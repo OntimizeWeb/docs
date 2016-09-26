@@ -9,8 +9,8 @@
 locale                   : "en-US"
 title                    : "Ontimize Web"
 title_separator          : "-"
-name                     : &name "Michael Rose"
-description              : &description "A flexible Jekyll theme for your blog or site with a minimalist aesthetic."
+name                     : "Ontimize Web"
+description              : &description "web application framework based on Angular 2 technology and standards for building aplications that require a browser-based user interface."
 url                      : https://ontimizeweb.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/docs" # the subpath of your site, e.g. "/blog"
 repository               : "OntimizeWeb/docs"
@@ -55,9 +55,9 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter "mmistakes"
+  username               : &twitter "imatiainnova"
 facebook:
-  username               : &facebook "michaelrose"
+  username               : 
   app_id                 :
   publisher              :
 og_image                 : "site-logo.png" # Open Graph/Twitter default site image
@@ -67,7 +67,7 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-    - "https://twitter.com/mmistakes"
+    - "https://twitter.com/imatiainnova"
     - "https://facebook.com/michaelrose"
 
 # Analytics
@@ -79,34 +79,34 @@ analytics:
 
 # Site Author
 author:
-  name             : *name
+  name             : "Imatia Innovation, S.L."
   avatar           : "michael-rose.jpg"
-  bio              : "Just another boring, tattooed, time traveling, designer."
-  location         : "Buffalo, NY"
-  email            :
-  uri              : "https://mademistakes.com"
+  bio              : "Let's do more."
+  location         : "Vigo, Spain"
+  email            : "contact@imatia.com"
+  uri              : "http://www.ontimize.com/"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         : *facebook
+  facebook         : #*facebook
   foursquare       :
-  github           : "mmistakes"
+  github           : "OntimizeWeb"
   google_plus      :
   keybase          :
-  instagram        : "mmistakes"
+  instagram        : 
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : *twitter
+  twitter          : #*twitter
   vine             :
   weibo            :
   xing             :
-  youtube          :
+  youtube          : "https://www.youtube.com/user/ImatiaInnovation"
 
 
 # Reading Files

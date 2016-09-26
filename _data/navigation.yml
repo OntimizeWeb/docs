@@ -24,14 +24,14 @@ main:
   - title: "Quick-Start Guide"
     url: /docs/quick-start-guide/
 
-  - title: "About"
-    url: /about/
+  # - title: "About"
+  #   url: /about/
 
-  - title: "Sample Posts"
-    url: /year-archive/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
 
-  - title: "Sample Collections"
-    url: /collection-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
 
   - title: "Terms &amp; Privacy Policy"
     url: /terms/
@@ -47,21 +47,6 @@ docs:
         url: /docs/structure/
       - title: "Installation"
         url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
-
-  - title: Customization
-    children:
-      - title: "Configuration"
-        url: /docs/configuration/
-      - title: "Navigation"
-        url: /docs/navigation/
-      - title: "UI Text"
-        url: /docs/ui-text/
-      - title: "Authors"
-        url: /docs/authors/
-      - title: "Layouts"
-        url: /docs/layouts/
 
   - title: Content
     children:
@@ -76,21 +61,10 @@ docs:
       - title: "Utility Classes"
         url: /docs/utility-classes/
 
-  - title: Extras
-    children:
-      - title: "Stylesheets"
-        url: /docs/stylesheets/
-      - title: "JavaScript"
-        url: /docs/javascript/
-
   - title: Meta
     children:
-      - title: "History"
-        url: /docs/history/
       - title: "Contributing"
         url: /docs/contributing/
-      - title: "Old 2.2 Docs"
-        url: /docs/docs-2-2/
       - title: "License"
         url: /docs/license/
       - title: "Terms &amp; Privacy Policy"
