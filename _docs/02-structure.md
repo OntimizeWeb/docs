@@ -79,3 +79,44 @@ quick-start
 |──  tslint.json                        # is used to configure which rules get run by the linter.
 └──  typings.json                       # provides additional definition files for libraries that the TypeScript compiler doesn't natively recognize.
 ```
+
+## Project configuration
+
+### Configuration files
+
+### Web app 
+
+## Application module
+
+## Start up your application
+
+Now it is time to start up your application, that is, tells to Angular 2 to start the app. You can find more information about Angular 2 bootstraping [here](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#bootstrap).
+
+The file responsible of starting up the app is *'app/main.ts'* and the content is the following:
+
+
+```bash
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);
+```
+
+This code calls framework launcher to bootstrap your AppModule.
+
+
+## Build and run your application
+
+Open a terminal window and enter this command:
+
+```bash
+npm start
+```
+> **NOTE:** Run this command with administrator privileges.
+
+That command runs the following two parallel node processes:
+
+* The TypeScript compiler in watch mode.
+* A static file server that loads *index.html* in a browser and refreshes the browser when application files change.
+
+In a browser tab enters [http://localhost:4200](http://localhost:4200) and the application should be displayed.
