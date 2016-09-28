@@ -79,11 +79,11 @@ analytics:
 # Site Author
 author:
   name             : "Imatia Innovation, S.L."
-  avatar           : "michael-rose.jpg"
+  avatar           : 
   bio              : "Let's do more."
   location         : "Vigo, Spain"
   email            : "contact@imatia.com"
-  uri              : "http://www.ontimize.com/"
+  uri              : "http://www.imatia.com/"
   bitbucket        :
   codepen          :
   dribbble         :
