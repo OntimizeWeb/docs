@@ -9,39 +9,51 @@ redirect_from:
 
 {% include base_path %}
 
-Minimal Mistakes has been developed to be 100% compatible with hosting a site on [GitHub Pages](https://pages.github.com/). To get up and running with a new GitHub repository quickly, follow these steps or jump ahead to the [full installation guide]({{ base_path }}/docs/installation/).
+Ontimize Web is web application framework based on Angular 2 technology and standards that provides to you an environment for solving the problematic situation of building aplications that require a browser-based user interface.
+Ontimize Web allows developing data management applications quickly and agile.
 
-## Fork the Theme
+The QuickStart app has the structure of Ontimize Web applications and displays the management of bank's customers and their accounts.
 
-Fork the [Minimal Mistakes theme](https://github.com/mmistakes/minimal-mistakes/fork), then rename the repo to **USERNAME.github.io** --- replacing **USERNAME** with your GitHub username.
+## Let's begin
 
-<figure>
-  <img src="{{ base_path }}/images/mm-theme-fork-repo.png" alt="fork Minimal Mistakes">
-</figure>
+### Prerequisites
 
-**Note:** Your Jekyll site should be viewable immediately at <http://USERNAME.github.io>. If it's not, you can force a rebuild by **Customizing Your Site** (see below for more details).
-{: .notice--warning}
+First of all you need to meet minimum requirements to start. [Check prerequesites depending on your operative system]({{ base_path }}/docs/prerequisites/).
 
-If you're hosting several Jekyll based sites under the same GitHub username you will have to use Project Pages instead of User Pages. Essentially you rename the repo to something other than **USERNAME.github.io** and create a `gh-pages` branch off of `master`. For more details on how to set things up check [GitHub's documentation](https://help.github.com/articles/user-organization-and-project-pages/).
+### Create new project based on QuickStart
 
-<figure>
-  <img src="{{ base_path }}/images/mm-gh-pages.gif" alt="creating a new branch on GitHub">
-</figure>
+There are several ways to start:
 
-**ProTip:** Be sure to [delete](https://github.com/blog/1377-create-and-delete-branches) the `gh-pages` branch if you forked Minimal Mistakes. This branch contains the documentation and demo site for the theme and you probably don't want that showing up in your repo.
-{: .notice--info}
+**1.** You can create and configure the project from scratch.
 
-## Customize Your Site
+**2.** You can [clone the entire QuickStart application](https://github.com/OntimizeWeb/ontimize-web-ng2-quickstart) from GitHub.
 
-Open up `_config.yml` found in the root of the repo and edit anything under **Site Settings**. For a full explanation of every setting be sure to read the [**Configuration**]({{ base_path }}/docs/configuration/) section, but for now let's just change the site's title.
+**3.** And for those who don't want to mess with Git, you can download the QuickStart as a ZIP file.
 
-<figure>
-  <img src="{{ base_path }}/images/mm-github-edit-config.gif" alt="editing _config.yml file">
-  <figcaption>Edit text files without leaving GitHub.com</figcaption>
-</figure>
+[<i class="fa fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ng2-quickstart/archive/quickstart.zip){: .btn .btn--success}
 
-Committing a change to `_config.yml` (or any file in your repository) will force GitHub Pages to rebuild your site with Jekyll. It should then be viewable a few seconds later at `https://USERNAME.github.io`.
+
+### Install npm packages and running
+
+Install the npm packages described in the `package.json` and verify that it works:
+
+**Attention Windows Developers:  You must run all of these commands in administrator mode**.
+
+```bash
+npm install
+npm start
+```
+
+> If the `typings` folder doesn't show up after `npm install` please install them manually with:
+
+> `npm run postinstall`
+
+The `npm start` command first compiles the application, 
+then simultaneously re-compiles and runs the `server`.
+Both the compiler and the server watch for file changes.
+
+Shut it down manually with Ctrl-C.
 
 ---
 
-Congratulations! You've successfully forked the theme and are up an running with GitHub Pages. Now you're ready to add content and customize the site further.
+Congratulations! You've successfully create an Ontimize Web application. Now you're ready to add content and customize the app further.
