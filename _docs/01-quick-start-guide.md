@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-Ontimize Web is web application framework based on Angular 2 technology and standards that provides to you an environment for solving the problematic situation of building aplications that require a browser-based user interface.
+Ontimize Web is an application framework based on Angular 2 technology and standards that provides to you an environment for solving the problematic situation of building applications that require a browser-based user interface.
 Ontimize Web allows developing data management applications quickly and agile.
 
 The QuickStart app has the structure of Ontimize Web applications and displays the management of bank's customers and their accounts.

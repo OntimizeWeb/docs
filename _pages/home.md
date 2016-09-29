@@ -7,7 +7,7 @@ header:
   cta_label: "<i class='fa fa-download'></i> Install Now"
   cta_url: "/docs/quick-start-guide/"
   caption:
-excerpt: 'web application framework based on Angular 2 technology and standards for building aplications that require a browser-based user interface.'
+excerpt: 'web application framework based on Angular 2 technology and standards for building applications that require a browser-based user interface.'
 feature_row:
   - image_path: mm-customizable-feature.png
     alt: "Quick to learn"

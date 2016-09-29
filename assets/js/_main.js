@@ -79,4 +79,20 @@ $(document).ready(function(){
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
 
+  $(window).scroll(function(){
+    // check to see if the window is top. If not, then display button
+    if($(this).scrollTop() > 100) {
+      $('.scrollToTop').fadeIn();
+    } else {
+      $('.scrollToTop').fadeOut();
+    }
+
+    // click event to scroll
+    $('.scrollToTop').click(function(){
+      $('html, body').stop(true, false).animate({scrollTop: 0}, 800);
+      return false;
+    });
+
+  });
+
 });
