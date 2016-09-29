@@ -24,7 +24,7 @@ feature_row:
   - image_path: mm-free-feature.png
     alt: "100% free"
     title: "100% Free"
-    excerpt: "Free to use however you want under the MIT License. Clone it, fork it, customize it, whatever!"
+    excerpt: "Free to use however you want under the Apache 2.0 License. Clone it, fork it, customize it, whatever!"
     url: "/docs/license/"
     btn_label: "Learn More"
 github:
