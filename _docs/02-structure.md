@@ -5,6 +5,7 @@ excerpt: "How an ontimize web app is organized and what all of the files are for
 modified: 2016-08-08T16:25:30-04:00
 ---
 
+{% include base_path %}
 
 ## Application structure
 
@@ -25,15 +26,15 @@ quick-start
 |    |   |   |──  login.directives.ts
 |    |   |   └──  index.ts
 |    |   |
-|    |   ├──  +main/                        # contains all blocks of application.
-|    |   |   ├──  +home/                    # home block.
+|    |   ├──  +main/                            # contains all blocks of application.
+|    |   |   ├──  +customers/                   # customers block.
 |    |   |   |   ├──  detail/
 |    |   |   |   ├──  edit/
 |    |   |   |   ├──  home/
 |    |   |   |   ├──  new/
 |    |   |   |   ├──  shared/
-|    |   |   |   |──  home.directives.ts    # directives of home block.
-|    |   |   |   |──  home.routes.ts        # routes of home block.
+|    |   |   |   |──  customers.directives.ts    # directives of customers block.
+|    |   |   |   |──  customers.routes.ts        # routes of customers block.
 |    |   |   |   └── index.ts
 |    |   |   | 
 |    |   |   |──  ...
@@ -218,7 +219,8 @@ The *NgModule* decorator uses the following metadata:
 * **providers:** Services that you want to make available module-wide. *standardProviders* includes framework services customized with application parameters.
 
 The noteworthy variables here are:
-* **CONFIG:** An object with application configuration parameters. Learn more here.
+
+* **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/).
 * **routing:** The definition of all application routes. Learn more here.
 * **APP_DIRECTIVES:** An array of component and directives of yout application. Lear more here. 
 
