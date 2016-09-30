@@ -33,8 +33,8 @@ main:
   # - title: "Sample Collections"
   #   url: /collection-archive/
   - title: "Components"
-    url: /components-archive/
-    
+    url: /components-collection/
+
   - title: "Terms &amp; Privacy Policy"
     url: /terms/
 
@@ -73,10 +73,35 @@ docs:
 components:
   - title: Input components
     children:
+      - title: "Text"
+        url: /components/o-text-input.component/
+      - title: "Integer"
+        url: /components/o-integer-input.component/
+      - title: "Real"
+        url: /components/o-real-input.component/
+      - title: "Textarea"
+        url: /components/o-textarea-input.component/
+      - title: "Email"
+        url: /components/o-email-input.component/
+      - title: "Password"
+        url: /components/o-password-input.component/  
       - title: "Currency"
         url: /components/o-currency-input.component/
       - title: "Date"
         url: /components/o-date-input.component/
+      - title: "Percent"
+        url: /components/o-percent-input.component/
+      - title: "NIF"
+        url: /components/o-nif-input.component/
+      - title: "HTML"
+        url: /components/o-html-input.component/
+      - title: "Search"
+        url: /components/o-search-input.component/
+      - title: "List picker"
+        url: /components/o-list-picker.component/
+      - title: "List picker dialog"
+        url: /components/o-list-picker-dialog.component/
+
   - title: Data components
     children:
       - title: "Form"

@@ -1,16 +1,16 @@
 ---
 layout: archive
 title: "Components"
-permalink: /components-archive/
+permalink: /components-collection/
 author_profile: false
+sidebar:
+  nav: "components"
 ---
 
 {% include base_path %}
 
 <div class="grid__wrapper">
   {% for post in site.components %}
-    
-
     {% if post.header.teaser %}
       {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
     {% else %}
@@ -23,13 +23,7 @@ author_profile: false
       {% assign title = post.title %}
     {% endif %}
 
-    {% if post.collectionURL %}
-      {% assign collURL = post.collectionURL %}
-    {% else %}
-      {% assign collURL = "asdf" %}
-    {% endif %}
-
-
+    
     <div class="{{ include.type | default: "grid" }}__item">
       <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
         {% if teaser %}
@@ -45,12 +39,10 @@ author_profile: false
         {% endif %}
         <h2 class="archive__item-title" itemprop="headline">
           
-            <a href="{{ base_path }}{{ collURL }}" rel="permalink">{{ title }}</a>
+            {{ title }}
           
         </h2>
-        {% if post.read_time %}
-          <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
-        {% endif %}
+        
         {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
       </article>
     </div>
@@ -64,8 +56,4 @@ author_profile: false
 
   {% endfor %}
 </div>
-
-
-
-
-
+  
