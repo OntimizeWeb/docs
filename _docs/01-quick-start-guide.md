@@ -18,7 +18,7 @@ The QuickStart app has the structure of Ontimize Web applications and displays t
 
 ### Prerequisites
 
-First of all you need to meet minimum requirements to start. [Check prerequesites depending on your operative system]({{ base_path }}/docs/prerequisites/).
+First of all you need to meet minimum requirements to start. [Check prerequesites depending on your operative system]({{ base_path }}/guide/prerequisites/).
 
 ### Create new project based on QuickStart
 

@@ -24,19 +24,17 @@ main:
   - title: "Quick-Start Guide"
     url: /docs/quick-start-guide/
 
-  # - title: "About"
-  #   url: /about/
+  - title: "Components"
+    url: /components-archive/
 
-  # - title: "Sample Posts"
+  - title: "About"
+    url: /about/
+
+    # - title: "Sample Posts"
   #   url: /year-archive/
 
   # - title: "Sample Collections"
   #   url: /collection-archive/
-  - title: "Components"
-    url: /components-archive/
-    
-  - title: "Terms &amp; Privacy Policy"
-    url: /terms/
 
 
 # documentation links
@@ -45,21 +43,13 @@ docs:
     children:
       - title: "Quick-Start Guide"
         url: /docs/quick-start-guide/
+
+  - title: Guide
+    children:
       - title: "Structure"
         url: /docs/structure/
-
-  - title: Content
-    children:
-      - title: "Working with Posts"
-        url: /docs/posts/
-      - title: "Working with Pages"
-        url: /docs/pages/
-      - title: "Working with Collections"
-        url: /docs/collections/
-      - title: "Helpers"
-        url: /docs/helpers/
-      - title: "Utility Classes"
-        url: /docs/utility-classes/
+      - title: "Routing"
+        url: /docs/routing/
 
   - title: Meta
     children:
@@ -67,8 +57,8 @@ docs:
         url: /docs/contributing/
       - title: "License"
         url: /docs/license/
-      - title: "Terms &amp; Privacy Policy"
-        url: /terms/
+      - title: "About"
+        url: /about/
 # components links
 components:
   - title: Input components
