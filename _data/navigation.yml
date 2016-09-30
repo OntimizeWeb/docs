@@ -32,7 +32,9 @@ main:
 
   # - title: "Sample Collections"
   #   url: /collection-archive/
-
+  - title: "Components"
+    url: /components-archive/
+    
   - title: "Terms &amp; Privacy Policy"
     url: /terms/
 

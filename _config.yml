@@ -168,7 +168,15 @@ collections:
   docs:
     output: true
     permalink: /:collection/:path/
-
+  components:
+    output: true
+    permalink: /:collection/:path/
+  input_components:
+    output: true
+    permalink: /input/:path/
+  data_components:
+    output: true
+    permalink: /data/:path/
 
 # Defaults
 defaults:
