@@ -6,6 +6,18 @@ modified: 2016-08-08T16:25:30-04:00
 ---
 
 {% include base_path %}
+{% include toc %}
+
+## Overview
+
+The QuickStart application has the structure of an Ontimize Web application. This structure is based on the structure
+of a real-world Angular app but with the specification needed by the Ontimize Web framework.  
+
+The QuickStart has been developed for teaching purposes about how to start programming with Ontimize Web.  
+
+In following sections of this documents will be explained in detail how is this structure and how each file is used for.  
+
+---  
 
 ## Application structure
 
@@ -46,7 +58,7 @@ quick-start
 |    |   |   |──  main.routes.ts            # routes of app private section.
 |    |   |   └──  index.ts
 |    |   |
-|    |   |──  shared/                       # contains all stuff (components, services, ...) for sharing on app.
+|    |   |──  shared/                       # contains all stuff (components, services, ...) for sharing on whole app.
 |    |   |   |──  ...
 |    |   |   |──  app.services.config.ts    # app services configuration parameters.
 |    |   |   |──  shared.directives.ts      # directives of shared block.
@@ -104,7 +116,7 @@ For *Webpack* and Angular, see [Webpack: an Introduction](https://angular.io/doc
 
 Define the web app that hosts your application in the file *index.html*.
 
-```bash
+```html
 <!doctype html>
 <html>
 <head>
@@ -221,9 +233,18 @@ The *NgModule* decorator uses the following metadata:
 The noteworthy variables here are:
 
 * **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/).
-* **routing:** The definition of all application routes. Learn more here.
-* **APP_DIRECTIVES:** An array of component and directives of yout application. Lear more here. 
+* **routing:** The definition of all application routes. Learn more [here]({{ base_path }}/docs/routing/).
+* **APP_DIRECTIVES:** An array of component and directives of your application. Lear more [here]({{ base_path }}/guide/app-directives/). 
 
+As a rule, our app will be conformed by different logic blocks which may or may not interact with each. Returning to our example customer management and accounts, 
+it makes sense to have a block containing the logic related to the creation, editing, deleting .. customer and one with the logic of the accounts.  
+
+As it is shown into the structure schema, the minimum logic blocks that every Ontimize Web app must contain are:
+
+* **+login:** This is a public block (always accesible) responsible of login process.
+* **+main:** This is a container for all private logic blocks of our application (e.g. +customers, +accounts, ...)
+
+You can find more information about logic blocks [here]({{ base_path }}/guide/logic-blocks).
 
 ## Start up your application
 
