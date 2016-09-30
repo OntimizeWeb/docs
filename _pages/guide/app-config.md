@@ -48,7 +48,7 @@ If no one is provided, by default is seta as 'ontimize-web-uuid'.
 * **title:** The title of the application.
 * **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, ...).
 * **serviceType:** The service type used in the app by framework components that request data from server. You can specify (Ontimize REST standard, Ontimize REST JEE or custom implementation)
-  * **Not configured (by default):** configures Ontimize REST standard services.
+  * **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
   * **'OntimizeEE':** configures Ontimize REST JEE services.
-  * **Custom class:** a class that extends from *Ontimize* or *OntimizeEE* default services or that implment IDataService interface.
+  * **Custom class:** a class that extends from *Ontimize* or *OntimizeEE* default services or that implements IDataService interface.
 * **servicesConfiguration:** Object that contains the configuration parameters of the services used into the app. 
