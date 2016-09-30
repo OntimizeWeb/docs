@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Ontimize Web"
 title_separator          : "-"
 name                     : "Ontimize Web"
-description              : &description "web application framework based on Angular 2 technology and standards for building aplications that require a browser-based user interface."
+description              : &description "web application framework based on Angular 2 technology and standards for building applications that require a browser-based user interface."
 url                      : https://ontimizeweb.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/docs" # the subpath of your site, e.g. "/blog"
 repository               : "OntimizeWeb/docs"
@@ -79,7 +79,7 @@ analytics:
 # Site Author
 author:
   name             : "Imatia Innovation, S.L."
-  avatar           : 
+  avatar           : "im.png"
   bio              : "Let's do more."
   location         : "Vigo, Spain"
   email            : "contact@imatia.com"

@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-Ontimize Web is web application framework based on Angular 2 technology and standards that provides to you an environment for solving the problematic situation of building aplications that require a browser-based user interface.
+Ontimize Web is an application framework based on Angular 2 technology and standards that provides to you an environment for solving the problematic situation of building applications that require a browser-based user interface.
 Ontimize Web allows developing data management applications quickly and agile.
 
 The QuickStart app has the structure of Ontimize Web applications and displays the management of bank's customers and their accounts.
@@ -30,7 +30,7 @@ There are several ways to start:
 
 **3.** And for those who don't want to mess with Git, you can download the QuickStart as a ZIP file.
 
-[<i class="fa fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ng2-quickstart/archive/quickstart.zip){: .btn .btn--success}
+[<i class="fa fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ng2-quickstart/archive/master.zip){: .btn .btn--success}
 
 
 ### Install npm packages and running

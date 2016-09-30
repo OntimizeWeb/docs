@@ -71,3 +71,16 @@
     font-weight: bold;
   }
 }
+
+.scrollToTop {
+  text-decoration: none;
+  position: fixed;
+  bottom: 75px;
+  right: 40px;
+  display: none;
+  z-index: 100;
+  font-size: 2em;
+}
+.scrollToTop:hover {
+  text-decoration: none;
+}
