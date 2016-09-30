@@ -1,0 +1,32 @@
+---
+layout: single
+---
+
+{% if site.data.components[page.comp] %} 
+
+    Directive : {{ site.data.components[page.comp].directive }}
+
+
+    <table>
+    <thead>
+        <tr>
+        {% for header in site.data.components[page.comp].attributesHeader %}
+            <th> {{ header }}</th>
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for attr in site.data.components[page.comp].attributes %}
+        <tr>     
+        <td>{{ attr.name }}</td>
+        <td>{{ attr.type }}</td>
+        <td>{{ attr.default }}</td>
+        <td>{{ attr.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>         
+{% endif %}
+
+
+{{ content }}

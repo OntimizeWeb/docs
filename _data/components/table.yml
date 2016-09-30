@@ -1,0 +1,166 @@
+
+directive : "o-table"
+
+attributesHeader: ["Name","Type","Default","Description"] 
+
+attributes: [{
+  name: "attr", 
+  type: "string",
+  default : "ddd",
+  description : ""
+},{
+  name: "title", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "visible", 
+  type: "no|yes",
+  default : "ddd",
+  description : ""
+},{
+  name: "enabled", 
+  type: "no|yes",
+  default : "dd",
+  description : ""
+},{
+  name: "data", 
+  type: "array<object>",
+  default : "ddd",
+  description : ""
+},{
+  name: "service", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "query-method", 
+  type: "string",
+  default : "ddd",
+  description : ""
+},{
+  name: "insert-method", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "update-method", 
+  type: "string",
+  default : "ddd",
+  description : ""
+},{
+  name: "delete-method", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "entity", 
+  type: "string",
+  default : "ddd",
+  description : ""
+},{
+  name: "keys", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "parent-keys", 
+  type: "string",
+  default : "ddd",
+  description : ""
+},{
+  name: "columns", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "visible-columns", 
+  type: "string",
+  default : "ddd",
+  description : ""
+},{
+  name: "editable-columns", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "edit-on-focus", 
+  type: "no|yes",
+  default : "ddd",
+  description : ""
+},{
+  name: "sort-columns", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "query-rows", 
+  type: "number",
+  default : "ddd",
+  description : ""
+},{
+  name: "query-on-init", 
+  type: "no|yes",
+  default : "dd",
+  description : ""
+},{
+  name: "quick-filter", 
+  type: "no|yes",
+  default : "ddd",
+  description : ""
+},{
+  name: "insert-button", 
+  type: "no|yes",
+  default : "dd",
+  description : ""
+},{
+  name: "delete-button", 
+  type: "no|yes",
+  default : "ddd",
+  description : ""
+},{
+  name: "refresh-button", 
+  type: "no|yes",
+  default : "dd",
+  description : ""
+},{
+  name: "columns-visibility-button", 
+ type: "no|yes",
+  default : "ddd",
+  description : ""
+},{
+  name: "columns-resize-button", 
+  type: "no|yes",
+  default : "dd",
+  description : ""
+},{
+  name: "columns-group-button", 
+  type: "no|yes",
+  default : "ddd",
+  description : ""
+},{
+  name: "export-button", 
+  type: "no|yes",
+  default : "dd",
+  description : ""
+},{
+  name: "detail-mode", 
+  type: "none|click|doubleclick",
+  default : "dd",
+  description : ""
+},{
+  name: "detail-form-route", 
+  type: "string",
+  default : "dd",
+  description : ""
+},{
+  name: "recursive-detail", 
+  type: "no|yes",
+  default : "dd",
+  description : ""
+},{
+  name: "insert-table", 
+  type: "no|yes",
+  default : "dd",
+  description : ""
+}]
