@@ -1,6 +1,6 @@
- ---
-title: "Table"
+---
 permalink: /components/o-table.component/
+title: "Table"
 comp: table
 ---
 

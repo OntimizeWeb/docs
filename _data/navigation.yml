@@ -25,7 +25,7 @@ main:
     url: /docs/quick-start-guide/
 
   - title: "Components"
-    url: /components-archive/
+    url: /components-collection/
 
   - title: "About"
     url: /about/
@@ -35,11 +35,6 @@ main:
 
   # - title: "Sample Collections"
   #   url: /collection-archive/
-  - title: "Components"
-    url: /components-collection/
-
-  - title: "Terms &amp; Privacy Policy"
-    url: /terms/
 
 
 # documentation links
