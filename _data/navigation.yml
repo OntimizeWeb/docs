@@ -67,3 +67,17 @@ docs:
         url: /docs/license/
       - title: "Terms &amp; Privacy Policy"
         url: /terms/
+# components links
+components:
+  - title: Input components
+    children:
+      - title: "Currency"
+        url: /components/o-currency-input.component/
+      - title: "Date"
+        url: /components/o-date-input.component/
+  - title: Data components
+    children:
+      - title: "Form"
+        url: /components/o-form.component/
+      - title: "Table"
+        url: /components/o-table.component/           
