@@ -1,0 +1,28 @@
+directive : "o-real-input"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+inheritedAttributes: [
+  {
+    component: "o-text-input", 
+    attributes: ["attr", "label", "hint", "data", "enabled", "required", "minLength", "maxLength"]
+  },
+  {
+    component: "o-integer-input",
+    attributes: ["min", "max"]
+  }
+]
+
+attributes: [{
+  name: "minDecimalDigits", 
+  type: "number",
+  default : "2",
+  required : "",
+  description : "Minimum number of decimals required"
+},{
+  name: "maxDecimalDigits", 
+  type: "number",
+  default : "2",
+  required : "",
+  description : "Maximum number of decimals required"
+}]	

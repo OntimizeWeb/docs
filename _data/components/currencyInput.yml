@@ -1,0 +1,32 @@
+directive : "o-currency-input"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+inheritedAttributes: [
+  {
+    component: "o-text-input", 
+    attributes: ["attr", "label", "hint", "data", "enabled", "required", "minLength", "maxLength"]
+  },
+  {
+    component: "o-integer-input",
+    attributes: ["min", "max"]
+  },
+  {
+    component: "o-real-input",
+    attributes: ["minDecimalDigits", "maxDecimalDigits"]
+  }
+]
+
+attributes: [{
+  name: "currencySymbol", 
+  type: "string",
+  default : "euro (EUR)",
+  required : "",
+  description : "currency symbol (According to ISO 4217)"
+},{
+  name: "currencySymbolPosition", 
+  type: "left | right",
+  default : "right",
+  required : "",
+  description : "Position of currency symbol"
+}]	

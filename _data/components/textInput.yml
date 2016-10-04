@@ -1,0 +1,60 @@
+
+directive : "o-text-input"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "attr", 
+  type: "string",
+  default : "",
+  required : "Yes",
+  description : "Fiel identifier"
+},{
+  name: "label", 
+  type: "string",
+  default : "Component attr", 
+  required : "",
+  description : "Field label (placeholder when field is empty and floating label when field has data) "
+},{
+  name: "hint", 
+  type: "string",
+  default : "", 
+  required : "",
+  description : "Text under the field."
+},{
+  name: "data", 
+  type: "string",
+  default : "", 
+  required : "",
+  description : ""
+},{
+  name: "enabled", 
+  type: "no | yes",
+  default : "", 
+  required : "",
+  description : "Component enabled state"
+},{
+  name: "required", 
+  type: "no | yes",
+  default : "no", 
+  required : "",
+  description : "Indicates whether the field is required"
+},{
+  name: "min-length", 
+  type: "number",
+  default : "", 
+  required : "",
+  description : "Minimum number of required characters"
+},{
+  name: "max-length", 
+  type: "number",
+  default : "", 
+  required : "",
+  description : "Maximum number of required characters"
+},{
+  name: "pattern", 
+  type: "string",
+  default : "", 
+  required : "",
+  description : "Regular expression to validate the field content"
+}]

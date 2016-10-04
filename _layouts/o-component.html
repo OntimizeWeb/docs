@@ -2,30 +2,55 @@
 layout: single
 ---
 
-{% if site.data.components[page.comp] %} 
 
-    Directive : {{ site.data.components[page.comp].directive }}
+{% if page.comp and site.data.components[page.comp] %}
+  {% assign componentData = site.data.components[page.comp] %}
+{% endif %}
 
 
-    <table>
-    <thead>
-        <tr>
-        {% for header in site.data.components[page.comp].attributesHeader %}
-            <th> {{ header }}</th>
-        {% endfor %}
-        </tr>
-    </thead>
-    <tbody>
-        {% for attr in site.data.components[page.comp].attributes %}
-        <tr>     
-        <td>{{ attr.name }}</td>
-        <td>{{ attr.type }}</td>
-        <td>{{ attr.default }}</td>
-        <td>{{ attr.description }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    </table>         
+{% if componentData %} 
+
+    {% if componentData.directive %} 
+    <p><strong>Directive:</strong> {{ componentData.directive }}</p>
+    {% endif %}
+
+    {% if componentData.inheritedAttributes %} 
+    <br/>
+        {% for inheritedObj in componentData.inheritedAttributes %}
+
+        Inherited attributes from {{ inheritedObj.component }} :
+            <ul>
+            {% for inheritedAttr in inheritedObj.attributes %}
+                <li> {{ inheritedAttr }} </li>
+            {% endfor %}
+            </ul>
+        <br/>    
+        {% endfor %}        
+    {% endif %}
+
+    {% if componentData.attributes %}
+        <p><strong>Attributes:</strong></p>
+        <table>
+            <thead>
+                <tr>
+                {% for header in componentData.attributesColumns %}
+                    <th> {{ header }}</th>
+                {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for attributeObject in componentData.attributes %}
+                <tr>
+                {% for column in componentData.attributesColumns %}
+                    {% assign columnKey = column | downcase %}  
+                    <td>{{ attributeObject[columnKey]  | default: '' }}</td>          
+                {% endfor %}       
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>   
+    {% endif %}
+
 {% endif %}
 
 
