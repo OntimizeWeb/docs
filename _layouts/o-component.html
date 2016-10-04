@@ -30,11 +30,11 @@ layout: single
 
     {% if componentData.attributes %}
         <p><strong>Attributes:</strong></p>
-        <table>
+        <table class="mdl-data-table">
             <thead>
                 <tr>
                 {% for header in componentData.attributesColumns %}
-                    <th> {{ header }}</th>
+                    <th class="mdl-data-table__cell--non-numeric"> {{ header }}</th>
                 {% endfor %}
                 </tr>
             </thead>
@@ -43,7 +43,7 @@ layout: single
                 <tr>
                 {% for column in componentData.attributesColumns %}
                     {% assign columnKey = column | downcase %}  
-                    <td>{{ attributeObject[columnKey]  | default: '' }}</td>          
+                    <td class="mdl-data-table__cell--non-numeric">{{ attributeObject[columnKey]  | default: '' }}</td>          
                 {% endfor %}       
                 </tr>
             {% endfor %}

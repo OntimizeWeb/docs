@@ -5,7 +5,7 @@ attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 inheritedAttributes: [
   {
     component: "o-text-input", 
-    attributes: ["attr", "label", "hint", "data", "enabled", "required", "minLength", "maxLength"]
+    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
   }
 ]
 

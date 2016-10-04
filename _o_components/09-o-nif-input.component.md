@@ -7,5 +7,5 @@ comp: nifInput
 **Example:**
 
 ```html
-<o-nif-input attr="ID" data="ID" max-length="50"></o-email-input>
+<o-nif-input attr="nif_input" label="NIF input" max-length="50"></o-nif-input>
 ```

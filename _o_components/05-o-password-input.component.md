@@ -7,5 +7,5 @@ comp: passwordInput
 **Example:**
 
 ```html
-<o-password-input attr="PASSWORD" data="PASSWORD"></o-password-input>
+<o-password-input attr="password_input" label="Password input"></o-password-input>
 ```

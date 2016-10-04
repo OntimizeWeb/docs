@@ -7,5 +7,7 @@ comp: integerInput
 **Example:**
 
 ```html
-<o-integer-input attr="integer_test" data="STARTDATE" required="yes" min="10" max="1000000" ></o-integer-input>
+<o-integer-input attr="integer_input" label="Integer input" 
+    min="10" max="1000000">
+</o-integer-input>    
 ```

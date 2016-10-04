@@ -1,4 +1,4 @@
-directive : "o-currency-input"
+directive : "o-percent-input"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
@@ -16,17 +16,3 @@ inheritedAttributes: [
     attributes: ["min-decimal-digits", "max-decimal-digits"]
   }
 ]
-
-attributes: [{
-  name: "currency-symbol", 
-  type: "string",
-  default : "euro (EUR)",
-  required : "",
-  description : "currency symbol (According to ISO 4217)"
-},{
-  name: "currency-symbol-position", 
-  type: "left | right",
-  default : "right",
-  required : "",
-  description : "Position of currency symbol"
-}]	

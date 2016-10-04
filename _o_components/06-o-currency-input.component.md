@@ -7,5 +7,8 @@ comp: currencyInput
 **Example:**
 
 ```html
-<o-currency-input attr="BALANCE" data="BALANCE" currency-symbol="USD" currency-symbol-position="left" ></o-currency-input>
+<o-currency-input attr="currency_input_2" 
+    label="Currency input" currency-symbol="EUR" 
+    currency-symbol-position="right">
+</o-currency-input>
 ``` 

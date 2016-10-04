@@ -1,0 +1,24 @@
+directive : "o-date-input"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+inheritedAttributes: [
+  {
+    component: "o-text-input", 
+    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+  }
+]
+
+attributes: [{
+  name: "format", 
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "locale", 
+  type: "string",
+  default : "Application configured locale",
+  required : "",
+  description : ""
+}]	
