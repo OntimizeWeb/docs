@@ -35,7 +35,7 @@ title: "Table column renderers"
   {% capture dataFileCapture %}
     {% include o-component-single.html compFile=dataFile %}
   {% endcapture %}
-
+  <h2 class="archive__subtitle">hola</h2>
   {{ dataFileCapture | replace: '    ', '' }}
  
 {% endfor %}
