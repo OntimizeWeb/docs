@@ -1,0 +1,35 @@
+directive : "o-table-cell-renderer-currency"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "currency-symbol", 
+  type: "string",
+  default : "dolar ($)",
+  description : "Currency symbol (According to ISO 4217)"
+},{
+  name: "currency-symbol-position", 
+  type: "left | right",
+  default : "left",
+  description : "Position of currency symbol"
+},{
+  name: "grouping", 
+  type: "no | yes",
+  default : "yes",
+  description : "Indicates whether to group the thousand digits"
+},{
+  name: "thousand-separator", 
+  type: "string",
+  default : "Comma (,)",
+  description : "Thousand digits chacarter separator (in case of grouping)"
+},{
+  name: "decimal-separator", 
+  type: "string",
+  default : "Dot (.)",
+  description : "Decimal digits chacarter separator"
+},{
+  name: "decimal-digits", 
+  type: "number",
+  default : "2",
+  description : "Number of decimals"
+}]

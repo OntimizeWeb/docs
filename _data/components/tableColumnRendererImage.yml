@@ -1,0 +1,20 @@
+directive : "o-table-cell-renderer-image"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "image-type", 
+  type: "base64 | url",
+  default : "Model value",
+  description : "Image type (external URL or base64)"
+},{
+  name: "avatar", 
+  type: "no | yes",
+  default : "no",
+  description : "Indicates whether visualize image as an avatar (as a circle)"   
+},{
+  name: "empty-image", 
+  type: "string",
+  default : "",
+  description : "Image URL when field has no value"
+}]

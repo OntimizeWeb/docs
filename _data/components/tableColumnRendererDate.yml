@@ -1,0 +1,10 @@
+directive : "o-table-cell-renderer-date"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "format", 
+  type: "string",
+  default : "",
+  description : "Date format. See MomentJS (http://momentjs.com/)"
+}]

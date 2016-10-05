@@ -1,0 +1,36 @@
+
+directive : "o-table-column"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "attr", 
+  type: "string",
+  default : "",
+  description : "Column name"
+},{
+  name: "title", 
+  type: "string",
+  default : "",
+  description : "Column title"
+},{
+  name: "orderable", 
+  type: "no | yes",
+  default : "yes",
+  description : "Indicates whether the column can be sorted"
+},{
+  name: "searchable", 
+  type: "no | yes",
+  default : "yes",
+  description : "Indicates whether the column content can be searched"
+},{
+  name: "editable", 
+  type: "no | yes",
+  default : "no",
+  description : "Indicates whether the column content can be edited. Alternative (with higher priority) to attribute 'editable-columns' de 'o-table'"
+},{
+  name: "type", 
+  type: "string | boolean | integer | real | currency | date | image",
+  default : "string",
+  description : "Column data type"
+}]

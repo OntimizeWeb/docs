@@ -2,56 +2,11 @@
 layout: single
 ---
 
-
-{% if page.comp and site.data.components[page.comp] %}
-  {% assign componentData = site.data.components[page.comp] %}
+{% if page.comp %}
+  {% assign componentKey = page.comp %}
 {% endif %}
 
-
-{% if componentData %} 
-
-    {% if componentData.directive %} 
-    <p><strong>Directive:</strong> {{ componentData.directive }}</p>
-    {% endif %}
-
-    {% if componentData.inheritedAttributes %} 
-    <br/>
-        {% for inheritedObj in componentData.inheritedAttributes %}
-
-        Inherited attributes from {{ inheritedObj.component }} :
-            <ul>
-            {% for inheritedAttr in inheritedObj.attributes %}
-                <li> {{ inheritedAttr }} </li>
-            {% endfor %}
-            </ul>
-        <br/>    
-        {% endfor %}        
-    {% endif %}
-
-    {% if componentData.attributes %}
-        <p><strong>Attributes:</strong></p>
-        <table class="mdl-data-table">
-            <thead>
-                <tr>
-                {% for header in componentData.attributesColumns %}
-                    <th class="mdl-data-table__cell--non-numeric"> {{ header }}</th>
-                {% endfor %}
-                </tr>
-            </thead>
-            <tbody>
-            {% for attributeObject in componentData.attributes %}
-                <tr>
-                {% for column in componentData.attributesColumns %}
-                    {% assign columnKey = column | downcase %}  
-                    <td class="mdl-data-table__cell--non-numeric">{{ attributeObject[columnKey]  | default: '' }}</td>          
-                {% endfor %}       
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>   
-    {% endif %}
-
-{% endif %}
+{% include o-component-single.html comp=componentKey %}
 
 
 {{ content }}
