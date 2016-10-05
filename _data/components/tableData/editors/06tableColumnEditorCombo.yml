@@ -1,0 +1,40 @@
+directive : "o-table-cell-editor-combo"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "service", 
+  type: "string",
+  default : "",
+  description : "JEE service path"
+},{
+  name: "query-method", 
+  type: "string",
+  default : "query",
+  description : "Service method name for queries"   
+},{
+  name: "entity", 
+  type: "string",
+  default : "",
+  description : "Service entity name"
+},{
+  name: "value-column", 
+  type: "string",
+  default : "",
+  description : "Column name for cell value mapping (similar to component 'ComboReferenceDataField' 'cod' attribute in classic Ontimize Desktop)"
+},{
+  name: "columns", 
+  type: "string",
+  default : "",
+  description : "Entity columns. Separated by ';'"
+},{
+  name: "visible-columns", 
+  type: "string",
+  default : "",
+  description : "Visible columns. Separated by ';'"
+},{
+  name: "separator", 
+  type: "string",
+  default : "",
+  description : "Separator used to concatenate the visible columns"
+}]

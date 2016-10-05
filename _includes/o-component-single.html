@@ -1,8 +1,10 @@
 {% if include.comp and site.data.components[include.comp] %}
-  {% assign componentData = site.data.components[include.comp] %}
+    {% assign componentData = site.data.components[include.comp] %}
+{% elsif include.compFile %}
+    {% assign componentData = include.compFile %}     
 {% endif %}
 
-
+ 
 {% if componentData %} 
 
     {% if componentData.directive %} 

@@ -6,6 +6,8 @@ comp: table
 
 {% include base_path %}
 
+
+
 **WARNING: table is storing changes made by user (show/hide columns, order changes, filters, etc.) in the browser local storage. That values will take precedence over table html definition.**
 For example: if a 'ID' column is not in the 'visible-columns' attribute but the user has chosen to display it manually, it will be visible in future loads. For restoring initial state is enough to delete it 'DataTables' entries in browswer local storage.
 
@@ -16,11 +18,12 @@ Using default renderer (o-table-cell-renderer-string) if column attr is present 
 In the same way, using the defualt editor (o-table-cell-editor-string) if column attr is contained in  the 'editable-columns' attribute from its 'o-table'.
 If 'o-table' directive contains inner 'o-table-column' elements, using renderers and editors defined on them.
 
-{% capture tableColumn %}
+{% capture tableColumnCapture %}
 {% include o-component-single.html comp="tableColumn" %}
 {% endcapture %}
-{{ tableColumn | replace: '    ', ''}}
+{{ tableColumnCapture | replace: '    ', ''}}
 
+####  markdownify 
 
 **Example:**
 
@@ -75,6 +78,10 @@ If 'o-table' directive contains inner 'o-table-column' elements, using renderers
 
 
 
+[Cell renderers]({{ base_path }}/table/o-table-renderers.component/)
+
+
+[Cell editors]({{ base_path }}/table/o-table-editors.component/)
 
 
 

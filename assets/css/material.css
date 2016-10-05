@@ -87,7 +87,7 @@ mdl-data-table {
 /* Custom styles */
 .mdl-data-table__cell--non-numeric.mdl-data-table__cell--non-numeric {
 	font-size: 12px;
-	padding: 6px 18px 6px 24px;
+	padding: 6px 12px 6px 18px;
 }
 
 .mdl-data-table th,

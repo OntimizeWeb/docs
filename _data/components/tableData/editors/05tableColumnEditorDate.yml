@@ -1,0 +1,15 @@
+directive : "o-table-cell-editor-date"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "date-model-type", 
+  type: "timestamp | string",
+  default : "timestamp",
+  description : "If a column of type date is editable its model must be defined for saving its value. For example, in Ontimize classic server, dates have timestamp format (number) but to save them is necessary  to send a string with format 'YYYY-MM-DD HH:MM:SS'. In this case, the 'date-model-type' attribute should have 'string' value, and 'date-model-format' should be 'YYYY-MM-DD HH:mm:ss' (see MomentJS http://momentjs.com/)"
+},{
+  name: "date-model-format", 
+  type: "string",
+  default : "ISO date format",
+  description : "Cover if the attribute 'date-model-type' value is 'string'"
+}]
