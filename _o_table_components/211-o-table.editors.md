@@ -1,7 +1,7 @@
 ---
 layout: single
-permalink: /table/o-table-editors.component/
-title: "Table column editors"
+permalink: /table-components/o-table-editors.component/
+title: "Column editors"
 ---
 
 
@@ -26,6 +26,9 @@ title: "Table column editors"
 
 **Default editors:**
 
+
+
+
 {% assign filenameArray = "" | split:"|"  %} 
 {% for editors_hash in site.data.components.tableData.editors %}
   {% assign filenameArray = filenameArray | push: editors_hash[0] %}
@@ -39,13 +42,15 @@ title: "Table column editors"
   {% capture dataFileCapture %}
     {% include o-component-single.html compFile=dataFile %}
   {% endcapture %}
-
+  <h2 class="archive__subtitle">{{ dataFile.title }}</h2>
   {{ dataFileCapture | replace: '    ', '' }}
  
 {% endfor %}
 
 
 **Creating a custom editor:**
+
+To create a custom renderer is necessary to create a component implementing the **ITableCellEditor** interface or extending another renderer.
 
 
 ```javascript
@@ -65,9 +70,24 @@ interface ITableCellEditor {
 }
 ```
 
+The implementation of this interface is more complex than the renderers interface, so it is recommended using existing editors as reference.
 
-
-
+<div style="font-size:15px;" markdown="1">
+  * *onFocus*: event triggered when the editor gets focused.
+  * *onBlur*: event triggered when the editor lost its focus.
+  * *onSubmit*: event triggered when the editor submits its value.
+  * *init(parameters: any)*: used for initialization from OTableColumn in default editors (passing o-table-column attributes to renderer). 
+  It is not necesary to implement in the new editors, initialization should be done in constructor or in ngOnInit method.
+  * *getHtml(data: any): string*: string containing editor HTML code.
+  * *handleCellFocus(cellElement: any, data: any)*: handler executed when the editable column cell receives the focus. Receiving the HTML cell code (<td></td>) to append the editor HTML code in it and current cell data.
+  * *handleCellBlur(cellElement: any)*: handler executed when the editable column cell losts focus. Receiving the HTML cell code (<td></td>) for deleting the editor code from it.
+  * *create(cellElement: any, data: any)*: method for creating the editor.
+  * *destroy(cellElement: any)*: method for deleting the editor.
+  * *performInsertion(cellElement: any)*: method for updating the cell with the editor's value. It should invoke *this.tableColumn.update* method.
+  * *createEditorForInsertTable(cellElement: any, data: any)*: method for creating the editor in the table fast insert row (*insert-table="yes"*).
+  * *getInsertTableValue(): any*: method for obtaining the value inserted in the editor in a fast insert row (*insert-table="yes"*).
+</div>
+For example, a editor extending o-table-cell-editor-string hiding its content: *password-cell-editor.ts*
 
 ```javascript
 import { Component, Inject, forwardRef } from '@angular/core';
@@ -96,7 +116,7 @@ export class PasswordCellEditorComponent extends OTableCellEditorStringComponent
 }
 ```
 
-
+Using example (**dont forget to include PasswordCellEditorComponent in the component directives**).
 
 
 ```html

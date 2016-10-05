@@ -18,3 +18,5 @@ attributes: [{
   default : "",
   description : "Image URL when field has no value"
 }]
+
+title : "OTableCellRendererImage"

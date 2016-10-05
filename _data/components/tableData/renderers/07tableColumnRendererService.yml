@@ -1,5 +1,5 @@
 
-directive : "o-table-cell-renderer-string"
+title : "OTableCellRendererService"
 
 
 directive : "o-table-cell-renderer-service"

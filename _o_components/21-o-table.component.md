@@ -23,7 +23,7 @@ If 'o-table' directive contains inner 'o-table-column' elements, using renderers
 {% endcapture %}
 {{ tableColumnCapture | replace: '    ', ''}}
 
-####  markdownify 
+
 
 **Example:**
 
@@ -75,13 +75,6 @@ If 'o-table' directive contains inner 'o-table-column' elements, using renderers
 </o-table>
 ```
 
-
-
-
-[Cell renderers]({{ base_path }}/table/o-table-renderers.component/)
-
-
-[Cell editors]({{ base_path }}/table/o-table-editors.component/)
-
-
-
+{% for post in site.o_table_components %}
+  {% include archive-single.html %}
+{% endfor %}

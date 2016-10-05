@@ -1,3 +1,5 @@
+title : "OTableCellEditorCombo"
+
 directive : "o-table-cell-editor-combo"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 

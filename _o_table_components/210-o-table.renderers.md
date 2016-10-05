@@ -1,17 +1,21 @@
 ---
 layout: single
-permalink: /table/o-table-renderers.component/
-title: "Table column renderers"
+permalink: /table-components/o-table-renderers.component/
+title: "Column renderers"
 ---
 
+Specify how to render cells. A table column has the attribute 'type' that indicates how its cells
+will be rendered.
 
-**Example:**
+For example:
 
 ```html
 <o-table-column attr="PHOTO" orderable="no" searchable="no" type="image" 
   image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
 </o-table-column>  
 ```
+
+It would be equivalent to define:
 
 ```html
 <o-table-column attr="PHOTO" orderable="no" searchable="no">
@@ -22,6 +26,7 @@ title: "Table column renderers"
 ```
 
 **Default renderers:**
+
 {% assign filenameArray = "" | split:"|"  %} 
 {% for renderers_hash in site.data.components.tableData.renderers %}
   {% assign filenameArray = filenameArray | push: renderers_hash[0] %}
@@ -35,12 +40,15 @@ title: "Table column renderers"
   {% capture dataFileCapture %}
     {% include o-component-single.html compFile=dataFile %}
   {% endcapture %}
-  <h2 class="archive__subtitle">hola</h2>
+  <h2 class="archive__subtitle">{{ dataFile.title }}</h2>
   {{ dataFileCapture | replace: '    ', '' }}
  
 {% endfor %}
 
+
 **Creating a custom renderer:**
+
+To create a custom renderer is necessary to create a component implementing the **ITableCellRenderer** interface or extending another renderer.
 
 
 ```javascript
@@ -51,7 +59,13 @@ interface ITableCellRenderer {
 }
 ```
 
+<div style="font-size:15px;" markdown="1">
+ * *init(parameters: any)*: used for initialization from OTableColumn in default renderers (passing o-table-column attributes to renderer). It is not necesary to implement in the new renderers, initialization should be done in constructor or in ngOnInit method.
+ * *render(data: any): string*:  code for rendering received data.
+ * *handleCreatedCell(cellElement: any, rowData: any)*: this method receives cell HTML code. Useful for registering event listeners over cell code.
+</div>
 
+For example: *movement-types-cell-renderer.component.ts*
 
 ```javascript
 import { Component, Inject, forwardRef } from '@angular/core';
@@ -85,8 +99,7 @@ export class MovementTypesCellRendererComponent implements ITableCellRenderer {
 }
 ```
 
-
-
+Using example (**dont forget to include MovementTypesCellRendererComponent in the component directives**).
 
 ```html
 <o-table entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"

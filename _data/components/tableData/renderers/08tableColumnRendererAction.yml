@@ -18,3 +18,5 @@ attributes: [{
   default : "Depends on render-type value",
   description : "Value to render"
 }]
+
+title : "OTableCellRendererAction"

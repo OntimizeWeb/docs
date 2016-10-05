@@ -8,3 +8,4 @@ attributes: [{
   default : "",
   description : "Date format. See MomentJS (http://momentjs.com/)"
 }]
+title : "OTableCellRendererDate"

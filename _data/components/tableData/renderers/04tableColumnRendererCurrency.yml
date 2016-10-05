@@ -33,3 +33,4 @@ attributes: [{
   default : "2",
   description : "Number of decimals"
 }]
+title : "OTableCellRendererCurrency"
