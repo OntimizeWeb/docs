@@ -30,7 +30,7 @@
             <thead>
                 <tr>
                 {% for header in componentData.attributesColumns %}
-                    <th class="mdl-data-table__cell--non-numeric"> {{ header }}</th>
+                    <th class=""> {{ header }}</th>
                 {% endfor %}
                 </tr>
             </thead>
@@ -39,7 +39,9 @@
                 <tr>
                 {% for column in componentData.attributesColumns %}
                     {% assign columnKey = column | downcase %}  
-                    <td class="mdl-data-table__cell--non-numeric">{{ attributeObject[columnKey]  | default: '' }}</td>          
+                    {% assign columnData = 'o-component-' | append: columnKey %}                    
+
+                    <td class="" {{ columnData }}>{{ attributeObject[columnKey]  | default: '' }}</td>          
                 {% endfor %}       
                 </tr>
             {% endfor %}

@@ -25,7 +25,7 @@ It would be equivalent to define:
 </o-table-column>
 ```
 
-**Default renderers:**
+## Default renderers
 
 {% assign filenameArray = "" | split:"|"  %} 
 {% for renderers_hash in site.data.components.tableData.renderers %}
@@ -40,13 +40,14 @@ It would be equivalent to define:
   {% capture dataFileCapture %}
     {% include o-component-single.html compFile=dataFile %}
   {% endcapture %}
-  <h2 class="archive__subtitle">{{ dataFile.title }}</h2>
-  {{ dataFileCapture | replace: '    ', '' }}
- 
+  <div class="o-table-component-cell">
+    <h3 class="archive__subtitle">{{ dataFile.title }}</h3>
+    {{ dataFileCapture | replace: '    ', '' }}
+  </div>
 {% endfor %}
 
 
-**Creating a custom renderer:**
+## Creating a custom renderer
 
 To create a custom renderer is necessary to create a component implementing the **ITableCellRenderer** interface or extending another renderer.
 

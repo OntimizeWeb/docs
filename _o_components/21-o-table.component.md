@@ -9,14 +9,19 @@ comp: table
 
 
 **WARNING: table is storing changes made by user (show/hide columns, order changes, filters, etc.) in the browser local storage. That values will take precedence over table html definition.**
-For example: if a 'ID' column is not in the 'visible-columns' attribute but the user has chosen to display it manually, it will be visible in future loads. For restoring initial state is enough to delete it 'DataTables' entries in browswer local storage.
+For example: if a *ID* column is not in the *visible-columns* attribute but the user has chosen 
+to display it manually, it will be visible in future loads. For restoring initial state is enough to 
+delete it *DataTables* entries in browser local storage.
 
 
-**Columns:**
+## Columns
 
-Using default renderer (o-table-cell-renderer-string) if column attr is present in 'visible-columns' attribute from its 'o-table' directive. 
-In the same way, using the defualt editor (o-table-cell-editor-string) if column attr is contained in  the 'editable-columns' attribute from its 'o-table'.
-If 'o-table' directive contains inner 'o-table-column' elements, using renderers and editors defined on them.
+Using default renderer (*o-table-cell-renderer-string*) if column attr is present in *visible-columns* attribute from its parent *o-table* directive. 
+In the same way, using the defualt editor (*o-table-cell-editor-string*) if column attr is contained 
+in  the *editable-columns* attribute from its parent *o-table*.
+
+If *o-table* directive contains inner *o-table-column* elements, using renderers and editors 
+defined on them.
 
 {% capture tableColumnCapture %}
 {% include o-component-single.html comp="tableColumn" %}
@@ -46,17 +51,20 @@ If 'o-table' directive contains inner 'o-table-column' elements, using renderers
   </o-table-column>
 
   <o-table-column attr="CUSTOMERTYPEID" title="TYPE" editable="true">
-    <o-table-cell-renderer-service entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
+    <o-table-cell-renderer-service entity="ECustomerTypes" 
+      value-column="CUSTOMERTYPEID" 
       columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
     </o-table-cell-renderer-service>
-    <o-table-cell-editor-combo entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
-      columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="CUSTOMERTYPEID;DESCRIPTION" 
-      separator=" - ">
+    <o-table-cell-editor-combo entity="ECustomerTypes" 
+      value-column="CUSTOMERTYPEID" separator=" - "
+      columns="CUSTOMERTYPEID;DESCRIPTION" 
+      visible-columns="CUSTOMERTYPEID;DESCRIPTION">
     </o-table-cell-editor-combo>
   </o-table-column>
 
-  <o-table-column attr="BOOLEAN" title="BOOLEAN" type="boolean" true-value-type="string" 
-    true-value="YES" false-value-type="icon" false-value="not_interested">
+  <o-table-column attr="BOOLEAN" title="BOOLEAN" type="boolean" 
+    true-value-type="string" true-value="YES"
+    false-value-type="icon" false-value="not_interested">
   </o-table-column>
 
   <o-table-column attr="INTEGER" title="INTEGER" type="integer" grouping="yes" 

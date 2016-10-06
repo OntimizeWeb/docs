@@ -4,14 +4,19 @@ permalink: /table-components/o-table-editors.component/
 title: "Column editors"
 ---
 
+As in the cell renderers, a column can have an 'type' attribute indicating which editor will be used for its value edition.
 
-**Example:**
+{% include toc %}
+
+For example:
 
 ```html
 <o-table-column attr="DATE_" title="DATE_" editable="yes" type="date" format="LL" 
   date-model-type="string" date-model-format="YYYY-MM-DD HH:mm:ss">
 </o-table-column>  
 ```
+
+It would be equivalent to define:
 
 ```html
 <o-table-column attr="DATE_" title="DATE_" editable="yes">
@@ -24,10 +29,7 @@ title: "Column editors"
 </o-table-column>
 ```
 
-**Default editors:**
-
-
-
+## Default editors
 
 {% assign filenameArray = "" | split:"|"  %} 
 {% for editors_hash in site.data.components.tableData.editors %}
@@ -42,13 +44,14 @@ title: "Column editors"
   {% capture dataFileCapture %}
     {% include o-component-single.html compFile=dataFile %}
   {% endcapture %}
-  <h2 class="archive__subtitle">{{ dataFile.title }}</h2>
-  {{ dataFileCapture | replace: '    ', '' }}
- 
+  <div class="o-table-component-cell">
+    <h3 id="{{ dataFile.title }}" class="">{{ dataFile.title }}</h3>
+    {{ dataFileCapture | replace: '    ', '' }}
+  </div>
 {% endfor %}
 
 
-**Creating a custom editor:**
+## Creating a custom editor
 
 To create a custom renderer is necessary to create a component implementing the **ITableCellEditor** interface or extending another renderer.
 
