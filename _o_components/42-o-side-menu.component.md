@@ -1,7 +1,6 @@
 ---
-permalink: /components/o-form.component/
-title: "Form"
-comp: form
+permalink: /components/o-side-menu.component/
+title: "Side menu"
+comp: sideMenu
 ---
 
-Description of form component.

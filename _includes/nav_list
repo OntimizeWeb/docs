@@ -4,8 +4,31 @@
 <nav class="nav__list">
   {% if page.sidebar.title %}<header><h4 class="nav__title" style="padding: 0;">{{ page.sidebar.title }}</h4></header>{% endif %}
   <ul>
+    {% comment %}set "active" class on category containing current page{% endcomment %}
+    
+    {% assign activeCategory = nil  %}
     {% for nav in navigation %}
-      <li>
+      
+        {% if nav.children and activeCategory == nil %}
+
+            {% for child in nav.children %}
+                {% if child.url == page.url %}
+                    {% assign activeCategory = nav %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}       
+    {% endfor %}
+
+ 
+
+    {% for nav in navigation %}
+      {% assign activeClass = '' %}
+      {% if activeCategory.title == nav.title %}
+            {% assign activeClass = 'active-component-category' %}
+      {% endif %} 
+
+      <li class="nav-component-category {{ activeClass }}">
         {% if nav.url %}
           {% comment %}internal/external URL check{% endcomment %}
           {% if nav.url contains "://" %}

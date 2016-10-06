@@ -1,7 +1,6 @@
 ---
-permalink: /components/o-form.component/
-title: "Form"
-comp: form
+permalink: /components/o-list.component/
+title: "List"
+comp: list
 ---
 
-Description of form component.

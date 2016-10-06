@@ -96,3 +96,20 @@
 .grey-color {
 	color: #9ba1a6;
 }
+
+.nav-component-category {
+	ul:first {
+		height: 0;
+		overflow: hidden;
+
+		-webkit-transition:height 1s ease;  
+		-moz-transition:height 1s ease;  
+		-o-transition:height 1s ease;  
+		transition:height 1s ease; 
+	}
+	
+
+	&.active-component-category ul:first {
+		height:auto;
+	}
+}

@@ -1,7 +1,6 @@
 ---
-permalink: /components/o-form.component/
-title: "Form"
-comp: form
+permalink: /components/o-dialog.component/
+title: "Dialog"
+comp: dialog
 ---
 
-Description of form component.
