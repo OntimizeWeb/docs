@@ -1,0 +1,53 @@
+directive : "o-image"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "attr", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "label", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "data", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "enabled", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "required", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "empty-image", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "show-controls", 
+  type: "yes | no",
+  default : "yes",
+  required : "",
+  description : "Shows or hides selection controls"
+},{
+  name: "sql-type", 
+  type: "string",
+  default : "OTHER",
+  required : "",
+  description : "Data type according to Java standard. See SQLType class"
+}]  

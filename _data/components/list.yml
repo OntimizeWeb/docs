@@ -1,0 +1,84 @@
+directive : "o-list"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+
+attributes: [{
+  name: "title", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "filter", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "refresh-button", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "query-on-init", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "pageable", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "css-class", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "columns", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "parent-keys", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "service", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "entity", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "key", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "route", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: " static-data", 
+  type: "Array<any>",
+  default : "",
+  required : "",
+  description : "Way to populate with static data"
+}]  

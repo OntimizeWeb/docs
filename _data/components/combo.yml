@@ -1,0 +1,114 @@
+directive : "o-combo"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+ 
+attributes: [{
+  name: "attr", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "label", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "data", 
+  type: "",
+  default : "",
+  required : "",
+  description : "sets selected value of the combo"
+},{
+  name: "enabled", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "required", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "static-data", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{ 
+  name: "service", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "entity", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "columns", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "value-column", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "parent-keys", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "visible-columns", 
+  type: "",
+  default : "",
+  required : "",
+  description : " Visible columns into selection dialog from parameter 'columns'. With empty parameter all columns are visible."
+},{
+  name: " description-columns", 
+  type: "",
+  default : "",
+  required : "",
+  description : "Visible columns in text field. By default, it is the parameter value of visible columns."
+},{
+  name: "separator", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "null-selection", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "query-on-init", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "query-on-bind", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "sql-type", 
+  type: "string",
+  default : "OTHER",
+  required : "",
+  description : "Data type according to Java standard. See SQLType class"
+}]  
