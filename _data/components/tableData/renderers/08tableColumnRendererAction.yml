@@ -40,48 +40,48 @@ example : >
     insert-table="yes" detail-mode="none" edit-on-focus="no">
 
     <o-table-column>
-      <o-table-cell-renderer-action action="detail" 
-        render-type="button" render-value="DETAIL">
-      </o-table-cell-renderer-action>
+        <o-table-cell-renderer-action action="detail" 
+            render-type="button" render-value="DETAIL">
+        </o-table-cell-renderer-action>
     </o-table-column>
 
     <o-table-column attr="PHOTO" orderable="no" searchable="no"
-          type="image" image-type="base64" avatar="yes" 
-          empty-image="assets/images/no-image.png">
+        type="image" image-type="base64" avatar="yes" 
+        empty-image="assets/images/no-image.png">
     </o-table-column>
-    
+
     <o-table-column attr="NAME" title="NAME"></o-table-column>
-      
+
     <o-table-column attr="SURNAME" title="SURNAME"></o-table-column>
-      
+
     <o-table-column attr="ADDRESS" title="ADDRESS"></o-table-column>
-      
+
     <o-table-column attr="STARTDATE" title="STARTDATE" type="date"
-          format="LL" date-model-type="string" date-model-format="YYYY-MM-DD HH:mm:ss">
+        format="LL" date-model-type="string" date-model-format="YYYY-MM-DD HH:mm:ss">
     </o-table-column>
-      
+
     <o-table-column attr="EMAIL" title="EMAIL"></o-table-column>
-      
+
     <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
-          <o-table-cell-renderer-service entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
-                columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
-          </o-table-cell-renderer-service>
-          <o-table-cell-editor-combo entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
-                columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
-          </o-table-cell-editor-combo>
+        <o-table-cell-renderer-service entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
+            columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
+        </o-table-cell-renderer-service>
+        <o-table-cell-editor-combo entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
+            columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
+        </o-table-cell-editor-combo>
     </o-table-column>
-      
+
     <o-table-column attr="LATITUDE" title="LATITUDE" type="real"
-            grouping="no" decimal-separator="," decimal-digits="6">
+        grouping="no" decimal-separator="," decimal-digits="6">
     </o-table-column>
-    
+
     <o-table-column attr="LONGITUDE" title="LONGITUDE" type="real"
-            grouping="no" decimal-separator="," decimal-digits="6">
+        grouping="no" decimal-separator="," decimal-digits="6">
     </o-table-column>
 
     <o-table-column>
-          <o-table-cell-renderer-action action="edit">
-          </o-table-cell-renderer-action>
+        <o-table-cell-renderer-action action="edit">
+        </o-table-cell-renderer-action>
     </o-table-column>
 
     <o-table-column>

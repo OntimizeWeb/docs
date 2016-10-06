@@ -176,7 +176,12 @@ collections:
     permalink: /:collection/:path/
   o_table_components:
     output: true
-    permalink: /:collection/:path/  
+    permalink: /:collection/:path/
+  o_form_components:
+    output: true
+    permalink: /:collection/:path/    
+
+    
 
 # Defaults
 defaults:
@@ -240,7 +245,21 @@ defaults:
       share: false
       comments: false
       sidebar:
-        nav: "components"      
+        nav: "components" 
+  # _o_form_components      
+  - scope:
+      path: ""
+      type: o_form_components      
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "components"          
+
+
+          
   
 
 # Sass/SCSS
