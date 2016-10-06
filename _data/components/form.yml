@@ -3,8 +3,51 @@ directive : "o-form"
 attributesColumns: ["Name","Type","Default","Description"] 
 
 attributes: [{
-  name: "attr", 
+  name: "service", 
   type: "string",
-  default : "Entity name if exists",
-  description : "Table identifier. Mandatory if table data is given by 'data' attribute"
-}]
+  default : "",
+  required : "",
+  description : "JEE service path"
+},{
+  name: "entity", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Service entity name"
+},{
+  name: "keys", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Entity keys. Separated by ';'"
+},{
+  name: "columns", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Entity columns. Separated by ';'"
+},{
+  name: "show-header", 
+  type: "yes | no",
+  default : "yes",
+  required : "",
+  description : "Indicates visibility of form toolbar"
+},{
+  name: "label-header", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Displayable text on form toolbar"
+},{
+  name: "header-actions", 
+  type: "string",
+  default : "R;I;U;D",
+  required : "",
+  description : "Available action buttons on form toolbar of standard CRUD operations, separated by ';'. Available options are R;I;U;D (Refresh, Insert, Update, Delete)"
+},{
+  name: "stay-in-record-after-insert", 
+  type: "yes | no",
+  default : "no",
+  required : "",
+  description : "Indicates whether to show detail form after insert new record"
+}]	
