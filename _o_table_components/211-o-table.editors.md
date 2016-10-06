@@ -6,7 +6,7 @@ title: "Column editors"
 
 As in the cell renderers, a column can have an *type* attribute indicating which editor will be used for its value edition.
 
-{% include toc %}
+
 
 For example:
 
