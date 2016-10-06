@@ -4,7 +4,7 @@ permalink: /table-components/o-table-editors.component/
 title: "Column editors"
 ---
 
-As in the cell renderers, a column can have an 'type' attribute indicating which editor will be used for its value edition.
+As in the cell renderers, a column can have an *type* attribute indicating which editor will be used for its value edition.
 
 {% include toc %}
 
@@ -53,7 +53,8 @@ It would be equivalent to define:
 
 ## Creating a custom editor
 
-To create a custom renderer is necessary to create a component implementing the **ITableCellEditor** interface or extending another renderer.
+To create a custom renderer is necessary to create a component implementing the **ITableCellEditor** 
+interface or extending another existing editor.
 
 
 ```javascript
@@ -73,29 +74,37 @@ interface ITableCellEditor {
 }
 ```
 
-The implementation of this interface is more complex than the renderers interface, so it is recommended using existing editors as reference.
+The implementation of this interface is more complex than the renderers interface, 
+so it is recommended using existing editors as reference.
 
 <div style="font-size:15px;" markdown="1">
   * *onFocus*: event triggered when the editor gets focused.
   * *onBlur*: event triggered when the editor lost its focus.
   * *onSubmit*: event triggered when the editor submits its value.
-  * *init(parameters: any)*: used for initialization from OTableColumn in default editors (passing o-table-column attributes to renderer). 
-  It is not necesary to implement in the new editors, initialization should be done in constructor or in ngOnInit method.
+  * *init(parameters: any)*: used for initialization from *OTableColumn* in default editors 
+  (passing *o-table-column* attributes to renderer). 
+  It is not necesary to implement in the new editors, initialization should be done in constructor or in *ngOnInit* method.
   * *getHtml(data: any): string*: string containing editor HTML code.
-  * *handleCellFocus(cellElement: any, data: any)*: handler executed when the editable column cell receives the focus. Receiving the HTML cell code (<td></td>) to append the editor HTML code in it and current cell data.
-  * *handleCellBlur(cellElement: any)*: handler executed when the editable column cell losts focus. Receiving the HTML cell code (<td></td>) for deleting the editor code from it.
+  * *handleCellFocus(cellElement: any, data: any)*: handler executed when the editable column cell receives the focus. 
+  Receiving the HTML cell code (<td></td>) to append the editor HTML code in it and current cell data.
+  * *handleCellBlur(cellElement: any)*: handler executed when the editable column cell losts focus. 
+  Receiving the HTML cell code (<td></td>) for deleting the editor code from it.
   * *create(cellElement: any, data: any)*: method for creating the editor.
   * *destroy(cellElement: any)*: method for deleting the editor.
-  * *performInsertion(cellElement: any)*: method for updating the cell with the editor's value. It should invoke *this.tableColumn.update* method.
-  * *createEditorForInsertTable(cellElement: any, data: any)*: method for creating the editor in the table fast insert row (*insert-table="yes"*).
+  * *performInsertion(cellElement: any)*: method for updating the cell with the editor value. 
+  It should invoke *this.tableColumn.update* method.
+  * *createEditorForInsertTable(cellElement: any, data: any)*: method for creating the editor in the table fast insert 
+  row (*insert-table="yes"*).
   * *getInsertTableValue(): any*: method for obtaining the value inserted in the editor in a fast insert row (*insert-table="yes"*).
 </div>
-For example, a editor extending o-table-cell-editor-string hiding its content: *password-cell-editor.ts*
+
+For example, a editor extending *o-table-cell-editor-string* and hiding its content: *password-cell-editor.ts*
 
 ```javascript
 import { Component, Inject, forwardRef } from '@angular/core';
 
-import { OTableColumnComponent, OTableCellEditorStringComponent } from 'ontimize-web-ng2/ontimize';
+import { OTableColumnComponent, 
+  OTableCellEditorStringComponent } from 'ontimize-web-ng2/ontimize';
 
 @Component({
   selector: 'password-cell-editor',
@@ -103,7 +112,8 @@ import { OTableColumnComponent, OTableCellEditorStringComponent } from 'ontimize
 })
 export class PasswordCellEditorComponent extends OTableCellEditorStringComponent {
 
-  constructor(@Inject(forwardRef(() => OTableColumnComponent)) tableColumn: OTableColumnComponent) {
+  constructor(@Inject(forwardRef(() => OTableColumnComponent)) 
+  tableColumn: OTableColumnComponent) {
     super(tableColumn);
   }
 
@@ -112,14 +122,15 @@ export class PasswordCellEditorComponent extends OTableCellEditorStringComponent
     if (typeof(data) !== 'undefined') {
       html += 'value="' + data + '" ';
     }
-    html += 'onclick="event.stopPropagation();" ondblclick="event.stopPropagation();" />';
+    html += 'onclick="event.stopPropagation();" ';
+    html += 'ondblclick="event.stopPropagation();" />';
     return html;
   }
 
 }
 ```
 
-Using example (**dont forget to include PasswordCellEditorComponent in the component directives**).
+Using example (**do not forget to include PasswordCellEditorComponent in the component directives**).
 
 
 ```html

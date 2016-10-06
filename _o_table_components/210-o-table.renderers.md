@@ -4,7 +4,7 @@ permalink: /table-components/o-table-renderers.component/
 title: "Column renderers"
 ---
 
-Specify how to render cells. A table column has the attribute 'type' that indicates how its cells
+Specify how to render a column cell content. A table column has the attribute *type* that indicates how its cells
 will be rendered.
 
 For example:
@@ -49,7 +49,8 @@ It would be equivalent to define:
 
 ## Creating a custom renderer
 
-To create a custom renderer is necessary to create a component implementing the **ITableCellRenderer** interface or extending another renderer.
+To create a custom renderer is necessary to create a component implementing
+ the **ITableCellRenderer** interface or extending another renderer component.
 
 
 ```javascript
@@ -61,9 +62,13 @@ interface ITableCellRenderer {
 ```
 
 <div style="font-size:15px;" markdown="1">
- * *init(parameters: any)*: used for initialization from OTableColumn in default renderers (passing o-table-column attributes to renderer). It is not necesary to implement in the new renderers, initialization should be done in constructor or in ngOnInit method.
- * *render(data: any): string*:  code for rendering received data.
- * *handleCreatedCell(cellElement: any, rowData: any)*: this method receives cell HTML code. Useful for registering event listeners over cell code.
+ * *init(parameters: any)*: used for initialization from OTableColumn in default 
+ renderers (passing *o-table-column* attributes to renderer). 
+ It is not necesary to implement in the renderers, initialization should be done in 
+ constructor or in *ngOnInit* method.
+ * *render(data: any): string*: code for rendering received data.
+ * *handleCreatedCell(cellElement: any, rowData: any)*: this method receives cell HTML code. 
+ Useful for registering event listeners over that code.
 </div>
 
 For example: *movement-types-cell-renderer.component.ts*
@@ -90,7 +95,8 @@ export class MovementTypesCellRendererComponent implements ITableCellRenderer {
 
   public render(cellData: any, rowData: any): string {
     return (typeof(cellData) !== 'undefined') ? 
-      ('<md-icon class="material-icons">filter_' + String(cellData) + '</md-icon>') : '';
+      ('<md-icon class="material-icons">filter_' + 
+      String(cellData) + '</md-icon>') : '';
   }
 
   public handleCreatedCell(cellElement: any, rowData: any) {
@@ -100,7 +106,7 @@ export class MovementTypesCellRendererComponent implements ITableCellRenderer {
 }
 ```
 
-Using example (**dont forget to include MovementTypesCellRendererComponent in the component directives**).
+Using example (**do not forget to include MovementTypesCellRendererComponent in the component directives**).
 
 ```html
 <o-table entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"

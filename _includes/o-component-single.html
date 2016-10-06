@@ -11,11 +11,12 @@
     <p><strong>Directive:</strong> {{ componentData.directive }}</p>
     {% endif %}
 
+    <strong>Inherited attributes</strong>
     {% if componentData.inheritedAttributes %} 
 
         {% for inheritedObj in componentData.inheritedAttributes %}
 
-        <strong>Inherited</strong> attributes from <strong>{{ inheritedObj.component }}:</strong>
+         from <strong>{{ inheritedObj.component }}:</strong>
             <ul class="attributes-list">
             {% for inheritedAttr in inheritedObj.attributes %}
                 <li> {{ inheritedAttr }} </li>
@@ -24,8 +25,9 @@
         {% endfor %}        
     {% endif %}
 
+    <p><strong>Attributes:</strong></p>
     {% if componentData.attributes %}
-        <p><strong>Attributes:</strong></p>
+        
         <table class="attributes-table mdl-data-table">
             <thead>
                 <tr>
@@ -46,7 +48,9 @@
                 </tr>
             {% endfor %}
             </tbody>
-        </table>   
+        </table> 
+    {% else %}
+        <p>No additional attributes</p>
     {% endif %}
 
 {% endif %}
