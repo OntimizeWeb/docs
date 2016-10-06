@@ -4,7 +4,7 @@ title: "Integer input"
 comp: integerInput
 ---
 
-**Example:**
+## Example
 
 ```html
 <o-integer-input attr="integer_input" label="Integer input" 

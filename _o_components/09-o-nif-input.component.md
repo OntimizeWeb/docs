@@ -4,7 +4,7 @@ title: "Nif input"
 comp: nifInput
 ---
 
-**Example:**
+## Example
 
 ```html
 <o-nif-input attr="nif_input" label="NIF input" max-length="50"></o-nif-input>

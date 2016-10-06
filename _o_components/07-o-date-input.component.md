@@ -4,7 +4,7 @@ title: "Date input"
 comp: dateInput
 ---
 
-**Example:**
+## Example
 
 ```html
 

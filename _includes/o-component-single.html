@@ -8,24 +8,30 @@
 {% if componentData %} 
 
     {% if componentData.directive %} 
-    <p><strong>Directive:</strong> {{ componentData.directive }}</p>
+    <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
     {% endif %}
 
-    <strong>Inherited attributes</strong>
+    {% if componentData.description %} 
+        {{ componentData.description | markdownify }}
+    {% endif %}
+    
     {% if componentData.inheritedAttributes %} 
-
+        <h3 class="grey-color">Inherited attributes</h3>
+        <ul>
         {% for inheritedObj in componentData.inheritedAttributes %}
-
-         from <strong>{{ inheritedObj.component }}:</strong>
-            <ul class="attributes-list">
-            {% for inheritedAttr in inheritedObj.attributes %}
-                <li> {{ inheritedAttr }} </li>
-            {% endfor %}
-            </ul>    
-        {% endfor %}        
+            <li>
+                from <a href="{{ base_path }}/docs/components/{{inheritedObj.component}}.component/" rel="permalink">{{ inheritedObj.component }}:</a>
+                <ul class="attributes-list">
+                {% for inheritedAttr in inheritedObj.attributes %}
+                    <li> {{ inheritedAttr }} </li>
+                {% endfor %}
+                </ul>    
+            {% endfor %}   
+            </li>
+        </ul>     
     {% endif %}
 
-    <p><strong>Attributes:</strong></p>
+    <h3 class="grey-color">Attributes</h3>
     {% if componentData.attributes %}
         
         <table class="attributes-table mdl-data-table">
@@ -53,4 +59,8 @@
         <p>No additional attributes</p>
     {% endif %}
 
+    {% if componentData.example %}
+        {% capture html-include %}{% include example.md code=componentData.example %}{% endcapture %}
+        {{ html-include | markdownify }}
+    {% endif %}
 {% endif %}

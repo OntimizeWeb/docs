@@ -45,7 +45,7 @@ It would be equivalent to define:
     {% include o-component-single.html compFile=dataFile %}
   {% endcapture %}
   <div class="o-table-component-cell">
-    <h3 id="{{ dataFile.title }}" class="">{{ dataFile.title }}</h3>
+    <h2 class="">{{ dataFile.title }}</h2>
     {{ dataFileCapture | replace: '    ', '' }}
   </div>
 {% endfor %}

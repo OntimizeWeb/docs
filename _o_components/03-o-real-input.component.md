@@ -4,7 +4,7 @@ title: "Real input"
 comp: realInput
 ---
 
-**Example:**
+## Example
 
 ```html
 <o-real-input attr="real_input" label="Real input" min="0.01" 

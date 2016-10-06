@@ -4,7 +4,7 @@ title: "Percent input"
 comp: percentInput
 ---
 
-**Example:**
+## Example
 
 ```html
 

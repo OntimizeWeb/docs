@@ -4,11 +4,11 @@ title: "Text input"
 comp: textInput
 ---
 
-**Examples:**
+## Examples
 
 ```html
-<o-text-input attr="input_1" label="Example input" 
-    min-length="10" max-length="100">
+<o-text-input attr="input_1" label="Example input" min-length="10" 
+    max-length="100">
 </o-text-input>
 
 <o-text-input attr="input_2" label="Example input" 
