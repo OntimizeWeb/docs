@@ -26,3 +26,4 @@ attributes: [{
   required : "",
   description : "Maximum number of decimals required"
 }]	
+

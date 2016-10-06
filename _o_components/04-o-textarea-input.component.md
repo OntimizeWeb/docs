@@ -4,7 +4,7 @@ title: "Textarea input"
 comp: textareaInput
 ---
 
-**Examples:**
+ <h3 class="grey-color">Example</h3>
 
 ```html
 

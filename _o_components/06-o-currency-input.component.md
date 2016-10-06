@@ -4,7 +4,7 @@ title: "Currency input"
 comp: currencyInput
 ---
  
-## Example
+ <h3 class="grey-color">Example</h3>
 
 ```html
 <o-currency-input attr="currency_input_2" 

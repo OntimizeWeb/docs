@@ -4,7 +4,7 @@ title: "Date input"
 comp: dateInput
 ---
 
-## Example
+ <h3 class="grey-color">Example</h3>
 
 ```html
 

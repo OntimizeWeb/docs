@@ -4,7 +4,7 @@ title: "Text input"
 comp: textInput
 ---
 
-## Examples
+<h3 class="grey-color">Example</h3>
 
 ```html
 <o-text-input attr="input_1" label="Example input" min-length="10" 

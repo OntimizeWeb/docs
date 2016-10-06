@@ -4,7 +4,7 @@ title: "Percent input"
 comp: percentInput
 ---
 
-## Example
+ <h3 class="grey-color">Example</h3>
 
 ```html
 

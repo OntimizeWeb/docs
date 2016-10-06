@@ -30,7 +30,7 @@ defined on them.
 
 
 
-## Example
+<h3 class="grey-color">Example</h3>
 
 ```html
 <o-table attr="customers" entity="ECustomers" title="CUSTOMERS" 
