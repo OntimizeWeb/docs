@@ -107,6 +107,8 @@ components:
         url: /components/o-table.component/  
       - title : "List"
         url: /components/o-list.component/
+      - title : "Combo"
+        url: /components/o-combo.component/  
 
   - title: Media components
     children:

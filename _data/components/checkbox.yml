@@ -1,0 +1,36 @@
+directive : "o-checkbox"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+
+attributes: [{
+  name: "attr", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "label", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "data", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "enabled", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "required", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+}]
