@@ -43,7 +43,7 @@
         {% endif %}
 
         {% if nav.children != null %}
-        <ul>
+        <ul class="category-components-list">
           {% for child in nav.children %}
             {% comment %}internal/external URL check{% endcomment %}
             {% if child.url contains "://" %}

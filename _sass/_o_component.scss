@@ -98,7 +98,7 @@
 }
 
 .nav-component-category {
-	ul:first {
+	.category-components-list {
 		height: 0;
 		overflow: hidden;
 
@@ -109,7 +109,7 @@
 	}
 	
 
-	&.active-component-category ul:first {
+	&.active-component-category .category-components-list {
 		height:auto;
 	}
 }
