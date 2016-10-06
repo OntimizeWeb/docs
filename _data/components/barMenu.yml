@@ -1,0 +1,12 @@
+directive : "o-bar-menu"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "title", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Menu title"
+}]  
+
