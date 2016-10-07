@@ -5,12 +5,9 @@ layout: single
 {% if page.under_construction %}
   {% include o-component-under-construction.html %}
 {% else %}
-
   {% if page.comp %}
     {% assign componentKey = page.comp %}
   {% endif %}
-
   {% include o-component-single.html comp=componentKey %}
   {{ content }}
-
 {% endif %}
