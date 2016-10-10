@@ -1,9 +1,16 @@
 {% include base_path %}
 {% assign navigation = site.data.navigation[include.nav] %}
 
+ <script type="text/javascript">
+  var onNavigationItemClick = function (element) {
+    $(element).parents('li.nav-component-category:first').toggleClass('active-component-category');
+  };
+</script>
+
 <nav class="nav__list">
   {% if page.sidebar.title %}<header><h4 class="nav__title" style="padding: 0;">{{ page.sidebar.title }}</h4></header>{% endif %}
   <ul>
+
     {% comment %}set "active" class on category containing current page{% endcomment %}
     {% assign activeCategory = nil  %}
     {% if include.nav == 'components' %}
@@ -41,7 +48,7 @@
 
           <a href="{{ domain }}{{ nav.url }}"><span class="nav__sub-title">{{ nav.title }}</span></a>
         {% else %}
-          <span class="nav__sub-title">{{ nav.title }}</span>
+          <span class="nav__sub-title"  onclick="onNavigationItemClick(this)">{{ nav.title }}</span>
         {% endif %}
 
         {% if nav.children != null %}
