@@ -1,9 +1,11 @@
 {% include base_path %}
 {% assign navigation = site.data.navigation[include.nav] %}
 
- <script type="text/javascript">
+ <script type="text/javascript" style="display:none;">
   var onNavigationItemClick = function (element) {
-    $(element).parents('li.nav-component-category:first').toggleClass('active-component-category');
+    var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.toggleClass('active-component-category');
   };
 </script>
 
