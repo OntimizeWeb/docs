@@ -13,7 +13,7 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "Icon name (Google Material icons: https://design.google.com/icons/)"
+  description : "Icon name (see <a href=https://design.google.com/icons/ target='_blank'>Google material design icons</a>)"
 },{
   name: "route", 
   type: "string",
