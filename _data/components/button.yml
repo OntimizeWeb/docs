@@ -6,36 +6,36 @@ attributes: [{
   name: "attr", 
   type: "string",
   default : "",
-  required : "",
-  description : ""
+  required : "Yes",
+  description : "Fiel identifier"
 },{
   name: "label", 
   type: "string",
-  default : "",
+  default : "<em>attr</em> attribute value",
   required : "",
-  description : ""
+  description : "Field label"
 },{
   name: "type", 
   type: "FLAT | RAISED | ICON | FAB | MINI-FAB",
-  default : "",
+  default : "FLAT",
   required : "",
-  description : ""
+  description : "Type of button"
 },{
   name: "icon", 
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Name of google icon (see <a href=https://design.google.com/icons/ target='_blank'>Google icons</a>)"
 },{
   name: "icon-position", 
-  type: "string",
-  default : "",
+  type: "left | right | top | bottom",
+  default : "left",
   required : "",
-  description : ""
+  description : "Icon position"
 },{
   name: "image", 
   type: "",
   default : "",
   required : "",
-  description : ""
+  description : "Icon image"
 }]  

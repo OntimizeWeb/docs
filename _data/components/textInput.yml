@@ -12,21 +12,15 @@ attributes: [{
 },{
   name: "label", 
   type: "string",
-  default : "Component attr", 
+  default : "<em>attr</em> attribute value", 
   required : "",
-  description : "Field label (placeholder when field is empty and floating label when field has data) "
+  description : "Field label (placeholder when field is empty and floating label when field has data)"
 },{
   name: "hint", 
   type: "string",
   default : "", 
   required : "",
   description : "Text under the field."
-},{
-  name: "data", 
-  type: "string",
-  default : "", 
-  required : "",
-  description : ""
 },{
   name: "enabled", 
   type: "no | yes",
@@ -57,4 +51,10 @@ attributes: [{
   default : "", 
   required : "",
   description : "Regular expression to validate the field content"
+},{
+  name: "data", 
+  type: "",
+  default : "", 
+  required : "",
+  description : ""
 }]

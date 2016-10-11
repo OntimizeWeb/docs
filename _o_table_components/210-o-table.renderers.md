@@ -4,7 +4,7 @@ permalink: /table-components/o-table-renderers.component/
 title: "Column renderers"
 ---
 
-Specify how to render a column cell content. A table column has the attribute *type* that indicates how its cells
+Specifies how to render a column cell content. A table column has the attribute *type* that indicates how its cells
 will be rendered.
 
 For example:
@@ -105,8 +105,13 @@ export class MovementTypesCellRendererComponent implements ITableCellRenderer {
 
 }
 ```
+<br/>
+Using example
 
-Using example (**do not forget to include MovementTypesCellRendererComponent in the component directives**).
+<div class="notice--warning" markdown="1">
+**WARNING:** do not forget to include *MovementTypesCellRendererComponent* in the component directives
+</div>
+
 
 ```html
 <o-table entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"

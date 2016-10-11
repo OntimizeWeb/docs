@@ -5,64 +5,64 @@ attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
   name: "title", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "List title displayed on screen"
 },{
   name: "filter", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "no",
   required : "",
-  description : ""
+  description : "Indicates whether to show list filtering options"
 },{
   name: "refresh-button", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "yes",
   required : "",
-  description : ""
+  description : "Indicates whether to show a refresh data button (also needs <em>filter</em> value to be true)"
 },{
   name: "query-on-init", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "yes",
   required : "",
-  description : ""
+  description : "Query list data on init"
 },{
   name: "pageable", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "no",
   required : "",
-  description : ""
+  description : "Indicates whether to get the list data in a paginated way"
 },{
   name: "css-class", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "<em>css</em> class name"
 },{
   name: "columns", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "	Entity columns. Separated by ';'"
 },{
   name: "parent-keys", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Filtering keys. Separated by ';'"
 },{
   name: "service", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "JEE service path"
 },{
   name: "entity", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Service entity name"
 },{
   name: "key", 
   type: "",
@@ -80,5 +80,5 @@ attributes: [{
   type: "Array<any>",
   default : "",
   required : "",
-  description : "Way to populate with static data"
+  description : "Static data for filling the list"
 }]  

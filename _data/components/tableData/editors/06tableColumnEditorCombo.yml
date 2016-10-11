@@ -23,7 +23,7 @@ attributes: [{
   name: "value-column", 
   type: "string",
   default : "",
-  description : "Column name for cell value mapping (similar to component 'ComboReferenceDataField' 'cod' attribute in classic Ontimize Desktop)"
+  description : "Column name for cell value mapping (similar to component <em>ComboReferenceDataField</em> <em>cod</em> attribute in classic Ontimize Desktop)"
 },{
   name: "columns", 
   type: "string",

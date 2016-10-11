@@ -12,13 +12,13 @@ inheritedAttributes: [
 attributes: [{
   name: "format", 
   type: "string",
-  default : "",
+  default : "<a href=http://momentjs.com/ target='_blank'>MomentJS</a> <em>_longDateFormat</em>",
   required : "",
-  description : ""
+  description : "Date format. See <a href=http://momentjs.com/ target='_blank'>MomentJS</a>"
 },{
   name: "locale", 
-  type: "string",
+  type: "string. Values like <em>es</em>, <em>en</em>, <em>...</em>",
   default : "Application configured locale",
   required : "",
-  description : ""
+  description : "Datepicker configured language"
 }]	

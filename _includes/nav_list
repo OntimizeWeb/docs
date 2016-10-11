@@ -4,7 +4,7 @@
  <script type="text/javascript" style="display:none;">
   var onNavigationItemClick = function (element) {
     var parentLi = $(element).parents('li.nav-component-category:first');
-    parentLi.siblings().removeClass('active-component-category');
+    parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
     parentLi.toggleClass('active-component-category');
   };
 </script>
@@ -36,7 +36,7 @@
     {% for nav in navigation %}
       {% assign activeClass = '' %}
       {% if activeCategory != nil and activeCategory.title == nav.title %}
-            {% assign activeClass = 'active-component-category' %}
+            {% assign activeClass = 'active-component-category active-parent' %}
       {% endif %} 
 
       <li class="{{ navigationCategoryClass }} {{ activeClass }}">

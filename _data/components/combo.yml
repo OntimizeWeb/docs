@@ -5,16 +5,16 @@ attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
  
 attributes: [{
   name: "attr", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Combo identifier"
 },{
   name: "label", 
-  type: "",
-  default : "",
+  type: "string",
+  default : "<em>attr</em> attribute value",
   required : "",
-  description : ""
+  description : "Field label (placeholder when field is empty and floating label when field has data)"
 },{
   name: "data", 
   type: "",
@@ -23,16 +23,16 @@ attributes: [{
   description : "sets selected value of the combo"
 },{
   name: "enabled", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "yes",
   required : "",
-  description : ""
+  description : "Component enabled state"
 },{
   name: "required", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "no",
   required : "",
-  description : ""
+  description : "Indicates whether the field is required"
 },{
   name: "static-data", 
   type: "",
@@ -41,70 +41,70 @@ attributes: [{
   description : ""
 },{ 
   name: "service", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "JEE service path"
 },{
   name: "entity", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Service entity name"
 },{
   name: "columns", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Entity columns. Separated by ';'"
 },{
   name: "value-column", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
   description : ""
 },{
   name: "parent-keys", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Filtering keys. Separated by ';'"
 },{
   name: "visible-columns", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : " Visible columns into selection dialog from parameter 'columns'. With empty parameter all columns are visible."
+  description : "Visible columns. Separated by ';'"
 },{
-  name: " description-columns", 
-  type: "",
-  default : "",
+  name: "description-columns", 
+  type: "string",
+  default : "<em>visible-columns</em> attribute value",
   required : "",
-  description : "Visible columns in text field. By default, it is the parameter value of visible columns."
+  description : "Visible columns in text field"
 },{
   name: "separator", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Separation character between <em>description-columns</em> values"
 },{
   name: "null-selection", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "yes",
   required : "",
   description : ""
 },{
   name: "query-on-init", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "yes",
   required : "",
-  description : ""
+  description : "Query table data on init"
 },{
   name: "query-on-bind", 
-  type: "",
+  type: "no | yes",
   default : "",
   required : "",
-  description : ""
+  description : "Query table data on bind"
 },{
   name: "sql-type", 
   type: "string",

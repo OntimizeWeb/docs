@@ -12,13 +12,13 @@ inheritedAttributes: [
 attributes: [{
   name: "columns", 
   type: "number",
-  default : "",
+  default : "20",
   required : "",
-  description : ""
+  description : "	Specifies the width of the text area (in average character width). <em>HTML5</em> <em>cols</em> attribute"
 },{
   name: "rows", 
   type: "number",
-  default : "",
+  default : "2",
   required : "",
-  description : ""
+  description : "Specifies the height of the text area (in lines). <em>HTML5</em> <em>rows</em> attribute"
 }]	

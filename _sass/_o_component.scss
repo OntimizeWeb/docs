@@ -73,6 +73,13 @@
 	[o-component-name] {
 		white-space:nowrap;
 	}
+	
+	[o-component-type] {
+		white-space:nowrap;
+		max-width: 85px;
+	}
+
+	
 
 }
 
@@ -163,11 +170,16 @@
 		overflow: hidden;
 
 		max-height: 0;
-		
+		/*
 		-webkit-transition:max-height 0.5s ease-in-out;  
 		-moz-transition:max-height 0.5s ease-in-out;  
 		-o-transition:max-height 0.5s ease-in-out;  
 		transition:max-height 0.5s ease-in-out; 
+		*/
+		-webkit-transition:max-height 0.5s;  
+		-moz-transition:max-height 0.5s;  
+		-o-transition:max-height 0.5s;  
+		transition:max-height 0.5s; 
 	}
 	
 	&:hover .category-components-list,

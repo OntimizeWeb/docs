@@ -13,7 +13,8 @@ For this task is enough to set the *parent-keys* attribute in the table componen
 ```html
 <div layout="column" layout-align="center top" layout-margin>
 
-  <o-form layout="column" show-header="no" label-header="GENERAL" header-actions="R" #oForm>
+  <o-form layout="column" show-header="no" label-header="GENERAL" 
+    header-actions="R" #oForm>
 
   <div layout="row" flex>
     <o-list-picker attr="CUSTOMERTYPEID" label="CUSTOMERTYPEID" flex layout-padding

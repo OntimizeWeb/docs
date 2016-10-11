@@ -6,8 +6,9 @@ excerpt: "Tips for extending a form component"
 ---
 
 Form component extension must follow the next steps:
-	* Adding *@OComponent* decorator to component.
-	* Class extends *OFormComponent* and it must be specified as provider in the decorator.
+
+1. Adding *@OComponent* decorator to component.
+2. Class extends *OFormComponent* and it must be specified as provider in the decorator.
 	
 From there, *OFormComponent* methods could be overwritten following use requirements.
 
@@ -91,7 +92,7 @@ export class SignInFormComponent extends OFormComponent {
 }
 
 ```
-
+<br/>
 Using example:
 
 ```html

@@ -4,9 +4,12 @@ description : >
   This special renderer allows the insertion of columns for handling some kind of action to be excecuted
   over the entire row: go to detail, edit, delete, etc.
 
+  <div class="notice--info" markdown="1">
+  
   **IMPORTANT:** *o-table-column* directives including this renderer must not have a *attr* attribute, because
   its not rendering a cell value.
 
+  </div>
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 

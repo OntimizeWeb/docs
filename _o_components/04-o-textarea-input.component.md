@@ -2,7 +2,7 @@
 permalink: /components/o-textarea-input.component/
 title: "Textarea input"
 comp: textareaInput
-under_construction: true
+under_construction: false
 ---
 
  <h3 class="grey-color">Example</h3>

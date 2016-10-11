@@ -7,7 +7,6 @@ title: "Column editors"
 As in the cell renderers, a column can have an *type* attribute indicating which editor will be used for its value edition.
 
 
-
 For example:
 
 ```html
@@ -129,9 +128,11 @@ export class PasswordCellEditorComponent extends OTableCellEditorStringComponent
 
 }
 ```
-
-Using example (**do not forget to include PasswordCellEditorComponent in the component directives**).
-
+<br/>
+Using example
+<div class="notice--warning" markdown="1">
+**WARNING:** do not forget to include *PasswordCellEditorComponent* in the component directives
+</div>
 
 ```html
 <o-table entity="EMovements" title="MOVEMENTS" columns="MOVEMENTID;CONCEPT" 

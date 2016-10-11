@@ -6,7 +6,7 @@ attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 attributes: [{
   name: "attr", 
   type: "string",
-  default : "Entity name if exists",
+  default : "<em>entity</em> attribute value (if exists)",
   description : "Table identifier. Mandatory if table data is given by 'data' attribute"
 },{
   name: "title", 
