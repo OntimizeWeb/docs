@@ -88,3 +88,4 @@ defined on them.
 {% for post in site.o_table_components %}
   {% include archive-single.html %}
 {% endfor %}
+

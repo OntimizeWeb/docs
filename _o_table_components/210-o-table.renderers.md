@@ -1,5 +1,4 @@
 ---
-layout: single
 permalink: /table-components/o-table-renderers.component/
 title: "Column renderers"
 ---

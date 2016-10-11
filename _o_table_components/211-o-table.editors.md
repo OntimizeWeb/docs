@@ -1,5 +1,4 @@
 ---
-layout: single
 permalink: /table-components/o-table-editors.component/
 title: "Column editors"
 ---
