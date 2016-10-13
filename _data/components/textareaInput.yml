@@ -9,6 +9,14 @@ inheritedAttributes: [
   }
 ]
 
+inheritedOutputs: [
+  {
+    component: "o-text-input", 
+    outputs: ["onChange"]
+  }
+]
+
+
 attributes: [{
   name: "columns", 
   type: "number",

@@ -30,3 +30,10 @@ attributes: [{
   required : "",
   description : "Position of currency symbol"
 }]	
+
+inheritedOutputs: [
+  {
+    component: "o-real-input", 
+    outputs: ["onChange"]
+  }
+]

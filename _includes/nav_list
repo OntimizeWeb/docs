@@ -4,15 +4,18 @@
  <script type="text/javascript" style="display:none;">
   var onNavigationItemClick = function (element) {
     var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.addClass('active-component-category');
+/*
     parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
     parentLi.toggleClass('active-component-category');
+*/    
   };
 </script>
 
 <nav class="nav__list">
   {% if page.sidebar.title %}<header><h4 class="nav__title" style="padding: 0;">{{ page.sidebar.title }}</h4></header>{% endif %}
   <ul>
-
     {% comment %}set "active" class on category containing current page{% endcomment %}
     {% assign activeCategory = nil  %}
     {% if include.nav == 'components' %}

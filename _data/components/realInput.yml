@@ -13,6 +13,13 @@ inheritedAttributes: [
   }
 ]
 
+inheritedOutputs: [
+  {
+    component: "o-integer-input", 
+    outputs: ["onChange"]
+  }
+]
+
 attributes: [{
   name: "min-decimal-digits", 
   type: "number",

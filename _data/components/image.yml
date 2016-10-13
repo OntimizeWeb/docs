@@ -4,16 +4,16 @@ attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
   name: "attr", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Image identifier"
 },{
   name: "label", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Field label"
 },{
   name: "data", 
   type: "",
@@ -22,16 +22,16 @@ attributes: [{
   description : ""
 },{
   name: "enabled", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "yes",
   required : "",
-  description : ""
+  description : "Component enabled state"
 },{
   name: "required", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "no",
   required : "",
-  description : ""
+  description : "Indicates whether the field is required"
 },{
   name: "empty-image", 
   type: "",
@@ -40,14 +40,21 @@ attributes: [{
   description : ""
 },{
   name: "show-controls", 
-  type: "yes | no",
+  type: "no | yes",
   default : "yes",
   required : "",
   description : "Shows or hides selection controls"
 },{
   name: "sql-type", 
   type: "string",
-  default : "OTHER",
+  default : "BLOB",
   required : "",
-  description : "Data type according to Java standard. See SQLType class"
+  description : "Data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}"
 }]  
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onChange",
+  description: "Event triggered when component value changes"
+}]

@@ -22,3 +22,11 @@ attributes: [{
   required : "",
   description : "Datepicker configured language"
 }]	
+
+
+inheritedOutputs: [
+  {
+    component: "o-text-input", 
+    outputs: ["onChange"]
+  }
+]

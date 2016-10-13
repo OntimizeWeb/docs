@@ -16,3 +16,11 @@ inheritedAttributes: [
     attributes: ["min-decimal-digits", "max-decimal-digits"]
   }
 ]
+
+
+inheritedOutputs: [
+  {
+    component: "o-real-input", 
+    outputs: ["onChange"]
+  }
+]

@@ -1,5 +1,14 @@
 directive : "o-form"
 
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onFormDataLoaded",
+  description: "Event triggered when "
+}]
+
+
 attributesColumns: ["Name","Type","Default","Description"] 
 
 attributes: [{

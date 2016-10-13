@@ -130,7 +130,7 @@
 		transition:max-height 0.5s; 
 	}
 	
-	&:hover .category-components-list,
+	//&:hover .category-components-list,
 	&.active-component-category .category-components-list {
 		margin-bottom: inherit;
 		max-height: 500px;

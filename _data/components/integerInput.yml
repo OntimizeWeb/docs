@@ -28,3 +28,10 @@ attributes: [{
   required : "",
   description : "Increase / decrease value"
 }]
+
+inheritedOutputs: [
+  {
+    component: "o-text-input", 
+    outputs: ["onChange"]
+  }
+]

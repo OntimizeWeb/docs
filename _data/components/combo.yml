@@ -1,7 +1,15 @@
 directive : "o-combo"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onChange",
+  description: "Event triggered when component selected value changes"
+}]
+
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
  
 attributes: [{
   name: "attr", 
@@ -110,5 +118,5 @@ attributes: [{
   type: "string",
   default : "OTHER",
   required : "",
-  description : "Data type according to Java standard. See SQLType class"
+  description : "Data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}"
 }]  

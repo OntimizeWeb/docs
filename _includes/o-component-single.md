@@ -76,6 +76,50 @@
     <p>No additional attributes</p>
   {% endif %}
 
+
+  {% if componentData.inheritedOutputs %} 
+    <h3 class="grey-color">Inherited outputs</h3>
+    <ul>
+      {% for inheritedObj in componentData.inheritedOutputs %}
+      <li>
+        from <a href="{{ base_path }}/docs/components/{{inheritedObj.component}}.component/" rel="permalink">{{ inheritedObj.component }}:</a>
+        <ul class="attributes-list">
+          {% for inheritedOutput in inheritedObj.outputs %}
+            <li> {{ inheritedOutput }} </li>
+          {% endfor %}
+        </ul>    
+        {% endfor %}   
+      </li>
+    </ul>     
+  {% endif %} 
+
+  {% if componentData.outputs %}
+    <h3 class="grey-color">Outputs</h3>
+    <table class="attributes-table mdl-data-table">
+      <thead>
+        <tr>
+        {% for header in componentData.outputsColumns %}
+            <th class=""> {{ header }}</th>
+        {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+        {% for outputObject in componentData.outputs %}
+          <tr>
+          {% for column in componentData.outputsColumns %}
+            {% assign columnKey = column | downcase %}
+            {% assign columnData = 'o-component-' | append: columnKey %}          
+            {% assign cellContent = outputObject[columnKey]  | default: '' | markdownify %}         
+            
+            <td class="" {{ columnData }}>{{ cellContent }}</td> 
+                            
+          {% endfor %}       
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+
   {% if componentData.example %}
     {% capture html-include %}{% include example.md code=componentData.example %}{% endcapture %}
     {{ html-include | markdownify }}

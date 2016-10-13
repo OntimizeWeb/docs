@@ -137,7 +137,8 @@ components:
         url: /components/o-bar-menu.component/
       - title: "Side menu"
         url: /components/o-side-menu.component/                
-
+  - title: "FAQ"
+    url: /components/faq/      
 
 
 

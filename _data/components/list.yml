@@ -44,7 +44,7 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "	Entity columns. Separated by ';'"
+  description : "Entity columns. Separated by ';'"
 },{
   name: "parent-keys", 
   type: "string",
@@ -82,3 +82,5 @@ attributes: [{
   required : "",
   description : "Static data for filling the list"
 }]  
+
+

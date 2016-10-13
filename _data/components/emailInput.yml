@@ -6,3 +6,10 @@ inheritedAttributes: [
     attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
   }
 ]
+
+inheritedOutputs: [
+  {
+    component: "o-text-input", 
+    outputs: ["onChange"]
+  }
+]

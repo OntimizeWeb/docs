@@ -1,6 +1,13 @@
 
 directive : "o-text-input"
 
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onChange",
+  description: "Event triggered when component input element changes"
+}]
+
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
 attributes: [{
