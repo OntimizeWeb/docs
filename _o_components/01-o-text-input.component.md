@@ -4,6 +4,8 @@ title: "Text input"
 comp: textInput
 ---
 
+{% include base_path %}
+
 <h3 class="grey-color">Example</h3>
 
 ```html
@@ -19,3 +21,8 @@ comp: textInput
 
 <o-text-input attr="input_4" label="Example input" enabled="no"></o-text-input>
 ``` 
+
+<br/>
+
+![image-right]({{ base_path }}/images/components/textInput2.PNG){: .align-right} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+

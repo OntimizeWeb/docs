@@ -26,7 +26,7 @@ If *o-table* directive contains inner *o-table-column* elements, using renderers
 defined on them.
 
 {% capture tableColumnCapture %}
-{% include o-component-single.html comp="tableColumn" %}
+{% include o-component-single.md comp="tableColumn" %}
 {% endcapture %}
 {{ tableColumnCapture | replace: '    ', ''}}
 

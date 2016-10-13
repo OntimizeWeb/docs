@@ -25,7 +25,7 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "Name of google icon (see <a href=https://design.google.com/icons/ target='_blank'>Google material design icons</a>)"
+  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
 },{
   name: "icon-position", 
   type: "left | right | top | bottom",

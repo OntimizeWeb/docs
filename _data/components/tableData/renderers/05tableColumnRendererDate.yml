@@ -6,6 +6,7 @@ attributes: [{
   name: "format", 
   type: "string",
   default : "",
-  description : "Date format. See <a href=http://momentjs.com/ target='_blank'>MomentJS</a>"
+  required : "",
+  description : "Date format. See [MomentJS](href=http://momentjs.com/){:target='_blank'}"
 }]
 title : "OTableCellRendererDate"

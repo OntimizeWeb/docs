@@ -22,6 +22,13 @@
                   {% if child.url == page.url %}
                       {% assign activeCategory = nav %}
                       {% break %}
+                  {% elsif child.children != nil %}
+                      {% for innerchild in child.children %}
+                          {% if innerchild.url == page.url %}                                                  
+                            {% assign activeCategory = nav %}
+                            {% break %}
+                          {% endif %}  
+                      {% endfor %}
                   {% endif %}
               {% endfor %}
           {% endif %}       

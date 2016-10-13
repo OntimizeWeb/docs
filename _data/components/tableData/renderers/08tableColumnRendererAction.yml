@@ -17,16 +17,19 @@ attributes: [{
   name: "action", 
   type: "detail | delete | edit",
   default : "",
+  required : "",
   description : "Name of the default action"
 },{
   name: "render-type", 
   type: "string | icon | image | button",
   default : "icon",
+  required : "",
   description : "Type of value to render"   
 },{
   name: "render-value", 
   type: "string",
   default : "Depends on render-type value",
+  required : "",
   description : "Value to render"
 }]
 

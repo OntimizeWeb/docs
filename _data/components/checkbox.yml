@@ -5,16 +5,16 @@ attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
   name: "attr", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Checkbox identifier"
 },{
   name: "label", 
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Field label (placeholder when field is empty and floating label when field has data)"
 },{
   name: "data", 
   type: "",
@@ -23,14 +23,14 @@ attributes: [{
   description : ""
 },{
   name: "enabled", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "yes",
   required : "",
-  description : ""
+  description : "Component enabled state"
 },{
   name: "required", 
-  type: "",
-  default : "",
+  type: "no | yes",
+  default : "no",
   required : "",
-  description : ""
+  description : "Indicates whether the field is required"
 }]

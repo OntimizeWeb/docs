@@ -10,18 +10,18 @@ comp: sideMenu
 {% endfor %}
 {% assign filenameArray = filenameArray | sort %}
 
-
 {% for filename in filenameArray %}
+  {% assign dataFile = site.data.components.barMenuData[filename] %}
+<div class="o-compFile-div">
+<h2 class="">{{ dataFile.title }}</h2>
 
-  {% assign dataFile = site.data.components.sideMenuData[filename] %}
-  {% capture dataFileCapture %}
-    {% include o-component-single.html compFile=dataFile %}
-  {% endcapture %}
-  <div class="o-compFile-div">
-    <h2 class="">{{ dataFile.title }}</h2>
-    {{ dataFileCapture | replace: '    ', '' }}
-  </div>
+{% capture include_to_markdownify %}
+{% include o-component-single.md compFile=dataFile %}
+{% endcapture %}
+{{ include_to_markdownify | markdownify }}
+</div>
 {% endfor %}
+
 
 Menu item actions priority order:
 

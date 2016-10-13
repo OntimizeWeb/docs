@@ -16,7 +16,7 @@ comp: barMenu
 
   {% assign dataFile = site.data.components.barMenuData[filename] %}
   {% capture dataFileCapture %}
-    {% include o-component-single.html compFile=dataFile %}
+    {% include o-component-single.md compFile=dataFile %}
   {% endcapture %}
   <div class="o-compFile-div">
     <h2 class="">{{ dataFile.title }}</h2>

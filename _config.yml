@@ -179,8 +179,10 @@ collections:
     permalink: /:collection/:path/
   o_form_components:
     output: true
+    permalink: /:collection/:path/ 
+  o_list_picker_components:
+    output: true
     permalink: /:collection/:path/    
-
     
 
 # Defaults
@@ -256,7 +258,22 @@ defaults:
       share: false
       comments: false
       sidebar:
-        nav: "components"          
+        nav: "components"
+  # _o_list_picker_components      
+  - scope:
+      path: ""
+      type: o_list_picker_components      
+    values:
+      layout: o-component
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "components"                 
+
+
+        
+           
 
 
           

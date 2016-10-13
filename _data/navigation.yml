@@ -89,8 +89,9 @@ components:
         url: /components/o-search-input.component/
       - title: "List picker"
         url: /components/o-list-picker.component/
-      - title: "List picker dialog"
-        url: /components/o-list-picker-dialog.component/
+        children : 
+          - title: "List picker dialog"
+            url: /list-picker-component/o-list-picker-dialog.component/
       - title: "Checkbox"
         url: /components/o-checkbox.component/
               
@@ -103,8 +104,18 @@ components:
     children:
       - title: "Form"
         url: /components/o-form.component/
+        children: 
+          - title: "Extending a form"
+            url: '/form-components/o-form.extend/'
+          - title: "Form to filter table"
+            url: '/form-components/o-form.filter-table/'
       - title: "Table"
         url: /components/o-table.component/  
+        children: 
+          - title: "Column renderers"
+            url: '/table-components/o-table-renderers.component/'
+          - title: "Column editors"
+            url: '/table-components/o-table-editors.component/'  
       - title : "List"
         url: /components/o-list.component/
       - title : "Combo"

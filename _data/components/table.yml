@@ -7,160 +7,192 @@ attributes: [{
   name: "attr", 
   type: "string",
   default : "<em>entity</em> attribute value (if exists)",
+  required : "",
   description : "Table identifier. Mandatory if table data is given by 'data' attribute"
 },{
   name: "title", 
   type: "string",
   default : "",
+  required : "",
   description : "Title in exported files"
 },{
   name: "visible", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Component visibility"
 },{
   name: "enabled", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Component enabled state. When table is not enabled the detail navigation is disabled too"
 },{
   name: "data", 
   type: "array<object>",
   default : "",
+  required : "",
   description : "Static data for filling the table"
 },{
   name: "service", 
   type: "string",
   default : "",
+  required : "",
   description : "JEE service path"
 },{
   name: "query-method", 
   type: "string",
   default : "query",
+  required : "",
   description : "Service method name for queries"
 },{
   name: "insert-method", 
   type: "string",
   default : "insert",
+  required : "",
   description : "Service method name for insertions"
 },{
   name: "update-method", 
   type: "string",
   default : "update",
+  required : "",
   description : "Service method name for updates"
 },{
   name: "delete-method", 
   type: "string",
   default : "delete",
+  required : "",
   description : "Service method name for deletions"
 },{
   name: "entity", 
   type: "string",
   default : "",
+  required : "",
   description : "Service entity name"
 },{
   name: "keys", 
   type: "string",
   default : "",
+  required : "",
   description : "Entity keys. Separated by ';'"
 },{
   name: "parent-keys", 
   type: "string",
   default : "",
+  required : "",
   description : "Filtering keys. Separated by ';'"
 },{
   name: "columns", 
   type: "string",
   default : "",
+  required : "",
   description : "Entity columns. Separated by ';'"
 },{
   name: "visible-columns", 
   type: "string",
   default : "",
+  required : "",
   description : "Visible columns. Separated by ';'"
 },{
   name: "editable-columns", 
   type: "string",
   default : "",
+  required : "",
   description : "Columns that can be edited directly on the table. Separated by ';'"
 },{
   name: "edit-on-focus", 
   type: "no | yes",
   default : "yes",
-  description : "Cell edition when it gains focus. Useful when using 'o-table-cell-renderer-action action=\"edit\"' for editing records and avoid having two differents edition modes in same table"
+  required : "",
+  description : "Cell edition when it gains focus. Useful when using <em>o-table-cell-renderer-action action=\"edit\"</em> for editing records and avoid having two differents edition modes in same table"
 },{
   name: "sort-columns", 
   type: "string",
   default : "",
-  description : "Initial ordering, using [ ASC | DESC ] format. Separated by ';'"
+  required : "",
+  description : "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
 },{
   name: "query-rows", 
   type: "number",
   default : "10",
+  required : "",
   description : "Number of records by page"
 },{
   name: "query-on-init", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Query table data on init"
 },{
   name: "quick-filter", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Showing input for filtering"
 },{
   name: "insert-button", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Showing button for insert"
 },{
   name: "delete-button", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Showing button for delete"
 },{
   name: "refresh-button", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Showing button for refresh"
 },{
   name: "columns-visibility-button", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Showing button for changing columns visibility"
 },{
   name: "columns-resize-button", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Showing button for changing columns size"
 },{
   name: "columns-group-button", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Showing button for grouping columns"
 },{
   name: "export-button", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Showing button for exporting table data (Excel, PDF, etc.)"
 },{
   name: "detail-mode", 
   type: "none | click | doubleclick",
   default : "doubleclick",
+  required : "",
   description : "Action for opening the detail form of a row"
 },{
   name: "detail-form-route", 
   type: "string",
   default : "detail",
+  required : "",
   description : "Detail form path"
 },{
   name: "recursive-detail", 
   type: "no | yes",
   default : "no",
+  required : "",
   description : "Adding detail key to current url path (overwrite)"
 },{
   name: "insert-table", 
   type: "no | yes",
   default : "no",
+  required : "",
   description : "Showing a empty row at the end of the table for inserting a new record"
 }]

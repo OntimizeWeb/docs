@@ -37,11 +37,11 @@ It would be equivalent to define:
 
   {% assign dataFile = site.data.components.tableData.renderers[filename] %}
   {% capture dataFileCapture %}
-    {% include o-component-single.html compFile=dataFile %}
+    {% include o-component-single.md compFile=dataFile  %}
   {% endcapture %}
   <div class="o-compFile-div">
     <h2 class="">{{ dataFile.title }}</h2>
-    {{ dataFileCapture | replace: '    ', '' }}
+    {{ dataFileCapture | replace: '    ', '' | markdownify }}
   </div>
 {% endfor %}
 

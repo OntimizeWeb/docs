@@ -7,30 +7,36 @@ attributes: [{
   name: "attr", 
   type: "string",
   default : "",
+  required : "",
   description : "Column name"
 },{
   name: "title", 
   type: "string",
   default : "",
+  required : "",
   description : "Column title"
 },{
   name: "orderable", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Indicates whether the column can be sorted"
 },{
   name: "searchable", 
   type: "no | yes",
   default : "yes",
+  required : "",
   description : "Indicates whether the column content can be searched"
 },{
   name: "editable", 
   type: "no | yes",
   default : "no",
-  description : "Indicates whether the column content can be edited. Alternative (with higher priority) to attribute 'editable-columns' de 'o-table'"
+  required : "",
+  description : "Indicates whether the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-table</em>"
 },{
   name: "type", 
   type: "string | boolean | integer | real | currency | date | image",
   default : "string",
+  required : "",
   description : "Column data type"
 }]
