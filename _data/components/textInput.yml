@@ -27,16 +27,16 @@ attributes: [{
   type: "string",
   default : "", 
   required : "",
-  description : "Text under the field."
+  description : "Text under the field"
 },{
   name: "enabled", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "", 
   required : "",
-  description : "Component enabled state"
+  description : "Indicates whether the field is enabled"
 },{
   name: "required", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no", 
   required : "",
   description : "Indicates whether the field is required"

@@ -22,13 +22,13 @@ attributes: [{
   description : ""
 },{
   name: "enabled", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Component enabled state"
+  description : "Indicates whether the field is enabled"
 },{
   name: "required", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Indicates whether the field is required"
@@ -40,10 +40,10 @@ attributes: [{
   description : ""
 },{
   name: "show-controls", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Shows or hides selection controls"
+  description : "Indicates whether to show or hide selection controls"
 },{
   name: "sql-type", 
   type: "string",

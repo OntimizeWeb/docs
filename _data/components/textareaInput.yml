@@ -22,7 +22,7 @@ attributes: [{
   type: "number",
   default : "20",
   required : "",
-  description : "	Specifies the width of the text area (in average character width). <em>HTML5</em> <em>cols</em> attribute"
+  description : "Specifies the width of the text area (in average character width). <em>HTML5</em> <em>cols</em> attribute"
 },{
   name: "rows", 
   type: "number",

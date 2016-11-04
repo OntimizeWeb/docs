@@ -20,6 +20,12 @@ attributes: [{
   required : "",
   description : "Name of the default action"
 },{
+  name: "edition-mode", 
+  type: "inline | other",
+  default : "",
+  required : "",
+  description : "Row edition mode. Using only when *action* is *edit*. Setting inline row edition when value is *inline* or opening edition screen in other case"
+},{
   name: "render-type", 
   type: "string | icon | image | button",
   default : "icon",

@@ -17,16 +17,16 @@ attributes: [{
   description : "Title in exported files"
 },{
   name: "visible", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Component visibility"
 },{
   name: "enabled", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Component enabled state. When table is not enabled the detail navigation is disabled too"
+  description : "Indicates whether the field is enabled. When table is not enabled the detail navigation is disabled too"
 },{
   name: "data", 
   type: "array<object>",
@@ -101,7 +101,7 @@ attributes: [{
   description : "Columns that can be edited directly on the table. Separated by ';'"
 },{
   name: "edit-on-focus", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Cell edition when it gains focus. Useful when using <em>o-table-cell-renderer-action action=\"edit\"</em> for editing records and avoid having two differents edition modes in same table"
@@ -119,62 +119,62 @@ attributes: [{
   description : "Number of records by page"
 },{
   name: "query-on-init", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Query table data on init"
 },{
   name: "quick-filter", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Showing input for filtering"
+  description : "Indicates whether to show a input for filtering data"
 },{
   name: "insert-button", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Showing button for insert"
+  description : "Indicates whether to show a button for inserting data"
 },{
   name: "delete-button", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Showing button for delete"
+  description : "Indicates whether to show a button for deleting data"
 },{
   name: "refresh-button", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Showing button for refresh"
+  description : "Indicates whether to show a button for refreshing data"
 },{
   name: "columns-visibility-button", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Showing button for changing columns visibility"
+  description : "Indicates whether to show a button for changing columns visibility"
 },{
   name: "columns-resize-button", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Showing button for changing columns size"
+  description : "Indicates whether to show a button for changing columns size"
 },{
   name: "columns-group-button", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Showing button for grouping columns"
+  description : "Indicates whether to show a button for grouping columns"
 },{
   name: "export-button", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Showing button for exporting table data (Excel, PDF, etc.)"
+  description : "Indicates whether to show a button for exporting table data (Excel, PDF, etc.)"
 },{
   name: "detail-mode", 
   type: "none | click | doubleclick",
-  default : "doubleclick",
+  default : "none",
   required : "",
   description : "Action for opening the detail form of a row"
 },{
@@ -185,14 +185,80 @@ attributes: [{
   description : "Detail form path"
 },{
   name: "recursive-detail", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Adding detail key to current url path (overwrite)"
 },{
   name: "insert-table", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Showing a empty row at the end of the table for inserting a new record"
+},{
+  name: "detail-button-in-row", 
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether to add a button in each row for opening the detail form"
+},{
+  name: "detail-button-in-row-icon", 
+  type: "string",
+  default : "search",
+  required : "",
+  description : "Detail icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "edit-button-in-row", 
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether to add a button in each row for opening the edit form"
+},{
+  name: "edit-button-in-row-icon", 
+  type: "string",
+  default : "edit",
+  required : "",
+  description : "Edit icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "edition-mode", 
+  type: "inline | other",
+  default : "",
+  required : "",
+  description : "Row edition mode. Setting inline row edition when value is *inline* or opening edition screen in other case"
+},{
+  name: "edit-form-route", 
+  type: "string",
+  default : "edit",
+  required : "",
+  description : "Route of edit form"
+},{ 
+  name: "recursive-edit", 
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Adding edit key to current url path (overwrite)"
+},{
+  name: "show-header-buttons-text", 
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether to show table actions text alongside icons"
+},{
+  name: "select-all-checkbox", 
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether to show a column of checkboxes for selecting table rows"
+},{
+  name: "controls", 
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether to show table controls bar. Including table actions, quickfilter and options"
+},{
+  name: "row-height", 
+  type: "small | medium | large",
+  default : "medium",
+  required : "",
+  description : "Predefined row height options"
 }]

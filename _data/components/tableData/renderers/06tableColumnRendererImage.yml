@@ -10,10 +10,10 @@ attributes: [{
   description : "Image type (external URL or base64)"
 },{
   name: "avatar", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether visualize image as an avatar (as a circle)"   
+  description : "Indicates whether to visualize image as an avatar (as a circle)"   
 },{
   name: "empty-image", 
   type: "string",

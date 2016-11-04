@@ -16,7 +16,7 @@ attributes: [{
   description : "Position of currency symbol"
 },{
   name: "grouping", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Indicates whether to group the thousand digits"

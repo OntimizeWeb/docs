@@ -235,6 +235,7 @@ defaults:
       type: o_components      
     values:
       layout: o-component
+      layoutClass: o-component
       author_profile: false
       share: false
       comments: false

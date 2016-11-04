@@ -22,13 +22,13 @@ attributes: [{
   description : ""
 },{
   name: "enabled", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Component enabled state"
+  description : "Indicates whether the field is enabled"
 },{
   name: "required", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Indicates whether the field is required"
@@ -76,7 +76,7 @@ attributes: [{
   description : "Visible columns in text field"
 },{
   name: "filter", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : ""
@@ -88,13 +88,13 @@ attributes: [{
   description : "Separation character between <em>description-columns</em> values"
 },{
   name: "query-on-init", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Query table data on init"
 },{
   name: "query-on-bind", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Query table data on bind"

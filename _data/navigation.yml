@@ -106,9 +106,9 @@ components:
         url: /components/o-form.component/
         children: 
           - title: "Extending a form"
-            url: '/form-components/o-form.extend/'
+            url: '/form-component/o-form.extend/'
           - title: "Form to filter table"
-            url: '/form-components/o-form.filter-table/'
+            url: '/form-component/o-form.filter-table/'
       - title: "Table"
         url: /components/o-table.component/  
         children: 

@@ -17,19 +17,19 @@ attributes: [{
   description : "Column title"
 },{
   name: "orderable", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Indicates whether the column can be sorted"
 },{
   name: "searchable", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Indicates whether the column content can be searched"
 },{
   name: "editable", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Indicates whether the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-table</em>"

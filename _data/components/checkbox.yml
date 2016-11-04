@@ -31,13 +31,13 @@ attributes: [{
   description : ""
 },{
   name: "enabled", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Component enabled state"
+  description : "Indicates whether the field is enabled"
 },{
   name: "required", 
-  type: "no | yes",
+  type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Indicates whether the field is required"
