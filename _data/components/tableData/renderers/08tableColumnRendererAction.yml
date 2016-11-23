@@ -1,0 +1,104 @@
+directive : "o-table-cell-renderer-action"
+
+description : >
+  This special renderer allows the insertion of columns for handling some kind of action to be excecuted
+  over the entire row: go to detail, edit, delete, etc.
+
+  <div class="notice--info" markdown="1">
+  
+  **IMPORTANT:** *o-table-column* directives including this renderer must not have a *attr* attribute, because
+  its not rendering a cell value.
+
+  </div>
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "action", 
+  type: "detail | delete | edit",
+  default : "",
+  required : "",
+  description : "Name of the default action"
+},{
+  name: "edition-mode", 
+  type: "inline | other",
+  default : "",
+  required : "",
+  description : "Row edition mode. Using only when *action* is *edit*. Setting inline row edition when value is *inline* or opening edition screen in other case"
+},{
+  name: "render-type", 
+  type: "string | icon | image | button",
+  default : "icon",
+  required : "",
+  description : "Type of value to render"   
+},{
+  name: "render-value", 
+  type: "string",
+  default : "Depends on render-type value",
+  required : "",
+  description : "Value to render"
+}]
+
+title : "OTableCellRendererAction"
+
+example : >
+
+  <o-table attr="customers" entity="ECustomers" title="CUSTOMERS" 
+    columns="CUSTOMERID;SURNAME;NAME;STARTDATE;ADDRESS;EMAIL;CUSTOMERTYPEID;PHOTO;LATITUDE;LONGITUDE" 
+    visible-columns="PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID;LATITUDE;LONGITUDE" 
+    editable-columns="NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;LATITUDE;LONGITUDE" 
+    sort-columns="SURNAME" keys="CUSTOMERID" 
+    query-on-init="true" query-rows="10" quick-filter="yes" 
+    insert-table="yes" detail-mode="none" edit-on-focus="no">
+
+    <o-table-column>
+        <o-table-cell-renderer-action action="detail" 
+            render-type="button" render-value="DETAIL">
+        </o-table-cell-renderer-action>
+    </o-table-column>
+
+    <o-table-column attr="PHOTO" orderable="no" searchable="no"
+        type="image" image-type="base64" avatar="yes" 
+        empty-image="assets/images/no-image.png">
+    </o-table-column>
+
+    <o-table-column attr="NAME" title="NAME"></o-table-column>
+
+    <o-table-column attr="SURNAME" title="SURNAME"></o-table-column>
+
+    <o-table-column attr="ADDRESS" title="ADDRESS"></o-table-column>
+
+    <o-table-column attr="STARTDATE" title="STARTDATE" type="date"
+        format="LL" date-model-type="string" date-model-format="YYYY-MM-DD HH:mm:ss">
+    </o-table-column>
+
+    <o-table-column attr="EMAIL" title="EMAIL"></o-table-column>
+
+    <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
+        <o-table-cell-renderer-service entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
+            columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
+        </o-table-cell-renderer-service>
+        <o-table-cell-editor-combo entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
+            columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
+        </o-table-cell-editor-combo>
+    </o-table-column>
+
+    <o-table-column attr="LATITUDE" title="LATITUDE" type="real"
+        grouping="no" decimal-separator="," decimal-digits="6">
+    </o-table-column>
+
+    <o-table-column attr="LONGITUDE" title="LONGITUDE" type="real"
+        grouping="no" decimal-separator="," decimal-digits="6">
+    </o-table-column>
+
+    <o-table-column>
+        <o-table-cell-renderer-action action="edit">
+        </o-table-cell-renderer-action>
+    </o-table-column>
+
+    <o-table-column>
+        <o-table-cell-renderer-action action="delete">
+        </o-table-cell-renderer-action>
+    </o-table-column>
+
+  </o-table>

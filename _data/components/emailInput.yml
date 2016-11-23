@@ -1,0 +1,15 @@
+directive : "o-email-input"
+
+inheritedAttributes: [
+  {
+    component: "o-text-input", 
+    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "o-text-input", 
+    outputs: ["onChange"]
+  }
+]

@@ -1,0 +1,37 @@
+directive : "o-integer-input"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+inheritedAttributes: [
+  {
+    component: "o-text-input", 
+    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+  }
+]
+
+attributes: [{
+  name: "min", 
+  type: "number",
+  default : "",
+  required : "",
+  description : "Minimum value required"
+},{
+  name: "max", 
+  type: "number",
+  default : "",
+  required : "",
+  description : "Maximum value required"
+},{
+  name: "step", 
+  type: "number",
+  default : "1",
+  required : "",
+  description : "Increase / decrease value"
+}]
+
+inheritedOutputs: [
+  {
+    component: "o-text-input", 
+    outputs: ["onChange"]
+  }
+]

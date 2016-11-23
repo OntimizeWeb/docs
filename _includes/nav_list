@@ -1,11 +1,55 @@
 {% include base_path %}
 {% assign navigation = site.data.navigation[include.nav] %}
 
+ <script type="text/javascript" style="display:none;">
+  var onNavigationItemClick = function (element) {
+    var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.addClass('active-component-category');
+/*
+    parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
+    parentLi.toggleClass('active-component-category');
+*/    
+  };
+</script>
+
 <nav class="nav__list">
   {% if page.sidebar.title %}<header><h4 class="nav__title" style="padding: 0;">{{ page.sidebar.title }}</h4></header>{% endif %}
   <ul>
+    {% comment %}set "active" class on category containing current page{% endcomment %}
+    {% assign activeCategory = nil  %}
+    {% if include.nav == 'components' %}
+      {% for nav in navigation %}
+          {% if nav.children and activeCategory == nil %}
+              {% for child in nav.children %}
+                  {% if child.url == page.url %}
+                      {% assign activeCategory = nav %}
+                      {% break %}
+                  {% elsif child.children != nil %}
+                      {% for innerchild in child.children %}
+                          {% if innerchild.url == page.url %}                                                  
+                            {% assign activeCategory = nav %}
+                            {% break %}
+                          {% endif %}  
+                      {% endfor %}
+                  {% endif %}
+              {% endfor %}
+          {% endif %}       
+      {% endfor %}
+    {% endif %}
+ 
+    {% assign navigationCategoryClass = '' %}
+    {% if include.nav == 'components' %}
+      {% assign navigationCategoryClass = 'nav-component-category' %}
+    {% endif %}
+
     {% for nav in navigation %}
-      <li>
+      {% assign activeClass = '' %}
+      {% if activeCategory != nil and activeCategory.title == nav.title %}
+            {% assign activeClass = 'active-component-category active-parent' %}
+      {% endif %} 
+
+      <li class="{{ navigationCategoryClass }} {{ activeClass }}">
         {% if nav.url %}
           {% comment %}internal/external URL check{% endcomment %}
           {% if nav.url contains "://" %}
@@ -16,11 +60,11 @@
 
           <a href="{{ domain }}{{ nav.url }}"><span class="nav__sub-title">{{ nav.title }}</span></a>
         {% else %}
-          <span class="nav__sub-title">{{ nav.title }}</span>
+          <span class="nav__sub-title"  onclick="onNavigationItemClick(this)">{{ nav.title }}</span>
         {% endif %}
 
         {% if nav.children != null %}
-        <ul>
+        <ul class="category-components-list">
           {% for child in nav.children %}
             {% comment %}internal/external URL check{% endcomment %}
             {% if child.url contains "://" %}

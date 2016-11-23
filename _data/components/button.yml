@@ -1,0 +1,41 @@
+directive : "o-button"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "attr", 
+  type: "string",
+  default : "",
+  required : "Yes",
+  description : "Fiel identifier"
+},{
+  name: "label", 
+  type: "string",
+  default : "<em>attr</em> attribute value",
+  required : "",
+  description : "Field label"
+},{
+  name: "type", 
+  type: "FLAT | RAISED | ICON | FAB | MINI-FAB",
+  default : "FLAT",
+  required : "",
+  description : "Type of button"
+},{
+  name: "icon", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "icon-position", 
+  type: "left | right | top | bottom",
+  default : "left",
+  required : "",
+  description : "Icon position"
+},{
+  name: "image", 
+  type: "",
+  default : "",
+  required : "",
+  description : "Icon image"
+}]  

@@ -66,7 +66,7 @@ docs:
         url: /about/
 # components links
 components:
-  - title: Input components
+  - title: Input
     children:
       - title: "Text"
         url: /components/o-text-input.component/
@@ -94,12 +94,57 @@ components:
         url: /components/o-search-input.component/
       - title: "List picker"
         url: /components/o-list-picker.component/
-      - title: "List picker dialog"
-        url: /components/o-list-picker-dialog.component/
+        children : 
+          - title: "List picker dialog"
+            url: /list-picker-component/o-list-picker-dialog.component/
+      - title: "Checkbox"
+        url: /components/o-checkbox.component/
+              
+  - title: Button
+    children:
+      - title: "Button"
+        url: /components/o-button.component/
 
-  - title: Data components
+  - title: Data
     children:
       - title: "Form"
         url: /components/o-form.component/
+        children: 
+          - title: "Extending a form"
+            url: '/form-component/o-form.extend/'
+          - title: "Form to filter table"
+            url: '/form-component/o-form.filter-table/'
       - title: "Table"
-        url: /components/o-table.component/           
+        url: /components/o-table.component/  
+        children: 
+          - title: "Column renderers"
+            url: '/table-components/o-table-renderers.component/'
+          - title: "Column editors"
+            url: '/table-components/o-table-editors.component/'  
+      - title : "List"
+        url: /components/o-list.component/
+      - title : "Combo"
+        url: /components/o-combo.component/  
+
+  - title: Media
+    children:
+      - title: "Image"
+        url: /components/o-image.component/
+
+  - title: Layout
+    children:
+      - title: "Dialog"
+        url: /components/o-dialog.component/        
+
+  - title: Menu
+    children:
+      - title: "Bar menu"
+        url: /components/o-bar-menu.component/
+      - title: "Side menu"
+        url: /components/o-side-menu.component/                
+  - title: "FAQ"
+    url: /components/faq/      
+
+
+
+        

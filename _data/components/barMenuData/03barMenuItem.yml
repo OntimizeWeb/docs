@@ -1,0 +1,31 @@
+directive : "o-bar-menu-item"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "title", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Item title"
+},{
+  name: "icon", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "route", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "App navigation route when the menu item is selected"
+},{
+  name: "action", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Method to execute when the menu item is selected"
+}]	
+
+title : "OBarMenuItem"

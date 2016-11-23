@@ -10,7 +10,7 @@ sidebar:
 {% include base_path %}
 
 <div class="grid__wrapper">
-  {% for post in site.components %}
+  {% for post in site.componentTypes %}
     {% if post.header.teaser %}
       {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
     {% else %}
