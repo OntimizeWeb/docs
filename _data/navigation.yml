@@ -51,6 +51,11 @@ docs:
       - title: "Routing"
         url: /docs/routing/
 
+  - title: Customization
+    children:
+      - title: "Theming"
+        url: /docs/theming/
+
   - title: Meta
     children:
       - title: "Contributing"

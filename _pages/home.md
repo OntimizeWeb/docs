@@ -4,10 +4,10 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: mm-home-page-feature.jpg
-  cta_label: "<i class='fa fa-download'></i> Install Now"
+  cta_label: "<i class='fa fa-play'></i> Check it out"
   cta_url: "/docs/quick-start-guide/"
   caption:
-excerpt: 'web application framework based on Angular 2 technology and standards for building applications that require a browser-based user interface.'
+excerpt: 'web application framework based on Angular 2 for building bussiness software.'
 feature_row:
   - image_path: mm-customizable-feature.png
     alt: "Quick to learn"
