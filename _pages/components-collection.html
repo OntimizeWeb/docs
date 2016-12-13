@@ -9,6 +9,16 @@ sidebar:
 
 {% include base_path %}
 
+<p>
+  In this section you will find all Ontimize Web available components as well as its configuration parameters and explanatory code snippets.
+</p>
+<p>
+  There is also a live demo where you can interact with different components.
+  <div><a href="https://ontimizeweb.github.io/ontimize-web-ng2-playground" target="_blank" class="btn btn--success">
+    <i class="fa fa-play"></i>
+    live demo</a></div>
+</p>
+
 <div class="grid__wrapper">
   {% for post in site.componentTypes %}
     {% if post.header.teaser %}
@@ -46,13 +56,6 @@ sidebar:
         {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
       </article>
     </div>
-
-
-
-
-
-
-
 
   {% endfor %}
 </div>

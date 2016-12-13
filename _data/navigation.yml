@@ -21,8 +21,8 @@ foo:
 
 # main links links
 main:
-  - title: "Quick-Start Guide"
-    url: /docs/quick-start-guide/
+  - title: "Getting started"
+    url: /docs/example-overview/
 
   - title: "Components"
     url: /components-collection/
@@ -41,8 +41,15 @@ main:
 docs:
   - title: Getting Started
     children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
+      - title: "Example overview"
+        url: /docs/example-overview/
+      - title: "Install and run example"
+        url: /docs/install-and-run/
+      - title: "Make some changes"
+        url: /docs/make-changes/
+      - title: "Do something advanced"
+        url: /docs/advanced-changes/
+      
 
   - title: Guide
     children:
@@ -50,6 +57,14 @@ docs:
         url: /docs/structure/
       - title: "Routing"
         url: /docs/routing/
+      - title: "Forms"
+        url: /docs/forms/
+      - title: "Permission"
+        url: /docs/permission/
+      - title: "Charts"
+        url: /docs/charts/
+      - title: "Maps"
+        url: /docs/maps/
 
   - title: Customization
     children:
