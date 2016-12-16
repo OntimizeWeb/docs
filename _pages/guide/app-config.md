@@ -23,7 +23,7 @@ export const CONFIG: Config = {
   // The base path of the URL used by app services.
   apiEndpoint: 'http://try.ontimize.com/QSAllComponents/rest',
 
-  //  Application identifier. Is the unique package identifier of the app. It is used when storing or managing temporal data related with the app. By default is set as 'ontimize-web-uuid'.
+  //  Application identifier. 
   uuid: 'com.ontimize.web.ng2.quickstart',
 
   // Title of the app
@@ -32,7 +32,7 @@ export const CONFIG: Config = {
   //  Language of the application.
   locale: 'es',
 
-  // The service type used (Ontimize REST standart, Ontimize REST JEE or custom implementation) in the whole application.
+  // The service type used in the whole application.
   // serviceType
 
   // Configuration parameters of application services.
@@ -44,8 +44,11 @@ The noteworthy parameters here are:
 
 * **uuid:** Application identifier. Is the unique package identifier of the app. It is used when storing or managing temporal data related with the app. 
 If no one is provided, by default is seta as 'ontimize-web-uuid'.
-* **apiEndpoint:** .
-* **title:** .
-* **locale:** .
-* **serviceType:** .
-* **servicesConfiguration:** . 
+* **apiEndpoint:** The base path of the URL used by app services.
+* **title:** The title of the application.
+* **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, ...).
+* **serviceType:** The service type used in the app by framework components that request data from server. You can specify (Ontimize REST standard, Ontimize REST JEE or custom implementation)
+  * **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
+  * **'OntimizeEE':** configures Ontimize REST JEE services.
+  * **Custom class:** a class that extends from *Ontimize* or *OntimizeEE* default services or that implements IDataService interface.
+* **servicesConfiguration:** Object that contains the configuration parameters of the services used into the app. 

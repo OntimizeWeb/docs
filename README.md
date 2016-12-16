@@ -4,7 +4,7 @@
 Ontimize Web is an application framework based on Angular 2 technology and standards that provides to you an environment for solving the problematic situation of building applications that require a browser-based user interface.
 Ontimize Web allows developing data management applications quickly and agile.
 
-See what's new in the [CHANGELOG](CHANGELOG.md).
+See what's new in the [CHANGELOG](https://github.com/OntimizeWeb/ontimize-web-ng2/blob/master/CHANGELOG.md).
 
 ---
 
@@ -18,4 +18,4 @@ Ontmize Web has been designed as a base for you to create and customize your web
 
 ## License
 
-[License](LICENSE).
+[License](https://github.com/OntimizeWeb/ontimize-web-ng2/blob/master/LICENSE).

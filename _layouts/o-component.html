@@ -1,32 +1,15 @@
 ---
 layout: single
----
+--- 
 
-{% if site.data.components[page.comp] %} 
-
-    Directive : {{ site.data.components[page.comp].directive }}
-
-
-    <table>
-    <thead>
-        <tr>
-        {% for header in site.data.components[page.comp].attributesHeader %}
-            <th> {{ header }}</th>
-        {% endfor %}
-        </tr>
-    </thead>
-    <tbody>
-        {% for attr in site.data.components[page.comp].attributes %}
-        <tr>     
-        <td>{{ attr.name }}</td>
-        <td>{{ attr.type }}</td>
-        <td>{{ attr.default }}</td>
-        <td>{{ attr.description }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    </table>         
+<div class="o-component-container">
+{% if page.under_construction %}
+  {% include o-component-under-construction.html %}
+{% else %}
+  {% if page.comp %}
+    {% assign componentKey = page.comp %}
+  {% endif %}
+  {% include o-component-single.md comp=componentKey %}
+  {{ content }}
 {% endif %}
-
-
-{{ content }}
+</div>

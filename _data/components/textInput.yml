@@ -1,0 +1,67 @@
+
+directive : "o-text-input"
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onChange",
+  description: "Event triggered when component input element changes"
+}]
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "attr", 
+  type: "string",
+  default : "",
+  required : "Yes",
+  description : "Fiel identifier"
+},{
+  name: "label", 
+  type: "string",
+  default : "<em>attr</em> attribute value", 
+  required : "",
+  description : "Field label (placeholder when field is empty and floating label when field has data)"
+},{
+  name: "hint", 
+  type: "string",
+  default : "", 
+  required : "",
+  description : "Text under the field"
+},{
+  name: "enabled", 
+  type: "no | false | yes | true",
+  default : "", 
+  required : "",
+  description : "Indicates whether the field is enabled"
+},{
+  name: "required", 
+  type: "no | false | yes | true",
+  default : "no", 
+  required : "",
+  description : "Indicates whether the field is required"
+},{
+  name: "min-length", 
+  type: "number",
+  default : "", 
+  required : "",
+  description : "Minimum number of required characters"
+},{
+  name: "max-length", 
+  type: "number",
+  default : "", 
+  required : "",
+  description : "Maximum number of required characters"
+},{
+  name: "pattern", 
+  type: "string",
+  default : "", 
+  required : "",
+  description : "Regular expression to validate the field content"
+},{
+  name: "data", 
+  type: "",
+  default : "", 
+  required : "",
+  description : ""
+}]

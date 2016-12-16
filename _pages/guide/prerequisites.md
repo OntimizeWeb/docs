@@ -15,13 +15,16 @@ sidebar:
 Make sure you have NodeJS installed. Download the installer [here](http://nodejs.org/) or use your favorite package manager (you must download the installer according to your platform and operative system). It’s best to get the **5.x.x** version of node along with the **3.x.x** version of npm. This offers the best in stability and speed for building.
 
 Following installation to check that you have correctly installed Node.js, you must be able to invoke *node* and *npm* commands in the command-line, for example:
+
 **NOTE**: On the Mac, the command-line is available via the *Terminal* application. On the PC, it's available as *Command Prompt* under *Accessories*.
 
 ```bash
 # Checking node version 
-C:\>node -v v6.2.0
+C:\>node -v 
+v6.2.0
 # Checking npm version
-C:\>npm -v3.5.2
+C:\>npm -v
+3.5.2
 ```
 
 If you want to know more about NPM you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm). 

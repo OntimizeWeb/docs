@@ -4,22 +4,22 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: mm-home-page-feature.jpg
-  cta_label: "<i class='fa fa-download'></i> Install Now"
-  cta_url: "/docs/quick-start-guide/"
+  cta_label: "<i class='fa fa-play'></i> Check it out"
+  cta_url: "/docs/doc-overview/"
   caption:
-excerpt: 'web application framework based on Angular 2 technology and standards for building applications that require a browser-based user interface.'
+excerpt: 'web application framework based on Angular 2 for building bussiness software.'
 feature_row:
-  - image_path: mm-customizable-feature.png
+  - image_path: mm-free-feature.png
     alt: "Quick to learn"
     title: "Quick to learn"
     excerpt: "Developing web data management applications quickly and agile based on Angular 2 technology."
-    url: "/docs/quick-start-guide/"
+    url: "/docs/doc-overview/"
     btn_label: "Learn More"
-  - image_path: mm-responsive-feature.png
-    alt: "Responsive Layouts"
-    title: "Responsive Layouts"
-    excerpt: "Built on Angular 2 Material. All layouts are fully responsive with helpers to augment your content."
-    url: "/docs/layouts/"
+  - image_path: mm-customizable-feature.png
+    alt: "Customizable"
+    title: "Customizable themes"
+    excerpt: "Built on Angular 2 Material. Customize standard themes or create new ones is very easy."
+    url: "/docs/theming/"
     btn_label: "Learn More"
   - image_path: mm-free-feature.png
     alt: "100% free"

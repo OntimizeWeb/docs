@@ -1,0 +1,13 @@
+directive : "o-bar-menu-group"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "title", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Group title"
+}]	
+
+title : "OBarMenuGroup"

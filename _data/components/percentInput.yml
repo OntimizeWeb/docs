@@ -1,0 +1,26 @@
+directive : "o-percent-input"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+inheritedAttributes: [
+  {
+    component: "o-text-input", 
+    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+  },
+  {
+    component: "o-integer-input",
+    attributes: ["min", "max"]
+  },
+  {
+    component: "o-real-input",
+    attributes: ["min-decimal-digits", "max-decimal-digits"]
+  }
+]
+
+
+inheritedOutputs: [
+  {
+    component: "o-real-input", 
+    outputs: ["onChange"]
+  }
+]

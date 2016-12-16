@@ -1,0 +1,74 @@
+
+title : "OTableCellRendererService"
+
+
+directive : "o-table-cell-renderer-service"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "service", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "JEE service path"
+},{
+  name: "query-method", 
+  type: "string",
+  default : "query",
+  required : "",
+  description : "Service method name for queries"   
+},{
+  name: "entity", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Service entity name"
+},{
+  name: "value-column", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Column name for cell value mapping (similar to component *ComboReferenceDataField* *cod* attribute in classic Ontimize Desktop)"
+},{
+  name: "columns", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Entity columns. Separated by ';'"
+},{
+  name: "visible-columns", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Visible columns. Separated by ';'"
+},{
+  name: "separator", 
+  type: "string",
+  default : "",
+  required : "",
+  description : "Separator used to concatenate the visible columns"
+}]
+
+example : > 
+
+  <o-table entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"
+    columns="MOVEMENTID;CONCEPT;MOVEMENTTYPEID" 
+    visible-columns="CONCEPT;MOVEMENTTYPEID" parent-keys="ACCOUNTID" 
+    query-on-init="false" query-rows="6" quick-filter="yes" 
+    detail-form-route="transactions">
+
+      <o-table-column attr="CONCEPT" title="CONCEPT"></o-table-column>
+      
+      <o-table-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPES">
+        <o-table-cell-renderer-service entity="EMovementTypes" 
+          value-column="MOVEMENTTYPEID" separator=" = "
+          columns="MOVEMENTTYPEID;DESCRIPTION" 
+          visible-columns="DESCRIPTION;MOVEMENTTYPEID" >
+        </o-table-cell-renderer-service>
+      </o-table-column>
+
+  </o-table>
+
+
+

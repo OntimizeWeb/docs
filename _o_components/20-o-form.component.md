@@ -1,6 +1,9 @@
 ---
 permalink: /components/o-form.component/
 title: "Form"
+comp: form
 ---
 
-Description of form component.
+{% for post in site.o_form_components %}
+  {% include archive-single.html %}
+{% endfor %}

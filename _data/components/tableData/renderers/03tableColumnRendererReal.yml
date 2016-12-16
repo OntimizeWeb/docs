@@ -1,0 +1,31 @@
+directive : "o-table-cell-renderer-real"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [{
+  name: "grouping", 
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether to group the thousand digits"
+},{
+  name: "thousand-separator", 
+  type: "string",
+  default : "Comma (,)",
+  required : "",
+  description : "Thousand digits chacarter separator (in case of grouping)"
+},{
+  name: "decimal-separator", 
+  type: "string",
+  default : "Dot (.)",
+  required : "",
+  description : "Decimal digits chacarter separator"
+},{
+  name: "decimal-digits", 
+  type: "number",
+  default : "2",
+  required : "",
+  description : "Number of decimals"
+}]
+
+title : "OTableCellRendererReal"
