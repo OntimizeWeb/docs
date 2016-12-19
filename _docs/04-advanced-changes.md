@@ -16,7 +16,7 @@ Advanced changes.
 
 ## Add a table form.
 
-## Dril-down to detail form.
+## Drill-down to detail form.
 
 ## Customize table.
 
