@@ -47,8 +47,8 @@ docs:
         url: /docs/install-and-run/
       - title: "Make some changes"
         url: /docs/make-changes/
-      # - title: "Do something advanced"
-      #   url: /docs/advanced-changes/
+      - title: "Do something advanced"
+        url: /docs/advanced-changes/
       
 
   - title: Guide

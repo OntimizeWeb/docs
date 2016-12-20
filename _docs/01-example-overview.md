@@ -15,7 +15,11 @@ due to the fact that all managed data into the app is provided by a REST service
 The quickstart application is a good test bench in which you can see the structure and the different definition files of the application, how to define
 the navigation between screens or see a small sample of the set of fields that Ontimize Web has among other things.
 
-Run the [live example](https://ontimizeweb.github.io/ontimize-web-ng2-quickstart).
+Run the live example.
+
+<div><a href="https://ontimizeweb.github.io/ontimize-web-ng2-quickstart" target="_blank" class="btn btn--success">
+    <i class="fa fa-play"></i>
+    live demo</a></div>
 
 ---  
 
