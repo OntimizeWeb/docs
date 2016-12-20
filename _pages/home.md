@@ -7,7 +7,7 @@ header:
   cta_label: "<i class='fa fa-play'></i> Check it out"
   cta_url: "/docs/doc-overview/"
   caption:
-excerpt: 'web application framework based on Angular 2 for building bussiness software.'
+excerpt: 'web application framework based on Angular 2 for building business software.'
 feature_row:
   - image_path: mm-free-feature.png
     alt: "Quick to learn"
