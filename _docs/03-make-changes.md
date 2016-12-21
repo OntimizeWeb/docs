@@ -18,7 +18,7 @@ and finally, we are going to navigate to other screen of the application.
 
 We are going to add a date field into the detail form of an account. So, first of all, we are going to see the aspect of this form. After
 logged in, click on the menu *Views -> Accounts*. A table with several account numbers will be shown. To work all with the same data, we will prefilter 
-the results and select the account that ends in '0010'. The aspect of the detail form is like this picture 
+the results and select the account that ends in '0002'. The aspect of the detail form is like this picture 
 (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ng2-quickstart)):
 
 <img src="{{ base_path }}/images/main_accounts_detail.png" alt="account detail">
@@ -34,35 +34,44 @@ under the location *src/app/+main/+accounts/detail/accounts-detail.component.htm
 
         <div layout="row" layout-padding>
 
-          <o-row attr="row1" title-label="ACCOUNT_NUMBER" elevation="1" flex>
-            <o-text-input attr="ENTITYID" layout-padding class="account align-right"></o-text-input>
-            <o-text-input attr="OFFICEID" layout-padding class="account align-right"></o-text-input>
-            <o-text-input attr="CDID" layout-padding class="account align-right"></o-text-input>
-            <o-text-input attr="ANID" layout-padding class="align-right"></o-text-input>
-          </o-row>
+          <o-column layout-align="start stretch" title-label="ACCOUNT_INFO" elevation="1">
+            <!--title-label="ACCOUNT_NUMBER" elevation="1"-->
+            <o-row attr="row1">
+              <o-text-input attr="ENTITYID" layout-padding class="account align-right"></o-text-input>
+              <o-text-input attr="OFFICEID" layout-padding  class="account align-right"></o-text-input>
+              <o-text-input attr="CDID" layout-padding class="account align-right"></o-text-input>
+              <o-text-input attr="ANID" layout-padding class="align-right"></o-text-input>
+            </o-row>
+            <!-- title-label="BALANCE" elevation="1" -->
+            <o-row attr="row2" >
+              <o-currency-input attr="BALANCE" flex layout-padding class="align-right"></o-currency-input>
+            </o-row>
+            <div layout="row" layout-padding flex></div>
+          </o-column>
 
           <div layout="row" layout-padding></div>
 
-          <o-row attr="row2" title-label="BALANCE" elevation="1" flex>
-            <o-currency-input attr="BALANCE" flex layout-padding class="align-right"></o-currency-input>
-          </o-row>
-
-          <div layout="row" flex></div>
-
+           <o-column layout-align="start stretch" elevation="1" flex>
+                    <o-chart type="pie" layout-fill [data]="data"  x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" parent-keys="ACCOUNTID"></o-chart>
+           </o-column>
         </div>
 
         <div layout="row" flex layout-padding>
           <o-table entity="EMovements" title="MOVEMENTS" columns="MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
             visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
             keys="MOVEMENTID" parent-keys="ACCOUNTID" sort-columns="DATE_" query-on-init="false" query-rows="6"
-            quick-filter="yes" detail-form-route="transactions">
+            quick-filter="yes" detail-form-route="transactions" (change)="onTableDataChange($event)">
+
             <o-table-column attr="DATE_" title="DATE_" type="date" format="LL"></o-table-column>
             <o-table-column attr="CONCEPT" title="CONCEPT"></o-table-column>
             <o-table-column attr="MOVEMENT" title="MOVEMENT" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-column>
             <o-table-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES"></o-table-column>
           </o-table>
         </div>
-
+        <div layout="row" flex layout-padding>
+          <o-chart type="line" x-label="Time" y-label="Amount (€)" layout-fill
+             [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
+        </div>
       </div>
     </o-form>
 </div>
