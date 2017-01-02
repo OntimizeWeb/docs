@@ -16,6 +16,99 @@ delete it *DataTables* entries in browser local storage.
 
 </div>
 
+## Table buttons
+
+{% capture tableButtonCapture %}
+{% include o-component-single.md comp="tableButton" %}
+{% endcapture %}
+{{ tableButtonCapture | replace: '    ', ''}}
+
+<h3 class="grey-color">Example</h3>
+
+```html
+<o-table attr="customers" entity="ECustomers" title="CUSTOMERS" 
+  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
+  editable-columns="NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
+  sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID" 
+  query-on-init="true" query-rows="6" quick-filter="yes" insert-table="yes">
+
+  <o-table-button label="My button" icon="account_circle"></o-table-button>
+
+  <o-table-column attr="NAME" title="NAME"></o-table-column>
+
+  ...
+
+</o-table>
+```
+
+<h3 class="grey-color">Typescript code</h3>
+
+```javascript
+  ...
+  import { OTableButtonComponent } from 'ontimize-web-ng2';
+  ...
+  @ViewChild('myButton')
+  protected myButton: OTableButtonComponent;
+  ...
+  ngAfterViewInit() {
+    this.myButton.click.subscribe(event => {
+      alert('my button click')
+    });
+  }
+```
+
+
+
+
+
+
+
+## Table options
+
+{% capture tableOptionCapture %}
+{% include o-component-single.md comp="tableOption" %}
+{% endcapture %}
+{{ tableOptionCapture | replace: '    ', ''}}
+
+<h3 class="grey-color">Example</h3>
+
+```html
+<o-table attr="customers" entity="ECustomers" title="CUSTOMERS" 
+  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
+  editable-columns="NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
+  sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID" 
+  query-on-init="true" query-rows="6" quick-filter="yes" insert-table="yes">
+
+  <o-table-option #myOption label="My option" icon="account_circle" icon-position="after">
+  </o-table-option>
+
+  <o-table-column attr="NAME" title="NAME"></o-table-column>
+
+  ...
+
+</o-table>
+```
+
+<h3 class="grey-color">Typescript code</h3>
+
+```javascript
+  ...
+  import { OTableOptionComponent } from 'ontimize-web-ng2';
+  ...
+  @ViewChild('myOption')
+  protected myOption: OTableOptionComponent;
+  ...
+  ngAfterViewInit() {
+    this.myOption.click.subscribe(event => {
+      alert('my option click')
+    });
+  }
+```
+
+  
+
 ## Columns
 
 Using default renderer (*o-table-cell-renderer-string*) if column attr is present in *visible-columns* attribute from its parent *o-table* directive. 

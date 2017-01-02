@@ -7,7 +7,7 @@ attributes: [{
   type: "string",
   default : "",
   required : "Yes",
-  description : "Fiel identifier"
+  description : "Field identifier"
 },{
   name: "label", 
   type: "string",

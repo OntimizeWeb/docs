@@ -46,6 +46,12 @@ attributes: [{
   required : "",
   description : "Service method name for queries"
 },{
+  name: "paginated-query-method", 
+  type: "string",
+  default : "advancedQuery",
+  required : "",
+  description : "Service method name for paginated queries"
+},{
   name: "insert-method", 
   type: "string",
   default : "insert",
@@ -116,7 +122,7 @@ attributes: [{
   type: "number",
   default : "10",
   required : "",
-  description : "Number of records by page"
+  description : "Number of records by page. Initial number of registries in queries when using pagination in server side"
 },{
   name: "query-on-init", 
   type: "no | false | yes | true",
@@ -238,15 +244,15 @@ attributes: [{
   required : "",
   description : "Adding edit key to current url path (overwrite)"
 },{
-  name: "show-header-buttons-text", 
+  name: "show-table-buttons-text", 
   type: "no | false | yes | true",
-  default : "no",
+  default : "yes",
   required : "",
   description : "Indicates whether to show table actions text alongside icons"
 },{
   name: "select-all-checkbox", 
   type: "no | false | yes | true",
-  default : "no",
+  default : "yes",
   required : "",
   description : "Indicates whether to show a column of checkboxes for selecting table rows"
 },{
@@ -261,4 +267,16 @@ attributes: [{
   default : "medium",
   required : "",
   description : "Predefined row height options"
+},{
+  name: "pageable", 
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether to do paginated queries for getting table data"
+},{
+  name: "single-page-mode", 
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates which pagination mode is used. If true, the only records stored in application memory are those found on the current page, doing a query on each page change"
 }]
