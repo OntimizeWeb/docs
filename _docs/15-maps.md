@@ -52,7 +52,8 @@ Finally, you can use ontimize-web-ng2-map in your Ontimize Web project.
 Configure third party dependencies like this:
 
 **system-config.ts**
-```sh
+
+```bash
 const cliSystemConfigPackages: any = {
 };
 // ontimize map module
@@ -93,7 +94,8 @@ System.config({
 ```
 
 **angular-cli-build.js**
-```sh
+
+```bash
 var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
 
 module.exports = function(defaults) {
@@ -123,10 +125,11 @@ module.exports = function(defaults) {
   });
 };
 ```
+
 **index.html**
 Do not forget to include CSS style sheets
 
-```sh
+```bash
   <link rel="stylesheet" type="text/css" href="./vendor/leaflet/dist/leaflet.css">
   <link rel="stylesheet" type="text/css" href="./vendor/leaflet-draw/dist/leaflet.draw.css">
   <link rel="stylesheet" type="text/css" href="./vendor/ontimize-web-ng2-map/o-map.css">
@@ -135,7 +138,7 @@ Do not forget to include CSS style sheets
 **app.module.ts**
 Include the library map module into your app.
 
-```sh
+```bash
 ...
 import { OMapModule } from 'ontimize-web-ng2-map/o-map';
 ...
