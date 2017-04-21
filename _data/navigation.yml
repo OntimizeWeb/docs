@@ -65,6 +65,8 @@ docs:
         url: /docs/charts/
       - title: "Maps"
         url: /docs/maps/
+      - title: "Migration guides"
+        url: /docs/migrations/
 
   - title: Customization
     children:
