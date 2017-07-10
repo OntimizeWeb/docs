@@ -37,7 +37,6 @@ npm start
 ```
 > **Attention Windows Developers:**  You must run all of these commands in administrator mode.
 
-
 The `npm start` command first compiles the application, then simultaneously re-compiles and runs the `server`.
 Both the compiler and the server watch for file changes. You can shut it down manually by pressing *Ctrl-C*.
 
