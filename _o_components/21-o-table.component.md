@@ -53,7 +53,7 @@ delete it *DataTables* entries in browser local storage.
   ...
   ngAfterViewInit() {
     this.myButton.click.subscribe(event => {
-      alert('my button click')
+      alert('my button click');
     });
   }
 ```
@@ -102,7 +102,7 @@ delete it *DataTables* entries in browser local storage.
   ...
   ngAfterViewInit() {
     this.myOption.click.subscribe(event => {
-      alert('my option click')
+      alert('my option click');
     });
   }
 ```

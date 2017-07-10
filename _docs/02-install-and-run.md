@@ -37,7 +37,6 @@ npm start
 ```
 > **Attention Windows Developers:**  You must run all of these commands in administrator mode.
 
-> If the `typings` folder doesn't show up after `npm install` please install them manually with: `npm run postinstall`
 
 The `npm start` command first compiles the application, then simultaneously re-compiles and runs the `server`.
 Both the compiler and the server watch for file changes. You can shut it down manually by pressing *Ctrl-C*.

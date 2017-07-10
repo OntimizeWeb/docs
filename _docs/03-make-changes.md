@@ -16,81 +16,103 @@ and finally, we are going to navigate to other screen of the application.
 
 # Add a field.
 
-We are going to add a date field into the detail form of an account. So, first of all, we are going to see the aspect of this form. After
-logged in, click on the menu *Views -> Accounts*. A table with several account numbers will be shown. To work all with the same data, we will prefilter 
-the results and select the account that ends in '0002'. The aspect of the detail form is like this picture 
+We are going to add a date field into the detail form of a client. So, first of all, we are going to see the aspect of this form. After
+logged in, click on the menu *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter 
+the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture 
 (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ng2-quickstart)):
 
-<img src="{{ base_path }}/images/main_accounts_detail.png" alt="account detail">
+<img src="{{ base_path }}/images/main_customers_detail.png" alt="customer detail">
 
 For adding the field we have to open the HTML definition file of the form
-under the location *src/app/+main/+accounts/detail/accounts-detail.component.html*. The content of this file is something like this:
+under the location *src/app/main/customers/detail/customers-detail.component.html*. The content of this file is something like this:
 
 ```html
-<div layout="column" layout-align="center top" layout-fill>
-    <o-form layout="column" show-header="yes" label-header="ACCOUNTS" header-actions="R;U;D" entity="EAccounts"
-      keys="ACCOUNTID" #oForm>
-      <div layout="column" layout-fill>
+<o-form entity="ECustomers" keys="CUSTOMERID" fxLayout="column" show-header="yes" header-actions="R;I;U" #oForm>
 
-        <div layout="row" layout-padding>
+  <md-tab-group fxFill>
 
-          <o-column layout-align="start stretch" title-label="ACCOUNT_INFO" elevation="1">
-            <!--title-label="ACCOUNT_NUMBER" elevation="1"-->
-            <o-row attr="row1">
-              <o-text-input attr="ENTITYID" layout-padding class="account align-right"></o-text-input>
-              <o-text-input attr="OFFICEID" layout-padding  class="account align-right"></o-text-input>
-              <o-text-input attr="CDID" layout-padding class="account align-right"></o-text-input>
-              <o-text-input attr="ANID" layout-padding class="align-right"></o-text-input>
-            </o-row>
-            <!-- title-label="BALANCE" elevation="1" -->
-            <o-row attr="row2" >
-              <o-currency-input attr="BALANCE" flex layout-padding class="align-right"></o-currency-input>
-            </o-row>
-            <div layout="row" layout-padding flex></div>
+    <md-tab label="{{ 'DATA' | oTranslate }}">
+      <div fxLayout="column" layout-padding>
+
+        <o-row attr="row1" layout-align="space-between center">
+
+          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <o-nif-input attr="ID" fxFlex="30" class="margin-right-24"></o-nif-input>
+              <o-date-input attr="STARTDATE" fxFlex="30"></o-date-input>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <o-text-input attr="NAME" fxFlex="30" class="margin-right-24"></o-text-input>
+              <o-text-input attr="SURNAME" fxFlex="50"></o-text-input>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <o-list-picker fxFlex="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
+                entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
+                separator=" - " class="margin-right-24">
+              </o-list-picker>
+            </div>
           </o-column>
 
-          <div layout="row" layout-padding></div>
+          <o-column fxFlex="40" layout-align="center center">
+            <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+          </o-column>
+        </o-row>
 
-           <o-column layout-align="start stretch" elevation="1" flex>
-                    <o-chart type="pie" layout-fill [data]="data"  x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" parent-keys="ACCOUNTID"></o-chart>
-           </o-column>
-        </div>
+        <div layout-padding></div>
 
-        <div layout="row" flex layout-padding>
-          <o-table entity="EMovements" title="MOVEMENTS" columns="MOVEMENTID;DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
-            visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPES"
-            keys="MOVEMENTID" parent-keys="ACCOUNTID" sort-columns="DATE_" query-on-init="false" query-rows="6"
-            quick-filter="yes" detail-form-route="transactions" (change)="onTableDataChange($event)">
+        <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding layout-align="start stretch">
+          <o-text-input attr="ADDRESS"></o-text-input>
+          <o-email-input attr="EMAIL"></o-email-input>
+          <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
+        </o-column>
 
-            <o-table-column attr="DATE_" title="DATE_" type="date" format="LL"></o-table-column>
-            <o-table-column attr="CONCEPT" title="CONCEPT"></o-table-column>
-            <o-table-column attr="MOVEMENT" title="MOVEMENT" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-column>
-            <o-table-column attr="MOVEMENTTYPES" title="MOVEMENTTYPES"></o-table-column>
-          </o-table>
-        </div>
-        <div layout="row" flex layout-padding>
-          <o-chart type="line" x-label="Time" y-label="Amount (€)" layout-fill
-             [data]="lineData" x-axis="DATE_" y-axis="BALANCE;MOVEMENT" x-data-type="time" parent-keys="ACCOUNTID"></o-chart>
-        </div>
       </div>
-    </o-form>
-</div>
-```
-Analyzing the code, we can see a *o-form* that contains several fields that take value from the entity *EAccounts* specified. The parameter *attr* of each
-field corresponds with an attribute that exists into the response of the service of the entity *EAccounts*.
+    </md-tab>
 
-We will add our date field after the row with *attr='row2'*. So, we add the code below:
+    <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
+      <div fxLayout="column" layout-padding>
+        <o-table #accountsTable entity="ECustomerAccountBalance" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
+          detail-form-route="accounts" edit-button-in-row="yes" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
+          visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" select-all-checkbox="no"
+          query-on-init="false" query-rows="6" quick-filter="yes" pageable="yes" delete-button="false" insert-button="no">
+
+          <o-table-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-table-button>
+
+          <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+            decimal-separator=",">
+          </o-table-column>
+          <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+        </o-table>
+
+        <o-list-picker class="display-none" (onChange)="onNewAccountSelected($event)" #accountListPicker query-on-init="no" automatic-binding="no"
+          query-on-bind="no" [static-data]="availableAccountsToAdd" required="no" enabled="yes" filter="yes" keys="ACCOUNTID"
+          value-column="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;ACCOUNTTYP" visible-columns="ACCOUNT;BALANCE"
+          separator=" - " dialog-width="600px">
+        </o-list-picker>
+      </div>
+
+    </md-tab>
+  </md-tab-group>
+</o-form>
+```
+
+Analyzing the code, we can see a *o-form* that contains several fields that take value from the entity *ECustomers* specified. The parameter *attr* of each
+field corresponds with an attribute (field name) that exists into the response of the service of the entity *ECustomers*.
+
+We will add our date field after the customer type field with *attr='CUSTOMERTYPEID'*. So, we add the code below:
 
 ```html
-<div layout="row" layout-padding></div>
-<o-row attr="row3" title-label="STARTDATE" elevation="1" flex>
-    <o-date-input attr="STARTDATE" flex layout-padding class="align-right"></o-date-input>
-</o-row>
+<o-text-input attr="PHONE" fxFlex="30"></o-text-input>
 ```
-The date field corresponds to *o-date-input*, the rest of div's and o-row are simply used to place the field according to the others. We set the *attr='STARTDATE'*
-because we know that the entity contains this attribute which corresponds with the opening date of the account.
+The text input field corresponds to *o-text-input*, the rest of div's and o-row are simply used to place the field according to the others. We set the *attr='PHONE'*
+because we know that the entity contains this attribute which corresponds with customer phone number.
 
-If you reload the page on the browser you will see the date field placed to the right of 'Balance' field. 
+If you reload the page on the browser you will see the phone field placed to the right of 'Customer type' field. 
 
 You can find all available fields and all of their configuration parameters into the [Components]({{ base_path }}/components-collection/) section.
 
@@ -98,52 +120,75 @@ You can find all available fields and all of their configuration parameters into
 
 # Validate a field.
 
-The next change that we will perform will be to validate the value of our date field when user changes its value. If the date entered is greater than
+The next change that we will perform will be to validate the value of a form field. In this case we choose a date field (*STARTDATE*) which value will be validated when user changes its value. If the date entered is greater than
 today's date it will shown an alerte message.
 
 Just a little clarification before continuing, the fields are only modifiable when the form is in 'edit' or 'insert' mode. 
-So, taking that in consideration, we have to repeat the step before and add the
-date field, but this time into the file *src/app/+main/+accounts/edit/accounts-edit.component.html*. The content of this file will be like this:
+So, taking that in consideration, we have to use the form defined in the file *src/app/main/customers/edit/customers-edit.component.html*. The content of this file will be like this:
 
 ```html
-<div layout="row" layout-padding layout-align="center center">
+<o-form entity="ECustomers" keys="CUSTOMERID"
+  fxLayout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D" #oForm>
 
-  <div layout="column" flex="50" layout-align="center top">
-    <o-form layout="column" show-header="yes" label-header="ACCOUNTS" entity="EAccounts"
-      keys="ACCOUNTID" #oForm >
-      <div layout="column">
 
-        <div layout="row" flex>
-          <o-text-input attr="ENTITYID" flex layout-padding enabled="false"></o-text-input>
-          <o-text-input attr="OFFICEID" flex layout-padding></o-text-input>
-          <o-text-input attr="CDID" flex layout-padding></o-text-input>
-          <o-text-input attr="ANID" flex layout-padding></o-text-input>
+  <div fxLayout="column" layout-padding class="rounded-panel">
+
+    <o-row attr="row1" layout-align="start stretch">
+
+      <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
+
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <o-nif-input attr="ID" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
+          <o-date-input attr="STARTDATE" fxFlex="30" required="yes"></o-date-input>
         </div>
 
-        <o-row attr="row3" title-label="STARTDATE" elevation="1" flex>
-            <o-date-input attr="STARTDATE" flex layout-padding class="align-right"
-              (onChange)="onDateChange($event)"></o-date-input>
-        </o-row>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <o-text-input attr="NAME" fxFlex="30" class="margin-right-24" required="yes"></o-text-input>
+          <o-text-input attr="SURNAME" fxFlex="50" required="yes"></o-text-input>
 
-      </div>
-    </o-form>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <o-list-picker fxFlex="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
+            value-column="CUSTOMERTYPEID" entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+            visible-columns="DESCRIPTION" separator=" - " class="margin-right-24"></o-list-picker>
+        </div>
+
+      </o-column>
+
+      <o-column fxFlex="40" layout-align="center center">
+        <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
+      </o-column>
+    </o-row>
+
+    <div layout-padding></div>
+
+    <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding fxLayoutAlign="start stretch">
+      <o-text-input attr="ADDRESS"></o-text-input>
+      <o-email-input attr="EMAIL"></o-email-input>
+      <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
+    </o-column>
+
   </div>
-</div>
+
+</o-form>
 ```
-We also need to modify the file *accounts-edit.component.ts* to include our validation code:
 
-```bash
-import { Component } from '@angular/core';
+We also need to modify the file *customers-edit.component.ts* to include our validation code:
 
-import { DialogService } from 'ontimize-web-ng2/ontimize';
+```javascript
+
+import { Component, ViewEncapsulation } from '@angular/core';
+
+import { DialogService } from 'ontimize-web-ng2';
 
 @Component({
-  moduleId: module.id,
-  selector: 'accounts-edit',
-  styleUrls: ['accounts-edit.component.css'],
-  templateUrl: 'accounts-edit.component.html'
+  selector: 'customers-edit',
+  styleUrls: ['./customers-edit.component.scss'],
+  templateUrl: './customers-edit.component.html',
+  encapsulation : ViewEncapsulation.None
 })
-export class AccountsEditComponent {
+export class CustomersEditComponent {
 
   constructor(protected dialogService: DialogService) {
   }
@@ -167,31 +212,43 @@ export class AccountsEditComponent {
 The last test we will do is navigate to another screen of the application. For doing that, we are going to add a button to our screen and, when we click on it,
 we navigato to other screen.
 
-Continuing with the example, in the file *accounts-edit.component.html* we will place anywhere the code of our button.
+Continuing with the example, in the file *customers-edit.component.html* we will place anywhere the code of our button.
 
 ```html
 <o-button type="RAISED" label="Navigate to 'About'" (click)="onButtonClick()"></o-button>
 ```
-And we will modify the file *accounts-edit.component.ts* like this:
+And we will modify the file *customers-edit.component.ts* like this:
 
-```bash
-import { Component } from '@angular/core';
-
+```javascript
+import { Component, ViewEncapsulation } from '@angular/core';
+import { DialogService } from 'ontimize-web-ng2';
 import { Router } from '@angular/router';
 
 @Component({
-  moduleId: module.id,
-  selector: 'accounts-edit',
-  styleUrls: ['accounts-edit.component.css'],
-  templateUrl: 'accounts-edit.component.html'
+  selector: 'customers-edit',
+  styleUrls: ['./customers-edit.component.scss'],
+  templateUrl: './customers-edit.component.html',
+  encapsulation: ViewEncapsulation.None
 })
-export class AccountsEditComponent {
+export class CustomersEditComponent {
 
-  constructor(protected router:Router) {
+  constructor(
+    protected dialogService: DialogService,
+    protected router: Router) {
   }
 
   onButtonClick() {
-    this.router.navigate(["about"]);
+    this.router.navigate(['about']);
+  }
+
+  onDateChange(evt: number) {
+    console.log(evt);
+    // evt contains the date selected in millis.
+    const today = new Date();
+    const todayMillis = today.getTime();
+    if (todayMillis < evt) {
+      this.dialogService.alert('Error', 'Selected date is greater than today\'s date');
+    }
   }
 
 }
@@ -199,11 +256,11 @@ export class AccountsEditComponent {
 Analyzing the code we have to pay attention in a few things:
 
 * We use the Router component for navigating, so, we need to import it and then inject it
-in the constructor of our AccountsEditComponent.
+in the constructor of our CustomersEditComponent.
 * We add the callback function *onButtonClick* that will be executed when user clicks on button.
 
 As we can see, in the callback function we call *navigate* method of router to navigate to other screen of our application. It is important
 to take into account that *"about"* route was previously defined as a route of our application. For further information about routing check this
 [link]({{ base_path }}/docs/routing/). 
 
-That's all, you do not need anythingelse. When user clicks the button it will navigate to the 'About' page.
+That's all, you do not need anything else. When user clicks the button it will navigate to the 'About' page.
