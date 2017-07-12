@@ -34,7 +34,7 @@ You need to have installed [Angular CLI](https://cli.angular.io/) for making eas
 
 ```bash
 # Installing angular cli package globally
-npm install -g @angular/cli
+npm install -g @angular/cli@1.0.0
 ```
 ## Python ##
 
