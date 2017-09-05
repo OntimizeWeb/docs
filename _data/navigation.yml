@@ -22,7 +22,7 @@ foo:
 # main links links
 main:
   - title: "Getting started"
-    url: /docs/example-overview/
+    url: /docs/doc-overview/
 
   - title: "Components"
     url: /components-collection/
@@ -41,6 +41,8 @@ main:
 docs:
   - title: Getting Started
     children:
+      - title: "Document overview"
+        url: /docs/doc-overview/
       - title: "Example overview"
         url: /docs/example-overview/
       - title: "Install and run example"
