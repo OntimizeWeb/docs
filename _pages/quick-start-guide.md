@@ -24,11 +24,11 @@ First of all you need to meet minimum requirements to start. [Check prerequesite
 
 There are several ways to start:
 
-**1.** You can [clone the entire QuickStart application](https://github.com/OntimizeWeb/ontimize-web-ng2-quickstart) from GitHub.
+**1.** You can [clone the entire QuickStart application](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart) from GitHub.
 
 **2.** And for those who don't want to mess with Git, you can download the QuickStart as a ZIP file.
 
-[<i class="fa fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ng2-quickstart/archive/master.zip){: .btn .btn--success}
+[<i class="fa fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ngx-quickstart/archive/master.zip){: .btn .btn--success}
 
 
 ### Install npm packages and running
