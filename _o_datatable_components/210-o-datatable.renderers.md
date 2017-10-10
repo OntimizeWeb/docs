@@ -9,16 +9,16 @@ will be rendered.
 For example:
 
 ```html
-<o-datatable-column attr="PHOTO" orderable="no" searchable="no" type="image" 
+<o-datatable-column attr="PHOTO" orderable="no" searchable="no" type="image"
   image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-</o-datatable-column>  
+</o-datatable-column>
 ```
 
 It would be equivalent to define:
 
 ```html
 <o-datatable-column attr="PHOTO" orderable="no" searchable="no">
-  <o-datatable-cell-renderer-image image-type="base64" 
+  <o-datatable-cell-renderer-image image-type="base64"
     empty-image="assets/images/no-image.png" avatar="yes">
   </o-datatable-cell-renderer-image>
 </o-datatable-column>
@@ -26,7 +26,7 @@ It would be equivalent to define:
 
 ## Default renderers
 
-{% assign filenameArray = "" | split:"|"  %} 
+{% assign filenameArray = "" | split:"|"  %}
 {% for renderers_hash in site.data.components.tableData.renderers %}
   {% assign filenameArray = filenameArray | push: renderers_hash[0] %}
 {% endfor %}
@@ -61,12 +61,12 @@ interface ITableCellRenderer {
 ```
 
 <div style="font-size:15px;" markdown="1">
- * *init(parameters: any)*: used for initialization from ODataTableColumn in default 
- renderers (passing *o-datatable-column* attributes to renderer). 
- It is not necesary to implement in the renderers, initialization should be done in 
+ * *init(parameters: any)*: used for initialization from ODataTableColumn in default
+ renderers (passing *o-datatable-column* attributes to renderer).
+ It is not necesary to implement in the renderers, initialization should be done in
  constructor or in *ngOnInit* method.
  * *render(data: any): string*: code for rendering received data.
- * *handleCreatedCell(cellElement: any, rowData: any)*: this method receives cell HTML code. 
+ * *handleCreatedCell(cellElement: any, rowData: any)*: this method receives cell HTML code.
  Useful for registering event listeners over that code.
 </div>
 
@@ -74,7 +74,7 @@ For example: *movement-types-cell-renderer.component.ts*
 
 ```javascript
 import { Component, Inject, forwardRef } from '@angular/core';
-import { ITableCellRenderer, ODataTableColumnComponent } from 'ontimize-web-ng2/ontimize';
+import { ITableCellRenderer, ODataTableColumnComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'movement-types-cell-renderer',
@@ -82,9 +82,9 @@ import { ITableCellRenderer, ODataTableColumnComponent } from 'ontimize-web-ng2/
 })
 export class MovementTypesCellRendererComponent implements ITableCellRenderer {
 
-  constructor(@Inject(forwardRef(() => ODataTableColumnComponent)) 
+  constructor(@Inject(forwardRef(() => ODataTableColumnComponent))
     tableColumn: ODataTableColumnComponent) {
-      
+
     tableColumn.registerRenderer(this);
   }
 
@@ -93,8 +93,8 @@ export class MovementTypesCellRendererComponent implements ITableCellRenderer {
   }
 
   public render(cellData: any, rowData: any): string {
-    return (typeof(cellData) !== 'undefined') ? 
-      ('<md-icon class="material-icons">filter_' + 
+    return (typeof(cellData) !== 'undefined') ?
+      ('<md-icon class="material-icons">filter_' +
       String(cellData) + '</md-icon>') : '';
   }
 
@@ -115,7 +115,7 @@ Using example
 ```html
 <o-datatable entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"
   columns="MOVEMENTID;CONCEPT;MOVEMENTTYPEID" parent-keys="ACCOUNTID"
-  visible-columns="CONCEPT;MOVEMENTTYPEID"  detail-form-route="transactions"  
+  visible-columns="CONCEPT;MOVEMENTTYPEID"  detail-form-route="transactions"
   query-on-init="false" query-rows="6" quick-filter="yes">
 
   <o-datatable-column attr="CONCEPT" title="CONCEPT"></o-datatable-column>

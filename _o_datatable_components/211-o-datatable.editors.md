@@ -9,9 +9,9 @@ As in the cell renderers, a column can have an *type* attribute indicating which
 For example:
 
 ```html
-<o-datatable-column attr="DATE_" title="DATE_" editable="yes" type="date" format="LL" 
+<o-datatable-column attr="DATE_" title="DATE_" editable="yes" type="date" format="LL"
   date-model-type="string" date-model-format="YYYY-MM-DD HH:mm:ss">
-</o-datatable-column>  
+</o-datatable-column>
 ```
 
 It would be equivalent to define:
@@ -29,7 +29,7 @@ It would be equivalent to define:
 
 ## Default editors
 
-{% assign filenameArray = "" | split:"|"  %} 
+{% assign filenameArray = "" | split:"|"  %}
 {% for editors_hash in site.data.components.tableData.editors %}
   {% assign filenameArray = filenameArray | push: editors_hash[0] %}
 {% endfor %}
@@ -51,7 +51,7 @@ It would be equivalent to define:
 
 ## Creating a custom editor
 
-To create a custom renderer is necessary to create a component implementing the **IDataTableCellEditor** 
+To create a custom renderer is necessary to create a component implementing the **IDataTableCellEditor**
 interface or extending another existing editor.
 
 
@@ -72,26 +72,26 @@ interface IDataTableCellEditor {
 }
 ```
 
-The implementation of this interface is more complex than the renderers interface, 
+The implementation of this interface is more complex than the renderers interface,
 so it is recommended using existing editors as reference.
 
 <div style="font-size:15px;" markdown="1">
   * *onFocus*: event triggered when the editor gets focused.
   * *onBlur*: event triggered when the editor lost its focus.
   * *onSubmit*: event triggered when the editor submits its value.
-  * *init(parameters: any)*: used for initialization from *ODataTableColumn* in default editors 
-  (passing *o-datatable-column* attributes to renderer). 
+  * *init(parameters: any)*: used for initialization from *ODataTableColumn* in default editors
+  (passing *o-datatable-column* attributes to renderer).
   It is not necesary to implement in the new editors, initialization should be done in constructor or in *ngOnInit* method.
   * *getHtml(data: any): string*: string containing editor HTML code.
-  * *handleCellFocus(cellElement: any, data: any)*: handler executed when the editable column cell receives the focus. 
+  * *handleCellFocus(cellElement: any, data: any)*: handler executed when the editable column cell receives the focus.
   Receiving the HTML cell code (<td></td>) to append the editor HTML code in it and current cell data.
-  * *handleCellBlur(cellElement: any)*: handler executed when the editable column cell losts focus. 
+  * *handleCellBlur(cellElement: any)*: handler executed when the editable column cell losts focus.
   Receiving the HTML cell code (<td></td>) for deleting the editor code from it.
   * *create(cellElement: any, data: any)*: method for creating the editor.
   * *destroy(cellElement: any)*: method for deleting the editor.
-  * *performInsertion(cellElement: any)*: method for updating the cell with the editor value. 
+  * *performInsertion(cellElement: any)*: method for updating the cell with the editor value.
   It should invoke *this.tableColumn.update* method.
-  * *createEditorForInsertTable(cellElement: any, data: any)*: method for creating the editor in the table fast insert 
+  * *createEditorForInsertTable(cellElement: any, data: any)*: method for creating the editor in the table fast insert
   row (*insert-table="yes"*).
   * *getInsertTableValue(): any*: method for obtaining the value inserted in the editor in a fast insert row (*insert-table="yes"*).
 </div>
@@ -101,8 +101,8 @@ For example, a editor extending *o-datatable-cell-editor-string* and hiding its 
 ```javascript
 import { Component, Inject, forwardRef } from '@angular/core';
 
-import { ODataTableColumnComponent, 
-  ODataTableCellEditorStringComponent } from 'ontimize-web-ng2/ontimize';
+import { ODataTableColumnComponent,
+  ODataTableCellEditorStringComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'password-cell-editor',
@@ -110,7 +110,7 @@ import { ODataTableColumnComponent,
 })
 export class PasswordCellEditorComponent extends ODataTableCellEditorStringComponent {
 
-  constructor(@Inject(forwardRef(() => ODataTableColumnComponent)) 
+  constructor(@Inject(forwardRef(() => ODataTableColumnComponent))
   tableColumn: ODataTableColumnComponent) {
     super(tableColumn);
   }
@@ -134,8 +134,8 @@ Using example
 </div>
 
 ```html
-<o-datatable entity="EMovements" title="MOVEMENTS" columns="MOVEMENTID;CONCEPT" 
-  visible-columns="CONCEPT" keys="MOVEMENTID" parent-keys="ACCOUNTID" 
+<o-datatable entity="EMovements" title="MOVEMENTS" columns="MOVEMENTID;CONCEPT"
+  visible-columns="CONCEPT" keys="MOVEMENTID" parent-keys="ACCOUNTID"
   query-on-init="false" query-rows="6" quick-filter="yes">
 
   <o-datatable-column attr="CONCEPT" title="CONCEPT" editable="yes">
