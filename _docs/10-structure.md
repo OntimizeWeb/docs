@@ -11,13 +11,13 @@ modified: 2016-08-08T16:25:30-04:00
 ## Overview
 
 The QuickStart application has the structure of an Ontimize Web application. This structure is based on the structure
-of a real-world Angular app but with the specification needed by the Ontimize Web framework.  
+of a real-world Angular app but with the specification needed by the Ontimize Web framework.
 
-The QuickStart has been developed for teaching purposes about how to start programming with Ontimize Web.  
+The QuickStart has been developed for teaching purposes about how to start programming with Ontimize Web.
 
-In following sections of this documents will be explained in detail how is this structure and how each file is used for.  
+In following sections of this documents will be explained in detail how is this structure and how each file is used for.
 
----  
+---
 
 ## Application structure
 
@@ -36,7 +36,7 @@ quick-start
 |    |   |   |──  login.component.scss
 |    |   |   |──  login.component.ts
 |    |   |   |──  login.module.ts           # define login module
-|    |   |   └──  login.theme.scss        
+|    |   |   └──  login.theme.scss
 |    |   |
 |    |   ├──  main/                         # contains all blocks of application.
 |    |   |   ├──  customers/                # customers block.
@@ -46,23 +46,23 @@ quick-start
 |    |   |   |   ├──  new/
 |    |   |   |   |──  customers-routing.module.ts     # register routing of  customers block.
 |    |   |   |   └──  customers.module.ts             # routes of customers block.
-|    |   |   |   
-|    |   |   | 
+|    |   |   |
+|    |   |   |
 |    |   |   |──  ...
-|    |   |   | 
+|    |   |   |
 |    |   |   |──  main.routing.module.ts      # routes of app private section.
 |    |   |   |──  main.component.html
 |    |   |   |──  main.component.scss
 |    |   |   |──  main.component.ts
 |    |   |   └──  main.modules.ts             # define the main section, also import and export necessary modules
-|    |   |    
+|    |   |
 |    |   |
 |    |   |──  shared/                               # contains all stuff (components, services, ...) for sharing on whole app.
 |    |   |   |──  app.menu.config.ts                # app menu configuration parameters.
 |    |   |   |──  app.services.config.ts            # app services configuration parameters.
-|    |   |   |──  movement-types-cell-renderer.ts   # services for renderer cell 
+|    |   |   |──  movement-types-cell-renderer.ts   # services for renderer cell
 |    |   |   └──  shared.modules.ts                 # directives of shared block.
-|    |   |   
+|    |   |
 |    |   |──  app-routing.module.ts     # app routes definition.
 |    |   |──  app.component.html
 |    |   |──  app.component.scss
@@ -84,12 +84,12 @@ quick-start
 |    |──  main-aot.ts                   # file that bootstraps the application and compiles the application with the AOT compiler
 |    |──  polyfills.ts                  # file that help normalize the different browsers have different levels of support of the web standards
 |    |──  styles-aot.scss               # global styles to compile with AOT COMPILER
-|    |──  styles.scss                   # global styles to compile with JIT COMPILER 
+|    |──  styles.scss                   # global styles to compile with JIT COMPILER
 |    |──  test.ts                       # main entry point for your unit tests. It has some custom configuration that might be unfamiliar, but it's not something you'll need to edit.
-|    |──  tsconfig.app.json             # typeScript compiler configuration for the Angular app 
-|    |──  tsconfig.spec.json            # typeScript compiler configuration for the unit tests 
+|    |──  tsconfig.app.json             # typeScript compiler configuration for the Angular app
+|    |──  tsconfig.spec.json            # typeScript compiler configuration for the unit tests
 |    |──  typings.d.ts                  # systemJS module definition
-|    └──  vendor-aot.ts                 # only includes what need 
+|    └──  vendor-aot.ts                 # only includes what need
 |
 
 |──  .editorconfig
@@ -114,8 +114,8 @@ Our typical project needs several configuration files:
 * **[angular-cli.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/.angular-cli.json)** provides information to the angular-cli tool about building the application.
 * **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tslint.json)** helps keep your code style consistent.
 
->Although we use *SystemJS*, it's only one option for loading modules. Use the module loader that you prefer. 
-For *Webpack* and Angular, see [Webpack: an Introduction](https://angular.io/docs/ts/latest/guide/webpack.html). Or, learn more about *SystemJS* configuration in general 
+>Although we use *SystemJS*, it's only one option for loading modules. Use the module loader that you prefer.
+For *Webpack* and Angular, see [Webpack: an Introduction](https://angular.io/docs/ts/latest/guide/webpack.html). Or, learn more about *SystemJS* configuration in general
 [here](https://github.com/systemjs/systemjs/blob/master/docs/config-api.md).
 
 ### Web app
@@ -128,7 +128,7 @@ Define the web app that hosts your application in the file *index.html*.
 <head>
   <meta charset="utf-8">
   <title>Ontimize Web QuickStart</title>
-  
+
   <base href="/">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -227,10 +227,10 @@ The *NgModule* decorator uses the following metadata:
 The noteworthy variables here are:
 
 * **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/).
- 
 
-As a rule, our app will be conformed by different logic blocks which may or may not interact with each. Returning to our example customer management and accounts, 
-it makes sense to have a block containing the logic related to the creation, editing, deleting .. customer and one with the logic of the accounts.  
+
+As a rule, our app will be conformed by different logic blocks which may or may not interact with each. Returning to our example customer management and accounts,
+it makes sense to have a block containing the logic related to the creation, editing, deleting .. customer and one with the logic of the accounts.
 
 As it is shown into the structure schema, the minimum logic blocks that every Ontimize Web app must contain are:
 
