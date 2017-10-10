@@ -178,7 +178,7 @@ defined on them.
 </o-datatable>
 ```
 
-{% for post in site.o_table_components %}
+{% for post in site.o_datatable_components %}
   {% include archive-single.html %}
 {% endfor %}
 
