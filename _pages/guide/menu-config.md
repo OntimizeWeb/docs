@@ -17,7 +17,7 @@ In the quickstart application (check it on [live example](https://ontimizeweb.gi
 
 This component get its content from the app configuration *appMenuConfiguration* property
 (in '*src\app\app.config.ts*'). That property refers to an array defined in a separated file ('*src\app\shared\app.menu.config.ts*') where each element defines a menu entry as it follows:
-
+  
 ```bash
 import { MenuRootItem } from 'ontimize-web-ngx';
 
@@ -40,6 +40,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
   }
 ];
 ```
+
 This menu configuration returns the following menu layout:
 
-![image-right]({{ base_path }}/images/application/menu.PNG){: .align-right}
+![image-center]({{ base_path }}/docs/images/application/menu.PNG){: .align-center}
