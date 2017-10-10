@@ -1,6 +1,6 @@
 ---
 title: "Contributing"
-permalink: /docs/contributing/
+permalink: /contributing/
 excerpt: "How you can contribute to make this documentation better."
 modified: 2016-09-27
 ---

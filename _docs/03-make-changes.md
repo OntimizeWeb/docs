@@ -1,6 +1,6 @@
 ---
 title: "Make some changes"
-permalink: /docs/make-changes/
+permalink: /make-changes/
 excerpt: ""
 modified: 2016-12-12T16:25:30-04:00
 ---
@@ -12,13 +12,13 @@ modified: 2016-12-12T16:25:30-04:00
 
 In this section we are going to make some simple changes on Quickstart app code. We are going to see
 how to add new field into a form. Once added, we are going to learn how to apply our validation logic over this field,
-and finally, we are going to navigate to other screen of the application.  
+and finally, we are going to navigate to other screen of the application.
 
 # Add a field.
 
 We are going to add a date field into the detail form of a client. So, first of all, we are going to see the aspect of this form. After
-logged in, click on the menu *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter 
-the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture 
+logged in, click on the menu *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter
+the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture
 (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart)):
 
 <img src="{{ base_path }}/images/main_customers_detail.png" alt="customer detail">
@@ -261,6 +261,6 @@ in the constructor of our CustomersEditComponent.
 
 As we can see, in the callback function we call *navigate* method of router to navigate to other screen of our application. It is important
 to take into account that *"about"* route was previously defined as a route of our application. For further information about routing check this
-[link]({{ base_path }}/docs/routing/). 
+[link]({{ base_path }}/routing/). 
 
 That's all, you do not need anything else. When user clicks the button it will navigate to the 'About' page.

@@ -1,6 +1,6 @@
 ---
 title: "Install and run example"
-permalink: /docs/install-and-run/
+permalink: /install-and-run/
 excerpt: ""
 modified: 2016-12-12T15:54:02-04:00
 ---

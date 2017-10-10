@@ -1,6 +1,6 @@
 ---
 title: "Documentation overview"
-permalink: /docs/doc-overview/
+permalink: /doc-overview/
 excerpt: ""
 modified: 2016-12-13T16:25:30-04:00
 ---

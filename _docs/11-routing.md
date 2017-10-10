@@ -1,6 +1,6 @@
 ---
 title: "Application routing"
-permalink: /docs/routing/
+permalink: /routing/
 excerpt: "Configuration of routing for an Ontimize Web app."
 modified: 2016-09-29T08:25:30-04:00
 ---
@@ -9,7 +9,7 @@ modified: 2016-09-29T08:25:30-04:00
 
 As a general rule, our application will have more than one screen. So, it is necessary to tell the application how it has to proceed when the user interacts with it.
 
-As good starting point is highly recommended, for getting familiar with the vocabulary and the notations, to have a look at the documentation on the ['Router' Angular 2](https://angular.io/docs/ts/latest/guide/router.html)
+As good starting point is highly recommended, for getting familiar with the vocabulary and the notations, to have a look at the documentation on the ['Router' Angular 2](https://angular.io/ts/latest/guide/router.html)
 
 There is a file where you may have to describe all routes available in your application and it is called and placed into *app/app.routes.ts*. The content of this file looks like:
 

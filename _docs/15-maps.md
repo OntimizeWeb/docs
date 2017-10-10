@@ -1,6 +1,6 @@
 ---
 title: "Maps"
-permalink: /docs/maps/
+permalink: /maps/
 excerpt: ""
 modified: 2016-12-12T18:25:30-04:00
 ---

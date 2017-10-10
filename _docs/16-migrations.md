@@ -1,6 +1,6 @@
 ---
 title: "Migration guides"
-permalink: /docs/migrations/
+permalink: /migrations/
 excerpt: "Versions migration guides."
 ---
 

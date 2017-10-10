@@ -1,6 +1,6 @@
 ---
 title: "Example overview"
-permalink: /docs/example-overview/
+permalink: /example-overview/
 excerpt: ""
 modified: 2016-12-12T16:25:30-04:00
 ---

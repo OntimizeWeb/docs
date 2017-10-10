@@ -1,6 +1,6 @@
 ---
 title: "Forms"
-permalink: /docs/forms/
+permalink: /forms/
 excerpt: ""
 modified: 2016-12-13T10:25:30-04:00
 ---
