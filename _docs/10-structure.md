@@ -24,7 +24,7 @@ In following sections of this documents will be explained in detail how is this 
 Here it is shown default Ontimize Web application's root directory:
 
 ```bash
-quick-start
+ontimize-web-ngx-quickstart
 |──  aot-config/    #Contains files needed for AoT compilation
 |──  src/
 |    ├──  app/                              # Contains all application code
