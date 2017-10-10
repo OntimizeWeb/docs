@@ -1,4 +1,4 @@
-directive : "o-table-cell-renderer-boolean"
+directive : "o-datatable-cell-renderer-boolean"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
@@ -27,4 +27,4 @@ attributes: [{
   required : "",
   description : "Value taken as false"
 }]
-title : "OTableCellRendererBoolean"
+title : "ODataTableCellRendererBoolean"

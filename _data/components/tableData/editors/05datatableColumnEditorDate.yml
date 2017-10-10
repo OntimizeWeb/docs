@@ -1,6 +1,6 @@
-title : "OTableCellEditorDate"
+title : "ODataTableCellEditorDate"
 
-directive : "o-table-cell-editor-date"
+directive : "o-datatable-cell-editor-date"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 

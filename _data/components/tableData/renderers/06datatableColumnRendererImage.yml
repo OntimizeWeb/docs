@@ -1,4 +1,4 @@
-directive : "o-table-cell-renderer-image"
+directive : "o-datatable-cell-renderer-image"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
@@ -22,4 +22,4 @@ attributes: [{
   description : "Image URL when field has no value"
 }]
 
-title : "OTableCellRendererImage"
+title : "ODataTableCellRendererImage"

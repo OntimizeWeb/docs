@@ -1,11 +1,11 @@
-directive : "o-table-button"
+directive : "o-datatable-option"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
 attributes: [{
   name: "icon", 
   type: "string",
-  default : "priority_high",
+  default : "",
   required : "",
   description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
 },{

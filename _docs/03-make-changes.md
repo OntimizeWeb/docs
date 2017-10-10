@@ -74,20 +74,20 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
 
     <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
       <div fxLayout="column" layout-padding>
-        <o-table #accountsTable entity="ECustomerAccountBalance" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
+        <o-datatable #accountsTable entity="ECustomerAccountBalance" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
           detail-form-route="accounts" edit-button-in-row="yes" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
           visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" select-all-checkbox="no"
           query-on-init="false" query-rows="6" quick-filter="yes" pageable="yes" delete-button="false" insert-button="no">
 
-          <o-table-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-table-button>
+          <o-datatable-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-datatable-button>
 
-          <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
-          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+          <o-datatable-column attr="ACCOUNT" title="ACCOUNT" class="o-datatable-column-centered"></o-datatable-column>
+          <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-datatable-column>
+          <o-datatable-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
             decimal-separator=",">
-          </o-table-column>
-          <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
-        </o-table>
+          </o-datatable-column>
+          <o-datatable-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-datatable-column>
+        </o-datatable>
 
         <o-list-picker class="display-none" (onChange)="onNewAccountSelected($event)" #accountListPicker query-on-init="no" automatic-binding="no"
           query-on-bind="no" [static-data]="availableAccountsToAdd" required="no" enabled="yes" filter="yes" keys="ACCOUNTID"

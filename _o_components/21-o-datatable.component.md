@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-table.component/
+permalink: /components/o-datatable.component/
 title: "Table"
 comp: table
 ---
@@ -26,30 +26,30 @@ delete it *DataTables* entries in browser local storage.
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table attr="customers" entity="ECustomers" title="CUSTOMERS" 
+<o-datatable attr="customers" entity="ECustomers" title="CUSTOMERS" 
   columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   editable-columns="NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID" 
   query-on-init="true" query-rows="6" quick-filter="yes" insert-table="yes">
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-datatable-button label="My button" icon="account_circle"></o-datatable-button>
 
-  <o-table-column attr="NAME" title="NAME"></o-table-column>
+  <o-datatable-column attr="NAME" title="NAME"></o-datatable-column>
 
   ...
 
-</o-table>
+</o-datatable>
 ```
 
 <h3 class="grey-color">Typescript code</h3>
 
 ```javascript
   ...
-  import { OTableButtonComponent } from 'ontimize-web-ng2';
+  import { ODataTableButtonComponent } from 'ontimize-web-ng2';
   ...
   @ViewChild('myButton')
-  protected myButton: OTableButtonComponent;
+  protected myButton: ODataTableButtonComponent;
   ...
   ngAfterViewInit() {
     this.myButton.click.subscribe(event => {
@@ -74,31 +74,31 @@ delete it *DataTables* entries in browser local storage.
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table attr="customers" entity="ECustomers" title="CUSTOMERS" 
+<o-datatable attr="customers" entity="ECustomers" title="CUSTOMERS" 
   columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   editable-columns="NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID" 
   query-on-init="true" query-rows="6" quick-filter="yes" insert-table="yes">
 
-  <o-table-option #myOption label="My option" icon="account_circle" icon-position="after">
-  </o-table-option>
+  <o-datatable-option #myOption label="My option" icon="account_circle" icon-position="after">
+  </o-datatable-option>
 
-  <o-table-column attr="NAME" title="NAME"></o-table-column>
+  <o-datatable-column attr="NAME" title="NAME"></o-datatable-column>
 
   ...
 
-</o-table>
+</o-datatable>
 ```
 
 <h3 class="grey-color">Typescript code</h3>
 
 ```javascript
   ...
-  import { OTableOptionComponent } from 'ontimize-web-ng2';
+  import { ODataTableOptionComponent } from 'ontimize-web-ng2';
   ...
   @ViewChild('myOption')
-  protected myOption: OTableOptionComponent;
+  protected myOption: ODataTableOptionComponent;
   ...
   ngAfterViewInit() {
     this.myOption.click.subscribe(event => {
@@ -111,11 +111,11 @@ delete it *DataTables* entries in browser local storage.
 
 ## Columns
 
-Using default renderer (*o-table-cell-renderer-string*) if column attr is present in *visible-columns* attribute from its parent *o-table* directive. 
-In the same way, using the defualt editor (*o-table-cell-editor-string*) if column attr is contained 
-in  the *editable-columns* attribute from its parent *o-table*.
+Using default renderer (*o-datatable-cell-renderer-string*) if column attr is present in *visible-columns* attribute from its parent *o-datatable* directive. 
+In the same way, using the defualt editor (*o-datatable-cell-editor-string*) if column attr is contained 
+in  the *editable-columns* attribute from its parent *o-datatable*.
 
-If *o-table* directive contains inner *o-table-column* elements, using renderers and editors 
+If *o-datatable* directive contains inner *o-datatable-column* elements, using renderers and editors 
 defined on them.
 
 {% capture tableColumnCapture %}
@@ -128,54 +128,54 @@ defined on them.
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table attr="customers" entity="ECustomers" title="CUSTOMERS" 
+<o-datatable attr="customers" entity="ECustomers" title="CUSTOMERS" 
   columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   editable-columns="NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY" 
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID" 
   query-on-init="true" query-rows="6" quick-filter="yes" insert-table="yes">
 
-  <o-table-column attr="PHOTO" orderable="no" searchable="no" type="image" 
+  <o-datatable-column attr="PHOTO" orderable="no" searchable="no" type="image" 
     image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-  </o-table-column>
+  </o-datatable-column>
 
-  <o-table-column attr="NAME" title="NAME"></o-table-column>
+  <o-datatable-column attr="NAME" title="NAME"></o-datatable-column>
 
-  <o-table-column attr="STARTDATE" title="STARTDATE" type="date" 
+  <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" 
     format="MM/DD/YYYY HH:mm:ss">
-  </o-table-column>
+  </o-datatable-column>
 
-  <o-table-column attr="CUSTOMERTYPEID" title="TYPE" editable="true">
-    <o-table-cell-renderer-service entity="ECustomerTypes" 
+  <o-datatable-column attr="CUSTOMERTYPEID" title="TYPE" editable="true">
+    <o-datatable-cell-renderer-service entity="ECustomerTypes" 
       value-column="CUSTOMERTYPEID" 
       columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
-    </o-table-cell-renderer-service>
-    <o-table-cell-editor-combo entity="ECustomerTypes" 
+    </o-datatable-cell-renderer-service>
+    <o-datatable-cell-editor-combo entity="ECustomerTypes" 
       value-column="CUSTOMERTYPEID" separator=" - "
       columns="CUSTOMERTYPEID;DESCRIPTION" 
       visible-columns="CUSTOMERTYPEID;DESCRIPTION">
-    </o-table-cell-editor-combo>
-  </o-table-column>
+    </o-datatable-cell-editor-combo>
+  </o-datatable-column>
 
-  <o-table-column attr="BOOLEAN" title="BOOLEAN" type="boolean" 
+  <o-datatable-column attr="BOOLEAN" title="BOOLEAN" type="boolean" 
     true-value-type="string" true-value="YES"
     false-value-type="icon" false-value="not_interested">
-  </o-table-column>
+  </o-datatable-column>
 
-  <o-table-column attr="INTEGER" title="INTEGER" type="integer" grouping="yes" 
+  <o-datatable-column attr="INTEGER" title="INTEGER" type="integer" grouping="yes" 
     thousand-separator=".">
-  </o-table-column>
+  </o-datatable-column>
 
-  <o-table-column attr="REAL" title="REAL" type="real" grouping="yes" 
+  <o-datatable-column attr="REAL" title="REAL" type="real" grouping="yes" 
     thousand-separator="." decimal-separator="," decimal-digits="4">
-  </o-table-column>
+  </o-datatable-column>
 
-  <o-table-column attr="CURRENCY" title="CURRENCY" type="currency" 
+  <o-datatable-column attr="CURRENCY" title="CURRENCY" type="currency" 
     currency-symbol="€" currency-symbol-position="right" grouping="yes" 
     thousand-separator="." decimal-separator="," decimal-digits="2">
-  </o-table-column>
+  </o-datatable-column>
   
-</o-table>
+</o-datatable>
 ```
 
 {% for post in site.o_table_components %}

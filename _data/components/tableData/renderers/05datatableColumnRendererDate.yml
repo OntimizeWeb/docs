@@ -1,4 +1,4 @@
-directive : "o-table-cell-renderer-date"
+directive : "o-datatable-cell-renderer-date"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
@@ -9,4 +9,4 @@ attributes: [{
   required : "",
   description : "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
 }]
-title : "OTableCellRendererDate"
+title : "ODataTableCellRendererDate"

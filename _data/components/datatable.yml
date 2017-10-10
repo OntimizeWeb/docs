@@ -1,5 +1,5 @@
 
-directive : "o-table"
+directive : "o-datatable"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
@@ -110,7 +110,7 @@ attributes: [{
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Cell edition when it gains focus. Useful when using <em>o-table-cell-renderer-action action=\"edit\"</em> for editing records and avoid having two differents edition modes in same table"
+  description : "Cell edition when it gains focus. Useful when using <em>o-datatable-cell-renderer-action action=\"edit\"</em> for editing records and avoid having two differents edition modes in same table"
 },{
   name: "sort-columns", 
   type: "string",

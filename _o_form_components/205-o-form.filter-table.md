@@ -29,7 +29,7 @@ For this task is enough to set the *parent-keys* attribute in the table componen
     <o-text-input attr="s" label="SURNAME" flex layout-padding></o-text-input>
   </div>
 
-  <o-table attr="customers" entity="ECustomers" title="CUSTOMERS" 
+  <o-datatable attr="customers" entity="ECustomers" title="CUSTOMERS" 
     columns="CUSTOMERID;SURNAME;NAME;STARTDATE;EMAIL;CUSTOMERTYPEID;LATITUDE;LONGITUDE" 
     visible-columns="NAME;SURNAME;STARTDATE;EMAIL;CUSTOMERTYPEID;LATITUDE;LONGITUDE" 
     editable-columns="NAME;SURNAME;STARTDATE;EMAIL;LATITUDE;LONGITUDE" 
@@ -38,49 +38,49 @@ For this task is enough to set the *parent-keys* attribute in the table componen
     query-on-init="true" query-rows="15" quick-filter="yes" 
     insert-table="yes" detail-mode="none" edit-on-focus="no">
 
-    <o-table-column attr="NAME" title="NAME"></o-table-column>
+    <o-datatable-column attr="NAME" title="NAME"></o-datatable-column>
 
-    <o-table-column attr="SURNAME" title="SURNAME"></o-table-column>
+    <o-datatable-column attr="SURNAME" title="SURNAME"></o-datatable-column>
 
-    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL" 
+    <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" format="LL" 
       date-model-type="string" date-model-format="YYYY-MM-DD HH:mm:ss">
-    </o-table-column>
+    </o-datatable-column>
 
-    <o-table-column attr="EMAIL" title="EMAIL"></o-table-column>
+    <o-datatable-column attr="EMAIL" title="EMAIL"></o-datatable-column>
 
-    <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
-      <o-table-cell-renderer-service entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
+    <o-datatable-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
+      <o-datatable-cell-renderer-service entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
         columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
-      </o-table-cell-renderer-service>
-      <o-table-cell-editor-combo entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
+      </o-datatable-cell-renderer-service>
+      <o-datatable-cell-editor-combo entity="ECustomerTypes" value-column="CUSTOMERTYPEID" 
         columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
-      </o-table-cell-editor-combo>
-    </o-table-column>
+      </o-datatable-cell-editor-combo>
+    </o-datatable-column>
 
-    <o-table-column attr="LATITUDE" title="LATITUDE" type="real" 
+    <o-datatable-column attr="LATITUDE" title="LATITUDE" type="real" 
       grouping="no" decimal-separator="," decimal-digits="6">
-    </o-table-column>
+    </o-datatable-column>
 
-    <o-table-column attr="LONGITUDE" title="LONGITUDE" type="real" 
+    <o-datatable-column attr="LONGITUDE" title="LONGITUDE" type="real" 
       grouping="no" decimal-separator="," decimal-digits="6">
-    </o-table-column>
+    </o-datatable-column>
 
-    <o-table-column>
-      <o-table-cell-renderer-action action="edit">
-      </o-table-cell-renderer-action>
-    </o-table-column>
+    <o-datatable-column>
+      <o-datatable-cell-renderer-action action="edit">
+      </o-datatable-cell-renderer-action>
+    </o-datatable-column>
 
-    <o-table-column>
-      <o-table-cell-renderer-action action="delete">
-      </o-table-cell-renderer-action>
-    </o-table-column>
+    <o-datatable-column>
+      <o-datatable-cell-renderer-action action="delete">
+      </o-datatable-cell-renderer-action>
+    </o-datatable-column>
 
-    <o-table-column>
-      <o-table-cell-renderer-action action="detail">
-      </o-table-cell-renderer-action>
-    </o-table-column>
+    <o-datatable-column>
+      <o-datatable-cell-renderer-action action="detail">
+      </o-datatable-cell-renderer-action>
+    </o-datatable-column>
 
-  </o-table>
+  </o-datatable>
 
   </o-form>
 

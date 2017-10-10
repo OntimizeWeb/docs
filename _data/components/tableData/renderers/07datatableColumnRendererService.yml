@@ -1,8 +1,8 @@
 
-title : "OTableCellRendererService"
+title : "ODataTableCellRendererService"
 
 
-directive : "o-table-cell-renderer-service"
+directive : "o-datatable-cell-renderer-service"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
@@ -52,23 +52,23 @@ attributes: [{
 
 example : > 
 
-  <o-table entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"
+  <o-datatable entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"
     columns="MOVEMENTID;CONCEPT;MOVEMENTTYPEID" 
     visible-columns="CONCEPT;MOVEMENTTYPEID" parent-keys="ACCOUNTID" 
     query-on-init="false" query-rows="6" quick-filter="yes" 
     detail-form-route="transactions">
 
-      <o-table-column attr="CONCEPT" title="CONCEPT"></o-table-column>
+      <o-datatable-column attr="CONCEPT" title="CONCEPT"></o-datatable-column>
       
-      <o-table-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPES">
-        <o-table-cell-renderer-service entity="EMovementTypes" 
+      <o-datatable-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPES">
+        <o-datatable-cell-renderer-service entity="EMovementTypes" 
           value-column="MOVEMENTTYPEID" separator=" = "
           columns="MOVEMENTTYPEID;DESCRIPTION" 
           visible-columns="DESCRIPTION;MOVEMENTTYPEID" >
-        </o-table-cell-renderer-service>
-      </o-table-column>
+        </o-datatable-cell-renderer-service>
+      </o-datatable-column>
 
-  </o-table>
+  </o-datatable>
 
 
 

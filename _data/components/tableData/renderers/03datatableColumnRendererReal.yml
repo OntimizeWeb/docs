@@ -1,20 +1,8 @@
-directive : "o-table-cell-renderer-currency"
+directive : "o-datatable-cell-renderer-real"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
 attributes: [{
-  name: "currency-symbol", 
-  type: "string",
-  default : "dolar ($)",
-  required : "",
-  description : "Currency symbol (According to ISO 4217)"
-},{
-  name: "currency-symbol-position", 
-  type: "left | right",
-  default : "left",
-  required : "",
-  description : "Position of currency symbol"
-},{
   name: "grouping", 
   type: "no | false | yes | true",
   default : "yes",
@@ -39,4 +27,5 @@ attributes: [{
   required : "",
   description : "Number of decimals"
 }]
-title : "OTableCellRendererCurrency"
+
+title : "ODataTableCellRendererReal"

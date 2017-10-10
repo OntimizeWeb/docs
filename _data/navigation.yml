@@ -133,13 +133,13 @@ components:
             url: '/form-component/o-form.extend/'
           - title: "Form to filter table"
             url: '/form-component/o-form.filter-table/'
-      - title: "Table"
-        url: /components/o-table.component/  
+      - title: "DataTable"
+        url: /components/o-datatable.component/  
         children: 
           - title: "Column renderers"
-            url: '/table-components/o-table-renderers.component/'
+            url: '/datatable-components/o-datatable-renderers.component/'
           - title: "Column editors"
-            url: '/table-components/o-table-editors.component/'  
+            url: '/datatable-components/o-datatable-editors.component/'  
       - title : "List"
         url: /components/o-list.component/
       - title : "Combo"

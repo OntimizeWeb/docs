@@ -1,5 +1,5 @@
 ---
-permalink: /table-components/o-table-renderers.component/
+permalink: /datatable-components/o-datatable-renderers.component/
 title: "Column renderers"
 ---
 
@@ -9,19 +9,19 @@ will be rendered.
 For example:
 
 ```html
-<o-table-column attr="PHOTO" orderable="no" searchable="no" type="image" 
+<o-datatable-column attr="PHOTO" orderable="no" searchable="no" type="image" 
   image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-</o-table-column>  
+</o-datatable-column>  
 ```
 
 It would be equivalent to define:
 
 ```html
-<o-table-column attr="PHOTO" orderable="no" searchable="no">
-  <o-table-cell-renderer-image image-type="base64" 
+<o-datatable-column attr="PHOTO" orderable="no" searchable="no">
+  <o-datatable-cell-renderer-image image-type="base64" 
     empty-image="assets/images/no-image.png" avatar="yes">
-  </o-table-cell-renderer-image>
-</o-table-column>
+  </o-datatable-cell-renderer-image>
+</o-datatable-column>
 ```
 
 ## Default renderers
@@ -61,8 +61,8 @@ interface ITableCellRenderer {
 ```
 
 <div style="font-size:15px;" markdown="1">
- * *init(parameters: any)*: used for initialization from OTableColumn in default 
- renderers (passing *o-table-column* attributes to renderer). 
+ * *init(parameters: any)*: used for initialization from ODataTableColumn in default 
+ renderers (passing *o-datatable-column* attributes to renderer). 
  It is not necesary to implement in the renderers, initialization should be done in 
  constructor or in *ngOnInit* method.
  * *render(data: any): string*: code for rendering received data.
@@ -74,7 +74,7 @@ For example: *movement-types-cell-renderer.component.ts*
 
 ```javascript
 import { Component, Inject, forwardRef } from '@angular/core';
-import { ITableCellRenderer, OTableColumnComponent } from 'ontimize-web-ng2/ontimize';
+import { ITableCellRenderer, ODataTableColumnComponent } from 'ontimize-web-ng2/ontimize';
 
 @Component({
   selector: 'movement-types-cell-renderer',
@@ -82,8 +82,8 @@ import { ITableCellRenderer, OTableColumnComponent } from 'ontimize-web-ng2/onti
 })
 export class MovementTypesCellRendererComponent implements ITableCellRenderer {
 
-  constructor(@Inject(forwardRef(() => OTableColumnComponent)) 
-    tableColumn: OTableColumnComponent) {
+  constructor(@Inject(forwardRef(() => ODataTableColumnComponent)) 
+    tableColumn: ODataTableColumnComponent) {
       
     tableColumn.registerRenderer(this);
   }
@@ -113,16 +113,16 @@ Using example
 
 
 ```html
-<o-table entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"
+<o-datatable entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"
   columns="MOVEMENTID;CONCEPT;MOVEMENTTYPEID" parent-keys="ACCOUNTID"
   visible-columns="CONCEPT;MOVEMENTTYPEID"  detail-form-route="transactions"  
   query-on-init="false" query-rows="6" quick-filter="yes">
 
-  <o-table-column attr="CONCEPT" title="CONCEPT"></o-table-column>
+  <o-datatable-column attr="CONCEPT" title="CONCEPT"></o-datatable-column>
 
-  <o-table-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPES" type="integer">
+  <o-datatable-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPES" type="integer">
     <movement-types-cell-renderer></movement-types-cell-renderer>
-  </o-table-column>
+  </o-datatable-column>
 
-</o-table>
+</o-datatable>
 ```
