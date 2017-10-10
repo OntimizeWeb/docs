@@ -210,7 +210,7 @@ The noteworthy variables here are:
 * **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/).
 
 
-As a rule, our app will be conformed by different logic blocks which may or may not interact with each. Returning to our example customer management and accounts,
+As a rule, our app will be conformed by different logic blocks (modules) which may or may not interact with each. Returning to our example customer management and accounts,
 it makes sense to have a block containing the logic related to the creation, editing, deleting .. customer and one with the logic of the accounts.
 
 As it is shown into the structure schema, the minimum logic blocks that every Ontimize Web app must contain are:
@@ -224,31 +224,31 @@ You can find more information about logic blocks [here]({{ base_path }}/guide/lo
 
 Now it is time to start up your application, that is, tells to Angular to start the app. You can find more information about Angular bootstraping [here](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#bootstrap).
 
-The file responsible of starting up the app is *'app/main-aot.ts'* and the content is the following:
+The file responsible of starting up the app is *'app/main.ts'* and the content is the following:
 
 
 ```bash
-import './polyfills.ts';
 import { enableProdMode } from '@angular/core';
-import { platformBrowser } from '@angular/platform-browser';
-import { AppModuleNgFactory } from './app/app.module.ngfactory';
-
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 import { ontimizePostBootstrap } from 'ontimize-web-ngx';
 
-enableProdMode();
+if (environment.production) {
+  enableProdMode();
+}
 
-const promise = platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
+const promise = platformBrowserDynamic().bootstrapModule(AppModule);
 promise.then(ontimizePostBootstrap).catch(err => {
   console.error(err.message);
 });
-
 ```
 
-The AOT approach changes application bootstrapping.
+<!-- The AOT approach changes application bootstrapping.
 
 Instead of bootstrapping AppModule,the bootstrap application with the generated module factory, AppModuleNgFactory.
 
-Switch from the platformBrowserDynamic.bootstrap used in JIT compilation to platformBrowser().bootstrapModuleFactory and pass in the AOT-generated AppModuleNgFactory.
+Switch from the platformBrowserDynamic.bootstrap used in JIT compilation to platformBrowser().bootstrapModuleFactory and pass in the AOT-generated AppModuleNgFactory. -->
 
 
 ## Build and run your application
@@ -265,4 +265,4 @@ That command runs the following two parallel node processes:
 * The TypeScript compiler in watch mode.
 * A static file server that loads *index.html* in a browser and refreshes the browser when application files change.
 
-In a browser tab enters [http://localhost:4209](http://localhost:4209) and the application should be displayed.
+In a browser tab enters [http://localhost:4200](http://localhost:4200) and the application should be displayed.

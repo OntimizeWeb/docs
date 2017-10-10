@@ -19,23 +19,26 @@ Following installation to check that you have correctly installed Node.js, you m
 **NOTE**: On the Mac, the command-line is available via the *Terminal* application. On the PC, it's available as *Command Prompt* under *Accessories*.
 
 ```bash
-# Checking node version 
-C:\>node -v 
+# Checking node version
+C:\>node -v
 v6.10.2
 # Checking npm version
 C:\>npm -v
 5.0.3
 ```
 
-If you want to know more about NPM you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm). 
+If you want to know more about NPM you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm).
 
 ## Angular cli ##
 You need to have installed [Angular CLI](https://cli.angular.io/) for making easy to build an applications, generate components, modules and more.
 
 ```bash
 # Installing angular cli package globally
-npm install -g @angular/cli@1.0.0
+npm install -g @angular/cli@latest
 ```
+
+*Note*: '*ontimize-web-ngx@2.0.0*' is using '*@angular/cli@1.3.2'*
+
 ## Python ##
 
 You need to have installed Python (`v2.7` recommended, `v3.x.x` is __*not*__ supported). Download the installer [here](https://www.python.org/downloads/) according your operating system.
