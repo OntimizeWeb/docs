@@ -224,10 +224,11 @@ You can find more information about logic blocks [here]({{ base_path }}/guide/lo
 
 Now it is time to start up your application, that is, tells to Angular to start the app. You can find more information about Angular bootstraping [here](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#bootstrap).
 
-The file responsible of starting up the app is *'app/main.ts'* and the content is the following:
+The file responsible of starting up the app is *'app/main-aot.ts'* and the content is the following:
 
 
 ```bash
+import './polyfills.ts';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
@@ -243,13 +244,6 @@ promise.then(ontimizePostBootstrap).catch(err => {
   console.error(err.message);
 });
 ```
-
-<!-- The AOT approach changes application bootstrapping.
-
-Instead of bootstrapping AppModule,the bootstrap application with the generated module factory, AppModuleNgFactory.
-
-Switch from the platformBrowserDynamic.bootstrap used in JIT compilation to platformBrowser().bootstrapModuleFactory and pass in the AOT-generated AppModuleNgFactory. -->
-
 
 ## Build and run your application
 
