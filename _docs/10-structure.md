@@ -27,72 +27,72 @@ Here it is shown default Ontimize Web application's root directory:
 ontimize-web-ngx-quickstart
 |──  aot-config/    #Contains files needed for AoT compilation
 |──  src/
-|    ├──  app/                              # Contains all application code
-|    |   ├──  login/                        # Login module folder
-|    |   |   |──  login-routing.module.ts   # Login routing module
-|    |   |   |──  login.component.html
-|    |   |   |──  login.component.scss
-|    |   |   |──  login.component.ts
-|    |   |   |──  login.module.ts           # Login module definition
-|    |   |   └──  login.theme.scss
-|    |   |
-|    |   ├──  main/                         # Contains application main module
-|    |   |   ├──  customers/                # Customes module folder
-|    |   |   |   ├──  detail/
-|    |   |   |   ├──  edit/
-|    |   |   |   ├──  home/
-|    |   |   |   ├──  new/
-|    |   |   |   |──  customers-routing.module.ts     # Customers routing module
-|    |   |   |   └──  customers.module.ts             # Customer module definition
-|    |   |   |
-|    |   |   |
-|    |   |   |──  ...
-|    |   |   |
-|    |   |   |──  main.routing.module.ts      # Main routing module
-|    |   |   |──  main.component.html
-|    |   |   |──  main.component.scss
-|    |   |   |──  main.component.ts
-|    |   |   └──  main.modules.ts             # Main module definition
-|    |   |
-|    |   |
-|    |   |──  shared/                               # Shared module folder.
-|    |   |   |──  app.menu.config.ts                # Application menu definition
-|    |   |   |──  app.services.config.ts            # Ontimize JEE services path configuration file
-|    |   |   |──  movement-types-cell-renderer.ts   # Custom component (cell renderer) definition
-|    |   |   └──  shared.modules.ts                 # Shared module definition
-|    |   |
-|    |   |──  app-routing.module.ts     # Application routing module
-|    |   |──  app.component.html
-|    |   |──  app.component.scss
-|    |   |──  app.component.ts          # Application bootstrap component
-|    |   |──  app.config.ts             # Application configuration file
-|    |   └──  app.module.ts             # Application module definition
-|    |
-|    |──  assets/                       # Application assets folder
-|    |    ├──  css/                     # Application css/scss files
-|    |    |──  i18n/                    # JSON bundle files
-|    |    |──  images/                  # Images used in the application.
-|    |    └──  js/                      # Application javascript code files
-|    |
-|    |──  environments/
-|    |
-|    |──  favicon.ico
-|    |──  index.html                    # Web page that hosts the application
-|    |──  main.ts                       # File that bootstraps the application and compiles the application with the JIT compiler
-|    |──  polyfills.ts                  # File that help normalize the different browsers have different levels of support of the web standards
-|    |──  styles.scss                   # Global styles file
-|    |──  test.ts                       # Entry point for your unit tests. It has some custom configuration that might be unfamiliar, but it's not something you'll need to edit.
-|    |──  tsconfig.app.json             # TypeScript compiler configuration for the Angular app
-|    |──  tsconfig.spec.json            # TypeScript compiler configuration for the unit tests
-|    └──  typings.d.ts                  # systemJS module definition
+|  ├──  app/                          # Contains all application code
+|  |  ├──  login/                     # Login module folder
+|  |  |  |──  login-routing.module.ts # Login routing module
+|  |  |  |──  login.component.html
+|  |  |  |──  login.component.scss
+|  |  |  |──  login.component.ts
+|  |  |  |──  login.module.ts         # Login module definition
+|  |  |  └──  login.theme.scss
+|  |  |
+|  |  ├──  main/                              # Contains application main module
+|  |  |  ├──  customers/                      # Customes module folder
+|  |  |  |  ├──  detail/
+|  |  |  |  ├──  edit/
+|  |  |  |  ├──  home/
+|  |  |  |  ├──  new/
+|  |  |  |  |──  customers-routing.module.ts  # Customers routing module
+|  |  |  |  └──  customers.module.ts          # Customer module definition
+|  |  |  |
+|  |  |  |
+|  |  |  |──  ...
+|  |  |  |
+|  |  |  |──  main.routing.module.ts  # Main routing module
+|  |  |  |──  main.component.html
+|  |  |  |──  main.component.scss
+|  |  |  |──  main.component.ts
+|  |  |  └──  main.modules.ts         # Main module definition
+|  |  |
+|  |  |
+|  |  |──  shared/                            # Shared module folder.
+|  |  |  |──  app.menu.config.ts              # Application menu definition
+|  |  |  |──  app.services.config.ts          # Ontimize JEE services path configuration file
+|  |  |  |──  movement-types-cell-renderer.ts # Custom component (cell renderer) definition
+|  |  |  └──  shared.modules.ts               # Shared module definition
+|  |  |
+|  |  |──  app-routing.module.ts  # Application routing module
+|  |  |──  app.component.html
+|  |  |──  app.component.scss
+|  |  |──  app.component.ts       # Application bootstrap component
+|  |  |──  app.config.ts          # Application configuration file
+|  |  └──  app.module.ts          # Application module definition
+|  |
+|  |──  assets/     # Application assets folder
+|  |  ├──  css/     # Application css/scss files
+|  |  |──  i18n/    # JSON bundle files
+|  |  |──  images/  # Images used in the application.
+|  |  └──  js/      # Application javascript code files
+|  |
+|  |──  environments/
+|  |
+|  |──  favicon.ico
+|  |──  index.html          # Web page that hosts the application
+|  |──  main.ts             # File that bootstraps the application and compiles the application with the JIT compiler
+|  |──  polyfills.ts        # File that help normalize the different browsers have different levels of support of the web standards
+|  |──  styles.scss         # Global styles file
+|  |──  test.ts             # Entry point for your unit tests. It has some custom configuration that might be unfamiliar, but it's not something you'll need to edit.
+|  |──  tsconfig.app.json   # TypeScript compiler configuration for the Angular app
+|  |──  tsconfig.spec.json  # TypeScript compiler configuration for the unit tests
+|  └──  typings.d.ts        # systemJS module definition
 |
-|──  angular-cli.json                   # Angular CLI configuration
-|──  karma.conf.js                      # Unit test configuration for the Karma test runner, used when running ng test
-|──  package.json                       # npm package dependencies for the project
-|──  protractor.conf.js                 # End-to-end test configuration for Protractor, used when running ng e2e. See link for more information https://github.com/angular/protractor/blob/master/lib/config.ts
-|──  tsconfig.aot.json                  # TypeScript AOT compiler configuration
-|──  tsconfig.json                      # TypeScript JIT compiler configuration
-└──  tslint.json                        # Linting configuration for TSLint together with Codelyzer, used when running ng lint. Linting helps keep your code style consistent.
+|──  angular-cli.json       # Angular CLI configuration
+|──  karma.conf.js          # Unit test configuration for the Karma test runner, used when running ng test
+|──  package.json           # npm package dependencies for the project
+|──  protractor.conf.js     # End-to-end test configuration for Protractor, used when running ng e2e. See link for more information https://github.com/angular/protractor/blob/master/lib/config.ts
+|──  tsconfig.aot.json      # TypeScript AOT compiler configuration
+|──  tsconfig.json          # TypeScript JIT compiler configuration
+└──  tslint.json            # Linting configuration for TSLint together with Codelyzer, used when running ng lint. Linting helps keep your code style consistent.
 
 ```
 
@@ -260,3 +260,5 @@ That command runs the following two parallel node processes:
 * A static file server that loads *index.html* in a browser and refreshes the browser when application files change.
 
 In a browser tab enters [http://localhost:4200](http://localhost:4200) and the application should be displayed.
+
+### Generate a distribution version
