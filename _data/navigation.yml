@@ -42,45 +42,45 @@ docs:
   - title: Getting Started
     children:
       - title: "Document overview"
-        url: /docs/doc-overview/
+        url: /doc-overview/
       - title: "Example overview"
-        url: /docs/example-overview/
+        url: /example-overview/
       - title: "Install and run example"
-        url: /docs/install-and-run/
+        url: /install-and-run/
       - title: "Make some changes"
-        url: /docs/make-changes/
+        url: /make-changes/
       - title: "Do something advanced"
-        url: /docs/advanced-changes/
+        url: /advanced-changes/
 
 
   - title: Guide
     children:
       - title: "Structure"
-        url: /docs/structure/
+        url: /structure/
       - title: "Routing"
-        url: /docs/routing/
+        url: /routing/
       - title: "Forms"
-        url: /docs/forms/
+        url: /forms/
       - title: "Permission"
-        url: /docs/permission/
+        url: /permission/
       - title: "Charts"
-        url: /docs/charts/
+        url: /charts/
       - title: "Maps"
-        url: /docs/maps/
+        url: /maps/
       - title: "Migration guides"
-        url: /docs/migrations/
+        url: /migrations/
 
   - title: Customization
     children:
       - title: "Theming"
-        url: /docs/theming/
+        url: /theming/
 
   - title: Meta
     children:
       - title: "Contributing"
-        url: /docs/contributing/
+        url: /contributing/
       - title: "License"
-        url: /docs/license/
+        url: /license/
       - title: "About"
         url: /about/
 # components links
