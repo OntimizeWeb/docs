@@ -1,5 +1,5 @@
 
-directive : "o-table-column"
+directive : "o-datatable-column"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 
@@ -32,7 +32,7 @@ attributes: [{
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-table</em>"
+  description : "Indicates whether the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-datatable</em>"
 },{
   name: "type", 
   type: "string | boolean | integer | real | currency | date | image",

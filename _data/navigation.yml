@@ -22,7 +22,7 @@ foo:
 # main links links
 main:
   - title: "Getting started"
-    url: /docs/example-overview/
+    url: /doc-overview/
 
   - title: "Components"
     url: /components-collection/
@@ -41,42 +41,46 @@ main:
 docs:
   - title: Getting Started
     children:
+      - title: "Document overview"
+        url: /doc-overview/
       - title: "Example overview"
-        url: /docs/example-overview/
+        url: /example-overview/
       - title: "Install and run example"
-        url: /docs/install-and-run/
+        url: /install-and-run/
       - title: "Make some changes"
-        url: /docs/make-changes/
+        url: /make-changes/
       - title: "Do something advanced"
-        url: /docs/advanced-changes/
-      
+        url: /advanced-changes/
+
 
   - title: Guide
     children:
       - title: "Structure"
-        url: /docs/structure/
+        url: /structure/
       - title: "Routing"
-        url: /docs/routing/
+        url: /routing/
       - title: "Forms"
-        url: /docs/forms/
+        url: /forms/
       - title: "Permission"
-        url: /docs/permission/
+        url: /permission/
       - title: "Charts"
-        url: /docs/charts/
+        url: /charts/
       - title: "Maps"
-        url: /docs/maps/
+        url: /maps/
+      - title: "Migration guides"
+        url: /migrations/
 
   - title: Customization
     children:
       - title: "Theming"
-        url: /docs/theming/
+        url: /theming/
 
   - title: Meta
     children:
       - title: "Contributing"
-        url: /docs/contributing/
+        url: /contributing/
       - title: "License"
-        url: /docs/license/
+        url: /license/
       - title: "About"
         url: /about/
 # components links
@@ -94,7 +98,7 @@ components:
       - title: "Email"
         url: /components/o-email-input.component/
       - title: "Password"
-        url: /components/o-password-input.component/  
+        url: /components/o-password-input.component/
       - title: "Currency"
         url: /components/o-currency-input.component/
       - title: "Date"
@@ -109,12 +113,12 @@ components:
         url: /components/o-search-input.component/
       - title: "List picker"
         url: /components/o-list-picker.component/
-        children : 
+        children :
           - title: "List picker dialog"
             url: /list-picker-component/o-list-picker-dialog.component/
       - title: "Checkbox"
         url: /components/o-checkbox.component/
-              
+
   - title: Button
     children:
       - title: "Button"
@@ -124,22 +128,22 @@ components:
     children:
       - title: "Form"
         url: /components/o-form.component/
-        children: 
+        children:
           - title: "Extending a form"
             url: '/form-component/o-form.extend/'
           - title: "Form to filter table"
             url: '/form-component/o-form.filter-table/'
-      - title: "Table"
-        url: /components/o-table.component/  
-        children: 
+      - title: "DataTable"
+        url: /components/o-datatable.component/
+        children:
           - title: "Column renderers"
-            url: '/table-components/o-table-renderers.component/'
+            url: '/datatable-components/o-datatable-renderers.component/'
           - title: "Column editors"
-            url: '/table-components/o-table-editors.component/'  
+            url: '/datatable-components/o-datatable-editors.component/'
       - title : "List"
         url: /components/o-list.component/
       - title : "Combo"
-        url: /components/o-combo.component/  
+        url: /components/o-combo.component/
 
   - title: Media
     children:
@@ -149,17 +153,17 @@ components:
   - title: Layout
     children:
       - title: "Dialog"
-        url: /components/o-dialog.component/        
+        url: /components/o-dialog.component/
 
   - title: Menu
     children:
       - title: "Bar menu"
         url: /components/o-bar-menu.component/
       - title: "Side menu"
-        url: /components/o-side-menu.component/                
+        url: /components/o-side-menu.component/
   - title: "FAQ"
-    url: /components/faq/      
+    url: /components/faq/
 
 
 
-        
+

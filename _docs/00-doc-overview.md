@@ -1,6 +1,6 @@
 ---
 title: "Documentation overview"
-permalink: /docs/doc-overview/
+permalink: /doc-overview/
 excerpt: ""
 modified: 2016-12-13T16:25:30-04:00
 ---
@@ -17,9 +17,9 @@ visit [Angular documentation ](https://angular.io/docs/ts/latest/) first.
 
 The documentation is divided into thematic sections.
 
-| [Getting started]({{ base_path }}/docs/example-overview/) | First contact with Ontimize Web app. Run sample app code.   |
-| [Guide]({{ base_path }}/docs/structure/)                  | More extensive documentation explaining all stuff related with Ontimize Web that you have to know. |
-| [Customization]({{ base_path }}/docs/theming/)            | Explanation of app's customization.   |
+| [Getting started]({{ base_path }}/example-overview/) | First contact with Ontimize Web app. Run sample app code.   |
+| [Guide]({{ base_path }}/structure/)                  | More extensive documentation explaining all stuff related with Ontimize Web that you have to know. |
+| [Customization]({{ base_path }}/theming/)            | Explanation of app's customization.   |
 
 
----  
+---

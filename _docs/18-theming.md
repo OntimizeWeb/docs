@@ -1,6 +1,6 @@
 ---
 title: "Theming"
-permalink: /docs/theming/
+permalink: /theming/
 excerpt: "How you can customize palette colors of your app."
 modified: 2016-11-23
 ---
@@ -26,7 +26,7 @@ Each Ontimize Web application follows material design guidelines proposed by Goo
  by using predefined ones or creating new ones by ourselves.
 
 
-## Configuration 
+## Configuration
 
 The configuration of the theme is performed into the file *app.scss* that is placed into */assets/css* folder. The configuration is done in two steps:
 
@@ -42,14 +42,14 @@ Here is an example of configuration:
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework
 */
-@import 'node_modules/ontimize-web-ng2/ontimize/components/theming/all-theme.scss';
+@import 'node_modules/ontimize-web-ngx/components/theming/all-theme.scss';
 @include o-material-theme($theme);
 
 ```
 
 ## Predefined themes
 
-The official library of components @angular/material contains four predefined themes. All of them 
+The official library of components @angular/material contains four predefined themes. All of them
 are stored in their corresponding files in the path *node_modules/@angular/material/core/theming/prebuilt/*
 
 * **deeppurple-amber.scss**
@@ -189,7 +189,7 @@ Now you just have have to call the `@mixin` function to apply the theme definiti
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework
 */
-@import 'node_modules/ontimize-web-ng2/ontimize/components/theming/all-theme.scss';
+@import 'node_modules/ontimize-web-ngx/components/theming/all-theme.scss';
 @include o-material-theme($theme);
 
 /*

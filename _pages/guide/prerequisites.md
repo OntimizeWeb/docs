@@ -12,23 +12,32 @@ sidebar:
 
 ## Node & NPM ##
 
-Make sure you have NodeJS installed. Download the installer [here](http://nodejs.org/) or use your favorite package manager (you must download the installer according to your platform and operative system). It’s best to get the **5.x.x** version of node along with the **3.x.x** version of npm. This offers the best in stability and speed for building.
+Make sure you have NodeJS installed. Download the installer [here](http://nodejs.org/) or use your favorite package manager (you must download the installer according to your platform and operative system). It’s best to get the **6.x.x** version of node along with the **5.x.x** version of npm. This offers the best in stability and speed for building.
 
 Following installation to check that you have correctly installed Node.js, you must be able to invoke *node* and *npm* commands in the command-line, for example:
 
 **NOTE**: On the Mac, the command-line is available via the *Terminal* application. On the PC, it's available as *Command Prompt* under *Accessories*.
 
 ```bash
-# Checking node version 
-C:\>node -v 
-v6.2.0
+# Checking node version
+C:\>node -v
+v6.10.2
 # Checking npm version
 C:\>npm -v
-3.5.2
+5.0.3
 ```
 
-If you want to know more about NPM you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm). 
+If you want to know more about NPM you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm).
 
+## Angular cli ##
+You need to have installed [Angular CLI](https://cli.angular.io/) for making easy to build an applications, generate components, modules and more.
+
+```bash
+# Installing angular cli package globally
+npm install -g @angular/cli@latest
+```
+
+*Note*: '*ontimize-web-ngx@2.0.0*' is using '*@angular/cli@1.3.2'*
 
 ## Python ##
 

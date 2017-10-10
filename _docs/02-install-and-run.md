@@ -1,6 +1,6 @@
 ---
 title: "Install and run example"
-permalink: /docs/install-and-run/
+permalink: /install-and-run/
 excerpt: ""
 modified: 2016-12-12T15:54:02-04:00
 ---
@@ -17,11 +17,11 @@ Before installing and running you need to meet minimum requirements to start. [C
 
 There are several ways to start:
 
-**a)** You can [clone the entire QuickStart application](https://github.com/OntimizeWeb/ontimize-web-ng2-quickstart) from GitHub.
+**a)** You can [clone the entire QuickStart application](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart) from GitHub.
 
 **b)** And for those who don't want to mess with Git, you can download the QuickStart as a ZIP file.
 
-[<i class="fa fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ng2-quickstart/archive/master.zip){: .btn .btn--success}
+[<i class="fa fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ngx-quickstart/archive/master.zip){: .btn .btn--success}
 
 
 
@@ -36,8 +36,6 @@ npm install
 npm start
 ```
 > **Attention Windows Developers:**  You must run all of these commands in administrator mode.
-
-> If the `typings` folder doesn't show up after `npm install` please install them manually with: `npm run postinstall`
 
 The `npm start` command first compiles the application, then simultaneously re-compiles and runs the `server`.
 Both the compiler and the server watch for file changes. You can shut it down manually by pressing *Ctrl-C*.

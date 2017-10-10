@@ -1,6 +1,6 @@
 ---
 title: "Do something advanced"
-permalink: /docs/advanced-changes/
+permalink: /advanced-changes/
 excerpt: ""
 modified: 2016-12-12T16:25:30-04:00
 ---

@@ -1,6 +1,6 @@
-title : "OTableCellEditorCombo"
+title : "ODataTableCellEditorCombo"
 
-directive : "o-table-cell-editor-combo"
+directive : "o-datatable-cell-editor-combo"
 
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
 

@@ -1,6 +1,6 @@
 ---
 title: "License"
-permalink: /docs/license/
+permalink: /license/
 excerpt: "License for Ontimize Web."
 modified: 2016-09-27T15:05:12-04:00
 ---

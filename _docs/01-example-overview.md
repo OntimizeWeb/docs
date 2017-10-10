@@ -1,6 +1,6 @@
 ---
 title: "Example overview"
-permalink: /docs/example-overview/
+permalink: /example-overview/
 excerpt: ""
 modified: 2016-12-12T16:25:30-04:00
 ---
@@ -17,7 +17,7 @@ the navigation between screens or see a small sample of the set of fields that O
 
 Run the live example.
 
-<div><a href="https://ontimizeweb.github.io/ontimize-web-ng2-quickstart" target="_blank" class="btn btn--success">
+<div><a href="https://ontimizeweb.github.io/ontimize-web-ngx-quickstart" target="_blank" class="btn btn--success">
     <i class="fa fa-play"></i>
     live demo</a></div>
 

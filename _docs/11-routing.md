@@ -1,15 +1,15 @@
 ---
 title: "Application routing"
-permalink: /docs/routing/
+permalink: /routing/
 excerpt: "Configuration of routing for an Ontimize Web app."
 modified: 2016-09-29T08:25:30-04:00
 ---
 
-## Overview 
+## Overview
 
-As a general rule, our application will have more than one screen. So, it is necessary to tell the application how it has to proceed when the user interacts with it. 
+As a general rule, our application will have more than one screen. So, it is necessary to tell the application how it has to proceed when the user interacts with it.
 
-As good starting point is highly recommended, for getting familiar with the vocabulary and the notations, to have a look at the documentation on the ['Router' Angular 2](https://angular.io/docs/ts/latest/guide/router.html) 
+As good starting point is highly recommended, for getting familiar with the vocabulary and the notations, to have a look at the documentation on the ['Router' Angular 2](https://angular.io/ts/latest/guide/router.html)
 
 There is a file where you may have to describe all routes available in your application and it is called and placed into *app/app.routes.ts*. The content of this file looks like:
 
@@ -48,9 +48,9 @@ export const routing = RouterModule.forRoot(routes, opt);
 ```
 
 The most important aspect of this file reside on last line, where it is being exported the constant *'routing'* that contains all rotues availables for the app collected
-into the constant *routes*. Let me show you how to configure these routes.  
+into the constant *routes*. Let me show you how to configure these routes.
 
->By convention each logic block of the app exports its own routes. It is the way of having nested and organized application routes.  
+>By convention each logic block of the app exports its own routes. It is the way of having nested and organized application routes.
 
 As you can see in this example, the routes of the application are composed by arrays of subroutes, in this case:
 
@@ -80,7 +80,7 @@ The content of this file is shown here:
 //main.routes.ts
 
 import { Routes } from '@angular/router';
-import { AuthGuardService } from 'ontimize-web-ng2/ontimize';
+import { AuthGuardService } from 'ontimize-web-ngx';
 
 import {
   CustomerRoutes
@@ -105,12 +105,12 @@ Noteworthies aspects here are:
 * We are exporting an array constant with private app routes.
 * It is set up that our url path of private section is '/main' and the component responsible of rendering is MainComponent.
 * It is set up a gardian to check user session by *'canActivate'* parameter.
-* It is defined subroutes by *'children'* parameter (the routes of each logic block) and set up default route ('customers') when empty path is specified. 
+* It is defined subroutes by *'children'* parameter (the routes of each logic block) and set up default route ('customers') when empty path is specified.
 
 So, let's organize all this stuff on our minds. Basically, we are exporting an array of private routes, that are composed by subroutes (the routes of each logic block), telling
-the system that there will be a guard responsible of checking user authentication (AuthGuardService) and setting which will be default route when empty path is specified.  
+the system that there will be a guard responsible of checking user authentication (AuthGuardService) and setting which will be default route when empty path is specified.
 
-If we continue with the organizational hierarchy of routes, we need to explore the routes exported by a logical block. 
+If we continue with the organizational hierarchy of routes, we need to explore the routes exported by a logical block.
 The content of the file *app/+main/+customers/customers.routes.ts* is shown here:
 
 ```bash
@@ -142,14 +142,14 @@ export const CustomerRoutes: Routes = [
 ```
 In this file are defined typical routes related with a logical block, that is:
 
-* **'customers':** entry point of this logical block. Typically it will contain a list or table of all elments of the block, in this case, a table with all customers. The view 
+* **'customers':** entry point of this logical block. Typically it will contain a list or table of all elments of the block, in this case, a table with all customers. The view
 will be rendered by *CustomersHomeComponent*.
 * **'customers/:CUSTOMERID':** detail of selected item. The *:CUSTOMERID* is the token for a route parameter. In a URL such as "/customers/22", "22" is the value
-of :CUSTOMERID parameter that, as general rule, will be the primary key. The component *CustomersDetailComponent* will render the view (usually a form) with the details of selected item.  
+of :CUSTOMERID parameter that, as general rule, will be the primary key. The component *CustomersDetailComponent* will render the view (usually a form) with the details of selected item.
 When displaying detail data of an item into a form, all inputs contained on it are in **read only** mode, that is, the inputs only displays data but can not be edited.
 * **'customers/new':** view for inserting new item of the collection. *NewCustomerComponent* is the responsible of rendering this view.
 NOTE: if you do not need specific logic when inserting new item, you can reuse the detail component (CustomersDetailComponent).
-* **'customers/:CUSTOMERID/edit':** view for editing values of the item. In this mode, the inputs contained into the form are ready for edition, so you can type, change, select, etc for changing values.  
+* **'customers/:CUSTOMERID/edit':** view for editing values of the item. In this mode, the inputs contained into the form are ready for edition, so you can type, change, select, etc for changing values.
 As in the case before, you can reuse detail component CustomersDetailComponent.
 
 
