@@ -207,7 +207,7 @@ The *NgModule* decorator uses the following metadata:
 
 The noteworthy variables here are:
 
-* **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/).
+* **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/){:target="_blank"}.
 
 
 As a rule, our app will be conformed by different logic blocks (modules) which may or may not interact with each. Returning to our example customer management and accounts,
@@ -218,7 +218,7 @@ As it is shown into the structure schema, the minimum logic blocks that every On
 * **login:** This is a public block (always accesible) responsible of login process.
 * **main:** This is a container for all private logic blocks of our application (e.g. customers, accounts, ...)
 
-You can find more information about logic blocks [here]({{ base_path }}/guide/logic-blocks).
+You can find more information about logic blocks [here]({{ base_path }}/guide/logic-blocks){:target="_blank"}.
 
 ## Start up your application
 
@@ -290,7 +290,7 @@ Compile TypeScript during build phase.
 * More secure, original source not disclosed.
 * Suitable for production builds.
 
-Ontimize web has its own plugin for the AoT distribution version creation, you can see more details [here]({{ base_path }}/add-ons/ontimize-web-ngx/). So you can generate your application AoT distribution version installing '*ontimize-web-ngx-tools*' and adding and running this script (with no parameters in this example) to your package.json.
+Ontimize web has its own plugin for the AoT distribution version creation, you can see more details [here]({{ base_path }}/ontimize-web-ngx-tools/){:target="_blank"}. So you can generate your application AoT distribution version installing '*ontimize-web-ngx-tools*' and adding and running this script (with no parameters in this example) to your package.json.
 
   ```bash
   "production-aot": "ontimize-web-ngx production-aot"

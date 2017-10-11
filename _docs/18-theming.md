@@ -27,7 +27,7 @@ Each Ontimize Web application follows material design guidelines proposed by Goo
 
 ## Configuration
 
-In order to make theming job easier, Ontimize Web provides a theming add-on called '*ontimize-web-ngx-theming*', you can see more information about it [here]({{ base_path }}/ontimize-web-ngx-theming/).
+In order to make theming job easier, Ontimize Web provides a theming add-on called '*ontimize-web-ngx-theming*', you can see more information about it [here]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"}.
 
 The configuration of the theme is performed into the file *app.scss* that is placed into */assets/css* folder. The configuration is done in two steps:
 
@@ -52,7 +52,7 @@ Here is an example of configuration:
 
 ## Predefined themes
 
-['*ontimize-web-ngx-theming*']({{ base_path }}/ontimize-web-ngx-theming/) provides predefined themes. All of them
+['*ontimize-web-ngx-theming*']({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"} provides predefined themes. All of them
 are stored in their corresponding files in the path *node_modules/ontimize-web-ngx-theming/src/themes/*
 
 * **md-deeppurple-amber.scss**

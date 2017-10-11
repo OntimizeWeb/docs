@@ -7,6 +7,8 @@ sidebar:
         nav: "docs"
 ---
 
+{% include base_path %}
+
 In the quickstart application (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart)) the main module component template ('*src\app\main\main.component.html*') wraps the main module content into a '*o-app-layout*' component:
 
 ```html
@@ -42,4 +44,4 @@ export const MENU_CONFIG: MenuRootItem[] = [
 ```
 Ontimize web parses each item and according to its parameters renders a propper menu item. This menu configuration returns the following menu layout:
 
-![image-center]({{ base_path }}/docs/images/application/menu.PNG){: .align-center}
+![image-center]({{ base_path }}/images/application/menu.PNG){: .align-center}
