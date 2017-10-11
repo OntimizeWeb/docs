@@ -25,7 +25,7 @@ Ontimize Web Tools module is stored in [github](https://github.com/OntimizeWeb/o
 If you are using a seed application with no previous installed version of '*ontimize-web-ngx-tools*' and you want to use it now you have to follow the next steps:
 
 * In your application routing modules make sure that you are using function callbacks in the '*loadChildren*' properties, as seen [here]({{ base_path }}/routing/).
-* Download the necessary resources [here](){:target="_blank"}.
+* Download the necessary resources [here](https://drive.google.com/file/d/0B5lrV0DE-eStNk1zdXVjRmJJYVk/view?usp=sharing){:target="_blank"}.
 * Using the downloaded resources:
   * Replace your '*config*' folder with '*aot-config*'.
     * **Important:** if you made some changes to your '*config/index.ejs*' or '*config/webpack-aot.config.js*' you should copy that changes into the new '*aot-config*' correspondant files.
