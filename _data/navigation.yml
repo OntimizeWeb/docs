@@ -52,6 +52,21 @@ docs:
       - title: "Do something advanced"
         url: /advanced-changes/
 
+
+  - title: Guide
+    children:
+      - title: "Structure"
+        url: /structure/
+      - title: "Routing"
+        url: /routing/
+      - title: "Forms"
+        url: /forms/
+      - title: "Permission"
+        url: /permission/
+
+      - title: "Migration guides"
+        url: /migrations/
+
   - title: Add-ons
     children:
       - title: "Tools"
@@ -72,20 +87,6 @@ docs:
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
         url: /ontimize-web-ngx-seed/
-  - title: Guide
-    children:
-      - title: "Structure"
-        url: /structure/
-      - title: "Routing"
-        url: /routing/
-      - title: "Forms"
-        url: /forms/
-      - title: "Permission"
-        url: /permission/
-
-      - title: "Migration guides"
-        url: /migrations/
-
   - title: Customization
     children:
       - title: "Theming"
