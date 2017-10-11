@@ -1,6 +1,6 @@
 ---
 permalink: /ontimize-web-ngx-seed/
-title: "JEE App Seed"
+title: "App Seed"
 excerpt: ""
 ---
 

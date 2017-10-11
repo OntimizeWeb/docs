@@ -112,7 +112,7 @@ We will add our date field after the customer type field with *attr='CUSTOMERTYP
 The text input field corresponds to *o-text-input*, the rest of div's and o-row are simply used to place the field according to the others. We set the *attr='PHONE'*
 because we know that the entity contains this attribute which corresponds with customer phone number.
 
-If you reload the page on the browser you will see the phone field placed to the right of 'Customer type' field. 
+If you reload the page on the browser you will see the phone field placed to the right of 'Customer type' field.
 
 You can find all available fields and all of their configuration parameters into the [Components]({{ base_path }}/components-collection/) section.
 
@@ -123,7 +123,7 @@ You can find all available fields and all of their configuration parameters into
 The next change that we will perform will be to validate the value of a form field. In this case we choose a date field (*STARTDATE*) which value will be validated when user changes its value. If the date entered is greater than
 today's date it will shown an alerte message.
 
-Just a little clarification before continuing, the fields are only modifiable when the form is in 'edit' or 'insert' mode. 
+Just a little clarification before continuing, the fields are only modifiable when the form is in 'edit' or 'insert' mode.
 So, taking that in consideration, we have to use the form defined in the file *src/app/main/customers/edit/customers-edit.component.html*. The content of this file will be like this:
 
 ```html
@@ -180,7 +180,7 @@ We also need to modify the file *customers-edit.component.ts* to include our val
 
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { DialogService } from 'ontimize-web-ng2';
+import { DialogService } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'customers-edit',
@@ -221,7 +221,7 @@ And we will modify the file *customers-edit.component.ts* like this:
 
 ```javascript
 import { Component, ViewEncapsulation } from '@angular/core';
-import { DialogService } from 'ontimize-web-ng2';
+import { DialogService } from 'ontimize-web-ngx';
 import { Router } from '@angular/router';
 
 @Component({
@@ -261,6 +261,6 @@ in the constructor of our CustomersEditComponent.
 
 As we can see, in the callback function we call *navigate* method of router to navigate to other screen of our application. It is important
 to take into account that *"about"* route was previously defined as a route of our application. For further information about routing check this
-[link]({{ base_path }}/routing/). 
+[link]({{ base_path }}/routing/).
 
 That's all, you do not need anything else. When user clicks the button it will navigate to the 'About' page.

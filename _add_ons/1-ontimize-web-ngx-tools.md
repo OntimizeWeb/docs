@@ -25,14 +25,14 @@ Ontimize Web Tools module is stored in [github](https://github.com/OntimizeWeb/o
 ## Usage
 
 ```bash
-  Commands:
+Commands:
 
-    production-aot  building AoT distribution version
+  production-aot  building AoT distribution version
 
-  Options:
+Options:
 
-    --href      index.html <base href=> value (default './')              [string]
+  --href      index.html <base href=> value (default './')  [string]
 
-    -h, --help  Show help                                                [boolean]
+  -h, --help  Show help                                     [boolean]
 ```
 

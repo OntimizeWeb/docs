@@ -2,7 +2,6 @@
 title: "Theming"
 permalink: /theming/
 excerpt: "How you can customize palette colors of your app."
-modified: 2016-11-23
 ---
 
 {% include base_path %}
@@ -28,6 +27,8 @@ Each Ontimize Web application follows material design guidelines proposed by Goo
 
 ## Configuration
 
+In order to make theming job easier, Ontimize Web provides a theming add-on called '*ontimize-web-ngx-theming*', you can see more information about it [here]({{ base_path }}/ontimize-web-ngx-theming/).
+
 The configuration of the theme is performed into the file *app.scss* that is placed into */assets/css* folder. The configuration is done in two steps:
 
 1. Import file that contains colors definition (predefined or custom).
@@ -36,26 +37,33 @@ The configuration of the theme is performed into the file *app.scss* that is pla
 Here is an example of configuration:
 
 ```css
-/***** Importing @angular/material predefined theme. *****/
-@import 'node_modules/@angular/material/core/theming/prebuilt/indigo-pink.scss';
+/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/md-indigo-pink.scss'; */
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/o-indigo-pink.scss'; */
+@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework
 */
-@import 'node_modules/ontimize-web-ngx/components/theming/all-theme.scss';
+@import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
 @include o-material-theme($theme);
 
 ```
 
 ## Predefined themes
 
-The official library of components @angular/material contains four predefined themes. All of them
-are stored in their corresponding files in the path *node_modules/@angular/material/core/theming/prebuilt/*
+['*ontimize-web-ngx-theming*']({{ base_path }}/ontimize-web-ngx-theming/) provides predefined themes. All of them
+are stored in their corresponding files in the path *node_modules/ontimize-web-ngx-theming/src/themes/*
 
-* **deeppurple-amber.scss**
-* **indigo-pink.scss**
-* **pink-bluegrey.scss**
-* **purple-green.scss**
+* **md-deeppurple-amber.scss**
+* **md-indigo-pink.scss**
+* **md-pink-bluegrey.scss**
+* **md-purple-green.scss**
+* **o-deeppurple-amber.scss**
+* **o-indigo-pink.scss**
+* **o-pink-bluegrey.scss**
+* **o-purple-green.scss**
+* **ontimize.scss**
 
 
 ## Custom theme definition
@@ -75,13 +83,13 @@ from library, we just import our custom file:
 The content of definition file would be like this:
 
 ```css
-@import 'node_modules/@angular/material/core/theming/all-theme';
+@import 'node_modules/@angular/material/theming';
 
-/* Include non-theme styles for core.*/
-@include md-core();
+// Include non-theme styles for core.
+@include mat-core();
 
 /* Color definitions */
-$md-custom-primary: (
+$mat-custom-primary: (
   50: #bdf5b3,
   100: #82eb6f,
   200: #57e53e,
@@ -117,23 +125,21 @@ $md-custom-primary: (
 
 
 /* Define a theme.*/
-$primary: md-palette($md-custom-primary);
-$accent:  md-palette($md-amber, A200, A100, A400);
+$primary: mat-palette($mat-custom-primary);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
 
 /* The warn palette is optional (defaults to red).*/
-$warn:    md-palette($md-red);
+$warn:    mat-palette($mat-red);
 
 /* Create the theme object (a Sass map containing all of the palettes). */
 /* Light theme */
-$theme: md-light-theme($primary, $accent, $warn);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 /* Dark theme */
-/*$theme: md-dark-theme($primary, $accent, $warn);*/
+/*$theme: mat-dark-theme($primary, $accent, $warn);*/
 
 /* Include all theme styles for the components.*/
 @include angular-material-theme($theme);
-
-
 ```
 
 To help you defining colors and combinations of them you can use these online tools:
@@ -143,9 +149,9 @@ To help you defining colors and combinations of them you can use these online to
 * <a href="http://mcg.mbitson.com/">http://mcg.mbitson.com/</a>
 
 For defining a theme you just need to declare three colors: **primary, accent and warn**. You can declare a new color
-as you can see in the example ($md-custom-primary) or you can reuse one of the [standard color palette][1].
+as you can see in the example ($mat-custom-primary) or you can reuse one of the [standard color palette][1].
 
-After that you can choose between **light** or **dark** theme by calling corresponding function *md-light-theme(...)* or *md-dark-theme(...)*. The function returns
+After that you can choose between **light** or **dark** theme by calling corresponding function *mat-light-theme(...)* or *mat-dark-theme(...)*. The function returns
 the theme configuration that it is necessary to pass to angular material library to configure component colors.
 
 
@@ -165,7 +171,7 @@ All you need is to create a `@mixin` function in the *custom-component-theme.scs
 
 ```css
 /* Import all the tools needed to customize the theme and extract parts of it*/
-@import 'node_modules/@angular/material/core/theming/theming';
+@import 'node_modules/@angular/material/theming';
 
 /* Define a mixin that accepts a theme and outputs the color styles for the component.*/
 @mixin custom-component-theme($theme) {
@@ -173,32 +179,32 @@ All you need is to create a `@mixin` function in the *custom-component-theme.scs
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
 
-  /* Use md-color to extract individual colors from a palette as necessary.*/
+  /* Use mat-color to extract individual colors from a palette as necessary.*/
   .foo-class {
-    background-color: md-color($primary);
-    border-color: md-color($accent, A400);
+    background-color: mat-color($primary);
+    border-color: mat-color($accent, A400);
   }
 }
 ```
 Now you just have have to call the `@mixin` function to apply the theme definition in *app.scss*:
 
 ```css
-/***** Importing @angular/material predefined theme. *****/
-@import 'node_modules/@angular/material/core/theming/prebuilt/indigo-pink.scss';
-
+/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/md-indigo-pink.scss'; */
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/o-indigo-pink.scss'; */
+@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework
 */
-@import 'node_modules/ontimize-web-ngx/components/theming/all-theme.scss';
+@import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
 @include o-material-theme($theme);
 
 /*
 * Propagate theme to custom component definition.
 */
 @import '../../app/shared/custom-component-theme.scss';
-@include login-theme($theme);
+@include custom-component-theme($theme);
 ```
 
 For more details about the theming functions, see the comments in the
 [source](https://github.com/angular/material2/blob/master/src/lib/core/theming/_theming.scss).
-

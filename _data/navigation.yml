@@ -68,15 +68,10 @@ docs:
         url: /ontimize-web-ngx-dynamicform/
       - title: "Dynamicform Builder"
         url: /ontimize-web-ngx-dynamicform-builder/
-      - title: "Ontimize Web JEE app seed"
+      - title: "JEE app seed"
         url: /ontimize-web-ngx-jee-seed/
-      - title: "Ontimize Web app seed"
+      - title: "App seed"
         url: /ontimize-web-ngx-seed/
-
-      - title: "Charts"
-        url: /charts/
-      - title: "Maps"
-        url: /maps/
   - title: Guide
     children:
       - title: "Structure"

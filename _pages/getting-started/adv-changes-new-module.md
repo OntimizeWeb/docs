@@ -12,7 +12,7 @@ sidebar:
 
 In this section we are going to add a new module for managing the employees of the Bank. We are going to explain step by step how to achieve the goal of adding new module.
 
-The module that we are going to create is only allowed for those users that have credentials, that is, users that have been logged in. So, into Quickstart structure directories, we have to 
+The module that we are going to create is only allowed for those users that have credentials, that is, users that have been logged in. So, into Quickstart structure directories, we have to
 create new folder *employees* inside *main* folder (at the same level of *accounts* and *customers*).
 
 Inside the *employees* directory we have to create the following files and folders:
@@ -34,8 +34,8 @@ For creating the above files we use the angular-cli tools.
 
 ```javascript
   ng g component --spec=false --flat=false --routing=employees employees-home
-  ng g component --spec=false --flat=false --routing=employees employees-detail 
-  ng g component --spec=false --flat=false --routing=employees employees-edit 
+  ng g component --spec=false --flat=false --routing=employees employees-detail
+  ng g component --spec=false --flat=false --routing=employees employees-edit
 ```
 
 At this point the created files may look like:
@@ -47,7 +47,7 @@ We change default *CommonModule* for *SharedModule* and add *OntimizeWebModule*.
 ```javascript
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { OntimizeWebModule } from 'ontimize-web-ng2';
+import { OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { EmployeesRoutingModule } from './employees-routing.module';
 import { EmployeesHomeComponent } from './employees-home/employees-home.component';
@@ -176,7 +176,7 @@ export const routes: Routes = [
 ```
 
 The last step of our process of adding new module is to create the inital form that contains a table with
-all employees of the Bank, and the form that is going to show sheet with the details of each employee. This is 
+all employees of the Bank, and the form that is going to show sheet with the details of each employee. This is
 going to be explained into next sections:
 
 * [Add a table form]({{ base_path }}/getting-started/adv-changes-table-form/).
