@@ -56,6 +56,23 @@ docs:
     children:
       - title: "Tools"
         url: /ontimize-web-ngx-tools/
+      - title: "Theming"
+        url: /ontimize-web-ngx-theming/
+      - title: "DataTable"
+        url: /ontimize-web-ngx-datatable/
+      - title: "Charts"
+        url: /ontimize-web-ngx-charts/
+      - title: "Map"
+        url: /ontimize-web-ngx-map/
+      - title: "Dynamicform"
+        url: /ontimize-web-ngx-dynamicform/
+      - title: "Dynamicform Builder"
+        url: /ontimize-web-ngx-dynamicform-builder/
+      - title: "Ontimize Web JEE app seed"
+        url: /ontimize-web-ngx-jee-seed/
+      - title: "Ontimize Web app seed"
+        url: /ontimize-web-ngx-seed/
+
       - title: "Charts"
         url: /charts/
       - title: "Maps"

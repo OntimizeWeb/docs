@@ -15,7 +15,7 @@ An implementation of leaflet map library for Ontimize Web.
 ## Examples
 
 Check out examples demo:
-<div><a href="https://ontimizeweb.github.io/ontimize-web-ng2-map" target="_blank" class="btn btn--success">
+<div><a href="https://ontimizeweb.github.io/ontimize-web-ngx-map" target="_blank" class="btn btn--success">
     <i class="fa fa-play"></i>
     live demo</a></div>
 
@@ -32,20 +32,20 @@ Do not forget to add typings as well
 ```bash
 typings install leaflet --ambient -DA
 ```
-> Ensure that you have installed 'typings' node module globally with the same version of the one saved into the package.json of the 
-application.  
-For checking the version : typings -v  
+> Ensure that you have installed 'typings' node module globally with the same version of the one saved into the package.json of the
+application.
+For checking the version : typings -v
 For installing globally: npm install -g typings@0.8.1
 
 After that, install the npm map module:
 
 ```bash
-npm install ontimize-web-ng2-map --save
+npm install ontimize-web-ngx-map --save
 ```
 
 ## Usage
 
-Finally, you can use ontimize-web-ng2-map in your Ontimize Web project.
+Finally, you can use ontimize-web-ngx-map in your Ontimize Web project.
 
 ### Configure third party dependencies and map module (Angular-cli & SystemeJS)
 
@@ -140,7 +140,7 @@ Include the library map module into your app.
 
 ```bash
 ...
-import { OMapModule } from 'ontimize-web-ng2-map/o-map';
+import { OMapModule } from 'ontimize-web-ngx-map';
 ...
 
 @NgModule({
