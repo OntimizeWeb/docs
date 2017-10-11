@@ -48,7 +48,7 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
 
 # SEO Related
-google_site_verification : 
+google_site_verification :
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -57,7 +57,7 @@ yandex_site_verification :
 twitter:
   username               : &twitter "imatiainnova"
 facebook:
-  username               : 
+  username               :
   app_id                 :
   publisher              :
 og_image                 : "site-logo.png" # Open Graph/Twitter default site image
@@ -93,7 +93,7 @@ author:
   github           : "OntimizeWeb"
   google_plus      :
   keybase          :
-  instagram        : 
+  instagram        :
   lastfm           :
   linkedin         : "company/224080?trk=prof-0-ovw-curr_pos"
   pinterest        :
@@ -179,14 +179,16 @@ collections:
     permalink: /:collection/:path/
   o_form_components:
     output: true
-    permalink: /:collection/:path/ 
+    permalink: /:collection/:path/
   o_list_picker_components:
     output: true
     permalink: /:collection/:path/
   o_faq_posts:
     output: true
-    permalink: /:collection/:path/      
-    
+    permalink: /:collection/:path/
+  add_ons:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -220,7 +222,7 @@ defaults:
       comments: false
       sidebar:
         nav: "docs"
-  # _componentTypes      
+  # _componentTypes
   - scope:
       path: ""
       type: componentTypes
@@ -229,10 +231,10 @@ defaults:
       author_profile: false
       share: false
       comments: false
-  # _o_components      
+  # _o_components
   - scope:
       path: ""
-      type: o_components      
+      type: o_components
     values:
       layout: o-component
       layoutClass: o-component
@@ -241,21 +243,10 @@ defaults:
       comments: false
       sidebar:
         nav: "components"
-  # _o_datatable_components      
+  # _o_datatable_components
   - scope:
       path: ""
-      type: o_datatable_components      
-    values:
-      layout: single
-      author_profile: false
-      share: false
-      comments: false
-      sidebar:
-        nav: "components" 
-  # _o_form_components      
-  - scope:
-      path: ""
-      type: o_form_components      
+      type: o_datatable_components
     values:
       layout: single
       author_profile: false
@@ -263,36 +254,47 @@ defaults:
       comments: false
       sidebar:
         nav: "components"
-  # _o_list_picker_components      
+  # _o_form_components
   - scope:
       path: ""
-      type: o_list_picker_components      
-    values:
-      layout: o-component
-      author_profile: false
-      share: false
-      comments: false
-      sidebar:
-        nav: "components"                 
-  # _o_faq_posts      
-  - scope:
-      path: ""
-      type: o_faq_posts      
+      type: o_form_components
     values:
       layout: single
       author_profile: false
       share: false
       comments: false
       sidebar:
-        nav: "components" 
+        nav: "components"
+  # _o_list_picker_components
+  - scope:
+      path: ""
+      type: o_list_picker_components
+    values:
+      layout: o-component
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "components"
+  # _o_faq_posts
+  - scope:
+      path: ""
+      type: o_faq_posts
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "components"
 
-        
-
-           
 
 
-          
-  
+
+
+
+
+
 
 # Sass/SCSS
 sass:
