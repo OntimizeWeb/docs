@@ -65,14 +65,14 @@ Below is shown the definition of the login module and its associated routing mod
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { LoginComponent } from './login.component';
-<b>import { LoginRoutingModule } from './login-routing.module';</b>
+import { LoginRoutingModule } from './login-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     SharedModule,
     OntimizeWebModule,
-    <b>LoginRoutingModule</b>
+    LoginRoutingModule
   ],
   declarations: [
     LoginComponent

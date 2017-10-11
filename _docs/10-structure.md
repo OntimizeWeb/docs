@@ -262,3 +262,33 @@ That command runs the following two parallel node processes:
 In a browser tab enters [http://localhost:4200](http://localhost:4200) and the application should be displayed.
 
 ### Generate a distribution version
+
+There are two ways to generate an ontimize web application distribution version: JIT and AoT.
+
+####JIT
+
+Compile TypeScript just in time for executing it.
+  * Compiled in the browser.
+  * Each file compiled separately.
+  * No need to build after changing your code and before reloading the browser page.
+  * Suitable for local development.
+
+You can generate your application JIT distribution version adding and running this script to your package.json
+
+  ```bash
+  "production": "ng build --aot=false --target -prod"
+  ```
+####AoT
+
+Compile TypeScript during build phase.
+  * Compiled by the machine itself, via the command line (Faster).
+  * All code compiled together, inlining HTML/CSS in the scripts.
+  * No need to deploy the compiler (Half of Angular size).
+  * More secure, original source not disclosed.
+  * Suitable for production builds.
+
+Ontimize web has its own plugin for the AoT distribution version creation, you can see more details [here]({{ base_path }}/add-ons/ontimize-web-ngx/). So you can generate your application AoT distribution version installing '*ontimize-web-ngx-tools*' and adding and running this script (with no parameters in this example) to your package.json.
+
+  ```bash
+  "production-aot": "ontimize-web-ngx production-aot"
+  ```
