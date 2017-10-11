@@ -222,6 +222,17 @@ defaults:
       comments: false
       sidebar:
         nav: "docs"
+  - scope:
+      path: ""
+      type: add_ons
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "docs"
   # _componentTypes
   - scope:
       path: ""
