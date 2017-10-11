@@ -52,7 +52,14 @@ docs:
       - title: "Do something advanced"
         url: /advanced-changes/
 
-
+  - title: Add-ons
+    children:
+      - title: "Tools"
+        url: /ontimize-web-ngx-tools/
+      - title: "Charts"
+        url: /charts/
+      - title: "Maps"
+        url: /maps/
   - title: Guide
     children:
       - title: "Structure"
@@ -63,10 +70,7 @@ docs:
         url: /forms/
       - title: "Permission"
         url: /permission/
-      - title: "Charts"
-        url: /charts/
-      - title: "Maps"
-        url: /maps/
+
       - title: "Migration guides"
         url: /migrations/
 
