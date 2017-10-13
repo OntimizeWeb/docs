@@ -2,14 +2,14 @@ directive : "o-email-input"
 
 inheritedAttributes: [
   {
-    component: "o-text-input", 
-    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+    component: "o-text-input",
+    attributes: ["attr", "label", "automatic-binding", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
   }
 ]
 
 inheritedOutputs: [
   {
-    component: "o-text-input", 
-    outputs: ["onChange"]
+    component: "o-text-input",
+    outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]

@@ -128,6 +128,8 @@ components:
         url: /components/o-html-input.component/
       - title: "Search"
         url: /components/o-search-input.component/
+      - title : "Combo"
+        url: /components/o-combo.component/
       - title: "List picker"
         url: /components/o-list-picker.component/
         children :
@@ -159,8 +161,7 @@ components:
             url: '/datatable-components/o-datatable-editors.component/'
       - title : "List"
         url: /components/o-list.component/
-      - title : "Combo"
-        url: /components/o-combo.component/
+
 
   - title: Media
     children:

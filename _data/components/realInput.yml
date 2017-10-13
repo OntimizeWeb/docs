@@ -1,11 +1,11 @@
 directive : "o-real-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 inheritedAttributes: [
   {
-    component: "o-text-input", 
-    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+    component: "o-text-input",
+    attributes: ["attr", "label", "automatic-binding", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
   },
   {
     component: "o-integer-input",
@@ -15,22 +15,34 @@ inheritedAttributes: [
 
 inheritedOutputs: [
   {
-    component: "o-integer-input", 
-    outputs: ["onChange"]
+    component: "o-integer-input",
+    outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]
 
 attributes: [{
-  name: "min-decimal-digits", 
+  name: "min-decimal-digits",
   type: "number",
   default : "2",
   required : "",
   description : "Minimum number of decimals required"
 },{
-  name: "max-decimal-digits", 
+  name: "max-decimal-digits",
   type: "number",
   default : "2",
   required : "",
   description : "Maximum number of decimals required"
-}]	
+},{
+  name: "decimal-separator",
+  type: "string",
+  default : "Dot (.)",
+  required : "",
+  description : "Decimal digits chacarter separator"
+},{
+  name: "decimal-digits",
+  type: "number",
+  default : "2",
+  required : "",
+  description : "Number of decimals"
+}]
 

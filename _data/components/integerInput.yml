@@ -1,37 +1,55 @@
 directive : "o-integer-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 inheritedAttributes: [
   {
-    component: "o-text-input", 
-    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+    component: "o-text-input",
+    attributes: ["attr", "label", "automatic-binding", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
   }
 ]
 
 attributes: [{
-  name: "min", 
+  name: "min",
   type: "number",
   default : "",
   required : "",
   description : "Minimum value required"
 },{
-  name: "max", 
+  name: "max",
   type: "number",
   default : "",
   required : "",
   description : "Maximum value required"
 },{
-  name: "step", 
+  name: "step",
   type: "number",
   default : "1",
   required : "",
   description : "Increase / decrease value"
+},{
+  name: "grouping",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether to group the thousand digits"
+},{
+  name: "thousand-separator",
+  type: "string",
+  default : "Comma (,)",
+  required : "",
+  description : "Thousand digits chacarter separator (in case of grouping)"
+},{
+  name: "locale",
+  type: "string. Values like <em>es</em>, <em>en</em>, <em>...</em>",
+  default : "Application configured locale",
+  required : "",
+  description : "Input configured language"
 }]
 
 inheritedOutputs: [
   {
-    component: "o-text-input", 
-    outputs: ["onChange"]
+    component: "o-text-input",
+    outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]

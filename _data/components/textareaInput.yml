@@ -1,32 +1,32 @@
 directive : "o-textarea-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 inheritedAttributes: [
   {
-    component: "o-text-input", 
-    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+    component: "o-text-input",
+    attributes: ["attr", "label", "automatic-binding", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
   }
 ]
 
 inheritedOutputs: [
   {
-    component: "o-text-input", 
-    outputs: ["onChange"]
+    component: "o-text-input",
+    outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]
 
 
 attributes: [{
-  name: "columns", 
+  name: "columns",
   type: "number",
   default : "20",
   required : "",
   description : "Specifies the width of the text area (in average character width). <em>HTML5</em> <em>cols</em> attribute"
 },{
-  name: "rows", 
+  name: "rows",
   type: "number",
   default : "2",
   required : "",
   description : "Specifies the height of the text area (in lines). <em>HTML5</em> <em>rows</em> attribute"
-}]	
+}]

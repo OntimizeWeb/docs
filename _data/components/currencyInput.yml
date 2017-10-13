@@ -1,11 +1,11 @@
 directive : "o-currency-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 inheritedAttributes: [
   {
-    component: "o-text-input", 
-    attributes: ["attr", "label", "hint", "data", "enabled", "required", "min-length", "max-length"]
+    component: "o-text-input",
+    attributes: ["attr", "label", "automatic-binding", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
   },
   {
     component: "o-integer-input",
@@ -18,22 +18,22 @@ inheritedAttributes: [
 ]
 
 attributes: [{
-  name: "currency-symbol", 
+  name: "currency-symbol",
   type: "string",
   default : "euro (EUR)",
   required : "",
   description : "currency symbol (According to ISO 4217)"
 },{
-  name: "currency-symbol-position", 
+  name: "currency-symbol-position",
   type: "left | right",
   default : "right",
   required : "",
   description : "Position of currency symbol"
-}]	
+}]
 
 inheritedOutputs: [
   {
-    component: "o-real-input", 
-    outputs: ["onChange"]
+    component: "o-real-input",
+    outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]
