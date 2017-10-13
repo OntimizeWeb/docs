@@ -48,6 +48,6 @@ The noteworthy parameters here are:
   * **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
   * **'OntimizeEE':** configures Ontimize REST JEE services.
   * **Custom class:** a class that extends from *Ontimize* or *OntimizeEE* default services or that implements IDataService interface.
-* **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here]({{ base_path }}/docs/guide/services-config/).
+* **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here]({{ base_path }}/guide/services-config/).
 * **appMenuConfiguration:** Object defining application menu structure. Learn more [here]({{ base_path }}/guide/menu-config/).
 * **applicationLocales:** Set of available locales for the application.

@@ -10,7 +10,7 @@ modified: 2016-09-29T08:25:30-04:00
 
 As a general rule, our application will have more than one screen. So, it is necessary to tell the application how it has to proceed when the user interacts with it.
 
-As a good starting point is highly recommended, for getting familiar with the vocabulary and the notations, to have a look at the documentation on the ['Router' Angular 2](https://angular.io/api/router/Router)
+As a good starting point is highly recommended, for getting familiar with the vocabulary and the notations, to have a look at the documentation on the ['Router' Angular 2](https://angular.io/api/router/Router){:target="_blank"}
 
 By convention each logic block (module) defines its own routes. This is the way of having nested and organized application routes.
 So, in a ontimize web application, the routes are loaded in routing modules. Each of this modules must be imported in a application block module. You can see this in the app structure schema [here]({{ base_path }}/structure/){:target="_blank"} where login or main modules are following this structure.

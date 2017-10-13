@@ -14,7 +14,7 @@ An implementation of leaflet map library for Ontimize Web.
 * [Usage](#usage)
 
 ## Github
-Ontimize Web Map module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-map) where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-map/issues) section.
+Ontimize Web Map module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-map){:target="_blank"} where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-map/issues){:target="_blank"} section.
 
 
 ## Examples

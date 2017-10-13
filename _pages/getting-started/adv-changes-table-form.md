@@ -2,7 +2,6 @@
 title: "Add a table form"
 permalink: /getting-started/adv-changes-table-form/
 excerpt: "Advanced changes. Add a table form"
-modified: 2016-12-19T08:25:30-04:00
 author_profile: false
 sidebar:
         nav: "docs"
@@ -16,7 +15,7 @@ all employees of the Bank.
 In the previous step it was configured into *employees.routes.ts* that if the url was *'employees'* the system have to render the component *EmployeesHomeComponent*. So, it
 is time to create this component.
 
-Inside the *+employees/home* directory we have to create the following files: 
+Inside the *employees/home* directory we have to create the following files:
 
 * **employees-home.component.html:** Contains the html template definition of our screen.
 * **employees-home.component.scss:** Contains specific screen css styles (saas definition), if needed.
@@ -63,7 +62,7 @@ export class EmployeesHomeComponent {
 }
 ```
 Into the html template is defined a table that is connected through an Ontimize service that provides the information of all employees.
-You can find further information about *o-table* configuration parameters into [Components]({{ base_path }}/components/o-table.component/) section.
+You can find further information about *o-table* configuration parameters into [Components]({{ base_path }}/components/o-table.component/){:target="_blank"} section.
 
 Into the logic file nothing special is done, only the paths of css and html files are defined.
 

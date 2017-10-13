@@ -14,7 +14,7 @@ An implemention of a set of utility tools for developing Ontimize Web applicatio
 * [Usage](#usage)
 
 ## Github
-Ontimize Web Tools module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-tools) where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-tools/issues) section.
+Ontimize Web Tools module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-tools){:target="_blank"} where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-tools/issues){:target="_blank"} section.
 
 
 ## Installation

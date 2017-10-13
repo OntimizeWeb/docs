@@ -2,7 +2,6 @@
 title: "Prerequisites"
 permalink: /guide/prerequisites/
 excerpt: "Instructions for installing the theme for new and existing Jekyll based sites."
-modified: 2016-08-01T09:36:36-04:00
 author_profile: false
 sidebar:
         nav: "docs"
@@ -12,7 +11,7 @@ sidebar:
 
 ## Node & NPM ##
 
-Make sure you have NodeJS installed. Download the installer [here](http://nodejs.org/) or use your favorite package manager (you must download the installer according to your platform and operative system). It’s best to get the **6.x.x** version of node along with the **5.x.x** version of npm. This offers the best in stability and speed for building.
+Make sure you have NodeJS installed. Download the installer [here](http://nodejs.org/){:target="_blank"} or use your favorite package manager (you must download the installer according to your platform and operative system). It’s best to get the **6.x.x** version of node along with the **5.x.x** version of npm. This offers the best in stability and speed for building.
 
 Following installation to check that you have correctly installed Node.js, you must be able to invoke *node* and *npm* commands in the command-line, for example:
 
@@ -27,10 +26,10 @@ C:\>npm -v
 5.0.3
 ```
 
-If you want to know more about NPM you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm).
+If you want to know more about NPM you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm){:target="_blank"}.
 
 ## Angular cli ##
-You need to have installed [Angular CLI](https://cli.angular.io/) for making easy to build an applications, generate components, modules and more.
+You need to have installed [Angular CLI](https://cli.angular.io/){:target="_blank"} for making easy to build an applications, generate components, modules and more.
 
 ```bash
 # Installing angular cli package globally
@@ -41,7 +40,7 @@ npm install -g @angular/cli@latest
 
 ## Python ##
 
-You need to have installed Python (`v2.7` recommended, `v3.x.x` is __*not*__ supported). Download the installer [here](https://www.python.org/downloads/) according your operating system.
+You need to have installed Python (`v2.7` recommended, `v3.x.x` is __*not*__ supported). Download the installer [here](https://www.python.org/downloads/){:target="_blank"} according your operating system.
 
 
 ## Git ##
@@ -51,7 +50,7 @@ It is also necessary to install Git tool for being able to download resources fr
 
 ## Visual Studio Code ##
 
-It is not absolutely necessary to use this IDE, if highly recommended, but certain .dll inherent in installation for some of the tools Ontimize compilation of web applications are needed. Download the installer [here](https://code.visualstudio.com/download/) according your operating system.
+It is not absolutely necessary to use this IDE, if highly recommended, but certain .dll inherent in installation for some of the tools Ontimize compilation of web applications are needed. Download the installer [here](https://code.visualstudio.com/download/){:target="_blank"} according your operating system.
 
 
 ## Troubleshooting ##
@@ -62,7 +61,7 @@ Here are shown some solutions to common problems related to node installations o
 
 Install dependencies needed by the Node.js native addon build tool (`node-gyp`):
 
-More information [here](https://github.com/nodejs/node-gyp).
+More information [here](https://github.com/nodejs/node-gyp){:target="_blank"}.
 You can install with `npm`:
 
 ``` bash
@@ -74,26 +73,26 @@ You will also need to install:
   * On Unix:
     * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported)
     * `make`
-    * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org)
+    * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org){:target="_blank"}
   * On Mac OS X:
     * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported) (already installed on Mac OS X)
-    * [Xcode](https://developer.apple.com/xcode/download/)
+    * [Xcode](https://developer.apple.com/xcode/download/){:target="_blank"}
       * You also need to install the `Command Line Tools` via Xcode. You can find this under the menu `Xcode -> Preferences -> Downloads`
       * This step will install `gcc` and the related toolchain containing `make`
   * On Windows:
-    * Option 1: Install all the required tools and configurations using Microsoft's [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools) using `npm install --global --production windows-build-tools` from an elevated PowerShell or CMD.exe (run as Administrator).
+    * Option 1: Install all the required tools and configurations using Microsoft's [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools){:target="_blank"} using `npm install --global --production windows-build-tools` from an elevated PowerShell or CMD.exe (run as Administrator).
     * Option 2: Install tools and configuration manually:
       * Visual C++ Build Environment:
-        * Option 1: Install [Visual C++ Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools) using the **Default Install** option.
+        * Option 1: Install [Visual C++ Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools){:target="_blank"} using the **Default Install** option.
 
-        * Option 2: Install [Visual Studio 2015](https://www.visualstudio.com/products/visual-studio-community-vs) (or modify an existing installation) and select *Common Tools for Visual C++* during setup. This also works with the free Community and Express for Desktop editions.
+        * Option 2: Install [Visual Studio 2015](https://www.visualstudio.com/products/visual-studio-community-vs){:target="_blank"} (or modify an existing installation) and select *Common Tools for Visual C++* during setup. This also works with the free Community and Express for Desktop editions.
 
-        > :bulb: [Windows Vista / 7 only] requires [.NET Framework 4.5.1](http://www.microsoft.com/en-us/download/details.aspx?id=40773)
+        > :bulb: [Windows Vista / 7 only] requires [.NET Framework 4.5.1](http://www.microsoft.com/en-us/download/details.aspx?id=40773){:target="_blank"}
 
-      * Install [Python 2.7](https://www.python.org/downloads/) (`v3.x.x` is not supported), and run `npm config set python python2.7` (or see below for further instructions on specifying the proper Python version and path.)
+      * Install [Python 2.7](https://www.python.org/downloads/){:target="_blank"} (`v3.x.x` is not supported), and run `npm config set python python2.7` (or see below for further instructions on specifying the proper Python version and path.)
       * Launch cmd, `npm config set msvs_version 2015`
 
-    If the above steps didn't work for you, please visit [Microsoft's Node.js Guidelines for Windows](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#compiling-native-addon-modules) for additional tips.
+    If the above steps didn't work for you, please visit [Microsoft's Node.js Guidelines for Windows](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#compiling-native-addon-modules){:target="_blank"} for additional tips.
 
 If you have multiple Python versions installed, you can identify which Python
 version `node-gyp` uses by setting the '--python' variable:

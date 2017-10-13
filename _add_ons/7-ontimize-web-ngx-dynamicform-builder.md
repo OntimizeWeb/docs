@@ -12,7 +12,7 @@ excerpt: ""
 * [Usage](#usage)
 
 ## Github
-Ontimize Web Dynamic Form module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-dynamicform-builder) where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-dynamicform-builder/issues) section.
+Ontimize Web Dynamic Form Builder module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-dynamicform-builder){:target="_blank"} where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-dynamicform-builder/issues){:target="_blank"} section.
 
 
 ## Installation

@@ -2,7 +2,6 @@
 title: "Drill-down to detail form"
 permalink: /getting-started/adv-changes-drill-down/
 excerpt: "Advanced changes. Drill-down to detail form"
-modified: 2016-12-19T08:25:30-04:00
 author_profile: false
 sidebar:
         nav: "docs"
@@ -15,7 +14,7 @@ In this section we are going to define the form that is going to show the sheet 
 Into *employees.routes.ts* file was configured that if the url was *'employees/:EMPLOYEEID'* the system have to render the component *EmployeesDetailComponent*. So, it
 is time to create this component.
 
-Inside the *+employees/detail* directory we have to create the following files: 
+Inside the *employees/detail* directory we have to create the following files:
 
 * **employees-detail.component.html:** Contains the html template definition of our screen.
 * **employees-detail.component.scss:** Contains specific screen css styles (saas definition), if needed.
@@ -83,8 +82,8 @@ export class EmployeesDetailComponent {
 }
 
 ```
-Into the html template is defined the form that contains several fields with the information of a determined employee. This data is provided through the Ontimize service 
-configured. You can find further information about components configuration parameters into [Components]({{ base_path }}/components-collection/) section.
+Into the html template is defined the form that contains several fields with the information of a determined employee. This data is provided through the Ontimize service
+configured. You can find further information about components configuration parameters into [Components]({{ base_path }}/components-collection/){:target="_blank"} section.
 
 Into the logic file nothing special is done, only the paths of css and html files are defined.
 

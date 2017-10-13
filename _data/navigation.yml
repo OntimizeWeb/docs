@@ -63,9 +63,13 @@ docs:
         url: /forms/
       - title: "Permission"
         url: /permission/
-
       - title: "Migration guides"
         url: /migrations/
+
+  - title: Customization
+    children:
+      - title: "Theming"
+        url: /theming/
 
   - title: Add-ons
     children:
@@ -87,10 +91,6 @@ docs:
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
         url: /ontimize-web-ngx-seed/
-  - title: Customization
-    children:
-      - title: "Theming"
-        url: /theming/
 
   - title: Meta
     children:

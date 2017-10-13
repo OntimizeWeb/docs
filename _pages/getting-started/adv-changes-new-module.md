@@ -2,7 +2,6 @@
 title: "Create new module"
 permalink: /getting-started/adv-changes-new-module/
 excerpt: "Advanced changes. Create new module"
-modified: 2016-12-19T08:25:30-04:00
 author_profile: false
 sidebar:
         nav: "docs"
@@ -40,7 +39,7 @@ For creating the above files we use the angular-cli tools.
 
 At this point the created files may look like:
 
-**employees.module.ts*
+**employees.module.ts**
 
 We change default *CommonModule* for *SharedModule* and add *OntimizeWebModule*.
 
@@ -60,13 +59,17 @@ import { EmployeesEditComponent } from './employees-edit/employees-edit.componen
     OntimizeWebModule,
     EmployeesRoutingModule
   ],
-  declarations: [EmployeesHomeComponent, EmployeesDetailComponent, EmployeesEditComponent]
+  declarations: [
+    EmployeesHomeComponent,
+    EmployeesDetailComponent,
+    EmployeesEditComponent
+  ]
 })
 export class EmployeesModule { }
 ```
 
 
-**employees-routing.module.ts*
+**employees-routing.module.ts**
 
 ```javascript
 import { NgModule } from '@angular/core';
@@ -75,19 +78,12 @@ import { EmployeesHomeComponent } from './employees-home/employees-home.componen
 import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
 import { EmployeesEditComponent } from './employees-edit/employees-edit.component';
 
-const routes: Routes = [{
-  path: '',
-  component: EmployeesHomeComponent,
-}, {
-  path: 'new',
-  component: EmployeesEditComponent
-}, {
-  path: ':EMPLOYEEID',
-  component: EmployeesDetailComponent
-}, {
-  path: ':EMPLOYEEID/edit',
-  component: EmployeesEditComponent
-}];
+const routes: Routes = [
+  { path: '',  component: EmployeesHomeComponent },
+  { path: 'new', component: EmployeesEditComponent },
+  { path: ':EMPLOYEEID', component: EmployeesDetailComponent },
+  { path: ':EMPLOYEEID/edit', component: EmployeesEditComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
@@ -119,60 +115,37 @@ export function loadEmployeesModule() {
 
 export const routes: Routes = [
   {
-    path: 'main',
-    component: MainComponent,
-    canActivate: [AuthGuardService],
+    path: '', component: MainComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      {
-        path: 'home',
-        loadChildren: loadHomeModule
-      },
-      {
-        path: 'about',
-        loadChildren: loadAboutModule
-      },
-      {
-        path: 'settings',
-        loadChildren: loadSettingsModule
-      },
-      {
-        path: 'customers',
-        loadChildren: loadCustomersModule
-      },
-      {
-        path: 'accounts',
-        loadChildren: loadAccountsModule
-      },
-      {
-        path: 'branches',
-        loadChildren: loadBranchesModule
-      },
-      {
-        path: 'employees',
-        loadChildren: loadEmployeesModule
-      }
+      { path: 'home', loadChildren: loadHomeModule },
+      { path: 'about', loadChildren: loadAboutModule },
+      { path: 'settings', loadChildren: loadSettingsModule },
+      { path: 'customers', loadChildren: loadCustomersModule },
+      { path: 'accounts', loadChildren: loadAccountsModule },
+      { path: 'branches', loadChildren: loadBranchesModule },
+      { path: 'employees', loadChildren: loadEmployeesModule }
     ]
   }
 ];
 ...
 ```
 
-**app.menu.config.ts
+**app.menu.config.ts**
 
 ```javascript
 {
-    id: 'views',
-    name: 'VIEW',
-    icon: 'remove_red_eye',
-    opened: true,
-    items: [
-      { id: 'customers', name: 'CUSTOMERS', route: '/main/customers', icon: 'people' },
-      { id: 'accounts', name: 'ACCOUNTS', route: '/main/accounts', icon: 'credit_card' },
-      { id: 'branches', name: 'BRANCHES', route: '/main/branches', icon: 'account_balance' },
-      { id: 'employees', name: 'EMPLOYEES', route: '/main/employees', icon: 'person' }
-    ]
-  },
+id: 'views',
+name: 'VIEW',
+icon: 'remove_red_eye',
+opened: true,
+items: [
+  { id: 'customers', name: 'CUSTOMERS', route: '/main/customers', icon: 'people' },
+  { id: 'accounts', name: 'ACCOUNTS', route: '/main/accounts', icon: 'credit_card' },
+  { id: 'branches', name: 'BRANCHES', route: '/main/branches', icon: 'account_balance' },
+  { id: 'employees', name: 'EMPLOYEES', route: '/main/employees', icon: 'person' }
+]
+},
 ```
 
 The last step of our process of adding new module is to create the inital form that contains a table with

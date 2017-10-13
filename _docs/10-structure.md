@@ -153,7 +153,7 @@ The noteworthy sections here are:
 
 ## Application module
 
-Angular apps are formed by blocks of functionality that are called [modules](https://angular.io/docs/ts/latest/guide/ngmodule.html). Ontimize Web apps keep this characteristic and every application has at least one module: the root module, which is named AppModule by convention.
+Angular apps are formed by blocks of functionality that are called [modules](https://angular.io/docs/ts/latest/guide/ngmodule.html){:target="_blank"}. Ontimize Web apps keep this characteristic and every application has at least one module: the root module, which is named AppModule by convention.
 
 The file that defines the root module is placed in *app/app.module.ts* with the following content:
 

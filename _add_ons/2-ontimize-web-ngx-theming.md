@@ -14,7 +14,7 @@ Ontimize web module for applications theming through '*scss*' files loading.
 
 ## Github
 
-Ontimize Web Theming module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-theming) where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues) section.
+Ontimize Web Theming module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-theming){:target="_blank"} where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues){:target="_blank"} section.
 
 
 ## Installation

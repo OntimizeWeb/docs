@@ -2,7 +2,6 @@
 title: "Make some changes"
 permalink: /make-changes/
 excerpt: ""
-modified: 2016-12-12T16:25:30-04:00
 ---
 
 {% include base_path %}
@@ -19,7 +18,7 @@ and finally, we are going to navigate to other screen of the application.
 We are going to add a date field into the detail form of a client. So, first of all, we are going to see the aspect of this form. After
 logged in, click on the menu *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter
 the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture
-(check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart)):
+(check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){:target="_blank"}):
 
 <img src="{{ base_path }}/images/main_customers_detail.png" alt="customer detail">
 
