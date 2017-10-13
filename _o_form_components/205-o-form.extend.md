@@ -9,7 +9,7 @@ Form component extension must follow the next steps:
 
 1. Adding *@OComponent* decorator to component.
 2. Class extends *OFormComponent* and it must be specified as provider in the decorator.
-	
+
 From there, *OFormComponent* methods could be overwritten following use requirements.
 
 This example shows how to extend a form for creating a classic registration form including a captcha and password verification befor submitting data.
@@ -21,17 +21,17 @@ import { Injector, forwardRef } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { OComponent, OFormComponent, LoginService,
-   OntimizeService, dataServiceFactory } from 'ontimize-web-ng2/ontimize';
+   OntimizeService, dataServiceFactory } from 'ontimize-web-ngx';
 
 @OComponent({
   selector: 'sign-in-form',
   providers: [
-    { 
-      provide: OntimizeService, 
-      useFactory: dataServiceFactory 
-    }, { 
+    {
+      provide: OntimizeService,
+      useFactory: dataServiceFactory
+    }, {
       provide: OFormComponent,
-      useExisting: forwardRef(() => signInFormComponent) 
+      useExisting: forwardRef(() => signInFormComponent)
     }
   ]
 })
@@ -40,8 +40,8 @@ export class SignInFormComponent extends OFormComponent {
   protected recaptchaResponseToken: string;
 
   constructor(
-    _router: Router, _location: Location, 
-    _actRoute: ActivatedRoute, _loginService: LoginService, 
+    _router: Router, _location: Location,
+    _actRoute: ActivatedRoute, _loginService: LoginService,
     injector: Injector) {
 
     super(_router, _location, _actRoute, _loginService, injector);
@@ -78,9 +78,9 @@ export class SignInFormComponent extends OFormComponent {
   }
 
   public send() {
-    if (this.formGroup.controls['password'].value !== 
+    if (this.formGroup.controls['password'].value !==
       this.formGroup.controls['password2'].value) {
-      
+
       this.dialogService.alert('ERROR', 'ERROR_PASSWORDS_NOT_MATCH');
     } else if (typeof(this.recaptchaResponseToken) === 'undefined') {
       this.dialogService.alert('ERROR', 'ERROR_CAPTCHA');
@@ -96,9 +96,9 @@ export class SignInFormComponent extends OFormComponent {
 Using example:
 
 ```html
-<sign-in-form layout="column" show-header="no" label-header="REGISTRY" 
-  header-actions="I" service="pharmacy" entity="registerPharmacy" 
-  columns="username;password;license;name_comercial;locality;province" 
+<sign-in-form layout="column" show-header="no" label-header="REGISTRY"
+  header-actions="I" service="pharmacy" entity="registerPharmacy"
+  columns="username;password;license;name_comercial;locality;province"
   keys="username" #registryForm>
 
   <div layout="column" class="registry-fieldset">
@@ -106,34 +106,34 @@ Using example:
     <o-text-input attr="license" required="yes" flex
       [data]="registryForm.getDataValue('license')" >
     </o-text-input>
-   
+
     <o-text-input attr="name_comercial" required="yes" flex
       [data]="registryForm.getDataValue('name_comercial')">
     </o-text-input>
-   
-    <o-text-input attr="locality" required="yes" 
+
+    <o-text-input attr="locality" required="yes"
       flex [data]="registryForm.getDataValue('locality')">
     </o-text-input>
-   
+
     <o-text-input attr="province" required="yes" flex
       [data]="registryForm.getDataValue('province')">
     </o-text-input>
-   
+
     <o-email-input attr="username" required="yes" flex
       [data]="registryForm.getDataValue('username')">
     </o-email-input>
-   
-    <o-password-input attr="password" required="yes" 
+
+    <o-password-input attr="password" required="yes"
       min-length="6" max-length="30" flex
       [data]="registryForm.getDataValue('password')">
     </o-password-input>
-   
-    <o-password-input attr="password2" required="yes" 
+
+    <o-password-input attr="password2" required="yes"
       min-length="6" max-length="30" flex
       [data]="registryForm.getDataValue('password2')">
     </o-password-input>
 
-    <re-captcha siteKey="{{ GOOGLE_RECAPTCHA_KEY }}" 
+    <re-captcha siteKey="{{ GOOGLE_RECAPTCHA_KEY }}"
       (captchaResponse)="registryForm.getCaptcha($event)">
     </re-captcha>
 

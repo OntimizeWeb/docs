@@ -1,6 +1,6 @@
 ---
 title: "Forms"
-permalink: /docs/forms/
+permalink: /forms/
 excerpt: ""
 modified: 2016-12-13T10:25:30-04:00
 ---
@@ -9,14 +9,14 @@ modified: 2016-12-13T10:25:30-04:00
 
 # Overview
 
-The 'o-form' component is a special component type that allows you to handle a good handful of data and 
+The 'o-form' component is a special component type that allows you to handle a good handful of data and
 perform typical operations in data management applications such as: creation, deletion, update and query.
 
 The component facilitates the management of the data so that the developer only has to worry about the aspect of the screen and its logic.
 
 The representation of the data is performed via input fields (such as text, checkbox, combos, etc.) lists or tables.
 
-You can find further information about *o-form* configuration parameters into [Components]({{ base_path }}/components/o-form.component/) section.
+You can find further information about *o-form* configuration parameters into [Components]({{ base_path }}/components/o-form.component/){:target="_blank"} section.
 
 ## Form life hooks
 

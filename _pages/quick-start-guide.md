@@ -1,6 +1,6 @@
 ---
 title: "Quick-Start Guide"
-permalink: /docs/quick-start-guide/
+permalink: /quick-start-guide/
 excerpt: "How to quickly install and setup Minimal Mistakes for use with GitHub Pages."
 modified: 2016-04-13T15:54:02-04:00
 redirect_from:
@@ -18,7 +18,7 @@ The QuickStart app has the structure of Ontimize Web applications and displays t
 
 ### Prerequisites
 
-First of all you need to meet minimum requirements to start. [Check prerequesites depending on your operative system]({{ base_path }}/guide/prerequisites/).
+First of all you need to meet minimum requirements to start. [Check prerequesites depending on your operating system]({{ base_path }}/guide/prerequisites/).
 
 ### Create new project based on QuickStart
 
@@ -46,7 +46,7 @@ npm start
 
 > `npm run postinstall`
 
-The `npm start` command first compiles the application, 
+The `npm start` command first compiles the application,
 then simultaneously re-compiles and runs the `server`.
 Both the compiler and the server watch for file changes.
 

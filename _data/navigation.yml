@@ -22,7 +22,7 @@ foo:
 # main links links
 main:
   - title: "Getting started"
-    url: /docs/doc-overview/
+    url: /doc-overview/
 
   - title: "Components"
     url: /components-collection/
@@ -42,45 +42,62 @@ docs:
   - title: Getting Started
     children:
       - title: "Document overview"
-        url: /docs/doc-overview/
+        url: /doc-overview/
       - title: "Example overview"
-        url: /docs/example-overview/
+        url: /example-overview/
       - title: "Install and run example"
-        url: /docs/install-and-run/
+        url: /install-and-run/
       - title: "Make some changes"
-        url: /docs/make-changes/
+        url: /make-changes/
       - title: "Do something advanced"
-        url: /docs/advanced-changes/
-      
+        url: /advanced-changes/
+
 
   - title: Guide
     children:
       - title: "Structure"
-        url: /docs/structure/
+        url: /structure/
       - title: "Routing"
-        url: /docs/routing/
+        url: /routing/
       - title: "Forms"
-        url: /docs/forms/
+        url: /forms/
       - title: "Permission"
-        url: /docs/permission/
-      - title: "Charts"
-        url: /docs/charts/
-      - title: "Maps"
-        url: /docs/maps/
+        url: /permission/
       - title: "Migration guides"
-        url: /docs/migrations/
+        url: /migrations/
 
   - title: Customization
     children:
       - title: "Theming"
-        url: /docs/theming/
+        url: /theming/
+
+  - title: Add-ons
+    children:
+      - title: "Tools"
+        url: /ontimize-web-ngx-tools/
+      - title: "Theming"
+        url: /ontimize-web-ngx-theming/
+      - title: "DataTable"
+        url: /ontimize-web-ngx-datatable/
+      - title: "Charts"
+        url: /ontimize-web-ngx-charts/
+      - title: "Map"
+        url: /ontimize-web-ngx-map/
+      - title: "Dynamicform"
+        url: /ontimize-web-ngx-dynamicform/
+      - title: "Dynamicform Builder"
+        url: /ontimize-web-ngx-dynamicform-builder/
+      - title: "JEE app seed"
+        url: /ontimize-web-ngx-jee-seed/
+      - title: "App seed"
+        url: /ontimize-web-ngx-seed/
 
   - title: Meta
     children:
       - title: "Contributing"
-        url: /docs/contributing/
+        url: /contributing/
       - title: "License"
-        url: /docs/license/
+        url: /license/
       - title: "About"
         url: /about/
 # components links
@@ -98,7 +115,7 @@ components:
       - title: "Email"
         url: /components/o-email-input.component/
       - title: "Password"
-        url: /components/o-password-input.component/  
+        url: /components/o-password-input.component/
       - title: "Currency"
         url: /components/o-currency-input.component/
       - title: "Date"
@@ -113,12 +130,12 @@ components:
         url: /components/o-search-input.component/
       - title: "List picker"
         url: /components/o-list-picker.component/
-        children : 
+        children :
           - title: "List picker dialog"
             url: /list-picker-component/o-list-picker-dialog.component/
       - title: "Checkbox"
         url: /components/o-checkbox.component/
-              
+
   - title: Button
     children:
       - title: "Button"
@@ -128,22 +145,22 @@ components:
     children:
       - title: "Form"
         url: /components/o-form.component/
-        children: 
+        children:
           - title: "Extending a form"
             url: '/form-component/o-form.extend/'
           - title: "Form to filter table"
             url: '/form-component/o-form.filter-table/'
       - title: "DataTable"
-        url: /components/o-datatable.component/  
-        children: 
+        url: /components/o-datatable.component/
+        children:
           - title: "Column renderers"
             url: '/datatable-components/o-datatable-renderers.component/'
           - title: "Column editors"
-            url: '/datatable-components/o-datatable-editors.component/'  
+            url: '/datatable-components/o-datatable-editors.component/'
       - title : "List"
         url: /components/o-list.component/
       - title : "Combo"
-        url: /components/o-combo.component/  
+        url: /components/o-combo.component/
 
   - title: Media
     children:
@@ -153,17 +170,17 @@ components:
   - title: Layout
     children:
       - title: "Dialog"
-        url: /components/o-dialog.component/        
+        url: /components/o-dialog.component/
 
   - title: Menu
     children:
       - title: "Bar menu"
         url: /components/o-bar-menu.component/
       - title: "Side menu"
-        url: /components/o-side-menu.component/                
+        url: /components/o-side-menu.component/
   - title: "FAQ"
-    url: /components/faq/      
+    url: /components/faq/
 
 
 
-        
+
