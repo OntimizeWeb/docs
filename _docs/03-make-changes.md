@@ -9,7 +9,7 @@ excerpt: ""
 
 ## Overview
 
-In this section we are going to make some simple changes on Quickstart app code. We are going to see
+In this section we are going to make some simple changes on QuickStart app code. We are going to see
 how to add new field into a form. Once added, we are going to learn how to apply our validation logic over this field,
 and finally, we are going to navigate to other screen of the application.
 

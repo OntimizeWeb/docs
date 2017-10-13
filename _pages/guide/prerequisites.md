@@ -9,11 +9,11 @@ sidebar:
 
 {% include base_path %}
 
-## Node & NPM ##
+## Node.js & npm ##
 
-Make sure you have NodeJS installed. Download the installer [here](http://nodejs.org/){:target="_blank"} or use your favorite package manager (you must download the installer according to your platform and operative system). It’s best to get the **6.x.x** version of node along with the **5.x.x** version of npm. This offers the best in stability and speed for building.
+Make sure you have Node.js installed. Download the installer [here](http://nodejs.org/){:target="_blank"} or use your favorite package manager. You must download the installer according to your platform and operating system. It’s suggested to use the **6.x.x** version of node along with the **5.x.x** version of npm. We've found this combination to be the fastest and most stable for Ontimize Web.
 
-Following installation to check that you have correctly installed Node.js, you must be able to invoke *node* and *npm* commands in the command-line, for example:
+Following installation, make sure you have correctly installed Node.js by invoking the following commands in the command-line:
 
 **NOTE**: On the Mac, the command-line is available via the *Terminal* application. On the PC, it's available as *Command Prompt* under *Accessories*.
 
@@ -26,13 +26,13 @@ C:\>npm -v
 5.0.3
 ```
 
-If you want to know more about NPM you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm){:target="_blank"}.
+If you want to know more about npm you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm){:target="_blank"}.
 
-## Angular cli ##
-You need to have installed [Angular CLI](https://cli.angular.io/){:target="_blank"} for making easy to build an applications, generate components, modules and more.
+## Angular CLI ##
+You need to have installed [Angular CLI](https://cli.angular.io/){:target="_blank"} to build applications and to generate components and modules.
 
 ```bash
-# Installing angular cli package globally
+# Installing angular CLI package globally
 npm install -g @angular/cli@latest
 ```
 
@@ -40,24 +40,25 @@ npm install -g @angular/cli@latest
 
 ## Python ##
 
-You need to have installed Python (`v2.7` recommended, `v3.x.x` is __*not*__ supported). Download the installer [here](https://www.python.org/downloads/){:target="_blank"} according your operating system.
+You need to have Python installed (`v2.7` recommended, `v3.x.x` is __*not*__ supported). Download the installer [here](https://www.python.org/downloads/){:target="_blank"} according your operating system.
 
 
 ## Git ##
 
-It is also necessary to install Git tool for being able to download resources from Imatia repositories of code. Download the installer [here](https://git-scm.com/downloads) according your operating system.
+Git is also necessary to be able to download resources from Imatia's code repositories. Download the installer [here](https://git-scm.com/downloads) according your operating system.
 
 
 ## Visual Studio Code ##
 
 It is not absolutely necessary to use this IDE, if highly recommended, but certain .dll inherent in installation for some of the tools Ontimize compilation of web applications are needed. Download the installer [here](https://code.visualstudio.com/download/){:target="_blank"} according your operating system.
 
+While the use of this IDE is not required (although it is recommended), the dynamic libraries installed with the IDE are used by some of the Ontimize compilation tools. Download the installer [here](https://code.visualstudio.com/download/){:target="_blank"} according your operating system.
 
 ## Troubleshooting ##
 
-Here are shown some solutions to common problems related to node installations on different operating systems.
+Here are some solutions to common problems related with Node.js installations on different operating systems.
 
-### Node addons ###
+### Node.js addons ###
 
 Install dependencies needed by the Node.js native addon build tool (`node-gyp`):
 
@@ -94,7 +95,7 @@ You will also need to install:
 
     If the above steps didn't work for you, please visit [Microsoft's Node.js Guidelines for Windows](https://github.com/Microsoft/nodejs-guidelines/blob/master/windows-environment.md#compiling-native-addon-modules){:target="_blank"} for additional tips.
 
-If you have multiple Python versions installed, you can identify which Python
+If you have multiple Python versions installed, you can specify which Python
 version `node-gyp` uses by setting the '--python' variable:
 
 ``` bash
@@ -108,7 +109,3 @@ value:
 ``` bash
 $ npm config set python /path/to/executable/python2.7
 ```
-
-Note that OS X is just a flavour of Unix and so needs `python`, `make`, and C/C++.
-An easy way to obtain these is to install XCode from Apple,
-and then use it to install the command line tools (under Preferences -> Downloads).

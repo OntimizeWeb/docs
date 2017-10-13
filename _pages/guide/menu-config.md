@@ -9,7 +9,7 @@ sidebar:
 
 {% include base_path %}
 
-In the quickstart application (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){:target="_blank"}) the main module component template ('*src\app\main\main.component.html*') wraps the main module content into a '*o-app-layout*' component:
+In the QuickStart application (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){:target="_blank"}) the main module component template ('*src\app\main\main.component.html*') wraps the main module content into a '*o-app-layout*' component:
 
 ```html
 <o-app-layout>

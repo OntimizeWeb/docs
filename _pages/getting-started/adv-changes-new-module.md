@@ -11,7 +11,7 @@ sidebar:
 
 In this section we are going to add a new module for managing the employees of the Bank. We are going to explain step by step how to achieve the goal of adding new module.
 
-The module that we are going to create is only allowed for those users that have credentials, that is, users that have been logged in. So, into Quickstart structure directories, we have to
+The module that we are going to create is only allowed for those users that have credentials, that is, users that have been logged in. So, into QuickStart structure directories, we have to
 create new folder *employees* inside *main* folder (at the same level of *accounts* and *customers*).
 
 Inside the *employees* directory we have to create the following files and folders:
@@ -93,7 +93,7 @@ export class EmployeesRoutingModule { }
 ```
 
 
-Before configure the content of the forms for this module, it is necessary to tell the Quickstart app that a new module exists
+Before configure the content of the forms for this module, it is necessary to tell the QuickStart app that a new module exists
 and configure it modifying some files:
 
 * **main-routing.module.ts:** Include the routes of *Employees* module.

@@ -12,23 +12,21 @@ modified: 2016-12-12T15:54:02-04:00
 
 ### Prerequisites
 
-Before installing and running you need to meet minimum requirements to start. [Check prerequesites depending on your operative system]({{ base_path }}/guide/prerequisites/).
-
+Before installing and running the QuickStart application, check you meet minimum requirements to start. Click [here]({{ base_path }}/guide/prerequisites/) to check prerequisites depending on your operating system.
 
 There are several ways to start:
 
 **a)** You can [clone the entire QuickStart application](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart){:target="_blank"} from GitHub.
 
-**b)** And for those who don't want to mess with Git, you can download the QuickStart as a ZIP file.
+**b)** And for those who don’t want to mess around with Git, you can download the QuickStart as a ZIP file.
 
 [<i class="fa fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ngx-quickstart/archive/master.zip){: .btn .btn--success}
 
 
 
-## 2. Install npm packages and running
+## 2. Install npm packages and run
 
-Goes into the directory of your project (e.g. 'my-proj') and then install the npm packages. Finally, run your app and test it on your browser
-on the url [http://localhost:4200](http://localhost:4200)
+Go into the directory of your project (e.g. ‘my-proj’) and then install the npm packages. Finally, run your app and test it in your browser with the url [http://localhost:4200](http://localhost:4200)
 
 ```bash
 cd my-proj

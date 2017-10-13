@@ -24,7 +24,7 @@ export const CONFIG: Config = {
 
   uuid: 'com.ontimize.web.quickstart',
 
-  title: 'Ontimize Web Quickstart',
+  title: 'Ontimize Web QuickStart',
 
   locale: 'es',
 
