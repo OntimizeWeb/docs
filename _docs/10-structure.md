@@ -300,6 +300,11 @@ Ontimize web has its own plugin for the AoT distribution version creation, you c
 
 In order to compare both types of distribution versions here is a comparison of the data loaded in a browser and the response time. For this comparision we are using the '*Ontimize Web Playground*' application, available [here](https://ontimizeweb.github.io/ontimize-web-ngx-playground){:target="_blank"} (AoT version), and only loading the main page.
 
-![image-left]({{ base_path }}/images/comparatives/playground-JIT.PNG){: .align-left}
+JIT version:
 
-![image-right]({{ base_path }}/images/comparatives/playground-AoT.PNG){: .align-right}
+![image-JIT]({{ base_path }}/images/comparatives/playground-JIT.PNG){: .align-center}
+
+
+AoT version:
+
+![image-AoT]({{ base_path }}/images/comparatives/playground-AoT.PNG){: .align-center}
