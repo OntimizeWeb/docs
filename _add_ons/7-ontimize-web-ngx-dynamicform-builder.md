@@ -4,8 +4,9 @@ title: "Dynamicform Builder"
 excerpt: ""
 ---
 
-# Ontimize Web Dynamicform
+# Ontimize Web Dynamicform builder
 
+Ontimize Web Dynamicform Builder is a web form builder using the [Ontimize Web Dynamic Form](https://github.com/OntimizeWeb/ontimize-web-ngx-dynamicform){:target="_blank"}.
 
 * [Github repository](#github)
 * [Installation](#installation)
@@ -22,3 +23,38 @@ Ontimize Web Dynamic Form Builder module is stored in [github](https://github.co
 ```
 
 ## Usage
+
+### Configure angular-cli.json dependencies
+
+You must add the module styles definition in your '*.angular-cli.json*' file styles array:
+
+```bash
+...
+"styles": [
+  ...
+  "../node_modules/ontimize-web-ngx-dynamicform-builder/styles.scss",
+  ....
+],
+...
+```
+
+### Import in an application module
+
+Include the datatable module into your app in the module where you want to use it.
+
+```bash
+...
+import { DynamicFormBuilderModule } from 'ontimize-web-ngx-dynamicform-builder';
+...
+
+@NgModule({
+  imports: [
+    DynamicFormBuilderModule,
+    /* other imports */
+  ],
+  declarations: ...
+  providers: ...
+})
+export class ExampleModule { }
+```
+
