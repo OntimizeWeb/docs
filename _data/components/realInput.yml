@@ -33,16 +33,8 @@ attributes: [{
   required : "",
   description : "Maximum number of decimals required"
 },{
-  name: "decimal-separator",
-  type: "string",
-  default : "Dot (.)",
-  required : "",
-  description : "Decimal digits chacarter separator"
+  name: "decimal-separator"
 },{
-  name: "decimal-digits",
-  type: "number",
-  default : "2",
-  required : "",
-  description : "Number of decimals"
+  name: "decimal-digits"
 }]
 

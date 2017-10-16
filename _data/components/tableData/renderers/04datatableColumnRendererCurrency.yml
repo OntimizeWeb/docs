@@ -1,42 +1,26 @@
 directive : "o-datatable-cell-renderer-currency"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "currency-symbol", 
+  name: "currency-symbol",
   type: "string",
   default : "dolar ($)",
   required : "",
   description : "Currency symbol (According to ISO 4217)"
 },{
-  name: "currency-symbol-position", 
+  name: "currency-symbol-position",
   type: "left | right",
   default : "left",
   required : "",
   description : "Position of currency symbol"
 },{
-  name: "grouping", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to group the thousand digits"
+  name: "grouping"
 },{
-  name: "thousand-separator", 
-  type: "string",
-  default : "Comma (,)",
-  required : "",
-  description : "Thousand digits chacarter separator (in case of grouping)"
+  name: "thousand-separator"
 },{
-  name: "decimal-separator", 
-  type: "string",
-  default : "Dot (.)",
-  required : "",
-  description : "Decimal digits chacarter separator"
+  name: "decimal-separator"
 },{
-  name: "decimal-digits", 
-  type: "number",
-  default : "2",
-  required : "",
-  description : "Number of decimals"
+  name: "decimal-digits"
 }]
 title : "ODataTableCellRendererCurrency"

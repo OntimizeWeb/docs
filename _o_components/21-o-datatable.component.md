@@ -1,7 +1,7 @@
 ---
 permalink: /components/o-datatable.component/
 title: "Table"
-comp: table
+comp: datatable
 ---
 
 {% include base_path %}

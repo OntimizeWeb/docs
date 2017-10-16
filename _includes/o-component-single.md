@@ -1,21 +1,24 @@
 {% if include.comp and site.data.components[include.comp] %}
   {% assign componentData = site.data.components[include.comp] %}
 {% elsif include.compFile %}
-  {% assign componentData = include.compFile %}     
+  {% assign componentData = include.compFile %}
 {% endif %}
 
+{% if include.comp and site.data.components.common.attributes %}
+  {% assign commonAttributes = site.data.components.common.attributes %}
+{% endif %}
 
-{% if componentData %} 
+{% if componentData %}
 
-  {% if componentData.directive %} 
+  {% if componentData.directive %}
     <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
   {% endif %}
 
-  {% if componentData.description %} 
+  {% if componentData.description %}
     {{ componentData.description | markdownify }}
   {% endif %}
 
-  {% if componentData.inheritedAttributes %} 
+  {% if componentData.inheritedAttributes %}
     <h3 class="grey-color">Inherited attributes</h3>
     <ul>
       {% for inheritedObj in componentData.inheritedAttributes %}
@@ -25,20 +28,20 @@
           {% for inheritedAttr in inheritedObj.attributes %}
             <li> {{ inheritedAttr }} </li>
           {% endfor %}
-        </ul>    
-        {% endfor %}   
+        </ul>
+        {% endfor %}
       </li>
-    </ul>     
+    </ul>
   {% endif %}
 
   <h3 class="grey-color">Attributes</h3>
   {% if componentData.attributes %}
-    {% assign emptyColumns = '' | split: '|' %}   
+    {% assign emptyColumns = '' | split: '|' %}
 
-    {% for column in componentData.attributesColumns %}    
+    {% for column in componentData.attributesColumns %}
       {% assign columnKey = column | downcase %}
-      {% assign emptyCol = componentData.attributes | where: columnKey, "" | size %} 
-      {% if emptyCol == componentData.attributes.size %}                    
+      {% assign emptyCol = componentData.attributes | where: columnKey, "" | size %}
+      {% if emptyCol == componentData.attributes.size %}
         {% assign emptyColumns = emptyColumns | push: columnKey %}
       {% endif %}
     {% endfor %}
@@ -50,34 +53,41 @@
           {% assign columnKey = header | downcase %}
           {% unless emptyColumns contains columnKey %}
             <th class=""> {{ header }}</th>
-          {% endunless %} 
+          {% endunless %}
         {% endfor %}
         </tr>
       </thead>
         <tbody>
         {% for attributeObject in componentData.attributes %}
           <tr>
+          {% assign commonData = site.data.components.common.attributes[attributeObject.name] | default : {} %}
           {% for column in componentData.attributesColumns %}
             {% assign columnKey = column | downcase %}
             {% unless emptyColumns contains columnKey %}
-              {% assign columnData = 'o-component-' | append: columnKey %}          
-              {% assign cellContent = attributeObject[columnKey]  | default: '' %}  
+              {% assign columnData = 'o-component-' | append: columnKey %}
+              
+              {% assign cellValue = commonData[columnKey] %}
+              {% if attributeObject[columnKey] != undefined %}
+                {% assign cellValue = attributeObject[columnKey] %}
+              {% endif %}
+
+              {% assign cellContent = cellValue | default: '' %}
               {% if columnKey != 'type' %}
-                {% assign cellContent = cellContent | markdownify %}  
-              {% endif %}          
-              <td class="" {{ columnData }}>{{ cellContent }}</td> 
-            {% endunless %}                               
-          {% endfor %}       
+                {% assign cellContent = cellContent | markdownify %}
+              {% endif %}
+              <td class="" {{ columnData }}>{{ cellContent }}</td>
+            {% endunless %}
+          {% endfor %}
           </tr>
         {% endfor %}
       </tbody>
-    </table> 
+    </table>
   {% else %}
     <p>No additional attributes</p>
   {% endif %}
 
 
-  {% if componentData.inheritedOutputs %} 
+  {% if componentData.inheritedOutputs %}
     <h3 class="grey-color">Inherited outputs</h3>
     <ul>
       {% for inheritedObj in componentData.inheritedOutputs %}
@@ -87,11 +97,11 @@
           {% for inheritedOutput in inheritedObj.outputs %}
             <li> {{ inheritedOutput }} </li>
           {% endfor %}
-        </ul>    
-        {% endfor %}   
+        </ul>
+        {% endfor %}
       </li>
-    </ul>     
-  {% endif %} 
+    </ul>
+  {% endif %}
 
   {% if componentData.outputs %}
     <h3 class="grey-color">Outputs</h3>
@@ -108,12 +118,12 @@
           <tr>
           {% for column in componentData.outputsColumns %}
             {% assign columnKey = column | downcase %}
-            {% assign columnData = 'o-component-' | append: columnKey %}          
-            {% assign cellContent = outputObject[columnKey]  | default: '' | markdownify %}         
-            
-            <td class="" {{ columnData }}>{{ cellContent }}</td> 
-                            
-          {% endfor %}       
+            {% assign columnData = 'o-component-' | append: columnKey %}
+            {% assign cellContent = outputObject[columnKey]  | default: '' | markdownify %}
+
+            <td class="" {{ columnData }}>{{ cellContent }}</td>
+
+          {% endfor %}
           </tr>
         {% endfor %}
       </tbody>
@@ -124,5 +134,5 @@
     {% capture html-include %}{% include example.md code=componentData.example %}{% endcapture %}
     {{ html-include | markdownify }}
   {% endif %}
-  
+
 {% endif %}

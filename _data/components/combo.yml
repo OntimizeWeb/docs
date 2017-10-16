@@ -12,83 +12,31 @@ outputs: [{
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Combo identifier"
+  name: "attr"
 },{
-  name: "label",
-  type: "string",
-  default : "<em>attr</em> attribute value",
-  required : "",
-  description : "Field label (placeholder when field is empty and floating label when field has data)"
+  name: "label"
 },{
-  name: "data",
-  type: "",
-  default : "",
-  required : "",
-  description : "sets selected value of the combo"
+  name: "data"
 },{
-  name: "automatic-binding",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "automatic-binding"
 },{
-  name: "enabled",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether the field is enabled"
+  name: "enabled"
 },{
-  name: "required",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether the field is required"
+  name: "required"
 },{
-  name: "static-data",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "static-data"
 },{
-  name: "service",
-  type: "string",
-  default : "",
-  required : "",
-  description : "JEE service path"
+  name: "service"
 },{
-  name: "entity",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Service entity name"
+  name: "entity"
 },{
-  name: "columns",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity columns. Separated by ';'"
+  name: "columns"
 },{
-  name: "value-column",
-  type: "string",
-  default : "",
-  required : "",
-  description : ""
+  name: "value-column"
 },{
-  name: "value-column-type",
-  type: "string",
-  default : "",
-  required : "",
-  description : ""
+  name: "value-column-type"
 },{
-  name: "parent-keys",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Filtering keys. Separated by ';'"
+  name: "parent-keys"
 },{
   name: "visible-columns",
   type: "string",
@@ -112,49 +60,21 @@ attributes: [{
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : ""
+  description : "Indicates whether or not to have a selectable <em>null</em> value"
 },{
-  name: "query-on-init",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Query table data on init"
+  name: "query-on-init"
 },{
-  name: "query-on-bind",
-  type: "no | false | yes | true",
-  default : "",
-  required : "",
-  description : "Query table data on bind"
+  name: "query-on-bind"
 },{
-  name: "sql-type",
-  type: "string",
-  default : "OTHER",
-  required : "",
-  description : "Data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}"
+  name: "sql-type"
 },{
-  name: "service-type",
-  type: "string",
-  default : "",
-  required : "",
-  description : ""
+  name: "service-type"
 },{
-  name: "tooltip",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Field tooltip text"
+  name: "tooltip"
 },{
-  name: "tooltip-position",
-  type: "before | after | above | below | left | right",
-  default : "below",
-  required : "",
-  description : "Tooltip position"
+  name: "tooltip-position"
 },{
-  name: "tooltip-show-delay",
-  type: "number",
-  default : "500",
-  required : "",
-  description : "Tooltip display time"
+  name: "tooltip-show-delay"
 },{
   name: "translate",
   type: "",

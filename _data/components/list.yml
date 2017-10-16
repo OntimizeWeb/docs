@@ -1,86 +1,117 @@
 directive : "o-list"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
-
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "title", 
+  name: "attr"
+},{
+  name: "title",
   type: "string",
   default : "",
   required : "",
   description : "List title displayed on screen"
 },{
-  name: "filter", 
+  name: "visible"
+},{
+  name: "enabled",
+  description : "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
+},{
+  name: "controls"
+},{
+  name: "filter",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether to show list filtering options"
+  description : "Indicates whether or not to show list filtering options"
 },{
-  name: "refresh-button", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a refresh data button (also needs <em>filter</em> value to be true)"
+  name: "refresh-button",
+  description : "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
 },{
-  name: "query-on-init", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Query list data on init"
+  name: "query-on-init",
+  default : "yes"
 },{
-  name: "pageable", 
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether to get the list data in a paginated way"
+  name: "query-on-bind",
+  default : "yes"
 },{
-  name: "css-class", 
+  name: "pageable"
+},{
+  name: "css-class",
   type: "string",
   default : "",
   required : "",
   description : "<em>css</em> class name"
 },{
-  name: "columns", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity columns. Separated by ';'"
+  name: "columns"
 },{
-  name: "parent-keys", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Filtering keys. Separated by ';'"
+  name: "parent-keys"
 },{
-  name: "service", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "JEE service path"
+  name: "service"
 },{
-  name: "entity", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Service entity name"
+  name: "service-type"
 },{
-  name: "key", 
+  name: "entity"
+},{
+  name: "keys"
+},{
+  name: "route",
   type: "",
   default : "",
   required : "",
   description : ""
 },{
-  name: "route", 
+  name: "static-data"
+},{
+  name: "query-method"
+},{
+  name: "paginated-query-method"
+},{
+  name: "delete-method"
+},{
+  name: "detail-mode"
+},{
+  name: "detail-form-route"
+},{
+  name: "recursive-detail"
+},{
+  name: "detail-button-in-row"
+},{
+  name: "detail-button-in-row-icon"
+},{
+  name: "edit-button-in-row"
+},{
+  name: "edit-button-in-row-icon"
+},{
+  name: "edit-form-route"
+},{
+  name: "recursive-edit"
+},{
+  name: "query-rows"
+},{
+  name: "insert-button"
+},{
+  name: "row-height"
+},{
+  name: "quick-filter"
+},{
+  name: "quick-filter-columns",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Columns used in the <em>quick-filter</em>. Separated by ';'"
+},{
+  name: "refresh-button"
+},{
+  name: "selectable",
   type: "",
   default : "",
   required : "",
   description : ""
 },{
-  name: " static-data", 
-  type: "Array<any>",
-  default : "",
+  name: "dense",
+  type: "no | false | yes | true",
+  default : "no",
   required : "",
-  description : "Static data for filling the list"
-}]  
+  description : ""
+}]
 
 

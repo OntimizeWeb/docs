@@ -1,0 +1,347 @@
+{
+  "attr" : {
+    name: "attr",
+    type: "string",
+    default : "",
+    required : "Yes",
+    description : "Field identifier. Registry property if component is inside a form."
+  },
+  "label" : {
+    name: "label",
+    type: "string",
+    default : "<em>attr</em> attribute value",
+    required : "",
+    description : "Field label (placeholder when field is empty and floating label when field has data)"
+  },
+  "automatic-binding" : {
+    name: "automatic-binding",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not the component will bind its value to its <em>attr</em> when located inside a form"
+  },
+  "enabled" : {
+    name: "enabled",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not the field is enabled"
+  },
+  "required" : {
+    name: "required",
+    type: "no | false | yes | true",
+    default : "no",
+    required : "",
+    description : "Indicates whether or not the field is required"
+  },
+  "data" : {
+    name: "data",
+    type: "",
+    default : "",
+    required : "",
+    description : "Manually setted component value"
+  },
+  "tooltip" : {
+    name: "tooltip",
+    type: "string",
+    default : "",
+    required : "",
+    description : "Field tooltip text"
+  },
+  "tooltip-position" : {
+    name: "tooltip-position",
+    type: "before | after | above | below | left | right",
+    default : "below",
+    required : "",
+    description : "Field tooltip position"
+  },
+  "tooltip-show-delay" : {
+    name: "tooltip-show-delay",
+    type: "number",
+    default : "500",
+    required : "",
+    description : "Field tooltip display time"
+  },
+  "grouping" : {
+    name: "grouping",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not to group the thousand digits"
+  },
+  "thousand-separator" : {
+    name: "thousand-separator",
+    type: "string",
+    default : "Comma (,)",
+    required : "",
+    description : "Thousand digits chacarter separator (in case of grouping)"
+  },
+  "decimal-separator" : {
+    name: "decimal-separator",
+    type: "string",
+    default : "Dot (.)",
+    required : "",
+    description : "Decimal digits chacarter separator"
+  },
+  "decimal-digits" : {
+    name: "decimal-digits",
+    type: "number",
+    default : "2",
+    required : "",
+    description : "Number of decimals"
+  },
+  "static-data" : {
+    name: "static-data",
+    type: "array<object>",
+    default : "",
+    required : "",
+    description : "Static data for filling the table"
+  },
+  "service" : {
+    name: "service",
+    type: "string",
+    default : "",
+    required : "",
+    description : "JEE service path"
+  },
+  "entity" : {
+    name: "entity",
+    type: "string",
+    default : "",
+    required : "",
+    description : "Service entity name"
+  },
+  "keys" : {
+    name: "keys",
+    type: "string",
+    default : "",
+    required : "",
+    description : "Entity keys. Separated by ';'"
+  },
+  "columns" : {
+    name: "columns",
+    type: "string",
+    default : "",
+    required : "",
+    description : "Entity columns. Separated by ';'"
+  },
+  "value-column" : {
+    name: "value-column",
+    type: "string",
+    default : "",
+    required : "",
+    description : "Column of the entity from where the component will get its value"
+  },
+  "value-column-type" : {
+    name: "value-column-type",
+    type: "string",
+    default : "int",
+    required : "",
+    description : "<em>value-column</em> value type"
+  },
+  "parent-keys": {
+    name: "parent-keys",
+    type: "string",
+    default : "",
+    required : "",
+    description : "Filtering keys. Separated by ';'"
+  },
+  "query-on-init" : {
+    name: "query-on-init",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Query table data on init"
+  },
+  "query-on-bind" : {
+    name: "query-on-bind",
+    type: "no | false | yes | true",
+    default : "",
+    required : "",
+    description : "Query table data on bind"
+  },
+  "sql-type" : {
+    name: "sql-type",
+    type: "string",
+    default : "OTHER",
+    required : "",
+    description : "Data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}"
+  },
+  "service-type" : {
+    name: "service-type",
+    type: "string",
+    default : "",
+    required : "",
+    description : ""
+  },
+  "query-method" : {
+    name: "query-method",
+    type: "string",
+    default : "query",
+    required : "",
+    description : "Service method name for queries"
+  },
+  "paginated-query-method" : {
+    name: "paginated-query-method",
+    type: "string",
+    default : "advancedQuery",
+    required : "",
+    description : "Service method name for paginated queries"
+  },
+  "insert-method" : {
+    name: "insert-method",
+    type: "string",
+    default : "insert",
+    required : "",
+    description : "Service method name for insertions"
+  },
+  "update-method" : {
+    name: "update-method",
+    type: "string",
+    default : "update",
+    required : "",
+    description : "Service method name for updates"
+  },
+  "delete-method" : {
+    name: "delete-method",
+    type: "string",
+    default : "delete",
+    required : "",
+    description : "Service method name for deletions"
+  },
+  "locale" : {
+    name: "locale",
+    type: "string. Values like <em>es</em>, <em>en</em>, <em>...</em>",
+    default : "Application configured locale",
+    required : "",
+    description : "Configured language locale"
+  },
+  "icon" : {
+    name: "icon",
+    type: "string",
+    default : "",
+    required : "",
+    description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  },
+  "quick-filter" : {
+    name: "quick-filter",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not to show a input for filtering data"
+  },
+  "insert-button" : {
+    name: "insert-button",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not to show a button for inserting data"
+  },
+  "refresh-button" : {
+    name: "refresh-button",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not to show a button for refreshing data"
+  },
+  "detail-mode" : {
+    name: "detail-mode",
+    type: "none | click | doubleclick",
+    default : "click",
+    required : "",
+    description : "Action for opening the detail form of a row"
+  },
+  "detail-form-route" : {
+    name: "detail-form-route",
+    type: "string",
+    default : "detail",
+    required : "",
+    description : "Detail form path appended to the current route"
+  },
+  "recursive-detail" : {
+    name: "recursive-detail",
+    type: "no | false | yes | true",
+    default : "no",
+    required : "",
+    description : "Indicates whether or not to add a detail key to current url path (overwrite)"
+  },
+  "detail-button-in-row" : {
+    name: "detail-button-in-row",
+    type: "no | false | yes | true",
+    default : "no",
+    required : "",
+    description : "Indicates whether or not to add a button in each row for opening the detail form"
+  },
+  "detail-button-in-row-icon" : {
+    name: "detail-button-in-row-icon",
+    type: "string",
+    default : "search",
+    required : "",
+    description : "Detail icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  },
+  "edit-button-in-row" : {
+    name: "edit-button-in-row",
+    type: "no | false | yes | true",
+    default : "no",
+    required : "",
+    description : "Indicates whether or not to add a button in each row for opening the edit form"
+  },
+  "edit-button-in-row-icon" : {
+    name: "edit-button-in-row-icon",
+    type: "string",
+    default : "edit",
+    required : "",
+    description : "Edit icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  },
+  "edit-form-route" : {
+    name: "edit-form-route",
+    type: "string",
+    default : "edit",
+    required : "",
+    description : "Edit form path appended to the current route"
+  },
+  "recursive-edit" : {
+    name: "recursive-edit",
+    type: "no | false | yes | true",
+    default : "no",
+    required : "",
+    description : "Indicates whether or not to add a edit key to current url path (overwrite)"
+  },
+  "controls" : {
+    name: "controls",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not to show a controls bar. Including component actions or the quickfilter"
+  },
+  "pageable" : {
+    name: "pageable",
+    type: "no | false | yes | true",
+    default : "no",
+    required : "",
+    description : "Indicates whether or not to do paginated queries for getting the data"
+  },
+  "visible" : {
+    name: "visible",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not the component is visible"
+  },
+  "query-rows": {
+    name: "query-rows",
+    type: "number",
+    default : "10",
+    required : "",
+    description : "Number of records by page. Initial number of registries in queries when using pagination in server side"
+  },
+  "row-height" : {
+    name: "row-height",
+    type: "small | medium | large",
+    default : "medium",
+    required : "",
+    description : "Predefined row height options"
+  }
+}
+
+

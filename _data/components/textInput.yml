@@ -17,35 +17,15 @@ outputs: [{
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr",
-  type: "string",
-  default : "",
-  required : "Yes",
-  description : "Fiel identifier"
+  name: "attr"
 },{
-  name: "label",
-  type: "string",
-  default : "<em>attr</em> attribute value",
-  required : "",
-  description : "Field label (placeholder when field is empty and floating label when field has data)"
+  name: "label"
 },{
-  name: "automatic-binding",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "automatic-binding"
 },{
-  name: "enabled",
-  type: "no | false | yes | true",
-  default : "",
-  required : "",
-  description : "Indicates whether the field is enabled"
+  name: "enabled"
 },{
-  name: "required",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether the field is required"
+  name: "required"
 },{
   name: "min-length",
   type: "number",
@@ -65,27 +45,11 @@ attributes: [{
   required : "",
   description : "Regular expression to validate the field content"
 },{
-  name: "data",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "data"
 },{
-  name: "tooltip",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Field tooltip text"
+  name: "tooltip"
 },{
-  name: "tooltip-position",
-  type: "before | after | above | below | left | right",
-  default : "below",
-  required : "",
-  description : "Tooltip position"
+  name: "tooltip-position"
 },{
-  name: "tooltip-show-delay",
-  type: "number",
-  default : "500",
-  required : "",
-  description : "Tooltip display time"
+  name: "tooltip-show-delay"
 }]

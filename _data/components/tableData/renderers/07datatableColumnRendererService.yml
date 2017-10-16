@@ -4,66 +4,47 @@ title : "ODataTableCellRendererService"
 
 directive : "o-datatable-cell-renderer-service"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "service", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "JEE service path"
+  name: "service"
 },{
-  name: "query-method", 
-  type: "string",
-  default : "query",
-  required : "",
-  description : "Service method name for queries"   
+  name: "query-method"
 },{
-  name: "entity", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Service entity name"
+  name: "entity"
 },{
-  name: "value-column", 
-  type: "string",
-  default : "",
-  required : "",
+  name: "value-column",
   description : "Column name for cell value mapping (similar to component *ComboReferenceDataField* *cod* attribute in classic Ontimize Desktop)"
 },{
-  name: "columns", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity columns. Separated by ';'"
+  name: "columns"
 },{
-  name: "visible-columns", 
+  name: "visible-columns",
   type: "string",
   default : "",
   required : "",
   description : "Visible columns. Separated by ';'"
 },{
-  name: "separator", 
+  name: "separator",
   type: "string",
   default : "",
   required : "",
   description : "Separator used to concatenate the visible columns"
 }]
 
-example : > 
+example : >
 
   <o-datatable entity="EMovements" title="MOVEMENTS" keys="MOVEMENTID"
-    columns="MOVEMENTID;CONCEPT;MOVEMENTTYPEID" 
-    visible-columns="CONCEPT;MOVEMENTTYPEID" parent-keys="ACCOUNTID" 
-    query-on-init="false" query-rows="6" quick-filter="yes" 
+    columns="MOVEMENTID;CONCEPT;MOVEMENTTYPEID"
+    visible-columns="CONCEPT;MOVEMENTTYPEID" parent-keys="ACCOUNTID"
+    query-on-init="false" query-rows="6" quick-filter="yes"
     detail-form-route="transactions">
 
       <o-datatable-column attr="CONCEPT" title="CONCEPT"></o-datatable-column>
-      
+
       <o-datatable-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPES">
-        <o-datatable-cell-renderer-service entity="EMovementTypes" 
+        <o-datatable-cell-renderer-service entity="EMovementTypes"
           value-column="MOVEMENTTYPEID" separator=" = "
-          columns="MOVEMENTTYPEID;DESCRIPTION" 
+          columns="MOVEMENTTYPEID;DESCRIPTION"
           visible-columns="DESCRIPTION;MOVEMENTTYPEID" >
         </o-datatable-cell-renderer-service>
       </o-datatable-column>

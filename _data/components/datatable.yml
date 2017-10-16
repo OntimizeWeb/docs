@@ -1,282 +1,196 @@
 
 directive : "o-datatable"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr", 
-  type: "string",
-  default : "<em>entity</em> attribute value (if exists)",
-  required : "",
-  description : "Table identifier. Mandatory if table data is given by 'data' attribute"
+  name: "attr"
 },{
-  name: "title", 
+  name: "title",
   type: "string",
   default : "",
   required : "",
   description : "Title in exported files"
 },{
-  name: "visible", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Component visibility"
+  name: "visible"
 },{
-  name: "enabled", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether the field is enabled. When table is not enabled the detail navigation is disabled too"
+  name: "enabled",
+  description : "Indicates whether or not the field is enabled. When table is not enabled the detail navigation is disabled too"
 },{
-  name: "data", 
-  type: "array<object>",
-  default : "",
-  required : "",
-  description : "Static data for filling the table"
+  name: "static-data"
 },{
-  name: "service", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "JEE service path"
+  name: "service"
 },{
-  name: "query-method", 
-  type: "string",
-  default : "query",
-  required : "",
-  description : "Service method name for queries"
+  name: "service-type"
 },{
-  name: "paginated-query-method", 
-  type: "string",
-  default : "advancedQuery",
-  required : "",
-  description : "Service method name for paginated queries"
+  name: "query-method"
 },{
-  name: "insert-method", 
-  type: "string",
-  default : "insert",
-  required : "",
-  description : "Service method name for insertions"
+  name: "paginated-query-method"
 },{
-  name: "update-method", 
-  type: "string",
-  default : "update",
-  required : "",
-  description : "Service method name for updates"
+  name: "insert-method"
 },{
-  name: "delete-method", 
-  type: "string",
-  default : "delete",
-  required : "",
-  description : "Service method name for deletions"
+  name: "update-method"
 },{
-  name: "entity", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Service entity name"
+  name: "delete-method"
 },{
-  name: "keys", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity keys. Separated by ';'"
+  name: "entity"
 },{
-  name: "parent-keys", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Filtering keys. Separated by ';'"
+  name: "keys"
 },{
-  name: "columns", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity columns. Separated by ';'"
+  name: "parent-keys"
 },{
-  name: "visible-columns", 
+  name: "columns"
+},{
+  name: "visible-columns",
   type: "string",
   default : "",
   required : "",
   description : "Visible columns. Separated by ';'"
 },{
-  name: "editable-columns", 
+  name: "editable-columns",
   type: "string",
   default : "",
   required : "",
   description : "Columns that can be edited directly on the table. Separated by ';'"
 },{
-  name: "edit-on-focus", 
+  name: "edit-on-focus",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Cell edition when it gains focus. Useful when using <em>o-datatable-cell-renderer-action action=\"edit\"</em> for editing records and avoid having two differents edition modes in same table"
 },{
-  name: "sort-columns", 
+  name: "sort-columns",
   type: "string",
   default : "",
   required : "",
   description : "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
 },{
-  name: "query-rows", 
-  type: "number",
-  default : "10",
-  required : "",
-  description : "Number of records by page. Initial number of registries in queries when using pagination in server side"
+  name: "query-rows"
 },{
-  name: "query-on-init", 
+  name: "query-on-init",
+  default : "yes",
+},{
+  name: "query-on-bind",
+  default : "yes",
+},{
+  name: "quick-filter"
+},{
+  name: "insert-button"
+},{
+  name: "delete-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Query table data on init"
+  description : "Indicates whether or not to show a button for deleting data"
 },{
-  name: "quick-filter", 
+  name: "refresh-button"
+},{
+  name: "columns-visibility-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a input for filtering data"
+  description : "Indicates whether or not to show a button for changing columns visibility"
 },{
-  name: "insert-button", 
+  name: "columns-resize-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a button for inserting data"
+  description : "Indicates whether or not to show a button for changing columns size"
 },{
-  name: "delete-button", 
+  name: "columns-group-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a button for deleting data"
+  description : "Indicates whether or not to show a button for grouping columns"
 },{
-  name: "refresh-button", 
+  name: "export-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a button for refreshing data"
+  description : "Indicates whether or not to show a button for exporting table data (Excel, PDF, etc.)"
 },{
-  name: "columns-visibility-button", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a button for changing columns visibility"
+  name: "detail-mode"
 },{
-  name: "columns-resize-button", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a button for changing columns size"
+  name: "detail-form-route"
 },{
-  name: "columns-group-button", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a button for grouping columns"
+  name: "recursive-detail"
 },{
-  name: "export-button", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a button for exporting table data (Excel, PDF, etc.)"
-},{
-  name: "detail-mode", 
-  type: "none | click | doubleclick",
-  default : "none",
-  required : "",
-  description : "Action for opening the detail form of a row"
-},{
-  name: "detail-form-route", 
-  type: "string",
-  default : "detail",
-  required : "",
-  description : "Detail form path"
-},{
-  name: "recursive-detail", 
+  name: "insert-table",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Adding detail key to current url path (overwrite)"
+  description : "Indicates whether or not to show a empty row at the end of the table for inserting a new record"
 },{
-  name: "insert-table", 
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Showing a empty row at the end of the table for inserting a new record"
+  name: "detail-button-in-row"
 },{
-  name: "detail-button-in-row", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to add a button in each row for opening the detail form"
+  name: "detail-button-in-row-icon"
 },{
-  name: "detail-button-in-row-icon", 
-  type: "string",
-  default : "search",
-  required : "",
-  description : "Detail icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  name: "edit-button-in-row"
 },{
-  name: "edit-button-in-row", 
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether to add a button in each row for opening the edit form"
+  name: "edit-button-in-row-icon"
 },{
-  name: "edit-button-in-row-icon", 
-  type: "string",
-  default : "edit",
-  required : "",
-  description : "Edit icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
-},{
-  name: "edition-mode", 
+  name: "edition-mode",
   type: "inline | other",
   default : "",
   required : "",
   description : "Row edition mode. Setting inline row edition when value is *inline* or opening edition screen in other case"
 },{
-  name: "edit-form-route", 
-  type: "string",
-  default : "edit",
-  required : "",
-  description : "Route of edit form"
-},{ 
-  name: "recursive-edit", 
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Adding edit key to current url path (overwrite)"
+  name: "edit-form-route"
 },{
-  name: "show-table-buttons-text", 
+  name: "recursive-edit"
+},{
+  name: "show-table-buttons-text",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show table actions text alongside icons"
+  description : "Indicates whether or not to show table actions text alongside icons"
 },{
-  name: "select-all-checkbox", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a column of checkboxes for selecting table rows"
-},{
-  name: "controls", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show table controls bar. Including table actions, quickfilter and options"
-},{
-  name: "row-height", 
-  type: "small | medium | large",
-  default : "medium",
-  required : "",
-  description : "Predefined row height options"
-},{
-  name: "pageable", 
+  name: "select-all-checkbox",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether to do paginated queries for getting table data"
+  description : "Indicates whether or not to show a column of checkboxes for selecting table rows"
 },{
-  name: "single-page-mode", 
+  name: "controls"
+},{
+  name: "row-height"
+},{
+  name: "pageable"
+},{
+  name: "pagination-controls",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the pagination controls"
+},{
+  name: "single-page-mode",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates which pagination mode is used. If true, the only records stored in application memory are those found on the current page, doing a query on each page change"
+  description : "Indicates whether or not the single pagination mode is used. If true, the only records stored in application memory are those found on the current page, doing a query on each page change"
+}]
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onClick",
+  description: "Event triggered when component "
+},{
+  name : "onRowSelected",
+  description: "Event triggered when component "
+},{
+  name : "onRowDeselected",
+  description: "Event triggered when component "
+},{
+  name : "onRowDeleted",
+  description: "Event triggered when component "
+},{
+  name : "onDoubleClick",
+  description: "Event triggered when component "
+},{
+  name : "onTableDataLoaded",
+  description: "Event triggered when component "
+},{
+  name : "onPaginatedTableDataLoaded",
+  description: "Event triggered when component "
 }]

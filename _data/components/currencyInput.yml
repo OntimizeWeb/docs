@@ -22,13 +22,13 @@ attributes: [{
   type: "string",
   default : "euro (EUR)",
   required : "",
-  description : "currency symbol (According to ISO 4217)"
+  description : "Currency symbol (According to ISO 4217)"
 },{
   name: "currency-symbol-position",
   type: "left | right",
   default : "right",
   required : "",
-  description : "Position of currency symbol"
+  description : "Position of the currency symbol"
 }]
 
 inheritedOutputs: [

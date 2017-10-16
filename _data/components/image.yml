@@ -1,56 +1,47 @@
 directive : "o-image"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr", 
+  name: "attr"
+},{
+  name: "label"
+},{
+  name: "automatic-binding"
+},{
+  name: "data"
+},{
+  name: "enabled"
+},{
+  name: "required"
+},{
+  name: "empty-image",
   type: "string",
   default : "",
   required : "",
-  description : "Image identifier"
+  description : "Image displayed when the component has no value. It has preference over the <em>empty-icon</em>"
 },{
-  name: "label", 
+  name: "empty-icon",
   type: "string",
   default : "",
   required : "",
-  description : "Field label"
+  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) displayed when the component has no value"
 },{
-  name: "data", 
-  type: "",
-  default : "",
-  required : "",
-  description : ""
-},{
-  name: "enabled", 
+  name: "show-controls",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether the field is enabled"
+  description : "Indicates whether or not to show the selection controls"
 },{
-  name: "required", 
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether the field is required"
+  name: "sql-type",
+  default : "BLOB"
 },{
-  name: "empty-image", 
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "tooltip"
 },{
-  name: "show-controls", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show or hide selection controls"
+  name: "tooltip-position"
 },{
-  name: "sql-type", 
-  type: "string",
-  default : "BLOB",
-  required : "",
-  description : "Data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}"
-}]  
+  name: "tooltip-show-delay"
+}]
 
 outputsColumns: ["Name", "Description"]
 
