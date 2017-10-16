@@ -16,22 +16,22 @@ attributes: [{
   name: "required"
 },{
   name: "empty-image",
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Image displayed when the component has no value. It has preference over the <em>empty-icon</em>"
 },{
   name: "empty-icon",
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) displayed when the component has no value"
 },{
   name: "show-controls",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show or hide selection controls"
+  description : "Indicates whether or not to show the selection controls"
 },{
   name: "sql-type",
   default : "BLOB"

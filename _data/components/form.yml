@@ -47,7 +47,7 @@ attributes: [{
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether the form toolbar is visible"
+  description : "Indicates whether or not to show the form toolbar"
 },{
   name: "header-mode",
   type: "none | floating",
@@ -59,47 +59,47 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "Displayable text in form toolbar"
+  description : "Displayable text in the form toolbar"
 },{
   name: "label-header-align",
   type: "start | center | end",
   default : "center",
   required : "",
-  description : "Alignment of form toolbar text"
+  description : "Alignment of the form toolbar text"
 },{
   name: "header-actions",
   type: "string",
   default : "R;I;U;D",
   required : "",
-  description : "Available action buttons on form toolbar of standard CRUD operations, separated by ';'. Available options are R;I;U;D (Refresh, Insert, Update, Delete)"
+  description : "Available action buttons in form toolbar of standard CRUD operations, separated by ';'. Available options are R;I;U;D (Refresh, Insert, Update, Delete)"
 },{
   name: "show-header-actions-text",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show the text of the form toolbar buttons"
+  description : "Indicates whether or not to show the text of the form toolbar buttons"
 },{
   name: "stay-in-record-after-insert",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether to show detail form after insert new record"
+  description : "Indicates whether or not to show detail form after insert new record"
 },{
   name: "stay-in-record-after-edit",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether to show edit form after editing a record"
+  description : "Indicates whether or not to stay in the edited detail form after a successful edition"
 },{
   name: "layout-fill",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : ""
+  description : "Indicates whether or not the form content will be expanded and occupying all its parent layout"
 },{
   name: "layout-direction",
   type: "column | row",
   default : "column",
   required : "",
-  description : ""
+  description : "Direction of the form main content"
 }]

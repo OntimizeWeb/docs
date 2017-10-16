@@ -13,11 +13,7 @@ attributes: [{
   required : "",
   description : "Type of button"
 },{
-  name: "icon",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  name: "icon"
 },{
   name: "icon-position",
   type: "left | right | top | bottom",

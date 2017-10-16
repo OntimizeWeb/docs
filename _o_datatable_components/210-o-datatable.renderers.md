@@ -3,8 +3,7 @@ permalink: /datatable-components/o-datatable-renderers.component/
 title: "Column renderers"
 ---
 
-Specifies how to render a column cell content. A table column has the attribute *type* that indicates how its cells
-will be rendered.
+Specifies how to render a column cell content. A table column has the attribute *type* that indicates how its cells will be rendered.
 
 For example:
 
@@ -46,7 +45,7 @@ It would be equivalent to define:
 {% endfor %}
 
 
-## Creating a custom renderer
+## Create a custom renderer
 
 To create a custom renderer is necessary to create a component implementing
  the **ITableCellRenderer** interface or extending another renderer component.

@@ -11,35 +11,21 @@ attributes: [{
   required : "",
   description : "List title displayed on screen"
 },{
-  name: "visible",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Component visibility"
+  name: "visible"
 },{
   name: "enabled",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether the field is enabled. When table is not enabled the detail navigation is disabled too"
+  description : "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
 },{
-  name: "controls",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show table controls bar. Including table actions, quickfilter and options"
+  name: "controls"
 },{
   name: "filter",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether to show list filtering options"
+  description : "Indicates whether or not to show list filtering options"
 },{
   name: "refresh-button",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a refresh data button (also needs <em>filter</em> value to be true)"
+  description : "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
 },{
   name: "query-on-init",
   default : "yes"
@@ -47,11 +33,7 @@ attributes: [{
   name: "query-on-bind",
   default : "yes"
 },{
-  name: "pageable",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether to get the list data in a paginated way"
+  name: "pageable"
 },{
   name: "css-class",
   type: "string",
@@ -81,103 +63,43 @@ attributes: [{
 },{
   name: "query-method"
 },{
-  name: "paginated-query-method",
-  type: "string",
-  default : "advancedQuery",
-  required : "",
-  description : "Service method name for paginated queries"
+  name: "paginated-query-method"
 },{
   name: "delete-method"
 },{
-  name: "detail-mode",
-  type: "none | click | doubleclick",
-  default : "click",
-  required : "",
-  description : "Action for opening the detail form of a row"
+  name: "detail-mode"
 },{
-  name: "detail-form-route",
-  type: "string",
-  default : "detail",
-  required : "",
-  description : "Detail form path"
+  name: "detail-form-route"
 },{
-  name: "recursive-detail",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Adding detail key to current url path (overwrite)"
+  name: "recursive-detail"
 },{
-  name: "detail-button-in-row",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether to add a button in each row for opening the detail form"
+  name: "detail-button-in-row"
 },{
-  name: "detail-button-in-row-icon",
-  type: "string",
-  default : "search",
-  required : "",
-  description : "Detail icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  name: "detail-button-in-row-icon"
 },{
-  name: "edit-button-in-row",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether to add a button in each row for opening the edit form"
+  name: "edit-button-in-row"
 },{
-  name: "edit-button-in-row-icon",
-  type: "string",
-  default : "edit",
-  required : "",
-  description : "Edit icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  name: "edit-button-in-row-icon"
 },{
-  name: "edit-form-route",
-  type: "string",
-  default : "edit",
-  required : "",
-  description : "Route of edit form"
+  name: "edit-form-route"
 },{
-  name: "recursive-edit",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Adding edit key to current url path (overwrite)"
+  name: "recursive-edit"
 },{
-  name: "query-rows",
-  type: "number",
-  default : "10",
-  required : "",
-  description : "Number of records by page. Initial number of registries in queries when using pagination in server side"
+  name: "query-rows"
 },{
-  name: "insert-button",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a button for inserting data"
+  name: "insert-button"
 },{
-  name: "row-height",
-  type: "small | medium | large",
-  default : "medium",
-  required : "",
-  description : "Predefined row height options"
+  name: "row-height"
 },{
-  name: "quick-filter",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a input for filtering data"
+  name: "quick-filter"
 },{
   name: "quick-filter-columns",
-  type: "",
+  type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Columns used in the <em>quick-filter</em>. Separated by ';'"
 },{
-  name: "refresh-button",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a button for refreshing data"
+  name: "refresh-button"
 },{
   name: "selectable",
   type: "",

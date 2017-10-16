@@ -12,17 +12,10 @@ attributes: [{
   required : "",
   description : "Title in exported files"
 },{
-  name: "visible",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Component visibility"
+  name: "visible"
 },{
   name: "enabled",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether the field is enabled. When table is not enabled the detail navigation is disabled too"
+  description : "Indicates whether or not the field is enabled. When table is not enabled the detail navigation is disabled too"
 },{
   name: "static-data"
 },{
@@ -32,11 +25,7 @@ attributes: [{
 },{
   name: "query-method"
 },{
-  name: "paginated-query-method",
-  type: "string",
-  default : "advancedQuery",
-  required : "",
-  description : "Service method name for paginated queries"
+  name: "paginated-query-method"
 },{
   name: "insert-method"
 },{
@@ -76,11 +65,7 @@ attributes: [{
   required : "",
   description : "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
 },{
-  name: "query-rows",
-  type: "number",
-  default : "10",
-  required : "",
-  description : "Number of records by page. Initial number of registries in queries when using pagination in server side"
+  name: "query-rows"
 },{
   name: "query-on-init",
   default : "yes",
@@ -88,101 +73,61 @@ attributes: [{
   name: "query-on-bind",
   default : "yes",
 },{
-  name: "quick-filter",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a input for filtering data"
+  name: "quick-filter"
 },{
-  name: "insert-button",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a button for inserting data"
+  name: "insert-button"
 },{
   name: "delete-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a button for deleting data"
+  description : "Indicates whether or not to show a button for deleting data"
 },{
-  name: "refresh-button",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show a button for refreshing data"
+  name: "refresh-button"
 },{
   name: "columns-visibility-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a button for changing columns visibility"
+  description : "Indicates whether or not to show a button for changing columns visibility"
 },{
   name: "columns-resize-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a button for changing columns size"
+  description : "Indicates whether or not to show a button for changing columns size"
 },{
   name: "columns-group-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a button for grouping columns"
+  description : "Indicates whether or not to show a button for grouping columns"
 },{
   name: "export-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show a button for exporting table data (Excel, PDF, etc.)"
+  description : "Indicates whether or not to show a button for exporting table data (Excel, PDF, etc.)"
 },{
-  name: "detail-mode",
-  type: "none | click | doubleclick",
-  default : "click",
-  required : "",
-  description : "Action for opening the detail form of a row"
+  name: "detail-mode"
 },{
-  name: "detail-form-route",
-  type: "string",
-  default : "detail",
-  required : "",
-  description : "Detail form path"
+  name: "detail-form-route"
 },{
-  name: "recursive-detail",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Adding detail key to current url path (overwrite)"
+  name: "recursive-detail"
 },{
   name: "insert-table",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Showing a empty row at the end of the table for inserting a new record"
+  description : "Indicates whether or not to show a empty row at the end of the table for inserting a new record"
 },{
-  name: "detail-button-in-row",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether to add a button in each row for opening the detail form"
+  name: "detail-button-in-row"
 },{
-  name: "detail-button-in-row-icon",
-  type: "string",
-  default : "search",
-  required : "",
-  description : "Detail icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  name: "detail-button-in-row-icon"
 },{
-  name: "edit-button-in-row",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether to add a button in each row for opening the edit form"
+  name: "edit-button-in-row"
 },{
-  name: "edit-button-in-row-icon",
-  type: "string",
-  default : "edit",
-  required : "",
-  description : "Edit icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  name: "edit-button-in-row-icon"
 },{
   name: "edition-mode",
   type: "inline | other",
@@ -190,59 +135,39 @@ attributes: [{
   required : "",
   description : "Row edition mode. Setting inline row edition when value is *inline* or opening edition screen in other case"
 },{
-  name: "edit-form-route",
-  type: "string",
-  default : "edit",
-  required : "",
-  description : "Route of edit form"
+  name: "edit-form-route"
 },{
-  name: "recursive-edit",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Adding edit key to current url path (overwrite)"
+  name: "recursive-edit"
 },{
   name: "show-table-buttons-text",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show table actions text alongside icons"
+  description : "Indicates whether or not to show table actions text alongside icons"
 },{
   name: "select-all-checkbox",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether to show a column of checkboxes for selecting table rows"
+  description : "Indicates whether or not to show a column of checkboxes for selecting table rows"
 },{
-  name: "controls",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to show table controls bar. Including table actions, quickfilter and options"
+  name: "controls"
 },{
-  name: "row-height",
-  type: "small | medium | large",
-  default : "medium",
-  required : "",
-  description : "Predefined row height options"
+  name: "row-height"
 },{
-  name: "pageable",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether to do paginated queries for getting table data"
+  name: "pageable"
 },{
   name: "pagination-controls",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether to show pagination controls"
+  description : "Indicates whether or not to show the pagination controls"
 },{
   name: "single-page-mode",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates which pagination mode is used. If true, the only records stored in application memory are those found on the current page, doing a query on each page change"
+  description : "Indicates whether or not the single pagination mode is used. If true, the only records stored in application memory are those found on the current page, doing a query on each page change"
 }]
 
 outputsColumns: ["Name", "Description"]

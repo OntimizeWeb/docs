@@ -1,21 +1,21 @@
 directive : "o-datatable-cell-renderer-image"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "image-type", 
+  name: "image-type",
   type: "base64 | url",
   default : "Model value",
   required : "",
   description : "Image type (external URL or base64)"
 },{
-  name: "avatar", 
+  name: "avatar",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether to visualize image as an avatar (as a circle)"   
+  description : "Indicates whether or not to visualize image as an avatar (as a circle)"
 },{
-  name: "empty-image", 
+  name: "empty-image",
   type: "string",
   default : "",
   required : "",

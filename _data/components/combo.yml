@@ -60,7 +60,7 @@ attributes: [{
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : ""
+  description : "Indicates whether or not to have a selectable <em>null</em> value"
 },{
   name: "query-on-init"
 },{

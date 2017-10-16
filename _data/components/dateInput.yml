@@ -16,11 +16,7 @@ attributes: [{
   required : "",
   description : "Date format. See [MomentJS format](http://momentjs.com/docs/#/displaying/format){:target='_blank'}"
 },{
-  name: "locale",
-  type: "string. Values like <em>es</em>, <em>en</em>, <em>...</em>",
-  default : "Application configured locale",
-  required : "",
-  description : "Datepicker configured language"
+  name: "locale"
 },{
   name: "start-view",
   type: "month | year",

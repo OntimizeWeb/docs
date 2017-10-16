@@ -1,40 +1,40 @@
 
 directive : "o-datatable-column"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr", 
+  name: "attr",
   type: "string",
   default : "",
   required : "",
   description : "Column name"
 },{
-  name: "title", 
+  name: "title",
   type: "string",
   default : "",
   required : "",
   description : "Column title"
 },{
-  name: "orderable", 
+  name: "orderable",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether the column can be sorted"
+  description : "Indicates whether or not the column can be sorted"
 },{
-  name: "searchable", 
+  name: "searchable",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether the column content can be searched"
+  description : "Indicates whether or not the column content can be searched"
 },{
-  name: "editable", 
+  name: "editable",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-datatable</em>"
+  description : "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-datatable</em>"
 },{
-  name: "type", 
+  name: "type",
   type: "string | boolean | integer | real | currency | date | image",
   default : "string",
   required : "",

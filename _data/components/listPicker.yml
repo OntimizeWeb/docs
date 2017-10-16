@@ -45,7 +45,7 @@ attributes: [{
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : ""
+  description : "Indicates whether or not to show values filtering input"
 },{
   name: "separator",
   type: "string",
@@ -71,13 +71,13 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "List picker dialog width"
 },{
   name: "dialog-height",
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "List picker dialog height"
 }]
 
 outputsColumns: ["Name", "Description"]

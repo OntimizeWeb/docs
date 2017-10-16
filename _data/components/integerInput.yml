@@ -32,11 +32,7 @@ attributes: [{
 },{
   name: "thousand-separator"
 },{
-  name: "locale",
-  type: "string. Values like <em>es</em>, <em>en</em>, <em>...</em>",
-  default : "Application configured locale",
-  required : "",
-  description : "Input configured language"
+  name: "locale"
 }]
 
 inheritedOutputs: [
