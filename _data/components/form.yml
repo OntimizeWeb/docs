@@ -21,71 +21,27 @@ outputs: [{
 attributesColumns: ["Name","Type","Default","Description"]
 
 attributes: [{
-  name: "service",
-  type: "string",
-  default : "",
-  required : "",
-  description : "JEE service path"
+  name: "service"
 },{
-  name: "service-type",
-  type: "string",
-  default : "",
-  required : "",
-  description : ""
+  name: "service-type"
 },{
-  name: "entity",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Service entity name"
+  name: "entity"
 },{
-  name: "keys",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity keys. Separated by ';'"
+  name: "keys"
 },{
-  name: "columns",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity columns. Separated by ';'"
+  name: "columns"
 },{
-  name: "query-on-init",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether to query data on init"
+  name: "query-on-init"
 },{
-  name: "parent-keys",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Filtering keys. Separated by ';'"
+  name: "parent-keys"
 },{
-  name: "query-method",
-  type: "string",
-  default : "query",
-  required : "",
-  description : "Service method name for queries"
+  name: "query-method"
 },{
-  name: "insert-method",
-  type: "string",
-  default : "insert",
-  required : "",
-  description : "Service method name for insertions"
+  name: "insert-method"
 },{
-  name: "update-method",
-  type: "string",
-  default : "update",
-  required : "",
-  description : "Service method name for updates"
+  name: "update-method"
 },{
-  name: "delete-method",
-  type: "string",
-  default : "delete",
-  required : "",
-  description : "Service method name for deletions"
+  name: "delete-method"
 },{
   name: "show-header",
   type: "no | false | yes | true",

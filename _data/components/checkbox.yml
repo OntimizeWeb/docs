@@ -9,36 +9,26 @@ outputs: [{
 }]
 
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Checkbox identifier"
+  name: "attr"
 },{
-  name: "label", 
-  type: "string",
-  default : "",
-  required : "",
-  description : "Field label (placeholder when field is empty and floating label when field has data)"
+  name: "label"
 },{
-  name: "data", 
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "data"
+}{
+  name: "automatic-binding"
 },{
-  name: "enabled", 
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether the field is enabled"
+  name: "enabled"
 },{
-  name: "required", 
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether the field is required"
-}] 
+  name: "required"
+},{
+  name: "sql-type"
+},{
+  name: "tooltip"
+},{
+  name: "tooltip-position"
+},{
+  name: "tooltip-show-delay"
+}]

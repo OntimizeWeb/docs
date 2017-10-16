@@ -63,6 +63,9 @@
           {% assign attributeData = commonAttributes[attributeObject.name] %}
           {% if attributeData == undefined %}
             {% assign attributeData = attributeObject %}
+          {% else %}
+            {% assign attributeData = Object.assign(attributeData, attributeObject) %}
+
           {% endif %}
 
           {% for column in componentData.attributesColumns %}

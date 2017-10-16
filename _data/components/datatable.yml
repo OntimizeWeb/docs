@@ -4,11 +4,7 @@ directive : "o-datatable"
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr",
-  type: "string",
-  default : "<em>entity</em> attribute value (if exists)",
-  required : "",
-  description : "Table identifier. Mandatory if table data is given by 'data' attribute"
+  name: "attr"
 },{
   name: "title",
   type: "string",
@@ -28,29 +24,13 @@ attributes: [{
   required : "",
   description : "Indicates whether the field is enabled. When table is not enabled the detail navigation is disabled too"
 },{
-  name: "static-data",
-  type: "array<object>",
-  default : "",
-  required : "",
-  description : "Static data for filling the table"
+  name: "static-data"
 },{
-  name: "service",
-  type: "string",
-  default : "",
-  required : "",
-  description : "JEE service path"
+  name: "service"
 },{
-  name: "service-type",
-  type: "string",
-  default : "",
-  required : "",
-  description : ""
+  name: "service-type"
 },{
-  name: "query-method",
-  type: "string",
-  default : "query",
-  required : "",
-  description : "Service method name for queries"
+  name: "query-method"
 },{
   name: "paginated-query-method",
   type: "string",
@@ -58,47 +38,19 @@ attributes: [{
   required : "",
   description : "Service method name for paginated queries"
 },{
-  name: "insert-method",
-  type: "string",
-  default : "insert",
-  required : "",
-  description : "Service method name for insertions"
+  name: "insert-method"
 },{
-  name: "update-method",
-  type: "string",
-  default : "update",
-  required : "",
-  description : "Service method name for updates"
+  name: "update-method"
 },{
-  name: "delete-method",
-  type: "string",
-  default : "delete",
-  required : "",
-  description : "Service method name for deletions"
+  name: "delete-method"
 },{
-  name: "entity",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Service entity name"
+  name: "entity"
 },{
-  name: "keys",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity keys. Separated by ';'"
+  name: "keys"
 },{
-  name: "parent-keys",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Filtering keys. Separated by ';'"
+  name: "parent-keys"
 },{
-  name: "columns",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity columns. Separated by ';'"
+  name: "columns"
 },{
   name: "visible-columns",
   type: "string",
@@ -131,16 +83,10 @@ attributes: [{
   description : "Number of records by page. Initial number of registries in queries when using pagination in server side"
 },{
   name: "query-on-init",
-  type: "no | false | yes | true",
   default : "yes",
-  required : "",
-  description : "Query table data on init"
 },{
   name: "query-on-bind",
-  type: "no | false | yes | true",
   default : "yes",
-  required : "",
-  description : "Query table data on bind"
 },{
   name: "quick-filter",
   type: "no | false | yes | true",

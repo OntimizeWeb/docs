@@ -3,11 +3,7 @@ directive : "o-list"
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr",
-  type: "string",
-  default : "<em>entity</em> attribute value (if exists)",
-  required : "",
-  description : "List identifier"
+  name: "attr"
 },{
   name: "title",
   type: "string",
@@ -46,16 +42,10 @@ attributes: [{
   description : "Indicates whether to show a refresh data button (also needs <em>filter</em> value to be true)"
 },{
   name: "query-on-init",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Query list data on init"
+  default : "yes"
 },{
   name: "query-on-bind",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Query table data on bind"
+  default : "yes"
 },{
   name: "pageable",
   type: "no | false | yes | true",
@@ -69,41 +59,17 @@ attributes: [{
   required : "",
   description : "<em>css</em> class name"
 },{
-  name: "columns",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity columns. Separated by ';'"
+  name: "columns"
 },{
-  name: "parent-keys",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Filtering keys. Separated by ';'"
+  name: "parent-keys"
 },{
-  name: "service",
-  type: "string",
-  default : "",
-  required : "",
-  description : "JEE service path"
+  name: "service"
 },{
-  name: "service-type",
-  type: "string",
-  default : "",
-  required : "",
-  description : ""
+  name: "service-type"
 },{
-  name: "entity",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Service entity name"
+  name: "entity"
 },{
-  name: "keys",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Entity keys. Separated by ';'"
+  name: "keys"
 },{
   name: "route",
   type: "",
@@ -111,17 +77,9 @@ attributes: [{
   required : "",
   description : ""
 },{
-  name: "static-data",
-  type: "Array<any>",
-  default : "",
-  required : "",
-  description : "Static data for filling the list"
+  name: "static-data"
 },{
-  name: "query-method",
-  type: "string",
-  default : "query",
-  required : "",
-  description : "Service method name for queries"
+  name: "query-method"
 },{
   name: "paginated-query-method",
   type: "string",
@@ -129,11 +87,7 @@ attributes: [{
   required : "",
   description : "Service method name for paginated queries"
 },{
-  name: "delete-method",
-  type: "string",
-  default : "delete",
-  required : "",
-  description : "Service method name for deletions"
+  name: "delete-method"
 },{
   name: "detail-mode",
   type: "none | click | doubleclick",

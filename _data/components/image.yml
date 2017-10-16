@@ -3,41 +3,17 @@ directive : "o-image"
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Image identifier"
+  name: "attr"
 },{
-  name: "label",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Field label"
+  name: "label"
 },{
-  name: "automatic-binding",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "automatic-binding"
 },{
-  name: "data",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "data"
 },{
-  name: "enabled",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether the field is enabled"
+  name: "enabled"
 },{
-  name: "required",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether the field is required"
+  name: "required"
 },{
   name: "empty-image",
   type: "",
@@ -58,28 +34,13 @@ attributes: [{
   description : "Indicates whether to show or hide selection controls"
 },{
   name: "sql-type",
-  type: "string",
-  default : "BLOB",
-  required : "",
-  description : "Data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}"
+  default : "BLOB"
 },{
-  name: "tooltip",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Field tooltip text"
+  name: "tooltip"
 },{
-  name: "tooltip-position",
-  type: "before | after | above | below | left | right",
-  default : "below",
-  required : "",
-  description : "Tooltip position"
+  name: "tooltip-position"
 },{
-  name: "tooltip-show-delay",
-  type: "number",
-  default : "500",
-  required : "",
-  description : "Tooltip display time"
+  name: "tooltip-show-delay"
 }]
 
 outputsColumns: ["Name", "Description"]
