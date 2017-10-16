@@ -1,0 +1,25 @@
+{
+  "attr" : {
+    name: "attr",
+    type: "string",
+    default : "",
+    required : "Yes",
+    description : "Field identifier"
+  },
+  "label" : {
+    name: "label",
+    type: "string",
+    default : "<em>attr</em> attribute value",
+    required : "",
+    description : "Field label (placeholder when field is empty and floating label when field has data)"
+  },
+  "automatic-binding" : {
+    name: "automatic-binding",
+    type: "",
+    default : "",
+    required : "",
+    description : ""
+  }
+}
+
+

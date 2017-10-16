@@ -17,23 +17,11 @@ outputs: [{
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "attr",
-  type: "string",
-  default : "",
-  required : "Yes",
-  description : "Fiel identifier"
+  name: "attr"
 },{
-  name: "label",
-  type: "string",
-  default : "<em>attr</em> attribute value",
-  required : "",
-  description : "Field label (placeholder when field is empty and floating label when field has data)"
+  name: "label"
 },{
-  name: "automatic-binding",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  name: "automatic-binding"
 },{
   name: "enabled",
   type: "no | false | yes | true",

@@ -5,7 +5,7 @@
 {% endif %}
 
 {% if include.comp and site.data.components.common['attributes'] %}
-  assign commonAttributes = site.data.components.common['attributes']
+  {% assign commonAttributes = site.data.components.common['attributes'] %}
 {% endif %}
 
 {% if componentData %}
@@ -60,11 +60,16 @@
         <tbody>
         {% for attributeObject in componentData.attributes %}
           <tr>
+          {% assign attributeData = commonAttributes[attributeObject.name] %}
+          {% if attributeData == undefined %}
+            {% assign attributeData = attributeObject %}
+          {% endif %}
+
           {% for column in componentData.attributesColumns %}
             {% assign columnKey = column | downcase %}
             {% unless emptyColumns contains columnKey %}
               {% assign columnData = 'o-component-' | append: columnKey %}
-              {% assign cellContent = attributeObject[columnKey]  | default: '' %}
+              {% assign cellContent = attributeData[columnKey]  | default: '' %}
               {% if columnKey != 'type' %}
                 {% assign cellContent = cellContent | markdownify %}
               {% endif %}
