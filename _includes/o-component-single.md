@@ -4,8 +4,8 @@
   {% assign componentData = include.compFile %}
 {% endif %}
 
-{% if include.comp and site.data.components.common['attributes'] %}
-  {% assign commonAttributes = site.data.components.common['attributes'] %}
+{% if include.comp and site.data.components.common.attributes %}
+  {% assign commonAttributes = site.data.components.common.attributes %}
 {% endif %}
 
 {% if componentData %}
@@ -60,8 +60,7 @@
         <tbody>
         {% for attributeObject in componentData.attributes %}
           <tr>
-          {% assign commonData = commonAttributes[attributeObject.name] | default : {} %}
-
+          {% assign commonData = site.data.components.common.attributes[attributeObject.name] | default : {} %}
           {% for column in componentData.attributesColumns %}
             {% assign columnKey = column | downcase %}
             {% unless emptyColumns contains columnKey %}
