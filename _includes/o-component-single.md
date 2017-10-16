@@ -60,19 +60,19 @@
         <tbody>
         {% for attributeObject in componentData.attributes %}
           <tr>
-          {% assign attributeData = commonAttributes[attributeObject.name] %}
-          {% if attributeData == undefined %}
-            {% assign attributeData = attributeObject %}
-          {% else %}
-            {% assign attributeData = Object.assign(attributeData, attributeObject) %}
-
-          {% endif %}
+          {% assign commonData = commonAttributes[attributeObject.name] | default : {} %}
 
           {% for column in componentData.attributesColumns %}
             {% assign columnKey = column | downcase %}
             {% unless emptyColumns contains columnKey %}
               {% assign columnData = 'o-component-' | append: columnKey %}
-              {% assign cellContent = attributeData[columnKey]  | default: '' %}
+              
+              {% assign cellValue = commonData[columnKey] %}
+              {% if attributeObject[columnKey] != undefined %}
+                {% assign cellValue = attributeObject[columnKey] %}
+              {% endif %}
+
+              {% assign cellContent = cellValue | default: '' %}
               {% if columnKey != 'type' %}
                 {% assign cellContent = cellContent | markdownify %}
               {% endif %}

@@ -17,7 +17,7 @@ attributes: [{
   name: "label"
 },{
   name: "data"
-}{
+},{
   name: "automatic-binding"
 },{
   name: "enabled"
