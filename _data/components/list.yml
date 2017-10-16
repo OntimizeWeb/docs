@@ -1,86 +1,241 @@
 directive : "o-list"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
-
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
-  name: "title", 
+  name: "attr",
+  type: "string",
+  default : "<em>entity</em> attribute value (if exists)",
+  required : "",
+  description : "List identifier"
+},{
+  name: "title",
   type: "string",
   default : "",
   required : "",
   description : "List title displayed on screen"
 },{
-  name: "filter", 
+  name: "visible",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Component visibility"
+},{
+  name: "enabled",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether the field is enabled. When table is not enabled the detail navigation is disabled too"
+},{
+  name: "controls",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether to show table controls bar. Including table actions, quickfilter and options"
+},{
+  name: "filter",
   type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Indicates whether to show list filtering options"
 },{
-  name: "refresh-button", 
+  name: "refresh-button",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Indicates whether to show a refresh data button (also needs <em>filter</em> value to be true)"
 },{
-  name: "query-on-init", 
+  name: "query-on-init",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
   description : "Query list data on init"
 },{
-  name: "pageable", 
+  name: "query-on-bind",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Query table data on bind"
+},{
+  name: "pageable",
   type: "no | false | yes | true",
   default : "no",
   required : "",
   description : "Indicates whether to get the list data in a paginated way"
 },{
-  name: "css-class", 
+  name: "css-class",
   type: "string",
   default : "",
   required : "",
   description : "<em>css</em> class name"
 },{
-  name: "columns", 
+  name: "columns",
   type: "string",
   default : "",
   required : "",
   description : "Entity columns. Separated by ';'"
 },{
-  name: "parent-keys", 
+  name: "parent-keys",
   type: "string",
   default : "",
   required : "",
   description : "Filtering keys. Separated by ';'"
 },{
-  name: "service", 
+  name: "service",
   type: "string",
   default : "",
   required : "",
   description : "JEE service path"
 },{
-  name: "entity", 
+  name: "service-type",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "entity",
   type: "string",
   default : "",
   required : "",
   description : "Service entity name"
 },{
-  name: "key", 
+  name: "keys",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Entity keys. Separated by ';'"
+},{
+  name: "route",
   type: "",
   default : "",
   required : "",
   description : ""
 },{
-  name: "route", 
-  type: "",
-  default : "",
-  required : "",
-  description : ""
-},{
-  name: " static-data", 
+  name: "static-data",
   type: "Array<any>",
   default : "",
   required : "",
   description : "Static data for filling the list"
-}]  
+},{
+  name: "query-method",
+  type: "string",
+  default : "query",
+  required : "",
+  description : "Service method name for queries"
+},{
+  name: "paginated-query-method",
+  type: "string",
+  default : "advancedQuery",
+  required : "",
+  description : "Service method name for paginated queries"
+},{
+  name: "delete-method",
+  type: "string",
+  default : "delete",
+  required : "",
+  description : "Service method name for deletions"
+},{
+  name: "detail-mode",
+  type: "none | click | doubleclick",
+  default : "click",
+  required : "",
+  description : "Action for opening the detail form of a row"
+},{
+  name: "detail-form-route",
+  type: "string",
+  default : "detail",
+  required : "",
+  description : "Detail form path"
+},{
+  name: "recursive-detail",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Adding detail key to current url path (overwrite)"
+},{
+  name: "detail-button-in-row",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether to add a button in each row for opening the detail form"
+},{
+  name: "detail-button-in-row-icon",
+  type: "string",
+  default : "search",
+  required : "",
+  description : "Detail icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "edit-button-in-row",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether to add a button in each row for opening the edit form"
+},{
+  name: "edit-button-in-row-icon",
+  type: "string",
+  default : "edit",
+  required : "",
+  description : "Edit icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "edit-form-route",
+  type: "string",
+  default : "edit",
+  required : "",
+  description : "Route of edit form"
+},{
+  name: "recursive-edit",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Adding edit key to current url path (overwrite)"
+},{
+  name: "query-rows",
+  type: "number",
+  default : "10",
+  required : "",
+  description : "Number of records by page. Initial number of registries in queries when using pagination in server side"
+},{
+  name: "insert-button",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether to show a button for inserting data"
+},{
+  name: "row-height",
+  type: "small | medium | large",
+  default : "medium",
+  required : "",
+  description : "Predefined row height options"
+},{
+  name: "quick-filter",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether to show a input for filtering data"
+},{
+  name: "quick-filter-columns",
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "refresh-button",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether to show a button for refreshing data"
+},{
+  name: "selectable",
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "dense",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : ""
+}]
 
 
