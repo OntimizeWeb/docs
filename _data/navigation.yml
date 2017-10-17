@@ -58,7 +58,7 @@ docs:
       - title: "Structure"
         url: /structure/
       - title: "Modules"
-        url: /modules/
+        url: /app-modules/
       - title: "Routing"
         url: /routing/
       - title: "Forms"

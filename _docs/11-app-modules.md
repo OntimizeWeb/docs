@@ -1,4 +1,5 @@
 ---
+title: "Application modules"
 permalink: /app-modules/
 excerpt: "Logic blocks of an Ontimize Web app."
 author_profile: false
