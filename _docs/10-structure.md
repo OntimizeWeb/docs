@@ -1,7 +1,7 @@
 ---
 title: "Structure"
 permalink: /structure/
-excerpt: "How an ontimize web app is organized and what all of the files are for."
+excerpt: "How an Ontimize Web app is organized and what all of the files are for."
 ---
 
 {% include base_path %}
@@ -44,7 +44,6 @@ ontimize-web-ngx-quickstart
 |  |  |  |  |──  customers-routing.module.ts  # Customers routing module
 |  |  |  |  └──  customers.module.ts          # Customer module definition
 |  |  |  |
-|  |  |  |
 |  |  |  |──  ...
 |  |  |  |
 |  |  |  |──  main.routing.module.ts  # Main routing module
@@ -52,7 +51,6 @@ ontimize-web-ngx-quickstart
 |  |  |  |──  main.component.scss
 |  |  |  |──  main.component.ts
 |  |  |  └──  main.modules.ts         # Main module definition
-|  |  |
 |  |  |
 |  |  |──  shared/                            # Shared module folder.
 |  |  |  |──  app.menu.config.ts              # Application menu definition
@@ -102,9 +100,9 @@ ontimize-web-ngx-quickstart
 Our typical project needs several configuration files:
 
 * **[package.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/package.json){:target="_blank"}** identifies npm package dependencies for the project.
-* **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.json)** and **[tsconfig.aot.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.aot.json)** defines how the TypeScript compiler generates JavaScript  from the project's files depending compile the project (JIT o AOT).
-* **[angular-cli.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/.angular-cli.json)** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
-* **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tslint.json)** helps keep your code style consistent.
+* **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.json){:target="_blank"}** and **[tsconfig.aot.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.aot.json){:target="_blank"}** defines how the TypeScript compiler generates JavaScript  from the project's files depending compile the project (JIT o AOT).
+* **[angular-cli.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/.angular-cli.json){:target="_blank"}** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
+* **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tslint.json){:target="_blank"}** helps keep your code style consistent.
 
 ### Web app
 
@@ -147,7 +145,7 @@ Define the web app that hosts your application in the file *index.html*.
 ```
 The noteworthy sections here are:
 
-* The *loader-wrapper* element. Which in addition with *loader.css* will load a spinner loader, visible during application load.
+* The *loader-wrapper* element. Which in addition with *loader.css* will load a spinner loader, visible during application load and hidden by Ontimize Web when application is loaded.
 * The *o-app* tag in the *body* which is where your app lives!
 
 ## Application module
@@ -198,8 +196,7 @@ export class AppModule { }
 
 The *NgModule* decorator uses the following metadata:
 
-* **imports:** An array of modules that you want to use in your application. *ONTIMIZE_MODULES* includes standard Angular Modules (HttpLoader
-, Http and TranslateHttpLoader).
+* **imports:** An array of modules that you want to use in your application. *ONTIMIZE_MODULES* includes standard Angular Modules (HttpLoader, Http and TranslateHttpLoader).
 * **declarations:** The root component.
 * **boostrap:** The root component of your app.
 * **providers:** Services that you want to make available module-wide. *customProviders* includes framework services customized with application parameters.
@@ -208,26 +205,22 @@ The noteworthy variables here are:
 
 * **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/){:target="_blank"}.
 
+The Ontimize Web applications will be conformed by dfferent logic blocks or modules, which may or may not interact with each other. Returning to our example about customers and accounts: it makes sense to have different blocks containing the logic related to creation, edition, or deletion of customers and another with the logic related to the accounts.
 
-As a rule, our app will be conformed by different logic blocks (modules) which may or may not interact with each. Returning to our example customer management and accounts,
-it makes sense to have a block containing the logic related to the creation, editing, deleting .. customer and one with the logic of the accounts.
-
-As it is shown into the structure schema, the minimum logic blocks that every Ontimize Web app must contain are:
+As it was specified into the structure schema, the minimum logic blocks that every Ontimize Web application contains are:
 
 * **login:** This is a public block (always accesible) responsible of login process.
-* **main:** This is a container for all private logic blocks of our application (e.g. customers, accounts, ...)
+* **main:** This is a container for all private logic blocks of our application (e.g. customers, accounts ...)
 
-You can find more information about logic blocks [here]({{ base_path }}/guide/logic-blocks){:target="_blank"}.
+You can find more information about logic blocks [here]({{ base_path }}/app-modules){:target="_blank"}.
 
 ## Start up your application
 
-Now it is time to start up your application, that is, tells to Angular to start the app. You can find more information about Angular bootstraping [here](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#bootstrap).
+Now it is time to start up your application, that is, to tell to Angular to start the app. You can find more information about Angular bootstraping [here](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#bootstrap).
 
-The file responsible of starting up the app is *'app/main-aot.ts'* and the content is the following:
-
+The file responsible of starting up the app is *'app/main.ts'*, which content is:
 
 ```bash
-import './polyfills.ts';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
@@ -243,67 +236,3 @@ promise.then(ontimizePostBootstrap).catch(err => {
   console.error(err.message);
 });
 ```
-
-## Build and run your application
-
-Open a terminal window and enter this command:
-
-```bash
-npm start
-```
-> **NOTE:** Run this command with administrator privileges.
-
-That command runs the following two parallel node processes:
-
-* The TypeScript compiler in watch mode.
-* A static file server that loads *index.html* in a browser and refreshes the browser when application files change.
-
-In a browser tab enters [http://localhost:4200](http://localhost:4200) and the application should be displayed.
-
-### Generate a distribution version
-
-There are two ways to generate an ontimize web application distribution version: JIT and AoT.
-
-#### JIT
-
-Compile TypeScript just in time for executing it.
-
-  * Compiled in the browser.
-  * Each file compiled separately.
-  * No need to build after changing your code and before reloading the browser page.
-  * Suitable for local development.
-
-You can generate your application JIT distribution version adding and running this script to your package.json
-
-  ```bash
-  "production": "ng build --aot=false --target -prod"
-  ```
-
-#### AoT
-
-Compile TypeScript during build phase.
-
-* Compiled by the machine itself, via the command line (Faster).
-* All code compiled together, inlining HTML/CSS in the scripts.
-* No need to deploy the compiler (Half of Angular size).
-* More secure, original source not disclosed.
-* Suitable for production builds.
-
-Ontimize web has its own plugin for the AoT distribution version creation, you can see more details [here]({{ base_path }}/ontimize-web-ngx-tools/){:target="_blank"}. So you can generate your application AoT distribution version installing '*ontimize-web-ngx-tools*' and adding and running this script (with no parameters in this example) to your package.json.
-
-  ```bash
-  "production-aot": "ontimize-web-ngx production-aot"
-  ```
-
-#### JIT vs. AoT
-
-In order to compare both types of distribution versions here is a comparison of the data loaded in a browser and the response time. For this comparision we are using the '*Ontimize Web Playground*' application, available [here](https://ontimizeweb.github.io/ontimize-web-ngx-playground){:target="_blank"} (AoT version), and only loading the main page.
-
-JIT version:
-
-![image-JIT]({{ base_path }}/images/comparatives/playground-JIT.PNG){: .align-center}
-
-
-AoT version:
-
-![image-AoT]({{ base_path }}/images/comparatives/playground-AoT.PNG){: .align-center}
