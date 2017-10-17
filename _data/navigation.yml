@@ -70,7 +70,7 @@ docs:
       - title: "Video examples"
         url: /video-examples/
       - title: "Migration guides"
-      url: /migrations/
+        url: /migrations/
 
   - title: Customization
     children:
