@@ -5,16 +5,16 @@ outputsColumns: ["Name", "Description"]
 
 outputs: [{
   name : "onFormDataLoaded",
-  description: "Event triggered when "
+  description: "Event triggered when form data is loaded"
 },{
   name : "beforeCloseDetail",
-  description: "Event triggered when "
+  description: "Event triggered just before detail form is closed"
 },{
   name : "beforeGoEditMode",
-  description: "Event triggered when "
+  description: "Event triggered just before navigate to form edit mode"
 },{
   name : "onFormModeChange",
-  description: "Event triggered when "
+  description: "Event triggered when form mode changes"
 }]
 
 

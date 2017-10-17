@@ -174,23 +174,23 @@ outputsColumns: ["Name", "Description"]
 
 outputs: [{
   name : "onClick",
-  description: "Event triggered when component "
-},{
-  name : "onRowSelected",
-  description: "Event triggered when component "
-},{
-  name : "onRowDeselected",
-  description: "Event triggered when component "
-},{
-  name : "onRowDeleted",
-  description: "Event triggered when component "
+  description: "Event triggered when a table row is clicked"
 },{
   name : "onDoubleClick",
-  description: "Event triggered when component "
+  description: "Event triggered when a table row is double clicked"
+},{
+  name : "onRowSelected",
+  description: "Event triggered when a table row is selected"
+},{
+  name : "onRowDeselected",
+  description: "Event triggered when a table row is deselected"
+},{
+  name : "onRowDeleted",
+  description: "Event triggered when a table row is deleted"
 },{
   name : "onTableDataLoaded",
-  description: "Event triggered when component "
+  description: "Event triggered when table data is loaded"
 },{
   name : "onPaginatedTableDataLoaded",
-  description: "Event triggered when component "
+  description: "Event triggered when paginated table data is loaded"
 }]
