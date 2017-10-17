@@ -44,7 +44,6 @@ ontimize-web-ngx-quickstart
 |  |  |  |  |──  customers-routing.module.ts  # Customers routing module
 |  |  |  |  └──  customers.module.ts          # Customer module definition
 |  |  |  |
-|  |  |  |
 |  |  |  |──  ...
 |  |  |  |
 |  |  |  |──  main.routing.module.ts  # Main routing module
@@ -52,7 +51,6 @@ ontimize-web-ngx-quickstart
 |  |  |  |──  main.component.scss
 |  |  |  |──  main.component.ts
 |  |  |  └──  main.modules.ts         # Main module definition
-|  |  |
 |  |  |
 |  |  |──  shared/                            # Shared module folder.
 |  |  |  |──  app.menu.config.ts              # Application menu definition

@@ -5,7 +5,6 @@ excerpt: "How to build and run an Ontimize Web application."
 ---
 
 {% include base_path %}
-{% include toc %}
 
 ## Build and run your application
 
