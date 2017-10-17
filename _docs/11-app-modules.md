@@ -1,5 +1,5 @@
 ---
-permalink: /guide/logic-blocks/
+permalink: /app-modules/
 excerpt: "Logic blocks of an Ontimize Web app."
 author_profile: false
 sidebar:
@@ -84,7 +84,7 @@ const routes: Routes = [{
 export class EmployeesRoutingModule { }
 ```
 
-  * Finally linking the *employees.module.ts* to the rest of the application routes, adding a route path in the *main-routing.module.ts* as you can see in the [routing section]({{ base_path }}/routing/){:target="_blank"} section.
+  * Finally linking the *employees.module.ts* to the rest of the application routes, adding a route path in the *main-routing.module.ts* as you can see in the [routing section]({{ base_path }}/routing/){:target="_blank"}.
 
 ```bash
 ...

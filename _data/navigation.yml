@@ -57,14 +57,16 @@ docs:
     children:
       - title: "Structure"
         url: /structure/
-      - title: "Build and run"
-        url: /build-and-run/
+      - title: "Modules"
+        url: /modules/
       - title: "Routing"
         url: /routing/
       - title: "Forms"
         url: /forms/
-      - title: "Permission"
-        url: /permission/
+      # - title: "Permission"
+      #   url: /permission/
+      - title: "Build and run"
+        url: /build-and-run/
       - title: "Migration guides"
         url: /migrations/
 

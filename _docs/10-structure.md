@@ -212,7 +212,7 @@ As it was specified into the structure schema, the minimum logic blocks that eve
 * **login:** This is a public block (always accesible) responsible of login process.
 * **main:** This is a container for all private logic blocks of our application (e.g. customers, accounts ...)
 
-You can find more information about logic blocks [here]({{ base_path }}/guide/logic-blocks){:target="_blank"}.
+You can find more information about logic blocks [here]({{ base_path }}/app-modules){:target="_blank"}.
 
 ## Start up your application
 
