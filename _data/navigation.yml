@@ -67,8 +67,10 @@ docs:
       #   url: /permission/
       - title: "Build and run"
         url: /build-and-run/
+      - title: "Video examples"
+        url: /video-examples/
       - title: "Migration guides"
-        url: /migrations/
+      url: /migrations/
 
   - title: Customization
     children:
