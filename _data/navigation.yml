@@ -143,6 +143,8 @@ components:
             url: /list-picker-component/o-list-picker-dialog.component/
       - title: "Checkbox"
         url: /components/o-checkbox.component/
+      - title: "File"
+        url: /components/o-file-input.component/
 
   - title: Button
     children:

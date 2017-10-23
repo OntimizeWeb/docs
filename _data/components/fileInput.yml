@@ -1,0 +1,47 @@
+directive : "o-file-input"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "attr"
+},{
+  name: "label"
+},{
+  name: "tooltip"
+},{
+  name: "tooltip-position"
+},{
+  name: "tooltip-show-delay"
+},{
+  name: "enabled"
+},{
+  name: "required"
+},{
+  name: "service"
+},{
+  name: "entity"
+},{
+  name: "service-type"
+},{
+  name: "accept-file-type",
+  type: "string",
+  default : "",
+  required : "",
+  description : "File types allowed on the file input, serparated by ';'"
+},{
+  name: "max-file-size",
+  type: "number",
+  default : "",
+  required : "",
+  description : "Maximum file size allowed"
+}]
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onChange",
+  description: "Event triggered when component input element changes"
+},{
+  name : "onUpload",
+  description: "Event triggered when file(s) is upload corectly"
+}]
