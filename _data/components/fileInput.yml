@@ -34,6 +34,12 @@ attributes: [{
   default : "",
   required : "",
   description : "Maximum file size allowed"
+},{
+  name: "multiple",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Multiple file selection allowed"
 }]
 
 outputsColumns: ["Name", "Description"]
