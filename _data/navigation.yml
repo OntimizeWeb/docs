@@ -165,6 +165,8 @@ components:
             url: '/datatable-components/o-datatable-renderers.component/'
           - title: "Column editors"
             url: '/datatable-components/o-datatable-editors.component/'
+      - title: "Table"
+        url: /components/o-table.component/
       - title : "List"
         url: /components/o-list.component/
 

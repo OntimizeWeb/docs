@@ -1,0 +1,59 @@
+
+directive : "o-table"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "attr"
+},{
+  name: "title",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Title in exported files"
+},{
+  name: "visible"
+},{
+  name: "static-data"
+},{
+  name: "service"
+},{
+  name: "service-type"
+},{
+  name: "query-method"
+},{
+  name: "entity"
+},{
+  name: "keys"
+},{
+  name: "parent-keys"
+},{
+  name: "columns"
+},{
+  name: "visible-columns",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Visible columns. Separated by ';'"
+},{
+  name: "sort-columns",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
+},{
+  name: "query-on-init",
+  default : "yes",
+},{
+  name: "query-on-bind",
+  default : "yes",
+},{
+  name: "quick-filter"
+},{
+  name: "filter-case-sensitive",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "By defaut not allow filtering by case sensitive"
+}]
+
