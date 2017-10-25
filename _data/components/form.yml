@@ -5,16 +5,16 @@ outputsColumns: ["Name", "Description"]
 
 outputs: [{
   name : "onFormDataLoaded",
-  description: "Event triggered when form data is loaded"
+  description: "Event triggered when "
 },{
   name : "beforeCloseDetail",
-  description: "Event triggered just before detail form is closed"
+  description: "Event triggered when "
 },{
   name : "beforeGoEditMode",
-  description: "Event triggered just before navigate to form edit mode"
+  description: "Event triggered when "
 },{
   name : "onFormModeChange",
-  description: "Event triggered when form mode changes"
+  description: "Event triggered when "
 }]
 
 
@@ -102,4 +102,10 @@ attributes: [{
   default : "column",
   required : "",
   description : "Direction of the form main content"
+},{
+  name: "editable-detail",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not the form default <em>detail</em> mode is editable. Learn more about <em>o-form</em> life hooks [here](https://ontimizeweb.github.io/docs/forms/){:target='_blank'})"
 }]
