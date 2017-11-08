@@ -57,3 +57,14 @@ attributes: [{
   description : "By defaut not allow filtering by case sensitive"
 }]
 
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onClick",
+  description: "Event triggered when component "
+},{
+  name : "onDoubleClick",
+  description: "Event triggered when component "
+}]
+

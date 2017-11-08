@@ -177,6 +177,9 @@ collections:
   o_datatable_components:
     output: true
     permalink: /:collection/:path/
+  o_table_components:
+    output: true
+    permalink: /:collection/:path/
   o_form_components:
     output: true
     permalink: /:collection/:path/

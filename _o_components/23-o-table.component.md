@@ -22,6 +22,8 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
 If column attr is present in *visible-columns* attribute from its parent *o-table* directive or 
 *o-table* directive contains inner *o-table-column* elements then this data will appear in the content of the table.
 
+The o-table directive can contains inner o-table-column elements, using renderers define on them.
+
 {% capture tableColumnCapture %}
 {% include o-component-single.md comp="tableColumn" %}
 {% endcapture %}
@@ -39,10 +41,14 @@ If column attr is present in *visible-columns* attribute from its parent *o-tabl
     sort-columns="ANID:DESC"  query-on-init="true"
     quick-filter="yes"   filter-case-sensitive="true" >
 
-   <o-table-column attr="ENTITYID" title="ENTITYID" searchable="no"></o-table-column>
-   <o-table-column attr="OFFICEID" title="OFFICEID" orderable="no"></o-table-column>
-   <o-table-column attr="CDID" title="CDID" ></o-table-column>
-   <o-table-column attr="ANID" title="ANID" ></o-table-column>
+    <o-table-column async-load="true" width="10px" attr="PHOTO" orderable="no" searchable="no">
+      <o-table-cell-renderer-image  image-type="base64"
+      empty-image="assets/images/no-image.png" avatar="yes">
+      </o-table-cell-renderer-image>
+    </o-table-column>
+    <o-table-column attr="STARTDATE" title="STARTDATE" >
+      <o-table-cell-renderer-date  format="L"></o-table-cell-renderer-date>
+    </o-table-column>
 </o-table>
 ```
 
