@@ -55,7 +55,21 @@ attributes: [{
   default : "no",
   required : "",
   description : "By defaut not allow filtering by case sensitive"
-}]
+},
+{
+  name: "insert-button"
+},
+{
+  name: "refresh-button"
+}
+,{
+  name: "show-table-buttons-text",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show table actions text alongside icons"
+}
+]
 
 
 outputsColumns: ["Name", "Description"]
