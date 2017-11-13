@@ -63,6 +63,13 @@ attributes: [{
   name: "refresh-button"
 }
 ,{
+  name: "delete-button",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show a button for deleting data"
+},
+{
   name: "show-table-buttons-text",
   type: "no | false | yes | true",
   default : "yes",
