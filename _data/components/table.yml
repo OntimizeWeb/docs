@@ -75,6 +75,13 @@ attributes: [{
   default : "yes",
   required : "",
   description : "Indicates whether or not to show table actions text alongside icons"
+},
+{
+  name: "select-all-checkbox",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether or not to show a option in the menu of the table that it have capacity show a column of checkboxes for selecting table rows"
 }
 ]
 
