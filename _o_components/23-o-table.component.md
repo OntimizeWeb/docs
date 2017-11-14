@@ -97,4 +97,5 @@ The o-table directive can contains inner o-table-column elements, using renderer
 {% endfor %}
 
 ## Demo
-In next link the usage of this component are available <a href="https://ontimizeweb.github.io/ontimize-web-ngx-playground/main/table">https://ontimizeweb.github.io/ontimize-web-ngx-playground/main/table</a>
+
+You can interact with different options of the table in <a href="https://ontimizeweb.github.io/ontimize-web-ngx-playground/">this live demo</a> in the section *Data->Table*.
