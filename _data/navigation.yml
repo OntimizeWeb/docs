@@ -49,7 +49,7 @@ docs:
         url: /install-and-run/
       - title: "Make some changes"
         url: /make-changes/
-      - title: "Do something advanced"
+      - title: "More advanced topics"
         url: /advanced-changes/
 
 
