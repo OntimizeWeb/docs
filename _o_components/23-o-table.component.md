@@ -9,18 +9,60 @@ comp: table
 
 <div class="notice--warning" markdown="1">
 
-**WARNING:** table is storing changes made by user (show/hide columns, order changes, filters, etc.) in the browser local storage. That values will take precedence over table html definition.
-For example: if a *ID* column is not in the *visible-columns* attribute but the user has chosen
-to display it manually, it will be visible in future loads. For restoring initial state is enough to
-delete it *DataTables* entries in browser local storage.
+**WARNING:** table is storing changes made by user (order changes, filters, etc.) in the browser local storage. That values will take precedence over table html definition.
+For example: if a *ID* column is not in the *sort-columns* attribute but the user has ordered
+other column it manually, it will be order in future loads. For restoring initial state is enough to
+delete it *com.ontimize.web.quickstart* entries in browser local storage.
 
 </div>
 
+## Table buttons
+
+{% capture tableButtonCapture %}
+{% include o-component-single.md comp="tableButton" %}
+{% endcapture %}
+{{ tableButtonCapture | replace: '    ', ''}}
+
+<h3 class="grey-color">Example</h3>
+
+```html
+<o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
+  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
+  query-on-init="true" query-rows="6" quick-filter="yes" >
+
+  <o-table-button label="My button" icon="account_circle"></o-table-button>
+
+  <o-table-column attr="NAME" title="NAME"></o-table-column>
+
+  ...
+
+</o-table>
+```
+
+<h3 class="grey-color">Typescript code</h3>
+
+```javascript
+  ...
+  import { OTableButtonComponent } from 'ontimize-web-ngx';
+  ...
+  @ViewChild('myButton')
+  protected myButton: OTableButtonComponent;
+  ...
+  ngAfterViewInit() {
+    this.myButton.click.subscribe(event => {
+      alert('my button click');
+    });
+  }
+```
 
 ## Columns
 
 If column attr is present in *visible-columns* attribute from its parent *o-table* directive or 
 *o-table* directive contains inner *o-table-column* elements then this data will appear in the content of the table.
+
+The o-table directive can contains inner o-table-column elements, using renderers define on them.
 
 {% capture tableColumnCapture %}
 {% include o-component-single.md comp="tableColumn" %}
@@ -32,17 +74,21 @@ If column attr is present in *visible-columns* attribute from its parent *o-tabl
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table  service="branches" entity="account" keys="ACCOUNTID" 
+<o-table service="branches" entity="account" keys="ACCOUNTID" 
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP"
     fxFlex layout-padding attr="accounts" title="ACCOUNTS"
-    sort-columns="ANID:DESC"  query-on-init="true" query-rows="15"
-    quick-filter="yes" pageable="no"  filter-case-sensitive="true" >
+    sort-columns="ANID:DESC"  query-on-init="true"
+    quick-filter="yes"   filter-case-sensitive="true" >
 
-   <o-column attr="ENTITYID" title="ENTITYID" searchable="no"></o-column>
-   <o-column attr="OFFICEID" title="OFFICEID" orderable="no"></o-column>
-   <o-column attr="CDID" title="CDID" ></o-column>
-   <o-column attr="ANID" title="ANID" ></o-column>
+    <o-table-column async-load="true" width="10px" attr="PHOTO" orderable="no" searchable="no">
+      <o-table-cell-renderer-image  image-type="base64"
+      empty-image="assets/images/no-image.png" avatar="yes">
+      </o-table-cell-renderer-image>
+    </o-table-column>
+    <o-table-column attr="STARTDATE" title="STARTDATE" >
+      <o-table-cell-renderer-date  format="L"></o-table-cell-renderer-date>
+    </o-table-column>
 </o-table>
 ```
 
@@ -50,3 +96,6 @@ If column attr is present in *visible-columns* attribute from its parent *o-tabl
   {% include archive-single.html %}
 {% endfor %}
 
+## Demo
+
+You can interact with different options of the table in <a href="https://ontimizeweb.github.io/ontimize-web-ngx-playground/">this live demo</a> in the section *Data->Table*.

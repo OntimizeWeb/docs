@@ -10,10 +10,9 @@ sidebar:
 {% include base_path %}
 
 In this section we are going to explain how to create the inital form that contains a table with
-all employees of the Bank.
+all the employees of the Bank.
 
-In the previous step it was configured into *employees.routes.ts* that if the url was *'employees'* the system have to render the component *EmployeesHomeComponent*. So, it
-is time to create this component.
+In the previous step *employees.routes.ts* was configured so that if the url was *'employees'* the system rendered the component *EmployeesHomeComponent*. It is now time to create this component.
 
 Inside the *employees/home* directory we have to create the following files:
 
@@ -21,7 +20,7 @@ Inside the *employees/home* directory we have to create the following files:
 * **employees-home.component.scss:** Contains specific screen css styles (saas definition), if needed.
 * **employees-home.component.ts:** Contains the logic of the screen.
 
-So, the contents of these files are shown below:
+The contents of these files are shown below:
 
 **employees-home.component.html**
 
@@ -61,10 +60,8 @@ export class EmployeesHomeComponent {
 
 }
 ```
-Into the html template is defined a table that is connected through an Ontimize service that provides the information of all employees.
-You can find further information about *o-table* configuration parameters into [Components]({{ base_path }}/components/o-table.component/){:target="_blank"} section.
+The table is defined within the html template, and is connected through an Ontimize service that provides the information of all employees. You can find further information about the o-table configuration parameters in the [Components]({{ base_path }}/components/o-table.component/){:target="_blank"} section.
 
-Into the logic file nothing special is done, only the paths of css and html files are defined.
+In the logic file nothing special is done, we simply define the paths of the css and html files.
 
-With this two simple files, the initial form of our *Employees* module is defined. The form that is going to show the sheet with the details of each employee
-is explained [here]({{ base_path }}/getting-started/adv-changes-drill-down/).
+With these two simple files, we have defined the initial form of our *Employees* module. The form that will show the table with the details of each employee is explained [here]({{ base_path }}/getting-started/adv-changes-drill-down/).
