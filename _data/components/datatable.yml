@@ -79,7 +79,7 @@ attributes: [{
 },{
   name: "delete-button",
   type: "no | false | yes | true",
-  default : "yes",
+  default : "no",
   required : "",
   description : "Indicates whether or not to show a button for deleting data"
 },{
@@ -168,29 +168,35 @@ attributes: [{
   default : "no",
   required : "",
   description : "Indicates whether or not the single pagination mode is used. If true, the only records stored in application memory are those found on the current page, doing a query on each page change"
+},{
+  name: "filter-case-sensitive",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether or not the quick filter is case sensitive"
 }]
 
 outputsColumns: ["Name", "Description"]
 
 outputs: [{
   name : "onClick",
-  description: "Event triggered when component "
+  description: "Event triggered when a row is clicked"
 },{
   name : "onRowSelected",
-  description: "Event triggered when component "
+  description: "Event triggered when a row is selected "
 },{
   name : "onRowDeselected",
-  description: "Event triggered when component "
+  description: "Event triggered when a row is deselected "
 },{
   name : "onRowDeleted",
-  description: "Event triggered when component "
+  description: "Event triggered when there some row deletion "
 },{
   name : "onDoubleClick",
-  description: "Event triggered when component "
+  description: "Event triggered when a row is double clicked "
 },{
   name : "onTableDataLoaded",
-  description: "Event triggered when component "
+  description: "Event triggered when table data is updated "
 },{
   name : "onPaginatedTableDataLoaded",
-  description: "Event triggered when component "
+  description: "Event triggered when table paginated data is updated "
 }]
