@@ -1,0 +1,15 @@
+directive : "o-table-paginator"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [
+  {
+  name: "page-size", 
+  type: "number",
+  default : "number",
+  required : "",
+  description : "Number of items to display on a page. By default set to 10"
+}
+]
+
+title : "OTablePaginator"

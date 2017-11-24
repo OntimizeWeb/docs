@@ -20,13 +20,13 @@ This new module will be located in a folder as a sibling of '*customers*' and '*
 
 ### Create the module
 
-Located in '*src/app/main*' run the following command:
+While in '*src/app/main*', run the following command:
 
 ```bash
  ng g module --routing employees
 ```
 
-This command creates a '*employees*' folder containing tge new module and its associated routing module (which import is already done).
+This command creates a '*employees*' folder containing the new module and its associated routing module (which import is already done).
 
 ```bash
 ontimize-web-ngx-quickstart
@@ -41,7 +41,7 @@ ontimize-web-ngx-quickstart
 
 ### Create the component
 
-Now, ocated in the new folder '*src/app/main/employees*', execute the following command:
+Now, while in the new folder '*src/app/main/employees*', execute the following command:
 
 ```bash
  ng g component --spec=false employees-home
