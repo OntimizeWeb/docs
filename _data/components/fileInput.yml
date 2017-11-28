@@ -25,21 +25,45 @@ attributes: [{
 },{
   name: "accept-file-type",
   type: "string",
-  default : "",
-  required : "",
-  description : "File types allowed on the file input, serparated by ';'"
+  default: "",
+  required: "",
+  description: "File types allowed on the file input, serparated by ';'. Accepted values: <file_extension>, 'audio/*', 'video/*', 'image/*'"
 },{
   name: "max-file-size",
   type: "number",
-  default : "",
-  required : "",
-  description : "Maximum file size allowed"
+  default: "",
+  required: "",
+  description: "Maximum file size (bytes) allowed"
 },{
   name: "multiple",
   type: "no | false | yes | true",
   default: "no",
   required: "",
   description: "Multiple file selection allowed"
+},{
+  name: "max-files",
+  type: "number",
+  default: "-1",
+  required: "",
+  description: "Maximum number of files allowed"
+},{
+  name: "show-info",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Show files information"
+},{
+  name: "split-upload",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates each file is uploaded in a single request (default). If 'no' or 'false' all files are uploaded in a single request"
+},{
+  name: "additional-data",
+  type: "JSON",
+  default: "",
+  required: "",
+  description: "Use this parameter to send extra information to the server side in the upload file request"
 }]
 
 outputsColumns: ["Name", "Description"]
@@ -48,6 +72,39 @@ outputs: [{
   name : "onChange",
   description: "Event triggered when component input element changes"
 },{
+  name: "onBeforeUpload",
+  description: "Event triggered before uploading a file or a set of files in a single request. This means, 'split-upload' parameter is set to 'no'/'false'"
+},{
+  name: "onBeforeUploadFile",
+  description: "Event triggered before uploading a file in a single request. This means, 'split-upload' parameter is set to its default value"
+},{
+  name: "onProgress",
+  description: "Event triggered each time the uploading progress of a file or a set of files changes. This means, 'split-upload' parameter is set to 'no'/'false'"
+},{
+  name: "onProgressFile",
+  description: "Event triggered each time the uploading progress of a file changes. This means, 'split-upload' parameter is set to its default value"
+},{
+  name: "onCancel",
+  description: "Event triggered when the upload of a file or a set of files is cancelled. This means, 'split-upload' parameter is set to 'no'/'false"
+},{
+  name: "onCancelFile",
+  description: "Event triggered when the upload of a file in a single request is cancelled. This means, 'split-upload' parameter is set to its default value"
+},{
   name : "onUpload",
-  description: "Event triggered when file(s) is upload corectly"
+  description: "Event triggered when a file or a set of files has been uploaded in a single request. This means, 'split-upload' parameter is set to 'no'/'false'"
+},{
+  name: "onUploadFile",
+  description: "Event triggered when a file has been uploaded. This means, 'split-upload' parameter is set to its default value"
+},{
+  name: "onComplete",
+  description: "Event triggered when the operation of uploading a file or a set of files has been completed. This means, 'split-upload' parameter is set to 'no'/'false'"
+},{
+  name: "onCompleteFile",
+  description: "Event triggered when the operation of uploading a file in a single request has been completed. This means, 'split-upload' parameter is set to its default value"
+},{
+  name: "onError",
+  description: "Event triggered when the operation of uploding a file or a set of files request has failed. This means, 'split-upload' parameter is set to 'no'/'false'"
+},{
+  name: "onerrorFile",
+  description: "Event triggered when the operation of uploading a file in a single request has failed. This means, 'split-upload' parameter is set to its default value"
 }]
