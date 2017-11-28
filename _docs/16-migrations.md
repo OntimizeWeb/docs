@@ -5,7 +5,7 @@ excerpt: "Versions migration guides."
 ---
 {% include base_path %}
 
-In this page you can download migration guides for specific versions where a guidance is needed.
+In this page you can download migration guides for specific versions where additional steps are need.
 
 * [RC4 to RC5](https://drive.google.com/open?id=0B-0gypyIR7-wRlRCRDNVLTI3cFk){:target="_blank"}
 
