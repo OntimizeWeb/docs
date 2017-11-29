@@ -107,8 +107,4 @@ outputs: [{
 },{
   name: "onerrorFile",
   description: "Event triggered when the operation of uploading a file in a single request has failed. This means, 'split-upload' parameter is set to its default value"
-<<<<<<< HEAD
 }]
-=======
-}]
->>>>>>> af28a01fc3e9ba9701fe1a9ba966b200f00eb643
