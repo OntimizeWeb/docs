@@ -167,10 +167,6 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
   }
 ```
 
-{% for post in site.o_table_components %}
-  {% include archive-single.html %}
-{% endfor %}
-
 ## Columns filters
 
 {% capture tableColumnsFilters %}
@@ -193,6 +189,11 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
     ...
 </o-table>
 ```
+
+{% for post in site.o_table_components %}
+  {% include archive-single.html %}
+{% endfor %}
+
 
 ## Demo
 
