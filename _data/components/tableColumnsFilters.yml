@@ -1,0 +1,11 @@
+directive : "o-table-columns-filter"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "columns",
+  type: "string",
+  default : "o-table visible-columns value",
+  required : "",
+  description : "Filterable columns separated by ';'. For each column attr it is indicated by which value is filtered, whether by the model (MODEL) or by the rendered (VIEW), using VIEW as default.""
+}]
