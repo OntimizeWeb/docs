@@ -6,7 +6,7 @@ attributes: [
   {
   name: "page-size", 
   type: "number",
-  default : "number",
+  default : "10",
   required : "",
   description : "Number of items to display on a page. By default set to 10"
 }

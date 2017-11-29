@@ -18,14 +18,13 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
 
 ## Table paginator
 
-
-{% assign dataFilePaginator = site.data.components.otableData.paginator["01tablePaginator"] %}
 {% capture paginatorFileCapture %}
-  {% include o-component-single.md comp=tablePaginator  %}
+  {% include o-component-single.md comp="tablePaginator"  %}
 {% endcapture %}
 {{ paginatorFileCapture | replace: '    ', ''}}
 
 
+<h3 class="grey-color">Example</h3>
 
 ```html
 <o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
