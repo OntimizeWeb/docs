@@ -9,18 +9,17 @@ excerpt: "How an Ontimize Web app is organized and what all of the files are for
 
 ## Overview
 
-The QuickStart application has the structure of an Ontimize Web application. This structure is based on the structure
-of a real-world Angular app but with the specification needed by the Ontimize Web framework.
+The QuickStart application has the structure of an Ontimize Web application. This structure is based on the structure of a regular Angular app but with the specification needed by the Ontimize Web framework.
 
-The QuickStart has been developed for teaching purposes about how to start programming with Ontimize Web.
+The QuickStart has been developed to help people learn how to start programming with Ontimize Web.
 
-In following sections of this documents will be explained in detail how is this structure and how each file is used for.
+In these following sections we will explain in detail this structure and what each file is used for.
 
 ---
 
 ## Application structure
 
-Here it is shown default Ontimize Web application's root directory:
+Here is the default root directory structure of an Ontimize Web application:
 
 ```bash
 ontimize-web-ngx-quickstart
@@ -97,10 +96,10 @@ ontimize-web-ngx-quickstart
 
 ### Configuration files
 
-Our typical project needs several configuration files:
+A typical project needs the following configuration files:
 
 * **[package.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/package.json){:target="_blank"}** identifies npm package dependencies for the project.
-* **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.json){:target="_blank"}** and **[tsconfig.aot.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.aot.json){:target="_blank"}** defines how the TypeScript compiler generates JavaScript  from the project's files depending compile the project (JIT o AOT).
+* **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.json){:target="_blank"}** and **[tsconfig.aot.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.aot.json){:target="_blank"}** define how the TypeScript compiler generates JavaScript  from the project's files depending on type of compilation (JIT o AOT).
 * **[angular-cli.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/.angular-cli.json){:target="_blank"}** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
 * **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tslint.json){:target="_blank"}** helps keep your code style consistent.
 
@@ -145,7 +144,7 @@ Define the web app that hosts your application in the file *index.html*.
 ```
 The noteworthy sections here are:
 
-* The *loader-wrapper* element. Which in addition with *loader.css* will load a spinner loader, visible during application load and hidden by Ontimize Web when application is loaded.
+* The *loader-wrapper* element. Which in addition with *loader.css* will load a spinner loader, visible during application load and hidden by Ontimize Web when the application is loaded.
 * The *o-app* tag in the *body* which is where your app lives!
 
 ## Application module
@@ -205,20 +204,20 @@ The noteworthy variables here are:
 
 * **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/){:target="_blank"}.
 
-The Ontimize Web applications will be conformed by dfferent logic blocks or modules, which may or may not interact with each other. Returning to our example about customers and accounts: it makes sense to have different blocks containing the logic related to creation, edition, or deletion of customers and another with the logic related to the accounts.
+The Ontimize Web applications are comprised of different logic blocks or modules, which may or may not interact with each other. Returning to our example about customers and accounts: it makes sense to have different blocks containing the logic related to creation, editing, or deletion of customers; and another with the logic related to the accounts.
 
-As it was specified into the structure schema, the minimum logic blocks that every Ontimize Web application contains are:
+As was specified in the structure schema, the basic logic blocks that every Ontimize Web application contains are:
 
-* **login:** This is a public block (always accesible) responsible of login process.
+* **login:** This is a public block (always accessible), responsible for the login process.
 * **main:** This is a container for all private logic blocks of our application (e.g. customers, accounts ...)
 
 You can find more information about logic blocks [here]({{ base_path }}/app-modules){:target="_blank"}.
 
 ## Start up your application
 
-Now it is time to start up your application, that is, to tell to Angular to start the app. You can find more information about Angular bootstraping [here](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#bootstrap).
+Now we are going to start up the application using Angular. You can find more information about Angular bootstrapping [here](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#bootstrap).
 
-The file responsible of starting up the app is *'app/main.ts'*, which content is:
+The file responsible for starting up the app is *'app/main.ts'*, with the content:
 
 ```bash
 import { enableProdMode } from '@angular/core';

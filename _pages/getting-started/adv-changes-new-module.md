@@ -1,7 +1,7 @@
 ---
-title: "Create new module"
+title: "Create a new module"
 permalink: /getting-started/adv-changes-new-module/
-excerpt: "Advanced changes. Create new module"
+excerpt: "Advanced changes. Create a new module"
 author_profile: false
 sidebar:
         nav: "docs"
@@ -9,27 +9,28 @@ sidebar:
 
 {% include base_path %}
 
-In this section we are going to add a new module for managing the employees of the Bank. We are going to explain step by step how to achieve the goal of adding new module.
+In this section we are going to add a new module for managing the employees of the Bank. We are going to explain step by step how to add the new module.
 
-The module that we are going to create is only allowed for those users that have credentials, that is, users that have been logged in. So, into QuickStart structure directories, we have to
-create new folder *employees* inside *main* folder (at the same level of *accounts* and *customers*).
+The module that we are going to create is going to be accessible only to users with credentials. To do
+this, we need to create a new folder *employees* inside the *main* directory of the QuickStart directory
+structure, at the same level as *accounts* and *customers*.
 
 Inside the *employees* directory we have to create the following files and folders:
 
 * **employees.module.ts:** Module configuration.
 * **employees-routing.module.ts:** Router configuration for this module.
-* **home and detail folders:** Folders that contains the resources of all employees and the detail of each record.
+* **home and detail folders:** Folders that contains the resources of all employees and the details of each record.
 * **edit and new folders (optional):** Create these ones if you want to create specific forms for these operations.
 
 For creating the above files we use the angular-cli tools.
 
-* Creating module and routing module (command line is prevously situated in *src/app/main* path):
+* Creating module and routing module (working directory is *src/app/main*):
 
 ```javascript
   ng g module employees --routing
 ```
 
-* Creating screen component (command line is prevously situated in *src/app/main/employees* path):
+* Creating screen component (working directory is *src/app/main/employees*):
 
 ```javascript
   ng g component --spec=false --flat=false --routing=employees employees-home
@@ -37,11 +38,11 @@ For creating the above files we use the angular-cli tools.
   ng g component --spec=false --flat=false --routing=employees employees-edit
 ```
 
-At this point the created files may look like:
+At this point the created files should look like:
 
 **employees.module.ts**
 
-We change default *CommonModule* for *SharedModule* and add *OntimizeWebModule*.
+We need to change the default *CommonModule* for *SharedModule* and to add *OntimizeWebModule*.
 
 ```javascript
 import { NgModule } from '@angular/core';
@@ -93,13 +94,12 @@ export class EmployeesRoutingModule { }
 ```
 
 
-Before configure the content of the forms for this module, it is necessary to tell the QuickStart app that a new module exists
-and configure it modifying some files:
+Before configuring the content of the forms for this module, it is necessary to tell the QuickStart app that a new module exists and configure it by modifying the following files:
 
 * **main-routing.module.ts:** Include the routes of *Employees* module.
 * **app.menu.config (optional):** Include a menu item into the app menu.
 
-So, the content of these files after been modified, is something like this:
+The content of these files after been modified should be like this:
 
 **main-routing.module.ts**
 
@@ -148,9 +148,8 @@ items: [
 },
 ```
 
-The last step of our process of adding new module is to create the inital form that contains a table with
-all employees of the Bank, and the form that is going to show sheet with the details of each employee. This is
-going to be explained into next sections:
+The last step of our process of adding new module is to create the initial form that contains a table with all employees of the Bank, and the form contains a table with the details of each employee. 
+This is explained in the following sections:
 
 * [Add a table form]({{ base_path }}/getting-started/adv-changes-table-form/).
 * [Drill-down to detail form]({{ base_path }}/getting-started/adv-changes-drill-down/)

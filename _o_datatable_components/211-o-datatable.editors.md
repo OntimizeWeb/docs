@@ -30,7 +30,7 @@ It would be equivalent to define:
 ## Default editors
 
 {% assign filenameArray = "" | split:"|"  %}
-{% for editors_hash in site.data.components.tableData.editors %}
+{% for editors_hash in site.data.components.oDatatableData.editors %}
   {% assign filenameArray = filenameArray | push: editors_hash[0] %}
 {% endfor %}
 {% assign filenameArray = filenameArray | sort %}
@@ -38,7 +38,7 @@ It would be equivalent to define:
 
 {% for filename in filenameArray %}
 
-  {% assign dataFile = site.data.components.tableData.editors[filename] %}
+  {% assign dataFile = site.data.components.oDatatableData.editors[filename] %}
   {% capture dataFileCapture %}
     {% include o-component-single.md compFile=dataFile %}
   {% endcapture %}

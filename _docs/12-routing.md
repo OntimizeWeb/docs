@@ -8,12 +8,11 @@ modified: 2016-09-29T08:25:30-04:00
 
 ## Overview
 
-As a general rule, our application will have more than one screen. So, it is necessary to tell the application how it has to proceed when the user interacts with it.
+Our application will normally have more than one screen. We need to tell the application what to do when the user interacts with it.
 
-As a good starting point is highly recommended, for getting familiar with the vocabulary and the notations, to have a look at the documentation on the ['Router' Angular 2](https://angular.io/api/router/Router){:target="_blank"}
+To familiarise yourself with the terminology, methods, and usage; it is highly recommended to take a look at the documentation for the ['Router' Angular 2](https://angular.io/api/router/Router){:target="_blank"} class in Angular 2.
 
-By convention each logic block (module) defines its own routes. This is the way of having nested and organized application routes.
-So, in a Ontimize Web application, the routes are loaded in routing modules. Each of this modules must be imported in a application block module. You can see this in the app structure schema [here]({{ base_path }}/structure/){:target="_blank"} where login or main modules are following this structure.
+By convention each logic block (module) defines its own routes. This allows for nested and organized application routes. In a Ontimize Web application, the routes are loaded in routing modules. Each of these modules must be imported into an application block module. You can see this in the app  [structure schema]({{ base_path }}/structure/){:target="_blank"} below where the login and main modules follow this structure.
 
 As you can see in the '*AppModule*' definition [here]({{ base_path }}/structure/){:target="_blank"}, an '*AppRoutingModule*' is in the imports array. This module is defined in '*src\app\app-routing.module.ts*' and contains:
 
@@ -53,14 +52,15 @@ export class AppRoutingModule { }
 ```
 
 In this module, the most important configuration items are:
-  * There are two main routes:  '*main*' and '*login*'. Both paths have its routes defined with a function in the  '*loadChildren*' property which *needs* to be a function returning the correspondent module reference. So, that module routing module will be the responsible to manage its mathcing routes.
-  * In the '*main*' route definition there is a '*canActivate*' property referencing to Ontimize Web '*AuthGuardService*'. This establishes a privacy policy for the ontimize services so the application flow will be redirected to the '*login*' module if some of the main module internal routes are loaded without no previous permissions granted.
-  * Empty path redirects user to '*main*' module, so this will be the default application behaviour.
+
+* There are two main routes:  '*main*' and '*login*'. Both paths have their respective routes defined with a function in the '*loadChildren*' property which *needs* to be a function returning the corresponding module reference. Each routing module is responsible for managing its matching routes.
+* In the '*main*' route definition there is a '*canActivate*' property referencing to Ontimize Web '*AuthGuardService* service'. This establishes a privacy policy for the ontimize services so that the application flow will be redirected to the '*login*' module if some of the main module internal routes are loaded with no previous permissions granted.
+* An empty path redirects the user to the '*main*' module, which is the default application behaviour.
 
 
 ## Login module
 
-Below is shown the definition of the login module and its associated routing module.
+Below is the definition of the login module and its associated routing module.
 
 ```bash
 import { NgModule } from '@angular/core';
@@ -82,7 +82,7 @@ import { SharedModule } from '../shared/shared.module';
 export class LoginModule { }
 ```
 
-And the routing module:
+The routing module:
 
 ```bash
 import { NgModule } from '@angular/core';
@@ -100,12 +100,12 @@ export class LoginRoutingModule { }
 
 ```
 
-As you can see, the empty route triggers the loading of the '*LoginComponent*'. But as we could see in the '*AppRoutingModule*', the '*LoginModule*' is loaded under the '*login*' path. So the absolute path for loading the login component is '*login/*'.
+As you can see, the empty route triggers the loading of the '*LoginComponent*'. From '*AppRoutingModule*', then we can see that '*LoginModule*' is loaded under the ‘*login*’ path, and therefore the absolute path for loading the login component is '*login/*'.
 
 
 ## Main module - Organizing new inner modules
 
-Now you can see the '*MainRoutingModule*' which manage the redirection to other inner modules: customers, accounts, branches, etc.
+Here is the '*MainRoutingModule*', which manages the redirection to other inner modules such as customers, accounts, branches, etc.
 
 ```bash
 import { NgModule } from '@angular/core';
@@ -155,7 +155,7 @@ Subroutes of inner modules are defined using *'loadChildren'* property giving an
 
 ## Customers routing module
 
-Here you can see the customers module routing.
+This is the routing for the customers module:
 
 ```bash
 import { NgModule } from '@angular/core';
@@ -184,13 +184,13 @@ export const routes: Routes = [
 export class CustomersRoutingModule { }
 ```
 
-In this file there are defined some typical routes related with a logical block, that is:
+In this file some of the more typical routes related with a logic block are defined, such as:
 
-* **Important**: remember that all of this routes are under '*customer*' route defined in the '*AppRoutingModule*'.
+* **Important**: Remember that all of these routes are below the '*customer*' route defined in the '*AppRoutingModule*'.
 
-* **'':** entry point of this logical block. Typically contains a list or table of all elments of the block, in this case, a table with all customers. This will be rendered by *CustomersHomeComponent*.
-* **'new':** view for inserting a new item into the collection. Using *CustomersNewComponent*.
-* **':CUSTOMERID':** detail of selected item. The *:CUSTOMERID* is the token for a route parameter. For example, in a URL such as "/customers/22", "22" is the value of :CUSTOMERID parameter that, as general rule, is the customers entity primary key. The component *CustomersDetailComponent* will render the view (usually a form) with the details of the selected item.
+* **'':** Entry point of this logical block. Typically contains a list or table of all elments of the block. In this case, it contains a table with all of the customers. This will be rendered by *CustomersHomeComponent*.
+* **'new':** View for inserting a new item into the collection. Uses *CustomersNewComponent*.
+* **':CUSTOMERID':** Details of selected item. The *:CUSTOMERID* is the token for a route parameter. For example, in a URL such as "/customers/22", "22" is the value of :CUSTOMERID parameter that is generally the customer’s entity primary key. The component *CustomersDetailComponent* will render the view  usually a form) with the details of the selected item. When the detailed data is displayed in a form all inputs contained in it are in read only mode and  cannot be edited.
 When the detail data is displayed into a form all inputs contained in it are in **read only** mode, that is, the inputs only displays data but can not be edited.
-* **':CUSTOMERID/edit':** view for editing values of the selected customer item. In this mode, the inputs contained into a form are ready for edition, so you can type, change, select, etc... for changing values.
-* **':CUSTOMERID/accounts':** entry point for loading the '*AccountsModule*'.
+* **':CUSTOMERID/edit':** View for editing values of the selected customer item. In this mode, the inputs with the form are editable.
+* **':CUSTOMERID/accounts':** Entry point for loading the '*AccountsModule*'.

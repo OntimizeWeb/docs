@@ -55,5 +55,51 @@ attributes: [{
   default : "no",
   required : "",
   description : "By defaut not allow filtering by case sensitive"
+},
+{
+  name: "insert-button"
+},
+{
+  name: "refresh-button"
+}
+,{
+  name: "delete-button",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show a button for deleting data"
+},
+{
+  name: "show-table-buttons-text",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show table actions text alongside icons"
+},
+{
+  name: "select-all-checkbox",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether or not to show a option in the menu of the table that it have capacity show a column of checkboxes for selecting table rows"
+},
+{
+  name: "pagination-controls",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the pagination controls"
+}
+]
+
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onClick",
+  description: "Event triggered when component "
+},{
+  name : "onDoubleClick",
+  description: "Event triggered when component "
 }]
 

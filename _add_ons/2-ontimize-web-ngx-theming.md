@@ -51,6 +51,11 @@ In other case you can define your own theme, and, if you want, use the ontimize 
   * `@include ontimize-theme-styles($theme);`
 
 
+<<<<<<< HEAD
 
 Also, if you want to use compact styles for *'Ontimize Web'* components, you have to load the following file:
   * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-lite.scss';`  
+=======
+Also, if you want to use compact styles for *'Ontimize Web'* components, you have to load the following file:
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-lite.scss';`  
+>>>>>>> af28a01fc3e9ba9701fe1a9ba966b200f00eb643

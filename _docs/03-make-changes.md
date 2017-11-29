@@ -9,16 +9,11 @@ excerpt: ""
 
 ## Overview
 
-In this section we are going to make some simple changes on QuickStart app code. We are going to see
-how to add new field into a form. Once added, we are going to learn how to apply our validation logic over this field,
-and finally, we are going to navigate to other screen of the application.
+In this section we are going to make some simple changes in the code of QuickStart app. We are going to see how to add a new field into a form. Once added, we are going to learn how to apply our validation logic over this field. Finally, we are going to navigate to another screen of the application.
 
 # Add a field.
 
-We are going to add a date field into the detail form of a client. So, first of all, we are going to see the aspect of this form. After
-logged in, click on the menu *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter
-the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture
-(check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){:target="_blank"}):
+We are going to add a date field into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){:target="_blank"}):
 
 <img src="{{ base_path }}/images/main_customers_detail.png" alt="customer detail">
 
@@ -119,10 +114,9 @@ You can find all available fields and all of their configuration parameters into
 
 # Validate a field.
 
-The next change that we will perform will be to validate the value of a form field. In this case we choose a date field (*STARTDATE*) which value will be validated when user changes its value. If the date entered is greater than
-today's date it will shown an alerte message.
+The next change that we will perform will be to validate the value of a form field. In this case we choose a date field (*STARTDATE*) which value will be validated when user changes its value. If the date entered is greater than today’s date it will show an error message.
 
-Just a little clarification before continuing, the fields are only modifiable when the form is in 'edit' or 'insert' mode.
+Just a little clarification before continuing: the fields are only modifiable when the form is in 'edit' or 'insert' mode.
 So, taking that in consideration, we have to use the form defined in the file *src/app/main/customers/edit/customers-edit.component.html*. The content of this file will be like this:
 
 ```html
@@ -208,10 +202,9 @@ export class CustomersEditComponent {
 
 # Open a form.
 
-The last test we will do is navigate to another screen of the application. For doing that, we are going to add a button to our screen and, when we click on it,
-we navigato to other screen.
+The last test we will do is navigate to another screen of the application. To do that, we are going to add a button to our screen and when we click on it, we navigate to the other screen.
 
-Continuing with the example, in the file *customers-edit.component.html* we will place anywhere the code of our button.
+Continuing with the example, we will place the code of our button in the file *customers-edit.component.html*.
 
 ```html
 <o-button type="RAISED" label="Navigate to 'About'" (click)="onButtonClick()"></o-button>
@@ -254,8 +247,8 @@ export class CustomersEditComponent {
 ```
 Analyzing the code we have to pay attention in a few things:
 
-* We use the Router component for navigating, so, we need to import it and then inject it
-in the constructor of our CustomersEditComponent.
+* We use the Router component for navigating, so we need to import it and reference it in the
+constructor of our CustomersEditComponent.
 * We add the callback function *onButtonClick* that will be executed when user clicks on button.
 
 As we can see, in the callback function we call *navigate* method of router to navigate to other screen of our application. It is important

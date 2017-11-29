@@ -1,7 +1,7 @@
 ---
-title: "Drill-down to detail form"
+title: "Employee details form"
 permalink: /getting-started/adv-changes-drill-down/
-excerpt: "Advanced changes. Drill-down to detail form"
+excerpt: "Advanced changes. Employee details form"
 author_profile: false
 sidebar:
         nav: "docs"
@@ -9,10 +9,9 @@ sidebar:
 
 {% include base_path %}
 
-In this section we are going to define the form that is going to show the sheet with the details of a determined employee.
+In this section we will define the form that will show the table that contains the details of a determined employee.
 
-Into *employees.routes.ts* file was configured that if the url was *'employees/:EMPLOYEEID'* the system have to render the component *EmployeesDetailComponent*. So, it
-is time to create this component.
+The *employees.routes.ts* file was configured that if the url was *'employees/:EMPLOYEEID'* the system renders the component *EmployeesDetailComponent*. We will now create this component.
 
 Inside the *employees/detail* directory we have to create the following files:
 
@@ -20,7 +19,7 @@ Inside the *employees/detail* directory we have to create the following files:
 * **employees-detail.component.scss:** Contains specific screen css styles (saas definition), if needed.
 * **employees-detail.component.ts:** Contains the logic of the screen.
 
-So, the contents of these files are shown below:
+The contents of these files are shown below:
 
 **employees-detail.component.html**
 
@@ -82,8 +81,7 @@ export class EmployeesDetailComponent {
 }
 
 ```
-Into the html template is defined the form that contains several fields with the information of a determined employee. This data is provided through the Ontimize service
-configured. You can find further information about components configuration parameters into [Components]({{ base_path }}/components-collection/){:target="_blank"} section.
+We have now defined the form that contains the information of a determined employee in the html template. This data is provided through the configured Ontimize service. You can find further information about component configuration parameters in the [Components]({{ base_path }}/components-collection/){:target="_blank"} section.
 
-Into the logic file nothing special is done, only the paths of css and html files are defined.
+In the logic file nothing special is done, we simply define the paths of the css and html files.
 

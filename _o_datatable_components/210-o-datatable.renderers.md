@@ -26,7 +26,7 @@ It would be equivalent to define:
 ## Default renderers
 
 {% assign filenameArray = "" | split:"|"  %}
-{% for renderers_hash in site.data.components.tableData.renderers %}
+{% for renderers_hash in site.data.components.oDatatableData.renderers %}
   {% assign filenameArray = filenameArray | push: renderers_hash[0] %}
 {% endfor %}
 {% assign filenameArray = filenameArray | sort %}
@@ -34,7 +34,7 @@ It would be equivalent to define:
 
 {% for filename in filenameArray %}
 
-  {% assign dataFile = site.data.components.tableData.renderers[filename] %}
+  {% assign dataFile = site.data.components.oDatatableData.renderers[filename] %}
   {% capture dataFileCapture %}
     {% include o-component-single.md compFile=dataFile  %}
   {% endcapture %}
