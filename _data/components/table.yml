@@ -89,6 +89,9 @@ attributes: [{
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the pagination controls"
+},
+{
+  name: "query-rows"
 }
 ]
 
