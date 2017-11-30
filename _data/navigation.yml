@@ -185,6 +185,8 @@ components:
     children:
       - title: "Dialog"
         url: /components/o-dialog.component/
+      - title: "SnackBar"
+        url: /components/snackbar/
 
   - title: Menu
     children:
