@@ -135,3 +135,7 @@ The o-table-cell-renderer-name.html file is as follows:
 
 ```
 
+
+Finally, add the component *OTableCellRendererName* to your module.
+
+
