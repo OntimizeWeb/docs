@@ -1,0 +1,23 @@
+directive : "o-table-option"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "icon",
+  type: "string",
+  default : "priority_high",
+  required : "",
+  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "show-active-icon",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Indicates whether or not to show a icon when option is active"
+},{
+  name: "label",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Field label"
+}]

@@ -16,6 +16,33 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
 
 </div>
 
+## Table paginator
+
+{% capture paginatorFileCapture %}
+  {% include o-component-single.md comp="tablePaginator"  %}
+{% endcapture %}
+{{ paginatorFileCapture | replace: '    ', ''}}
+
+
+<h3 class="grey-color">Example</h3>
+
+```html
+<o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
+  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
+  query-on-init="true" query-rows="6" quick-filter="yes" >
+
+  <o-table-button label="My button" icon="account_circle"></o-table-button>
+
+  <o-table-column attr="NAME" title="NAME"></o-table-column>
+
+  ...
+  <o-table-paginator page-size="20"></o-table-paginator>
+</o-table>
+```
+
+
 ## Table buttons
 
 {% capture tableButtonCapture %}
@@ -57,44 +84,116 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
   }
 ```
 
-## Columns
+## Table options
 
-If column attr is present in *visible-columns* attribute from its parent *o-table* directive or 
-*o-table* directive contains inner *o-table-column* elements then this data will appear in the content of the table.
-
-The o-table directive can contains inner o-table-column elements, using renderers define on them.
-
-{% capture tableColumnCapture %}
-{% include o-component-single.md comp="tableColumn" %}
+{% capture tableOptionCapture %}
+{% include o-component-single.md comp="tableOption" %}
 {% endcapture %}
-{{ tableColumnCapture | replace: '    ', ''}}
-
-
+{{ tableOptionCapture | replace: '    ', ''}}
 
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table service="branches" entity="account" keys="ACCOUNTID" 
+<o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
+  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
+  query-on-init="true" query-rows="6" quick-filter="yes" >
+
+  <o-table-option label="My option"></o-table-button>
+
+  <o-table-column attr="NAME" title="NAME"></o-table-column>
+
+  ...
+
+</o-table>
+```
+
+<h3 class="grey-color">Typescript code</h3>
+
+```javascript
+  ...
+  import { OTableOptionComponent } from 'ontimize-web-ngx';
+  ...
+  @ViewChild('myOption')
+  protected myOption: OTableOptionComponent;
+  ...
+  ngAfterViewInit() {
+    this.myButton.click.subscribe(event => {
+      alert('my option click');
+    });
+  }
+```
+
+## Columns Aggregate
+
+
+{% capture tableColumnCapture %}
+{% include o-component-single.md comp="tableColumnAggregate" %}
+{% endcapture %}
+{{ tableColumnCapture | replace: '    ', ''}}
+
+
+<h3 class="grey-color">Example</h3>
+
+
+```html
+<o-table service="branches" entity="account" keys="ACCOUNTID"
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
+    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    sort-columns="ANID:DESC"  query-on-init="true"
+    quick-filter="yes"   filter-case-sensitive="true" >
+    <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" thousand-separator=","></o-table-column>
+    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="real" ></o-table-column>
+    <o-table-column-aggregate attr="BALANCE" title="sum;">
+    <o-table-column-aggregate attr="INTERESRATE" [function-aggregate]="custonm"></o-table-column-aggregate>
+</o-table>
+```
+
+
+<h3 class="grey-color">Typescript code</h3>
+
+```javascript
+
+  ...
+
+  custom(data:any[]):number{
+    let result = 0;
+    for(var i=0;i<data.length;i++){
+      if(i%2==0) result+=data[i];
+    }
+    return result;
+  }
+```
+
+## Columns filters
+
+{% capture tableColumnsFilters %}
+{% include o-component-single.md comp="tableColumnsFilters" %}
+{% endcapture %}
+{{ tableColumnsFilters | replace: '    ', ''}}
+
+<h3 class="grey-color">Example</h3>
+
+```html
+<o-table service="branches" entity="account" keys="ACCOUNTID"
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
     fxFlex layout-padding attr="accounts" title="ACCOUNTS"
     sort-columns="ANID:DESC"  query-on-init="true"
     quick-filter="yes"   filter-case-sensitive="true" >
 
-    <o-table-column async-load="true" width="10px" attr="PHOTO" orderable="no" searchable="no">
-      <o-table-cell-renderer-image  image-type="base64"
-      empty-image="assets/images/no-image.png" avatar="yes">
-      </o-table-cell-renderer-image>
-    </o-table-column>
-    <o-table-column attr="STARTDATE" title="STARTDATE" >
-      <o-table-cell-renderer-date  format="L"></o-table-cell-renderer-date>
-    </o-table-column>
+    <o-table-columns-filter columns="OFFICEID;ACCOUNTTYP" ></o-table-columns-filter>
+
+    ...
 </o-table>
 ```
 
 {% for post in site.o_table_components %}
   {% include archive-single.html %}
 {% endfor %}
+
 
 ## Demo
 

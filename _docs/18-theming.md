@@ -7,8 +7,7 @@ excerpt: "How you can customize palette colors of your app."
 {% include base_path %}
 
 ## What is a theme?
-A **theme** is the set of colors that will be applied to the Angular Material components. The
-library's approach to theming is based on the guidance from the [Material Design spec][1].
+A **theme** is the set of colors that are applied to the Angular Material components. The library’s approach to theming is based on guidance from the [Material Design spec][1].
 
 In Angular Material, a theme is created by composing multiple palettes. In particular,
 a theme consists of:
@@ -21,18 +20,17 @@ a theme consists of:
 
 [1]: https://material.google.com/style/color.html#color-color-palette
 
-Each Ontimize Web application follows material design guidelines proposed by Google. So, in this chapter we will see how to configure this set of colors,
- by using predefined ones or creating new ones by ourselves.
+Each Ontimize Web application follows material design guidelines proposed by Google. In this chapter we will see how to configure these palettes by both using predefined ones and creating new ones.
 
 
 ## Configuration
 
-In order to make theming job easier, Ontimize Web provides a theming add-on called '*ontimize-web-ngx-theming*', you can see more information about it [here]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"}.
+In order to make theming job easier, Ontimize Web provides a theming add-on called '*ontimize-web-ngx-theming*', You can get more information about it [here]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"}.
 
-The configuration of the theme is performed into the file *app.scss* that is placed into */assets/css* folder. The configuration is done in two steps:
+The configuration of the theme is performed in the file *app.scss* in */assets/css* folder. The configuration is done in two steps:
 
-1. Import file that contains colors definition (predefined or custom).
-2. Propagate the colors to Ontimize Web framework.
+1. Import the theme file (predefined or custom).
+2. Propagate the theme to the Ontimize Web framework.
 
 Here is an example of configuration:
 
@@ -43,7 +41,7 @@ Here is an example of configuration:
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
 /*
-* After define theme, it is necessary to transfer color to Ontimize Web framework
+*  After defining the theme, you need to propagate the theme to the Ontimize Web framework
 */
 @import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
 @include o-material-theme($theme);
@@ -68,9 +66,7 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 
 ## Custom theme definition
 
-If none of predefined themes satisfies your needings, you can define your own style sheet color definition. For example, we
-can create the file *my-custom-app-theme.scss* into the folder */assets/css* and then, instead of importing predefined theme
-from library, we just import our custom file:
+If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css*, *my-custom-app-theme.scss* , and import it instead of the default theme:
 
 ```css
 /*
@@ -80,7 +76,7 @@ from library, we just import our custom file:
 
 ```
 
-The content of definition file would be like this:
+Here is the content of the theme file:
 
 ```css
 @import 'node_modules/@angular/material/theming';
@@ -142,30 +138,29 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 ```
 
-To help you defining colors and combinations of them you can use these online tools:
+To help with defining color palettes, you can use these online tools:
 
 * <a href="https://www.materialpalette.com/">https://www.materialpalette.com/</a>
 * <a href="https://www.materialui.co/">https://www.materialui.co/</a>
 * <a href="http://mcg.mbitson.com/">http://mcg.mbitson.com/</a>
 
-For defining a theme you just need to declare three colors: **primary, accent and warn**. You can declare a new color
-as you can see in the example ($mat-custom-primary) or you can reuse one of the [standard color palette][1].
+To define a theme, you just need to declare three palettes: **primary, accent and warn**. You can declare a new palette
+as you can see in the example ($mat-custom-primary) or you can reuse one of the [standard palettes][1].
 
-After that you can choose between **light** or **dark** theme by calling corresponding function *mat-light-theme(...)* or *mat-dark-theme(...)*. The function returns
-the theme configuration that it is necessary to pass to angular material library to configure component colors.
+After that you can choose between the **light** or **dark** themes by calling their corresponding functions *mat-light-theme(...)* or *mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
 
 
 ## Theming your own components
-In order to style your own components with Angular Material's tooling, the component's styles must be defined with Sass.
+To style your own components with Angular Material’s tools, the component’s styles must be defined with Sass.
 
 ### Using `@mixin` to automatically apply a theme
 
-#### Why using `@mixin`
+#### Advantages of using `@mixin`
 The advantage of using a `@mixin` function is that when you change your theme, every file that uses it will be updated automatically.
 Calling it with a different theme argument allow multiple themes within the app or component.
 
 #### How to use `@mixin`
-We can better theming our custom components adding a `@mixin` function to its theme file and then calling this function to apply a theme.
+We can more modularly theme our custom components adding a `@mixin` function to its theme file and then calling this function to apply a theme.
 
 All you need is to create a `@mixin` function in the *custom-component-theme.scss*
 
