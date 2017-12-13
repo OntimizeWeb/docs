@@ -92,7 +92,15 @@ attributes: [{
 },
 {
   name: "query-rows"
+},
+{
+  name: "fixed-header",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Fixed header and footer when the content is greather than its own height"
 }
+
 ]
 
 
