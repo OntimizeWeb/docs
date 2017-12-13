@@ -187,6 +187,8 @@ components:
     children:
       - title: "Dialog"
         url: /components/o-dialog.component/
+      - title: "Breadcrumb"
+        url: /components/o-breadcrumb.component/
 
   - title: Menu
     children:
