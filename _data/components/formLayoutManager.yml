@@ -13,28 +13,28 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Form data columns used for detail title"
 },{
   name: "separator",
-   type: "string",
+  type: "string",
   default : "' ' (space)",
   required : "",
-  description : ""
+  description : "Separator between the multiple label columns values"
 },{
   name: "title",
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Detail title"
 }]
 
 outputsColumns: ["Name", "Description"]
 
 outputs: [{
   name : "onMainTabSelected",
-  description: "Event triggered when  "
+  description: "Event triggered when the main tab is selected"
 },{
   name : "onCloseTab",
-  description: "Event triggered when  "
+  description: "Event triggered when a detail tab is closed"
 }]
 
