@@ -4,6 +4,8 @@ title: "App layout"
 comp: appLayout
 ---
 
+{% include base_path %}
+
 ## Examples
 
 * Default behaviour:
