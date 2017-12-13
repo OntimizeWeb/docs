@@ -63,6 +63,8 @@ docs:
         url: /routing/
       - title: "Forms"
         url: /forms/
+      - title: "Form layout manager"
+        url: /form-layout-manager/
       # - title: "Permission"
       #   url: /permission/
       - title: "Build and run"
