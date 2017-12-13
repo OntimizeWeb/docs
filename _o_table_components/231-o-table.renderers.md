@@ -82,7 +82,8 @@ To create a custom render, you need to create a new component to display custom 
 
 Here's how you might begin in your file .ts:
 
-- Your component must extends ```OBaseTableCellRenderer```
+- Your component must extends ```OBaseTableCellRenderer```.
+
 - Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the <ng-template> contents with a TemplateRef and access the view container.
 - In constructor you must add 
 ``` 
@@ -92,7 +93,19 @@ constructor(protected injector: Injector) {
 }
 ```
 
-The following example show how render two values of column in a cell, "SURNAME, name". 
+- If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*
+
+
+
+
+{% capture tablecellrendererFileCapture %}
+  {% include o-class.md comp="basecellrenderer"  %}
+{% endcapture %}
+{{ tablecellrendererFileCapture | replace: '    ', ''}}
+
+
+
+The following example show how render two values of column in a cell, "SURNAME, name" and override method getCellData
 
 The o-table-cell-renderer-name.ts file is as follows:
 
@@ -116,6 +129,9 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
         super(injector);
         this.initialize(); 
     }
+     getCellData(cellvalue: any,rowvalue) {
+       return `rowvalue['SURNAME'].toUpperCase()., .rowvalue[NAME]`;
+     }
 
 }
 ```

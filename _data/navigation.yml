@@ -191,7 +191,8 @@ components:
         url: /components/o-app-layout.component/
       - title: "Form layout manager"
         url: /components/o-form-layout-manager.component/
-
+      - title: "Breadcrumb"
+        url: /components/o-breadcrumb.component/
   - title: Menu
     children:
       - title: "Bar menu"
