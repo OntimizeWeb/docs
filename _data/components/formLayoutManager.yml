@@ -1,0 +1,40 @@
+directive : "o-form-layout-manager"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "mode",
+  type: "tab | dialog",
+  default : "dialog",
+  required : "",
+  description : "Form layout manager mode"
+},{
+  name: "label-columns",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "separator",
+   type: "string",
+  default : "' ' (space)",
+  required : "",
+  description : ""
+},{
+  name: "title",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+}]
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onMainTabSelected",
+  description: "Event triggered when  "
+},{
+  name : "onCloseTab",
+  description: "Event triggered when  "
+}]
+
