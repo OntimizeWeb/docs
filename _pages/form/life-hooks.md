@@ -22,7 +22,7 @@ the contained fields are not modificable, and the form toolbar shows the buttons
 
 The next picture shows each of the form’s possible states:
 
-<img src="{{ base_path }}/images/form/editableDetailFALSE.png" alt="Form life hooks">
+<img src="{{ base_path }}/images/components/form/editableDetailFALSE.png" alt="Form life hooks">
 
 ### editable-detail=true
 
@@ -35,7 +35,7 @@ form toolbar shows the buttons to accept or reject the operation.
 
 The next picture shows each of the form’s possible states:
 
-<img src="{{ base_path }}/images/form/editableDetailTRUE.png" alt="Form life hooks">
+<img src="{{ base_path }}/images/components/form/editableDetailTRUE.png" alt="Form life hooks">
 
 
 ## detail-button-in-row and edit-button-in-row
@@ -46,10 +46,10 @@ The new form configuration affects the operation of these parameters.
 
 This is the old default configuration:
 
-<img src="{{ base_path }}/images/form/modesEditableFALSE.png" alt="Form life hooks">
+<img src="{{ base_path }}/images/components/form/modesEditableFALSE.png" alt="Form life hooks">
 
 ### editable-detail=true
 
 With this new configuration the user should not use the edit button, because the '*o-form*' will not parse the '*edit*' path:
 
-<img src="{{ base_path }}/images/form/modesEditableTRUE.png" alt="Form life hooks">
+<img src="{{ base_path }}/images/components/form/modesEditableTRUE.png" alt="Form life hooks">
