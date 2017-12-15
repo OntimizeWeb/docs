@@ -1,0 +1,16 @@
+directive : "o-table-cell-renderer-percentage"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+},{
+  name: "decimal-separator"
+},{
+  name: "decimal-digits",
+  default: "0"
+}]
+
+title : "OTableCellRendererPercentage"

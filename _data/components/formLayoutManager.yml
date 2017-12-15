@@ -1,0 +1,40 @@
+directive : "o-form-layout-manager"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "mode",
+  type: "tab | dialog",
+  default : "dialog",
+  required : "",
+  description : "Form layout manager mode"
+},{
+  name: "label-columns",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Form data columns used for detail title"
+},{
+  name: "separator",
+  type: "string",
+  default : "' ' (space)",
+  required : "",
+  description : "Separator between the multiple label columns values"
+},{
+  name: "title",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Detail title"
+}]
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onMainTabSelected",
+  description: "Event triggered when the main tab is selected"
+},{
+  name : "onCloseTab",
+  description: "Event triggered when a detail tab is closed"
+}]
+

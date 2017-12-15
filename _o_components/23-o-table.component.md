@@ -84,6 +84,46 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
   }
 ```
 
+## Table options
+
+{% capture tableOptionCapture %}
+{% include o-component-single.md comp="tableOption" %}
+{% endcapture %}
+{{ tableOptionCapture | replace: '    ', ''}}
+
+<h3 class="grey-color">Example</h3>
+
+```html
+<o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
+  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
+  query-on-init="true" query-rows="6" quick-filter="yes" >
+
+  <o-table-option label="My option"></o-table-button>
+
+  <o-table-column attr="NAME" title="NAME"></o-table-column>
+
+  ...
+
+</o-table>
+```
+
+<h3 class="grey-color">Typescript code</h3>
+
+```javascript
+  ...
+  import { OTableOptionComponent } from 'ontimize-web-ngx';
+  ...
+  @ViewChild('myOption')
+  protected myOption: OTableOptionComponent;
+  ...
+  ngAfterViewInit() {
+    this.myButton.click.subscribe(event => {
+      alert('my option click');
+    });
+  }
+```
 
 ## Columns Aggregate
 
@@ -98,7 +138,7 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
 
 
 ```html
-<o-table service="branches" entity="account" keys="ACCOUNTID" 
+<o-table service="branches" entity="account" keys="ACCOUNTID"
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
     fxFlex layout-padding attr="accounts" title="ACCOUNTS"
@@ -127,51 +167,33 @@ delete it *com.ontimize.web.quickstart* entries in browser local storage.
   }
 ```
 
-{% for post in site.o_table_components %}
-  {% include archive-single.html %}
-{% endfor %}
+## Columns filters
 
-
-## Table buttons
-
-{% capture tableButtonCapture %}
-{% include o-component-single.md comp="tableButton" %}
+{% capture tableColumnsFilters %}
+{% include o-component-single.md comp="tableColumnsFilters" %}
 {% endcapture %}
-{{ tableButtonCapture | replace: '    ', ''}}
+{{ tableColumnsFilters | replace: '    ', ''}}
 
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
-  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
-  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
-  sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
-  query-on-init="true" query-rows="6" quick-filter="yes" >
+<o-table service="branches" entity="account" keys="ACCOUNTID"
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
+    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    sort-columns="ANID:DESC"  query-on-init="true"
+    quick-filter="yes"   filter-case-sensitive="true" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+    <o-table-columns-filter columns="OFFICEID;ACCOUNTTYP" ></o-table-columns-filter>
 
-  <o-table-column attr="NAME" title="NAME"></o-table-column>
-
-  ...
-
+    ...
 </o-table>
 ```
 
-<h3 class="grey-color">Typescript code</h3>
+{% for post in site.o_table_components %}
+  {% include archive-single.html %}
+{% endfor %}
 
-```javascript
-  ...
-  import { OTableButtonComponent } from 'ontimize-web-ngx';
-  ...
-  @ViewChild('myButton')
-  protected myButton: OTableButtonComponent;
-  ...
-  ngAfterViewInit() {
-    this.myButton.click.subscribe(event => {
-      alert('my button click');
-    });
-  }
-```
 
 ## Demo
 
