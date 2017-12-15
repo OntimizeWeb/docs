@@ -187,14 +187,14 @@ components:
     children:
       - title: "Dialog"
         url: /components/o-dialog.component/
-      - title: "SnackBar"
-        url: /components/snackbar/
       - title: "App layout"
         url: /components/o-app-layout.component/
       - title: "Form layout manager"
         url: /components/o-form-layout-manager.component/
       - title: "Breadcrumb"
         url: /components/o-breadcrumb.component/
+      - title: "SnackBar"
+        url: /components/snackbar/
   - title: Menu
     children:
       - title: "Bar menu"
@@ -203,7 +203,3 @@ components:
         url: /components/o-side-menu.component/
   - title: "FAQ"
     url: /components/faq/
-
-
-
-

@@ -1,1 +1,23 @@
 directive : "o-breadcrumb"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "form",
+  type: "OFormComponent",
+  default : "",
+  required : "no",
+  description : "Form component reference from which breadcrumb takes labeling values"
+},{
+  name: "label-columns",
+  type: "string",
+  default : "",
+  required : "no",
+  description : "Form data columns used for breadcrum labels. Separated by ';'"
+},{
+  name: "separator",
+  type: "string",
+  default : "' ' (space)",
+  required : "no",
+  description : "Separator between multiple label column values"
+}]
