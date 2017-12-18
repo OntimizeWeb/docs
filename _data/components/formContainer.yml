@@ -1,0 +1,11 @@
+directive : "o-form-container"
+
+attributesColumns: ["Name","Type","Default","Description"]
+
+attributes: [{
+  name: "breadcrum",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the breadscrum of the form"
+}]
