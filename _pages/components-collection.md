@@ -1,7 +1,7 @@
 ---  
 layout: archive 
 title: "Components" 
-permalink: /components-collection/ 
+permalink: /components/ 
 author_profile: false 
 sidebar: 
   nav: "components"

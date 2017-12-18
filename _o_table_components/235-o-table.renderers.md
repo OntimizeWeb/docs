@@ -1,12 +1,9 @@
 ---
-
-permalink: /table-components/o-table-renderers.component/
+permalink: /components/table/renderers/
 title: "Column renderers"
 ---
 
-
-<h2 id="overview">Overview</h2>
-In this section we are specifing how to render a cell content of the column.
+In this section we are specifing how to add a render for a table column.
 
 <aside class="sidebar__right">
   <nav class="toc">
@@ -86,10 +83,10 @@ Here's how you might begin in your file .ts:
 
 - Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the <ng-template> contents with a TemplateRef and access the view container.
 - In constructor you must add 
-``` 
+```javascript
 constructor(protected injector: Injector) {
-    super(injector);
-    this.initialize(); 
+  super(injector);
+  this.initialize(); 
 }
 ```
 
@@ -109,8 +106,7 @@ The following example show how render two values of column in a cell, "SURNAME, 
 
 The o-table-cell-renderer-name.ts file is as follows:
 
-```
-
+```javascript
 import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
 import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
 
@@ -144,11 +140,10 @@ The *let* keyword declares a template input variable that you reference within t
 
 The o-table-cell-renderer-name.html file is as follows:
 
-```
+```html
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-    {{ "{{ " }} rowvalue['SURNAME'] | uppercase {{ "}}" }} ,  {{ "{{ " }} rowvalue['NAME'] {{ "}}" }}
+  {% raw %}{{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}{% endraw %}
 </ng-template>
-
 ```
 
 

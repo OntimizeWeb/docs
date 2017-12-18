@@ -25,7 +25,7 @@ main:
     url: /doc-overview/
 
   - title: "Components"
-    url: /components-collection/
+    url: /components/
 
   - title: "About"
     url: /about/
@@ -170,10 +170,22 @@ components:
           - title: "Column editors"
             url: '/datatable-components/o-datatable-editors.component/'
       - title: "Table"
-        url: /components/o-table.component/
+        url: /components/table/
         children:
-          - title: "Column renderers"
-            url: '/table-components/o-table-renderers.component/'
+          - title: "Table buttons"
+            url: '/components/table/buttons/'
+          - title: "Table options"
+            url: '/components/table/options/'
+          - title: "Table columns filter"
+            url: '/components/table/columnsfilter/'
+          - title: "Table column renderers"
+            url: '/components/table/renderers/'
+          - title: "Table exportation"
+            url: '/components/table/exportation/'
+          - title: "Table aggregate"
+            url: '/components/table/aggregate/'
+          - title: "Table paginator"
+            url: '/components/table/paginator/'
       - title : "List"
         url: /components/o-list.component/
 

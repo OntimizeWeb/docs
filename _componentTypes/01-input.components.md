@@ -1,6 +1,6 @@
 ---
 permalink: /components/01-input.components/
-collectionURL: /components-collection/
+collectionURL: /components/
 title: "Input"
 ---
 
