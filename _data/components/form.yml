@@ -108,4 +108,11 @@ attributes: [{
   default : "yes",
   required : "",
   description : "Indicates whether or not the form default <em>detail</em> mode is editable. Learn more about <em>o-form</em> life hooks [here](https://ontimizeweb.github.io/docs/forms/){:target='_blank'})"
-}]
+},{
+  name: "show-header-navigation",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Include navigations buttons in form-toolbar. It's not included when the form is content in dialog mode in the  o-form-layout-manager component. Learn more about <em>o-form-layout-manager </em> [here](https://ontimizeweb.github.io/docs/components/o-form-layout-manager.component/){:target='_blank'}). Default: true;"
+}
+]

@@ -17,8 +17,8 @@ This component allow to place the breadscrum on the toolbar of the form in a tra
  <h3 class="grey-color">Example</h3>
 
 ```html
-  <o-form-container>
-    <o-form editable-detail="false" service="branches"....
+  <o-form-container breadcrumb="yes" breadcrumb-label-columns="NAME;SURNAME;" breadcrumb-separator=", ">
+    <o-form editable-detail="false" service="customers"....
     ..........>
     ............................
     </o-form>  

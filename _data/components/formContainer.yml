@@ -3,9 +3,23 @@ directive : "o-form-container"
 attributesColumns: ["Name","Type","Default","Description"]
 
 attributes: [{
-  name: "breadcrum",
+  name: "breadcrumb",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether or not to show the breadscrum of the form"
-}]
+  description : "Indicates whether or not to show the breadscrum of the form. Learn more about <em>breadcrub</em> [here](https://ontimizeweb.github.io/docs/components/o-breadcrumb.component/){:target='_blank'})."
+},
+{
+  name: "breadcrumb-label-columns",
+  type: "string",
+  default : "",
+  required : "no",
+  description : "Form data columns used for breadcrum labels. Separated by ';'"
+ },{
+  name: "breadcrumb-separator",
+  type: "string",
+  default : "' ' (space)",
+  required : "no",
+   description : "Separator between multiple label column values"
+ }
+]
