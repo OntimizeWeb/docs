@@ -1,0 +1,71 @@
+directive : "o-card-menu-layout"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "title",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "image",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "icon",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "tooltip",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "button-text",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "disabled-button",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : ""
+},{
+  name: "main-container-layout",
+  type: "string",
+  default : "column",
+  required : "",
+  description : ""
+},{
+  name: "secondary-container-layout",
+  type: "string",
+  default : "column",
+  required : "",
+  description : ""
+},{
+  name: "route",
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "detail-component",
+  type: "Component reference",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "detail-component-inputs",
+  type: "Object",
+  default : "{}",
+  required : "",
+  description : ""
+}]
