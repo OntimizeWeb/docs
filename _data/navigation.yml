@@ -57,7 +57,7 @@ docs:
     children:
       - title: "Structure"
         url: /structure/
-      - title: "Appl config file"
+      - title: "App config file"
         url: /guide/menu-config/
       - title: "Modules"
         url: /app-modules/
@@ -209,7 +209,7 @@ components:
         url: /components/o-breadcrumb.component/
       - title: "SnackBar"
         url: /components/snackbar/
-        - title: "Card menu layout"
+      - title: "Card menu layout"
         url: /components/o-card-menu-layout.component/
   - title: Menu
     children:

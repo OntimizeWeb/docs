@@ -48,6 +48,7 @@ items: [
 }
 ];
 ```
+
 ## Using menu configuration in components
 
 Ontimize Web parses each menu item configuration data and allows to use it in some components:
@@ -60,4 +61,4 @@ The menu configuration returns the following sidenav menu layout when using the 
 
 ### Card menu layout
 
-The menu configuration returns the following menu cards when using the [o-card-menu-layout]({{ base_path }}/components/o-card-menu-layout.component/) component
+The menu configuration returns the following menu cards when using the [o-card-menu-layout]({{ base_path }}/components/o-card-menu-layout.component/){:target="_blank"} component.
