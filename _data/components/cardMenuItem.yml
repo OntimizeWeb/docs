@@ -7,65 +7,65 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Card title"
 },{
   name: "image",
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Card image"
 },{
   name: "icon",
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Card icon. Card image have preference over it"
 },{
   name: "tooltip",
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Card tooltip"
 },{
   name: "button-text",
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "Card button text. If it has no value, the card will have no button"
 },{
   name: "disabled-button",
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : ""
+  description : "Indicates whether or not to the card button is enabled"
 },{
   name: "main-container-layout",
   type: "string",
   default : "column",
   required : "",
-  description : ""
+  description : "Card upper container layout direction"
 },{
   name: "secondary-container-layout",
   type: "string",
   default : "column",
   required : "",
-  description : ""
+  description : "Card lower container layout direction"
 },{
   name: "route",
   type: "string",
   default : "",
   required : "",
-  description : ""
+  description : "App navigation route when the menu card is selected (clicking on button, if exists, or in the card)"
 },{
   name: "detail-component",
   type: "Component reference",
   default : "",
   required : "",
-  description : ""
+  description : "Lower card component content"
 },{
   name: "detail-component-inputs",
   type: "Object",
   default : "{}",
   required : "",
-  description : ""
+  description : "<em>detail-component</em> inputs"
 }]
