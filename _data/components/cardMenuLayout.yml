@@ -1,0 +1,11 @@
+directive : "o-card-menu-layout"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "parent-menu-id",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Indicates the menu group id to render"
+}]

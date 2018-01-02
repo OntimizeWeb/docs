@@ -28,7 +28,13 @@ export const MENU_CONFIG: MenuRootItem[] = [
 {
 id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
 items: [
-  { id: 'customers', name: 'CUSTOMERS', route: '/main/customers', icon: 'people' },
+  { id: 'customers',
+    name: 'CUSTOMERS',
+    tooltip: 'CUSTOMERS_CONTENT',
+    route: '/main/customers',
+    icon: 'people',
+    image: './assets/images/ontimize.png'
+  },
   { id: 'accounts', name: 'ACCOUNTS', route: '/main/accounts', icon: 'credit_card' },
   { id: 'branches', name: 'BRANCHES', route: '/main/branches', icon: 'account_balance' },
   { id: 'employees', name: 'EMPLOYEES', route: '/main/employees', icon: 'person' }
@@ -42,6 +48,17 @@ items: [
 }
 ];
 ```
-Ontimize web parses each item and according to its parameters renders a propper menu item. This menu configuration returns the following menu layout:
+
+## Using menu configuration in components
+
+Ontimize Web parses each menu item configuration data and allows to use it in some components:
+
+### App layout
+
+The menu configuration returns the following sidenav menu layout when using the [o-app-layout]({{ base_path }}/components/o-app-layout.component/) component:
 
 ![image-center]({{ base_path }}/images/application/menu.PNG){: .align-center}
+
+### Card menu layout
+
+The menu configuration returns the following menu cards when using the [o-card-menu-layout]({{ base_path }}/components/o-card-menu-layout.component/){:target="_blank"} component.
