@@ -21,11 +21,13 @@
   {% if componentData.inheritedAttributes %}
     <h3 class="grey-color">Inherited attributes</h3>
     <ul>
-      {% for inheritedObj in componentData.inheritedAttributes %}
+    {% assign sortedInheritedAttributes = (componentData.inheritedAttributes | sort: 'name') %}
+      {% for inheritedObj in sortedInheritedAttributes %}
       <li>
         from <a href="{{ base_path }}/docs/components/{{inheritedObj.component}}.component/" rel="permalink">{{ inheritedObj.component }}:</a>
         <ul class="attributes-list">
-          {% for inheritedAttr in inheritedObj.attributes %}
+          {% assign sortedInheritedAttrs = (inheritedObj.attributes | sort) %}
+          {% for inheritedAttr in sortedInheritedAttrs %}
             <li> {{ inheritedAttr }} </li>
           {% endfor %}
         </ul>
@@ -58,7 +60,8 @@
         </tr>
       </thead>
         <tbody>
-        {% for attributeObject in componentData.attributes %}
+        {% assign sortedAttrs = (componentData.attributes | sort: 'name') %}
+        {% for attributeObject in sortedAttrs %}
           <tr>
           {% assign commonData = site.data.components.common.attributes[attributeObject.name] | default : {} %}
           {% for column in componentData.attributesColumns %}
@@ -90,11 +93,13 @@
   {% if componentData.inheritedOutputs %}
     <h3 class="grey-color">Inherited outputs</h3>
     <ul>
-      {% for inheritedObj in componentData.inheritedOutputs %}
+      {% assign sortedInheritedOutputs = (componentData.inheritedOutputs | sort: 'name') %}
+      {% for inheritedObj in sortedInheritedOutputs %}
       <li>
         from <a href="{{ base_path }}/docs/components/{{inheritedObj.component}}.component/" rel="permalink">{{ inheritedObj.component }}:</a>
         <ul class="attributes-list">
-          {% for inheritedOutput in inheritedObj.outputs %}
+          {% assign sortedInheritedOuts = (inheritedObj.outputs | sort) %}
+          {% for inheritedOutput in sortedInheritedOuts %}
             <li> {{ inheritedOutput }} </li>
           {% endfor %}
         </ul>
@@ -114,7 +119,8 @@
         </tr>
       </thead>
         <tbody>
-        {% for outputObject in componentData.outputs %}
+        {% assign sortedOutputs = (componentData.outputs | sort: 'name') %}
+        {% for outputObject in sortedOutputs %}
           <tr>
           {% for column in componentData.outputsColumns %}
             {% assign columnKey = column | downcase %}

@@ -108,7 +108,7 @@ because we know that the entity contains this attribute which corresponds with c
 
 If you reload the page on the browser you will see the phone field placed to the right of 'Customer type' field.
 
-You can find all available fields and all of their configuration parameters into the [Components]({{ base_path }}/components-collection/) section.
+You can find all available fields and all of their configuration parameters into the [Components]({{ base_path }}/components/) section.
 
 ---
 

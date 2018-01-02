@@ -81,7 +81,7 @@ export class EmployeesDetailComponent {
 }
 
 ```
-We have now defined the form that contains the information of a determined employee in the html template. This data is provided through the configured Ontimize service. You can find further information about component configuration parameters in the [Components]({{ base_path }}/components-collection/){:target="_blank"} section.
+We have now defined the form that contains the information of a determined employee in the html template. This data is provided through the configured Ontimize service. You can find further information about component configuration parameters in the [Components]({{ base_path }}/components/){:target="_blank"} section.
 
 In the logic file nothing special is done, we simply define the paths of the css and html files.
 

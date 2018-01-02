@@ -99,6 +99,12 @@ attributes: [{
   default : "no",
   required : "",
   description : "Fixed header and footer when the content is greather than its own height"
+},{
+  name: "export-button",
+  type: "no | false | yes | true",
+  default: "yes",
+  required : "",
+  description: "Indicates wherther or not to show a button on the header menu for exporting data"
 }
 
 ]
