@@ -6,7 +6,8 @@ comp: cardMenuLayout
 
 {% include base_path %}
 
-Read more about application menu configuration [here]({{ base_path }}/guide/menu-config/){:target="_blank"}.
+Read more about application menu configuration (and a simple example) [here]({{ base_path }}/guide/menu-config/){:target="_blank"}.
 
-## Examples
-
+{% for post in site.o_card_menu_layout_components %}
+  {% include archive-single.html %}
+{% endfor %}
