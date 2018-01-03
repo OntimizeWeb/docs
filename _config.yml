@@ -186,6 +186,9 @@ collections:
   o_list_picker_components:
     output: true
     permalink: /:collection/:path/
+  o_card_menu_layout_components:
+    output: true
+    permalink: /:collection/:path/
   o_faq_posts:
     output: true
     permalink: /:collection/:path/
@@ -306,7 +309,7 @@ defaults:
       path: ""
       type: o_card_menu_layout_components
     values:
-      layout: single
+      layout: o-component
       author_profile: false
       share: false
       comments: false

@@ -4,3 +4,7 @@ title: "Card menu item"
 comp: cardMenuItem
 excerpt: "Application menu card configuration"
 ---
+
+## Example
+
+![image-center]({{ base_path }}/images/components/card-menu-item/example.PNG){: .align-center}

@@ -57,7 +57,7 @@ Ontimize Web parses each menu item configuration data and allows to use it in so
 
 The menu configuration returns the following sidenav menu layout when using the [o-app-layout]({{ base_path }}/components/o-app-layout.component/) component:
 
-![image-center]({{ base_path }}/images/application/menu.PNG){: .align-center}
+![image-center]({{ base_path }}/images/layouts/app-layout/app_layout_sidenav.PNG){: .align-center}
 
 ### Card menu layout
 
