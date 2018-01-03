@@ -114,7 +114,7 @@ outputs: [{
   description: "Event triggered when a row is clicked"
 },{
   name : "onDoubleClick",
-  description: "Event triggered when a row is double clicked""
+  description: "Event triggered when a row is double clicked"
 },{
   name : "onRowDeselected",
   description: "Event triggered when a row is deselected "
