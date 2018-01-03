@@ -7,18 +7,18 @@ header:
   cta_label: "<i class='fa fa-play'></i> Check it out"
   cta_url: "/doc-overview/"
   caption:
-excerpt: 'web application framework based on Angular 2 for building business software.'
+excerpt: 'Web application framework based on Angular for building business software.'
 feature_row:
   - image_path: mm-free-feature.png
     alt: "Quick to learn"
     title: "Quick to learn"
-    excerpt: "Develop web data management applications quickly and agile based on Angular 2 technology."
+    excerpt: "Develop web data management applications quickly and agile based on Angular technology."
     url: "/doc-overview/"
     btn_label: "Learn More"
   - image_path: mm-customizable-feature.png
     alt: "Customizable"
     title: "Customizable themes"
-    excerpt: "Built on Angular 2 Material. Customizing standard themes or create new ones is very easy."
+    excerpt: "Built on Angular Material. Customizing standard themes or create new ones is very easy."
     url: "/theming/"
     btn_label: "Learn More"
   - image_path: mm-free-feature.png

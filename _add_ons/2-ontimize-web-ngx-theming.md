@@ -6,7 +6,7 @@ excerpt: ""
 
 # Ontimize Web Theming
 
-Ontimize web module for applications theming through '*scss*' files loading.
+Ontimize Web module for applications theming through '*scss*' files loading.
 
 * [Github repository](#github)
 * [Installation](#installation)

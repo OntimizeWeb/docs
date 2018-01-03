@@ -105,18 +105,30 @@ attributes: [{
   default: "yes",
   required : "",
   description: "Indicates wherther or not to show a button on the header menu for exporting data"
-}
-
-]
-
+}]
 
 outputsColumns: ["Name", "Description"]
 
 outputs: [{
   name : "onClick",
-  description: "Event triggered when component "
+  description: "Event triggered when a row is clicked"
 },{
   name : "onDoubleClick",
-  description: "Event triggered when component "
+  description: "Event triggered when a row is double clicked""
+},{
+  name : "onRowDeselected",
+  description: "Event triggered when a row is deselected "
+},{
+  name : "onRowDeleted",
+  description: "Event triggered when there some row deletion "
+},{
+  name : "onDoubleClick",
+  description: "Event triggered when a row is double clicked "
+},{
+  name : "onTableDataLoaded",
+  description: "Event triggered when table data is updated "
+},{
+  name : "onPaginatedTableDataLoaded",
+  description: "Event triggered when table paginated data is updated "
 }]
 

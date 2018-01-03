@@ -1,10 +1,9 @@
 ---
 permalink: /about/
-excerpt: "Minimal Mistakes is a flexible two-column Jekyll theme."
-modified: 2016-04-18T16:39:37-04:00
+excerpt: ""
 ---
 
-Ontimize Web is an application framework based on Angular 2 technology and standards that provides to you an environment for solving the problematic situation of building applications that require a browser-based user interface.
+Ontimize Web is an application framework based on Angular technology and standards that provides to you an environment for solving the problematic situation of building applications that require a browser-based user interface.
 Ontimize Web allows developing data management applications quickly and agile.
 
 See what's new in the [CHANGELOG](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/CHANGELOG.md){:target="_blank"}.

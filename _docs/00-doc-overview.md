@@ -9,7 +9,7 @@ excerpt: ""
 How to read and use this documentation.
 
 ---
-This page describes Ontimize Web at a high level and assumes that the reader has knowledge of Angular 2. if you are new to Angular, we suggest you take a look at the [Angular documentation](https://angular.io/docs/ts/latest/){:target="_blank"} first.
+This page describes Ontimize Web at a high level and assumes that the reader has knowledge of Angular. if you are new to Angular, we suggest you take a look at the [Angular documentation](https://angular.io/docs/ts/latest/){:target="_blank"} first.
 
 
 ## Sections

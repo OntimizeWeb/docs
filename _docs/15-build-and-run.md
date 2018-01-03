@@ -57,7 +57,7 @@ Which compiles your app at build time.
 * More secure, original source not disclosed.
 * Suitable for production builds.
 
-Ontimize web has its own plugin for the AoT distribution version creation, you can see more details [here]({{ base_path }}/ontimize-web-ngx-tools/){:target="_blank"}. You can generate the AoT distribution version of your application by installing '*ontimize-web-ngx-tools*', adding this line to your package.json, and running '*npm run production-aot*'.
+Ontimize Web has its own plugin for the AoT distribution version creation, you can see more details [here]({{ base_path }}/ontimize-web-ngx-tools/){:target="_blank"}. You can generate the AoT distribution version of your application by installing '*ontimize-web-ngx-tools*', adding this line to your package.json, and running '*npm run production-aot*'.
 
   ```bash
   "production-aot": "ontimize-web-ngx production-aot"
