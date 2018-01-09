@@ -188,6 +188,8 @@ components:
             url: '/components/table/aggregate/'
           - title: "Table paginator"
             url: '/components/table/paginator/'
+          - title: "Table context menu"
+            url: '/components/table/contextmenu/'
       - title : "List"
         url: /components/o-list.component/
 
@@ -211,6 +213,8 @@ components:
         url: /components/snackbar/
       - title: "Card menu layout"
         url: /components/o-card-menu-layout.component/
+      - title: "Context menu"
+        url: /components/contextmenu/
   - title: Menu
     children:
       - title: "Bar menu"

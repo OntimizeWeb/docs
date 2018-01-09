@@ -1,0 +1,13 @@
+directive: "oContextMenu"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "oContextMenuData",
+  type: "object",
+  default : "",
+  required : "",
+  description : "Data passed to the context menu. It will be available as an attribute of the execute event on the context menu"
+}]	
+
+title : "Context menu directive"

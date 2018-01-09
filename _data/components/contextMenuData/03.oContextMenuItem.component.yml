@@ -1,0 +1,24 @@
+directive : "o-context-menu-item"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "icon"
+},{
+  name: "label",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Text shown on the menu item"
+},{
+  name: "enabled"
+},
+{
+  name: "data",
+  type: "object",
+  default : "",
+  required : "",
+  description : "Data passed to the context menu. It will be available as an attribute of the execute event on the context menu"
+}]	
+
+title : "Context menu item component"
