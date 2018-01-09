@@ -5,7 +5,7 @@ comp: formContainer
 excerpt: "Tips for extending a form component"
 ---
 
-This component allow to place the breadscrum on the toolbar of the form in a transparent way for the user.
+This component allow to place the breadcrumb on the toolbar of the form in a transparent way for the user.
 
 {% capture paginatorFileCapture %}
   {% include o-component-single.md comp="formContainer"  %}
@@ -24,3 +24,11 @@ This component allow to place the breadscrum on the toolbar of the form in a tra
     </o-form>  
   </o-form-container>
 ```
+
+Below you can see an example using *o-form-container*
+
+![image-center]({{ base_path }}/images/layouts/form-container/customers_with_breadcrumb.gif){: .align-center}
+
+And below you can see an example that does not use *o-form-container*
+
+![image-center]({{ base_path }}/images/layouts/form-container/customers_fixed_withoutbreadcrumb.gif){: .align-center}
