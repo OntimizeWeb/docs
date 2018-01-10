@@ -31,7 +31,7 @@ In this section we are specifing how to define a context menu for the table rows
 <o-context-menu #myContextMenu>
   <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute($event)">
   <o-context-menu-item icon="star_rate" label="Item 2" enabled="no">
-  <o-context-menu-item label="Item 3" (execute)="onExecute($event)">
+  <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)">
 </o-context-menu>
 ```
 

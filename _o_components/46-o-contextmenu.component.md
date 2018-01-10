@@ -32,6 +32,6 @@ The context menu component is compound of a the context menu component and a dir
 <o-context-menu #myContextMenu>
     <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute($event)"></o-context-menu-item>
     <o-context-menu-item icon="start_rate" label="Item 2" enabled="no"></o-context-menu-item>
-    <o-context-menu-item label="Item 3" (execute)="onExecute($event)"></o-context-menu-item>
+    <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)"></o-context-menu-item>
 </o-context-menu>
 ```
