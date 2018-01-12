@@ -23,7 +23,7 @@ In this section we are specifing how to define an aggregate column.
     <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" thousand-separator=","></o-table-column>
     <o-table-column attr="INTERESRATE" title="INTERESRATE" type="real" ></o-table-column>
     <o-table-column-aggregate attr="BALANCE" title="sum">
-    <o-table-column-aggregate attr="INTERESRATE" [function-aggregate]="custonm"></o-table-column-aggregate>
+    <o-table-column-aggregate attr="INTERESRATE" [function-aggregate]="custom"></o-table-column-aggregate>
 </o-table>
 ```
 
