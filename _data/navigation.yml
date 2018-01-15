@@ -97,6 +97,8 @@ docs:
         url: /ontimize-web-ngx-dynamicform/
       - title: "Dynamicform Builder"
         url: /ontimize-web-ngx-dynamicform-builder/
+      - title: "File Manager"
+        url: /ontimize-web-ngx-filemanager/
       - title: "JEE app seed"
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
@@ -209,10 +211,10 @@ components:
         url: /components/o-breadcrumb.component/
       - title: "SnackBar"
         url: /components/snackbar/
-      - title: "Card menu layout"
-        url: /components/o-card-menu-layout.component/
   - title: Menu
     children:
+      - title: "Card menu layout"
+        url: /components/o-card-menu-layout.component/
       - title: "Bar menu"
         url: /components/o-bar-menu.component/
       - title: "Side menu"

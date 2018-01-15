@@ -40,7 +40,7 @@ You must add the module styles definition in your '*.angular-cli.json*' file sty
 
 ### Import in an application module
 
-Include the datatable module into your app in the module where you want to use it.
+Include the dynamic form builder module into your app in the module where you want to use it.
 
 ```bash
 ...
