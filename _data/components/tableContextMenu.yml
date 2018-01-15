@@ -1,0 +1,15 @@
+directive : "o-table-context-menu"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+
+attributes: [
+  {
+  name: "context-menu", 
+  type: "OContextMenuComponent",
+  default : "",
+  required : "yes",
+  description : "Context menu component reference."
+}
+]
+
+title : "OTableContextMenu"
