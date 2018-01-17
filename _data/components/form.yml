@@ -111,8 +111,8 @@ attributes: [{
 },{
   name: "show-header-navigation",
   type: "no | false | yes | true",
-  default : "false",
+  default : "no",
   required : "",
-  description : "Include navigations buttons in form-toolbar. It's not included when the form is content in dialog mode in the  o-form-layout-manager component. Learn more about <em>o-form-layout-manager </em> [here](https://ontimizeweb.github.io/docs/components/o-form-layout-manager.component/){:target='_blank'}). Default: true;"
+  description : "Include navigations buttons in form-toolbar. It's not included when the form is content in <em> tab </em> mode in the  o-form-layout-manager component. Learn more about <em>o-form-layout-manager </em> [here](https://ontimizeweb.github.io/docs/components/o-form-layout-manager.component/){:target='_blank'}). Default: no;"
 }
 ]

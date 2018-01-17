@@ -5,7 +5,7 @@ attributesColumns: ["Name","Type","Default","Description"]
 attributes: [{
   name: "breadcrumb",
   type: "no | false | yes | true",
-  default : "yes",
+  default : "no",
   required : "",
   description : "Indicates whether or not to show the breadscrum of the form. Learn more about <em>breadcrub</em> [here](https://ontimizeweb.github.io/docs/components/o-breadcrumb.component/){:target='_blank'})."
 },
