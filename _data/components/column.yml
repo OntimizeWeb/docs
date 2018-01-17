@@ -1,10 +1,6 @@
 
 directive : "o-column"
 
-outputsColumns: ["Name", "Description"]
-
-outputs: []
-
 attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
