@@ -15,7 +15,7 @@ comp: breadcrumb
 ```
 **Note**: If *form* attibute is not present, the text shown in the breadcrumb label will be the corresponding route item for the component where the breadcrumb is placed.
 
-<h3 class="grey-color">Initialize</h3>
+<!-- <h3 class="grey-color">Initialize</h3>
 
 For using the breadcrum component it is necessary to initialize the *NavigationService* in order to gather the required information for building the breadcrumb component. For initializing the Navigation Service, just call the method *initialize* on the constructor of your application main component like the example below.
 
@@ -37,4 +37,4 @@ For using the breadcrum component it is necessary to initialize the *NavigationS
         }
 
     }
-```
+``` -->
