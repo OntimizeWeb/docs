@@ -20,6 +20,13 @@
     required : "",
     description : "Indicates whether or not the component will bind its value to its <em>attr</em> when located inside a form"
   },
+  "automatic-registering" : {
+    name: "automatic-registering",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not the component will register itself (using its <em>attr</em>) when located inside a form"
+  },
   "enabled" : {
     name: "enabled",
     type: "no | false | yes | true",

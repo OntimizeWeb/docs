@@ -9,6 +9,8 @@ attributes: [{
 },{
   name: "automatic-binding"
 },{
+  name: "automatic-registering"
+},{
   name: "data"
 },{
   name: "enabled"

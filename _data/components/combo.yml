@@ -20,6 +20,8 @@ attributes: [{
 },{
   name: "automatic-binding"
 },{
+  name: "automatic-registering"
+},{
   name: "enabled"
 },{
   name: "required"
