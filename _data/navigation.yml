@@ -51,8 +51,6 @@ docs:
         url: /make-changes/
       - title: "More advanced topics"
         url: /advanced-changes/
-
-
   - title: Guide
     children:
       - title: "Structure"
@@ -75,12 +73,10 @@ docs:
         url: /video-examples/
       - title: "Migration guides"
         url: /migrations/
-
   - title: Customization
     children:
       - title: "Theming"
         url: /theming/
-
   - title: Add-ons
     children:
       - title: "Tools"
@@ -103,7 +99,6 @@ docs:
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
         url: /ontimize-web-ngx-seed/
-
   - title: Meta
     children:
       - title: "Contributing"
@@ -112,6 +107,7 @@ docs:
         url: /license/
       - title: "About"
         url: /about/
+
 # components links
 components:
   - title: Input
@@ -227,3 +223,16 @@ components:
         url: /components/o-side-menu.component/
   - title: "FAQ"
     url: /components/faq/
+
+ontimize_web_ngx_filemanager_docs:
+  - title: "Getting Started"
+    children:
+      - title: "Document overview"
+        url: /ontimize-web-ngx-filemanager/doc-overview/
+      - title: "Example overview"
+        url: /ontimize-web-ngx-filemanager/example-overview/
+
+  - title: "Components"
+    children:
+      - title: "Table"
+      url: /ontimize-web-ngx-filemanager/components/o-filemanager-table.component/

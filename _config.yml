@@ -195,6 +195,9 @@ collections:
   add_ons:
     output: true
     permalink: /:collection/:path/
+  ontimize_web_ngx_filemanager:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -228,6 +231,7 @@ defaults:
       comments: false
       sidebar:
         nav: "docs"
+  # _add_ons
   - scope:
       path: ""
       type: add_ons
@@ -272,6 +276,7 @@ defaults:
       sidebar:
         nav: "components"
    # _o_table_components
+  # _o_table_components
   - scope:
       path: ""
       type: o_table_components
@@ -326,12 +331,18 @@ defaults:
       comments: false
       sidebar:
         nav: "components"
-
-
-
-
-
-
+  #_ontimize_web_ngx_filemanager
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_filemanager
+    values:
+      layout: o-module
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "ontimize_web_ngx_filemanager_docs"
 
 
 
