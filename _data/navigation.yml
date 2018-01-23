@@ -235,4 +235,4 @@ ontimize_web_ngx_filemanager_docs:
   - title: "Components"
     children:
       - title: "Table"
-      url: /ontimize-web-ngx-filemanager/components/o-filemanager-table.component/
+        url: /ontimize-web-ngx-filemanager/components/o-filemanager-table.component/
