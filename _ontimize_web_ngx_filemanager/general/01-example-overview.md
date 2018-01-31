@@ -1,6 +1,6 @@
 ---
 title: "Documentation overview"
-permalink: /ontimize-web-ngx-filemanager/example-overview/
+permalink: /ontimize_web_ngx_filemanager/example-overview/
 excerpt: ""
 ---
 

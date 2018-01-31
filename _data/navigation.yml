@@ -224,15 +224,15 @@ components:
   - title: "FAQ"
     url: /components/faq/
 
-ontimize_web_ngx_filemanager_docs:
+ontimize_web_ngx_filemanager:
   - title: "Getting Started"
     children:
       - title: "Document overview"
-        url: /ontimize-web-ngx-filemanager/doc-overview/
+        url: /ontimize_web_ngx_filemanager/doc-overview/
       - title: "Example overview"
-        url: /ontimize-web-ngx-filemanager/example-overview/
+        url: /ontimize_web_ngx_filemanager/example-overview/
 
   - title: "Components"
     children:
       - title: "Table"
-        url: /ontimize-web-ngx-filemanager/components/o-filemanager-table.component/
+        url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/

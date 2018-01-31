@@ -331,18 +331,18 @@ defaults:
       comments: false
       sidebar:
         nav: "components"
-  #_ontimize_web_ngx_filemanager
+  #_ontimize_web_ngx_filemanager layout: o-module
   - scope:
       path: ""
       type: ontimize_web_ngx_filemanager
     values:
-      layout: o-module
+      layout: single
       read_time: false
       author_profile: false
       share: false
       comments: false
       sidebar:
-        nav: "ontimize_web_ngx_filemanager_docs"
+        nav: "ontimize_web_ngx_filemanager"
 
 
 

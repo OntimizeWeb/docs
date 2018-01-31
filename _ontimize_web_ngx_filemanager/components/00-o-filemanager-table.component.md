@@ -1,5 +1,5 @@
 ---
-permalink: /ontimize-web-ngx-filemanager/components/o-filemanager-table.component/
+permalink: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
 title: "Filemanager table"
 ---
 <!-- comp: textInput -->
