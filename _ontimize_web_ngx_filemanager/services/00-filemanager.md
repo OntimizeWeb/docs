@@ -107,6 +107,18 @@ Create a folder in the work space.
 
 * **Return** Observable<any>
 
+### *fileUpdate*
+Update a folder or file name.
+
+* **Parameters**
+
+| Name | Type      | Required | Description                   |
+| ---- | --------- | -------- | ----------------------------- |
+| name | string    | yes      | The file/folder name          |
+| file | FileClass | yes      | The file for changin the name |
+
+* **Return** Observable<any>
+
 
 ## Extending the File Manager Service
 
@@ -316,6 +328,46 @@ In this section we describe the REST API used by the *FileManagerService*.
                     <tbody>
                         <tr>
                             <td>data</td><td>Map</td><td>A map with the insert extra information</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+### Change file/folder name
+
+* **Path**: /fileUpdate
+* **Method**: POST
+* **Data params**:
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th><th>Type</th><th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>fileParams</td>
+            <td>Map</td>
+            <td>A map with the following parameters described as follows<br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th><th>Type</th><th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>file</td><td>FileClass</td><td>The file data for changing name</td>
+                        </tr>
+                        <tr>
+                            <td>params</td><td>Map</td><td>A map with a 'name' key containing the new name for the file</td>
                         </tr>
                     </tbody>
                 </table>
