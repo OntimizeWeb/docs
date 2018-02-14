@@ -1,0 +1,28 @@
+directive : "o-table-insertable-row"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "columns",
+  default : "All visible columns",
+  description : "Insertable columns. Separated by ';'"
+},{
+  name: "requiredColumns",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Required columns for doing a insertion. Separated by ';'"
+},{
+  name: "position",
+  default: "last",
+  type : "first | last",
+  description : "Indicates wheter the insertable row is shown as first or last table record."
+}]
+
+outputsColumns: ["Name", "Description"]
+
+outputs: [{
+  name : "onPostInsertRecord",
+  description: "Event triggered when a successful insertion is done"
+}]
+
