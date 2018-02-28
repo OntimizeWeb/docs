@@ -35,13 +35,13 @@ For example:
 
 // 2. Use equivalent code
 <o-table-column attr="STARTDATE" title="STARTDATE">
-  <o-table-cell-renderer-image format="LL">
-  </o-table-cell-renderer-image>
+  <o-table-cell-editor-date format="LL">
+  </o-table-cell-editor-date>
 </o-table-column>
 
 // 3. Custom editor.
 <o-table-column attr="STARTDATE" title="STARTDATE">
-  <o-table-cell-renderer-startdate></o-table-cell-renderer-startdate>
+  <o-table-cell-editor-startdate></o-table-cell-editor-startdate>
 </o-table-column>
 ```
 
@@ -98,30 +98,26 @@ constructor(protected injector: Injector) {
 
 The following example show how render two values of column in a cell, "SURNAME, name" and override method getCellData
 
-The o-table-cell-renderer-name.ts file is as follows:
+The o-table-cell-editor-name.ts file is as follows:
 
 ```javascript
 import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
-import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
+import { OBaseTableCellEditor } from 'ontimize-web-ngx';
 
 
 @Component({
-    selector: 'custom-render',
-    templateUrl: './custom-render.component.html'
+    selector: 'custom-editor',
+    templateUrl: './custom-editor.component.html'
 })
 
-export class OTableCellRendererName extends OBaseTableCellRenderer {
+export class OTableCellEditorName extends OBaseTableCellEditor {
 
     @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
 
     constructor(protected injector: Injector) {
-
         super(injector);
         this.initialize();
     }
-     getCellData(cellvalue: any,rowvalue) {
-       return `rowvalue['SURNAME'].toUpperCase()., .rowvalue[NAME]`;
-     }
 
 }
 ```
@@ -132,7 +128,7 @@ Here's how you might begin in your file .html:
 The *let* keyword declares a template input variable that you reference within the template. The input variables are *cellvalue* and *rowvalue*. The parser translates let cellvalue and let rowvalue into variables named, *let-cellvalue* and *let-rowvalue*.
 
 
-The o-table-cell-renderer-name.html file is as follows:
+The o-table-cell-editor-name.html file is as follows:
 
 ```html
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
@@ -141,6 +137,6 @@ The o-table-cell-renderer-name.html file is as follows:
 ```
 
 
-Finally, add the component *OTableCellRendererName* to your module.
+Finally, add the component *OTableCellEditorName* to your module.
 
 
