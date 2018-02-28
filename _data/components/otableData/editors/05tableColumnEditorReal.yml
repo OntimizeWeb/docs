@@ -1,0 +1,7 @@
+directive : "o-table-cell-editor-real"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: []
+
+title : "OTableCellEditorReal"

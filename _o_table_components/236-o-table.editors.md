@@ -1,69 +1,63 @@
 ---
-permalink: /components/table/renderers/
-title: "Column renderers"
+permalink: /components/table/editors/
+title: "Column editors"
 ---
 
-In this section we are specifing how to add a render for a table column.
+In this section we are specifing how to add a editor for a table column cell.
 
 <aside class="sidebar__right">
   <nav class="toc">
       <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
       <ul class="toc__menu" id="markdown-toc">
         <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-        <li><a href="#default-renderers" >Default renderers</a></li>
-        <li><a href="#custom-renderers" >Custom renderers.</a></li>
+        <li><a href="#default-editors" >Default editors</a></li>
+        <li><a href="#custom-editors" >Custom editors</a></li>
     </ul>
   </nav>
 </aside>
 
-By default, the table will place the values of your data into the cell as simple strings. If you want something other than simple strings, then you use a cell renderer. So for rendering your values, you have the following four options.
+By default, the table will no define a editor for your data into a cell. If you want to be able to edit that data you have to use a cell editor. So, for editing your values, you have the following options.
 
-**1.** Do nothing, simple strings get used to display the table.
+**1.** Use one of the predefined cell editor. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
 
-**2.** Use one of cell renderer predefined. The predefined types are *boolean*, *real*, *currency*, *date*, *image*, *percentage* and *string*. If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/table-components/o-table-renderers.component/#default-renderers).
+If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/table-components/o-table-editors.component/#default-editors).
 
-**3.** Use equivalent code.
+**2.** Use equivalent code.
 
-**4.** Custom renderer. Below is an example but you can find all information [here]({{ base_path }}/docs/table-components/o-table-renderers.component/#custom-renderers).
+**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/docs/table-components/o-table-editors.component/#custom-editors).
 
 
 For example:
 
 ```html
-// 1.Do nothing, simple strings get used to display the table
-<o-table-column attr="PHOTO" > </o-table-column>
+// 1. Use one of the predefined cell editor
+<o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL" editable="yes"></o-table-column>
 
-// 2. Use one of cell renderer predefined
-<o-table-column attr="PHOTO" orderable="no" searchable="no" type="image"
-  image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-</o-table-column>
-
-// 3. Use equivalent code
-<o-table-column attr="PHOTO" orderable="no" searchable="no">
-  <o-table-cell-renderer-image image-type="base64"
-    empty-image="assets/images/no-image.png" avatar="yes">
+// 2. Use equivalent code
+<o-table-column attr="STARTDATE" title="STARTDATE">
+  <o-table-cell-renderer-image format="LL">
   </o-table-cell-renderer-image>
 </o-table-column>
 
-// 4. Custom renderer.
-<o-table-column attr="NAME" orderable="no" searchable="no">
-  <o-table-cell-renderer-name></o-table-cell-renderer-name>
+// 3. Custom editor.
+<o-table-column attr="STARTDATE" title="STARTDATE">
+  <o-table-cell-renderer-startdate></o-table-cell-renderer-startdate>
 </o-table-column>
 ```
 
 
-## Default renderers
+## Default editors
 
 {% assign filenameArray = "" | split:"|"  %}
-{% for renderers_hash in site.data.components.otableData.renderers %}
-  {% assign filenameArray = filenameArray | push: renderers_hash[0] %}
+{% for editors_hash in site.data.components.otableData.editors %}
+  {% assign filenameArray = filenameArray | push: editors_hash[0] %}
 {% endfor %}
 {% assign filenameArray = filenameArray | sort %}
 
 
 {% for filename in filenameArray %}
 
-  {% assign dataFile = site.data.components.otableData.renderers[filename] %}
+  {% assign dataFile = site.data.components.otableData.editors[filename] %}
   {% capture dataFileCapture %}
     {% include o-component-single.md compFile=dataFile  %}
   {% endcapture %}
@@ -73,13 +67,13 @@ For example:
   </div>
 {% endfor %}
 
-## Custom renderers
+## Custom editors
 
-To create a custom render, you need to create a new component to display custom renderer information and place this render in the content of cell.
+To create a custom editor, you need to create a new component to display custom editor information and place it inside a cell.
 
 Here's how you might begin in your file .ts:
 
-- Your component must extends ```OBaseTableCellRenderer```.
+- Your component must extends ```OBaseTableCellEditor```.
 
 - Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the <ng-template> contents with a TemplateRef and access the view container.
 - In constructor you must add

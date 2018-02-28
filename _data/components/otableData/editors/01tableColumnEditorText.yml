@@ -1,0 +1,9 @@
+directive : "o-table-cell-editor-text"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "required"
+}]
+
+title : "OTableCellEditorText"
