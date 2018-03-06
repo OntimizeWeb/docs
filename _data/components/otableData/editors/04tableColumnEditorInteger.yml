@@ -1,0 +1,7 @@
+directive : "o-table-cell-editor-integer"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: []
+
+title : "OTableCellEditorInteger"

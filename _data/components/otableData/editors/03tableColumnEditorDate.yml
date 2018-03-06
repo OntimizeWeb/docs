@@ -1,0 +1,50 @@
+directive : "o-table-cell-editor-date"
+
+attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+
+attributes: [{
+  name: "format",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+},{
+  name: "locale"
+},{
+  name: "start-view",
+  type: "month | year",
+  default : "month",
+  required : "",
+  description : ""
+},{
+  name: "min",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Minimum selectable date"
+},{
+  name: "max",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Maximum selectable date"
+},{
+  name: "touch-ui",
+  type: "boolean",
+  default : "false",
+  required : "",
+  description : "Indicates wheter to use the datepicker 'touch-ui' mode"
+},{
+  name: "start-at",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Start date"
+},{
+  name: "filter-date",
+  type: "(date: Date) => boolean",
+  default : "",
+  required : "",
+  description : "Function for filtering datepicker possible values"
+}]
+title : "OTableCellEditorDate"

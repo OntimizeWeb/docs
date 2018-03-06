@@ -22,7 +22,7 @@ By default, the table will place the values of your data into the cell as simple
 
 **2.** Use one of cell renderer predefined. The predefined types are *boolean*, *real*, *currency*, *date*, *image*, *percentage* and *string*. If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/table-components/o-table-renderers.component/#default-renderers).
 
-**3.** Use equivalente code.
+**3.** Use equivalent code.
 
 **4.** Custom renderer. Below is an example but you can find all information [here]({{ base_path }}/docs/table-components/o-table-renderers.component/#custom-renderers).
 
@@ -38,7 +38,7 @@ For example:
   image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
 </o-table-column>
 
-// 3. Use equivalente code
+// 3. Use equivalent code
 <o-table-column attr="PHOTO" orderable="no" searchable="no">
   <o-table-cell-renderer-image image-type="base64"
     empty-image="assets/images/no-image.png" avatar="yes">
@@ -82,11 +82,11 @@ Here's how you might begin in your file .ts:
 - Your component must extends ```OBaseTableCellRenderer```.
 
 - Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the <ng-template> contents with a TemplateRef and access the view container.
-- In constructor you must add 
+- In constructor you must add
 ```javascript
 constructor(protected injector: Injector) {
   super(injector);
-  this.initialize(); 
+  this.initialize();
 }
 ```
 
@@ -123,7 +123,7 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
     constructor(protected injector: Injector) {
 
         super(injector);
-        this.initialize(); 
+        this.initialize();
     }
      getCellData(cellvalue: any,rowvalue) {
        return `rowvalue['SURNAME'].toUpperCase()., .rowvalue[NAME]`;
