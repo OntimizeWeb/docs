@@ -253,7 +253,7 @@
   },
   "detail-mode" : {
     name: "detail-mode",
-    type: "none | click | doubleclick",
+    type: "none | click | dblclick",
     default : "click",
     required : "",
     description : "Action for opening the detail form of a row"
