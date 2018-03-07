@@ -148,7 +148,8 @@ attributes: [{
 },{
   name: "deleted-method"
 },{
-  name: "pageable"
+  name: "pageable",
+  default : "yes"
 },{
   name: "detail-form-route"
 },{
