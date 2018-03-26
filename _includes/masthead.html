@@ -4,16 +4,35 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
+          <a href="{{ base_path }}/">
+            <div class="main_icon"></div>
+        </a>
+        <span class="fill_remaing_space"></span>
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
+          <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>-->
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            
+           
+
+            {% if page.url contains link.url %} 
+              <li class="masthead__menu-item masthead__menu-item-active"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+            {% else %}
+              <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+            {% endif %}
+            </li>
+
+          
+            {% if forloop.last %}
+            {% else %}
+              <div class="masthead__menu-separator"></div>
+            {% endif %}
+           
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>

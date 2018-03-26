@@ -23,6 +23,7 @@
 
     nav {
       z-index: 10;
+      display: flex;
     }
 
     a {
@@ -40,14 +41,42 @@
     list-style-type: none;
   }
 }
+.masthead__menu-separator{
+  border-left: 1px solid #e5e5e5;
+  height: 50px;
+}
+
+.masthead__menu-item-active{
+  //border-top: 3px solid $orange;
+}
 
 .masthead__menu-item {
   display: block;
   list-style-type: none;
   white-space: nowrap;
+  font-family: $pt-sans;
+  color: #666666;
+  font-size: 0.65em;
+  text-transform: uppercase;
+  font-weight: 400;
+
+  &:hover {
+    color: #000000;
+  }
 
   &--lg {
     padding-right: 2em;
     font-weight: 700;
   }
+}
+
+.main_icon{
+  background-image: url('/docs/images/logo-ontimize.png');
+  background-size: 116px 30px;
+  width: 116px;
+  height: 30px;
+}
+
+.fill_remaing_space{
+  flex: 1 1 auto;
 }

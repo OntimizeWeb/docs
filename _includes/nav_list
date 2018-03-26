@@ -3,6 +3,13 @@
 
  <script type="text/javascript" style="display:none;">
   var onNavigationItemClick = function (element) {
+
+    var parentNav = $(element).parents('nav.nav__list');
+    var icons = parentNav.find('svg');
+    icons.addClass('fa-folder');
+    icons.addClass('orange-icon');
+    icons.removeClass('fa-folder-open');
+
     var parentLi = $(element).parents('li.nav-component-category:first');
     parentLi.siblings().removeClass('active-component-category');
     parentLi.addClass('active-component-category');
@@ -10,6 +17,11 @@
     parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
     parentLi.toggleClass('active-component-category');
 */    
+    var currentIcon = parentLi.find('svg:first');
+    currentIcon.addClass('fa-folder-open');
+    currentIcon.removeClass('orange-icon');
+    currentIcon.removeClass('fa-folder');
+
   };
 </script>
 
@@ -18,7 +30,7 @@
   <ul>
     {% comment %}set "active" class on category containing current page{% endcomment %}
     {% assign activeCategory = nil  %}
-    {% if include.nav == 'components' %}
+    {% if include.nav == 'components' or include.nav == 'docs' %}
       {% for nav in navigation %}
           {% if nav.children and activeCategory == nil %}
               {% for child in nav.children %}
@@ -39,7 +51,8 @@
     {% endif %}
  
     {% assign navigationCategoryClass = '' %}
-    {% if include.nav == 'components' %}
+
+    {% if include.nav == 'components' or include.nav == 'docs' %}
       {% assign navigationCategoryClass = 'nav-component-category' %}
     {% endif %}
 
@@ -48,7 +61,6 @@
       {% if activeCategory != nil and activeCategory.title == nav.title %}
             {% assign activeClass = 'active-component-category active-parent' %}
       {% endif %} 
-
       <li class="{{ navigationCategoryClass }} {{ activeClass }}">
         {% if nav.url %}
           {% comment %}internal/external URL check{% endcomment %}
@@ -60,7 +72,12 @@
 
           <a href="{{ domain }}{{ nav.url }}"><span class="nav__sub-title">{{ nav.title }}</span></a>
         {% else %}
-          <span class="nav__sub-title"  onclick="onNavigationItemClick(this)">{{ nav.title }}</span>
+          {% if activeCategory != nil and activeCategory.title == nav.title %}
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>{{ nav.title }}</span>
+          {% else %}
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>{{ nav.title }}</span>
+          {% endif %}
+
         {% endif %}
 
         {% if nav.children != null %}

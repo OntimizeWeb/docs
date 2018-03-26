@@ -21,6 +21,9 @@ $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 $sans-serif-narrow          : $sans-serif;
 $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
 
+/*PT Sans*/
+$pt-sans                    : "PT Sans", sans-serif;
+
 /* serif typefaces */
 $georgia                    : Georgia, serif;
 $times                      : Times, serif;
@@ -48,6 +51,7 @@ $type-size-8                : 0.625em;  // ~10px
    ========================================================================== */
 
 $gray                       : #7a8288;
+$orange                     : #f8b603;
 $dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : mix(#fff, $gray, 50%);
@@ -61,7 +65,7 @@ $text-color                 : $dark-gray;
 $border-color               : $lighter-gray;
 
 $primary-color              : #7a8288;
-$success-color              : #62c462;
+$success-color              : #f8b603;
 $warning-color              : #f89406;
 $danger-color               : #ee5f5b;
 $info-color                 : #52adc8;

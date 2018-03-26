@@ -12,8 +12,8 @@
   margin-bottom: 0.25em;
   padding: 0.5em 1em;
   color: #fff !important;
-  font-family: $sans-serif;
-  font-size: $type-size-6;
+  font-family: $pt-sans;
+  font-size: 0.7em;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -61,7 +61,6 @@
   /* light outline */
 
   &--light-outline {
-    border: 1px solid #fff !important; /* override*/
     background-color: transparent;
   }
 
@@ -142,7 +141,43 @@
   /* large button */
 
   &--large {
-    font-size: $type-size-5;
+    font-size: 0.9em;
+    font-family: $pt-sans;
+    line-height: 1.25;
+    font-weight: bold;
+
+    -webkit-border-radius:5;
+    -moz-border-radius:5;
+    border-radius: 5px;
+    background: #f8b603;
+    padding: 15px 20px 15px 15px;
+    text-decoration: none;
+    border: none;
+    text-shadow: none;
+
+    &:hover {
+      background-color: #333333;
+      text-decoration: none;
+    }
+  }
+
+  &--small{
+    font-size: 1em;
+    font-family: $pt-sans;
+    color:#FFFFFF;
+    font-weight: bold;
+
+    -webkit-border-radius:5;
+    -moz-border-radius:5;
+    border-radius: 5px;
+    background: #f8b603;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+
+    &:hover {
+      background: #333333;
+      text-decoration: none;
+    }
   }
 
   /* small button */
@@ -150,4 +185,12 @@
   &--small {
     font-size: $type-size-7;
   }
+}
+
+.black-icon{
+  color: #000000;
+}
+
+.orange-icon{
+  color: $orange;
 }
