@@ -8,11 +8,11 @@ attributes: [
   type: "string",
   default : "",
   required : "",
-  description : "Define the formula of the calculated column."
+  description : "Define the formula for the calculated column."
 },{
-  name: "functionOperation", 
-  type: "(rowData:any[]) => number ",
+  name: "operation-function", 
+  type: "(rowData: any[]) => number",
   default : "",
   required : "",
-  description : "Calculated function that will be defined and should return an number. The param 'rowData' is the value of the row"
+  description : "Responsible function for calculating the column values. It shoud return a number. The param 'rowData' contains the row values."
 }]  
