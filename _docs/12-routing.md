@@ -112,7 +112,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
 
-import { HomeModule } from './home/home.module';
+import { HomeModule } from './home.module';
 import { AboutModule } from './about/about.module';
 import { SettingsModule } from './settings/settings.module';
 import { CustomersModule } from './customers/customers.module';
@@ -163,7 +163,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CustomersDetailComponent } from './detail/customers-detail.component';
 import { CustomersEditComponent } from './edit/customers-edit.component';
-import { CustomersHomeComponent } from './home/customers-home.component';
+import { CustomersHomeComponent } from './customers-home.component';
 import { CustomersNewComponent } from './new/customers-new.component';
 import { AccountsModule } from '../accounts/accounts.module';
 

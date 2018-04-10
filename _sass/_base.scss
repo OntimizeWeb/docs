@@ -7,7 +7,7 @@ body {
   padding: 0;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  line-height: 1.75;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -91,8 +91,24 @@ blockquote {
   padding-left: 1em;
   padding-right: 1em;
   font-style: italic;
-  border-left: 0.25em solid $primary-color;
 
+  strong{
+    border-left: 0.25em solid $orange;
+    padding-left: 1em;
+    font-weight: bold;
+    color: black;
+  }
+
+  p{
+    &:before{
+      content:"\f256";
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      color: $orange;
+      padding-right: 0.5em;
+    }  
+  }
   cite {
     font-style: italic;
 

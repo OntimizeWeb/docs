@@ -20,6 +20,12 @@
   }
 }
 
+.archive_item_icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: $orange;
+}
+
 .archive__subtitle {
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
@@ -30,11 +36,20 @@
   + .list__item .archive__item-title {
     margin-top: 0.5em;
   }
+
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  font-family:  $pt-sans;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  line-height: 1.25;
+  text-align: justify;
+  
 
   a + a {
     opacity: 0.5;
@@ -46,16 +61,28 @@
 
   .archive__item-title {
     margin-top: 1em;
-    border-bottom: none;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid $border-color;
+    font-size: 0.75em;
+    font-weight: 400;
   }
 }
 
 .archive__item-excerpt {
-  margin-top: 0;
-  font-size: $type-size-6;
+  font-weight: 400;
+  font-family: $pt-sans;
+  color: #888888;
+  text-align: left;
+  line-height: 1.5;
+  margin: 1em 0;
+
 
   & + p {
     text-indent: 0;
+    font-weight: 400;
+    font-family: $pt-sans;
+    color: #888888;
+    text-align: left;
   }
 }
 
@@ -70,10 +97,6 @@
 .archive__item:hover {
   .archive__item-teaser {
     box-shadow: 0 0 10px rgba(#000, 0.25);
-  }
-
-  .archive__item-title {
-    text-decoration: underline;
   }
 }
 
@@ -151,13 +174,14 @@
 
 .feature__wrapper {
   @include clearfix();
-  margin-bottom: 2em;
-  border-bottom: 1px solid $border-color;
+  margin-top: 1.5em;
+  /*margin-bottom: 2em;*/
+  /*border-bottom: 1px solid $border-color; */
 }
 
 .feature__item {
   margin-bottom: 2em;
-  font-size: 1.25rem;
+  
 
   @include breakpoint($small) {
     margin-bottom: 0;
@@ -171,7 +195,7 @@
 
   &--left {
     @include full();
-    font-size: 1.25rem;
+   
 
     .archive__item-teaser {
       margin-bottom: 2em;

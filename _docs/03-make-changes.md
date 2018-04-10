@@ -11,7 +11,7 @@ excerpt: ""
 
 In this section we are going to make some simple changes in the code of QuickStart app. We are going to see how to add a new field into a form. Once added, we are going to learn how to apply our validation logic over this field. Finally, we are going to navigate to another screen of the application.
 
-# Add a field.
+## Add a field.
 
 We are going to add a date field into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){:target="_blank"}):
 
@@ -112,7 +112,7 @@ You can find all available fields and all of their configuration parameters into
 
 ---
 
-# Validate a field.
+## Validate a field.
 
 The next change that we will perform will be to validate the value of a form field. In this case we choose a date field (*STARTDATE*) which value will be validated when user changes its value. If the date entered is greater than today’s date it will show an error message.
 
@@ -200,7 +200,7 @@ export class CustomersEditComponent {
 ```
 ---
 
-# Open a form.
+## Open a form.
 
 The last test we will do is navigate to another screen of the application. To do that, we are going to add a button to our screen and when we click on it, we navigate to the other screen.
 

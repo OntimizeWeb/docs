@@ -77,7 +77,10 @@
               {% assign cellContent = cellValue | default: '' %}
               {% if columnKey != 'type' %}
                 {% assign cellContent = cellContent | markdownify %}
+              {% else %}
+                {% assign cellContent = '<p>' | append: cellContent | append: '</p>' %}
               {% endif %}
+
               <td class="" {{ columnData }}>{{ cellContent }}</td>
             {% endunless %}
           {% endfor %}

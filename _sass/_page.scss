@@ -10,6 +10,7 @@
   padding-right: 1em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
+  font-family: $pt-sans;
 
   @include breakpoint($x-large) {
     max-width: $x-large;
@@ -34,6 +35,13 @@
   }
 }
 
+h1.page__title{
+  color:#333333;
+  font-family: $pt-sans;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
 .page__title {
   margin-top: 0;
   line-height: 1;
@@ -41,27 +49,47 @@
   & + .page__meta {
     margin-top: -0.5em;
   }
+
 }
 
 .page__lead {
   font-family: $global-font-family;
-  font-size: $type-size-4;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  text-align: left;
+
 }
 
 .page__content {
 
-  h2 {
+  h2, h3 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
+    color:#555555;
+    font-family: $pt-sans;
+    font-size: 0.8em;
+    font-weight: 700;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+
+  li p {
+    font-size: 1em;
   }
 
   p, li, dl {
-    font-size: 1em;
+    color:#999999;
+    font-size: 0.65em;
     text-align: justify;
+    font-family: $pt-sans;
   }
 
   /* paragraph indents */
   p {
+    font-family: $pt-sans;
     margin: 0 0 $indent-var;
 
     /* sibling indentation*/
@@ -75,10 +103,14 @@
 
   a {
     text-decoration: none;
+    color: #f8b603;
+    font-size: 1em;
+    font-family: $pt-sans;
 
     &:hover {
-      text-decoration: underline;
-
+      text-decoration: none;
+      color: #000000;
+      font-size: 1em;
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
       }
@@ -105,6 +137,8 @@
   blockquote + .small {
     margin-top: -1.5em;
     padding-left: 1.25rem;
+    font-family: $pt-sans;
+    color: #000000;
   }
 }
 
@@ -120,19 +154,23 @@
     margin-bottom: 2em;
     padding: 3em 0;
     @include clearfix;
+    /*background-size: cover;*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     animation: intro 0.3s both;
     animation-delay: 0.25s;
 
+
     a {
       color: #fff;
+      
     }
 
     .wrapper {
       padding-left: 1em;
       padding-right: 1em;
+      padding-top: 8em;
 
       @include breakpoint($x-large) {
         max-width: $x-large;
@@ -143,19 +181,34 @@
     .page__meta,
     .page__lead,
     .btn {
+      text-shadow: none;
       color: #fff;
-      text-shadow: 1px 1px 4px rgba(#000, 0.5);
+      font-family: $pt-sans;
+      line-height: 1.25;
+      text-align: justify;
     }
 
     .page__lead {
       max-width: $medium;
+      font-weight: normal;
     }
 
     .page__title {
-      font-size: $type-size-2;
+      /*font-size: $type-size-2;*/
+      text-shadow: 1px 1px 1px rgba(0, 0,0,0.2  );
+      font-weight: 700;
+      margin-top: 50px;
+      text-transform: uppercase;
 
       @include breakpoint($small) {
         font-size: $type-size-1;
+      }
+
+      h1{
+        font-family: $pt-sans;
+        color: #333333;
+        font-size:1.2m;
+        font-weight: 400;
       }
     }
   }
@@ -230,7 +283,7 @@
   margin-top: 2em;
   color: mix(#fff, $gray, 25%);
   font-family: $sans-serif;
-  font-size: $type-size-6;
+  font-size: 0.6em;
 
   p {
     margin: 0;
