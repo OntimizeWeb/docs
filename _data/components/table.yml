@@ -28,7 +28,11 @@ attributes: [{
 },{
   name: "keys"
 },{
-  name: "parent-keys"
+  name: "parent-keys",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Form field attributes used for filtering the table data. Separated by ';'. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields."
 },{
   name: "columns"
 },{
