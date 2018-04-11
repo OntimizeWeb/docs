@@ -272,6 +272,20 @@
     required : "",
     description : "Indicates whether or not to add a detail key to current url path (overwrite)"
   },
+  "insert-form-route" : {
+    name: "insert-form-route",
+    type: "string",
+    default : "new",
+    required : "",
+    description : "Insert form path appended to the current route"
+  },
+  "insert-detail" : {
+    name: "insert-detail",
+    type: "no | false | yes | true",
+    default : "no",
+    required : "",
+    description : "Indicates whether or not to add a insert key to current url path (overwrite)"
+  },
   "detail-button-in-row" : {
     name: "detail-button-in-row",
     type: "no | false | yes | true",

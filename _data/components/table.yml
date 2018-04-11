@@ -164,9 +164,11 @@ attributes: [{
   name: "recursive-edit"
 },{
   name: "row-height"
-}
-
-]
+},{
+  name: "insert-form-route"
+},{
+  name: "recursive-insert"
+}]
 
 outputsColumns: ["Name", "Description"]
 
