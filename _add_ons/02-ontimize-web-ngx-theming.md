@@ -29,10 +29,10 @@ In your application main style file ('*app.scss*' if you are using ontimize-web 
 
 * If you only want to load a pre-built theme of '*@angular/material*', load one of the following files:
 
-  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/md-indigo-pink.scss';`
-  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/md-deeppurple-amber.scss';`
-  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/md-pink-bluegrey.scss';`
-  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/md-purple-green.scss';`
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss';`
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss';`
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';`
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';`
 
 * Otherwise, if you to load a pre-built theme of '*@angular/material*' and the default preconfigured ontimize style, load one of the following files:
 

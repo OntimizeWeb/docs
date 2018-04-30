@@ -153,7 +153,7 @@ attributes: [{
   name: "deleted-method"
 },{
   name: "pageable",
-  default : "yes"
+  default : "no"
 },{
   name: "detail-form-route"
 },{

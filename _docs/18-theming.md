@@ -36,7 +36,7 @@ Here is an example of configuration:
 
 ```css
 /***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/md-indigo-pink.scss'; */
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/o-indigo-pink.scss'; */
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
@@ -185,7 +185,7 @@ Now you just have have to call the `@mixin` function to apply the theme definiti
 
 ```css
 /***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/md-indigo-pink.scss'; */
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/o-indigo-pink.scss'; */
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 /*
