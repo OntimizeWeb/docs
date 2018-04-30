@@ -13,4 +13,6 @@ In this page you can download migration guides for specific versions where addit
 
 * [1.1.x to 1.2.x](https://drive.google.com/open?id=0B-0gypyIR7-wQ1AzWmgxUk8wcWs){:target="_blank"}
 
+* [2.x.x to 3.x.x](https://drive.google.com/file/d/1CIY8lPYzX5SlLuiH6KhrF_mg8I3nVXjp/view?usp=sharing){:target="_blank"}
+
 * For updating applications with a version older than 2.0.0 (or any of its releases candidates) the easiest way to proceed is to download a copy of the seed application ([Ontimize Web app seed]({{ base_path }}/ontimize-web-ngx-seed/) or [Ontimize Web JEE app seed]({{ base_path }}/ontimize-web-ngx-jee-seed/)) and move your old resorces to it.
