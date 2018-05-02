@@ -168,6 +168,12 @@ attributes: [{
   name: "insert-form-route"
 },{
   name: "recursive-insert"
+},,{
+  name: "editable-columns",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Columns that can be edited directly on the table. Separated by ';'"
 }]
 
 outputsColumns: ["Name", "Description"]

@@ -32,7 +32,7 @@ attributes: [{
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-datatable</em>"
+  description : "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-table</em>"
 },{
   name: "type",
   type: "string | boolean | integer | real | currency | date | image",
