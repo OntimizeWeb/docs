@@ -49,7 +49,7 @@ For example:
 ## Default editors
 
 {% assign filenameArray = "" | split:"|"  %}
-{% for editors_hash in site.data.components.otableData.editors %}
+{% for editors_hash in site.data.components.oTableData.editors %}
   {% assign filenameArray = filenameArray | push: editors_hash[0] %}
 {% endfor %}
 {% assign filenameArray = filenameArray | sort %}
@@ -57,7 +57,7 @@ For example:
 
 {% for filename in filenameArray %}
 
-  {% assign dataFile = site.data.components.otableData.editors[filename] %}
+  {% assign dataFile = site.data.components.oTableData.editors[filename] %}
   {% capture dataFileCapture %}
     {% include o-component-single.md compFile=dataFile  %}
   {% endcapture %}

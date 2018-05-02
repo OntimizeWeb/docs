@@ -55,7 +55,7 @@ For example:
 ## Default renderers
 
 {% assign filenameArray = "" | split:"|"  %}
-{% for renderers_hash in site.data.components.otableData.renderers %}
+{% for renderers_hash in site.data.components.oTableData.renderers %}
   {% assign filenameArray = filenameArray | push: renderers_hash[0] %}
 {% endfor %}
 {% assign filenameArray = filenameArray | sort %}
@@ -63,7 +63,7 @@ For example:
 
 {% for filename in filenameArray %}
 
-  {% assign dataFile = site.data.components.otableData.renderers[filename] %}
+  {% assign dataFile = site.data.components.oTableData.renderers[filename] %}
   {% capture dataFileCapture %}
     {% include o-component-single.md compFile=dataFile  %}
   {% endcapture %}
