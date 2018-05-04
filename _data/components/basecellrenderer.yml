@@ -17,14 +17,14 @@ propertiesColumns: ["Name","Type",  "Description"]
 properties: [
   {
     name: "column",
-    type: "propertie",
+    type: "property",
     description : "Name of the column"
   },{
   name: "table",
-  type: "propertie"
+  type: "property"
   },{
   name: "tableColumn",
-  type: "propertie"
+  type: "property"
   },{
   name: "initialize()",
   type: "method",
