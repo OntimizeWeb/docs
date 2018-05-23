@@ -16,13 +16,13 @@
     var i, tabcontent, tablinks;
 
     // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
+    tabcontent = document.getElementsByClassName("o-tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
     // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
+    tablinks = document.getElementsByClassName("o-tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
@@ -31,16 +31,17 @@
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
 </script>
 
 <!-- Tab links -->
 <div class="o-tab">
-  <button class="tablinks" onclick="openTab(event, 'overview')">Overview</button>
-  <button class="tablinks" onclick="openTab(event, 'api')">API</button>
+  <button class="o-tablinks active" onclick="openTab(event, 'overview')">Overview</button>
+  <button class="o-tablinks" onclick="openTab(event, 'api')">API</button>
 </div>
 
 <!-- Tab content -->
-<div id="overview" class="o-tabcontent">
+<div id="overview" class="o-tabcontent" style="display:block;">
   <p>Overview</p>
 </div>
 
