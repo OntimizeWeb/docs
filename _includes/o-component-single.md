@@ -11,7 +11,7 @@
 {% if componentData %}
 
 <script type="text/javascript">
-    function openTab(evt, tabName) {
+  function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
 
@@ -30,8 +30,7 @@
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-}
-
+  }
 </script>
 
 <!-- Tab links -->
@@ -40,18 +39,8 @@
   <button class="o-tablinks" onclick="openTab(event, 'api')">API</button>
 </div>
 
-<!-- Tab content -->
-<div id="overview" class="o-tabcontent" style="display:block;">
-  <p>Overview</p>
-</div>
-
-<div id="api" class="o-tabcontent">
-  <p>API</p>
-</div>
-
-
-
-
+<!-- OVERVIEW -->
+<div class="o-tabcontent" style="display:block;">
   {% if componentData.directive %}
     <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
   {% endif %}
@@ -60,6 +49,14 @@
     {{ componentData.description | markdownify }}
   {% endif %}
 
+  {% if componentData.example %}
+    {% capture html-include %}{% include example.md code=componentData.example %}{% endcapture %}
+    {{ html-include | markdownify }}
+  {% endif %}
+</div>
+
+<!-- API -->
+<div id="api" class="o-tabcontent">
   {% if componentData.inheritedAttributes %}
     <h3 class="grey-color">Inherited attributes</h3>
     <ul>
@@ -90,46 +87,44 @@
       {% endif %}
     {% endfor %}
 
-    <table class="attributes-table mdl-data-table">
-      <thead>
+  <table class="attributes-table mdl-data-table">
+    <thead>
+      <tr>
+      {% for header in componentData.attributesColumns %}
+        {% assign columnKey = header | downcase %}
+        {% unless emptyColumns contains columnKey %}
+          <th class=""> {{ header }}</th>
+        {% endunless %}
+      {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% assign sortedAttrs = (componentData.attributes | sort: 'name') %}
+      {% for attributeObject in sortedAttrs %}
         <tr>
-        {% for header in componentData.attributesColumns %}
-          {% assign columnKey = header | downcase %}
+        {% assign commonData = site.data.components.common.attributes[attributeObject.name] | default : {} %}
+        {% for column in componentData.attributesColumns %}
+          {% assign columnKey = column | downcase %}
           {% unless emptyColumns contains columnKey %}
-            <th class=""> {{ header }}</th>
+            {% assign columnData = 'o-component-' | append: columnKey %}
+
+            {% assign cellValue = commonData[columnKey] %}
+            {% if attributeObject[columnKey] != undefined %}
+              {% assign cellValue = attributeObject[columnKey] %}
+            {% endif %}
+
+            {% assign cellContent = cellValue | default: '' %}
+            {% if columnKey != 'type' %}
+              {% assign cellContent = cellContent | markdownify %}
+
+            {% endif %}
+<td class="" {{ columnData }}>{{ cellContent }}</td>
           {% endunless %}
         {% endfor %}
         </tr>
-      </thead>
-        <tbody>
-        {% assign sortedAttrs = (componentData.attributes | sort: 'name') %}
-        {% for attributeObject in sortedAttrs %}
-          <tr>
-          {% assign commonData = site.data.components.common.attributes[attributeObject.name] | default : {} %}
-          {% for column in componentData.attributesColumns %}
-            {% assign columnKey = column | downcase %}
-            {% unless emptyColumns contains columnKey %}
-              {% assign columnData = 'o-component-' | append: columnKey %}
-
-              {% assign cellValue = commonData[columnKey] %}
-              {% if attributeObject[columnKey] != undefined %}
-                {% assign cellValue = attributeObject[columnKey] %}
-              {% endif %}
-
-              {% assign cellContent = cellValue | default: '' %}
-              {% if columnKey != 'type' %}
-                {% assign cellContent = cellContent | markdownify %}
-              {% else %}
-                {% assign cellContent = '<p>' | append: cellContent | append: '</p>' %}
-              {% endif %}
-
-              <td class="" {{ columnData }}>{{ cellContent }}</td>
-            {% endunless %}
-          {% endfor %}
-          </tr>
-        {% endfor %}
+      {% endfor %}
       </tbody>
-    </table>
+  </table>
   {% else %}
     <p>No additional attributes</p>
   {% endif %}
@@ -180,10 +175,5 @@
       </tbody>
     </table>
   {% endif %}
-
-  {% if componentData.example %}
-    {% capture html-include %}{% include example.md code=componentData.example %}{% endcapture %}
-    {{ html-include | markdownify }}
-  {% endif %}
-
+</div>
 {% endif %}
