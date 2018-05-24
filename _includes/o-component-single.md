@@ -91,16 +91,26 @@
   <h3 class="grey-color">Inputs</h3>
   {% if componentData.attributes %}
     {% assign emptyColumns = '' | split: '|' %}
+    {% assign requiredInputs = '' | split: '|' %}
 
     {% for column in inputsColumns %}
       {% assign columnKey = column | downcase %}
       {% assign emptyCol = componentData.attributes | where: columnKey, "" | size %}
       {% if emptyCol == componentData.attributes.size %}
         {% assign emptyColumns = emptyColumns | push: columnKey %}
+      {% endif %}     
+    {% endfor %}
+    {% for attributeObject in componentData.attributes %}
+      {% assign commonAttributeObject = site.data.components.common.attributes[attributeObject.name] | default : {} %}
+      {% if attributeObject['required'] == 'yes' %}
+        {% assign requiredInputs = requiredInputs | push: attributeObject['name'] %}
+      {% endif %} 
+      {% if commonAttributeObject['required'] == 'yes' %}
+        {% assign requiredInputs = requiredInputs | push: attributeObject['name'] %}
       {% endif %}
     {% endfor %}
 
-    {% assign anyRequired = false %}
+
   <table class="attributes-table mdl-data-table">
     <thead>
       <tr>
@@ -115,7 +125,13 @@
     <tbody>
       {% assign sortedAttrs = (componentData.attributes | sort: 'name') %}
       {% for attributeObject in sortedAttrs %}
-        <tr>
+
+        {% assign requiredAttribute = '' %}
+        {% if requiredInputs contains attributeObject['name'] %}
+          {% assign requiredAttribute = 'required' %}
+        {% endif %}
+
+<tr {{ requiredAttribute }}>
         {% assign commonData = site.data.components.common.attributes[attributeObject.name] | default : {} %}
         {% for column in inputsColumns %}
           {% assign columnKey = column | downcase %}
@@ -131,13 +147,8 @@
 
             {% assign secondLine = '' %}
             {% if columnKey == 'name' %}
-              {% if attributeObject['required'] == 'yes' %}
+              {% if requiredInputs contains attributeObject['name'] %}
                 {% assign requiredData = 'required' %}
-                {% assign anyRequired = true %}
-              {% endif %}
-              {% if commonData['required'] == 'yes' %}
-                {% assign requiredData = 'required' %}
-                {% assign anyRequired = true %}
               {% endif %}
 
               {% assign secondLine = commonData['type'] | default: '' %}
@@ -153,12 +164,12 @@
   </td>
           {% endunless %}
         {% endfor %}
-  </tr>
+</tr>
       {% endfor %}
       </tbody>
   </table>
 
-  {% if anyRequired %}
+  {% if requiredInputs.size > 0 %}
     <div class="notice--info" markdown="1">
     * required inputs.
     </div>
