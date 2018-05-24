@@ -38,6 +38,15 @@
     p {
       margin: 0;
     }
+
+    &[required] {
+      p.first {
+        font-weight: bold;
+        &:after {
+          content: ' *';
+        }
+      }
+    }
   }
 
   th {
@@ -71,16 +80,6 @@
     text-align: left;
     white-space: normal;
   }
-
-  [o-component-name] {
-    white-space: nowrap;
-  }
-
-  // [o-component-type] {
-  // 	white-space:nowrap;
-  // 	max-width: 85px;
-  // }
-
 }
 
 .attributes-list {

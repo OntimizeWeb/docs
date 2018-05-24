@@ -1,3 +1,5 @@
+{% include base_path %}
+
 {% if include.comp and site.data.components[include.comp] %}
   {% assign componentData = site.data.components[include.comp] %}
 {% elsif include.compFile %}
@@ -9,6 +11,9 @@
 {% endif %}
 
 {% if componentData %}
+
+{% assign inputsColumns = "Name|Description|Default" | split: "|" %} 
+{% assign outputsColumns = "Name|Description" | split: "|" %} 
 
 <script type="text/javascript">
   function openTab(evt, tabName) {
@@ -32,7 +37,7 @@
     evt.currentTarget.className += " active";
   }
 </script>
-
+ 
 <!-- Tab links -->
 <div class="o-tab">
   <button class="o-tablinks active" onclick="openTab(event, 'overview')">Overview</button>
@@ -40,25 +45,33 @@
 </div>
 
 <!-- OVERVIEW -->
-<div class="o-tabcontent" style="display:block;">
+<div id="overview" class="o-tabcontent" style="display:block;">
+ <!-- {% include toc %} -->
+  
   {% if componentData.directive %}
     <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
   {% endif %}
 
   {% if componentData.description %}
+    <h3>Description</h3>
     {{ componentData.description | markdownify }}
   {% endif %}
 
+  
   {% if componentData.example %}
-    {% capture html-include %}{% include example.md code=componentData.example %}{% endcapture %}
-    {{ html-include | markdownify }}
+    <h3 class="grey-color">Example</h3>
+    ```html 
+      {{ componentData.example | markdownify }}
+    ```
   {% endif %}
+
+  {{ content }}
 </div>
 
 <!-- API -->
 <div id="api" class="o-tabcontent">
   {% if componentData.inheritedAttributes %}
-    <h3 class="grey-color">Inherited attributes</h3>
+    <h3 class="grey-color">Inherited inputs</h3>
     <ul>
     {% assign sortedInheritedAttributes = (componentData.inheritedAttributes | sort: 'name') %}
       {% for inheritedObj in sortedInheritedAttributes %}
@@ -75,11 +88,11 @@
     </ul>
   {% endif %}
 
-  <h3 class="grey-color">Attributes</h3>
+  <h3 class="grey-color">Inputs</h3>
   {% if componentData.attributes %}
     {% assign emptyColumns = '' | split: '|' %}
 
-    {% for column in componentData.attributesColumns %}
+    {% for column in inputsColumns %}
       {% assign columnKey = column | downcase %}
       {% assign emptyCol = componentData.attributes | where: columnKey, "" | size %}
       {% if emptyCol == componentData.attributes.size %}
@@ -87,14 +100,15 @@
       {% endif %}
     {% endfor %}
 
+    {% assign anyRequired = false %}
   <table class="attributes-table mdl-data-table">
     <thead>
       <tr>
-      {% for header in componentData.attributesColumns %}
+      {% for header in inputsColumns %}
         {% assign columnKey = header | downcase %}
-        {% unless emptyColumns contains columnKey %}
-          <th class=""> {{ header }}</th>
-        {% endunless %}
+          {% unless emptyColumns contains columnKey %}
+            <th class=""> {{ header }}</th>
+          {% endunless %}
       {% endfor %}
       </tr>
     </thead>
@@ -103,33 +117,59 @@
       {% for attributeObject in sortedAttrs %}
         <tr>
         {% assign commonData = site.data.components.common.attributes[attributeObject.name] | default : {} %}
-        {% for column in componentData.attributesColumns %}
+        {% for column in inputsColumns %}
           {% assign columnKey = column | downcase %}
           {% unless emptyColumns contains columnKey %}
             {% assign columnData = 'o-component-' | append: columnKey %}
+            {% assign requiredData = '' %}
 
             {% assign cellValue = commonData[columnKey] %}
             {% if attributeObject[columnKey] != undefined %}
               {% assign cellValue = attributeObject[columnKey] %}
             {% endif %}
-
             {% assign cellContent = cellValue | default: '' %}
-            {% if columnKey != 'type' %}
-              {% assign cellContent = cellContent | markdownify %}
 
+            {% assign secondLine = '' %}
+            {% if columnKey == 'name' %}
+              {% if attributeObject['required'] == 'yes' %}
+                {% assign requiredData = 'required' %}
+                {% assign anyRequired = true %}
+              {% endif %}
+              {% if commonData['required'] == 'yes' %}
+                {% assign requiredData = 'required' %}
+                {% assign anyRequired = true %}
+              {% endif %}
+
+              {% assign secondLine = commonData['type'] | default: '' %}
+              {% if attributeObject['type'] != undefined %}
+                {% assign secondLine = attributeObject['type'] | default: '' %}
+              {% endif %}
             {% endif %}
-<td class="" {{ columnData }}>{{ cellContent }}</td>
+  <td class="" {{ columnData }} {{ requiredData }}>
+    <p class="first">{{ cellContent }}</p>
+    {% if secondLine != '' %}
+      <p><i>{{ secondLine }}</i></p>
+    {% endif %}
+  </td>
           {% endunless %}
         {% endfor %}
-        </tr>
+  </tr>
       {% endfor %}
       </tbody>
   </table>
-  {% else %}
-    <p>No additional attributes</p>
+
+  {% if anyRequired %}
+    <div class="notice--info" markdown="1">
+    * required inputs.
+    </div>
   {% endif %}
 
 
+  {% else %}
+    <p>No additional inputs</p>
+  {% endif %}
+
+  
   {% if componentData.inheritedOutputs %}
     <h3 class="grey-color">Inherited outputs</h3>
     <ul>
@@ -153,7 +193,7 @@
     <table class="attributes-table mdl-data-table">
       <thead>
         <tr>
-        {% for header in componentData.outputsColumns %}
+        {% for header in outputsColumns %}
             <th class=""> {{ header }}</th>
         {% endfor %}
         </tr>
@@ -162,7 +202,7 @@
         {% assign sortedOutputs = (componentData.outputs | sort: 'name') %}
         {% for outputObject in sortedOutputs %}
           <tr>
-          {% for column in componentData.outputsColumns %}
+          {% for column in outputsColumns %}
             {% assign columnKey = column | downcase %}
             {% assign columnData = 'o-component-' | append: columnKey %}
             {% assign cellContent = outputObject[columnKey]  | default: '' | markdownify %}
@@ -174,6 +214,12 @@
         {% endfor %}
       </tbody>
     </table>
+  {% endif %}
+
+
+  {% if componentData.methods %}
+    <h3 class="grey-color">Methods</h3>
+
   {% endif %}
 </div>
 {% endif %}
