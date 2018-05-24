@@ -1,6 +1,6 @@
 directive : "o-bar-menu-group"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+  
 
 attributes: [{
   name: "title", 

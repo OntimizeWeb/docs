@@ -2,7 +2,7 @@ class : "OBaseTableCellRenderer"
 
 #description : ""
 
-outputsColumns: ["Name", "Description"]
+  
 
 outputs: [{
   name : "onClick",

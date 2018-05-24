@@ -1,7 +1,7 @@
 
 directive : "o-datatable"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "attr"
@@ -176,7 +176,7 @@ attributes: [{
   description : "Indicates whether or not the quick filter is case sensitive"
 }]
 
-outputsColumns: ["Name", "Description"]
+  
 
 outputs: [{
   name : "onClick",

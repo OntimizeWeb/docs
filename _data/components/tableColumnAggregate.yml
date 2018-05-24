@@ -1,6 +1,6 @@
 directive : "o-table-column-aggregate"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+  
 
 attributes: [{
   name: "attr", 

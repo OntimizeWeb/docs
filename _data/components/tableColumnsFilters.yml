@@ -1,6 +1,6 @@
 directive : "o-table-columns-filter"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "columns",

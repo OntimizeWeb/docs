@@ -1,6 +1,6 @@
 directive : "o-list-picker"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "attr"
@@ -82,7 +82,7 @@ attributes: [{
   description : "List picker dialog height"
 }]
 
-outputsColumns: ["Name", "Description"]
+  
 
 outputs: [{
   name : "onChange",

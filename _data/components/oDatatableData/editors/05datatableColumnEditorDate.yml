@@ -2,7 +2,7 @@ title : "ODataTableCellEditorDate"
 
 directive : "o-datatable-cell-editor-date"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+  
 
 attributes: [{
   name: "date-model-type", 

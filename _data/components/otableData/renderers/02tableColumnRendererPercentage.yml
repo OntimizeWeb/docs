@@ -1,6 +1,6 @@
 directive : "o-table-cell-renderer-percentage"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "grouping"

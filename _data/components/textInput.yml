@@ -1,8 +1,6 @@
 
 directive : "o-text-input"
 
-outputsColumns: ["Name", "Description"]
-
 outputs: [{
   name : "onChange",
   description: "Event triggered when component input element changes"
@@ -13,8 +11,6 @@ outputs: [{
   name : "onBlur",
   description: "Event triggered when component input loses the focus"
 }]
-
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
 
 attributes: [{
   name: "attr"

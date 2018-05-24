@@ -1,6 +1,6 @@
 directive : "o-textarea-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 inheritedAttributes: [
   {

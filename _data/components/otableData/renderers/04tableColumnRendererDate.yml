@@ -1,6 +1,6 @@
 directive : "o-table-cell-renderer-date"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+  
 
 attributes: [{
   name: "format", 

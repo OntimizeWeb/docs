@@ -2,7 +2,7 @@ title : "ODataTableCellEditorCombo"
 
 directive : "o-datatable-cell-editor-combo"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "service"

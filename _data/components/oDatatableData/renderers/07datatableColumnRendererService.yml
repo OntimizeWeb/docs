@@ -4,7 +4,7 @@ title : "ODataTableCellRendererService"
 
 directive : "o-datatable-cell-renderer-service"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "service"

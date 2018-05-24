@@ -1,7 +1,7 @@
 directive : "o-combo"
 
 
-outputsColumns: ["Name", "Description"]
+  
 
 outputs: [{
   name : "onChange",
@@ -9,7 +9,7 @@ outputs: [{
 }]
 
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "attr"

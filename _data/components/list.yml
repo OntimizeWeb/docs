@@ -1,6 +1,6 @@
 directive : "o-list"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "attr"

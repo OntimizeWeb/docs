@@ -1,6 +1,6 @@
 directive : "o-currency-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 inheritedAttributes: [
   {

@@ -11,7 +11,7 @@ description : >
 
   </div>
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+  
 
 attributes: [{
   name: "action", 

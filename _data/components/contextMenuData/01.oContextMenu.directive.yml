@@ -1,6 +1,6 @@
 directive: "oContextMenu"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "oContextMenuData",

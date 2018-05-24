@@ -1,6 +1,6 @@
 directive : "o-app-layout"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "sidenav-opened",

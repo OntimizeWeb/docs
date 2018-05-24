@@ -3,13 +3,13 @@
     name: "attr",
     type: "string",
     default : "",
-    required : "Yes",
+    required : "yes",
     description : "Field identifier. Registry property if component is inside a form."
   },
   "label" : {
     name: "label",
     type: "string",
-    default : "<em>attr</em> attribute value",
+    default : "<em>attr</em> input",
     required : "",
     description : "Field label (placeholder when field is empty and floating label when field has data)"
   },

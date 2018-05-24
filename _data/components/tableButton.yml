@@ -1,6 +1,6 @@
 directive : "o-table-button"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+  
 
 attributes: [{
   name: "icon", 

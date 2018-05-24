@@ -1,6 +1,6 @@
 directive : "o-table-cell-renderer-currency"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "currency-symbol",

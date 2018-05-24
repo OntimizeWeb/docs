@@ -1,7 +1,7 @@
 
 directive : "o-table-column"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "attr",

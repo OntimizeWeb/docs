@@ -1,6 +1,6 @@
 directive : "o-form-layout-manager"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "mode",
@@ -28,7 +28,7 @@ attributes: [{
   description : "Detail title"
 }]
 
-outputsColumns: ["Name", "Description"]
+  
 
 outputs: [{
   name : "onMainTabSelected",

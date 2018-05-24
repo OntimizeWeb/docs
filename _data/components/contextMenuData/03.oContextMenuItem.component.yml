@@ -1,6 +1,6 @@
 directive : "o-context-menu-item"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "icon"

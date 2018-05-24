@@ -1,6 +1,6 @@
 directive : "o-table-column-calculated"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+  
 
 attributes: [
 {

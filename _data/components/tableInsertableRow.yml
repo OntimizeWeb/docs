@@ -1,6 +1,6 @@
 directive : "o-table-insertable-row"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "columns",
@@ -19,7 +19,7 @@ attributes: [{
   description : "Indicates wheter the insertable row is shown as first or last table record."
 }]
 
-outputsColumns: ["Name", "Description"]
+  
 
 outputs: [{
   name : "onPostInsertRecord",

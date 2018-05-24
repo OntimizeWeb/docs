@@ -1,6 +1,6 @@
 directive : "o-card-menu-layout"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "title",

@@ -1,15 +1,14 @@
 directive : "o-checkbox"
 
 
-outputsColumns: ["Name", "Description"]
+  
 
 outputs: [{
   name : "onChange",
   description: "Event triggered when component value changes"
 }]
 
-
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "attr"

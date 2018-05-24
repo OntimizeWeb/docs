@@ -1,6 +1,6 @@
 directive : "o-breadcrumb"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "form",

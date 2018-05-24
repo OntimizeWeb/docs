@@ -1,6 +1,6 @@
 directive : "o-integer-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 inheritedAttributes: [
   {
