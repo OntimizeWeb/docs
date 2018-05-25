@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-textarea-input.component/
+permalink: /components/input/textarea/
 title: "Textarea input"
 comp: textareaInput
 under_construction: false

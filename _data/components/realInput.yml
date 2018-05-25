@@ -1,14 +1,14 @@
 directive : "o-real-input"
 
- 
-
 inheritedAttributes: [
   {
     component: "o-text-input",
+    path: "input/text",
     attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
   },
   {
     component: "o-integer-input",
+    path: "input/integer",
     attributes: ["min", "max"]
   }
 ]
@@ -16,6 +16,7 @@ inheritedAttributes: [
 inheritedOutputs: [
   {
     component: "o-integer-input",
+    path: "input/integer",
     outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]
@@ -37,4 +38,3 @@ attributes: [{
 },{
   name: "decimal-digits"
 }]
-

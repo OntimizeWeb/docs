@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-nif-input.component/
+permalink: /components/input/nif/
 title: "Nif input"
 comp: nifInput
 ---

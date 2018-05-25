@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-password-input.component/
+permalink: /components/input/password/
 title: "Password input"
 comp: passwordInput
 ---

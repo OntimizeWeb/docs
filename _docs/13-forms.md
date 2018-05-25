@@ -14,7 +14,7 @@ This component makes data management easier and allows the developer to focus on
 
 The data representation is performed via input fields (such as text, checkbox and combo boxes), lists, or tables.
 
-You can find further information about '*o-form*' configuration parameters in the [Components]({{ base_path }}/components/o-form.component/){:target="_blank"} section.
+You can find further information about '*o-form*' configuration parameters in the [Components]({{ base_path }}/components/form/){:target="_blank"} section.
 
 ## Form life hooks
 

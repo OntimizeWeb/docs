@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-date-input.component/
+permalink: /components/input/date/
 title: "Date input"
 comp: dateInput
 under_construction: false

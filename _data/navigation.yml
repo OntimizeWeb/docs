@@ -115,40 +115,40 @@ components:
   - title: Input
     children:
       - title: "Text"
-        url: /components/o-text-input.component/
+        url: /components/input/text/
       - title: "Integer"
-        url: /components/o-integer-input.component/
+        url: /components/input/integer/
       - title: "Real"
-        url: /components/o-real-input.component/
+        url: /components/input/real/
       - title: "Textarea"
-        url: /components/o-textarea-input.component/
+        url: /components/input/textarea/
       - title: "Email"
-        url: /components/o-email-input.component/
+        url: /components/input/email/
       - title: "Password"
-        url: /components/o-password-input.component/
+        url: /components/input/password/
       - title: "Currency"
-        url: /components/o-currency-input.component/
+        url: /components/input/currency/
       - title: "Date"
-        url: /components/o-date-input.component/
+        url: /components/input/date/
       - title: "Percent"
-        url: /components/o-percent-input.component/
+        url: /components/input/percent/
       - title: "NIF"
-        url: /components/o-nif-input.component/
+        url: /components/input/nif/
       - title: "HTML"
-        url: /components/o-html-input.component/
+        url: /components/input/html/
       - title: "Search"
-        url: /components/o-search-input.component/
+        url: /components/input/search/
       - title : "Combo"
-        url: /components/o-combo.component/
+        url: /components/input/combo/
       - title: "List picker"
-        url: /components/o-list-picker.component/
+        url: /components/input/listpicker/
         children :
           - title: "List picker dialog"
-            url: /list-picker-component/o-list-picker-dialog.component/
+            url: /listpicker/listpickerdialog/
       - title: "Checkbox"
-        url: /components/o-checkbox.component/
+        url: /components/input/checkbox/
       - title: "File"
-        url: /components/o-file-input.component/
+        url: /components/input/fileinput/
 
   - title: Button
     children:
@@ -158,7 +158,7 @@ components:
   - title: Data
     children:
       - title: "Form"
-        url: /components/o-form.component/
+        url: /components/form/
         children:
           - title: "Extending a form"
             url: '/form-component/o-form.extend/'

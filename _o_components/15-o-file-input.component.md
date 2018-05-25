@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-file-input.component/
+permalink: /components/input/fileinput/
 title: "File input"
 comp: fileInput
 ---

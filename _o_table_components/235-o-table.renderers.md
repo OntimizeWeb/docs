@@ -20,11 +20,11 @@ By default, the table will place the values of your data into the cell as simple
 
 **1.** Do nothing, simple strings get used to display the table.
 
-**2.** Use one of cell renderer predefined. The predefined types are *boolean*, *real*, *currency*, *date*, *image*, *percentage* and *string*. If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/table-components/o-table-renderers.component/#default-renderers).
+**2.** Use one of cell renderer predefined. The predefined types are *boolean*, *real*, *currency*, *date*, *image*, *percentage* and *string*. If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/components/table/renderers/#default-renderers).
 
 **3.** Use equivalent code.
 
-**4.** Custom renderer. Below is an example but you can find all information [here]({{ base_path }}/docs/table-components/o-table-renderers.component/#custom-renderers).
+**4.** Custom renderer. Below is an example but you can find all information [here]({{ base_path }}/docs/components/table/renderers/#custom-renderers).
 
 
 For example:

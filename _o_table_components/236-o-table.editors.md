@@ -20,11 +20,11 @@ By default, the table will no define a editor for your data into a cell. If you 
 
 **1.** Use one of the predefined cell editor. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
 
-If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/table-components/o-table-editors.component/#default-editors).
+If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/components/table/editors/#default-editors).
 
 **2.** Use equivalent code.
 
-**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/docs/table-components/o-table-editors.component/#custom-editors).
+**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/docs/components/table/editors/#custom-editors).
 
 
 For example:

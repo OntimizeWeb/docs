@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-percent-input.component/
+permalink: /components/input/percent/
 title: "Percent input"
 comp: percentInput
 under_construction: false

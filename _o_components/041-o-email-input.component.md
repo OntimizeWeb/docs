@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-email-input.component/
+permalink: /components/input/email/
 title: "Email input"
 comp: emailInput
 ---

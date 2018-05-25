@@ -47,10 +47,6 @@
 <!-- OVERVIEW -->
 <div id="overview" class="o-tabcontent" style="display:block;">
  <!-- {% include toc %} -->
-  
-  {% if componentData.directive %}
-    <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
-  {% endif %}
 
   {% if componentData.description %}
     <h3>Description</h3>
@@ -70,13 +66,18 @@
 
 <!-- API -->
 <div id="api" class="o-tabcontent">
+
+  {% if componentData.directive %}
+    <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
+  {% endif %}
+
   {% if componentData.inheritedAttributes %}
     <h3 class="grey-color">Inherited inputs</h3>
     <ul>
     {% assign sortedInheritedAttributes = (componentData.inheritedAttributes | sort: 'name') %}
       {% for inheritedObj in sortedInheritedAttributes %}
       <li>
-        from <a href="{{ base_path }}/docs/components/{{inheritedObj.component}}.component/" rel="permalink">{{ inheritedObj.component }}:</a>
+        from <a href="{{ base_path }}/docs/components/{{inheritedObj.path}}/" rel="permalink">{{ inheritedObj.component }}:</a>
         <ul class="attributes-list">
           {% assign sortedInheritedAttrs = (inheritedObj.attributes | sort) %}
           {% for inheritedAttr in sortedInheritedAttrs %}
@@ -187,7 +188,7 @@
       {% assign sortedInheritedOutputs = (componentData.inheritedOutputs | sort: 'name') %}
       {% for inheritedObj in sortedInheritedOutputs %}
       <li>
-        from <a href="{{ base_path }}/docs/components/{{inheritedObj.component}}.component/" rel="permalink">{{ inheritedObj.component }}:</a>
+        from <a href="{{ base_path }}/docs/components/{{inheritedObj.path}}/" rel="permalink">{{ inheritedObj.component }}:</a>
         <ul class="attributes-list">
           {% assign sortedInheritedOuts = (inheritedObj.outputs | sort) %}
           {% for inheritedOutput in sortedInheritedOuts %}

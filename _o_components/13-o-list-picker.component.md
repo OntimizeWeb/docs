@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-list-picker.component/
+permalink: /components/input/listpicker/
 title: "List picker"
 comp: listPicker
 ---

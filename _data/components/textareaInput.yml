@@ -1,10 +1,9 @@
 directive : "o-textarea-input"
 
- 
-
 inheritedAttributes: [
   {
     component: "o-text-input",
+    path: "input/text",
     attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
   }
 ]
@@ -12,10 +11,10 @@ inheritedAttributes: [
 inheritedOutputs: [
   {
     component: "o-text-input",
+    path: "input/text",
     outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]
-
 
 attributes: [{
   name: "columns",

@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-form.component/
+permalink: /components/form/
 title: "Form"
 comp: form
 ---

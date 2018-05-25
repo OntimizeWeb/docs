@@ -1,26 +1,27 @@
 directive : "o-percent-input"
 
- 
-
 inheritedAttributes: [
   {
     component: "o-text-input",
+    path: "input/text",
     attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
   },
   {
     component: "o-integer-input",
+    path: "input/integer",
     attributes: ["min", "max"]
   },
   {
     component: "o-real-input",
+    path: "input/real",
     attributes: ["min-decimal-digits", "max-decimal-digits"]
   }
 ]
 
-
 inheritedOutputs: [
   {
     component: "o-real-input",
+    path: "input/real",
     outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]

@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-html-input.component/
+permalink: /components/input/html/
 title: "HTML input"
 under_construction: true
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-search-input.component/
+permalink: /components/input/search/
 title: "Search input"
 under_construction: true
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /components/o-currency-input.component/
+permalink: /components/input/currency/
 title: "Currency input"
 comp: currencyInput
 ---
