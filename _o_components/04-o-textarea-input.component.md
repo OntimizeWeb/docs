@@ -17,7 +17,7 @@ under_construction: false
 
 The `o-textarea-input` component is used in [forms]({{ base_path }}/docs/components/form/) for getting or displaying text input submitted by the user.
 
-The text input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+The textarea input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
 <img src="{{ base_path }}/docs/images/components/inputs/o-textarea-input.png" alt="o-textarea-input component">
