@@ -37,12 +37,6 @@ attributes: [{
   required : "",
   description : "Maximum number of required characters"
 },{
-  name: "pattern",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Regular expression to validate the field content"
-},{
   name: "data"
 },{
   name: "tooltip"
