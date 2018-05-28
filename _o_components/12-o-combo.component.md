@@ -5,7 +5,6 @@ comp: combo
 under_construction: false
 ---
 
-
 <aside class="sidebar__right">
   <nav class="toc">
       <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
