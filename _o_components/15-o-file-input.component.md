@@ -1,13 +1,68 @@
 ---
-permalink: /components/input/fileinput/
+permalink: /components/input/file/
 title: "File input"
 comp: fileInput
 ---
 
- <h3 class="grey-color">Example</h3>
+<aside class="sidebar__right">
+  <nav class="toc">
+      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
+      <ul class="toc__menu" id="markdown-toc">
+        <li><a href="#basic-example" id="markdown-toc-overview">Basic example</a></li>
+        <li><a href="#validation">Validation</a></li>
+        <li><a href="#server-configuration">Server configuration</a></li>
+    </ul>
+  </nav>
+</aside>
+
+The `o-file-input` component is used in [forms]({{ base_path }}/docs/components/form/) for uploading files to a server.
+
+The file input is automatically registered on its parent `o-form`. The configuration attributes for this component are explained on the **API** section of this page.
+
+## Basic example
+<img src="{{ base_path }}/docs/images/components/inputs/o-file-input.png" alt="o-file-input component">
 
 ```html
-<o-file-input attr="file_input" label="File input" accept-file-type="image/*"
-    max-file-size="100000" max-num-files="10" show-info="yes">
-</o-file-input>
+<o-form editable-detail="no" show-header="no">
+    <o-file-input attr="file" label="File" accept-file-type="image/*" max-file-size="100000" max-num-files="10" show-info="yes"></o-file-input>
+</o-form>
 ```
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/file).
+
+## Validation
+The `o-file-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input. It also validates the number of files and the size of these files depending the component configuration.
+
+## Server configuration
+For uploading the files to a server, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** for uploading the files.
+
+```html
+<o-file-input attr="file_upload" service="files" entity="upload" accept-file-type="image/*" multiple="yes" show-info="yes" (onUploadFile)="onUploadFile($event)" [additional-data]="getFileData()"></o-file-input>
+```
+
+Below you have an example of a REST interface used by the conponent definition provided above.
+
+```java
+@RestController
+@RequestMapping("/files")
+public class FilesRestController {
+
+    @PostMapping(value = "upload")
+    public ResponseEntity upload(@RequestParam("name) String[] names, @RequestParam("file") MultipartFile[] files, @RequestParam("data", required = false) String data) {
+
+        // Parameters received:
+        // * names: array with the names of the uploaded files
+        // * files: array with the uploaded files
+        // * data: string with the data provided to the 'addiotional-data' attribute
+
+        HashMap<String, Object> extraData  new HashMap<>();
+        if (data != null) {
+            extraData = new ObjectMapper().readValue(data, HashMap.class);
+        }
+
+        ...
+
+    }
+}
+```
+
+<img src="{{ base_path }}/docs/images/components/inputs/o-file-input2.png" alt="o-file-input component">

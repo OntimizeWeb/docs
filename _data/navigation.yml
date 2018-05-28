@@ -148,7 +148,7 @@ components:
       - title: "Checkbox"
         url: /components/input/checkbox/
       - title: "File"
-        url: /components/input/fileinput/
+        url: /components/input/file/
 
   - title: Button
     children:
