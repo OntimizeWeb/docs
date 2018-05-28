@@ -1,0 +1,42 @@
+directive : "o-html-input"
+
+outputs: [{
+  name : "onChange",
+  description: "Event triggered when component input element changes"
+},{
+  name : "onFocus",
+  description: "Event triggered when component input gains the focus"
+},{
+  name : "onBlur",
+  description: "Event triggered when component input loses the focus"
+}]
+
+attributes: [{
+  name: "attr"
+},{
+  name: "label"
+},{
+  name: "automatic-binding"
+},{
+  name: "automatic-registering"
+},{
+  name: "enabled"
+},{
+  name: "required"
+},{
+  name: "min-length",
+  type: "number",
+  default : "",
+  required : "",
+  description : "Minimum number of required characters"
+},{
+  name: "max-length",
+  type: "number",
+  default : "",
+  required : "",
+  description : "Maximum number of required characters"
+},{
+  name: "data"
+},{
+  name: "sql-type"
+}]
