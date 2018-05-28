@@ -126,14 +126,14 @@ components:
         url: /components/input/currency/
       - title: "Date"
         url: /components/input/date/
-      - title: "Textarea"
-        url: /components/input/textarea/
+      - title: "NIF"
+        url: /components/input/nif/
       - title: "Email"
         url: /components/input/email/
       - title: "Password"
         url: /components/input/password/
-      - title: "NIF"
-        url: /components/input/nif/
+      - title: "Textarea"
+        url: /components/input/textarea/
       - title: "HTML"
         url: /components/input/html/
       - title: "Search"
