@@ -122,14 +122,14 @@ components:
         url: /components/input/real/
       - title: "Currency"
         url: /components/input/currency/
+      - title: "Date"
+        url: /components/input/date/
       - title: "Textarea"
         url: /components/input/textarea/
       - title: "Email"
         url: /components/input/email/
       - title: "Password"
         url: /components/input/password/
-      - title: "Date"
-        url: /components/input/date/
       - title: "Percent"
         url: /components/input/percent/
       - title: "NIF"
