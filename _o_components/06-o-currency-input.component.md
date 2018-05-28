@@ -31,4 +31,4 @@ The currency input is automatically registered on its parent `o-form`, which pro
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/currency).
 
 ## Validation
-The `o-text-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.
+The `o-currency-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.
