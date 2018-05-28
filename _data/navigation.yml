@@ -136,8 +136,10 @@ components:
         url: /components/input/textarea/
       - title: "HTML"
         url: /components/input/html/
-      - title: "Search"
-        url: /components/input/search/
+      - title: "File"
+        url: /components/input/file/
+      - title: "Checkbox"
+        url: /components/input/checkbox/
       - title : "Combo"
         url: /components/input/combo/
       - title: "List picker"
@@ -145,10 +147,6 @@ components:
         children :
           - title: "List picker dialog"
             url: /listpicker/listpickerdialog/
-      - title: "Checkbox"
-        url: /components/input/checkbox/
-      - title: "File"
-        url: /components/input/file/
 
   - title: Button
     children:
