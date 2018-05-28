@@ -218,8 +218,7 @@ article.page.o-component {
 
 .o-tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  padding-bottom: 6px;
 
   /* Style the buttons that are used to open the tab content */
   button {
@@ -228,18 +227,21 @@ article.page.o-component {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 12px 16px;
     transition: .3s;
+    font-size: 0.8em;
+    color: #333333;
   }
 
   /* Change background color of buttons on hover */
   button:hover {
-    background-color: #ddd;
+    background-color: lighten($orange, 40%);
+    border-bottom: 2px solid $orange;
   }
 
   /* Create an active/current tablink class */
   button.active {
-    background-color: #ccc;
+    border-bottom: 2px solid $orange;
   }
 
 }
