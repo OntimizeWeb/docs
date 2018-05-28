@@ -120,6 +120,8 @@ components:
         url: /components/input/integer/
       - title: "Real"
         url: /components/input/real/
+      - title: "Percent"
+        url: /components/input/percent/
       - title: "Currency"
         url: /components/input/currency/
       - title: "Date"
@@ -130,8 +132,6 @@ components:
         url: /components/input/email/
       - title: "Password"
         url: /components/input/password/
-      - title: "Percent"
-        url: /components/input/percent/
       - title: "NIF"
         url: /components/input/nif/
       - title: "HTML"
