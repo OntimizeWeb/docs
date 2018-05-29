@@ -363,7 +363,7 @@
     required : "",
     description : "Predefined row height options"
   },
-  "store-state" {
+  "store-state": {
     name: "store-state",
     type: "no | false | yes | true",
     default : "yes",

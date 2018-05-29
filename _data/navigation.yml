@@ -190,6 +190,8 @@ components:
             url: '/components/table/contextmenu/'
       - title : "List"
         url: /components/o-list.component/
+      - title : "Tree"
+        url: /components/o-tree.component/
 
 
   - title: Media
