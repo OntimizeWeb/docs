@@ -362,6 +362,26 @@
     default : "medium",
     required : "",
     description : "Predefined row height options"
+  },
+  "store-state" {
+    name: "store-state",
+    type: "no | false | yes | true",
+    default : "yes",
+    required : "",
+    description : "Indicates whether or not to store component state"
+  },
+  "description-columns": {
+    name: "description-columns",
+    type: "string",
+    required : "",
+    description : "Visible columns in text field"
+  },
+  "separator": {
+    name: "separator",
+    type: "string",
+    default : "",
+    required : "",
+    description : "Separation character between <em>description-columns</em> values"
   }
 }
 

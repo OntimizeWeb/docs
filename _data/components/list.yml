@@ -1,6 +1,6 @@
 directive : "o-list"
 
- 
+
 
 attributes: [{
   name: "attr"
@@ -112,6 +112,8 @@ attributes: [{
   default : "no",
   required : "",
   description : ""
+},{
+  name: "store-state"
 }]
 
 

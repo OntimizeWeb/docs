@@ -1,7 +1,7 @@
 directive : "o-combo"
 
 
-  
+
 
 outputs: [{
   name : "onChange",
@@ -9,7 +9,7 @@ outputs: [{
 }]
 
 
- 
+
 
 attributes: [{
   name: "attr"
@@ -47,16 +47,10 @@ attributes: [{
   description : "Visible columns. Separated by ';'"
 },{
   name: "description-columns",
-  type: "string",
   default : "<em>visible-columns</em> attribute value",
-  required : "",
   description : "Visible columns in text field"
 },{
-  name: "separator",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Separation character between <em>description-columns</em> values"
+  name: "separator"
 },{
   name: "null-selection",
   type: "no | false | yes | true",

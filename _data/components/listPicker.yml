@@ -1,6 +1,6 @@
 directive : "o-list-picker"
 
- 
+
 
 attributes: [{
   name: "attr"
@@ -38,9 +38,7 @@ attributes: [{
   description : "Visible columns. Separated by ';'"
 },{
   name: "description-columns",
-  type: "string",
   default : "<em>visible-columns</em> attribute value",
-  required : "",
   description : "Visible columns in text field"
 },{
   name: "filter",
@@ -49,11 +47,7 @@ attributes: [{
   required : "",
   description : "Indicates whether or not to show values filtering input"
 },{
-  name: "separator",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Separation character between <em>description-columns</em> values"
+  name: "separator"
 },{
   name: "query-on-init"
 },{
@@ -82,7 +76,7 @@ attributes: [{
   description : "List picker dialog height"
 }]
 
-  
+
 
 outputs: [{
   name : "onChange",
