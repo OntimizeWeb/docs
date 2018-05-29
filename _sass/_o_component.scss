@@ -265,3 +265,10 @@ article.page.o-component {
   to {opacity: 1;}
 }
 
+/* Example images */
+.comp-example-img {
+  border: 1px solid #f2f3f3;
+  border-radius: 4px;
+  background-color: #fafafa;
+  box-shadow: 0 1px 1px rgna(0, 0, 0, 0.125);
+}

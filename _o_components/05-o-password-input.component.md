@@ -19,7 +19,7 @@ The `o-password-input` component is used in [forms]({{ base_path }}/docs/compone
 The password input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-password-input.png" alt="o-password-input component">
+![Password input component]({{ "/images/components/inputs/o-password-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -27,7 +27,7 @@ The password input is automatically registered on its parent `o-form`, which pro
     <o-password-input attr="password" label="Password" data="password" enabled="no"></o-password-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/password).
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/password){:target="_blank"}.
 
 ## Validation
 The `o-password-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

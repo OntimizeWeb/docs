@@ -20,14 +20,14 @@ The `o-file-input` component is used in [forms]({{ base_path }}/docs/components/
 The file input is automatically registered on its parent `o-form`. The configuration attributes for this component are explained on the **API** section of this page.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-file-input.png" alt="o-file-input component">
+![File input component]({{ "/images/components/inputs/o-file-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
     <o-file-input attr="file" label="File" accept-file-type="image/*" max-file-size="100000" max-num-files="10" show-info="yes"></o-file-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/file).
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/file){:target="_blank"}.
 
 ## Validation
 The `o-file-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input. It also validates the number of files and the size of these files depending the component configuration.
@@ -64,5 +64,3 @@ public class FilesRestController {
     }
 }
 ```
-
-<img src="{{ base_path }}/docs/images/components/inputs/o-file-input2.png" alt="o-file-input component">

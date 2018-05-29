@@ -19,7 +19,7 @@ The `o-text-input` component is used in [forms]({{ base_path }}/docs/components/
 The text input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-text-input.png" alt="o-text-input component">
+![Text input component]({{ "/images/components/inputs/o-text-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -28,7 +28,7 @@ The text input is automatically registered on its parent `o-form`, which provide
     <o-text-input attr="state" label="Country" data="Canada" enabled="no"></o-text-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/text).
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/text){:target="_blank"}.
 
 ## Validation
 The `o-text-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

@@ -20,7 +20,7 @@ The `o-percent-input` component is used in [forms]({{ base_path }}/docs/componen
 The percentage input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-percent-input.png" alt="o-percent-input component">
+![Percentage input component]({{ "/images/components/inputs/o-percent-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -29,7 +29,7 @@ The percentage input is automatically registered on its parent `o-form`, which p
     <o-percent-input attr="percent" label="Percentage" data="52.55" enabled="no"></o-percent-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/percent).
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/percent){:target="_blank"}.
 
 ## Validation
 The `o-percent-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

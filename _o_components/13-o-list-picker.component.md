@@ -27,7 +27,8 @@ The data array can be provided in two ways:
 Once some data has been provided to the component, the user can see the option list by clicking in the search button of the component. Choosing an option, the list will close up and the selected value will be set to the input.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-list-picker.png" alt="o-list-picker component">
+<img src="{{ base_path }}/docs/images/components/inputs/o-list-picker.png" alt="o-list-picker component" class="comp-example-img">
+![List picker component]({{ "/images/components/inputs/o-list-picker-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -35,7 +36,7 @@ Once some data has been provided to the component, the user can see the option l
     <o-list-picker attr="country" label="Country" data="Spain" [static-data]="getStaticData()" value-column="name" columns="id;name" visible-columns="name" enabled="no"></o-list-picker>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/listpicker).
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/listpicker){:target="_blank"}.
 
 ## Validation
 The `o-list-picker` shows automatically an error message when the `required` attribute is set to "yes" and there is no value selected.

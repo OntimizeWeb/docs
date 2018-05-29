@@ -10,7 +10,7 @@ The `o-checkbox` component is used in [forms]({{ base_path }}/docs/components/fo
 The checkbox is automatically registered on its parent `o-form`, which provides the value for the checkbox programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-checkbox.png" alt="o-checkbox component">
+![Checkbox component]({{ "/images/components/inputs/o-checkbox.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -18,4 +18,4 @@ The checkbox is automatically registered on its parent `o-form`, which provides 
     <o-checkbox attr="checkbox2" label="Checkbox" enabled="no"></o-checkbox>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/checkbox).
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/checkbox){:target="_blank"}.

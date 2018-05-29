@@ -26,7 +26,7 @@ The data array can be provided in two ways:
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-combo.png" alt="o-combo component">
+![Combo component]({{ "/images/components/inputs/o-combo.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -34,7 +34,7 @@ The data array can be provided in two ways:
     <o-combo attr="country" label="Country" data="Spain" [static-data]="getStaticData()" value-column="name" columns="id;name" visible-columns="name" enabled="no"></o-combo>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/combo).
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/combo){:target="_blank"}.
 
 ## Validation
 The `o-combo` shows automatically an error message when the `required` attribute is set to "yes" and there is no value selected.
