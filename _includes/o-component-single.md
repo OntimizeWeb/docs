@@ -158,7 +158,7 @@
               {% endif %}
             {% endif %}
   <td class="" {{ columnData }} {{ requiredData }}>
-    <p class="first">{{ cellContent }}</p>
+    <p class="first">{{ cellContent | markdownify }}</p>
     {% if secondLine != '' %}
       <p><i>{{ secondLine }}</i></p>
     {% endif %}
@@ -219,7 +219,7 @@
             {% assign columnData = 'o-component-' | append: columnKey %}
             {% assign cellContent = outputObject[columnKey]  | default: '' | markdownify %}
 
-            <td class="" {{ columnData }}>{{ cellContent }}</td>
+            <td class="" {{ columnData }}>{{ cellContent | markdownify  }}</td>
 
           {% endfor %}
           </tr>

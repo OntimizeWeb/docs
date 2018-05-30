@@ -1,17 +1,17 @@
 ---
-permalink: /ontimize-web-ngx-filemanager/
+permalink: /filemanager/
 title: "File Manager"
 excerpt: ""
 ---
 
 {% include base_path %}
 
-The **Ontimize Web File Manager** is a web file manager using [Ontimize Web](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
+The **Ontimize Web File Manager** is a web file manager using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
 
 * [Github repository](#github)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Documentation]({{ base_path }}/ontimize_web_ngx_filemanager/doc-overview/)
+* [Documentation]({{ base_path }}/filemanager/overview/)
 
 ## Github
 Ontimize Web File Manager module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-filemanager){:target="_blank"} where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-filemanager/issues){:target="_blank"} section.

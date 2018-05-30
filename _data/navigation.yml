@@ -1,24 +1,3 @@
-# example navigation
-foo:
-  - title: "Parent Link 1"
-    url: /parent-1-page-url/
-    children:
-      - title: "Child Link 1"
-        url: /child-1-page-url/
-      - title: "Child Link 2"
-        url: /child-2-page-url/
-
-  - title: "Parent Link 2"
-    url: /parent-2-page-url/
-    children:
-      - title: "Child Link 1"
-        url: /child-1-page-url/
-      - title: "Child Link 2"
-        url: /child-2-page-url/
-      - title: "Child Link 3"
-        url: /child-3-page-url/
-
-
 # main links links
 main:
   - title: "Getting started"
@@ -53,10 +32,10 @@ docs:
         url: /advanced-changes/
   - title: Guide
     children:
-      - title: "Structure"
-        url: /structure/
-      - title: "App config file"
-        url: /guide/menu-config/
+      - title: "App structure"
+        url: /guide/appstructure/
+      - title: "App configuration"
+        url: /guide/appconfig/
       - title: "Modules"
         url: /app-modules/
       - title: "Routing"
@@ -96,7 +75,7 @@ docs:
       - title: "Dynamicform Builder"
         url: /ontimize-web-ngx-dynamicform-builder/
       - title: "File Manager"
-        url: /ontimize-web-ngx-filemanager/
+        url: /filemanager/
       - title: "JEE app seed"
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
@@ -230,9 +209,9 @@ ontimize_web_ngx_filemanager:
   - title: "Getting Started"
     children:
       - title: "Document overview"
-        url: /ontimize_web_ngx_filemanager/doc-overview/
+        url: /filemanager/overview/
       - title: "Example overview"
-        url: /ontimize_web_ngx_filemanager/example-overview/
+        url: /filemanager/example/
 
   - title: "Components"
     children:
