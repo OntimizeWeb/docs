@@ -1,8 +1,5 @@
 directive : "o-form"
 
-
-  
-
 outputs: [{
   name : "onFormDataLoaded",
   description: "Event triggered when form data is loaded"
@@ -103,6 +100,12 @@ attributes: [{
   required : "",
   description : "Direction of the form main content"
 },{
+  name: "layout-align",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Component alignment inside the form"
+},{
   name: "editable-detail",
   type: "no | false | yes | true",
   default : "yes",
@@ -113,6 +116,18 @@ attributes: [{
   type: "no | false | yes | true",
   default : "no",
   required : "",
-  description : "Include navigations buttons in form-toolbar. It's not included when the form is content in <em> tab </em> mode in the  o-form-layout-manager component. Learn more about <em>o-form-layout-manager </em> [here](https://ontimizeweb.github.io/docs/components/o-form-layout-manager.component/){:target='_blank'}). Default: no;"
+  description : "Include navigations buttons in form-toolbar. It's not included when the form is content in <em> tab </em> mode in the  o-form-layout-manager component. Learn more about <em>o-form-layout-manager </em> [here](https://ontimizeweb.github.io/docs/components/o-form-layout-manager.component/){:target='_blank'})"
+},{
+  name: "undo-button",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Include undo button in form toolbar"
+},{
+  name: "keys-sql-types",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Entity keys SQL types, separated by ';'"
 }
 ]

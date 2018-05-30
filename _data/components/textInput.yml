@@ -1,4 +1,3 @@
-
 directive : "o-text-input"
 
 outputs: [{
@@ -44,4 +43,6 @@ attributes: [{
   name: "tooltip-position"
 },{
   name: "tooltip-show-delay"
+},{
+  name: "sql-type"
 }]

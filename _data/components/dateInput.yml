@@ -4,7 +4,7 @@ inheritedAttributes: [
   {
     component: "o-text-input",
     path: "input/text",
-    attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
+    attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay", "sql-type"]
   }
 ]
 
@@ -53,7 +53,6 @@ attributes: [{
   required : "",
   description : "Function for filtering datepicker possible values"
 }]
-
 
 inheritedOutputs: [
   {
