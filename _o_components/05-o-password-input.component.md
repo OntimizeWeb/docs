@@ -14,7 +14,7 @@ comp: passwordInput
   </nav>
 </aside>
 
-The `o-password-input` component is used in [forms]({{ base_path }}/docs/components/form/) for getting or displaying text input submitted by the user.
+The `o-password-input` component is used in [forms]({{ base_path }}/docs/components/form/) for getting a password input submitted by the user.
 
 The password input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
