@@ -33,7 +33,22 @@ attributes: [{
   name: "entity"
 },{
   name: "columns"
-},{
+},
+{
+  name: "multiple",
+  type: "no | false | yes | true",
+  default : "false",
+  required : "",
+  description : "Whether the user should be allowed to select multiple options."
+},
+{
+  name: "multiple-trigger-label",
+  type: "no | false | yes | true",
+  default : "false",
+  required : "",
+  description : "Whether the user should be allowed to display a custom trigger label inside a select."
+},
+{
   name: "value-column"
 },{
   name: "value-column-type"
@@ -77,4 +92,18 @@ attributes: [{
   default : "",
   required : "",
   description : ""
+}]
+
+methods: [
+{
+  name: "getSelectedItems()",
+  type: "method", 
+  description : "Return the selected items of the component.",
+  returns: "any[]"
+},
+{
+  name: "setSelectedItems()",
+  type: "method",
+  parameters : "any[]",
+  description : "Set the selected items of the component."
 }]

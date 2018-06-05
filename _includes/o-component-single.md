@@ -14,6 +14,7 @@
 
 {% assign inputsColumns = "Name|Description|Default" | split: "|" %} 
 {% assign outputsColumns = "Name|Description" | split: "|" %} 
+{% assign methodsColumns = "Name|Description|Parameters|Returns" | split: "|" %} 
 
 <script type="text/javascript">
   function openTab(evt, tabName) {
@@ -231,7 +232,27 @@
 
   {% if componentData.methods %}
     <h3 class="grey-color">Methods</h3>
+      {% for outputObject in componentData.methods %}
+    <table>
+      <thead>
+       <tr><th>{{outputObject['name']}}</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>{{outputObject['description']}}</td></tr>
+        
+        {% if outputObject['parameters'] %}
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>{{outputObject['parameters']}}</td></tr>
+         {% endif %}
 
+        {% if outputObject['returns'] %}
+          <tr><td><strong>Returns</strong></td></tr>
+          <tr><td>{{outputObject['returns']}}</td></tr>
+        {% endif %}
+      </tbody>
+    </table>
+      {% endfor %}
   {% endif %}
+
 </div>
 {% endif %}
