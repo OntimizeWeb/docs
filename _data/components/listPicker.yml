@@ -1,7 +1,5 @@
 directive : "o-list-picker"
 
-
-
 attributes: [{
   name: "attr"
 },{
@@ -24,6 +22,8 @@ attributes: [{
   name: "entity"
 },{
   name: "columns"
+},{
+  name: "keys"
 },{
   name: "value-column"
 },{
@@ -75,8 +75,6 @@ attributes: [{
   required : "",
   description : "List picker dialog height"
 }]
-
-
 
 outputs: [{
   name : "onChange",

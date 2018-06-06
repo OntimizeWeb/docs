@@ -1,15 +1,9 @@
 directive : "o-combo"
 
-
-
-
 outputs: [{
   name : "onChange",
   description: "Event triggered when component selected value changes"
 }]
-
-
-
 
 attributes: [{
   name: "attr"
@@ -33,22 +27,21 @@ attributes: [{
   name: "entity"
 },{
   name: "columns"
-},
-{
+},{
+  name: "keys"
+},{
   name: "multiple",
   type: "no | false | yes | true",
   default : "false",
   required : "",
   description : "Whether the user should be allowed to select multiple options."
-},
-{
+},{
   name: "multiple-trigger-label",
   type: "no | false | yes | true",
   default : "false",
   required : "",
   description : "Whether the user should be allowed to display a custom trigger label inside a select."
-},
-{
+},{
   name: "value-column"
 },{
   name: "value-column-type"
@@ -94,14 +87,12 @@ attributes: [{
   description : ""
 }]
 
-methods: [
-{
+methods: [{
   name: "getSelectedItems()",
   type: "method", 
   description : "Return the selected items of the component.",
   returns: "any[]"
-},
-{
+},{
   name: "setSelectedItems()",
   type: "method",
   parameters : "any[]",
