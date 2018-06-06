@@ -20,8 +20,7 @@ The data array can be provided in two ways:
 Once some data has been provided to the component, the user can see the option list by clicking in the search button of the component. Choosing an option, the list will close up and the selected value will be set to the input.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-list-picker.png" alt="o-list-picker component" class="comp-example-img">
-![List picker component]({{ "/images/components/inputs/o-list-picker-input.png" | absolute_url }}){: .comp-example-img}
+![List picker component]({{ "/images/components/inputs/o-list-picker.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
