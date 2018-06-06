@@ -5,19 +5,10 @@ comp: combo
 under_construction: false
 ---
 
-<aside class="sidebar__right">
-  <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
-      <ul class="toc__menu" id="markdown-toc">
-        <li><a href="#basic-example" id="markdown-toc-overview">Basic example</a></li>
-        <li><a href="#multiple-selection" id="markdown-toc-overview">Multiple selection</a></li>
-        <li><a href="#multiple-selection---customizing-the-trigger-label" id="markdown-toc-overview">Multiple selection - Customizing the trigger label</a></li>
-        <li><a href="#validation">Validation</a></li>
-    </ul>
-  </nav>
-</aside>
+{% include base_path %}
+{% include toc %}
 
-The `o-combo` component is used in [forms]({{ base_path }}/docs/components/form/) for getting or displaying an option between multiple input submitted by the user.
+The `o-combo` component is used in [forms]({{ base_path }}/components/form/) for getting or displaying an option between multiple input submitted by the user.
 
 The combo component is automatically registered on its parent `o-form`, which provides the value for the combo programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 

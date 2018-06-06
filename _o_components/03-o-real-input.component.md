@@ -4,17 +4,10 @@ title: "Real input"
 comp: realInput
 ---
 
-<aside class="sidebar__right">
-  <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
-      <ul class="toc__menu" id="markdown-toc">
-        <li><a href="#basic-example" id="markdown-toc-overview">Basic example</a></li>
-        <li><a href="#validation">Validation</a></li>
-    </ul>
-  </nav>
-</aside>
+{% include base_path %}
+{% include toc %}
 
-The `o-real-input` component is used in [forms]({{ base_path }}/docs/components/form/) for getting or displaying numeric input submitted by the user.
+The `o-real-input` component is used in [forms]({{ base_path }}/components/form/) for getting or displaying numeric input submitted by the user.
 
 The real input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 

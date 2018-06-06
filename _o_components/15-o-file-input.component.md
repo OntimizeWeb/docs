@@ -4,18 +4,10 @@ title: "File input"
 comp: fileInput
 ---
 
-<aside class="sidebar__right">
-  <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
-      <ul class="toc__menu" id="markdown-toc">
-        <li><a href="#basic-example" id="markdown-toc-overview">Basic example</a></li>
-        <li><a href="#validation">Validation</a></li>
-        <li><a href="#server-configuration">Server configuration</a></li>
-    </ul>
-  </nav>
-</aside>
+{% include base_path %}
+{% include toc %}
 
-The `o-file-input` component is used in [forms]({{ base_path }}/docs/components/form/) for uploading files to a server.
+The `o-file-input` component is used in [forms]({{ base_path }}/components/form/) for uploading files to a server.
 
 The file input is automatically registered on its parent `o-form`. The configuration attributes for this component are explained on the **API** section of this page.
 

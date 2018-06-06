@@ -4,19 +4,10 @@ title: "Filter builder"
 comp: filterbuilder
 ---
 
-<aside class="sidebar__right">
-  <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
-      <ul class="toc__menu" id="markdown-toc">
-        <li><a href="#query-directive" id="markdown-toc-overview">Query directive</a></li>
-        <li><a href="#clear-directive" id="markdown-toc-overview">Clear directive</a></li>
-        <li><a href="#building-the-filter" id="markdown-toc-overview">Building the filter</a></li>
-        <li><a href="#complete-example" id="markdown-toc-overview">Complete example</a></li>
-    </ul>
-  </nav>
-</aside>
+{% include base_path %}
+{% include toc %}
 
-The `o-filter-builder` component is used for easily building complex structures for filtering the data of a [table]({{ base_path }}/docs/components/table/). It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/docs/components/form/). All the attributes are explained on the **API** section of this page.
+The `o-filter-builder` component is used for easily building complex structures for filtering the data of a [table]({{ base_path }}/components/table/). It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/components/form/). All the attributes are explained on the **API** section of this page.
 
 ## Query directive
 The `oFilterBuilderQuery` directive is used to trigger the `reloadData` method of the comonent indicated on the `target` attribute of the filter builder component. This directive must be attached to a clickable component and you must provide the `o-filter-builder` reference as parameter in order to indicate the directive which filter builder trigger the filter action.
@@ -36,7 +27,7 @@ The `oFilterBuilderClear` directive is used to clear the form components that pa
 ```
 
 ## Building the filter
-This `o-filter-builder` component builds automatically [complex filter expressions]({{ base_path }}/docs/guide/filterexpression/){:target='_blank'} considering the values provided by the form components included in the `filters` attribute. For building this complex expression, the component ignores **null** and **undefined** values and join all the simple expressions with the **OR** operator by default.
+This `o-filter-builder` component builds automatically [complex filter expressions]({{ base_path }}/guide/filterexpression/){:target='_blank'} considering the values provided by the form components included in the `filters` attribute. For building this complex expression, the component ignores **null** and **undefined** values and join all the simple expressions with the **OR** operator by default.
 
 For building custom complex filter expressions, set the `expression-builder` attribute with a function that returns an `IExpression` object like in the example below.
 
@@ -45,7 +36,7 @@ For building custom complex filter expressions, set the `expression-builder` att
   [expression-builder]="createFilter"></o-filter-builder>
 ```
 
-Read more abut how to build complex filter expressions [here]({{ base_path }}/docs/guide/filterexpression/){:target='_blank'}.
+Read more abut how to build complex filter expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
 
 ## Complete example
 In the following example there is a `o-form` component that contains two `o-text-input` and a `o-list-picker` used to filter the `o-table` at the bottom. For this, we use the `o-filter-builder` component and provide the form components attributes for getting the filter values.
@@ -75,7 +66,7 @@ In the following example there is a `o-form` component that contains two `o-text
   <o-column title-label="{{ 'EMPLOYEES' | oTranslate }}">
     <o-table #tableEmployees attr="employees" service="employees" entity="employee" columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
       visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEETYPEID;EMPLOYEESTARTDATE" keys="EMPLOYEEID"
-      sort-columns="EMPLOYEESURNAME" detail-mode="none" insert-button="no" [filter-builder]="filterBuilder" pageable="yes">
+      sort-columns="EMPLOYEESURNAME" detail-mode="none" insert-button="no" pageable="yes">
       <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
       <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
         <o-table-cell-renderer-service service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" value-column="EMPLOYEETYPENAME"></o-table-cell-renderer-service>
