@@ -167,12 +167,6 @@ attributes: [{
   name: "recursive-insert"
 },{
   name: "store-state"
-},{
-  name: "filter-builder",
-  type: "OFilterBuilderComponent",
-  default : "",
-  required : "",
-  description : "[o-filter-builder](https://ontimizeweb.github.io/docs/components/filterbuilder/){:target='_blank'} component reference."
 }]
 
 outputs: [{
