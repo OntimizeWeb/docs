@@ -1,20 +1,7 @@
 ---
 permalink: /components/table/renderers/
-title: "Column renderers"
+title: "Rendering"
 ---
-
-In this section we are specifing how to add a render for a table column.
-
-<aside class="sidebar__right">
-  <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
-      <ul class="toc__menu" id="markdown-toc">
-        <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-        <li><a href="#default-renderers" >Default renderers</a></li>
-        <li><a href="#custom-renderers" >Custom renderers.</a></li>
-    </ul>
-  </nav>
-</aside>
 
 By default, the table will place the values of your data into the cell as simple strings. If you want something other than simple strings, then you use a cell renderer. So for rendering your values, you have the following four options.
 
@@ -52,28 +39,8 @@ For example:
 ```
 
 
-## Default renderers
 
-{% assign filenameArray = "" | split:"|"  %}
-{% for renderers_hash in site.data.components.oTableData.renderers %}
-  {% assign filenameArray = filenameArray | push: renderers_hash[0] %}
-{% endfor %}
-{% assign filenameArray = filenameArray | sort %}
-
-
-{% for filename in filenameArray %}
-
-  {% assign dataFile = site.data.components.oTableData.renderers[filename] %}
-  {% capture dataFileCapture %}
-    {% include o-component-single.md compFile=dataFile  %}
-  {% endcapture %}
-  <div class="o-compFile-div">
-    <h2 class="">{{ dataFile.title }}</h2>
-    {{ dataFileCapture | replace: '    ', '' | markdownify }}
-  </div>
-{% endfor %}
-
-## Custom renderers
+## Custom renders
 
 To create a custom render, you need to create a new component to display custom renderer information and place this render in the content of cell.
 
@@ -91,15 +58,6 @@ constructor(protected injector: Injector) {
 ```
 
 - If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*
-
-
-
-
-{% capture tablecellrendererFileCapture %}
-  {% include o-class.md comp="basecellrenderer"  %}
-{% endcapture %}
-{{ tablecellrendererFileCapture | replace: '    ', ''}}
-
 
 
 The following example show how render two values of column in a cell, "SURNAME, name" and override method getCellData

@@ -1,6 +1,6 @@
 ---
 permalink: /components/table/exportation/
-title: "Table exportation"
+title: "Exporting"
 ---
 
 In this section we are specifing how table data exportation works.

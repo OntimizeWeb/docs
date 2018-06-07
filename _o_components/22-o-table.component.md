@@ -30,25 +30,26 @@ comp: table
         </li>
          <li><a href="#rendering" id="markdown-toc-overview">Rendering</a>
           <ul>
-            <li><a href="#validation">1. Default templates </a></li>
-            <li><a href="#validation">2. Customazing templates </a></li>
+            <li><a href="#rendering">1. Default renders </a></li>
+            <li><a href="#customazing-template">2. Custom renders </a></li>
           </ul>
         </li>
         <li><a href="#editing" id="markdown-toc-overview">Editing</a>
           <ul>
-            <li><a href="#validation">1. Inline editing </a></li>
-            <li><a href="#validation">2. Customazing templates </a></li>
+            <li><a href="#default-editors">1. Default editors </a></li>
+            <li><a href="#custom-editors">2. Custom editors </a></li>
           </ul>
         </li>
-        <li><a href="#basic-example" id="markdown-toc-overview">Functionaly</a>
+        <li><a href="#checkbox-selection" id="markdown-toc-overview">Features</a>
           <ul>
-            <li><a href="#validation">1. Checkbox selection </a></li>
-            <li><a href="#validation">2. Inside the form </a></li>
-            <li><a href="#validation">3. Fixing position of the footer </a></li>
-            <li><a href="#validation">4. Aggregates </a></li>
-            <li><a href="#multiple-selection---customizing-the-trigger-label" id="markdown-toc-overview">5. Table options</a></li>
-            <li><a href="#multiple-selection" id="markdown-toc-overview">6. Table buttons</a></li>
-            <li><a href="#basic-example" id="markdown-toc-overview">7. Exporting</a></li>
+            <li><a href="#checkbox-selection">1. Checkbox selection </a></li>
+            <li><a href="#inside-the-form">2. Inside the form </a></li>
+            <li><a href="#fixing-position-of-the-footer">3. Fixing position of the footer </a></li>
+            <li><a href="#aggregates">4. Aggregates </a></li>
+            <li><a href="#calculated-columns">5. Calculated columns </a></li>
+            <li><a href="#table-options" id="markdown-toc-overview">6. Table options</a></li>
+            <li><a href="#table-buttons" id="markdown-toc-overview">7. Table buttons</a></li>
+            <li><a href="#exporting" id="markdown-toc-overview">8. Exporting</a></li>
           </ul>
         </li>
         

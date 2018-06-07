@@ -1,6 +1,6 @@
 ---
 permalink: /components/table/editors/
-title: "Column editors"
+title: "Editing"
 ---
 The *o-table component* supports data editing operations (create, update, destroy) via a simple configuration of its data source. By default, this operations are enabled.
 
@@ -8,10 +8,11 @@ All you have to do to enable data editing capabilities for the component is to:
 <ul>
 <li>Include the table within an o-form component</li>
 <li>Configure data binding</li>
-<li></li>
 </ul>
 
 If you need to disabled one operation, you can changing `insert-button= "no"`, `delete-button= "no"`.
+
+## Default editors
 
 Next we are specifing how to add a editor for a table column cell.
 
@@ -44,27 +45,6 @@ For example:
 </o-table-column>
 ```
 
-
-## Default editors
-
-{% assign filenameArray = "" | split:"|"  %}
-{% for editors_hash in site.data.components.oTableData.editors %}
-  {% assign filenameArray = filenameArray | push: editors_hash[0] %}
-{% endfor %}
-{% assign filenameArray = filenameArray | sort %}
-
-
-{% for filename in filenameArray %}
-
-  {% assign dataFile = site.data.components.oTableData.editors[filename] %}
-  {% capture dataFileCapture %}
-    {% include o-component-single.md compFile=dataFile  %}
-  {% endcapture %}
-  <div class="o-compFile-div">
-    <h2 class="">{{ dataFile.title }}</h2>
-    {{ dataFileCapture | replace: '    ', '' | markdownify }}
-  </div>
-{% endfor %}
 
 ## Custom editors
 

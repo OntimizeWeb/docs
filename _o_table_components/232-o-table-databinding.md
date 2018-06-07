@@ -3,7 +3,7 @@ permalink: /components/table/options/
 title: "Data binding"
 ---
 
-The o-table component supports data binding and you can command the component to display data either from local or remote data storage
+The o-table component supports data binding and you can command the component to display data either from *local* or *remote* data storage
 
 ## Binding to local data
 
@@ -15,6 +15,7 @@ If you need the data query to be performed after the `parent-keys` is updated, `
 
 To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage.
 
+You can configure the methods by default with the `ìnsert-method`,`update-method`,`deleted-method`
 
 
 

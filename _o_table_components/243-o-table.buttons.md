@@ -3,12 +3,12 @@ permalink: /components/table/buttons/
 title: "Table buttons"
 ---
 
-In this section we are specifing how to define custom buttons for the table header.
-
-{% capture tableButtonCapture %}
-{% include o-component-single.md comp="tableButton" %}
-{% endcapture %}
-{{ tableButtonCapture | replace: '    ', ''}}
+O-table component allow to adding extra buttons in the toolbar with `o-table-button` selector.
+You can configure:
+<ul>
+  <li> The icon in `icon` property, this name must to be of google icon (see Google material design icons)</li>
+  <li> The label in `label` property</li>
+</ul>
 
 <h3 class="grey-color">Example</h3>
 
