@@ -433,6 +433,15 @@
   li ul > li a {
     padding-left: 2rem;
     font-weight: normal;
+    padding-top:0.3rem;
+    padding-bottom:0.3rem;
+    border:none;
+    text-transform: none;
+  }
+  li ul > li:last-child a {
+    
+    border-bottom: 1px solid $border-color;
+    
   }
 
   /* hide sub sub links on small screens*/

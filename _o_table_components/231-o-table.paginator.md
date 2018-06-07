@@ -1,15 +1,13 @@
 ---
 permalink: /components/table/paginator/
-title: "Table paginator"
+title: "Pagination"
 ---
 
+By default, the table is paginating  but you want it to be add `pagination-controls= "no"` in `o-table` selector.
+
+You can configure the pagination by adding the selector `<o-table-paginator>` after the table.
+
 In this section we are specifing how to define a paginator for the table.
-
-{% capture paginatorFileCapture %}
-  {% include o-component-single.md comp="tablePaginator"  %}
-{% endcapture %}
-{{ paginatorFileCapture | replace: '    ', ''}}
-
 
 <h3 class="grey-color">Example</h3>
 

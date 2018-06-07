@@ -2,19 +2,18 @@
 permalink: /components/table/editors/
 title: "Column editors"
 ---
+The *o-table component* supports data editing operations (create, update, destroy) via a simple configuration of its data source. By default, this operations are enabled.
 
-In this section we are specifing how to add a editor for a table column cell.
+All you have to do to enable data editing capabilities for the component is to:
+<ul>
+<li>Include the table within an o-form component</li>
+<li>Configure data binding</li>
+<li></li>
+</ul>
 
-<aside class="sidebar__right">
-  <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
-      <ul class="toc__menu" id="markdown-toc">
-        <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-        <li><a href="#default-editors" >Default editors</a></li>
-        <li><a href="#custom-editors" >Custom editors</a></li>
-    </ul>
-  </nav>
-</aside>
+If you need to disabled one operation, you can changing `insert-button= "no"`, `delete-button= "no"`.
+
+Next we are specifing how to add a editor for a table column cell.
 
 By default, the table will no define a editor for your data into a cell. If you want to be able to edit that data you have to use a cell editor. So, for editing your values, you have the following options.
 

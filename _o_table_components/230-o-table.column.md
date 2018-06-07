@@ -1,19 +1,19 @@
 ---
 permalink: /components/table/column/
-title: "Table column"
+title: "Define columns"
 ---
+
+To define a table, it is necessary to define the columns
+
+They can be defined as follows:
+- In the input `columns` separated by ';'.
+- Using the `o-table-column` selector. For more information see the API. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them.
+
+With `visible-columns` you can indicate which columns we want to be visible
 
 Using default renderer (*o-table-cell-renderer-string*) if column attr is present in *visible-columns* attribute from its parent *o-table*.
 In the same way, using the defualt editor (*o-table-cell-editor-string*) if column attr is contained
 in  the *editable-columns* attribute from its parent *o-table*.
-
-If *o-table* component contains inner *o-table-column* elements, using renderers and editors
-defined in them.
-
-{% capture tableColumnCapture %}
-{% include o-component-single.md comp="tableColumn" %}
-{% endcapture %}
-{{ tableColumnCapture | replace: '    ', ''}}
 
 
 
