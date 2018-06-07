@@ -27,16 +27,16 @@ The `oFilterBuilderClear` directive is used to clear the form components that pa
 ```
 
 ## Building the filter
-This `o-filter-builder` component builds automatically [complex filter expressions]({{ base_path }}/guide/filterexpression/){:target='_blank'} considering the values provided by the form components included in the `filters` attribute. For building this complex expression, the component ignores **null** and **undefined** values and join all the simple expressions with the **OR** operator by default.
+This `o-filter-builder` component builds automatically [complex filtering expressions]({{ base_path }}/guide/filterexpression/){:target='_blank'} considering the values provided by the form components included in the `filters` attribute. For building this complex expression, the component ignores **null** and **undefined** values and join all the simple expressions with the **OR** operator by default.
 
-For building custom complex filter expressions, set the `expression-builder` attribute with a function that returns an `IExpression` object like in the example below.
+For building custom complex filtering expressions, set the `expression-builder` attribute with a function that returns an `IExpression` object like in the example below.
 
 ```html
 <o-filter-builder #filterBuilder attr="thefilter" filters="NAME:EMPLOYEENAME;SURNAME:EMPLOYEESURNAME;EMPLOYEETYPEID" [target]="tableEmployees"
   [expression-builder]="createFilter"></o-filter-builder>
 ```
 
-Read more abut how to build complex filter expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
+Read more abut how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
 
 ## Complete example
 In the following example there is a `o-form` component that contains two `o-text-input` and a `o-list-picker` used to filter the `o-table` at the bottom. For this, we use the `o-filter-builder` component and provide the form components attributes for getting the filter values.
