@@ -171,6 +171,8 @@ components:
         url: /components/o-list.component/
       - title : "Tree"
         url: /components/o-tree.component/
+      - title : "Filter bulder"
+        url: /components/filterbuilder/
 
 
   - title: Media
