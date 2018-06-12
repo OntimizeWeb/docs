@@ -36,3 +36,8 @@ It is posible to configure filtering by columns with `o-table-columns-filter` se
 
 </o-table>
 ```
+
+## Custom filter
+**OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/filterbuilder/){:target='_blank'} component to you application.
+
+The `o-filter-builder` component uses the `IExpression` inserface that represents a filtering expression. You can read more about how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
