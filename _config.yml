@@ -276,7 +276,6 @@ defaults:
       sidebar:
         nav: "components"
    # _o_table_components
-  # _o_table_components
   - scope:
       path: ""
       type: o_table_components

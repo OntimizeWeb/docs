@@ -64,7 +64,7 @@ docs:
         url: /ontimize-web-ngx-tools/
       - title: "Theming"
         url: /ontimize-web-ngx-theming/
-      - title: "DataTable"
+      - title: "DataTable <small>(deprecated)</small>"
         url: /ontimize-web-ngx-datatable/
       - title: "Charts"
         url: /ontimize-web-ngx-charts/
@@ -141,14 +141,14 @@ components:
             url: '/form-component/o-form.extend/'
           - title: "Form to filter table"
             url: '/form-component/o-form.filter-table/'
-      - title: "DataTable"
+      - title: "DataTable <small>(deprecated)</small>"
         url: /components/o-datatable.component/
         children:
           - title: "Column renderers"
             url: '/datatable-components/o-datatable-renderers.component/'
           - title: "Column editors"
             url: '/datatable-components/o-datatable-editors.component/'
-      - title: "Table"
+      - title: "Table <span class='menuitem-badge'>new<span>"
         url: /components/table/
         children:
           - title: "Table buttons"

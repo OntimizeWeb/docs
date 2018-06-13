@@ -329,3 +329,20 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   -webkit-transition: $global-transition;
   transition: $global-transition;
 }
+
+
+/*
+  Badge menu
+*/
+
+.menuitem-badge {
+  background: linear-gradient(-180deg,$success-color 0,$success-color 100%);
+  padding: 2px 4px;
+  vertical-align: middle;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  position: relative;
+  top: -1px;
+}
