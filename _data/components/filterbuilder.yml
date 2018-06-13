@@ -31,3 +31,31 @@ attributes: [{
   required: "",
   description: "Delay time in milliseconds `query-on-change` method is triggered."
 }]
+
+outputs: [{
+  name : "onFilter",
+  description: "Event triggered when the filter action is executed"
+},{
+  name : "onClear",
+  description: "Event triggered when the clear action is excuted"
+}]
+
+methods: [{
+  name: "getExpression",
+  description: "Returns an `IExpression` object with the filter.",
+  returns: "The `IExpression` object with the filter."
+},{
+  name: "getBasicExpression",
+  description: "Returns an `IBasicExpression` object with the filter.",
+  returns: "The `IBasicExpression` object with the filter."
+},{
+  name: "getTargetComponent",
+  description: "Returns the filter builder target component.",
+  returns: "The target component."
+},{
+  name: "triggerReload",
+  description: "Trigger the `reloadData` method from the target component."
+},{
+  name: "clearFilter",
+  description: "Trigger the `reloadData` method from the target component."
+}]
