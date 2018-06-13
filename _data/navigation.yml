@@ -183,7 +183,7 @@ components:
   - title: Layout
     children:
       - title: "Containers"
-        url: /components/o-container.components/
+        url: /components/containers/
       - title: "Dialog"
         url: /components/o-dialog.component/
       - title: "App layout"

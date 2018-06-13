@@ -1,7 +1,4 @@
-
-directive : "o-row"
-
- 
+directive : "o-column, o-row"
 
 attributes: [{
   name: "attr"
