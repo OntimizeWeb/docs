@@ -229,10 +229,10 @@
     </table>
   {% endif %}
 
-
   {% if componentData.methods %}
     <h3 class="grey-color">Methods</h3>
-      {% for outputObject in componentData.methods %}
+      {% assign sortedMethods = (componentData.methods | sort: 'name') %}
+      {% for outputObject in sortedMethods %}
     <table>
       <thead>
        <tr><th>{{outputObject['name']}}</th></tr>
