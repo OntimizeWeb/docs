@@ -1,5 +1,8 @@
 directive : "o-table-cell-renderer-percentage"
 
+class: "OTableCellRendererPercentageComponent"
+
+extends : "OTableCellRendererRealComponent" 
  
 
 attributes: [{

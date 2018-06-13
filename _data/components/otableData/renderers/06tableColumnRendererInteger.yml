@@ -1,6 +1,8 @@
-directive : "o-table-cell-renderer-integer"
+class: "OTableCellRendererIntegerComponent"
 
- 
+extends : "OBaseTableCellRenderer" 
+
+directive : "o-table-cell-renderer-integer"
 
 attributes: [{
   name: "grouping"

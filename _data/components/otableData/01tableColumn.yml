@@ -1,7 +1,7 @@
 
-directive : "o-table-column"
+class : "OTableColumnComponent"
 
- 
+directive : "o-table-column"
 
 attributes: [{
   name: "attr",

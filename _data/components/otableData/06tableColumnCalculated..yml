@@ -1,6 +1,5 @@
-directive : "o-table-column-calculated"
-
-  
+class : "OTableColumnCalculatedComponent"
+directive : "o-table-column-calculated" 
 
 attributes: [
 {

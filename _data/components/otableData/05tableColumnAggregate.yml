@@ -1,6 +1,6 @@
-directive : "o-table-column-aggregate"
+class : "OTableColumnAggregateComponent"
 
-  
+directive : "o-table-column-aggregate"
 
 attributes: [{
   name: "attr", 

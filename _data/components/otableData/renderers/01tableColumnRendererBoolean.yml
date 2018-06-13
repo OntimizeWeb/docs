@@ -1,3 +1,7 @@
+class : "OTableCellRendererImageComponent"
+
+extends : "OBaseTableCellRenderer" 
+
 directive : "o-table-cell-renderer-boolean"
 
   

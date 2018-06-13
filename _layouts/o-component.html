@@ -9,6 +9,11 @@ layout: single
   {% if page.comp %}
     {% assign componentKey = page.comp %}
   {% endif %}
-  {% include o-component-single.md comp=componentKey %}
+    
+  {% if page.comp =='table' %}
+    {% include o-component-table.md comp=componentKey %}
+  {% else %}
+    {% include o-component-single.md comp=componentKey %}
+  {% endif %}
 {% endif %}
 </div>

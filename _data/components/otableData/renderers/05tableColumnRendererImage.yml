@@ -1,6 +1,8 @@
-directive : "o-table-cell-renderer-image"
+class: "OTableCellRendererImageComponent"
 
- 
+extends : "OBaseTableCellRenderer" 
+
+directive : "o-table-cell-renderer-image" 
 
 attributes: [{
   name: "image-type",

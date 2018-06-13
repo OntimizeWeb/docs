@@ -1,6 +1,6 @@
-directive : "o-table-columns-filter"
+class : "OTableColumnsFilterComponent"
 
- 
+directive : "o-table-columns-filter"
 
 attributes: [{
   name: "columns",

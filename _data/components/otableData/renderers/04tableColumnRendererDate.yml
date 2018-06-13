@@ -1,5 +1,8 @@
 directive : "o-table-cell-renderer-date"
 
+class : "OTableCellRendererDateComponent"
+
+extends : "OBaseTableCellRenderer" 
   
 
 attributes: [{

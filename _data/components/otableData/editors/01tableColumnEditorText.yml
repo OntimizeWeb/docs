@@ -1,6 +1,8 @@
 directive : "o-table-cell-editor-text"
 
- 
+class: "OTableCellEditorTextComponent"
+
+extends : "OBaseTableCellEditor"
 
 attributes: [{
   name: "required"

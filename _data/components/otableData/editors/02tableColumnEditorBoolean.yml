@@ -1,6 +1,8 @@
 directive : "o-table-cell-editor-boolean"
 
- 
+class: "OTableCellEditorBooleanComponent"
+
+extends : "OBaseTableCellEditor"
 
 attributes: []
 title : "OTableCellEditorBoolean"

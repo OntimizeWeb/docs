@@ -1,6 +1,6 @@
-directive : "o-table-option"
+class: "OTableOptionComponent"
 
- 
+directive : "o-table-option"
 
 attributes: [{
   name: "icon",
