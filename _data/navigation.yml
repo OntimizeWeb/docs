@@ -189,7 +189,7 @@ components:
       - title: "App layout"
         url: /components/o-app-layout.component/
       - title: "Form layout manager"
-        url: /components/o-form-layout-manager.component/
+        url: /components/formlayoutmanager/
       - title: "Breadcrumb"
         url: /components/o-breadcrumb.component/
       - title: "SnackBar"
