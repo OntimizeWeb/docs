@@ -11,10 +11,9 @@ By default, *all columns are searchable*, if you don't want to used a column as 
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table attr="customers" entity="ECustomers" title="CUSTOMERS" keys="CUSTOMERID" 
+<o-table attr="customers" entity="ECustomers" keys="CUSTOMERID" sort-columns="SURNAME:DESC"
   columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
   visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
-  sort-columns="SURNAME:DESC" 
   query-on-init="true" query-rows="6" quick-filter="yes" insert-table="yes">
 ...
   <o-table-column attr="SURNAME" orderable="yes" searchable="no" type="string">

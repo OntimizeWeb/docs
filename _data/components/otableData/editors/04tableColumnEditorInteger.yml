@@ -3,7 +3,42 @@ directive : "o-table-cell-editor-integer"
 class: "OTableCellEditorIntegerComponent"
 
 extends : "OBaseTableCellEditor"
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    attributes: ["required", "show-placeholder", "label"]
+  }
+]
 
-attributes: []
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
+  }
+]
+
+attributes: [
+  {
+  name: "min", 
+  type: "number ",
+  default : "",
+  required : "",
+  description : "Minimum value"
+  },
+   {
+  name: "max", 
+  type: "number ",
+  default : "",
+  required : "",
+  description : "Maximum value"
+  },
+   {
+  name: "step", 
+  type: "number ",
+  default : "1",
+  required : "",
+  description : "Number interval"
+  }
+]
 
 title : "OTableCellEditorInteger"

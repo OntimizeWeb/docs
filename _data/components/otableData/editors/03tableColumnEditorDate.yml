@@ -4,6 +4,20 @@ class: "OTableCellEditorDateComponent"
 
 extends : "OBaseTableCellEditor"
 
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    attributes: ["required", "show-placeholder", "label"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
+  }
+]
+
 attributes: [{
   name: "format",
   type: "string",

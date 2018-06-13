@@ -4,8 +4,23 @@ class: "OTableCellEditorTextComponent"
 
 extends : "OBaseTableCellEditor"
 
-attributes: [{
-  name: "required"
-}]
+
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    attributes: ["required", "show-placeholder", "label"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
+  }
+]
+
+#attributes: [{
+#  name: "required"
+#}]
 
 title : "OTableCellEditorText"

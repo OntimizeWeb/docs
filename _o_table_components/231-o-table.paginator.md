@@ -3,11 +3,11 @@ permalink: /components/table/paginator/
 title: "Pagination"
 ---
 
-By default, the table is paginating  but you want it to be add `pagination-controls= "no"` in `o-table` selector.
+By default, the table is paginating  but if you want it not to be, add `pagination-controls= "no"` in `o-table` selector.
 
-You can configure the pagination by adding the selector `<o-table-paginator>` after the table.
+You can configure the pagination by adding the selector `o-table-paginator` inside the table. For more information see the API.
 
-In this section we are specifing how to define a paginator for the table.
+Below is an example of how to define a paginator for the table.
 
 <h3 class="grey-color">Example</h3>
 
@@ -19,10 +19,8 @@ In this section we are specifing how to define a paginator for the table.
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
   <o-table-button label="My button" icon="account_circle"></o-table-button>
-
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
-  ...
   <o-table-paginator page-size="20"></o-table-paginator>
 </o-table>
 ```

@@ -1,9 +1,45 @@
 directive : "o-table-cell-editor-real"
 
-class: "OTableCellEditorDateComponent"
+class: "OTableCellEditorRealComponent"
 
-extends : "OTableCellEditorRealComponent"
+extends : "OBaseTableCellEditor"
 
-attributes: []
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    attributes: ["required", "show-placeholder", "label"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
+  }
+]
+
+attributes: [
+  {
+  name: "min", 
+  type: "number ",
+  default : "",
+  required : "",
+  description : "Minimum value"
+  },
+   {
+  name: "max", 
+  type: "number ",
+  default : "",
+  required : "",
+  description : "Maximum value"
+  },
+   {
+  name: "step", 
+  type: "number ",
+  default : "0.01",
+  required : "",
+  description : "Number interval"
+  }
+]
 
 title : "OTableCellEditorReal"
