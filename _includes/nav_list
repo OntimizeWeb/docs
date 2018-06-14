@@ -82,7 +82,13 @@
 
         {% if nav.children != null %}
         <ul class="category-components-list">
-          {% for child in nav.children %}
+          {% if include.nav == 'components' %}
+            {% assign childrenNav = nav.children | sort:'title'%}
+          {% else %}
+            {% assign childrenNav = nav.children %}
+          {% endif %}
+
+          {% for child in childrenNav %}
             {% comment %}internal/external URL check{% endcomment %}
             {% if child.url contains "://" %}
               {% assign domain = "" %}
