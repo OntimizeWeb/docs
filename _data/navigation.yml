@@ -167,6 +167,11 @@ components:
             url: '/components/table/paginator/'
           - title: "Table context menu"
             url: '/components/table/contextmenu/'
+          - title: "OBaseTableCellEditor"
+            url: '/components/table/obasetablecelleditor/'
+          - title: "OBaseTableCellEditor"
+            url: '/components/table/obasetablecellrenderer/'
+
       - title : "List"
         url: /components/o-list.component/
       - title : "Tree"

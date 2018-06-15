@@ -14,6 +14,27 @@
     <p><strong class="grey-color">Directive:</strong> {{ componentAPI.directive }}</p>
   {% endif %}
 
+  {% if componentAPI.inherit_properties %}
+  <h3 class="grey-color">Inherited properties</h3>
+  <ul>
+    {% assign inherit_properties = componentAPI.inherit_properties %}
+
+    {% for inheritedObj in inherit_properties %}
+    <li>
+        from <a href="{{ base_path }}/components/{{inheritedObj.path}}/" rel="permalink">{{ inheritedObj.component }}:</a>
+        <ul class="attributes-list">
+           
+            {% assign sortedInheritedProperties = (inheritedObj.properties | sort: 'name') %}
+            {% for inheritedAttr in sortedInheritedProperties %}
+              <li> {{ inheritedAttr.name }} </li>
+            {% endfor %}
+          </ul>
+    </li>
+
+    {% endfor %}
+  </ul>
+{% endif %}
+
   {% if componentAPI.inheritedAttributes %}
     <h3 class="grey-color">Inherited inputs</h3>
     <ul>

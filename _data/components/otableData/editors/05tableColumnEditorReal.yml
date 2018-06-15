@@ -7,6 +7,7 @@ extends : "OBaseTableCellEditor"
 inheritedAttributes: [
   {
     component: "OBaseTableCellEditor",
+    path: "table/obasetablecelleditor",
     attributes: ["required", "show-placeholder", "label"]
   }
 ]
@@ -14,6 +15,7 @@ inheritedAttributes: [
 inheritedOutputs: [
   {
     component: "OBaseTableCellEditor",
+    path: "table/obasetablecelleditor",
     outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
   }
 ]

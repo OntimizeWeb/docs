@@ -1,7 +1,5 @@
 {% include base_path %}
 
-
-
 {% if include.comp and site.data.components[include.comp] %}
   {% assign componentData = site.data.components[include.comp] %}
 {% elsif include.compFile %}
@@ -64,7 +62,7 @@
     ```
   {% endif %}
 
-  {{ content }}
+  {{ content | smartify | markdownify }}
 </div>
 
 <!-- API -->

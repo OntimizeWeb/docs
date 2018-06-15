@@ -2,16 +2,6 @@ class : "OBaseTableCellRenderer"
 
 #description : ""
 
-  
-
-outputs: [{
-  name : "onClick",
-  description: "Event triggered when component cell is clicked"
-},{
-  name : "onDoubleClick",
-  description: "Event triggered when component cell is double clicked"
-}]
-
 propertiesColumns: ["Name","Type",  "Description"]
 
 properties: [
