@@ -383,8 +383,8 @@
     required : "",
     description : "Separation character between <em>description-columns</em> values"
   },
-  "show-clear": {
-    name: "show-clear",
+  "clear-button": {
+    name: "clear-button",
     type: "no | false | yes | true",
     default: "no",
     description: "Indicates whether or not to show the clear button"

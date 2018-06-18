@@ -46,5 +46,5 @@ attributes: [{
 },{
   name: "sql-type"
 },{
-  name: "show-clear"
+  name: "clear-button"
 }]
