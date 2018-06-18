@@ -45,4 +45,6 @@ attributes: [{
   name: "tooltip-show-delay"
 },{
   name: "sql-type"
+},{
+  name: "clear-button"
 }]

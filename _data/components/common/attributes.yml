@@ -382,7 +382,11 @@
     default : "",
     required : "",
     description : "Separation character between <em>description-columns</em> values"
+  },
+  "clear-button": {
+    name: "clear-button",
+    type: "no | false | yes | true",
+    default: "no",
+    description: "Indicates whether or not to show the clear button"
   }
 }
-
-
