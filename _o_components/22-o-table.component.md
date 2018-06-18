@@ -6,50 +6,50 @@ comp: table
 
 <aside class="sidebar__right">
   <nav class="toc">
-    <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
+    <header><h4 class="nav__title"><i class="fa fa-file-alt"></i> On This Page</h4></header>
     <ul class="toc__menu" id="markdown-toc">
       <li><a href="#basic-example" id="markdown-toc-overview">Basic example</a>
         <ul>
-          <li><a href="#define-columns" id="markdown-toc-overview">1. Define columns</a></li>
-          <li><a href="#sorting">2. Sorting</a></li>
-          <li><a href="#pagination">3. Pagination</a></li>
+          <li><a href="#define-columns" id="markdown-toc-overview">Define columns</a></li>
+          <li><a href="#sorting">Sorting</a></li>
+          <li><a href="#pagination">Pagination</a></li>
         </ul>
       </li>
       <li><a href="#data-binding" id="markdown-toc-overview">Data binding</a>
         <ul>
-          <li><a href="#binding-to-local-data" id="markdown-toc-overview">1. Binding to local data</a></li>
-          <li><a href="#binding-to-remote-data">2. Binding to remote data</a></li>
+          <li><a href="#binding-to-local-data" id="markdown-toc-overview">Binding to local data</a></li>
+          <li><a href="#binding-to-remote-data">Binding to remote data</a></li>
         </ul>
       </li>
         <li><a href="#filtering">Filtering </a>
           <ul>
-            <li><a href="#general-filtering">1. Quick filter</a></li>
-            <li><a href="#filtering-by-columns">2. Filtering by columns</a></li>
-            <li><a href="#custom-filter">3. Custom filter</a></li>
+            <li><a href="#general-filtering">Quick filter</a></li>
+            <li><a href="#filtering-by-columns">Filtering by columns</a></li>
+            <li><a href="#custom-filter">Custom filter</a></li>
           </ul>
       </li>
       <li><a href="#rendering" id="markdown-toc-overview">Rendering</a>
         <ul>
-          <li><a href="#rendering">1. Default renders </a></li>
-          <li><a href="#customazing-template">2. Custom renders </a></li>
+          <li><a href="#rendering">Default renders </a></li>
+          <li><a href="#customazing-template">Custom renders </a></li>
         </ul>
       </li>
       <li><a href="#editing" id="markdown-toc-overview">Editing</a>
         <ul>
-          <li><a href="#default-editors">1. Default editors </a></li>
-          <li><a href="#custom-editors">2. Custom editors </a></li>
+          <li><a href="#default-editors">Default editors </a></li>
+          <li><a href="#custom-editors">Custom editors </a></li>
         </ul>
       </li>
       <li><a href="#checkbox-selection" id="markdown-toc-overview">Features</a>
         <ul>
-          <li><a href="#checkbox-selection">1. Checkbox selection </a></li>
-          <li><a href="#inside-the-form">2. Inside the form </a></li>
-          <li><a href="#fixing-position-of-the-footer">3. Fixing position of the footer </a></li>
-          <li><a href="#aggregates">4. Aggregates </a></li>
-          <li><a href="#calculated-columns">5. Calculated columns </a></li>
-          <li><a href="#table-options" id="markdown-toc-overview">6. Table options</a></li>
-          <li><a href="#table-buttons" id="markdown-toc-overview">7. Table buttons</a></li>
-          <li><a href="#exporting" id="markdown-toc-overview">8. Exporting</a></li>
+          <li><a href="#checkbox-selection">Checkbox selection </a></li>
+          <li><a href="#inside-the-form">Inside the form </a></li>
+          <li><a href="#fixing-position-of-the-footer">Fixing position of the footer </a></li>
+          <li><a href="#aggregates">Aggregates </a></li>
+          <li><a href="#calculated-columns">Calculated columns </a></li>
+          <li><a href="#table-options" id="markdown-toc-overview">Table options</a></li>
+          <li><a href="#table-buttons" id="markdown-toc-overview">Table buttons</a></li>
+          <li><a href="#exporting" id="markdown-toc-overview">Exporting</a></li>
         </ul>
       </li>
     </ul>
