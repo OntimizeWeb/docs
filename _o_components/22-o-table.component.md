@@ -74,10 +74,11 @@ If the table also is *inside a form*, the `attr` property is required for regist
 ![Table component]({{ "/images/components/tabla/basic-example-table.png" | absolute_url }}){: .comp-example-img}
 
 
-
 {% for post in site.o_table_components %}
-  {% include archive-table.md %}
+  {% include archive-table.html %}
 {% endfor %}
+
+
 
 
 ## Demo

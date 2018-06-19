@@ -1,6 +1,7 @@
 ---
 permalink: /components/table/options/
 title: "Data binding"
+comp: "o-table"
 ---
 
 The o-table component supports data binding and you can command the component to display data either from *local* or *remote* data storage
@@ -12,20 +13,19 @@ For local data binding you simply need to supply an array of Typpescript objects
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table fxFill #table attr="accounts" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"  layout-padding title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes"
-      insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
-      <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
-      <o-table-column attr="NUMCARD" title="NUMCARD">
-        <o-table-column-renderer-cardtype></o-table-column-renderer-cardtype>
-      </o-table-column>
-      <o-table-column attr="TOTALCREDIT" type="currency" title="TOTALCREDIT" thousand-separator="." decimal-separator="," currency-symbol="€"
-        currency-symbol-position="right"></o-table-column>
-      <o-table-column attr="TOTALREADY" title="TOTALREADY">
-        <o-table-column-renderer-totalready></o-table-column-renderer-totalready>
-      </o-table-column>
-      <o-table-column attr="BALANCE" title="BALANCE">
-        <o-table-column-renderer-balance></o-table-column-renderer-balance>
-      </o-table-column>
+
+ <o-table attr="accounts" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" title="ACCOUNTS" [static-data]="getStaticData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+  <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
+  <o-table-column attr="NUMCARD" title="NUMCARD">
+    <o-table-column-renderer-cardtype></o-table-column-renderer-cardtype>
+  </o-table-column>
+  <o-table-column attr="TOTALCREDIT" type="currency" title="TOTALCREDIT" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"></o-table-column>
+  <o-table-column attr="TOTALREADY" title="TOTALREADY">
+    <o-table-column-renderer-totalready></o-table-column-renderer-totalready>
+  </o-table-column>
+  <o-table-column attr="BALANCE" title="BALANCE">
+    <o-table-column-renderer-balance></o-table-column-renderer-balance>
+  </o-table-column>
 </o-table>
 ```
 

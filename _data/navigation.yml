@@ -93,36 +93,54 @@ docs:
 components:
   - title: Input
     children:
+      - title: "Overview"
+        url: /components/input/overview/
+        order: "1"
       - title: "Text"
         url: /components/input/text/
+        order: "2"
       - title: "Integer"
         url: /components/input/integer/
+        order: "2"
       - title: "Real"
         url: /components/input/real/
+        order: "2"
       - title: "Percent"
         url: /components/input/percent/
+        order: "2"
       - title: "Currency"
         url: /components/input/currency/
+        order: "2"
       - title: "Date"
         url: /components/input/date/
+        order: "2"
       - title: "NIF"
         url: /components/input/nif/
+        order: "2"
       - title: "Email"
         url: /components/input/email/
+        order: "2"
       - title: "Password"
         url: /components/input/password/
+        order: "2"
       - title: "Textarea"
         url: /components/input/textarea/
+        order: "2"
       - title: "HTML"
         url: /components/input/html/
+        order: "2"
       - title: "File"
         url: /components/input/file/
+        order: "2"
       - title: "Checkbox"
         url: /components/input/checkbox/
+        order: "2"
       - title : "Combo"
         url: /components/input/combo/
+        order: "2"
       - title: "List picker"
         url: /components/input/listpicker/
+        order: "2"
         children :
           - title: "List picker dialog"
             url: /listpicker/listpickerdialog/

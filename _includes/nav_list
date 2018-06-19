@@ -83,7 +83,9 @@
         {% if nav.children != null %}
         <ul class="category-components-list">
           {% if include.nav == 'components' %}
-            {% assign childrenNav = nav.children | sort:'title'%}
+          
+          {% assign childrenSortTitle =  nav.children | sort: "title" %}
+          {% assign childrenNav = childrenSortTitle | sort: "order" %}
           {% else %}
             {% assign childrenNav = nav.children %}
           {% endif %}

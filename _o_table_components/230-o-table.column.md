@@ -7,7 +7,7 @@ To define a table, it is necessary to define the columns
 
 You can be defined it as follows:
 - In the input `columns`, adding the columns separated by ';'.
-- Using the `o-table-column` selector. For more information see the API. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them.
+- Using the `o-table-column` selector. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the API.
 
 With `visible-columns` you can indicate which columns we want to be visible
 

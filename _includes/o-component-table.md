@@ -69,7 +69,7 @@
 <div id="api" class="o-tabcontent">
   <aside class="sidebar__right">
     <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
+      <header><h4 class="nav__title"><i class="fa fa-file-alt"></i> On This Page</h4></header>
       <ul class="toc__menu" id="markdown-toc">
         <li><a>Directives</a>
           <ul>

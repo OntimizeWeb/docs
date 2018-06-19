@@ -7,11 +7,11 @@ By default, the table will place the values of your data into the cell as simple
 
 **1.** Do nothing, simple strings get used to display the table.
 
-**2.** Use one of cell renderer predefined. The predefined types are *boolean*, *real*, *currency*, *date*, *image*, *percentage* and *string*. If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/components/table/renderers/#default-renderers).
+**2.** Use one of cell renderer predefined. The predefined types are *boolean*, *real*, *currency*, *date*, *image*, *percentage* and *string*. If a column haven't type will be *string*. you can find all information [here](#default-renders).
 
 **3.** Use equivalent code.
 
-**4.** Custom renderer. Below is an example but you can find all information [here]({{ base_path }}/docs/components/table/renderers/#custom-renderers).
+**4.** Custom renderer. Below is an example but you can find all information [here](#custom-renderers).
 
 
 For example:
@@ -38,8 +38,44 @@ For example:
 </o-table-column>
 ```
 
+## Default renders
+The predefined types are *boolean*, *date*, *currency*,, *image* ,*integer*,  *percentage*, *real*,*service* and *string*. If a column haven't type will be *string*. you can find all information For more information see the API.
 
+#### Boolean
 
+ ```html
+<o-table-column attr="COMMISSION" title="COMMISSION">
+  <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon"
+    boolean-type="string"></o-table-cell-renderer-boolean>
+</o-table-column>
+  ```
+
+#### Date 
+```html 
+<o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
+```
+
+#### Currency
+```html 
+<o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator=","  
+  width="18%"></o-table-column>```
+
+#### Image
+```html
+ <o-table-column attr="PHOTO" orderable="no" searchable="no">
+        <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+  </o-table-column>
+````
+
+#### Integer
+  ```html
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
+  ````
+
+#### Percentage
+```html
+  <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+```
 ## Custom renders
 
 To create a custom render, you need to create a new component to display custom renderer information and place this render in the content of cell.
@@ -86,13 +122,12 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
      getCellData(cellvalue: any,rowvalue) {
        return `rowvalue['SURNAME'].toUpperCase()., .rowvalue[NAME]`;
      }
-
 }
 ```
 
 Here's how you might begin in your file .html:
 
-- Your component must start ```<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">``` and end ```</ng-template>```.
+- Your component must start *<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">* and end *</ng-template>*.
 The *let* keyword declares a template input variable that you reference within the template. The input variables are *cellvalue* and *rowvalue*. The parser translates let cellvalue and let rowvalue into variables named, *let-cellvalue* and *let-rowvalue*.
 
 
@@ -100,7 +135,7 @@ The o-table-cell-renderer-name.html file is as follows:
 
 ```html
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-  {% raw %}{{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}{% endraw %}
+  {{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}
 </ng-template>
 ```
 

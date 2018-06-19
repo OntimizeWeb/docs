@@ -7,6 +7,8 @@ By default, the table is paginating  but if you want it not to be, add `paginati
 
 You can configure the pagination by adding the selector `o-table-paginator` inside the table. For more information see the API.
 
+You can also configure the number of records initially displayed with `query-rows` attribute.
+
 Below is an example of how to define a paginator for the table.
 
 <h3 class="grey-color">Example</h3>
