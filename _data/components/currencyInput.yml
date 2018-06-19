@@ -2,9 +2,9 @@ directive : "o-currency-input"
 
 inheritedAttributes: [
   {
-    component: "o-text-input",
-    path: "input/text",
-    attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay", "clear-button"]
+    component: "FormDataComponent",
+    path: "input/overview",
+    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
   },
   {
     component: "o-integer-input",

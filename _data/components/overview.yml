@@ -1,0 +1,95 @@
+class : FormDataComponent
+
+
+propertiesColumns: ["Name","Type",  "Description"]
+
+properties: [
+  {
+    name: "elementRef",
+    type: "property",
+    description : "Name of the column"
+  }]
+
+
+
+attributes: [{
+  name: "attr"
+},{
+  name: "label"
+},{
+  name: "data"
+},{
+  name: "automatic-binding"
+},{
+  name: "automatic-registering"
+},{
+  name: "enabled"
+},{
+  name: "required"
+},{
+  name: "sql-type"
+},{
+  name: "tooltip"
+},{
+  name: "tooltip-position"
+},{
+  name: "tooltip-show-delay"
+},
+{
+   name: "clear-button"
+}]
+
+
+methods: [{
+  name: "getSQLType()",
+  type: "method", 
+  description : "Return the code of sqltype of the input.",
+  returns: "number"
+},{
+  name: "setValue()",
+  type: "method", 
+  parameters : "any",
+  description : "Set value of the component."
+},{
+  name: "getValue()",
+  type: "method", 
+  description : "Return the selected items of the component.",
+  returns: "any"
+},{
+  name: "getFormGroup()",
+  type: "method", 
+  description : "Return the form group of the input.",
+  returns: "FormControl"
+},{
+  name: "getFormControl()",
+  type: "method",
+  returns: "FormControl",
+  description : "Return the form cpntrol of the input."
+},{
+  name: "hasError()",
+  type: "method",
+  parameters : "string",
+  returns: "boolean",
+  description : "Set the selected items of the component."
+},{
+  name: "isAutomaticBinding()",
+  type: "method", 
+  description : "Return the input is automatic binding.",
+  returns: "boolean"
+},{
+  name: "isAutomaticRegistering()",
+  type: "method", 
+  description : "Return the input is automatic registering.",
+  returns: "boolean"
+},{
+  name: "getSelectedItems()",
+  type: "method", 
+  description : "Return the selected items of the component.",
+  returns: "any[]"
+},{
+  name: "setSelectedItems()",
+  type: "method",
+  parameters : "any[]",
+  description : "Set the selected items of the component."
+}]
+

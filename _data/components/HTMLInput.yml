@@ -1,4 +1,12 @@
 directive : "o-html-input"
+inheritedAttributes: [
+  {
+    component: "FormDataComponent",
+    path: "input/overview",
+    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
+  }
+]
+  
 
 outputs: [{
   name : "onChange",
@@ -12,18 +20,6 @@ outputs: [{
 }]
 
 attributes: [{
-  name: "attr"
-},{
-  name: "label"
-},{
-  name: "automatic-binding"
-},{
-  name: "automatic-registering"
-},{
-  name: "enabled"
-},{
-  name: "required"
-},{
   name: "min-length",
   type: "number",
   default : "",
@@ -35,8 +31,4 @@ attributes: [{
   default : "",
   required : "",
   description : "Maximum number of required characters"
-},{
-  name: "data"
-},{
-  name: "sql-type"
 }]

@@ -1,6 +1,13 @@
 directive : "o-checkbox"
 
 
+inheritedAttributes: [
+  {
+    component: "FormDataComponent",
+    path: "input/overview",
+    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
+  }
+]
   
 
 outputs: [{
@@ -10,26 +17,3 @@ outputs: [{
 
  
 
-attributes: [{
-  name: "attr"
-},{
-  name: "label"
-},{
-  name: "data"
-},{
-  name: "automatic-binding"
-},{
-  name: "automatic-registering"
-},{
-  name: "enabled"
-},{
-  name: "required"
-},{
-  name: "sql-type"
-},{
-  name: "tooltip"
-},{
-  name: "tooltip-position"
-},{
-  name: "tooltip-show-delay"
-}]
