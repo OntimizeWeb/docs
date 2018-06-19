@@ -1,14 +1,8 @@
 ---
 permalink: /components/table/aggregate/
-title: "Columns aggregate"
+title: "Aggregates"
 ---
-
-In this section we are specifing how to define an aggregate column.
-
-{% capture tableColumnCapture %}
-{% include o-component-single.md comp="tableColumnAggregate" %}
-{% endcapture %}
-{{ tableColumnCapture | replace: '    ', ''}}
+Oftentimes when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. O-table has support for the mostly used aggregate functions (count,sum,avg,min,max).
 
 
 <h3 class="grey-color">Example</h3>

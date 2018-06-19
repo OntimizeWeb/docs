@@ -2,13 +2,8 @@
 permalink: /components/table/calculated/
 title: "Calculated columns"
 ---
-
-In this section we are specifing how to define an calculated column.
-
-{% capture tableColumnCapture %}
-{% include o-component-single.md comp="tableColumnCalculated" %}
-{% endcapture %}
-{{ tableColumnCapture | replace: '    ', ''}}
+---
+O-table suppport calculated columns, that is, when users would like to be able to show another column result of an operation.
 
 
 <h3 class="grey-color">Example</h3>
@@ -36,10 +31,9 @@ In the following example, two calculated columns are defined that perform the sa
     <o-table-column-calculated attr="BENEFIT2" title="BENEFIT2"  type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
       currency-symbol-position="right" [operation-function]="calculateBenefit" > </o-table-column-calculated>
 
- 
+
   </o-table>
 ```
-
 
 <h3 class="grey-color">Typescript code</h3>
 

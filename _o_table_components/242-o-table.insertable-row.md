@@ -2,6 +2,8 @@
 permalink: /components/table/insertableRow/
 title: "Insertable row"
 ---
+If you want to enable insert rows, you have to add the `o-table-insertable-row` selector into the o-table componente.
+In this selector you can define the columns 
 
 In this section we are specifing how to define an insertable row.
 
