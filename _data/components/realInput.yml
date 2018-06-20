@@ -40,6 +40,4 @@ attributes: [{
   description : "Maximum number of decimals required"
 },{
   name: "decimal-separator"
-},{
-  name: "decimal-digits"
 }]
