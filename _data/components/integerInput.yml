@@ -1,31 +1,29 @@
 directive : "o-integer-input"
 
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  }
-]
-  
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+}]
+
 attributes: [{
   name: "min",
   type: "number",
   default : "",
   required : "",
-  description : "Minimum value required"
+  description : "Specifies a minimum value for the component"
 },{
   name: "max",
   type: "number",
   default : "",
   required : "",
-  description : "Maximum value required"
+  description : "Specifies the maximum value for the component"
 },{
   name: "step",
   type: "number",
   default : "1",
   required : "",
-  description : "Increase / decrease unit value"
+  description : "Specifies the numeric interval for the incrementing / decrementing the component value"
 },{
   name: "grouping"
 },{

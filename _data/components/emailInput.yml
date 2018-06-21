@@ -1,22 +1,17 @@
 directive : "o-email-input"
 
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  },
-  {
-    component: "o-text-input",
-    path: "input/text",
-    attributes: ["min-length", "max-length"]
-  }
-]
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+},{
+  component: "o-text-input",
+  path: "input/text",
+  attributes: ["min-length", "max-length"]
+}]
 
-inheritedOutputs: [
-  {
-    component: "o-text-input",
-    path: "input/text",
-    outputs: ["onChange", "onFocus", "onBlur"]
-  }
-]
+inheritedOutputs: [{
+  component: "o-text-input",
+  path: "input/text",
+  outputs: ["onChange", "onFocus", "onBlur"]
+}]

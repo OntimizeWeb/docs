@@ -1,12 +1,11 @@
 directive : "o-file-input"
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  }
-]
-  
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "enabled", "required", "width", "read-only"]
+}]
+
 attributes: [{
   name: "service"
 },{
@@ -56,8 +55,6 @@ attributes: [{
   required: "",
   description: "Use this parameter to send extra information to the server side in the upload file request"
 }]
-
-  
 
 outputs: [{
   name : "onChange",

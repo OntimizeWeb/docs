@@ -1,34 +1,17 @@
 directive : "o-html-input"
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  }
-]
-  
 
-outputs: [{
-  name : "onChange",
-  description: "Event triggered when component input element changes"
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "sql-type", "width", "read-only"]
 },{
-  name : "onFocus",
-  description: "Event triggered when component input gains the focus"
-},{
-  name : "onBlur",
-  description: "Event triggered when component input loses the focus"
+  component: "o-text-input",
+  path: "input/text",
+  attributes: [ "min-length", "max-length"]
 }]
 
-attributes: [{
-  name: "min-length",
-  type: "number",
-  default : "",
-  required : "",
-  description : "Minimum number of required characters"
-},{
-  name: "max-length",
-  type: "number",
-  default : "",
-  required : "",
-  description : "Maximum number of required characters"
+inheritedOutputs: [{
+  component: "o-text-input",
+  path: "input/text",
+  outputs: ["onChange", "onFocus", "onBlur"]
 }]

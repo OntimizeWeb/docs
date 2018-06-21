@@ -1,19 +1,12 @@
 directive : "o-checkbox"
 
-
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  }
-]
-  
-
-outputs: [{
-  name : "onChange",
-  description: "Event triggered when component value changes"
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "read-only"]
 }]
 
- 
-
+outputs: [{
+name : "onChange",
+description: "Event triggered when component value changes"
+}]

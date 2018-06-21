@@ -1,30 +1,20 @@
 directive : "o-real-input"
 
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  },
-  {
-    component: "o-text-input",
-    path: "input/text",
-    attributes: [ "min-length", "max-length"]
-  },
-  {
-    component: "o-integer-input",
-    path: "input/integer",
-    attributes: ["min", "max"]
-  }
-]
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+},{
+  component: "o-integer-input",
+  path: "input/integer",
+  attributes: ["min", "max", "step", "grouping", "thousand-separator", "locale"]
+}]
 
-inheritedOutputs: [
-  {
-    component: "o-text-input",
-    path: "input/text",
-    outputs: ["onChange", "onFocus", "onBlur"]
-  }
-]
+inheritedOutputs: [{
+  component: "o-text-input",
+  path: "input/text",
+  outputs: ["onChange", "onFocus", "onBlur"]
+}]
 
 attributes: [{
   name: "min-decimal-digits",
@@ -38,12 +28,6 @@ attributes: [{
   default : "2",
   required : "",
   description : "Maximum number of decimals required"
-},{
-  name: "step",
-  type: "number",
-  default : "0.01",
-  required : "",
-  description : "Increase / decrease unit value"
 },{
   name: "decimal-separator"
 }]

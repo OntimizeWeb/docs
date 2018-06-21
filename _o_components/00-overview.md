@@ -1,16 +1,17 @@
 ---
 permalink : /components/input/overview/
-title : "OFormDataComponent"
+title : "Form data components"
 comp: "overview"
 ---
+{% include base_path %}
 {% include toc %}
 
-All inputs extend from FormDataComponent class.  This and other attributes are explained on the **API** section of this page.
+Form data components are components that must be placed inside a [form]({{ base_path }}/docs/components/form/){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, html, integer, list picker, NIF, password, percent, real, text and textarea.
 
-Ontimize web supports *checkbox, combo, currency, date, email, file, html, integer, list picker, NIF, password, percent, real, text and textarea*.
+All input components in **OntimizeWeb** extend the `OFormDataComponent` class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the **API** section of this page.
 
 ## Data
-You can set value with the `data` input or with method data().
+You can modify value by setting the `data` attribute or calling the `setData` method.
 
 ```html
  <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
@@ -23,7 +24,7 @@ You can set value with the `data` input or with method data().
 ```
 
 ## Validation
-The input shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.
+The input shows automatically an error message when the `required` attribute is set to **yes** and there is no value on the input.
 ## Enabled 
 
 ```html
@@ -36,8 +37,7 @@ Yo can configure for an input to be reandonly `read-only="yes"`.
     <o-text-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()"></o-text-input>
 ```
 ## Tooltip
-To create a tooltip, add the `tooltip="tooltip"` attribute to an element. By default, the tooltip will appear on bottom of the element. Use `tooltip-position` attribute to set the position of the tooltip on *top, bottom, left or the right* side of the element.
-
+To create a tooltip, add the `tooltip` attribute to an element. By default, the tooltip will appear on bottom of the element. Use `tooltip-position` attribute to set the position of the tooltip on **top**, **bottom**, **left** or the **right** side of the element.
 
 ```html
  <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"

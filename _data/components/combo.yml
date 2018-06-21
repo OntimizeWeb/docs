@@ -1,12 +1,10 @@
 directive : "o-combo"
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  }
-]
-  
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+}]
 
 outputs: [{
   name : "onChange",
@@ -21,8 +19,6 @@ attributes: [{
   name: "entity"
 },{
   name: "columns"
-},{
-  name: "keys"
 },{
   name: "multiple",
   type: "no | false | yes | true",
@@ -64,7 +60,7 @@ attributes: [{
 },{
   name: "query-on-bind"
 },{
-  name: "sql-type"
+  name: "query-on-event"
 },{
   name: "service-type"
 },{
@@ -73,6 +69,8 @@ attributes: [{
   default : "",
   required : "",
   description : ""
+},{
+  name: "query-method"
 }]
 
 methods: [{

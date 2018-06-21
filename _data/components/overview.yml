@@ -1,16 +1,12 @@
-class : FormDataComponent
+class : "FormDataComponent"
 
+propertiesColumns: ["Name", "Type", "Description"]
 
-propertiesColumns: ["Name","Type",  "Description"]
-
-properties: [
-  {
-    name: "elementRef",
-    type: "property",
-    description : "Name of the column"
-  }]
-
-
+properties: [{
+  name: "elementRef",
+  type: "property",
+  description : "Name of the column"
+}]
 
 attributes: [{
   name: "attr"
@@ -34,16 +30,25 @@ attributes: [{
   name: "tooltip-position"
 },{
   name: "tooltip-show-delay"
-},
-{
+},{
    name: "clear-button"
+},{
+  name: "width",
+  type: "string ",
+  default : "",
+  required : "",
+  description : "Indicates the width of input component in pixels (px) or percentage (%)"
+},{
+  name: "read-only",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether the input value is modifiable or not. This attribute may be ignored depending on the value of the `editable-detail` attribute of its parent [`o-form` component](https://ontimizeweb.github.io/docs/components/o-form.component/){:target='_blank'}"
 }]
-
 
 methods: [{
   name: "getSQLType()",
   type: "method", 
-  description : "Return the code of sqltype of the input.",
+  description : "Returns the code of sqltype of the input.",
   returns: "number"
 },{
   name: "setValue()",
@@ -53,18 +58,18 @@ methods: [{
 },{
   name: "getValue()",
   type: "method", 
-  description : "Return the selected items of the component.",
+  description : "Returns the selected items of the component.",
   returns: "any"
 },{
   name: "getFormGroup()",
   type: "method", 
-  description : "Return the form group of the input.",
+  description : "Returns the form group of the input.",
   returns: "FormControl"
 },{
   name: "getFormControl()",
   type: "method",
   returns: "FormControl",
-  description : "Return the form cpntrol of the input."
+  description : "Returns the form control of the input."
 },{
   name: "hasError()",
   type: "method",
@@ -74,17 +79,17 @@ methods: [{
 },{
   name: "isAutomaticBinding()",
   type: "method", 
-  description : "Return the input is automatic binding.",
+  description : "Returns the input is automatic binding.",
   returns: "boolean"
 },{
   name: "isAutomaticRegistering()",
   type: "method", 
-  description : "Return the input is automatic registering.",
+  description : "Returns the input is automatic registering.",
   returns: "boolean"
 },{
   name: "getSelectedItems()",
   type: "method", 
-  description : "Return the selected items of the component.",
+  description : "Returns the selected items of the component.",
   returns: "any[]"
 },{
   name: "setSelectedItems()",
@@ -92,4 +97,3 @@ methods: [{
   parameters : "any[]",
   description : "Set the selected items of the component."
 }]
-

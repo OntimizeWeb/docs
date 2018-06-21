@@ -1,11 +1,10 @@
 directive : "o-list-picker"
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  }
-]
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "sql-type", "width", "read-only"]
+}]
   
 attributes: [{
   name: "static-data"
@@ -15,8 +14,6 @@ attributes: [{
   name: "entity"
 },{
   name: "columns"
-},{
-  name: "keys"
 },{
   name: "value-column"
 },{
@@ -46,7 +43,9 @@ attributes: [{
 },{
   name: "query-on-bind"
 },{
-  name: "sql-type"
+  name: "query-on-event"
+},{
+  name: "query-method"
 },{
   name: "service-type"
 },{
@@ -61,9 +60,17 @@ attributes: [{
   default : "",
   required : "",
   description : "List picker dialog height"
+},{
+  name: "query-rows"
 }]
 
 outputs: [{
   name : "onChange",
   description: "Event triggered when component selected value changes"
+},{
+  name : "onFocus",
+  description: "Event triggered when component gains the focus"
+},{
+  name : "onBlur",
+  description: "Event triggered when component loses the focus"
 }]

@@ -28,7 +28,6 @@ The data array can be provided in two ways:
 </o-form>
 ```
 
-
 ## Multiple selection <span class='menuitem-badge'>new<span>
 
 The `o-combo` component by defaults to single-selection mode, but can be configured to allow multiple selection by setting the *multiple* property. This will allow the user to select multiple values at once. 
@@ -43,7 +42,7 @@ The `o-combo` component by defaults to single-selection mode, but can be configu
 </o-form>
 ```
 
-## Multiple selection - Customizing the trigger label <span class='menuitem-badge'>new<span>
+### Customizing the trigger label
 
 If you want to display a custom trigger label inside a select, you must configured *multiple-trigger-label* property.
 

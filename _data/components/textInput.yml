@@ -1,21 +1,20 @@
 directive : "o-text-input"
-inheritedAttributes: [
-  {
-    component: "FormDataComponent",
-    path: "input/overview",
-    attributes: ["attr", "label", "tooltip","tooltipPosition","tooltipShowDelay","automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button"]
-  }
-]
-  
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+}]
+
 outputs: [{
   name : "onChange",
-  description: "Event triggered when component input element changes"
+  description: "Event triggered when component element changes"
 },{
   name : "onFocus",
-  description: "Event triggered when component input gains the focus"
+  description: "Event triggered when component gains the focus"
 },{
   name : "onBlur",
-  description: "Event triggered when component input loses the focus"
+  description: "Event triggered when component loses the focus"
 }]
 
 attributes: [{
@@ -23,11 +22,11 @@ attributes: [{
   type: "number",
   default : "",
   required : "",
-  description : "Minimum number of required characters"
+  description : "Specifies the minimum number of characters required in the component"
 },{
   name: "max-length",
   type: "number",
   default : "",
   required : "",
-  description : "Maximum number of required characters"
+  description : "Specifies the maximum number of characters allowed in the component"
 }]
