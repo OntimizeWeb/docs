@@ -19,14 +19,14 @@ inheritedAttributes: [
   {
     component: "o-real-input",
     path: "input/real",
-    attributes: ["min-decimal-digits", "max-decimal-digits"]
+    attributes: ["step", "min-decimal-digits", "max-decimal-digits"]
   }
 ]
 
 inheritedOutputs: [
   {
-    component: "o-real-input",
-    path: "input/real",
+    component: "o-text-input",
+    path: "input/text",
     outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]

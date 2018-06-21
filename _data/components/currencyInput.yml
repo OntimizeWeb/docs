@@ -14,7 +14,7 @@ inheritedAttributes: [
   {
     component: "o-real-input",
     path: "input/real",
-    attributes: ["min-decimal-digits", "max-decimal-digits"]
+    attributes: ["step", "min-decimal-digits", "max-decimal-digits"]
   }
 ]
 
@@ -23,7 +23,7 @@ attributes: [{
   type: "string",
   default : "euro (EUR)",
   required : "",
-  description : "Currency symbol (According to ISO 4217)"
+  description : "Currency code according to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes){:target='_blank'}"
 },{
   name: "currency-symbol-position",
   type: "left | right",
@@ -34,8 +34,8 @@ attributes: [{
 
 inheritedOutputs: [
   {
-    component: "o-real-input",
-    path: "input/real",
+    component: "o-text-input",
+    path: "input/text",
     outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]

@@ -20,8 +20,8 @@ inheritedAttributes: [
 
 inheritedOutputs: [
   {
-    component: "o-integer-input",
-    path: "input/integer",
+    component: "o-text-input",
+    path: "input/text",
     outputs: ["onChange", "onFocus", "onBlur"]
   }
 ]
@@ -38,6 +38,12 @@ attributes: [{
   default : "2",
   required : "",
   description : "Maximum number of decimals required"
+},{
+  name: "step",
+  type: "number",
+  default : "0.01",
+  required : "",
+  description : "Increase / decrease unit value"
 },{
   name: "decimal-separator"
 }]
