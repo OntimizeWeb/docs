@@ -30,7 +30,7 @@ The data array can be provided in two ways:
 
 ## Multiple selection <span class='menuitem-badge'>new<span>
 
-The `o-combo` component by defaults to single-selection mode, but can be configured to allow multiple selection by setting the *multiple* property. This will allow the user to select multiple values at once. 
+The `o-combo` doesn't allow multiple selection by default, you can configure the multiple selection by setting the value **yes** to the `multiple` attribute. This will allow the user to select multiple values at once. 
 
 ![Multiple selection]({{ "/images/components/inputs/o-combo-multiple.png" | absolute_url }}){: .comp-example-img}
 
@@ -42,9 +42,9 @@ The `o-combo` component by defaults to single-selection mode, but can be configu
 </o-form>
 ```
 
-### Customizing the trigger label
+### Customize the trigger label
 
-If you want to display a custom trigger label inside a select, you must configured *multiple-trigger-label* property.
+You can customize the combo label configuring the `multiple-trigger-label` attribute as in the example below.
 
 ![Multiple selection]({{ "/images/components/inputs/o-combo-multiple-trigger-label.png" | absolute_url }}){: .comp-example-img}
 
@@ -60,7 +60,7 @@ If you want to display a custom trigger label inside a select, you must configur
   </o-form>
 ```
 
-If you want to change the text by default, you must to added the traslation by this key 'INPUT.COMBO.MESSAGE_TRIGGER' in your bundle
+If you want to override the default trigger lable, add the entry `INPUT.COMBO.MESSAGE_TRIGGER` in your bundle with the desired text.
 
 ```html
  'INPUT.COMBO.MESSAGE_TRIGGER':' (+{0} others)'
