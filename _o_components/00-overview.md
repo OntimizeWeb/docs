@@ -25,14 +25,17 @@ You can modify value by setting the `data` attribute or calling the `setData` me
 
 ## Validation
 The input shows automatically an error message when the `required` attribute is set to **yes** and there is no value on the input.
+
 ## Enabled 
+The *enabled* mode is actived by default. You can disabled the input by setting `enabled='no'`.
 
 ```html
-   <o-text-input attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" " [data]="getValue()"></o-text-input>
+   <o-text-input attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()"></o-text-input>
 ```
 
 ## Read-only 
-Yo can configure for an input to be reandonly `read-only="yes"`.
+The *readonly* mode represents an element that is no longer editable by the user. You can configure for an input to be reandonly `read-only="yes"`.
+
  ```html
     <o-text-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()"></o-text-input>
 ```

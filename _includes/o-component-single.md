@@ -71,6 +71,10 @@
   {% if componentData.directive %}
     <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
   {% endif %}
+  {% if componentData.class %}
+    <p><strong class="grey-color">Class:</strong> {{ componentData.class }}</p>
+  {% endif %}
+
 
   {% if componentData.inheritedAttributes %}
     <h3 class="grey-color">Inherited inputs</h3>

@@ -60,7 +60,7 @@ You can customize the combo label configuring the `multiple-trigger-label` attri
   </o-form>
 ```
 
-If you want to override the default trigger lable, add the entry `INPUT.COMBO.MESSAGE_TRIGGER` in your bundle with the desired text.
+If you want to override the default trigger label, add the entry `INPUT.COMBO.MESSAGE_TRIGGER` in your bundle with the desired text.
 
 ```html
  'INPUT.COMBO.MESSAGE_TRIGGER':' (+{0} others)'
