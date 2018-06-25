@@ -222,7 +222,10 @@ components:
   - title: Menu
     children:
       - title: "Card menu layout"
-        url: /components/o-card-menu-layout.component/
+        url: /components/cardmenulayout/
+        children:
+          - title: "Card menu item"
+            url: /components/cardmenulayout/cardmenuitem/
       - title: "Bar menu"
         url: /components/o-bar-menu.component/
       - title: "Side menu"

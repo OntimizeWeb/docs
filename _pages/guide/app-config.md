@@ -130,10 +130,10 @@ items: [
 
 ### App layout
 
-The menu configuration returns the following sidenav menu layout when using the [o-app-layout]({{ base_path }}/components/applayout/) component:
+The menu configuration returns the following sidenav menu layout when using the [`o-app-layout`]({{ base_path }}/components/applayout/){:target="_blank"} component:
 
 ![image-center]({{ base_path }}/images/layouts/app-layout/app_layout_sidenav.PNG){: .align-center}
 
 ### Card menu layout
 
-The menu configuration returns the following menu cards when using the [o-card-menu-layout]({{ base_path }}/components/o-card-menu-layout.component/){:target="_blank"} component.
+The menu configuration returns the following menu cards when using the [`o-card-menu-layout`]({{ base_path }}/components/cardmenulayout/){:target="_blank"} component.
