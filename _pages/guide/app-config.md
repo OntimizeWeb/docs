@@ -130,7 +130,7 @@ items: [
 
 ### App layout
 
-The menu configuration returns the following sidenav menu layout when using the [o-app-layout]({{ base_path }}/components/o-app-layout.component/) component:
+The menu configuration returns the following sidenav menu layout when using the [o-app-layout]({{ base_path }}/components/applayout/) component:
 
 ![image-center]({{ base_path }}/images/layouts/app-layout/app_layout_sidenav.PNG){: .align-center}
 

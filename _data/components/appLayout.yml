@@ -1,36 +1,39 @@
-directive : "o-app-layout"
-
- 
+directive: "o-app-layout"
 
 attributes: [{
   name: "sidenav-opened",
   type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether or not to the sidenav is initially opened"
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to the sidenav is initially opened"
 },{
   name: "show-header",
   type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether or not to show an application header"
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show an application header"
 },{
   name: "show-user-info",
   type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether or not to show a component with logged user information"
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show a component with logged user information"
 },{
   name: "opened-sidenav-image",
   type: "string",
-  default : "",
-  required : "",
-  description : "Sidenav header image when it is opened"
+  default: "",
+  required: "",
+  description: "Sidenav header image when it is opened"
 },{
   name: "closed-sidenav-image",
   type: "string",
-  default : "",
-  required : "",
-  description : "Sidenav header image when it is closed"
+  default: "",
+  required: "",
+  description: "Sidenav header image when it is closed"
+},{
+  name: "use-flag-icons",
+  type: "no | false | yes | true",
+  default: "",
+  required: "",
+  description: "Indicates whether or not the language selector shows flags"
 }]
-

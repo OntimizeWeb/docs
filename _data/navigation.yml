@@ -210,7 +210,7 @@ components:
       - title: "Dialog"
         url: /components/o-dialog.component/
       - title: "App layout"
-        url: /components/o-app-layout.component/
+        url: /components/applayout/
       - title: "Form layout manager"
         url: /components/formlayoutmanager/
       - title: "Breadcrumb"
