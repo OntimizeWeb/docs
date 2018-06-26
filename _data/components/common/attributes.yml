@@ -158,7 +158,7 @@
     type: "no | false | yes | true",
     default: "no",
     required: "",
-    description: "Indicates whether or not to trigger query method when the filter generated from parent-keys is null"
+    description: "Indicates whether or not to trigger query method when the filter generated from parent-keys is null. The use of this attribute is not recommended when the component may request a big amount of information"
   },
   "query-on-init": {
     name: "query-on-init",
