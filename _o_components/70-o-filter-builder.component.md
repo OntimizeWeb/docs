@@ -60,7 +60,7 @@ In the following example there is a `o-form` component that contains two `o-text
     </o-row>
   </o-column>
 
-  <o-filter-builder #filterBuilder attr="thefilter" filters="NAME:EMPLOYEENAME;SURNAME:EMPLOYEESURNAME;EMPLOYEETYPEID" [target]="tableEmployees"
+  <o-filter-builder #filterBuilder attr="thefilter" filters="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID" [target]="tableEmployees"
     query-on-change="no" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
 
   <o-column title-label="{{ 'EMPLOYEES' | oTranslate }}">
