@@ -57,6 +57,8 @@
     {% endif %}
 
     {% for nav in navigation %}
+    
+
       {% assign activeClass = '' %}
       {% if activeCategory != nil and activeCategory.title == nav.title %}
             {% assign activeClass = 'active-component-category active-parent' %}
@@ -105,7 +107,7 @@
               {% assign active = "" %}
             {% endif %}
 
-            <li><a href="{{ domain }}{{ child.url }}" class="{{ active }}">{{ child.title }}</a></li>
+            <li><a href="{{ domain }}{{ child.url }}" class="{{ active }} {{child.class}}">{{ child.title }}</a></li>
           {% endfor %}
         </ul>
         {% endif %}

@@ -135,6 +135,10 @@
     transition: max-height .5s;
   }
 
+  .category-components-list li a.overview {
+    color: #000000;
+    padding-left: 10px;
+  }
   //&:hover .category-components-list,
   &.active-component-category .category-components-list {
     margin-bottom: inherit;
