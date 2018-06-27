@@ -25,7 +25,7 @@ The `o-form` component allows you to display data from the server and also inser
 
 ## Modes
 
-The `o-form` component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the [*detailf form*](#detail-form) section. The common description of the different form modes is the following:
+The `o-form` component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the [*detail form*](#detail-form) section. The common description of the different form modes is the following:
 
 ### Read only mode
 
