@@ -1,3 +1,5 @@
+class : "OTableComponent"
+
 directive : "o-table"
 
 attributes: [{
