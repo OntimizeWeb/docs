@@ -273,9 +273,11 @@ For example:
 </o-table-column>
 ```
 
+You can see examples of this section in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/custrenderer){:target="_blank"}.
+
 ### Default renders
 
-The predefined types are *boolean*, *date*, *currency*, *image* ,*integer*,  *percentage*, *real*,*service* and *string* and they are defined by the `type` property of o-table-column. If a column haven't type will be *string*. you can find all information. To consult all the parameters of the renderers see the API.
+The predefined types are *boolean*, *date*, *currency*, *image* ,*integer*,  *percentage*, *real*,*service* and *string* and they are defined by the `type` property of o-table-column. If a column haven't type will be *string*. You can find all information. To consult all the parameters of the renderers see the API.
 
 In the following example you can see different predefined renderers in the table
 
@@ -320,6 +322,7 @@ It is defined with `type="date"`. In the date renderer you can define format of 
 ```
 
 *Currency*
+
 It is defined with `type="currency"`.In the currency renderer you can format currency simbol with `currency-symbol` property and configure the position of currency symbol with `currency-symbol-position` property. All the attributes are explained on the **API** section of this page.
 
 ```html 
@@ -328,6 +331,7 @@ It is defined with `type="currency"`.In the currency renderer you can format cur
 ```
 
 *Image*
+
 It is defined with `type="image"`. In the image renderer you can configure whether or not to visualize image as an avatar with `avatar` property and you also configure type of image with `image-type` property. All the attributes are explained on the **API** section of this page.
 
 ```html
@@ -337,6 +341,7 @@ It is defined with `type="image"`. In the image renderer you can configure wheth
 ````
 
 *Integer*
+
 It is defined with `type="integer"` in *o-table-column* selector. All the attributes are explained on the **API** section of this page.
 
 ```html
@@ -374,8 +379,9 @@ Here's how you might begin in your file .ts:
 
 - Your component must extends ```OBaseTableCellRenderer```.
 
-- Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the <ng-template> contents with a TemplateRef and access the view container.
+- Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the ```<ng-template> ``` contents with a TemplateRef and access the view container.
 - In constructor you must add
+
 ```javascript
 constructor(protected injector: Injector) {
   super(injector);
@@ -424,9 +430,9 @@ The *let* keyword declares a template input variable that you reference within t
 The o-table-cell-renderer-name.html file is as follows:
 
 ```html
-<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-  {{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}
-</ng-template>
+  <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
+    {{ "getCellData(cellvalue, rowvalue)" }}
+  </ng-template>
 ```
 
 
@@ -438,8 +444,8 @@ The *o-table component* supports data editing operations (create, update, destro
 
 All you have to do to enable data editing capabilities for the component is to:
 <ul>
-<li>Include the table within an o-form component</li>
-<li>Configure data binding</li>
+  <li>Include the table within an o-form component</li>
+  <li>Configure data binding</li>
 </ul>
 
 If you need to disabled one operation, you can changing `insert-button= "no"`, `delete-button= "no"`.
@@ -450,14 +456,15 @@ Next we are specifing how to add a editor for a table column cell.
 
 By default, the table will no define a editor for your data into a cell. If you want to be able to edit that data you have to use a cell editor. So, for editing your values, you have the following options.
 
-**1.** Use one of the predefined cell editor. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
+**1.** Use one of the predefined cell editor, you should add `editable="yes"`. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
 
-If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/components/table/editors/#default-editors).
+If a column haven't type will be *string*. You can find all information [here]({{ base_path }}/components/table/#default-editors).
 
 **2.** Use equivalent code.
 
-**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/docs/components/table/editors/#custom-editors).
+**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/components/table/#custom-editors).
 
+You can see examples of this section in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/editor){:target="_blank"}.
 
 For example:
 
@@ -477,6 +484,75 @@ For example:
 </o-table-column>
 ```
 
+*Boolean*
+
+The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` componente inside the `o-table-column`. To consult all the parameters of the editor see the API.
+
+```html
+  <o-table-column attr="CLOSED" title="CLOSED">
+    <o-table-cell-editor-boolean true-value="1" false-value="0" boolean-type="number" (editionStarted)="editionStarted($event)"
+    (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-boolean>
+  </o-table-column>
+```
+```js
+ editionStarted(arg: any) {
+    console.log('editionStarted');
+    console.log(arg);
+  }
+
+  editionCancelled(arg: any) {
+    console.log('editionCancelled');
+    console.log(arg);
+  }
+
+  editionCommitted(arg: any) {
+    console.log('editionCommitted');
+    console.log(arg);
+  }
+```
+*Date*
+
+The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add 
+`type="date" editable="yes"` in `o-table-column` componente. To consult all the parameters of the editor see the API.
+
+```html
+  <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes" (editionStarted)="editionStarted($event)"
+        (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
+  </o-table-column>
+```
+
+*Integer*
+
+The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` componente inside the `o-table-column`. To consult all the parameters of the editor see the API.
+
+```html
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
+    <o-table-cell-editor-integer (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)">
+        </o-table-cell-editor-integer>
+  </o-table-column>
+```
+
+*Real*
+
+The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add 
+`type="currency" editable="yes"` in `o-table-column` componente. To consult all the parameters of the editor see the API.
+ 
+ ```html
+ <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
+        currency-symbol="€" currency-symbol-position="right" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
+        (editionCommitted)="editionCommitted($event)">
+  </o-table-column>
+ ```
+
+*Text*
+
+The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` componente inside the `o-table-column`. To consult all the parameters of the editor see the API.
+
+ ```html 
+    <o-table-column attr="NAME" title="NAME">
+        <o-table-cell-editor-text (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-text>
+    </o-table-column>
+  ```
 
 ### Custom editors
 
@@ -486,8 +562,9 @@ Here's how you might begin in your file .ts:
 
 - Your component must extends ```OBaseTableCellEditor```.
 
-- Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the <ng-template> contents with a TemplateRef and access the view container.
+- Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
 - In constructor you must add
+
 ```javascript
 constructor(protected injector: Injector) {
   super(injector);
@@ -584,6 +661,9 @@ Oftentimes when displaying numbers in the table, users would like to be able to 
     return result;
   }
 ```
+
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/total){:target="_blank"}.
+
 ### Calculated columns
 
 O-table suppport calculated columns, that is, when users would like to be able to show another column result of an operation.
@@ -629,9 +709,11 @@ In the following example, two calculated columns are defined that perform the sa
 
     return (rowData['BALANCE'] * rowData['INTERESRATE']);
   }
-
  
 ```
+
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/calculatedcolumn)
+
 ### Table options
 
 The `o-table-option` allow to add options to menu `o-table`. Below an example
@@ -676,8 +758,7 @@ The `o-table-option` allow to add options to menu `o-table`. Below an example
 The `o-table` allow to add context menu to table rows, supports left clicking on a row to bring up a context menu.
 The menu is attached to and opened via application of the `context-menu` attribute that refers to the definition of the menu.
 
- Below an example.
-
+Below an example.
 
 <h3 class="grey-color">Example</h3>
 
@@ -704,6 +785,8 @@ The menu is attached to and opened via application of the `context-menu` attribu
 ```
 
 For more information about _o-context-menu_ component definition, please read the [docs]({{ base_path }}/components/contextmenu/).
+
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/contextmenu){:target="_blank"}.
 
 ### Insertable row
 

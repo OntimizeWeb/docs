@@ -94,6 +94,7 @@ components:
       - title: "Overview"
         url: /components/input/overview/
         order: "1"
+        class: "overview"
       - title: "Text"
         url: /components/input/text/
         order: "2"
