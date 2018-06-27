@@ -42,8 +42,6 @@ docs:
         url: /routing/
       - title: "Forms"
         url: /forms/
-      - title: "Form layout manager"
-        url: /form-layout-manager/
       # - title: "Permission"
       #   url: /permission/
       - title: "Build and run"
@@ -135,13 +133,13 @@ components:
       - title: "Checkbox"
         url: /components/input/checkbox/
         order: "2"
-      - title : "Combo"
+      - title: "Combo"
         url: /components/input/combo/
         order: "2"
       - title: "List picker"
         url: /components/input/listpicker/
         order: "2"
-        children :
+        children:
           - title: "List picker dialog"
             url: /listpicker/listpickerdialog/
 
@@ -155,10 +153,10 @@ components:
       - title: "Form"
         url: /components/form/
         children:
-          - title: "Extending a form"
-            url: '/form-component/o-form.extend/'
-          - title: "Form to filter table"
-            url: '/form-component/o-form.filter-table/'
+          - title: "Detail form"
+            url: /components/form/detail/
+          - title: "Form container"
+            url: /components/form/container/
       - title: "DataTable <small>(deprecated)</small>"
         url: /components/o-datatable.component/
         children:
@@ -189,14 +187,12 @@ components:
             url: '/components/table/obasetablecelleditor/'
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
-
-      - title : "List"
+      - title: "List"
         url: /components/o-list.component/
-      - title : "Tree"
+      - title: "Tree"
         url: /components/o-tree.component/
-      - title : "Filter builder <span class='menuitem-badge'>new<span>"
+      - title: "Filter builder <span class='menuitem-badge'>new<span>"
         url: /components/filterbuilder/
-
 
   - title: Media
     children:
@@ -214,7 +210,7 @@ components:
       - title: "Form layout manager"
         url: /components/formlayoutmanager/
       - title: "Breadcrumb"
-        url: /components/o-breadcrumb.component/
+        url: /components/breadcrumb/
       - title: "SnackBar"
         url: /components/snackbar/
       - title: "Context menu"
