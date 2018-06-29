@@ -169,6 +169,8 @@ attributes: [{
   name: "recursive-insert"
 },{
   name: "store-state"
+},{
+  name: "query-with-null-parent-keys"
 }]
 
 outputs: [{

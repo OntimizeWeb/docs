@@ -5,7 +5,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "List of pairs of form component attributes and target component colums (componentAttr1:targetColumn1;componentAttr2:targetColumn2;...). Separated by ';'."
+  description: "List of pairs of target component colums and form component attributes. Separated by ';'. Example: \"targetColumn1:componentAttr1;targetColumn2:componentAttr2\"."
 },{
   name: "target",
   type: "OServiceComponent",

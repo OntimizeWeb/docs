@@ -1,9 +1,9 @@
-directive : "o-file-input"
+directive: "o-file-input"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "enabled", "required", "width", "read-only"]
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "enabled", "required", "width", "read-only", "clear-button"]
 }]
 
 attributes: [{
@@ -57,7 +57,7 @@ attributes: [{
 }]
 
 outputs: [{
-  name : "onChange",
+  name: "onChange",
   description: "Event triggered when component input element changes"
 },{
   name: "onBeforeUpload",
@@ -78,7 +78,7 @@ outputs: [{
   name: "onCancelFile",
   description: "Event triggered when the upload of a file in a single request is cancelled. This means, 'split-upload' parameter is set to its default value"
 },{
-  name : "onUpload",
+  name: "onUpload",
   description: "Event triggered when a file or a set of files has been uploaded in a single request. This means, 'split-upload' parameter is set to 'no'/'false'"
 },{
   name: "onUploadFile",
