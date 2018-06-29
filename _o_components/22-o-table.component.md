@@ -41,7 +41,15 @@ Using default renderer (*o-table-cell-renderer-string*) if column attr is presen
 In the same way, using the default editor (*o-table-cell-editor-string*) if column attr is contained
 in  the *editable-columns* attribute from its parent *o-table*.
 
+
+ 
+
 ## Define columns
+
+Firstly, you must define the columns of the entity that queries the database in `columns`, in `visible-columns` you can configure the visible columns.
+
+You can represent the columns in extended mode with `o-table-column` selector. To define a column it is necessary to add the `attr` property must be included in `visible-columns` property, except the columns generated for the calculated columns. To consult all the parameters of the 'o-table-column' see the API.
+
 
 <h3 class="grey-color">Example</h3>
 
@@ -197,7 +205,7 @@ You can configure the methods by default with the `ìnsert-method`,`update-metho
 
 By default the filtering is *local*, you can be enabled filtering *remote* with `pageable="yes"`.
 
-## Quick filter.
+## Quick filter
 
 By default this option is enabled, the filter is visible in the top right. You can be disabled with `quick-filter="no"` property.
 
@@ -624,6 +632,22 @@ Finally, add the component *OTableCellEditorName* to your module.
 O-table support checkbox selection with `select-all-checkbox` property. If this property is activated in the menu on the upper right, the option will be active. By default is no.
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
+
+### Fixed header and footer
+O-table support *fixed header* and *footer* with `fixed-header="yes"` when the content is greather than its own height and then you must set the height of the table, for example `[ngStyle]="height: 400px;"`. By default it is disabled. 
+
+<h3 class="grey-color">Example</h3>
+```html
+<o-table #table attr="table" title="ACCOUNTS" fixed-header="yes" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
+    quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
+    [ngStyle]="height:400px">
+    <o-table-column attr="ENTITYID" title="ENTITYID" width="14%"></o-table-column>
+    <o-table-column attr="OFFICEID" title="OFFICEID" width="14%"></o-table-column>
+    <o-table-column attr="CDID" title="CDID" width="14%"></o-table-column>
+    ...
+  </o-table>
+```
 
 ### Aggregates
 
