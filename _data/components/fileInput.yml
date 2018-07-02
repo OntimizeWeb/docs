@@ -1,22 +1,12 @@
-directive : "o-file-input"
+directive: "o-file-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "enabled", "required", "width", "read-only", "clear-button"]
+}]
 
 attributes: [{
-  name: "attr"
-},{
-  name: "label"
-},{
-  name: "tooltip"
-},{
-  name: "tooltip-position"
-},{
-  name: "tooltip-show-delay"
-},{
-  name: "enabled"
-},{
-  name: "required"
-},{
   name: "service"
 },{
   name: "entity"
@@ -66,10 +56,8 @@ attributes: [{
   description: "Use this parameter to send extra information to the server side in the upload file request"
 }]
 
-outputsColumns: ["Name", "Description"]
-
 outputs: [{
-  name : "onChange",
+  name: "onChange",
   description: "Event triggered when component input element changes"
 },{
   name: "onBeforeUpload",
@@ -90,7 +78,7 @@ outputs: [{
   name: "onCancelFile",
   description: "Event triggered when the upload of a file in a single request is cancelled. This means, 'split-upload' parameter is set to its default value"
 },{
-  name : "onUpload",
+  name: "onUpload",
   description: "Event triggered when a file or a set of files has been uploaded in a single request. This means, 'split-upload' parameter is set to 'no'/'false'"
 },{
   name: "onUploadFile",

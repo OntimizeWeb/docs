@@ -1,6 +1,6 @@
 directive : "o-image"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+ 
 
 attributes: [{
   name: "attr"
@@ -45,7 +45,7 @@ attributes: [{
   name: "tooltip-show-delay"
 }]
 
-outputsColumns: ["Name", "Description"]
+  
 
 outputs: [{
   name : "onChange",

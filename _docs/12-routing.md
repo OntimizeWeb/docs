@@ -12,9 +12,9 @@ Our application will normally have more than one screen. We need to tell the app
 
 To familiarise yourself with the terminology, methods, and usage; it is highly recommended to take a look at the documentation for the ['Router' Angular](https://angular.io/api/router/Router){:target="_blank"} class in Angular.
 
-By convention each logic block (module) defines its own routes. This allows for nested and organized application routes. In a Ontimize Web application, the routes are loaded in routing modules. Each of these modules must be imported into an application block module. You can see this in the app  [structure schema]({{ base_path }}/structure/){:target="_blank"} below where the login and main modules follow this structure.
+By convention each logic block (module) defines its own routes. This allows for nested and organized application routes. In a Ontimize Web application, the routes are loaded in routing modules. Each of these modules must be imported into an application block module. You can see this in the app  [structure schema]({{ base_path }}/guide/appstructure/){:target="_blank"} below where the login and main modules follow this structure.
 
-As you can see in the '*AppModule*' definition [here]({{ base_path }}/structure/){:target="_blank"}, an '*AppRoutingModule*' is in the imports array. This module is defined in '*src\app\app-routing.module.ts*' and contains:
+As you can see in the '*AppModule*' definition [here]({{ base_path }}/guide/appstructure/){:target="_blank"}, an '*AppRoutingModule*' is in the imports array. This module is defined in '*src\app\app-routing.module.ts*' and contains:
 
 ```bash
 import { NgModule } from '@angular/core';

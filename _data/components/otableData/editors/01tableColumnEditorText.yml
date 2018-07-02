@@ -1,9 +1,28 @@
 directive : "o-table-cell-editor-text"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+class: "OTableCellEditorTextComponent"
 
-attributes: [{
-  name: "required"
-}]
+extends : "OBaseTableCellEditor"
+
+
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "table/obasetablecelleditor",
+    attributes: ["required", "show-placeholder", "label"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "table/obasetablecelleditor",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
+  }
+]
+
+#attributes: [{
+#  name: "required"
+#}]
 
 title : "OTableCellEditorText"

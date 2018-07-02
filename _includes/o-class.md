@@ -9,7 +9,7 @@
 {% endif %}
 
 {% if componentData %}
-
+  {% assign outputsColumns = "Name|Description" | split: "|" %} 
   {% if componentData.class %}
     <p><strong class="grey-color"> {{ componentData.class }}</strong></p>
   {% endif %}
@@ -47,7 +47,8 @@
         {% for attributeObject in componentData.properties %}
           <tr>
           {% assign commonData = site.data.components.common.properties[attributeObject.name] | default : {} %}
-          {% for column in componentData.propertiesColumns %}
+           {% assign propertiesColumns = (componentData.propertiesColumns | sort: 'name') %}
+          {% for column in propertiesColumns %}
             {% assign columnKey = column | downcase %}
             {% unless emptyColumns contains columnKey %}
               {% assign columnData = 'o-component-' | append: columnKey %}
@@ -56,11 +57,9 @@
               {% if attributeObject[columnKey] != undefined %}
                 {% assign cellValue = attributeObject[columnKey] %}
               {% endif %}
-
-              {% assign cellContent = cellValue | default: '' %}
-              {% if columnKey != 'type' %}
-                {% assign cellContent = cellContent | markdownify %}
-              {% endif %}
+            
+              {% assign cellContent = cellValue | default: ''  | markdownify %}
+          
               <td class="" {{ columnData }}>{{ cellContent }}</td>
             {% endunless %}
           {% endfor %}
@@ -72,7 +71,33 @@
     <p>No additional properties</p>
   {% endif %}
 
+ {% if componentData.outputs %}
+    <h3 class="grey-color">Outputs</h3>
+    <table class="attributes-table mdl-data-table">
+      <thead>
+        <tr>
+        {% for header in outputsColumns %}
+            <th class=""> {{ header }}</th>
+        {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+        {% assign sortedOutputs = (componentData.outputs | sort: 'name') %}
+        {% for outputObject in sortedOutputs %}
+          <tr>
+          {% for column in outputsColumns %}
+            {% assign columnKey = column | downcase %}
+            {% assign columnData = 'o-component-' | append: columnKey %}
+            {% assign cellContent = outputObject[columnKey]  | default: '' | markdownify %}
 
+            <td class="" {{ columnData }}>{{ cellContent | markdownify  }}</td>
+
+          {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
 
   {% if componentData.example %}
     {% capture html-include %}{% include example.md code=componentData.example %}{% endcapture %}

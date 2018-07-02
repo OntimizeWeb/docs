@@ -1,13 +1,21 @@
 ---
-permalink: /components/o-card-menu-layout.component/
+permalink: /components/cardmenulayout/
 title: "Card menu layout"
 comp: cardMenuLayout
 ---
 
 {% include base_path %}
 
-Read more about application menu configuration (and a simple example) [here]({{ base_path }}/guide/menu-config/){:target="_blank"}.
+The `o-card-menu-layout` component builds automatically a dashboard page based on the application menu. It displays a card for each child of the menu item provided on the `parent-menu-id` attribute. Read more about how to configure the application menu [here]({{ base_path }}/guide/appconfig/#menu-configuration){:target="_blank"}.
 
-{% for post in site.o_card_menu_layout_components %}
-  {% include archive-single.html %}
-{% endfor %}
+## Example
+
+```html
+<o-card-menu-layout parent-menu-id="views"></o-card-menu-layout>
+```
+
+You can see an example of this component working in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/){:target="_blank"}.
+
+## Card item
+
+You can read more about the card items in the [`o-card-menu-item`]({{ base_path }}/components/cardmenulayout/cardmenuitem/){:target="_blank"} component page.

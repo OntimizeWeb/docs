@@ -1,26 +1,21 @@
 directive : "o-percent-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+},{
+  component: "o-integer-input",
+  path: "input/integer",
+  attributes: ["min", "max", "step", "grouping", "thousand-separator", "locale"]
+},{
+  component: "o-real-input",
+  path: "input/real",
+  attributes: ["min-decimal-digits", "max-decimal-digits", "decimal-separator"]
+}]
 
-inheritedAttributes: [
-  {
-    component: "o-text-input",
-    attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
-  },
-  {
-    component: "o-integer-input",
-    attributes: ["min", "max"]
-  },
-  {
-    component: "o-real-input",
-    attributes: ["min-decimal-digits", "max-decimal-digits"]
-  }
-]
-
-
-inheritedOutputs: [
-  {
-    component: "o-real-input",
-    outputs: ["onChange", "onFocus", "onBlur"]
-  }
-]
+inheritedOutputs: [{
+  component: "o-text-input",
+  path: "input/text",
+  outputs: ["onChange", "onFocus", "onBlur"]
+}]

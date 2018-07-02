@@ -1,6 +1,24 @@
 directive : "o-table-cell-editor-date"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+class: "OTableCellEditorDateComponent"
+
+extends : "OBaseTableCellEditor"
+
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "table/obasetablecelleditor",
+    attributes: ["required", "show-placeholder", "label"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "table/obasetablecelleditor",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
+  }
+]
 
 attributes: [{
   name: "format",

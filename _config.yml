@@ -276,21 +276,9 @@ defaults:
       sidebar:
         nav: "components"
    # _o_table_components
-  # _o_table_components
   - scope:
       path: ""
       type: o_table_components
-    values:
-      layout: single
-      author_profile: false
-      share: false
-      comments: false
-      sidebar:
-        nav: "components"
-  # _o_form_components
-  - scope:
-      path: ""
-      type: o_form_components
     values:
       layout: single
       author_profile: false

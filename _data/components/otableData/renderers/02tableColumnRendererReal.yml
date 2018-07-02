@@ -1,7 +1,9 @@
 directive : "o-table-cell-renderer-real"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+class : 'OTableCellEditorRealComponent'
 
+extends : "OTableCellRendererIntegerComponent" 
+ 
 attributes: [{
   name: "grouping"
 },{

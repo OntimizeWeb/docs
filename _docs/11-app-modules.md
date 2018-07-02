@@ -16,7 +16,7 @@ With this tool the user can generate [modules](https://github.com/angular/angula
 
 Here you can see a example of how to add a new '*employees*' module with an inner component in our '*QuickStart*' example:
 
-This new module will be located in a folder as a sibling of '*customers*' and '*accounts*' in the application hierachy (see [structure]({{ base_path }}/structure/){:target="_blank"} section).
+This new module will be located in a folder as a sibling of '*customers*' and '*accounts*' in the application hierachy (see [structure]({{ base_path }}/guide/appstructure/){:target="_blank"} section).
 
 ### Create the module
 

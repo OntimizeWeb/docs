@@ -1,31 +1,17 @@
 directive : "o-combo"
 
-
-outputsColumns: ["Name", "Description"]
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+}]
 
 outputs: [{
   name : "onChange",
   description: "Event triggered when component selected value changes"
 }]
 
-
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
-
 attributes: [{
-  name: "attr"
-},{
-  name: "label"
-},{
-  name: "data"
-},{
-  name: "automatic-binding"
-},{
-  name: "automatic-registering"
-},{
-  name: "enabled"
-},{
-  name: "required"
-},{
   name: "static-data"
 },{
   name: "service"
@@ -33,6 +19,18 @@ attributes: [{
   name: "entity"
 },{
   name: "columns"
+},{
+  name: "multiple",
+  type: "no | false | yes | true",
+  default : "false",
+  required : "",
+  description : "Whether the user should be allowed to select multiple options."
+},{
+  name: "multiple-trigger-label",
+  type: "no | false | yes | true",
+  default : "false",
+  required : "",
+  description : "Whether the user should be allowed to display a custom trigger label inside a select."
 },{
   name: "value-column"
 },{
@@ -47,16 +45,10 @@ attributes: [{
   description : "Visible columns. Separated by ';'"
 },{
   name: "description-columns",
-  type: "string",
   default : "<em>visible-columns</em> attribute value",
-  required : "",
   description : "Visible columns in text field"
 },{
-  name: "separator",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Separation character between <em>description-columns</em> values"
+  name: "separator"
 },{
   name: "null-selection",
   type: "no | false | yes | true",
@@ -68,19 +60,27 @@ attributes: [{
 },{
   name: "query-on-bind"
 },{
-  name: "sql-type"
+  name: "query-on-event"
 },{
   name: "service-type"
-},{
-  name: "tooltip"
-},{
-  name: "tooltip-position"
-},{
-  name: "tooltip-show-delay"
 },{
   name: "translate",
   type: "",
   default : "",
   required : "",
   description : ""
+},{
+  name: "query-method"
+}]
+
+methods: [{
+  name: "getSelectedItems()",
+  type: "method", 
+  description : "Return the selected items of the component.",
+  returns: "any[]"
+},{
+  name: "setSelectedItems()",
+  type: "method",
+  parameters : "any[]",
+  description : "Set the selected items of the component."
 }]

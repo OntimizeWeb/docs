@@ -1,0 +1,30 @@
+
+
+class: "OBaseTableCellEditor"
+
+outputs: [{
+  name : "editionStarted",
+  description : "Event triggered when component input element started."
+},{
+  name : "editionCancelled",
+  description : "Event triggered when component input is canceled."
+},{
+  name : "editionCommitted",
+  description : "Event triggered when component input is committed."
+}]
+
+
+propertiesColumns: ["Name","Type", "Description"]
+
+properties: [{
+  name: "required",
+  type: "boolean",
+  description: "Indicates whether or not required."
+},{
+  name: "label",
+  type: "string"
+},{
+  name: "show-placeholder",
+  type: "boolean",
+  description: "Indicates whether or not to show placeholder in form control."
+}]

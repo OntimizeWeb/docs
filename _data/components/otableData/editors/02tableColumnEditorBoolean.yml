@@ -1,6 +1,52 @@
 directive : "o-table-cell-editor-boolean"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+class: "OTableCellEditorBooleanComponent"
 
-attributes: []
+extends : "OBaseTableCellEditor"
+
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "table/obasetablecelleditor",
+    attributes: ["required", "show-placeholder", "label"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "table/obasetablecelleditor",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
+  }
+]
+attributes: [
+  {
+  name: "indeterminate-on-null", 
+  type: "number | boolean | string ",
+  default : "false",
+  required : "",
+  description : ""
+  },
+  {
+    name: "true-value", 
+    type: "number | boolean | string ",
+    default : "true",
+    required : "",
+    description : "True value "
+  },
+   {
+    name: "false-value", 
+    type: "number | boolean | string ",
+    default : "false",
+    required : "",
+    description : "False value "
+  },
+  {
+    name: "boolean-type", 
+    type: "number | boolean | string ",
+    default : "boolean",
+    required : "",
+    description : "Type of data"
+  }
+]
 title : "OTableCellEditorBoolean"

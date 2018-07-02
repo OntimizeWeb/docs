@@ -1,6 +1,9 @@
 directive : "o-table-cell-renderer-percentage"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+class: "OTableCellRendererPercentageComponent"
+
+extends : "OTableCellRendererRealComponent" 
+ 
 
 attributes: [{
   name: "grouping"

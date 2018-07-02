@@ -1,6 +1,9 @@
 directive : "o-table-cell-renderer-date"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+class : "OTableCellRendererDateComponent"
+
+extends : "OBaseTableCellRenderer" 
+  
 
 attributes: [{
   name: "format", 
@@ -10,3 +13,31 @@ attributes: [{
   description : "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
 }]
 title : "OTableCellRendererDate"
+
+
+inherit_properties: [
+  {
+   component: "OBaseTableCellRenderer",
+   path: "table/obasetablecellrenderer",
+   properties: [
+    {
+      name: "column",
+      type: "property",
+      description : "Name of the column"
+    },{
+      name: "table",
+      type: "property"
+    },{
+      name: "tableColumn",
+      type: "property"
+    },{
+      name: "initialize()",
+      type: "method",
+      description : "Required method to render the column "
+    },{
+      name: "getCellData(cellvalue,rowvalue)",
+      type: "method",
+      description : "This default method returns the value of the column as *a string*. This method is used to obtain the value of the column in the exports or filtering, so that if you want to customize the value of the column you must overwrite it. "
+    }]
+    }
+  ]

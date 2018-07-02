@@ -1,45 +1,43 @@
-directive : "o-list"
-
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+directive: "o-list"
 
 attributes: [{
   name: "attr"
 },{
   name: "title",
   type: "string",
-  default : "",
-  required : "",
-  description : "List title displayed on screen"
+  default: "",
+  required: "",
+  description: "List title displayed on screen"
 },{
   name: "visible"
 },{
   name: "enabled",
-  description : "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
+  description: "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
 },{
   name: "controls"
 },{
   name: "filter",
   type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether or not to show list filtering options"
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show list filtering options"
 },{
   name: "refresh-button",
-  description : "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
+  description: "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
 },{
   name: "query-on-init",
-  default : "yes"
+  default: "yes"
 },{
   name: "query-on-bind",
-  default : "yes"
+  default: "yes"
 },{
   name: "pageable"
 },{
   name: "css-class",
   type: "string",
-  default : "",
-  required : "",
-  description : "<em>css</em> class name"
+  default: "",
+  required: "",
+  description: "<em>css</em> class name"
 },{
   name: "columns"
 },{
@@ -55,9 +53,9 @@ attributes: [{
 },{
   name: "route",
   type: "",
-  default : "",
-  required : "",
-  description : ""
+  default: "",
+  required: "",
+  description: ""
 },{
   name: "static-data"
 },{
@@ -95,23 +93,25 @@ attributes: [{
 },{
   name: "quick-filter-columns",
   type: "string",
-  default : "",
-  required : "",
-  description : "Columns used in the <em>quick-filter</em>. Separated by ';'"
+  default: "",
+  required: "",
+  description: "Columns used in the <em>quick-filter</em>. Separated by ';'"
 },{
   name: "refresh-button"
 },{
   name: "selectable",
   type: "",
-  default : "",
-  required : "",
-  description : ""
+  default: "",
+  required: "",
+  description: ""
 },{
   name: "dense",
   type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : ""
+  default: "no",
+  required: "",
+  description: ""
+},{
+  name: "store-state"
+},{
+  name: "query-with-null-parent-keys"
 }]
-
-

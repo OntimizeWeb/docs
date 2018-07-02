@@ -1,21 +1,20 @@
 directive : "o-textarea-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+inheritedAttributes: [  {
+  component: "FormDataComponent",
+  path: "input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+},{
+  component: "o-text-input",
+  path: "input/text",
+  attributes: [ "min-length", "max-length"]
+}]
 
-inheritedAttributes: [
-  {
-    component: "o-text-input",
-    attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
-  }
-]
-
-inheritedOutputs: [
-  {
-    component: "o-text-input",
-    outputs: ["onChange", "onFocus", "onBlur"]
-  }
-]
-
+inheritedOutputs: [{
+  component: "o-text-input",
+  path: "input/text",
+  outputs: ["onChange", "onFocus", "onBlur"]
+}]
 
 attributes: [{
   name: "columns",

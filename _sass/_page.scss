@@ -36,9 +36,8 @@
 }
 
 h1.page__title{
-  color:#333333;
-  font-family: $pt-sans;
-  font-size: 1.2em;
+  color:#555555;
+  font-size: 1.5em;
   font-weight: 700;
 }
 
@@ -49,7 +48,6 @@ h1.page__title{
   & + .page__meta {
     margin-top: -0.5em;
   }
-
 }
 
 .page__lead {
@@ -58,18 +56,27 @@ h1.page__title{
   font-weight: 400;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   text-align: left;
-
 }
 
 .page__content {
 
-  h2, h3 {
+  h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
     color:#555555;
-    font-family: $pt-sans;
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 700;
+  }
+
+  h3 {
+    color:#555555;
+    font-size: 0.75em;
+    font-weight: 700;
+    margin: 1em 0 0.5em;
+  }
+
+  h3.grey-color {
+    font-size: 0.7em;
   }
 
   ul {

@@ -1,6 +1,6 @@
 directive : "o-datatable-cell-renderer-boolean"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+  
 
 attributes: [{
   name: "true-value-type", 

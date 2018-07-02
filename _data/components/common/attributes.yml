@@ -1,368 +1,399 @@
 {
-  "attr" : {
+  "attr": {
     name: "attr",
     type: "string",
-    default : "",
-    required : "Yes",
-    description : "Field identifier. Registry property if component is inside a form."
+    default: "",
+    required: "yes",
+    description: "Field identifier. Registry property if component is inside a form."
   },
-  "label" : {
+  "label": {
     name: "label",
     type: "string",
-    default : "<em>attr</em> attribute value",
-    required : "",
-    description : "Field label (placeholder when field is empty and floating label when field has data)"
+    default: "<em>attr</em> input",
+    required: "",
+    description: "Field label (placeholder when field is empty and floating label when field has data)"
   },
-  "automatic-binding" : {
+  "automatic-binding": {
     name: "automatic-binding",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not the component will bind its value to its <em>attr</em> when located inside a form"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not the component will bind its value to its <em>attr</em> when located inside a form"
   },
-  "automatic-registering" : {
+  "automatic-registering": {
     name: "automatic-registering",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not the component will register itself (using its <em>attr</em>) when located inside a form"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not the component will register itself (using its <em>attr</em>) when located inside a form"
   },
-  "enabled" : {
+  "enabled": {
     name: "enabled",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not the field is enabled"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not the field is enabled"
   },
-  "required" : {
+  "required": {
     name: "required",
     type: "no | false | yes | true",
-    default : "no",
-    required : "",
-    description : "Indicates whether or not the field is required"
+    default: "no",
+    required: "",
+    description: "Indicates whether or not the field is required"
   },
-  "data" : {
+  "data": {
     name: "data",
     type: "",
-    default : "",
-    required : "",
-    description : "Manually setted component value"
+    default: "",
+    required: "",
+    description: "Manually setted component value"
   },
-  "tooltip" : {
+  "tooltip": {
     name: "tooltip",
     type: "string",
-    default : "",
-    required : "",
-    description : "Field tooltip text"
+    default: "",
+    required: "",
+    description: "Field tooltip text"
   },
-  "tooltip-position" : {
+  "tooltip-position": {
     name: "tooltip-position",
     type: "before | after | above | below | left | right",
-    default : "below",
-    required : "",
-    description : "Field tooltip position"
+    default: "below",
+    required: "",
+    description: "Field tooltip position"
   },
-  "tooltip-show-delay" : {
+  "tooltip-show-delay": {
     name: "tooltip-show-delay",
     type: "number",
-    default : "500",
-    required : "",
-    description : "Field tooltip display time"
+    default: "500",
+    required: "",
+    description: "Field tooltip display time"
   },
-  "grouping" : {
+  "grouping": {
     name: "grouping",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not to group the thousand digits"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not to group the thousand digits"
   },
-  "thousand-separator" : {
+  "thousand-separator": {
     name: "thousand-separator",
     type: "string",
-    default : "Comma (,)",
-    required : "",
-    description : "Thousand digits chacarter separator (in case of grouping)"
+    default: "Comma (,)",
+    required: "",
+    description: "Thousand digits chacarter separator (in case of grouping)"
   },
-  "decimal-separator" : {
+  "decimal-separator": {
     name: "decimal-separator",
     type: "string",
-    default : "Dot (.)",
-    required : "",
-    description : "Decimal digits chacarter separator"
+    default: "Dot (.)",
+    required: "",
+    description: "Decimal digits chacarter separator"
   },
-  "decimal-digits" : {
+  "decimal-digits": {
     name: "decimal-digits",
     type: "number",
-    default : "2",
-    required : "",
-    description : "Number of decimals"
+    default: "2",
+    required: "",
+    description: "Number of decimals"
   },
-  "static-data" : {
+  "static-data": {
     name: "static-data",
     type: "array<object>",
-    default : "",
-    required : "",
-    description : "Static data for filling the table"
+    default: "",
+    required: "",
+    description: "Static data for filling the table"
   },
-  "service" : {
+  "service": {
     name: "service",
     type: "string",
-    default : "",
-    required : "",
-    description : "JEE service path"
+    default: "",
+    required: "",
+    description: "JEE service path"
   },
-  "entity" : {
+  "entity": {
     name: "entity",
     type: "string",
-    default : "",
-    required : "",
-    description : "Service entity name"
+    default: "",
+    required: "",
+    description: "Service entity name"
   },
-  "keys" : {
+  "keys": {
     name: "keys",
     type: "string",
-    default : "",
-    required : "",
-    description : "Entity keys. Separated by ';'"
+    default: "",
+    required: "",
+    description: "Entity keys. Separated by ';'"
   },
-  "columns" : {
+  "columns": {
     name: "columns",
     type: "string",
-    default : "",
-    required : "",
-    description : "Entity columns. Separated by ';'"
+    default: "",
+    required: "",
+    description: "Entity columns. Separated by ';'"
   },
-  "value-column" : {
+  "value-column": {
     name: "value-column",
     type: "string",
-    default : "",
-    required : "",
-    description : "Column of the entity from where the component will get its value"
+    default: "",
+    required: "",
+    description: "Column of the entity from where the component will get its value"
   },
-  "value-column-type" : {
+  "value-column-type": {
     name: "value-column-type",
     type: "string",
-    default : "int",
-    required : "",
-    description : "<em>value-column</em> value type"
+    default: "int",
+    required: "",
+    description: "<em>value-column</em> value type"
   },
   "parent-keys": {
     name: "parent-keys",
     type: "string",
-    default : "",
-    required : "",
-    description : "Filtering keys. Separated by ';'"
+    default: "",
+    required: "",
+    description: "Filtering keys. Separated by ';'"
   },
-  "query-on-init" : {
+  "query-with-null-parent-keys": {
+    name: "query-with-null-parent-keys",
+    type: "no | false | yes | true",
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to trigger query method when the filter generated from parent-keys is null. The use of this attribute is not recommended when the component may request a big amount of information"
+  },
+  "query-on-init": {
     name: "query-on-init",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Query table data on init"
+    default: "yes",
+    required: "",
+    description: "Query table data on init"
   },
-  "query-on-bind" : {
+  "query-on-bind": {
     name: "query-on-bind",
     type: "no | false | yes | true",
-    default : "",
-    required : "",
-    description : "Query table data on bind"
+    default: "",
+    required: "",
+    description: "Query table data on bind"
   },
-  "sql-type" : {
+  "sql-type": {
     name: "sql-type",
     type: "string",
-    default : "OTHER",
-    required : "",
-    description : "Data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}"
+    default: "OTHER",
+    required: "",
+    description: "Data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}"
   },
-  "service-type" : {
+  "service-type": {
     name: "service-type",
     type: "string",
-    default : "",
-    required : "",
-    description : ""
+    default: "",
+    required: "",
+    description: ""
   },
-  "query-method" : {
+  "query-method": {
     name: "query-method",
     type: "string",
-    default : "query",
-    required : "",
-    description : "Service method name for queries"
+    default: "query",
+    required: "",
+    description: "Service method name for queries"
   },
-  "paginated-query-method" : {
+  "paginated-query-method": {
     name: "paginated-query-method",
     type: "string",
-    default : "advancedQuery",
-    required : "",
-    description : "Service method name for paginated queries"
+    default: "advancedQuery",
+    required: "",
+    description: "Service method name for paginated queries"
   },
-  "insert-method" : {
+  "insert-method": {
     name: "insert-method",
     type: "string",
-    default : "insert",
-    required : "",
-    description : "Service method name for insertions"
+    default: "insert",
+    required: "",
+    description: "Service method name for insertions"
   },
-  "update-method" : {
+  "update-method": {
     name: "update-method",
     type: "string",
-    default : "update",
-    required : "",
-    description : "Service method name for updates"
+    default: "update",
+    required: "",
+    description: "Service method name for updates"
   },
-  "delete-method" : {
+  "delete-method": {
     name: "delete-method",
     type: "string",
-    default : "delete",
-    required : "",
-    description : "Service method name for deletions"
+    default: "delete",
+    required: "",
+    description: "Service method name for deletions"
   },
-  "locale" : {
+  "locale": {
     name: "locale",
     type: "string. Values like <em>es</em>, <em>en</em>, <em>...</em>",
-    default : "Application configured locale",
-    required : "",
-    description : "Configured language locale"
+    default: "Application configured locale",
+    required: "",
+    description: "Configured language locale"
   },
-  "icon" : {
+  "icon": {
     name: "icon",
     type: "string",
-    default : "",
-    required : "",
-    description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+    default: "",
+    required: "",
+    description: "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
   },
-  "quick-filter" : {
+  "quick-filter": {
     name: "quick-filter",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not to show a input for filtering data"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not to show a input for filtering data"
   },
-  "insert-button" : {
+  "insert-button": {
     name: "insert-button",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not to show a button for inserting data"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not to show a button for inserting data"
   },
-  "refresh-button" : {
+  "refresh-button": {
     name: "refresh-button",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not to show a button for refreshing data"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not to show a button for refreshing data"
   },
-  "detail-mode" : {
+  "detail-mode": {
     name: "detail-mode",
     type: "none | click | dblclick",
-    default : "click",
-    required : "",
-    description : "Action for opening the detail form of a row"
+    default: "click",
+    required: "",
+    description: "Action for opening the detail form of a row"
   },
-  "detail-form-route" : {
+  "detail-form-route": {
     name: "detail-form-route",
     type: "string",
-    default : "detail",
-    required : "",
-    description : "Detail form path appended to the current route"
+    default: "detail",
+    required: "",
+    description: "Detail form path appended to the current route"
   },
-  "recursive-detail" : {
+  "recursive-detail": {
     name: "recursive-detail",
     type: "no | false | yes | true",
-    default : "no",
-    required : "",
-    description : "Indicates whether or not to add a detail key to current url path (overwrite)"
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to add a detail key to current url path (overwrite)"
   },
-  "insert-form-route" : {
+  "insert-form-route": {
     name: "insert-form-route",
     type: "string",
-    default : "new",
-    required : "",
-    description : "Insert form path appended to the current route"
+    default: "new",
+    required: "",
+    description: "Insert form path appended to the current route"
   },
-  "insert-detail" : {
+  "insert-detail": {
     name: "insert-detail",
     type: "no | false | yes | true",
-    default : "no",
-    required : "",
-    description : "Indicates whether or not to add a insert key to current url path (overwrite)"
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to add a insert key to current url path (overwrite)"
   },
-  "detail-button-in-row" : {
+  "detail-button-in-row": {
     name: "detail-button-in-row",
     type: "no | false | yes | true",
-    default : "no",
-    required : "",
-    description : "Indicates whether or not to add a button in each row for opening the detail form"
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to add a button in each row for opening the detail form"
   },
-  "detail-button-in-row-icon" : {
+  "detail-button-in-row-icon": {
     name: "detail-button-in-row-icon",
     type: "string",
-    default : "search",
-    required : "",
-    description : "Detail icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+    default: "search",
+    required: "",
+    description: "Detail icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
   },
-  "edit-button-in-row" : {
+  "edit-button-in-row": {
     name: "edit-button-in-row",
     type: "no | false | yes | true",
-    default : "no",
-    required : "",
-    description : "Indicates whether or not to add a button in each row for opening the edit form"
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to add a button in each row for opening the edit form"
   },
-  "edit-button-in-row-icon" : {
+  "edit-button-in-row-icon": {
     name: "edit-button-in-row-icon",
     type: "string",
-    default : "edit",
-    required : "",
-    description : "Edit icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+    default: "edit",
+    required: "",
+    description: "Edit icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
   },
-  "edit-form-route" : {
+  "edit-form-route": {
     name: "edit-form-route",
     type: "string",
-    default : "edit",
-    required : "",
-    description : "Edit form path appended to the current route"
+    default: "edit",
+    required: "",
+    description: "Edit form path appended to the current route"
   },
-  "recursive-edit" : {
+  "recursive-edit": {
     name: "recursive-edit",
     type: "no | false | yes | true",
-    default : "no",
-    required : "",
-    description : "Indicates whether or not to add a edit key to current url path (overwrite)"
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to add a edit key to current url path (overwrite)"
   },
-  "controls" : {
+  "controls": {
     name: "controls",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not to show a controls bar. Including component actions or the quickfilter"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not to show a controls bar. Including component actions or the quickfilter"
   },
-  "pageable" : {
+  "pageable": {
     name: "pageable",
     type: "no | false | yes | true",
-    default : "no",
-    required : "",
-    description : "Indicates whether or not to do paginated queries for getting the data"
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to do paginated queries for getting the data"
   },
-  "visible" : {
+  "visible": {
     name: "visible",
     type: "no | false | yes | true",
-    default : "yes",
-    required : "",
-    description : "Indicates whether or not the component is visible"
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not the component is visible"
   },
   "query-rows": {
     name: "query-rows",
     type: "number",
-    default : "10",
-    required : "",
-    description : "Number of records by page. Initial number of registries in queries when using pagination in server side"
+    default: "10",
+    required: "",
+    description: "Number of records by page. Initial number of registries in queries when using pagination in server side"
   },
-  "row-height" : {
+  "row-height": {
     name: "row-height",
     type: "small | medium | large",
-    default : "medium",
-    required : "",
-    description : "Predefined row height options"
+    default: "medium",
+    required: "",
+    description: "Predefined row height options"
+  },
+  "store-state": {
+    name: "store-state",
+    type: "no | false | yes | true",
+    default: "yes",
+    required: "",
+    description: "Indicates whether or not to store component state"
+  },
+  "description-columns": {
+    name: "description-columns",
+    type: "string",
+    required: "",
+    description: "Visible columns in text field"
+  },
+  "separator": {
+    name: "separator",
+    type: "string",
+    default: "",
+    required: "",
+    description: "Separation character between <em>description-columns</em> values"
+  },
+  "clear-button": {
+    name: "clear-button",
+    type: "no | false | yes | true",
+    default: "no",
+    description: "Indicates whether or not to show the clear button"
   }
 }
-
-

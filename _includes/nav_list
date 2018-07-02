@@ -57,6 +57,8 @@
     {% endif %}
 
     {% for nav in navigation %}
+    
+
       {% assign activeClass = '' %}
       {% if activeCategory != nil and activeCategory.title == nav.title %}
             {% assign activeClass = 'active-component-category active-parent' %}
@@ -82,7 +84,15 @@
 
         {% if nav.children != null %}
         <ul class="category-components-list">
-          {% for child in nav.children %}
+          {% if include.nav == 'components' %}
+          
+          {% assign childrenSortTitle =  nav.children | sort: "title" %}
+          {% assign childrenNav = childrenSortTitle | sort: "order" %}
+          {% else %}
+            {% assign childrenNav = nav.children %}
+          {% endif %}
+
+          {% for child in childrenNav %}
             {% comment %}internal/external URL check{% endcomment %}
             {% if child.url contains "://" %}
               {% assign domain = "" %}
@@ -97,7 +107,7 @@
               {% assign active = "" %}
             {% endif %}
 
-            <li><a href="{{ domain }}{{ child.url }}" class="{{ active }}">{{ child.title }}</a></li>
+            <li><a href="{{ domain }}{{ child.url }}" class="{{ active }} {{child.class}}">{{ child.title }}</a></li>
           {% endfor %}
         </ul>
         {% endif %}
