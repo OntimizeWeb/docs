@@ -740,40 +740,39 @@ You can see this and more examples of this component in the [OntimizeWeb playgro
 
 ### Table options
 
-The `o-table-option` allow to add options to menu `o-table`. Below an example
+The `o-table-option` component allows you to add extra options to the table menu. You only have to add the component to your table and subscribe to the `onClick` event in your component to perform the desired actions. Check the example below.
 
-
-<h3 class="grey-color">Example</h3>
+### Example
 
 ```html
 <o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
   columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
-  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
-  sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
-  query-on-init="true" query-rows="6" quick-filter="yes" >
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY">
 
-  <o-table-option label="My option"></o-table-button>
-
-  <o-table-column attr="NAME" title="NAME"></o-table-column>
-
-  ...
+  <o-table-option #myOption label="My option"></o-table-option>
 
 </o-table>
 ```
 
-<h3 class="grey-color">Typescript code</h3>
-
 ```javascript
-  ...
+  import { Component, ViewChild } from '@angular/core';
   import { OTableOptionComponent } from 'ontimize-web-ngx';
-  ...
-  @ViewChild('myOption')
-  protected myOption: OTableOptionComponent;
-  ...
-  ngAfterViewInit() {
-    this.myButton.click.subscribe(event => {
-      alert('my option click');
-    });
+
+  @Component({
+    selector: 'my-page',
+    templateUrl: 'my-page.component.html'
+  })
+  export class MyPageComponent {
+
+    @ViewChild('myOption')
+    protected myOption: OTableOptionComponent;
+
+    ngAfterViewInit() {
+      this.myButton.onClick.subscribe(event => {
+        alert('my option click');
+      });
+    }
+
   }
 ```
 
