@@ -46,7 +46,7 @@ If you need the data query to be performed after the `parent-keys` is updated, `
 
 ## Binding to remote data 
 
-To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration ]({{ base_path }}/guide/appconfig/){:target="_blank"}. 
+To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}. 
 
 <h3 class="grey-color">Example</h3>
 
