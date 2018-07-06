@@ -161,6 +161,7 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  parse_block_html: true
 
 
 # Collections
@@ -348,7 +349,7 @@ timezone: America/New_York # http://en.wikipedia.org/wiki/List_of_tz_database_ti
 
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -399,3 +400,5 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+github: [metadata]

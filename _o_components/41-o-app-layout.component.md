@@ -6,7 +6,7 @@ comp: appLayout
 
 {% include base_path %}
 
-The `o-app-layout` components provides a side navigator for our applications.For adding it to the applicatio you just have to wrap the content of the main page with this component like in the example below.
+The `o-app-layout` components builds a side navigator for application using the [application menu configuration]({{ base_path }}/guide/appconfig/#menu-configuration){:target="_blank"}. For adding it to the application you just have to wrap the content of the main page with this component like in the example below.
 
 ## Example
 ```html
@@ -19,7 +19,7 @@ The result of this example is shown below.
 
 ![App layout component]({{ "/images/layouts/app-layout/app_layout_default.png" | absolute_url }})
 
-You can see an example of this component working in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/){:target="_blank"}.
+You can see a working example of this in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/main/main.component.html){:target="_blank"}.
 
 ## Toolbar
 
