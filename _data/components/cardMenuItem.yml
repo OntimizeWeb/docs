@@ -66,4 +66,10 @@ attributes: [{
   default: "{}",
   required: "",
   description: "Object containing the attributes for the component provided to the `detail-component` attribute"
+},{
+  name: "action",
+  type: "function",
+  default: "",
+  required: "",
+  description: "A function defined in your component called when the card button is clicked and the route attribute is not configured"
 }]
