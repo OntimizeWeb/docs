@@ -3,9 +3,9 @@ permalink: /components/table/
 title: "Table"
 comp: table
 ---
-{% include toc %}
 
 {% include base_path %}
+{% include toc %}
 
 ## Introduction
 The `o-table` provides a table of data that can be used to display rows of data.
@@ -378,64 +378,47 @@ It is defined with `type="service"` in *o-table-column* selector. All the attrib
       </o-table-column>
     </o-table>
 ```
+
 ### Custom renderers
 
+A custom renderer allows you to display the data of a table cell formatted as you desire. For this, you need to create a new component that extends the cell rendere base class and place it into your table.
 
-To create a custom render, you need to create a new component to display custom renderer information and place this render in the content of cell.
+The requisites for a custom table cell renderer component are the following:
 
-Here's how you might begin in your file .ts:
+- The component must extends the `OBaseTableCellRenderer` class.
 
-- Your component must extends ```OBaseTableCellRenderer```.
+- Reference the template container in your component. For this, wrap the content of your component HTML with the `ng-template` tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: `@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>`. This will give your component a reference to acces the template container.
 
-- Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the ```<ng-template> ``` contents with a TemplateRef and access the view container.
-- In constructor you must add
+- Call the `initialize` method in the contructor.
 
-```javascript
-constructor(protected injector: Injector) {
-  super(injector);
-  this.initialize();
-}
-```
+- If you want to customize the internal value of the cell (this value is used for filtering or exporting the table data), you must overwrite the `getCellData` method.
 
-- If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*
-
-
-The following example show how render two values of column in a cell, "SURNAME, name" and override method getCellData
-
-The o-table-cell-renderer-name.ts file is as follows:
+You have an example of a custom renderer below. It displays a person full name in a table cell, for this, it concat the values in the `getCellData` method and displays its value in the template.
 
 ```javascript
-import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
+import { Component, Injector, TemplateRef ViewChild } from '@angular/core';
 import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
 
-
 @Component({
-    selector: 'custom-render',
-    templateUrl: './custom-render.component.html'
+  selector: 'custom-render',
+  templateUrl: './custom-render.component.html'
 })
 
 export class OTableCellRendererName extends OBaseTableCellRenderer {
 
-    @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
 
-    constructor(protected injector: Injector) {
+  constructor(protected injector: Injector) {
+    super(injector);
+    this.initialize();
+  }
 
-        super(injector);
-        this.initialize();
-    }
-     getCellData(cellvalue: any,rowvalue) {
-       return `rowvalue['SURNAME'].toUpperCase()., .rowvalue[NAME]`;
-     }
+  getCellData(cellvalue: any, rowvalue: Object) {
+    return rowvalue['SURNAME'].toUpperCase() + ', ' + rowvalue[NAME];
+  }
+
 }
 ```
-
-Here's how you might begin in your file .html:
-
-- Your component must start *<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">* and end *</ng-template>*.
-The *let* keyword declares a template input variable that you reference within the template. The input variables are *cellvalue* and *rowvalue*. The parser translates let cellvalue and let rowvalue into variables named, *let-cellvalue* and *let-rowvalue*.
-
-
-The o-table-cell-renderer-name.html file is as follows:
 
 ```html
   <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
@@ -443,8 +426,9 @@ The o-table-cell-renderer-name.html file is as follows:
   </ng-template>
 ```
 
+The *let* keyword declares a template input variable that you reference within the template. The input variables are `cellvalue` and `rowvalue`. The parser translates let cellvalue and let rowvalue into variables named, `let-cellvalue` and `let-rowvalue`.
 
-Finally, add the component *OTableCellRendererName* to your module.
+Finally, add the created component to your module for including it in your table.
 
 ## Editing
 
