@@ -62,7 +62,7 @@
     ```
   {% endif %}
 
-  {{ content | smartify | markdownify }}
+  {{ content }}
 </div>
 
 <!-- API -->
