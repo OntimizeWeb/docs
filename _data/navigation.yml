@@ -224,7 +224,7 @@ components:
           - title: "Card menu item"
             url: /components/cardmenulayout/cardmenuitem/
       - title: "Bar menu"
-        url: /components/o-bar-menu.component/
+        url: /components/barmenu/
       - title: "Side menu"
         url: /components/o-side-menu.component/
   - title: "FAQ"

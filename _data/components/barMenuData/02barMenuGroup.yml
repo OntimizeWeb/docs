@@ -1,11 +1,10 @@
-directive: "o-bar-menu"
+directive: "o-bar-menu-group"
+title: "Bar menu group"
 
 attributes: [{
   name: "title",
   type: "string",
   default: "",
   required: "",
-  description: "Menu title"
+  description: "Group title"
 }]
-
-extraComponents: "barMenuData"
