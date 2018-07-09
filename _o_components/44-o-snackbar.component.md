@@ -4,27 +4,13 @@ title: "SnackBar"
 comp: snackbar
 ---
 
-SnackBarService is a service for displaying snack-bar notifications.
+{% include base_path %}
 
-A snack-bar contains allways a message. You can optionally add a configuration object in order to show an icon, an action button or deciding how long the snack-bar will be shown.
+The `SnackBarService` is a service for displaying snack-bar notifications.
 
-{% assign filenameArray = "" | split:"|"  %} 
-{% for files_hash in site.data.components.snackbarData %}
-  {% assign filenameArray = filenameArray | push: files_hash[0] %}
-{% endfor %}
-{% assign filenameArray = filenameArray | sort %}
-{% for filename in filenameArray %}
-  {% assign dataFile = site.data.components.snackbarData[filename] %}
-  {% capture dataFileCapture %}
-    {% include o-component-single.md compFile=dataFile %}
-  {% endcapture %}
-  <div class="o-compFile-div">
-    <h2 class="">{{ dataFile.title }}</h2>
-    {{ dataFileCapture | replace: '    ', '' }}
-  </div>
-{% endfor %}
+A snack-bar contains allways a message. You can optionally add a configuration object in order to show an icon, an action button or deciding how long the snack-bar will be shown. Check the attributes of the snack-bar configuration in the **API** sectio of this page.
 
-<h3 class="grey-color">Example</h3>
+## Example
 
 ```javascript
     import { OSnackBarConfig, SnackBarService } from 'ontimize-web-ngx';
