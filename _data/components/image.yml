@@ -34,9 +34,19 @@ attributes: [{
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the selection controls"
+},
+{
+  name: "size-adjust",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not the image size is adjusted"
 },{
-  name: "sql-type",
-  default : "BLOB"
+  name: "height",
+  type: "number",
+  default : "",
+  required : "",
+  description : "Indicates the height of image component in pixels (px) or percentage (%)"
 },{
   name: "tooltip"
 },{

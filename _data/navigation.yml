@@ -198,7 +198,7 @@ components:
   - title: Media
     children:
       - title: "Image"
-        url: /components/o-image.component/
+        url: /components/image/
 
   - title: Layout
     children:
