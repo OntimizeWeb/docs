@@ -762,8 +762,8 @@ The `o-table-option` component allows you to add extra options to the table menu
 
 ### Table context menu
 
-The `o-table` allow to add context menu to table rows, supports left clicking on a row to bring up a context menu.
-The menu is attached to and opened via application of the `context-menu` attribute that refers to the definition of the menu.
+The `o-table` allows to add a context menu to table rows, the menu is displayed by right clicking in the table row.
+For includig the context menu in your table you have to include the `o-table-context-menu` component in your table and configure the `context-menu` attribute with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'} component.
 
 Below an example.
 
@@ -791,7 +791,7 @@ Below an example.
 </o-context-menu>
 ```
 
-For more information about _o-context-menu_ component definition, please read the [docs]({{ base_path }}/components/contextmenu/).
+For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/){:target='_blank'}.
 
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/contextmenu){:target="_blank"}.
 
