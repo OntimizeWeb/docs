@@ -24,11 +24,11 @@ docs:
         url: /doc-overview/
       - title: "Example overview"
         url: /example-overview/
-      - title: "Install and run example"
+      - title: "Run an example"
         url: /install-and-run/
       - title: "Make some changes"
         url: /make-changes/
-      - title: "More advanced topics"
+      - title: "Advanced topics"
         url: /advanced-changes/
   - title: Guide
     children:
@@ -46,7 +46,7 @@ docs:
       #   url: /permission/
       - title: "Build and run"
         url: /build-and-run/
-      - title: "Add OntimizeWeb to your project"
+      - title: "OntimizeWeb library"
         url: /add-to-project/
       - title: "Video examples"
         url: /video-examples/
@@ -203,7 +203,7 @@ components:
         url: /components/dialog/
       - title: "App layout"
         url: /components/applayout/
-      - title: "Form layout manager"
+      - title: "Form layout mngr."
         url: /components/formlayoutmanager/
       - title: "Breadcrumb"
         url: /components/breadcrumb/
@@ -220,7 +220,7 @@ components:
             url: /components/cardmenulayout/cardmenuitem/
       - title: "Bar menu"
         url: /components/barmenu/
-      - title: "Side menu"
+      - title: "Side menu <small>(deprecated)</small>"
         url: /components/sidemenu/
   - title: "FAQ"
     url: /components/faq/

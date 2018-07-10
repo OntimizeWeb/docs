@@ -7,6 +7,10 @@ comp: sideMenu
 {% include base_path %}
 {% include toc %}
 
+<div class="notice--danger align-center" style="margin: 0;">
+This component is **deprecated** and will be removed in following versions.
+</div>
+
 The `o-side-menu` component displays a side menu on the page where it is included. It is recommended to include it in the main component of you **OntimizeWeb** application, where the `router-outlet` is placed, so the side menu will be always visible.
 
 For building the side menu component you must include different components
