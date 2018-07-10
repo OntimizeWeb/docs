@@ -226,7 +226,7 @@ components:
       - title: "Bar menu"
         url: /components/barmenu/
       - title: "Side menu"
-        url: /components/o-side-menu.component/
+        url: /components/sidemenu/
   - title: "FAQ"
     url: /components/faq/
 
