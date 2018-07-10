@@ -184,7 +184,7 @@ components:
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
       - title: "List"
-        url: /components/o-list.component/
+        url: /components/list/
       - title: "Tree"
         url: /components/o-tree.component/
       - title: "Filter builder <span class='menuitem-badge'>new<span>"

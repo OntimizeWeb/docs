@@ -3,27 +3,15 @@ directive: "o-list"
 attributes: [{
   name: "attr"
 },{
-  name: "title",
-  type: "string",
-  default: "",
-  required: "",
-  description: "List title displayed on screen"
+  name: "service"
 },{
-  name: "visible"
+  name: "service-type"
 },{
-  name: "enabled",
-  description: "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
+  name: "entity"
 },{
-  name: "controls"
+  name: "keys"
 },{
-  name: "filter",
-  type: "no | false | yes | true",
-  default: "no",
-  required: "",
-  description: "Indicates whether or not to show list filtering options"
-},{
-  name: "refresh-button",
-  description: "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
+  name: "parent-keys"
 },{
   name: "query-on-init",
   default: "yes"
@@ -33,29 +21,7 @@ attributes: [{
 },{
   name: "pageable"
 },{
-  name: "css-class",
-  type: "string",
-  default: "",
-  required: "",
-  description: "<em>css</em> class name"
-},{
   name: "columns"
-},{
-  name: "parent-keys"
-},{
-  name: "service"
-},{
-  name: "service-type"
-},{
-  name: "entity"
-},{
-  name: "keys"
-},{
-  name: "route",
-  type: "",
-  default: "",
-  required: "",
-  description: ""
 },{
   name: "static-data"
 },{
@@ -63,7 +29,30 @@ attributes: [{
 },{
   name: "paginated-query-method"
 },{
-  name: "delete-method"
+  name: "query-rows"
+},{
+  name: "insert-method"
+},{
+  name: "query-with-null-parent-keys"
+},{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The title of the list"
+},{
+  name: "css-class",
+  type: "string",
+  default: "",
+  required: "",
+  description: "<em>css</em> class name"
+},{
+  name: "visible"
+},{
+  name: "enabled",
+  description: "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
+},{
+  name: "controls"
 },{
   name: "detail-mode"
 },{
@@ -75,19 +64,27 @@ attributes: [{
 },{
   name: "detail-button-in-row-icon"
 },{
-  name: "edit-button-in-row"
-},{
-  name: "edit-button-in-row-icon"
+  name: "filter",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show list filtering options"
 },{
   name: "edit-form-route"
 },{
   name: "recursive-edit"
 },{
-  name: "query-rows"
+  name: "edit-button-in-row"
+},{
+  name: "edit-button-in-row-icon"
 },{
   name: "insert-button"
 },{
+  name: "delete-button"
+},{
   name: "row-height"
+},{
+  name: "insert-form-route"
 },{
   name: "quick-filter"
 },{
@@ -97,7 +94,16 @@ attributes: [{
   required: "",
   description: "Columns used in the <em>quick-filter</em>. Separated by ';'"
 },{
-  name: "refresh-button"
+  name: "refresh-button",
+  description: "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
+},{
+  name: "route",
+  type: "",
+  default: "",
+  required: "",
+  description: ""
+},{
+  name: "delete-method"
 },{
   name: "selectable",
   type: "",
@@ -112,6 +118,6 @@ attributes: [{
   description: ""
 },{
   name: "store-state"
-},{
-  name: "query-with-null-parent-keys"
 }]
+
+extraComponents: "listData"
