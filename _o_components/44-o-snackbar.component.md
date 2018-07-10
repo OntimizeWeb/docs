@@ -8,7 +8,7 @@ comp: snackbar
 
 The `SnackBarService` is a service for displaying snack-bar notifications.
 
-A snack-bar contains allways a message. You can optionally add a configuration object in order to show an icon, an action button or deciding how long the snack-bar will be shown. Check the attributes of the snack-bar configuration in the **API** sectio of this page.
+A snack-bar contains always a message. You can optionally add a configuration object in order to show an icon, an action button or deciding how long the snack-bar will be shown. Check the attributes of the snack-bar configuration in the **API** section of this page.
 
 ## Example
 

@@ -205,7 +205,7 @@ components:
       - title: "Containers"
         url: /components/containers/
       - title: "Dialog"
-        url: /components/o-dialog.component/
+        url: /components/dialog/
       - title: "App layout"
         url: /components/applayout/
       - title: "Form layout manager"
