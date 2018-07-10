@@ -124,6 +124,7 @@
       {% for inheritedObj in sortedInheritedOutputs %}
       <li>
         from {% if inheritedObj.path %} <a href="{{ base_path }}/components/{{inheritedObj.path}}/" rel="permalink">{% endif %}{{ inheritedObj.component }}:{% if inheritedObj.path %}</a>{% endif %}
+        <ul class="attributes-list">
           {% assign sortedInheritedOuts = (inheritedObj.outputs | sort) %}
           {% for inheritedOutput in sortedInheritedOuts %}
             <li> {{ inheritedOutput }} </li>
