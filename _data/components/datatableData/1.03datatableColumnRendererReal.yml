@@ -1,6 +1,5 @@
-directive : "o-datatable-cell-renderer-real"
-
- 
+directive: "o-datatable-cell-renderer-real"
+title: "Cell renderer: real"
 
 attributes: [{
   name: "grouping"
@@ -11,5 +10,3 @@ attributes: [{
 },{
   name: "decimal-digits"
 }]
-
-title : "ODataTableCellRendererReal"

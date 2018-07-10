@@ -159,12 +159,7 @@ components:
           - title: "Form container"
             url: /components/form/container/
       - title: "DataTable <small>(deprecated)</small>"
-        url: /components/o-datatable.component/
-        children:
-          - title: "Column renderers"
-            url: '/datatable-components/o-datatable-renderers.component/'
-          - title: "Column editors"
-            url: '/datatable-components/o-datatable-editors.component/'
+        url: /components/datatable/
       - title: "Table <span class='menuitem-badge'>new<span>"
         url: /components/table/
         children:
