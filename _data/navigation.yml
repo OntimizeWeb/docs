@@ -147,7 +147,7 @@ components:
   - title: Button
     children:
       - title: "Button"
-        url: /components/o-button.component/
+        url: /components/button/
 
   - title: Data
     children:
