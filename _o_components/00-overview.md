@@ -48,7 +48,7 @@ To create a tooltip, add the `tooltip` attribute to an element. By default, the 
 ```
 ## Width <span class='menuitem-badge'> new </span>
 
-You can specifie the width, in px or % of a input component.
+All input conponents have the `width` atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.
 
 <!--
 extends OFormDataComponent
