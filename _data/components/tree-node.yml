@@ -1,5 +1,4 @@
-
-directive : "o-tree-node"
+directive: "o-tree-node"
 
 attributes: [{
   name: "attr"
@@ -26,14 +25,14 @@ attributes: [{
 },{
   name: "sort-columns",
   type: "string",
-  default : "",
-  description : "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
+  default: "",
+  description: "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
 },{
   name: "query-on-init",
-  default : "yes",
+  default: "yes",
 },{
   name: "query-on-bind",
-  default : "yes",
+  default: "yes",
 },{
   name: "query-rows"
 },{
@@ -46,77 +45,75 @@ attributes: [{
   name: "deleted-method"
 },{
   name: "pageable",
-  default : "no"
+  default: "no"
 },{
   name: "description-columns",
-  default : "<em>columns</em> attribute value",
-  description : "Tree node visible text columns"
+  default: "<em>columns</em> attribute value",
+  description: "Tree node visible text columns"
 },{
   name: "separator"
 },{
   name: "parent-column",
   type: "string",
-  default : "",
-  description : ""
+  default: "",
+  description: ""
 },{
   name: "show-root",
   type: "no | false | yes | true",
-  default : "",
-  description : "Indicates whether or not to show the root node"
+  default: "",
+  description: "Indicates whether or not to show the root node"
 },{
   name: "root-title",
   type: "string",
-  default : "",
-  description : "Title of the root node"
+  default: "",
+  description: "Title of the root node"
 },{
   name: "recursive",
   type: "no | false | yes | true",
-  default : "no",
-  description : "Indicates wheter or not to do recursive queries over the selected node"
+  default: "no",
+  description: "Indicates wheter or not to do recursive queries over the selected node"
 },{
   name: "recursive-levels",
   type: "number",
-  default : "1",
-  description : "Number of recursive levels"
+  default: "1",
+  description: "Number of recursive levels"
 },{
   name: "translate",
   type: "no | false | yes | true",
-  default : "no",
-  description : "Indicates whether or not to automatically translate the tree nodes values"
-}{
-   name: "route",
-   type: "string",
-   default : "",
-   description : "Navigation route activated when the node is clicked"
- }
+  default: "no",
+  description: "Indicates whether or not to automatically translate the tree nodes values"
+},{
+  name: "route",
+  type: "string",
+  default: "",
+  description: "Navigation route activated when the node is clicked"
 }]
 
-
 outputs: [{
-  name : "onNodeSelected",
+  name: "onNodeSelected",
   description: "Event triggered when a tree node is selected"
 },{
-  name : "onNodeExpanded",
+  name: "onNodeExpanded",
   description: "Event triggered when a tree node is expanded"
 },{
-  name : "onNodeCollapsed",
+  name: "onNodeCollapsed",
   description: "Event triggered when a tree node is collapsed"
 }]
 
 # ,{
-#   name : "onLoadNextLevel",
+#   name: "onLoadNextLevel",
 #   description: "Event triggered when "
 # }
 
-#   name : "onNodeMoved",
+#   name: "onNodeMoved",
 #   description: "Event triggered when "
 # },{
-#   name : "onNodeCreated",
+#   name: "onNodeCreated",
 #   description: "Event triggered when "
 # },{
-#   name : "onNodeRemoved",
+#   name: "onNodeRemoved",
 #   description: "Event triggered when "
 # },{
-#   name : "onNodeRenamed",
+#   name: "onNodeRenamed",
 #   description: "Event triggered when "
 # },{
