@@ -9,16 +9,18 @@ under_construction: false
 
 
 The `o-image` component to display different types of images, including network images, base64 images or images from the local disk.
+This component can also be used within the form allowing the management of this data (add, modify or delete an image of the form).
 
 ## Basic example
 
 This example shows the obtaining and visualization of an image from the network, from relative url and even in base64 in the `data` propertie.
 ```html
-<!-- network images-->
- <o-image attr="image1" data="http://placekitten.com/500/600"></o-image>
+<!-- network images -->
+ <o-image attr="image1" data="http://placekitten.com/200/200"></o-image>
+ <!-- local network image -->
  <o-image attr="image2" data="assets/images/sidenav-opened.png"></o-image>
  <!-- base64 images-->
- <o-image attr="image3" [data]="dataBase64" auto-fit="no" height="200px" width="50%"></o-image>
+ <o-image attr="image3" [data]="dataBase64"></o-image>
         
 ```
 ```js
@@ -28,7 +30,9 @@ public dataBase64= "data:image/png;base64,iV BORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAA
 ![Image component]({{ "/images/components/media/image/image-screen.png" | absolute_url }}){: .comp-example-img}
 
 ## Empty image
-The `o-image` component allow add an empty image when the data is empty. For example:
+The `o-image` component allow add an empty image when the data is empty. 
+
+For example:
 ```html
     <o-image attr="PHOTO" class="customer-picture" empty-image="./assets/images/no-image.png" ></o-image>
 ```
@@ -41,13 +45,13 @@ The `o-image` component show controls by default, you can configure hide the con
 
 
 ## Configure size
-The `o-image` component adjust size the image by default, you can configure hide the controls by setting the value *no* to `size-adjust` attribute.
+The `o-image` component adjust size the image by default, you can disable this functionality setting the value *no* to `auto-fit` attribute.
 
-You can also add the height and the width to an image with `height` and `width` attribute in px or in %.
+You can also add the height and the width to an `o-image` componente with `height` and `width` attribute in px or in %.
 
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/media)
 
 
 ## Validation
 
-The `o-image` shows automatically an error message when the required attribute is set to 'yes' and there is no value on the input.
+The `o-image` shows automatically an error message inside of the form when the required attribute is set to 'yes' and there is no value on the input.

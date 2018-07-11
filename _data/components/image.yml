@@ -21,26 +21,26 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "Image displayed when the component has no value. It has preference over the <em>empty-icon</em>"
+  description : "Image displayed when the component has no value. It has preference over the <em>empty-icon</em>."
 },{
   name: "empty-icon",
   type: "string",
   default : "",
   required : "",
-  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) displayed when the component has no value"
+  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) displayed when the component has no value."
 },{
   name: "show-controls",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether or not to show the selection controls"
+  description : "Indicates whether or not to show the selection controls."
 },
 {
-  name: "size-adjust",
+  name: "auto-fit",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether or not the image size is adjusted"
+  description : "Indicates whether or not the image size is adjusted."
 },{
   name: "height",
   type: "number",
