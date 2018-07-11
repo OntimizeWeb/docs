@@ -16,9 +16,12 @@ For adding a list component to your application you must insert the `o-list` in 
 The `o-list-item-text` is used to display a maximun of two lines of text with and a title.
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
+<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
+  columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-text #item title="{{ row.NAME }}" primary-text="{{ row.EMAIL }}" secondary-text="{{ row.ADDRESS }}"></o-list-item-text>
+    <o-list-item-text #item title="{% raw %}{{ row.NAME }}{% endraw %}" primary-text="{% raw %}{{ row.EMAIL }}{% endraw %}"
+      secondary-text="{% raw %}{{ row.ADDRESS }}{% endraw %}">
+    </o-list-item-text>
   </o-list-item>
 </o-list>
 ```
@@ -30,9 +33,12 @@ You can see an example of this component in the [OntimizeWeb playground](https:/
 ## List item: avatar
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
+<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
+  columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-avatar #item avatar="./assets/images/ontimize.png" title="{{ row.NAME }}" primary-text="{{ row.EMAIL }}" secondary-text="{{ row.ADDRESS }}"></o-list-item-avatar>
+    <o-list-item-avatar #item avatar="./assets/images/ontimize.png" title="{% raw %}{{ row.NAME }}{% endraw %}"
+      primary-text="{% raw %}{{ row.EMAIL }}{% endraw %}" secondary-text="{% raw %}{{ row.ADDRESS }}{% endraw %}">
+    </o-list-item-avatar>
   </o-list-item>
 </o-list>
 ```
@@ -44,9 +50,12 @@ You can see an example of this component in the [OntimizeWeb playground](https:/
 ## List item: card
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
+<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
+  columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card #item title="{{ row.NAME }}" subtitle="{{ row.EMAIL }}" image="./assets/images/ontimize.png" action-1-text="Contact" action-2-text="Share"></o-list-item-card>
+    <o-list-item-card #item title="{% raw %}{{ row.NAME }}{% endraw %}" subtitle="{% raw %}{{ row.EMAIL }}{% endraw %}"
+      image="./assets/images/ontimize.png" action-1-text="Contact" action-2-text="Share">
+    </o-list-item-card>
   </o-list-item>
 </o-list>
 ```
@@ -58,9 +67,12 @@ You can see an example of this component in the [OntimizeWeb playground](https:/
 ## List item: card image
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
+<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
+  columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-text #item title="{{ row.NAME }}" primary-text="{{ row.EMAIL }}" secondary-text="{{ row.ADDRESS }}"></o-list-item-text>
+    <o-list-item-card-image #item title="{% raw %}{{ row.NAME }}{% endraw %}" subtitle="{% raw %}{{ row.EMAIL }}{% endraw %}"
+      content="{% raw %}{{ row.ADDRESS }}{% endraw %}" avatar="./assets/images/ontimize.png" image="./assets/images/ontimize.png" action-1-text="Contact" action-2-text="Share" collapsible="yes" collapsed="no">
+    </o-list-item-card-image>
   </o-list-item>
 </o-list>
 ```
