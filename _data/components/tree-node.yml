@@ -1,13 +1,8 @@
 
-directive : "o-tree"
+directive : "o-tree-node"
 
 attributes: [{
   name: "attr"
-},{
-  name: "title",
-  type: "string",
-  default : "",
-  description : "Title in the tree toolbar"
 },{
   name: "static-data"
 },{
@@ -40,10 +35,6 @@ attributes: [{
   name: "query-on-bind",
   default : "yes",
 },{
-  name: "quick-filter"
-},{
-  name: "refresh-button"
-},{
   name: "query-rows"
 },{
   name: "insert-method"
@@ -56,8 +47,6 @@ attributes: [{
 },{
   name: "pageable",
   default : "no"
-},{
-  name: "store-state"
 },{
   name: "description-columns",
   default : "<em>columns</em> attribute value",
@@ -94,9 +83,7 @@ attributes: [{
   type: "no | false | yes | true",
   default : "no",
   description : "Indicates whether or not to automatically translate the tree nodes values"
-},{
-  name: "controls"
- ,{
+}{
    name: "route",
    type: "string",
    default : "",
