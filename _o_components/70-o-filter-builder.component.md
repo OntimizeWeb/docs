@@ -44,7 +44,7 @@ In the following example there is a `o-form` component that contains two `o-text
 ```html
 <o-form editable-detail="no" show-header="no">
 
-  <o-column title-label="{{ 'FILTERS' | oTranslate }}">
+  <o-column title-label="{% raw %}{{ 'FILTERS' | oTranslate }}{% endraw %}">
     <o-row layout-align="space-between center">
       <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
       <o-text-input attr="SURNAME" read-only="no" fxFlex="66"></o-text-input>
@@ -63,7 +63,7 @@ In the following example there is a `o-form` component that contains two `o-text
   <o-filter-builder #filterBuilder attr="thefilter" filters="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID" [target]="tableEmployees"
     query-on-change="no" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
 
-  <o-column title-label="{{ 'EMPLOYEES' | oTranslate }}">
+  <o-column title-label="{% raw %}{{ 'EMPLOYEES' | oTranslate }}{% endraw %}">
     <o-table #tableEmployees attr="employees" service="employees" entity="employee" columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
       visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEETYPEID;EMPLOYEESTARTDATE" keys="EMPLOYEEID"
       sort-columns="EMPLOYEESURNAME" detail-mode="none" insert-button="no" pageable="yes">

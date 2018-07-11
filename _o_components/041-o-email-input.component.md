@@ -12,7 +12,7 @@ The `o-email-input` component is used in [forms]({{ base_path }}/components/form
 The email input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-<img src="{{ base_path }}/docs/images/components/inputs/o-email-input.png" alt="o-email-input component" class="comp-example-img">
+![Email input component]({{ "/images/components/inputs/o-email-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">

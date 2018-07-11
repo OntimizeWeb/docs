@@ -222,8 +222,7 @@ components:
         url: /components/barmenu/
       - title: "Side menu <small>(deprecated)</small>"
         url: /components/sidemenu/
-  - title: "FAQ"
-    url: /components/faq/
+  
 
 ontimize_web_ngx_filemanager:
   - title: "Getting Started"
