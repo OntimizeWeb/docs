@@ -153,7 +153,7 @@ Now, you can use the extended form in your template as follows:
   <o-email-input attr="username" required="yes" flex [data]="registryForm.getDataValue('username')"> </o-email-input>
   <o-password-input attr="password" required="yes" min-length="6" max-length="30" flex [data]="registryForm.getDataValue('password')"></o-password-input>
   <o-password-input attr="password2" required="yes" min-length="6" max-length="30" flex [data]="registryForm.getDataValue('password2')"></o-password-input>
-  <re-captcha siteKey="{{ GOOGLE_RECAPTCHA_KEY }}" (captchaResponse)="registryForm.getCaptcha($event)"></re-captcha>
+  <re-captcha siteKey="{% raw %}{{ GOOGLE_RECAPTCHA_KEY }}{% endraw %}" (captchaResponse)="registryForm.getCaptcha($event)"></re-captcha>
   <o-row layout-align="end center">
     <o-button label="SEND" (click)="registryForm.send()"></o-button>
   </o-row>
@@ -174,7 +174,7 @@ In the following example we have a form component withe field for filtering the 
 
 ```html
 <o-form editable-detail="no" show-header="no">
-  <o-column title-label="{{ 'FILTERS' | oTranslate }}">
+  <o-column title-label="{% raw %}{{ 'FILTERS' | oTranslate }}{% endraw %}">
     <o-row layout-align="space-between center">
       <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
       <o-text-input attr="SURNAME" read-only="no" fxFlex="66"></o-text-input>
@@ -185,7 +185,7 @@ In the following example we have a form component withe field for filtering the 
     </o-combo>
   </o-column>
 
-  <o-column title-label="{{ 'EMPLOYEES' | oTranslate }}">
+  <o-column title-label="{% raw %}{{ 'EMPLOYEES' | oTranslate }}{% endraw %}">
     <o-table attr="employees" service="employees" entity="employee" columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
       visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEETYPEID;EMPLOYEESTARTDATE" keys="EMPLOYEEID"
       parent-keys="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID" query-with-null-parent-keys="yes" sort-columns="EMPLOYEESURNAME"
