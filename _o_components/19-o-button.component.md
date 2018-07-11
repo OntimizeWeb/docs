@@ -16,4 +16,6 @@ The `o-button` component is a wrapper for Angular Material buttons. It allows ad
   <o-button attr="floating" type="FLOATING" icon="add" (click)="onClick($event)"></o-button>
 ```
 
+![List item card image]({{ "/images/components/button/o-button.png" | absolute_url }}){: .comp-example-img}
+
 You can see this live example in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/buttons){:target="_blank"}.
