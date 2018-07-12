@@ -1,5 +1,5 @@
 ---
-permalink: /components/dialog
+permalink: /components/dialog/
 title: "Dialog"
 comp: dialogLayout
 ---
