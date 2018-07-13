@@ -200,7 +200,7 @@ keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL
 </o-table>
 ```
 
-You can configure the methods by default with the `ìnsert-method`,`update-method`,`deleted-method`
+You can configure the methods by default with the `ìnsert-method`,`update-method`,`delete-method`
 
 
 By default the filtering is *local*, you can be enabled filtering *remote* with `pageable="yes"`.

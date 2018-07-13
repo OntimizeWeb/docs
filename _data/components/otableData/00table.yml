@@ -149,7 +149,7 @@ attributes: [{
 },{
   name: "paginated-query-method"
 },{
-  name: "deleted-method"
+  name: "delete-method"
 },{
   name: "pageable",
   default : "no"
