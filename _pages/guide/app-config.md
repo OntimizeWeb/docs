@@ -97,7 +97,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | ------- | ------- | ----------- |
   | id      | string  | The menu item identifier |
   | name    | string  | The menu item name |
-  | icon    | string  | The menu item icon |
+  | icon    | string  | The menu item icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) |
   | items   | array   | The menu item children. Providing this attribute means that the menu item is a container for a group of menu items |
   | opened  | boolean | In case the `items` property is defined, indicates if the group menu item is open or not by default |
   | tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
@@ -124,7 +124,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | ------------------- | ------------------- | ----------- |
   | id                  | string              | The menu item identifier |
   | name                | string              | The menu item name |
-  | icon                | string              | The menu item icon |
+  | icon                | string              | The menu item icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) |
   | tooltip             | string              | The tooltip text showed on the menu item when the menu is callapsed |
   | show-in-app-sidenav | boolean             | Indicates whether or not to show the menu item in the side menu |
   | show-in-card-menu   | boolean             | Indicates whether or not to show the corresponding card in the [`o-card-menu-layout`](#card-menu-layout) |
