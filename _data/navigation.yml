@@ -44,6 +44,8 @@ docs:
         url: /forms/
       # - title: "Permission"
       #   url: /permission/
+      - title: "Services"
+        url: /guide/service/
       - title: "Build and run"
         url: /build-and-run/
       - title: "OntimizeWeb library"

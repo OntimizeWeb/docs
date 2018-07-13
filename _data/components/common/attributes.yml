@@ -186,7 +186,7 @@
     type: "string",
     default: "",
     required: "",
-    description: ""
+    description: "Injection token indicated in the provider of the service"
   },
   "query-method": {
     name: "query-method",
