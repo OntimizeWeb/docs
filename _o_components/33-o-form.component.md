@@ -7,7 +7,7 @@ comp: form
 {% include base_path %}
 {% include toc %}
 
-Forms are the pillar of management applicatios. They are used in applications for requesting information from the user or displaying data. **OntimizeWeb** allows you to add a form and insert [form fields]({{ base_path }}/components/input/overview/){:target="_blank"} on it in a very easy way.
+Forms are the pillar of management applications. They are used in applications for requesting information from the user or displaying data. **OntimizeWeb** allows you to add a form and insert [form fields]({{ base_path }}/components/input/overview/){:target="_blank"} on it in a very easy way.
 
 The `o-form` component allows you to display data from the server and also insert, update and delete records in the database. This can be achived easily by configuring few attributes like `service` and `entity`. Check this and other attributes in the **API** section of this page.
 
