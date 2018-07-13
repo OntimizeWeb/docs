@@ -42,8 +42,6 @@ docs:
         url: /routing/
       - title: "Forms"
         url: /forms/
-      # - title: "Permission"
-      #   url: /permission/
       - title: "Services"
         url: /guide/service/
       - title: "Build and run"

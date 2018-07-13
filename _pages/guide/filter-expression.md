@@ -1,7 +1,10 @@
 ---
 title: "Complex filtering expressions"
 permalink: /guide/filterexpression/
+author_profile: false
 excerpt: "Build complex filtering expressions."
+sidebar:
+  nav: "docs"
 ---
 
 {% include base_path %}
