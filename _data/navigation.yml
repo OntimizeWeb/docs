@@ -227,15 +227,16 @@ components:
 ontimize_web_ngx_filemanager:
   - title: "Getting Started"
     children:
-      - title: "Document overview"
+      - title: "Overview"
         url: /filemanager/overview/
-      - title: "Example overview"
-        url: /filemanager/example/
+      - title: "Installation"
+        url: /filemanager/installation/
+      
 
-  - title: "Components"
-    children:
-      - title: "Table"
-        url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
+  #- title: "Components"
+  #  children:
+  #    - title: "Table"
+  #      url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
 
   - title: "Services"
     children:

@@ -3,54 +3,29 @@ permalink: /filemanager/
 title: "File Manager"
 excerpt: ""
 ---
-
 {% include base_path %}
+{% include toc %}
 
+## Introduction
 The **Ontimize Web File Manager** is a web file manager using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
 
-* [Github repository](#github)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Documentation]({{ base_path }}/filemanager/overview/)
 
-## Github
+Main features are:
+- Ability to upload, delete and download files.
+- Multiple download support.
+- Ability to create folders.
+- Ability to rename files or folders.
+- Opening a given folder.
+- Browsing between folders.
+- File types restriction.??
+- Textbox Search filter.
+- File size limit.??
+
+
+![File manager]({{ base_path }}/images/filemanager/filemanager.png){: .align-center}
+
+## Support
 Ontimize Web File Manager module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-filemanager){:target="_blank"} where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-filemanager/issues){:target="_blank"} section.
 
-## Installation
-
-```bash
-  npm install ontimize-web-ngx-filemanager --save
-```
-
-## Usage
-
-<!-- ### Configure angular-cli.json dependencies
-
-You must add the module styles definition in your '*.angular-cli.json*' file styles array:
-
-```bash
-...
-"styles": [
-  ...
-  "../node_modules/ontimize-web-ngx-filemanager/styles.scss",
-  ....
-],
-...
-``` -->
-
-### Import in an application module
-
-Import the Ontimize Web file manager module in the app module you want to use it.
-
-```javascript
-import { OFileManagerModule } from 'ontimize-web-ngx-filemanager';
-
-@NgModule({
-  imports: [
-    OFileManagerModule
-  ],
-  declarations: ...
-  providers: ...
-})
-export class ExampleModule { }
-```
+## Documentation
+You can see completed documentation on [here]({{ base_path }}/filemanager/overview/)
