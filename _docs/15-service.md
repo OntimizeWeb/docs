@@ -6,11 +6,7 @@ permalink: /guide/service/
 {% include base_path %}
 {% include toc %}
 
-This section describes how **OntimizeWeb** use 
-
-Services are used for fetching and saving data, sharing data between different parts of the application 
-
- This services allows you 
+This section describes the **OntimizeWeb** services an how to extend them to add or modify its functionality.
 
 ## Ontimize services
 
@@ -63,7 +59,7 @@ Where the attributes indicates the following:
 
 You may need extra functionality or changing the behaviour of a service, for doing this follow the next steps:
 
-### Create a new service and extend an Ontimize service
+### Create an extended Ontimize service
 
 Create a new service class that extends an Ontimize service (`OntimizeService` or `OntimizeEEService`). In the following example we are creating a service called `StarsWarsService` that extends the `OntimizeEEService`.
 
@@ -81,6 +77,8 @@ export class StarsWarsService extends OntimizeEEService {
 
 }
 ```
+
+Once your service is created you must decide if it will be used [in the whole application](#use-your-service-in-the-whole-application) or only in [specific components](#use-your-service-in-a-specific-component).
 
 ### Use your service in the whole application
 
