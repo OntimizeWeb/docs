@@ -38,13 +38,17 @@ The standard response of the request made to Ontimize based servers allways foll
 ```javascript
 {
     code: number;
-    data: any;
+    data: Array<Object>;
     message: '';
     sqlTypes?: Object;
     startRecordIndex?: number;
     totalQueryRecordsNumber?: number;
 }
 ```
+
+You can see an example of a Ontimize service request response in the image below. You can see the complete response [here]({{ base_path }}/assets/examples/ontimize_service_request_example_response.json){:target='_blank'}.
+
+![Ontimize service response example]({{ base_path }}/images/request.png){: .align-center}
 
 Where the attributes indicates the following:
 

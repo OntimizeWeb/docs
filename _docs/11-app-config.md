@@ -43,8 +43,8 @@ The noteworthy parameters here are:
 * **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, etc.).
 * **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation
   * **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
-  * **'OntimizeEE':** configures Ontimize REST JEE services.
-  * **Custom class:** a service reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface.
+  * **'OntimizeEE':** string that configures Ontimize REST JEE services.
+  * **Custom class:** a service class reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface.
 * **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 * **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
 * **applicationLocales:** Set of available locales for the application.
