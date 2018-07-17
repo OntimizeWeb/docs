@@ -74,6 +74,8 @@ docs:
         url: /ontimize-web-ngx-dynamicform-builder/
       - title: "File Manager"
         url: /filemanager/
+      - title: "Tree"
+        url: /tree/
       - title: "JEE app seed"
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
@@ -185,8 +187,6 @@ components:
             url: '/components/table/obasetablecellrenderer/'
       - title: "List"
         url: /components/list/
-      - title: "Tree"
-        url: /components/o-tree.component/
       - title: "Filter builder <span class='menuitem-badge'>new<span>"
         url: /components/filterbuilder/
 
@@ -242,3 +242,17 @@ ontimize_web_ngx_filemanager:
     children:
       - title: "File Manager Service"
         url: /ontimize_web_ngx_filemanager/services/filemanager/
+
+ontimize_web_ngx_tree:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /tree/overview/
+      - title: "Installation"
+        url: /tree/installation/
+  - title: "Components"
+    children:
+      - title: "Tree"
+        url: /tree/components/o-tree.component/      
+      - title: "Tree node"    
+        url: /tree/components/o-tree-node.component/

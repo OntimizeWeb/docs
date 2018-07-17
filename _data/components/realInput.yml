@@ -2,11 +2,11 @@ directive : "o-real-input"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
-  path: "input/overview",
+  path: "components/input/overview",
   attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
 },{
   component: "o-integer-input",
-  path: "input/integer",
+  path: "components/input/integer",
   attributes: ["min", "max", "step", "grouping", "thousand-separator", "locale"]
 }]
 
