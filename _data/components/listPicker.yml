@@ -2,7 +2,7 @@ directive : "o-list-picker"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
-  path: "input/overview",
+  path: "components/input/overview",
   attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "sql-type", "width", "read-only"]
 }]
   

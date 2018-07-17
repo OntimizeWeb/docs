@@ -2,12 +2,12 @@ directive : "o-nif-input"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
-  path: "input/overview",
+  path: "components/input/overview",
   attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
 }]
 
 inheritedOutputs: [{
   component: "o-text-input",
-  path: "input/text",
+  path: "components/input/text",
   outputs: ["onChange", "onFocus", "onBlur"]
 }]
