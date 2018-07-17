@@ -1,15 +1,13 @@
-class: "OTableCellRendererDateComponent"
+class: "OTableCellRendererIntegerComponent"
 
 extends: "OBaseTableCellRenderer" 
 
-directive: "o-table-cell-renderer-date"  
+directive: "o-table-cell-renderer-integer"
 
 attributes: [{
-  name: "format", 
-  type: "string",
-  default: "",
-  required: "",
-  description: "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+  name: "grouping"
+},{
+  name: "thousand-separator"
 }]
 
 inherit_properties: [{

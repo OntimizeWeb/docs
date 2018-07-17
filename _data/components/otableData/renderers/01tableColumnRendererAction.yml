@@ -1,15 +1,22 @@
-class: "OTableCellRendererDateComponent"
+class: "OTableCellRendererActionComponent"
 
 extends: "OBaseTableCellRenderer" 
 
-directive: "o-table-cell-renderer-date"  
+directive: "o-table-cell-renderer-action"
 
 attributes: [{
-  name: "format", 
+  name: "icon"
+},{
+  name: "action", 
   type: "string",
   default: "",
   required: "",
-  description: "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+  description: ""
+}]
+
+outputs: [{
+  name : "onClick",
+  description: "Event triggered when cell renderer is clicked"
 }]
 
 inherit_properties: [{
@@ -29,9 +36,5 @@ inherit_properties: [{
     name: "initialize()",
     type: "method",
     description: "Required method to render the column "
-  },{
-    name: "getCellData(cellvalue,rowvalue)",
-    type: "method",
-    description: "This default method returns the value of the column as *a string*. This method is used to obtain the value of the column in the exports or filtering, so that if you want to customize the value of the column you must overwrite it. "
   }]
 }]

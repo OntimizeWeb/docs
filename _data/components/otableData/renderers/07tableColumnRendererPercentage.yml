@@ -1,9 +1,8 @@
-directive : "o-table-cell-renderer-percentage"
-
 class: "OTableCellRendererPercentageComponent"
 
-extends : "OTableCellRendererRealComponent" 
- 
+extends: "OTableCellRendererRealComponent" 
+
+directive: "o-table-cell-renderer-percentage" 
 
 attributes: [{
   name: "grouping"
@@ -15,5 +14,3 @@ attributes: [{
   name: "decimal-digits",
   default: "0"
 }]
-
-title : "OTableCellRendererPercentage"

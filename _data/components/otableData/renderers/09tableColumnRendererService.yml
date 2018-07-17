@@ -1,15 +1,27 @@
-class: "OTableCellRendererDateComponent"
+class: "OTableCellRendererServiceComponent"
 
 extends: "OBaseTableCellRenderer" 
 
-directive: "o-table-cell-renderer-date"  
+directive: "o-table-cell-renderer-service"
 
 attributes: [{
-  name: "format", 
+  name: "entity"
+},{
+  name: "service"
+},{
+  name: "columns"
+},{
+  name: "value-column"
+},{
+  name: "parent-keys",
   type: "string",
   default: "",
   required: "",
-  description: "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+  description: "Filtering keys. Separated by ‘;’. It is possible to use alias on the following way: entityCol1:tableCol1;entityCol2;tableCol2... where entityCol1 and entityCol2 are columns from the entity requested in the cell renderer and tableCol1 and tableCol2 are table columns."
+},{
+  name: "query-method"
+},{
+  name: "service-type"
 }]
 
 inherit_properties: [{
