@@ -299,10 +299,16 @@ You can see this live example in the [OntimizeWeb playground](https://try.imatia
 
 **Action cell renderer**
 
-The action cell renderer is used for displaying a button in a table cell. Include the table cell renderer action in your table column by configuring the attribute `type` in the column with the value **action** or adding the `o-table-cell-renderer-action` to the table column. You must configure the `action` attribute with the function called when the button on the table cell will be clicked. Check the definition of this and more attributes in the **API** section of this page.
+The action cell renderer is used for displaying a button in a table cell. Include the table cell renderer action in your table column by configuring the attribute `type` in the column with the value **action** or adding the `o-table-cell-renderer-action` to the table column. You can listen to the `onClick` events on the table cell in order to perform the desired action. Check the definition of this and more attributes in the **API** section of this page.
 
 ```html
+<o-table-column attr="EMPLOYEENAME" type="action" icon="person" (onClick)="showMessage($event)"></o-table-column>
 
+<!-- Equivalent code -->
+
+<o-table-column attr="EMPLOYEENAME">
+  <o-table-cell-renderer-action icon="person" (onClick)="showMessage($event)"></o-table-cell-renderer-action>
+</o-table-column>
 ```
 
 **Boolean cell renderer**
@@ -414,12 +420,17 @@ You can include this component in your table in two different ways:
 
 ```html
 <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
-  <o-table-cell-renderer-service service="employees" entity="employeeType" columns="TYPEID;EMPLOYEETYPENAME" parent-keys="TYPEID:EMPLOYEETYPEID" value-column="EMPLOYEETYPENAME"></o-table-cell-renderer-service>
+  <o-table-cell-renderer-service service="employees" entity="employeeType" columns="TYPEID;EMPLOYEETYPENAME"
+    parent-keys="TYPEID:EMPLOYEETYPEID" value-column="EMPLOYEETYPENAME">
+  </o-table-cell-renderer-service>
 </o-table-column>
 
 <!-- Equivalent code -->
 
-<o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID" type="service" service="employees" entity="employeeType" columns="TYPEID;EMPLOYEETYPENAME" parent-keys="TYPEID:EMPLOYEETYPEID" value-column="EMPLOYEETYPENAME"></o-table-column>
+<o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID" type="service" service="employees"
+  entity="employeeType" columns="TYPEID;EMPLOYEETYPENAME" parent-keys="TYPEID:EMPLOYEETYPEID"
+  value-column="EMPLOYEETYPENAME">
+</o-table-column>
 ```
 
 You can see this example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/employees){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home){:target="_blank"}.
