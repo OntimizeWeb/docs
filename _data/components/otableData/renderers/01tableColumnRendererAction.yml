@@ -1,17 +1,26 @@
 class: "OTableCellRendererActionComponent"
 
-extends: "OBaseTableCellRenderer" 
+extends: "OBaseTableCellRenderer"
 
 directive: "o-table-cell-renderer-action"
 
 attributes: [{
   name: "icon"
 },{
-  name: "action", 
+  name: "action",
+  type: "detail | edit",
+  default: "",
+  description: "Default action of the cell when its clicked, triggers the navigation to the indicated mode"
+},{
+  name: "icon-position",
+  type: "left | right",
+  default: "left",
+  description: "Icon position with respect to the text (if exists)"
+},{
+  name: "text",
   type: "string",
   default: "",
-  required: "",
-  description: ""
+  description: "Cell text"
 }]
 
 outputs: [{
