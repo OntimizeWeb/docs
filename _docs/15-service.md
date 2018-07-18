@@ -46,10 +46,6 @@ The standard response of the request made to Ontimize based servers allways foll
 }
 ```
 
-You can see an example of a Ontimize service request response in the image below. You can see the complete response [here]({{ base_path }}/assets/examples/ontimize_service_request_example_response.json){:target='_blank'}.
-
-![Ontimize service response example]({{ base_path }}/images/request.png){: .align-center}
-
 Where the attributes indicates the following:
 
 * **code**: indicates the result of the operation: 0 for successful operations, 1 for unsuccessful operations, 3 for session expired.
@@ -58,6 +54,10 @@ Where the attributes indicates the following:
 * **sqlTypes**: indicates the data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}.
 * **startRecordIndex**: in paginated queries, indicates the position of the first retrieved record in the collection.
 * **totalQueryRecordsNumber**: in paginated queries, indicates the total number of record of the collection.
+
+You can see an example of a Ontimize service request response in the image below. You can see the complete response [here]({{ base_path }}/assets/examples/ontimize_service_request_example_response.json){:target='_blank'}.
+
+![Ontimize service response example]({{ base_path }}/images/request.png){: .align-center}
 
 ## Extending Ontimize services
 
