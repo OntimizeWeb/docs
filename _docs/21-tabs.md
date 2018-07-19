@@ -1,6 +1,6 @@
 ---
 title: "Tabs"
-permalink: /tabs/
+permalink: /customize/tabs/
 ---
 
 {% include base_path %}

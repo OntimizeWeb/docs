@@ -1,6 +1,6 @@
 ---
 title: "Theming"
-permalink: /theming/
+permalink: /customize/theming/
 excerpt: "How you can customize palette colors of your app."
 ---
 

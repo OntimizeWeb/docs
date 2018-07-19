@@ -12,7 +12,9 @@ This section describes the **OntimizeWeb** services an how to extend them to add
 
 OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://www.ontimize.com/){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`. You must indicate which one the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
 
-Both services have the same methods for configuring and sending request to the server. This methods are the following:
+### Ontimize services methods
+
+Both services `OntimizeService` and `OntimizeEEService` have the same methods for configuring and sending request to the server. This methods are the following:
 
 ```javascript
 /* Configuration methods */
@@ -33,7 +35,36 @@ endsession(user: string, sessionId: number): Observable<any>;
 redirectLogin?(sessionExpired?: boolean);
 ```
 
-The standard response of the request made to Ontimize based servers allways follows the following structure:
+The *CRUD* (Create, Read, Update and Delete) methods are used to perform standard Ontimize operations:
+
+* **query**: performs a request to get data from the server.
+  * **kv**: indicates the filtering values. An empty object means that no filter will be applied into the request.
+  * **av**: indicates the columns that you want to request.
+  * **entity**: indicates the entity to perform the request.
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/ontimize/util/sqltypes.ts){:target='_blank'}).
+* **advancedQuery**: performs a request to get **paginated** data from the server.
+  * **kv**: indicates the filtering values. An empty object means that no filter will be applied into the request.
+  * **av**: indicates the columns that you want to request.
+  * **entity**: indicates the entity to perform the request.
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/ontimize/util/sqltypes.ts){:target='_blank'}).
+  * **offset**: the index of the first item requested in the collection.
+  * **pagesize**: the number of items requested.
+  * **orderby**: object with the sorting that will be applied to the request result.
+* **insert**: performs a insert operation request to the server.
+  * **av**: indicates the values to insert.
+  * **entity**: indicates the entity to perform the request.
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/ontimize/util/sqltypes.ts){:target='_blank'}).
+* **update**: performs an update operation request to the server.
+  * **kv**: indicates the filtering values for performing the update.
+  * **av**: indicates the values to update.
+  * **entity**: indicates the entity to perform the request.
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/ontimize/util/sqltypes.ts){:target='_blank'}).
+* **delete**: performs an delete operation request to the server.
+  * **kv**: indicates the filtering values for performing the deletion.
+  * **entity**: indicates the entity to perform the request.
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/ontimize/util/sqltypes.ts){:target='_blank'}).
+
+The standard response of the requests made to Ontimize based servers allways follows the following structure:
 
 ```javascript
 {
@@ -186,7 +217,7 @@ The following example shows a [`o-table`]({{ base_path }}/components/table/){:ta
 
 ### Use your service in a specific component
 
-If you want to use your service in a specific component instead of using it in the whole application, you have to add your service as a provider in the module where you want to use it like in the example below.
+If you want to use your service in a specific component instead of using it in the whole application, you have to create a factory method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
 
 ```javascript
 import { StarsWarsService } from '../../shared/stars-wars.service';
@@ -208,7 +239,7 @@ export function starsWarsServiceFactory(injector: Injector): StarsWarsService {
 export class MyModule { }
 ```
 
-Once the service is included in the providers, an instance of it will be available in the module, so you can configure the components for using it. For this, configure the `service-type` attribute in the component like in the example below.
+Once the service is included in the providers of your module, an instance of it will be available in the module, so you can configure the components for using it. For this, configure the `service-type` attribute in the component with the value of the `provide` attribute indicated in the previous step. Check the example below.
 
 ```html
 <o-table attr="starships" entity="starships" columns="name;model;manufacturer;starship_class;crew;passengers"

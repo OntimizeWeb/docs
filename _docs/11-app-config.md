@@ -89,7 +89,7 @@ There is different types of `MenuRootItem` depending on the task they are define
 
 <details class="collapsible">
   <summary markdown="span">MenuGroup</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   If you want to include a menu item to group other menu items, you must include a `MenuGroup` whose attributes are the following:
 
@@ -116,7 +116,7 @@ There is different types of `MenuRootItem` depending on the task they are define
 
 <details class="collapsible">
   <summary markdown="span">MenuItem</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   If you want to include a common menu item, you must include a `MenuItem` whith the following attributes. Note that there is some attributes that refers to the [`o-card-menu-layout`](#card-menu-layout), this will be explained later.
 
@@ -139,7 +139,7 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
 
 <details class="collapsible">
   <summary markdown="span">MenuItemRoute</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   For navigating the different modules of your application you must include a `MenuItemRoute`, its attributes are the following:
 
@@ -156,7 +156,7 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
 
 <details class="collapsible">
   <summary markdown="span">MenuItemAction</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   For triggering an action include a `MenuItemAction`, its specific attributes are the following:
 
@@ -181,7 +181,7 @@ function myFunction() {
 
 <details class="collapsible">
   <summary markdown="span">MenuItemLocale</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   For switching between different languages available in the application, add as many `MenuItemLocale` items as languages.
 
@@ -199,7 +199,7 @@ function myFunction() {
 
 <details class="collapsible">
   <summary markdown="span">MenuItemLogout</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   Include a `MenuItemLogout` for login out the user of the application, its specific attributes are the following:
 
@@ -217,7 +217,7 @@ function myFunction() {
 
 <details class="collapsible">
   <summary markdown="span">MenuItemUserInfo</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   For displaying the application user information, include a `MenuItemUserInfo` with the following attributes:
 
