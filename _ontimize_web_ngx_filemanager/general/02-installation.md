@@ -1,10 +1,9 @@
 ---
-permalink: /filemanager/installation
+permalink: /filemanager/installation/
 title: "File Manager"
-excerpt: ""
 ---
-{% include base_path %}
 
+{% include base_path %}
 
 ## Installation
 
@@ -14,23 +13,9 @@ excerpt: ""
 
 ## Usage
 
-<!-- ### Configure angular-cli.json dependencies
+### Import the File Manager into your application
 
-You must add the module styles definition in your '*.angular-cli.json*' file styles array:
-
-```bash
-...
-"styles": [
-  ...
-  "../node_modules/ontimize-web-ngx-filemanager/styles.scss",
-  ....
-],
-...
-``` -->
-
-### Import in an application module
-
-Import the Ontimize Web file manager module in the app module you want to use it.
+Import the Ontimize Web file manager module in the module you want to use it.
 
 ```javascript
 import { OFileManagerModule } from 'ontimize-web-ngx-filemanager';
@@ -43,4 +28,14 @@ import { OFileManagerModule } from 'ontimize-web-ngx-filemanager';
   providers: ...
 })
 export class ExampleModule { }
+```
+
+### Add the File Manager to your component
+
+Insert the `o-filemanager-table` component in your application component template.
+
+You must configure the `service` attribute within the name of the service that manages the files in the server. You must indicate also the column name that stores the work space identifier in the `workspace-key` attribute.
+
+```html
+<o-filemanager-table service="customers" workspace-key="ID_DMS_DOC"></o-filemanager-table>
 ```

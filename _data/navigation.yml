@@ -56,6 +56,8 @@ docs:
     children:
       - title: "Theming"
         url: /theming/
+      - title: "Tabs"
+        url: /tabs/
   - title: Add-ons
     children:
       - title: "Tools"
@@ -241,7 +243,7 @@ ontimize_web_ngx_filemanager:
   - title: "Services"
     children:
       - title: "File Manager Service"
-        url: /ontimize_web_ngx_filemanager/services/filemanager/
+        url: /filemanager/services/filemanager/
 
 ontimize_web_ngx_tree:
   - title: "Getting Started"

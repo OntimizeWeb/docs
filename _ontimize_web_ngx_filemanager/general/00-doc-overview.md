@@ -1,24 +1,18 @@
 ---
 title: "Overview"
 permalink: /filemanager/overview/
-excerpt: ""
 ---
 
 {% include base_path %}
 {% include toc %}
+
 ## Introduction
 
-The `o-filemanager-table` component allow manage files in a table.  
-To manage server data, it is necessary to configure the `service` attributes and `workspace-key`. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}. 
+The **OntimizeWeb** file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc.
 
 <div style="width:65%">
-```html
-<o-filemanager-table service="customers" workspace-key="ID_DMS_DOC"></o-filemanager-table>
-```
+![Filemanager]({{ "/images/filemanager/filemanager_default.png" | absolute_url }}){: .comp-example-img }
 </div>
-
- ![Filemanager]({{ "/images/filemanager/filemanager_default.png" | absolute_url }}){: .comp-example-img }
-
 
 ## Upload
 

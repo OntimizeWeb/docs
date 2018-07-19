@@ -45,12 +45,11 @@ Here is an example of configuration:
 */
 @import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
 @include o-material-theme($theme);
-
 ```
 
 ## Predefined themes
 
-['*ontimize-web-ngx-theming*']({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"} provides predefined themes. All of them
+The module [*ontimize-web-ngx-theming*]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"} provides predefined themes. All of them
 are stored in their corresponding files in the path *node_modules/ontimize-web-ngx-theming/src/themes/*
 
 * **md-deeppurple-amber.scss**
@@ -73,7 +72,6 @@ If none of predefined themes satisfies your needs, you can define your own style
 * Import custom theme
 */
 @import 'my-custom-app-theme.scss';
-
 ```
 
 Here is the content of the theme file:
@@ -202,4 +200,4 @@ Now you just have have to call the `@mixin` function to apply the theme definiti
 ```
 
 For more details about the theming functions, see the comments in the
-[source](https://github.com/angular/material2/blob/master/src/lib/core/theming/_theming.scss).
+[source](https://github.com/angular/material2/blob/master/src/lib/core/theming/_theming.scss){:target="_blank"}.
