@@ -12,7 +12,7 @@ inheritedAttributes: [{
 
 inheritedOutputs: [{
   component: "o-text-input",
-  path: "input/text",
+  path: "components/input/text",
   outputs: ["onChange", "onFocus", "onBlur"]
 }]
 

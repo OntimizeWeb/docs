@@ -1,8 +1,17 @@
 directive: "o-table"
 
-attributes: [{
-  name: "attr"
-},{
+inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base",
+  attributes: ["attr", "static-data", "service", "service-type", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state"]
+}]
+
+
+attributes: [
+#   {
+#   name: "attr"
+# },
+{
   name: "title",
   type: "string",
   default: "",
@@ -12,27 +21,33 @@ attributes: [{
   name: "visible"
 },{
   name: "enabled"
-},{
-  name: "static-data"
-},{
-  name: "service"
-},{
-  name: "service-type"
-},{
-  name: "query-method"
-},{
-  name: "entity"
-},{
-  name: "keys"
-},{
-  name: "parent-keys",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Form field attributes used for filtering the table data. Separated by ';'. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields."
-},{
-  name: "columns"
-},{
+},
+# {
+#   name: "static-data"
+# },
+# {
+#   name: "service"
+# },{
+#   name: "service-type"
+# }
+# ,{
+#   name: "query-method"
+# },{
+#   name: "entity"
+# },
+# {
+#   name: "keys"
+# },{
+#   name: "parent-keys",
+#   type: "string",
+#   default: "",
+#   required: "",
+#   description: "Form field attributes used for filtering the table data. Separated by ';'. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields."
+# },
+# {
+#   name: "columns"
+# },
+{
   name: "visible-columns",
   type: "string",
   default: "",
@@ -44,13 +59,15 @@ attributes: [{
   default: "",
   required: "",
   description: "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
-},{
-  name: "query-on-init",
-  default: "yes",
-},{
-  name: "query-on-bind",
-  default: "yes",
-},{
+},
+# {
+#   name: "query-on-init",
+#   default: "yes",
+# },{
+#   name: "query-on-bind",
+#   default: "yes",
+# },
+{
   name: "quick-filter"
 },{
   name: "filter-case-sensitive",
@@ -86,9 +103,11 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to show the pagination controls"
-},{
-  name: "query-rows"
-},{
+},
+# {
+#   name: "query-rows"
+# },
+{
   name: "fixed-header",
   type: "no | false | yes | true",
   default: "no",
@@ -100,11 +119,13 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to show a button on the header menu for exporting data"
-},{
-  name: "insert-method"
-},{
-  name: "update-method"
-},{
+},
+# {
+#   name: "insert-method"
+# },{
+#   name: "update-method"
+# },
+{
   name: "quick-filter-function",
   type: "(filter: string) => IFilterExpression | Object",
   default: "",
@@ -136,14 +157,17 @@ attributes: [{
   default: "multiple",
   required: "",
   description: "Row selection mode"
-},{
-  name: "paginated-query-method"
-},{
-  name: "delete-method"
-},{
-  name: "pageable",
-  default: "no"
-},{
+},
+# {
+#   name: "paginated-query-method"
+# },
+# {
+#   name: "delete-method"
+# },{
+#   name: "pageable",
+#   default: "no"
+# },
+{
   name: "detail-form-route"
 },{
   name: "recursive-detail"
@@ -157,9 +181,11 @@ attributes: [{
   name: "insert-form-route"
 },{
   name: "recursive-insert"
-},{
-  name: "store-state"
-},{
+},
+# {
+#   name: "store-state"
+# },
+{
   name: "query-with-null-parent-keys"
 }]
 
