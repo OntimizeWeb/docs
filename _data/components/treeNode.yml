@@ -6,11 +6,11 @@ inheritedOutputs: [{
   outputs: ["onNodeSelected", "onNodeExpanded", "onNodeCollapsed"]
 }]
 
-inheritedAttributes: [{
-  component: "FormDataComponent",
-  path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
-}]
+# inheritedAttributes: [{
+#   component: "FormDataComponent",
+#   path: "components/input/overview",
+#   attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+# }]
 
 attributes: [{
   name: "attr"
