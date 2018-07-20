@@ -6,12 +6,7 @@ inheritedAttributes: [{
   attributes: ["attr", "static-data", "service", "service-type", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state"]
 }]
 
-
-attributes: [
-#   {
-#   name: "attr"
-# },
-{
+attributes: [{
   name: "title",
   type: "string",
   default: "",
