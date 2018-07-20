@@ -1,0 +1,107 @@
+class : "OServiceBaseComponent"
+
+propertiesColumns: ["Name", "Type", "Description"]
+
+# properties: [{
+#   name: "elementRef",
+#   type: "property",
+#   description : "Name of the column"
+# }]
+
+attributes: [{
+  name: "attr"
+},{
+  name: "service"
+},{
+  name: "service-type"
+},{
+  name: "query-on-init",
+  default: "yes",
+},{
+  name: "query-on-bind",
+  default: "yes",
+},{
+  name: "columns"
+},{
+  name: "keys"
+},{
+  name: "parent-keys",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Form field attributes used for filtering the table data. Separated by ';'. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields."
+},{
+  name: "query-method"
+},{
+  name: "entity"
+},{
+  name: "static-data"
+},{
+  name: "paginated-query-method"
+},{
+  name: "insert-method"
+},{
+  name: "update-method"
+},{
+  name: "delete-method"
+},{
+  name: "pageable",
+  default: "no"
+},{
+  name: "query-rows"
+},{
+  name: "store-state"
+}]
+
+# methods: [{
+#   name: "getSQLType()",
+#   type: "method",
+#   description : "Returns the code of sqltype of the input.",
+#   returns: "number"
+# },{
+#   name: "setValue()",
+#   type: "method",
+#   parameters : "any",
+#   description : "Set value of the component."
+# },{
+#   name: "getValue()",
+#   type: "method",
+#   description : "Returns the selected items of the component.",
+#   returns: "any"
+# },{
+#   name: "getFormGroup()",
+#   type: "method",
+#   description : "Returns the form group of the input.",
+#   returns: "FormControl"
+# },{
+#   name: "getFormControl()",
+#   type: "method",
+#   returns: "FormControl",
+#   description : "Returns the form control of the input."
+# },{
+#   name: "hasError()",
+#   type: "method",
+#   parameters : "string",
+#   returns: "boolean",
+#   description : "Set the selected items of the component."
+# },{
+#   name: "isAutomaticBinding()",
+#   type: "method",
+#   description : "Returns the input is automatic binding.",
+#   returns: "boolean"
+# },{
+#   name: "isAutomaticRegistering()",
+#   type: "method",
+#   description : "Returns the input is automatic registering.",
+#   returns: "boolean"
+# },{
+#   name: "getSelectedItems()",
+#   type: "method",
+#   description : "Returns the selected items of the component.",
+#   returns: "any[]"
+# },{
+#   name: "setSelectedItems()",
+#   type: "method",
+#   parameters : "any[]",
+#   description : "Set the selected items of the component."
+# }]
