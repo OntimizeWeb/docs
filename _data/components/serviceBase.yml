@@ -47,55 +47,104 @@ attributes: [{
   name: "store-state"
 }]
 
-# methods: [{
-#   name: "getSQLType()",
+methods: [{
+  name: "initialize",
+  type: "method",
+  description : "Method for inputs and listeners initialization that must be called inside ngOnInit"
+},{
+  name: "afterViewInit",
+  type: "method",
+  description : "Method for inputs and listeners parsing that must be called inside ngAfterViewInit"
+},{
+  name: "destroy",
+  type: "method",
+  description : "Method for unsuscribing listeners that must be called inside ngOnDestroy"
+},{
+  name: "getAttribute",
+  type: "method",
+  returns: "string",
+  description : "Returns component attr, used as identifier"
+},{
+  name: "getComponentKey",
+  type: "method",
+  returns: "string",
+  description : "Returns component identifier for state storage, attr value by default"
+},{
+  name: "getDataToStore",
+  type: "method",
+  returns: "any",
+  description : "Method returning component data that will be stored as its state"
+},{
+  name: "onLanguageChangeCallback",
+  type: "method",
+  description : "Callback for app locale change, receiving the selected locale as parameter",
+  parameters: "lang: string"
+},{
+  name: "getKeys",
+  type: "method",
+  returns: "string[]",
+  description : "Returns parsed keys input ass array"
+},{
+  name: "configureService",
+  type: "method",
+  description : "Method needed for Ontimize service initialization, already called in initialize method"
+},{
+  name: "getDataArray",
+  type: "method",
+  returns: "any[]",
+  description : "Returns component data array"
+},{
+  name: "setDataArray",
+  type: "method",
+  description : "",
+  parameters: ""
+},{
+  name: "setFormComponent",
+  type: "method",
+  description : "Setting parent form reference, already called in initialize method",
+  parameters: "form: OFormComponent"
+},{
+  name: "queryData",
+  type: "method",
+  description : "",
+  parameters: ""
+},{
+  name: "reloadData",
+  type: "method",
+  description : "",
+  parameters: ""
+},{
+  name: "getAttributesValuesToQuery",
+  type: "method",
+  returns : "string[]",
+  description: "Returns a list of attributes to be queried. This list includes the columns array and the keys array"
+},{
+  name: "getQueryArguments",
+  type: "method",
+  returns : "any[]",
+  description : "Returns the array of arguments needed for making a query",
+  parameters: ""
+},{
+  name: "updatePaginationInfo",
+  type: "method",
+  parameters: "queryResponse: any",
+  description : "Updating pagination internal information, only if the component is pageable"
+},{
+  name: "getTotalRecordsNumber",
+  type: "method",
+  returns: "number",
+  description : "Returns total number of records if the component is paginated"
+}
+# ,{
+#   name: "getComponentFilter",
 #   type: "method",
-#   description : "Returns the code of sqltype of the input.",
-#   returns: "number"
-# },{
-#   name: "setValue()",
+#   description : "",
+#   parameters: ""
+# }
+# ,{
+#   name: "setData",
 #   type: "method",
-#   parameters : "any",
-#   description : "Set value of the component."
-# },{
-#   name: "getValue()",
-#   type: "method",
-#   description : "Returns the selected items of the component.",
-#   returns: "any"
-# },{
-#   name: "getFormGroup()",
-#   type: "method",
-#   description : "Returns the form group of the input.",
-#   returns: "FormControl"
-# },{
-#   name: "getFormControl()",
-#   type: "method",
-#   returns: "FormControl",
-#   description : "Returns the form control of the input."
-# },{
-#   name: "hasError()",
-#   type: "method",
-#   parameters : "string",
-#   returns: "boolean",
-#   description : "Set the selected items of the component."
-# },{
-#   name: "isAutomaticBinding()",
-#   type: "method",
-#   description : "Returns the input is automatic binding.",
-#   returns: "boolean"
-# },{
-#   name: "isAutomaticRegistering()",
-#   type: "method",
-#   description : "Returns the input is automatic registering.",
-#   returns: "boolean"
-# },{
-#   name: "getSelectedItems()",
-#   type: "method",
-#   description : "Returns the selected items of the component.",
-#   returns: "any[]"
-# },{
-#   name: "setSelectedItems()",
-#   type: "method",
-#   parameters : "any[]",
-#   description : "Set the selected items of the component."
-# }]
+#   description : "",
+#   parameters: ""
+# }
+]
