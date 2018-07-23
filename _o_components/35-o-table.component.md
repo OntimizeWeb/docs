@@ -299,7 +299,7 @@ You can see this live example in the [OntimizeWeb playground](https://try.imatia
 
 **Action cell renderer**
 
-The action cell renderer is used for displaying a button in a table cell. Include the table cell renderer action in your table column by configuring the attribute `type` in the column with the value **action** or adding the `o-table-cell-renderer-action` to the table column. You can listen to the `onClick` events on the table cell in order to perform the desired action. Check the definition of this and more attributes in the **API** section of this page.
+The action cell renderer is used for displaying a button in a table cell. Include this renderer in your table column by configuring the attribute `type` in the column with the value **action** or adding the `o-table-cell-renderer-action` to the table column. 
 
 ```html
 <o-table-column attr="EMPLOYEENAME" type="action" icon="person" (onClick)="showMessage($event)"></o-table-column>
@@ -310,6 +310,29 @@ The action cell renderer is used for displaying a button in a table cell. Includ
   <o-table-cell-renderer-action icon="person" (onClick)="showMessage($event)"></o-table-cell-renderer-action>
 </o-table-column>
 ```
+
+You can display a `text` and/or a `icon` in the cell, also choosing the icon position using the `icon-position` attribute. 
+
+```html
+<o-table-column attr="EMPLOYEENAME">
+  <o-table-cell-renderer-action icon="person" text="user" icon-position="right"></o-table-cell-renderer-action>
+</o-table-column>
+```
+
+When an action cell is clicked you can trigger a predefined action or execute your custom callback. In the first case there are two predefined actions: `detail` or `edit`, that will trigger navigation to table detail or edition route. Otherwise, you can listen to the `onClick` event to perform your defined action. Check the definition of this and more attributes in the **API** section of this page.
+
+```html
+<!-- Navigation to detail mode -->
+<o-table-column attr="EMPLOYEENAME">
+  <o-table-cell-renderer-action icon="person" action="detail"></o-table-cell-renderer-action>
+</o-table-column>
+
+<!-- Triggering showMessage method -->
+<o-table-column attr="EMPLOYEENAME">
+  <o-table-cell-renderer-action icon="person" (onClick)="showMessage($event)"></o-table-cell-renderer-action>
+</o-table-column>
+```
+
 
 **Boolean cell renderer**
 

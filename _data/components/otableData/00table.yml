@@ -2,39 +2,16 @@ class: "OTableComponent"
 
 directive: "o-table"
 
+inheritedAttributes: [{
+  component: "OServiceComponent",
+  path: "components/service/service",
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
+}]
+
+
+# css-class
+
 attributes: [{
-  name: "attr"
-},{
-  name: "title",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Title in exported files"
-},{
-  name: "visible"
-},{
-  name: "enabled"
-},{
-  name: "static-data"
-},{
-  name: "service"
-},{
-  name: "service-type"
-},{
-  name: "query-method"
-},{
-  name: "entity"
-},{
-  name: "keys"
-},{
-  name: "parent-keys",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Form field attributes used for filtering the table data. Separated by ';'. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields"
-},{
-  name: "columns"
-},{
   name: "visible-columns",
   type: "string",
   default: "",
@@ -47,12 +24,6 @@ attributes: [{
   required: "",
   description: "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
 },{
-  name: "query-on-init",
-  default: "yes",
-},{
-  name: "query-on-bind",
-  default: "yes",
-},{
   name: "quick-filter"
 },{
   name: "filter-case-sensitive",
@@ -60,8 +31,6 @@ attributes: [{
   default: "no",
   required: "",
   description: "Indicates whether or not to do a case sensitive quickfilter search"
-},{
-  name: "insert-button"
 },{
   name: "refresh-button"
 },{
@@ -89,8 +58,6 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show the pagination controls"
 },{
-  name: "query-rows"
-},{
   name: "fixed-header",
   type: "no | false | yes | true",
   default: "no",
@@ -102,10 +69,6 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to show a button on the header menu for exporting data"
-},{
-  name: "insert-method"
-},{
-  name: "update-method"
 },{
   name: "quick-filter-function",
   type: "(filter: string) => IFilterExpression | Object",
@@ -125,8 +88,6 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show the table title in the toolbar"
 },{
-  name: "detail-mode"
-},{
   name: "edition-mode",
   type: "none | click | dblclick",
   default: "none",
@@ -138,29 +99,6 @@ attributes: [{
   default: "multiple",
   required: "",
   description: "Row selection mode"
-},{
-  name: "paginated-query-method"
-},{
-  name: "delete-method"
-},{
-  name: "pageable",
-  default: "no"
-},{
-  name: "detail-form-route"
-},{
-  name: "recursive-detail"
-},{
-  name: "edit-form-route"
-},{
-  name: "recursive-edit"
-},{
-  name: "row-height"
-},{
-  name: "insert-form-route"
-},{
-  name: "recursive-insert"
-},{
-  name: "store-state"
 },{
   name: "query-with-null-parent-keys"
 }]
