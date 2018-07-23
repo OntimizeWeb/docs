@@ -1,12 +1,6 @@
 class : "OServiceBaseComponent"
 
-propertiesColumns: ["Name", "Type", "Description"]
-
-# properties: [{
-#   name: "elementRef",
-#   type: "property",
-#   description : "Name of the column"
-# }]
+propertiesColumns: ["Name", "Type", "Required", "Description"]
 
 attributes: [{
   name: "attr"

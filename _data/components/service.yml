@@ -1,99 +1,49 @@
-class : "FormDataComponent"
+class : "OServiceComponent"
 
-propertiesColumns: ["Name", "Type", "Description"]
+propertiesColumns: ["Name", "Type", "Required", "Description"]
 
-properties: [{
-  name: "elementRef",
-  type: "property",
-  description : "Name of the column"
+inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base",
+  attributes: ["attr", "static-data", "service", "service-type", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state"]
 }]
 
 attributes: [{
-  name: "attr"
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Title in exported files"
 },{
-  name: "label"
-},{
-  name: "data"
-},{
-  name: "automatic-binding"
-},{
-  name: "automatic-registering"
+  name: "visible"
 },{
   name: "enabled"
 },{
-  name: "required"
+  name: "detail-mode"
 },{
-  name: "sql-type"
+  name: "detail-form-route"
 },{
-  name: "tooltip"
+  name: "recursive-detail"
 },{
-  name: "tooltip-position"
+  name: "edit-form-route"
 },{
-  name: "tooltip-show-delay"
+  name: "recursive-edit"
 },{
-   name: "clear-button"
+  name: "detail-button-in-row"
 },{
-  name: "width",
-  type: "string ",
-  default : "",
-  required : "",
-  description : "Indicates the width of input component in pixels (px) or percentage (%)"
+  name: "detail-button-in-row-icon"
 },{
-  name: "read-only",
-  type: "no | false | yes | true",
-  default: "no",
-  description: "Indicates whether the input value is modifiable or not. This attribute may be ignored depending on the value of the `editable-detail` attribute of its parent [`o-form` component](https://ontimizeweb.github.io/docs/components/o-form.component/){:target='_blank'}"
-}]
-
-methods: [{
-  name: "getSQLType()",
-  type: "method", 
-  description : "Returns the code of sqltype of the input.",
-  returns: "number"
+  name: "edit-button-in-row"
 },{
-  name: "setValue()",
-  type: "method", 
-  parameters : "any",
-  description : "Set value of the component."
+  name: "edit-button-in-row-icon"
 },{
-  name: "getValue()",
-  type: "method", 
-  description : "Returns the selected items of the component.",
-  returns: "any"
+  name: "insert-button"
 },{
-  name: "getFormGroup()",
-  type: "method", 
-  description : "Returns the form group of the input.",
-  returns: "FormControl"
+  name: "row-height"
 },{
-  name: "getFormControl()",
-  type: "method",
-  returns: "FormControl",
-  description : "Returns the form control of the input."
+  name: "insert-form-route"
 },{
-  name: "hasError()",
-  type: "method",
-  parameters : "string",
-  returns: "boolean",
-  description : "Set the selected items of the component."
-},{
-  name: "isAutomaticBinding()",
-  type: "method", 
-  description : "Returns the input is automatic binding.",
-  returns: "boolean"
-},{
-  name: "isAutomaticRegistering()",
-  type: "method", 
-  description : "Returns the input is automatic registering.",
-  returns: "boolean"
-},{
-  name: "getSelectedItems()",
-  type: "method", 
-  description : "Returns the selected items of the component.",
-  returns: "any[]"
-},{
-  name: "setSelectedItems()",
-  type: "method",
-  parameters : "any[]",
-  description : "Set the selected items of the component."
+  name: "recursive-insert"
+}, {
+  name: "controls"
 }]
