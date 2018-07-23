@@ -8,6 +8,7 @@ inheritedAttributes: [{
   attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
 }]
 
+
 # css-class
 
 attributes: [{
