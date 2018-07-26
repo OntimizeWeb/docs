@@ -395,5 +395,12 @@
     type: "no | false | yes | true",
     default: "no",
     description: "Indicates whether or not to show the clear button"
+  },
+  "recursive-insert": {
+    name: "recursive-insert",
+    type: "no | false | yes | true",
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to add a insert key to current url path (overwrite)"
   }
 }

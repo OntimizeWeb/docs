@@ -6,47 +6,59 @@ comp: "serviceBase"
 {% include base_path %}
 {% include toc %}
 
-Form data components are components that must be placed inside a [form]({{ base_path }}/docs/components/form/){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, html, integer, list picker, NIF, password, percent, real, text and textarea.
 
-All input components in **OntimizeWeb** extend the `OFormDataComponent` class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the **API** section of this page.
+Components extending the `OServiceBaseComponent` class are components which have a service instance configured ready for ask for remote data. This class provides a set of inputs and methods and attributes inherited by all the service components. This properties are explained on the **API** section of this page.
 
-## Data
-You can modify value by setting the `data` attribute or calling the `setData` method.
+The class inputs are available in the static `DEFAULT_INPUTS_O_SERVICE_BASE_COMPONENT` variable, so a component implementing `OServiceBaseComponent` class will look like:
 
-```html
- <o-text-input attr="input2" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()" read-only="no" required="yes"
-    tooltip="This is an awesome tooltip!"></o-text-input>
-```
 ```javascript
-  getValue() {
-    return 'John Doe';
-  }
+@Component({
+  selector: 'my-component',
+  templateUrl: './my-component.html',
+  styleUrls: ['./my-component.scss'],
+  inputs: [
+    ...OServiceBaseComponent.DEFAULT_INPUTS_O_SERVICE_BASE_COMPONENT,
+    // more component inputs
+  ],
+  outputs: [
+    // component ouputs
+  ],
+  providers: [
+    { provide: OntimizeService, useFactory: dataServiceFactory, deps: [Injector] }
+  ]
+})
+export class MyComponent extends OServiceBaseComponent {
+
+}
 ```
 
-## Validation
-The input shows automatically an error message when the `required` attribute is set to **yes** and there is no value on the input.
+## Binding to remote data
 
-## Enabled
-The *enabled* mode is actived by default. You can disabled the input by setting `enabled='no'`.
+To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}.
 
-```html
-   <o-text-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()"></o-text-input>
-```
+## Binding to local data
+For local data binding you simply need to supply an array of TypeScript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in `o-table` component.
 
-## Read-only
-The *readonly* mode represents an element that is no longer editable by the user. You can configure for an input to be reandonly `read-only="yes"`.
+If you need the data query to be performed after the `parent-keys` is updated, `query-on-init = false` and `query-on-bind = true` must be changed
 
- ```html
-    <o-text-input fxFlex attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()"></o-text-input>
-```
-## Tooltip
-To create a tooltip, add the `tooltip` attribute to an element. By default, the tooltip will appear on bottom of the element. Use `tooltip-position` attribute to set the position of the tooltip on **top**, **bottom**, **left** or the **right** side of the element.
+## query-on-init
 
-```html
- <o-text-input attr="input2" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()" read-only="no" required="yes"
-    tooltip="This is an awesome tooltip!" tooltip-position="left"></o-text-input>
-```
-## Width <span class='menuitem-badge'> new </span>
 
-All input conponents have the `width` atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.
+## query-on-bind
+
+
+## CRUD methods
+
+There are a set of preconfigured method names for doing the `CRUD` operations that can be overrided using its inputs: `query-method`, `paginated-query-method`, `insert-method`, `update-method` or `delete-method`. You can learn more about Ontimize services configuration [here]({{ base_path }}/guide/service/){:target="_blank"}.
+
+This are the methods that will be invoked when the component needs to query, insert, update or delete data from its configured `service` and `entity`.
+
+### Parent keys filter
+When a service component is inside a form component you can configure the `parent-keys` attribute of the with the `attr` of the [form fields]({{ base_path }}/components/input/overview/){:target="_blank"} you want to include in the query filtering.
+
+Keep in mind that a service component will not send any request when the parent keys values are all null. You can configure the `query-with-null-parent-keys` to avoid that, but it is not always recommended, it might query for too many data.
+
+## Storing component state
+Using the `store-state` boolean input allows user to choose whether or not to store the component configuration state in local storage. That state is returned by the `getDataToStore` method under the key returned in `getComponentKey` callback.
+
 
