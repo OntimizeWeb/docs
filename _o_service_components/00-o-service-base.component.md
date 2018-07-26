@@ -51,7 +51,7 @@ There are a set of preconfigured method names for doing the `CRUD` operations th
 
 This are the methods that will be invoked when the component needs to query, insert, update or delete data from its configured `service` and `entity`.
 
-### Parent keys filter
+## Parent keys filter
 When a service component is inside a form component you can configure the `parent-keys` attribute of the with the `attr` of the [form fields]({{ base_path }}/components/input/overview/){:target="_blank"} you want to include in the query filtering.
 
 Keep in mind that a service component will not send any request when the parent keys values are all null. You can configure the `query-with-null-parent-keys` to avoid that, but it is not always recommended, it might query for too many data.

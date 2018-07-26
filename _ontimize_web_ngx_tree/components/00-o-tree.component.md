@@ -20,10 +20,14 @@ You have to specify which text will be displayed in each tree node using the `de
 The `o-tree` will show a base node if the `show-root` input is set to a true value, that node text is setted using the `root-title` input.
 
 <h3 class="grey-color">Example</h3>
-´´´html
-<o-tree service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME" description-columns="SURNAME;NAME" separator=", " root-title="CUSTOMERS" show-root="yes">
+
+```html
+<o-tree service="customers" entity="customer" keys="CUSTOMERID" 
+    columns="CUSTOMERID;SURNAME;NAME" description-columns="SURNAME;NAME" 
+    separator=", " root-title="CUSTOMERS" show-root="yes">
 </o-tree>
-´´´
+```
+
 ![Tree component]({{ "/images/components/tree/basic.png" | absolute_url }}){: .comp-example-img}
 
 
