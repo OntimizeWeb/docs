@@ -33,7 +33,7 @@ attributes: [{
   default: "no",
   required: "",
   description: "Indicates whether or not to show list filtering options"
-}{
+},{
   name: "delete-button"
 },{
   name: "quick-filter"
