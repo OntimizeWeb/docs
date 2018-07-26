@@ -1,5 +1,5 @@
 ---
-permalink: /tree/installation
+permalink: /tree/installation/
 title: "Tree"
 excerpt: ""
 ---
