@@ -19,7 +19,7 @@ feature_row:
   - alt: "Customizable"
     title: "Customizable themes"
     excerpt: "Built on Angular Material. Customizing standard themes or create new ones is very easy."
-    url: "/theming/"
+    url: "/customize/theming/"
     btn_label: "Learn More"
     icon: "fab fa-angular"
     btn_class: btn--small
@@ -33,7 +33,5 @@ feature_row:
 github:
   - excerpt: '{::nomarkdown}<iframe style="display: inline-block;" src="https://ghbtns.com/github-btn.html?user=mmistakes&repo=minimal-mistakes&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe> <iframe style="display: inline-block;" src="https://ghbtns.com/github-btn.html?user=mmistakes&repo=minimal-mistakes&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>{:/nomarkdown}'
 ---
-
-{% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}

@@ -24,11 +24,11 @@ docs:
         url: /doc-overview/
       - title: "Example overview"
         url: /example-overview/
-      - title: "Install and run example"
+      - title: "Run an example"
         url: /install-and-run/
       - title: "Make some changes"
         url: /make-changes/
-      - title: "More advanced topics"
+      - title: "Advanced topics"
         url: /advanced-changes/
   - title: Guide
     children:
@@ -42,11 +42,11 @@ docs:
         url: /routing/
       - title: "Forms"
         url: /forms/
-      # - title: "Permission"
-      #   url: /permission/
+      - title: "Services"
+        url: /guide/service/
       - title: "Build and run"
         url: /build-and-run/
-      - title: "Add OntimizeWeb to your project"
+      - title: "OntimizeWeb library"
         url: /add-to-project/
       - title: "Video examples"
         url: /video-examples/
@@ -55,7 +55,9 @@ docs:
   - title: Customization
     children:
       - title: "Theming"
-        url: /theming/
+        url: /customize/theming/
+      - title: "Tabs"
+        url: /customize/tabs/
   - title: Add-ons
     children:
       - title: "Tools"
@@ -74,6 +76,8 @@ docs:
         url: /ontimize-web-ngx-dynamicform-builder/
       - title: "File Manager"
         url: /filemanager/
+      - title: "Tree"
+        url: /tree/
       - title: "JEE app seed"
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
@@ -147,7 +151,7 @@ components:
   - title: Button
     children:
       - title: "Button"
-        url: /components/o-button.component/
+        url: /components/button/
 
   - title: Data
     children:
@@ -159,12 +163,7 @@ components:
           - title: "Form container"
             url: /components/form/container/
       - title: "DataTable <small>(deprecated)</small>"
-        url: /components/o-datatable.component/
-        children:
-          - title: "Column renderers"
-            url: '/datatable-components/o-datatable-renderers.component/'
-          - title: "Column editors"
-            url: '/datatable-components/o-datatable-editors.component/'
+        url: /components/datatable/
       - title: "Table <span class='menuitem-badge'>new<span>"
         url: /components/table/
         children:
@@ -189,26 +188,24 @@ components:
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
       - title: "List"
-        url: /components/o-list.component/
-      - title: "Tree"
-        url: /components/o-tree.component/
+        url: /components/list/
       - title: "Filter builder <span class='menuitem-badge'>new<span>"
         url: /components/filterbuilder/
 
   - title: Media
     children:
       - title: "Image"
-        url: /components/o-image.component/
+        url: /components/image/
 
   - title: Layout
     children:
       - title: "Containers"
         url: /components/containers/
       - title: "Dialog"
-        url: /components/o-dialog.component/
+        url: /components/dialog/
       - title: "App layout"
         url: /components/applayout/
-      - title: "Form layout manager"
+      - title: "Form layout mngr."
         url: /components/formlayoutmanager/
       - title: "Breadcrumb"
         url: /components/breadcrumb/
@@ -224,26 +221,40 @@ components:
           - title: "Card menu item"
             url: /components/cardmenulayout/cardmenuitem/
       - title: "Bar menu"
-        url: /components/o-bar-menu.component/
-      - title: "Side menu"
-        url: /components/o-side-menu.component/
-  - title: "FAQ"
-    url: /components/faq/
+        url: /components/barmenu/
+      - title: "Side menu <small>(deprecated)</small>"
+        url: /components/sidemenu/
+  
 
 ontimize_web_ngx_filemanager:
   - title: "Getting Started"
     children:
-      - title: "Document overview"
+      - title: "Overview"
         url: /filemanager/overview/
-      - title: "Example overview"
-        url: /filemanager/example/
+      - title: "Installation"
+        url: /filemanager/installation/
+      
 
-  - title: "Components"
-    children:
-      - title: "Table"
-        url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
+  #- title: "Components"
+  #  children:
+  #    - title: "Table"
+  #      url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
 
   - title: "Services"
     children:
       - title: "File Manager Service"
-        url: /ontimize_web_ngx_filemanager/services/filemanager/
+        url: /filemanager/services/filemanager/
+
+ontimize_web_ngx_tree:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /tree/overview/
+      - title: "Installation"
+        url: /tree/installation/
+  - title: "Components"
+    children:
+      - title: "Tree"
+        url: /tree/components/o-tree.component/      
+      - title: "Tree node"    
+        url: /tree/components/o-tree-node.component/

@@ -14,7 +14,7 @@ All input components in **OntimizeWeb** extend the `OFormDataComponent` class. T
 You can modify value by setting the `data` attribute or calling the `setData` method.
 
 ```html
- <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
+ <o-text-input attr="input2" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()" read-only="no" required="yes"
     tooltip="This is an awesome tooltip!"></o-text-input>
 ```
 ```javascript
@@ -30,25 +30,25 @@ The input shows automatically an error message when the `required` attribute is 
 The *enabled* mode is actived by default. You can disabled the input by setting `enabled='no'`.
 
 ```html
-   <o-text-input attr="input3" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()"></o-text-input>
+   <o-text-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()"></o-text-input>
 ```
 
 ## Read-only 
 The *readonly* mode represents an element that is no longer editable by the user. You can configure for an input to be reandonly `read-only="yes"`.
 
  ```html
-    <o-text-input fxFlex attr="input" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()"></o-text-input>
+    <o-text-input fxFlex attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()"></o-text-input>
 ```
 ## Tooltip
 To create a tooltip, add the `tooltip` attribute to an element. By default, the tooltip will appear on bottom of the element. Use `tooltip-position` attribute to set the position of the tooltip on **top**, **bottom**, **left** or the **right** side of the element.
 
 ```html
- <o-text-input attr="input2" label="{{ 'INPUT.BUTTON.TEXT' | oTranslate }}" [data]="getValue()" read-only="no" required="yes"
+ <o-text-input attr="input2" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()" read-only="no" required="yes"
     tooltip="This is an awesome tooltip!" tooltip-position="left"></o-text-input>
 ```
 ## Width <span class='menuitem-badge'> new </span>
 
-You can specifie the width, in px or % of a input component.
+All input conponents have the `width` atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.
 
 <!--
 extends OFormDataComponent

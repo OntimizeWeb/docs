@@ -1,39 +1,21 @@
 
 directive : "o-tree"
 
+inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base",
+  attributes: ["attr", "static-data", "service", "service-type", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state"]
+}]
+
 attributes: [{
-  name: "attr"
-},{
   name: "title",
   type: "string",
   default : "",
-
-  description : "Title in exported files"
-},{
-  name: "static-data"
-},{
-  name: "service"
-},{
-  name: "service-type"
-},{
-  name: "query-method"
-},{
-  name: "entity"
-},{
-  name: "keys"
-},{
-  name: "parent-keys",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Form field attributes used for filtering the table data. Separated by ';'. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields."
-},{
-  name: "columns"
+  description : "Title in the tree toolbar"
 },{
   name: "sort-columns",
   type: "string",
   default : "",
-
   description : "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
 },{
   name: "query-on-init",
@@ -46,20 +28,8 @@ attributes: [{
 },{
   name: "refresh-button"
 },{
-  name: "query-rows"
-},{
-  name: "insert-method"
-},{
-  name: "update-method"
-},{
-  name: "paginated-query-method"
-},{
-  name: "deleted-method"
-},{
   name: "pageable",
   default : "no"
-},{
-  name: "store-state"
 },{
   name: "description-columns",
   default : "<em>columns</em> attribute value",
@@ -70,41 +40,41 @@ attributes: [{
   name: "parent-column",
   type: "string",
   default : "",
-
   description : ""
 },{
   name: "show-root",
   type: "no | false | yes | true",
   default : "",
-
-  description : ""
+  description : "Indicates whether or not to show the root node"
 },{
   name: "root-title",
   type: "string",
   default : "",
-  description : ""
+  description : "Title of the root node"
 },{
   name: "recursive",
   type: "no | false | yes | true",
   default : "no",
-  description : ""
+  description : "Indicates wheter or not to do recursive queries over the selected node"
 },{
   name: "recursive-levels",
   type: "number",
   default : "1",
-  description : ""
+  description : "Number of recursive levels"
 },{
   name: "translate",
   type: "no | false | yes | true",
   default : "no",
   description : "Indicates whether or not to automatically translate the tree nodes values"
-}]
-# ,{
-#   name: "route",
-#   type: "string",
-#   default : "",
-#   description : ""
-# }
+},{
+  name: "controls"
+},{
+   name: "route",
+   type: "string",
+   default : "",
+   description : "Navigation route activated when the node is clicked"
+ }
+]
 
 
 outputs: [{

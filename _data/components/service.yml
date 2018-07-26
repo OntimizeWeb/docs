@@ -1,0 +1,89 @@
+class : "OServiceComponent"
+
+propertiesColumns: ["Name", "Type", "Required", "Description"]
+
+inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base",
+  attributes: ["attr", "static-data", "service", "service-type", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state"]
+}]
+
+attributes: [{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Title in exported files"
+},{
+  name: "visible"
+},{
+  name: "enabled"
+},{
+  name: "detail-mode"
+},{
+  name: "detail-form-route"
+},{
+  name: "recursive-detail"
+},{
+  name: "edit-form-route"
+},{
+  name: "recursive-edit"
+},{
+  name: "detail-button-in-row"
+},{
+  name: "detail-button-in-row-icon"
+},{
+  name: "edit-button-in-row"
+},{
+  name: "edit-button-in-row-icon"
+},{
+  name: "insert-button"
+},{
+  name: "row-height"
+},{
+  name: "insert-form-route"
+},{
+  name: "recursive-insert"
+}, {
+  name: "controls"
+}]
+
+
+methods: [{
+  name: "initialize",
+  type: "method",
+  description : "Method for inputs and listeners initialization that must be called inside ngOnInit"
+},{
+  name: "afterViewInit",
+  type: "method",
+  description : "Method for inputs and listeners parsing that must be called inside ngAfterViewInit"
+},{
+  name: "destroy",
+  type: "method",
+  description : "Method for unsuscribing listeners that must be called inside ngOnDestroy"
+},{
+  name: "onLanguageChangeCallback",
+  type: "method",
+  description : "Callback for app locale change, receiving the selected locale as parameter",
+  parameters: "lang: string"
+},{
+  name: "viewDetail",
+  type: "method",
+  description : "Triggers navigation to item detail, receiving item data",
+  parameters: "item: any"
+},{
+  name: "editDetail",
+  type: "method",
+  description : "Triggers navigation to item edition, receiving item data",
+  parameters: "item: any"
+},{
+  name: "insertDetail",
+  type: "method",
+  description : "Triggers navigation to new item insertion",
+}
+# ,{
+#   name: "reinitialize",
+#   type: "method",
+#   description : ""
+# }
+]

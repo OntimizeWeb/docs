@@ -1,0 +1,27 @@
+directive: "o-datatable-cell-editor-combo"
+title: "Cell editor: combo"
+
+attributes: [{
+  name: "service"
+},{
+  name: "query-method"
+},{
+  name: "entity"
+},{
+  name: "value-column",
+  description: "Column name for cell value mapping (similar to component <em>ComboReferenceDataField</em> <em>cod</em> attribute in classic Ontimize Desktop)"
+},{
+  name: "columns"
+},{
+  name: "visible-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Visible columns. Separated by ';'"
+},{
+  name: "separator",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Separator used to concatenate the visible columns"
+}]
