@@ -1,24 +1,3 @@
-# example navigation
-foo:
-  - title: "Parent Link 1"
-    url: /parent-1-page-url/
-    children:
-      - title: "Child Link 1"
-        url: /child-1-page-url/
-      - title: "Child Link 2"
-        url: /child-2-page-url/
-
-  - title: "Parent Link 2"
-    url: /parent-2-page-url/
-    children:
-      - title: "Child Link 1"
-        url: /child-1-page-url/
-      - title: "Child Link 2"
-        url: /child-2-page-url/
-      - title: "Child Link 3"
-        url: /child-3-page-url/
-
-
 # main links links
 main:
   - title: "Getting started"
@@ -45,30 +24,30 @@ docs:
         url: /doc-overview/
       - title: "Example overview"
         url: /example-overview/
-      - title: "Install and run example"
+      - title: "Run an example"
         url: /install-and-run/
       - title: "Make some changes"
         url: /make-changes/
-      - title: "More advanced topics"
+      - title: "Advanced topics"
         url: /advanced-changes/
   - title: Guide
     children:
-      - title: "Structure"
-        url: /structure/
-      - title: "App config file"
-        url: /guide/menu-config/
+      - title: "App structure"
+        url: /guide/appstructure/
+      - title: "App configuration"
+        url: /guide/appconfig/
       - title: "Modules"
         url: /app-modules/
       - title: "Routing"
         url: /routing/
       - title: "Forms"
         url: /forms/
-      - title: "Form layout manager"
-        url: /form-layout-manager/
-      # - title: "Permission"
-      #   url: /permission/
+      - title: "Services"
+        url: /guide/service/
       - title: "Build and run"
         url: /build-and-run/
+      - title: "OntimizeWeb library"
+        url: /add-to-project/
       - title: "Video examples"
         url: /video-examples/
       - title: "Migration guides"
@@ -76,14 +55,16 @@ docs:
   - title: Customization
     children:
       - title: "Theming"
-        url: /theming/
+        url: /customize/theming/
+      - title: "Tabs"
+        url: /customize/tabs/
   - title: Add-ons
     children:
       - title: "Tools"
         url: /ontimize-web-ngx-tools/
       - title: "Theming"
         url: /ontimize-web-ngx-theming/
-      - title: "DataTable"
+      - title: "DataTable <small>(deprecated)</small>"
         url: /ontimize-web-ngx-datatable/
       - title: "Charts"
         url: /ontimize-web-ngx-charts/
@@ -94,7 +75,9 @@ docs:
       - title: "Dynamicform Builder"
         url: /ontimize-web-ngx-dynamicform-builder/
       - title: "File Manager"
-        url: /ontimize-web-ngx-filemanager/
+        url: /filemanager/
+      - title: "Tree"
+        url: /tree/
       - title: "JEE app seed"
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
@@ -112,64 +95,76 @@ docs:
 components:
   - title: Input
     children:
+      - title: "Overview"
+        url: /components/input/overview/
+        order: "1"
+        class: "overview"
       - title: "Text"
-        url: /components/o-text-input.component/
+        url: /components/input/text/
+        order: "2"
       - title: "Integer"
-        url: /components/o-integer-input.component/
+        url: /components/input/integer/
+        order: "2"
       - title: "Real"
-        url: /components/o-real-input.component/
-      - title: "Textarea"
-        url: /components/o-textarea-input.component/
-      - title: "Email"
-        url: /components/o-email-input.component/
-      - title: "Password"
-        url: /components/o-password-input.component/
+        url: /components/input/real/
+        order: "2"
+      - title: "Percentage"
+        url: /components/input/percent/
+        order: "2"
       - title: "Currency"
-        url: /components/o-currency-input.component/
+        url: /components/input/currency/
+        order: "2"
       - title: "Date"
-        url: /components/o-date-input.component/
-      - title: "Percent"
-        url: /components/o-percent-input.component/
+        url: /components/input/date/
+        order: "2"
       - title: "NIF"
-        url: /components/o-nif-input.component/
+        url: /components/input/nif/
+        order: "2"
+      - title: "Email"
+        url: /components/input/email/
+        order: "2"
+      - title: "Password"
+        url: /components/input/password/
+        order: "2"
+      - title: "Textarea"
+        url: /components/input/textarea/
+        order: "2"
       - title: "HTML"
-        url: /components/o-html-input.component/
-      - title: "Search"
-        url: /components/o-search-input.component/
-      - title : "Combo"
-        url: /components/o-combo.component/
-      - title: "List picker"
-        url: /components/o-list-picker.component/
-        children :
-          - title: "List picker dialog"
-            url: /list-picker-component/o-list-picker-dialog.component/
-      - title: "Checkbox"
-        url: /components/o-checkbox.component/
+        url: /components/input/html/
+        order: "2"
       - title: "File"
-        url: /components/o-file-input.component/
+        url: /components/input/file/
+        order: "2"
+      - title: "Checkbox"
+        url: /components/input/checkbox/
+        order: "2"
+      - title: "Combo"
+        url: /components/input/combo/
+        order: "2"
+      - title: "List picker"
+        url: /components/input/listpicker/
+        order: "2"
+        children:
+          - title: "List picker dialog"
+            url: /listpicker/listpickerdialog/
 
   - title: Button
     children:
       - title: "Button"
-        url: /components/o-button.component/
+        url: /components/button/
 
   - title: Data
     children:
       - title: "Form"
-        url: /components/o-form.component/
+        url: /components/form/
         children:
-          - title: "Extending a form"
-            url: '/form-component/o-form.extend/'
-          - title: "Form to filter table"
-            url: '/form-component/o-form.filter-table/'
-      - title: "DataTable"
-        url: /components/o-datatable.component/
-        children:
-          - title: "Column renderers"
-            url: '/datatable-components/o-datatable-renderers.component/'
-          - title: "Column editors"
-            url: '/datatable-components/o-datatable-editors.component/'
-      - title: "Table"
+          - title: "Detail form"
+            url: /components/form/detail/
+          - title: "Form container"
+            url: /components/form/container/
+      - title: "DataTable <small>(deprecated)</small>"
+        url: /components/datatable/
+      - title: "Table <span class='menuitem-badge'>new<span>"
         url: /components/table/
         children:
           - title: "Table buttons"
@@ -188,27 +183,32 @@ components:
             url: '/components/table/paginator/'
           - title: "Table context menu"
             url: '/components/table/contextmenu/'
-      - title : "List"
-        url: /components/o-list.component/
-
+          - title: "OBaseTableCellEditor"
+            url: '/components/table/obasetablecelleditor/'
+          - title: "OBaseTableCellEditor"
+            url: '/components/table/obasetablecellrenderer/'
+      - title: "List"
+        url: /components/list/
+      - title: "Filter builder <span class='menuitem-badge'>new<span>"
+        url: /components/filterbuilder/
 
   - title: Media
     children:
       - title: "Image"
-        url: /components/o-image.component/
+        url: /components/image/
 
   - title: Layout
     children:
       - title: "Containers"
-        url: /components/o-container.components/
+        url: /components/containers/
       - title: "Dialog"
-        url: /components/o-dialog.component/
+        url: /components/dialog/
       - title: "App layout"
-        url: /components/o-app-layout.component/
-      - title: "Form layout manager"
-        url: /components/o-form-layout-manager.component/
+        url: /components/applayout/
+      - title: "Form layout mngr."
+        url: /components/formlayoutmanager/
       - title: "Breadcrumb"
-        url: /components/o-breadcrumb.component/
+        url: /components/breadcrumb/
       - title: "SnackBar"
         url: /components/snackbar/
       - title: "Context menu"
@@ -216,28 +216,45 @@ components:
   - title: Menu
     children:
       - title: "Card menu layout"
-        url: /components/o-card-menu-layout.component/
+        url: /components/cardmenulayout/
+        children:
+          - title: "Card menu item"
+            url: /components/cardmenulayout/cardmenuitem/
       - title: "Bar menu"
-        url: /components/o-bar-menu.component/
-      - title: "Side menu"
-        url: /components/o-side-menu.component/
-  - title: "FAQ"
-    url: /components/faq/
+        url: /components/barmenu/
+      - title: "Side menu <small>(deprecated)</small>"
+        url: /components/sidemenu/
+  
 
 ontimize_web_ngx_filemanager:
   - title: "Getting Started"
     children:
-      - title: "Document overview"
-        url: /ontimize_web_ngx_filemanager/doc-overview/
-      - title: "Example overview"
-        url: /ontimize_web_ngx_filemanager/example-overview/
+      - title: "Overview"
+        url: /filemanager/overview/
+      - title: "Installation"
+        url: /filemanager/installation/
+      
 
-  - title: "Components"
-    children:
-      - title: "Table"
-        url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
+  #- title: "Components"
+  #  children:
+  #    - title: "Table"
+  #      url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
 
   - title: "Services"
     children:
       - title: "File Manager Service"
-        url: /ontimize_web_ngx_filemanager/services/filemanager/
+        url: /filemanager/services/filemanager/
+
+ontimize_web_ngx_tree:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /tree/overview/
+      - title: "Installation"
+        url: /tree/installation/
+  - title: "Components"
+    children:
+      - title: "Tree"
+        url: /tree/components/o-tree.component/      
+      - title: "Tree node"    
+        url: /tree/components/o-tree-node.component/

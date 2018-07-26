@@ -1,6 +1,6 @@
 ---
 permalink: /ontimize-web-ngx-datatable/
-title: "DataTable"
+title: "DataTable (Deprecated)"
 excerpt: ""
 ---
 

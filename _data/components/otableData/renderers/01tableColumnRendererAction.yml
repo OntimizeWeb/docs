@@ -1,0 +1,49 @@
+class: "OTableCellRendererActionComponent"
+
+extends: "OBaseTableCellRenderer"
+
+directive: "o-table-cell-renderer-action"
+
+attributes: [{
+  name: "icon"
+},{
+  name: "action",
+  type: "detail | edit",
+  default: "",
+  description: "Default action of the cell when its clicked, triggers the navigation to the indicated mode"
+},{
+  name: "icon-position",
+  type: "left | right",
+  default: "left",
+  description: "Icon position with respect to the text (if exists)"
+},{
+  name: "text",
+  type: "string",
+  default: "",
+  description: "Cell text"
+}]
+
+outputs: [{
+  name : "onClick",
+  description: "Event triggered when cell renderer is clicked"
+}]
+
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "initialize()",
+    type: "method",
+    description: "Required method to render the column "
+  }]
+}]

@@ -1,0 +1,12 @@
+directive: "o-datatable-cell-renderer-real"
+title: "Cell renderer: real"
+
+attributes: [{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+},{
+  name: "decimal-separator"
+},{
+  name: "decimal-digits"
+}]

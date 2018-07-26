@@ -1,24 +1,35 @@
 ---
-permalink: /ontimize_web_ngx_filemanager/services/filemanager/
+permalink: /filemanager/services/filemanager/
 title: "File Manager Service"
-excerpt: ""
 ---
 
+{% include base_path %}
+{% include toc %}
 
-The **FileManagerService** class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting and searching from files, as well as creating and deleting folders for organising the work space.
+The `FileManagerService` class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting and searching from files, as well as creating and deleting folders for organising the work space.
 
 
 ## File data model
 
-The File Manager Service uses the class **FileClass** as the file data model. This class provides the following attributes:
+The File Manager Service uses the class `FileClass` as the file data model. This class provides the following attributes:
 
-| Name         | Type    | Description                                                |
-| ------------ | ------- | ---------------------------------------------------------- |
-| id           | number  | The file identifier                                        |
-| name         | string  | The file name                                              |
-| size         | number  | The file size                                              |
-| creationDate | number  | Timestamp that represents the date of creation of the file |
-| directory    | boolean | Indicates wether a file is a folder or not                 |
+```javascript
+{
+  id: number;
+  name: string;
+  size: number;
+  creationDate: number;
+  directory: boolean;
+}
+```
+
+Where the attributes indicates the following:
+
+* **id**: The file identifier.
+* **name**: The file name.
+* **size**: The file size.
+* **creationDate**: Timestamp that represents the date of creation of the file.
+* **directory**: Indicates wether a file is a folder or not.
 
 
 ## Methods
@@ -122,7 +133,7 @@ Update a folder or file name.
 
 ## Extending the File Manager Service
 
-You can define **your own file manager service** by extending the *FileManagerService* as follows.
+You can define **your own file manager service** by extending the `FileManagerService` class as follows.
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
@@ -143,7 +154,7 @@ export class FileManagerExtendedService extends FileManagerService {
 
 ## File Manager REST API
 
-In this section we describe the REST API used by the *FileManagerService*.
+In this section we describe the REST API used by the `FileManagerService`.
 
 ### Get files information
 

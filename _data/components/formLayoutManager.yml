@@ -1,7 +1,5 @@
 directive : "o-form-layout-manager"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
-
 attributes: [{
   name: "mode",
   type: "tab | dialog",
@@ -13,22 +11,20 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "Form data columns used for detail title"
+  description : "Form data columns used in the detail form title. Separated by ';'"
 },{
   name: "separator",
   type: "string",
-  default : "' ' (space)",
+  default : "' ' (blank space)",
   required : "",
-  description : "Separator between the multiple label columns values"
+  description : "Separator between multiple label columns values"
 },{
   name: "title",
   type: "string",
   default : "",
   required : "",
-  description : "Detail title"
+  description : "Detail form main title"
 }]
-
-outputsColumns: ["Name", "Description"]
 
 outputs: [{
   name : "onMainTabSelected",
@@ -37,4 +33,3 @@ outputs: [{
   name : "onCloseTab",
   description: "Event triggered when a detail tab is closed"
 }]
-

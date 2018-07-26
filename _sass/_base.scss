@@ -7,7 +7,7 @@ body {
   padding: 0;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  line-height: 1.75;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -91,8 +91,24 @@ blockquote {
   padding-left: 1em;
   padding-right: 1em;
   font-style: italic;
-  border-left: 0.25em solid $primary-color;
 
+  strong{
+    border-left: 0.25em solid $orange;
+    padding-left: 1em;
+    font-weight: bold;
+    color: black;
+  }
+
+  p{
+    &:before{
+      content:"\f256";
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      color: $orange;
+      padding-right: 0.5em;
+    }  
+  }
   cite {
     font-style: italic;
 
@@ -144,6 +160,7 @@ td > code {
   border: 1px solid $lighter-gray;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  white-space: nowrap;
 
   &:before, &:after {
     letter-spacing: -0.2em;
@@ -312,4 +329,48 @@ nav {
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, form button, input[type="submit"], .btn, .highlight, .archive__item-teaser {
   -webkit-transition: $global-transition;
   transition: $global-transition;
+}
+
+
+/*
+  Badge menu
+*/
+
+.menuitem-badge {
+  background: linear-gradient(-180deg,$success-color 0,$success-color 100%);
+  padding: 2px 4px;
+  vertical-align: middle;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  position: relative;
+  top: -1px;
+}
+
+/*
+  Collapsible
+*/
+details.collapsible {
+  margin-bottom: 24px;
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.3);
+
+  summary {
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 12px;
+    border: 1px solid #dedede;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  .collapsible-content {
+    padding: 6px 18px;
+    border: 1px solid #dedede;
+    border-top: 0;
+  }
 }

@@ -1,12 +1,11 @@
-directive : "o-bar-menu"
-
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"] 
+directive: "o-bar-menu"
 
 attributes: [{
-  name: "title", 
+  name: "title",
   type: "string",
-  default : "",
-  required : "",
-  description : "Menu title"
-}]  
+  default: "",
+  required: "",
+  description: "Menu title"
+}]
 
+extraComponents: "barMenuData"

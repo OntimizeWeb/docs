@@ -1,0 +1,10 @@
+directive: "o-bar-menu-group"
+title: "Bar menu group"
+
+attributes: [{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Group title"
+}]

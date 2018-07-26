@@ -1,0 +1,15 @@
+class : "OTableContextMenuComponent"
+
+directive : "o-table-context-menu"
+
+attributes: [
+  {
+  name: "context-menu", 
+  type: "OContextMenuComponent",
+  default : "",
+  required : "yes",
+  description : "Context menu component reference."
+}
+]
+
+title : "OTableContextMenu"

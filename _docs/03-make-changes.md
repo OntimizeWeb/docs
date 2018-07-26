@@ -9,11 +9,11 @@ excerpt: ""
 
 ## Overview
 
-In this section we are going to make some simple changes in the code of QuickStart app. We are going to see how to add a new field into a form. Once added, we are going to learn how to apply our validation logic over this field. Finally, we are going to navigate to another screen of the application.
+In this section we are going to make some simple changes in the code of the QuickStart app. We are going to see how to add a [form field]({{ base_path }}/components/input/overview/){:target="_blank"} into a [form]({{ base_path }}/components/form/){:target="_blank"}. Once added, we are going to learn how to listen the component events. Finally, we are going to navigate to another screen of the application.
 
-# Add a field.
+## Add a field
 
-We are going to add a date field into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){:target="_blank"}):
+We are going to add a [date field]({{ base_path }}/components/input/date/){:target="_blank"} into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://try.imatia.com/ontimizeweb/quickstart/main/customers){:target="_blank"}):
 
 <img src="{{ base_path }}/images/main_customers_detail.png" alt="customer detail">
 
@@ -27,11 +27,8 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
 
     <md-tab label="{{ 'DATA' | oTranslate }}">
       <div fxLayout="column" layout-padding>
-
         <o-row attr="row1" layout-align="space-between center">
-
           <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
-
             <div fxLayout="row" fxLayoutAlign="start center">
               <o-nif-input attr="ID" fxFlex="30" class="margin-right-24"></o-nif-input>
               <o-date-input attr="STARTDATE" fxFlex="30"></o-date-input>
@@ -55,14 +52,11 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
           </o-column>
         </o-row>
 
-        <div layout-padding></div>
-
         <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding layout-align="start stretch">
           <o-text-input attr="ADDRESS"></o-text-input>
           <o-email-input attr="EMAIL"></o-email-input>
           <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
         </o-column>
-
       </div>
     </md-tab>
 
@@ -89,32 +83,27 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
           separator=" - " dialog-width="600px">
         </o-list-picker>
       </div>
-
     </md-tab>
   </md-tab-group>
 </o-form>
 ```
 
-Analyzing the code, we can see a *o-form* that contains several fields that take value from the entity *ECustomers* specified. The parameter *attr* of each
-field corresponds with an attribute (field name) that exists into the response of the service of the entity *ECustomers*.
+Analyzing the code, we can see a `o-form` that contains several fields that take value from the entity `ECustomers` specified. The parameter `attr` of each field corresponds with an attribute (field name) that exists into the response of the service of the entity `ECustomers`.
 
-We will add our date field after the customer type field with *attr='CUSTOMERTYPEID'*. So, we add the code below:
+We will add our date field after the customer type field with `attr='CUSTOMERTYPEID'`. So, we add the code below:
 
 ```html
 <o-text-input attr="PHONE" fxFlex="30"></o-text-input>
 ```
-The text input field corresponds to *o-text-input*, the rest of div's and o-row are simply used to place the field according to the others. We set the *attr='PHONE'*
-because we know that the entity contains this attribute which corresponds with customer phone number.
+The text input field corresponds to *o-text-input*, the rest of div's and o-row are simply used to place the field according to the others. We set the `attr='PHONE'` because we know that the entity contains this attribute which corresponds with customer phone number.
 
 If you reload the page on the browser you will see the phone field placed to the right of 'Customer type' field.
 
 You can find all available fields and all of their configuration parameters into the [Components]({{ base_path }}/components/) section.
 
----
+## Listen to an event
 
-# Validate a field.
-
-The next change that we will perform will be to validate the value of a form field. In this case we choose a date field (*STARTDATE*) which value will be validated when user changes its value. If the date entered is greater than today’s date it will show an error message.
+The next change that we will perform will be to listen to the value change event of a form field. In this case we choose a date field (`STARTDATE`) which value change event will be triggered every time the user changes its value.
 
 Just a little clarification before continuing: the fields are only modifiable when the form is in 'edit' or 'insert' mode.
 So, taking that in consideration, we have to use the form defined in the file *src/app/main/customers/edit/customers-edit.component.html*. The content of this file will be like this:
@@ -123,22 +112,17 @@ So, taking that in consideration, we have to use the form defined in the file *s
 <o-form entity="ECustomers" keys="CUSTOMERID"
   fxLayout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D" #oForm>
 
-
   <div fxLayout="column" layout-padding class="rounded-panel">
-
     <o-row attr="row1" layout-align="start stretch">
-
       <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
-
         <div fxLayout="row" fxLayoutAlign="start center">
           <o-nif-input attr="ID" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
-          <o-date-input attr="STARTDATE" fxFlex="30" required="yes"></o-date-input>
+          <o-date-input attr="STARTDATE" fxFlex="30" required="yes" (onChange)="onDateChange($event)"></o-date-input>
         </div>
 
         <div fxLayout="row" fxLayoutAlign="start center">
           <o-text-input attr="NAME" fxFlex="30" class="margin-right-24" required="yes"></o-text-input>
           <o-text-input attr="SURNAME" fxFlex="50" required="yes"></o-text-input>
-
         </div>
 
         <div fxLayout="row" fxLayoutAlign="start center">
@@ -146,7 +130,6 @@ So, taking that in consideration, we have to use the form defined in the file *s
             value-column="CUSTOMERTYPEID" entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
             visible-columns="DESCRIPTION" separator=" - " class="margin-right-24"></o-list-picker>
         </div>
-
       </o-column>
 
       <o-column fxFlex="40" layout-align="center center">
@@ -154,53 +137,38 @@ So, taking that in consideration, we have to use the form defined in the file *s
       </o-column>
     </o-row>
 
-    <div layout-padding></div>
-
     <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding fxLayoutAlign="start stretch">
       <o-text-input attr="ADDRESS"></o-text-input>
       <o-email-input attr="EMAIL"></o-email-input>
       <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
     </o-column>
-
   </div>
 
 </o-form>
 ```
 
-We also need to modify the file *customers-edit.component.ts* to include our validation code:
+We also need to modify the file *customers-edit.component.ts* to include the callback for the event:
 
 ```javascript
-
-import { Component, ViewEncapsulation } from '@angular/core';
-
-import { DialogService } from 'ontimize-web-ngx';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'customers-edit',
   styleUrls: ['./customers-edit.component.scss'],
-  templateUrl: './customers-edit.component.html',
-  encapsulation : ViewEncapsulation.None
+  templateUrl: './customers-edit.component.html'
 })
 export class CustomersEditComponent {
 
-  constructor(protected dialogService: DialogService) {
-  }
-
   onDateChange(evt: number) {
-    console.log(evt);
-    //evt contains the date selected in millis.
-    let today = new Date();
-    let todayMillis = today.getTime();
-    if (todayMillis < evt) {
-      this.dialogService.alert('Error', 'Selected date is greater than today\'s date');
-    }
+    /*
+      do whatever you want
+    */
   }
 
 }
 ```
----
 
-# Open a form.
+## Open a form
 
 The last test we will do is navigate to another screen of the application. To do that, we are going to add a button to our screen and when we click on it, we navigate to the other screen.
 
@@ -234,13 +202,9 @@ export class CustomersEditComponent {
   }
 
   onDateChange(evt: number) {
-    console.log(evt);
-    // evt contains the date selected in millis.
-    const today = new Date();
-    const todayMillis = today.getTime();
-    if (todayMillis < evt) {
-      this.dialogService.alert('Error', 'Selected date is greater than today\'s date');
-    }
+    /*
+      do whatever you want
+    */
   }
 
 }

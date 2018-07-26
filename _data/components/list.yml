@@ -1,117 +1,69 @@
-directive : "o-list"
+directive: "o-list"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+inheritedAttributes: [{
+  component: "OServiceComponent",
+  path: "components/service/service",
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
+}]
 
 attributes: [{
-  name: "attr"
+  name: "query-on-init",
+  default: "yes"
+},{
+  name: "query-on-bind",
+  default: "yes"
 },{
   name: "title",
   type: "string",
-  default : "",
-  required : "",
-  description : "List title displayed on screen"
-},{
-  name: "visible"
-},{
-  name: "enabled",
-  description : "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
-},{
-  name: "controls"
-},{
-  name: "filter",
-  type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether or not to show list filtering options"
-},{
-  name: "refresh-button",
-  description : "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
-},{
-  name: "query-on-init",
-  default : "yes"
-},{
-  name: "query-on-bind",
-  default : "yes"
-},{
-  name: "pageable"
+  default: "",
+  required: "",
+  description: "The title of the list"
 },{
   name: "css-class",
   type: "string",
-  default : "",
-  required : "",
-  description : "<em>css</em> class name"
+  default: "",
+  required: "",
+  description: "<em>css</em> class name"
 },{
-  name: "columns"
+  name: "enabled",
+  description: "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
 },{
-  name: "parent-keys"
+  name: "filter",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show list filtering options"
 },{
-  name: "service"
-},{
-  name: "service-type"
-},{
-  name: "entity"
-},{
-  name: "keys"
-},{
-  name: "route",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
-},{
-  name: "static-data"
-},{
-  name: "query-method"
-},{
-  name: "paginated-query-method"
-},{
-  name: "delete-method"
-},{
-  name: "detail-mode"
-},{
-  name: "detail-form-route"
-},{
-  name: "recursive-detail"
-},{
-  name: "detail-button-in-row"
-},{
-  name: "detail-button-in-row-icon"
-},{
-  name: "edit-button-in-row"
-},{
-  name: "edit-button-in-row-icon"
-},{
-  name: "edit-form-route"
-},{
-  name: "recursive-edit"
-},{
-  name: "query-rows"
-},{
-  name: "insert-button"
-},{
-  name: "row-height"
+  name: "delete-button"
 },{
   name: "quick-filter"
 },{
   name: "quick-filter-columns",
   type: "string",
-  default : "",
-  required : "",
-  description : "Columns used in the <em>quick-filter</em>. Separated by ';'"
+  default: "",
+  required: "",
+  description: "Columns used in the <em>quick-filter</em>. Separated by ';'"
 },{
-  name: "refresh-button"
+  name: "refresh-button",
+  description: "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
+},{
+  name: "route",
+  type: "",
+  default: "",
+  required: "",
+  description: ""
 },{
   name: "selectable",
   type: "",
-  default : "",
-  required : "",
-  description : ""
+  default: "",
+  required: "",
+  description: ""
 },{
   name: "dense",
   type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : ""
+  default: "no",
+  required: "",
+  description: ""
 }]
 
-
+extraComponents: "listData"

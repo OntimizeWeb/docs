@@ -1,0 +1,35 @@
+directive: "o-list-item-text"
+title: "List item: text"
+
+attributes: [{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The title of the list item"
+},{
+  name: "primary-text",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The primary of the list item"
+},{
+  name: "secondary-text",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The secondary of the list item"
+},{
+  name: "icon"
+},{
+  name: "icon-position",
+  type: "left | right",
+  default: "",
+  required: "",
+  description: "The icon position"
+}]
+
+outputs: [{
+  name : "icon-action",
+  description: "Event triggered when the list item icon is clicked"
+}]

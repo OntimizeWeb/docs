@@ -1,6 +1,4 @@
-directive : "o-button"
-
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+directive: "o-button"
 
 attributes: [{
   name: "attr"
@@ -9,21 +7,21 @@ attributes: [{
 },{
   name: "type",
   type: "FLAT | RAISED | ICON | FAB | MINI-FAB",
-  default : "FLAT",
-  required : "",
-  description : "Type of button"
+  default: "FLAT",
+  required: "",
+  description: "Type of button"
 },{
   name: "icon"
 },{
   name: "icon-position",
   type: "left | right | top | bottom",
-  default : "left",
-  required : "",
-  description : "Icon position"
+  default: "left",
+  required: "",
+  description: "Icon position"
 },{
   name: "image",
   type: "",
-  default : "",
-  required : "",
-  description : "Icon image"
+  default: "",
+  required: "",
+  description: "Icon image"
 }]

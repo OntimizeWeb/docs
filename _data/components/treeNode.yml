@@ -1,0 +1,13 @@
+directive: "o-tree-node"
+
+inheritedOutputs: [{
+  component: "o-tree",
+  path: "tree/components/o-tree.component",
+  outputs: ["onNodeSelected", "onNodeExpanded", "onNodeCollapsed"]
+}]
+
+inheritedAttributes: [{
+  component: "o-tree",
+  path: "tree/components/o-tree.component",
+  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys", "sort-columns", "description-columns", "separator", "parent-column", "show-root", "root-title", "recursive", "recursive-levels", "translate", "route"]
+}]

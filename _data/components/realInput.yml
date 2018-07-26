@@ -1,24 +1,20 @@
 directive : "o-real-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+},{
+  component: "o-integer-input",
+  path: "components/input/integer",
+  attributes: ["min", "max", "step", "grouping", "thousand-separator", "locale"]
+}]
 
-inheritedAttributes: [
-  {
-    component: "o-text-input",
-    attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
-  },
-  {
-    component: "o-integer-input",
-    attributes: ["min", "max"]
-  }
-]
-
-inheritedOutputs: [
-  {
-    component: "o-integer-input",
-    outputs: ["onChange", "onFocus", "onBlur"]
-  }
-]
+inheritedOutputs: [{
+  component: "o-text-input",
+  path: "components/input/text",
+  outputs: ["onChange", "onFocus", "onBlur"]
+}]
 
 attributes: [{
   name: "min-decimal-digits",
@@ -34,7 +30,4 @@ attributes: [{
   description : "Maximum number of decimals required"
 },{
   name: "decimal-separator"
-},{
-  name: "decimal-digits"
 }]
-

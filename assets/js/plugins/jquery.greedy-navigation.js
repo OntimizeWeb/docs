@@ -16,15 +16,21 @@ function updateNav() {
 
   var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
 
+  
   // The visible list is overflowing the nav
-  if($vlinks.width() > availableSpace) {
-
+  //if($vlinks.width() > availableSpace) {
+  if (availableSpace < 900){
+   
     // Record the width of the list
-    breaks.push($vlinks.width());
-
-    // Move item to the hidden list
-    $vlinks.children().last().prependTo($hlinks);
-
+    if ($vlinks.width()>0){
+      breaks.push($vlinks.width());
+      // Move item to the hidden list
+      var $current = $vlinks.children().last();
+      if ($current.hasClass('masthead__menu-separator')){
+        $current.css('display','none');
+      }
+      $current.prependTo($hlinks);
+    }
     // Show the dropdown btn
     if($btn.hasClass('hidden')) {
       $btn.removeClass('hidden');
@@ -32,14 +38,22 @@ function updateNav() {
 
   // The visible list is not overflowing
   } else {
-
+    
     // There is space for another item in the nav
-    if(availableSpace > breaks[breaks.length-1]) {
-
+    //if(availableSpace > breaks[breaks.length-1]) {
+      
       // Move the item to the visible list
-      $hlinks.children().first().appendTo($vlinks);
-      breaks.pop();
-    }
+      if ($hlinks.width()>0){
+        var $current = $hlinks.children().first();
+        if ($current.hasClass('masthead__menu-separator')){
+          $current.css('display','');
+        }
+        $current.appendTo($vlinks);
+        breaks.pop();
+      }
+      //
+      
+    //}
 
     // Hide the dropdown btn if hidden list is empty
     if(breaks.length < 1) {
@@ -51,11 +65,14 @@ function updateNav() {
   // Keep counter updated
   $btn.attr("count", breaks.length);
 
+  console.log('breaks.length:'+breaks.length);
+
   // Recur if the visible list is still overflowing the nav
-  if($vlinks.width() > availableSpace) {
+  if(availableSpace < 900 & $vlinks.width() > 0) {
+    updateNav();
+  }else if (availableSpace > 900 & $hlinks.width() > 0){
     updateNav();
   }
-
 }
 
 // Window listeners

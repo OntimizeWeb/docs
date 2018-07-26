@@ -1,30 +1,30 @@
 ---
 permalink: /components/table/editors/
-title: "Column editors"
+title: "Editing"
 ---
+The *o-table component* supports data editing operations (create, update, destroy) via a simple configuration of its data source. By default, this operations are enabled.
 
-In this section we are specifing how to add a editor for a table column cell.
+All you have to do to enable data editing capabilities for the component is to:
+<ul>
+<li>Include the table within an o-form component</li>
+<li>Configure data binding</li>
+</ul>
 
-<aside class="sidebar__right">
-  <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-text"></i> On This Page</h4></header>
-      <ul class="toc__menu" id="markdown-toc">
-        <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-        <li><a href="#default-editors" >Default editors</a></li>
-        <li><a href="#custom-editors" >Custom editors</a></li>
-    </ul>
-  </nav>
-</aside>
+If you need to disabled one operation, you can changing `insert-button= "no"`, `delete-button= "no"`.
+
+## Default editors
+
+Next we are specifing how to add a editor for a table column cell.
 
 By default, the table will no define a editor for your data into a cell. If you want to be able to edit that data you have to use a cell editor. So, for editing your values, you have the following options.
 
 **1.** Use one of the predefined cell editor. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
 
-If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/table-components/o-table-editors.component/#default-editors).
+If a column haven't type will be *string*. you can find all information [here]({{ base_path }}/docs/components/table/editors/#default-editors).
 
 **2.** Use equivalent code.
 
-**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/docs/table-components/o-table-editors.component/#custom-editors).
+**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/docs/components/table/editors/#custom-editors).
 
 
 For example:
@@ -45,27 +45,6 @@ For example:
 </o-table-column>
 ```
 
-
-## Default editors
-
-{% assign filenameArray = "" | split:"|"  %}
-{% for editors_hash in site.data.components.otableData.editors %}
-  {% assign filenameArray = filenameArray | push: editors_hash[0] %}
-{% endfor %}
-{% assign filenameArray = filenameArray | sort %}
-
-
-{% for filename in filenameArray %}
-
-  {% assign dataFile = site.data.components.otableData.editors[filename] %}
-  {% capture dataFileCapture %}
-    {% include o-component-single.md compFile=dataFile  %}
-  {% endcapture %}
-  <div class="o-compFile-div">
-    <h2 class="">{{ dataFile.title }}</h2>
-    {{ dataFileCapture | replace: '    ', '' | markdownify }}
-  </div>
-{% endfor %}
 
 ## Custom editors
 

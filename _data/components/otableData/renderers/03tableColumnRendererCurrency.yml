@@ -1,19 +1,21 @@
-directive : "o-table-cell-renderer-currency"
+class: "OTableCellRendererCurrencyComponent"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
+extends: "OBaseTableCellRenderer" 
+
+directive: "o-table-cell-renderer-currency"
 
 attributes: [{
   name: "currency-symbol",
   type: "string",
-  default : "dolar ($)",
-  required : "",
-  description : "Currency symbol (According to ISO 4217)"
+  default: "dolar ($)",
+  required: "",
+  description: "Currency symbol (According to ISO 4217)"
 },{
   name: "currency-symbol-position",
   type: "left | right",
-  default : "left",
-  required : "",
-  description : "Position of currency symbol"
+  default: "left",
+  required: "",
+  description: "Position of currency symbol"
 },{
   name: "grouping"
 },{
@@ -23,4 +25,27 @@ attributes: [{
 },{
   name: "decimal-digits"
 }]
-title : "OTableCellRendererCurrency"
+
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "initialize()",
+    type: "method",
+    description: "Required method to render the column "
+  },{
+    name: "getCellData(cellvalue,rowvalue)",
+    type: "method",
+    description: "This default method returns the value of the column as *a string*. This method is used to obtain the value of the column in the exports or filtering, so that if you want to customize the value of the column you must overwrite it. "
+  }]
+}]

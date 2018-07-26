@@ -1,22 +1,12 @@
 directive : "o-list-picker"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
-
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "sql-type", "width", "read-only"]
+}]
+  
 attributes: [{
-  name: "attr"
-},{
-  name: "label"
-},{
-  name: "data"
-},{
-  name: "automatic-binding"
-},{
-  name: "automatic-registering"
-},{
-  name: "enabled"
-},{
-  name: "required"
-},{
   name: "static-data"
 },{
   name: "service"
@@ -38,9 +28,7 @@ attributes: [{
   description : "Visible columns. Separated by ';'"
 },{
   name: "description-columns",
-  type: "string",
   default : "<em>visible-columns</em> attribute value",
-  required : "",
   description : "Visible columns in text field"
 },{
   name: "filter",
@@ -49,25 +37,17 @@ attributes: [{
   required : "",
   description : "Indicates whether or not to show values filtering input"
 },{
-  name: "separator",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Separation character between <em>description-columns</em> values"
+  name: "separator"
 },{
   name: "query-on-init"
 },{
   name: "query-on-bind"
 },{
-  name: "sql-type"
+  name: "query-on-event"
+},{
+  name: "query-method"
 },{
   name: "service-type"
-},{
-  name: "tooltip"
-},{
-  name: "tooltip-position"
-},{
-  name: "tooltip-show-delay"
 },{
   name: "dialog-width",
   type: "string",
@@ -80,11 +60,17 @@ attributes: [{
   default : "",
   required : "",
   description : "List picker dialog height"
+},{
+  name: "query-rows"
 }]
-
-outputsColumns: ["Name", "Description"]
 
 outputs: [{
   name : "onChange",
   description: "Event triggered when component selected value changes"
+},{
+  name : "onFocus",
+  description: "Event triggered when component gains the focus"
+},{
+  name : "onBlur",
+  description: "Event triggered when component loses the focus"
 }]

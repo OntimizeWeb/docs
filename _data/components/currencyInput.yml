@@ -1,28 +1,25 @@
 directive : "o-currency-input"
 
-attributesColumns: ["Name", "Type", "Default", "Required", "Description"]
-
-inheritedAttributes: [
-  {
-    component: "o-text-input",
-    attributes: ["attr", "label", "automatic-binding", "automatic-registering", "data", "enabled", "required", "min-length", "max-length", "tooltip", "tooltip-position", "tooltip-show-delay"]
-  },
-  {
-    component: "o-integer-input",
-    attributes: ["min", "max"]
-  },
-  {
-    component: "o-real-input",
-    attributes: ["min-decimal-digits", "max-decimal-digits"]
-  }
-]
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+},{
+  component: "o-integer-input",
+  path: "components/input/integer",
+  attributes: ["min", "max", "step", "grouping", "thousand-separator", "locale"]
+},{
+  component: "o-real-input",
+  path: "components/input/real",
+  attributes: ["min-decimal-digits", "max-decimal-digits", "decimal-separator"]
+}]
 
 attributes: [{
   name: "currency-symbol",
   type: "string",
   default : "euro (EUR)",
   required : "",
-  description : "Currency symbol (According to ISO 4217)"
+  description : "Currency code according to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes){:target='_blank'}"
 },{
   name: "currency-symbol-position",
   type: "left | right",
@@ -31,9 +28,8 @@ attributes: [{
   description : "Position of the currency symbol"
 }]
 
-inheritedOutputs: [
-  {
-    component: "o-real-input",
-    outputs: ["onChange", "onFocus", "onBlur"]
-  }
-]
+inheritedOutputs: [{
+  component: "o-text-input",
+  path: "components/input/text",
+  outputs: ["onChange", "onFocus", "onBlur"]
+}]

@@ -1,0 +1,17 @@
+directive : "o-html-input"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  attributes: ["attr", "automatic-binding", "automatic-registering", "data", "required", "sql-type", "read-only"]
+},{
+  component: "o-text-input",
+  path: "components/input/text",
+  attributes: [ "min-length", "max-length"]
+}]
+
+inheritedOutputs: [{
+  component: "o-text-input",
+  path: "components/input/text",
+  outputs: ["onChange", "onFocus", "onBlur"]
+}]

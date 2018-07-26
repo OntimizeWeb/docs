@@ -17,8 +17,8 @@ This page describes Ontimize Web at a high level and assumes that the reader has
 This documentation is divided into three sections:
 
 | [Getting started]({{ base_path }}/example-overview/) | First contact with an Ontimize Web app. Run sample app code.   |
-| [Guide]({{ base_path }}/structure/)                  | More extensive documentation covering Ontimize Web in depth. |
-| [Customization]({{ base_path }}/theming/)            | How to customize the application.   |
+| [Guide]({{ base_path }}/guide/appstructure/)                  | More extensive documentation covering Ontimize Web in depth. |
+| [Customization]({{ base_path }}/customize/theming/)            | How to customize the application.   |
 
 
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Structure"
-permalink: /structure/
+title: "Application structure"
+permalink: /guide/appstructure/
 excerpt: "How an Ontimize Web app is organized and what all of the files are for."
 ---
 
@@ -9,13 +9,11 @@ excerpt: "How an Ontimize Web app is organized and what all of the files are for
 
 ## Overview
 
-The QuickStart application has the structure of an Ontimize Web application. This structure is based on the structure of a regular Angular app but with the specification needed by the Ontimize Web framework.
+The QuickStart application has the structure of an Ontimize Web application. This structure is based on the structure of a regular Angular app but with the specification needed by the **OntimizeWeb** framework.
 
-The QuickStart has been developed to help people learn how to start programming with Ontimize Web.
+The QuickStart has been developed to help people learn how to start programming with **OntimizeWeb**.
 
 In these following sections we will explain in detail this structure and what each file is used for.
-
----
 
 ## Application structure
 
@@ -83,13 +81,10 @@ ontimize-web-ngx-quickstart
 |  └──  typings.d.ts        # systemJS module definition
 |
 |──  angular-cli.json       # Angular CLI configuration
-|──  karma.conf.js          # Unit test configuration for the Karma test runner, used when running ng test
 |──  package.json           # npm package dependencies for the project
-|──  protractor.conf.js     # End-to-end test configuration for Protractor, used when running ng e2e. See link for more information https://github.com/angular/protractor/blob/master/lib/config.ts
 |──  tsconfig.aot.json      # TypeScript AOT compiler configuration
 |──  tsconfig.json          # TypeScript JIT compiler configuration
 └──  tslint.json            # Linting configuration for TSLint together with Codelyzer, used when running ng lint. Linting helps keep your code style consistent.
-
 ```
 
 ## Project configuration
@@ -144,16 +139,16 @@ Define the web app that hosts your application in the file *index.html*.
 ```
 The noteworthy sections here are:
 
-* The *loader-wrapper* element. Which in addition with *loader.css* will load a spinner loader, visible during application load and hidden by Ontimize Web when the application is loaded.
-* The *o-app* tag in the *body* which is where your app lives!
+* The `loader-wrapper` element. Which in addition with *loader.css* file will load a spinner loader, visible during application load and hidden by Ontimize Web when the application is loaded.
+* The `o-app` tag in the `body` which is where your app lives!
 
 ## Application module
 
-Angular apps are formed by blocks of functionality that are called [modules](https://angular.io/docs/ts/latest/guide/ngmodule.html){:target="_blank"}. Ontimize Web apps keep this characteristic and every application has at least one module: the root module, which is named AppModule by convention.
+Angular apps are formed by blocks of functionality that are called [modules](https://angular.io/docs/ts/latest/guide/ngmodule.html){:target="_blank"}. Ontimize Web apps keep this characteristic and every application has at least one module: the root module, which is named `AppModule` by convention.
 
-The file that defines the root module is placed in *app/app.module.ts* with the following content:
+The root module definition is placen in the file *app/app.module.ts* and contains the following content:
 
-```bash
+```javascript
 import { NgModule } from '@angular/core';
 import { Injector, APP_INITIALIZER } from '@angular/core';
 
@@ -168,7 +163,7 @@ import { CONFIG } from './app.config';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-// Defining custom providers (if needed)...
+// Define custom providers if needed
 export const customProviders: any = [
 ];
 
@@ -193,16 +188,16 @@ export const customProviders: any = [
 export class AppModule { }
 ```
 
-The *NgModule* decorator uses the following metadata:
+The `NgModule` decorator uses the following metadata:
 
-* **imports:** An array of modules that you want to use in your application. *ONTIMIZE_MODULES* includes standard Angular Modules (HttpLoader, Http and TranslateHttpLoader).
-* **declarations:** The root component.
-* **boostrap:** The root component of your app.
-* **providers:** Services that you want to make available module-wide. *customProviders* includes framework services customized with application parameters.
+* **imports:** An array of modules that you want to use in your application. `ONTIMIZE_MODULES` includes standard Angular Modules (`HttpLoader`, `Http` and `TranslateHttpLoader`).
+* **declarations:** Specifies a list of directives/pipes that belong to this module.
+* **boostrap:** Defines the components that should be bootstrapped when this module is bootstrapped.
+* **providers:** Define the set of injectable objects that are available in the injector of this module. You will include here all the services that you want to make available module-wide. Use the variable `customProviders` for including your application providers.
 
 The noteworthy variables here are:
 
-* **CONFIG:** An object with application configuration parameters. Learn more [here]({{ base_path }}/guide/app-config/){:target="_blank"}.
+* **CONFIG:** An object containing the application configuration. Learn more [here]({{ base_path }}/guide/appconfig/){:target="_blank"}.
 
 The Ontimize Web applications are comprised of different logic blocks or modules, which may or may not interact with each other. Returning to our example about customers and accounts: it makes sense to have different blocks containing the logic related to creation, editing, or deletion of customers; and another with the logic related to the accounts.
 
@@ -215,11 +210,11 @@ You can find more information about logic blocks [here]({{ base_path }}/app-modu
 
 ## Start up your application
 
-Now we are going to start up the application using Angular. You can find more information about Angular bootstrapping [here](https://angular.io/docs/ts/latest/guide/ngmodule.html#!#bootstrap).
+Now we are going to start up the application using Angular. You can find more information about Angular bootstrapping [here](https://angular.io/guide/bootstrapping).
 
-The file responsible for starting up the app is *'app/main.ts'*, with the content:
+The file responsible for starting up the app is *app/main.ts*, with the content:
 
-```bash
+```javascript
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
