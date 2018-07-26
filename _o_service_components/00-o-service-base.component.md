@@ -9,7 +9,7 @@ comp: "serviceBase"
 
 Components extending the `OServiceBaseComponent` class are components which have a service instance configured ready for ask for remote data. This class provides a set of inputs and methods and attributes inherited by all the service components. This properties are explained on the **API** section of this page.
 
-The class inputs are available in the static `DEFAULT_INPUTS_O_SERVICE_BASE_COMPONENT` variable, so a component implementing `OServiceBaseComponent` class will look like:
+For using the `OntimizeService` configuration (explained [here]({{ base_path }}/guide/service/){:target="_blank"}) and have a unique instance of it in your component you shoud add it in the providers definition, as you can see in the following example. The class inputs are available in the static `DEFAULT_INPUTS_O_SERVICE_BASE_COMPONENT` variable, so a component implementing `OServiceBaseComponent` class will look like:
 
 ```javascript
 @Component({
@@ -33,7 +33,6 @@ export class MyComponent extends OServiceBaseComponent {
 ```
 
 ## Binding to remote data
-
 To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}.
 
 ## Binding to local data
@@ -41,14 +40,13 @@ For local data binding you simply need to supply an array of TypeScript objects/
 
 If you need the data query to be performed after the `parent-keys` is updated, `query-on-init = false` and `query-on-bind = true` must be changed
 
-## query-on-init
+## Define columns
+You have to define the `columns` of the database entity (if binding to remote data) or the properties of the static data items (when binding to local data).
 
-
-## query-on-bind
-
+<!-- ## query-on-init
+## query-on-bind -->
 
 ## CRUD methods
-
 There are a set of preconfigured method names for doing the `CRUD` operations that can be overrided using its inputs: `query-method`, `paginated-query-method`, `insert-method`, `update-method` or `delete-method`. You can learn more about Ontimize services configuration [here]({{ base_path }}/guide/service/){:target="_blank"}.
 
 This are the methods that will be invoked when the component needs to query, insert, update or delete data from its configured `service` and `entity`.

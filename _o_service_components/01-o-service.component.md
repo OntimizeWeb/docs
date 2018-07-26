@@ -8,7 +8,7 @@ comp: "service"
 
 Components extending the `OServiceComponent` are components which extends the behaviour of the `OServiceBaseComponent` adding more features, mostly about navigation. New properties and methods are explained on the **API** section of this page.
 
-The class inputs are available in the static `DEFAULT_INPUTS_O_SERVICE_COMPONENT` variable, so a component implementing `OServiceComponent` class will look like:
+For using the `OntimizeService` configuration (explained [here]({{ base_path }}/guide/service/){:target="_blank"}) and have a unique instance of it in your component you shoud add it in the providers definition, as you can see in the following example. The class inputs are available in the static `DEFAULT_INPUTS_O_SERVICE_COMPONENT` variable, so a component implementing `OServiceComponent` class will look like:
 
 ```javascript
 @Component({
