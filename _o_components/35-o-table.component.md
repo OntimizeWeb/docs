@@ -10,7 +10,7 @@ comp: table
 ## Introduction
 The `o-table` provides a table of data that can be used to display rows of data.
 
-If the table also is *inside a form*, the `attr` property is required for registry the table in the form.
+If the table also is *inside a form*, the `attr` property is required for registry the table in the form. 
 
 <div class="notice--warning" markdown="1">
 
@@ -23,11 +23,9 @@ If the table also is *inside a form*, the `attr` property is required for regist
 
 ![Table component]({{ "/images/components/tabla/basic-example-table.png" | absolute_url }}){: .comp-example-img}
 
-
 <!--{% for post in site.o_table_components %}
   {% include archive-table.html %}
 {% endfor %}-->
-
 
 To define a table, it is necessary to define the columns
 
@@ -42,7 +40,7 @@ In the same way, using the default editor (*o-table-cell-editor-string*) if colu
 in  the *editable-columns* attribute from its parent *o-table*.
 
 
-
+ 
 
 ## Define columns
 
@@ -182,14 +180,14 @@ getTableData(){
 
 If you need the data query to be performed after the `parent-keys` is updated, `query-on-init = false` and `query-on-bind = true` must be changed
 
-### Binding to remote data
+### Binding to remote data 
 
-To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}.
+To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}. 
 
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer"
+<o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" 
 keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" query-rows="10" quick-filter="yes" row-height="medium" select-all-checkbox="true">
   <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
   <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64"
@@ -215,9 +213,9 @@ Additionally, you can specify default filter function to be applied when the use
 
 
 
-### Filtering by columns
+### Filtering by columns 
 
-It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property.
+It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property. 
 
 
 <h3 class="grey-color">Example</h3>
@@ -299,7 +297,7 @@ You can see this live example in the [OntimizeWeb playground](https://try.imatia
 
 **Action cell renderer**
 
-The action cell renderer is used for displaying a button in a table cell. Include this renderer in your table column by configuring the attribute `type` in the column with the value **action** or adding the `o-table-cell-renderer-action` to the table column.
+The action cell renderer is used for displaying a button in a table cell. Include this renderer in your table column by configuring the attribute `type` in the column with the value **action** or adding the `o-table-cell-renderer-action` to the table column. 
 
 ```html
 <o-table-column attr="EMPLOYEENAME" type="action" icon="person" (onClick)="showMessage($event)"></o-table-column>
@@ -311,7 +309,7 @@ The action cell renderer is used for displaying a button in a table cell. Includ
 </o-table-column>
 ```
 
-You can display a `text` and/or a `icon` in the cell, also choosing the icon position using the `icon-position` attribute.
+You can display a `text` and/or a `icon` in the cell, also choosing the icon position using the `icon-position` attribute. 
 
 ```html
 <o-table-column attr="EMPLOYEENAME">
@@ -352,7 +350,7 @@ Include the table cell renderer boolean in your table column by configuring the 
 
 Include the table cell renderer currency in your table column by configuring the attribute `type` in the column with the value **currency** or adding the `o-table-cell-renderer-currency` to the table column. Configure the currency symbol with the `currency-symbol` attribute. Check this and other attributes in the **API** section of this page.
 
-```html
+```html 
 <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-column>
 
 <!-- Equivalent code -->
@@ -366,7 +364,7 @@ Include the table cell renderer currency in your table column by configuring the
 
 You can include the table cell renderer date in your table column by configuring the attribute `type` in the column with the value **date** or adding the `o-table-cell-renderer-date` to the table column. You may want to set the displaying date format by configuring the `format` attribute. Check this and other attributes in the **API** section of this page.
 
-```html
+```html 
 <o-table-column attr="STARTDATE" title="STARTDATE" type="date"></o-table-column>
 
 <!-- Equivalent code -->
@@ -583,7 +581,7 @@ The configuration is similar to the renderer boolean. The following example uses
 ```
 *Date*
 
-The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add
+The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add 
 `type="date" editable="yes"` in `o-table-column` componente. To consult all the parameters of the editor see the API.
 
 ```html
@@ -605,9 +603,9 @@ The configuration is similar to the renderer integer. The following example uses
 
 *Real*
 
-The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add
+The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add 
 `type="currency" editable="yes"` in `o-table-column` componente. To consult all the parameters of the editor see the API.
-
+ 
  ```html
  <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
         currency-symbol="€" currency-symbol-position="right" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
@@ -619,7 +617,7 @@ The configuration is similar to the renderer real. The following example uses th
 
 The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` componente inside the `o-table-column`. To consult all the parameters of the editor see the API.
 
- ```html
+ ```html 
     <o-table-column attr="NAME" title="NAME">
         <o-table-cell-editor-text (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-text>
     </o-table-column>
@@ -697,7 +695,7 @@ O-table support checkbox selection with `select-all-checkbox` property. If this 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
 ### Fixed header and footer
-O-table support *fixed header* and *footer* with `fixed-header="yes"` when the content is greather than its own height and then you must set the height of the table, for example `[ngStyle]="height: 400px;"`. By default it is disabled.
+O-table support *fixed header* and *footer* with `fixed-header="yes"` when the content is greather than its own height and then you must set the height of the table, for example `[ngStyle]="height: 400px;"`. By default it is disabled. 
 
 <h3 class="grey-color">Example</h3>
 ```html
@@ -766,14 +764,14 @@ In the following example, two calculated columns are defined that perform the sa
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE;INTERESRATE;BENEFIT;BENEFIT2"
     attr="accounts" title="ACCOUNTS"
-    layout-padding
+    layout-padding 
     sort-columns="ANID" query-rows="15" pageable="no" >
-
+  
     <o-table-column attr="ENTITYID" title="ENTITYID"></o-table-column>
     <o-table-column attr="CDID" title="CDID"></o-table-column>
     <o-table-column attr="ANID" title="ANID"></o-table-column>
     <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator=","> </o-table-column>
-    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator=","></o-table-column>
+    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator=","></o-table-column> 
 
   <!--calculated column-->
     <o-table-column-calculated attr="BENEFIT" title="BENEFIT" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
@@ -796,7 +794,7 @@ In the following example, two calculated columns are defined that perform the sa
 
     return (rowData['BALANCE'] * rowData['INTERESRATE']);
   }
-
+ 
 ```
 
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/calculatedcolumn)
@@ -1008,7 +1006,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 </p>
 <p>In the following example you ca see the download api end point method.</p>
 
-```java
+```java 
 @RequestMapping(value = "download/{extension}/{id}", method = RequestMethod.GET)
 public void downloadFile(@PathVariable(name = "extension", required = true) String fileExtension, @PathVariable(name = "id", required = true) String fileId, HttpServletResponse response) {
     InputStream fis = null;
@@ -1070,4 +1068,3 @@ export const SERVICE_CONFIG: Object = {
 ## Demo
 
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table){:target="_blank"}.
-

@@ -1,17 +1,5 @@
 {% include base_path %}
 
-{% if include.comp and site.data.components[include.comp] %}
-  {% assign componentData = site.data.components[include.comp] %}
-{% elsif include.compFile %}
-  {% assign componentData = include.compFile %}
-{% endif %}
-
-{% if include.comp and site.data.components.common.attributes %}
-  {% assign commonAttributes = site.data.components.common.attributes %}
-{% endif %}
-
-{% if componentData %}
-
 {% assign inputsColumns = "Name|Description|Default" | split: "|" %} 
 {% assign outputsColumns = "Name|Description" | split: "|" %} 
 {% assign methodsColumns = "Name|Description|Parameters|Returns" | split: "|" %} 
@@ -95,4 +83,3 @@
     {% include functions/o-table/directive-api.html folder=site.data.components.otableData.editors %}
   </div>
 </div>
-{% endif %}
