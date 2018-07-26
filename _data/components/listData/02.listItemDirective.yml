@@ -1,0 +1,24 @@
+directive: "o-list-item"
+title: "List item directive"
+
+attributes: [{
+  name: "o-list-item",
+  type: "Object",
+  default: "",
+  required: "",
+  description: "The list item model data"
+},{
+  name: "selectable",
+  type: "boolean",
+  default: "false",
+  required: "",
+  description: "Indicates whether the list item is selectable or not"
+}]
+
+outputs: [{
+  name: "click",
+  description: "Event triggered when the list item is clicked"
+},{
+  name: "dblclick",
+  description: "Event triggered when the list item is double clicked"
+}]
