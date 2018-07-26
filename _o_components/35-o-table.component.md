@@ -23,11 +23,9 @@ If the table also is *inside a form*, the `attr` property is required for regist
 
 ![Table component]({{ "/images/components/tabla/basic-example-table.png" | absolute_url }}){: .comp-example-img}
 
-
 <!--{% for post in site.o_table_components %}
   {% include archive-table.html %}
 {% endfor %}-->
-
 
 To define a table, it is necessary to define the columns
 
@@ -146,7 +144,7 @@ The o-table component supports data binding and you can command the component to
 
 ### Binding to local data
 
-For local data binding you simply need to supply an array of Typpescript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in `o-table` component.
+For local data binding you simply need to supply an array of TypeScript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in `o-table` component.
 
 <h3 class="grey-color">Example</h3>
 
@@ -1070,4 +1068,3 @@ export const SERVICE_CONFIG: Object = {
 ## Demo
 
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table){:target="_blank"}.
-

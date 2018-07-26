@@ -45,6 +45,8 @@ attributes: [{
   name: "query-rows"
 },{
   name: "store-state"
+}, {
+  name : "query-with-null-parent-keys"
 }]
 
 methods: [{
@@ -108,12 +110,14 @@ methods: [{
   type: "method",
   description : "",
   parameters: ""
-},{
-  name: "reloadData",
-  type: "method",
-  description : "",
-  parameters: ""
-},{
+}
+# ,{
+#   name: "reloadData",
+#   type: "method",
+#   description : "",
+#   parameters: ""
+# }
+,{
   name: "getAttributesValuesToQuery",
   type: "method",
   returns : "string[]",
