@@ -19,6 +19,21 @@ This component wraps the [CKEditor 4](https://ckeditor.com/ckeditor-4/){:target=
     ```html
     <script type="text/javascript" src="./assets/js/ckeditor/ckeditor.js"></script>
     ```
+
+    * For production you have the take two more steps:
+        * Include the CKEditor library in the *aot-config/index.ejs* file, like in the previous example.
+        * Include the CKEditor in the webpack copy files plugin, for this, include the ckeditor folder in the `GlobCopyWebpackPlugin` patterns in the *aot-config/webpack-aot.config.js* file.
+
+        ```javascript
+            plugins: [
+                new GlobCopyWebpackPlugin({
+                    "patterns": [
+                    ...
+                    "assets/js/ckeditor"
+                ],
+                ...
+        ```
+
 3. Now you can include the `o-html-input` in your application templates.
 
 The HTML input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
