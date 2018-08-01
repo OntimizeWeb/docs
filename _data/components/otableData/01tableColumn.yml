@@ -1,115 +1,110 @@
 
-class : "OTableColumnComponent"
+class: "OTableColumnComponent"
 
-directive : "o-table-column"
+directive: "o-table-column"
 
 attributes: [{
   name: "attr",
   type: "string",
-  default : "",
-  required : "",
-  description : "Column name"
+  default: "",
+  required: "",
+  description: "Column name"
 },{
   name: "title",
   type: "string",
-  default : "",
-  required : "",
-  description : "Column title"
+  default: "",
+  required: "",
+  description: "Column title"
+},{
+  name: "title-align",
+  type: "start | center | end",
+  default: "center",
+  required: "",
+  description: "Column title cell text alignment"
 },{
   name: "orderable",
   type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether or not the column can be sorted"
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the column can be sorted"
 },{
   name: "searchable",
   type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether or not the column content can be searched"
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the column content can be searched"
 },{
   name: "editable",
   type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-table</em>"
+  default: "no",
+  required: "",
+  description: "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-table</em>"
 },{
   name: "type",
   type: "string | boolean | integer | real | currency | date | image",
-  default : "string",
-  required : "",
-  description : "Column data type"
+  default: "string",
+  required: "",
+  description: "Column data type"
 },{
   name: "format",
-  type: "string ",
-  default : "LL",
-  required : "",
-  description : "Indicates the format in which you want to represent the date."
+  type: "string",
+  default: "LL",
+  required: "",
+  description: "Indicates the format in which you want to represent the date"
 },{
   name: "width",
-  type: "string ",
-  default : "",
-  required : "",
-  description : "Indicates the width of the column in px or %"
+  type: "string",
+  default: "",
+  required: "",
+  description: "Indicates the width of the column in px or %"
 },{
   name: "date-model-type",
   type: "timestamp | string",
-  default : "timestamp",
-  required : "",
-  description : "If a date column is editable, its model type must be defined to be able to save its value, e.g. classic ontimize server dates come as timestamps (number), but to be able to save them they have to be send as strings with  the format 'YYYY-MM-DD HH:mm:ss' (especified in the date-model-format attribute)"
-}
-,{
+  default: "timestamp",
+  required: "",
+  description: "If a date column is editable, its model type must be defined to be able to save its value, e.g. classic ontimize server dates come as timestamps (number), but to be able to save them they have to be send as strings with  the format 'YYYY-MM-DD HH:mm:ss' (especified in the date-model-format attribute)"
+},{
   name: "date-model-format",
   type: "string",
-  default : "",
-  required : "",
-  description : "If date model type is string, its date model format should be defined. Default: ISO date."
+  default: "",
+  required: "",
+  description: "If date model type is string, its date model format should be defined. Default: ISO date"
 },{
   name: "class",
-  type: "string ",
-  default : "",
-  required : "",
-  description : "Indicates the class of the column."
-},
-{
+  type: "string",
+  default: "",
+  required: "",
+  description: "Indicates the css class for the column"
+},{
   name: "break-word",
-  type: "no|yes|true|false ",
-  default : "no",
-  required : "",
-  description : "Show content column in multiple lines if it not catch in the cell."
-},
-{
+  type: "no | yes | true | false",
+  default: "no",
+  required: "",
+  description: "Show the cell content in multiple lines"
+},{
   name: "async-load",
-  type: "no|yes|true|false ",
-  default : "no",
-  required : "",
-  description : "Asynchronous query for this column."
-},
-{
-  name: "sql-type",
-  type: "no|yes|true|false ",
-  default : "no",
-  required : "",
-  description : " Data type according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/ontimize/util/sqltypes.ts){:target='_blank'})"
-},
-{
+  type: "no | yes | true | false",
+  default: "no",
+  required: "",
+  description: "Asynchronous query for this column"
+},{
+  name: "sql-type"
+},{
   name: "tooltip",
-  type: "no|yes|true|false ",
-  default : "no",
-  required : "",
-  description : "Indicates whether or not the tooltip over column."
-},
-{
+  type: "no | yes | true | false",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not the tooltip over column"
+},{
   name: "tooltip-value",
-  type: "no|yes|true|false ",
-  default : "no",
-  required : "Indicates value of tooltip.",
-  description : ""
-},
-{
+  type: "string",
+  default: "",
+  required: "Indicates value of tooltip",
+  description: ""
+},{
   name: "tooltip-function",
-  type: "no|yes|true|false ",
-  default : "no",
-  required : "",
-  description : "Callback function that will be executed when the mouse pointer over the column."
+  type: "function",
+  default: "",
+  required: "",
+  description: "Callback function that will be executed when the mouse pointer over the column"
 }]

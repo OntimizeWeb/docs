@@ -10,7 +10,7 @@ comp: table
 ## Introduction
 The `o-table` provides a table of data that can be used to display rows of data.
 
-If the table also is *inside a form*, the `attr` property is required for registry the table in the form. 
+If the table also is *inside a form*, the `attr` property is required for registry the table in the form.
 
 <div class="notice--warning" markdown="1">
 
@@ -23,17 +23,15 @@ If the table also is *inside a form*, the `attr` property is required for regist
 
 ![Table component]({{ "/images/components/tabla/basic-example-table.png" | absolute_url }}){: .comp-example-img}
 
-
 <!--{% for post in site.o_table_components %}
   {% include archive-table.html %}
 {% endfor %}-->
 
-
 To define a table, it is necessary to define the columns
 
-You can be defined it as follows:
-- In the input `columns`, adding the columns separated by ';'.
-- Using the `o-table-column` selector. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the API.
+You can define it as follows:
+- Using the input `columns`, adding the columns separated by ';'.
+- Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the API.
 
 With `visible-columns` you can indicate which columns we want to be visible
 
@@ -42,7 +40,7 @@ In the same way, using the default editor (*o-table-cell-editor-string*) if colu
 in  the *editable-columns* attribute from its parent *o-table*.
 
 
- 
+
 
 ## Define columns
 
@@ -146,7 +144,7 @@ The o-table component supports data binding and you can command the component to
 
 ### Binding to local data
 
-For local data binding you simply need to supply an array of Typpescript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in `o-table` component.
+For local data binding you simply need to supply an array of TypeScript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in `o-table` component.
 
 <h3 class="grey-color">Example</h3>
 
@@ -182,14 +180,14 @@ getTableData(){
 
 If you need the data query to be performed after the `parent-keys` is updated, `query-on-init = false` and `query-on-bind = true` must be changed
 
-### Binding to remote data 
+### Binding to remote data
 
-To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}. 
+To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}.
 
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" 
+<o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer"
 keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" query-rows="10" quick-filter="yes" row-height="medium" select-all-checkbox="true">
   <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
   <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64"
@@ -200,7 +198,7 @@ keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL
 </o-table>
 ```
 
-You can configure the methods by default with the `ìnsert-method`,`update-method`,`deleted-method`
+You can configure the methods by default with the `ìnsert-method`,`update-method`,`delete-method`
 
 
 By default the filtering is *local*, you can be enabled filtering *remote* with `pageable="yes"`.
@@ -215,9 +213,9 @@ Additionally, you can specify default filter function to be applied when the use
 
 
 
-### Filtering by columns 
+### Filtering by columns
 
-It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property. 
+It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property.
 
 
 <h3 class="grey-color">Example</h3>
@@ -243,141 +241,220 @@ It is posible to configure filtering by columns with `o-table-columns-filter` se
 
 The `o-filter-builder` component uses the `IExpression` inserface that represents a filtering expression. You can read more about how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
 
+## Cell renderers
 
-## Rendering
+The data is displayed in the table cells as simple text by default. **OntimizeWeb** allows you to modify the way the data is displayed by adding renderers to the table columns. You have different options to include table cell renderers in your table component:
 
-By default, the table will place the values of your data into the cell as simple strings. If you want something other than simple strings, then you use a cell renderer. So for rendering your values, you have the following four options.
-
-**1.** Do nothing, simple strings get used to display the table.
-
-**2.** Use one of cell renderer predefined. The predefined types are *boolean*, *real*, *currency*, *date*, *image*, *percentage* and *string*. If a column haven't type will be *string*. You can find all information [here](#default-renders).
-
-**3.** Use equivalent code.
-
-**4.** Custom renderer. Below is an example but you can find all information [here](#custom-renderers).
-
-
-For example:
+1. Do nothing, the cell data is displayed as simple text.
+2. Use a predefined cell renderer in the table column. The predefined renderers are: *action*, *boolean*, *real*, *currency*, *date*, *integer*, *image*, *percentage* and *service*.
+3. Use one of the predefined table cell renderer components that **OntimizeWeb** offers. This option is equivalent to the previous one.
+4. Create a [custom renderer](#custom-renderers) component and use it in your table.
 
 ```html
-// 1.Do nothing, simple strings get used to display the table
+<!-- 1.Do nothing, simple strings get used to display the table -->
 <o-table-column attr="PHOTO" > </o-table-column>
 
-// 2. Use one of cell renderer predefined
-<o-table-column attr="PHOTO" orderable="no" searchable="no" type="image"
-  image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-</o-table-column>
+<!-- 2. Use one of cell renderer predefined -->
+<o-table-column attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"></o-table-column>
 
-// 3. Use equivalent code
+<!-- 3. Use equivalent code -->
 <o-table-column attr="PHOTO" orderable="no" searchable="no">
-  <o-table-cell-renderer-image image-type="base64"
-    empty-image="assets/images/no-image.png" avatar="yes">
-  </o-table-cell-renderer-image>
+  <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"></o-table-cell-renderer-image>
 </o-table-column>
 
-// 4. Custom renderer.
+<!-- 4. Custom renderer -->
 <o-table-column attr="NAME" orderable="no" searchable="no">
   <o-table-cell-renderer-name></o-table-cell-renderer-name>
 </o-table-column>
 ```
 
-You can see examples of this section in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/custrenderer){:target="_blank"}.
+### Predefined renderers
 
-### Default renders
+**OntimizeWeb** offers you a set of prebuilt table cell renderers to include in your table. This cell renderers are the following data types: *action*, *boolean*, *real*, *currency*, *date*, *integer*, *image*, *percentage* and *service*.
 
-The predefined types are *boolean*, *date*, *currency*, *image* ,*integer*,  *percentage*, *real*,*service* and *string* and they are defined by the `type` property of o-table-column. If a column haven't type will be *string*. You can find all information. To consult all the parameters of the renderers see the API.
+For adding a cell renderer to the cells of a table columns, you have to configure the attribute `type` in the desired table column with the value that indicates the cell render you want to use. You may need to configure additional parametres depending on the cell renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the **API** section of this page.
 
-In the following example you can see different predefined renderers in the table
+You can see different predefined table cell renderers in the example below.
 
-<p><img src="/docs/images/components/tabla/renderers_table.png" alt="Default renders Table" class="comp-example-img"></p>
+![Predefined table cell renderers]({{ "/images/components/tabla/renderers_table.png" | absolute_url }}){: .comp-example-img}
+
 ```html
- <o-table  attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"
-      visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" title="ACCOUNTS"
-      [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no"
-      delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
-      <!--Date Renderer-->
-      <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
-      <!--Currency Renderer-->
-      <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
-        currency-symbol-position="right"></o-table-column>
-      <!--Percentage Renderer-->
-      <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
-      <!--Integer Renderer-->
-      <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
-       <!--Boolean Renderer-->
-      <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean>
-      </o-table-column>
-    </o-table>
+<o-table  attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+  <!--Date Renderer-->
+  <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
+  <!--Currency Renderer-->
+  <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"></o-table-column>
+  <!--Percentage Renderer-->
+  <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+  <!--Integer Renderer-->
+  <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
+  <!--Boolean Renderer-->
+  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean></o-table-column>
+</o-table>
 ```
 
-*Boolean*
+You can see this live example in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/renderer){:target="_blank"}.
 
-In the boolean renderer you can define the type of value with `boolean-type` property. It can be number, boolean or string
-You also define type of false value and true value with `false-value-type` and `true-value-type`, it can be string, number, icon or image .The value of column with `true-value` and `false-value`. All the attributes are explained on the **API** section of this page.
+**Action cell renderer**
+
+The action cell renderer is used for displaying a button in a table cell. Include this renderer in your table column by configuring the attribute `type` in the column with the value **action** or adding the `o-table-cell-renderer-action` to the table column.
+
+```html
+<o-table-column attr="EMPLOYEENAME" type="action" icon="person" (onClick)="showMessage($event)"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="EMPLOYEENAME">
+  <o-table-cell-renderer-action icon="person" (onClick)="showMessage($event)"></o-table-cell-renderer-action>
+</o-table-column>
+```
+
+You can display a `text` and/or a `icon` in the cell, also choosing the icon position using the `icon-position` attribute.
+
+```html
+<o-table-column attr="EMPLOYEENAME">
+  <o-table-cell-renderer-action icon="person" text="user" icon-position="right"></o-table-cell-renderer-action>
+</o-table-column>
+```
+
+When an action cell is clicked you can trigger a predefined action or execute your custom callback. In the first case there are two predefined actions: `detail` or `edit`, that will trigger navigation to table detail or edition route. Otherwise, you can listen to the `onClick` event to perform your defined action. Check the definition of this and more attributes in the **API** section of this page.
+
+```html
+<!-- Navigation to detail mode -->
+<o-table-column attr="EMPLOYEENAME">
+  <o-table-cell-renderer-action icon="person" action="detail"></o-table-cell-renderer-action>
+</o-table-column>
+
+<!-- Triggering showMessage method -->
+<o-table-column attr="EMPLOYEENAME">
+  <o-table-cell-renderer-action icon="person" (onClick)="showMessage($event)"></o-table-cell-renderer-action>
+</o-table-column>
+```
+
+
+**Boolean cell renderer**
+
+Include the table cell renderer boolean in your table column by configuring the attribute `type` in the column with the value **boolean** or adding the `o-table-cell-renderer-boolean` to the table column. You can indicate the type of the retrieved data by configuring the `boolean-type` attribute. Display a custom value by configuring `false-value` and `true-value` attributes depending on the `false-value-type` and `true-value-type` attributes. Check the configuration of this attributes in the **API** section of this page.
 
  ```html
+<o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-column>
+
+<!-- Equivalent code -->
+
 <o-table-column attr="COMMISSION" title="COMMISSION">
-  <o-table-cell-renderer-boolean true-value-type="icon" true-value="check_circle" false-value="highlight_off"
-   false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean>
+  <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean>
 </o-table-column>
-  ```
-
-*Date*
-
-It is defined with `type="date"`. In the date renderer you can define format of the date with `format` property. You can see all formats in <a href="http://momentjs.com/"  target="_blank">MomentJS</a>. All the attributes are explained on the **API** section of this page.
-```html 
-<o-table-column attr="STARTDATE" title="STARTDATE" width="22%" type="date" format="LL"></o-table-column>
 ```
 
-*Currency*
+**Currency cell renderer**
 
-It is defined with `type="currency"`.In the currency renderer you can format currency simbol with `currency-symbol` property and configure the position of currency symbol with `currency-symbol-position` property. All the attributes are explained on the **API** section of this page.
-
-```html 
-<o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator=","  
-  width="18%"></o-table-column>
-```
-
-*Image*
-
-It is defined with `type="image"`. In the image renderer you can configure whether or not to visualize image as an avatar with `avatar` property and you also configure type of image with `image-type` property. All the attributes are explained on the **API** section of this page.
+Include the table cell renderer currency in your table column by configuring the attribute `type` in the column with the value **currency** or adding the `o-table-cell-renderer-currency` to the table column. Configure the currency symbol with the `currency-symbol` attribute. Check this and other attributes in the **API** section of this page.
 
 ```html
-<o-table-column attr="PHOTO" orderable="no" searchable="no" type="image"
- image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+<o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column a ttr="BALANCE" title="BALANCE">
+  <o-table-cell-renderer-currency currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-cell-renderer-currency>
 </o-table-column>
-````
+```
 
-*Integer*
+**Date cell renderer**
 
-It is defined with `type="integer"` in *o-table-column* selector. All the attributes are explained on the **API** section of this page.
+You can include the table cell renderer date in your table column by configuring the attribute `type` in the column with the value **date** or adding the `o-table-cell-renderer-date` to the table column. You may want to set the displaying date format by configuring the `format` attribute. Check this and other attributes in the **API** section of this page.
+
+```html
+<o-table-column attr="STARTDATE" title="STARTDATE" type="date"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="STARTDATE" title="STARTDATE">
+  <o-table-cell-renderer-date></o-table-cell-renderer-date>
+</o-table-column>
+```
+
+**Integer cell renderer**
+
+Include the table cell renderer integer in your table column by configuring the attribute `type` in the column with the value **integer** or adding the `o-table-cell-renderer-integer` to the table column. Check the attributes of this component in the **API** section of this page.
 
 ```html
 <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
-````
 
-*Percentage*
+<!-- Equivalent code -->
 
-It is defined with `type="percentage"` in *o-table-column* selector. All the attributes are explained on the **API** section of this page.
+<o-table-column attr="NUMCARDS" title="NUMCARDS">
+  <o-table-cell-renderer-integer></o-table-cell-renderer-integer>
+</o-table-column>
+```
+
+**Image cell renderer**
+
+You can include the table cell renderer image in your table column by configuring the attribute `type` in the column with the value **image** or adding the `o-table-cell-renderer-image` to the table column. Check the attributes of this component in the **API** section of this page.
+
+```html
+<o-table-column attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="PHOTO" orderable="no" searchable="no">
+  <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"></o-table-cell-renderer-image>
+</o-table-column>
+```
+
+**Percentage cell renderer**
+
+You can include the table cell renderer percentage in your table column by configuring the attribute `type` in the column with the value **percentage** or adding the `o-table-cell-renderer-percentage` to the table column. Check the attributes of this component in the **API** section of this page.
 
 ```html
 <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="INTERESRATE" title="INTERESRATE">
+  <o-table-cell-renderer-percentage decimal-separator="," decimal-digits="2"></o-table-cell-renderer-percentage>
+</o-table-column>
 ```
 
-*Service*
+**Real cell renderer**
 
-It is defined with `type="service"` in *o-table-column* selector. All the attributes are explained on the **API** section of this page.
+Include the table cell renderer real in your table column by configuring the attribute `type` in the column with the value **real** or adding the `o-table-cell-renderer-real` to the table column. Check the attributes of this component in the **API** section of this page.
 
 ```html
-<o-table #tableEmployees attr="employees" service="employees" entity="employee" columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
-      visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEETYPEID;EMPLOYEESTARTDATE" keys="EMPLOYEEID"
-      sort-columns="EMPLOYEESURNAME" detail-mode="none" insert-button="no" pageable="yes">
-      <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
-      <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
-        <o-table-cell-renderer-service service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" value-column="EMPLOYEETYPENAME"></o-table-cell-renderer-service>
-      </o-table-column>
-    </o-table>
+<o-table-column attr="UNITPRICE" title="UNITPRICE" type="real" thousand-separator="." decimal-separator=","></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="UNITPRICE" title="UNITPRICE">
+  <o-table-cell-renderer-real thousand-separator="." decimal-separator=","></o-table-cell-renderer-real>
+</o-table-column>
 ```
+
+**Service cell renderer**
+
+The table cell renderer service component is used for retrieving data form an entity that is related to the current table entity. The most common usage of this is displaying some text description when the current table entity has the identifier for that entity.
+
+You can include this component in your table in two different ways:
+
+1. Configuring the attribute `type` in the column with the value **service** and including the attributes of the table cell renderer service. Check all the attributes of the table cell renderer service in the **API** section of this page.
+2. Adding the `o-table-cell-renderer-service` component to the table column like in the example below.
+
+```html
+<o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
+  <o-table-cell-renderer-service service="employees" entity="employeeType" columns="TYPEID;EMPLOYEETYPENAME"
+    parent-keys="TYPEID:EMPLOYEETYPEID" value-column="EMPLOYEETYPENAME">
+  </o-table-cell-renderer-service>
+</o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID" type="service" service="employees"
+  entity="employeeType" columns="TYPEID;EMPLOYEETYPENAME" parent-keys="TYPEID:EMPLOYEETYPEID"
+  value-column="EMPLOYEETYPENAME">
+</o-table-column>
+```
+
+You can see this example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/employees){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home){:target="_blank"}.
 
 ### Custom renderers
 
@@ -504,7 +581,7 @@ The configuration is similar to the renderer boolean. The following example uses
 ```
 *Date*
 
-The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add 
+The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add
 `type="date" editable="yes"` in `o-table-column` componente. To consult all the parameters of the editor see the API.
 
 ```html
@@ -526,9 +603,9 @@ The configuration is similar to the renderer integer. The following example uses
 
 *Real*
 
-The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add 
+The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add
 `type="currency" editable="yes"` in `o-table-column` componente. To consult all the parameters of the editor see the API.
- 
+
  ```html
  <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
         currency-symbol="€" currency-symbol-position="right" (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)"
@@ -540,7 +617,7 @@ The configuration is similar to the renderer real. The following example uses th
 
 The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` componente inside the `o-table-column`. To consult all the parameters of the editor see the API.
 
- ```html 
+ ```html
     <o-table-column attr="NAME" title="NAME">
         <o-table-cell-editor-text (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-text>
     </o-table-column>
@@ -618,7 +695,7 @@ O-table support checkbox selection with `select-all-checkbox` property. If this 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
 ### Fixed header and footer
-O-table support *fixed header* and *footer* with `fixed-header="yes"` when the content is greather than its own height and then you must set the height of the table, for example `[ngStyle]="height: 400px;"`. By default it is disabled. 
+O-table support *fixed header* and *footer* with `fixed-header="yes"` when the content is greather than its own height and then you must set the height of the table, for example `[ngStyle]="height: 400px;"`. By default it is disabled.
 
 <h3 class="grey-color">Example</h3>
 ```html
@@ -687,14 +764,14 @@ In the following example, two calculated columns are defined that perform the sa
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE;INTERESRATE;BENEFIT;BENEFIT2"
     attr="accounts" title="ACCOUNTS"
-    layout-padding 
+    layout-padding
     sort-columns="ANID" query-rows="15" pageable="no" >
-  
+
     <o-table-column attr="ENTITYID" title="ENTITYID"></o-table-column>
     <o-table-column attr="CDID" title="CDID"></o-table-column>
     <o-table-column attr="ANID" title="ANID"></o-table-column>
     <o-table-column attr="BALANCE" title="BALANCE" currency-symbol="€" type="currency" grouping="yes" thousand-separator=","> </o-table-column>
-    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator=","></o-table-column> 
+    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator=","></o-table-column>
 
   <!--calculated column-->
     <o-table-column-calculated attr="BENEFIT" title="BENEFIT" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€"
@@ -717,7 +794,7 @@ In the following example, two calculated columns are defined that perform the sa
 
     return (rowData['BALANCE'] * rowData['INTERESRATE']);
   }
- 
+
 ```
 
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/calculatedcolumn)
@@ -929,7 +1006,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 </p>
 <p>In the following example you ca see the download api end point method.</p>
 
-```java 
+```java
 @RequestMapping(value = "download/{extension}/{id}", method = RequestMethod.GET)
 public void downloadFile(@PathVariable(name = "extension", required = true) String fileExtension, @PathVariable(name = "id", required = true) String fileId, HttpServletResponse response) {
     InputStream fis = null;
@@ -991,4 +1068,3 @@ export const SERVICE_CONFIG: Object = {
 ## Demo
 
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table){:target="_blank"}.
-

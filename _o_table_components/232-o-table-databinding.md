@@ -8,7 +8,7 @@ The o-table component supports data binding and you can command the component to
 
 ## Binding to local data
 
-For local data binding you simply need to supply an array of Typpescript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in `o-table` component.
+For local data binding you simply need to supply an array of TypeScript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in `o-table` component.
 
 <h3 class="grey-color">Example</h3>
 
@@ -44,14 +44,14 @@ getTableData(){
 
 If you need the data query to be performed after the `parent-keys` is updated, `query-on-init = false` and `query-on-bind = true` must be changed
 
-## Binding to remote data 
+## Binding to remote data
 
-To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}. 
+To manage server data, it is necessary to configure the `service` and the `entity` attributes. You may need configure the `service-type` attribute in case you don't use the default **OntimizeWebService** to manage. For more information see in [App configuration]({{ base_path }}/guide/appconfig/){:target="_blank"}.
 
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" 
+<o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer"
 keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" query-rows="10" quick-filter="yes" row-height="medium" select-all-checkbox="true">
   <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
   <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64"
@@ -62,7 +62,7 @@ keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL
 </o-table>
 ```
 
-You can configure the methods by default with the `ìnsert-method`,`update-method`,`deleted-method`
+You can configure the methods by default with the `ìnsert-method`,`update-method`,`delete-method`
 
 
 

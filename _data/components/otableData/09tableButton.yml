@@ -1,6 +1,6 @@
-directive : "o-table-button"
+class: "OTableButton"
 
-  
+directive : "o-table-button"
 
 attributes: [{
   name: "icon", 
@@ -14,4 +14,14 @@ attributes: [{
   default : "",
   required : "",
   description : "Field label"
+},{
+  name: "icon-position",
+  type: "left | right",
+  default: "left",
+  description: "Icon position with respect to the text (if exists)"
+},{
+  name: "svg-icon",
+  type: "string",
+  default: "",
+  description: "Name of svg icon"
 }]  

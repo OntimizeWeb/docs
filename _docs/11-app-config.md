@@ -43,8 +43,8 @@ The noteworthy parameters here are:
 * **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, etc.).
 * **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation
   * **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
-  * **'OntimizeEE':** configures Ontimize REST JEE services.
-  * **Custom class:** a service reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface.
+  * **'OntimizeEE':** string that configures Ontimize REST JEE services.
+  * **Custom class:** a service class reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface.
 * **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 * **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
 * **applicationLocales:** Set of available locales for the application.
@@ -89,7 +89,7 @@ There is different types of `MenuRootItem` depending on the task they are define
 
 <details class="collapsible">
   <summary markdown="span">MenuGroup</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   If you want to include a menu item to group other menu items, you must include a `MenuGroup` whose attributes are the following:
 
@@ -97,7 +97,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | ------- | ------- | ----------- |
   | id      | string  | The menu item identifier |
   | name    | string  | The menu item name |
-  | icon    | string  | The menu item icon |
+  | icon    | string  | The menu item icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) |
   | items   | array   | The menu item children. Providing this attribute means that the menu item is a container for a group of menu items |
   | opened  | boolean | In case the `items` property is defined, indicates if the group menu item is open or not by default |
   | tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
@@ -116,7 +116,7 @@ There is different types of `MenuRootItem` depending on the task they are define
 
 <details class="collapsible">
   <summary markdown="span">MenuItem</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   If you want to include a common menu item, you must include a `MenuItem` whith the following attributes. Note that there is some attributes that refers to the [`o-card-menu-layout`](#card-menu-layout), this will be explained later.
 
@@ -124,7 +124,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | ------------------- | ------------------- | ----------- |
   | id                  | string              | The menu item identifier |
   | name                | string              | The menu item name |
-  | icon                | string              | The menu item icon |
+  | icon                | string              | The menu item icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) |
   | tooltip             | string              | The tooltip text showed on the menu item when the menu is callapsed |
   | show-in-app-sidenav | boolean             | Indicates whether or not to show the menu item in the side menu |
   | show-in-card-menu   | boolean             | Indicates whether or not to show the corresponding card in the [`o-card-menu-layout`](#card-menu-layout) |
@@ -139,7 +139,7 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
 
 <details class="collapsible">
   <summary markdown="span">MenuItemRoute</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   For navigating the different modules of your application you must include a `MenuItemRoute`, its attributes are the following:
 
@@ -156,7 +156,7 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
 
 <details class="collapsible">
   <summary markdown="span">MenuItemAction</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   For triggering an action include a `MenuItemAction`, its specific attributes are the following:
 
@@ -181,7 +181,7 @@ function myFunction() {
 
 <details class="collapsible">
   <summary markdown="span">MenuItemLocale</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   For switching between different languages available in the application, add as many `MenuItemLocale` items as languages.
 
@@ -199,7 +199,7 @@ function myFunction() {
 
 <details class="collapsible">
   <summary markdown="span">MenuItemLogout</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   Include a `MenuItemLogout` for login out the user of the application, its specific attributes are the following:
 
@@ -217,7 +217,7 @@ function myFunction() {
 
 <details class="collapsible">
   <summary markdown="span">MenuItemUserInfo</summary>
-  <div class="collapsible-content">
+  <div class="collapsible-content" markdown="1">
 
   For displaying the application user information, include a `MenuItemUserInfo` with the following attributes:
 

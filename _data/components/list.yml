@@ -1,39 +1,17 @@
 directive: "o-list"
 
+inheritedAttributes: [{
+  component: "OServiceComponent",
+  path: "components/service/service",
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
+}]
+
 attributes: [{
-  name: "attr"
-},{
-  name: "service"
-},{
-  name: "service-type"
-},{
-  name: "entity"
-},{
-  name: "keys"
-},{
-  name: "parent-keys"
-},{
   name: "query-on-init",
   default: "yes"
 },{
   name: "query-on-bind",
   default: "yes"
-},{
-  name: "pageable"
-},{
-  name: "columns"
-},{
-  name: "static-data"
-},{
-  name: "query-method"
-},{
-  name: "paginated-query-method"
-},{
-  name: "query-rows"
-},{
-  name: "insert-method"
-},{
-  name: "query-with-null-parent-keys"
 },{
   name: "title",
   type: "string",
@@ -47,22 +25,8 @@ attributes: [{
   required: "",
   description: "<em>css</em> class name"
 },{
-  name: "visible"
-},{
   name: "enabled",
   description: "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
-},{
-  name: "controls"
-},{
-  name: "detail-mode"
-},{
-  name: "detail-form-route"
-},{
-  name: "recursive-detail"
-},{
-  name: "detail-button-in-row"
-},{
-  name: "detail-button-in-row-icon"
 },{
   name: "filter",
   type: "no | false | yes | true",
@@ -70,21 +34,7 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show list filtering options"
 },{
-  name: "edit-form-route"
-},{
-  name: "recursive-edit"
-},{
-  name: "edit-button-in-row"
-},{
-  name: "edit-button-in-row-icon"
-},{
-  name: "insert-button"
-},{
   name: "delete-button"
-},{
-  name: "row-height"
-},{
-  name: "insert-form-route"
 },{
   name: "quick-filter"
 },{
@@ -103,8 +53,6 @@ attributes: [{
   required: "",
   description: ""
 },{
-  name: "delete-method"
-},{
   name: "selectable",
   type: "",
   default: "",
@@ -116,8 +64,6 @@ attributes: [{
   default: "no",
   required: "",
   description: ""
-},{
-  name: "store-state"
 }]
 
 extraComponents: "listData"
