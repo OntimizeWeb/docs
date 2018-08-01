@@ -2,6 +2,7 @@
 permalink: /filemanager/
 title: "File Manager"
 excerpt: ""
+breadcrumb: Add-ons File Manager
 ---
 {% include base_path %}
 {% include toc %}
@@ -17,12 +18,11 @@ Main features are:
 - Ability to rename files or folders.
 - Opening a given folder.
 - Browsing between folders.
-- File types restriction.??
 - Textbox Search filter.
-- File size limit.??
 
 
-![File manager]({{ base_path }}/images/filemanager/filemanager.png){: .align-center}
+
+![File manager]({{ base_path }}/images/filemanager/filemanager_default.png){: .align-center}
 
 ## Support
 Ontimize Web File Manager module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-filemanager){:target="_blank"} where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-filemanager/issues){:target="_blank"} section.
