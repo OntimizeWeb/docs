@@ -17,7 +17,7 @@ attributes: [{
   description: "Column title"
 },{
   name: "title-align",
-  type: "start | center | end",
+  type: "start | center | end | auto",
   default: "center",
   required: "",
   description: "Column title cell text alignment"
