@@ -5,11 +5,8 @@ directive: "o-table"
 inheritedAttributes: [{
   component: "OServiceComponent",
   path: "components/service/service",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "query-with-null-parent-keys"]
 }]
-
-
-# css-class
 
 attributes: [{
   name: "visible-columns",
@@ -99,8 +96,6 @@ attributes: [{
   default: "multiple",
   required: "",
   description: "Row selection mode"
-},{
-  name: "query-with-null-parent-keys"
 }]
 
 outputs: [{
