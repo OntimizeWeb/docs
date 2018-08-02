@@ -11,7 +11,7 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not to show an application header"
+  description: "Indicates whether or not to show an application header. The default value is **no** when the app layout mode is desktop and **yes** when the app layout mode is mobile"
 },{
   name: "show-user-info",
   type: "no | false | yes | true",
@@ -36,4 +36,22 @@ attributes: [{
   default: "",
   required: "",
   description: "Indicates whether or not the language selector shows flags"
+},{
+  name: "mode",
+  type: "desktop | mobile",
+  default: "desktop",
+  required: "",
+  description: "Indicates the component performance mode"
+},{
+  name: "sidenav-mode",
+  type: "over | push | side",
+  default: "side",
+  required: "",
+  description: "Indicates the [angular material sidenav mode](https://material.angular.io/components/sidenav/overview#changing-the-sidenav-39-s-behavior). The default value is **side** when app layout mode is desktop and **over** when app layout mode is mobile"
+},{
+  name: "show-language-selector",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the language selector"
 }]
