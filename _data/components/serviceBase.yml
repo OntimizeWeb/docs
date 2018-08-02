@@ -110,6 +110,17 @@ methods: [{
   type: "method",
   description : "",
   parameters: ""
+},{
+  name: "extractKeysFromRecord",
+  type: "method",
+  returns: "Object",
+  description : "Extracting the given record keys properties",
+  parameters: "record: any"
+},{
+  name: "getSqlTypes",
+  type: "method",
+  description : "Getting stored sql types",
+  parameters: ""
 }
 # ,{
 #   name: "reloadData",

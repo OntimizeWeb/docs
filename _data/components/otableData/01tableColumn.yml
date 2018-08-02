@@ -16,6 +16,12 @@ attributes: [{
   required: "",
   description: "Column title"
 },{
+  name: "title-align",
+  type: "start | center | end | auto",
+  default: "center",
+  required: "",
+  description: "Column title cell text alignment"
+},{
   name: "orderable",
   type: "no | false | yes | true",
   default: "yes",

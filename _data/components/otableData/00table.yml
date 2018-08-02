@@ -96,6 +96,21 @@ attributes: [{
   default: "multiple",
   required: "",
   description: "Row selection mode"
+},{
+  name: "horizontal-scroll",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether or not to allow horizontal scroll"
+},{
+  name: "show-paginator-first-last-buttons",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to show the go to the first and last page in the table pagination"
+},{
+  name: "auto-align-titles",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether or not to auto align the table header cells"
 }]
 
 outputs: [{

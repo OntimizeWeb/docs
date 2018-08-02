@@ -11,6 +11,9 @@ outputs: [{
 },{
   name : "editionCommitted",
   description : "Event triggered when component input is committed."
+},{
+  name : "onPostUpdateRecord",
+  description : "Event triggered after component record is succesfully updated."
 }]
 
 
@@ -18,13 +21,25 @@ propertiesColumns: ["Name","Type", "Description"]
 
 properties: [{
   name: "required",
-  type: "boolean",
+  type: "no | false | yes | true",
+  default: "no",
   description: "Indicates whether or not required."
 },{
   name: "label",
   type: "string"
 },{
   name: "show-placeholder",
-  type: "boolean",
+  default: "no",
+  type: "no | false | yes | true",
   description: "Indicates whether or not to show placeholder in form control."
+},{
+  name: "update-record-on-edit",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to update cell data in server after it edition ends"
+},{
+  name: "show-toast-on-edit",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether or not to show a toast indicating the succesfull update"
 }]

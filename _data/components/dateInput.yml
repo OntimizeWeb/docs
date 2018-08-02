@@ -34,7 +34,7 @@ attributes: [{
   description : "Maximum selectable date"
 },{
   name: "touch-ui",
-  type: "boolean",
+  type: "no | false | yes | true",
   default : "false",
   required : "",
   description : "Indicates wheter to use the datepicker 'touch-ui' mode"

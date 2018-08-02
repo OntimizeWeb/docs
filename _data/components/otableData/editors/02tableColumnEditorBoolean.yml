@@ -8,7 +8,7 @@ inheritedAttributes: [
   {
     component: "OBaseTableCellEditor",
     path: "components/table/obasetablecelleditor",
-    attributes: ["required", "show-placeholder", "label"]
+    attributes: ["required", "show-placeholder", "label", "update-record-on-edit", "show-toast-on-edit"]
   }
 ]
 
@@ -16,33 +16,33 @@ inheritedOutputs: [
   {
     component: "OBaseTableCellEditor",
     path: "components/table/obasetablecelleditor",
-    outputs: ["editionStarted", "editionCancelled", "editionCommitted"]
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted", "onPostUpdateRecord"]
   }
 ]
 attributes: [
   {
-  name: "indeterminate-on-null", 
+  name: "indeterminate-on-null",
   type: "number | boolean | string ",
   default : "false",
   required : "",
   description : ""
   },
   {
-    name: "true-value", 
+    name: "true-value",
     type: "number | boolean | string ",
     default : "true",
     required : "",
     description : "True value "
   },
    {
-    name: "false-value", 
+    name: "false-value",
     type: "number | boolean | string ",
     default : "false",
     required : "",
     description : "False value "
   },
   {
-    name: "boolean-type", 
+    name: "boolean-type",
     type: "number | boolean | string ",
     default : "boolean",
     required : "",
