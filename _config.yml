@@ -178,6 +178,9 @@ collections:
   o_service_components:
     output: true
     permalink: /components/:path/
+  o_validation_components:
+    output: true
+    permalink: /components/:path/
   o_datatable_components:
     output: true
     permalink: /:collection/:path/

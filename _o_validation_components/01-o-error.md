@@ -1,11 +1,14 @@
 ---
-permalink: /components/inputs/error/
+permalink: /components/input/error/
 title: "OErrorComponent"
 comp: error
 ---
 
 {% include base_path %}
 
+Using the `o-error` component allows to define multiple errors messages associated to its parent `o-validator` component.
+
+<h3 class="grey-color">Example</h3>
 
 ```html
 

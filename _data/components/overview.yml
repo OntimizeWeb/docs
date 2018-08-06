@@ -101,7 +101,7 @@ methods: [{
   type: "method",
   parameters : "any[]",
   description : "Set the selected items of the component."
-},
+},{
   name: "getActiveOErrors()",
   type: "method",
   returns: "IErrorData[]",

@@ -26,12 +26,13 @@ You can modify value by setting the `data` attribute or calling the `setData` me
 ## Validation
 The input shows automatically an error message when the `required` attribute is set to **yes** and there is no value on the input.
 
-###Input
+### Input
 
 User can add its own validators to a input component using the `validators` input.
 
 ```html
-   <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [validators]="validatorsArray"></o-text-input>
+   <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" 
+   [validators]="validatorsArray"></o-text-input>
 ```
 
 ```javascript
@@ -69,9 +70,9 @@ User can add its own validators to a input component using the `validators` inpu
    ...
 ```
 
-###Validation component
+### Validation component
 
-Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}components/inputs/validator/){:target='_blank'} and [`o-error`]({{ base_path }}/components/inputs/error/){:target='_blank'} components.
+Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/){:target='_blank'} components.
 
 
 ## Enabled
