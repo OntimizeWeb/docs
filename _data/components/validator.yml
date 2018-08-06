@@ -1,0 +1,25 @@
+directive : "o-validator"
+
+# outputs: [{
+#   name : "onChange",
+#   description: "Event triggered when component element changes"
+# }]
+
+attributes: [{
+  name: "validator-function",
+  type: "ValidatorFn",
+  default: "[]",
+  description: "Custom validators to apply to the component value. It must be a Angular [ValidatorFn](https://v5.angular.io/api/forms/ValidatorFn)"
+},{
+  name: "error-name",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Name of the configured error"
+},{
+  name: "error-text",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Message displayed when the configured error is present in the component"
+}]
