@@ -105,7 +105,7 @@ attributes: [{
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Include undo button in form toolbar"
+  description: "Include undo button in form toolbar (only showed if form is editable)"
 },{
   name: "keys-sql-types",
   type: "string",
