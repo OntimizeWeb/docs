@@ -105,6 +105,9 @@ components:
       - title: "Integer"
         url: /components/input/integer/
         order: "2"
+      - title: "Hour"
+        url: /components/input/hour/
+        order: "2"
       - title: "Real"
         url: /components/input/real/
         order: "2"

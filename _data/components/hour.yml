@@ -1,0 +1,26 @@
+directive : "o-hour-input"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
+}]
+
+outputs: [{
+  name : "onChange",
+  description: "Event triggered when component element changes"
+},{
+  name : "onFocus",
+  description: "Event triggered when component gains the focus"
+},{
+  name : "onBlur",
+  description: "Event triggered when component loses the focus"
+}]
+
+attributes: [{
+  name: "format",
+  type: "12 | 24",
+  default : "",
+  required : "",
+  description : "Select hour format that returns. 12 hours format with AM PM. By default:24 "
+}]
