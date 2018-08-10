@@ -6,6 +6,26 @@ inheritedAttributes: [{
   attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "read-only"]
 }]
 
+attributes: [{
+  name: "true-value",
+  type: "any",
+  default : "true",
+  required : "",
+  description : "Value that represents the true value"
+},{
+  name: "false-value",
+  type: "any",
+  default : "false",
+  required : "",
+  description : "Value that represents the false value"
+},{
+  name: "boolean-type",
+  type: "number | boolean | string",
+  default : "boolean",
+  required : "",
+  description : "The data type of the values managed by the component"
+}]
+
 outputs: [{
 name : "onChange",
 description: "Event triggered when component value changes"
