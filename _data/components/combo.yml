@@ -1,36 +1,23 @@
-directive : "o-combo"
+directive: "o-combo"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only"]
-}]
-
-outputs: [{
-  name : "onChange",
-  description: "Event triggered when component selected value changes"
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "clear-button"]
+# },{
+#   component: "OFormServiceComponent",
+#   path: "components/input/overviewservicecomponent",
+#   attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type"]
 }]
 
 attributes: [{
   name: "static-data"
 },{
-  name: "service"
-},{
   name: "entity"
 },{
+  name: "service"
+},{
   name: "columns"
-},{
-  name: "multiple",
-  type: "no | false | yes | true",
-  default : "false",
-  required : "",
-  description : "Whether the user should be allowed to select multiple options."
-},{
-  name: "multiple-trigger-label",
-  type: "no | false | yes | true",
-  default : "false",
-  required : "",
-  description : "Whether the user should be allowed to display a custom trigger label inside a select."
 },{
   name: "value-column"
 },{
@@ -38,23 +25,9 @@ attributes: [{
 },{
   name: "parent-keys"
 },{
-  name: "visible-columns",
-  type: "string",
-  default : "",
-  required : "",
-  description : "Visible columns. Separated by ';'"
-},{
-  name: "description-columns",
-  default : "<em>visible-columns</em> attribute value",
-  description : "Visible columns in text field"
+  name: "description-columns"
 },{
   name: "separator"
-},{
-  name: "null-selection",
-  type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether or not to have a selectable <em>null</em> value"
 },{
   name: "query-on-init"
 },{
@@ -62,25 +35,48 @@ attributes: [{
 },{
   name: "query-on-event"
 },{
+  name: "query-method"
+},{
   name: "service-type"
 },{
   name: "translate",
-  type: "",
-  default : "",
-  required : "",
-  description : ""
+  type: "no | false | yes | true",
+  default: "false",
+  required: "",
+  description: "Indicates whether or not to translate the values shown on the drop down"
 },{
-  name: "query-method"
+  name: "multiple",
+  type: "no | false | yes | true",
+  default: "false",
+  required: "",
+  description: "Indicates whether or not to allow the user to select multiple options"
+},{
+  name: "null-selection",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to have a selectable <em>null</em> value"
+},{
+  name: "multiple-trigger-label",
+  type: "no | false | yes | true",
+  default: "false",
+  required: "",
+  description: "Indicates whether or not the component label shows a summary of the selected items"
+}]
+
+outputs: [{
+  name: "onChange",
+  description: "Event triggered when component selected value changes"
 }]
 
 methods: [{
   name: "getSelectedItems()",
   type: "method", 
-  description : "Return the selected items of the component.",
+  description: "Return the selected items of the component.",
   returns: "any[]"
 },{
   name: "setSelectedItems()",
   type: "method",
-  parameters : "any[]",
-  description : "Set the selected items of the component."
+  parameters: "any[]",
+  description: "Set the selected items of the component."
 }]

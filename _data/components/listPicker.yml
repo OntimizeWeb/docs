@@ -3,7 +3,7 @@ directive : "o-list-picker"
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltipPosition", "tooltipShowDelay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "sql-type", "width", "read-only"]
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "sql-type", "width", "read-only"]
 }]
   
 attributes: [{
@@ -28,7 +28,7 @@ attributes: [{
   description : "Visible columns. Separated by ';'"
 },{
   name: "description-columns",
-  default : "<em>visible-columns</em> attribute value",
+  default : "`visible-columns` attribute value",
   description : "Visible columns in text field"
 },{
   name: "filter",

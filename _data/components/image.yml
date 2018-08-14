@@ -21,7 +21,7 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "Image displayed when the component has no value. It has preference over the <em>empty-icon</em>."
+  description : "Image displayed when the component has no value. It has preference over the `empty-icon` attribute"
 },{
   name: "empty-icon",
   type: "string",

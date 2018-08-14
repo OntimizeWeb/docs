@@ -32,7 +32,7 @@ attributes: [{
   default : "no"
 },{
   name: "description-columns",
-  default : "<em>columns</em> attribute value",
+  default : "`columns` attribute value",
   description : "Tree node visible text columns"
 },{
   name: "separator"

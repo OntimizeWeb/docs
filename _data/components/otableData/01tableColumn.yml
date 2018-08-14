@@ -38,7 +38,7 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-table</em>"
+  description: "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute `editable-columns` from `o-table`"
 },{
   name: "type",
   type: "string | boolean | integer | real | currency | date | image",

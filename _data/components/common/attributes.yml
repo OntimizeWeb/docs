@@ -9,7 +9,7 @@
   "label": {
     name: "label",
     type: "string",
-    default: "<em>attr</em> input",
+    default: "`attr` input",
     required: "",
     description: "Field label (placeholder when field is empty and floating label when field has data)"
   },
@@ -18,14 +18,14 @@
     type: "no | false | yes | true",
     default: "yes",
     required: "",
-    description: "Indicates whether or not the component will bind its value to its <em>attr</em> when located inside a form"
+    description: "Indicates whether or not the component will bind its value to its `attr` when located inside a form"
   },
   "automatic-registering": {
     name: "automatic-registering",
     type: "no | false | yes | true",
     default: "yes",
     required: "",
-    description: "Indicates whether or not the component will register itself (using its <em>attr</em>) when located inside a form"
+    description: "Indicates whether or not the component will register itself (using its `attr`) when located inside a form"
   },
   "enabled": {
     name: "enabled",
@@ -144,7 +144,7 @@
     type: "string",
     default: "int",
     required: "",
-    description: "<em>value-column</em> value type"
+    description: "`value-column` value type"
   },
   "parent-keys": {
     name: "parent-keys",
@@ -173,6 +173,13 @@
     default: "",
     required: "",
     description: "Query table data on bind"
+  },
+  "query-on-event": {
+    name: "query-on-event",
+    type: "",
+    default: "",
+    required: "",
+    description: "A component event reference the component must listen to in order to perform its query"
   },
   "sql-type": {
     name: "sql-type",
@@ -388,7 +395,7 @@
     type: "string",
     default: "",
     required: "",
-    description: "Separation character between <em>description-columns</em> values"
+    description: "Separation character between `description-columns` values"
   },
   "clear-button": {
     name: "clear-button",
