@@ -13,25 +13,31 @@ inheritedAttributes: [{
 attributes: [{
   name: "quick-filter"
 },{
+  name: "quick-filter-columns",
+  type: "string",
+  default: "`columns` attribute value",
+  required: "",
+  description: "Columns used by the quick filter. Separated by ';'"
+},{
   name: "refresh-button"
 },{
   name: "selectable",
   type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether or not to show selection check boxes on the list items"
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show selection check boxes on the list items"
 },{
   name: "dense",
   type: "no | false | yes | true",
-  default : "no",
-  required : "",
-  description : "Indicates whether or not to display the table in dense mode"
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to display the table in dense mode"
 },{
   name: "delete-button",
   type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether or not to show a delete button. The delete button is shown only when some list item is selected"
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show a delete button. The delete button is shown only when some list item is selected"
 }]
 
 extraComponents: "listData"
