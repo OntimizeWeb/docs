@@ -5,6 +5,7 @@ excerpt: "How to build and run an Ontimize Web application."
 ---
 
 {% include base_path %}
+{% include toc %}
 
 ## Build and run your application
 
@@ -76,3 +77,38 @@ JIT version:
 AoT version:
 
 ![image-AoT]({{ base_path }}/images/comparatives/playground-AoT.PNG){: .align-center}
+
+## How to wrap an Angular app with Apache Cordova
+You must have installed your Cordova Cli, if not, refer [Installing the Cordova CLI]({{base_path}}/build-and-run-requirements){:target="_blank"}
+
+Step to follow
+* *Create the app*, go to the directory where you maintain your source code, and create a cordova project.
+
+ ```bash
+cordova create hello com.example.hello HelloWorld
+```
+* Merge your *distribution version* of Angular project with the Cordova project created by copying every folders and files, except your package.json file from your Angular project root directory to the Cordova project root directory.
+
+* To implement the Cordova plugin, *add reference to cordova.js* in angular project html file (www/index.html ).
+
+```html
+<script type=”text/javascript” src=”cordova.js”></script>
+```
+
+* Update the <base href=“/”> tag in your www/index.html  to *<base href=“./”>*, this will enable angular to access files in a directory path since we are not hosting on a server.
+* Add your Cordova Building Platform:
+
+
+```
+  cordova platform add android|ios|windows@6.0.0 
+```
+
+* Lastly, *build and run your Cordova* project by executing the code below:
+
+```
+cordova build android|ios|windows
+```
+
+```
+cordova run android|ios|windows
+```
