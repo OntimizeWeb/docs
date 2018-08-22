@@ -78,8 +78,11 @@ AoT version:
 
 ![image-AoT]({{ base_path }}/images/comparatives/playground-AoT.PNG){: .align-center}
 
+
+Once you have the production version you can deploy it on a web server or to create cross platform applications using Apache Cordova.
+
 ## How to wrap an Angular app with Apache Cordova
-You must have installed your Cordova Cli, if not, refer [Installing the Cordova CLI]({{base_path}}/build-and-run-requirements){:target="_blank"}
+First you must verify that the installation and configuration requirements discussed [here]({{base_path}}/build-and-run/requirements){:target="_blank"} are accomplished .
 
 Step to follow
 * *Create the app*, go to the directory where you maintain your source code, and create a cordova project.

@@ -1,10 +1,11 @@
 ---
 title: "Requirements form build and run with Cordova"
-permalink: /build-and-run-requirements/
+permalink: /build-and-run/requirements/
 excerpt: "How to build and run an Ontimize Web application."
 ---
 
 {% include base_path %}
+{% include breadcrumbs.html %}
 
 ## Installing the Cordova CLI
 
@@ -75,7 +76,7 @@ $ npm install -g ios-deploy
 ```
 
 ## Installing the requirements for Windows
-### Install [VistualStudio Community 2017](https://visualstudio.microsoft.com/es/downloads/){:target:"blank"} or better
+### Install [VisualStudio Community 2017](https://visualstudio.microsoft.com/es/downloads/){:target:"blank"} or better
 
 With options:
 
