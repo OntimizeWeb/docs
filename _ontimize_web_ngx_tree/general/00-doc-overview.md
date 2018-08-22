@@ -5,6 +5,7 @@ excerpt: ""
 ---
 
 {% include base_path %}
+{% include breadcrumbs.html %}
 {% include toc %}
 ## Introduction
 
