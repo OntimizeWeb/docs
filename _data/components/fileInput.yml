@@ -3,7 +3,7 @@ directive: "o-file-input"
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "enabled", "required", "width", "read-only", "clear-button"]
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "enabled", "required", "width", "read-only", "clear-button", "validators"]
 }]
 
 attributes: [{
