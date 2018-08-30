@@ -132,6 +132,9 @@ components:
       - title: "Textarea"
         url: /components/input/textarea/
         order: "2"
+      - title: "Time"
+        url: /components/input/time/
+        order: "2"
       - title: "HTML"
         url: /components/input/html/
         order: "2"

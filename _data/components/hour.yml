@@ -20,7 +20,7 @@ outputs: [{
 attributes: [{
   name: "format",
   type: "12 | 24",
-  default : "",
+  default : "24",
   required : "",
-  description : "Select hour format that returns. 12 hours format with AM PM. By default:24 "
+  description : "Hour format. 12 hours format with AM PM"
 }]
