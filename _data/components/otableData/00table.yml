@@ -129,9 +129,9 @@ outputs: [{
   name: "onDoubleClick",
   description: "Event triggered when a row is double clicked"
 },{
-  name: "onTableDataLoaded",
-  description: "Event triggered when table data is updated"
+  name: "onDataLoaded",
+  description: "Event triggered when the data is updated"
 },{
-  name: "onPaginatedTableDataLoaded",
-  description: "Event triggered when table paginated data is updated"
+  name: "onPaginatedDataLoaded",
+  description: "Event triggered when the paginated data is updated"
 }]

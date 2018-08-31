@@ -40,4 +40,18 @@ attributes: [{
   description: "Indicates whether or not to show a delete button. The delete button is shown only when some list item is selected"
 }]
 
+outputs: [{
+  name: "onDataLoaded",
+  description: "Event triggered when the data is loaded"
+},{
+  name: "onPaginatedDataLoaded",
+  description: "Event triggered when the paginated data is loaded"
+},{
+  name: "beforeGoEditMode",
+  description: "Event triggered befoe going to form edition mode"
+},{
+  name: "onFormModeChange",
+  description: "Event triggered when form mode changes"
+}]
+
 extraComponents: "listData"
