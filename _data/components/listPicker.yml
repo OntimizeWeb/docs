@@ -1,4 +1,4 @@
-directive : "o-list-picker"
+directive: "o-list-picker"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
@@ -23,19 +23,19 @@ attributes: [{
 },{
   name: "visible-columns",
   type: "string",
-  default : "",
-  required : "",
-  description : "Visible columns. Separated by ';'"
+  default: "",
+  required: "",
+  description: "Visible columns. Separated by ';'"
 },{
   name: "description-columns",
-  default : "`visible-columns` attribute value",
-  description : "Visible columns in text field"
+  default: "`visible-columns` attribute value",
+  description: "Visible columns in text field"
 },{
   name: "filter",
   type: "no | false | yes | true",
-  default : "yes",
-  required : "",
-  description : "Indicates whether or not to show values filtering input"
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show values filtering input"
 },{
   name: "separator"
 },{
@@ -51,26 +51,32 @@ attributes: [{
 },{
   name: "dialog-width",
   type: "string",
-  default : "",
-  required : "",
-  description : "List picker dialog width"
+  default: "",
+  required: "",
+  description: "List picker dialog width"
 },{
   name: "dialog-height",
   type: "string",
-  default : "",
-  required : "",
-  description : "List picker dialog height"
+  default: "",
+  required: "",
+  description: "List picker dialog height"
 },{
   name: "query-rows"
+},{
+  name: "text-input-enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to allow the user to edit the list picker manually"
 }]
 
 outputs: [{
-  name : "onChange",
+  name: "onChange",
   description: "Event triggered when component selected value changes"
 },{
-  name : "onFocus",
+  name: "onFocus",
   description: "Event triggered when component gains the focus"
 },{
-  name : "onBlur",
+  name: "onBlur",
   description: "Event triggered when component loses the focus"
 }]
