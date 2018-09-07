@@ -115,8 +115,8 @@ attributes: [{
 }]
 
 outputs: [{
-  name: "onFormDataLoaded",
-  description: "Event triggered when form data is loaded"
+  name: "onDataLoaded",
+  description: "Event triggered when the data is loaded"
 },{
   name: "beforeCloseDetail",
   description: "Event triggered before leaving form detail mode"

@@ -1079,11 +1079,11 @@ Table columns titles texts are centered by default. Using the `o-column` compone
 
 There also exists the possibility of automatically align the table columns titles depending on the column type, using the `auto-align-titles` input:
 
-* `image`, `date`, `action` and `boolean`: `center` align
-* `currency`, `integer`, `real` and `percentage`: `end` align
-* `service` and default value when `auto-align-titles` is active: `start` align
+* **start**: service types and default value when auto-align-titles is active.
+* **center**: image, date, action and boolean types.
+* **end**: currency, integer, real and percentage types.
 
-When the `auto-align-titles` user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
+When the `auto-align-titles` input is true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
 
 
 ## Demo
