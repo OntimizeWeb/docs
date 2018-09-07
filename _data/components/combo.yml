@@ -7,7 +7,7 @@ inheritedAttributes: [{
 # },{
 #   component: "OFormServiceComponent",
 #   path: "components/input/overviewservicecomponent",
-#   attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type"]
+#   attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys"]
 }]
 
 attributes: [{
@@ -62,6 +62,8 @@ attributes: [{
   default: "false",
   required: "",
   description: "Indicates whether or not the component label shows a summary of the selected items"
+},{
+  name: "query-with-null-parent-keys"
 }]
 
 outputs: [{

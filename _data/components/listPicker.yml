@@ -68,6 +68,8 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to allow the user to edit the list picker manually"
+},{
+  name: "query-with-null-parent-keys"
 }]
 
 outputs: [{
