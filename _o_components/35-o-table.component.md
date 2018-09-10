@@ -98,7 +98,7 @@ You can represent the columns in extended mode with `o-table-column` selector. T
 ## Sorting
 Since this functionality is built-in, all you have to do is to set the sorting configuration via `sort-columns` input in the selector `o-table` using [ ASC or DESC ] format.
 
-By default, *all columns are searchable*, if you don't want to used a column as searchable you add  `orderable= "no"` in this columns.
+By default, *all columns are sortable*, if you don't want to used a column as searchable you add  `sortable= "no"` in this columns.
 
 
 <h3 class="grey-color">Example</h3>

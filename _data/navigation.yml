@@ -197,7 +197,7 @@ components:
         url: /components/filterbuilder/
 
       - title: "Grid <span class='menuitem-badge'>new<span>"
-        url: /components/Grid/
+        url: /components/grid/
   - title: Media
     children:
       - title: "Image"
