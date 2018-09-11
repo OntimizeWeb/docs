@@ -193,11 +193,11 @@ components:
             url: '/components/table/obasetablecelleditor/'
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
-      - title: "List"
-        url: /components/list/
       - title: "Filter builder <span class='menuitem-badge'>new<span>"
         url: /components/filterbuilder/
 
+      - title: "Grid <span class='menuitem-badge'>new<span>"
+        url: /components/grid/
   - title: Media
     children:
       - title: "Image"

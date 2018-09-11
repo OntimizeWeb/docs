@@ -98,7 +98,7 @@ You can represent the columns in extended mode with `o-table-column` selector. T
 ## Sorting
 Since this functionality is built-in, all you have to do is to set the sorting configuration via `sort-columns` input in the selector `o-table` using [ ASC or DESC ] format.
 
-By default, *all columns are searchable*, if you don't want to used a column as searchable you add  `orderable= "no"` in this columns.
+By default, *all columns are sortable*, if you don't want to used a column as searchable you add  `sortable= "no"` in this columns.
 
 
 <h3 class="grey-color">Example</h3>
@@ -466,8 +466,6 @@ The requisites for a custom table cell renderer component are the following:
 
 - Reference the template container in your component. For this, wrap the content of your component HTML with the `ng-template` tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: `@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>`. This will give your component a reference to acces the template container.
 
-- Call the `initialize` method in the contructor.
-
 - If you want to customize the internal value of the cell (this value is used for filtering or exporting the table data), you must overwrite the `getCellData` method.
 
 You have an example of a custom renderer below. It displays a person full name in a table cell, for this, it concat the values in the `getCellData` method and displays its value in the template.
@@ -487,7 +485,6 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
 
   constructor(protected injector: Injector) {
     super(injector);
-    this.initialize();
   }
 
   getCellData(cellvalue: any, rowvalue: Object) {
