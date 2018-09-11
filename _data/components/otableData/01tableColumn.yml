@@ -70,12 +70,6 @@ attributes: [{
   required: "",
   description: "If date model type is string, its date model format should be defined. Default: ISO date"
 },{
-  name: "class",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Indicates the css class for the column"
-},{
   name: "async-load",
   type: "no | yes | true | false",
   default: "no",
