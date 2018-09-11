@@ -496,7 +496,7 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
 
 ```html
   <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-    {{ "getCellData(cellvalue, rowvalue)" }}
+    {% raw %}{{ getCellData(cellvalue, rowvalue) }}{% endraw %}
   </ng-template>
 ```
 

@@ -57,5 +57,5 @@ methods: [{
   description: "Trigger the `reloadData` method from the target component."
 },{
   name: "clearFilter",
-  description: "Trigger the `reloadData` method from the target component."
+  description: "Clears the form fields used by the filter builder to create the filter."
 }]
