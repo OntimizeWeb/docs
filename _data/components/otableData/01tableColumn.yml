@@ -76,12 +76,6 @@ attributes: [{
   required: "",
   description: "Indicates the css class for the column"
 },{
-  name: "break-word",
-  type: "no | yes | true | false",
-  default: "no",
-  required: "",
-  description: "Show the cell content in multiple lines"
-},{
   name: "async-load",
   type: "no | yes | true | false",
   default: "no",
