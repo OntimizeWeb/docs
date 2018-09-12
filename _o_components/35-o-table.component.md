@@ -629,14 +629,6 @@ Here's how you might begin in your file .ts:
 - Your component must extends ```OBaseTableCellEditor```.
 
 - Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
-- In constructor you must add
-
-```javascript
-constructor(protected injector: Injector) {
-  super(injector);
-  this.initialize();
-}
-```
 
 - If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*
 
@@ -651,18 +643,16 @@ import { OBaseTableCellEditor } from 'ontimize-web-ngx';
 
 
 @Component({
-    selector: 'custom-editor',
-    templateUrl: './custom-editor.component.html'
+  selector: 'custom-editor',
+  templateUrl: './custom-editor.component.html'
 })
-
 export class OTableCellEditorName extends OBaseTableCellEditor {
 
-    @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
 
-    constructor(protected injector: Injector) {
-        super(injector);
-        this.initialize();
-    }
+  constructor(protected injector: Injector) {
+    super(injector);
+  }
 
 }
 ```
