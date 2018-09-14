@@ -1,7 +1,5 @@
 directive : "o-image"
 
- 
-
 attributes: [{
   name: "attr"
 },{
@@ -21,26 +19,25 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "Image displayed when the component has no value. It has preference over the <em>empty-icon</em>."
+  description : "Image displayed when the component has no value. It has preference over the `empty-icon` attribute"
 },{
   name: "empty-icon",
   type: "string",
   default : "",
   required : "",
-  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) displayed when the component has no value."
+  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) displayed when the component has no value"
 },{
   name: "show-controls",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether or not to show the selection controls."
-},
-{
+  description : "Indicates whether or not to show the selection controls"
+},{
   name: "auto-fit",
   type: "no | false | yes | true",
   default : "yes",
   required : "",
-  description : "Indicates whether or not the image size is adjusted."
+  description : "Indicates whether or not the image size is automatically adjusted"
 },{
   name: "height",
   type: "number",
@@ -53,11 +50,15 @@ attributes: [{
   name: "tooltip-position"
 },{
   name: "tooltip-show-delay"
+},{
+  name: "full-screen-button",
+  type: "no | false | yes | true",
+  default: "no",
+  required : "",
+  description : "Indicates whether or not to show the maximize button"
 }]
-
-  
 
 outputs: [{
   name : "onChange",
-  description: "Event triggered when component value changes"
+  description: "Event triggered when the component value changes"
 }]

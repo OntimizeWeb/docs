@@ -105,6 +105,9 @@ components:
       - title: "Integer"
         url: /components/input/integer/
         order: "2"
+      - title: "Hour"
+        url: /components/input/hour/
+        order: "2"
       - title: "Real"
         url: /components/input/real/
         order: "2"
@@ -128,6 +131,9 @@ components:
         order: "2"
       - title: "Textarea"
         url: /components/input/textarea/
+        order: "2"
+      - title: "Time"
+        url: /components/input/time/
         order: "2"
       - title: "HTML"
         url: /components/input/html/
@@ -187,11 +193,11 @@ components:
             url: '/components/table/obasetablecelleditor/'
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
-      - title: "List"
-        url: /components/list/
       - title: "Filter builder <span class='menuitem-badge'>new<span>"
         url: /components/filterbuilder/
 
+      - title: "Grid <span class='menuitem-badge'>new<span>"
+        url: /components/grid/
   - title: Media
     children:
       - title: "Image"
@@ -224,7 +230,7 @@ components:
         url: /components/barmenu/
       - title: "Side menu <small>(deprecated)</small>"
         url: /components/sidemenu/
-  
+
 
 ontimize_web_ngx_filemanager:
   - title: "Getting Started"
@@ -233,7 +239,7 @@ ontimize_web_ngx_filemanager:
         url: /filemanager/overview/
       - title: "Installation"
         url: /filemanager/installation/
-      
+
 
   #- title: "Components"
   #  children:
@@ -243,7 +249,7 @@ ontimize_web_ngx_filemanager:
   - title: "Services"
     children:
       - title: "File Manager Service"
-        url: /filemanager/services/filemanager/
+        url: /filemanager/filemanagerservice/
 
 ontimize_web_ngx_tree:
   - title: "Getting Started"
@@ -255,6 +261,6 @@ ontimize_web_ngx_tree:
   - title: "Components"
     children:
       - title: "Tree"
-        url: /tree/components/o-tree.component/      
-      - title: "Tree node"    
+        url: /tree/components/o-tree.component/
+      - title: "Tree node"
         url: /tree/components/o-tree-node.component/

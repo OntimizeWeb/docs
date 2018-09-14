@@ -38,7 +38,9 @@
     evt.currentTarget.className += " active";
   }
 </script>
- 
+ {% if componentData.version %}
+ <p> This component is available since version <i>{{componentData.version}}</i> and later.</p>
+ {% endif %}
 <!-- Tab links -->
 <div class="o-tab">
   <button class="o-tablinks active" onclick="openTab(event, 'overview')">Overview</button>
@@ -82,7 +84,7 @@
       {% capture dataFileCapture %}
         {% include o-component-single-api.md component=dataFile %}
       {% endcapture %}
-  <h2 class="">{{ dataFile.title }}</h2>
+  <h2 class="">{{ title.title }}</h2>
       {{ dataFileCapture | replace: '    ', '' }}
     {% endfor %}
   {% endif %}

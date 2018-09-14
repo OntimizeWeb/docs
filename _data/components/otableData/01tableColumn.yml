@@ -16,6 +16,12 @@ attributes: [{
   required: "",
   description: "Column title"
 },{
+  name: "title-align",
+  type: "start | center | end | auto",
+  default: "center",
+  required: "",
+  description: "Column title cell text alignment"
+},{
   name: "orderable",
   type: "no | false | yes | true",
   default: "yes",
@@ -32,7 +38,7 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <em>editable-columns</em> from <em>o-table</em>"
+  description: "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute `editable-columns` from `o-table`"
 },{
   name: "type",
   type: "string | boolean | integer | real | currency | date | image",
@@ -64,18 +70,6 @@ attributes: [{
   required: "",
   description: "If date model type is string, its date model format should be defined. Default: ISO date"
 },{
-  name: "class",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Indicates the css class for the column"
-},{
-  name: "break-word",
-  type: "no | yes | true | false",
-  default: "no",
-  required: "",
-  description: "Show the cell content in multiple lines"
-},{
   name: "async-load",
   type: "no | yes | true | false",
   default: "no",
@@ -101,4 +95,10 @@ attributes: [{
   default: "",
   required: "",
   description: "Callback function that will be executed when the mouse pointer over the column"
+},{
+  name: "multiline",
+  type: "no | yes | true | false",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to display the cell content in multiple lines if it is needed"
 }]

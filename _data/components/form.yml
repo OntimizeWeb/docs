@@ -99,13 +99,13 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Include navigations buttons in form-toolbar. It's not included when the form is content in <em> tab </em> mode in the  o-form-layout-manager component. Learn more about <em>o-form-layout-manager </em> [here](https://ontimizeweb.github.io/docs/components/formlayoutmanager/){:target='_blank'})"
+  description: "Include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/components/formlayoutmanager/){:target='_blank'})"
 },{
   name: "undo-button",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Include undo button in form toolbar"
+  description: "Include undo button in form toolbar (only showed if form is editable)"
 },{
   name: "keys-sql-types",
   type: "string",
@@ -115,8 +115,8 @@ attributes: [{
 }]
 
 outputs: [{
-  name: "onFormDataLoaded",
-  description: "Event triggered when form data is loaded"
+  name: "onDataLoaded",
+  description: "Event triggered when the data is loaded"
 },{
   name: "beforeCloseDetail",
   description: "Event triggered before leaving form detail mode"

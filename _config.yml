@@ -177,7 +177,10 @@ collections:
     permalink: /:collection/:path/
   o_service_components:
     output: true
-    permalink: /components/:path/  
+    permalink: /components/:path/
+  o_validation_components:
+    output: true
+    permalink: /components/:path/
   o_datatable_components:
     output: true
     permalink: /:collection/:path/
@@ -204,7 +207,7 @@ collections:
     permalink: /:collection/:path/
   ontimize_web_ngx_tree:
     output: true
-    permalink: /:collection/:path/    
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -282,7 +285,7 @@ defaults:
       share: false
       comments: false
       sidebar:
-        nav: "components"      
+        nav: "components"
   # _o_datatable_components
   - scope:
       path: ""
@@ -362,6 +365,19 @@ defaults:
       comments: false
       sidebar:
         nav: "ontimize_web_ngx_tree"
+  # _o_validation_components
+  - scope:
+      path: ""
+      type: o_validation_components
+    values:
+      layout: o-component
+      layoutClass: o-component
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "components"
+
 
 
 

@@ -2,7 +2,7 @@
 title: "Overview"
 permalink: /filemanager/overview/
 ---
-
+{% include breadcrumbs.html %}
 {% include base_path %}
 {% include toc %}
 
@@ -10,9 +10,9 @@ permalink: /filemanager/overview/
 
 The **OntimizeWeb** file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc.
 
-<div style="width:65%">
-![Filemanager]({{ "/images/filemanager/filemanager_default.png" | absolute_url }}){: .comp-example-img }
-</div>
+
+![Filemanager]({{ "/images/filemanager/filemanager_default.png" | absolute_url }}){: .comp-example-img width='60%' }
+
 
 ## Upload
 
@@ -20,7 +20,7 @@ You can *upload* files since the button *Upload*.
 
 While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value `auto-hide-timeout` in ms and also auto hide the message by setting the value `auto-hide-upload="no"`.
 
-![Filemanager]({{ "/images/filemanager/filemanager_upload.png" | absolute_url }}){: .comp-example-img}
+![Filemanager upload]({{ "/images/filemanager/filemanager_upload.png" | absolute_url }}){: .comp-example-img}
 
 
 ## Create folders

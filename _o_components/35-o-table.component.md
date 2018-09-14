@@ -98,7 +98,7 @@ You can represent the columns in extended mode with `o-table-column` selector. T
 ## Sorting
 Since this functionality is built-in, all you have to do is to set the sorting configuration via `sort-columns` input in the selector `o-table` using [ ASC or DESC ] format.
 
-By default, *all columns are searchable*, if you don't want to used a column as searchable you add  `orderable= "no"` in this columns.
+By default, *all columns are sortable*, if you don't want to used a column as searchable you add  `sortable= "no"` in this columns.
 
 
 <h3 class="grey-color">Example</h3>
@@ -466,8 +466,6 @@ The requisites for a custom table cell renderer component are the following:
 
 - Reference the template container in your component. For this, wrap the content of your component HTML with the `ng-template` tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: `@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>`. This will give your component a reference to acces the template container.
 
-- Call the `initialize` method in the contructor.
-
 - If you want to customize the internal value of the cell (this value is used for filtering or exporting the table data), you must overwrite the `getCellData` method.
 
 You have an example of a custom renderer below. It displays a person full name in a table cell, for this, it concat the values in the `getCellData` method and displays its value in the template.
@@ -487,7 +485,6 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
 
   constructor(protected injector: Injector) {
     super(injector);
-    this.initialize();
   }
 
   getCellData(cellvalue: any, rowvalue: Object) {
@@ -499,7 +496,7 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
 
 ```html
   <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-    {{ "getCellData(cellvalue, rowvalue)" }}
+    {% raw %}{{ getCellData(cellvalue, rowvalue) }}{% endraw %}
   </ng-template>
 ```
 
@@ -632,14 +629,6 @@ Here's how you might begin in your file .ts:
 - Your component must extends ```OBaseTableCellEditor```.
 
 - Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
-- In constructor you must add
-
-```javascript
-constructor(protected injector: Injector) {
-  super(injector);
-  this.initialize();
-}
-```
 
 - If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*
 
@@ -654,18 +643,16 @@ import { OBaseTableCellEditor } from 'ontimize-web-ngx';
 
 
 @Component({
-    selector: 'custom-editor',
-    templateUrl: './custom-editor.component.html'
+  selector: 'custom-editor',
+  templateUrl: './custom-editor.component.html'
 })
-
 export class OTableCellEditorName extends OBaseTableCellEditor {
 
-    @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
 
-    constructor(protected injector: Injector) {
-        super(injector);
-        this.initialize();
-    }
+  constructor(protected injector: Injector) {
+    super(injector);
+  }
 
 }
 ```
@@ -1063,6 +1050,27 @@ export const SERVICE_CONFIG: Object = {
     }
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+### Column titles alignment
+Table columns titles texts are centered by default. Using the `o-column` component `title-align` input user can modify that default value.
+
+There also exists the possibility of automatically align the table columns titles depending on the column type, using the `auto-align-titles` input:
+
+* **start**: service types and default value when auto-align-titles is active.
+* **center**: image, date, action and boolean types.
+* **end**: currency, integer, real and percentage types.
+
+When the `auto-align-titles` input is true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
 
 
 ## Demo

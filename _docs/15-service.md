@@ -29,6 +29,28 @@ insert(av: Object, entity?: string, sqltypes?: Object): Observable<any>;
 update(kv: Object, av: Object, entity?: string, sqltypes?: Object): Observable<any>;
 delete(kv: Object, entity?: string, sqltypes?: Object): Observable<any>;
 
+/**
+* Successful response parsers, there is one parser for each CRUD method which calls to the common parser.
+* User can overwrite the chosen methods parsers or the common parser
+*/
+protected parseSuccessfulResponse(resp: any, _innerObserver: any);
+protected parseSuccessfulQueryResponse(resp: any, _innerObserver: any);
+protected parseSuccessfulAdvancedQueryResponse(resp: any, _innerObserver: any);
+protected parseSuccessfulInsertResponse(resp: any, _innerObserver: any);
+protected parseSuccessfulUpdateResponse(resp: any, _innerObserver: any);
+protected parseSuccessfulDeleteResponse(resp: any, _innerObserver: any);
+
+/**
+* Unsuccessful response parsers, there is one parser for each CRUD method which calls to the common parser.
+* User can overwrite the chosen methods parsers or the common parser
+*/
+protected parseUnsuccessfulResponse(error: any, _innerObserver: any);
+protected parseUnsuccessfulQueryResponse(resp: any, _innerObserver: any);
+protected parseUnsuccessfulAdvancedQueryResponse(resp: any, _innerObserver: any);
+protected parseUnsuccessfulInsertResponse(resp: any, _innerObserver: any);
+protected parseUnsuccessfulUpdateResponse(resp: any, _innerObserver: any);
+protected parseUnsuccessfulDeleteResponse(resp: any, _innerObserver: any);
+
 /* Authentication methods */
 startsession(user: string, password: string): Observable<any>;
 endsession(user: string, sessionId: number): Observable<any>;
@@ -165,7 +187,7 @@ export class StarsWarsService extends OntimizeEEService {
       };
       _innerObserver.next(response);
     }, error => {
-      self.parseUnsuccessfulResponse(error, _innerObserver);
+      self.parseUnsuccessfulQueryResponse(error, _innerObserver);
     }, () => _innerObserver.complete());
     return dataObservable;
   }
@@ -196,7 +218,7 @@ export class StarsWarsService extends OntimizeEEService {
       };
       _innerObserver.next(response);
     }, error => {
-      self.parseUnsuccessfulResponse(error, _innerObserver);
+      self.parseUnsuccessfulQueryResponse(error, _innerObserver);
     }, () => _innerObserver.complete());
     return dataObservable;
   }
@@ -283,7 +305,7 @@ export class StarsWarsService extends OntimizeEEService {
       };
       _innerObserver.next(response);
     }, error => {
-      self.parseUnsuccessfulResponse(error, _innerObserver);
+      self.parseUnsuccessfulQueryResponse(error, _innerObserver);
     }, () => _innerObserver.complete());
     return dataObservable;
   }
@@ -302,3 +324,9 @@ Now you can configure the `query-method` attribute of your component to use the 
   <o-text-input attr="mass" read-only="yes"></o-text-input>
 </o-form>
 ```
+
+### Define your own successful/unsuccessful request callback methods
+
+Each *CRUD* method has it owns successful and unsuccessful request callbacks, called when the request ends. User can override or extends this methods to modify its behaviour. This methods are: `parseSuccessfulMETHODResponse` and `parseUnsuccessfulMETHODResponse` where `METHOD` is `query`, `advancedQuery`, `update`,`insert` or `delete`.
+
+Both services `OntimizeService` and `OntimizeEEService` also have the generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained *CRUD* method callbacks so user can chose whether to override a particular or the generic callback.

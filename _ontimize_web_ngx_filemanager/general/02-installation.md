@@ -1,9 +1,10 @@
 ---
 permalink: /filemanager/installation/
-title: "File Manager"
+title: "Installation"
 ---
 
 {% include base_path %}
+{% include breadcrumbs.html %}
 
 ## Installation
 

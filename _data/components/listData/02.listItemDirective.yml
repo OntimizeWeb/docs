@@ -9,7 +9,7 @@ attributes: [{
   description: "The list item model data"
 },{
   name: "selectable",
-  type: "boolean",
+  type: "no | false | yes | true",
   default: "false",
   required: "",
   description: "Indicates whether the list item is selectable or not"

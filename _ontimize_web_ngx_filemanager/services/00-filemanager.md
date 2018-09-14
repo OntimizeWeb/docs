@@ -1,9 +1,10 @@
 ---
-permalink: /filemanager/services/filemanager/
+permalink: /filemanager/filemanagerservice/
 title: "File Manager Service"
 ---
 
 {% include base_path %}
+{% include breadcrumbs.html %}
 {% include toc %}
 
 The `FileManagerService` class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting and searching from files, as well as creating and deleting folders for organising the work space.

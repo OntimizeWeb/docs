@@ -1,69 +1,57 @@
 directive: "o-list"
 
 inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base",
+  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
+},{
   component: "OServiceComponent",
   path: "components/service/service",
   attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
 }]
 
 attributes: [{
-  name: "query-on-init",
-  default: "yes"
-},{
-  name: "query-on-bind",
-  default: "yes"
-},{
-  name: "title",
-  type: "string",
-  default: "",
-  required: "",
-  description: "The title of the list"
-},{
-  name: "css-class",
-  type: "string",
-  default: "",
-  required: "",
-  description: "<em>css</em> class name"
-},{
-  name: "enabled",
-  description: "Indicates whether or not the field is enabled. When is not enabled the detail navigation is disabled too"
-},{
-  name: "filter",
-  type: "no | false | yes | true",
-  default: "no",
-  required: "",
-  description: "Indicates whether or not to show list filtering options"
-},{
-  name: "delete-button"
-},{
   name: "quick-filter"
 },{
   name: "quick-filter-columns",
   type: "string",
-  default: "",
+  default: "`columns` attribute value",
   required: "",
-  description: "Columns used in the <em>quick-filter</em>. Separated by ';'"
+  description: "Columns used by the quick filter. Separated by ';'"
 },{
-  name: "refresh-button",
-  description: "Indicates whether or not to show a refresh data button (also needs <em>filter</em> value to be true)"
-},{
-  name: "route",
-  type: "",
-  default: "",
-  required: "",
-  description: ""
+  name: "refresh-button"
 },{
   name: "selectable",
-  type: "",
-  default: "",
+  type: "no | false | yes | true",
+  default: "no",
   required: "",
-  description: ""
+  description: "Indicates whether or not to show selection check boxes on the list items"
 },{
   name: "dense",
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: ""
+  description: "Indicates whether or not to display the table in dense mode"
+},{
+  name: "delete-button",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show a delete button. The delete button is shown only when some list item is selected"
+}]
+
+outputs: [{
+  name: "onDataLoaded",
+  description: "Event triggered when the data is loaded"
+},{
+  name: "onPaginatedDataLoaded",
+  description: "Event triggered when the paginated data is loaded"
+},{
+  name: "beforeGoEditMode",
+  description: "Event triggered befoe going to form edition mode"
+},{
+  name: "onFormModeChange",
+  description: "Event triggered when form mode changes"
 }]
 
 extraComponents: "listData"

@@ -5,11 +5,8 @@ directive: "o-table"
 inheritedAttributes: [{
   component: "OServiceComponent",
   path: "components/service/service",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "query-with-null-parent-keys"]
 }]
-
-
-# css-class
 
 attributes: [{
   name: "visible-columns",
@@ -100,7 +97,20 @@ attributes: [{
   required: "",
   description: "Row selection mode"
 },{
-  name: "query-with-null-parent-keys"
+  name: "horizontal-scroll",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether or not to allow horizontal scroll"
+},{
+  name: "show-paginator-first-last-buttons",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to show the go to the first and last page in the table pagination"
+},{
+  name: "auto-align-titles",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether or not to auto align the table header cells"
 }]
 
 outputs: [{
@@ -119,9 +129,9 @@ outputs: [{
   name: "onDoubleClick",
   description: "Event triggered when a row is double clicked"
 },{
-  name: "onTableDataLoaded",
-  description: "Event triggered when table data is updated"
+  name: "onDataLoaded",
+  description: "Event triggered when the data is updated"
 },{
-  name: "onPaginatedTableDataLoaded",
-  description: "Event triggered when table paginated data is updated"
+  name: "onPaginatedDataLoaded",
+  description: "Event triggered when the paginated data is updated"
 }]

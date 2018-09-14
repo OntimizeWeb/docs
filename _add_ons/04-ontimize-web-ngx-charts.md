@@ -20,12 +20,12 @@ Ontimize Web Charts module is stored in [github](https://github.com/OntimizeWeb/
 ## Examples
 
 Check out examples demo:
-<div>
+<p>
   <a href="https://ontimizeweb.github.io/ontimize-web-ngx-charts" target="_blank" class="btn btn--success">
     <i class="fa fa-play"></i>
     live demo
   </a>
-</div>
+</p>
 
 
 ## Installation
