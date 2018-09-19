@@ -198,6 +198,8 @@ components:
 
       - title: "Grid <span class='menuitem-badge'>new<span>"
         url: /components/grid/
+      - title: "List"
+        url: /components/list/
   - title: Media
     children:
       - title: "Image"
