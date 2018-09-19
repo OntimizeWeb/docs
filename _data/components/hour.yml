@@ -23,4 +23,10 @@ attributes: [{
   default : "24",
   required : "",
   description : "Hour format. 12 hours format with AM PM"
+},{
+  name: "text-input-enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to allow the user to edit the input manually"
 }]
