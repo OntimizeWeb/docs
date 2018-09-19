@@ -115,6 +115,11 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   description: "Indicates whether or not to auto align the table header cells"
+},{
+  name: "multiple-sort",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to allow multiple columns sorting"
 }]
 
 outputs: [{
