@@ -127,3 +127,34 @@ outputs: [{
   name: "onFormModeChange",
   description: "Event triggered when form mode changes"
 }]
+
+
+methods: [{
+  name: "getFieldValue",
+  type: "method",
+  description: "Return the current value of the control in the form",
+  parameters: "attr: string",
+  returns: "any"
+},{
+  name: "getFieldValues",
+  type: "method",
+  description : "Return a array of the current value of the controls in the form",
+  parameters: "attrs: string[]",
+  returns : "any[]"
+},{
+  name: "setFieldValue",
+  type: "method",
+  parameters : "attr: string, value:any",
+  description : "Sets the value of the control in the form."
+},{
+  name: "deleteFieldValue",
+  type: "method",
+  parameters : "attr: string",
+  description : "Reset the value of the control in the form."
+},
+{
+  name: "getFieldReference",
+  type: "method",
+  parameters : "attr: string",
+  description : "Retrieves the reference of the control in the form."
+}]
