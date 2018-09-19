@@ -6,6 +6,13 @@ attributes: [{
   default: "",
   required: "",
   description: "Menu title"
-}]
+},{
+  name: "tooltip",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Bar menu  tooltip. Default: 'title' value."
+}
+]
 
 extraComponents: "barMenuData"
