@@ -1,85 +1,67 @@
 directive: "o-grid"
-version: "3.0.2"
+version: "3.1.0"
+
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base",
-  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
+  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "store-state", "query-with-null-parent-keys"]
 },{
   component: "OServiceComponent",
   path: "components/service/service",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail"]
 }]
 
-
-
 attributes: [{
-  name: "quick-filter",
-  description: "Show quick filter",
-  default: "yes."
+  name: "quick-filter"
 },{
   name: "cols",
   type: "number",
   default: "By default, the number of columns will be automatically determined based mediaQuery of Flex Layout. See more [here](https://github.com/angular/flex-layout/wiki/Responsive-API#mediaqueries-and-aliases).",
   required: "",
   description: "Number of items to display on a page. By default set to 32."
-},
-{
+},{
   name: "page-size",
   type: "number",
   default: "32",
   required: "",
-  description: "Number of items to display on a page. By default set to 32."
-},
-{
+  description: "Number of items displayed per page."
+},{
   name: "page-size-options",
   type: "array",
   default: "[8, 16, 24, 32, 64]",
   required: "",
   description: "The set of provided page size options to display to the user."
-},
-{
+},{
   name: "show-page-size",
-  type: "boolean",
-  default: "false",
+  type: "no | false | yes | true",
+  default: "no",
   required: "",
-  description: "Whether to hide the page size selection UI from the user."
-},
-{
+  description: "Whether or not to hide the page size selector."
+},{
   name: "orderable",
-  type: "boolean",
+  type: "no | false | yes | true",
   default: "false",
   required: "",
   description: "Whether or not the sort select is shown in the toolbar."
-},
-{
+},{
   name: "sortable-columns",
   type: "string",
   default: "",
   required: "",
-  description: "Sorting columns separated by ';'. Default: no value"
+  description: "Sorting columns separated by ';'."
 },{
   name: "sort-column",
   type: "string",
   default: "",
   required: "",
-  description: "Column of sorting. Default: no value"
-},
-{
-  name: "sort-column",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Column of sorting. Default: no value"
-},
-{
+  description: "Sorting default column."
+},{
   name: "grid-item-height",
-  type: "string",
+  type: "string | number",
   default: "1:1",
   required: "",
-  description: "Set internal representation of row height from the user-provided value. The height can be in px, em, ratio or to fit."
+  description: "Set internal representation of row height from the user-provided value (see attribute `rowHeight` of [MatGridList](https://material.angular.io/components/grid-list/api#MatGridList))."
+},{
+  name: "pagination-controls",
+  default: "no"
 }]
-
-
-  
-
-

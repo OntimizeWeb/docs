@@ -1051,16 +1051,6 @@ export const SERVICE_CONFIG: Object = {
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
 ### Column titles alignment
 Table columns titles texts are centered by default. Using the `o-column` component `title-align` input user can modify that default value.
 
@@ -1072,6 +1062,10 @@ There also exists the possibility of automatically align the table columns title
 
 When the `auto-align-titles` input is true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
 
+### Columns multiple sorting
+Table allows mulitple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
+
+A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state.
 
 ## Demo
 

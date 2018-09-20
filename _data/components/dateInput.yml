@@ -50,6 +50,12 @@ attributes: [{
   default : "",
   required : "",
   description : "Function for filtering datepicker possible values"
+},{
+  name: "text-input-enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to allow the user to edit the input manually"
 }]
 
 inheritedOutputs: [{

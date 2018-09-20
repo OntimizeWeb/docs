@@ -66,9 +66,21 @@ attributes: [{
   required : "",
   description : "Function for filtering datepicker possible values"
 },{
+  name: "date-text-input-enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to allow the user to edit the date input manually"
+},{
   name: "hour-format",
   type: "12 | 24",
   default : "24",
   required : "",
   description : "Hour format. 12 hours format with AM PM "
+},{
+  name: "hour-text-input-enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to allow the user to edit the hour input manually"
 }]
