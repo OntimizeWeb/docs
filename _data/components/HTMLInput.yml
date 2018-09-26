@@ -11,7 +11,16 @@ inheritedAttributes: [{
 }]
 
 inheritedOutputs: [{
-  component: "o-text-input",
-  path: "components/input/text",
-  outputs: ["onChange", "onFocus", "onBlur"]
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["change", "onChangeValue"]
+}]
+
+
+outputs: [{
+  name : "onFocus",
+  description: "Event triggered when component gains the focus"
+},{
+  name : "onBlur",
+  description: "Event triggered when component loses the focus"
 }]

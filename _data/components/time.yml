@@ -6,10 +6,13 @@ inheritedAttributes: [{
   attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only", "validators"]
 }]
 
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["change", "onChangeValue"]
+}]
+
 outputs: [{
-  name : "onChange",
-  description: "Event triggered when component element changes"
-},{
   name : "onFocus",
   description: "Event triggered when component gains the focus"
 },{

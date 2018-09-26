@@ -6,6 +6,12 @@ inheritedAttributes: [{
   attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "read-only", "validators"]
 }]
 
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["change", "onChangeValue"]
+}]
+
 attributes: [{
   name: "true-value",
   type: "any",
@@ -26,7 +32,3 @@ attributes: [{
   description : "The data type of the values managed by the component"
 }]
 
-outputs: [{
-name : "onChange",
-description: "Event triggered when component value changes"
-}]

@@ -72,10 +72,13 @@ attributes: [{
   name: "query-with-null-parent-keys"
 }]
 
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["change", "onChangeValue"]
+}]
+
 outputs: [{
-  name: "onChange",
-  description: "Event triggered when component selected value changes"
-},{
   name: "onFocus",
   description: "Event triggered when component gains the focus"
 },{

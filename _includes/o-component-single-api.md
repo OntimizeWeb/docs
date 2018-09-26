@@ -153,7 +153,18 @@
             {% assign columnKey = column | downcase %}
             {% assign columnData = 'o-component-' | append: columnKey %}
             {% assign cellContent = outputObject[columnKey]  | default: '' | markdownify %}
-            <td class="" {{ columnData }}>{{ cellContent | markdownify  }}</td>
+            {% if columnKey == 'name' %}
+              {% assign secondLine = outputObject['type'] | default: ''| xml_escape %}
+            {% else %}
+              {% assign secondLine = '' %}
+            {% endif %}
+
+            <td class="" {{ columnData }}>
+              {{ cellContent | markdownify  }} 
+              {% if secondLine != '' %}
+                <p><i>{{ secondLine }}</i></p>
+              {% endif %}
+            </td>
           {% endfor %}
           </tr>
         {% endfor %}
