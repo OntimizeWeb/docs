@@ -88,6 +88,8 @@ docs:
         url: /contributing/
       - title: "License"
         url: /license/
+      - title: "Versions"
+        url: /versions
       - title: "About"
         url: /about/
 
