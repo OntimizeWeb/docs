@@ -73,7 +73,7 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
     </tbody>
 </table>
 
-The addon *DataTable* is not available for Angular 5.
+>**NOTE** The addon *DataTable* is not available for Angular 5.
 
 ### Angular 4
 <table>
@@ -186,7 +186,7 @@ The addon *DataTable* is not available for Angular 5.
     </tbody>
 </table>
 
-The addons *Tree and Library Tools* is not available for Angular 4.
+>**NOTE** The addons *Tree and Library Tools* are not available for Angular 4.
 
 ### Angular 2
 <table>
@@ -261,7 +261,7 @@ The addons *Tree and Library Tools* is not available for Angular 4.
     </tbody>
 </table>
 
-The addons *Filemanager, Theming, Tree, Tools and Library Tools* and Data Table is not available for Angular 2.
+>**NOTE** The addons *Filemanager, Theming, Tree, Tools and Library Tools* and *DataTable* are not available for Angular 2.
            
 
 * The prefix *ontimize-web-ngx* was omitted from the names of the addons.
