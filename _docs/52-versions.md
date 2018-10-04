@@ -14,7 +14,7 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
 <table>
     <thead>
         <tr>
-            <th>ontimize-web-ngx</th> 
+            <th>ontimize-web-ngx</th>
             <th>filemanager*</th>
             <th>map*</th>
             <th>charts*</th>
@@ -32,8 +32,8 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
             <td>3.1.0</td>
             <td rowspan="2">3.0.0</td>
             <td>3.1.0</td>
-            <td rowspan="2">3.0.0</td>
-            <td rowspan="2">3.0.0</td>
+            <td>3.1.0</td>
+            <td>3.1.0</td>
             <td>1.2.0</td>
             <td>3.1.0</td>
             <td rowspan="4">1.0.6</td>
@@ -41,6 +41,8 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
         </tr>
         <tr>
             <td>3.0.1</td>
+            <td>3.0.0</td>
+            <td>3.0.0</td>
             <td>3.0.0</td>
             <td>3.0.0</td>
             <td rowspan="2">1.1.2</td>
@@ -79,7 +81,7 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
 <table>
     <thead>
         <tr>
-            <th>ontimize-web-ngx</th> 
+            <th>ontimize-web-ngx</th>
             <th>filemanager*</th>
             <th>map*</th>
             <th>charts*</th>
@@ -98,9 +100,9 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
             <td rowspan="4">2.0.2<br>2.0.3</td>
             <td rowspan="4">2.0.2<br>2.0.3</td>
             <td rowspan="4">2.0.2</td>
-            <td rowspan="4">1.0.6</td>   
-            <td rowspan="5">1.0.3</td>   
-            <td rowspan="4">1.0.7</td>  
+            <td rowspan="4">1.0.6</td>
+            <td rowspan="5">1.0.3</td>
+            <td rowspan="4">1.0.7</td>
         </tr>
         <tr>
             <td>2.1.2</td>
@@ -113,39 +115,39 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
         </tr>
         <tr>
             <td>2.1.0-rc.3</td>
-            <td rowspan="14">-</td> 
-            <td rowspan="5">2.0.4</td> 
-            <td rowspan="5">2.0.0<br>2.0.1</td> 
-            <td rowspan="5">2.0.0<br>2.0.1</td> 
-            <td rowspan="5">2.0.0<br>2.0.1</td> 
-            <td>1.0.4<br>1.0.5</td> 
-            <td rowspan="4">1.0.4<br>1.0.5<br>1.0.6</td> 
+            <td rowspan="14">-</td>
+            <td rowspan="5">2.0.4</td>
+            <td rowspan="5">2.0.0<br>2.0.1</td>
+            <td rowspan="5">2.0.0<br>2.0.1</td>
+            <td rowspan="5">2.0.0<br>2.0.1</td>
+            <td>1.0.4<br>1.0.5</td>
+            <td rowspan="4">1.0.4<br>1.0.5<br>1.0.6</td>
         </tr>
          <tr>
             <td>2.1.0-rc.2</td>
-            <td>1.0.2</td> 
-            <td rowspan="3">1.0.2</td> 
+            <td>1.0.2</td>
+            <td rowspan="3">1.0.2</td>
         </tr>
          <tr>
             <td>2.1.0-rc.1</td>
-            <td>1.0.1</td> 
+            <td>1.0.1</td>
         </tr>
          <tr>
             <td>2.1.0-rc.0</td>
-            <td>1.0.1</td>  
+            <td>1.0.1</td>
         </tr>
          <tr>
             <td>2.0.0</td>
             <td>1.0.0</td>
             <td>1.0.0</td>
-            <td>1.0.1<br>1.0.2<br>1.0.3</td> 
+            <td>1.0.1<br>1.0.2<br>1.0.3</td>
         </tr>
         <tr>
             <td>2.0.0-rc.8</td>
             <td rowspan="2">2.0.0-rc.1<br>2.0.0-rc.2</td>
             <td>2.0.0-rc.3</td>
-            <td rowspan="2">2.0.0-rc.1</td> 
-            <td rowspan="2">2.0.0-rc.1</td> 
+            <td rowspan="2">2.0.0-rc.1</td>
+            <td rowspan="2">2.0.0-rc.1</td>
             <td rowspan="9">-</td>
             <td rowspan="9">-</td>
             <td>1.0.0</td>
@@ -192,7 +194,7 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
 <table>
     <thead>
         <tr>
-            <th>ontimize-web-ngx</th> 
+            <th>ontimize-web-ngx</th>
             <th>map*</th>
             <th>charts*</th>
             <th>dynamicform*</th>
@@ -205,18 +207,18 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
             <td>1.2.3</td>
             <td rowspan="5">1.0.2<br>1.0.1</td>
             <td rowspan="5">1.0.2</td>
-            <td>0.0.4</td> 
+            <td>0.0.4</td>
             <td>0.0.5<br>0.0.6</td>
         </tr>
         <tr>
             <td>1.2.2</td>
-            <td>0.0.3</td> 
-            <td>0.0.4</td> 
+            <td>0.0.3</td>
+            <td>0.0.4</td>
         </tr>
         <tr>
             <td>1.2.1</td>
-            <td>0.0.2</td> 
-            <td>0.0.31</td> 
+            <td>0.0.2</td>
+            <td>0.0.31</td>
         </tr>
         <tr>
             <td>1.2.0</td>
@@ -262,7 +264,7 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
 </table>
 
 >**NOTE** The addons *Filemanager, Theming, Tree, Tools and Library Tools* and *DataTable* are not available for Angular 2.
-           
+
 
 * The prefix *ontimize-web-ngx* was omitted from the names of the addons.
 
