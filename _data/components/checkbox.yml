@@ -9,7 +9,7 @@ inheritedAttributes: [{
 inheritedOutputs: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  outputs: ["change", "onChangeValue"]
+  outputs: ["change", "onValueChange"]
 }]
 
 attributes: [{
