@@ -141,7 +141,7 @@
   //&:hover .category-components-list,
   &.active-component-category .category-components-list {
     margin-bottom: inherit;
-    max-height: 500px;
+    max-height: initial;
   }
 }
 

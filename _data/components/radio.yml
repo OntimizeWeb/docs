@@ -1,0 +1,47 @@
+directive: "o-radio"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "validators"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservicecomponent",
+  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "visible-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys"]
+}]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["change", "onValueChange"]
+}]
+
+attributes: [{
+  name: "translate",
+  type: "no | false | yes | true",
+  default: "false",
+  required: "",
+  description: "Indicates whether or not to translate the labels displayed in the radio buttons"
+},{
+  name: "layout",
+  type: "row | column",
+  default: "column",
+  required: "",
+  description: "Indicates the disposition of the radio buttons"
+},{
+  name: "label-position",
+  type: "before | after",
+  default: "fater",
+  required: "",
+  description: "Indicates whether the labels should appear after or before the radio buttons"
+}]
+
+methods: [{
+  name: "getOptionDescriptionValue(element)",
+  description: "Returns the displayed text for the provided radio group element",
+  returns: "string"
+},{
+  name: "getDescriptionValue()",
+  description: "Returns the displayed text for the selected radio group element",
+  returns: "string"
+}]
