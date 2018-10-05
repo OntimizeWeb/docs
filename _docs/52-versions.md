@@ -19,7 +19,7 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
             <th>map*</th>
             <th>charts*</th>
             <th>dynamicform*</th>
-            <th>dynamicform-builder* </th>
+            <th>dynamicform-builder*</th>
             <th>theming*</th>
             <th>tree*</th>
             <th>tools*</th>
@@ -28,20 +28,25 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
     </thead>
     <tbody>
         <tr>
+            <td>3.1.1</td>
+            <td>3.1.1</td>
+            <td rowspan="3">3.0.0</td>
+            <td>3.1.1</td>
+            <td rowspan="2">3.1.0</td>
+            <td rowspan="2">3.1.0</td>
+            <td rowspan="2">1.2.0</td>
+            <td rowspan="3">3.0.0</td>
+            <td rowspan="5">1.0.6</td>
+            <td>1.1.0</td>
+        </tr>
+        <tr>
             <td>3.1.0</td>
             <td>3.1.0</td>
-            <td rowspan="2">3.0.0</td>
             <td>3.1.0</td>
-            <td>3.1.0</td>
-            <td>3.1.0</td>
-            <td>1.2.0</td>
-            <td>3.1.0</td>
-            <td rowspan="4">1.0.6</td>
             <td rowspan="5">1.0.0</td>
         </tr>
         <tr>
             <td>3.0.1</td>
-            <td>3.0.0</td>
             <td>3.0.0</td>
             <td>3.0.0</td>
             <td>3.0.0</td>
