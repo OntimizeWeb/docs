@@ -70,11 +70,6 @@ You can represent the columns in extended mode with `o-table-column` selector. T
       value-column="CUSTOMERTYPEID"
       columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
     </o-table-cell-renderer-service>
-    <o-table-cell-editor-combo entity="ECustomerTypes"
-      value-column="CUSTOMERTYPEID" separator=" - "
-      columns="CUSTOMERTYPEID;DESCRIPTION"
-      visible-columns="CUSTOMERTYPEID;DESCRIPTION">
-    </o-table-cell-editor-combo>
   </o-table-column>
   <o-table-column attr="BOOLEAN" title="BOOLEAN" type="boolean"
     true-value-type="string" true-value="YES"
