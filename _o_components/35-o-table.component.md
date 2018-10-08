@@ -16,8 +16,7 @@ If the table also is *inside a form*, the `attr` property is required for regist
 
   **WARNING:** table is storing changes made by user (order changes, filters, etc.) in the browser local storage. That values will take precedence over table html definition.
   For example: if a *ID* column is not in the *sort-columns* attribute but the user has ordered
-  other column it manually, it will be order in future loads. For restoring initial state is enough to
-  delete it *com.ontimize.web.quickstart* entries in browser local storage.
+  other column it manually, it will be order in future loads. For restoring initial state is enough to go to the Configuration -> Load Configuration option in the table menu and load the default configuration that deletes in browser local storage and restore the values defined over table html definition.
 
 </div>
 
@@ -71,11 +70,6 @@ You can represent the columns in extended mode with `o-table-column` selector. T
       value-column="CUSTOMERTYPEID"
       columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
     </o-table-cell-renderer-service>
-    <o-table-cell-editor-combo entity="ECustomerTypes"
-      value-column="CUSTOMERTYPEID" separator=" - "
-      columns="CUSTOMERTYPEID;DESCRIPTION"
-      visible-columns="CUSTOMERTYPEID;DESCRIPTION">
-    </o-table-cell-editor-combo>
   </o-table-column>
   <o-table-column attr="BOOLEAN" title="BOOLEAN" type="boolean"
     true-value-type="string" true-value="YES"

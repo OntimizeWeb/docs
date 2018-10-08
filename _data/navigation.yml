@@ -88,6 +88,8 @@ docs:
         url: /contributing/
       - title: "License"
         url: /license/
+      - title: "Versions"
+        url: /versions
       - title: "About"
         url: /about/
 
@@ -153,6 +155,9 @@ components:
         children:
           - title: "List picker dialog"
             url: /listpicker/listpickerdialog/
+      - title: "Radio <span class='menuitem-badge'>new<span>"
+        url: /components/input/radio/
+        order: "2"
 
   - title: Button
     children:
