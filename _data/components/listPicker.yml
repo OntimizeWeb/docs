@@ -75,7 +75,7 @@ attributes: [{
 inheritedOutputs: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  outputs: ["change", "onValueChange"]
+  outputs: ["onChange", "onValueChange"]
 }]
 
 outputs: [{

@@ -61,7 +61,7 @@ attributes: [{
 inheritedOutputs: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  outputs: ["change", "onValueChange"]
+  outputs: ["onChange", "onValueChange"]
 },{
   component: "o-text-input",
   path: "components/input/text",
