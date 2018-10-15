@@ -2,7 +2,6 @@
 title: "Overview"
 permalink: /filemanager/overview/
 ---
-{% include breadcrumbs.html %}
 {% include base_path %}
 {% include toc %}
 

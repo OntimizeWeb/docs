@@ -5,7 +5,6 @@ comp: treeNode
 layout: o-component
 ---
 {% include base_path %}
-{% include breadcrumbs.html %}
 {% include toc %}
 
 ## Introduction

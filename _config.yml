@@ -341,19 +341,8 @@ defaults:
       comments: false
       sidebar:
         nav: "components"
-  #_ontimize_web_ngx_filemanager layout: o-module
-  - scope:
-      path: ""
-      type: ontimize_web_ngx_filemanager
-    values:
-      layout: single
-      read_time: false
-      author_profile: false
-      share: false
-      comments: false
-      sidebar:
-        nav: "ontimize_web_ngx_filemanager"
-  #_ontimize_web_ngx_tree layout: o-module
+
+  #_ontimize_web_ngx_tree layout: single      
   - scope:
       path: ""
       type: ontimize_web_ngx_tree
@@ -363,8 +352,25 @@ defaults:
       author_profile: false
       share: false
       comments: false
+      breadcrumbs: true
       sidebar:
         nav: "ontimize_web_ngx_tree"
+
+  #_ontimize_web_ngx_filemanager layout: o-module   
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_filemanager
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      breadcrumbs: true
+      sidebar:
+        nav: "ontimize_web_ngx_filemanager"
+
+ 
   # _o_validation_components
   - scope:
       path: ""
