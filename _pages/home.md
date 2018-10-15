@@ -16,12 +16,19 @@ feature_row:
     btn_label: "Learn More"
     icon: "fas fa-bolt"
     btn_class: btn--small
-  - alt: "Customizable"
-    title: "Customizable themes"
+  - alt: "Advanced themes"
+    title: "Advanced themes"
     excerpt: "Built on Angular Material. Customizing standard themes or create new ones is very easy."
     url: "/customize/theming/"
     btn_label: "Learn More"
     icon: "fab fa-angular"
+    btn_class: btn--small
+  - alt: "Add-ons"
+    title: "Add-ons"
+    excerpt: "Add-ons consists of extended components missing in Ontimize Web."
+    url: "/ontimize-web-ngx-tools/"
+    btn_label: "Learn More"
+    icon: "fas fa-puzzle-piece"
     btn_class: btn--small
   - alt: "100% free"
     title: "100% Free"
