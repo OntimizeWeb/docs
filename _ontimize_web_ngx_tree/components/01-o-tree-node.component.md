@@ -41,3 +41,11 @@ When using a remote data binded tree component, a `o-tree-node` must specify in 
 ```
 
 ![Tree component]({{ "/images/components/tree/inner.png" | absolute_url }}){: .comp-example-img}
+
+## Quick filter
+
+You can configure the same `o-tree` component filtering properties, that will only affect to this tree node.
+
+## Demo
+
+You can see an example of this component behaviour in this [OntimizeWeb tree quickstart](https://try.imatia.com/ontimizeweb/tree/main/nodes){:target="_blank"} section.
