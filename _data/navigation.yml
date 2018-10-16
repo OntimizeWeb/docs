@@ -228,15 +228,22 @@ components:
         url: /components/contextmenu/
   - title: Menu
     children:
+      - title: "Overview"
+        url: /components/menu/
+        order: "1"
+        class: "overview"
       - title: "Card menu layout"
         url: /components/cardmenulayout/
         children:
           - title: "Card menu item"
             url: /components/cardmenulayout/cardmenuitem/
+        order: "2"
       - title: "Bar menu"
         url: /components/barmenu/
+        order: "2"
       - title: "Side menu <small>(deprecated)</small>"
         url: /components/sidemenu/
+        order: "2"
 
 
 ontimize_web_ngx_filemanager:
