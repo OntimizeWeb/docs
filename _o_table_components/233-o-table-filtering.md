@@ -9,9 +9,9 @@ By default the filtering is *local*, you can be enabled filtering *remote* with 
 
 ## Quick filter.
 
-By default this option is enabled, the filter is visible in the top right. You can be disabled with `quick-filter="no"` property.
+This option is enabled by default, the filter is visible in the top right. You can disable it setting `quick-filter="no"`.
 
-You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, It is disabled
+You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
 Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in `quick-filter-function` property.
 

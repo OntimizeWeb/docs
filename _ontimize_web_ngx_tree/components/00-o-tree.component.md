@@ -31,7 +31,11 @@ The `o-tree` will show a base node if the `show-root` input is set to a true val
 ![Tree component]({{ "/images/components/tree/basic.png" | absolute_url }}){: .comp-example-img}
 
 
+## Quick filter
 
+This option is enabled by default, the filter is visible in the top right. You can disable it setting `quick-filter="no"`.
+
+You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
 
 

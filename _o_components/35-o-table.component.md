@@ -199,9 +199,9 @@ By default the filtering is *local*, you can be enabled filtering *remote* with 
 
 ## Quick filter
 
-By default this option is enabled, the filter is visible in the top right. You can be disabled with `quick-filter="no"` property.
+This option is enabled by default, the filter is visible in the top right. You can disable it setting `quick-filter="no"`.
 
-You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, It is disabled
+You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled
 
 Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in `quick-filter-function` property.
 
@@ -676,7 +676,7 @@ O-table support checkbox selection with `select-all-checkbox` property. If this 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
 ### Fixed header and footer
-O-table support *fixed header* and *footer* with `fixed-header="yes"` when the content is greather than its own height and then you must set the height of the table, for example `[ngStyle]="height: 400px;"`. By default it is disabled.
+O-table support *fixed header* and *footer* with `fixed-header="yes"` when the content is greater than its own height and then you must set the height of the table, for example `[ngStyle]="height: 400px;"`. By default, it's disabled.
 
 <h3 class="grey-color">Example</h3>
 ```html
