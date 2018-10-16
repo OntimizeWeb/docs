@@ -47,6 +47,7 @@
 }
 
 .masthead__menu-item-active{
+  font-weight: bold;
   //border-top: 3px solid $orange;
 }
 
@@ -58,7 +59,6 @@
   color: #666666;
   font-size: 0.65em;
   text-transform: uppercase;
-  font-weight: 400;
 
   &:hover {
     color: #000000;

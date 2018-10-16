@@ -14,22 +14,16 @@
 
   @include breakpoint($x-large) {
     max-width: $x-large;
-    padding-left: 0;
-    padding-right: 0;
   }
-  /*
-   @include breakpoint($xl-large) {
-    max-width: $xl-large;
-  }*/
+
 }
 
 .page {
   @include breakpoint($large) {
     @include span(9 of 12 last);
-
   }
   @include breakpoint($x-large) {
-    @include span(10 of 12 last);
+    @include span(9.8 of 12 last);
     @include prefix(0.5 of 12);
     @include suffix(2 of 12);
   }
