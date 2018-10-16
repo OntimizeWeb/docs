@@ -5,7 +5,7 @@ title: "Filtering"
 {% include base_path %}
 {{ site.baseurl }}
 
-By default the filtering is *local*, you can be enabled filtering *remote* with `pageable="yes"`.
+By default the filtering is *local*, you can enable *remote* filtering setting `pageable="yes"`.
 
 ## Quick filter.
 
@@ -17,9 +17,9 @@ Additionally, you can specify default filter function to be applied when the use
 
 
 
-## Filtering by columns 
+## Filtering by columns
 
-It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property. 
+It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property.
 
 
 <h3 class="grey-color">Example</h3>
