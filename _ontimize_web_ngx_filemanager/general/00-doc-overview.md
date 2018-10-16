@@ -24,7 +24,7 @@ While uploading the file will show the progress of the upload process and whethe
 
 ## Create folders
 
-The `o-filemanager-table` allow create folder since the button *New folder* or from the table menu. The button by default it is disabled, you can enabled for the button by setting the value `new-folder-button="yes"`.
+The `o-filemanager-table` allows to create a folder using the *New folder* button or the table menu. The button it's disabled by default, you can enable it by setting the value `new-folder-button="yes"`.
 
 ![New folder]({{ "/images/filemanager/filemanager_new.png" | absolute_url }}){: .comp-example-img }
 

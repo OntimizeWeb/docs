@@ -22,8 +22,8 @@ The `o-tree` will show a base node if the `show-root` input is set to a true val
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-tree service="customers" entity="customer" keys="CUSTOMERID" 
-    columns="CUSTOMERID;SURNAME;NAME" description-columns="SURNAME;NAME" 
+<o-tree service="customers" entity="customer" keys="CUSTOMERID"
+    columns="CUSTOMERID;SURNAME;NAME" description-columns="SURNAME;NAME"
     separator=", " root-title="CUSTOMERS" show-root="yes">
 </o-tree>
 ```
@@ -31,8 +31,36 @@ The `o-tree` will show a base node if the `show-root` input is set to a true val
 ![Tree component]({{ "/images/components/tree/basic.png" | absolute_url }}){: .comp-example-img}
 
 
+## Quick filter
+
+This option is enabled by default, the filter is visible in the top right. You can disable it setting `quick-filter="no"`.
+
+You can configure which columns will be affected by the filtering setting the `quick-filter-columns` attribute, which contains the columns separated by ';'. By default it contains all the columns of the `columns` attribute.
+
+You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
 
+## Tree nodes navigation
+
+Setting the `route` attribute in the `o-tree` and `o-tree-node` components allows to trigger the navigation to the route indicated in its value.
+
+You can define static routes or/and wildcards (that must be included in the `columns` attribute). For example:
+
+```html
+<o-tree #treeview fxFlex root-title="CUSTOMERS" service-type="DummyService"
+      service="customers" entity="customer" keys="CUSTOMERID"
+      columns="CUSTOMERID;SURNAME;NAME" description-columns="SURNAME;NAME"
+      separator=", " query-on-init="true" route="customers/:CUSTOMERID">
+</o-tree>
+```
+
+Clicking on a node of this tree will triger the navigation to the current route appending the static path `customers/` followed by the record 'CUSTOMERID' value.
+
+You can see this working [here](https://try.imatia.com/ontimizeweb/tree/main/detail/){:target="_blank"}.
+
+## Demo
+
+You can see this and more examples of this component in the [OntimizeWeb tree quickstart](https://try.imatia.com/ontimizeweb/tree){:target="_blank"}.
 
 
 <!-- recursive -->
