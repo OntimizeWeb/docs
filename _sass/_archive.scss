@@ -83,6 +83,11 @@
     font-family: $pt-sans;
     color: #888888;
     text-align: left;
+    
+  }
+
+  + p{
+    min-height: 60px;
   }
 }
 
