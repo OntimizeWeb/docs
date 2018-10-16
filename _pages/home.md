@@ -25,7 +25,7 @@ feature_row:
     btn_class: btn--small
   - alt: "Add-ons"
     title: "Add-ons"
-    excerpt: "Add-ons consists of extended components missing in Ontimize Web."
+    excerpt: "Advanced components to cover your specific needs such as maps, graphics, file management ...."
     url: "/ontimize-web-ngx-tools/"
     btn_label: "Learn More"
     icon: "fas fa-puzzle-piece"
