@@ -13,11 +13,7 @@ inheritedAttributes: [{
 attributes: [{
   name: "quick-filter"
 },{
-  name: "quick-filter-columns",
-  type: "string",
-  default: "`columns` attribute value",
-  required: "",
-  description: "Columns used by the quick filter. Separated by ';'"
+  name: "quick-filter-columns"
 },{
   name: "refresh-button"
 },{

@@ -409,5 +409,19 @@
     default: "no",
     required: "",
     description: "Indicates whether or not to add a insert key to current url path (overwrite)"
+  },
+  "filter-case-sensitive": {
+    name: "filter-case-sensitive",
+    type: "no | false | yes | true",
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to do a case sensitive quickfilter search"
+  },
+  "quick-filter-columns":{
+    name: "quick-filter-columns",
+    type: "string",
+    default: "`columns` attribute value",
+    required: "",
+    description: "Columns used by the quick filter. Separated by ';'"
   }
 }

@@ -167,11 +167,7 @@ attributes: [{
   required: "",
   description: "Indicates whether or not the single pagination mode is used. If true, the only records stored in application memory are those found on the current page, doing a query on each page change"
 },{
-  name: "filter-case-sensitive",
-  type: "no | false | yes | true",
-  default: "no",
-  required: "",
-  description: "Indicates whether or not the quick filter is case sensitive"
+  name: "filter-case-sensitive"
 }]
 
 outputs: [{
