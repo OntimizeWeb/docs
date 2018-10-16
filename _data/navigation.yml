@@ -43,7 +43,7 @@ docs:
       - title: "Forms"
         url: /forms/
       - title: "Services"
-        url: /guide/service/
+        url: /guide/service/       
       - title: "Build and run"
         url: /build-and-run/
       - title: "OntimizeWeb library"
@@ -175,7 +175,7 @@ components:
             url: /components/form/container/
       - title: "DataTable <small>(deprecated)</small>"
         url: /components/datatable/
-      - title: "Table <span class='menuitem-badge'>new<span>"
+      - title: "Table"
         url: /components/table/
         children:
           - title: "Table buttons"
@@ -198,7 +198,7 @@ components:
             url: '/components/table/obasetablecelleditor/'
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
-      - title: "Filter builder <span class='menuitem-badge'>new<span>"
+      - title: "Filter builder"
         url: /components/filterbuilder/
 
       - title: "Grid <span class='menuitem-badge'>new<span>"
@@ -244,6 +244,7 @@ ontimize_web_ngx_filemanager:
     children:
       - title: "Overview"
         url: /filemanager/overview/
+        
       - title: "Installation"
         url: /filemanager/installation/
 
