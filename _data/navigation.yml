@@ -44,8 +44,10 @@ docs:
         url: /forms/
       - title: "Services"
         url: /guide/service/       
-      - title: "Build and run"
-        url: /build-and-run/
+      - title: "Run your app"
+        url: /run-your-app/
+      - title: "Deploy your app"
+        url: /deployment/
       - title: "OntimizeWeb library"
         url: /add-to-project/
       - title: "Video examples"
