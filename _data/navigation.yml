@@ -58,6 +58,8 @@ docs:
     children:
       - title: "Theming"
         url: /customize/theming/
+      - title: "Icons"
+        url: /customize/icons/  
       - title: "Tabs"
         url: /customize/tabs/
   - title: Add-ons

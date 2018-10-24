@@ -152,13 +152,13 @@ After that you can choose between the **light** or **dark** themes by calling th
 ## Theming your own components
 To style your own components with Angular Material’s tools, the component’s styles must be defined with Sass.
 
-### Using `@mixin` to automatically apply a theme
+### Using @mixin to automatically apply a theme
 
-#### Advantages of using `@mixin`
+#### Advantages of using @mixin
 The advantage of using a `@mixin` function is that when you change your theme, every file that uses it will be updated automatically.
 Calling it with a different theme argument allow multiple themes within the app or component.
 
-#### How to use `@mixin`
+#### How to use @mixin
 We can more modularly theme our custom components adding a `@mixin` function to its theme file and then calling this function to apply a theme.
 
 All you need is to create a `@mixin` function in the *custom-component-theme.scss*
