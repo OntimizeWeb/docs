@@ -114,6 +114,52 @@ You can see an example of a Ontimize service request response in the image below
 
 ![Ontimize service response example]({{ base_path }}/images/request.png){: .align-center}
 
+
+### Example of Ontimize Service in a component
+
+Below we will show an example of how to configure and use an `Ontimize service`.
+
+
+```js
+ 
+protected service: OntimizeService;
+
+constructor(protected injector: Injector) {
+  this.service = this.injector.get(OntimizeService);
+}
+
+
+ngOnInit() {
+  this.configureService();
+}
+
+protected configureService() {
+  this.service = this.injector.get(OntimizeService);
+  const conf = this.service.getDefaultServiceConfiguration();
+  conf['path'] = '/movements';
+  this.service.configureService(conf);
+}
+
+getMovements(data){
+  if (data.hasOwnProperty('ACCOUNTID') && this.service !== null) {
+    const filter = {
+      'ACCOUNTID': data['ACCOUNTID']
+    };
+    const columns = [this.yAxis, this.xAxis, 'DATE_'];
+    this.service.query(filter, columns, 'movement').subscribe((resp) => {
+      if (resp.code === 0) {
+        this.adaptResult(resp.data);
+      } else {
+        alert('Impossible to query data!');
+      }
+    });
+  }
+this.adaptResult(data){
+     ........
+}
+
+``` 
+
 ## Extending Ontimize services
 
 You may need extra functionality or changing the behaviour of a service, for doing this follow the next steps:
@@ -334,22 +380,4 @@ Each *CRUD* method has it owns successful and unsuccessful request callbacks, ca
 
 Both services `OntimizeService` and `OntimizeEEService` also have the generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained *CRUD* method callbacks so user can chose whether to override a particular or the generic callback.
 
-## Example of service use in a component
 
-Next we will show an example of use of service *StarsWarsService*.
-
-To do this, add a private starsWarsService parameter of type StarsWarsService to the component's constructor, the parameter simultaneously defines a private starsWarsService property and identifies it as a StarsWarsService injection site.
-
-```js
-  constructor(private starsWarsService: StarsWarsService) { }
-
-
-  ngOnInit() {
-    this.getPeople();
-  }
-
-   getPeople(){
-    this.people =  this.starsWarsService.getPeople();
-  }
-
-``` 
