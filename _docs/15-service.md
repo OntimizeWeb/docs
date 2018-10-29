@@ -114,11 +114,9 @@ You can see an example of a Ontimize service request response in the image below
 
 ![Ontimize service response example]({{ base_path }}/images/request.png){: .align-center}
 
-
 ### Example of Ontimize Service in a component
 
 Below we will show an example of how to configure and use an `Ontimize service`.
-
 
 ```js
  
