@@ -1,6 +1,5 @@
 directive : "o-form-toolbar"
 
-  
 
 attributes: [{
   name: "form-data", 

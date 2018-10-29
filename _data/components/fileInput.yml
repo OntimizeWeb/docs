@@ -56,10 +56,13 @@ attributes: [{
   description: "Use this parameter to send extra information to the server side in the upload file request"
 }]
 
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["change", "onValueChange"]
+}]
+
 outputs: [{
-  name: "onChange",
-  description: "Event triggered when component input element changes"
-},{
   name: "onBeforeUpload",
   description: "Event triggered before uploading a file or a set of files in a single request. This means, 'split-upload' parameter is set to 'no'/'false'"
 },{

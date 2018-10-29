@@ -10,6 +10,12 @@ inheritedAttributes: [{
 #   attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys"]
 }]
 
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["change", "onValueChange"]
+}]
+
 attributes: [{
   name: "static-data"
 },{
@@ -64,11 +70,6 @@ attributes: [{
   description: "Indicates whether or not the component label shows a summary of the selected items"
 },{
   name: "query-with-null-parent-keys"
-}]
-
-outputs: [{
-  name: "onChange",
-  description: "Event triggered when component selected value changes"
 }]
 
 methods: [{

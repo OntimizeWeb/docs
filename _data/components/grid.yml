@@ -20,17 +20,11 @@ attributes: [{
   required: "",
   description: "Number of items to display on a page. By default set to 32."
 },{
-  name: "page-size",
-  type: "number",
-  default: "32",
-  required: "",
-  description: "Number of items displayed per page."
-},{
   name: "page-size-options",
   type: "array",
-  default: "[8, 16, 24, 32, 64]",
+  default: "8;16;24;32;64]",
   required: "",
-  description: "The set of provided page size options to display to the user."
+  description: "Page size options separated by ';'."
 },{
   name: "show-page-size",
   type: "no | false | yes | true",
@@ -63,5 +57,30 @@ attributes: [{
   description: "Set internal representation of row height from the user-provided value (see attribute `rowHeight` of [MatGridList](https://material.angular.io/components/grid-list/api#MatGridList))."
 },{
   name: "pagination-controls",
-  default: "no"
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the pagination controls"
+},{
+  name: "refresh-button"
+},{
+  name: "quick-filter-columns",
+  type: "string",
+  default: "`columns` attribute value",
+  required: "",
+  description: "Columns used by the quick filter. Separated by ';'"
+}]
+
+outputs: [{
+  name: "onClick",
+  description: "Event triggered when a row is clicked"
+},{
+  name: "onDoubleClick",
+  description: "Event triggered when a row is double clicked"
+},{
+  name: "onDataLoaded",
+  description: "Event triggered when the data is updated"
+},{
+  name: "onPaginatedDataLoaded",
+  description: "Event triggered when the paginated data is updated"
 }]

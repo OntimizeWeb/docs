@@ -135,9 +135,6 @@ outputs: [{
   name: "onRowDeleted",
   description: "Event triggered when there some row deletion"
 },{
-  name: "onDoubleClick",
-  description: "Event triggered when a row is double clicked"
-},{
   name: "onDataLoaded",
   description: "Event triggered when the data is updated"
 },{

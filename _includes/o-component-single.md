@@ -39,7 +39,7 @@
   }
 </script>
  {% if componentData.version %}
- <p> This component is available since version <i>{{componentData.version}}</i> and later.</p>
+ <p> This component is available since version <i>{{componentData.version}}</i>.</p>
  {% endif %}
 <!-- Tab links -->
 <div class="o-tab">

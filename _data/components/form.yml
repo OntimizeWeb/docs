@@ -1,4 +1,5 @@
 directive: "o-form"
+extraComponents: "formData"
 
 attributes: [{
   name: "service"
@@ -138,23 +139,41 @@ methods: [{
 },{
   name: "getFieldValues",
   type: "method",
-  description : "Return a array of the current value of the controls in the form",
+  description : "Return an object with the values of each attribute",
   parameters: "attrs: string[]",
-  returns : "any[]"
+  returns : "any"
 },{
   name: "setFieldValue",
   type: "method",
-  parameters : "attr: string, value:any",
+  parameters : "attr: string, value:any, options: IFormValueOptions",
   description : "Sets the value of the control in the form."
-},{
-  name: "deleteFieldValue",
+}
+,{
+  name: "setFieldValues",
   type: "method",
-  parameters : "attr: string",
+  parameters : "values:any, options: IFormValueOptions",
+  description : "Sets the value of each control in the form."
+},{
+  name: "clearFieldValue",
+  type: "method",
+  parameters : "attr: string, options: IFormValueOptions",
   description : "Reset the value of the control in the form."
+},
+{
+  name: "clearFieldValues",
+  type: "method",
+  parameters : "attrs: string[], options: IFormValueOptions",
+  description : "Reset the value of each control in the form."
 },
 {
   name: "getFieldReference",
   type: "method",
   parameters : "attr: string",
   description : "Retrieves the reference of the control in the form."
+},
+{
+  name: "getFieldReferences",
+  type: "method",
+  parameters : "attrs: string[]",
+  description : "Retrieves the reference of each control in the form."
 }]
