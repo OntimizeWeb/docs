@@ -504,6 +504,8 @@ All you have to do to enable data editing capabilities for the component is to:
 
 If you need to disabled one operation, you can changing `insert-button= "no"`, `delete-button= "no"`.
 
+>**NOTE**: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
+
 ### Default editors
 
 Next we are specifing how to add a editor for a table column cell.
