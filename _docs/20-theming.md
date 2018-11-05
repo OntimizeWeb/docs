@@ -64,6 +64,10 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 * **ontimize.scss**
 
 
+Also, if you want to use *compact styles*, you have to load the following file:
+
+* **ontimize-lite.scss**
+
 ## Custom theme definition
 
 If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
