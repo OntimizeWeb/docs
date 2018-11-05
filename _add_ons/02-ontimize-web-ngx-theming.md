@@ -47,7 +47,8 @@ In your application main style file ('*app.scss*' if you are using ontimize-web 
 
 In other case you can define your own theme, and, if you want, use the ontimize styles for a better component rendering including the following lines:
 
-  * `@import '../styles/ontimize-theme-styles.scss';`
+@include ontimize-theme-styles($theme);
+  * `@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';`
   * `@include ontimize-theme-styles($theme);`
 
 

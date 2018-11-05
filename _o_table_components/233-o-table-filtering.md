@@ -5,21 +5,21 @@ title: "Filtering"
 {% include base_path %}
 {{ site.baseurl }}
 
-By default the filtering is *local*, you can be enabled filtering *remote* with `pageable="yes"`.
+By default the filtering is *local*, you can enable *remote* filtering setting `pageable="yes"`.
 
 ## Quick filter.
 
-By default this option is enabled, the filter is visible in the top right. You can be disabled with `quick-filter="no"` property.
+This option is enabled by default, the filter is visible in the top right. You can disable it setting `quick-filter="no"`.
 
-You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, It is disabled
+You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
 Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in `quick-filter-function` property.
 
 
 
-## Filtering by columns 
+## Filtering by columns
 
-It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property. 
+It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property.
 
 
 <h3 class="grey-color">Example</h3>

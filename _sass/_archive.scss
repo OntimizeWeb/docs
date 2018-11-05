@@ -75,6 +75,7 @@
   text-align: left;
   line-height: 1.5;
   margin: 1em 0;
+  min-height: 60px;
 
 
   & + p {
@@ -83,6 +84,11 @@
     font-family: $pt-sans;
     color: #888888;
     text-align: left;
+    
+  }
+
+  + p{
+    min-height: 60px;
   }
 }
 
@@ -185,7 +191,7 @@
 
   @include breakpoint($small) {
     margin-bottom: 0;
-    @include gallery(4 of 12);
+    @include gallery(3 of 12);
 
     .feature__item-teaser {
       max-height: 200px;

@@ -5,6 +5,7 @@ excerpt: "How you can customize palette colors of your app."
 ---
 
 {% include base_path %}
+{% include toc %}
 
 ## What is a theme?
 A **theme** is the set of colors that are applied to the Angular Material components. The library’s approach to theming is based on guidance from the [Material Design spec][1].
@@ -25,9 +26,9 @@ Each Ontimize Web application follows material design guidelines proposed by Goo
 
 ## Configuration
 
-In order to make theming job easier, Ontimize Web provides a theming add-on called '*ontimize-web-ngx-theming*', You can get more information about it [here]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"}.
+In order to make theming job easier, Ontimize Web provides a theming add-on called '*ontimize-web-ngx-theming*'. You can get more information about it [here]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"}.
 
-The configuration of the theme is performed in the file *app.scss* in */assets/css* folder. The configuration is done in two steps:
+The configuration of the application theme is done in the file *app.scss* in */assets/css* folder in two steps:
 
 1. Import the theme file (predefined or custom).
 2. Propagate the theme to the Ontimize Web framework.
@@ -63,9 +64,13 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 * **ontimize.scss**
 
 
+Also, if you want to use *compact styles*, you have to load the following file:
+
+* **ontimize-lite.scss**
+
 ## Custom theme definition
 
-If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css*, *my-custom-app-theme.scss* , and import it instead of the default theme:
+If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
 
 ```css
 /*
@@ -151,13 +156,13 @@ After that you can choose between the **light** or **dark** themes by calling th
 ## Theming your own components
 To style your own components with Angular Material’s tools, the component’s styles must be defined with Sass.
 
-### Using `@mixin` to automatically apply a theme
+### Using @mixin to automatically apply a theme
 
-#### Advantages of using `@mixin`
+#### Advantages of using @mixin
 The advantage of using a `@mixin` function is that when you change your theme, every file that uses it will be updated automatically.
 Calling it with a different theme argument allow multiple themes within the app or component.
 
-#### How to use `@mixin`
+#### How to use @mixin
 We can more modularly theme our custom components adding a `@mixin` function to its theme file and then calling this function to apply a theme.
 
 All you need is to create a `@mixin` function in the *custom-component-theme.scss*

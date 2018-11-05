@@ -28,10 +28,6 @@ attributes: [{
   name: "quick-filter"
 },{
   name: "filter-case-sensitive",
-  type: "no | false | yes | true",
-  default: "no",
-  required: "",
-  description: "Indicates whether or not to do a case sensitive quickfilter search"
 },{
   name: "refresh-button"
 },{

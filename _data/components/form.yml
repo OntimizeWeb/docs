@@ -1,7 +1,10 @@
 directive: "o-form"
 extraComponents: "formData"
 
-attributes: [{
+attributes: [
+  {
+  name: "attr"
+  },{
   name: "service"
 },{
   name: "service-type"

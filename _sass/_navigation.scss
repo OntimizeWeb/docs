@@ -16,7 +16,7 @@
           animation: intro 0.3s both;
   -webkit-animation-delay: 0.30s;
           animation-delay: 0.30s;
-
+  font-size: 0.75rem;
   
 
   @include breakpoint($x-large) {
@@ -26,25 +26,44 @@
   ol {
     padding: 0;
     list-style: none;
+    margin-bottom:0;
+    margin-top:0;
+
     span.sep{
-     font-size: $type-size-6;
+      font-weight: bold;
+      font-size:1em;
     }
 
     @include breakpoint($large) {
-    //  @include span(10 of 12 last);
-    }
-
-    @include breakpoint($x-large) {
-    //  @include prefix(0.5 of 12);
+      @include prefix(0.5 of 12);
     }
   }
 
   li {
     display: inline;
+    a {
+      color: inherit;
+      font-family: $pt-sans;
+      text-align: left;
+      padding:0 0.2rem;
+      color:#858484;
+      
+      &:hover {
+        color:#f8b603;
+        border-left-color: #f8b603;
+      }
+    }
+  
+    .active {
+      color:#f8b603;
+      border-left-color: #f8b603;
+    }
   }
 
   .current {
+    padding:0 0.2rem;
     font-weight: bold;
+    color: #f8b603;
   }
 }
 
@@ -230,7 +249,7 @@
       vertical-align: middle;
 
       &:first-child {
-        font-weight: bold;
+       // font-weight: bold;
 
         a {
           margin-left: 0;

@@ -57,6 +57,7 @@ endsession(user: string, sessionId: number): Observable<any>;
 redirectLogin?(sessionExpired?: boolean);
 ```
 
+### CRUD methods
 The *CRUD* (Create, Read, Update and Delete) methods are used to perform standard Ontimize operations:
 
 * **query**: performs a request to get data from the server.
@@ -86,7 +87,8 @@ The *CRUD* (Create, Read, Update and Delete) methods are used to perform standar
   * **entity**: indicates the entity to perform the request.
   * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/ontimize/util/sqltypes.ts){:target='_blank'}).
 
-The standard response of the requests made to Ontimize based servers allways follows the following structure:
+### Server response interface
+The standard response of the requests made to Ontimize based servers always follows the following structure:
 
 ```javascript
 {
@@ -112,9 +114,54 @@ You can see an example of a Ontimize service request response in the image below
 
 ![Ontimize service response example]({{ base_path }}/images/request.png){: .align-center}
 
+### Example of Ontimize Service in a component
+
+Below we will show an example of how to configure and use an `Ontimize service`.
+
+```js
+ 
+protected service: OntimizeService;
+
+constructor(protected injector: Injector) {
+  this.service = this.injector.get(OntimizeService);
+}
+
+
+ngOnInit() {
+  this.configureService();
+}
+
+protected configureService() {
+  this.service = this.injector.get(OntimizeService);
+  const conf = this.service.getDefaultServiceConfiguration();
+  conf['path'] = '/movements';
+  this.service.configureService(conf);
+}
+
+getMovements(data){
+  if (data.hasOwnProperty('ACCOUNTID') && this.service !== null) {
+    const filter = {
+      'ACCOUNTID': data['ACCOUNTID']
+    };
+    const columns = [this.yAxis, this.xAxis, 'DATE_'];
+    this.service.query(filter, columns, 'movement').subscribe((resp) => {
+      if (resp.code === 0) {
+        this.adaptResult(resp.data);
+      } else {
+        alert('Impossible to query data!');
+      }
+    });
+  }
+this.adaptResult(data){
+     ........
+}
+
+``` 
+
 ## Extending Ontimize services
 
 You may need extra functionality or changing the behaviour of a service, for doing this follow the next steps:
+
 
 ### Create an extended Ontimize service
 
@@ -137,7 +184,7 @@ export class StarsWarsService extends OntimizeEEService {
 
 Once your service is created you must decide if it will be used [in the whole application](#use-your-service-in-the-whole-application) or only in [specific components](#use-your-service-in-a-specific-component).
 
-### Use your service in the whole application
+#### Use your service in the whole application
 
 In case you want all the components in your application to use your new service, you have to modify `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. Import your service class and include it in the `serviceType` attribute like in the example below.
 
@@ -237,7 +284,7 @@ The following example shows a [`o-table`]({{ base_path }}/components/table/){:ta
 </o-table>
 ```
 
-### Use your service in a specific component
+#### Use your service in a specific component
 
 If you want to use your service in a specific component instead of using it in the whole application, you have to create a factory method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
 
@@ -330,3 +377,5 @@ Now you can configure the `query-method` attribute of your component to use the 
 Each *CRUD* method has it owns successful and unsuccessful request callbacks, called when the request ends. User can override or extends this methods to modify its behaviour. This methods are: `parseSuccessfulMETHODResponse` and `parseUnsuccessfulMETHODResponse` where `METHOD` is `query`, `advancedQuery`, `update`,`insert` or `delete`.
 
 Both services `OntimizeService` and `OntimizeEEService` also have the generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained *CRUD* method callbacks so user can chose whether to override a particular or the generic callback.
+
+

@@ -5,7 +5,6 @@ comp: treeNode
 layout: o-component
 ---
 {% include base_path %}
-{% include breadcrumbs.html %}
 {% include toc %}
 
 ## Introduction
@@ -17,22 +16,22 @@ When using a remote data binded tree component, a `o-tree-node` must specify in 
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-tree #treeview fxFlex root-title="CUSTOMERS" service="customers" entity="customer" 
-  keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME" 
+<o-tree #treeview fxFlex root-title="CUSTOMERS" service="customers" entity="customer"
+  keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
   description-columns="SURNAME;NAME" separator=", ">
 
-<o-tree-node root-title="ACCOUNTS" show-root="no" service="customers" 
-  entity="customerAccount" columns="ACCOUNTID;CUSTOMERID;ACCOUNT" 
+<o-tree-node root-title="ACCOUNTS" show-root="no" service="customers"
+  entity="customerAccount" columns="ACCOUNTID;CUSTOMERID;ACCOUNT"
   description-columns="ACCOUNT" keys="ACCOUNTID" parent-keys="CUSTOMERID">
 
   <o-tree-node root-title="ACCOUNT_CONCEPTS" show-root="no" service="branches"
-    entity="accountConcepts" columns="CONCEPT;ACCOUNTID" 
+    entity="accountConcepts" columns="CONCEPT;ACCOUNTID"
     description-columns="CONCEPT" keys="CONCEPT;ACCOUNTID" parent-keys="ACCOUNTID">
   </o-tree-node>
 
-  <o-tree-node root-title="ACCOUNT_MOVEMENTTYPES" show-root="no" 
-    service="branches" entity="accountMovementTypes" columns="DESCRIPTION;ACCOUNTID" 
-    description-columns="DESCRIPTION" keys="DESCRIPTION;ACCOUNTID" 
+  <o-tree-node root-title="ACCOUNT_MOVEMENTTYPES" show-root="no"
+    service="branches" entity="accountMovementTypes" columns="DESCRIPTION;ACCOUNTID"
+    description-columns="DESCRIPTION" keys="DESCRIPTION;ACCOUNTID"
     parent-keys="ACCOUNTID">
   </o-tree-node>
 
@@ -42,3 +41,11 @@ When using a remote data binded tree component, a `o-tree-node` must specify in 
 ```
 
 ![Tree component]({{ "/images/components/tree/inner.png" | absolute_url }}){: .comp-example-img}
+
+## Quick filter
+
+You can configure the same `o-tree` component filtering properties, that will only affect to this tree node.
+
+## Demo
+
+You can see an example of this component behaviour in this [OntimizeWeb tree quickstart](https://try.imatia.com/ontimizeweb/tree/main/nodes){:target="_blank"} section.

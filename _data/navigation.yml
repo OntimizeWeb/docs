@@ -43,9 +43,11 @@ docs:
       - title: "Forms"
         url: /forms/
       - title: "Services"
-        url: /guide/service/
-      - title: "Build and run"
-        url: /build-and-run/
+        url: /guide/service/       
+      - title: "Run your app"
+        url: /run-your-app/
+      - title: "Deploy your app"
+        url: /deployment/
       - title: "OntimizeWeb library"
         url: /add-to-project/
       - title: "Video examples"
@@ -56,6 +58,8 @@ docs:
     children:
       - title: "Theming"
         url: /customize/theming/
+      - title: "Icons"
+        url: /customize/icons/  
       - title: "Tabs"
         url: /customize/tabs/
   - title: Add-ons
@@ -175,7 +179,7 @@ components:
             url: /components/form/container/
       - title: "DataTable <small>(deprecated)</small>"
         url: /components/datatable/
-      - title: "Table <span class='menuitem-badge'>new<span>"
+      - title: "Table"
         url: /components/table/
         children:
           - title: "Table buttons"
@@ -198,7 +202,7 @@ components:
             url: '/components/table/obasetablecelleditor/'
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
-      - title: "Filter builder <span class='menuitem-badge'>new<span>"
+      - title: "Filter builder"
         url: /components/filterbuilder/
 
       - title: "Grid <span class='menuitem-badge'>new<span>"
@@ -228,15 +232,22 @@ components:
         url: /components/contextmenu/
   - title: Menu
     children:
+      - title: "Overview"
+        url: /components/menu/
+        order: "1"
+        class: "overview"
       - title: "Card menu layout"
         url: /components/cardmenulayout/
         children:
           - title: "Card menu item"
             url: /components/cardmenulayout/cardmenuitem/
+        order: "2"
       - title: "Bar menu"
         url: /components/barmenu/
+        order: "2"
       - title: "Side menu <small>(deprecated)</small>"
         url: /components/sidemenu/
+        order: "2"
 
 
 ontimize_web_ngx_filemanager:
@@ -244,6 +255,7 @@ ontimize_web_ngx_filemanager:
     children:
       - title: "Overview"
         url: /filemanager/overview/
+        
       - title: "Installation"
         url: /filemanager/installation/
 

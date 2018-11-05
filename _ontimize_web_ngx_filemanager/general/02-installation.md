@@ -4,7 +4,6 @@ title: "Installation"
 ---
 
 {% include base_path %}
-{% include breadcrumbs.html %}
 
 ## Installation
 

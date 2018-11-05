@@ -28,7 +28,7 @@ The data array can be provided in two ways:
 </o-form>
 ```
 
-## Multiple selection <span class='menuitem-badge'>new<span>
+## Multiple selection
 
 The `o-combo` doesn't allow multiple selection by default, you can configure the multiple selection by setting the value **yes** to the `multiple` attribute. This will allow the user to select multiple values at once. 
 

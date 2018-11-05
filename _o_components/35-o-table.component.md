@@ -32,20 +32,18 @@ You can define it as follows:
 - Using the input `columns`, adding the columns separated by ';'.
 - Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the API.
 
-With `visible-columns` you can indicate which columns we want to be visible
+With `visible-columns` you can indicate which columns will be visible.
 
 Using default renderer (*o-table-cell-renderer-string*) if column attr is present in *visible-columns* attribute from its parent *o-table*.
 In the same way, using the default editor (*o-table-cell-editor-string*) if column attr is contained
-in  the *editable-columns* attribute from its parent *o-table*.
-
-
+in the *editable-columns* attribute from its parent *o-table*.
 
 
 ## Define columns
 
 Firstly, you must define the columns of the entity that queries the database in `columns`, in `visible-columns` you can configure the visible columns.
 
-You can represent the columns in extended mode with `o-table-column` selector. To define a column it is necessary to add the `attr` property must be included in `visible-columns` property, except the columns generated for the calculated columns. To consult all the parameters of the 'o-table-column' see the API.
+You can represent the columns in extended mode with `o-table-column` component. To define a column it's necessary to add the `attr` property in the `visible-columns` property, with the exception of the columns generated for the calculated columns. To consult all the parameters of the 'o-table-column' see the API.
 
 
 <h3 class="grey-color">Example</h3>
@@ -90,9 +88,9 @@ You can represent the columns in extended mode with `o-table-column` selector. T
 ```
 
 ## Sorting
-Since this functionality is built-in, all you have to do is to set the sorting configuration via `sort-columns` input in the selector `o-table` using [ ASC or DESC ] format.
+Since this functionality is built-in, all you have to do is to set the sorting configuration via `sort-columns` input in the `o-table` component using [ ASC or DESC ] format.
 
-By default, *all columns are sortable*, if you don't want to used a column as searchable you add  `sortable= "no"` in this columns.
+*All columns are sortable* by default, if you don't want to avoid to set column as sortable you must add  `sortable= "no"` in its column definition.
 
 
 <h3 class="grey-color">Example</h3>
@@ -109,9 +107,9 @@ By default, *all columns are sortable*, if you don't want to used a column as se
 ```
 
 ## Pagination
-By default, the table is paginating  but if you want it not to be, add `pagination-controls= "no"` in `o-table` selector.
+By default, the table is paginating the data, but if you want avoid that behaviour you must set `pagination-controls= "no"` in the `o-table` component.
 
-You can configure the pagination by adding the selector `o-table-paginator` inside the table. For more information see the API.
+You can configure the pagination using the `o-table-paginator` component inside the table. For more information see the API.
 
 You can also configure the number of records initially displayed with `query-rows` attribute.
 
@@ -138,7 +136,7 @@ The o-table component supports data binding and you can command the component to
 
 ### Binding to local data
 
-For local data binding you simply need to supply an array of TypeScript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in `o-table` component.
+For local data binding you simply need to supply an array of TypeScript objects/JSON via the `static-data` property. Adicional, you need to set `query-on-init="false"` in the `o-table` component.
 
 <h3 class="grey-color">Example</h3>
 
@@ -194,23 +192,20 @@ keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL
 
 You can configure the methods by default with the `ìnsert-method`,`update-method`,`delete-method`
 
-
-By default the filtering is *local*, you can be enabled filtering *remote* with `pageable="yes"`.
+By default the filtering is *local*, you can enable *remote* filtering setting `pageable="yes"`.
 
 ## Quick filter
 
-By default this option is enabled, the filter is visible in the top right. You can be disabled with `quick-filter="no"` property.
+This option is enabled by default, the filter is visible in the top right. You can disable it setting `quick-filter="no"`.
 
-You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, It is disabled
+You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
 Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in `quick-filter-function` property.
 
 
-
 ### Filtering by columns
 
-It is posible to configure filtering by columns with `o-table-columns-filter` selector adding filterable columns separated by ‘;’ in `columns` property.
-
+It is posible to configure filtering by columns with the `o-table-columns-filter` component, adding filterable columns separated by ‘;’ in its `columns` property.
 
 <h3 class="grey-color">Example</h3>
 
@@ -233,7 +228,7 @@ It is posible to configure filtering by columns with `o-table-columns-filter` se
 
 **OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/filterbuilder/){:target='_blank'} component to you application.
 
-The `o-filter-builder` component uses the `IExpression` inserface that represents a filtering expression. You can read more about how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
+The `o-filter-builder` component uses the `IExpression` interface that represents a filtering expression. You can read more about how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
 
 ## Cell renderers
 
@@ -266,7 +261,7 @@ The data is displayed in the table cells as simple text by default. **OntimizeWe
 
 **OntimizeWeb** offers you a set of prebuilt table cell renderers to include in your table. This cell renderers are the following data types: *action*, *boolean*, *real*, *currency*, *date*, *integer*, *image*, *percentage* and *service*.
 
-For adding a cell renderer to the cells of a table columns, you have to configure the attribute `type` in the desired table column with the value that indicates the cell render you want to use. You may need to configure additional parametres depending on the cell renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the **API** section of this page.
+For adding a cell renderer to the cells of a table column, you have to configure the attribute `type` in the desired table column with the value that indicates the cell render you want to use. You may need to configure additional parametres depending on the cell renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the **API** section of this page.
 
 You can see different predefined table cell renderers in the example below.
 
@@ -324,7 +319,6 @@ When an action cell is clicked you can trigger a predefined action or execute yo
   <o-table-cell-renderer-action icon="person" (onClick)="showMessage($event)"></o-table-cell-renderer-action>
 </o-table-column>
 ```
-
 
 **Boolean cell renderer**
 
@@ -452,13 +446,13 @@ You can see this example in the [OntimizeWeb QuickStart](https://try.imatia.com/
 
 ### Custom renderers
 
-A custom renderer allows you to display the data of a table cell formatted as you desire. For this, you need to create a new component that extends the cell rendere base class and place it into your table.
+A custom renderer allows you to display the data of a table cell formatted as you desire. For this, you need to create a new component that extends the base cell renderer class and place it into your table.
 
 The requisites for a custom table cell renderer component are the following:
 
-- The component must extends the `OBaseTableCellRenderer` class.
+- The component must extend the `OBaseTableCellRenderer` class.
 
-- Reference the template container in your component. For this, wrap the content of your component HTML with the `ng-template` tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: `@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>`. This will give your component a reference to acces the template container.
+- Your renderer template must reference the template container. For this, wrap the content of your component HTML with the `ng-template` tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: `@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>`. This will give your component a reference to acces the template container.
 
 - If you want to customize the internal value of the cell (this value is used for filtering or exporting the table data), you must overwrite the `getCellData` method.
 
@@ -548,7 +542,7 @@ For example:
 
 *Boolean*
 
-The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` componente inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
 
 ```html
   <o-table-column attr="CLOSED" title="CLOSED">
@@ -575,7 +569,7 @@ The configuration is similar to the renderer boolean. The following example uses
 *Date*
 
 The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add
-`type="date" editable="yes"` in `o-table-column` componente. To consult all the parameters of the editor see the API.
+`type="date" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the API.
 
 ```html
   <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes" (editionStarted)="editionStarted($event)"
@@ -585,7 +579,7 @@ The configuration is similar to the renderer date. The following example uses th
 
 *Integer*
 
-The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` componente inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
 
 ```html
   <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
@@ -597,7 +591,7 @@ The configuration is similar to the renderer integer. The following example uses
 *Real*
 
 The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add
-`type="currency" editable="yes"` in `o-table-column` componente. To consult all the parameters of the editor see the API.
+`type="currency" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the API.
 
  ```html
  <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
@@ -608,7 +602,7 @@ The configuration is similar to the renderer real. The following example uses th
 
 *Text*
 
-The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` componente inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
 
  ```html
     <o-table-column attr="NAME" title="NAME">
@@ -622,21 +616,24 @@ To create a custom editor, you need to create a new component to display custom 
 
 Here's how you might begin in your file .ts:
 
-- Your component must extends ```OBaseTableCellEditor```.
+- Your component must extend ```OBaseTableCellEditor``` class.
 
-- Also add a line ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ```  you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
+- It also must get the `templateref` view child reference, using  ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ``` where you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
 
-- If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*
+- If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*.
+
+- In your editor constructor you must set its `type` property value.
+
+- In your editor constructor you must register it as a new editor, using the `OTableColumnComponent` `addEditor` static method.
 
 
-The following example show how render two values of column in a cell, "SURNAME, name" and override method getCellData
+In the following example shows how to render two values of column in a cell ("SURNAME, name") and how to override the `getCellData` method.
 
 The o-table-cell-editor-name.ts file is as follows:
 
 ```javascript
 import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
-import { OBaseTableCellEditor } from 'ontimize-web-ngx';
-
+import { OBaseTableCellEditor, OTableColumnComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'custom-editor',
@@ -648,16 +645,17 @@ export class OTableCellEditorName extends OBaseTableCellEditor {
 
   constructor(protected injector: Injector) {
     super(injector);
+    this.type = 'custom-editor';
+    OTableColumnComponent.addEditor(this.type, OTableCellEditorName);
   }
 
 }
 ```
 
-Here's how you might begin in your file .html:
+Here's how you might build your editor html template:
 
-- Your component must start ```<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">``` and end ```</ng-template>```.
-The *let* keyword declares a template input variable that you reference within the template. The input variables are *cellvalue* and *rowvalue*. The parser translates let cellvalue and let rowvalue into variables named, *let-cellvalue* and *let-rowvalue*.
-
+- You must wrap your component template with ```<ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">``` and  ```</ng-template>```.
+The *let* keyword declares a template input variable that you reference within the template. The input variables are *cellvalue* and *rowvalue*. The parser translates 'let cellvalue' and 'let rowvalue' into variables named, *let-cellvalue* and *let-rowvalue*.
 
 The o-table-cell-editor-name.html file is as follows:
 
@@ -667,18 +665,17 @@ The o-table-cell-editor-name.html file is as follows:
 </ng-template>
 ```
 
-
-Finally, add the component *OTableCellEditorName* to your module.
+Finally, add the *OTableCellEditorName* component to your module.
 
 ## Features
 ### Checkbox selection
 
-O-table support checkbox selection with `select-all-checkbox` property. If this property is activated in the menu on the upper right, the option will be active. By default is no.
+The table supports checkbox selection with `select-all-checkbox` property. If this property is activated in the menu on the upper right, the option will be active. It is disabled by default.
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
 ### Fixed header and footer
-O-table support *fixed header* and *footer* with `fixed-header="yes"` when the content is greather than its own height and then you must set the height of the table, for example `[ngStyle]="height: 400px;"`. By default it is disabled.
+The `o-table` component supports *fixed header* and *footer* setting `fixed-header="yes"` when its content is greater than its own height. For that, you must set the height of the table, using, for example `[ngStyle]="height: 400px;"`. By default, it's disabled.
 
 <h3 class="grey-color">Example</h3>
 ```html
@@ -695,8 +692,7 @@ O-table support *fixed header* and *footer* with `fixed-header="yes"` when the c
 
 ### Aggregates
 
-Oftentimes when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. O-table has support for the mostly used aggregate functions (count,sum,avg,min,max).
-
+Oftentimes, when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. The  `o-table` component has support for the mostly used aggregate functions (count,sum,avg,min,max).
 
 <h3 class="grey-color">Example</h3>
 
@@ -734,8 +730,7 @@ You can see this and more examples of this component in the [OntimizeWeb playgro
 
 ### Calculated columns
 
-O-table suppport calculated columns, that is, when users would like to be able to show another column result of an operation.
-
+The `o-table` suppports calculated columns, used when user wants to show an additional column which contains a result of an operation.
 
 <h3 class="grey-color">Example</h3>
 
@@ -780,11 +775,11 @@ In the following example, two calculated columns are defined that perform the sa
 
 ```
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/calculatedcolumn)
+You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/calculatedcolumn).
 
 ### Table options
 
-The `o-table-option` component allows you to add extra options to the table menu. You only have to add the component to your table and subscribe to the `onClick` event in your component to perform the desired actions. Check the example below.
+The `o-table-option` component allows to add extra options to the table menu. You only have to add the component to your table and subscribe to the `onClick` event in your component to perform the desired actions. Check the example below.
 
 ### Example
 
@@ -823,7 +818,7 @@ The `o-table-option` component allows you to add extra options to the table menu
 ### Table context menu
 
 The `o-table` allows to add a context menu to table rows, the menu is displayed by right clicking in the table row.
-For includig the context menu in your table you have to include the `o-table-context-menu` component in your table and configure the `context-menu` attribute with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'} component.
+For including the context menu in your table you have to include the `o-table-context-menu` component in your table and configure the `context-menu` attribute with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'} component.
 
 Below an example.
 
@@ -857,9 +852,8 @@ You can see this and more examples of this component in the [OntimizeWeb playgro
 
 ### Insertable row
 
-The `o-table` componente allow to insert rows adding the `o-table-insertable-row` selector into the o-table componente.
-In this selector you can define the columns and required columns with `columns` and `required-columns` attribute.
-
+The `o-table` component allow to insert rows adding the `o-table-insertable-row` component into the `o-table` definition.
+In this component you can define the columns and required columns with `columns` and `required-columns` attributes.
 
 <h3 class="grey-color">Example</h3>
 
@@ -879,11 +873,11 @@ In the following example the table has a insertable row where the user may intro
 
 ### Table buttons
 
-The `o-table` component allow to adding extra buttons in the toolbar with `o-table-button` selector.
+The `o-table` component allows to add extra buttons in the toolbar with the `o-table-button` component.
 
 You can configure:
 <ul>
-  <li> The icon in `icon` property, this name must to be of google icon (see Google material design icons)</li>
+  <li> The icon in `icon` property, this name must to be of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})) </li>
   <li> The label in `label` property</li>
 </ul>
 
@@ -926,7 +920,7 @@ You can configure:
 In this section we are specifing how table data exportation works.
 
 <h3 class="grey-color">Exportating the table data</h3>
-The table component it is able to export its data to Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface.
+The `o-table` component it is able to export its data to Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface.
 
 The exportation process is performed as follows:
 
@@ -1048,7 +1042,7 @@ export const SERVICE_CONFIG: Object = {
 ```
 
 ### Column titles alignment
-Table columns titles texts are centered by default. Using the `o-column` component `title-align` input user can modify that default value.
+The `o-table` columns title texts are centered by default. Using the `o-column` component `title-align` input user can modify that default value.
 
 There also exists the possibility of automatically align the table columns titles depending on the column type, using the `auto-align-titles` input:
 
@@ -1056,7 +1050,7 @@ There also exists the possibility of automatically align the table columns title
 * **center**: image, date, action and boolean types.
 * **end**: currency, integer, real and percentage types.
 
-When the `auto-align-titles` input is true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
+When the `auto-align-titles` input is set to true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
 
 ### Columns multiple sorting
 Table allows mulitple columns sorting by default. Using the `multiple-sort` input user can modify that default value.

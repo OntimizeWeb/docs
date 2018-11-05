@@ -73,7 +73,13 @@ attributes: [{
    type: "string",
    default : "",
    description : "Navigation route activated when the node is clicked"
- }
+},{
+  name: "quick-filter"
+},{
+  name: "quick-filter-columns"
+},{
+  name: "filter-case-sensitive"
+}
 ]
 
 
