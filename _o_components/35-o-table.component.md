@@ -915,12 +915,12 @@ You can configure:
   }
 ```
 
-### Exporting
+### Export table data
 
-In this section we are specifing how table data exportation works.
+This section explains how the table data exportation works.
 
 <h3 class="grey-color">Exportating the table data</h3>
-The `o-table` component it is able to export its data to Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface.
+The `o-table` component is able to export its data in Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface.
 
 The exportation process is performed as follows:
 
