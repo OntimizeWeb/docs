@@ -25,7 +25,7 @@ attributes: [{
 }]
 
 inherit_properties: [{
-  component: "OBaseT  ableCellRenderer",
+  component: "OBaseTableCellRenderer",
   path: "table/obasetablecellrenderer",
   properties: [{
     name: "column",
