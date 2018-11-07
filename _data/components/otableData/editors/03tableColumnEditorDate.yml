@@ -1,8 +1,8 @@
-directive : "o-table-cell-editor-date"
+directive: "o-table-cell-editor-date"
+title: "OTableCellEditorDate"
 
 class: "OTableCellEditorDateComponent"
-
-extends : "OBaseTableCellEditor"
+extends: "OBaseTableCellEditor"
 
 inheritedAttributes: [
   {
@@ -23,46 +23,51 @@ inheritedOutputs: [
 attributes: [{
   name: "format",
   type: "string",
-  default : "",
-  required : "",
-  description : "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+  default: "",
+  required: "",
+  description: "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
 },{
   name: "locale"
 },{
   name: "start-view",
   type: "month | year",
-  default : "month",
-  required : "",
-  description : ""
+  default: "month",
+  required: "",
+  description: ""
 },{
   name: "min",
   type: "string",
-  default : "",
-  required : "",
-  description : "Minimum selectable date"
+  default: "",
+  required: "",
+  description: "Minimum selectable date"
 },{
   name: "max",
   type: "string",
-  default : "",
-  required : "",
-  description : "Maximum selectable date"
+  default: "",
+  required: "",
+  description: "Maximum selectable date"
 },{
   name: "touch-ui",
   type: "no | false | yes | true",
-  default : "false",
-  required : "",
-  description : "Indicates wheter to use the datepicker 'touch-ui' mode"
+  default: "false",
+  required: "",
+  description: "Indicates wheter to use the datepicker 'touch-ui' mode"
 },{
   name: "start-at",
   type: "string",
-  default : "",
-  required : "",
-  description : "Start date"
+  default: "",
+  required: "",
+  description: "Start date"
 },{
   name: "filter-date",
   type: "(date: Date) => boolean",
-  default : "",
-  required : "",
-  description : "Function for filtering datepicker possible values"
+  default: "",
+  required: "",
+  description: "Function for filtering datepicker possible values"
+},{
+  name: "date-value-type",
+  type: "timestamp | string",
+  default: "string",
+  required: "",
+  description: "Inner value type of the table cell. Used for sending the cell data to the server in order to perform an update"
 }]
-title : "OTableCellEditorDate"
