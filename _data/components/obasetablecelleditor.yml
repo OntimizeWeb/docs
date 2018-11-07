@@ -38,7 +38,7 @@ properties: [{
   default: "yes",
   description: "Indicates whether or not to update cell data in server after it edition ends"
 },{
-  name: "show-toast-on-edit",
+  name: "show-notification-on-edit",
   type: "no | false | yes | true",
   default: "no",
   description: "Indicates whether or not to show a toast indicating the succesfull update"
