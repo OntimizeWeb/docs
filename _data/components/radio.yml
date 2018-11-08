@@ -31,7 +31,7 @@ attributes: [{
 },{
   name: "label-position",
   type: "before | after",
-  default: "fater",
+  default: "after",
   required: "",
   description: "Indicates whether the labels should appear after or before the radio buttons"
 }]
