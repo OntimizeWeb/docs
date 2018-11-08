@@ -162,6 +162,9 @@ components:
       - title: "Radio <span class='menuitem-badge'>new<span>"
         url: /components/input/radio/
         order: "2"
+      - title: "Slide toggle <span class='menuitem-badge'>new<span>"
+        url: /components/input/slidetoggle/
+        order: "2"
 
   - title: Button
     children:
