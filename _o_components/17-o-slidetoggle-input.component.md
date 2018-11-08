@@ -16,7 +16,7 @@ The slide toggle component is automatically registered on its parent `o-form`, w
 ```html
 <o-form editable-detail="false" show-header="no">
     <o-slide-toggle attr="slidetoggle1" label="Slide toggle" [data]="true" read-only="no"></o-slide-toggle>
-      <o-slide-toggle attr="slidetoggle2" label="Slide toggle disabled" enabled="no"></o-slide-toggle>
+    <o-slide-toggle attr="slidetoggle2" label="Slide toggle disabled" enabled="no"></o-slide-toggle>
 </o-form>
 ```
 
