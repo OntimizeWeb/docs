@@ -1,4 +1,4 @@
-directive : "o-checkbox"
+directive: "o-checkbox"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
@@ -15,20 +15,31 @@ inheritedOutputs: [{
 attributes: [{
   name: "true-value",
   type: "any",
-  default : "true",
-  required : "",
-  description : "Value that represents the true value"
+  default: "true",
+  required: "",
+  description: "Value that represents the true value"
 },{
   name: "false-value",
   type: "any",
-  default : "false",
-  required : "",
-  description : "Value that represents the false value"
+  default: "false",
+  required: "",
+  description: "Value that represents the false value"
 },{
   name: "boolean-type",
   type: "number | boolean | string",
-  default : "boolean",
-  required : "",
-  description : "The data type of the values managed by the component"
+  default: "boolean",
+  required: "",
+  description: "The data type of the values managed by the component"
+},{
+  name: "color",
+  type: "primary | accent | warn",
+  default: "primary",
+  required: "",
+  description: "Theme color palette for the component"
+},{
+  name: "label-position",
+  type: "before | after",
+  default: "after",
+  required: "",
+  description: "Indicates whether the label should appear after or before the slide toggle"
 }]
-
