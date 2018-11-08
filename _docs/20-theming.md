@@ -38,7 +38,9 @@ Here is an example of configuration:
 ```css
 /***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/o-indigo-pink.scss'; */
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
 /*
@@ -53,15 +55,10 @@ Here is an example of configuration:
 The module [*ontimize-web-ngx-theming*]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"} provides predefined themes. All of them
 are stored in their corresponding files in the path *node_modules/ontimize-web-ngx-theming/src/themes/*
 
-* **md-deeppurple-amber.scss**
-* **md-indigo-pink.scss**
-* **md-pink-bluegrey.scss**
-* **md-purple-green.scss**
-* **o-deeppurple-amber.scss**
-* **o-indigo-pink.scss**
-* **o-pink-bluegrey.scss**
-* **o-purple-green.scss**
-* **ontimize.scss**
+* **mat-deeppurple-amber.scss**
+* **mat-indigo-pink.scss**
+* **mat-pink-bluegrey.scss**
+* **mat-purple-green.scss**
 
 
 Also, if you want to use *compact styles*, you have to load the following file:
@@ -189,7 +186,11 @@ Now you just have have to call the `@mixin` function to apply the theme definiti
 ```css
 /***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/o-indigo-pink.scss'; */
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
+
+
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 /*
 * After define theme, it is necessary to transfer color to Ontimize Web framework
