@@ -14,6 +14,10 @@ inheritedOutputs: [{
   component: "FormDataComponent",
   path: "components/input/overview",
   outputs: ["onChange", "onValueChange"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservicecomponent",
+  outputs: ["onSetValuesOnValueChange"]
 }]
 
 attributes: [{
@@ -70,6 +74,12 @@ attributes: [{
   description: "Indicates whether or not the component label shows a summary of the selected items"
 },{
   name: "query-with-null-parent-keys"
+},{
+  name: "set-values-on-value-change",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ';'. Accepted format: `attr | attr:columnName`"
 }]
 
 methods: [{
