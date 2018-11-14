@@ -137,3 +137,22 @@ outputs: [{
   name: "onPaginatedDataLoaded",
   description: "Event triggered when the paginated data is updated"
 }]
+
+methods: [{
+  name: "getValue()",
+  type: "method",
+  description: "Returns the current page table data.",
+  returns: "any[]"
+},
+{
+  name: "getRenderedValue()",
+  type: "method",
+  parameters: "any[]",
+   description: "Returns the current page table renderer data.",
+},
+,{
+  name: "getAllValues()",
+  type: "method",
+  parameters: "any[]",
+  description: "Returns the table data."
+}]
