@@ -86,4 +86,16 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to allow the user to edit the hour input manually"
+},{
+  name: "hour-min",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Minimum selectable date"
+},{
+  name: "hour-max",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Maximum selectable date"
 }]

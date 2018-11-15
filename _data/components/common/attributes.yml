@@ -11,7 +11,7 @@
     type: "string",
     default: "`attr` input",
     required: "",
-    description: "Field label (placeholder when field is empty and floating label when field has data)"
+    description: "Field label"
   },
   "automatic-binding": {
     name: "automatic-binding",
