@@ -23,6 +23,17 @@ You can modify value by setting the `data` attribute or calling the `setData` me
   }
 ```
 
+## Appearance <span class='menuitem-badge'> new </span>
+
+You can configure multiple appearance variants changing the `appearance` and `float-label` input values.
+
+### Appearance
+The `appearance` input indicates which of the different `mat-form-field` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants).
+
+### Float label
+The `float-label` input indicates which of the different `mat-form-field` label behaviours is chosen. It has the same features that Angular Material appearance input, watch it [here](https://v6.material.angular.io/components/form-field/overview#floating-label)
+
+
 ## Validation
 The input shows automatically an error message when the `required` attribute is set to **yes** and there is no value on the input.
 
@@ -31,7 +42,7 @@ The input shows automatically an error message when the `required` attribute is 
 User can add its own validators to a input component using the `validators` input.
 
 ```html
-   <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" 
+   <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}"
    [validators]="validatorsArray"></o-text-input>
 ```
 
@@ -76,14 +87,14 @@ Using the `validators` input has the disadvantage that the user cannot define an
 
 
 ## Enabled
-The *enabled* mode is actived by default. You can disabled the input by setting `enabled='no'`.
+The *enabled* mode is active by default. You can disable the input by setting `enabled='no'`.
 
 ```html
    <o-text-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()"></o-text-input>
 ```
 
 ## Read-only
-The *readonly* mode represents an element that is no longer editable by the user. You can configure for an input to be reandonly `read-only="yes"`.
+The *readonly* mode represents an element that is no longer editable by the user. You can make a component only readable setting `read-only="yes"`.
 
  ```html
     <o-text-input fxFlex attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()"></o-text-input>
@@ -97,7 +108,7 @@ To create a tooltip, add the `tooltip` attribute to an element. By default, the 
     tooltip="This is an awesome tooltip!" tooltip-position="left"></o-text-input>
 ```
 
-## Width <span class='menuitem-badge'> new </span>
+## Width new
 
 All input conponents have the `width` atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.
 
