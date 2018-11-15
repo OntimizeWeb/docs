@@ -143,14 +143,12 @@ methods: [{
   type: "method",
   description: "Returns the current page table data.",
   returns: "any[]"
-},
-{
+},{
   name: "getRenderedValue()",
   type: "method",
   parameters: "any[]",
-   description: "Returns the current page table renderer data.",
-},
-,{
+  description: "Returns the current page table renderer data.",
+},{
   name: "getAllValues()",
   type: "method",
   parameters: "any[]",
