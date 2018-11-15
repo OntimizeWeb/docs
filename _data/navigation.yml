@@ -170,6 +170,8 @@ components:
     children:
       - title: "Button"
         url: /components/button/
+      - title: "Button toggle"
+        url: /components/buttontoggle/
 
   - title: Data
     children:
