@@ -71,7 +71,7 @@ attributes: [{
 },{
   name: "query-with-null-parent-keys"
 },{
-  name: "set-values-on-value-change",
+  name: "set-value-on-value-change",
   type: "string",
   default: "",
   required: "",
@@ -85,7 +85,7 @@ inheritedOutputs: [{
 },{
   component: "OFormServiceComponent",
   path: "components/input/overviewservicecomponent",
-  outputs: ["onSetValuesOnValueChange"]
+  outputs: ["onSetValueOnValueChange"]
 }]
 
 outputs: [{
