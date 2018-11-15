@@ -42,4 +42,6 @@ properties: [{
   type: "no | false | yes | true",
   default: "no",
   description: "Indicates whether or not to show a toast indicating the succesfull update"
+},{
+  name: "enabled"
 }]

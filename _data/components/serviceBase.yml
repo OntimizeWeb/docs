@@ -47,6 +47,8 @@ attributes: [{
   name: "store-state"
 }, {
   name : "query-with-null-parent-keys"
+}, {
+  name: "query-on-event"
 }]
 
 methods: [{

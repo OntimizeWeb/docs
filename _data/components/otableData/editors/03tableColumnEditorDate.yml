@@ -8,7 +8,7 @@ inheritedAttributes: [
   {
     component: "OBaseTableCellEditor",
     path: "components/table/obasetablecelleditor",
-    attributes: ["required", "show-placeholder", "label", "update-record-on-edit", "show-notification-on-edit"]
+    attributes: ["required", "show-placeholder", "label", "update-record-on-edit", "show-notification-on-edit", "enabled"]
   }
 ]
 
