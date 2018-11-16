@@ -1,0 +1,14 @@
+# Develop override settings
+
+url                     : https://ontimizeweb.github.io
+baseurl                 : "/v3/docs"
+
+analytics:
+  provider              : false
+
+comments:
+  disqus:
+    shortname           : "mmistakes-dev"
+
+sass:
+  style: expanded
