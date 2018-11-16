@@ -77,7 +77,7 @@ attributes: [{
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Indicates whether or not to showa button on the header menu for changing columns visibility"
+  description: "Indicates whether or not to show a button on the header menu for changing columns visibility"
 },{
   name: "show-title",
   type: "no | false | yes | true",
@@ -149,7 +149,7 @@ methods: [{
   type: "method",
   parameters: "any[]",
    description: "Returns the current page table renderer data.",
-},
+}
 ,{
   name: "getAllValues()",
   type: "method",
