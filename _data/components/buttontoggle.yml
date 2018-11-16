@@ -1,0 +1,42 @@
+directive: "o-button-toggle"
+
+attributes: [{
+  name: "attr"
+},{
+  name: "label"
+},{
+  name: "icon"
+},{
+  name: "icon-position",
+  type: "before | after",
+  default: "before",
+  required: "",
+  description: "Icon position"
+},{
+  name: "checked",
+  type: "boolean",
+  default: "false",
+  required: "",
+  description: "Indicates whether the button toggle is checked or not"
+},{
+  name: "enabled"
+},{
+  name: "value",
+  type: "any",
+  default: "",
+  required: "",
+  description: "The value for the button toggle, this attribute is used when the toggle button is inside a button toggle group"
+},{
+  name: "name",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The name for the button toggle, this attribute is used when the toggle button is inside a button toggle group"
+}]
+
+outputs: [{
+  name: "onChange",
+  description: "Event triggered when the status of the button toggle changes"
+}]
+
+extraComponents: "buttonToggle"

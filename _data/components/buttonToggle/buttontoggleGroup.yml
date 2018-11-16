@@ -1,0 +1,28 @@
+directive: "o-button-toggle-group"
+
+attributes: [{
+  name: "attr"
+},{
+  name: "name",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The name tha identifies the button toggle group and its toggle buttons"
+},{
+  name: "enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the button toggle group is enabled"
+},{
+  name: "layout",
+  type: "row | column",
+  default: "row",
+  required: "",
+  description: "Indicates the disposition of the toggle buttons inside the group"
+}]
+
+outputs: [{
+  name: "onChange",
+  description: "Event triggered when the value of the toggle button group changes"
+}]

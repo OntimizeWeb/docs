@@ -20,4 +20,8 @@ attributes: [{
   default : "",
   required : "",
   description : "Field label"
+},{
+  name: "attr"
+},{
+  name: "enabled"
 }]
