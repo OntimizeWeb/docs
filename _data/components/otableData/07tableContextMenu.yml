@@ -9,6 +9,41 @@ attributes: [
   default : "",
   required : "yes",
   description : "Context menu component reference."
+},
+{
+  name: 'insert', 
+  type: "boolean",
+  default : "yes",
+  required : "",
+  description : "Indicates whether the option to insert in the contextual menu is shown."
+},
+{
+  name: 'edit', 
+  type: "boolean",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the option edit in the contextual menu."
+},
+{
+  name: 'view-detail', 
+  type: "boolean",
+  default : "no",
+  required : "",
+  description : "Indicates whether or not to show the option view details in the contextual menu."
+},
+{
+  name: 'copy', 
+  type: "boolean",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the option copy in the contextual menu."
+},
+{
+  name: 'select-all', 
+  type: "boolean",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the option to select all in the contextual menu."
 }
 ]
 

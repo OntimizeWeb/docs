@@ -818,9 +818,21 @@ The `o-table-option` component allows to add extra options to the table menu. Yo
 ### Table context menu
 
 The `o-table` allows to add a context menu to table rows, the menu is displayed by right clicking in the table row.
-For including the context menu in your table you have to include the `o-table-context-menu` component in your table and configure the `context-menu` attribute with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'} component.
+For including the context menu in your table you have to include the `o-table-context-menu` component in your table.
+
+By default, `o-table-context-menu` include the next options:
+- View detail.
+- Edit.
+- Insert.
+- Copy options.
+- Select all.
 
 Below an example.
+
+![Table contextual by default ]({{ "/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
+
+The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `copy`, `select-all`  to `no`. 
+You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'}component like in the example below.
 
 <h3 class="grey-color">Example</h3>
 
@@ -836,7 +848,7 @@ Below an example.
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
   ...
-  <o-table-context-menu [context-menu]="myContextMenu"></o-table-context-menu>
+   <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
 </o-table>
 
 <o-context-menu #myContextMenu>
@@ -845,6 +857,8 @@ Below an example.
   <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)">
 </o-context-menu>
 ```
+
+![Table contextual]({{ "/images/components/tabla/table_contextual.png" | absolute_url }}){: .comp-example-img}
 
 For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/){:target='_blank'}.
 
