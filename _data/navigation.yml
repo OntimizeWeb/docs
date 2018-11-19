@@ -17,9 +17,9 @@ main:
 
 versions:
   - title: "3.x.x"
-    url: /v3
+    url: /docs/v3
   - title: "4.x.x"
-    url: /v4  
+    url: /docs/v4
 
 
 # documentation links
@@ -49,7 +49,7 @@ docs:
       - title: "Forms"
         url: /forms/
       - title: "Services"
-        url: /guide/service/       
+        url: /guide/service/
       - title: "Run your app"
         url: /run-your-app/
       - title: "Deploy your app"
@@ -65,7 +65,7 @@ docs:
       - title: "Theming"
         url: /customize/theming/
       - title: "Icons"
-        url: /customize/icons/  
+        url: /customize/icons/
       - title: "Tabs"
         url: /customize/tabs/
   - title: Add-ons
@@ -266,7 +266,7 @@ ontimize_web_ngx_filemanager:
     children:
       - title: "Overview"
         url: /filemanager/overview/
-        
+
       - title: "Installation"
         url: /filemanager/installation/
 

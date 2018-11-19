@@ -17,29 +17,29 @@
               {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            
-           
 
-            {% if page.url contains link.url %} 
+
+
+            {% if page.url contains link.url %}
               <li class="masthead__menu-item masthead__menu-item-active"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             {% else %}
               <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             {% endif %}
             </li>
 
-          
+
             {% if forloop.last %}
             {% else %}
               <div class="masthead__menu-separator"></div>
             {% endif %}
-           
+
           {% endfor %}
 
           {% if site.data.navigation.versions %}
           <li class="masthead__menu-item masthead__menu-item-active">
             <select onchange="window.location = this.options[this.selectedIndex].value">
             {% for link in site.data.navigation.versions %}
-              <option value="{{ domain }}{{ link.url }}">{{ link.title }}</option>
+              <option value="{{ site.url }}{{ link.url }}">{{ link.title }}</option>
             {% endfor %}
             </select>
           </li>
