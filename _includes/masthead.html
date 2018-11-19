@@ -34,6 +34,16 @@
             {% endif %}
            
           {% endfor %}
+
+          {% if site.data.navigation.versions %}
+          <li class="masthead__menu-item masthead__menu-item-active">
+            <select onchange="window.location = this.options[this.selectedIndex].value">
+            {% for link in site.data.navigation.versions %}
+              <option value="{{ domain }}{{ link.url }}">{{ link.title }}</option>
+            {% endfor %}
+            </select>
+          </li>
+          {% endif %}
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>

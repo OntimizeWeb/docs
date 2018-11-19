@@ -15,6 +15,12 @@ main:
   # - title: "Sample Collections"
   #   url: /collection-archive/
 
+versions:
+  - title: "3.x.x"
+    url: /v3
+  - title: "4.x.x"
+    url: /v4  
+
 
 # documentation links
 docs:
