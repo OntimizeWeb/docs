@@ -79,13 +79,13 @@ By default, the exact selected value of a slider is not visible to the user. How
 By default, sliders do not show tick marks along the thumb track. This can be enabled using the `tick-interval` attribute. The value of `tick-interval` should be a number representing the number of steps between between ticks. For example a tick-interval of 3 with a step of 4 will draw tick marks at every 3 steps, which is the same as every 12 values.
 
 ```html
- <o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" read-only="no" thumb-label="true"  step="4" tickInterval="3"></o-slider>
+ <o-slider attr="slider-editable"  read-only="no" thumb-label="true"  step="4" tickInterval="3"></o-slider>
  ```
 
 The tick-interval can also be set to auto which will automatically choose the number of steps such that there is at least 30px of space between ticks.
 
 ```html
-<o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" read-only="no" thumb-label="true" tick-interval="auto"></o-slider>
+<o-slider attr="slider-editable" read-only="no" thumb-label="true" tick-interval="auto"></o-slider>
 ```
 
 ![Vertical slider component with tick-interval]({{ "/images/components/inputs/slider/o-slider-vertical-tickinterval.png" | absolute_url }}){: .comp-example-img}
