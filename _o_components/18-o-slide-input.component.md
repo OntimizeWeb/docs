@@ -9,27 +9,27 @@ comp: slider
 
 The `o-slider` component is used in [forms]({{ base_path }}/components/form/) for selecting or displaying a value from a range via mouse, touch or keyboard.
 
-The slider component is automatically registered on its parent `o-form`, which provides the value for the slide toggle programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+The slider component is automatically registered on its parent `o-form`, which provides the value for the slide programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
 ![Slider component]({{ "/images/components/inputs/slider/o-slider.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-  <o-form editable-detail="false" show-header="no">
+<o-form editable-detail="false" show-header="no">
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
-      <o-slider attr="slider" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue()"></o-slider>
+        <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+        <o-slider attr="slider" [data]="getValue()"></o-slider>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider #slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue()"
+        <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
+        <o-slider #slider attr="slider-editable" [data]="getValue()"
         read-only="no" tooltip="This is an awesome tooltip!" read-only="no"></o-slider>
     </div>
     <div fxLayout="column" layout-padding>
-      <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
-      <o-slider attr="slider-disabled" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue()" enabled="no" ></o-slider>
+        <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
+        <o-slider attr="slider-disabled" [data]="getValue()" enabled="no" ></o-slider>
     </div>
-  </o-form>
+</o-form>
 ```
 
 ```
@@ -52,8 +52,7 @@ By default sliders are *horizontal* with the minimum value on the left and the m
 <o-form editable-detail="false" show-header="no" layout-direction="row">
     <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue()"
-        read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" step="1" tick-interval="auto"></o-slider>
+      <o-slider attr="slider-editable" [data]="getValue()" read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" step="1" tick-interval="auto"></o-slider>
     </div>
   </o-form>
 ``` 
@@ -64,8 +63,7 @@ An `invert` attribute is also available which can be specified to flip the axis 
 <o-form editable-detail="false" show-header="no" layout-direction="row">
     <div fxLayout="column" layout-padding fxFlex="30">
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
-      <o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue()"
-        read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" step="1" tick-interval="auto" invert="yes"></o-slider>
+      <o-slider attr="slider-editable" [data]="getValue()" read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" step="1" tick-interval="auto" invert="yes"></o-slider>
     </div>
   </o-form>
 ``` 
@@ -74,18 +72,17 @@ An `invert` attribute is also available which can be specified to flip the axis 
 
 By default, the exact selected value of a slider is not visible to the user. However, this value can be added to the thumb by adding the `thumb-label` attribute.
 
-The [Material Design spec](https://material.io/design/components/sliders.html){:target="_blank"} recommends using the thumbLabel attribute (along with tickInterval="1") only for sliders that are used to display a discrete value (such as a 1-5 rating).
-
-<o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" read-only="no" thumb-label="true" tick-interval="1" ></o-slider>
+<o-slider attr="slider-editable" read-only="no" thumb-label="true" tick-interval="1" ></o-slider>
 
 ## Tick marks
-By default, sliders do not show tick marks along the thumb track. This can be enabled using the `tick-interval` attribute. The value of `tick-interval` should be a number representing the number of steps between between ticks. For example a tickInterval of 3 with a step of 4 will draw tick marks at every 3 steps, which is the same as every 12 values.
+
+By default, sliders do not show tick marks along the thumb track. This can be enabled using the `tick-interval` attribute. The value of `tick-interval` should be a number representing the number of steps between between ticks. For example a tick-interval of 3 with a step of 4 will draw tick marks at every 3 steps, which is the same as every 12 values.
 
 ```html
  <o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" read-only="no" thumb-label="true"  step="4" tickInterval="3"></o-slider>
  ```
 
-The tickInterval can also be set to auto which will automatically choose the number of steps such that there is at least 30px of space between ticks.
+The tick-interval can also be set to auto which will automatically choose the number of steps such that there is at least 30px of space between ticks.
 
 ```html
 <o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" read-only="no" thumb-label="true" tick-interval="auto"></o-slider>
