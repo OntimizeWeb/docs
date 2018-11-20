@@ -90,6 +90,31 @@ The tick-interval can also be set to auto which will automatically choose the nu
 
 ![Vertical slider component with tick-interval]({{ "/images/components/inputs/slider/o-slider-vertical-tickinterval.png" | absolute_url }}){: .comp-example-img}
 
+## Formatting the thumb label
+By default, the value in the slider's thumb label will be the same as the model value, however this may end up being too large to fit into the label. If you want to control the value that is being displayed, you can do so using the displayWith input.
+
+```html
+<o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue()"
+        read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" tick-interval="auto" [displayWith]="formatLabel"  ></o-slider>
+```
+```js
+ getValue() {
+    return 10;
+  }
+
+  formatLabel(value: number | null) {
+    if (!value) {
+      value = 0;
+    }
+    return  value +'%';
+
+  }
+
+```
+
+
+![Formatting the thumb label in slider component]({{ "/images/components/inputs/slider/o-slider-vertical-displayWith.png" | absolute_url }}){: .comp-example-img}
+
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/slider){:target="_blank"}.
 
 

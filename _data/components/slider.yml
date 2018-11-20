@@ -12,7 +12,15 @@ inheritedOutputs: [{
   outputs: ["onChange", "onValueChange"]
 }]
 
-attributes: [{
+attributes: [
+  {
+  name: "displayWith",
+  type: "(value: number | null) => string | number",
+  default: "",
+  required: "",
+  description: "Function that will be used to format the value before it is displayed in the thumb label. Can be used to format very large number in order for them to fit into the slider thumb."
+  },
+  {
   name: "invert",
   type: "boolean",
   default: "false",
