@@ -171,6 +171,9 @@ components:
       - title: "Slide toggle <span class='menuitem-badge'>new<span>"
         url: /components/input/slidetoggle/
         order: "2"
+      - title: "Slider <span class='menuitem-badge'>new<span>"
+        url: /components/input/slider/
+        order: "2"
 
   - title: Button
     children:
