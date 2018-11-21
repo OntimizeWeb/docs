@@ -17,16 +17,17 @@ outputs: [{
 }]
 
 
-propertiesColumns: ["Name","Type", "Description"]
+attributesColumns: ["Name","Type", "Description"]
 
-properties: [{
+attributes: [{
   name: "required",
   type: "no | false | yes | true",
   default: "no",
   description: "Indicates whether or not required."
 },{
   name: "label",
-  type: "string"
+  type: "string",
+  description: "The placeholder text form a editor."
 },{
   name: "show-placeholder",
   default: "no",
@@ -45,3 +46,5 @@ properties: [{
 },{
   name: "enabled"
 }]
+
+

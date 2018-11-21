@@ -1,0 +1,26 @@
+class : "OBaseTableCellRenderer"
+
+#description : ""
+
+propertiesColumns: ["Name", "Type",  "Description"]
+
+properties: [
+  {
+  name: "column",
+  type: "property",
+  description : "Name of the column"
+  },{
+  name: "table",
+  type: "property",
+  description: "Reference to the component OTableComponent"
+  },{
+  name: "tableColumn",
+  type: "property",
+  description: "Reference to the component OTableColumnComponent"
+  },{
+  name: "getCellData(cellvalue,rowvalue)",
+  type: "method",
+  description : "This default method returns the value of the column as *a string*. This method is used to obtain the value of the column in the exports or filtering, so that if you want to customize the value of the column you must overwrite it. "
+}]
+
+
