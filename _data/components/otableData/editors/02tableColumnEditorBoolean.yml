@@ -19,34 +19,36 @@ inheritedOutputs: [
     outputs: ["editionStarted", "editionCancelled", "editionCommitted", "onPostUpdateRecord"]
   }
 ]
-attributes: [
-  {
+attributes: [{
   name: "indeterminate-on-null",
   type: "number | boolean | string ",
   default : "false",
   required : "",
   description : ""
-  },
-  {
-    name: "true-value",
-    type: "number | boolean | string ",
-    default : "true",
-    required : "",
-    description : "True value "
-  },
-   {
-    name: "false-value",
-    type: "number | boolean | string ",
-    default : "false",
-    required : "",
-    description : "False value "
-  },
-  {
-    name: "boolean-type",
-    type: "number | boolean | string ",
-    default : "boolean",
-    required : "",
-    description : "Type of data"
-  }
-]
+},{
+  name: "true-value",
+  type: "number | boolean | string ",
+  default : "true",
+  required : "",
+  description : "Value considered as true"
+},{
+  name: "false-value",
+  type: "number | boolean | string ",
+  default : "false",
+  required : "",
+  description : "Value considered as false"
+},{
+  name: "boolean-type",
+  type: "number | boolean | string ",
+  default : "boolean",
+  required : "",
+  description : "Type of the cell value"
+},{
+  name: "auto-commit",
+  type: "yes | no | true | false",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to automatically change the cell value without rendering the editor (a checkbox)"
+}]
+
 title : "OTableCellEditorBoolean"
