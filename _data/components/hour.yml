@@ -32,4 +32,10 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to allow the user to edit the input manually"
+},{
+  name: "value-type",
+  type: "string | timestamp",
+  default: "timestamp",
+  required: "",
+  description: "Type of the component data"
 }]
