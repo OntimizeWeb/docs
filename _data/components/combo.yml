@@ -4,10 +4,11 @@ inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
   attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "clear-button", "validators"]
-# },{
-#   component: "OFormServiceComponent",
-#   path: "components/input/overviewservicecomponent",
-#   attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservice",
+  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", 
+  "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys"]
 }]
 
 inheritedOutputs: [{
@@ -16,7 +17,7 @@ inheritedOutputs: [{
   outputs: ["onChange", "onValueChange"]
 },{
   component: "OFormServiceComponent",
-  path: "components/input/overviewservicecomponent",
+  path: "components/input/overviewservice",
   outputs: ["onSetValueOnValueChange"]
 }]
 
@@ -72,14 +73,6 @@ attributes: [{
   default: "false",
   required: "",
   description: "Indicates whether or not the component label shows a summary of the selected items"
-},{
-  name: "query-with-null-parent-keys"
-},{
-  name: "set-value-on-value-change",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ';'. Accepted format: `attr | attr:columnName`"
 }]
 
 methods: [{

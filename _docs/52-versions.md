@@ -5,9 +5,9 @@ permalink: /versions/
 
 {% include toc %}
 
-In this secction you can check the different versions of **OntimizeWeb** and its modules and dependencies, grouped by the angular version their are build over.
+In this secction you can check the different releases of **OntimizeWeb** and its modules and dependencies, grouped by the angular version their are build over.
 
-## Versions and dependencies
+## Releases and dependencies
 
 ### Angular 5
 

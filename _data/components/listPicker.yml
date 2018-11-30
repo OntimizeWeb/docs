@@ -68,14 +68,6 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to allow the user to edit the list picker manually"
-},{
-  name: "query-with-null-parent-keys"
-},{
-  name: "set-value-on-value-change",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ';'. Accepted format: `attr | attr:columnName`"
 }]
 
 inheritedOutputs: [{
@@ -84,7 +76,7 @@ inheritedOutputs: [{
   outputs: ["onChange", "onValueChange"]
 },{
   component: "OFormServiceComponent",
-  path: "components/input/overviewservicecomponent",
+  path: "components/input/overviewservice",
   outputs: ["onSetValueOnValueChange"]
 }]
 
