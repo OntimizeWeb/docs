@@ -1,13 +1,13 @@
 ---
-title: "Versions"
+title: "Releases"
 permalink: /versions/
-
 ---
+
 {% include toc %}
 
-## Versions and dependencies
+In this secction you can check the different versions of **OntimizeWeb** and its modules and dependencies, grouped by the angular version their are build over.
 
-Below are the different versions of addons compatible with Ontimize Web, are grouped by the angular version.
+## Versions and dependencies
 
 ### Angular 5
 
@@ -20,63 +20,71 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
             <th>charts*</th>
             <th>dynamicform*</th>
             <th>dynamicform-builder*</th>
+			<th>tree*</th>
             <th>theming*</th>
-            <th>tree*</th>
             <th>tools*</th>
             <th>library-tools*</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>3.1.1</td>
-            <td>3.1.1</td>
-            <td rowspan="3">3.0.0</td>
-            <td>3.1.1</td>
-            <td rowspan="2">3.1.0</td>
-            <td rowspan="2">3.1.0</td>
-            <td rowspan="2">1.2.0</td>
-            <td rowspan="3">3.0.0</td>
-            <td rowspan="5">1.0.6</td>
-            <td>1.1.0</td>
-        </tr>
-        <tr>
-            <td>3.1.0</td>
-            <td>3.1.0</td>
-            <td>3.1.0</td>
-            <td rowspan="5">1.0.0</td>
-        </tr>
-        <tr>
-            <td>3.0.1</td>
-            <td>3.0.0</td>
-            <td>3.0.0</td>
-            <td>3.0.0</td>
-            <td rowspan="2">1.1.2</td>
-            <td>3.0.0</td>
-        </tr>
-        <tr>
-            <td>3.0.0</td>
-            <td rowspan="2">3.0.0-rc.1</td>
-            <td rowspan="2">3.0.0-rc.1</td>
-            <td rowspan="2">3.0.0-rc.1</td>
-            <td rowspan="2">3.0.0-rc.1</td>
-            <td rowspan="2">3.0.0-rc.1</td>
-            <td rowspan="2">3.0.0-rc.1</td>
-        </tr>
-        <tr>
-            <td>3.0.0-rc.1</td>
-            <td>1.1.1</td>
-        </tr>
-        <tr>
-            <td>3.0.0-rc.0</td>
-            <td>3.0.0-rc.0</td>
-            <td>3.0.0-rc.0</td>
-            <td>3.0.0-rc.0</td>
-            <td>3.0.0-rc.0</td>
-            <td>3.0.0-rc.0</td>
-            <td>1.1.0</td>
-            <td>3.0.0-rc.0</td>
-            <td>1.0.4</td>
-        </tr>
+		<tr>
+			<td>3.2.0</td>
+			<td rowspan="3">3.1.1</td>
+			<td rowspan="5">3.0.0</td>
+			<td rowspan="3">3.1.1<br>3.1.2</td>
+			<td rowspan="4">3.1.0</td>
+			<td rowspan="4">3.1.0</td>
+			<td rowspan="4">3.1.0</td>
+			<td rowspan="4">1.2.0</td>
+			<td rowspan="7">1.0.6<br>1.0.7</td>
+			<td rowspan="5">1.1.1</td>
+		</tr>
+		<tr>
+			<td>3.1.2</td>
+		</tr>
+		<tr>
+			<td>3.1.1</td>
+		</tr>
+		<tr>
+			<td>3.1.0</td>
+			<td>3.1.0</td>
+			<td>3.1.0</td>
+		</tr>
+		<tr>
+			<td>3.0.1</td>
+			<td>3.0.0</td>
+			<td>3.0.0</td>
+			<td>3.0.0</td>
+			<td>3.0.0</td>
+			<td>3.0.0</td>
+			<td rowspan="2">1.1.2</td>
+		</tr>
+		<tr>
+			<td>3.0.0</td>
+			<td rowspan="2">3.0.0-rc.1</td>
+			<td rowspan="2">3.0.0-rc.1</td>
+			<td rowspan="2">3.0.0-rc.1</td>
+			<td rowspan="2">3.0.0-rc.1</td>
+			<td rowspan="2">3.0.0-rc.1</td>
+			<td rowspan="2">3.0.0-rc.1</td>
+			<td rowspan="2">1.1.0</td>
+		</tr>
+		<tr>
+			<td>3.0.0-rc.1</td>
+			<td>1.1.1</td>
+		</tr>
+		<tr>
+			<td>3.0.0-rc.0</td>
+			<td>3.0.0-rc.0</td>
+			<td>3.0.0-rc.0</td>
+			<td>3.0.0-rc.0</td>
+			<td>3.0.0-rc.0</td>
+			<td>3.0.0-rc.0</td>
+			<td>3.0.0-rc.0</td>
+			<td>1.1.0</td>
+			<td>1.0.4</td>
+			<td>1.0.0</td>
+		</tr>
     </tbody>
 </table>
 
@@ -204,7 +212,6 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
             <th>charts*</th>
             <th>dynamicform*</th>
             <th>dynamicform-builder* </th>
-
         </tr>
     </thead>
     <tbody>
@@ -232,7 +239,6 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
         </tr>
         <tr>
             <td>1.1.1</td>
-
         </tr>
         <tr>
             <td>1.1.0</td>
@@ -268,9 +274,6 @@ Below are the different versions of addons compatible with Ontimize Web, are gro
     </tbody>
 </table>
 
->**NOTE** The addons *Filemanager, Theming, Tree, Tools and Library Tools* and *DataTable* are not available for Angular 2.
-
+>**NOTE** The addons *Filemanager, Theming, Tree, DataTable* and *Tools* and *Library Tools* are not available for Angular 2.
 
 * The prefix *ontimize-web-ngx* was omitted from the names of the addons.
-
-
