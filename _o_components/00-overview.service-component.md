@@ -1,6 +1,6 @@
 ---
 permalink: /components/input/overviewservice/
-title: "Form data components"
+title: "Form service components"
 comp: "overviewService"
 ---
 

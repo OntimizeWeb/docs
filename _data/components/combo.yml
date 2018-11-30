@@ -7,8 +7,7 @@ inheritedAttributes: [{
 },{
   component: "OFormServiceComponent",
   path: "components/input/overviewservice",
-  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", 
-  "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys"]
+  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys"]
 }]
 
 inheritedOutputs: [{
@@ -22,34 +21,6 @@ inheritedOutputs: [{
 }]
 
 attributes: [{
-  name: "static-data"
-},{
-  name: "entity"
-},{
-  name: "service"
-},{
-  name: "columns"
-},{
-  name: "value-column"
-},{
-  name: "value-column-type"
-},{
-  name: "parent-keys"
-},{
-  name: "description-columns"
-},{
-  name: "separator"
-},{
-  name: "query-on-init"
-},{
-  name: "query-on-bind"
-},{
-  name: "query-on-event"
-},{
-  name: "query-method"
-},{
-  name: "service-type"
-},{
   name: "translate",
   type: "no | false | yes | true",
   default: "false",
