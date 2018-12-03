@@ -61,3 +61,5 @@ outputs: [{
   name: "onBlur",
   description: "Event triggered when component loses the focus"
 }]
+
+extraComponents: "locker"
