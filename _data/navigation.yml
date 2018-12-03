@@ -50,6 +50,8 @@ docs:
         url: /forms/
       - title: "Services"
         url: /guide/service/
+      - title: "Permissions"
+        url: /guide/permissions/
       - title: "Run your app"
         url: /run-your-app/
       - title: "Deploy your app"
