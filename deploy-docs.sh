@@ -24,4 +24,4 @@ rm -rf $SITE_FOLDER_NAME
 mv ../$SITE_FOLDER_NAME .
 git add -A
 git commit -m "Updating ${BRANCH} version docs"
-git push
+git push origin $GHPAGES
