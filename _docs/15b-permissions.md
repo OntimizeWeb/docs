@@ -3,7 +3,7 @@ title: Permissions
 permalink: /guide/permissions/
 ---
 
-{% include base_path %}
+{% include base_path %} {% include toc %}
 
 In this section we are going to show how to define components permissions.
 
@@ -48,7 +48,7 @@ In the following example you can explore a Ontimize Web application permissions 
           "attr":"customers_form_edit",
           "selector": "o-form",
           "components": [
-            {"attr":"ID","visible":true,"enabled":false}
+            { "attr":"ID","visible": true, "enabled": false }
           ]
         },
         {
@@ -62,11 +62,11 @@ In the following example you can explore a Ontimize Web application permissions 
           "attr":"account_detail_form",
           "selector": "o-form",
           "components": [
-            {"attr":"BALANCE","visible":false,"enabled":false}
+            { "attr":"BALANCE","visible": false, "enabled": false }
           ]
         }
       ]
-    },{
+    }, {
       "permissionId": "branch-detail-permissions",
       "enabled": false
     }
@@ -80,9 +80,9 @@ In the following example you can explore a Ontimize Web application permissions 
 }
 ```
 
-# Components Permissions
+# Components permissions
 
-In the following sections we will explore the components which have configurable permissions. All of them have common attributes:
+The `components` properties must contain an array of Ontimize Web components permissions definition. In the following sections we will explore the components which have configurable permissions. All of them have common attributes:
 
 - **selector**: Ontimize Web component selector.
 - **attr**: component `attr` value, used for matching the permissions definition with the application component.
@@ -111,11 +111,11 @@ The `o-form` component has two configurable sections: components and actions.
 }
 ```
 
-### Components
+### Inner form components
 
 The `components` property must be an array containing the permissions of the inner form components. Each component permisisons contains its `attr`, used for its identification, and the `visible` and `enabled` boolean properties.
 
-### Actions
+### Form actions
 
 The `actions` property must be an array containing the form available actions permissions, each one identified with its `attr`. There are two types of actions:
 
@@ -166,11 +166,11 @@ The `o-table` component has three configurable sections: columns, menu and actio
 }
 ```
 
-### Columns
+### Table columns
 
 The `columns` property must be an array containing the permissions of the table columns. Each column permisisons contains its `attr`, used for its identification, and the `visible` and `enabled` boolean properties.
 
-### Menu
+### Table menu
 
 The `menu` property must be an object containing the permissions of the table menu. This object has the following properties:
 
@@ -181,7 +181,7 @@ The `menu` property must be an object containing the permissions of the table me
   - `select-all-checkbox`, `export`, `show-hide-columns`, `filter` and `configuration`: standard table options.
   - Custom user menu items, added by the user with the `o-table-option` component.
 
-### Actions
+### Table actions
 
 The `actions` property must be an array containing the form available actions permissions, each one identified with its `attr`. There are two types of actions:
 
@@ -193,7 +193,9 @@ The actions permissions have two effects:
 - Hiding or disabling the table buttons of each action.
 - Disabling (if permissions object says so) the standard table actions executions.
 
-# Routes Permissions
+# Routes permissions
+
+The `routes` property must be an array containing the permissions defined for a given route.
 
 ```javascript
 ...
@@ -206,7 +208,7 @@ The actions permissions have two effects:
           "attr":"customers_form_edit",
           "selector": "o-form",
           "components": [
-            {"attr":"ID","visible":true,"enabled":false}
+            { "attr":"ID","visible": true, "enabled": false }
           ]
         },
         {
@@ -220,17 +222,65 @@ The actions permissions have two effects:
           "attr":"account_detail_form",
           "selector": "o-form",
           "components": [
-            {"attr":"BALANCE","visible":false,"enabled":false}
+            { "attr":"BALANCE","visible": false, "enabled": false }
           ]
         }
       ]
-    },{
+    }, {
       "permissionId": "branch-detail-permissions",
       "enabled": false
     }
   ]
 }
 ...
+```
+
+Each element of this array contains the permissions of a given route, having the following properties:
+
+- `permissionId`: route identification. For matching the permissions object definition and a given route in the Ontimize Web app, you have to add a object to the `data` property in the route configuration object (`oPermission`) in your routing module, as you can see in the following example.
+
+- `components`: array of Ontimize Web components permissions definition. As seen in the previous section of this page.
+
+- `enabled`: boolean property that indicates if the given route is accesible in the app.
+
+```javascript
+export const routes: Routes = [
+  { path: '', component: CustomersHomeComponent },
+  { path: 'new', component: CustomersNewComponent },
+  {
+    path: ':CUSTOMERID',
+    component: CustomersDetailComponent,
+    data: {
+      oPermission: {
+        permissionId: 'customer-detail-permissions'
+      }
+    }
+  },
+  { path: ':CUSTOMERID/accounts', loadChildren: loadAccountsModule }
+];
+```
+
+In this case, all the `:CUSTOMERID` path inner components will be affected by the permissions defined under the 'customer-detail-permissions' `permissionId`. When a component has permissions defined in general components array and in a route components array, its permissions are computed merging both objects. The route permissions have preference over the general definition.
+
+If the given route is not enabled (as you can see in the 'branch-detail-permissions' permissions definition in the previous JSON definition), user wont be allowed to navigate to that route in the Ontimize Web app. And, in addition, if the routing module object has defined the `restrictedPermissionsRedirect` property, app wil be redirected to that page. Ontimize Web has the default forbidden access redirect page defined in the route '403'.
+
+```javascript
+export const routes: Routes = [
+  { path: '', component: BranchesHomeComponent },
+  { path: 'new', component: BranchesEditComponent },
+  {
+    path: ':OFFICEID', component: BranchesDetailComponent,
+    data: {
+      oPermission: {
+        permissionId: 'branch-detail-permissions',
+        restrictedPermissionsRedirect: '403', /* Ontimize Web defined component */
+        // restrictedPermissionsRedirect: 'main' /* App route */
+      }
+    }
+  },
+  { path: ':OFFICEID/edit', component: BranchesEditComponent },
+  { path: ':OFFICEID/accounts', loadChildren: loadAccountsModule }
+];
 ```
 
 # Menu Permissions
