@@ -670,7 +670,9 @@ Finally, add the *OTableCellEditorName* component to your module.
 ## Features
 ### Checkbox selection
 
-The table supports checkbox selection with `select-all-checkbox` property. If this property is activated in the menu on the upper right, the option will be active. It is disabled by default.
+The table supports checkbox selection with `select-all-checkbox-visible` property. If this property is activated will display the row checkboxes,including a master toggle checkbox for the header. It is disabled by default.
+
+You can configure show in the menu on the upper right the option of select row with `select-all-checkbox` property. It is disabled by default.
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
@@ -781,7 +783,6 @@ You can see this and more examples of this component in the [OntimizeWeb playgro
 
 The `o-table-option` component allows to add extra options to the table menu. You only have to add the component to your table and subscribe to the `onClick` event in your component to perform the desired actions. Check the example below.
 
-### Example
 
 ```html
 <o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
@@ -1067,9 +1068,24 @@ There also exists the possibility of automatically align the table columns title
 When the `auto-align-titles` input is set to true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
 
 ### Columns multiple sorting
-Table allows mulitple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
+Table allows multiple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
 
 A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state.
+
+### Tooltip in columns
+
+The `o-table` component provides a text that is displayed when the user hovers over an column.
+```html
+...
+  <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
+...
+``` 
+
+![Tooltip in table component]({{ "/images/components/tabla/table-tooltip.png" | absolute_url }}){: .comp-example-img}
+
+You can configure the value that is displayed with the attribute `tooltip-value` attribute. Additionally, you can specify default function to be applied when the user over column with `tooltip-function` attribute.
+
+Note: If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
 
 ## Demo
 
