@@ -72,7 +72,7 @@ The `o-combo` shows automatically an error message when the `required` attribute
 
 You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/combo){:target="_blank"}.
 
-## Locker
+## Locker  <span class='menuitem-badge'>new<span>
 
 OntimizeWeb offers the `oLocker` directive to the `o-combo` that should to lock the component when you configure the component to query the data from a service
 

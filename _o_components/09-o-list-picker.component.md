@@ -33,9 +33,9 @@ You can see this and more examples of this component in the [OntimizeWeb playgro
 ## Validation
 The `o-list-picker` shows automatically an error message when the `required` attribute is set to "yes" and there is no value selected.
 
-## Locker
+## Locker <span class='menuitem-badge'>new<span>
 
-OntimizeWeb offers the `oLocker` directive to the `o-list-picker` that should to lock the component when you configure the component to query the data from a service
+OntimizeWeb offers the `oLocker` directive to the `o-list-picker` that should to lock the component when you configure the component to query the data from a service.
 
 ```html
 <o-list-picker attr="CUSTOMERID LOAD" oLocker oLockerMode="load" oLockerDelay="1500"
