@@ -116,7 +116,13 @@ attributes: [{
   type: "no | false | yes | true",
   default: "yes",
   description: "Indicates whether or not to allow multiple columns sorting"
-}]
+},{
+  name: "select-all-checkbox-visible",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the column of checkboxes for selecting table rows in the table."
+},]
 
 outputs: [{
   name: "onClick",

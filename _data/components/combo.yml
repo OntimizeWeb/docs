@@ -57,3 +57,4 @@ methods: [{
   parameters: "any[]",
   description: "Set the selected items of the component."
 }]
+extraComponents: "locker"
