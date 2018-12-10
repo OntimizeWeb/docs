@@ -1085,7 +1085,10 @@ The `o-table` component provides a text that is displayed when the user hovers o
 
 You can configure the value that is displayed with the attribute `tooltip-value` attribute. Additionally, you can specify default function to be applied when the user over column with `tooltip-function` attribute.
 
+You can customize the tooltip styles by redefining the class `o-table-cell-tooltip`.
+
 Note: If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
+
 
 ## Demo
 
