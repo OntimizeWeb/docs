@@ -39,7 +39,7 @@
           <li class="masthead__menu-item masthead__menu-item-active">
             <select onchange="window.location = this.options[this.selectedIndex].value">
             {% for link in site.data.navigation.versions %}
-              <option value="{{ site.url }}{{ link.url }}">{{ link.title }}</option>
+              <option value="{{ site.url }}{{ link.url }}" {% if link.active %} selected="selected" {% endif %}>{{ link.title }}</option>
             {% endfor %}
             </select>
           </li>

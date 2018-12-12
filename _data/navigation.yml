@@ -18,9 +18,10 @@ main:
 versions:
   - title: "3.x.x"
     url: /docs/v3
+    active: true
   - title: "4.x.x"
     url: /docs/v4
-
+    
 
 # documentation links
 docs:
