@@ -1,12 +1,12 @@
 ---
-permalink : /components/input/overview/
-title : "Form data components"
+permalink: /components/input/overview/
+title: "Form data components"
 comp: "overview"
 ---
 {% include base_path %}
 {% include toc %}
 
-Form data components are components that must be placed inside a [form]({{ base_path }}/docs/components/form/){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, html, integer, list picker, NIF, password, percent, real, text and textarea.
+Form data components are components that must be placed inside a [form]({{ base_path }}/components/form/){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, radio, real, slider, slide toggle, text, textarea and time.
 
 All input components in **OntimizeWeb** extend the `OFormDataComponent` class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the **API** section of this page.
 

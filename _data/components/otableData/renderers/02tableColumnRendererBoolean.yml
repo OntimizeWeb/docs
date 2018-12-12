@@ -1,35 +1,41 @@
 class: "OTableCellRendererImageComponent"
 
-extends: "OBaseTableCellRenderer" 
+extends: "OBaseTableCellRenderer"
 
 directive: "o-table-cell-renderer-boolean"
 
 attributes: [{
-  name: "boolean-type", 
+  name: "boolean-type",
   type: "number | boolean | string ",
   default: "boolean",
   required: "",
-  description: "Type of value of the cell"
+  description: "Type of the cell value"
 },{
-  name: "true-value-type", 
-  type: "string | number | icon | image",
+  name: "true-value",
+  type: "string",
   default: "",
   required: "",
-  description: "Type of true value"
+  description: "Value considered as true"
 },{
-  name: "true-value", 
+  name: "false-value",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Value considered as false"
+},{
+  name: "render-type",
+  type: "string | number | icon | image",
+  default: "string",
+  required: "",
+  description: "Type of the cell displayed value"
+},{
+  name: "render-true-value",
   type: "string",
   default: "",
   required: "",
   description: "Value displayed as true"
 },{
-  name: "false-value-type", 
-  type: "string | number | icon | image",
-  default: "",
-  required: "",
-  description: "Type of false value"
-},{
-  name: "false-value", 
+  name: "render-false-value",
   type: "string",
   default: "",
   required: "",

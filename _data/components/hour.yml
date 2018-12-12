@@ -44,4 +44,10 @@ attributes: [{
   default : "",
   required : "",
   description : "Maximum selectable date"
+},{
+  name: "value-type",
+  type: "string | timestamp",
+  default: "timestamp",
+  required: "",
+  description: "Type of the component data"
 }]

@@ -33,7 +33,7 @@ You can see a working example of this in the [OntimizeWeb QuickStart](https://tr
 The `o-app-layout` components has two performance modes designed for making this component more usable in desktop and mobile applications. This modes are the following:
 
 * **Desktop**
-This is the default mode of the `o-app-layout` component. This mode displays the side menu and allows the user to partially hide it. 
+This is the default mode of the `o-app-layout` component. This mode displays the side menu and allows the user to partially hide it.
 
 ![App layout component in desktop mode]({{ "/images/layouts/app-layout/o-app-layout-desktop.gif" | absolute_url }})
 
@@ -47,6 +47,22 @@ Configure this mode by setting the **mobile** value in the `mode` attribute in t
 The application layout component may show a toolbar at the top of the screen by setting the `show-header` attribute to **yes**. Check this and other attributes in the **API** section of this page.
 
 ![App layout component toolbar]({{ "/images/layouts/app-layout/app_layout_header.png" | absolute_url }})
+
+### Adding custom content to the toolbar
+
+If you want to add your own components to the layout toolbar you must use the `o-app-layout-header` component.
+
+```html
+<o-app-layout opened-sidenav-image="assets/images/sidenav-opened.png"
+  closed-sidenav-image="assets/images/sidenav-closed.png"
+  mode="desktop" show-header="yes">
+  <o-app-layout-header>
+      <!-- YOUR CUSTOM CONTENT HERE -->
+  </o-app-layout-header>
+
+  <router-outlet></router-outlet>
+</o-app-layout>
+```
 
 ## Images
 

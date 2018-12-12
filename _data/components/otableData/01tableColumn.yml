@@ -22,6 +22,12 @@ attributes: [{
   required: "",
   description: "Column title cell text alignment"
 },{
+  name: "content-align",
+  type: "start | center | end",
+  default: "",
+  required: "",
+  description: "Column cell context alignment"
+},{
   name: "orderable",
   type: "no | false | yes | true",
   default: "yes",
@@ -41,7 +47,7 @@ attributes: [{
   description: "Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute `editable-columns` from `o-table`"
 },{
   name: "type",
-  type: "string | boolean | integer | real | currency | date | image",
+  type: "string | boolean | integer | real | currency | date | image | action",
   default: "string",
   required: "",
   description: "Column data type"

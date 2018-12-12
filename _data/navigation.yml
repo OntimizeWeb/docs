@@ -20,6 +20,7 @@ versions:
     url: /docs/v3
   - title: "4.x.x"
     url: /docs/v4
+    active: true
 
 
 # documentation links
@@ -50,6 +51,8 @@ docs:
         url: /forms/
       - title: "Services"
         url: /guide/service/
+      - title: "Permissions"
+        url: /guide/permissions/
       - title: "Run your app"
         url: /run-your-app/
       - title: "Deploy your app"
