@@ -13,6 +13,8 @@ title: "Installation"
 
 ## Usage
 
+Finally, you can use ontimize-web-ngx-map in your Ontimize Web project.
+
 ### Import into your application
 
 
