@@ -21,7 +21,7 @@ versions:
     active: true
   - title: "4.x.x"
     url: /docs/v4
-    
+
 
 # documentation links
 docs:
@@ -275,17 +275,38 @@ ontimize_web_ngx_filemanager:
 
       - title: "Installation"
         url: /filemanager/installation/
-
-
   #- title: "Components"
   #  children:
   #    - title: "Table"
   #      url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
-
   - title: "Services"
     children:
       - title: "File Manager Service"
         url: /filemanager/filemanagerservice/
+
+ontimize_web_ngx_charts:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /charts/overview/
+      - title: "Installation"
+        url: /charts/installation/
+  #- title: "Components"
+  #  children:
+  #    - title: "Chart"
+  #      url: /ontimize_web_ngx_charts/components/o-chart.component/
+
+ontimize_web_ngx_map:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /map/overview/
+      - title: "Installation"
+        url: /map/installation/
+  #- title: "Components"
+  #  children:
+  #    - title: "Table"
+  #      url: /ontimize_web_ngx_map/components/o-map.component/
 
 ontimize_web_ngx_tree:
   - title: "Getting Started"
