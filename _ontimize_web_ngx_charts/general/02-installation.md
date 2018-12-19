@@ -1,5 +1,5 @@
 ---
-permalink: /chart/installation/
+permalink: /charts/installation/
 title: "Installation"
 ---
 
