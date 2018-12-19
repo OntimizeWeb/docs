@@ -82,7 +82,7 @@ docs:
       - title: "Charts"
         url: /ontimize-web-ngx-charts/
       - title: "Map"
-        url: /ontimize-web-ngx-map/
+        url: /map/
       - title: "Dynamicform"
         url: /ontimize-web-ngx-dynamicform/
       - title: "Dynamicform Builder"
@@ -300,3 +300,11 @@ ontimize_web_ngx_tree:
         url: /tree/components/o-tree.component/
       - title: "Tree node"
         url: /tree/components/o-tree-node.component/
+ontimize_web_ngx_map:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /map/overview/
+
+      - title: "Installation"
+        url: /map/installation/

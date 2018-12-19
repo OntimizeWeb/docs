@@ -208,6 +208,9 @@ collections:
   ontimize_web_ngx_tree:
     output: true
     permalink: /:collection/:path/
+  ontimize_web_ngx_map:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -369,6 +372,19 @@ defaults:
       breadcrumbs: true
       sidebar:
         nav: "ontimize_web_ngx_filemanager"
+    #_ontimize_web_ngx_map layout: o-module   
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_map
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      breadcrumbs: true
+      sidebar:
+        nav: "ontimize_web_ngx_map"
 
  
   # _o_validation_components
