@@ -80,7 +80,7 @@ docs:
       - title: "DataTable <small>(deprecated)</small>"
         url: /ontimize-web-ngx-datatable/
       - title: "Charts"
-        url: /ontimize-web-ngx-charts/
+        url: /charts/
       - title: "Map"
         url: /map/
       - title: "Dynamicform"

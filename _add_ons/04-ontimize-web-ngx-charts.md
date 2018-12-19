@@ -1,7 +1,6 @@
 ---
-permalink: /ontimize-web-ngx-charts/
+permalink: /charts/
 title: "Charts"
-excerpt: ""
 ---
 
 {% include base_path %}
