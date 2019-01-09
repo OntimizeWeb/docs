@@ -26,4 +26,10 @@ attributes: [{
   default : "",
   required : "",
   description : "Number indicating elevation according to predefined CSS classes in [Angular Material Elevation](https://github.com/angular/material2/blob/master/guides/elevation.md){:target='_blank'}"
+},{
+  name: "appearance",
+  type: "outside",
+  default : "",
+  required : "",
+  description : "Indicates which of container appearance style, it will match the form-field appearance style [float label variants](https://v6.material.angular.io/components/form-field/overview#floating-label) will be used."
 }]
