@@ -30,10 +30,28 @@ You can configure multiple appearance variants changing the `appearance` and `fl
 ### Appearance
 The `appearance` input indicates which of the different `mat-form-field` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants).
 
+
+Global default appearance options can be specified by providing a value for *MAT_FORM_FIELD_DEFAULT_OPTIONS* in your application's root module. Like the property, the global setting can be either legacy, standard, fill or outside.
+
+```
+@NgModule({
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
+  ]
+})
+```
 ### Float label
 The `float-label` input indicates which of the different `mat-form-field` label behaviours is chosen. It has the same features that Angular Material appearance input, watch it [here](https://v6.material.angular.io/components/form-field/overview#floating-label)
 
+Global default label options can be specified by providing a value for *MAT_LABEL_GLOBAL_OPTIONS* in your application's root module. Like the property, the global setting can be either always, never, or auto.
 
+```
+@NgModule({
+  providers: [
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}}
+  ]
+})
+```
 ## Validation
 The input shows automatically an error message when the `required` attribute is set to **yes** and there is no value on the input.
 
