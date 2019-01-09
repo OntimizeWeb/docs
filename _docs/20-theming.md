@@ -134,8 +134,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
 /* Dark theme */
 /*$theme: mat-dark-theme($primary, $accent, $warn);*/
 
-/* Include all theme styles for the components.*/
-@include angular-material-theme($theme);
 ```
 
 To help with defining color palettes, you can use these online tools:
