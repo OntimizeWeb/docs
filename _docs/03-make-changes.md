@@ -28,7 +28,7 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
     <md-tab label="{{ 'DATA' | oTranslate }}">
       <div fxLayout="column" layout-padding>
         <o-row attr="row1" layout-align="space-between center">
-          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
+          <o-column title="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
             <div fxLayout="row" fxLayoutAlign="start center">
               <o-nif-input attr="ID" fxFlex="30" class="margin-right-24"></o-nif-input>
               <o-date-input attr="STARTDATE" fxFlex="30"></o-date-input>
@@ -52,7 +52,7 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
           </o-column>
         </o-row>
 
-        <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding layout-align="start stretch">
+        <o-column attr="other_data" title="CONTACT_DATA" layout-padding layout-align="start stretch">
           <o-text-input attr="ADDRESS"></o-text-input>
           <o-email-input attr="EMAIL"></o-email-input>
           <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
@@ -114,7 +114,7 @@ So, taking that in consideration, we have to use the form defined in the file *s
 
   <div fxLayout="column" layout-padding class="rounded-panel">
     <o-row attr="row1" layout-align="start stretch">
-      <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
+      <o-column title="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
         <div fxLayout="row" fxLayoutAlign="start center">
           <o-nif-input attr="ID" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
           <o-date-input attr="STARTDATE" fxFlex="30" required="yes" (onChange)="onDateChange($event)"></o-date-input>
@@ -137,7 +137,7 @@ So, taking that in consideration, we have to use the form defined in the file *s
       </o-column>
     </o-row>
 
-    <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding fxLayoutAlign="start stretch">
+    <o-column attr="other_data" title="CONTACT_DATA" layout-padding fxLayoutAlign="start stretch">
       <o-text-input attr="ADDRESS"></o-text-input>
       <o-email-input attr="EMAIL"></o-email-input>
       <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
