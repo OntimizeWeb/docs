@@ -8,7 +8,7 @@ excerpt: "How you can customize palette colors of your app."
 {% include toc %}
 
 ## What is a theme?
-A **theme** is the set of colors that are applied to the Angular Material components. The library’s approach to theming is based on guidance from the [Material Design spec][1].
+A **theme** is the set of colors that are applied to the Angular Material components. The library’s approach to theming is based on guidance from the [Material Design spec](https://material.google.com/style/color.html#color-color-palette){:target="_blank"}.
 
 In Angular Material, a theme is created by composing multiple palettes. In particular,
 a theme consists of:
@@ -19,14 +19,12 @@ a theme consists of:
 * A foreground palette: colors for text and icons.
 * A background palette: colors used for element backgrounds.
 
-[1]: https://material.google.com/style/color.html#color-color-palette
-
 Each Ontimize Web application follows material design guidelines proposed by Google. In this chapter we will see how to configure these palettes by both using predefined ones and creating new ones.
 
 
 ## Configuration
 
-In order to make theming job easier, Ontimize Web provides a theming add-on called '*ontimize-web-ngx-theming*'. You can get more information about it [here]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"}.
+In order to make theming job easier, **OntimizeWeb** provides a theming module. You can read more about the *OntimizeWeb Theming module* [here]({{ base_path }}/theming/){:target="_blank"}.
 
 The configuration of the application theme is done in the file *app.scss* in */assets/css* folder in two steps:
 
@@ -52,7 +50,7 @@ Here is an example of configuration:
 
 ## Predefined themes
 
-The module [*ontimize-web-ngx-theming*]({{ base_path }}/ontimize-web-ngx-theming/){:target="_blank"} provides predefined themes. All of them
+The [*OntimizeWeb Theming*]({{ base_path }}/theming/){:target="_blank"} module provides predefined themes. All of them
 are stored in their corresponding files in the path *node_modules/ontimize-web-ngx-theming/src/themes/*
 
 * **mat-deeppurple-amber.scss**
@@ -60,10 +58,7 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 * **mat-pink-bluegrey.scss**
 * **mat-purple-green.scss**
 
-
-Also, if you want to use *compact styles*, you have to load the following file:
-
-* **ontimize-lite.scss**
+> **Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.
 
 ## Custom theme definition
 
@@ -119,7 +114,6 @@ $mat-custom-primary: (
   )
 );
 
-
 /* Define a theme.*/
 $primary: mat-palette($mat-custom-primary);
 $accent:  mat-palette($mat-amber, A200, A100, A400);
@@ -133,7 +127,6 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 /* Dark theme */
 /*$theme: mat-dark-theme($primary, $accent, $warn);*/
-
 ```
 
 To help with defining color palettes, you can use these online tools:
@@ -146,7 +139,6 @@ To define a theme, you just need to declare three palettes: **primary, accent an
 as you can see in the example ($mat-custom-primary) or you can reuse one of the [standard palettes][1].
 
 After that you can choose between the **light** or **dark** themes by calling their corresponding functions *mat-light-theme(...)* or *mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
-
 
 ## Theming your own components
 To style your own components with Angular Material’s tools, the component’s styles must be defined with Sass.
@@ -187,7 +179,6 @@ Now you just have have to call the `@mixin` function to apply the theme definiti
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
-
 
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 /*
