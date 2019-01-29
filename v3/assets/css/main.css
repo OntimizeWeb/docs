@@ -1570,6 +1570,17 @@ tr, td, th {
 .masthead__inner-wrap a {
   text-decoration: none;
 }
+.masthead__inner-wrap select {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+.masthead__inner-wrap select:hover {
+  border: none;
+  box-shadow: none;
+}
 
 .masthead__menu ul {
   margin: 0;
@@ -1822,14 +1833,14 @@ tr, td, th {
   min-width: 250px;
   background: #fff;
 }
-.greedy-nav a {
+.greedy-nav a, .greedy-nav select {
   display: block;
   margin: 0 1rem;
   padding: 0.5rem 0;
   color: #7a8288;
   text-decoration: none;
 }
-.greedy-nav a:hover {
+.greedy-nav a:hover, .greedy-nav select:hover {
   color: #5c6266;
 }
 .greedy-nav button {

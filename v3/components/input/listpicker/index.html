@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2018-11-19T03:32:08-05:00">
+  <meta property="article:published_time" content="2019-01-29T05:22:32-05:00">
 
 
 
@@ -216,9 +216,9 @@
           <li class="masthead__menu-item masthead__menu-item-active">
             <select onchange="window.location = this.options[this.selectedIndex].value">
             
-              <option value="https://ontimizeweb.github.io/docs/v3">3.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs/v4">4.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v4" >4.x.x</option>
             
             </select>
           </li>
@@ -493,6 +493,14 @@
             
 
             <li><a href="https://ontimizeweb.github.io/docs/v3/components/input/slidetoggle/" class=" ">Slide toggle <span class='menuitem-badge'>new<span></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/components/input/slider/" class=" ">Slider <span class='menuitem-badge'>new<span></a></li>
           
             
             
@@ -800,7 +808,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 19, 2018">
+    <meta itemprop="datePublished" content="January 29, 2019">
     
 
     <div class="page__inner-wrap">
@@ -881,6 +889,7 @@
 <ul class="toc__menu" id="markdown-toc">
   <li><a href="#basic-example" id="markdown-toc-basic-example">Basic example</a></li>
   <li><a href="#validation" id="markdown-toc-validation">Validation</a></li>
+  <li><a href="#locker-new" id="markdown-toc-locker-new">Locker <span class="menuitem-badge">new<span></span></span></a></li>
 </ul>
 
   </nav>
@@ -913,6 +922,24 @@
 <h2 id="validation">Validation</h2>
 <p>The <code class="highlighter-rouge">o-list-picker</code> shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value selected.</p>
 
+<h2 id="locker-new">Locker <span class="menuitem-badge">new<span></span></span></h2>
+
+<p>OntimizeWeb offers the <code class="highlighter-rouge">oLocker</code> directive to the <code class="highlighter-rouge">o-list-picker</code> that should to lock the component when you configure the component to query the data from a service.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"CUSTOMERID LOAD"</span> <span class="na">oLocker</span> <span class="na">oLockerMode=</span><span class="s">"load"</span> <span class="na">oLockerDelay=</span><span class="s">"1500"</span>
+    <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">columns=</span><span class="s">"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"</span>
+    <span class="na">value-column=</span><span class="s">"CUSTOMERID"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span> <span class="na">visible-columns=</span><span class="s">"NAME"</span> <span class="na">width=</span><span class="s">"30%"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/o-list-picker&gt;</span>
+
+<span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"CUSTOMERID DISABLED"</span> <span class="na">oLocker</span> <span class="na">oLockerMode=</span><span class="s">"disable"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">service=</span><span class="s">"customers"</span>
+    <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">columns=</span><span class="s">"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"</span> <span class="na">value-column=</span><span class="s">"CUSTOMERID"</span>
+    <span class="na">keys=</span><span class="s">"CUSTOMERID"</span> <span class="na">visible-columns=</span><span class="s">"NAME"</span> <span class="na">width=</span><span class="s">"30%"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/o-list-picker&gt;</span>
+</code></pre></div></div>
+<p><img src="https://ontimizeweb.github.io/docs/v3/images/components/inputs/listPicker-oLocker.gif" alt="OLocker in  Combo component" class="comp-example-img" /></p>
+
+<p>Note you can configure the mode of the locker, there are two modes to block, <em>disable</em> and <em>load</em> mode. The mode by default is <em>load</em>. You can configure  delay service start with <code class="highlighter-rouge">oLockerDelay</code> attribute, by default this value is the <em>250ms</em>.</p>
+
 </div>
 
 <!-- API -->
@@ -926,6 +953,10 @@
     <p><strong class="grey-color">Directive:</strong> o-list-picker</p>
   
   
+
+
+  
+
 
   
     <h3 class="grey-color">Inherited inputs</h3>
@@ -967,6 +998,43 @@
           
         </ul>
         
+      <li>
+        from  <a href="https://ontimizeweb.github.io/docs/v3/components/input/overviewservice/" rel="permalink">OFormServiceComponent:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> columns </li>
+          
+            <li> description-columns </li>
+          
+            <li> entity </li>
+          
+            <li> parent-keys </li>
+          
+            <li> query-method </li>
+          
+            <li> query-on-bind </li>
+          
+            <li> query-on-event </li>
+          
+            <li> query-on-init </li>
+          
+            <li> query-with-null-parent-keys </li>
+          
+            <li> separator </li>
+          
+            <li> service </li>
+          
+            <li> service-type </li>
+          
+            <li> static-data </li>
+          
+            <li> value-column </li>
+          
+            <li> value-column-type </li>
+          
+        </ul>
+        
       </li>
     </ul>
   
@@ -1003,136 +1071,6 @@
     </thead>
     <tbody>
       
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>columns</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Entity columns. Separated by ‘;’</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>description-columns</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Visible columns in text field</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p><code class="highlighter-rouge">visible-columns</code> attribute value</p>
-</p>
-    
-  </td>
-          
-        
-</tr>
       
 
         
@@ -1283,71 +1221,6 @@
             
             
   <td class="" o-component-name >
-    <p class="first"><p>entity</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Service entity name</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
     <p class="first"><p>filter</p>
 </p>
     
@@ -1369,329 +1242,6 @@
             
   <td class="" o-component-description >
     <p class="first"><p>Indicates whether or not to show values filtering input</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>yes</p>
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>parent-keys</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Filtering keys. Separated by ‘;’</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>query-method</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Service method name for queries</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>query</p>
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>query-on-bind</p>
-</p>
-    
-      <p><i>no | false | yes | true</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Query table data on bind</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>query-on-event</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>A component event reference the component must listen to in order to perform its query</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>query-on-init</p>
-</p>
-    
-      <p><i>no | false | yes | true</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Query table data on init</p>
 </p>
     
   </td>
@@ -1801,396 +1351,6 @@
             
             
   <td class="" o-component-name >
-    <p class="first"><p>query-with-null-parent-keys</p>
-</p>
-    
-      <p><i>no | false | yes | true</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Indicates whether or not to trigger query method when the filter generated from parent-keys is null. The use of this attribute is not recommended when the component may request a big amount of information</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>no</p>
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>separator</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Separation character between <code class="highlighter-rouge">description-columns</code> values</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>service</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>JEE service path</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>service-type</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Injection token indicated in the provider of the service</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>set-value-on-value-change</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ‘;’. Accepted format: <code class="highlighter-rouge">attr | attr:columnName</code></p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>static-data</p>
-</p>
-    
-      <p><i>array<object></i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Static data for filling the table</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
     <p class="first"><p>text-input-enabled</p>
 </p>
     
@@ -2230,136 +1390,6 @@
             
   <td class="" o-component-default >
     <p class="first"><p>yes</p>
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>value-column</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Column of the entity from where the component will get its value</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>value-column-type</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p><code class="highlighter-rouge">value-column</code> value type</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>int</p>
 </p>
     
   </td>
@@ -2457,7 +1487,7 @@
         </ul>
         
       <li>
-        from  <a href="https://ontimizeweb.github.io/docs/v3/components/input/overviewservicecomponent/" rel="permalink">OFormServiceComponent:</a>
+        from  <a href="https://ontimizeweb.github.io/docs/v3/components/input/overviewservice/" rel="permalink">OFormServiceComponent:</a>
         <ul class="attributes-list">
           
           
@@ -2547,6 +1577,213 @@
 
 
   
+  
+     
+    
+    
+    
+      
+      
+  <h2 class=""></h2>
+      
+
+
+
+
+  
+<p><strong class="grey-color">Directive:</strong> oLocker</p>
+  
+  
+
+
+  
+
+
+  
+
+
+  
+  <h3 class="grey-color">Inputs</h3>
+
+
+
+
+
+
+  <table class="attributes-table mdl-data-table">
+<thead>
+  <tr>
+  
+
+  
+<th class=""> Name</th>
+  
+  
+
+  
+<th class=""> Description</th>
+  
+  
+
+  
+<th class=""> Default</th>
+  
+  
+  </tr>
+</thead>
+<tbody>
+  
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>oLockerDelay</p>
+</p>
+
+  <p><i>number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Time the oLocker will be shown</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>250</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>oLockerMode</p>
+</p>
+
+  <p><i>'load' | 'disable'</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Indicates the component performance mode</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>false</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+  </tbody>
+  </table>
+
+  
+
+  
+
+
+  
+
+  
+
+
+  
+
+
+
+  
+    
+  
 
 </div>
 
@@ -2565,7 +1802,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-11-19T03:32:08-05:00">November 19, 2018</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-01-29T05:22:32-05:00">January 29, 2019</time></p>
         
       </footer>
 
@@ -2628,7 +1865,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

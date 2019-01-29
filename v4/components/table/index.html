@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2018-11-19T03:34:12-05:00">
+  <meta property="article:published_time" content="2019-01-29T05:23:15-05:00">
 
 
 
@@ -216,9 +216,9 @@
           <li class="masthead__menu-item masthead__menu-item-active">
             <select onchange="window.location = this.options[this.selectedIndex].value">
             
-              <option value="https://ontimizeweb.github.io/docs/v3">3.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs/v4">4.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v4"  selected="selected" >4.x.x</option>
             
             </select>
           </li>
@@ -323,6 +323,8 @@
                       
                             
                       
+                  
+              
                   
               
                   
@@ -521,6 +523,14 @@
             
 
             <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/slidetoggle/" class=" ">Slide toggle <span class='menuitem-badge'>new<span></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/slider/" class=" ">Slider <span class='menuitem-badge'>new<span></a></li>
           
             
             
@@ -828,7 +838,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 19, 2018">
+    <meta itemprop="datePublished" content="January 29, 2019">
     
 
     <div class="page__inner-wrap">
@@ -931,13 +941,13 @@
       <li><a href="#aggregates" id="markdown-toc-aggregates">Aggregates</a></li>
       <li><a href="#calculated-columns" id="markdown-toc-calculated-columns">Calculated columns</a></li>
       <li><a href="#table-options" id="markdown-toc-table-options">Table options</a></li>
-      <li><a href="#example" id="markdown-toc-example">Example</a></li>
       <li><a href="#table-context-menu" id="markdown-toc-table-context-menu">Table context menu</a></li>
       <li><a href="#insertable-row" id="markdown-toc-insertable-row">Insertable row</a></li>
       <li><a href="#table-buttons" id="markdown-toc-table-buttons">Table buttons</a></li>
       <li><a href="#export-table-data" id="markdown-toc-export-table-data">Export table data</a></li>
       <li><a href="#column-titles-alignment" id="markdown-toc-column-titles-alignment">Column titles alignment</a></li>
       <li><a href="#columns-multiple-sorting" id="markdown-toc-columns-multiple-sorting">Columns multiple sorting</a></li>
+      <li><a href="#tooltip-in-columns" id="markdown-toc-tooltip-in-columns">Tooltip in columns</a></li>
     </ul>
   </li>
   <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
@@ -1654,7 +1664,9 @@ The <em>let</em> keyword declares a template input variable that you reference w
 <h2 id="features">Features</h2>
 <h3 id="checkbox-selection">Checkbox selection</h3>
 
-<p>The table supports checkbox selection with <code class="highlighter-rouge">select-all-checkbox</code> property. If this property is activated in the menu on the upper right, the option will be active. It is disabled by default.</p>
+<p>The table supports checkbox selection with <code class="highlighter-rouge">select-all-checkbox-visible</code> property. If this property is activated will display the row checkboxes,including a master toggle checkbox for the header. It is disabled by default.</p>
+
+<p>You can configure show in the menu on the upper right the option of select row with <code class="highlighter-rouge">select-all-checkbox</code> property. It is disabled by default.</p>
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img" /></p>
 
@@ -1758,8 +1770,6 @@ The <em>let</em> keyword declares a template input variable that you reference w
 <h3 id="table-options">Table options</h3>
 
 <p>The <code class="highlighter-rouge">o-table-option</code> component allows to add extra options to the table menu. You only have to add the component to your table and subscribe to the <code class="highlighter-rouge">onClick</code> event in your component to perform the desired actions. Check the example below.</p>
-
-<h3 id="example">Example</h3>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"ECustomers"</span> <span class="na">title=</span><span class="s">"CUSTOMERS"</span>
   <span class="na">columns=</span><span class="s">"CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"</span>
@@ -2040,9 +2050,25 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 <p>When the <code class="highlighter-rouge">auto-align-titles</code> input is set to true, user can also define a <code class="highlighter-rouge">title-align</code> in the columns (its value has precedence over the default type alignment).</p>
 
 <h3 id="columns-multiple-sorting">Columns multiple sorting</h3>
-<p>Table allows mulitple columns sorting by default. Using the <code class="highlighter-rouge">multiple-sort</code> input user can modify that default value.</p>
+<p>Table allows multiple columns sorting by default. Using the <code class="highlighter-rouge">multiple-sort</code> input user can modify that default value.</p>
 
 <p>A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state.</p>
+
+<h3 id="tooltip-in-columns">Tooltip in columns</h3>
+
+<p>The <code class="highlighter-rouge">o-table</code> component provides a text that is displayed when the user hovers over an column.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NOTES"</span> <span class="na">title=</span><span class="s">"NOTES"</span> <span class="na">multiline=</span><span class="s">"no"</span> <span class="na">width=</span><span class="s">"300px"</span> <span class="na">tooltip=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+...
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/v4/images/components/tabla/table-tooltip.png" alt="Tooltip in table component" class="comp-example-img" /></p>
+
+<p>You can configure the value that is displayed with the attribute <code class="highlighter-rouge">tooltip-value</code> attribute. Additionally, you can specify default function to be applied when the user over column with <code class="highlighter-rouge">tooltip-function</code> attribute.</p>
+
+<p>You can customize the tooltip styles by redefining the class <code class="highlighter-rouge">o-table-cell-tooltip</code>.</p>
+
+<p>Note: If you have a custom render in the column and it is not overwritten the <em>getCelldata</em> method will show the internal value of the table.</p>
 
 <h2 id="demo">Demo</h2>
 
@@ -3303,6 +3329,71 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
+    <p class="first"><p>select-all-checkbox-visible</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show the column of checkboxes for selecting table rows in the table.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
     <p class="first"><p>selection-mode</p>
 </p>
     
@@ -4076,6 +4167,71 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
+    <p class="first"><p>content-align</p>
+</p>
+    
+      <p><i>start | center | end</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Column cell context alignment</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
     <p class="first"><p>editable</p>
 </p>
     
@@ -4794,7 +4950,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
     <p class="first"><p>type</p>
 </p>
     
-      <p><i>string | boolean | integer | real | currency | date | image</i></p>
+      <p><i>string | boolean | integer | real | currency | date | image | action</i></p>
     
   </td>
           
@@ -6331,6 +6487,71 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
+    <p class="first"><p>delete</p>
+</p>
+    
+      <p><i>boolean</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show the option to delete all in the contextual menu.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
     <p class="first"><p>edit</p>
 </p>
     
@@ -6417,6 +6638,71 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
   <td class="" o-component-description >
     <p class="first"><p>Indicates whether the option to insert in the contextual menu is shown.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>refresh</p>
+</p>
+    
+      <p><i>boolean</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show the option to refresh all in the contextual menu.</p>
 </p>
     
   </td>
@@ -7996,7 +8282,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Type of value of the cell</p>
+    <p class="first"><p>Type of the cell value</p>
 </p>
     
   </td>
@@ -8061,6 +8347,71 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-description >
+    <p class="first"><p>Value considered as false</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>render-false-value</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
     <p class="first"><p>Value displayed as false</p>
 </p>
     
@@ -8106,72 +8457,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
-    <p class="first"><p>false-value-type</p>
-</p>
-    
-      <p><i>string | number | icon | image</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Type of false value</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-  </tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>true-value</p>
+    <p class="first"><p>render-true-value</p>
 </p>
     
       <p><i>string</i></p>
@@ -8236,7 +8522,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
-    <p class="first"><p>true-value-type</p>
+    <p class="first"><p>render-type</p>
 </p>
     
       <p><i>string | number | icon | image</i></p>
@@ -8256,7 +8542,72 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Type of true value</p>
+    <p class="first"><p>Type of the cell displayed value</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>string</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>true-value</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Value considered as true</p>
 </p>
     
   </td>
@@ -10819,6 +11170,71 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
+    <p class="first"><p>auto-commit</p>
+</p>
+    
+      <p><i>yes | no | true | false</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to automatically change the cell value without rendering the editor (a checkbox)</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
     <p class="first"><p>boolean-type</p>
 </p>
     
@@ -10839,7 +11255,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Type of data</p>
+    <p class="first"><p>Type of the cell value</p>
 </p>
     
   </td>
@@ -10904,7 +11320,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-description >
-    <p class="first"><p>False value</p>
+    <p class="first"><p>Value considered as false</p>
 </p>
     
   </td>
@@ -11034,7 +11450,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-description >
-    <p class="first"><p>True value</p>
+    <p class="first"><p>Value considered as true</p>
 </p>
     
   </td>
@@ -12437,7 +12853,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-11-19T03:34:12-05:00">November 19, 2018</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-01-29T05:23:15-05:00">January 29, 2019</time></p>
         
       </footer>
 
@@ -12500,7 +12916,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 
