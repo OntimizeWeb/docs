@@ -11,11 +11,21 @@ The Lite Theme defines *compact* styles for the **OntimizeWeb** components. It i
 
 ## Usage
 
-Modify your application main styles file (*app.scss* if you are using ontimize-web pre-built apps) and import the theme from the [*OntimizeWeb Theming*]({{ base_path }}/theming/){:target="_blank"} module and includeit in your applications theme.
+Modify your application main styles file (*app.scss* if you are using ontimize-web pre-built apps) and apply the following changes:
 
+* Apply the *Lite Theme* to your application theme:
+
+{:.table-list}
 ```css
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
 @include ontimize-theme-styles-lite($theme);
+```
+
+* Override the material typography with the *Lite Theme* typography (`$lite-typography`):
+
+{:.table-list}
+```css
+@include o-material-theme($theme, $lite-typography);
 ```
 
 ## Additional steps
@@ -24,6 +34,7 @@ You must also apply the following changes in order to make **Lite Theme** workin
 
 * Display the form component error messages on tooltips. For this,  provide the **lite** value for the `type` property for `O_MAT_ERROR_OPTIONS` in your application root module like in the example below.
 
+{:.table-list}
 ```javascript
 import { O_MAT_ERROR_OPTIONS } from 'ontimize-web-ngx';
 
