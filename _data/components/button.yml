@@ -6,7 +6,7 @@ attributes: [{
   name: "label"
 },{
   name: "type",
-  type: "FLAT | RAISED | ICON | FAB | MINI-FAB",
+  type: "FLAT | RAISED | FLOATING",
   default: "FLAT",
   required: "",
   description: "Type of button"

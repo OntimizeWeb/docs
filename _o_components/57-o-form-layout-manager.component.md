@@ -13,7 +13,7 @@ A very common feature on management applications is displaying a form with the d
 For including the `o-form-layout-manager` component in your application you just have to wrap the desired data table with the form layout manager and it will manage the transitions between the table view and the detail forms.
 
 ```html
-<o-form-layout-manager mode="tab" title="Customers" label-columns="SURNAME;NAME" separator=",">
+<o-form-layout-manager attr="formLayoutMngr" mode="tab" title="Customers" label-columns="SURNAME;NAME" separator=",">
 
   <o-table attr="customers" title="Customers" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;NAME;SURNAME"
     visible-columns="NAME;SURNAME">
