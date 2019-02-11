@@ -77,11 +77,11 @@ You can represent the columns in extended mode with `o-table-column` component. 
     thousand-separator=".">
   </o-table-column>
   <o-table-column attr="REAL" title="REAL" type="real" grouping="yes"
-    thousand-separator="." decimal-separator="," decimal-digits="4">
+    thousand-separator="." decimal-separator="," max-decimal-digits="4">
   </o-table-column>
   <o-table-column attr="CURRENCY" title="CURRENCY" type="currency"
     currency-symbol="€" currency-symbol-position="right" grouping="yes"
-    thousand-separator="." decimal-separator="," decimal-digits="2">
+    thousand-separator="." decimal-separator="," max-decimal-digits="2">
   </o-table-column>
 
 </o-table>
@@ -274,7 +274,7 @@ You can see different predefined table cell renderers in the example below.
   <!--Currency Renderer-->
   <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"></o-table-column>
   <!--Percentage Renderer-->
-  <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+  <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," max-decimal-digits="2"></o-table-column>
   <!--Integer Renderer-->
   <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
   <!--Boolean Renderer-->
@@ -395,12 +395,12 @@ You can include the table cell renderer image in your table column by configurin
 You can include the table cell renderer percentage in your table column by configuring the attribute `type` in the column with the value **percentage** or adding the `o-table-cell-renderer-percentage` to the table column. Check the attributes of this component in the **API** section of this page.
 
 ```html
-<o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+<o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," max-decimal-digits="2"></o-table-column>
 
 <!-- Equivalent code -->
 
 <o-table-column attr="INTERESRATE" title="INTERESRATE">
-  <o-table-cell-renderer-percentage decimal-separator="," decimal-digits="2"></o-table-cell-renderer-percentage>
+  <o-table-cell-renderer-percentage decimal-separator="," max-decimal-digits="2"></o-table-cell-renderer-percentage>
 </o-table-column>
 ```
 
