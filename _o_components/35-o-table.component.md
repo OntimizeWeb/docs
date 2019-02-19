@@ -822,17 +822,21 @@ The `o-table` allows to add a context menu to table rows, the menu is displayed 
 For including the context menu in your table you have to include the `o-table-context-menu` component in your table.
 
 By default, `o-table-context-menu` include the next options:
+- Refresh
 - View detail.
 - Edit.
 - Insert.
+- Delete
 - Copy options.
-- Select all.
+- Filter options.
+- Select/Deselect all.
+
 
 Below an example.
 
 ![Table contextual by default ]({{ "/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
 
-The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `copy`, `select-all`  to `no`. 
+The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `delete`,`copy`, `select-all`,`refresh`,`filter`  to `no`. 
 You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'}component like in the example below.
 
 <h3 class="grey-color">Example</h3>
@@ -849,13 +853,13 @@ You can also include your own `context-menu` with the reference to a [`o-context
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
   ...
-   <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
+   <o-table-context-menu [context-menu]="myContextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
 </o-table>
 
 <o-context-menu #myContextMenu>
-  <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute($event)">
-  <o-context-menu-item icon="star_rate" label="Item 2" enabled="no">
-  <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)">
+  <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute($event)"></o-context-menu-item>
+  <o-context-menu-item icon="star_rate" label="Item 2" enabled="no"></o-context-menu-item>
+  <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)"></o-context-menu-item>
 </o-context-menu>
 ```
 
