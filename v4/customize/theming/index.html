@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-01-29T05:23:15-05:00">
+  <meta property="article:published_time" content="2019-02-27T12:06:08-05:00">
 
 
 
@@ -552,6 +552,22 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/v4/customize/lite/" class=" ">Lite theme</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/customize/style-guide/" class=" ">Style guide</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/v4/customize/icons/" class=" ">Icons</a></li>
           
             
@@ -597,7 +613,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v4/ontimize-web-ngx-theming/" class=" ">Theming</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v4/theming/" class=" ">Theming</a></li>
           
             
             
@@ -613,7 +629,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v4/ontimize-web-ngx-charts/" class=" ">Charts</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v4/charts/" class=" ">Charts</a></li>
           
             
             
@@ -621,7 +637,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v4/ontimize-web-ngx-map/" class=" ">Map</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v4/map/" class=" ">Map</a></li>
           
             
             
@@ -741,7 +757,7 @@
     
     <meta itemprop="description" content="How you can customize palette colors of your app.">
     
-    <meta itemprop="datePublished" content="January 29, 2019">
+    <meta itemprop="datePublished" content="February 27, 2019">
     
 
     <div class="page__inner-wrap">
@@ -777,7 +793,7 @@
 </aside>
 
 <h2 id="what-is-a-theme">What is a theme?</h2>
-<p>A <strong>theme</strong> is the set of colors that are applied to the Angular Material components. The library’s approach to theming is based on guidance from the <a href="https://material.google.com/style/color.html#color-color-palette">Material Design spec</a>.</p>
+<p>A <strong>theme</strong> is the set of colors that are applied to the Angular Material components. The library’s approach to theming is based on guidance from the <a href="https://material.google.com/style/color.html#color-color-palette" target="_blank">Material Design spec</a>.</p>
 
 <p>In Angular Material, a theme is created by composing multiple palettes. In particular,
 a theme consists of:</p>
@@ -794,7 +810,7 @@ a theme consists of:</p>
 
 <h2 id="configuration">Configuration</h2>
 
-<p>In order to make theming job easier, Ontimize Web provides a theming add-on called ‘<em>ontimize-web-ngx-theming</em>’. You can get more information about it <a href="https://ontimizeweb.github.io/docs/v4/ontimize-web-ngx-theming/" target="_blank">here</a>.</p>
+<p>In order to make theming job easier, <strong>OntimizeWeb</strong> provides a theming module. You can read more about the <em>OntimizeWeb Theming module</em> <a href="https://ontimizeweb.github.io/docs/v4/theming/" target="_blank">here</a>.</p>
 
 <p>The configuration of the application theme is done in the file <em>app.scss</em> in <em>/assets/css</em> folder in two steps:</p>
 
@@ -821,7 +837,7 @@ a theme consists of:</p>
 
 <h2 id="predefined-themes">Predefined themes</h2>
 
-<p>The module <a href="https://ontimizeweb.github.io/docs/v4/ontimize-web-ngx-theming/" target="_blank"><em>ontimize-web-ngx-theming</em></a> provides predefined themes. All of them
+<p>The <a href="https://ontimizeweb.github.io/docs/v4/theming/" target="_blank"><em>OntimizeWeb Theming</em></a> module provides predefined themes. All of them
 are stored in their corresponding files in the path <em>node_modules/ontimize-web-ngx-theming/src/themes/</em></p>
 
 <ul>
@@ -831,11 +847,9 @@ are stored in their corresponding files in the path <em>node_modules/ontimize-we
   <li><strong>mat-purple-green.scss</strong></li>
 </ul>
 
-<p>Also, if you want to use <em>compact styles</em>, you have to load the following file:</p>
-
-<ul>
-  <li><strong>ontimize-lite.scss</strong></li>
-</ul>
+<blockquote>
+  <p><strong>Lite Theme:</strong> The <em>Lite Theme</em> defines compact styles for the OntimizeWeb components. You can read more about this theme <a href="https://ontimizeweb.github.io/docs/v4/customize/lite/" target="_blank">here</a>.</p>
+</blockquote>
 
 <h2 id="custom-theme-definition">Custom theme definition</h2>
 
@@ -889,7 +903,6 @@ are stored in their corresponding files in the path <em>node_modules/ontimize-we
   <span class="o">)</span>
 <span class="o">);</span>
 
-
 <span class="c">/* Define a theme.*/</span>
 <span class="err">$</span><span class="nt">primary</span><span class="o">:</span> <span class="nt">mat-palette</span><span class="o">(</span><span class="err">$</span><span class="nt">mat-custom-primary</span><span class="o">);</span>
 <span class="err">$</span><span class="nt">accent</span><span class="o">:</span>  <span class="nt">mat-palette</span><span class="o">(</span><span class="err">$</span><span class="nt">mat-amber</span><span class="o">,</span> <span class="nt">A200</span><span class="o">,</span> <span class="nt">A100</span><span class="o">,</span> <span class="nt">A400</span><span class="o">);</span>
@@ -903,9 +916,6 @@ are stored in their corresponding files in the path <em>node_modules/ontimize-we
 
 <span class="c">/* Dark theme */</span>
 <span class="c">/*$theme: mat-dark-theme($primary, $accent, $warn);*/</span>
-
-<span class="c">/* Include all theme styles for the components.*/</span>
-<span class="k">@include</span> <span class="n">angular-material-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>To help with defining color palettes, you can use these online tools:</p>
@@ -917,7 +927,7 @@ are stored in their corresponding files in the path <em>node_modules/ontimize-we
 </ul>
 
 <p>To define a theme, you just need to declare three palettes: <strong>primary, accent and warn</strong>. You can declare a new palette
-as you can see in the example ($mat-custom-primary) or you can reuse one of the <a href="https://material.google.com/style/color.html#color-color-palette">standard palettes</a>.</p>
+as you can see in the example ($mat-custom-primary) or you can reuse one of the [standard palettes][1].</p>
 
 <p>After that you can choose between the <strong>light</strong> or <strong>dark</strong> themes by calling their corresponding functions <em>mat-light-theme(…)</em> or <em>mat-dark-theme(…)</em>. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.</p>
 
@@ -959,7 +969,6 @@ Calling it with a different theme argument allow multiple themes within the app 
 <span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/</span>
 <span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/</span>
 
-
 <span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'</span><span class="p">;</span>
 <span class="c">/*
 * After define theme, it is necessary to transfer color to Ontimize Web framework
@@ -988,7 +997,7 @@ Calling it with a different theme argument allow multiple themes within the app 
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-01-29T05:23:15-05:00">January 29, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-02-27T12:06:08-05:00">February 27, 2019</time></p>
         
       </footer>
 

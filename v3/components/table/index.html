@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-01-29T05:22:32-05:00">
+  <meta property="article:published_time" content="2019-02-27T12:05:35-05:00">
 
 
 
@@ -838,7 +838,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="January 29, 2019">
+    <meta itemprop="datePublished" content="February 27, 2019">
     
 
     <div class="page__inner-wrap">
@@ -1082,11 +1082,11 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
     <span class="na">thousand-separator=</span><span class="s">"."</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/o-table-column&gt;</span>
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"REAL"</span> <span class="na">title=</span><span class="s">"REAL"</span> <span class="na">type=</span><span class="s">"real"</span> <span class="na">grouping=</span><span class="s">"yes"</span>
-    <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">decimal-digits=</span><span class="s">"4"</span><span class="nt">&gt;</span>
+    <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">max-decimal-digits=</span><span class="s">"4"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/o-table-column&gt;</span>
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"CURRENCY"</span> <span class="na">title=</span><span class="s">"CURRENCY"</span> <span class="na">type=</span><span class="s">"currency"</span>
     <span class="na">currency-symbol=</span><span class="s">"€"</span> <span class="na">currency-symbol-position=</span><span class="s">"right"</span> <span class="na">grouping=</span><span class="s">"yes"</span>
-    <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+    <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">max-decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/o-table-column&gt;</span>
 
 <span class="nt">&lt;/o-table&gt;</span>
@@ -1271,7 +1271,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
   <span class="c">&lt;!--Currency Renderer--&gt;</span>
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"BALANCE"</span> <span class="na">title=</span><span class="s">"BALANCE"</span> <span class="na">type=</span><span class="s">"currency"</span> <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">currency-symbol=</span><span class="s">"€"</span> <span class="na">currency-symbol-position=</span><span class="s">"right"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
   <span class="c">&lt;!--Percentage Renderer--&gt;</span>
-  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="na">title=</span><span class="s">"INTERESRATE"</span> <span class="na">type=</span><span class="s">"percentage"</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="na">title=</span><span class="s">"INTERESRATE"</span> <span class="na">type=</span><span class="s">"percentage"</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">max-decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
   <span class="c">&lt;!--Integer Renderer--&gt;</span>
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NUMCARDS"</span> <span class="na">title=</span><span class="s">"NUMCARDS"</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
   <span class="c">&lt;!--Boolean Renderer--&gt;</span>
@@ -1383,12 +1383,12 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p>You can include the table cell renderer percentage in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>percentage</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-percentage</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="na">title=</span><span class="s">"INTERESRATE"</span> <span class="na">type=</span><span class="s">"percentage"</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="na">title=</span><span class="s">"INTERESRATE"</span> <span class="na">type=</span><span class="s">"percentage"</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">max-decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
 <span class="c">&lt;!-- Equivalent code --&gt;</span>
 
 <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="na">title=</span><span class="s">"INTERESRATE"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-table-cell-renderer-percentage</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/o-table-cell-renderer-percentage&gt;</span>
+  <span class="nt">&lt;o-table-cell-renderer-percentage</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">max-decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/o-table-cell-renderer-percentage&gt;</span>
 <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 
@@ -1808,18 +1808,21 @@ For including the context menu in your table you have to include the <code class
 
 <p>By default, <code class="highlighter-rouge">o-table-context-menu</code> include the next options:</p>
 <ul>
+  <li>Refresh</li>
   <li>View detail.</li>
   <li>Edit.</li>
   <li>Insert.</li>
+  <li>Delete</li>
   <li>Copy options.</li>
-  <li>Select all.</li>
+  <li>Filter options.</li>
+  <li>Select/Deselect all.</li>
 </ul>
 
 <p>Below an example.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/tabla/table_contextual_default.png" alt="Table contextual by default " class="comp-example-img" /></p>
 
-<p>The <code class="highlighter-rouge">o-table-context-menu</code> allows to hide these options by setting  the attributes <code class="highlighter-rouge">insert</code>, <code class="highlighter-rouge">edit</code>, <code class="highlighter-rouge">view-detail</code>, <code class="highlighter-rouge">copy</code>, <code class="highlighter-rouge">select-all</code>  to <code class="highlighter-rouge">no</code>. 
+<p>The <code class="highlighter-rouge">o-table-context-menu</code> allows to hide these options by setting  the attributes <code class="highlighter-rouge">insert</code>, <code class="highlighter-rouge">edit</code>, <code class="highlighter-rouge">view-detail</code>, <code class="highlighter-rouge">delete</code>,<code class="highlighter-rouge">copy</code>, <code class="highlighter-rouge">select-all</code>,<code class="highlighter-rouge">refresh</code>,<code class="highlighter-rouge">filter</code>  to <code class="highlighter-rouge">no</code>. 
 You can also include your own <code class="highlighter-rouge">context-menu</code> with the reference to a <a href="https://ontimizeweb.github.io/docs/v3/components/contextmenu/" target="_blank"><code class="highlighter-rouge">o-context-menu</code></a>component like in the example below.</p>
 
 <h3 class="grey-color">Example</h3>
@@ -1835,13 +1838,13 @@ You can also include your own <code class="highlighter-rouge">context-menu</code
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NAME"</span> <span class="na">title=</span><span class="s">"NAME"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
   ...
-   <span class="nt">&lt;o-table-context-menu</span> <span class="err">[</span><span class="na">context-menu</span><span class="err">]="</span><span class="na">contextMenu</span><span class="err">"</span> <span class="na">insert=</span><span class="s">"no"</span> <span class="na">edit=</span><span class="s">"no"</span> <span class="na">view-details=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-table-context-menu&gt;</span>
+   <span class="nt">&lt;o-table-context-menu</span> <span class="err">[</span><span class="na">context-menu</span><span class="err">]="</span><span class="na">myContextMenu</span><span class="err">"</span> <span class="na">insert=</span><span class="s">"no"</span> <span class="na">edit=</span><span class="s">"no"</span> <span class="na">view-details=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-table-context-menu&gt;</span>
 <span class="nt">&lt;/o-table&gt;</span>
 
 <span class="nt">&lt;o-context-menu</span> <span class="err">#</span><span class="na">myContextMenu</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"face"</span> <span class="na">label=</span><span class="s">"Item 1"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"star_rate"</span> <span class="na">label=</span><span class="s">"Item 2"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-context-menu-item</span> <span class="na">label=</span><span class="s">"Item 3"</span> <span class="err">[</span><span class="na">visible</span><span class="err">]="</span><span class="na">getVisible</span><span class="err">"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"face"</span> <span class="na">label=</span><span class="s">"Item 1"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
+  <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"star_rate"</span> <span class="na">label=</span><span class="s">"Item 2"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
+  <span class="nt">&lt;o-context-menu-item</span> <span class="na">label=</span><span class="s">"Item 3"</span> <span class="err">[</span><span class="na">visible</span><span class="err">]="</span><span class="na">getVisible</span><span class="err">"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
 <span class="nt">&lt;/o-context-menu&gt;</span>
 </code></pre></div></div>
 
@@ -6617,6 +6620,71 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
+    <p class="first"><p>filter</p>
+</p>
+    
+      <p><i>boolean</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show the filtering options in the contextual menu.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
     <p class="first"><p>insert</p>
 </p>
     
@@ -8876,71 +8944,6 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
-    <p class="first"><p>decimal-digits</p>
-</p>
-    
-      <p><i>number</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Number of decimals</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>2</p>
-</p>
-    
-  </td>
-          
-        
-  </tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
     <p class="first"><p>decimal-separator</p>
 </p>
     
@@ -9045,6 +9048,136 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
   <td class="" o-component-default >
     <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>max-decimal-digits</p>
+</p>
+    
+      <p><i>number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>The maximun number of decimal digits</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>2</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>min-decimal-digits</p>
+</p>
+    
+      <p><i>number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>The minimum number of decimal digits</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>2</p>
 </p>
     
   </td>
@@ -9858,71 +9991,6 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
-    <p class="first"><p>decimal-digits</p>
-</p>
-    
-      <p><i>number</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Number of decimals</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>0</p>
-</p>
-    
-  </td>
-          
-        
-  </tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
     <p class="first"><p>decimal-separator</p>
 </p>
     
@@ -10027,6 +10095,136 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
   <td class="" o-component-default >
     <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>max-decimal-digits</p>
+</p>
+    
+      <p><i>number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>The maximun number of decimal digits</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>0</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>min-decimal-digits</p>
+</p>
+    
+      <p><i>number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>The minimum number of decimal digits</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>2</p>
 </p>
     
   </td>
@@ -10185,71 +10383,6 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-name >
-    <p class="first"><p>decimal-digits</p>
-</p>
-    
-      <p><i>number</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Number of decimals</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>2</p>
-</p>
-    
-  </td>
-          
-        
-  </tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
     <p class="first"><p>decimal-separator</p>
 </p>
     
@@ -10354,6 +10487,136 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
   <td class="" o-component-default >
     <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>max-decimal-digits</p>
+</p>
+    
+      <p><i>number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>The maximun number of decimal digits</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>2</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>min-decimal-digits</p>
+</p>
+    
+      <p><i>number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>The minimum number of decimal digits</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>2</p>
 </p>
     
   </td>
@@ -12853,7 +13116,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-01-29T05:22:32-05:00">January 29, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-02-27T12:05:35-05:00">February 27, 2019</time></p>
         
       </footer>
 

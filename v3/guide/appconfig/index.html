@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-01-29T05:22:32-05:00">
+  <meta property="article:published_time" content="2019-02-27T12:05:35-05:00">
 
 
 
@@ -528,6 +528,22 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/v3/customize/lite/" class=" ">Lite theme</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/customize/style-guide/" class=" ">Style guide</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/v3/customize/icons/" class=" ">Icons</a></li>
           
             
@@ -573,7 +589,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-theming/" class=" ">Theming</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v3/theming/" class=" ">Theming</a></li>
           
             
             
@@ -589,7 +605,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-charts/" class=" ">Charts</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v3/charts/" class=" ">Charts</a></li>
           
             
             
@@ -597,7 +613,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-map/" class=" ">Map</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v3/map/" class=" ">Map</a></li>
           
             
             
@@ -717,7 +733,7 @@
     
     <meta itemprop="description" content="How tow configure an OntimizeWeb app lication.">
     
-    <meta itemprop="datePublished" content="January 29, 2019">
+    <meta itemprop="datePublished" content="February 27, 2019">
     
 
     <div class="page__inner-wrap">
@@ -927,248 +943,258 @@
       </tbody>
     </table>
 
-    <p><code>javascript
-{
-  id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
-  items: [
-    // Include here the child menu items
-  ]
-}</code>&lt;/div&gt;
-&lt;/details&gt;</p>
+    <p><span>Example:</span></p>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span>
+    <span class="nl">id</span><span class="p">:</span> <span class="s1">'views'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'VIEW'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'remove_red_eye'</span><span class="p">,</span> <span class="nx">opened</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">items</span><span class="p">:</span> <span class="p">[</span>
+      <span class="c1">// Include here the child menu items</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+</details>
 
-    <details class="collapsible">
+<details class="collapsible">
   <summary>MenuItem</summary>
   <div class="collapsible-content">
 
-        <p>If you want to include a common menu item, you must include a <code>MenuItem</code> whith the following attributes. Note that there is some attributes that refers to the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a>, this will be explained later.</p>
+    <p>If you want to include a common menu item, you must include a <code>MenuItem</code> whith the following attributes. Note that there is some attributes that refers to the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a>, this will be explained later.</p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>id</td>
-              <td>string</td>
-              <td>The menu item identifier</td>
-            </tr>
-            <tr>
-              <td>name</td>
-              <td>string</td>
-              <td>The menu item name</td>
-            </tr>
-            <tr>
-              <td>icon</td>
-              <td>string</td>
-              <td>The menu item icon (see <a href="https://design.google.com/icons/" target="_blank">Google material design icons</a>)</td>
-            </tr>
-            <tr>
-              <td>tooltip</td>
-              <td>string</td>
-              <td>The tooltip text showed on the menu item when the menu is callapsed</td>
-            </tr>
-            <tr>
-              <td>show-in-app-sidenav</td>
-              <td>boolean</td>
-              <td>Indicates whether or not to show the menu item in the side menu</td>
-            </tr>
-            <tr>
-              <td>show-in-card-menu</td>
-              <td>boolean</td>
-              <td>Indicates whether or not to show the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a></td>
-            </tr>
-            <tr>
-              <td>image</td>
-              <td>string</td>
-              <td>The image displayed on the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a></td>
-            </tr>
-            <tr>
-              <td>component</td>
-              <td>component reference</td>
-              <td>The component for the corresonding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a></td>
-            </tr>
-            <tr>
-              <td>component-inputs</td>
-              <td>Object</td>
-              <td>The attributes for the component for the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a></td>
-            </tr>
-          </tbody>
-        </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>string</td>
+          <td>The menu item identifier</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>string</td>
+          <td>The menu item name</td>
+        </tr>
+        <tr>
+          <td>icon</td>
+          <td>string</td>
+          <td>The menu item icon (see <a href="https://design.google.com/icons/" target="_blank">Google material design icons</a>)</td>
+        </tr>
+        <tr>
+          <td>tooltip</td>
+          <td>string</td>
+          <td>The tooltip text showed on the menu item when the menu is callapsed</td>
+        </tr>
+        <tr>
+          <td>show-in-app-sidenav</td>
+          <td>boolean</td>
+          <td>Indicates whether or not to show the menu item in the side menu</td>
+        </tr>
+        <tr>
+          <td>show-in-card-menu</td>
+          <td>boolean</td>
+          <td>Indicates whether or not to show the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a></td>
+        </tr>
+        <tr>
+          <td>image</td>
+          <td>string</td>
+          <td>The image displayed on the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a></td>
+        </tr>
+        <tr>
+          <td>component</td>
+          <td>component reference</td>
+          <td>The component for the corresonding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a></td>
+        </tr>
+        <tr>
+          <td>component-inputs</td>
+          <td>Object</td>
+          <td>The attributes for the component for the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a></td>
+        </tr>
+      </tbody>
+    </table>
 
-      </div>
+  </div>
 </details>
 
-    <p>In addition to the attributes of the <code class="highlighter-rouge">MenuItem</code>, you can include other attributes depending on what kind of menu item you want. All the following menu item types extend from the <code class="highlighter-rouge">MenuItem</code>, all its attributes are inherited.</p>
+<p>In addition to the attributes of the <code class="highlighter-rouge">MenuItem</code>, you can include other attributes depending on what kind of menu item you want. All the following menu item types extend from the <code class="highlighter-rouge">MenuItem</code>, all its attributes are inherited.</p>
 
-    <details class="collapsible">
+<details class="collapsible">
   <summary>MenuItemRoute</summary>
   <div class="collapsible-content">
 
-        <p>For navigating the different modules of your application you must include a <code>MenuItemRoute</code>, its attributes are the following:</p>
+    <p>For navigating the different modules of your application you must include a <code>MenuItemRoute</code>, its attributes are the following:</p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>route</td>
-              <td>string</td>
-              <td>The route the application will navigate when the menu item is clicked</td>
-            </tr>
-          </tbody>
-        </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>route</td>
+          <td>string</td>
+          <td>The route the application will navigate when the menu item is clicked</td>
+        </tr>
+      </tbody>
+    </table>
 
-        <p><code>javascript
-{ id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' }</code>&lt;/div&gt;
-&lt;/details&gt;</p>
+    <p><span>Example:</span></p>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'customers'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'CUSTOMERS'</span><span class="p">,</span> <span class="nx">tooltip</span><span class="p">:</span> <span class="s1">'CUSTOMERS_CONTENT'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="s1">'/main/customers'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'people'</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+</details>
 
-        <details class="collapsible">
+<details class="collapsible">
   <summary>MenuItemAction</summary>
   <div class="collapsible-content">
 
-            <p>For triggering an action include a <code>MenuItemAction</code>, its specific attributes are the following:</p>
+    <p>For triggering an action include a <code>MenuItemAction</code>, its specific attributes are the following:</p>
 
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>action</td>
-                  <td>function</td>
-                  <td>A function called when the menu item is clicked</td>
-                </tr>
-                <tr>
-                  <td>confirm</td>
-                  <td>yes/no</td>
-                  <td>Indicates whether or not the user must confirm the menu action</td>
-                </tr>
-                <tr>
-                  <td>confirmText</td>
-                  <td>string</td>
-                  <td>The confirmation text</td>
-                </tr>
-              </tbody>
-            </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>action</td>
+          <td>function</td>
+          <td>A function called when the menu item is clicked</td>
+        </tr>
+        <tr>
+          <td>confirm</td>
+          <td>yes/no</td>
+          <td>Indicates whether or not the user must confirm the menu action</td>
+        </tr>
+        <tr>
+          <td>confirmText</td>
+          <td>string</td>
+          <td>The confirmation text</td>
+        </tr>
+      </tbody>
+    </table>
 
-            <p><code>javascript
-function myFunction() {
-  /<em>
-    do whatever you want
-  </em>/
-}
-...
-{ id: 'action', name: 'action', icon: 'autorenew', action: myFunction }</code>&lt;/div&gt;
-&lt;/details&gt;</p>
+    <p><span>Example:</span></p>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">myFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// do whatever you want</span>
+  <span class="p">}</span>
+  <span class="p">...</span>
+  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'action'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'action'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'autorenew'</span><span class="p">,</span> <span class="nx">action</span><span class="p">:</span> <span class="nx">myFunction</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+</details>
 
-            <details class="collapsible">
+<details class="collapsible">
   <summary>MenuItemLocale</summary>
   <div class="collapsible-content">
 
-                <p>For switching between different languages available in the application, add as many <code>MenuItemLocale</code> items as languages.</p>
+    <p>For switching between different languages available in the application, add as many <code>MenuItemLocale</code> items as languages.</p>
 
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Type</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>locale</td>
-                      <td>string</td>
-                      <td>The language to be configured on the application</td>
-                    </tr>
-                  </tbody>
-                </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>locale</td>
+          <td>string</td>
+          <td>The language to be configured on the application</td>
+        </tr>
+      </tbody>
+    </table>
 
-                <p><code>javascript
-{ id: 'lang_es', name: 'LOCALE_es', icon: 'language', locale: 'es' },
-{ id: 'lang_en', name: 'LOCALE_en', icon: 'language', locale: 'en' }</code>&lt;/div&gt;
-&lt;/details&gt;</p>
+    <p><span>Example:</span></p>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'lang_es'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'LOCALE_es'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'language'</span><span class="p">,</span> <span class="nx">locale</span><span class="p">:</span> <span class="s1">'es'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'lang_en'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'LOCALE_en'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'language'</span><span class="p">,</span> <span class="na">locale</span><span class="p">:</span> <span class="s1">'en'</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+</details>
 
-                <details class="collapsible">
+<details class="collapsible">
   <summary>MenuItemLogout</summary>
   <div class="collapsible-content">
 
-                    <p>Include a <code>MenuItemLogout</code> for login out the user of the application, its specific attributes are the following:</p>
+    <p>Include a <code>MenuItemLogout</code> for login out the user of the application, its specific attributes are the following:</p>
 
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Type</th>
-                          <th>Description</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>route</td>
-                          <td>string</td>
-                          <td>The route the application will navigate when the user logs out</td>
-                        </tr>
-                        <tr>
-                          <td>confirm</td>
-                          <td>string</td>
-                          <td>Indicates whether or not the user must confirm the log out</td>
-                        </tr>
-                      </tbody>
-                    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>route</td>
+          <td>string</td>
+          <td>The route the application will navigate when the user logs out</td>
+        </tr>
+        <tr>
+          <td>confirm</td>
+          <td>string</td>
+          <td>Indicates whether or not the user must confirm the log out</td>
+        </tr>
+      </tbody>
+    </table>
 
-                    <p><code>javascript
-{ id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }</code>&lt;/div&gt;
-&lt;/details&gt;</p>
+    <p><span>Example:</span></p>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'logout'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'LOGOUT'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="s1">'/login'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'power_settings_new'</span><span class="p">,</span> <span class="nx">confirm</span><span class="p">:</span> <span class="s1">'yes'</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+</details>
 
-                    <details class="collapsible">
+<details class="collapsible">
   <summary>MenuItemUserInfo</summary>
   <div class="collapsible-content">
 
-                        <p>For displaying the application user information, include a <code>MenuItemUserInfo</code> with the following attributes:</p>
+    <p>For displaying the application user information, include a <code>MenuItemUserInfo</code> with the following attributes:</p>
 
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Name</th>
-                              <th>Type</th>
-                              <th>Description</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>user</td>
-                              <td>string</td>
-                              <td>The displayed user name</td>
-                            </tr>
-                            <tr>
-                              <td>avatar</td>
-                              <td>string</td>
-                              <td>The displayed image</td>
-                            </tr>
-                          </tbody>
-                        </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>user</td>
+          <td>string</td>
+          <td>The displayed user name</td>
+        </tr>
+        <tr>
+          <td>avatar</td>
+          <td>string</td>
+          <td>The displayed image</td>
+        </tr>
+      </tbody>
+    </table>
 
-                        <p><code>javascript
-{ id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }</code>&lt;/div&gt;
-&lt;/details&gt;</p>
+    <p><span>Example:</span></p>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'logout'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'LOGOUT'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="s1">'/login'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'power_settings_new'</span><span class="p">,</span> <span class="nx">confirm</span><span class="p">:</span> <span class="s1">'yes'</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </div>
+</details>
 
-                        <p>You can see an example of a menu configuration below. This is a piece of the configuration used in the <a href="https://try.imatia.com/ontimizeweb/quickstart" target="_blank">OntimizeWeb QuickStart</a>. You can check the full code in <a href="https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/shared/app.menu.config.ts" target="_blank">GitHub</a>.</p>
+<p>You can see an example of a menu configuration below. This is a piece of the configuration used in the <a href="https://try.imatia.com/ontimizeweb/quickstart" target="_blank">OntimizeWeb QuickStart</a>. You can check the full code in <a href="https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/shared/app.menu.config.ts" target="_blank">GitHub</a>.</p>
 
-                        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">MenuRootItem</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">MenuRootItem</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">MENU_CONFIG</span><span class="p">:</span> <span class="nx">MenuRootItem</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'home'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'HOME'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'dashboard'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/main/home'</span> <span class="p">},</span>
@@ -1188,21 +1214,15 @@ function myFunction() {
   <span class="p">},</span>
   <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'logout'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'LOGOUT'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/login'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'power_settings_new'</span><span class="p">,</span> <span class="na">confirm</span><span class="p">:</span> <span class="s1">'yes'</span> <span class="p">}</span>
 <span class="p">];</span>
-</code></pre></div>                        </div>
+</code></pre></div></div>
 
-                        <h2 id="card-menu-layout">Card menu layout</h2>
+<h2 id="card-menu-layout">Card menu layout</h2>
 
-                        <p>In addition to the side menu, <strong>OntimizeWeb</strong> provides <a href="https://ontimizeweb.github.io/docs/v3/components/cardmenulayout/" target="_blank"><code class="highlighter-rouge">o-card-menu-layout</code></a> component that builds automatically a dashboard page using the menu configuration.</p>
+<p>In addition to the side menu, <strong>OntimizeWeb</strong> provides <a href="https://ontimizeweb.github.io/docs/v3/components/cardmenulayout/" target="_blank"><code class="highlighter-rouge">o-card-menu-layout</code></a> component that builds automatically a dashboard page using the menu configuration.</p>
 
-                        <p><img src="https://ontimizeweb.github.io/docs/v3/images/layouts/app-layout/card-menu-layout.png" alt="Card menu layout example" class="align-center" /></p>
+<p><img src="https://ontimizeweb.github.io/docs/v3/images/layouts/app-layout/card-menu-layout.png" alt="Card menu layout example" class="align-center" /></p>
 
-                        <p>You can see this live example in the <a href="https://try.imatia.com/ontimizeweb/quickstart" target="_blank">OntimizeWeb QuickStart</a>.</p>
-                      </div></details>
-                  </div></details>
-              </div></details>
-          </div></details>
-      </div></details>
-  </div></details>
+<p>You can see this live example in the <a href="https://try.imatia.com/ontimizeweb/quickstart" target="_blank">OntimizeWeb QuickStart</a>.</p>
 
         
       </section>
@@ -1215,7 +1235,7 @@ function myFunction() {
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-01-29T05:22:32-05:00">January 29, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-02-27T12:05:35-05:00">February 27, 2019</time></p>
         
       </footer>
 

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-01-29T05:23:15-05:00">
+  <meta property="article:published_time" content="2019-02-27T12:06:08-05:00">
 
 
 
@@ -774,7 +774,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="January 29, 2019">
+    <meta itemprop="datePublished" content="February 27, 2019">
     
 
     <div class="page__inner-wrap">
@@ -895,9 +895,25 @@
 <h3 id="appearance">Appearance</h3>
 <p>The <code class="highlighter-rouge">appearance</code> input indicates which of the different <code class="highlighter-rouge">mat-form-field</code> appearance is used. It has the same features that Angular Material appearance input, watch it <a href="https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants">here</a>.</p>
 
+<p>Global default appearance options can be specified by providing a value for <em>MAT_FORM_FIELD_DEFAULT_OPTIONS</em> in your application&#8217;s root module. Like the property, the global setting can be either legacy, standard, fill or outside.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@NgModule({
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
+  ]
+})
+</code></pre></div></div>
 <h3 id="float-label">Float label</h3>
 <p>The <code class="highlighter-rouge">float-label</code> input indicates which of the different <code class="highlighter-rouge">mat-form-field</code> label behaviours is chosen. It has the same features that Angular Material appearance input, watch it <a href="https://v6.material.angular.io/components/form-field/overview#floating-label">here</a></p>
 
+<p>Global default label options can be specified by providing a value for <em>MAT_LABEL_GLOBAL_OPTIONS</em> in your application&#8217;s root module. Like the property, the global setting can be either always, never, or auto.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@NgModule({
+  providers: [
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}}
+  ]
+})
+</code></pre></div></div>
 <h2 id="validation">Validation</h2>
 <p>The input shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to <strong>yes</strong> and there is no value on the input.</p>
 
@@ -950,13 +966,13 @@
 <h2 id="enabled">Enabled</h2>
 <p>The <em>enabled</em> mode is active by default. You can disable the input by setting <code class="highlighter-rouge">enabled='no'</code>.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input3"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input3"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
 </code></pre></div></div>
 
 <h2 id="read-only">Read-only</h2>
 <p>The <em>readonly</em> mode represents an element that is no longer editable by the user. You can make a component only readable setting <code class="highlighter-rouge">read-only="yes"</code>.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-text-input</span> <span class="na">fxFlex</span> <span class="na">attr=</span><span class="s">"input"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-text-input</span> <span class="na">fxFlex</span> <span class="na">attr=</span><span class="s">"input"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="na">read-only=</span><span class="s">"yes"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
 </code></pre></div></div>
 
 <h2 id="tooltip">Tooltip</h2>
@@ -2914,7 +2930,7 @@ export interface IFormDataComponent extends IFormControlComponent {
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-01-29T05:23:15-05:00">January 29, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-02-27T12:06:08-05:00">February 27, 2019</time></p>
         
       </footer>
 
