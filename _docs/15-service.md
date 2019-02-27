@@ -118,27 +118,24 @@ You can see an example of a Ontimize service request response in the image below
 
 Below we will show an example of how to configure and use an `Ontimize service`.
 
-```js
- 
+```javascript
 protected service: OntimizeService;
 
 constructor(protected injector: Injector) {
   this.service = this.injector.get(OntimizeService);
 }
 
-
 ngOnInit() {
   this.configureService();
 }
 
 protected configureService() {
-  this.service = this.injector.get(OntimizeService);
   const conf = this.service.getDefaultServiceConfiguration();
   conf['path'] = '/movements';
   this.service.configureService(conf);
 }
 
-getMovements(data){
+getMovements(data) {
   if (data.hasOwnProperty('ACCOUNTID') && this.service !== null) {
     const filter = {
       'ACCOUNTID': data['ACCOUNTID']
@@ -152,11 +149,11 @@ getMovements(data){
       }
     });
   }
-this.adaptResult(data){
-     ........
-}
 
-``` 
+  this.adaptResult(data){
+    ...
+  }
+```
 
 ## Extending Ontimize services
 

@@ -1,12 +1,12 @@
 ---
-permalink: /ontimize-web-ngx-theming/
-title: "Theming"
+permalink: /theming/
+title: "OntimizeWeb Theming"
 excerpt: ""
 ---
 
-# Ontimize Web Theming
+{% include base_path %}
 
-Ontimize Web module for applications theming through '*scss*' files loading.
+Ontimize Web Theming is a module for applications loading predefined themes in your applications through '*scss*' files.
 
 * [Github repository](#github)
 * [Installation](#installation)
@@ -44,6 +44,4 @@ In other case you can define your own theme, and, if you want, use the ontimize 
   * `@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';`
   * `@include ontimize-theme-styles($theme);`
 
-
-Also, if you want to use compact styles for *'Ontimize Web'* components, you have to load the following file:
-  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-lite.scss';`
+> **Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.

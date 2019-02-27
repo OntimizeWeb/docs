@@ -174,7 +174,7 @@ In the following example we have a form component withe field for filtering the 
 
 ```html
 <o-form editable-detail="no" show-header="no">
-  <o-column title-label="{% raw %}{{ 'FILTERS' | oTranslate }}{% endraw %}">
+  <o-column title="{% raw %}{{ 'FILTERS' | oTranslate }}{% endraw %}">
     <o-row layout-align="space-between center">
       <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
       <o-text-input attr="SURNAME" read-only="no" fxFlex="66"></o-text-input>
@@ -185,7 +185,7 @@ In the following example we have a form component withe field for filtering the 
     </o-combo>
   </o-column>
 
-  <o-column title-label="{% raw %}{{ 'EMPLOYEES' | oTranslate }}{% endraw %}">
+  <o-column title="{% raw %}{{ 'EMPLOYEES' | oTranslate }}{% endraw %}">
     <o-table attr="employees" service="employees" entity="employee" columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID"
       visible-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEETYPEID;EMPLOYEESTARTDATE" keys="EMPLOYEEID"
       parent-keys="EMPLOYEENAME:NAME;EMPLOYEESURNAME:SURNAME;EMPLOYEETYPEID" query-with-null-parent-keys="yes" sort-columns="EMPLOYEESURNAME"

@@ -67,6 +67,10 @@ docs:
     children:
       - title: "Theming"
         url: /customize/theming/
+      - title: "Lite theme"
+        url: /customize/lite/
+      - title: "Style guide"
+        url: /customize/style-guide/
       - title: "Icons"
         url: /customize/icons/
       - title: "Tabs"
@@ -76,13 +80,13 @@ docs:
       - title: "Tools"
         url: /ontimize-web-ngx-tools/
       - title: "Theming"
-        url: /ontimize-web-ngx-theming/
+        url: /theming/
       - title: "DataTable <small>(deprecated)</small>"
         url: /ontimize-web-ngx-datatable/
       - title: "Charts"
-        url: /ontimize-web-ngx-charts/
+        url: /charts/
       - title: "Map"
-        url: /ontimize-web-ngx-map/
+        url: /map/
       - title: "Dynamicform"
         url: /ontimize-web-ngx-dynamicform/
       - title: "Dynamicform Builder"
@@ -275,17 +279,38 @@ ontimize_web_ngx_filemanager:
 
       - title: "Installation"
         url: /filemanager/installation/
-
-
   #- title: "Components"
   #  children:
   #    - title: "Table"
   #      url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
-
   - title: "Services"
     children:
       - title: "File Manager Service"
         url: /filemanager/filemanagerservice/
+
+ontimize_web_ngx_charts:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /charts/overview/
+      - title: "Installation"
+        url: /charts/installation/
+  #- title: "Components"
+  #  children:
+  #    - title: "Chart"
+  #      url: /ontimize_web_ngx_charts/components/o-chart.component/
+
+ontimize_web_ngx_map:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /map/overview/
+      - title: "Installation"
+        url: /map/installation/
+  #- title: "Components"
+  #  children:
+  #    - title: "Table"
+  #      url: /ontimize_web_ngx_map/components/o-map.component/
 
 ontimize_web_ngx_tree:
   - title: "Getting Started"
@@ -300,3 +325,11 @@ ontimize_web_ngx_tree:
         url: /tree/components/o-tree.component/
       - title: "Tree node"
         url: /tree/components/o-tree-node.component/
+ontimize_web_ngx_map:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /map/overview/
+
+      - title: "Installation"
+        url: /map/installation/
