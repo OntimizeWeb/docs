@@ -1,21 +1,19 @@
 ---
-permalink: /ontimize-web-ngx-charts/
+permalink: /charts/
 title: "Charts"
-excerpt: ""
 ---
 
-# Ontimize Web Charts
+{% include base_path %}
+{% include toc %}
 
-An implementation of nvD3 and d3 charts library for Ontimize Web.
+## Introduction
+The **Ontimize Web Charts** is an an implementation of nvD3 and d3 charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
 
+## Support
+The Ontimize Web Charts module is available in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-charts){:target="_blank"} where you can start discussions, add bug reports or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-charts/issues){:target="_blank"} section.
 
-* [Github repository](#github)
-* [Examples](#examples)
-* [Installation](#installation)
-* [Usage](#usage)
-
-## Github
-Ontimize Web Charts module is stored in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-charts){:target="_blank"} where you can also see/add todos, bugs or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-charts/issues){:target="_blank"} section.
+## Documentation
+You can see the complete documentation [here]({{ base_path }}/charts/overview/).
 
 ## Examples
 
@@ -26,48 +24,3 @@ Check out examples demo:
     live demo
   </a>
 </p>
-
-
-## Installation
-
-```bash
-  npm install ontimize-web-ngx-charts --save
-```
-
-## Usage
-
-Finally, you can use ontimize-web-ngx-charts in your Ontimize Web project.
-
-### Configure angular-cli.json dependencies
-
-You must add the module styles definition in your '*.angular-cli.json*' file styles array:
-
-```bash
-...
-"styles": [
-  ...
-  "../node_modules/ontimize-web-ngx-charts/styles.scss",
-  ....
-],
-...
-```
-
-### Import in an application module
-
-Include the library chart module into your app in the module where you want to use it.
-
-```bash
-...
-import { OChartModule } from 'ontimize-web-ngx-charts';
-...
-
-@NgModule({
-  imports: [
-    OChartModule,
-    /* other imports */
-  ],
-  declarations: ...
-  providers: ...
-})
-export class ExampleModule { }
-```

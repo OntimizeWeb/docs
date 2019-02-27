@@ -98,8 +98,54 @@ The height of the rows in a grid list can be set via the `grid-item-height` attr
 - *Ratio*: This ratio is *column-width:row-height*, and must be passed in with a colon, not a decimal (e.g. 4:3).
 - *Fit*: Setting `grid-item-height` to fit automatically divides the available height by the number of rows. Please note the height of the o-grid or its container must be set.
 
+## Gutter size <span class="menuitem-badge">new</span>
+The gutter size can be set to any px, em, or rem value with the `gutter-size` property. If no units are specified, px units are assumed. By default the gutter size is 1px.
+
+## Multiple rows or columns <span class="menuitem-badge">new</span>
+
+It is possible to set the `rowspan` and `colspan` of each o-grid-item individually, using the rowspan and colspan properties. By default its values are 1. The `colspan` must not exceed the number of cols in the `o-grid`. There is no such restriction on the rowspan however, more rows will simply be added for it the tile to fill.
+```html
+ <o-grid #grid attr="grid" [static-data]="getStaticData())" columns="text;cols;rows;color" cols="4"
+grid-item-height="100px" controls="no" gutter-size="0">
+  <o-grid-item *ngFor="let list of grid.dataArray" [colspan]="list.cols" [rowspan]="list.rows">
+    <div [style.background]="list.color" fxFill>
+      {% raw %} {{list.text}} {% endraw %}
+    </div>
+  </o-grid-item>
+</o-grid>
+```
+
+![Grid with multiple rows or columns]({{ "/images/components/grid/grid-multiple.png" | absolute_url }}){: .comp-example-img}
+
 ## QuickFilter
 By default this option is enabled, the filter is visible in the top right. It can be disabled by configuring the `quick-filter` attribute.
+
+### Fixed header and footer
+The `o-grid` component supports *fixed header* and *footer* setting `fixed-header="yes"` when its content is greater than its own height. For that, you must set the height of the grid, using, for example `[ngStyle]="{height: 400px;}"`. By default, it's disabled.
+
+```html
+<o-grid #grid attr="grid" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
+  keys="id" fixed-header="yes" [ngStyle]="{height:400px}" pagination-controls="yes" query-rows="8">
+  <o-grid-item *ngFor="let list of grid.dataArray">
+    <o-column layout-padding class="container-item">
+      <img [src]="list.thumbnailUrl" style="margin-top:8px">
+      <div class="name"><b>{% raw %} {{ list.name }}{% endraw %}</b></div>
+      <div class="phone">
+        <mat-icon>phone</mat-icon> <span> {% raw %} {{ list.phone }} {% endraw %}</span>
+      </div>
+      <div class="email">
+        <mat-icon>email</mat-icon> <span>{% raw %} {{ list.email }} {% endraw %}</span>
+      </div>
+      <div class="domain">
+        <mat-icon>domain</mat-icon> <span> {% raw %} {{ list.companyname }} {% endraw %}</span>
+      </div>
+      <div class="website">
+        <mat-icon>website</mat-icon> <span> {% raw %} {{ list.website }} {% endraw %}</span>
+      </div>
+    </o-column>
+  </o-grid-item>
+</o-grid>
+```
 
 ## Custom grid item
 When building an `o-grid` component you can define your own grid item. For including a custom grid item, **OntimizeWeb** offers the `o-grid-item` directive that can be attached to an angular material grid tile (`mat-grid-tile`) .
@@ -110,13 +156,13 @@ When building an `o-grid` component you can define your own grid item. For inclu
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding  class="container-item">
       <img [src]="list.thumbnailUrl" style="margin-top:8px">
-      <h4>{{ list.name }}</h4>
-      <div class="phone"><mat-icon>phone</mat-icon><span>{{ list.phone }}</span></div>
-      <div class="email"><mat-icon>email</mat-icon><span>{{ list.email }}</span></div>
-      <div class="domain"><mat-icon>domain</mat-icon><span>{{ list.companyname }}</span></div>
-      <div class="website"><mat-icon>website</mat-icon><span>{{ list.website }}</span></div>
+      <h4>{% raw %} {{ list.name }} {% endraw %}</h4>
+      <div class="phone"><mat-icon>phone</mat-icon><span>{% raw %} {{ list.phone }} {% endraw %}</span></div>
+      <div class="email"><mat-icon>email</mat-icon><span>{% raw %} {{ list.email }}</span></div>
+      <div class="domain"><mat-icon>domain</mat-icon><span>{% raw %} {{ list.companyname }}{% endraw %} </span></div>
+      <div class="website"><mat-icon>website</mat-icon><span>{% raw %}  {{ list.website }}{% endraw %}</span></div>
       <div class="body">
-        {{ list.body }}
+        {% raw %} {{ list.body }}{% endraw %}
       </div>
     </o-column>
   </o-grid-item>

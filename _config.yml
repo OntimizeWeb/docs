@@ -208,6 +208,12 @@ collections:
   ontimize_web_ngx_tree:
     output: true
     permalink: /:collection/:path/
+  ontimize_web_ngx_map:
+    output: true
+    permalink: /:collection/:path/
+  ontimize_web_ngx_charts:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -342,7 +348,7 @@ defaults:
       sidebar:
         nav: "components"
 
-  #_ontimize_web_ngx_tree layout: single      
+  #_ontimize_web_ngx_tree layout: single
   - scope:
       path: ""
       type: ontimize_web_ngx_tree
@@ -356,7 +362,7 @@ defaults:
       sidebar:
         nav: "ontimize_web_ngx_tree"
 
-  #_ontimize_web_ngx_filemanager layout: o-module   
+  #_ontimize_web_ngx_filemanager layout: o-module
   - scope:
       path: ""
       type: ontimize_web_ngx_filemanager
@@ -369,8 +375,37 @@ defaults:
       breadcrumbs: true
       sidebar:
         nav: "ontimize_web_ngx_filemanager"
+    #_ontimize_web_ngx_map layout: o-module   
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_map
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      breadcrumbs: true
+      sidebar:
+        nav: "ontimize_web_ngx_map"
 
- 
+  #_ontimize_web_ngx_charts
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_charts
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      breadcrumbs: true
+      sidebar:
+        nav: "ontimize_web_ngx_charts"
+
+
+
+
   # _o_validation_components
   - scope:
       path: ""

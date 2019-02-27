@@ -23,7 +23,9 @@ attributes: [{
 },{
   name: "decimal-separator"
 },{
-  name: "decimal-digits"
+  name: "min-decimal-digits"
+},{
+  name: "max-decimal-digits"
 }]
 
 inherit_properties: [{

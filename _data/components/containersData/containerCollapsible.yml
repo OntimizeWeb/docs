@@ -1,4 +1,5 @@
-directive: "o-column, o-row"
+directive: "o-column-collapsible, o-row-collapsible"
+title: "Collapsible containers"
 
 attributes: [{
   name: "attr"
@@ -22,6 +23,16 @@ attributes: [{
   description: "Number indicating elevation according to predefined CSS classes in [Angular Material Elevation](https://github.com/angular/material2/blob/master/guides/elevation.md){:target='_blank'}"
 },{
   name: "icon"
+},{
+  name: "expanded",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates wether the collapsible container will be expanded or not"
+},{
+  name: "description",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Container description"
 }]
-
-extraComponents: "containersData"

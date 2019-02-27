@@ -77,11 +77,11 @@ You can represent the columns in extended mode with `o-table-column` component. 
     thousand-separator=".">
   </o-table-column>
   <o-table-column attr="REAL" title="REAL" type="real" grouping="yes"
-    thousand-separator="." decimal-separator="," decimal-digits="4">
+    thousand-separator="." decimal-separator="," max-decimal-digits="4">
   </o-table-column>
   <o-table-column attr="CURRENCY" title="CURRENCY" type="currency"
     currency-symbol="€" currency-symbol-position="right" grouping="yes"
-    thousand-separator="." decimal-separator="," decimal-digits="2">
+    thousand-separator="." decimal-separator="," max-decimal-digits="2">
   </o-table-column>
 
 </o-table>
@@ -274,7 +274,7 @@ You can see different predefined table cell renderers in the example below.
   <!--Currency Renderer-->
   <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"></o-table-column>
   <!--Percentage Renderer-->
-  <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+  <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," max-decimal-digits="2"></o-table-column>
   <!--Integer Renderer-->
   <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
   <!--Boolean Renderer-->
@@ -395,12 +395,12 @@ You can include the table cell renderer image in your table column by configurin
 You can include the table cell renderer percentage in your table column by configuring the attribute `type` in the column with the value **percentage** or adding the `o-table-cell-renderer-percentage` to the table column. Check the attributes of this component in the **API** section of this page.
 
 ```html
-<o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+<o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," max-decimal-digits="2"></o-table-column>
 
 <!-- Equivalent code -->
 
 <o-table-column attr="INTERESRATE" title="INTERESRATE">
-  <o-table-cell-renderer-percentage decimal-separator="," decimal-digits="2"></o-table-cell-renderer-percentage>
+  <o-table-cell-renderer-percentage decimal-separator="," max-decimal-digits="2"></o-table-cell-renderer-percentage>
 </o-table-column>
 ```
 
@@ -822,17 +822,21 @@ The `o-table` allows to add a context menu to table rows, the menu is displayed 
 For including the context menu in your table you have to include the `o-table-context-menu` component in your table.
 
 By default, `o-table-context-menu` include the next options:
+- Refresh
 - View detail.
 - Edit.
 - Insert.
+- Delete
 - Copy options.
-- Select all.
+- Filter options.
+- Select/Deselect all.
+
 
 Below an example.
 
 ![Table contextual by default ]({{ "/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
 
-The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `copy`, `select-all`  to `no`. 
+The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `delete`,`copy`, `select-all`,`refresh`,`filter`  to `no`. 
 You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'}component like in the example below.
 
 <h3 class="grey-color">Example</h3>
@@ -849,13 +853,13 @@ You can also include your own `context-menu` with the reference to a [`o-context
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
   ...
-   <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
+   <o-table-context-menu [context-menu]="myContextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
 </o-table>
 
 <o-context-menu #myContextMenu>
-  <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute($event)">
-  <o-context-menu-item icon="star_rate" label="Item 2" enabled="no">
-  <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)">
+  <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute($event)"></o-context-menu-item>
+  <o-context-menu-item icon="star_rate" label="Item 2" enabled="no"></o-context-menu-item>
+  <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)"></o-context-menu-item>
 </o-context-menu>
 ```
 

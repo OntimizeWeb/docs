@@ -62,6 +62,19 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show the pagination controls"
 },{
+  name: "fixed-header",
+  type: string",
+  default: "no",
+  required: "",
+  description: "Size of the grid list's gutter in pixels"
+}
+,{
+  name: "gutter-size",
+  type: "no | false | yes | true",
+  default: "1px",
+  required: "",
+  description: "The amount of space between o-grid-items. This will be something like '10px' or '1em'."
+},{
   name: "refresh-button"
 },{
   name: "quick-filter-columns"
@@ -80,3 +93,5 @@ outputs: [{
   name: "onPaginatedDataLoaded",
   description: "Event triggered when the paginated data is updated"
 }]
+
+extraComponents: "gridData"

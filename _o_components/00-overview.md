@@ -79,14 +79,14 @@ Using the `validators` input has the disadvantage that the user cannot define an
 The *enabled* mode is actived by default. You can disabled the input by setting `enabled='no'`.
 
 ```html
-   <o-text-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()"></o-text-input>
+   <o-text-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" enabled="no" [data]="getValue()"></o-text-input>
 ```
 
 ## Read-only
 The *readonly* mode represents an element that is no longer editable by the user. You can configure for an input to be reandonly `read-only="yes"`.
 
  ```html
-    <o-text-input fxFlex attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" [data]="getValue()"></o-text-input>
+    <o-text-input fxFlex attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" read-only="yes" [data]="getValue()"></o-text-input>
 ```
 
 ## Tooltip

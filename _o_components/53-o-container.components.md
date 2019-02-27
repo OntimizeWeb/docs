@@ -13,13 +13,21 @@ This components also apply basic styling
 ## Example
 
 ```html
-<o-column attr="col" title-label="This is a column">
+<o-column attr="col" title="This is a column">
     <!-- Children displayed along Y axis -->
 </o-column>
 
-<o-row attr="row" title-label="This is a row">
+<o-row attr="row" title="This is a row">
     <!-- Children displayed along X axis -->
 </o-row>
+
+<o-column-collapsible attr="collapsible-col" title="Column" description="This is a collapsible column">
+    <!-- Children displayed along Y axis -->
+</o-column-collapsible>
+
+<o-row-collapsible attr="collapsible-row" title="Row" description="This is a collapsible row">
+    <!-- Children displayed along X axis -->
+</o-row-collapsible>
 ```
 
 You can interact with different options of this components in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/containers){:target="_blank"}.
