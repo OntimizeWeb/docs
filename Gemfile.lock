@@ -249,6 +249,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-feed
+  nokogiri
 
 BUNDLED WITH
-   1.16.2
+   2.0.1
