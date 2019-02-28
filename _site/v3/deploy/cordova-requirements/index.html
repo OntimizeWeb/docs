@@ -1,0 +1,1063 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Requirements form build and run with Cordova - Ontimize Web</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ontimize Web">
+<meta property="og:title" content="Requirements form build and run with Cordova">
+
+
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v3/deploy/cordova-requirements/">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v3/deploy/cordova-requirements/">
+
+
+
+  <meta property="og:description" content="Deploy an Ontimize Web application.">
+
+
+
+  <meta name="twitter:site" content="@imatiainnova">
+  <meta name="twitter:title" content="Requirements form build and run with Cordova">
+  <meta name="twitter:description" content="Deploy an Ontimize Web application.">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/deploy/cordova-requirements/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://ontimizeweb.github.io/docs/v3/images/site-logo.png">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="https://ontimizeweb.github.io/docs/v3/images/site-logo.png">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2019-02-27T12:10:10-05:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://ontimizeweb.github.io/docs/v3",
+      "logo": "https://ontimizeweb.github.io/docs/v3/images/site-logo.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ontimize Web",
+      "url" : "https://ontimizeweb.github.io/docs/v3",
+      "sameAs" : ["https://twitter.com/imatiainnova"]
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ontimizeweb.github.io/docs/v3/feed.xml" type="application/atom+xml" rel="alternate" title="Ontimize Web Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script defer src="https://ontimizeweb.github.io/docs/v3/assets/js/fontawesome-all.min.js"></script>
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ontimizeweb.github.io/docs/v3/assets/css/main.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ontimizeweb.github.io/docs/v3/images/apple-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v3/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v3/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v3/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v3/images/android-icon-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="manifest" href="https://ontimizeweb.github.io/docs/v3/images/manifest.json?v=M44lzPylqQ">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://ontimizeweb.github.io/docs/v3/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://ontimizeweb.github.io/docs/v3/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+          <a href="https://ontimizeweb.github.io/docs/v3/">
+            <div class="main_icon"></div>
+        </a>
+        <span class="fill_remaing_space"></span>
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/v3/">Ontimize Web</a></li>-->
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v3/doc-overview/">Getting started</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v3/components/">Components</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v3/about/">About</a>
+            
+            </li>
+
+
+            
+            
+
+          
+
+          
+          <li class="masthead__menu-item masthead__menu-item-active">
+            <select onchange="window.location = this.options[this.selectedIndex].value">
+            
+              <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v4" >4.x.x</option>
+            
+            </select>
+          </li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+
+ <script type="text/javascript" style="display:none;">
+  var onNavigationItemClick = function (element) {
+
+    var parentNav = $(element).parents('nav.nav__list');
+    var icons = parentNav.find('svg');
+    icons.addClass('fa-folder');
+    icons.addClass('orange-icon');
+    icons.removeClass('fa-folder-open');
+
+    var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.addClass('active-component-category');
+/*
+    parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
+    parentLi.toggleClass('active-component-category');
+*/    
+    var currentIcon = parentLi.find('svg:first');
+    currentIcon.addClass('fa-folder-open');
+    currentIcon.removeClass('orange-icon');
+    currentIcon.removeClass('fa-folder');
+
+  };
+</script>
+
+<nav class="nav__list">
+  
+  <ul>
+    
+    
+    
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+    
+ 
+    
+
+    
+
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Getting Started</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/doc-overview/" class=" ">Document overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/example-overview/" class=" ">Example overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/install-and-run/" class=" ">Run an example</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/make-changes/" class=" ">Make some changes</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/advanced-changes/" class=" ">Advanced topics</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Guide</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/guide/appstructure/" class=" ">App structure</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/guide/appconfig/" class=" ">App configuration</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/app-modules/" class=" ">Modules</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/routing/" class=" ">Routing</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/forms/" class=" ">Forms</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/guide/service/" class=" ">Services</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/guide/permissions/" class=" ">Permissions</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/run-your-app/" class=" ">Run your app</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/deployment/" class=" ">Deploy your app</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/add-to-project/" class=" ">OntimizeWeb library</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/video-examples/" class=" ">Video examples</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/migrations/" class=" ">Migration guides</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Customization</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/customize/theming/" class=" ">Theming</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/customize/lite/" class=" ">Lite theme</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/customize/style-guide/" class=" ">Style guide</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/customize/icons/" class=" ">Icons</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/customize/tabs/" class=" ">Tabs</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Add-ons</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-tools/" class=" ">Tools</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/theming/" class=" ">Theming</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-datatable/" class=" ">DataTable <small>(deprecated)</small></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/charts/" class=" ">Charts</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/map/" class=" ">Map</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-dynamicform/" class=" ">Dynamicform</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-dynamicform-builder/" class=" ">Dynamicform Builder</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/filemanager/" class=" ">File Manager</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/tree/" class=" ">Tree</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-jee-seed/" class=" ">JEE app seed</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/ontimize-web-ngx-seed/" class=" ">App seed</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Meta</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/contributing/" class=" ">Contributing</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/license/" class=" ">License</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/versions" class=" ">Versions</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v3/about/" class=" ">About</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+  <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Requirements form build and run with Cordova">
+    
+    <meta itemprop="description" content="Deploy an Ontimize Web application.">
+    
+    <meta itemprop="datePublished" content="February 27, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 class="page__title" itemprop="headline">Requirements form build and run with Cordova
+</h1>
+        
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+<nav class="breadcrumbs">
+  <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <a href="https://ontimizeweb.github.io/docs/v3/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        
+        <span class="sep">&gt;</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <a href="https://ontimizeweb.github.io/docs/v3/deploy" itemprop="item"><span itemprop="name">Deploy</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">&gt;</span>
+      
+    
+      
+      
+        <li class="current">Requirements form build and run with Cordova</li>
+      
+    
+  </ol>
+</nav>
+
+<h2 id="installing-the-cordova-cli">Installing the Cordova CLI</h2>
+
+<p>Install the cordova module using npm utility of Node.js. The cordova module will automatically be downloaded by the npm utility.
+on OS X and Linux:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    npm install <span class="nt">-g</span> cordova
+</code></pre></div></div>
+<p>The -g flag above tells npm to install cordova globally. Otherwise it will be installed in the node_modules subdirectory of the current working directory.</p>
+
+<h2 id="installing-the-requirements-for-android">Installing the requirements for Android</h2>
+
+<h3 id="java-development-kit-jdk">Java Development Kit (JDK)</h3>
+
+<p>Install <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">Java Development Kit (JDK) 8</a></p>
+
+<h3 id="gradle">Gradle</h3>
+<p>Install Grandle and add Grandle to your path.</p>
+
+<h3 id="android-studio">Android Studio</h3>
+<p>Install <a href="https://developer.android.com/studio/" target="_blank">Android Studio</a>. Detailed installation instructions are on Android’s developer site.</p>
+
+<h3 id="adding-sdk-packages">Adding SDK Packages</h3>
+
+<p>After installing the Android SDK, you must also install the packages for whatever API level you wish to target. It is recommended that you install the highest SDK version that your version of cordova-android supports.</p>
+
+<p>Open the Android SDK Manager and make sure the following are installed:</p>
+
+<ul>
+  <li>Android Platform SDK for your targeted version of Android.</li>
+  <li>Android SDK build-tools version 19.1.0 or higher.</li>
+  <li>Android Support Repository (found under “Extras”).</li>
+</ul>
+
+<h3 id="setting-environment-variables">Setting environment variables</h3>
+<p>Cordova’s CLI tools require some environment variables to be set in order to function correctly. The CLI will attempt to set these variables for you, but in certain cases you may need to set them manually. The following variables should be updated:</p>
+
+<ul>
+  <li>Set the <code class="highlighter-rouge">JAVA_HOME</code> environment variable to the location of your JDK installation.</li>
+  <li>Set the <code class="highlighter-rouge">ANDROID_HOME</code> environment variable to the location of your Android SDK installation.</li>
+  <li>It is also recommended that you add the Android SDK’s <code class="highlighter-rouge">tools</code>, <code class="highlighter-rouge">tools/bin</code>, and <code class="highlighter-rouge">platform-tools</code>directories to your PATH.</li>
+</ul>
+
+<p>Before building your project, you need to <em>accept the license agreements</em> and complete the installation of the missing components using the Android Studio SDK Manager.</p>
+
+<p>If you get the following aan error message indicates that “Application Error (file:///android_asset/www/index.html)”  when run the application add <code class="highlighter-rouge">&lt;preference name=”loadUrlTimeoutValue” value=”700000″ /&gt;</code> in config.xml.</p>
+<h2 id="installing-the-requirements-for-ios">Installing the requirements for IOS</h2>
+<p>Apple® tools required to build iOS applications only run on the OS X operating system on Intel-based Macs. Xcode® 7.0 (the minimum required version) runs only on OS X version 10.10.4 (Yosemite) or greater, and includes the iOS 9 SDK (Software Development Kit). To submit apps to the Apple App Store℠ requires the latest versions of the Apple tools.</p>
+
+<h3 id="xcode">Xcode</h3>
+<p>There are two ways to download Xcode:</p>
+
+<ul>
+  <li>
+    <p>from the App Store, available by searching for “Xcode” in the App Store application.</p>
+  </li>
+  <li>
+    <p>from Apple Developer Downloads, which requires registration as an Apple Developer.</p>
+  </li>
+</ul>
+
+<p>Once Xcode is installed, several command-line tools need to be enabled for Cordova to run. From the command line, run:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --install
+</code></pre></div></div>
+
+<h3 id="deployment-tools">Deployment Tools</h3>
+<p>The ios-deploy tools allow you to launch iOS apps on an iOS Device from the command-line.</p>
+
+<p>To install it, run the following from command-line terminal:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install -g ios-deploy
+</code></pre></div></div>
+
+<h2 id="installing-the-requirements-for-windows">Installing the requirements for Windows</h2>
+<h3 id="install-visualstudio-community-2017-or-better">Install <a href="https://visualstudio.microsoft.com/es/downloads/">VisualStudio Community 2017</a> or better</h3>
+
+<p>With options:</p>
+
+<p>Universal Windows Platform development,</p>
+<ul>
+  <li>Windows 10 Mobile-Emulator</li>
+  <li>Windows 10 SDK</li>
+  <li>SDK Windows 10</li>
+</ul>
+
+<p>Mobile development with JavaScript</p>
+<ul>
+  <li>Windows 10 Mobile-Emulator</li>
+  <li>UWP-Tools for Cordova</li>
+</ul>
+
+<h3 id="install-build-tools-for-visual-studio-2017">Install <a href="https://visualstudio.microsoft.com/es/downloads/">Build Tools for Visual Studio 2017</a></h3>
+<p>You will find them on the VS downloads page in Other Tools and Frameworks section</p>
+
+<p>The options below might not all be necessary, but I installed them all to get it just running.
+With options:</p>
+
+<ul>
+  <li>
+    <p>Visual C++ Buildtools
+** +add optional: Windows 10 SDK for Desktop C++
+** +add optional: Visual C++-Tools for CMake</p>
+  </li>
+  <li>
+    <p>Buildtools for web development:
+** +add optional: Development tools for .NET Framework 4–4.6
+** +add optional: .NET Core 2.0-Development tools
+** +add optional: NuGet-Ziele und Buildaufgaben
+** +add optional: TypeScript 2.6 SDK
+** +add optional: Extended ASP.NET-Features</p>
+  </li>
+  <li>
+    <p>.NET Core-Buildtools</p>
+  </li>
+  <li>
+    <p>Node.js Buildtools</p>
+  </li>
+</ul>
+
+<h3 id="set-msbuilddir">Set MSBUILDDIR</h3>
+<p>New ENV variable MSBUILDDIR allows to directly configure the MSBuild Tools to be used to build the app.
+While VSINSTALLDIR always has been a hack that accidentally also worked to switch between different MSBuildTools versions, we now make this functionality explicit: Just set the ENV var to a your desired MSBuild folder (e.g. C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin or C:\Program Files (x86)\MSBuild\14.0\bin) and it will be used to build your project.</p>
+
+<p>If you have Visual Studio 2017 and Visual Studio 2015 installed at the same time, the normal logic would always choose Visual Studio 2017’s MSBuild 15 - and fail on a Windows (Phone) 8.1 project. If you set the environment variable to MSBuild 14, it can successfully build your 8.1 apps.
+If the supplied path is invalid or doesn’t contain a working MSBuild, the normal MSBuild selection logic will be triggered</p>
+
+<h3 id="set-configxml">Set config.xml</h3>
+<p>I also added these preferences to the config.xml</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;platform</span> <span class="na">name=</span><span class="s">"windows"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">name=</span><span class="s">"windows-target-version"</span> <span class="na">value=</span><span class="s">"10.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">name=</span><span class="s">"windows-phone-target-version"</span> <span class="na">value=</span><span class="s">"10.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">name=</span><span class="s">"WindowsDefaultUriPrefix"</span> <span class="na">value=</span><span class="s">"ms-appx://"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/platform&gt;</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+
+        
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-02-27T12:10:10-05:00">February 27, 2019</time></p>
+        
+      </footer>
+
+      
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="https://ontimizeweb.github.io/docs/v3/deployment/" class="pagination--pager" title="Deploy your application
+">
+          <i class="fas fa-arrow-left margin-right"></i>
+        Previous
+      </a>
+    
+    
+      <a href="https://ontimizeweb.github.io/docs/v3/customize/lite/" class="pagination--pager" title="Lite Theme
+">
+        Next
+        <i class="fas fa-arrow-right margin-left"></i>
+      </a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<a href="#" class="scrollToTop"><i class="fa fa-fw fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/imatiainnova" target="_blank"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+    
+    
+      <li><a href="http://github.com/OntimizeWeb" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="https://ontimizeweb.github.io/docs/v3/feed.xml" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+      </footer>
+    </div>
+
+    <script src="https://ontimizeweb.github.io/docs/v3/assets/js/main.min.js"></script>
+
+
+
+
+
+  </body>
+</html>
