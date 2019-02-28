@@ -247,8 +247,12 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  ffi (>= 1.9.24)
   github-pages
+  jekyll (>= 3.6.3)
   jekyll-feed
+  nokogiri (>= 1.8.5)
+  rubyzip (>= 1.2.2)
 
 BUNDLED WITH
    1.16.2
