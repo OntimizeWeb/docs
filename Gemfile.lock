@@ -242,9 +242,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ffi (>= 1.9.24)
   github-pages
+  jekyll (>= 3.6.3)
   jekyll-feed
-  nokogiri
+  nokogiri (>= 1.8.5)
+  rubyzip (>= 1.2.2)
 
 BUNDLED WITH
    1.16.1
