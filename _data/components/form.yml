@@ -116,6 +116,18 @@ attributes: [
   default: "",
   required: "",
   description: "Entity keys SQL types, separated by ';'"
+},{
+  name: "detect-changes-on-blur",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form will detect inner components changes (for updating toolbar buttons) on its blur"
+},{
+  name: "include-breadcrumb",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form toolbar will render its parent 'form-container' breadrcrumb (only working if the form is inside a 'form-container' with a breadcrumb)"
 }]
 
 outputs: [{
