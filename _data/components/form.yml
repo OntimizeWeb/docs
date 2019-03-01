@@ -121,7 +121,7 @@ attributes: [
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Indicates whether or not the form will detect inner components changes (for updating toolbar buttons) ont its blur"
+  description: "Indicates whether or not the form will detect inner components changes (for updating toolbar buttons) on its blur"
 },{
   name: "include-breadcrumb",
   type: "no | false | yes | true",
