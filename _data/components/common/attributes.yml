@@ -90,12 +90,19 @@
     required: "",
     description: "Decimal digits chacarter separator"
   },
-  "decimal-digits": {
-    name: "decimal-digits",
+  "min-decimal-digits": {
+    name: "min-decimal-digits",
     type: "number",
     default: "2",
     required: "",
-    description: "Number of decimals"
+    description: "The minimum number of decimal digits"
+  },
+  "max-decimal-digits": {
+    name: "max-decimal-digits",
+    type: "number",
+    default: "2",
+    required: "",
+    description: "The maximun number of decimal digits"
   },
   "static-data": {
     name: "static-data",

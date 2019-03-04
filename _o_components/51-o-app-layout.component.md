@@ -46,6 +46,20 @@ Configure this mode by setting the **mobile** value in the `mode` attribute in t
 
 The application layout component may show a toolbar at the top of the screen by setting the `show-header` attribute to **yes**. Check this and other attributes in the **API** section of this page.
 
+The `o-app-layout` can allows you  to configure whether or not the language selector shows flags by setting `use-flag-icons=yes`.
+
+> **NOTE:** It is necessary install  `flag-icon-css` by NPM.
+```bash
+  $ npm install flag-icon-css
+```
+
+And you must added  
+```bash
+  "node_modules/flag-icon-css/css/flag-icon.css"
+```
+to angular.json's "styles" and it worked.
+
+
 ![App layout component toolbar]({{ "/images/layouts/app-layout/app_layout_header.png" | absolute_url }})
 
 ### Adding custom content to the toolbar

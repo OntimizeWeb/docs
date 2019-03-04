@@ -9,11 +9,9 @@ sidebar:
 
 {% include base_path %} {% include toc %}
 
-# Overview
-
 During the application development you will need to set some global parameters: application title, services paths, language, etc. Those parameters are configured into the application when angular bootstraps it.
 
-# Application configuration
+# Application configuration file
 
 The file that contains the application configuration parameters is called _app.config.ts_ and it is placed on the _app_ folder. The content of this file is similar as the example below:
 
@@ -31,17 +29,28 @@ export const CONFIG: Config = {
   servicesConfiguration: SERVICE_CONFIG,
   appMenuConfiguration: MENU_CONFIG,
   applicationLocales: ['es', 'en'],
+  remoteConfig: { /* Optional */
+    path: '/configPath',
+    endpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest', /* Optional */
+    timeout: 60000, /* Optional */
+    columns: { /* Optional */
+      user: 'USER_', /* Optional */
+      appId: 'APP_UUID', /* Optional */
+      configuration: 'CONFIGURATION' /* Optional */
+    }
+  },
   bundle: { /* Optional */
     endpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest', /* Optional */
     path: '/bundlePath' /* Optional */
   },
   startSessionPath: '/startSessionPath', /* Optional */
-  permissionsServiceType: 'OntimizePermissions' | 'OntimizeEEPermissions',  /* Optional */
-  permissionsConfiguration: {   /* Optional */
+  permissionsServiceType: 'OntimizePermissions' | 'OntimizeEEPermissions', /* Optional */
+  permissionsConfiguration: { /* Optional */
     service: 'permissions'
   }
 };
 ```
+{: .no-scroll}
 
 The noteworthy parameters here are:
 
@@ -49,26 +58,28 @@ The noteworthy parameters here are:
 - **uuid:** The application identifier, this is the unique package identifier of the application. It is used when storing or managing temporal data related with the application. By default is set as `ontimize-web-uuid`.
 - **title:** The title of the application.
 - **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, etc.).
-- **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation
-
+- **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
   - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
   - **'OntimizeEE':** string that configures Ontimize REST JEE services.
   - **Custom class:** a service class reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface.
-
 - **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 - **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
 - **applicationLocales:** Set of available locales for the application.
-- **bundle:** bundle configuration object
-
+- **remoteConfig:** remote configuration object. You can read more about this [here](#remote-configuration).
+  - **path:** remote configuration path.
+  - **endpoint:** the base path of the URL used for the remote configuration requests. Default value is provided by `apiEndpoint`.
+  - **timeout:** the timeout for the remote configuration requests.
+  - **columns:** the remote column names.
+    - **user:** the name of the column where the user name is stored remotely.
+    - **appId:** the name of the column where the application identifier is stored remotely.
+    - **configuration:** the name of the column where the configuration is stored remotely.
+- **bundle:** bundle configuration object.
   - **endpoint:** the base path of the URL used in the remote bundles query.
   - **path:** bundle query method path.
-
-- **permissionsServiceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation
-
+- **permissionsServiceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
   - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
   - **'OntimizeEEPermissions':** string that configures Ontimize REST JEE services.
   - **Custom class:** a service class reference that extends `OntimizePermissions` or `OntimizeEEPermissions` or implements the `IPermissionsService` interface.
-
 - **permissionsConfiguration:** permissions service configuration object.
 
 # Services configuration
@@ -122,6 +133,12 @@ For using the **OntimizeEEPermissions** service, the `permissionsConfiguration` 
   ...
 ```
 
+# Remote configuration
+
+Some components in **OntimizeWeb** store the changes made by the user in local storage. This configuration may also be stored on remote server in order to be loaded when the user uses the application in different browsers or devices.
+
+For storing the user configuration remotely it is only necessary to add the `remoteConfig` object to the application configuration (see example above). The `path` attribute is the only one that is mandatory, the other parameters have a default value as you can see in the example.
+
 # Application menu
 
 A lot of applications include a side menu for navigating through the different sections or performing actions. **OntimizeWeb** provides a prebuilt solution for this using the [`o-app-layout`]({{ base_path }}/components/applayout/){:target="_blank"} component and adding the menu configuration as explained below.
@@ -147,16 +164,17 @@ There is different types of `MenuRootItem` depending on the task they are define
   | opened  | boolean | In case the <code>items</code> property is defined, indicates if the group menu item is open or not by default |
   | tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
 
-<code>javascript
-{
-  id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
-  items: [
-    // Include here the child menu items
-  ]
-}</code></div>
+  <span>Example:</span>
+  ```javascript
+  {
+    id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
+    items: [
+      // Include here the child menu items
+    ]
+  }
+  ```
+</div>
 </details>
-
-
 
 <details class="collapsible">
   <summary markdown="span">MenuItem</summary>
@@ -191,11 +209,12 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
   | ----- | ------ | ----------- |
   | route | string | The route the application will navigate when the menu item is clicked |
 
-<code>javascript
-{ id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' }</code></div>
+  <span>Example:</span>
+  ```javascript
+  { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' }
+  ```
+  </div>
 </details>
-
-
 
 <details class="collapsible">
   <summary markdown="span">MenuItemAction</summary>
@@ -209,17 +228,16 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
   | confirm     | yes/no   | Indicates whether or not the user must confirm the menu action |
   | confirmText | string   | The confirmation text |
 
-<code>javascript
-function myFunction() {
-  /<em>
-    do whatever you want
-  </em>/
-}
-...
-{ id: 'action', name: 'action', icon: 'autorenew', action: myFunction }</code></div>
+  <span>Example:</span>
+  ```javascript
+  function myFunction() {
+    // do whatever you want
+  }
+  ...
+  { id: 'action', name: 'action', icon: 'autorenew', action: myFunction }
+  ```
+  </div>
 </details>
-
-
 
 <details class="collapsible">
   <summary markdown="span">MenuItemLocale</summary>
@@ -231,12 +249,13 @@ function myFunction() {
   | ------ | ------ | ----------- |
   | locale | string | The language to be configured on the application |
 
-<code>javascript
-{ id: 'lang_es', name: 'LOCALE_es', icon: 'language', locale: 'es' },
-{ id: 'lang_en', name: 'LOCALE_en', icon: 'language', locale: 'en' }</code></div>
+  <span>Example:</span>
+  ```javascript
+  { id: 'lang_es', name: 'LOCALE_es', icon: 'language', locale: 'es' },
+  { id: 'lang_en', name: 'LOCALE_en', icon: 'language', locale: 'en' }
+  ```
+  </div>
 </details>
-
-
 
 <details class="collapsible">
   <summary markdown="span">MenuItemLogout</summary>
@@ -249,11 +268,12 @@ function myFunction() {
   | route   | string | The route the application will navigate when the user logs out |
   | confirm | string | Indicates whether or not the user must confirm the log out |
 
-<code>javascript
-{ id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }</code></div>
+  <span>Example:</span>
+  ```javascript
+  { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }
+  ```
+  </div>
 </details>
-
-
 
 <details class="collapsible">
   <summary markdown="span">MenuItemUserInfo</summary>
@@ -266,8 +286,11 @@ function myFunction() {
   | user   | string | The displayed user name |
   | avatar | string | The displayed image |
 
-<code>javascript
-{ id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }</code></div>
+  <span>Example:</span>
+  ```javascript
+  { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }
+  ```
+  </div>
 </details>
 
 You can see an example of a menu configuration below. This is a piece of the configuration used in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart){:target="_blank"}. You can check the full code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/shared/app.menu.config.ts){:target="_blank"}.
