@@ -14,7 +14,7 @@ inheritedOutputs: [{
 
 attributes: [
   {
-  name: "displayWith",
+  name: "display-with",
   type: "(value: number | null) => string | number",
   default: "",
   required: "",
