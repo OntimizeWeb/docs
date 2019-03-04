@@ -6,8 +6,8 @@ attributes: [{
   name: "label"
 },{
   name: "type",
-  type: "FLAT | RAISED | ICON | FAB | MINI-FAB",
-  default: "FLAT",
+  type: "BASIC | RAISED | STROKED | FLAT | ICON | FAB | FAB-MIN",
+  default: "STROKED",
   required: "",
   description: "Type of button"
 },{
