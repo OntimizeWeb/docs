@@ -2,7 +2,7 @@
 title: Application configuration
 permalink: /guide/appconfig/
 author_profile: false
-excerpt: How tow configure an OntimizeWeb app lication.
+excerpt: How tow configure an OntimizeWeb application.
 sidebar:
   nav: docs
 ---
@@ -135,9 +135,11 @@ For using the **OntimizeEEPermissions** service, the `permissionsConfiguration` 
 
 # Remote configuration
 
-Some components in **OntimizeWeb** store the changes made by the user in local storage. This configuration may also be stored on remote server in order to be loaded when the user uses the application in different browsers or devices.
+Some components in **OntimizeWeb** store the changes made by the user in local storage. This configuration may also be stored on a remote server in order to be loaded when the user uses the application in different browsers or devices.
 
-For storing the user configuration remotely it is only necessary to add the `remoteConfig` object to the application configuration (see example above). The `path` attribute is the only one that is mandatory, the other parameters have a default value as you can see in the example.
+For storing the user configuration remotely it is only necessary to add the `remoteConfig` object to the application configuration (see the [example above](#application-configuration-file)). The `path` attribute is the only one that is mandatory, the other parameters have a default value as you can see in the example.
+
+Read more about how to configure the remote configuration [here]({{ base_path }}/guide/remoteconfig/){:target="_blank"}.
 
 # Application menu
 
