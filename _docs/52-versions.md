@@ -9,8 +9,59 @@ In this secction you can check the different releases of **OntimizeWeb** and its
 
 ## Releases and dependencies
 
-### Angular 5
+### Angular 6
+<table>
+  <thead>
+    <tr>
+      <th>ontimize-web-ngx</th>
+      <th>filemanager*</th>
+      <th>map*</th>
+      <th>charts*</th>
+      <th>dynamicform*</th>
+      <th>dynamicform-builder*</th>
+      <th>tree*</th>
+      <th>theming*</th>
+      <th>tools*</th>
+      <th>library-tools*</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+			<td>4.0.1</td>
+      <td rowspan="3">4.0.0-rc.1</td><!-- filemanager -->
+      <td rowspan="2">4.0.0</td><!-- map -->
+      <td>4.0.1</td>
+      <td rowspan="4">4.0.0-rc.0</td>
+      <td rowspan="4">4.0.0-rc.0</td>
+      <td rowspan="4">-</td>
+			<td>4.0.1</td>
+      <td rowspan="2">4.0.0</td>
+      <td rowspan="2">4.0.0</td>
+    </tr>
+    <tr>
+			<td>4.0.0</td>
+      <td>4.0.0</td>
+      <td>4.0.0</td>
+    </tr>
+    <tr>
+			<td>4.0.0-rc.1</td>
+      <td>4.0.0-rc.1</td>
+      <td>4.0.0-rc.1</td>
+      <td>4.0.0-rc.1</td>
+      <td rowspan="2">4.0.0-rc.0</td>
+      <td rowspan="2">4.0.0-rc.0</td>
+    </tr>
+    <tr>
+			<td>4.0.0-rc.0</td>
+      <td>4.0.0-rc.0</td>
+      <td>4.0.0-rc.0</td>
+      <td>4.0.0-rc.0</td>
+      <td>4.0.0-rc.0</td>
+    </tr>
+  </tbody>
+</table>
 
+### Angular 5
 <table>
     <thead>
         <tr>
@@ -27,17 +78,23 @@ In this secction you can check the different releases of **OntimizeWeb** and its
         </tr>
     </thead>
     <tbody>
+    <tr>
+      <td>3.2.2</td>
+      <td rowspan="5">3.1.1</td>
+			<td rowspan="7">3.0.0</td>
+			<td rowspan="5">3.1.1<br>3.1.2</td>
+			<td rowspan="6">3.1.0</td>
+			<td rowspan="6">3.1.0</td>
+			<td rowspan="6">3.1.0</td>
+			<td rowspan="6">1.2.0</td>
+			<td rowspan="9">1.0.6<br>1.0.7</td>
+			<td rowspan="7">1.1.1</td>
+    </tr>
+    <tr>
+      <td>3.2.1</td>
+    </tr>
 		<tr>
 			<td>3.2.0</td>
-			<td rowspan="3">3.1.1</td>
-			<td rowspan="5">3.0.0</td>
-			<td rowspan="3">3.1.1<br>3.1.2</td>
-			<td rowspan="4">3.1.0</td>
-			<td rowspan="4">3.1.0</td>
-			<td rowspan="4">3.1.0</td>
-			<td rowspan="4">1.2.0</td>
-			<td rowspan="7">1.0.6<br>1.0.7</td>
-			<td rowspan="5">1.1.1</td>
 		</tr>
 		<tr>
 			<td>3.1.2</td>
