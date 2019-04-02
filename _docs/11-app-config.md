@@ -165,6 +165,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | items   | array   | The menu item children. Providing this attribute means that the menu item is a container for a group of menu items |
   | opened  | boolean | In case the <code>items</code> property is defined, indicates if the group menu item is open or not by default |
   | tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
+  | class   | string  | The CSS class applied to the menu group |
 
   <span>Example:</span>
   ```javascript
@@ -190,6 +191,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | name                | string              | The menu item name |
   | icon                | string              | The menu item icon (see <a href="https://design.google.com/icons/">Google material design icons</a>{:target='_blank'}) |
   | tooltip             | string              | The tooltip text showed on the menu item when the menu is callapsed |
+  | class               | string  | The CSS class applied to the menu item |
   | show-in-app-sidenav | boolean             | Indicates whether or not to show the menu item in the side menu |
   | show-in-card-menu   | boolean             | Indicates whether or not to show the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
   | image               | string              | The image displayed on the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
