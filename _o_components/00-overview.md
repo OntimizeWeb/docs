@@ -103,6 +103,21 @@ User can add its own validators to a input component using the `validators` inpu
 
 Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/){:target='_blank'} components.
 
+## Label visible <span class='menuitem-badge'> new </span>
+Form data components allow you to show or hide label with `label-visible` attribute. By default, this value is *true*.
+
+>**NOTE**: This attribute *not* apply in `o-checkbox`,`o-radio` and  `o-slider`.
+
+## Required 
+A input can be market with a `required` attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the `hide-required-marker` property on *form data component*.
+
+```html
+<o-text-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" required="yes" [data]="getValue()"></o-text-input>
+<o-text-input attr="input4" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" required="yes" 
+hide-required-marker="yes" [data]="getValue()"></o-text-input>
+```
+
+![Input required]({{ "/images/components/inputs/required.png" | absolute_url }}){: .comp-example-img}
 
 ## Enabled
 The *enabled* mode is active by default. You can disable the input by setting `enabled='no'`.
@@ -126,7 +141,7 @@ To create a tooltip, add the `tooltip` attribute to an element. By default, the 
     tooltip="This is an awesome tooltip!" tooltip-position="left"></o-text-input>
 ```
 
-## Width new
+## Width
 
 All input conponents have the `width` atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.
 
