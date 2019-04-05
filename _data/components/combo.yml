@@ -23,13 +23,13 @@ inheritedOutputs: [{
 attributes: [{
   name: "translate",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not to translate the values shown on the drop down"
 },{
   name: "multiple",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not to allow the user to select multiple options"
 },{
@@ -41,9 +41,15 @@ attributes: [{
 },{
   name: "multiple-trigger-label",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not the component label shows a summary of the selected items"
+},{
+  name: "searchable",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Displays an input field for searching between the dropdown options"
 }]
 
 methods: [{
