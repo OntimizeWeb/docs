@@ -124,7 +124,7 @@ Below is an example of how to define a paginator for the table.
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
   <o-table-paginator page-size="20"></o-table-paginator>
@@ -848,7 +848,7 @@ You can also include your own `context-menu` with the reference to a [`o-context
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
 
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
@@ -909,7 +909,7 @@ You can configure:
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
 
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
