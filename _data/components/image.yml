@@ -3,25 +3,10 @@ directive: "o-image"
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "enabled", "required", "width", "read-only", "clear-button", "validators", "label-visible", "hide-required-marker"]
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "clear-button", "validators", "label-visible", "hide-required-marker"]
 }]
 
-
 attributes: [{
-  name: "attr"
-},{
-  name: "label"
-},{
-  name: "automatic-binding"
-},{
-  name: "automatic-registering"
-},{
-  name: "data"
-},{
-  name: "enabled"
-},{
-  name: "required"
-},{
   name: "empty-image",
   type: "string",
   default: "",
@@ -52,12 +37,6 @@ attributes: [{
   required: "",
   description: "Indicates the height of image component in pixels (px) or percentage (%)"
 },{
-  name: "tooltip"
-},{
-  name: "tooltip-position"
-},{
-  name: "tooltip-show-delay"
-},{
   name: "full-screen-button",
   type: "no | false | yes | true",
   default: "no",
@@ -71,7 +50,12 @@ attributes: [{
   description: "File types allowed on the image input, serparated by ';'. Accepted values: <image_extension>, 'image/*'"
 }]
 
-outputs: [{
-  name: "onChange",
-  description: "Event triggered when the component value changes"
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["onChange", "onValueChange"]
+},{
+  component: "o-text-input",
+  path: "components/input/text",
+  outputs: [ "onFocus", "onBlur"]
 }]
