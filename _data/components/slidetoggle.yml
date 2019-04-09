@@ -15,13 +15,13 @@ inheritedOutputs: [{
 attributes: [{
   name: "true-value",
   type: "any",
-  default: "true",
+  default: "yes",
   required: "",
   description: "Value that represents the true value"
 },{
   name: "false-value",
   type: "any",
-  default: "false",
+  default: "no",
   required: "",
   description: "Value that represents the false value"
 },{

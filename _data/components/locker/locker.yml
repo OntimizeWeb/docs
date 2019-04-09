@@ -1,10 +1,9 @@
 directive: "oLocker"
 
-
 attributes: [{
   name: "oLockerMode",
   type: "'load' | 'disable'",
-  default: "false",
+  default: "disable",
   required: "",
   description: "Indicates the component performance mode"
 },{

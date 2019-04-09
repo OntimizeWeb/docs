@@ -23,7 +23,7 @@ inheritedOutputs: [{
 attributes: [{
   name: "translate",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not to translate the labels displayed in the radio buttons"
 },{

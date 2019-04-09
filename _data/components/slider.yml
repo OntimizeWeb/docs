@@ -23,7 +23,7 @@ attributes: [
   {
   name: "invert",
   type: "boolean",
-  default: "false",
+  default: "no",
   required: "",
   description: "Whether the slider is inverted."
 },{
@@ -53,7 +53,7 @@ attributes: [
 },{
   name: "thumb-label",
   type: "boolean",
-  default: "false",
+  default: "no",
   required: "",
   description: "Whether or not to show the thumb label."
 },{
@@ -65,7 +65,7 @@ attributes: [
 },{
   name: "vertical",
   type: "boolean",
-  default: "false",
+  default: "no",
   required: "",
   description: "Whether the slider is vertical."
 }
