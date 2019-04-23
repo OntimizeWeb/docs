@@ -49,7 +49,7 @@ The `o-image` component adjust size the image by default, you can disable this f
 
 You can also add the height and the width to an `o-image` component with `height` and `width` attribute in px or in %.
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/media)
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/media)
 
 
 ## Validation

@@ -115,6 +115,6 @@ By default, the value in the slider's thumb label will be the same as the model 
 
 ![Formatting the thumb label in slider component]({{ "/images/components/inputs/slider/o-slider-vertical-displayWith.png" | absolute_url }}){: .comp-example-img}
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/slider){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/slider){:target="_blank"}.
 
 

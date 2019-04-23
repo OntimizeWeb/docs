@@ -46,7 +46,7 @@ The HTML input is automatically registered on its parent `o-form`, which provide
     <o-html-input attr="html" [data]="getHTMLData()" read-only="no" required="yes"></o-html-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/html){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/html){:target="_blank"}.
 
 ## Validation
 The `o-html-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

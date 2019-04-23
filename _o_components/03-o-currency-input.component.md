@@ -21,7 +21,7 @@ The currency input is automatically registered on its parent `o-form`, which pro
     <o-currency-input attr="balance" label="Balance" data="Canada" enabled="no"></o-currency-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/currency){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/currency){:target="_blank"}.
 
 ## Validation
 The `o-currency-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

@@ -14,6 +14,7 @@ description              : &description "web application framework based on Angu
 url                      : https://ontimizeweb.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/docs" # the subpath of your site, e.g. "/blog"
 repository               : "OntimizeWeb/docs"
+playgroundurl            : "https://try.imatia.com/ontimizeweb/playground"
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200

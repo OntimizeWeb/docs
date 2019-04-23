@@ -53,4 +53,4 @@ only has a possible *outline* value.
 ![Outline Appearance]({{ "/images/layouts/containers/outline-appearance.png" | absolute_url }}){: .comp-example-img}
 
 
-You can interact with different options of this components in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/containers){:target="_blank"}.
+You can interact with different options of this components in the [OntimizeWeb playground]({{site.playgroundurl}}/main/containers){:target="_blank"}.
