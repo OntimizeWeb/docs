@@ -22,7 +22,7 @@ The percentage input is automatically registered on its parent `o-form`, which p
     <o-percent-input attr="percent" label="Percentage" data="52.55" enabled="no"></o-percent-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/percent){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/percent){:target="_blank"}.
 
 ## Validation
 The `o-percent-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

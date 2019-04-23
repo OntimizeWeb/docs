@@ -282,7 +282,7 @@ You can see different predefined table cell renderers in the example below.
 </o-table>
 ```
 
-You can see this live example in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/renderer){:target="_blank"}.
+You can see this live example in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/renderer){:target="_blank"}.
 
 **Action cell renderer**
 
@@ -520,7 +520,7 @@ If a column haven't type will be *string*. You can find all information [here]({
 
 **3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/components/table/#custom-editors).
 
-You can see examples of this section in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/editor){:target="_blank"}.
+You can see examples of this section in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/editor){:target="_blank"}.
 
 For example:
 
@@ -728,7 +728,7 @@ Oftentimes, when displaying numbers in the table, users would like to be able to
   }
 ```
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/total){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/total){:target="_blank"}.
 
 ### Calculated columns
 
@@ -777,7 +777,7 @@ In the following example, two calculated columns are defined that perform the sa
 
 ```
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/calculatedcolumn).
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/calculatedcolumn).
 
 ### Table options
 
@@ -867,7 +867,7 @@ You can also include your own `context-menu` with the reference to a [`o-context
 
 For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/){:target='_blank'}.
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/contextmenu){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/contextmenu){:target="_blank"}.
 
 ### Insertable row
 
@@ -1096,4 +1096,4 @@ Note: If you have a custom render in the column and it is not overwritten the *g
 
 ## Demo
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table){:target="_blank"}.

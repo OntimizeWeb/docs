@@ -67,4 +67,4 @@ The `oContextMenuData` is an attribute of the `oContextMenu` directive is used f
 ```
 ![Context Menu]({{ "/images/layouts/context-menu/context-menu.png" | absolute_url }}){: .comp-example-img}
 
-You can see a live example of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/contextmenu){:target="_blank"}.
+You can see a live example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/contextmenu){:target="_blank"}.

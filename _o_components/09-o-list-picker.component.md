@@ -28,7 +28,7 @@ Once some data has been provided to the component, the user can see the option l
     <o-list-picker attr="country" label="Country" data="Spain" [static-data]="getStaticData()" value-column="name" columns="id;name" visible-columns="name" enabled="no"></o-list-picker>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/listpicker){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/listpicker){:target="_blank"}.
 
 ## Validation
 The `o-list-picker` shows automatically an error message when the `required` attribute is set to "yes" and there is no value selected.

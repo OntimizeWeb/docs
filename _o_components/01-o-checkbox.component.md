@@ -20,4 +20,4 @@ The checkbox is automatically registered on its parent `o-form`, which provides 
     <o-checkbox attr="checkbox2" label="Checkbox" enabled="no"></o-checkbox>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/checkbox){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/checkbox){:target="_blank"}.

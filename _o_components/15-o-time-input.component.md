@@ -30,5 +30,5 @@ The time input is automatically registered on its parent `o-form`, which provide
       <o-time-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.TIME' | oTranslate }}{% endraw %}" enabled="no" [data]="getValue()"></o-time-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/time){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/time){:target="_blank"}.
 

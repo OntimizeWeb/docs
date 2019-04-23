@@ -20,7 +20,7 @@ The email input is automatically registered on its parent `o-form`, which provid
     <o-email-input attr="email" label="Email" data="john.doe@ontimize.com" enabled="no"></o-text-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/email){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/email){:target="_blank"}.
 
 ## Validation
 The `o-email-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input. It also validates the input value is a valid email address.

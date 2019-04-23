@@ -70,7 +70,7 @@ If you want to override the default trigger label, add the entry `INPUT.COMBO.ME
 The `o-combo` shows automatically an error message when the `required` attribute is set to "yes" and there is no value selected.
 
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/combo){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/combo){:target="_blank"}.
 
 ## Locker  <span class='menuitem-badge'>new<span>
 
