@@ -3,7 +3,7 @@ permalink: /components/table/options/
 title: "Filtering"
 ---
 {% include base_path %}
-{{ site.baseurl }}
+
 
 By default the filtering is *local*, you can enable *remote* filtering setting `pageable="yes"`.
 

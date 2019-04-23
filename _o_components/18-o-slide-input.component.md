@@ -90,6 +90,6 @@ The tick-interval can also be set to auto which will automatically choose the nu
 
 ![Vertical slider component with tick-interval]({{ "/images/components/inputs/slider/o-slider-vertical-tickinterval.png" | absolute_url }}){: .comp-example-img}
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/slider){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/slider){:target="_blank"}.
 
 

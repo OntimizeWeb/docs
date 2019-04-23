@@ -18,4 +18,4 @@ The `o-button` component is a wrapper for Angular Material buttons. It allows ad
 
 ![Button]({{ "/images/components/button/o-button.png" | absolute_url }}){: .comp-example-img}
 
-You can see this live example in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/buttons){:target="_blank"}.
+You can see this live example in the [OntimizeWeb playground]({{site.playgroundurl}}/main/buttons){:target="_blank"}.

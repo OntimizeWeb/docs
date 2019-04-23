@@ -21,7 +21,7 @@ The NIF input is automatically registered on its parent `o-form`, which provides
     <o-nif-input attr="nif3" label="NIF" data="53780330M" enabled="no"></o-nif-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/nif){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/nif){:target="_blank"}.
 
 ## Validation
 The `o-nif-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input. It also validates the input value is a valid personal identification number.
