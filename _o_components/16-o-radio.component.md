@@ -33,4 +33,4 @@ The data array can be provided in two ways:
 ## Validation
 The `o-radio` shows automatically an error message when the `required` attribute is set to "yes" and there is no value selected.
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/radio){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/radio){:target="_blank"}.

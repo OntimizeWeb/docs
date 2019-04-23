@@ -22,7 +22,7 @@ The date input is automatically registered on its parent `o-form`, which provide
     <o-date-input attr="date3" label="Date" enabled="no"></o-date-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/date){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/date){:target="_blank"}.
 
 ## Validation
 The `o-date-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

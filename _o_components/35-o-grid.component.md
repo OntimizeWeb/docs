@@ -172,4 +172,4 @@ When building an `o-grid` component you can define your own grid item. For inclu
 ![Grid item custom]({{ "/images/components/grid/grid-sortable.png" | absolute_url }}){: .comp-example-img}
 
 ## Demo
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/grid/).
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/grid/).
