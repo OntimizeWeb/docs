@@ -19,7 +19,7 @@ versions:
   - title: "3.x.x"
     url: /docs/v3
   - title: "4.x.x"
-    url: /docs/v4
+    url: /docs
     active: true
 
 
