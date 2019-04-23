@@ -68,6 +68,18 @@ attributes: [{
   default : "auto",
   required : "",
   description : "Indicates which of the mat-form-field different [float label variants](https://v6.material.angular.io/components/form-field/overview#floating-label) will be used."
+},{
+  name: "hide-required-marker",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Whether the required marker should be hidden"
+},{
+  name: "label-visible",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Whether the label should be shown"
 }]
 
 

@@ -10,7 +10,7 @@ attributes: [{
 },{
   name: "selectable",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether the list item is selectable or not"
 }]

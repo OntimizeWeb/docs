@@ -3,7 +3,7 @@ directive: "o-radio"
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "validators"]
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker"]
 },{
   component: "OFormServiceComponent",
   path: "components/input/overviewservice",
@@ -23,7 +23,7 @@ inheritedOutputs: [{
 attributes: [{
   name: "translate",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not to translate the labels displayed in the radio buttons"
 },{

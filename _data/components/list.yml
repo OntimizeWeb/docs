@@ -34,6 +34,14 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to show a delete button. The delete button is shown only when some list item is selected"
+},{
+  name: "sort-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
+},{
+  name: "filter-case-sensitive"
 }]
 
 outputs: [{

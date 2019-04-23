@@ -124,7 +124,7 @@ Below is an example of how to define a paginator for the table.
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
   <o-table-paginator page-size="20"></o-table-paginator>
@@ -278,7 +278,7 @@ You can see different predefined table cell renderers in the example below.
   <!--Integer Renderer-->
   <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
   <!--Boolean Renderer-->
-  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean></o-table-column>
+  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-column>
 </o-table>
 ```
 
@@ -476,7 +476,7 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
   }
 
   getCellData(cellvalue: any, rowvalue: Object) {
-    return rowvalue['SURNAME'].toUpperCase() + ', ' + rowvalue[NAME];
+    return rowvalue['SURNAME'].toUpperCase() + ', ' + rowvalue['NAME'];
   }
 
 }
@@ -836,7 +836,7 @@ Below an example.
 
 ![Table contextual by default ]({{ "/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
 
-The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `delete`,`copy`, `select-all`,`refresh`,`filter`  to `no`. 
+The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `delete`,`copy`, `select-all`,`refresh`,`filter`  to `no`.
 You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'}component like in the example below.
 
 <h3 class="grey-color">Example</h3>
@@ -848,7 +848,7 @@ You can also include your own `context-menu` with the reference to a [`o-context
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
 
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
@@ -909,7 +909,7 @@ You can configure:
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
 
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
@@ -1083,7 +1083,7 @@ The `o-table` component provides a text that is displayed when the user hovers o
 ...
   <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
 ...
-``` 
+```
 
 ![Tooltip in table component]({{ "/images/components/tabla/table-tooltip.png" | absolute_url }}){: .comp-example-img}
 

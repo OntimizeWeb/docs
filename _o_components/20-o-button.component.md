@@ -9,11 +9,17 @@ The `o-button` component is a wrapper for Angular Material buttons. It allows ad
 ## Example
 
 ```html
-  <o-button attr="flat" type="FLAT" label="FLAT" (click)="onClick($event)"></o-button>
+  <o-button attr="basic" type="BASIC" label="BASIC" (click)="onClick($event)"></o-button>
 
   <o-button attr="raised" type="RAISED" label="RAISED" (click)="onClick($event)"></o-button>
 
-  <o-button attr="floating" type="FLOATING" icon="add" (click)="onClick($event)"></o-button>
+  <o-button attr="stroked" type="STROKED" label="STROKED" (click)="onClick($event)"></o-button>
+
+   <o-button attr="icon" type="ICON" icon="add"  (click)="onClick($event)"></o-button>
+
+  <o-button attr="floating" type="FAB" icon="power_setting"  (click)="onClick($event)"></o-button>
+
+  <o-button attr="floating-mini" type="FAB-MINI" icon="power_setting" (click)="onClick($event)"></o-button>
 ```
 
 ![Button]({{ "/images/components/button/o-button.png" | absolute_url }}){: .comp-example-img}

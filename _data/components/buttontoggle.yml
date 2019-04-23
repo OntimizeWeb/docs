@@ -15,7 +15,7 @@ attributes: [{
 },{
   name: "checked",
   type: "boolean",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether the button toggle is checked or not"
 },{

@@ -49,7 +49,7 @@ attributes: [{
 },{
   name: "touch-ui",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates wheter to use the datepicker 'touch-ui' mode"
 },{

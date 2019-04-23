@@ -2,18 +2,16 @@
 title: Application configuration
 permalink: /guide/appconfig/
 author_profile: false
-excerpt: How tow configure an OntimizeWeb app lication.
+excerpt: How tow configure an OntimizeWeb application.
 sidebar:
   nav: docs
 ---
 
 {% include base_path %} {% include toc %}
 
-# Overview
-
 During the application development you will need to set some global parameters: application title, services paths, language, etc. Those parameters are configured into the application when angular bootstraps it.
 
-# Application configuration
+# Application configuration file
 
 The file that contains the application configuration parameters is called _app.config.ts_ and it is placed on the _app_ folder. The content of this file is similar as the example below:
 
@@ -31,17 +29,28 @@ export const CONFIG: Config = {
   servicesConfiguration: SERVICE_CONFIG,
   appMenuConfiguration: MENU_CONFIG,
   applicationLocales: ['es', 'en'],
+  remoteConfig: { /* Optional */
+    path: '/configPath',
+    endpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest', /* Optional */
+    timeout: 60000, /* Optional */
+    columns: { /* Optional */
+      user: 'USER_', /* Optional */
+      appId: 'APP_UUID', /* Optional */
+      configuration: 'CONFIGURATION' /* Optional */
+    }
+  },
   bundle: { /* Optional */
     endpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest', /* Optional */
     path: '/bundlePath' /* Optional */
   },
   startSessionPath: '/startSessionPath', /* Optional */
-  permissionsServiceType: 'OntimizePermissions' | 'OntimizeEEPermissions',  /* Optional */
-  permissionsConfiguration: {   /* Optional */
+  permissionsServiceType: 'OntimizePermissions' | 'OntimizeEEPermissions', /* Optional */
+  permissionsConfiguration: { /* Optional */
     service: 'permissions'
   }
 };
 ```
+{: .no-scroll}
 
 The noteworthy parameters here are:
 
@@ -49,26 +58,28 @@ The noteworthy parameters here are:
 - **uuid:** The application identifier, this is the unique package identifier of the application. It is used when storing or managing temporal data related with the application. By default is set as `ontimize-web-uuid`.
 - **title:** The title of the application.
 - **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, etc.).
-- **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation
-
+- **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
   - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
   - **'OntimizeEE':** string that configures Ontimize REST JEE services.
   - **Custom class:** a service class reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface.
-
 - **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 - **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
 - **applicationLocales:** Set of available locales for the application.
-- **bundle:** bundle configuration object
-
+- **remoteConfig:** remote configuration object. You can read more about this [here](#remote-configuration).
+  - **path:** remote configuration path.
+  - **endpoint:** the base path of the URL used for the remote configuration requests. Default value is provided by `apiEndpoint`.
+  - **timeout:** the timeout for the remote configuration requests.
+  - **columns:** the remote column names.
+    - **user:** the name of the column where the user name is stored remotely.
+    - **appId:** the name of the column where the application identifier is stored remotely.
+    - **configuration:** the name of the column where the configuration is stored remotely.
+- **bundle:** bundle configuration object.
   - **endpoint:** the base path of the URL used in the remote bundles query.
   - **path:** bundle query method path.
-
-- **permissionsServiceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation
-
+- **permissionsServiceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
   - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
   - **'OntimizeEEPermissions':** string that configures Ontimize REST JEE services.
   - **Custom class:** a service class reference that extends `OntimizePermissions` or `OntimizeEEPermissions` or implements the `IPermissionsService` interface.
-
 - **permissionsConfiguration:** permissions service configuration object.
 
 # Services configuration
@@ -122,6 +133,14 @@ For using the **OntimizeEEPermissions** service, the `permissionsConfiguration` 
   ...
 ```
 
+# Remote configuration
+
+Some components in **OntimizeWeb** store the changes made by the user in local storage. This configuration may also be stored on a remote server in order to be loaded when the user uses the application in different browsers or devices.
+
+For storing the user configuration remotely it is only necessary to add the `remoteConfig` object to the application configuration (see the [example above](#application-configuration-file)). The `path` attribute is the only one that is mandatory, the other parameters have a default value as you can see in the example.
+
+Read more about how to configure the remote configuration [here]({{ base_path }}/guide/remoteconfig/){:target="_blank"}.
+
 # Application menu
 
 A lot of applications include a side menu for navigating through the different sections or performing actions. **OntimizeWeb** provides a prebuilt solution for this using the [`o-app-layout`]({{ base_path }}/components/applayout/){:target="_blank"} component and adding the menu configuration as explained below.
@@ -146,6 +165,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | items   | array   | The menu item children. Providing this attribute means that the menu item is a container for a group of menu items |
   | opened  | boolean | In case the <code>items</code> property is defined, indicates if the group menu item is open or not by default |
   | tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
+  | class   | string  | The CSS class applied to the menu group |
 
   <span>Example:</span>
   ```javascript
@@ -171,6 +191,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | name                | string              | The menu item name |
   | icon                | string              | The menu item icon (see <a href="https://design.google.com/icons/">Google material design icons</a>{:target='_blank'}) |
   | tooltip             | string              | The tooltip text showed on the menu item when the menu is callapsed |
+  | class               | string  | The CSS class applied to the menu item |
   | show-in-app-sidenav | boolean             | Indicates whether or not to show the menu item in the side menu |
   | show-in-card-menu   | boolean             | Indicates whether or not to show the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
   | image               | string              | The image displayed on the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |

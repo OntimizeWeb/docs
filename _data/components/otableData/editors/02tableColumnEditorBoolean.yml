@@ -1,8 +1,7 @@
-directive : "o-table-cell-editor-boolean"
-
+directive: "o-table-cell-editor-boolean"
+title: "OTableCellEditorBoolean"
 class: "OTableCellEditorBooleanComponent"
-
-extends : "OBaseTableCellEditor"
+extends: "OBaseTableCellEditor"
 
 inheritedAttributes: [
   {
@@ -19,36 +18,35 @@ inheritedOutputs: [
     outputs: ["editionStarted", "editionCancelled", "editionCommitted", "onPostUpdateRecord"]
   }
 ]
+
 attributes: [{
   name: "indeterminate-on-null",
-  type: "number | boolean | string ",
-  default : "false",
-  required : "",
-  description : ""
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: ""
 },{
   name: "true-value",
   type: "number | boolean | string ",
-  default : "true",
-  required : "",
-  description : "Value considered as true"
+  default: "true",
+  required: "",
+  description: "Value considered as true"
 },{
   name: "false-value",
   type: "number | boolean | string ",
-  default : "false",
-  required : "",
-  description : "Value considered as false"
+  default: "false",
+  required: "",
+  description: "Value considered as false"
 },{
   name: "boolean-type",
   type: "number | boolean | string ",
-  default : "boolean",
-  required : "",
-  description : "Type of the cell value"
+  default: "boolean",
+  required: "",
+  description: "Type of the cell value"
 },{
   name: "auto-commit",
   type: "yes | no | true | false",
-  default : "yes",
-  required : "",
-  description : "Indicates whether or not to automatically change the cell value without rendering the editor (a checkbox)"
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to automatically change the cell value without rendering the editor (a checkbox)"
 }]
-
-title : "OTableCellEditorBoolean"

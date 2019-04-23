@@ -34,7 +34,7 @@ attributes: [{
 },{
   name: "orderable",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Whether or not the sort select is shown in the toolbar."
 },{

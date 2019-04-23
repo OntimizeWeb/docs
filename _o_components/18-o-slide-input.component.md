@@ -95,7 +95,7 @@ By default, the value in the slider's thumb label will be the same as the model 
 
 ```html
 <o-slider attr="slider-editable" label="{{ 'INPUT.SLIDER' | oTranslate }}" [data]="getValue()"
-        read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" tick-interval="auto" [displayWith]="formatLabel"  ></o-slider>
+        read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" tick-interval="auto" [display-with]="formatLabel"  ></o-slider>
 ```
 ```js
  getValue() {
