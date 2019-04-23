@@ -19,7 +19,7 @@
 
 
 
-<title>Add a table form - Ontimize Web</title>
+<title>Remote configuration - Ontimize Web</title>
 
 
 
@@ -29,22 +29,22 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ontimize Web">
-<meta property="og:title" content="Add a table form">
+<meta property="og:title" content="Remote configuration">
 
 
-  <link rel="canonical" href="https://ontimizeweb.github.io/docs//getting-started/adv-changes-table-form/">
-  <meta property="og:url" content="https://ontimizeweb.github.io/docs//getting-started/adv-changes-table-form/">
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs//guide/remoteconfig/">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs//guide/remoteconfig/">
 
 
 
-  <meta property="og:description" content="Advanced changes. Add a table form">
+  <meta property="og:description" content="How tow configure an OntimizeWeb application.">
 
 
 
   <meta name="twitter:site" content="@imatiainnova">
-  <meta name="twitter:title" content="Add a table form">
-  <meta name="twitter:description" content="Advanced changes. Add a table form">
-  <meta name="twitter:url" content="https://ontimizeweb.github.io/getting-started/adv-changes-table-form/">
+  <meta name="twitter:title" content="Remote configuration">
+  <meta name="twitter:description" content="How tow configure an OntimizeWeb application.">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/guide/remoteconfig/">
 
   
     <meta name="twitter:card" content="summary">
@@ -66,6 +66,9 @@
   <meta property="og:image" content="https://ontimizeweb.github.io/docs//images/site-logo.png">
 
 
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2019-04-23T11:00:41-04:00">
 
 
 
@@ -791,79 +794,104 @@
 
   <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Add a table form">
+    <meta itemprop="headline" content="Remote configuration">
     
-    <meta itemprop="description" content="Advanced changes. Add a table form">
+    <meta itemprop="description" content="How tow configure an OntimizeWeb application.">
     
+    <meta itemprop="datePublished" content="April 23, 2019">
     
 
     <div class="page__inner-wrap">
       
       <header>
-        <h1 class="page__title" itemprop="headline">Add a table form
+        <h1 class="page__title" itemprop="headline">Remote configuration
 </h1>
         
       </header>
       
 
       <section class="page__content" itemprop="text">
-        
-<p>In this section we are going to explain how to create the inital form that contains a table with
-all the employees of the Bank.</p>
-
-<p>In the previous step <em>employees.routes.ts</em> was configured so that if the url was <em>&#8216;employees&#8217;</em> the system rendered the component <em>EmployeesHomeComponent</em>. It is now time to create this component.</p>
-
-<p>Inside the <em>employees/home</em> directory we have to create the following files:</p>
-
-<ul>
-  <li><strong>employees-home.component.html:</strong> Contains the html template definition of our screen.</li>
-  <li><strong>employees-home.component.scss:</strong> Contains specific screen css styles (saas definition), if needed.</li>
-  <li><strong>employees-home.component.ts:</strong> Contains the logic of the screen.</li>
+        <aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#configuration" id="markdown-toc-configuration">Configuration</a></li>
+  <li><a href="#server-side" id="markdown-toc-server-side">Server side</a>    <ul>
+      <li><a href="#retrieve-the-user-information" id="markdown-toc-retrieve-the-user-information">Retrieve the user information</a></li>
+      <li><a href="#store-the-user-information" id="markdown-toc-store-the-user-information">Store the user information</a></li>
+    </ul>
+  </li>
 </ul>
 
-<p>The contents of these files are shown below:</p>
+  </nav>
+</aside>
 
-<p><strong>employees-home.component.html</strong></p>
+<p>Some components in <strong>OntimizeWeb</strong> store their configuration in the local storage of the browser. This configuration may also be stored on a remote server in order to be loaded when the user uses the application in different browsers or devices.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">layout=</span><span class="s">"column"</span> <span class="na">layout-align=</span><span class="s">"center top"</span> <span class="na">layout-margin</span><span class="nt">&gt;</span>
+<h2 id="configuration">Configuration</h2>
 
-  <span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"employees"</span> <span class="na">entity=</span><span class="s">"EEmployees"</span> <span class="na">title=</span><span class="s">"EMPLOYEES"</span>
-      <span class="na">columns=</span><span class="s">"EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"</span>
-      <span class="na">visible-columns=</span><span class="s">"EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"</span>
-      <span class="na">sort-columns=</span><span class="s">"SURNAME"</span> <span class="na">keys=</span><span class="s">"EMPLOYEEID"</span> <span class="na">query-on-init=</span><span class="s">"true"</span> <span class="na">query-rows=</span><span class="s">"10"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEEPHOTO"</span> <span class="na">orderable=</span><span class="s">"no"</span> <span class="na">searchable=</span><span class="s">"no"</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">image-type=</span><span class="s">"base64"</span> <span class="na">empty-image=</span><span class="s">"assets/images/no-image.png"</span> <span class="na">avatar=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span> <span class="na">title=</span><span class="s">"EMPLOYEENAME"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEESURNAME"</span> <span class="na">title=</span><span class="s">"EMPLOYEESURNAME"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEEADDRESS"</span> <span class="na">title=</span><span class="s">"EMPLOYEEADDRESS"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEESTARTDATE"</span> <span class="na">title=</span><span class="s">"EMPLOYEESTARTDATE"</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">format=</span><span class="s">"LL"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEEEMAIL"</span> <span class="na">title=</span><span class="s">"EMPLOYEEEMAIL"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-  <span class="nt">&lt;/o-table&gt;</span>
+<p>For enabling this behaviour you have to add the <code class="highlighter-rouge">remoteConfig</code> object to the <a href="https://ontimizeweb.github.io/docs//guide/appconfig/#application-configuration-file" target="_blank">application configuration</a> like in the example below.</p>
 
-<span class="nt">&lt;/div&gt;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">CONFIG</span><span class="p">:</span> <span class="nx">Config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="na">remoteConfig</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* Optional */</span>
+    <span class="na">path</span><span class="p">:</span> <span class="s1">'/configPath'</span><span class="p">,</span>
+    <span class="na">endpoint</span><span class="p">:</span> <span class="s1">'https://try.ontimize.com/QSAllComponents-jee/services/rest'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+    <span class="na">timeout</span><span class="p">:</span> <span class="mi">60000</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+    <span class="na">columns</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* Optional */</span>
+      <span class="na">user</span><span class="p">:</span> <span class="s1">'USER_'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+      <span class="na">appId</span><span class="p">:</span> <span class="s1">'APP_UUID'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+      <span class="na">configuration</span><span class="p">:</span> <span class="s1">'CONFIGURATION'</span> <span class="cm">/* Optional */</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="p">...</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p><strong>employees-home.component.ts</strong></p>
+<p>The <code class="highlighter-rouge">remoteConfig</code> enables the capability of loading and storing the application configuration in a remote server. It is also used to configure this behaviour. The only mandatory attribute is the <code class="highlighter-rouge">path</code>, the others can be omitted.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import <span class="o">{</span> Component <span class="o">}</span> from <span class="s1">'@angular/core'</span><span class="p">;</span>
+<ul>
+  <li><strong>path:</strong> remote configuration path.</li>
+  <li><strong>endpoint:</strong> the base path of the URL used for the remote configuration requests. Its default value is the same as the <code class="highlighter-rouge">apiEndpoint</code>.</li>
+  <li><strong>timeout:</strong> the timeout for the remote configuration requests.</li>
+  <li><strong>columns:</strong> the remote column names.
+    <ul>
+      <li><strong>user:</strong> the name of the column where the user name is stored remotely.</li>
+      <li><strong>appId:</strong> the name of the column where the application identifier is stored remotely.</li>
+      <li><strong>configuration:</strong> the name of the column where the configuration is stored remotely.</li>
+    </ul>
+  </li>
+</ul>
 
-@Component<span class="o">({</span>
-  moduleId: module.id,
-  selector: <span class="s1">'employees-home'</span>,
-  styleUrls: <span class="o">[</span><span class="s1">'employees-home.component.css'</span><span class="o">]</span>,
-  templateUrl: <span class="s1">'employees-home.component.html'</span>
-<span class="o">})</span>
-<span class="nb">export </span>class EmployeesHomeComponent <span class="o">{</span>
+<h2 id="server-side">Server side</h2>
 
-  constructor<span class="o">()</span> <span class="o">{</span>
-  <span class="o">}</span>
+<p>If you are not using an Ontimize server on the server side, you must implement a facade for retrieving and storing the configuration.</p>
+
+<h3 id="retrieve-the-user-information">Retrieve the user information</h3>
+
+<p>For retrieving the user configuration from your server you must send a <code class="highlighter-rouge">GET</code> request to an URL like the following: <em>https://{ endpoint }{ path }/search</em>.
+You must also send as argument an object that indicates the user and the application you want to retrieve the configuration for.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">"/search"</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">,</span> <span class="n">consumes</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">EntityResult</span><span class="o">&gt;</span> <span class="nf">getUserConfiguration</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;?,</span> <span class="o">?&gt;</span> <span class="n">filter</span><span class="o">)</span> <span class="o">{</span>
+
+  <span class="o">...</span>
 
 <span class="o">}</span>
 </code></pre></div></div>
-<p>The table is defined within the html template, and is connected through an Ontimize service that provides the information of all employees. You can find further information about the o-table configuration parameters in the <a href="https://ontimizeweb.github.io/docs//components/o-table.component/" target="_blank">Components</a> section.</p>
 
-<p>In the logic file nothing special is done, we simply define the paths of the css and html files.</p>
+<h3 id="store-the-user-information">Store the user information</h3>
 
-<p>With these two simple files, we have defined the initial form of our <em>Employees</em> module. The form that will show the table with the details of each employee is explained <a href="https://ontimizeweb.github.io/docs//getting-started/adv-changes-drill-down/">here</a>.</p>
+<p>For storing the user configuration in your server you must send a <code class="highlighter-rouge">PUT</code> request to an URL like the following: <em>https://{ endpoint }{ path }</em>.
+You must also send as argument an object with the data to store and the user and the application identifier.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">PUT</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">EntityResult</span><span class="o">&gt;</span> <span class="nf">storeUserConfiguration</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Object</span> <span class="n">storeParameter</span><span class="o">)</span> <span class="o">{</span>
+
+  <span class="o">...</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
 
         
       </section>
@@ -876,12 +904,31 @@ all the employees of the Bank.</p>
 
 
         
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-04-23T11:00:41-04:00">April 23, 2019</time></p>
+        
       </footer>
 
       
 
       
 
+
+  <nav class="pagination">
+    
+      <a href="https://ontimizeweb.github.io/docs//guide/appconfig/" class="pagination--pager" title="Application configuration
+">
+          <i class="fas fa-arrow-left margin-right"></i>
+        Previous
+      </a>
+    
+    
+      <a href="https://ontimizeweb.github.io/docs//app-modules/" class="pagination--pager" title="Application modules
+">
+        Next
+        <i class="fas fa-arrow-right margin-left"></i>
+      </a>
+    
+  </nav>
 
     </div>
 

@@ -2194,6 +2194,10 @@ figure.highlight .highlight {
   margin: 0;
   padding: 1em;
 }
+div.highlighter-rouge.no-scroll .highlight,
+figure.highlight.no-scroll .highlight {
+  overflow: visible;
+}
 
 figure.highlight {
   padding-left: 1em;
