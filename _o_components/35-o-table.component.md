@@ -223,6 +223,19 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
 
 </o-table>
 ```
+`o-table-columns-filter` component can filter in one of three different ways based on the `mode` property.
+
+| Mode | Description |
+|------|--------------|
+| default|Combines selection and custom mode|
+| selection| Allows filtering selected by the values in the column. |
+| custom| Allows filtering by a form control
+
+
+
+
+![Filtering columns mode]({{ "/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
+
 
 ### Custom filter
 
