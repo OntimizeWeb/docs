@@ -444,6 +444,20 @@ You can include this component in your table in two different ways:
 
 You can see this example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/employees){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home){:target="_blank"}.
 
+**Translate cell renderer**
+
+You can include the table cell renderer translate in your table column by configuring the attribute `type` in the column with the value **translate** or adding the `o-table-cell-renderer-translate` to the table column. Check the attributes of this component in the **API** section of this page.
+
+```html
+<o-table-column attr="CODE" type="translate"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="CODE">
+  <o-table-cell-renderer-translate></o-table-cell-renderer-translate>
+</o-table-column>
+```
+
 ### Custom renderers
 
 A custom renderer allows you to display the data of a table cell formatted as you desire. For this, you need to create a new component that extends the base cell renderer class and place it into your table.
