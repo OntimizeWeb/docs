@@ -13,7 +13,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "Layout align value according to flex-layout library see [Flex Layout](https://github.com/angular/flex-layout/wiki){:target='_blank'}"
+  description: "Layout align value according to flex-layout library, see [fxLayoutAlign API](https://github.com/angular/flex-layout/wiki/fxLayoutAlign-API){:target='_blank'} for more information"
 },{
   name: "elevation",
   type: "number",
@@ -28,6 +28,12 @@ attributes: [{
   description: "Indicates the appearance of the container, similar to the [form fiel appearance](https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants){:target='_blank'}"
 },{
   name: "icon"
+},{
+  name: "layout-gap",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Specify margin gaps on children within the container. This attribute refers to the `fxLayoutGap` directive from flex-layout library, see [fxLayoutGap API](https://github.com/angular/flex-layout/wiki/fxLayoutGap-API){:target='_blank'} for more information"
 }]
 
 extraComponents: "containersData"
