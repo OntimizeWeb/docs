@@ -22,7 +22,7 @@ attributes: [{
 },{
   name: "page-size-options",
   type: "array",
-  default: "8;16;24;32;64]",
+  default: "8;16;24;32;64",
   required: "",
   description: "Page size options separated by ';'."
 },{
