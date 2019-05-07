@@ -647,11 +647,11 @@ Here's how you might begin in your file .ts:
 
 - It also must get the `templateref` view child reference, using  ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ``` where you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
 
-- If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*.
-
 - In your editor constructor you must set its `type` property value.
 
 - In your editor constructor you must register it as a new editor, using the `OTableColumnComponent` `addEditor` static method.
+
+- In your editor, the input must register `formControl`
 
 
 In the following example shows how to render two values of column in a cell ("SURNAME, name") and how to override the `getCellData` method.
@@ -688,7 +688,12 @@ The o-table-cell-editor-name.html file is as follows:
 
 ```html
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-  {% raw %}{{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}{% endraw %}
+  <div [formGroup]="formGroup">
+    <mat-form-field floatLabel="never">
+      <input #input matInput type="text" [placeholder]="getPlaceholder()" [formControl]="formControl" [required]="orequired">
+      <mat-error *ngIf="hasError('required')">{{ 'FORM_VALIDATION.REQUIRED' | oTranslate }}</mat-error>
+    </mat-form-field>
+  </div>
 </ng-template>
 ```
 
@@ -916,6 +921,12 @@ In the following example the table has a insertable row where the user may intro
   <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
 </o-table>
 ```
+
+The `o-table-insertable-row` support 2 differnent positions which can be set via the `position` input, `first` and `last`. By default, it's `last`.
+
+To create a custom insertable column, you must define a custom editor for the column following the same steps as in <a href="#custom-editors"> Custom editors</a> and add the column attr column in `columns` attribute in `o-table-insertable-row`.
+
+You can see more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/insertablerow){:target="_blank"}.
 
 ### Table buttons
 
