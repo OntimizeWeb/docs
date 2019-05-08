@@ -28,6 +28,21 @@ The result of this example is shown below.
 
 You can see a working example of this in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/main/main.component.html){:target="_blank"}.
 
+### Custom content
+
+You can attach your own content to the side navigator using the `o-app-layout-sidenav` component inside the `o-app-layout-sidenav` of you application.
+
+```html
+<o-app-layout opened-sidenav-image="assets/images/sidenav-opened.png" closed-sidenav-image="assets/images/sidenav-closed.png">
+
+  <o-app-layout-sidenav>
+    <!-- YOUR CUSTOM CONTENT HERE -->
+  </o-app-layout-sidenav>
+
+  <router-outlet></router-outlet>
+</o-app-layout>
+```
+
 ## Modes
 
 The `o-app-layout` components has two performance modes designed for making this component more usable in desktop and mobile applications. This modes are the following:
@@ -46,19 +61,14 @@ Configure this mode by setting the **mobile** value in the `mode` attribute in t
 
 The application layout component may show a toolbar at the top of the screen by setting the `show-header` attribute to **yes**. Check this and other attributes in the **API** section of this page.
 
-The `o-app-layout` can allows you  to configure whether or not the language selector shows flags by setting `use-flag-icons=yes`.
-
-> **NOTE:** It is necessary install  `flag-icon-css` by NPM.
+The `o-app-layout` component allows you to configure whether or not to show flags on the language selector by setting  the attribute `use-flag-icons` to **yes**. In order to show the language flags, it is necessary install the dependency `flag-icon-css`:
 ```bash
   $ npm install flag-icon-css
 ```
-
-And you must added  
+And import the flag icon styles in your application's **angular.json** file:
 ```bash
   "node_modules/flag-icon-css/css/flag-icon.css"
 ```
-to angular.json's "styles" and it worked.
-
 
 ![App layout component toolbar]({{ "/images/layouts/app-layout/app_layout_header.png" | absolute_url }})
 
