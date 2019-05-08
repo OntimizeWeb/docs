@@ -223,6 +223,19 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
 
 </o-table>
 ```
+`o-table-columns-filter` component can filter in one of three different ways based on the `mode` property.
+
+| Mode | Description |
+|------|--------------|
+| default|Combines selection and custom mode|
+| selection| Allows filtering selected by the values in the column. |
+| custom| Allows filtering by a form control
+
+
+
+
+![Filtering columns mode]({{ "/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
+
 
 ### Custom filter
 
@@ -444,6 +457,20 @@ You can include this component in your table in two different ways:
 
 You can see this example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/employees){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home){:target="_blank"}.
 
+**Translate cell renderer**
+
+You can include the table cell renderer translate in your table column by configuring the attribute `type` in the column with the value **translate** or adding the `o-table-cell-renderer-translate` to the table column. Check the attributes of this component in the **API** section of this page.
+
+```html
+<o-table-column attr="CODE" type="translate"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="CODE">
+  <o-table-cell-renderer-translate></o-table-cell-renderer-translate>
+</o-table-column>
+```
+
 ### Custom renderers
 
 A custom renderer allows you to display the data of a table cell formatted as you desire. For this, you need to create a new component that extends the base cell renderer class and place it into your table.
@@ -620,11 +647,11 @@ Here's how you might begin in your file .ts:
 
 - It also must get the `templateref` view child reference, using  ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ``` where you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
 
-- If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*.
-
 - In your editor constructor you must set its `type` property value.
 
 - In your editor constructor you must register it as a new editor, using the `OTableColumnComponent` `addEditor` static method.
+
+- In your editor, the input must register `formControl`
 
 
 In the following example shows how to render two values of column in a cell ("SURNAME, name") and how to override the `getCellData` method.
@@ -661,7 +688,12 @@ The o-table-cell-editor-name.html file is as follows:
 
 ```html
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-  {% raw %}{{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}{% endraw %}
+  <div [formGroup]="formGroup">
+    <mat-form-field floatLabel="never">
+      <input #input matInput type="text" [placeholder]="getPlaceholder()" [formControl]="formControl" [required]="orequired">
+      <mat-error *ngIf="hasError('required')">{{ 'FORM_VALIDATION.REQUIRED' | oTranslate }}</mat-error>
+    </mat-form-field>
+  </div>
 </ng-template>
 ```
 
@@ -889,6 +921,12 @@ In the following example the table has a insertable row where the user may intro
   <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
 </o-table>
 ```
+
+The `o-table-insertable-row` support 2 differnent positions which can be set via the `position` input, `first` and `last`. By default, it's `last`.
+
+To create a custom insertable column, you must define a custom editor for the column following the same steps as in <a href="#custom-editors"> Custom editors</a> and add the column attr column in `columns` attribute in `o-table-insertable-row`.
+
+You can see more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/insertablerow){:target="_blank"}.
 
 ### Table buttons
 

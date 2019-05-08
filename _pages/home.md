@@ -4,8 +4,8 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: imagen-home.jpg
-  cta_label: "<i class='fas fa-eye black-icon'></i> Check it out"
-  cta_url: "/doc-overview/"
+  cta_label: "Live demos"
+  cta_url: "https://try.imatia.com/ontimizeweb/"
   caption:
 excerpt: 'Web application framework based on Angular for building business software.'
 feature_row:

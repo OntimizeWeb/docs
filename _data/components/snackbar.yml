@@ -21,4 +21,10 @@ attributes: [{
   default: "left",
   required: "no",
   description: "Position of the icon"
+},{
+  name: "cssClass",
+  type: "string",
+  default: "",
+  required: "no",
+  description: "CSS class to be added to the snack bar container"
 }]

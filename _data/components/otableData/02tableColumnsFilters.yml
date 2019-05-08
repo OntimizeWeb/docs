@@ -14,4 +14,10 @@ attributes: [{
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the list values when the filter dialog is opened."
+},{
+  name: "mode",
+  type: "default | selection | custom",
+  default : "default",
+  required : "",
+  description : "Indicates the component performance mode."
 }]

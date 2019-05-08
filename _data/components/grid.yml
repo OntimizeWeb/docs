@@ -22,7 +22,7 @@ attributes: [{
 },{
   name: "page-size-options",
   type: "array",
-  default: "8;16;24;32;64]",
+  default: "8;16;24;32;64",
   required: "",
   description: "Page size options separated by ';'."
 },{
@@ -63,12 +63,11 @@ attributes: [{
   description: "Indicates whether or not to show the pagination controls"
 },{
   name: "fixed-header",
-  type: string",
+  type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Size of the grid list's gutter in pixels"
-}
-,{
+  description: "Indicates whether or not to have a fixed header and footer when the content is greather than its own height"
+},{
   name: "gutter-size",
   type: "no | false | yes | true",
   default: "1px",
