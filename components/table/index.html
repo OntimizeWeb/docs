@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-04-23T12:05:12-04:00">
+  <meta property="article:published_time" content="2019-05-08T02:20:07-04:00">
 
 
 
@@ -838,7 +838,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="April 23, 2019">
+    <meta itemprop="datePublished" content="May 08, 2019">
     
 
     <div class="page__inner-wrap">
@@ -1220,6 +1220,32 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <span class="nt">&lt;/o-table&gt;</span>
 </code></pre></div></div>
+<p><code class="highlighter-rouge">o-table-columns-filter</code> component can filter in one of three different ways based on the <code class="highlighter-rouge">mode</code> property.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mode</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default</td>
+      <td>Combines selection and custom mode</td>
+    </tr>
+    <tr>
+      <td>selection</td>
+      <td>Allows filtering selected by the values in the column.</td>
+    </tr>
+    <tr>
+      <td>custom</td>
+      <td>Allows filtering by a form control</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/filter-columns-mode.png" alt="Filtering columns mode" class="comp-example-img" /></p>
 
 <h3 id="custom-filter">Custom filter</h3>
 
@@ -1432,6 +1458,19 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p>You can see this example in the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/employees" target="_blank">OntimizeWeb QuickStart</a> or check the code in <a href="https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home" target="_blank">GitHub</a>.</p>
 
+<p><strong>Translate cell renderer</strong></p>
+
+<p>You can include the table cell renderer translate in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>translate</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-translate</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"CODE"</span> <span class="na">type=</span><span class="s">"translate"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+
+<span class="c">&lt;!-- Equivalent code --&gt;</span>
+
+<span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"CODE"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-table-cell-renderer-translate&gt;&lt;/o-table-cell-renderer-translate&gt;</span>
+<span class="nt">&lt;/o-table-column&gt;</span>
+</code></pre></div></div>
+
 <h3 id="custom-renderers">Custom renderers</h3>
 
 <p>A custom renderer allows you to display the data of a table cell formatted as you desire. For this, you need to create a new component that extends the base cell renderer class and place it into your table.</p>
@@ -1611,13 +1650,13 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
     <p>It also must get the <code class="highlighter-rouge">templateref</code> view child reference, using  <code class="highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code> where you’ll acquire the <code class="highlighter-rouge">&lt;ng-template&gt;</code> contents with a TemplateRef and access the view container.</p>
   </li>
   <li>
-    <p>If you want to customize the value of the columns in exports or filtering, you must overwrite the method <em>getCellData(cellvalue,rowvalue)</em>.</p>
-  </li>
-  <li>
     <p>In your editor constructor you must set its <code class="highlighter-rouge">type</code> property value.</p>
   </li>
   <li>
     <p>In your editor constructor you must register it as a new editor, using the <code class="highlighter-rouge">OTableColumnComponent</code> <code class="highlighter-rouge">addEditor</code> static method.</p>
+  </li>
+  <li>
+    <p>In your editor, the input must register <code class="highlighter-rouge">formControl</code></p>
   </li>
 </ul>
 
@@ -1655,7 +1694,12 @@ The <em>let</em> keyword declares a template input variable that you reference w
 <p>The o-table-cell-editor-name.html file is as follows:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ng-template</span> <span class="err">#</span><span class="na">templateref</span> <span class="na">let-cellvalue=</span><span class="s">"cellvalue"</span> <span class="na">let-rowvalue=</span><span class="s">"rowvalue"</span><span class="nt">&gt;</span>
-  {{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}
+  <span class="nt">&lt;div</span> <span class="err">[</span><span class="na">formGroup</span><span class="err">]="</span><span class="na">formGroup</span><span class="err">"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;mat-form-field</span> <span class="na">floatLabel=</span><span class="s">"never"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="err">#</span><span class="na">input</span> <span class="na">matInput</span> <span class="na">type=</span><span class="s">"text"</span> <span class="err">[</span><span class="na">placeholder</span><span class="err">]="</span><span class="na">getPlaceholder</span><span class="err">()"</span> <span class="err">[</span><span class="na">formControl</span><span class="err">]="</span><span class="na">formControl</span><span class="err">"</span> <span class="err">[</span><span class="na">required</span><span class="err">]="</span><span class="na">orequired</span><span class="err">"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;mat-error</span> <span class="err">*</span><span class="na">ngIf=</span><span class="s">"hasError('required')"</span><span class="nt">&gt;</span>FORM_VALIDATION.REQUIRED<span class="nt">&lt;/mat-error&gt;</span>
+    <span class="nt">&lt;/mat-form-field&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/ng-template&gt;</span>
 </code></pre></div></div>
 
@@ -1873,6 +1917,12 @@ In this component you can define the columns and required columns with <code cla
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"STARTDATE"</span> <span class="na">title=</span><span class="s">"STARTDATE"</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">format=</span><span class="s">"LL"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 <span class="nt">&lt;/o-table&gt;</span>
 </code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">o-table-insertable-row</code> support 2 differnent positions which can be set via the <code class="highlighter-rouge">position</code> input, <code class="highlighter-rouge">first</code> and <code class="highlighter-rouge">last</code>. By default, it’s <code class="highlighter-rouge">last</code>.</p>
+
+<p>To create a custom insertable column, you must define a custom editor for the column following the same steps as in <a href="#custom-editors"> Custom editors</a> and add the column attr column in <code class="highlighter-rouge">columns</code> attribute in <code class="highlighter-rouge">o-table-insertable-row</code>.</p>
+
+<p>You can see more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/table/insertablerow" target="_blank">OntimizeWeb playground</a>.</p>
 
 <h3 id="table-buttons">Table buttons</h3>
 
@@ -2214,6 +2264,12 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
     
   
   <li><a href="#o-table-cell-renderer-service">o-table-cell-renderer-service</a></li>
+  
+
+  
+    
+  
+  <li><a href="#o-datatable-cell-renderer-translate">o-datatable-cell-renderer-translate</a></li>
   
 
           </ul>
@@ -3979,6 +4035,26 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
           
           </tr>
         
+          <tr>
+          
+            
+            
+            
+
+            <td class="" o-component-name><p>onRowSelected</p>
+</td>
+
+          
+            
+            
+            
+
+            <td class="" o-component-description><p>Event triggered when a row is selected</p>
+</td>
+
+          
+          </tr>
+        
       </tbody>
     </table>
   
@@ -5253,6 +5329,71 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
   <td class="" o-component-default >
     <p class="first"><p>o-table visible-columns value</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>mode</p>
+</p>
+    
+      <p><i>default | selection | custom</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates the component performance mode.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>default</p>
 </p>
     
   </td>
@@ -11320,6 +11461,146 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
   
   
 
+  
+    
+  
+  <h2 id="o-datatable-cell-renderer-translate"> 
+    <span>OTableCellRendererTranslateComponent </span>
+    
+      extends OBaseTableCellRenderer 
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-datatable-cell-renderer-translate</p>
+  
+
+  
+  <h3 class="grey-color">Inherited properties</h3>
+  <ul>
+    
+
+    
+    <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+           
+            
+            
+              <li> column </li>
+            
+              <li> initialize() </li>
+            
+              <li> table </li>
+            
+              <li> tableColumn </li>
+            
+          </ul>
+    </li>
+
+    
+  </ul>
+
+
+  
+
+  <h3 class="grey-color">Inputs</h3>
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>translate-params</p>
+</p>
+    
+      <p><i>(rowData: any) => any[]</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Function that receives the row data and return the parameters for the translate pipe</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+
+
+  
+
+  
+  
+
+  
+
+
+  
+  
+
 
     
 
@@ -13181,7 +13462,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-04-23T12:05:12-04:00">April 23, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-05-08T02:20:07-04:00">May 08, 2019</time></p>
         
       </footer>
 
