@@ -121,13 +121,19 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not to show the column of checkboxes for selecting table rows in the table."
+  description: "Indicates whether or not to show the column of checkboxes for selecting table rows in the table"
 },{
   name: "enabled",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Indicates whether or not the table is enabled."
+  description: "Indicates whether or not the table is enabled"
+},{
+  name: "resizable",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the table columns are resizables"
 }]
 
 outputs: [{
