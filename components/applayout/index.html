@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-05-08T02:20:07-04:00">
+  <meta property="article:published_time" content="2019-05-23T10:54:13-04:00">
 
 
 
@@ -878,7 +878,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="May 08, 2019">
+    <meta itemprop="datePublished" content="May 23, 2019">
     
 
     <div class="page__inner-wrap">
@@ -957,7 +957,10 @@
 <nav class="toc">
     <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
 <ul class="toc__menu" id="markdown-toc">
-  <li><a href="#example" id="markdown-toc-example">Example</a></li>
+  <li><a href="#example" id="markdown-toc-example">Example</a>    <ul>
+      <li><a href="#custom-content" id="markdown-toc-custom-content">Custom content</a></li>
+    </ul>
+  </li>
   <li><a href="#modes" id="markdown-toc-modes">Modes</a></li>
   <li><a href="#toolbar" id="markdown-toc-toolbar">Toolbar</a>    <ul>
       <li><a href="#adding-custom-content-to-the-toolbar" id="markdown-toc-adding-custom-content-to-the-toolbar">Adding custom content to the toolbar</a></li>
@@ -989,6 +992,20 @@
 
 <p>You can see a working example of this in the <a href="https://try.imatia.com/ontimizeweb/quickstart" target="_blank">OntimizeWeb QuickStart</a> or check the code in <a href="https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/main/main.component.html" target="_blank">GitHub</a>.</p>
 
+<h3 id="custom-content">Custom content</h3>
+
+<p>You can attach your own content to the side navigator using the <code class="highlighter-rouge">o-app-layout-sidenav</code> component inside the <code class="highlighter-rouge">o-app-layout-sidenav</code> of you application.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-app-layout</span> <span class="na">opened-sidenav-image=</span><span class="s">"assets/images/sidenav-opened.png"</span> <span class="na">closed-sidenav-image=</span><span class="s">"assets/images/sidenav-closed.png"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;o-app-layout-sidenav&gt;</span>
+    <span class="c">&lt;!-- YOUR CUSTOM CONTENT HERE --&gt;</span>
+  <span class="nt">&lt;/o-app-layout-sidenav&gt;</span>
+
+  <span class="nt">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+<span class="nt">&lt;/o-app-layout&gt;</span>
+</code></pre></div></div>
+
 <h2 id="modes">Modes</h2>
 
 <p>The <code class="highlighter-rouge">o-app-layout</code> components has two performance modes designed for making this component more usable in desktop and mobile applications. This modes are the following:</p>
@@ -1011,18 +1028,12 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 <p>The application layout component may show a toolbar at the top of the screen by setting the <code class="highlighter-rouge">show-header</code> attribute to <strong>yes</strong>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
-<p>The <code class="highlighter-rouge">o-app-layout</code> can allows you  to configure whether or not the language selector shows flags by setting <code class="highlighter-rouge">use-flag-icons=yes</code>.</p>
-
-<blockquote>
-  <p><strong>NOTE:</strong> It is necessary install  <code class="highlighter-rouge">flag-icon-css</code> by NPM.</p>
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>npm install flag-icon-css
-</code></pre></div>  </div>
-</blockquote>
-
-<p>And you must added</p>
+<p>The <code class="highlighter-rouge">o-app-layout</code> component allows you to configure whether or not to show flags on the language selector by setting  the attribute <code class="highlighter-rouge">use-flag-icons</code> to <strong>yes</strong>. In order to show the language flags, it is necessary install the dependency <code class="highlighter-rouge">flag-icon-css</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>npm install flag-icon-css
+</code></pre></div></div>
+<p>And import the flag icon styles in your application&#8217;s <strong>angular.json</strong> file:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s2">"node_modules/flag-icon-css/css/flag-icon.css"</span>
 </code></pre></div></div>
-<p>to angular.json&#8217;s &#8220;styles&#8221; and it worked.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/app-layout/app_layout_header.png" alt="App layout component toolbar" /></p>
 
@@ -1704,6 +1715,148 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 
   
+  
+     
+    
+    
+    
+      
+      
+  <h2 class=""></h2>
+      
+
+
+
+
+  
+<p><strong class="grey-color">Directive:</strong> o-app-layout-sidenav</p>
+  
+  
+
+
+  
+
+
+  
+
+
+  
+  <h3 class="grey-color">Inputs</h3>
+
+
+
+
+
+
+  <table class="attributes-table mdl-data-table">
+<thead>
+  <tr>
+  
+
+  
+<th class=""> Name</th>
+  
+  
+
+  
+<th class=""> Description</th>
+  
+  
+
+  
+<th class=""> Default</th>
+  
+  
+  </tr>
+</thead>
+<tbody>
+  
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>position</p>
+</p>
+
+  <p><i>start | end</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Indicates whether the custom content of the side menu is attached at the top or at the end of the menu</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>end</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+  </tbody>
+  </table>
+
+  
+
+  
+
+
+  
+
+  
+
+
+  
+
+
+
+  
+    
+  
 
 </div>
 
@@ -1722,7 +1875,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-05-08T02:20:07-04:00">May 08, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-05-23T10:54:13-04:00">May 23, 2019</time></p>
         
       </footer>
 

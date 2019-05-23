@@ -19,7 +19,7 @@
 
 
 
-<title>Ontimize Web</title>
+<title>53 About - Ontimize Web</title>
 
 
 
@@ -29,7 +29,7 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ontimize Web">
-<meta property="og:title" content="Ontimize Web">
+<meta property="og:title" content="53 About">
 
 
   <link rel="canonical" href="https://ontimizeweb.github.io/docs/about/">
@@ -42,7 +42,7 @@
 
 
   <meta name="twitter:site" content="@imatiainnova">
-  <meta name="twitter:title" content="Ontimize Web">
+  <meta name="twitter:title" content="53 About">
   <meta name="twitter:description" content="web application framework based on Angular for building business software.">
   <meta name="twitter:url" content="https://ontimizeweb.github.io/about/">
 
@@ -66,6 +66,9 @@
   <meta property="og:image" content="https://ontimizeweb.github.io/docs/images/site-logo.png">
 
 
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2019-05-23T10:54:13-04:00">
 
 
 
@@ -239,81 +242,571 @@
 
   <div class="sidebar sticky">
   
-
-
-
-<div itemscope itemtype="http://schema.org/Person">
-
-  <div class="author__avatar">
+  
     
-    	<img src="https://ontimizeweb.github.io/docs/images/im.png" class="author__avatar" alt="Imatia Innovation, S.L.">
+      
+      
+      
     
-  </div>
+    
+      
 
-  <div class="author__content">
-    <h3 class="author__name">Imatia Innovation, S.L.</h3>
-    <p class="author__bio">Let's do more.</p>
-  </div>
 
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Vigo, Spain</li>
-      
-      
-        <li><a href="http://www.imatia.com/"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
-      
-      
-        <li><a href="mailto:contact@imatia.com"><i class="fa fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
-      
-      
-      
-      
-      
-      
-        <li><a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
-      
-      
-      
-      
-      
-      
-        <li><a href="https://github.com/OntimizeWeb"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
-      
-      
-      
-      
-      
-      
-      
-      
-        <li><a href="https://www.youtube.com/user/ImatiaInnovation"><i class="fab fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube</a></li>
-      
-      
-      
-      
-      
-      
-    </ul>
-  </div>
-</div>
+ <script type="text/javascript" style="display:none;">
+  var onNavigationItemClick = function (element) {
 
+    var parentNav = $(element).parents('nav.nav__list');
+    var icons = parentNav.find('svg');
+    icons.addClass('fa-folder');
+    icons.addClass('orange-icon');
+    icons.removeClass('fa-folder-open');
+
+    var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.addClass('active-component-category');
+/*
+    parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
+    parentLi.toggleClass('active-component-category');
+*/    
+    var currentIcon = parentLi.find('svg:first');
+    currentIcon.addClass('fa-folder-open');
+    currentIcon.removeClass('orange-icon');
+    currentIcon.removeClass('fa-folder');
+
+  };
+</script>
+
+<nav class="nav__list">
+  
+  <ul>
+    
+    
+    
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+                      
+                      
+                 
+      
+    
+ 
+    
+
+    
+
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Getting Started</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/doc-overview/" class=" ">Document overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/example-overview/" class=" ">Example overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/install-and-run/" class=" ">Run an example</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/make-changes/" class=" ">Make some changes</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/advanced-changes/" class=" ">Advanced topics</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Guide</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/guide/appstructure/" class=" ">App structure</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/guide/appconfig/" class=" ">App configuration</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/app-modules/" class=" ">Modules</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/routing/" class=" ">Routing</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/forms/" class=" ">Forms</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/guide/service/" class=" ">Services</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/guide/permissions/" class=" ">Permissions</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/run-your-app/" class=" ">Run your app</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/deployment/" class=" ">Deploy your app</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/add-to-project/" class=" ">OntimizeWeb library</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/video-examples/" class=" ">Video examples</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/migrations/" class=" ">Migration guides</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Customization</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/theming/" class=" ">Theming</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/lite/" class=" ">Lite theme</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/style-guide/" class=" ">Style guide</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/icons/" class=" ">Icons</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/tabs/" class=" ">Tabs</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Add-ons</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-tools/" class=" ">Tools</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/theming/" class=" ">Theming</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-datatable/" class=" ">DataTable <small>(deprecated)</small></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/charts/" class=" ">Charts</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/map/" class=" ">Map</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-dynamicform/" class=" ">Dynamicform</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-dynamicform-builder/" class=" ">Dynamicform Builder</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/filemanager/" class=" ">File Manager</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/tree/" class=" ">Tree</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-jee-seed/" class=" ">JEE app seed</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-seed/" class=" ">App seed</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category active-component-category active-parent">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Meta</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/contributing/" class=" ">Contributing</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/license/" class=" ">License</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/versions/" class=" ">Versions</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/about/" class="active ">About</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
   
   </div>
 
 
   <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
     
+    <meta itemprop="headline" content="53 About">
     
     <meta itemprop="description" content="">
     
+    <meta itemprop="datePublished" content="May 23, 2019">
     
 
     <div class="page__inner-wrap">
       
       <header>
-        
+        <h1 class="page__title" itemprop="headline">53 About
+</h1>
         
       </header>
       
@@ -349,12 +842,31 @@ Ontimize Web allows developing data management applications quickly and agile.</
 
 
         
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-05-23T10:54:13-04:00">May 23, 2019</time></p>
+        
       </footer>
 
       
 
       
 
+
+  <nav class="pagination">
+    
+      <a href="https://ontimizeweb.github.io/docs/versions/" class="pagination--pager" title="Releases
+">
+          <i class="fas fa-arrow-left margin-right"></i>
+        Previous
+      </a>
+    
+    
+      <a href="#" class="pagination--pager disabled">
+        
+        Next
+        <i class="fas fa-arrow-right margin-left"></i>
+      </a>
+    
+  </nav>
 
     </div>
 
