@@ -74,6 +74,8 @@ attributes: [{
   default: "",
   required: "",
   description: "The dialog maximum height"
+},{
+  name: "store-state"
 }]
 
 outputs: [{
