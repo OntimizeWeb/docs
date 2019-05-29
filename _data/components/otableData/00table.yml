@@ -5,7 +5,7 @@ directive: "o-table"
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base",
-  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
+  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
 },{
   component: "OServiceComponent",
   path: "components/service/service",
