@@ -2,7 +2,7 @@ class: "OTableCellRendererTranslateComponent"
 
 extends: "OBaseTableCellRenderer"
 
-directive: "o-datatable-cell-renderer-translate"
+directive: "o-table-cell-renderer-translate"
 
 attributes: [{
   name: "translate-params",

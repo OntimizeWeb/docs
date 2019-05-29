@@ -1,0 +1,10 @@
+directive: "o-table-cell-renderer-time"
+title: "Cell renderer: time"
+
+attributes: [{
+  name: "format",
+  type: "string",
+  default: "L HH:hh a",
+  required: "",
+  description: "Date and time format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+}]

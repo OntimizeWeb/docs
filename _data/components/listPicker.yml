@@ -35,6 +35,12 @@ attributes: [{
   required: "",
   description: "List picker dialog height"
 },{
+  name: "dialog-class",
+  type: "string",
+  default: "",
+  required: "",
+  description: "List picker dialog class name"
+},{
   name: "query-rows"
 },{
   name: "text-input-enabled",
