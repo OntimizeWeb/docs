@@ -9,7 +9,7 @@ sidebar:
 
 {% include base_path %}
 
-In this section we are going to add a new module for managing the employees of the Bank. We are going to explain step by step how to add the new module.
+In this section we are going to add a new module for managing the employees of the Bank (Currently in the quickstart the module of employees already exists but we think it is interesting for this section to explain the steps to create this module in a different way to the current one). We will explain step by step how to add the new module.
 
 The module that we are going to create is going to be accessible only to users with credentials. To do
 this, we need to create a new folder *employees* inside the *main* directory of the QuickStart directory
@@ -134,18 +134,48 @@ export const routes: Routes = [
 **app.menu.config.ts**
 
 ```javascript
-{
-id: 'views',
-name: 'VIEW',
-icon: 'remove_red_eye',
-opened: true,
-items: [
-  { id: 'customers', name: 'CUSTOMERS', route: '/main/customers', icon: 'people' },
-  { id: 'accounts', name: 'ACCOUNTS', route: '/main/accounts', icon: 'credit_card' },
-  { id: 'branches', name: 'BRANCHES', route: '/main/branches', icon: 'account_balance' },
-  { id: 'employees', name: 'EMPLOYEES', route: '/main/employees', icon: 'person' }
-]
-},
+{ id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' },
+  {
+    id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
+    items: [
+      {
+        id: 'customers',
+        name: 'CUSTOMERS',
+        tooltip: 'CUSTOMERS_CONTENT',
+        route: '/main/customers',
+        icon: 'people',
+        image: 'assets/images/ic_clientes.png',
+        component: CustomersCardComponent
+      },
+      {
+        id: 'accounts',
+        name: 'ACCOUNTS',
+        tooltip: 'ACCOUNTS_CONTENT',
+        route: '/main/accounts',
+        icon: 'credit_card',
+        image: 'assets/images/ic_cuentas.png',
+        component: AccountsCardComponent
+      },
+      {
+        id: 'branches',
+        name: 'BRANCHES',
+        tooltip: 'BRANCHES_CONTENT',
+        route: '/main/branches',
+        icon: 'account_balance',
+        image: 'assets/images/ic_sucursales.png',
+        component: BranchesCardComponent
+      },
+      {
+        id: 'employees',
+        name: 'EMPLOYEES',
+        tooltip: 'EMPLOYEES_CONTENT',
+        route: '/main/employees',
+        icon: 'person',
+        image: 'assets/images/ic_empleados.png',
+        component: EmployeesCardComponent
+      }
+    ]
+  },
 ```
 
 The last step of our process of adding new module is to create the initial form that contains a table with all employees of the Bank, and the form contains a table with the details of each employee. 
