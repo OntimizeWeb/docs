@@ -824,45 +824,44 @@
 
 <p><strong>employees-detail.component.html</strong></p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">layout=</span><span class="s">"row"</span> <span class="na">layout-padding</span> <span class="na">layout-align=</span><span class="s">"center center"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">show-header=</span><span class="s">"yes"</span> <span class="na">label-header=</span><span class="s">"EMPLOYEES"</span> <span class="na">header-actions=</span><span class="s">"R;U;D"</span> <span class="na">service=</span><span class="s">"employees"</span>
+  <span class="na">entity=</span><span class="s">"employee"</span> <span class="na">keys=</span><span class="s">"EMPLOYEEID"</span> <span class="err">#</span><span class="na">oForm</span> <span class="na">keys-sql-types=</span><span class="s">"INTEGER"</span><span class="nt">&gt;</span>
 
-  <span class="nt">&lt;o-form</span> <span class="na">layout=</span><span class="s">"column"</span> <span class="na">show-header=</span><span class="s">"yes"</span> <span class="na">label-header=</span><span class="s">"EMPLOYEES"</span> <span class="na">header-actions=</span><span class="s">"R;U;D"</span> <span class="na">entity=</span><span class="s">"EEmployees"</span> <span class="na">keys=</span><span class="s">"EMPLOYEEID"</span>
-    <span class="err">#</span><span class="na">oForm</span><span class="nt">&gt;</span>
-
-      <span class="nt">&lt;div</span> <span class="na">layout=</span><span class="s">"column"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">layout=</span><span class="s">"row"</span> <span class="na">flex</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">layout=</span><span class="s">"column"</span> <span class="na">flex=</span><span class="s">"75"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span> <span class="na">flex</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
-            <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEESURNAME"</span> <span class="na">flex</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">flex=</span><span class="s">"25"</span> <span class="na">layout-aling=</span><span class="s">"center center"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;o-image</span> <span class="na">attr=</span><span class="s">"EMPLOYEEPHOTO"</span> <span class="na">emptyimage=</span><span class="s">"./assets/images/no-image.png"</span><span class="nt">&gt;&lt;/o-image&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-
-        <span class="nt">&lt;div</span> <span class="na">layout=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;o-date-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEESTARTDATE"</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-date-input&gt;</span>--&gt;
-          <span class="nt">&lt;o-email-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEEEMAIL"</span> <span class="na">flex</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-email-input&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-
-        <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEEADDRESS"</span> <span class="na">flex</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
-
-        <span class="nt">&lt;div</span> <span class="na">layout=</span><span class="s">"row"</span> <span class="na">flex</span> <span class="nt">&gt;</span>
-          <span class="nt">&lt;o-combo</span> <span class="na">attr=</span><span class="s">"EMPLOYEETYPEID"</span> <span class="na">flex</span> <span class="na">layout-padding</span>
-            <span class="na">query-on-init=</span><span class="s">"no"</span> <span class="na">query-on-bind=</span><span class="s">"yes"</span> <span class="na">enabled=</span><span class="s">"yes"</span> <span class="na">value-column=</span><span class="s">"EMPLOYEETYPEID"</span>
-            <span class="na">entity=</span><span class="s">"EEmployeeTypes"</span> <span class="na">keys=</span><span class="s">"EMPLOYEETYPEID"</span> <span class="na">columns=</span><span class="s">"EMPLOYEETYPEID;EMPLOYEETYPENAME"</span>
-            <span class="na">visible-columns=</span><span class="s">"EMPLOYEETYPENAME"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
-
-          <span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"OFFICEID"</span> <span class="na">flex</span> <span class="na">layout-padding</span>
-            <span class="na">query-on-init=</span><span class="s">"no"</span> <span class="na">query-on-bind=</span><span class="s">"yes"</span> <span class="na">enabled=</span><span class="s">"yes"</span> <span class="na">filter=</span><span class="s">"yes"</span> <span class="na">value-column=</span><span class="s">"OFFICEID"</span>
-            <span class="na">entity=</span><span class="s">"EBranches"</span> <span class="na">keys=</span><span class="s">"OFFICEID"</span> <span class="na">columns=</span><span class="s">"OFFICEID;NAME"</span>
-            <span class="na">visible-columns=</span><span class="s">"NAME"</span><span class="nt">&gt;&lt;/o-list-picker&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-
+  <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">layout-padding</span> <span class="na">class=</span><span class="s">"rounded-panel"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"row"</span> <span class="na">fxFill</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">fxFlex=</span><span class="s">"75"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span> <span class="na">fxFlex</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
+        <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEESURNAME"</span> <span class="na">fxFlex</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
       <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">fxFlex=</span><span class="s">"25"</span> <span class="na">fxLayoutAlign=</span><span class="s">"center center"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;o-image</span> <span class="na">attr=</span><span class="s">"EMPLOYEEPHOTO"</span> <span class="na">emptyimage=</span><span class="s">"./assets/images/no-image.png"</span><span class="nt">&gt;&lt;/o-image&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 
-  <span class="nt">&lt;/o-form&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"row"</span> <span class="na">fxFill</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-date-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEESTARTDATE"</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-date-input&gt;</span>
+      <span class="nt">&lt;o-email-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEEEMAIL"</span> <span class="na">fxFlex</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-email-input&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"row"</span> <span class="na">fxFill</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"EMPLOYEEADDRESS"</span> <span class="na">fxFlex</span> <span class="na">layout-padding</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"row"</span> <span class="na">fxFill</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-combo</span> <span class="na">attr=</span><span class="s">"EMPLOYEETYPEID"</span> <span class="na">fxFlex</span> <span class="na">layout-padding</span> <span class="na">query-on-init=</span><span class="s">"no"</span> <span class="na">query-on-bind=</span><span class="s">"yes"</span> <span class="na">enabled=</span><span class="s">"yes"</span>
+        <span class="na">value-column=</span><span class="s">"EMPLOYEETYPEID"</span> <span class="na">service=</span><span class="s">"employees"</span> <span class="na">entity=</span><span class="s">"employeeType"</span> <span class="na">keys=</span><span class="s">"EMPLOYEETYPEID"</span>
+        <span class="na">columns=</span><span class="s">"EMPLOYEETYPEID;EMPLOYEETYPENAME"</span> <span class="na">visible-columns=</span><span class="s">"EMPLOYEETYPENAME"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/o-combo&gt;</span>
+
+      <span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"OFFICEID"</span> <span class="na">fxFlex</span> <span class="na">layout-padding</span> <span class="na">query-on-init=</span><span class="s">"no"</span> <span class="na">query-on-bind=</span><span class="s">"yes"</span> <span class="na">enabled=</span><span class="s">"yes"</span>
+        <span class="na">filter=</span><span class="s">"yes"</span> <span class="na">value-column=</span><span class="s">"OFFICEID"</span> <span class="na">service=</span><span class="s">"branches"</span> <span class="na">entity=</span><span class="s">"branch"</span> <span class="na">keys=</span><span class="s">"OFFICEID"</span> <span class="na">columns=</span><span class="s">"OFFICEID;NAME"</span>
+        <span class="na">visible-columns=</span><span class="s">"NAME"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/o-list-picker&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
 <p><strong>employees-detail.component.ts</strong></p>

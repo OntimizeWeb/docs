@@ -808,7 +808,7 @@
 
       <section class="page__content" itemprop="text">
         
-<p>In this section we are going to explain how to create the inital form that contains a table with
+<p>In this section we are going to explain how to create the initial form that contains a table with
 all the employees of the Bank.</p>
 
 <p>In the previous step <em>employees.routes.ts</em> was configured so that if the url was <em>&#8216;employees&#8217;</em> the system rendered the component <em>EmployeesHomeComponent</em>. It is now time to create this component.</p>
@@ -827,16 +827,15 @@ all the employees of the Bank.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">layout=</span><span class="s">"column"</span> <span class="na">layout-align=</span><span class="s">"center top"</span> <span class="na">layout-margin</span><span class="nt">&gt;</span>
 
-  <span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"employees"</span> <span class="na">entity=</span><span class="s">"EEmployees"</span> <span class="na">title=</span><span class="s">"EMPLOYEES"</span>
+  <span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"employees"</span> <span class="na">service=</span><span class="s">"employees"</span> <span class="na">entity=</span><span class="s">"employee"</span> <span class="na">title=</span><span class="s">"EMPLOYEES"</span>
       <span class="na">columns=</span><span class="s">"EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"</span>
       <span class="na">visible-columns=</span><span class="s">"EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"</span>
-      <span class="na">sort-columns=</span><span class="s">"SURNAME"</span> <span class="na">keys=</span><span class="s">"EMPLOYEEID"</span> <span class="na">query-on-init=</span><span class="s">"true"</span> <span class="na">query-rows=</span><span class="s">"10"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+      <span class="na">sort-columns=</span><span class="s">"EMPLOYEESURNAME"</span> <span class="na">keys=</span><span class="s">"EMPLOYEEID"</span> <span class="na">query-on-init=</span><span class="s">"true"</span> <span class="na">query-rows=</span><span class="s">"10"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEEPHOTO"</span> <span class="na">orderable=</span><span class="s">"no"</span> <span class="na">searchable=</span><span class="s">"no"</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">image-type=</span><span class="s">"base64"</span> <span class="na">empty-image=</span><span class="s">"assets/images/no-image.png"</span> <span class="na">avatar=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span> <span class="na">title=</span><span class="s">"EMPLOYEENAME"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEESURNAME"</span> <span class="na">title=</span><span class="s">"EMPLOYEESURNAME"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEEADDRESS"</span> <span class="na">title=</span><span class="s">"EMPLOYEEADDRESS"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
     <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEESTARTDATE"</span> <span class="na">title=</span><span class="s">"EMPLOYEESTARTDATE"</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">format=</span><span class="s">"LL"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
-    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEEEMAIL"</span> <span class="na">title=</span><span class="s">"EMPLOYEEEMAIL"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEETYPEID"</span> <span class="na">title=</span><span class="s">"EMPLOYEETYPEID"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-table-cell-renderer-service</span> <span class="na">service=</span><span class="s">"employees"</span> <span class="na">entity=</span><span class="s">"employeeType"</span> <span class="na">columns=</span><span class="s">"EMPLOYEETYPEID;EMPLOYEETYPENAME"</span> <span class="na">value-column=</span><span class="s">"EMPLOYEETYPENAME"</span><span class="nt">&gt;&lt;/o-table-cell-renderer-service&gt;</span>
+    <span class="nt">&lt;/o-table-column&gt;</span>
   <span class="nt">&lt;/o-table&gt;</span>
 
 <span class="nt">&lt;/div&gt;</span>
