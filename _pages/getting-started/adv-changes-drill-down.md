@@ -24,45 +24,44 @@ The contents of these files are shown below:
 **employees-detail.component.html**
 
 ```html
-<div layout="row" layout-padding layout-align="center center">
+<o-form fxLayout="column" show-header="yes" label-header="EMPLOYEES" header-actions="R;U;D" service="employees"
+  entity="employee" keys="EMPLOYEEID" #oForm keys-sql-types="INTEGER">
 
-  <o-form layout="column" show-header="yes" label-header="EMPLOYEES" header-actions="R;U;D" entity="EEmployees" keys="EMPLOYEEID"
-    #oForm>
-
-      <div layout="column">
-        <div layout="row" flex>
-          <div layout="column" flex="75">
-            <o-text-input attr="EMPLOYEENAME" flex layout-padding></o-text-input>
-            <o-text-input attr="EMPLOYEESURNAME" flex layout-padding></o-text-input>
-          </div>
-          <div flex="25" layout-aling="center center">
-            <o-image attr="EMPLOYEEPHOTO" emptyimage="./assets/images/no-image.png"></o-image>
-          </div>
-        </div>
-
-        <div layout="row">
-          <o-date-input attr="EMPLOYEESTARTDATE" layout-padding></o-date-input>-->
-          <o-email-input attr="EMPLOYEEEMAIL" flex layout-padding></o-email-input>
-        </div>
-
-        <o-text-input attr="EMPLOYEEADDRESS" flex layout-padding></o-text-input>
-
-        <div layout="row" flex >
-          <o-combo attr="EMPLOYEETYPEID" flex layout-padding
-            query-on-init="no" query-on-bind="yes" enabled="yes" value-column="EMPLOYEETYPEID"
-            entity="EEmployeeTypes" keys="EMPLOYEETYPEID" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
-            visible-columns="EMPLOYEETYPENAME"></o-combo>
-
-          <o-list-picker attr="OFFICEID" flex layout-padding
-            query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="OFFICEID"
-            entity="EBranches" keys="OFFICEID" columns="OFFICEID;NAME"
-            visible-columns="NAME"></o-list-picker>
-        </div>
-
+  <div fxLayout="column" layout-padding class="rounded-panel">
+    <div fxLayout="row" fxFill>
+      <div fxLayout="column" fxFlex="75">
+        <o-text-input attr="EMPLOYEENAME" fxFlex layout-padding></o-text-input>
+        <o-text-input attr="EMPLOYEESURNAME" fxFlex layout-padding></o-text-input>
       </div>
+      <div fxFlex="25" fxLayoutAlign="center center">
+        <o-image attr="EMPLOYEEPHOTO" emptyimage="./assets/images/no-image.png"></o-image>
+      </div>
+    </div>
 
-  </o-form>
-</div>
+    <div fxLayout="row" fxFill>
+      <o-date-input attr="EMPLOYEESTARTDATE" layout-padding></o-date-input>
+      <o-email-input attr="EMPLOYEEEMAIL" fxFlex layout-padding></o-email-input>
+    </div>
+
+    <div fxLayout="row" fxFill>
+      <o-text-input attr="EMPLOYEEADDRESS" fxFlex layout-padding></o-text-input>
+    </div>
+
+    <div fxLayout="row" fxFill>
+      <o-combo attr="EMPLOYEETYPEID" fxFlex layout-padding query-on-init="no" query-on-bind="yes" enabled="yes"
+        value-column="EMPLOYEETYPEID" service="employees" entity="employeeType" keys="EMPLOYEETYPEID"
+        columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" visible-columns="EMPLOYEETYPENAME">
+      </o-combo>
+
+      <o-list-picker attr="OFFICEID" fxFlex layout-padding query-on-init="no" query-on-bind="yes" enabled="yes"
+        filter="yes" value-column="OFFICEID" service="branches" entity="branch" keys="OFFICEID" columns="OFFICEID;NAME"
+        visible-columns="NAME">
+      </o-list-picker>
+    </div>
+
+  </div>
+
+</o-form>
 ```
 
 **employees-detail.component.ts**

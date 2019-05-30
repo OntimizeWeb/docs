@@ -206,6 +206,8 @@ Now you can override the methods indicated in the previous section. The followin
 import { Injectable, Injector } from '@angular/core';
 
 import { OntimizeEEService, Observable, Util } from 'ontimize-web-ngx';
+import { Observable}  from 'rxjs';
+import { share } from 'rxjs/operators';
 
 @Injectable()
 export class StarsWarsService extends OntimizeEEService {
@@ -218,7 +220,7 @@ export class StarsWarsService extends OntimizeEEService {
     const url = 'https://swapi.co/api/' + entity + '/?format=json';
 
     let _innerObserver: any;
-    const dataObservable = new Observable(observer => _innerObserver = observer).share();
+    const dataObservable = new Observable(observer => _innerObserver = observer).pipe(share());
 
     const self = this;
     this.httpClient.get(url).subscribe(resp => {
@@ -233,7 +235,7 @@ export class StarsWarsService extends OntimizeEEService {
     }, error => {
       self.parseUnsuccessfulQueryResponse(error, _innerObserver);
     }, () => _innerObserver.complete());
-    return dataObservable;
+    return dataObservable.pipe(share());
   }
 
   public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object, offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
@@ -248,7 +250,7 @@ export class StarsWarsService extends OntimizeEEService {
     let url = 'https://swapi.co/api/' + entity + '/?format=json' + '&page=' + page;
 
     let _innerObserver: any;
-    const dataObservable = new Observable(observer => _innerObserver = observer).share();
+    const dataObservable = new Observable(observer => _innerObserver = observer);
 
     const self = this;
     this.httpClient.get(url).subscribe(resp => {
@@ -264,7 +266,7 @@ export class StarsWarsService extends OntimizeEEService {
     }, error => {
       self.parseUnsuccessfulQueryResponse(error, _innerObserver);
     }, () => _innerObserver.complete());
-    return dataObservable;
+    return dataObservable.pipe(share());
   }
 
 }
