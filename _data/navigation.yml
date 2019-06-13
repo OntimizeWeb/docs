@@ -139,6 +139,9 @@ components:
       - title: "Date"
         url: /components/input/date/
         order: "2"
+      - title: "Date range <span class='menuitem-badge'>new<span>"
+        url: /components/input/daterange/
+        order: "2"
       - title: "NIF"
         url: /components/input/nif/
         order: "2"
@@ -172,13 +175,13 @@ components:
         children:
           - title: "List picker dialog"
             url: /listpicker/listpickerdialog/
-      - title: "Radio <span class='menuitem-badge'>new<span>"
+      - title: "Radio"
         url: /components/input/radio/
         order: "2"
-      - title: "Slide toggle <span class='menuitem-badge'>new<span>"
+      - title: "Slide toggle"
         url: /components/input/slidetoggle/
         order: "2"
-      - title: "Slider <span class='menuitem-badge'>new<span>"
+      - title: "Slider"
         url: /components/input/slider/
         order: "2"
 
