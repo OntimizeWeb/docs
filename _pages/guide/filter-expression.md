@@ -23,7 +23,7 @@ The filtering expression structure is the following;
 
   /** The operator. */
   op: string
-  
+
   /** The right operand. */
   rop?: string | IExpression
 }
@@ -46,8 +46,9 @@ The filtering expression structure is the following;
 | NULL       | is `NULL`                                     |
 | NOT NULL   | is not `NULL`                                 |
 | OR         | `TRUE` if either logical expression is `TRUE` |
+| IN         | `TRUE` if the operand is contained in the provided values |
 
-<!-- * **Logical operators**: 
+<!-- * **Logical operators**:
 > * AND: `TRUE` if both logical expressions are `TRUE`.
 > * LIKE: `TRUE` if the operand matches a pattern.
 > * NOT_LIKE: `TRUE` if the operand not matches a pattern.
