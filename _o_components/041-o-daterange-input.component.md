@@ -14,7 +14,7 @@ The `o-daterange-input` component is used in [forms]({{ base_path }}/components/
 The date range input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-![Daterange input component]({{ "/images/components/inputs/o-daterange-input.png" | absolute_url }}){ width: 70% }
+![Daterange input component]({{ "/images/components/inputs/o-daterange-input.png" | absolute_url }}){: .comp-example-img width='65%'}
 
 ```html
 <o-form editable-detail="no" show-header="no" layout-direction="row">
