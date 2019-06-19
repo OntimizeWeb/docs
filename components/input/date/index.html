@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-06-19T09:53:37-04:00">
+  <meta property="article:published_time" content="2019-06-19T09:57:20-04:00">
 
 
 
@@ -384,6 +384,14 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/daterange/" class=" ">Date range <span class='menuitem-badge'>new<span></a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/components/input/email/" class=" ">Email</a></li>
           
             
@@ -456,7 +464,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/radio/" class=" ">Radio <span class='menuitem-badge'>new<span></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/radio/" class=" ">Radio</a></li>
           
             
             
@@ -472,7 +480,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/slidetoggle/" class=" ">Slide toggle <span class='menuitem-badge'>new<span></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/slidetoggle/" class=" ">Slide toggle</a></li>
           
             
             
@@ -480,7 +488,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/slider/" class=" ">Slider <span class='menuitem-badge'>new<span></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/slider/" class=" ">Slider</a></li>
           
             
             
@@ -868,6 +876,9 @@
     <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
 <ul class="toc__menu" id="markdown-toc">
   <li><a href="#basic-example" id="markdown-toc-basic-example">Basic example</a></li>
+  <li><a href="#disable-the-text-input" id="markdown-toc-disable-the-text-input">Disable the text input</a></li>
+  <li><a href="#touch-ui-mode" id="markdown-toc-touch-ui-mode">Touch UI mode</a></li>
+  <li><a href="#setting-the-calendar-starting-view" id="markdown-toc-setting-the-calendar-starting-view">Setting the calendar starting view</a></li>
   <li><a href="#validation" id="markdown-toc-validation">Validation</a></li>
 </ul>
 
@@ -887,10 +898,23 @@
     <span class="nt">&lt;o-date-input</span> <span class="na">attr=</span><span class="s">"date3"</span> <span class="na">label=</span><span class="s">"Date"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-date-input&gt;</span>
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
-<p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/inputs/date" target="_blank">OntimizeWeb playground</a>.</p>
+
+<h2 id="disable-the-text-input">Disable the text input</h2>
+
+<p>It is possible to disable the date input by adding the <code class="highlighter-rouge">text-input-enabled</code> property is set to “no”. By default, the value is true .</p>
+
+<h2 id="touch-ui-mode">Touch UI mode</h2>
+
+<p>The <code class="highlighter-rouge">o-dateinput</code> normally opens as a popup under the input, however the component has a <code class="highlighter-rouge">touch-ui</code> property that can be set to <code class="highlighter-rouge">true</code> where the calendar opens in a large dialog.</p>
+
+<h2 id="setting-the-calendar-starting-view">Setting the calendar starting view</h2>
+
+<p>The <em>startView</em> property of <code class="highlighter-rouge">o-date-input</code> can be used to set the view that will show up when the calendar first opens. It can be set to month or year; by default it will open to month view</p>
 
 <h2 id="validation">Validation</h2>
-<p>The <code class="highlighter-rouge">o-date-input</code> shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value on the input.</p>
+<p>The <code class="highlighter-rouge">o-date-input</code> shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to “yes” and there is no value on the input.</p>
+
+<p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/inputs/date" target="_blank">OntimizeWeb playground</a>.</p>
 
 </div>
 
@@ -1644,7 +1668,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-06-19T09:53:37-04:00">June 19, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-06-19T09:57:20-04:00">June 19, 2019</time></p>
         
       </footer>
 
@@ -1662,7 +1686,7 @@
       </a>
     
     
-      <a href="https://ontimizeweb.github.io/docs/components/input/email/" class="pagination--pager" title="Email input
+      <a href="https://ontimizeweb.github.io/docs/components/input/daterange/" class="pagination--pager" title="Date range input
 ">
         Next
         <i class="fas fa-arrow-right margin-left"></i>

@@ -833,7 +833,7 @@
 
   </span><span class="err">/**</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">operator.</span><span class="w"> </span><span class="err">*/</span><span class="w">
   </span><span class="err">op</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
-  
+
   </span><span class="err">/**</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">right</span><span class="w"> </span><span class="err">operand.</span><span class="w"> </span><span class="err">*/</span><span class="w">
   </span><span class="err">rop?</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">IExpression</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -898,10 +898,14 @@
       <td>OR</td>
       <td><code class="highlighter-rouge">TRUE</code> if either logical expression is <code class="highlighter-rouge">TRUE</code></td>
     </tr>
+    <tr>
+      <td>IN</td>
+      <td><code class="highlighter-rouge">TRUE</code> if the operand is contained in the provided values</td>
+    </tr>
   </tbody>
 </table>
 
-<!-- * **Logical operators**: 
+<!-- * **Logical operators**:
 > * AND: `TRUE` if both logical expressions are `TRUE`.
 > * LIKE: `TRUE` if the operand matches a pattern.
 > * NOT_LIKE: `TRUE` if the operand not matches a pattern.
@@ -1468,6 +1472,47 @@ Both expressions are joined using the provided operator.</p>
                 <td>value <p>any</p>
 </td>
                 <td><p>the value</p>
+</td>
+            </tr>
+        
+    
+
+    
+        <tr><td colspan="2"><strong>Returns</strong></td></tr>
+        <tr>
+            <td><p><code class="highlighter-rouge">IExpression</code></p>
+</td>
+            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+<table class="o-method-table">
+    <thead>
+        <tr><th colspan="2"><strong><p>buildExpressionIn</p>
+</strong></th></tr>
+    </thead>
+    <tbody>
+    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key IN the provided values.</p>
+</td></tr>
+
+    
+        
+        <tr><td colspan="2"><strong>Parameters</strong></td></tr>
+        
+            <tr>
+                <td>key <p>string</p>
+</td>
+                <td><p>the key</p>
+</td>
+            </tr>
+        
+            <tr>
+                <td>values <p>any</p>
+</td>
+                <td><p>the values</p>
 </td>
             </tr>
         
