@@ -764,7 +764,7 @@ You can see this and more examples of this component in the [OntimizeWeb playgro
 
 ### Calculated columns
 
-The `o-table` suppports calculated columns, used when user wants to show an additional column which contains a result of an operation.
+The `o-table` supports calculated columns, used when user wants to show an additional column which contains a result of an operation.
 
 <h3 class="grey-color">Example</h3>
 

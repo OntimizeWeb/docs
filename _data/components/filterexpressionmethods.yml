@@ -254,7 +254,7 @@ methods: [
     description: "Builds an `IExpression` instance for filtering the provided key with two conditions:
       * The first filter the provided key with a NULL value.
       * The second filter the provided key EQUAL to the provided value.
-      
+
       Both expressions are joined using the provided operator.",
     params: [
       {
@@ -266,6 +266,26 @@ methods: [
         name: "value",
         type: "any",
         description: "the value"
+      }
+    ],
+    return: {
+      name: "`IExpression`",
+      description: "the `IExpression`"
+    }
+  },
+  {
+    name: "buildExpressionIn",
+    description: "Builds an `IExpression` instance for filtering the provided key IN the provided values.",
+    params: [
+      {
+        name: "key",
+        type: "string",
+        description: "the key"
+      },
+      {
+        name: "values",
+        type: "any",
+        description: "the values"
       }
     ],
     return: {
