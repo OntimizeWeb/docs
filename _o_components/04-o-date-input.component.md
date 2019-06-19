@@ -34,7 +34,7 @@ The `o-dateinput` normally opens as a popup under the input, however the compone
 
 ## Setting the calendar starting view
 
-The startView property of `o-date-input` can be used to set the view that will show up when the calendar first opens. It can be set to month or year; by default it will open to month view
+The *startView* property of `o-date-input` can be used to set the view that will show up when the calendar first opens. It can be set to month or year; by default it will open to month view
 
 ## Validation
 The `o-date-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.
