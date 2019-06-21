@@ -26,17 +26,28 @@ In this secction you can check the different releases of **OntimizeWeb** and its
     </tr>
   </thead>
   <tbody>
+  <tr>
+	  <td>4.0.6</td>
+	  <td>4.0.0</td>
+	  <td rowspan="7">4.0.0</td>
+	  <td rowspan="4">4.0.0</td>
+	  <td rowspan="2">4.0.0</td>
+	  <td rowspan="4">4.0.0<br>4.0.1</td>
+	  <td rowspan="4">4.0.0</td>
+	  <td rowspan="5">4.0.2</td>
+	  <td rowspan="7">4.0.0</td>
+      <td rowspan="7">4.0.0</td>
+	</tr>
+    <tr>
+	  <td>4.0.5</td>
+	  <td rowspan="7">4.0.0-rc.1</td>
+	</tr>
+    <tr>
+	  <td>4.0.4</td>
+	  <td rowspan="3">4.0.1</td>
+	</tr>
 	<tr>
 	  <td>4.0.3</td>
-	  <td rowspan="5">4.0.0-rc.1</td>
-	  <td rowspan="4">4.0.0</td>
-	  <td rowspan="3">4.0.1</td>
-	  <td>4.0.0</td>
-	  <td>4.0.0<br>4.0.1</td>
-	  <td rowspan="2">4.0.0</td>
-	  <td rowspan="2">4.0.2</td>
-	  <td rowspan="4">4.0.0</td>
-      <td rowspan="4">4.0.0</td>
 	</tr>
     <tr>
       <td>4.0.2</td>
