@@ -1,5 +1,7 @@
 directive: "o-form-layout-manager"
 
+extraComponents: "formLayoutManagerComponents"
+
 attributes: [{
   name: "attr"
 },{
@@ -37,43 +39,43 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "CSS class attached to the dialog when the dialog mode is active"
+  description: "<b><i>Deprecated</i></b>. CSS class attached to the dialog when the dialog mode is active"
 },{
   name: "dialog-width",
   type: "string",
   default: "",
   required: "",
-  description: "The dialog width"
+  description: "<b><i>Deprecated</i></b>. The dialog width"
 },{
   name: "dialog-min-width",
   type: "string",
   default: "",
   required: "",
-  description: "The dialog minimum width"
+  description: "<b><i>Deprecated</i></b>. The dialog minimum width"
 },{
   name: "dialog-max-width",
   type: "string",
   default: "",
   required: "",
-  description: "The dialog maximum width"
+  description: "<b><i>Deprecated</i></b>. The dialog maximum width"
 },{
   name: "dialog-height",
   type: "string",
   default: "",
   required: "",
-  description: "The dialog height"
+  description: "<b><i>Deprecated</i></b>. The dialog height"
 },{
   name: "dialog-min-height",
   type: "string",
   default: "",
   required: "",
-  description: "The dialog minimum height"
+  description: "<b><i>Deprecated</i></b>. The dialog minimum height"
 },{
   name: "dialog-max-height",
   type: "string",
   default: "",
   required: "",
-  description: "The dialog maximum height"
+  description: "<b><i>Deprecated</i></b>. The dialog maximum height"
 },{
   name: "store-state"
 }]
