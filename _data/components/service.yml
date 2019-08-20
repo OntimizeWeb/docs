@@ -46,7 +46,11 @@ attributes: [{
   name: "recursive-insert"
 }, {
   name: "controls"
-}]
+},{
+  name: "filter-case-sensitive"
+},{
+  name: "quick-filter"
+},]
 
 methods: [{
   name: "initialize",

@@ -251,6 +251,13 @@
     required: "",
     description: "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
   },
+  "svg-icon": {
+    name: "svg-icon",
+    type: "string",
+    default: "",
+    required: "",
+    description: "Name of svg icon"
+  },
   "quick-filter": {
     name: "quick-filter",
     type: "no | false | yes | true",

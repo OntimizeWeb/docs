@@ -13,6 +13,8 @@ attributes: [{
 },{
   name: "icon"
 },{
+  name: "svg-icon"
+},{
   name: "icon-position",
   type: "left | right | top | bottom",
   default: "left",
