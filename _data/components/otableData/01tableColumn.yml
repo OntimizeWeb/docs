@@ -47,7 +47,7 @@ attributes: [{
   description: "Indicates whether or not the column content can be edited. "
 },{
   name: "type",
-  type: "string | boolean | integer | real | currency | date | image | action",
+  type: "string | boolean | integer | real | currency | percentage | date | image | action | service  |translate",
   default: "string",
   required: "",
   description: "Column data type"
@@ -63,6 +63,18 @@ attributes: [{
   default: "",
   required: "",
   description: "Indicates the width of the column in px or %"
+},{
+  name: "min-width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Indicates the min width of the column in px"
+},{
+  name: "max-width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Indicates the min width of the column in px"
 },{
   name: "async-load",
   type: "no | yes | true | false",
@@ -95,4 +107,10 @@ attributes: [{
   default: "no",
   required: "",
   description: "Indicates whether or not to display the cell content in multiple lines if it is needed"
+},{
+  name: "resizable",
+  type: "no | yes | true | false",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to resizable the column"
 }]
