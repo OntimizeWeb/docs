@@ -134,6 +134,12 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the table columns are resizables"
+}, {
+  name: "select-column-visible",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the table columns are resizables"
 }]
 
 outputs: [{
