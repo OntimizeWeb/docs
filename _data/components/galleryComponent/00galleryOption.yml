@@ -1,0 +1,361 @@
+
+class : "GalleryOptions"
+
+attributes: [{
+  name: "width",
+  type: "string",
+  default : "500px",
+  description : "Gallery width"
+},{
+  name: "height",
+  type: "string",
+  default : "400px",
+  description : "Gallery height"
+},{
+  name: "breakpoint ",
+  type: "number",
+  default : "undefined",
+  description : "Responsive breakpoint, works like media query max-width"
+},{
+  name: "fullWidth ",
+  type: "boolean",
+  default : "false ",
+  description : "Sets the same width as browser"
+},{
+  name: "layout",
+  type: "GalleryLayout.ThumbnailsTop | GalleryLayout.ThumbnailsBottom",
+  default : "GalleryLayout.ThumbnailsBottom",
+  description : "Sets thumbnails position"
+},{
+  name: "startIndex",
+  type: "number",
+  default : "0",
+  description : "Sets index of selected image on start"
+},{
+  name: "linkTarget",
+  type: "string",
+  default : "_blank",
+  description : "Sets target attribute of link"
+},{
+  name: "lazyLoading",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables lazy loading for images"
+},{
+  name: "image",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables image"
+},{
+  name: "imageDescription",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables description for images"
+},{
+  name: "imagePercent",
+  type: "number",
+  default : "75",
+  description : "Percentage height"
+},{
+  name: "imageArrows",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables arrows"
+},{
+  name: "imageArrowsAutoHide",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables arrows auto hide"
+},{
+  name: "imageSwipe",
+  type: "boolean",
+  default : "false",
+  description : "enables or disables swipe"
+},{
+  name: "imageAnimation",
+  type: "GalleryAnimation.Fade | GalleryAnimation.Slide | GalleryAnimation.Rotate | GalleryAnimation.Zoom",
+  default : "GalleryAnimation.Fade",
+  description : "Animation type"
+},{
+  name: "imageSize",
+  type: "GalleryImageSize.Cover | GalleryImageSize.Contain",
+  default : "GalleryImageSize.Cover",
+  description : "Image size"
+},{
+  name: "imageAutoPlay",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables auto play"
+},{
+  name: "imageAutoPlayInterval",
+  type: "number",
+  default : "2000",
+  description : "Interval for auto play (ms)"
+},{
+  name: "imageAutoPlayPauseOnHover",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables pause auto play on hover"
+},{
+  name: "imageInfinityMove",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables infinity move by arrows"
+},{
+  name: "imageActions",
+  type: "GalleryAction[]",
+  default : "[]",
+  description : "Array of custom actions"
+},{
+  name: "imageBullets",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables navigation bullets"
+},{
+  name: "thumbnails",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables thumbnails"
+},{
+  name: "thumbnailsColumns",
+  type: "number",
+  default : "4",
+  description : "Columns count"
+},{
+  name: "thumbnailsRows",
+  type: "number",
+  default : "1",
+  description : "Rows count"
+},{
+  name: "thumbnailsPercent",
+  type: "number",
+  default : "25",
+  description : "Percentage height"
+},{
+  name: "thumbnailsMargin",
+  type: "number",
+  default : "10",
+  description : "margin between thumbnails and image"
+},{
+  name: "thumbnailsArrows",
+  type: "boolean",
+  default : "true",
+  description : Enables or disables arrows in layout thumbnail"
+},{
+  name: "thumbnailsArrowsAutoHide",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables arrows auto hide in layout thumbnail"
+},{
+  name: "thumbnailsSwipe",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables swipe"
+},{
+  name: "thumbnailsMoveSize",
+  type: "number",
+  default : "1",
+  description : "Number of items to move on arrow click."
+},{
+  name: "thumbnailsOrder",
+  type: "GalleryOrder.Column | GalleryOrder.Row | GalleryOrder.Page",
+  default : "GalleryOrder.Column",
+  description : "Images order"
+},{
+  name: "thumbnailsRemainingCount",
+  type: "boolean",
+  default : "false",
+  description : "Whether true arrows are disabled and last item has label with remaining count"
+},{
+  name: "thumbnailsAsLinks",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables links on thumbnails"
+},{
+  name: "thumbnailsAutoHide",
+  type: "boolean",
+  default : "false",
+  description : "Hides thumbnails if there is only one image"
+},{
+  name: "thumbnailMargin",
+  type: "number",
+  default : "10",
+  description : "Margin between images in thumbnails"
+},{
+  name: "thumbnailSize",
+  type: "GalleryImageSize.Cover | GalleryImageSize.Contain",
+  default : "GalleryImageSize.Cover",
+  description : "Thumbnail size"
+},{
+  name: "thumbnailActions",
+  type: "GalleryAction[]",
+  default : "[]",
+  description : "Array of custom actions"
+},{
+  name: "preview",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables description for images"
+},{
+  name: "previewDescription",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables description for images"
+},{
+  name: "previewArrows",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables arrows"
+},{
+  name: "previewArrowsAutoHide",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables arrows auto hide"
+},{
+  name: "previewSwipe",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables swipe"
+},{
+  name: "previewFullscreen",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables fullscreen icon"
+},{
+  name: "previewForceFullscreen",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables opening preview in fullscreen mode"
+},{
+  name: "previewCloseOnClick",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables closing preview by click"
+},{
+  name: "previewCloseOnEsc",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables closing preview by esc keyboard"
+},{
+  name: "previewKeyboardNavigation",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables navigation by keyboard"
+},{
+  name: "previewAnimation",
+  type: "boolean",
+  default : "true",
+  description : "Enables or disables image loading animation"
+},{
+  name: "previewAutoPlay",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables auto play"
+},{
+  name: "previewAutoPlayInterval",
+  type: "number",
+  default : "2000",
+  description : "Interval for auto play (ms)"
+},{
+  name: "previewAutoPlayPauseOnHover",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables pause auto play on hover"
+},{
+  name: "previewInfinityMove ",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables infinity move by arrows"
+},{
+  name: "previewZoom",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables zoom in and zoom out"
+},{
+  name: "previewZoomStep",
+  type: "number",
+  default : "0.1",
+  description : "Enables or disables step for zoom change"
+},{
+  name: "previewZoomMax",
+  type: "number",
+  default : "2",
+  description : "Max value for zoom"
+},{
+  name: "previewZoomMin",
+  type: "number",
+  default : "0.5",
+  description : "Min value for zoom"
+},{
+  name: "previewRotate",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables rotate buttons"
+},{
+  name: "previewDownload",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables download button"
+},{
+  name: "previewBullets",
+  type: "boolean",
+  default : "false",
+  description : "Enables or disables navigation bullets"
+},{
+  name: "arrowPrevIcon",
+  type: "string",
+  default : "navigate_before",
+  description : "Icon for prev arrow (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "arrowNextIcon",
+  type: "string",
+  default : "navigate_ext",
+  description : "Icon for next arrow (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "closeIcon",
+  type: "string",
+  default : "close",
+  description : "Icon for close button (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "fullscreenIcon",
+  type: "string",
+  default : "fullscreen",
+  description : "Icon for fullscreen button (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "spinnerIcon",
+  type: "string",
+  default : "loop",
+  description : "Icon for spinner (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "zoomInIcon",
+  type: "string",
+  default : "zoom_in",
+  description : "Icon for zoom in (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "zoomOutIcon",
+  type: "string",
+  default : "zoom_out",
+  description : "Icon for zoom out (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "rotateLeftIcon",
+  type: "string",
+  default : "rotate_left",
+  description : "Icon for rotate left (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "rotateRightIcon",
+  type: "string",
+  default : "rotate_right",
+  description : "Icon for rotate right (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "downloadIcon",
+  type: "string",
+  default : "cloud_download",
+  description : "Icon for download (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "actions",
+  type: "GalleryAction[]",
+  default : "[]",
+  description : "Array of new custom actions that will be added to the left of the current close/zoom/fullscreen icons"
+}]
+
+

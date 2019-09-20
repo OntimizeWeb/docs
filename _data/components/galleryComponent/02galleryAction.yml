@@ -1,0 +1,23 @@
+class : "GalleryAction"
+
+attributes: [{
+  name: "icon",
+  type: "string",
+  default : "",
+  description : "Icon for custom action"
+},{
+  name: "disabled",
+  type: "boolean",
+  default : "false",
+  description : "Tf the icon should be disabled"
+},{
+  name: "titleText",
+  type: "string",
+  default : "''",
+  description : "Text to set the title attribute to"
+},{
+  name: "onClick",
+  type: "(event: Event, index: number) => void",
+  default : "",
+  description : "Output function to call when custom action icon is clicked"
+}]

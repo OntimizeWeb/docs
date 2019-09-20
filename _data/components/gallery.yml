@@ -1,0 +1,73 @@
+directive : "o-gallery"
+extraComponents: "galleryComponent"
+
+attributes: [{
+  name: "options",
+  type: "GalleryOptions[]",
+  default : "",
+  description : " Array of custom options"
+},{
+  name: "images",
+  type: "GalleryImage[]",
+  default : "",
+  description : "Array of images"
+}]
+
+outputs: [{
+  name : "onImagesReady",
+  description: "Event triggered when images length > 0"
+},{
+  name : "onChange",
+  description: "Event triggered when on image change"
+},{
+  name : "onPreviewOpen",
+  description: "Event triggered when on preview open"
+},{
+  name : "onPreviewClose",
+  description: "Event triggered when on preview close"
+},{
+  name : "onPreviewChange",
+  description: "Event triggered when on preview image change"
+}]
+
+methods: [{
+  name: "show(index: number)",
+  description: "Shows image at index",
+  returns: ""
+},{
+  name: "showNext()",
+  description: "Shows next image",
+  returns: ""
+},{
+  name: "showPrev()",
+  description: "Shows prev image",
+  returns: ""
+},{
+  name: "canShowNext()",
+  description: "Returns true if there is next image",
+  returns: "boolean"
+},{
+  name: "canShowPrev()",
+  description: "Returns true if there is prev image",
+  returns: ""
+},{
+  name: "openPreview(index: number)",
+  description: "Opens preview at index",
+  returns: ""
+},{
+  name: "moveThumbnailsLeft()",
+  description: "Moves thumbnails to left",
+  returns: ""
+},{
+  name: "moveThumbnailsRight()",
+  description: "Moves thumbnails to right",
+  returns: ""
+},{
+  name: "canMoveThumbnailsLeft()",
+  description: "Returns true if you can move thumbnails to left",
+  returns: "boolean"
+},{
+  name: "canMoveThumbnailsRight()",
+  description: "Returns true if you can move thumbnails to right",
+  returns: "boolean"
+}]
