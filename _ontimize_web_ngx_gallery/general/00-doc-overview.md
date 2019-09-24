@@ -13,7 +13,7 @@ The `o-gallery` component allows to create beautiful image and videos galleries 
 ![Gallery component]({{ "/images/components/gallery/gallery.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-    <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>
+<o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>
 ```
 
 ```ts

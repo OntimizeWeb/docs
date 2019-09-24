@@ -94,8 +94,34 @@ The `o-gallery` component allow multiple options for configurating with `gallery
 You can add "actions" to the gallery, it shows icons on the top right corner and trigger your custom method.
 
 Form example 
+
 ```
- actions: [
-          { icon: 'info', onClick: this.showInfo, titleText: 'info' }
-        ]
+constructor(
+  protected dialogService: DialogService) {
+}
+
+
+showInfo(event: Event, i: number): void {
+  this.dialogService.info('INFO', 'Image ' + i);
+}
+
+
+ngOnInit(): void {
+
+  // bind "this" to the method callback before assign if not lost context
+  this.showInfo = this.showInfo.bind(this);
+
+  this.galleryOptions = [
+    {
+      ...
+      actions: [
+        { icon: 'info', onClick: this.showInfo, titleText: 'info' }
+      ]
+    ...
+    }
+  ]
+}
 ```
+
+
+![Action Gallery]({{ "/images/components/gallery/gallery-actions.png" | absolute_url }}){: .comp-example-img}

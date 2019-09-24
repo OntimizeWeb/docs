@@ -32,36 +32,28 @@ outputs: [{
 
 methods: [{
   name: "show(index: number)",
-  description: "Shows image at index",
-  returns: ""
+  description: "Shows image at index"
 },{
   name: "showNext()",
-  description: "Shows next image",
-  returns: ""
+  description: "Shows next image"
 },{
   name: "showPrev()",
-  description: "Shows prev image",
-  returns: ""
+  description: "Shows prev image"
 },{
   name: "canShowNext()",
-  description: "Returns true if there is next image",
-  returns: "boolean"
+  description: "Returns true if there is next image"
 },{
   name: "canShowPrev()",
-  description: "Returns true if there is prev image",
-  returns: ""
+  description: "Returns true if there is prev image"
 },{
   name: "openPreview(index: number)",
-  description: "Opens preview at index",
-  returns: ""
+  description: "Opens preview at index"
 },{
   name: "moveThumbnailsLeft()",
-  description: "Moves thumbnails to left",
-  returns: ""
+  description: "Moves thumbnails to left"
 },{
   name: "moveThumbnailsRight()",
-  description: "Moves thumbnails to right",
-  returns: ""
+  description: "Moves thumbnails to right"
 },{
   name: "canMoveThumbnailsLeft()",
   description: "Returns true if you can move thumbnails to left",

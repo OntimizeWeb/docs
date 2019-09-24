@@ -8,7 +8,7 @@ excerpt: ""
 ## Installation
 
 ```bash
-  npm install ontimize-web-ngx-gallery --save
+npm install ontimize-web-ngx-gallery --save
 ```
 
 ## Usage

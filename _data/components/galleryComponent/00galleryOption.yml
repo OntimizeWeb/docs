@@ -309,7 +309,7 @@ attributes: [{
 },{
   name: "arrowNextIcon",
   type: "string",
-  default : "navigate_ext",
+  default : "navigate_next",
   description : "Icon for next arrow (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
 },{
   name: "closeIcon",
