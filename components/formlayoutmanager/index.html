@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-10-07T10:23:29-04:00">
+  <meta property="article:published_time" content="2019-10-07T10:30:17-04:00">
 
 
 
@@ -970,8 +970,14 @@
     <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
 <ul class="toc__menu" id="markdown-toc">
   <li><a href="#basic-example" id="markdown-toc-basic-example">Basic example</a></li>
-  <li><a href="#tab-mode" id="markdown-toc-tab-mode">Tab mode</a></li>
-  <li><a href="#dialog-mode" id="markdown-toc-dialog-mode">Dialog mode</a></li>
+  <li><a href="#tab-mode" id="markdown-toc-tab-mode">Tab mode</a>    <ul>
+      <li><a href="#configure-tab-mode-options" id="markdown-toc-configure-tab-mode-options">Configure tab mode options</a></li>
+    </ul>
+  </li>
+  <li><a href="#dialog-mode" id="markdown-toc-dialog-mode">Dialog mode</a>    <ul>
+      <li><a href="#configure-dialog-mode-options" id="markdown-toc-configure-dialog-mode-options">Configure dialog mode options</a></li>
+    </ul>
+  </li>
 </ul>
 
   </nav>
@@ -1002,12 +1008,47 @@
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/form-layout-manager/formLayoutManagerTAB.png" alt="Form layout manager in *tab* mode" /></p>
 
+<h4 id="configure-tab-mode-options">Configure tab mode options</h4>
+<p>It is possible to configure tab mode options with the <code class="highlighter-rouge">o-form-layout-tabgroup-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
+
+<p>For complex labels, you can add <code class="highlighter-rouge">&lt;ng-template let-tabData="tabData"&gt;...&lt;/ng-template&gt;</code>  and inside you can define your template. It&#8217;s <em>important</em> than the tabData attributes are including in <code class="highlighter-rouge">labe-columns</code>.</p>
+
+<h3 class="grey-color">Example</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form-layout-manager</span> <span class="na">mode=</span><span class="s">"tab"</span> <span class="na">title=</span><span class="s">"CUSTOMERS"</span> <span class="na">label-columns=</span><span class="s">"SURNAME;NAME"</span> <span class="na">separator=</span><span class="s">","</span>
+  <span class="na">attr=</span><span class="s">"o-form-layout-customer-home"</span> <span class="na">title-data-origin=</span><span class="s">"customers_form_edit"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-form-layout-tabgroup-options</span> <span class="na">background-color=</span><span class="s">"primary"</span> <span class="na">color=</span><span class="s">"accent"</span> <span class="na">header-position=</span><span class="s">"below"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ng-template</span> <span class="na">let-tabData</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;mat-icon&gt;</span>person<span class="nt">&lt;/mat-icon&gt;</span>
+      {{tabData?.SURNAME}}, {{tabData?.NAME}}
+    <span class="nt">&lt;/ng-template&gt;</span>
+  <span class="nt">&lt;/o-form-layout-tabgroup-options&gt;</span>
+ ................
+<span class="nt">&lt;/o-form-layout-manager&gt;</span>
+</code></pre></div></div>
 <h3 id="dialog-mode">Dialog mode</h3>
 <p>The <em>dialog</em> mode consists of displaying the form detail in a dialog over the data table.</p>
 
 <p>Select this mode setting the value <strong>dialog</strong> to the <code class="highlighter-rouge">mode</code> attribute. You can see a working example of this mode in the <em>branches</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/branches" target="_blank">OntimizeWeb QuickStart</a>.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/form-layout-manager/formLayoutManagerDIALOG.png" alt="Form layout manager in *dialog* mode" /></p>
+
+<h4 id="configure-dialog-mode-options">Configure dialog mode options</h4>
+
+<p>It is possible to configure dialog mode options with the <code class="highlighter-rouge">o-form-layout-dialog-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
+
+<h3 class="grey-color">Example</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form-layout-manager</span> <span class="na">mode=</span><span class="s">"dialog"</span> <span class="na">title=</span><span class="s">"BRANCHES"</span> <span class="na">label-columns=</span><span class="s">"NAME"</span> <span class="na">separator=</span><span class="s">""</span>
+  <span class="na">attr=</span><span class="s">"o-form-layout-branches-home"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;o-form-layout-dialog-options</span> <span class="na">width=</span><span class="s">"600px"</span> <span class="na">height=</span><span class="s">"400px"</span> 
+  <span class="na">disable-close=</span><span class="s">"false"</span> <span class="nt">&gt;&lt;/o-form-layout-dialog-options&gt;</span>
+
+  ...
+
+<span class="nt">&lt;/o-form-layout-manager&gt;</span>
+</code></pre></div></div>
+
 
 </div>
 
@@ -1166,7 +1207,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>CSS class attached to the dialog when the dialog mode is active</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. CSS class attached to the dialog when the dialog mode is active</p>
 </p>
     
   </td>
@@ -1231,7 +1272,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>The dialog height</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. The dialog height</p>
 </p>
     
   </td>
@@ -1296,7 +1337,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>The dialog maximum height</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. The dialog maximum height</p>
 </p>
     
   </td>
@@ -1361,7 +1402,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>The dialog maximum width</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. The dialog maximum width</p>
 </p>
     
   </td>
@@ -1426,7 +1467,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>The dialog minimum height</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. The dialog minimum height</p>
 </p>
     
   </td>
@@ -1491,7 +1532,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>The dialog minimum width</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. The dialog minimum width</p>
 </p>
     
   </td>
@@ -1556,7 +1597,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>The dialog width</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. The dialog width</p>
 </p>
     
   </td>
@@ -2064,6 +2105,1259 @@
 
 
   
+  
+     
+    
+    
+    
+      
+      
+  <h2 class=""></h2>
+      
+
+
+
+
+  
+<p><strong class="grey-color">Directive:</strong> o-form-layout-dialog-options</p>
+  
+  
+
+
+  
+
+
+  
+
+
+  
+  <h3 class="grey-color">Inputs</h3>
+
+
+
+
+
+
+  <table class="attributes-table mdl-data-table">
+<thead>
+  <tr>
+  
+
+  
+<th class=""> Name</th>
+  
+  
+
+  
+<th class=""> Description</th>
+  
+  
+
+  
+<th class=""> Default</th>
+  
+  
+  </tr>
+</thead>
+<tbody>
+  
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>backdrop-class</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Custom class for the backdrop.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>class</p>
+</p>
+
+  <p><i>string | string[]</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Custom class for the overlay pane.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>close-on-navigation</p>
+</p>
+
+  <p><i>no | false | yes | true</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Whether the dialog should close when the user goes backwards/forwards in history. Note that this usually doesn’t include clicking on links</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>yes</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>disable-close</p>
+</p>
+
+  <p><i>no | false | yes | true</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Whether the user can use escape or clicking on the backdrop to close the modal</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>no</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>height</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Height of the dialog.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>max-height</p>
+</p>
+
+  <p><i>string | number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Max height of the dialog</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>max-width</p>
+</p>
+
+  <p><i>string | number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Max width of the dialog</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>min-height</p>
+</p>
+
+  <p><i>string | number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Min height of the dialog</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>min-width</p>
+</p>
+
+  <p><i>string | number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Form layout manager mode.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>position</p>
+</p>
+
+  <p><i>DialogPosition</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Position overrides</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>width</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Width of the dialog.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+  </tbody>
+  </table>
+
+  
+
+  
+
+
+  
+
+  
+
+
+  
+
+
+
+  
+    
+      
+      
+  <h2 class=""></h2>
+      
+
+
+
+
+  
+<p><strong class="grey-color">Directive:</strong> o-form-layout-tabgroup-options</p>
+  
+  
+
+
+  
+
+
+  
+
+
+  
+  <h3 class="grey-color">Inputs</h3>
+
+
+
+
+
+
+  <table class="attributes-table mdl-data-table">
+<thead>
+  <tr>
+  
+
+  
+<th class=""> Name</th>
+  
+  
+
+  
+<th class=""> Description</th>
+  
+  
+
+  
+<th class=""> Default</th>
+  
+  
+  </tr>
+</thead>
+<tbody>
+  
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>background-color</p>
+</p>
+
+  <p><i>ThemePalette</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Background color of the tab nav.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>color</p>
+</p>
+
+  <p><i>ThemePalette</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Theme color palette for the component.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>disable-animation</p>
+</p>
+
+  <p><i>no | false | yes | true</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Disable the animations in the tabs</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>no</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>header-position</p>
+</p>
+
+  <p><i> 'above' | 'below'</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Position of the tab header.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>above</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>icon</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Icon name (see <a href="https://design.google.com/icons/" target="_blank">Google material design icons</a>)</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>icon-position</p>
+</p>
+
+  <p><i>'left' | right</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Icon position</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+  </tbody>
+  </table>
+
+  
+
+  
+
+
+  
+
+  
+
+
+  
+
+
+
+  
+    
+  
 
 </div>
 
@@ -2082,7 +3376,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-10-07T10:23:29-04:00">October 07, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-10-07T10:30:17-04:00">October 07, 2019</time></p>
         
       </footer>
 
