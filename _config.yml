@@ -215,6 +215,9 @@ collections:
   ontimize_web_ngx_charts:
     output: true
     permalink: /:collection/:path/
+  ontimize_web_ngx_gallery:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -403,6 +406,19 @@ defaults:
       breadcrumbs: true
       sidebar:
         nav: "ontimize_web_ngx_charts"
+  #_ontimize_web_ngx_gallery
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_gallery
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      breadcrumbs: true
+      sidebar:
+        nav: "ontimize_web_ngx_gallery"
 
 
 

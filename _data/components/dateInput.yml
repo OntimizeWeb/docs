@@ -56,6 +56,12 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to allow the user to edit the input manually"
+},{
+  name: "value-type",
+  type: "string | date | timestamp | iso-8601",
+  default: "timestamp",
+  required: "",
+  description: "Type of the component data"
 }]
 
 inheritedOutputs: [{

@@ -134,6 +134,18 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the table columns are resizables"
+}, {
+  name: "select-column-visible",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the table columns are resizables"
+},{
+  name: "export-mode",
+  type: "visible | all",
+  default: "yes",
+  required: "",
+  description: "Mode export data"
 }]
 
 outputs: [{
@@ -169,10 +181,15 @@ methods: [{
   type: "method",
   parameters: "any[]",
    description: "Returns the current page table renderer data.",
-}
-,{
+},{
   name: "getAllValues()",
   type: "method",
   parameters: "any[]",
   description: "Returns the table data."
-}]
+},{
+  name: "getAllRenderedValues()",
+  type: "method",
+  parameters: "any[]",
+  description: "Returns the table renderer data."
+}
+]

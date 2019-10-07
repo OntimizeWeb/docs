@@ -1,0 +1,63 @@
+directive: "o-form-layout-dialog-options"
+
+attributes: [{
+  name: "width",
+  type: "string",
+  description : "Width of the dialog."
+},{
+  name: "min-width",
+  type: "string | number",
+  required: "",
+  description: "Form layout manager mode."
+},{
+  name: "backdrop-class",
+  type: "string",
+  required: "",
+  description: "Custom class for the backdrop."
+},{
+  name: "max-width",
+  type: "string | number",
+  default: "",
+  required: "",
+  description: "Max width of the dialog"
+},{
+  name: "height",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Height of the dialog."
+},{
+  name: "min-height",
+  type: "string | number",
+  default: "",
+  required: "",
+  description: "Min height of the dialog"
+},{
+  name: "max-height",
+  type: "string | number",
+  default: "",
+  required: "",
+  description: "Max height of the dialog"
+},{
+  name: "class",
+  type: "string | string[]",
+  default: "",
+  required: "",
+  description: "Custom class for the overlay pane."
+},{
+  name: "position",
+  type: "DialogPosition",
+  default: "",
+  required: "",
+  description: "Position overrides"
+},{
+  name: "close-on-navigation",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Whether the dialog should close when the user goes backwards/forwards in history. Note that this usually doesn't include clicking on links"
+},{
+  name: "disable-close",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Whether the user can use escape or clicking on the backdrop to close the modal"
+}]

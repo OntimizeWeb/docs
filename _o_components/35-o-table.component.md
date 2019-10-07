@@ -977,7 +977,11 @@ You can configure:
 This section explains how the table data exportation works.
 
 <h3 class="grey-color">Exportating the table data</h3>
-The `o-table` component is able to export its data in Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface.
+The `o-table` component is able to export its data in Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface. 
+
+Table allows export visible data by default. Using the `export-mode` input user can modify that default value to all data.
+>**NOTE**: The `export-mode="all"` only work whether the table is not pageable, that is pageable="no" .
+
 
 The exportation process is performed as follows:
 
@@ -993,7 +997,7 @@ Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b
 You can change the <b>/export</b> end point. Please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
 </p>
 
-<p>The service must send a response with an object containing an unique indentifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.
+<p>The service must send a response with an object containing an unique identifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.
 <br>
 You can see an example of the exportation method end point in the following example.</p>
 

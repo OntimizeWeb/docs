@@ -7,12 +7,10 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "quick-filter"]
 }]
 
 attributes: [{
-  name: "quick-filter"
-},{
   name: "quick-filter-columns"
 },{
   name: "refresh-button"
@@ -40,8 +38,20 @@ attributes: [{
   default: "",
   required: "",
   description: "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
-},{
-  name: "filter-case-sensitive"
+},
+{
+  name: "insert-button-position",
+  type: "'bottom' | 'top'",
+  default: "bottom",
+  required: "",
+  description: "Indicates whether or not the insert button is attached at the top or at the bottom of the list"
+},
+{
+  name: "insert-button-floatable",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the insert button is floating"
 }]
 
 outputs: [{

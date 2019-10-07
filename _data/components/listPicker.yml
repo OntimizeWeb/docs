@@ -48,6 +48,12 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to allow the user to edit the list picker manually"
+},{
+  name: "dialog-disable-close",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether the user can use escape or clicking on the backdrop to close the modal"
 }]
 
 inheritedOutputs: [{
