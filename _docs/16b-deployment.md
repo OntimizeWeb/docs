@@ -167,9 +167,11 @@ To set up the Angular service worker in your project you need to follow next act
 
 
 * Enables service worker build support in the CLI.
+
 ```bash
   ng set apps.0.serviceWorker = true
 ``` 
+
 ```bash
 //angular.json
 {
@@ -201,6 +203,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 ```
 
 * Updates the index.html file:
+
   * Create manifest.json file (see [The Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifes){:target='_blank'})
 
   ```bash
