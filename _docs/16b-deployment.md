@@ -5,6 +5,8 @@ excerpt: "Deploy an Ontimize Web application."
 ---
 
 {% include base_path %}
+{% include toc %}
+
 
 This section describes how to build the production version of your application and deploy it to a remote server.
 
@@ -145,4 +147,294 @@ Run the following command to laumch you Apache Cordova project in a emulator or 
 
 ```bash
   cordova run [android|ios|windows]
+```
+
+
+## PWA
+To set up the Angular service worker in your project you need to follow next actions:
+
+* Adds the `@angular/service-worker` package to your project.
+
+```bash
+...
+"dependencies": {
+  ...
+    "@angular/service-worker": "6.1.10",
+    ...
+  },
+...
+```
+
+
+* Enables service worker build support in the CLI.
+```bash
+  ng set apps.0.serviceWorker = true
+``` 
+```bash
+//angular.json
+{
+  ...
+  apps:[{
+    ...
+    "serviceWorker":true,
+  }]
+}
+```
+
+* Imports and registers the service worker in the app module.
+
+```bash
+...
+import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
+...
+
+@NgModule({
+  imports: [
+   ...
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production })
+    ...
+  ],
+ ...
+})
+
+```
+
+* Updates the index.html file:
+  * Create manifest.json file (see [The Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifes){:target='_blank'})
+
+  ```bash
+  {
+    "name": "Quickstart PWA App",
+    "short_name": "Quickstart",
+    "orientation": "landscape",
+    "display": "standalone",
+    "start_url": "index.html",
+    "description": "Quickstart app",
+    "background_color": "#ccd5dd",
+    "theme_color": "#002757"
+    "icons": [
+      {
+        "src": "icon_512x512.49b7c1068a3e823cafbbc93ee668cf90.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "icon_256x256.5a33e6d514a214bd3c74a51b03915a29.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      },
+      {
+        "src": "icon_192x192.b88c6ddd5e997a970106e207280f070a.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icon_128x128.e9d5cec6eb4af6cd09ba54d51342e1d0.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      },
+      {
+        "src": "icon_96x96.3026e7eece02b69b3552da7513d93622.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "src": "icon_48x48.18f2efa3931f72b4c806607131ddca7b.png",
+        "sizes": "48x48",
+        "type": "image/png"
+      }
+    ]
+  }
+  ```
+
+  * Includes a link to add the `manifest.json` file.
+
+  ```bash
+  <!doctype html>
+  <html style="overflow: auto">
+  <head>
+    ....
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+    ...
+  </head>
+...
+  ```
+
+  * Adds meta tags for theme-color.
+
+  ```bash
+  <!doctype html>
+  <html style="overflow: auto">
+  <head>
+    ....
+    <meta name="theme-color" content="#002757">
+    ...
+  </head>
+  ...
+```
+
+* Adds the `webpack-pwa-manifest` package to your project.
+
+```bash
+  ...
+  "devDependencies": {
+    ...
+    "webpack-pwa-manifest": "4.0.0"
+      ...
+    },
+  ...
+```
+* Adds configuration webpack plugin
+webpack-aot.config
+
+```bash
+...
+var GlobCopyWebpackPlugin = require("copy-webpack-plugin");
+var WebpackPwaManifest = require('webpack-pwa-manifest');
+
+...
+var webpack = require('webpack');
+var path = require('path');
+
+module.exports = {
+  ... 
+  plugins: [
+
+    new GlobCopyWebpackPlugin([
+    ...
+      { from: "src/manifest.json", to: "./" },
+      { from: "src/manifest-mobile.json", to: "./"},
+    ...
+    ]),
+
+  ....
+  
+    new WebpackPwaManifest({
+      name: "Quickstart Quickstart App",
+      short_name: "Ibercisa",
+      description: "Quickstart app",
+      background_color: "#ccd5dd",
+      theme_color: "#002757",
+      display: "standalone",
+      orientation: "landscape",
+      start_url: "index.html",
+      icons: [
+        {
+          src: path.resolve('src/assets/icons/logo.png'),
+          sizes: [48, 96, 128, 192, 256, 512]
+        }
+      ]
+    }),
+
+    ...
+  ]
+};
+```
+
+* Updates `index.ejs`
+```
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Ontimize Web QuickStart</title>
+
+    ...
+  <!-- Manifest for PWA -->
+    <link rel="manifest" id="manifest-file">
+  </head>
+  <body>
+  <script>
+    var linkManifest = document.querySelector('#manifest-file');
+    window.innerWidth < 960 
+      ? linkManifest.setAttribute('href', './manifest-mobile.json')
+      : linkManifest.setAttribute('href', './manifest.json');
+  </script>
+
+  <noscript>
+    <h3>Sorry, but app is not avaliable without JavaScript</h3>
+  </noscript>
+
+  </body>
+</html>
+```
+
+* Installs icon files to support the installed Progressive Web App (PWA).
+
+* Creates the service worker configuration file called `ngsw-config.json`, which specifies the caching behaviors and other settings.(see [Service worker configuration](https://v6.angular.io/guide/service-worker-config){:target='_blank'})
+
+ngsw-config.json
+
+```bash
+  {
+  "index": "/index.html",
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "updateMode": "prefetch", 
+    "resources": {
+      "files": [
+        "/index.html",
+        "/ngsw-worker.js",
+        "/*.bundle.css",
+        "/*.bundle.js",
+        "/*.chunk.js"
+      ]
+    }
+  }, {
+    "name": "assets",
+    "installMode": "lazy",
+    "updateMode": "lazy",
+    "resources": {
+      "files": [
+        "/assets/**",
+        "/logo.png",
+        "/*.png"
+      ],
+      "urls": [
+        "https://fonts.googleapis.com/**"
+      ]
+    }
+  }]
+}
+```
+* Adds service worker to dist folder
+
+```bash
+package.json
+...
+ "scripts": {
+   ...
+    "production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --href /quickstart/pwa/",
+    "build-ngsw": "npm run build-ngsw-config && node cp-ngsw-dist.js",
+    "build-ngsw-config": "node_modules/.bin/ngsw-config dist src/ngsw-config.json /quickstart/pwa"
+    ...
+    },
+  ...
+   "dependencies": {
+    ...
+    "file-system": "2.2.2"
+    ...
+   }
+```
+
+The ngsw-worker.js file is the name of the service worker precompiled script, which the CLI copies to the dist folder to deploy the server.
+
+cp-sw-dist.js
+```bash
+var fs = require('fs');
+
+fs.createReadStream('node_modules/@angular/service-worker/ngsw-worker.js').pipe(fs.createWriteStream('dist/ngsw-worker.js'));
+
+/*  Use with node version >= 8.5
+
+fs.copyFile('node_modules/@angular/service-worker/ngsw-worker.js', 'dist/ngsw-worker.js', (err) => {
+    if(err) throw err;
+    console.log('Copy SW in dist directory');
+});
+
+*/
 ```
