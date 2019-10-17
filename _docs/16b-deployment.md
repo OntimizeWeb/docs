@@ -178,7 +178,12 @@ To set up the Angular service worker in your project you need to follow next act
   ...
   apps:[{
     ...
-    "serviceWorker":true,
+    "configurations": {
+      "production": {
+      ...
+      "serviceWorker":true,
+      ...
+      }
   }]
 }
 ```
@@ -215,7 +220,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     "start_url": "index.html",
     "description": "Quickstart app",
     "background_color": "#ccd5dd",
-    "theme_color": "#002757"
+    "theme_color": "#242424"
     "icons": [
       {
         "src": "icon_512x512.49b7c1068a3e823cafbbc93ee668cf90.png",
@@ -272,7 +277,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   <html style="overflow: auto">
   <head>
     ....
-    <meta name="theme-color" content="#002757">
+    <meta name="theme-color" content="#242424">
     ...
   </head>
   ...
@@ -319,7 +324,7 @@ module.exports = {
       short_name: "Ibercisa",
       description: "Quickstart app",
       background_color: "#ccd5dd",
-      theme_color: "#002757",
+      theme_color: "#242424",
       display: "standalone",
       orientation: "landscape",
       start_url: "index.html",
@@ -346,8 +351,9 @@ module.exports = {
     <title>Ontimize Web QuickStart</title>
 
     ...
-  <!-- Manifest for PWA -->
+    <!-- Manifest for PWA -->
     <link rel="manifest" id="manifest-file">
+    <meta name="theme-color" content="#242424">
   </head>
   <body>
   <script>
@@ -377,9 +383,9 @@ ngsw-config.json
   "assetGroups": [{
     "name": "app",
     "installMode": "prefetch",
-    "updateMode": "prefetch", 
     "resources": {
       "files": [
+        "/favicon.ico",
         "/index.html",
         "/ngsw-worker.js",
         "/*.bundle.css",
@@ -390,7 +396,7 @@ ngsw-config.json
   }, {
     "name": "assets",
     "installMode": "lazy",
-    "updateMode": "lazy",
+    "updateMode": "prefetch",
     "resources": {
       "files": [
         "/assets/**",
