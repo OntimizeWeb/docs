@@ -162,13 +162,13 @@ Now, you can use the extended form in your template as follows:
 
 ## Form to filter table
 
-A ver common use of a form is using the form data introduced by the user for requesting filtered information from a service and display it on a table. **OntimizeWeb** offers you two different solutions for filtering a table using the data of a form component. The simplest way of filtering a table is configuring the `parent-keys` attribute of the table we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we shoud use the [filter builder](#filter-builder) component.
+A common use of a form is using the form data introduced by the user for requesting filtered information from a service and display it on a table. **OntimizeWeb** offers you two different solutions for filtering a table using the data of a form component. The simplest way of filtering a table is configuring the `parent-keys` attribute of the table we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we shoud use the [filter builder](#filter-builder) component.
 
 ### Parent keys filter
 
 Configuring the `parent-keys` attribute of the [table]({{ base_path }}/components/table/){:target="_blank"} with the `attr` of the [form fields]({{ base_path }}/components/input/overview/){:target="_blank"} we want to include on the filtering is the simplest and the fastest way of filtering table data. This aproach is not enough when you want to apply complex filters using logical operations.
 
-In the following example we have a form component withe field for filtering the name, surname and the emplolyee type of a table of employees. Note that the table has configured the attributes `parent-keys` with the columns involved in the filtering and its corresponding form component attr's. Remember that when the table column and the form component attr are the same, you only have to include it once.
+In the following example we have a form component with the field for filtering the name, surname and the employee type of a table of employees. Note that the table has configured the attributes `parent-keys` with the columns involved in the filtering and its corresponding form component attr's. Remember that when the table column and the form component attr are the same, you only have to include it once.
 
 >**NOTE** Keep in mind that the table will not send any request when the parent keys values are all null. You can configure the `query-with-null-parent-keys` as in the example below to avoid this, but it is not always recommended. Check the [table]({{ base_path }}/components/table/){:target="_blank"} documentation page.
 
@@ -202,3 +202,29 @@ In the following example we have a form component withe field for filtering the 
 ### Filter builder
 
 The filter builder is a component whose purpose is solving the problem described above. It allows you to build complex filtering expressions using the data introduced in a form component. Read more about the filter builder component on its [documentarion page]({{ base_path }}/components/filterbuilder/){:target="_blank"}.
+
+## Custom form toolbar buttons
+
+`o-form-toolbar-buttons` is a directive that allows to add custom buttons in the toolbar form.
+
+```html
+<o-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+  header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
+  show-header-navigation="yes">
+  <div o-form-toolbar-buttons>
+    <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="onClickCustomButton1($event)"
+      attr="accountBalance">
+      <mat-icon>account_balance</mat-icon>
+      <span>{{ 'CUSTOM_BUTTON_1' | oTranslate }}</span>
+    </button>
+
+    <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="onClickCustomButton2($event)"
+      attr="addShoppingCart">
+      <mat-icon>star_border</mat-icon>
+      <span>{{ 'CUSTOM_BUTTON_2' | oTranslate }}</span>
+    </button>
+  </div>
+  ....
+```
+
+![Custom form toolbar buttons]({{ "/images/components/form/customtoolbarform.png" | absolute_url }}){: .comp-example-img}

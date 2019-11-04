@@ -113,6 +113,11 @@ export const SERVICE_CONFIG: Object = {
 
 For clarification, if your `apiEndpoint` is the one in the [application configuration](#application-configuration) example, **OntimizeWeb** will concat the `apiEndpoint` and the `path` of the service to build the URL for sending requests. For example : _<https://try.ontimize.com/QSAllComponents-jee/services/rest/customers>_.
 
+# Internationalization (i18) configuration
+
+*Ontimize Web* providers the `locale` attribute to configure the language of the application, this attribute will be an identifier that refers to of user preferences as displaying dates, numbers, ..., translation of words and in `applicationLocales` which configure the `locale id ` availables in the language selector in `<o-app-sidenav>`. For more information see in [OTranslateService]({{ base_path }}/guide/otranslateservice/){:target="_blank"}.
+
+
 # Permissions configuration
 
 The Ontimize Web application permissions are queried if the configuration file contains a valid `permissionsConfiguration` object. The service used for that is configured in the `permissionsServiceType` (using **OntimizePermissions** by default, following the same philosophy as `serviceType` attribute).

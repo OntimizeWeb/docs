@@ -120,7 +120,81 @@ grid-item-height="100px" controls="no" gutter-size="0">
 ## QuickFilter
 By default this option is enabled, the filter is visible in the top right. It can be disabled by configuring the `quick-filter` attribute.
 
-### Fixed header and footer
+By default the filtering is local, you can enable remote filtering setting `pageable="yes"`, in the case if you the filtering is local and you need to customize the filter for example by a date format, you must overwrite the *filterData* method.
+
+```html
+ <o-grid #grid attr="employees" service="employees" entity="employee"
+    columns="EMPLOYEEID;EMPLOYEETYPEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEEPHOTO;EMPLOYEEPHONE"
+    quick-filter-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEEEMAIL;EMPLOYEESTARTDATE;OFFICEID"
+    keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME" pageable="no" query-rows="16" fixed-header="yes"
+    refresh-button="no" gutter-size="18px" detail-mode="none">
+    <o-grid-item *ngFor="let item of grid.dataArray">
+      <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center"
+        class="employee-item mat-elevation-z1">
+        <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
+          <mat-divider fxFlex></mat-divider>
+          <div class="image">
+            <img [src]="getImageSrc(item.EMPLOYEEPHOTO)">
+          </div>
+          <mat-divider fxFlex></mat-divider>
+        </div>
+
+        <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
+          {% raw %}
+          <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
+          <span>{{ item.EMPLOYEEEMAIL }}</span>
+          <span>{{ 'EMPLOYEE_BRANCH' | oTranslate : {values: [item.OFFICEID]} }}
+            <div class="square"></div>
+            {{ 'EMPLOYEETYPE_' + item.EMPLOYEETYPEID | oTranslate }}</span>
+          <span>{{ item.ADDRESS }}</span>
+          <span>{{ item.EMPLOYEESTARTDATE | date }}</span>
+          {% endraw %}
+        </div>
+      </div>
+    </o-grid-item>
+  </o-grid>
+```
+
+```js
+... 
+const self_2 = this;
+//overwrite filterdData method
+this.grid.filterData = function (value?: string, loadMore?: boolean) {
+  ...
+  if (this.dataResponseArray && this.dataResponseArray.length > 0) {
+    let filteredData = this.dataResponseArray.slice(0);
+    if (value && value.length > 0) {
+      const caseSensitive = this.isFilterCaseSensitive();
+      const self = this;
+
+      filteredData = filteredData.filter(item => {
+        return self.getQuickFilterColumns().some(col => {
+          //Add this code to filter by the formatted value of the dates
+          let valueOfColumn = item[col];
+          
+          switch (this.sqlTypes[col]) {
+            case 93:
+              if (Util.isDefined(item[col])) {
+                valueOfColumn = self_2.datePipe.transform(item[col]);
+              }
+              break;
+          }
+
+          const regExpStr = Util.escapeSpecialCharacter(Util.normalizeString(value, !caseSensitive));
+          return new RegExp(regExpStr).test(Util.normalizeString(valueOfColumn + '', !caseSensitive));
+        });
+
+      });
+    }
+    ...
+  }
+
+}
+...
+
+``` 
+
+## Fixed header and footer
 The `o-grid` component supports *fixed header* and *footer* setting `fixed-header="yes"` when its content is greater than its own height. For that, you must set the height of the grid, using, for example `[ngStyle]="{height: 400px;}"`. By default, it's disabled.
 
 ```html
