@@ -21,4 +21,4 @@ The `o-button-toggle` component is an on/off toggle with the appearance of a but
 
 ![Button toggle]({{ "/images/components/button/o-button-toggle.png" | absolute_url }}){: .comp-example-img}
 
-You can see this live example in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/buttons){:target="_blank"}.
+You can see this live example in the [OntimizeWeb playground]({{site.playgroundurl}}/main/buttons){:target="_blank"}.

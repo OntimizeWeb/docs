@@ -19,7 +19,7 @@ The file input is automatically registered on its parent `o-form`. The configura
     <o-file-input attr="file" label="File" accept-file-type="image/*" max-file-size="100000" max-num-files="10" show-info="yes"></o-file-input>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/file){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/file){:target="_blank"}.
 
 ## Validation
 The `o-file-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input. It also validates the number of files and the size of these files depending the component configuration.

@@ -3,51 +3,25 @@ directive: "o-list-picker"
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "sql-type", "width", "read-only", "validators"]
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservice",
+  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys", "set-value-on-value-change"]
 }]
 
 attributes: [{
-  name: "static-data"
-},{
-  name: "service"
-},{
-  name: "entity"
-},{
-  name: "columns"
-},{
-  name: "value-column"
-},{
-  name: "value-column-type"
-},{
-  name: "parent-keys"
-},{
   name: "visible-columns",
   type: "string",
   default: "",
   required: "",
   description: "Visible columns. Separated by ';'"
 },{
-  name: "description-columns",
-  default: "`visible-columns` attribute value",
-  description: "Visible columns in text field"
-},{
   name: "filter",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
   description: "Indicates whether or not to show values filtering input"
-},{
-  name: "separator"
-},{
-  name: "query-on-init"
-},{
-  name: "query-on-bind"
-},{
-  name: "query-on-event"
-},{
-  name: "query-method"
-},{
-  name: "service-type"
 },{
   name: "dialog-width",
   type: "string",
@@ -61,6 +35,12 @@ attributes: [{
   required: "",
   description: "List picker dialog height"
 },{
+  name: "dialog-class",
+  type: "string",
+  default: "",
+  required: "",
+  description: "List picker dialog class name"
+},{
   name: "query-rows"
 },{
   name: "text-input-enabled",
@@ -69,13 +49,11 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to allow the user to edit the list picker manually"
 },{
-  name: "query-with-null-parent-keys"
-},{
-  name: "set-value-on-value-change",
-  type: "string",
-  default: "",
+  name: "dialog-disable-close",
+  type: "no | false | yes | true",
+  default: "yes",
   required: "",
-  description: "Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ';'. Accepted format: `attr | attr:columnName`"
+  description: "Indicates whether the user can use escape or clicking on the backdrop to close the modal"
 }]
 
 inheritedOutputs: [{
@@ -84,7 +62,7 @@ inheritedOutputs: [{
   outputs: ["onChange", "onValueChange"]
 },{
   component: "OFormServiceComponent",
-  path: "components/input/overviewservicecomponent",
+  path: "components/input/overviewservice",
   outputs: ["onSetValueOnValueChange"]
 }]
 
@@ -95,3 +73,5 @@ outputs: [{
   name: "onBlur",
   description: "Event triggered when component loses the focus"
 }]
+
+extraComponents: "locker"

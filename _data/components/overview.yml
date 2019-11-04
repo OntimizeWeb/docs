@@ -50,7 +50,38 @@ attributes: [{
   type: "ValidatorFn[]",
   default: "[]",
   description: "Array of custom validators to apply to the component value. Each elemnent must be a Angular [ValidatorFn](https://v5.angular.io/api/forms/ValidatorFn)"
+},{
+  name: "placeholder",
+  type: "string ",
+  default : "",
+  required : "",
+  description : "Field placeholder"
+},{
+  name: "appearance",
+  type: "legacy | standard | fill | outline",
+  default : "legacy",
+  required : "",
+  description : "Indicates which of the mat-form-field different [appearance variants](https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants) will be used."
+},{
+  name: "float-label",
+  type: "always | never | auto",
+  default : "auto",
+  required : "",
+  description : "Indicates which of the mat-form-field different [float label variants](https://v6.material.angular.io/components/form-field/overview#floating-label) will be used."
+},{
+  name: "hide-required-marker",
+  type: "no | false | yes | true",
+  default : "no",
+  required : "",
+  description : "Whether the required marker should be hidden"
+},{
+  name: "label-visible",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Whether the label should be shown"
 }]
+
 
 outputs: [{
   name: "onChange",

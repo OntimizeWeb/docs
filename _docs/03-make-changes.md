@@ -13,7 +13,7 @@ In this section we are going to make some simple changes in the code of the Quic
 
 ## Add a field
 
-We are going to add a [date field]({{ base_path }}/components/input/date/){:target="_blank"} into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://try.imatia.com/ontimizeweb/quickstart/main/customers){:target="_blank"}):
+We are going to add two [real fields]({{ base_path }}/components/input/real/){:target="_blank"} into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://try.imatia.com/ontimizeweb/quickstart/main/customers){:target="_blank"}):
 
 <img src="{{ base_path }}/images/main_customers_detail.png" alt="customer detail">
 
@@ -21,83 +21,84 @@ For adding the field we have to open the HTML definition file of the form
 under the location *src/app/main/customers/detail/customers-detail.component.html*. The content of this file is something like this:
 
 ```html
-<o-form entity="ECustomers" keys="CUSTOMERID" fxLayout="column" show-header="yes" header-actions="R;I;U" #oForm>
+<mat-tab-group fxFill>
 
-  <md-tab-group fxFill>
+  <mat-tab label="{{ 'DATA' | oTranslate }}">
+    <o-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC" show-header-navigation="yes">
 
-    <md-tab label="{{ 'DATA' | oTranslate }}">
-      <div fxLayout="column" layout-padding>
-        <o-row attr="row1" layout-align="space-between center">
-          <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <o-nif-input attr="ID" fxFlex="30" class="margin-right-24"></o-nif-input>
-              <o-date-input attr="STARTDATE" fxFlex="30"></o-date-input>
-            </div>
+      <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
+        <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
+          <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
+          <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+            <o-nif-input attr="ID" width="160px" class="form-field"></o-nif-input>
+            <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
+            <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
+            <o-date-input attr="STARTDATE" width="160px" class="form-field"></o-date-input>
+            <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes" value-column="CUSTOMERTYPEID" service="customers"
+              entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - "
+              width="160px" class="form-field"></o-combo>
+          </div>
+        </div>
+      </o-row>
 
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <o-text-input attr="NAME" fxFlex="30" class="margin-right-24"></o-text-input>
-              <o-text-input attr="SURNAME" fxFlex="50"></o-text-input>
-            </div>
+      <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10">
+        <div fxLayout="row wrap" fxLayoutGap="14px">
+          <o-text-input attr="ADDRESS" width="374px" class="form-field"></o-text-input>
+          <o-text-input attr="COUNTRY" class="form-field"></o-text-input>
+          <o-text-input attr="STATE" class="form-field"></o-text-input>
+          <o-text-input attr="ZIPCODE" class="form-field"></o-text-input>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="14px">
+          <o-email-input attr="EMAIL" width="374px" class="form-field"></o-email-input>
+          <o-text-input attr="PHONE" class="form-field"></o-text-input>
+        </div>
+      </o-column>
 
-            <div fxLayout="row" fxLayoutAlign="start center">
-              <o-list-picker fxFlex="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" enabled="yes" filter="yes" value-column="CUSTOMERTYPEID"
-                entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
-                separator=" - " class="margin-right-24">
-              </o-list-picker>
-            </div>
-          </o-column>
+      <o-column title="COMMENTS" icon="message" attr="row3" layout-align="start stretch">
+        <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
+      </o-column>
+    </o-form>
+  </mat-tab>
 
-          <o-column fxFlex="40" layout-align="center center">
-            <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
-          </o-column>
-        </o-row>
+  <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
+    <o-form attr="customers_accounts_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
+      keys-sql-types="INTEGER">
+      <o-table #accountsTable attr="customer_accounts" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
+        detail-form-route="accounts" edit-form-route="accounts"
+        columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
+        visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6"
+        quick-filter="yes" pageable="no" insert-button="no" row-height="medium" class="vertical-padding-8">
+        <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+        <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+        <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
+          decimal-separator=",">
+        </o-table-column>
+        <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+      </o-table>
+    </o-form>
+  </mat-tab>
 
-        <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding layout-align="start stretch">
-          <o-text-input attr="ADDRESS"></o-text-input>
-          <o-email-input attr="EMAIL"></o-email-input>
-          <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
-        </o-column>
-      </div>
-    </md-tab>
+  <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
+    <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
+      keys-sql-types="INTEGER" columns="ID_DMS_DOC">
+      <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
+    </o-form>
+  </mat-tab>
 
-    <md-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-      <div fxLayout="column" layout-padding>
-        <o-datatable #accountsTable entity="ECustomerAccountBalance" parent-keys="CUSTOMERID" keys="ACCOUNTID" detail-button-in-row="yes"
-          detail-form-route="accounts" edit-button-in-row="yes" edit-form-route="accounts" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;CUSTOMER;STARTDATE;ENDDATE"
-          visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" select-all-checkbox="no"
-          query-on-init="false" query-rows="6" quick-filter="yes" pageable="yes" delete-button="false" insert-button="no">
-
-          <o-datatable-button (onClick)="onAddAccount()" label="ADD_ACCOUNT" icon="add"></o-datatable-button>
-
-          <o-datatable-column attr="ACCOUNT" title="ACCOUNT" class="o-datatable-column-centered"></o-datatable-column>
-          <o-datatable-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-datatable-column>
-          <o-datatable-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="."
-            decimal-separator=",">
-          </o-datatable-column>
-          <o-datatable-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-datatable-column>
-        </o-datatable>
-
-        <o-list-picker class="display-none" (onChange)="onNewAccountSelected($event)" #accountListPicker query-on-init="no" automatic-binding="no"
-          query-on-bind="no" [static-data]="availableAccountsToAdd" required="no" enabled="yes" filter="yes" keys="ACCOUNTID"
-          value-column="ACCOUNTID" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;ACCOUNTTYP" visible-columns="ACCOUNT;BALANCE"
-          separator=" - " dialog-width="600px">
-        </o-list-picker>
-      </div>
-    </md-tab>
-  </md-tab-group>
-</o-form>
+</mat-tab-group>
 ```
 
-Analyzing the code, we can see a `o-form` that contains several fields that take value from the entity `ECustomers` specified. The parameter `attr` of each field corresponds with an attribute (field name) that exists into the response of the service of the entity `ECustomers`.
+Analyzing the code, we can see the first `o-form` that contains several fields that take value from the entity `customer` specified. The parameter `attr` of each field corresponds with an attribute (field name) that exists into the response of the service of the entity `customer`.
 
-We will add our date field after the customer type field with `attr='CUSTOMERTYPEID'`. So, we add the code below:
+We will add our real fields after the zip code field with `attr='ZIPCODE'`. So, we add the code below:
 
 ```html
-<o-text-input attr="PHONE" fxFlex="30"></o-text-input>
+<o-real-input attr="LONGITUDE" class="form-field" min-decimal-digits="6" max-decimal-digits="10" decimal-separator="."></o-real-input>
+<o-real-input attr="LATITUDE" class="form-field" min-decimal-digits="6" max-decimal-digits="10" decimal-separator="."></o-real-input>
 ```
-The text input field corresponds to *o-text-input*, the rest of div's and o-row are simply used to place the field according to the others. We set the `attr='PHONE'` because we know that the entity contains this attribute which corresponds with customer phone number.
+The real input field corresponds to *o-real-input*, the rest of div's and o-row are simply used to place the field according to the others. We set the `attr='LONGITUDE'` and `attr='LATITUDE'` because we know that the entity contains this attribute which corresponds with longitude and latitude of the customer's address.
 
-If you reload the page on the browser you will see the phone field placed to the right of 'Customer type' field.
+If you reload the page on the browser you will see the latitude and longitude field placed to the right of 'Zip code' field.
 
 You can find all available fields and all of their configuration parameters into the [Components]({{ base_path }}/components/) section.
 
@@ -106,56 +107,59 @@ You can find all available fields and all of their configuration parameters into
 The next change that we will perform will be to listen to the value change event of a form field. In this case we choose a date field (`STARTDATE`) which value change event will be triggered every time the user changes its value.
 
 Just a little clarification before continuing: the fields are only modifiable when the form is in 'edit' or 'insert' mode.
-So, taking that in consideration, we have to use the form defined in the file *src/app/main/customers/edit/customers-edit.component.html*. The content of this file will be like this:
+So, taking that in consideration, we have to use the form defined in the file *src/app/main/customers/detail/customers-detail.component.html*. The content of this file will be like this:
 
 ```html
-<o-form entity="ECustomers" keys="CUSTOMERID"
-  fxLayout="column" show-header="yes" label-header="CUSTOMERS" header-actions="R;U;D" #oForm>
+<o-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+  header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
+  show-header-navigation="yes">
 
-  <div fxLayout="column" layout-padding class="rounded-panel">
-    <o-row attr="row1" layout-align="start stretch">
-      <o-column title-label="CUSTOMER_DATA" layout-align="start stretch" fxFlex="60" layout-padding>
-        <div fxLayout="row" fxLayoutAlign="start center">
-          <o-nif-input attr="ID" fxFlex="30" class="margin-right-24" required="yes"></o-nif-input>
-          <o-date-input attr="STARTDATE" fxFlex="30" required="yes" (onChange)="onDateChange($event)"></o-date-input>
-        </div>
+  <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
+    <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
+      <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
+      <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+        <o-nif-input attr="ID" width="160px" class="form-field"></o-nif-input>
+        <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
+        <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
+        <o-date-input attr="STARTDATE" width="160px" class="form-field" (onChange)="onDateChange($event)"></o-date-input>
+        <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes"
+          value-column="CUSTOMERTYPEID" service="customers" entity="customerType" keys="CUSTOMERTYPEID"
+          columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" - " width="160px"
+          class="form-field"></o-combo>
+      </div>
+    </div>
+  </o-row>
 
-        <div fxLayout="row" fxLayoutAlign="start center">
-          <o-text-input attr="NAME" fxFlex="30" class="margin-right-24" required="yes"></o-text-input>
-          <o-text-input attr="SURNAME" fxFlex="50" required="yes"></o-text-input>
-        </div>
+  <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10">
+    <div fxLayout="row wrap" fxLayoutGap="14px">
+      <o-text-input attr="ADDRESS" width="374px" class="form-field"></o-text-input>
+      <o-text-input attr="COUNTRY" class="form-field"></o-text-input>
+      <o-text-input attr="STATE" class="form-field"></o-text-input>
+      <o-text-input attr="ZIPCODE" class="form-field"></o-text-input>
+      <o-real-input attr="LONGITUDE" class="form-field" min-decimal-digits="6" max-decimal-digits="10" decimal-separator="."></o-real-input>
+      <o-real-input attr="LATITUDE" class="form-field" min-decimal-digits="6" max-decimal-digits="10" decimal-separator="."></o-real-input>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="14px">
+      <o-email-input attr="EMAIL" width="374px" class="form-field"></o-email-input>
+      <o-text-input attr="PHONE" class="form-field"></o-text-input>
+    </div>
+  </o-column>
 
-        <div fxLayout="row" fxLayoutAlign="start center">
-          <o-list-picker fxFlex="30" attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" required="yes" enabled="yes" filter="yes"
-            value-column="CUSTOMERTYPEID" entity="ECustomerTypes" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
-            visible-columns="DESCRIPTION" separator=" - " class="margin-right-24"></o-list-picker>
-        </div>
-      </o-column>
-
-      <o-column fxFlex="40" layout-align="center center">
-        <o-image attr="PHOTO" fxFill class="customer-picture" empty-image="./assets/images/no-image.png"></o-image>
-      </o-column>
-    </o-row>
-
-    <o-column attr="other_data" title-label="CONTACT_DATA" layout-padding fxLayoutAlign="start stretch">
-      <o-text-input attr="ADDRESS"></o-text-input>
-      <o-email-input attr="EMAIL"></o-email-input>
-      <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
-    </o-column>
-  </div>
-
+  <o-column title="COMMENTS" icon="message" attr="row3" layout-align="start stretch">
+    <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
+  </o-column>
 </o-form>
 ```
 
-We also need to modify the file *customers-edit.component.ts* to include the callback for the event:
+We also need to modify the file *customers-detail.component.ts* to include the callback for the event:
 
 ```javascript
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'customers-edit',
-  styleUrls: ['./customers-edit.component.scss'],
-  templateUrl: './customers-edit.component.html'
+  selector: 'customers-detail',
+  styleUrls: ['./customers-detail.component.scss'],
+  templateUrl: './customers-detail.component.html'
 })
 export class CustomersEditComponent {
 
@@ -172,25 +176,29 @@ export class CustomersEditComponent {
 
 The last test we will do is navigate to another screen of the application. To do that, we are going to add a button to our screen and when we click on it, we navigate to the other screen.
 
-Continuing with the example, we will place the code of our button in the file *customers-edit.component.html*.
+Continuing with the example, we will place the code of our button in the file *customers-detail.component.html*.
 
 ```html
 <o-button type="RAISED" label="Navigate to 'About'" (click)="onButtonClick()"></o-button>
 ```
-And we will modify the file *customers-edit.component.ts* like this:
+And we will modify the file *customers-detail.component.ts* like this:
 
 ```javascript
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { DialogService } from 'ontimize-web-ngx';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'customers-edit',
-  styleUrls: ['./customers-edit.component.scss'],
-  templateUrl: './customers-edit.component.html',
-  encapsulation: ViewEncapsulation.None
+  selector: 'customers-detail',
+  templateUrl: './customers-detail.component.html',
+  styleUrls: ['./customers-detail.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  host: {
+    '[class.customers-detail]': 'true'
+  }
 })
-export class CustomersEditComponent {
+
+export class CustomersDetailComponent implements OnInit {
 
   constructor(
     protected dialogService: DialogService,
@@ -198,7 +206,7 @@ export class CustomersEditComponent {
   }
 
   onButtonClick() {
-    this.router.navigate(['about']);
+    this.router.navigate(['/main/about']);
   }
 
   onDateChange(evt: number) {
@@ -212,11 +220,11 @@ export class CustomersEditComponent {
 Analyzing the code we have to pay attention in a few things:
 
 * We use the Router component for navigating, so we need to import it and reference it in the
-constructor of our CustomersEditComponent.
+constructor of our CustomersDetailComponent.
 * We add the callback function *onButtonClick* that will be executed when user clicks on button.
 
 As we can see, in the callback function we call *navigate* method of router to navigate to other screen of our application. It is important
-to take into account that *"about"* route was previously defined as a route of our application. For further information about routing check this
+to take into account that *"/main/about"* route was previously defined as a route of our application. For further information about routing check this
 [link]({{ base_path }}/routing/).
 
 That's all, you do not need anything else. When user clicks the button it will navigate to the 'About' page.

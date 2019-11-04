@@ -1,0 +1,72 @@
+directive: "o-slider"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "read-only", "validators", "label-visible", "hide-required-marker"]
+}]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["onChange", "onValueChange"]
+}]
+
+attributes: [
+  {
+  name: "display-with",
+  type: "(value: number | null) => string | number",
+  default: "",
+  required: "",
+  description: "Function that will be used to format the value before it is displayed in the thumb label. Can be used to format very large number in order for them to fit into the slider thumb."
+  },
+  {
+  name: "invert",
+  type: "boolean",
+  default: "no",
+  required: "",
+  description: "Whether the slider is inverted."
+},{
+  name: "color",
+  type: "ThemePalette",
+  default: "",
+  required: "",
+  description: "Theme color palette for the component."
+},{
+  name: "max",
+  type: "number",
+  default: "100",
+  required: "",
+  description: "The maximum value that the slider can have."
+},{
+  name: "min",
+  type: "number",
+  default: "0",
+  required: "",
+  description: "The minimum value that the slider can have."
+},{
+  name: "step",
+  type: "number",
+  default: "1",
+  required: "",
+  description: "The values at which the thumb will snap."
+},{
+  name: "thumb-label",
+  type: "boolean",
+  default: "no",
+  required: "",
+  description: "Whether or not to show the thumb label."
+},{
+  name: "tick-interval",
+  type: "'auto' | number",
+  default: "0",
+  required: "",
+  description: "How often to show ticks."
+},{
+  name: "vertical",
+  type: "boolean",
+  default: "no",
+  required: "",
+  description: "Whether the slider is vertical."
+}
+]

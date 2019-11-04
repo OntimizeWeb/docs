@@ -9,6 +9,57 @@
     <p><strong class="grey-color">Class:</strong> {{ componentData.class }}</p>
   {% endif %}
 
+
+  {% if componentData.properties %}
+    <h3 class="grey-color">Properties</h3>
+    {% assign emptyColumns = '' | split: '|' %}
+
+    {% for column in componentData.propertiesColumns %}
+      {% assign columnKey = column | downcase %}
+      {% assign emptyCol = componentData.properties | where: columnKey, "" | size %}
+      {% if emptyCol == componentData.properties.size %}
+        {% assign emptyColumns = emptyColumns | push: columnKey %}
+      {% endif %}
+    {% endfor %}
+
+    <table class="attributes-table mdl-data-table">
+      <thead>
+        <tr>
+        {% for header in componentData.propertiesColumns %}
+          {% assign columnKey = header | downcase %}
+          {% unless emptyColumns contains columnKey %}
+            <th class=""> {{ header }}</th>
+          {% endunless %}
+        {% endfor %}
+        </tr>
+      </thead>
+        <tbody>
+        {% for attributeObject in componentData.properties %}
+          <tr>
+          {% assign commonData = site.data.components.common.properties[attributeObject.name] | default : {} %}
+           {% assign propertiesColumns = (componentData.propertiesColumns | sort: 'name') %}
+          {% for column in propertiesColumns %}
+            {% assign columnKey = column | downcase %}
+            {% unless emptyColumns contains columnKey %}
+              {% assign columnData = 'o-component-' | append: columnKey %}
+              
+              {% assign cellValue = commonData[columnKey] %}
+              {% if attributeObject[columnKey] != undefined %}
+                {% assign cellValue = attributeObject[columnKey] %}
+              {% endif %}
+            
+              {% assign cellContent = cellValue | default: ''  | markdownify %}
+          
+              <td class="" {{ columnData }}>{{ cellContent }}</td>
+            {% endunless %}
+          {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+
+
   {% if componentData.inheritedAttributes %}
     <h3 class="grey-color">Inherited inputs</h3>
     <ul>

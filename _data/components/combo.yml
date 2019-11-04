@@ -3,11 +3,11 @@ directive: "o-combo"
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "clear-button", "validators"]
-# },{
-#   component: "OFormServiceComponent",
-#   path: "components/input/overviewservicecomponent",
-#   attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys"]
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "clear-button", "validators", "label-visible", "hide-required-marker"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservice",
+  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys", "set-value-on-value-change"]
 }]
 
 inheritedOutputs: [{
@@ -16,48 +16,20 @@ inheritedOutputs: [{
   outputs: ["onChange", "onValueChange"]
 },{
   component: "OFormServiceComponent",
-  path: "components/input/overviewservicecomponent",
+  path: "components/input/overviewservice",
   outputs: ["onSetValueOnValueChange"]
 }]
 
 attributes: [{
-  name: "static-data"
-},{
-  name: "entity"
-},{
-  name: "service"
-},{
-  name: "columns"
-},{
-  name: "value-column"
-},{
-  name: "value-column-type"
-},{
-  name: "parent-keys"
-},{
-  name: "description-columns"
-},{
-  name: "separator"
-},{
-  name: "query-on-init"
-},{
-  name: "query-on-bind"
-},{
-  name: "query-on-event"
-},{
-  name: "query-method"
-},{
-  name: "service-type"
-},{
   name: "translate",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not to translate the values shown on the drop down"
 },{
   name: "multiple",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not to allow the user to select multiple options"
 },{
@@ -69,17 +41,15 @@ attributes: [{
 },{
   name: "multiple-trigger-label",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not the component label shows a summary of the selected items"
 },{
-  name: "query-with-null-parent-keys"
-},{
-  name: "set-value-on-value-change",
-  type: "string",
-  default: "",
+  name: "searchable",
+  type: "no | false | yes | true",
+  default: "no",
   required: "",
-  description: "Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ';'. Accepted format: `attr | attr:columnName`"
+  description: "Displays an input field for searching between the dropdown options"
 }]
 
 methods: [{
@@ -93,3 +63,4 @@ methods: [{
   parameters: "any[]",
   description: "Set the selected items of the component."
 }]
+extraComponents: "locker"

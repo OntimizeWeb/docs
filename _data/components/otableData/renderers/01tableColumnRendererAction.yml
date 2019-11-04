@@ -21,6 +21,9 @@ attributes: [{
   type: "string",
   default: "",
   description: "Cell text"
+},
+{
+  name: "svg-icon"
 }]
 
 outputs: [{

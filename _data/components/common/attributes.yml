@@ -11,7 +11,7 @@
     type: "string",
     default: "`attr` input",
     required: "",
-    description: "Field label (placeholder when field is empty and floating label when field has data)"
+    description: "Field label"
   },
   "automatic-binding": {
     name: "automatic-binding",
@@ -90,12 +90,19 @@
     required: "",
     description: "Decimal digits chacarter separator"
   },
-  "decimal-digits": {
-    name: "decimal-digits",
+  "min-decimal-digits": {
+    name: "min-decimal-digits",
     type: "number",
     default: "2",
     required: "",
-    description: "Number of decimals"
+    description: "The minimum number of decimal digits"
+  },
+  "max-decimal-digits": {
+    name: "max-decimal-digits",
+    type: "number",
+    default: "2",
+    required: "",
+    description: "The maximun number of decimal digits"
   },
   "static-data": {
     name: "static-data",
@@ -243,6 +250,13 @@
     default: "",
     required: "",
     description: "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  },
+  "svg-icon": {
+    name: "svg-icon",
+    type: "string",
+    default: "",
+    required: "",
+    description: "Name of svg icon"
   },
   "quick-filter": {
     name: "quick-filter",

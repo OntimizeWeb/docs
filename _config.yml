@@ -14,6 +14,7 @@ description              : &description "web application framework based on Angu
 url                      : https://ontimizeweb.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/docs" # the subpath of your site, e.g. "/blog"
 repository               : "OntimizeWeb/docs"
+playgroundurl            : "https://try.imatia.com/ontimizeweb/playground"
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -208,6 +209,15 @@ collections:
   ontimize_web_ngx_tree:
     output: true
     permalink: /:collection/:path/
+  ontimize_web_ngx_map:
+    output: true
+    permalink: /:collection/:path/
+  ontimize_web_ngx_charts:
+    output: true
+    permalink: /:collection/:path/
+  ontimize_web_ngx_gallery:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -342,7 +352,7 @@ defaults:
       sidebar:
         nav: "components"
 
-  #_ontimize_web_ngx_tree layout: single      
+  #_ontimize_web_ngx_tree layout: single
   - scope:
       path: ""
       type: ontimize_web_ngx_tree
@@ -356,7 +366,7 @@ defaults:
       sidebar:
         nav: "ontimize_web_ngx_tree"
 
-  #_ontimize_web_ngx_filemanager layout: o-module   
+  #_ontimize_web_ngx_filemanager layout: o-module
   - scope:
       path: ""
       type: ontimize_web_ngx_filemanager
@@ -369,8 +379,50 @@ defaults:
       breadcrumbs: true
       sidebar:
         nav: "ontimize_web_ngx_filemanager"
+    #_ontimize_web_ngx_map layout: o-module   
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_map
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      breadcrumbs: true
+      sidebar:
+        nav: "ontimize_web_ngx_map"
 
- 
+  #_ontimize_web_ngx_charts
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_charts
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      breadcrumbs: true
+      sidebar:
+        nav: "ontimize_web_ngx_charts"
+  #_ontimize_web_ngx_gallery
+  - scope:
+      path: ""
+      type: ontimize_web_ngx_gallery
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      breadcrumbs: true
+      sidebar:
+        nav: "ontimize_web_ngx_gallery"
+
+
+
+
   # _o_validation_components
   - scope:
       path: ""

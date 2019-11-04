@@ -3,10 +3,10 @@ directive: "o-radio"
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview",
-  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "validators"]
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker"]
 },{
   component: "OFormServiceComponent",
-  path: "components/input/overviewservicecomponent",
+  path: "components/input/overviewservice",
   attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "visible-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys", "set-value-on-value-change"]
 }]
 
@@ -16,14 +16,14 @@ inheritedOutputs: [{
   outputs: ["onChange", "onValueChange"]
 },{
   component: "OFormServiceComponent",
-  path: "components/input/overviewservicecomponent",
+  path: "components/input/overviewservice",
   outputs: ["onSetValueOnValueChange"]
 }]
 
 attributes: [{
   name: "translate",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Indicates whether or not to translate the labels displayed in the radio buttons"
 },{

@@ -116,6 +116,31 @@ attributes: [
   default: "",
   required: "",
   description: "Entity keys SQL types, separated by ';'"
+},{
+  name: "detect-changes-on-blur",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form will detect inner components changes (for updating toolbar buttons) on its blur"
+},{
+  name: "include-breadcrumb",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form toolbar will render its parent 'form-container' breadrcrumb (only working if the form is inside a 'form-container' with a breadcrumb)"
+},{
+  name: "detect-changes-on-blur",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form detects that there was a change in the blur event of the form components."
+
+},{
+  name: "confirm-exit",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form  confirm when it exit"
 }]
 
 outputs: [{
@@ -130,6 +155,15 @@ outputs: [{
 },{
   name: "onFormModeChange",
   description: "Event triggered when form mode changes"
+},{
+  name: "onInsert",
+  description: "Event triggered when the data is inserted"
+},{
+  name: "onUpdate",
+  description: "Event triggered when the data is updated"
+},{
+  name: "onDelete",
+  description: "Event triggered when the data is removed"
 }]
 
 

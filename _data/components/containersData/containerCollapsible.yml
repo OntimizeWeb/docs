@@ -1,0 +1,44 @@
+directive: "o-column-collapsible, o-row-collapsible"
+title: "Collapsible containers"
+
+attributes: [{
+  name: "attr"
+},{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Container title"
+},{
+  name: "layout-align",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Layout align value according to flex-layout library see [Flex Layout](https://github.com/angular/flex-layout/wiki){:target='_blank'}"
+},{
+  name: "elevation",
+  type: "number",
+  default: "",
+  required: "",
+  description: "Number indicating elevation according to predefined CSS classes in [Angular Material Elevation](https://github.com/angular/material2/blob/master/guides/elevation.md){:target='_blank'}"
+},{
+  name: "icon"
+},{
+  name: "expanded",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates wether the collapsible container will be expanded or not"
+},{
+  name: "description",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Container description"
+},{
+  name: "appearance",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Indicates the appearance of the container, similar to the [form fiel appearance](https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants){:target='_blank'}"
+}]

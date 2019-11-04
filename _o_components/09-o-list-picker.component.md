@@ -28,7 +28,26 @@ Once some data has been provided to the component, the user can see the option l
     <o-list-picker attr="country" label="Country" data="Spain" [static-data]="getStaticData()" value-column="name" columns="id;name" visible-columns="name" enabled="no"></o-list-picker>
 </o-form>
 ```
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/listpicker){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/listpicker){:target="_blank"}.
 
 ## Validation
 The `o-list-picker` shows automatically an error message when the `required` attribute is set to "yes" and there is no value selected.
+
+## Locker <span class='menuitem-badge'>new<span>
+
+OntimizeWeb offers the `oLocker` directive to the `o-list-picker` that should to lock the component when you configure the component to query the data from a service.
+
+```html
+<o-list-picker attr="CUSTOMERID LOAD" oLocker oLockerMode="load" oLockerDelay="1500"
+    read-only="no" service="customers" entity="customer" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
+    value-column="CUSTOMERID" keys="CUSTOMERID" visible-columns="NAME" width="30%">
+</o-list-picker>
+
+<o-list-picker attr="CUSTOMERID DISABLED" oLocker oLockerMode="disable" read-only="no" service="customers"
+    entity="customer" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL" value-column="CUSTOMERID"
+    keys="CUSTOMERID" visible-columns="NAME" width="30%">
+</o-list-picker>
+```
+![OLocker in  Combo component]({{ "/images/components/inputs/listPicker-oLocker.gif" | absolute_url }}){: .comp-example-img}
+
+Note you can configure the mode of the locker, there are two modes to block, *disable* and *load* mode. The mode by default is *load*. You can configure  delay service start with `oLockerDelay` attribute, by default this value is the *250ms*.

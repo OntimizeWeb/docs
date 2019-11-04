@@ -31,6 +31,10 @@ figure.highlight {
     margin: 0;
     padding: 1em;
   }
+
+  &.no-scroll .highlight {
+    overflow: visible;
+  }
 }
 
 figure.highlight {

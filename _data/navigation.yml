@@ -15,6 +15,13 @@ main:
   # - title: "Sample Collections"
   #   url: /collection-archive/
 
+versions:
+  - title: "3.x.x"
+    url: /docs/v3
+  - title: "4.x.x"
+    url: /docs
+    active: true
+
 
 # documentation links
 docs:
@@ -43,7 +50,9 @@ docs:
       - title: "Forms"
         url: /forms/
       - title: "Services"
-        url: /guide/service/       
+        url: /guide/service/
+      - title: "Permissions"
+        url: /guide/permissions/
       - title: "Run your app"
         url: /run-your-app/
       - title: "Deploy your app"
@@ -58,8 +67,12 @@ docs:
     children:
       - title: "Theming"
         url: /customize/theming/
+      - title: "Lite theme"
+        url: /customize/lite/
+      - title: "Style guide"
+        url: /customize/style-guide/
       - title: "Icons"
-        url: /customize/icons/  
+        url: /customize/icons/
       - title: "Tabs"
         url: /customize/tabs/
   - title: Add-ons
@@ -67,13 +80,13 @@ docs:
       - title: "Tools"
         url: /ontimize-web-ngx-tools/
       - title: "Theming"
-        url: /ontimize-web-ngx-theming/
+        url: /theming/
       - title: "DataTable <small>(deprecated)</small>"
         url: /ontimize-web-ngx-datatable/
       - title: "Charts"
-        url: /ontimize-web-ngx-charts/
+        url: /charts/
       - title: "Map"
-        url: /ontimize-web-ngx-map/
+        url: /map/
       - title: "Dynamicform"
         url: /ontimize-web-ngx-dynamicform/
       - title: "Dynamicform Builder"
@@ -82,6 +95,8 @@ docs:
         url: /filemanager/
       - title: "Tree"
         url: /tree/
+      - title: "Gallery <span class='menuitem-badge'>new<span>"
+        url: /gallery/
       - title: "JEE app seed"
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
@@ -93,7 +108,7 @@ docs:
       - title: "License"
         url: /license/
       - title: "Versions"
-        url: /versions
+        url: /versions/
       - title: "About"
         url: /about/
 
@@ -125,6 +140,9 @@ components:
         order: "2"
       - title: "Date"
         url: /components/input/date/
+        order: "2"
+      - title: "Date range <span class='menuitem-badge'>new<span>"
+        url: /components/input/daterange/
         order: "2"
       - title: "NIF"
         url: /components/input/nif/
@@ -159,11 +177,14 @@ components:
         children:
           - title: "List picker dialog"
             url: /listpicker/listpickerdialog/
-      - title: "Radio <span class='menuitem-badge'>new<span>"
+      - title: "Radio"
         url: /components/input/radio/
         order: "2"
-      - title: "Slide toggle <span class='menuitem-badge'>new<span>"
+      - title: "Slide toggle"
         url: /components/input/slidetoggle/
+        order: "2"
+      - title: "Slider"
+        url: /components/input/slider/
         order: "2"
 
   - title: Button
@@ -260,20 +281,30 @@ ontimize_web_ngx_filemanager:
     children:
       - title: "Overview"
         url: /filemanager/overview/
-        
+
       - title: "Installation"
         url: /filemanager/installation/
-
-
   #- title: "Components"
   #  children:
   #    - title: "Table"
   #      url: /ontimize_web_ngx_filemanager/components/o-filemanager-table.component/
-
   - title: "Services"
     children:
       - title: "File Manager Service"
         url: /filemanager/filemanagerservice/
+
+ontimize_web_ngx_charts:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /charts/overview/
+      - title: "Installation"
+        url: /charts/installation/
+  #- title: "Components"
+  #  children:
+  #    - title: "Chart"
+  #      url: /ontimize_web_ngx_charts/components/o-chart.component/
+
 
 ontimize_web_ngx_tree:
   - title: "Getting Started"
@@ -288,3 +319,25 @@ ontimize_web_ngx_tree:
         url: /tree/components/o-tree.component/
       - title: "Tree node"
         url: /tree/components/o-tree-node.component/
+
+ontimize_web_ngx_map:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /map/overview/
+
+      - title: "Installation"
+        url: /map/installation/
+        
+ontimize_web_ngx_gallery:
+  - title: "Getting Started"
+    children:
+      - title: "Overview"
+        url: /gallery/overview/
+      - title: "Installation"
+        url: /gallery/installation/
+  - title: "Components"
+    children:
+      - title: "Gallery"
+        url: /gallery/components/gallery/
+    

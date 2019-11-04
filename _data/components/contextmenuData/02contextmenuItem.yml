@@ -28,3 +28,9 @@ attributes: [{
   required : "",
   description : "Data passed to the context menu. It will be available as an attribute of the execute event on the context menu"
 }]
+
+
+outputs: [{
+  name: "execute",
+  description: "Event triggered when a item is clicked"
+}]

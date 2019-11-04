@@ -77,11 +77,11 @@ You can represent the columns in extended mode with `o-table-column` component. 
     thousand-separator=".">
   </o-table-column>
   <o-table-column attr="REAL" title="REAL" type="real" grouping="yes"
-    thousand-separator="." decimal-separator="," decimal-digits="4">
+    thousand-separator="." decimal-separator="," max-decimal-digits="4">
   </o-table-column>
   <o-table-column attr="CURRENCY" title="CURRENCY" type="currency"
     currency-symbol="€" currency-symbol-position="right" grouping="yes"
-    thousand-separator="." decimal-separator="," decimal-digits="2">
+    thousand-separator="." decimal-separator="," max-decimal-digits="2">
   </o-table-column>
 
 </o-table>
@@ -124,7 +124,7 @@ Below is an example of how to define a paginator for the table.
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
   <o-table-paginator page-size="20"></o-table-paginator>
@@ -223,6 +223,19 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
 
 </o-table>
 ```
+`o-table-columns-filter` component can filter in one of three different ways based on the `mode` property.
+
+| Mode | Description |
+|------|--------------|
+| default|Combines selection and custom mode|
+| selection| Allows filtering selected by the values in the column. |
+| custom| Allows filtering by a form control
+
+
+
+
+![Filtering columns mode]({{ "/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
+
 
 ### Custom filter
 
@@ -274,15 +287,15 @@ You can see different predefined table cell renderers in the example below.
   <!--Currency Renderer-->
   <o-table-column attr="BALANCE" title="BALANCE" type="currency" thousand-separator="." decimal-separator="," currency-symbol="€" currency-symbol-position="right"></o-table-column>
   <!--Percentage Renderer-->
-  <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+  <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," max-decimal-digits="2"></o-table-column>
   <!--Integer Renderer-->
   <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
   <!--Boolean Renderer-->
-  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean></o-table-column>
+  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-column>
 </o-table>
 ```
 
-You can see this live example in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/renderer){:target="_blank"}.
+You can see this live example in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/renderer){:target="_blank"}.
 
 **Action cell renderer**
 
@@ -395,12 +408,12 @@ You can include the table cell renderer image in your table column by configurin
 You can include the table cell renderer percentage in your table column by configuring the attribute `type` in the column with the value **percentage** or adding the `o-table-cell-renderer-percentage` to the table column. Check the attributes of this component in the **API** section of this page.
 
 ```html
-<o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," decimal-digits="2"></o-table-column>
+<o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" decimal-separator="," max-decimal-digits="2"></o-table-column>
 
 <!-- Equivalent code -->
 
 <o-table-column attr="INTERESRATE" title="INTERESRATE">
-  <o-table-cell-renderer-percentage decimal-separator="," decimal-digits="2"></o-table-cell-renderer-percentage>
+  <o-table-cell-renderer-percentage decimal-separator="," max-decimal-digits="2"></o-table-cell-renderer-percentage>
 </o-table-column>
 ```
 
@@ -444,6 +457,20 @@ You can include this component in your table in two different ways:
 
 You can see this example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/employees){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home){:target="_blank"}.
 
+**Translate cell renderer**
+
+You can include the table cell renderer translate in your table column by configuring the attribute `type` in the column with the value **translate** or adding the `o-table-cell-renderer-translate` to the table column. Check the attributes of this component in the **API** section of this page.
+
+```html
+<o-table-column attr="CODE" type="translate"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="CODE">
+  <o-table-cell-renderer-translate></o-table-cell-renderer-translate>
+</o-table-column>
+```
+
 ### Custom renderers
 
 A custom renderer allows you to display the data of a table cell formatted as you desire. For this, you need to create a new component that extends the base cell renderer class and place it into your table.
@@ -476,7 +503,7 @@ export class OTableCellRendererName extends OBaseTableCellRenderer {
   }
 
   getCellData(cellvalue: any, rowvalue: Object) {
-    return rowvalue['SURNAME'].toUpperCase() + ', ' + rowvalue[NAME];
+    return rowvalue['SURNAME'].toUpperCase() + ', ' + rowvalue['NAME'];
   }
 
 }
@@ -520,7 +547,7 @@ If a column haven't type will be *string*. You can find all information [here]({
 
 **3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/components/table/#custom-editors).
 
-You can see examples of this section in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/editor){:target="_blank"}.
+You can see examples of this section in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/editor){:target="_blank"}.
 
 For example:
 
@@ -620,11 +647,11 @@ Here's how you might begin in your file .ts:
 
 - It also must get the `templateref` view child reference, using  ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ``` where you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
 
-- If you want to customize the value of the columns in exports or filtering, you must overwrite the method *getCellData(cellvalue,rowvalue)*.
-
 - In your editor constructor you must set its `type` property value.
 
 - In your editor constructor you must register it as a new editor, using the `OTableColumnComponent` `addEditor` static method.
+
+- In your editor, the input must register `formControl`
 
 
 In the following example shows how to render two values of column in a cell ("SURNAME, name") and how to override the `getCellData` method.
@@ -661,7 +688,12 @@ The o-table-cell-editor-name.html file is as follows:
 
 ```html
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-  {% raw %}{{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}{% endraw %}
+  <div [formGroup]="formGroup">
+    <mat-form-field floatLabel="never">
+      <input #input matInput type="text" [placeholder]="getPlaceholder()" [formControl]="formControl" [required]="orequired">
+      <mat-error *ngIf="hasError('required')">{{ 'FORM_VALIDATION.REQUIRED' | oTranslate }}</mat-error>
+    </mat-form-field>
+  </div>
 </ng-template>
 ```
 
@@ -670,7 +702,9 @@ Finally, add the *OTableCellEditorName* component to your module.
 ## Features
 ### Checkbox selection
 
-The table supports checkbox selection with `select-all-checkbox` property. If this property is activated in the menu on the upper right, the option will be active. It is disabled by default.
+The table supports checkbox selection with `select-all-checkbox-visible` property. If this property is activated will display the row checkboxes,including a master toggle checkbox for the header. It is disabled by default.
+
+You can configure show in the menu on the upper right the option of select row with `select-all-checkbox` property. It is disabled by default.
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
@@ -726,11 +760,11 @@ Oftentimes, when displaying numbers in the table, users would like to be able to
   }
 ```
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/total){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/total){:target="_blank"}.
 
 ### Calculated columns
 
-The `o-table` suppports calculated columns, used when user wants to show an additional column which contains a result of an operation.
+The `o-table` supports calculated columns, used when user wants to show an additional column which contains a result of an operation.
 
 <h3 class="grey-color">Example</h3>
 
@@ -775,13 +809,12 @@ In the following example, two calculated columns are defined that perform the sa
 
 ```
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/calculatedcolumn).
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/calculatedcolumn).
 
 ### Table options
 
 The `o-table-option` component allows to add extra options to the table menu. You only have to add the component to your table and subscribe to the `onClick` event in your component to perform the desired actions. Check the example below.
 
-### Example
 
 ```html
 <o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
@@ -821,17 +854,21 @@ The `o-table` allows to add a context menu to table rows, the menu is displayed 
 For including the context menu in your table you have to include the `o-table-context-menu` component in your table.
 
 By default, `o-table-context-menu` include the next options:
+- Refresh
 - View detail.
 - Edit.
 - Insert.
+- Delete
 - Copy options.
-- Select all.
+- Filter options.
+- Select/Deselect all.
+
 
 Below an example.
 
 ![Table contextual by default ]({{ "/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
 
-The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `copy`, `select-all`  to `no`. 
+The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `delete`,`copy`, `select-all`,`refresh`,`filter`  to `no`.
 You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'}component like in the example below.
 
 <h3 class="grey-color">Example</h3>
@@ -843,18 +880,18 @@ You can also include your own `context-menu` with the reference to a [`o-context
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
 
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
   ...
-   <o-table-context-menu [context-menu]="contextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
+   <o-table-context-menu [context-menu]="myContextMenu" insert="no" edit="no" view-details="no"></o-table-context-menu>
 </o-table>
 
 <o-context-menu #myContextMenu>
-  <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute($event)">
-  <o-context-menu-item icon="star_rate" label="Item 2" enabled="no">
-  <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)">
+  <o-context-menu-item icon="face" label="Item 1" (execute)="onExecute($event)"></o-context-menu-item>
+  <o-context-menu-item icon="star_rate" label="Item 2" enabled="no"></o-context-menu-item>
+  <o-context-menu-item label="Item 3" [visible]="getVisible" (execute)="onExecute($event)"></o-context-menu-item>
 </o-context-menu>
 ```
 
@@ -862,7 +899,7 @@ You can also include your own `context-menu` with the reference to a [`o-context
 
 For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/){:target='_blank'}.
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table/contextmenu){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/contextmenu){:target="_blank"}.
 
 ### Insertable row
 
@@ -885,6 +922,12 @@ In the following example the table has a insertable row where the user may intro
 </o-table>
 ```
 
+The `o-table-insertable-row` support 2 differnent positions which can be set via the `position` input, `first` and `last`. By default, it's `last`.
+
+To create a custom insertable column, you must define a custom editor for the column following the same steps as in <a href="#custom-editors"> Custom editors</a> and add the column attr column in `columns` attribute in `o-table-insertable-row`.
+
+You can see more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/insertablerow){:target="_blank"}.
+
 ### Table buttons
 
 The `o-table` component allows to add extra buttons in the toolbar with the `o-table-button` component.
@@ -904,7 +947,7 @@ You can configure:
   sort-columns="SURNAME" keys="CUSTOMERID" parent-keys="n:NAME;CUSTOMERTYPEID"
   query-on-init="true" query-rows="6" quick-filter="yes" >
 
-  <o-table-button label="My button" icon="account_circle"></o-table-button>
+  <o-table-button attr="myButton" label="My button" icon="account_circle"></o-table-button>
 
   <o-table-column attr="NAME" title="NAME"></o-table-column>
 
@@ -934,7 +977,11 @@ You can configure:
 This section explains how the table data exportation works.
 
 <h3 class="grey-color">Exportating the table data</h3>
-The `o-table` component is able to export its data in Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface.
+The `o-table` component is able to export its data in Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface. 
+
+Table allows export visible data by default. Using the `export-mode` input user can modify that default value to all data.
+>**NOTE**: The `export-mode="all"` only work whether the table is not pageable, that is pageable="no" .
+
 
 The exportation process is performed as follows:
 
@@ -950,7 +997,7 @@ Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b
 You can change the <b>/export</b> end point. Please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
 </p>
 
-<p>The service must send a response with an object containing an unique indentifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.
+<p>The service must send a response with an object containing an unique identifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.
 <br>
 You can see an example of the exportation method end point in the following example.</p>
 
@@ -1067,10 +1114,28 @@ There also exists the possibility of automatically align the table columns title
 When the `auto-align-titles` input is set to true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
 
 ### Columns multiple sorting
-Table allows mulitple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
+Table allows multiple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
 
 A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state.
 
+### Tooltip in columns
+
+The `o-table` component provides a text that is displayed when the user hovers over an column.
+```html
+...
+  <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
+...
+```
+
+![Tooltip in table component]({{ "/images/components/tabla/table-tooltip.png" | absolute_url }}){: .comp-example-img}
+
+You can configure the value that is displayed with the attribute `tooltip-value`. Additionally, you can specify default function to be applied when the user over column with `tooltip-function` attribute.
+
+You can customize the tooltip styles by redefining the class `o-table-cell-tooltip`.
+
+Note: If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
+
+
 ## Demo
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/table){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table){:target="_blank"}.

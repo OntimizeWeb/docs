@@ -1,0 +1,34 @@
+
+class : "GalleryImage"
+
+attributes: [{
+  name: "small",
+  type: "string | SafeResourceUrl",
+  default : "",
+  description : "Url used in thumbnails"
+},{
+  name: "medium",
+  type: "string | SafeResourceUrl",
+  default : "",
+  description : "Url used in image"
+},{
+  name: "big",
+  type: "string | SafeResourceUrl",
+  default : "",
+  description : "Url used in preview"
+},{
+  name: "description",
+  type: "string",
+  default : "",
+  description : "Description used in preview"
+},{
+  name: "url",
+  type: "string",
+  default : "Url used in link",
+  description : "Description used in preview"
+},{
+  name: "label",
+  type: "string",
+  default : "",
+  description : "Label used for aria-label when thumbnail is a link"
+}]

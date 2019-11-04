@@ -4,7 +4,7 @@ version: "3.1.0"
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base",
-  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "store-state", "query-with-null-parent-keys"]
+  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-fallback-function", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "store-state", "query-with-null-parent-keys"]
 },{
   component: "OServiceComponent",
   path: "components/service/service",
@@ -22,7 +22,7 @@ attributes: [{
 },{
   name: "page-size-options",
   type: "array",
-  default: "8;16;24;32;64]",
+  default: "8;16;24;32;64",
   required: "",
   description: "Page size options separated by ';'."
 },{
@@ -34,7 +34,7 @@ attributes: [{
 },{
   name: "orderable",
   type: "no | false | yes | true",
-  default: "false",
+  default: "no",
   required: "",
   description: "Whether or not the sort select is shown in the toolbar."
 },{
@@ -62,6 +62,18 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show the pagination controls"
 },{
+  name: "fixed-header",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to have a fixed header and footer when the content is greather than its own height"
+},{
+  name: "gutter-size",
+  type: "no | false | yes | true",
+  default: "1px",
+  required: "",
+  description: "The amount of space between o-grid-items. This will be something like '10px' or '1em'."
+},{
   name: "refresh-button"
 },{
   name: "quick-filter-columns"
@@ -80,3 +92,5 @@ outputs: [{
   name: "onPaginatedDataLoaded",
   description: "Event triggered when the paginated data is updated"
 }]
+
+extraComponents: "gridData"

@@ -10,8 +10,8 @@ comp: list
 The `o-list` component is used to display a series of items. There is different types of predefined list items you can add to the list component.
 
 For adding a list component to your application you must insert the `o-list` in your page and include a `o-list-item` component wrapping the desired list item type you want to display. Check the different list items types below.
-
-## List item: text
+## List item
+### List item: text
 
 The `o-list-item-text` component is used to display list items with a maximum of two lines of text and a title.
 
@@ -28,9 +28,9 @@ The `o-list-item-text` component is used to display list items with a maximum of
 
 ![List item text]({{ "/images/components/list/list-item-text.png" | absolute_url }}){: .comp-example-img}
 
-You can see an example of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/lists/list-item-text){:target="_blank"}.
+You can see an example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/lists/list-item-text){:target="_blank"}.
 
-## List item: avatar
+### List item: avatar
 
 The `o-list-item-avatar` component is used to display list items with an avatar and a maximum of two lines of text and a title.
 
@@ -47,9 +47,9 @@ The `o-list-item-avatar` component is used to display list items with an avatar 
 
 ![List item avatar]({{ "/images/components/list/list-item-avatar.png" | absolute_url }}){: .comp-example-img}
 
-You can see an example of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/lists/list-item-avatar){:target="_blank"}.
+You can see an example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/lists/list-item-avatar){:target="_blank"}.
 
-## List item: card
+### List item: card
 
 The `o-list-item-card` component is used to display a card list item with text, image and action buttons.
 
@@ -66,9 +66,9 @@ The `o-list-item-card` component is used to display a card list item with text, 
 
 ![List item card]({{ "/images/components/list/list-item-card.png" | absolute_url }}){: .comp-example-img}
 
-You can see an example of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/lists/list-item-card){:target="_blank"}.
+You can see an example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/lists/list-item-card){:target="_blank"}.
 
-## List item: card image
+### List item: card image
 
 The `o-list-item-card-image` component is used to display card list items with a big image.
 
@@ -85,9 +85,9 @@ The `o-list-item-card-image` component is used to display card list items with a
 
 ![List item card image]({{ "/images/components/list/list-item-card-image.png" | absolute_url }}){: .comp-example-img}
 
-You can see an example of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/lists/list-item-card-image){:target="_blank"}.
+You can see an example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/lists/list-item-card-image){:target="_blank"}.
 
-## Custom list item
+### Custom list item
 
 When building an `o-list` component you can include one of the predefined list items the **OntimizeWeb** offers or you can include your own list item. For including a custom list item, **OntimizeWeb** offers the `o-list-item` directive that can be attached to an angular material list item (`mat-list-item`) or an angular material card (`mat-card`).
 

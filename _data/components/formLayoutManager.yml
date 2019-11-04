@@ -1,35 +1,89 @@
-directive : "o-form-layout-manager"
+directive: "o-form-layout-manager"
+
+extraComponents: "formLayoutManagerComponents"
 
 attributes: [{
+  name: "attr"
+},{
   name: "mode",
   type: "tab | dialog",
-  default : "dialog",
-  required : "",
-  description : "Form layout manager mode"
+  default: "dialog",
+  required: "",
+  description: "Form layout manager mode"
 },{
   name: "label-columns",
   type: "string",
-  default : "",
-  required : "",
-  description : "Form data columns used in the detail form title. Separated by ';'"
+  default: "",
+  required: "",
+  description: "Form data columns used in the detail form title. Separated by ';'"
 },{
   name: "separator",
   type: "string",
-  default : "' ' (blank space)",
-  required : "",
-  description : "Separator between multiple label columns values"
+  default: "' ' (blank space)",
+  required: "",
+  description: "Separator between multiple label columns values"
 },{
   name: "title",
   type: "string",
-  default : "",
-  required : "",
-  description : "Detail form main title"
+  default: "",
+  required: "",
+  description: "Detail form main title"
+},{
+  name: "title-data-origin",
+  type: "string",
+  default: "",
+  required: "",
+  description: "`attr` of the form component used for retrieving the data used on the tabs title"
+},{
+  name: "dialog-class",
+  type: "string",
+  default: "",
+  required: "",
+  description: "<b><i>Deprecated</i></b>. CSS class attached to the dialog when the dialog mode is active"
+},{
+  name: "dialog-width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "<b><i>Deprecated</i></b>. The dialog width"
+},{
+  name: "dialog-min-width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "<b><i>Deprecated</i></b>. The dialog minimum width"
+},{
+  name: "dialog-max-width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "<b><i>Deprecated</i></b>. The dialog maximum width"
+},{
+  name: "dialog-height",
+  type: "string",
+  default: "",
+  required: "",
+  description: "<b><i>Deprecated</i></b>. The dialog height"
+},{
+  name: "dialog-min-height",
+  type: "string",
+  default: "",
+  required: "",
+  description: "<b><i>Deprecated</i></b>. The dialog minimum height"
+},{
+  name: "dialog-max-height",
+  type: "string",
+  default: "",
+  required: "",
+  description: "<b><i>Deprecated</i></b>. The dialog maximum height"
+},{
+  name: "store-state"
 }]
 
 outputs: [{
-  name : "onMainTabSelected",
+  name: "onMainTabSelected",
   description: "Event triggered when the main tab is selected"
 },{
-  name : "onCloseTab",
+  name: "onCloseTab",
   description: "Event triggered when a detail tab is closed"
 }]

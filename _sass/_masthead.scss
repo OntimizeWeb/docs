@@ -29,6 +29,18 @@
     a {
       text-decoration: none;
     }
+
+    select{
+      padding:0;
+      margin:0;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      &:hover {
+        border: none;
+        box-shadow: none;
+      }
+    }
   }
 }
 

@@ -5,7 +5,7 @@ directive: "o-table"
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base",
-  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
+  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
 },{
   component: "OServiceComponent",
   path: "components/service/service",
@@ -116,6 +116,36 @@ attributes: [{
   type: "no | false | yes | true",
   default: "yes",
   description: "Indicates whether or not to allow multiple columns sorting"
+},{
+  name: "select-all-checkbox-visible",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the column of checkboxes for selecting table rows in the table"
+},{
+  name: "enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the table is enabled"
+},{
+  name: "resizable",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the table columns are resizables"
+}, {
+  name: "select-column-visible",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the table columns are resizables"
+},{
+  name: "export-mode",
+  type: "visible | all",
+  default: "yes",
+  required: "",
+  description: "Mode export data"
 }]
 
 outputs: [{
@@ -124,6 +154,9 @@ outputs: [{
 },{
   name: "onDoubleClick",
   description: "Event triggered when a row is double clicked"
+},{
+  name: "onRowSelected",
+  description: "Event triggered when a row is selected"
 },{
   name: "onRowDeselected",
   description: "Event triggered when a row is deselected"
@@ -148,10 +181,15 @@ methods: [{
   type: "method",
   parameters: "any[]",
    description: "Returns the current page table renderer data.",
-}
-,{
+},{
   name: "getAllValues()",
   type: "method",
   parameters: "any[]",
   description: "Returns the table data."
-}]
+},{
+  name: "getAllRenderedValues()",
+  type: "method",
+  parameters: "any[]",
+  description: "Returns the table renderer data."
+}
+]

@@ -1,0 +1,35 @@
+directive: "o-form-layout-tabgroup-options"
+
+attributes: [{
+  name: "background-color",
+  type: "ThemePalette",
+  description: "Background color of the tab nav."
+},{
+  name: "color",
+  type: "ThemePalette",
+  description: "Theme color palette for the component."
+},{
+  name: "header-position",
+  type: " 'above' | 'below'",
+  default: "above",
+  required: "",
+  description: "Position of the tab header."
+},{
+  name: "disable-animation",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Disable the animations in the tabs"
+},{
+  name: "icon",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "icon-position",
+  type: "'left' | right",
+  default: "",
+  required: "",
+  description: "Icon position"
+}]

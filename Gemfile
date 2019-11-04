@@ -15,6 +15,7 @@ gem "github-pages", group: :jekyll_plugins
 # To upgrade, run `bundle update`.
 
 # gem "jekyll"
+gem "jekyll", ">= 3.6.3"
 
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
@@ -23,3 +24,7 @@ group :jekyll_plugins do
   # gem "jekyll-archives"
   gem "jekyll-feed"
 end
+
+gem "ffi", ">= 1.11.1"
+gem "rubyzip", ">= 1.3.0"
+gem "nokogiri", ">= 1.10.5"

@@ -44,7 +44,28 @@ attributes: [
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the option to select all in the contextual menu."
-}
+},
+{
+  name: 'refresh', 
+  type: "boolean",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the option to refresh all in the contextual menu."
+},
+{
+  name: 'delete', 
+  type: "boolean",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the option to delete all in the contextual menu."
+},
+{
+  name: 'filter', 
+  type: "boolean",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the filtering options in the contextual menu."
+},
 ]
 
 title : "OTableContextMenu"

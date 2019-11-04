@@ -9,7 +9,7 @@ sidebar:
 
 {% include base_path %}
 
-In this section we are going to explain how to create the inital form that contains a table with
+In this section we are going to explain how to create the initial form that contains a table with
 all the employees of the Bank.
 
 In the previous step *employees.routes.ts* was configured so that if the url was *'employees'* the system rendered the component *EmployeesHomeComponent*. It is now time to create this component.
@@ -27,16 +27,15 @@ The contents of these files are shown below:
 ```html
 <div layout="column" layout-align="center top" layout-margin>
 
-  <o-table attr="employees" entity="EEmployees" title="EMPLOYEES"
+  <o-table attr="employees" service="employees" entity="employee" title="EMPLOYEES"
       columns="EMPLOYEEID;EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"
       visible-columns="EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL"
-      sort-columns="SURNAME" keys="EMPLOYEEID" query-on-init="true" query-rows="10" quick-filter="yes">
+      sort-columns="EMPLOYEESURNAME" keys="EMPLOYEEID" query-on-init="true" query-rows="10" quick-filter="yes">
     <o-table-column attr="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"></o-table-column>
-    <o-table-column attr="EMPLOYEENAME" title="EMPLOYEENAME"></o-table-column>
-    <o-table-column attr="EMPLOYEESURNAME" title="EMPLOYEESURNAME"></o-table-column>
-    <o-table-column attr="EMPLOYEEADDRESS" title="EMPLOYEEADDRESS"></o-table-column>
     <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
-    <o-table-column attr="EMPLOYEEEMAIL" title="EMPLOYEEEMAIL"></o-table-column>
+    <o-table-column attr="EMPLOYEETYPEID" title="EMPLOYEETYPEID">
+      <o-table-cell-renderer-service service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" value-column="EMPLOYEETYPENAME"></o-table-cell-renderer-service>
+    </o-table-column>
   </o-table>
 
 </div>

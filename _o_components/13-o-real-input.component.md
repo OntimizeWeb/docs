@@ -22,7 +22,7 @@ The real input is automatically registered on its parent `o-form`, which provide
 </o-form>
 ```
 
-You can see this and more examples of this component in the [OntimizeWeb playground](https://try.imatia.com/ontimizeweb/playground/main/inputs/real){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/real){:target="_blank"}.
 
 ## Validation
 The `o-real-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input. It also validates the input value considering the parameters `min`, `max` and the decimal digits.
