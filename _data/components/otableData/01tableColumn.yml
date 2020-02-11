@@ -12,7 +12,7 @@ attributes: [{
 },{
   name: "title",
   type: "string",
-  default: "",
+  default: "By default it is the attr translation except in the column of type action and image which by default the title doesn't show it",
   required: "",
   description: "Column title"
 },{

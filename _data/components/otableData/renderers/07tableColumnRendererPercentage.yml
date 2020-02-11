@@ -1,8 +1,8 @@
 class: "OTableCellRendererPercentageComponent"
 
-extends: "OTableCellRendererRealComponent" 
+extends: "OTableCellRendererRealComponent"
 
-directive: "o-table-cell-renderer-percentage" 
+directive: "o-table-cell-renderer-percentage"
 
 attributes: [{
   name: "grouping"
@@ -15,4 +15,10 @@ attributes: [{
 },{
   name: "max-decimal-digits",
   default: "0"
+},{
+  name: "value-base",
+  type: "1 | 100",
+  default: "1",
+  required: "",
+  description: "Indicates whether de numeral system of the value received by the cell renderer is 1 or 100"
 }]
