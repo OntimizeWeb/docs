@@ -67,13 +67,19 @@ attributes: [
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not to show detail form after insert new record"
+  description: "Indicates whether or not to show detail form after insert new record. Will be deprecated on version 8.x.x"
 },{
   name: "stay-in-record-after-edit",
   type: "no | false | yes | true",
   default: "no",
   required: "",
   description: "Indicates whether or not to stay in the edited detail form after a successful edition"
+},{
+  name: "after-insert-mode",
+  type: "new | detail",
+  default: "",
+  required: "",
+  description: "Shows reseted form after insert a new record (new) or shows the inserted record after (detail). This property works in substitution of stay-in-record-after-insert (detail)"
 },{
   name: "layout-fill",
   type: "no | false | yes | true",
