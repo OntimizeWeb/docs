@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -808,7 +808,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -893,15 +893,15 @@
   </nav>
 </aside>
 
-<p>For translations, <em>Ontimize Web</em> use <code class="highlighter-rouge">OTranslateService</code> which is a <em>service</em> and a <em>pipe</em> to handle any dynamic and static content you can help you make your app available in multiples languages.</p>
+<p>For translations, <em>Ontimize Web</em> use <code class="language-plaintext highlighter-rouge">OTranslateService</code> which is a <em>service</em> and a <em>pipe</em> to handle any dynamic and static content you can help you make your app available in multiples languages.</p>
 
 <h2 id="define-the-translations">Define the translations</h2>
 
-<p>Once you&#8217;ve installed <code class="highlighter-rouge">ontimize-web-ngx</code>, you can put your translations in a json file (locale_id.json) in <code class="highlighter-rouge">src/assets/i18n</code> folder. There must be at least one language translation file for the resulting translation. <code class="highlighter-rouge">OTranslateService</code> understands nested JSON objects.</p>
+<p>Once you&#8217;ve installed <code class="language-plaintext highlighter-rouge">ontimize-web-ngx</code>, you can put your translations in a json file (locale_id.json) in <code class="language-plaintext highlighter-rouge">src/assets/i18n</code> folder. There must be at least one language translation file for the resulting translation. <code class="language-plaintext highlighter-rouge">OTranslateService</code> understands nested JSON objects.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"HOME"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"HELLO"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="w">
+    </span><span class="nl">"HOME"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"HELLO"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -911,12 +911,12 @@
 <h2 id="init-the-otranslateservice-for-your-application">Init the <em>OTranslateService</em> for your application.</h2>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Subscription</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'rxjs'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">OTranslateService</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"ontimize-web-ngx"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Subscription</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OTranslateService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">ontimize-web-ngx</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-    <span class="na">selector</span><span class="p">:</span> <span class="s1">'app'</span><span class="p">,</span>
+    <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">template</span><span class="p">:</span> <span class="s2">`
         ...
     `</span>
@@ -944,7 +944,7 @@
 <p>Having the following entry in the bundle file:</p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
-    </span><span class="s2">"EXAMPLE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example bundle text: {0}, {1}"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"EXAMPLE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example bundle text: {0}, {1}"</span><span class="p">,</span><span class="w"> 
     </span><span class="err">...</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1632,7 +1632,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Separation character between <code class="highlighter-rouge">description-columns</code> values</p>
+    <p class="first"><p>Separation character between <code class="language-plaintext highlighter-rouge">description-columns</code> values</p>
 </p>
     
   </td>
@@ -1827,7 +1827,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ‘;’. Accepted format: <code class="highlighter-rouge">attr | attr:columnName</code></p>
+    <p class="first"><p>Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ‘;’. Accepted format: <code class="language-plaintext highlighter-rouge">attr | attr:columnName</code></p>
 </p>
     
   </td>
@@ -2022,7 +2022,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p><code class="highlighter-rouge">value-column</code> value type</p>
+    <p class="first"><p><code class="language-plaintext highlighter-rouge">value-column</code> value type</p>
 </p>
     
   </td>
@@ -2275,7 +2275,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -2338,7 +2338,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

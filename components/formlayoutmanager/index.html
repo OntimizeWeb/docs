@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -890,7 +890,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -983,10 +983,10 @@
   </nav>
 </aside>
 
-<p>A very common feature on management applications is displaying a form with the details related to a row from a data table. As a solution for this, <strong>OntimizeWeb</strong> offers the <code class="highlighter-rouge">o-form-layout-manager</code> component, that allows you managing the transitions between the data table and the form with the row details.</p>
+<p>A very common feature on management applications is displaying a form with the details related to a row from a data table. As a solution for this, <strong>OntimizeWeb</strong> offers the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component, that allows you managing the transitions between the data table and the form with the row details.</p>
 
 <h3 id="basic-example">Basic example</h3>
-<p>For including the <code class="highlighter-rouge">o-form-layout-manager</code> component in your application you just have to wrap the desired data table with the form layout manager and it will manage the transitions between the table view and the detail forms.</p>
+<p>For including the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component in your application you just have to wrap the desired data table with the form layout manager and it will manage the transitions between the table view and the detail forms.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form-layout-manager</span> <span class="na">attr=</span><span class="s">"formLayoutMngr"</span> <span class="na">mode=</span><span class="s">"tab"</span> <span class="na">title=</span><span class="s">"Customers"</span> <span class="na">label-columns=</span><span class="s">"SURNAME;NAME"</span> <span class="na">separator=</span><span class="s">","</span><span class="nt">&gt;</span>
 
@@ -999,19 +999,19 @@
 
 <p>This is a summarized example of the customers module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/customers" target="_blank">OntimizeWeb QuickStart</a>.</p>
 
-<p>The <code class="highlighter-rouge">o-form-layout-manager</code>  component has two available modes: <em>tab</em> and <em>dialog</em>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code>  component has two available modes: <em>tab</em> and <em>dialog</em>.</p>
 
 <h3 id="tab-mode">Tab mode</h3>
 <p>Selection the <em>tab</em> mode the data table and the detail form are displayed in <em>tabs</em>. This allows opening multiple form details at the same time and switch between the quickly.</p>
 
-<p>You can select this mode setting the value <strong>tab</strong> to the <code class="highlighter-rouge">mode</code> attribute. You can see a working example of this mode in the <em>customers</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/customers" target="_blank">OntimizeWeb QuickStart</a>.</p>
+<p>You can select this mode setting the value <strong>tab</strong> to the <code class="language-plaintext highlighter-rouge">mode</code> attribute. You can see a working example of this mode in the <em>customers</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/customers" target="_blank">OntimizeWeb QuickStart</a>.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/form-layout-manager/formLayoutManagerTAB.png" alt="Form layout manager in *tab* mode" /></p>
 
 <h4 id="configure-tab-mode-options">Configure tab mode options</h4>
-<p>It is possible to configure tab mode options with the <code class="highlighter-rouge">o-form-layout-tabgroup-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>It is possible to configure tab mode options with the <code class="language-plaintext highlighter-rouge">o-form-layout-tabgroup-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
 
-<p>For complex labels, you can add <code class="highlighter-rouge">&lt;ng-template let-tabData="tabData"&gt;...&lt;/ng-template&gt;</code>  and inside you can define your template. It&#8217;s <em>important</em> than the tabData attributes are including in <code class="highlighter-rouge">labe-columns</code>.</p>
+<p>For complex labels, you can add <code class="language-plaintext highlighter-rouge">&lt;ng-template let-tabData="tabData"&gt;...&lt;/ng-template&gt;</code>  and inside you can define your template. It&#8217;s <em>important</em> than the tabData attributes are including in <code class="language-plaintext highlighter-rouge">labe-columns</code>.</p>
 
 <h3 class="grey-color">Example</h3>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form-layout-manager</span> <span class="na">mode=</span><span class="s">"tab"</span> <span class="na">title=</span><span class="s">"CUSTOMERS"</span> <span class="na">label-columns=</span><span class="s">"SURNAME;NAME"</span> <span class="na">separator=</span><span class="s">","</span>
@@ -1028,13 +1028,13 @@
 <h3 id="dialog-mode">Dialog mode</h3>
 <p>The <em>dialog</em> mode consists of displaying the form detail in a dialog over the data table.</p>
 
-<p>Select this mode setting the value <strong>dialog</strong> to the <code class="highlighter-rouge">mode</code> attribute. You can see a working example of this mode in the <em>branches</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/branches" target="_blank">OntimizeWeb QuickStart</a>.</p>
+<p>Select this mode setting the value <strong>dialog</strong> to the <code class="language-plaintext highlighter-rouge">mode</code> attribute. You can see a working example of this mode in the <em>branches</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/branches" target="_blank">OntimizeWeb QuickStart</a>.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/form-layout-manager/formLayoutManagerDIALOG.png" alt="Form layout manager in *dialog* mode" /></p>
 
 <h4 id="configure-dialog-mode-options">Configure dialog mode options</h4>
 
-<p>It is possible to configure dialog mode options with the <code class="highlighter-rouge">o-form-layout-dialog-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>It is possible to configure dialog mode options with the <code class="language-plaintext highlighter-rouge">o-form-layout-dialog-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1987,7 +1987,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p><code class="highlighter-rouge">attr</code> of the form component used for retrieving the data used on the tabs title</p>
+    <p class="first"><p><code class="language-plaintext highlighter-rouge">attr</code> of the form component used for retrieving the data used on the tabs title</p>
 </p>
     
   </td>
@@ -3376,7 +3376,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -3439,7 +3439,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

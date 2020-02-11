@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -810,7 +810,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -896,7 +896,7 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-html-input</code> component is used in <a href="https://ontimizeweb.github.io/docs/components/form/">forms</a> for getting or displaying html text submitted by the user.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-html-input</code> component is used in <a href="https://ontimizeweb.github.io/docs/components/form/">forms</a> for getting or displaying html text submitted by the user.</p>
 
 <p>This component wraps the <a href="https://ckeditor.com/ckeditor-4/" target="_blank">CKEditor 4</a> component into an <strong>OntimizeWeb</strong> component. For using it you need to download the CKEditor library and include it in your application.</p>
 
@@ -915,36 +915,36 @@
       <li>For production you have the take two more steps:
         <ul>
           <li>Include the CKEditor library in the <em>aot-config/index.ejs</em> file, like in the previous example.</li>
-          <li>Include the CKEditor in the webpack copy files plugin, for this, include the ckeditor folder in the <code class="highlighter-rouge">GlobCopyWebpackPlugin</code> patterns in the <em>aot-config/webpack-aot.config.js</em> file.</li>
+          <li>Include the CKEditor in the webpack copy files plugin, for this, include the ckeditor folder in the <code class="language-plaintext highlighter-rouge">GlobCopyWebpackPlugin</code> patterns in the <em>aot-config/webpack-aot.config.js</em> file.</li>
         </ul>
 
         <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nx">plugins</span><span class="p">:</span> <span class="p">[</span>
           <span class="k">new</span> <span class="nx">GlobCopyWebpackPlugin</span><span class="p">({</span>
-              <span class="s2">"patterns"</span><span class="p">:</span> <span class="p">[</span>
+              <span class="dl">"</span><span class="s2">patterns</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
               <span class="p">...</span>
-              <span class="s2">"assets/js/ckeditor"</span>
+              <span class="dl">"</span><span class="s2">assets/js/ckeditor</span><span class="dl">"</span>
           <span class="p">],</span>
           <span class="p">...</span>
 </code></pre></div>        </div>
       </li>
     </ul>
   </li>
-  <li>Now you can include the <code class="highlighter-rouge">o-html-input</code> in your application templates.</li>
+  <li>Now you can include the <code class="language-plaintext highlighter-rouge">o-html-input</code> in your application templates.</li>
 </ol>
 
-<p>The HTML input is automatically registered on its parent <code class="highlighter-rouge">o-form</code>, which provides the value for the input programatically. Its value can be also set manually via the <code class="highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>The HTML input is automatically registered on its parent <code class="language-plaintext highlighter-rouge">o-form</code>, which provides the value for the input programatically. Its value can be also set manually via the <code class="language-plaintext highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <h2 id="basic-example">Basic example</h2>
 <p><img src="https://ontimizeweb.github.io/docs/images/components/inputs/o-html-input.png" alt="HTML input component" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-html-input</span> <span class="na">attr=</span><span class="s">"html"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getHTMLData</span><span class="err">()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-html-input&gt;</span>
+    <span class="nt">&lt;o-html-input</span> <span class="na">attr=</span><span class="s">"html"</span> <span class="na">[data]=</span><span class="s">"getHTMLData()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-html-input&gt;</span>
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 <p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/inputs/html" target="_blank">OntimizeWeb playground</a>.</p>
 
 <h2 id="validation">Validation</h2>
-<p>The <code class="highlighter-rouge">o-html-input</code> shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value on the input.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-html-input</code> shows automatically an error message when the <code class="language-plaintext highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value on the input.</p>
 
 </div>
 
@@ -1129,7 +1129,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -1192,7 +1192,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

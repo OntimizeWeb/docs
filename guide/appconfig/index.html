@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -741,7 +741,7 @@
     
     <meta itemprop="description" content="How tow configure an OntimizeWeb application.">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -779,37 +779,37 @@
 
 <p>The file that contains the application configuration parameters is called <em>app.config.ts</em> and it is placed on the <em>app</em> folder. The content of this file is similar as the example below:</p>
 
-<div class="language-javascript no-scroll highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">SERVICE_CONFIG</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./shared/app.services.config'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">MENU_CONFIG</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./shared/app.menu.config'</span><span class="p">;</span>
+<div class="language-javascript no-scroll highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">SERVICE_CONFIG</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./shared/app.services.config</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">MENU_CONFIG</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./shared/app.menu.config</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">CONFIG</span><span class="p">:</span> <span class="nx">Config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">apiEndpoint</span><span class="p">:</span> <span class="s1">'https://try.ontimize.com/QSAllComponents-jee/services/rest'</span><span class="p">,</span>
-  <span class="na">uuid</span><span class="p">:</span> <span class="s1">'com.ontimize.web.quickstart'</span><span class="p">,</span>
-  <span class="na">title</span><span class="p">:</span> <span class="s1">'Ontimize Web QuickStart'</span><span class="p">,</span>
-  <span class="na">locale</span><span class="p">:</span> <span class="s1">'es'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
-  <span class="na">serviceType</span><span class="p">:</span> <span class="s1">'Ontimize'</span> <span class="o">|</span> <span class="s1">'OntimizeEE'</span><span class="p">,</span>
+  <span class="na">apiEndpoint</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://try.ontimize.com/QSAllComponents-jee/services/rest</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">uuid</span><span class="p">:</span> <span class="dl">'</span><span class="s1">com.ontimize.web.quickstart</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Ontimize Web QuickStart</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">es</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+  <span class="na">serviceType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Ontimize</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">OntimizeEE</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">servicesConfiguration</span><span class="p">:</span> <span class="nx">SERVICE_CONFIG</span><span class="p">,</span>
   <span class="na">appMenuConfiguration</span><span class="p">:</span> <span class="nx">MENU_CONFIG</span><span class="p">,</span>
-  <span class="na">applicationLocales</span><span class="p">:</span> <span class="p">[</span><span class="s1">'es'</span><span class="p">,</span> <span class="s1">'en'</span><span class="p">],</span>
+  <span class="na">applicationLocales</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">es</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">en</span><span class="dl">'</span><span class="p">],</span>
   <span class="na">remoteConfig</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* Optional */</span>
-    <span class="na">path</span><span class="p">:</span> <span class="s1">'/configPath'</span><span class="p">,</span>
-    <span class="na">endpoint</span><span class="p">:</span> <span class="s1">'https://try.ontimize.com/QSAllComponents-jee/services/rest'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/configPath</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">endpoint</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://try.ontimize.com/QSAllComponents-jee/services/rest</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
     <span class="na">timeout</span><span class="p">:</span> <span class="mi">60000</span><span class="p">,</span> <span class="cm">/* Optional */</span>
     <span class="na">columns</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* Optional */</span>
-      <span class="na">user</span><span class="p">:</span> <span class="s1">'USER_'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
-      <span class="na">appId</span><span class="p">:</span> <span class="s1">'APP_UUID'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
-      <span class="na">configuration</span><span class="p">:</span> <span class="s1">'CONFIGURATION'</span> <span class="cm">/* Optional */</span>
+      <span class="na">user</span><span class="p">:</span> <span class="dl">'</span><span class="s1">USER_</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+      <span class="na">appId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">APP_UUID</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+      <span class="na">configuration</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CONFIGURATION</span><span class="dl">'</span> <span class="cm">/* Optional */</span>
     <span class="p">}</span>
   <span class="p">},</span>
   <span class="na">bundle</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* Optional */</span>
-    <span class="na">endpoint</span><span class="p">:</span> <span class="s1">'https://try.ontimize.com/QSAllComponents-jee/services/rest'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
-    <span class="na">path</span><span class="p">:</span> <span class="s1">'/bundlePath'</span> <span class="cm">/* Optional */</span>
+    <span class="na">endpoint</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://try.ontimize.com/QSAllComponents-jee/services/rest</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/bundlePath</span><span class="dl">'</span> <span class="cm">/* Optional */</span>
   <span class="p">},</span>
-  <span class="na">startSessionPath</span><span class="p">:</span> <span class="s1">'/startSessionPath'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
-  <span class="na">permissionsServiceType</span><span class="p">:</span> <span class="s1">'OntimizePermissions'</span> <span class="o">|</span> <span class="s1">'OntimizeEEPermissions'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+  <span class="na">startSessionPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/startSessionPath</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+  <span class="na">permissionsServiceType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OntimizePermissions</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">OntimizeEEPermissions</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
   <span class="na">permissionsConfiguration</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* Optional */</span>
-    <span class="na">service</span><span class="p">:</span> <span class="s1">'permissions'</span>
+    <span class="na">service</span><span class="p">:</span> <span class="dl">'</span><span class="s1">permissions</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div></div>
@@ -818,14 +818,14 @@
 
 <ul>
   <li><strong>apiEndpoint:</strong> The base path of the URL used by the application services.</li>
-  <li><strong>uuid:</strong> The application identifier, this is the unique package identifier of the application. It is used when storing or managing temporal data related with the application. By default is set as <code class="highlighter-rouge">ontimize-web-uuid</code>.</li>
+  <li><strong>uuid:</strong> The application identifier, this is the unique package identifier of the application. It is used when storing or managing temporal data related with the application. By default is set as <code class="language-plaintext highlighter-rouge">ontimize-web-uuid</code>.</li>
   <li><strong>title:</strong> The title of the application.</li>
   <li><strong>locale:</strong> The language of the application specified by the country code (e.g. &#8216;es&#8217; for Spanish, &#8216;en&#8217; for English, etc.).</li>
   <li><strong>serviceType:</strong> The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
     <ul>
       <li><strong>Not configured (by default):</strong> if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.</li>
       <li><strong>&#8216;OntimizeEE&#8217;:</strong> string that configures Ontimize REST JEE services.</li>
-      <li><strong>Custom class:</strong> a service class reference that extends <code class="highlighter-rouge">OntimizeService</code> or <code class="highlighter-rouge">OntimizeEEService</code> or implements the <code class="highlighter-rouge">IDataService</code> interface.</li>
+      <li><strong>Custom class:</strong> a service class reference that extends <code class="language-plaintext highlighter-rouge">OntimizeService</code> or <code class="language-plaintext highlighter-rouge">OntimizeEEService</code> or implements the <code class="language-plaintext highlighter-rouge">IDataService</code> interface.</li>
     </ul>
   </li>
   <li><strong>servicesConfiguration:</strong> Object that contains the services configuration parameters. Learn more <a href="#services-configuration">here</a>.</li>
@@ -834,7 +834,7 @@
   <li><strong>remoteConfig:</strong> remote configuration object. You can read more about this <a href="#remote-configuration">here</a>.
     <ul>
       <li><strong>path:</strong> remote configuration path.</li>
-      <li><strong>endpoint:</strong> the base path of the URL used for the remote configuration requests. Default value is provided by <code class="highlighter-rouge">apiEndpoint</code>.</li>
+      <li><strong>endpoint:</strong> the base path of the URL used for the remote configuration requests. Default value is provided by <code class="language-plaintext highlighter-rouge">apiEndpoint</code>.</li>
       <li><strong>timeout:</strong> the timeout for the remote configuration requests.</li>
       <li><strong>columns:</strong> the remote column names.
         <ul>
@@ -855,7 +855,7 @@
     <ul>
       <li><strong>Not configured (by default):</strong> if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.</li>
       <li><strong>&#8216;OntimizeEEPermissions&#8217;:</strong> string that configures Ontimize REST JEE services.</li>
-      <li><strong>Custom class:</strong> a service class reference that extends <code class="highlighter-rouge">OntimizePermissions</code> or <code class="highlighter-rouge">OntimizeEEPermissions</code> or implements the <code class="highlighter-rouge">IPermissionsService</code> interface.</li>
+      <li><strong>Custom class:</strong> a service class reference that extends <code class="language-plaintext highlighter-rouge">OntimizePermissions</code> or <code class="language-plaintext highlighter-rouge">OntimizeEEPermissions</code> or implements the <code class="language-plaintext highlighter-rouge">IPermissionsService</code> interface.</li>
     </ul>
   </li>
   <li><strong>permissionsConfiguration:</strong> permissions service configuration object.</li>
@@ -863,41 +863,41 @@
 
 <h1 id="services-configuration">Services configuration</h1>
 
-<p>If you indicate in the application configuration that the application should use <strong>OntimizeEE</strong> services (check <code class="highlighter-rouge">serviceType</code> attribute in the previous section of this page), you have to configure the service paths. For doing this <strong>OntimizeWeb</strong> uses the <code class="highlighter-rouge">servicesConfiguration</code> property from the app configuration file that must point to an object defined as in the example below.</p>
+<p>If you indicate in the application configuration that the application should use <strong>OntimizeEE</strong> services (check <code class="language-plaintext highlighter-rouge">serviceType</code> attribute in the previous section of this page), you have to configure the service paths. For doing this <strong>OntimizeWeb</strong> uses the <code class="language-plaintext highlighter-rouge">servicesConfiguration</code> property from the app configuration file that must point to an object defined as in the example below.</p>
 
-<p>In this object, the keys represents the different services names used in the application. Every service needs a <code class="highlighter-rouge">path</code> property where you must set the path of the service, excluding the URL configured in the <code class="highlighter-rouge">apiEndpoint</code> attribute of the application configuration.</p>
+<p>In this object, the keys represents the different services names used in the application. Every service needs a <code class="language-plaintext highlighter-rouge">path</code> property where you must set the path of the service, excluding the URL configured in the <code class="language-plaintext highlighter-rouge">apiEndpoint</code> attribute of the application configuration.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">SERVICE_CONFIG</span><span class="p">:</span> <span class="nb">Object</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'users'</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s1">'path'</span><span class="p">:</span> <span class="s1">'/users'</span>
+  <span class="dl">'</span><span class="s1">users</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/users</span><span class="dl">'</span>
   <span class="p">},</span>
-  <span class="s1">'customers'</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s1">'path'</span><span class="p">:</span> <span class="s1">'/customers'</span>
+  <span class="dl">'</span><span class="s1">customers</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/customers</span><span class="dl">'</span>
   <span class="p">},</span>
-  <span class="s1">'branches'</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s1">'path'</span><span class="p">:</span> <span class="s1">'/branches'</span>
+  <span class="dl">'</span><span class="s1">branches</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/branches</span><span class="dl">'</span>
   <span class="p">},</span>
-  <span class="s1">'movements'</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s1">'path'</span><span class="p">:</span> <span class="s1">'/movements'</span>
+  <span class="dl">'</span><span class="s1">movements</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/movements</span><span class="dl">'</span>
   <span class="p">},</span>
-  <span class="s1">'employees'</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s1">'path'</span><span class="p">:</span> <span class="s1">'/employees'</span>
+  <span class="dl">'</span><span class="s1">employees</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/employees</span><span class="dl">'</span>
   <span class="p">},</span>
-  <span class="s1">'permissions'</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s1">'path'</span><span class="p">:</span> <span class="s1">'/permissions/get'</span>
+  <span class="dl">'</span><span class="s1">permissions</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/permissions/get</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>For clarification, if your <code class="highlighter-rouge">apiEndpoint</code> is the one in the <a href="#application-configuration">application configuration</a> example, <strong>OntimizeWeb</strong> will concat the <code class="highlighter-rouge">apiEndpoint</code> and the <code class="highlighter-rouge">path</code> of the service to build the URL for sending requests. For example : <em><a href="https://try.ontimize.com/QSAllComponents-jee/services/rest/customers">https://try.ontimize.com/QSAllComponents-jee/services/rest/customers</a></em>.</p>
+<p>For clarification, if your <code class="language-plaintext highlighter-rouge">apiEndpoint</code> is the one in the <a href="#application-configuration">application configuration</a> example, <strong>OntimizeWeb</strong> will concat the <code class="language-plaintext highlighter-rouge">apiEndpoint</code> and the <code class="language-plaintext highlighter-rouge">path</code> of the service to build the URL for sending requests. For example : <em><a href="https://try.ontimize.com/QSAllComponents-jee/services/rest/customers">https://try.ontimize.com/QSAllComponents-jee/services/rest/customers</a></em>.</p>
 
 <h1 id="internationalization-i18-configuration">Internationalization (i18) configuration</h1>
 
-<p><em>Ontimize Web</em> providers the <code class="highlighter-rouge">locale</code> attribute to configure the language of the application, this attribute will be an identifier that refers to of user preferences as displaying dates, numbers, &#8230;, translation of words and in <code class="highlighter-rouge">applicationLocales</code> which configure the <code class="highlighter-rouge">locale id </code> availables in the language selector in <code class="highlighter-rouge">&lt;o-app-sidenav&gt;</code>. For more information see in <a href="https://ontimizeweb.github.io/docs/guide/otranslateservice/" target="_blank">OTranslateService</a>.</p>
+<p><em>Ontimize Web</em> providers the <code class="language-plaintext highlighter-rouge">locale</code> attribute to configure the language of the application, this attribute will be an identifier that refers to of user preferences as displaying dates, numbers, &#8230;, translation of words and in <code class="language-plaintext highlighter-rouge">applicationLocales</code> which configure the <code class="language-plaintext highlighter-rouge">locale id </code> availables in the language selector in <code class="language-plaintext highlighter-rouge">&lt;o-app-sidenav&gt;</code>. For more information see in <a href="https://ontimizeweb.github.io/docs/guide/otranslateservice/" target="_blank">OTranslateService</a>.</p>
 
 <h1 id="permissions-configuration">Permissions configuration</h1>
 
-<p>The Ontimize Web application permissions are queried if the configuration file contains a valid <code class="highlighter-rouge">permissionsConfiguration</code> object. The service used for that is configured in the <code class="highlighter-rouge">permissionsServiceType</code> (using <strong>OntimizePermissions</strong> by default, following the same philosophy as <code class="highlighter-rouge">serviceType</code> attribute).</p>
+<p>The Ontimize Web application permissions are queried if the configuration file contains a valid <code class="language-plaintext highlighter-rouge">permissionsConfiguration</code> object. The service used for that is configured in the <code class="language-plaintext highlighter-rouge">permissionsServiceType</code> (using <strong>OntimizePermissions</strong> by default, following the same philosophy as <code class="language-plaintext highlighter-rouge">serviceType</code> attribute).</p>
 
 <p>In the <a href="https://ontimizeweb.github.io/docs/guide/permissions/" target="_blank">permissions</a> section you can see which components can use permissions and its defition.</p>
 
@@ -905,11 +905,11 @@
 
 <p>## OntimizeEEPermissions</p>
 
-<p>For using the <strong>OntimizeEEPermissions</strong> service, the <code class="highlighter-rouge">permissionsConfiguration</code> configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page).</p>
+<p>For using the <strong>OntimizeEEPermissions</strong> service, the <code class="language-plaintext highlighter-rouge">permissionsConfiguration</code> configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page).</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
   <span class="nx">permissionsConfiguration</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nl">service</span><span class="p">:</span> <span class="s1">'permissions'</span>
+    <span class="nl">service</span><span class="p">:</span> <span class="dl">'</span><span class="s1">permissions</span><span class="dl">'</span>
   <span class="p">}</span>
   <span class="p">...</span>
 </code></pre></div></div>
@@ -918,19 +918,19 @@
 
 <p>Some components in <strong>OntimizeWeb</strong> store the changes made by the user in local storage. This configuration may also be stored on a remote server in order to be loaded when the user uses the application in different browsers or devices.</p>
 
-<p>For storing the user configuration remotely it is only necessary to add the <code class="highlighter-rouge">remoteConfig</code> object to the application configuration (see the <a href="#application-configuration-file">example above</a>). The <code class="highlighter-rouge">path</code> attribute is the only one that is mandatory, the other parameters have a default value as you can see in the example.</p>
+<p>For storing the user configuration remotely it is only necessary to add the <code class="language-plaintext highlighter-rouge">remoteConfig</code> object to the application configuration (see the <a href="#application-configuration-file">example above</a>). The <code class="language-plaintext highlighter-rouge">path</code> attribute is the only one that is mandatory, the other parameters have a default value as you can see in the example.</p>
 
 <p>Read more about how to configure the remote configuration <a href="https://ontimizeweb.github.io/docs/guide/remoteconfig/" target="_blank">here</a>.</p>
 
 <h1 id="application-menu">Application menu</h1>
 
-<p>A lot of applications include a side menu for navigating through the different sections or performing actions. <strong>OntimizeWeb</strong> provides a prebuilt solution for this using the <a href="https://ontimizeweb.github.io/docs/components/applayout/" target="_blank"><code class="highlighter-rouge">o-app-layout</code></a> component and adding the menu configuration as explained below.</p>
+<p>A lot of applications include a side menu for navigating through the different sections or performing actions. <strong>OntimizeWeb</strong> provides a prebuilt solution for this using the <a href="https://ontimizeweb.github.io/docs/components/applayout/" target="_blank"><code class="language-plaintext highlighter-rouge">o-app-layout</code></a> component and adding the menu configuration as explained below.</p>
 
 <h2 id="menu-configuration">Menu configuration</h2>
 
-<p>The side menu content is built automatically using the <code class="highlighter-rouge">appMenuConfiguration</code> property defined in the application configuration file (<em>app\app.config.ts</em>). This property refers to an array of <code class="highlighter-rouge">MenuRootItem</code> objects defined in a separated file (<em>app\shared\app.menu.config.ts</em>) where each object defines a menu entry.</p>
+<p>The side menu content is built automatically using the <code class="language-plaintext highlighter-rouge">appMenuConfiguration</code> property defined in the application configuration file (<em>app\app.config.ts</em>). This property refers to an array of <code class="language-plaintext highlighter-rouge">MenuRootItem</code> objects defined in a separated file (<em>app\shared\app.menu.config.ts</em>) where each object defines a menu entry.</p>
 
-<p>There is different types of <code class="highlighter-rouge">MenuRootItem</code> depending on the task they are defined for. The two main menu item types are the <code class="highlighter-rouge">MenuGroup</code> and the <code class="highlighter-rouge">MenuItem</code>.</p>
+<p>There is different types of <code class="language-plaintext highlighter-rouge">MenuRootItem</code> depending on the task they are defined for. The two main menu item types are the <code class="language-plaintext highlighter-rouge">MenuGroup</code> and the <code class="language-plaintext highlighter-rouge">MenuItem</code>.</p>
 
 <details class="collapsible">
   <summary>MenuGroup</summary>
@@ -987,7 +987,7 @@
 
     <p><span>Example:</span></p>
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span>
-    <span class="nl">id</span><span class="p">:</span> <span class="s1">'views'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'VIEW'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'remove_red_eye'</span><span class="p">,</span> <span class="nx">opened</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">views</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">VIEW</span><span class="dl">'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">remove_red_eye</span><span class="dl">'</span><span class="p">,</span> <span class="nx">opened</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nx">items</span><span class="p">:</span> <span class="p">[</span>
       <span class="c1">// Include here the child menu items</span>
     <span class="p">]</span>
@@ -1067,7 +1067,7 @@
   </div>
 </details>
 
-<p>In addition to the attributes of the <code class="highlighter-rouge">MenuItem</code>, you can include other attributes depending on what kind of menu item you want. All the following menu item types extend from the <code class="highlighter-rouge">MenuItem</code>, all its attributes are inherited.</p>
+<p>In addition to the attributes of the <code class="language-plaintext highlighter-rouge">MenuItem</code>, you can include other attributes depending on what kind of menu item you want. All the following menu item types extend from the <code class="language-plaintext highlighter-rouge">MenuItem</code>, all its attributes are inherited.</p>
 
 <details class="collapsible">
   <summary>MenuItemRoute</summary>
@@ -1093,7 +1093,7 @@
     </table>
 
     <p><span>Example:</span></p>
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'customers'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'CUSTOMERS'</span><span class="p">,</span> <span class="nx">tooltip</span><span class="p">:</span> <span class="s1">'CUSTOMERS_CONTENT'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="s1">'/main/customers'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'people'</span> <span class="p">}</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">customers</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS</span><span class="dl">'</span><span class="p">,</span> <span class="nx">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS_CONTENT</span><span class="dl">'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/customers</span><span class="dl">'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">people</span><span class="dl">'</span> <span class="p">}</span>
 </code></pre></div>    </div>
   </div>
 </details>
@@ -1136,7 +1136,7 @@
     <span class="c1">// do whatever you want</span>
   <span class="p">}</span>
   <span class="p">...</span>
-  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'action'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'action'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'autorenew'</span><span class="p">,</span> <span class="nx">action</span><span class="p">:</span> <span class="nx">myFunction</span> <span class="p">}</span>
+  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">action</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">action</span><span class="dl">'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">autorenew</span><span class="dl">'</span><span class="p">,</span> <span class="nx">action</span><span class="p">:</span> <span class="nx">myFunction</span> <span class="p">}</span>
 </code></pre></div>    </div>
   </div>
 </details>
@@ -1165,8 +1165,8 @@
     </table>
 
     <p><span>Example:</span></p>
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'lang_es'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'LOCALE_es'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'language'</span><span class="p">,</span> <span class="nx">locale</span><span class="p">:</span> <span class="s1">'es'</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'lang_en'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'LOCALE_en'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'language'</span><span class="p">,</span> <span class="na">locale</span><span class="p">:</span> <span class="s1">'en'</span> <span class="p">}</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">lang_es</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">LOCALE_es</span><span class="dl">'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">language</span><span class="dl">'</span><span class="p">,</span> <span class="nx">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">es</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">lang_en</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">LOCALE_en</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">language</span><span class="dl">'</span><span class="p">,</span> <span class="na">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">en</span><span class="dl">'</span> <span class="p">}</span>
 </code></pre></div>    </div>
   </div>
 </details>
@@ -1200,7 +1200,7 @@
     </table>
 
     <p><span>Example:</span></p>
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'logout'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'LOGOUT'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="s1">'/login'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'power_settings_new'</span><span class="p">,</span> <span class="nx">confirm</span><span class="p">:</span> <span class="s1">'yes'</span> <span class="p">}</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">logout</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">LOGOUT</span><span class="dl">'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/login</span><span class="dl">'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">power_settings_new</span><span class="dl">'</span><span class="p">,</span> <span class="nx">confirm</span><span class="p">:</span> <span class="dl">'</span><span class="s1">yes</span><span class="dl">'</span> <span class="p">}</span>
 </code></pre></div>    </div>
   </div>
 </details>
@@ -1234,38 +1234,38 @@
     </table>
 
     <p><span>Example:</span></p>
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="s1">'logout'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="s1">'LOGOUT'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="s1">'/login'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="s1">'power_settings_new'</span><span class="p">,</span> <span class="nx">confirm</span><span class="p">:</span> <span class="s1">'yes'</span> <span class="p">}</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">logout</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">LOGOUT</span><span class="dl">'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/login</span><span class="dl">'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">power_settings_new</span><span class="dl">'</span><span class="p">,</span> <span class="nx">confirm</span><span class="p">:</span> <span class="dl">'</span><span class="s1">yes</span><span class="dl">'</span> <span class="p">}</span>
 </code></pre></div>    </div>
   </div>
 </details>
 
 <p>You can see an example of a menu configuration below. This is a piece of the configuration used in the <a href="https://try.imatia.com/ontimizeweb/quickstart" target="_blank">OntimizeWeb QuickStart</a>. You can check the full code in <a href="https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/shared/app.menu.config.ts" target="_blank">GitHub</a>.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">MenuRootItem</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">MenuRootItem</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">MENU_CONFIG</span><span class="p">:</span> <span class="nx">MenuRootItem</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'home'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'HOME'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'dashboard'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/main/home'</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'views'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'VIEW'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'remove_red_eye'</span><span class="p">,</span> <span class="na">opened</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">HOME</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">dashboard</span><span class="dl">'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/home</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">views</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">VIEW</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">remove_red_eye</span><span class="dl">'</span><span class="p">,</span> <span class="na">opened</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="na">items</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'customers'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'CUSTOMERS'</span><span class="p">,</span> <span class="na">tooltip</span><span class="p">:</span> <span class="s1">'CUSTOMERS_CONTENT'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/main/customers'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'people'</span> <span class="p">},</span>
-      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'accounts'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'ACCOUNTS'</span><span class="p">,</span> <span class="na">tooltip</span><span class="p">:</span> <span class="s1">'ACCOUNTS_CONTENT'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/main/accounts'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'credit_card'</span> <span class="p">},</span>
-      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'branches'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'BRANCHES'</span><span class="p">,</span> <span class="na">tooltip</span><span class="p">:</span> <span class="s1">'BRANCHES_CONTENT'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/main/branches'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'account_balance'</span> <span class="p">},</span>
-      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'employees'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'EMPLOYEES'</span><span class="p">,</span> <span class="na">tooltip</span><span class="p">:</span> <span class="s1">'EMPLOYEES_CONTENT'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/main/employees'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'person'</span>
+      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">customers</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS</span><span class="dl">'</span><span class="p">,</span> <span class="na">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS_CONTENT</span><span class="dl">'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/customers</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">people</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">accounts</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ACCOUNTS</span><span class="dl">'</span><span class="p">,</span> <span class="na">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ACCOUNTS_CONTENT</span><span class="dl">'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/accounts</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">credit_card</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">branches</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">BRANCHES</span><span class="dl">'</span><span class="p">,</span> <span class="na">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">BRANCHES_CONTENT</span><span class="dl">'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/branches</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">account_balance</span><span class="dl">'</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">employees</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">EMPLOYEES</span><span class="dl">'</span><span class="p">,</span> <span class="na">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">EMPLOYEES_CONTENT</span><span class="dl">'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/employees</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">person</span><span class="dl">'</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">},</span>
-  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'general'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'GENERAL'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'info_outline'</span><span class="p">,</span> <span class="na">opened</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">general</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GENERAL</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">info_outline</span><span class="dl">'</span><span class="p">,</span> <span class="na">opened</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="na">items</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'about'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'ABOUT'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/main/about'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'help_outline'</span> <span class="p">}</span>
+      <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">about</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ABOUT</span><span class="dl">'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/about</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">help_outline</span><span class="dl">'</span> <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">},</span>
-  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="s1">'logout'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="s1">'LOGOUT'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="s1">'/login'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="s1">'power_settings_new'</span><span class="p">,</span> <span class="na">confirm</span><span class="p">:</span> <span class="s1">'yes'</span> <span class="p">}</span>
+  <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">logout</span><span class="dl">'</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">LOGOUT</span><span class="dl">'</span><span class="p">,</span> <span class="na">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/login</span><span class="dl">'</span><span class="p">,</span> <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">power_settings_new</span><span class="dl">'</span><span class="p">,</span> <span class="na">confirm</span><span class="p">:</span> <span class="dl">'</span><span class="s1">yes</span><span class="dl">'</span> <span class="p">}</span>
 <span class="p">];</span>
 </code></pre></div></div>
 
 <h2 id="card-menu-layout">Card menu layout</h2>
 
-<p>In addition to the side menu, <strong>OntimizeWeb</strong> provides <a href="https://ontimizeweb.github.io/docs/components/cardmenulayout/" target="_blank"><code class="highlighter-rouge">o-card-menu-layout</code></a> component that builds automatically a dashboard page using the menu configuration.</p>
+<p>In addition to the side menu, <strong>OntimizeWeb</strong> provides <a href="https://ontimizeweb.github.io/docs/components/cardmenulayout/" target="_blank"><code class="language-plaintext highlighter-rouge">o-card-menu-layout</code></a> component that builds automatically a dashboard page using the menu configuration.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/app-layout/card-menu-layout.png" alt="Card menu layout example" class="align-center" /></p>
 
@@ -1282,7 +1282,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -1345,7 +1345,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

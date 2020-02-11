@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -888,7 +888,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -982,7 +982,7 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-app-layout</code> components builds a side navigator for application using the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#menu-configuration" target="_blank">application menu configuration</a>. For adding it to the application you just have to wrap the content of the main page with this component like in the example below.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-app-layout</code> components builds a side navigator for application using the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#menu-configuration" target="_blank">application menu configuration</a>. For adding it to the application you just have to wrap the content of the main page with this component like in the example below.</p>
 
 <h2 id="example">Example</h2>
 
@@ -1004,7 +1004,7 @@
 
 <h3 id="custom-content">Custom content</h3>
 
-<p>You can attach your own content to the side navigator using the <code class="highlighter-rouge">o-app-layout-sidenav</code> component inside the <code class="highlighter-rouge">o-app-layout-sidenav</code> of you application.</p>
+<p>You can attach your own content to the side navigator using the <code class="language-plaintext highlighter-rouge">o-app-layout-sidenav</code> component inside the <code class="language-plaintext highlighter-rouge">o-app-layout-sidenav</code> of you application.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-app-layout</span> <span class="na">opened-sidenav-image=</span><span class="s">"assets/images/sidenav-opened.png"</span> <span class="na">closed-sidenav-image=</span><span class="s">"assets/images/sidenav-closed.png"</span><span class="nt">&gt;</span>
 
@@ -1018,28 +1018,28 @@
 
 <h2 id="modes">Modes</h2>
 
-<p>The <code class="highlighter-rouge">o-app-layout</code> components has two performance modes designed for making this component more usable in desktop and mobile applications. This modes are the following:</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-app-layout</code> components has two performance modes designed for making this component more usable in desktop and mobile applications. This modes are the following:</p>
 
 <ul>
   <li><strong>Desktop</strong>
-This is the default mode of the <code class="highlighter-rouge">o-app-layout</code> component. This mode displays the side menu and allows the user to partially hide it.</li>
+This is the default mode of the <code class="language-plaintext highlighter-rouge">o-app-layout</code> component. This mode displays the side menu and allows the user to partially hide it.</li>
 </ul>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/app-layout/o-app-layout-desktop.gif" alt="App layout component in desktop mode" /></p>
 
 <ul>
   <li><strong>Mobile</strong>
-Configure this mode by setting the <strong>mobile</strong> value in the <code class="highlighter-rouge">mode</code> attribute in the <code class="highlighter-rouge">o-app-layout</code> component. This mode shows the side menu and a toolbar on the top with a button for show/hide the side menu.</li>
+Configure this mode by setting the <strong>mobile</strong> value in the <code class="language-plaintext highlighter-rouge">mode</code> attribute in the <code class="language-plaintext highlighter-rouge">o-app-layout</code> component. This mode shows the side menu and a toolbar on the top with a button for show/hide the side menu.</li>
 </ul>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/app-layout/o-app-layout-mobile.gif" alt="App layout component in mobile mode" /></p>
 
 <h2 id="toolbar">Toolbar</h2>
 
-<p>The application layout component may show a toolbar at the top of the screen by setting the <code class="highlighter-rouge">show-header</code> attribute to <strong>yes</strong>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>The application layout component may show a toolbar at the top of the screen by setting the <code class="language-plaintext highlighter-rouge">show-header</code> attribute to <strong>yes</strong>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
-<p>The <code class="highlighter-rouge">o-app-layout</code> component allows you to configure whether or not to show flags on the language selector by setting  the attribute <code class="highlighter-rouge">use-flag-icons</code> to <strong>yes</strong>. In order to show the language flags, it is necessary install the dependency <code class="highlighter-rouge">flag-icon-css</code>:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>npm install flag-icon-css
+<p>The <code class="language-plaintext highlighter-rouge">o-app-layout</code> component allows you to configure whether or not to show flags on the language selector by setting  the attribute <code class="language-plaintext highlighter-rouge">use-flag-icons</code> to <strong>yes</strong>. In order to show the language flags, it is necessary install the dependency <code class="language-plaintext highlighter-rouge">flag-icon-css</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>npm <span class="nb">install </span>flag-icon-css
 </code></pre></div></div>
 <p>And import the flag icon styles in your application&#8217;s <strong>angular.json</strong> file:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s2">"node_modules/flag-icon-css/css/flag-icon.css"</span>
@@ -1049,7 +1049,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 <h3 id="adding-custom-content-to-the-toolbar">Adding custom content to the toolbar</h3>
 
-<p>If you want to add your own components to the layout toolbar you must use the <code class="highlighter-rouge">o-app-layout-header</code> component.</p>
+<p>If you want to add your own components to the layout toolbar you must use the <code class="language-plaintext highlighter-rouge">o-app-layout-header</code> component.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-app-layout</span> <span class="na">opened-sidenav-image=</span><span class="s">"assets/images/sidenav-opened.png"</span>
   <span class="na">closed-sidenav-image=</span><span class="s">"assets/images/sidenav-closed.png"</span>
@@ -1064,7 +1064,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 <h2 id="images">Images</h2>
 
-<p>You can set provide images to be shown in the side navigator using the attributes <code class="highlighter-rouge">opened-sidenav-image</code> and <code class="highlighter-rouge">closed-sidenav-image</code>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>You can set provide images to be shown in the side navigator using the attributes <code class="language-plaintext highlighter-rouge">opened-sidenav-image</code> and <code class="language-plaintext highlighter-rouge">closed-sidenav-image</code>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/app-layout/app_layout_images.png" alt="App layout component images" /></p>
 
@@ -1885,7 +1885,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -1948,7 +1948,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

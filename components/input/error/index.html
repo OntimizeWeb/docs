@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -909,7 +909,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -984,13 +984,13 @@
   
 
   
-<p>Using the <code class="highlighter-rouge">o-error</code> component allows to define multiple errors messages associated to its parent <code class="highlighter-rouge">o-validator</code> component.</p>
+<p>Using the <code class="language-plaintext highlighter-rouge">o-error</code> component allows to define multiple errors messages associated to its parent <code class="language-plaintext highlighter-rouge">o-validator</code> component.</p>
 
 <h3 class="grey-color">Example</h3>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
   <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-validator</span> <span class="err">[</span><span class="na">validator-function</span><span class="err">]="</span><span class="na">aValidator</span><span class="err">"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;o-validator</span> <span class="na">[validator-function]=</span><span class="s">"aValidator"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;o-error</span> <span class="na">name=</span><span class="s">"requiredLowercaseA"</span> <span class="na">text=</span><span class="s">"Must contain a lowercase 'a'"</span><span class="nt">&gt;&lt;/o-error&gt;</span>
       <span class="nt">&lt;o-error</span> <span class="na">name=</span><span class="s">"requiredUppercaseA"</span> <span class="na">text=</span><span class="s">"Must contain a uppercase 'A'"</span><span class="nt">&gt;&lt;/o-error&gt;</span>
     <span class="nt">&lt;/o-validator&gt;</span>
@@ -999,15 +999,15 @@
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">...</span>
 
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">ValidationErrors</span><span class="p">,</span> <span class="nx">FormControl</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/forms'</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">ValidationErrors</span><span class="p">,</span> <span class="nx">FormControl</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="nx">aValidator</span><span class="p">(</span><span class="nx">control</span><span class="p">:</span> <span class="nx">FormControl</span><span class="p">):</span> <span class="nx">ValidationErrors</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{};</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">result</span><span class="p">[</span><span class="s1">'requiredLowercaseA'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span><span class="p">[</span><span class="dl">'</span><span class="s1">requiredLowercaseA</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">result</span><span class="p">[</span><span class="s1">'requiredUppercaseA'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span><span class="p">[</span><span class="dl">'</span><span class="s1">requiredUppercaseA</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
   <span class="p">}</span>
@@ -1203,7 +1203,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -1266,7 +1266,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

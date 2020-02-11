@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -818,7 +818,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -905,16 +905,16 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-list-picker</code> component is used in <a href="https://ontimizeweb.github.io/docs/components/form/">forms</a> for getting or displaying an option between multiple input submitted by the user.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-list-picker</code> component is used in <a href="https://ontimizeweb.github.io/docs/components/form/">forms</a> for getting or displaying an option between multiple input submitted by the user.</p>
 
-<p>The list picker component is automatically registered on its parent <code class="highlighter-rouge">o-form</code>, which provides the value for the list picker programatically. Its value can be also set manually via the <code class="highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>The list picker component is automatically registered on its parent <code class="language-plaintext highlighter-rouge">o-form</code>, which provides the value for the list picker programatically. Its value can be also set manually via the <code class="language-plaintext highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <p>This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the optoins on the list and each element of the data array must be an object with at least one key/value pair.</p>
 
 <p>The data array can be provided in two ways:</p>
 <ul>
-  <li>Provide an array of objects to the <code class="highlighter-rouge">static-data</code> attribute (see the <a href="#basic-example">example</a> below).</li>
-  <li>Configure the component to query the data from a service. Using <code class="highlighter-rouge">service</code> and <code class="highlighter-rouge">entity</code> attributes.</li>
+  <li>Provide an array of objects to the <code class="language-plaintext highlighter-rouge">static-data</code> attribute (see the <a href="#basic-example">example</a> below).</li>
+  <li>Configure the component to query the data from a service. Using <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code> attributes.</li>
 </ul>
 
 <p>Once some data has been provided to the component, the user can see the option list by clicking in the search button of the component. Choosing an option, the list will close up and the selected value will be set to the input.</p>
@@ -923,18 +923,18 @@
 <p><img src="https://ontimizeweb.github.io/docs/images/components/inputs/o-list-picker.png" alt="List picker component" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"country"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">data=</span><span class="s">"Spain"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getStaticData</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"name"</span> <span class="na">columns=</span><span class="s">"id;name"</span> <span class="na">visible-columns=</span><span class="s">"name"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-list-picker&gt;</span>
-    <span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"country"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">data=</span><span class="s">"Spain"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getStaticData</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"name"</span> <span class="na">columns=</span><span class="s">"id;name"</span> <span class="na">visible-columns=</span><span class="s">"name"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-list-picker&gt;</span>
+    <span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"country"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">data=</span><span class="s">"Spain"</span> <span class="na">[static-data]=</span><span class="s">"getStaticData()"</span> <span class="na">value-column=</span><span class="s">"name"</span> <span class="na">columns=</span><span class="s">"id;name"</span> <span class="na">visible-columns=</span><span class="s">"name"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-list-picker&gt;</span>
+    <span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"country"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">data=</span><span class="s">"Spain"</span> <span class="na">[static-data]=</span><span class="s">"getStaticData()"</span> <span class="na">value-column=</span><span class="s">"name"</span> <span class="na">columns=</span><span class="s">"id;name"</span> <span class="na">visible-columns=</span><span class="s">"name"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-list-picker&gt;</span>
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 <p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/inputs/listpicker" target="_blank">OntimizeWeb playground</a>.</p>
 
 <h2 id="validation">Validation</h2>
-<p>The <code class="highlighter-rouge">o-list-picker</code> shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value selected.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-list-picker</code> shows automatically an error message when the <code class="language-plaintext highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value selected.</p>
 
 <h2 id="locker-new">Locker <span class="menuitem-badge">new<span></span></span></h2>
 
-<p>OntimizeWeb offers the <code class="highlighter-rouge">oLocker</code> directive to the <code class="highlighter-rouge">o-list-picker</code> that should to lock the component when you configure the component to query the data from a service.</p>
+<p>OntimizeWeb offers the <code class="language-plaintext highlighter-rouge">oLocker</code> directive to the <code class="language-plaintext highlighter-rouge">o-list-picker</code> that should to lock the component when you configure the component to query the data from a service.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"CUSTOMERID LOAD"</span> <span class="na">oLocker</span> <span class="na">oLockerMode=</span><span class="s">"load"</span> <span class="na">oLockerDelay=</span><span class="s">"1500"</span>
     <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">columns=</span><span class="s">"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"</span>
@@ -948,7 +948,7 @@
 </code></pre></div></div>
 <p><img src="https://ontimizeweb.github.io/docs/images/components/inputs/listPicker-oLocker.gif" alt="OLocker in  Combo component" class="comp-example-img" /></p>
 
-<p>Note you can configure the mode of the locker, there are two modes to block, <em>disable</em> and <em>load</em> mode. The mode by default is <em>load</em>. You can configure  delay service start with <code class="highlighter-rouge">oLockerDelay</code> attribute, by default this value is the <em>250ms</em>.</p>
+<p>Note you can configure the mode of the locker, there are two modes to block, <em>disable</em> and <em>load</em> mode. The mode by default is <em>load</em>. You can configure  delay service start with <code class="language-plaintext highlighter-rouge">oLockerDelay</code> attribute, by default this value is the <em>250ms</em>.</p>
 
 </div>
 
@@ -1948,7 +1948,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -2011,7 +2011,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

@@ -836,29 +836,29 @@
 
 <h2 id="configuration">Configuration</h2>
 
-<p>For enabling this behaviour you have to add the <code class="highlighter-rouge">remoteConfig</code> object to the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#application-configuration-file" target="_blank">application configuration</a> like in the example below.</p>
+<p>For enabling this behaviour you have to add the <code class="language-plaintext highlighter-rouge">remoteConfig</code> object to the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#application-configuration-file" target="_blank">application configuration</a> like in the example below.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">CONFIG</span><span class="p">:</span> <span class="nx">Config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="p">...</span>
   <span class="na">remoteConfig</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* Optional */</span>
-    <span class="na">path</span><span class="p">:</span> <span class="s1">'/configPath'</span><span class="p">,</span>
-    <span class="na">endpoint</span><span class="p">:</span> <span class="s1">'https://try.ontimize.com/QSAllComponents-jee/services/rest'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/configPath</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">endpoint</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://try.ontimize.com/QSAllComponents-jee/services/rest</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
     <span class="na">timeout</span><span class="p">:</span> <span class="mi">60000</span><span class="p">,</span> <span class="cm">/* Optional */</span>
     <span class="na">columns</span><span class="p">:</span> <span class="p">{</span> <span class="cm">/* Optional */</span>
-      <span class="na">user</span><span class="p">:</span> <span class="s1">'USER_'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
-      <span class="na">appId</span><span class="p">:</span> <span class="s1">'APP_UUID'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
-      <span class="na">configuration</span><span class="p">:</span> <span class="s1">'CONFIGURATION'</span> <span class="cm">/* Optional */</span>
+      <span class="na">user</span><span class="p">:</span> <span class="dl">'</span><span class="s1">USER_</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+      <span class="na">appId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">APP_UUID</span><span class="dl">'</span><span class="p">,</span> <span class="cm">/* Optional */</span>
+      <span class="na">configuration</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CONFIGURATION</span><span class="dl">'</span> <span class="cm">/* Optional */</span>
     <span class="p">}</span>
   <span class="p">},</span>
   <span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">remoteConfig</code> enables the capability of loading and storing the application configuration in a remote server. It is also used to configure this behaviour. The only mandatory attribute is the <code class="highlighter-rouge">path</code>, the others can be omitted.</p>
+<p>The <code class="language-plaintext highlighter-rouge">remoteConfig</code> enables the capability of loading and storing the application configuration in a remote server. It is also used to configure this behaviour. The only mandatory attribute is the <code class="language-plaintext highlighter-rouge">path</code>, the others can be omitted.</p>
 
 <ul>
   <li><strong>path:</strong> remote configuration path.</li>
-  <li><strong>endpoint:</strong> the base path of the URL used for the remote configuration requests. Its default value is the same as the <code class="highlighter-rouge">apiEndpoint</code>.</li>
+  <li><strong>endpoint:</strong> the base path of the URL used for the remote configuration requests. Its default value is the same as the <code class="language-plaintext highlighter-rouge">apiEndpoint</code>.</li>
   <li><strong>timeout:</strong> the timeout for the remote configuration requests.</li>
   <li><strong>columns:</strong> the remote column names.
     <ul>
@@ -875,11 +875,11 @@
 
 <h3 id="retrieve-the-user-information">Retrieve the user information</h3>
 
-<p>For retrieving the user configuration from your server you must send a <code class="highlighter-rouge">GET</code> request to an URL like the following: <em>https://{ endpoint }{ path }/search</em>.
+<p>For retrieving the user configuration from your server you must send a <code class="language-plaintext highlighter-rouge">GET</code> request to an URL like the following: <em>https://{ endpoint }{ path }/search</em>.
 You must also send as argument an object that indicates the user and the application you want to retrieve the configuration for.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">"/search"</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">,</span> <span class="n">consumes</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
-<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">EntityResult</span><span class="o">&gt;</span> <span class="nf">getUserConfiguration</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Map</span><span class="o">&lt;?,</span> <span class="o">?&gt;</span> <span class="n">filter</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">path</span> <span class="o">=</span> <span class="s">"/search"</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="nc">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">,</span> <span class="n">consumes</span> <span class="o">=</span> <span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">EntityResult</span><span class="o">&gt;</span> <span class="nf">getUserConfiguration</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="nc">Map</span><span class="o">&lt;?,</span> <span class="o">?&gt;</span> <span class="n">filter</span><span class="o">)</span> <span class="o">{</span>
 
   <span class="o">...</span>
 
@@ -888,11 +888,11 @@ You must also send as argument an object that indicates the user and the applica
 
 <h3 id="store-the-user-information">Store the user information</h3>
 
-<p>For storing the user configuration in your server you must send a <code class="highlighter-rouge">PUT</code> request to an URL like the following: <em>https://{ endpoint }{ path }</em>.
+<p>For storing the user configuration in your server you must send a <code class="language-plaintext highlighter-rouge">PUT</code> request to an URL like the following: <em>https://{ endpoint }{ path }</em>.
 You must also send as argument an object with the data to store and the user and the application identifier.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">PUT</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
-<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">EntityResult</span><span class="o">&gt;</span> <span class="nf">storeUserConfiguration</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">Object</span> <span class="n">storeParameter</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">method</span> <span class="o">=</span> <span class="nc">RequestMethod</span><span class="o">.</span><span class="na">PUT</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">EntityResult</span><span class="o">&gt;</span> <span class="nf">storeUserConfiguration</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="nc">Object</span> <span class="n">storeParameter</span><span class="o">)</span> <span class="o">{</span>
 
   <span class="o">...</span>
 
@@ -954,7 +954,7 @@ You must also send as argument an object with the data to store and the user and
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

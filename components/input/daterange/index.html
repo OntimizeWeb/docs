@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -798,7 +798,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -891,22 +891,22 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-daterange-input</code> component is used in <a href="https://ontimizeweb.github.io/docs/components/form/">forms</a> for getting or displaying start and end date values as a range from a calendar pop-up or by entering the value directly in an HTML input text box.
+<p>The <code class="language-plaintext highlighter-rouge">o-daterange-input</code> component is used in <a href="https://ontimizeweb.github.io/docs/components/form/">forms</a> for getting or displaying start and end date values as a range from a calendar pop-up or by entering the value directly in an HTML input text box.
 .</p>
 
-<p>The date range input is automatically registered on its parent <code class="highlighter-rouge">o-form</code>, which provides the value for the input programatically. Its value can be also set manually via the <code class="highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>The date range input is automatically registered on its parent <code class="language-plaintext highlighter-rouge">o-form</code>, which provides the value for the input programatically. Its value can be also set manually via the <code class="language-plaintext highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <h2 id="basic-example">Basic example</h2>
 <p><img src="https://ontimizeweb.github.io/docs/images/components/inputs/o-daterange-input.png" alt="Daterange input component" class="comp-example-img" width="65%" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span> <span class="na">layout-direction=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange1"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-daterange-input&gt;</span>
-   <span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange2"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">read-only=</span><span class="s">"no"</span>  <span class="na">required=</span><span class="s">"yes"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-daterange-input&gt;</span>  
-   <span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange3"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-daterange-input&gt;</span>
+   <span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange1"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-daterange-input&gt;</span>
+   <span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange2"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">read-only=</span><span class="s">"no"</span>  <span class="na">required=</span><span class="s">"yes"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span><span class="nt">&gt;&lt;/o-daterange-input&gt;</span>  
+   <span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange3"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span><span class="nt">&gt;&lt;/o-daterange-input&gt;</span>
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export class InputDateRangeComponent {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export class InputDateRangeComponent {
 
   public selected = {};
 
@@ -927,21 +927,21 @@
 
 <h2 id="disable-the-text-input">Disable the text input</h2>
 
-<p>It is possible to disable the date range input by adding the <code class="highlighter-rouge">text-input-enabled</code> property  is set to “no”. By default, the value is true .</p>
+<p>It is possible to disable the date range input by adding the <code class="language-plaintext highlighter-rouge">text-input-enabled</code> property  is set to “no”. By default, the value is true .</p>
 
 <h2 id="touch-ui-mode">Touch UI mode</h2>
 
-<p>The <code class="highlighter-rouge">o-daterange-input</code> normally opens as a popup under the input, however the component has a <code class="highlighter-rouge">touch-ui</code> property that can be set to <code class="highlighter-rouge">true</code> where the calendar opens in a large dialog.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-daterange-input</code> normally opens as a popup under the input, however the component has a <code class="language-plaintext highlighter-rouge">touch-ui</code> property that can be set to <code class="language-plaintext highlighter-rouge">true</code> where the calendar opens in a large dialog.</p>
 
 <h2 id="customizing-the-parse-and-display-formats">Customizing the parse and display formats</h2>
 
-<p>The <code class="highlighter-rouge">o-daterange-input</code> supports date Moments formats setting, all you have to do is to set the format via <code class="highlighter-rouge">format</code> input. The format MomentJS by default is <em>L</em> (see <em>Localized formats</em> in <a href="http://momentjs.com/docs/#/displaying/format" target="_blank">MomentJS format</a>)</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-daterange-input</code> supports date Moments formats setting, all you have to do is to set the format via <code class="language-plaintext highlighter-rouge">format</code> input. The format MomentJS by default is <em>L</em> (see <em>Localized formats</em> in <a href="http://momentjs.com/docs/#/displaying/format" target="_blank">MomentJS format</a>)</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/components/inputs/o-daterange-format.png" alt="Format int daterang input component" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">layout-padding</span><span class="nt">&gt;</span>
   <span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">read-only=</span><span class="s">"no"</span>
-    <span class="na">required=</span><span class="s">"yes"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">format=</span><span class="s">"LL"</span> <span class="na">separator=</span><span class="s">" to "</span> <span class="na">text-input-enabled=</span><span class="s">"no"</span><span class="nt">&gt;</span>
+    <span class="na">required=</span><span class="s">"yes"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">format=</span><span class="s">"LL"</span> <span class="na">separator=</span><span class="s">" to "</span> <span class="na">text-input-enabled=</span><span class="s">"no"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/o-daterange-input&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
@@ -952,8 +952,8 @@
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">selected</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">startDate</span><span class="p">:</span> <span class="nx">moment</span><span class="p">(</span><span class="s1">'2019-05-15T00:00Z'</span><span class="p">),</span>
-      <span class="na">endDate</span><span class="p">:</span> <span class="nx">moment</span><span class="p">(</span><span class="s1">'2019-05-20T00:00Z'</span><span class="p">)</span>
+      <span class="na">startDate</span><span class="p">:</span> <span class="nx">moment</span><span class="p">(</span><span class="dl">'</span><span class="s1">2019-05-15T00:00Z</span><span class="dl">'</span><span class="p">),</span>
+      <span class="na">endDate</span><span class="p">:</span> <span class="nx">moment</span><span class="p">(</span><span class="dl">'</span><span class="s1">2019-05-20T00:00Z</span><span class="dl">'</span><span class="p">)</span>
     <span class="p">};</span>
   <span class="p">}</span>
 
@@ -970,14 +970,14 @@
 <p>Specifying startKey and endKey would have different model.  For example, the model in the example below would be <em>{start:Date, endDate:Date}</em>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">startKey=</span><span class="s">"start"</span> <span class="na">endKey=</span><span class="s">"end"</span>
-  <span class="na">required=</span><span class="s">"yes"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">format=</span><span class="s">"LL"</span> <span class="na">separator=</span><span class="s">" to "</span>  <span class="na">text-input-enabled=</span><span class="s">"no"</span><span class="nt">&gt;</span>
+  <span class="na">required=</span><span class="s">"yes"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">format=</span><span class="s">"LL"</span> <span class="na">separator=</span><span class="s">" to "</span>  <span class="na">text-input-enabled=</span><span class="s">"no"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/o-daterange-input&gt;</span> 
 
 </code></pre></div></div>
 
 <h2 id="ranges-predefined">Ranges predefined</h2>
 
-<p>The <code class="highlighter-rouge">o-daterange-input</code> have available 7 predefined date ranges that you can select from. For displaying you must set <code class="highlighter-rouge">show-ranges="true"</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-daterange-input</code> have available 7 predefined date ranges that you can select from. For displaying you must set <code class="language-plaintext highlighter-rouge">show-ranges="true"</code>.</p>
 <ul>
   <li>Today</li>
   <li>Yesterday</li>
@@ -989,22 +989,22 @@
 <p><img src="https://ontimizeweb.github.io/docs/images/components/inputs/o-daterange-touchui.png" alt="Touch UI in date range" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">read-only=</span><span class="s">"no"</span>  <span class="na">required=</span><span class="s">"yes"</span> 
-<span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">show-ranges=</span><span class="s">"true"</span> <span class="na">separator=</span><span class="s">" to "</span> <span class="na">touch-ui=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-daterange-input&gt;</span>
+<span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">show-ranges=</span><span class="s">"true"</span> <span class="na">separator=</span><span class="s">" to "</span> <span class="na">touch-ui=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-daterange-input&gt;</span>
 
 </code></pre></div></div>
 
 <h2 id="validation">Validation</h2>
-<p>The <code class="highlighter-rouge">o-daterange-input</code> shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to “yes” and there is no value on the input.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-daterange-input</code> shows automatically an error message when the <code class="language-plaintext highlighter-rouge">required</code> attribute is set to “yes” and there is no value on the input.</p>
 
-<p>The <code class="highlighter-rouge">min</code> and <code class="highlighter-rouge">max</code> properties will disable all dates on the calendar popup before or after the respective values and prevent the user from advancing the calendar past the month or year (depending on current view) containing the min or max date.</p>
+<p>The <code class="language-plaintext highlighter-rouge">min</code> and <code class="language-plaintext highlighter-rouge">max</code> properties will disable all dates on the calendar popup before or after the respective values and prevent the user from advancing the calendar past the month or year (depending on current view) containing the min or max date.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-daterange-input</span> <span class="na">attr=</span><span class="s">"daterange"</span> <span class="na">label=</span><span class="s">"Date range"</span> <span class="na">read-only=</span><span class="s">"no"</span>
-        <span class="na">required=</span><span class="s">"yes"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">min=</span><span class="s">"15/05/2019"</span> <span class="na">max=</span><span class="s">"20/06/2019"</span>
+        <span class="na">required=</span><span class="s">"yes"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">min=</span><span class="s">"15/05/2019"</span> <span class="na">max=</span><span class="s">"20/06/2019"</span>
         <span class="na">format=</span><span class="s">"DD/MM/YYYY"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/o-daterange-input&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export class InputDateRangeComponent {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export class InputDateRangeComponent {
 
   public selected = {};
 
@@ -1713,7 +1713,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -1776,7 +1776,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

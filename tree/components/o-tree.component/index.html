@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -423,7 +423,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -513,16 +513,16 @@
 </aside>
 
 <h2 id="introduction">Introduction</h2>
-<p>The <code class="highlighter-rouge">o-tree</code> component allows to show data with a tree structure.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-tree</code> component allows to show data with a tree structure.</p>
 
-<p>If the component is <em>inside a form</em>, the <code class="highlighter-rouge">attr</code> property is required for registry the tree in the form components.</p>
+<p>If the component is <em>inside a form</em>, the <code class="language-plaintext highlighter-rouge">attr</code> property is required for registry the tree in the form components.</p>
 
-<p>This component extends the <code class="highlighter-rouge">OServiceBaseComponent</code> class, so you can bind the data origin to a remote server or to local data, as seen <a href="https://ontimizeweb.github.io/docs/components/service/service-base/" target="_blank">here</a>. You also must define which <code class="highlighter-rouge">columns</code> to retrieve.</p>
+<p>This component extends the <code class="language-plaintext highlighter-rouge">OServiceBaseComponent</code> class, so you can bind the data origin to a remote server or to local data, as seen <a href="https://ontimizeweb.github.io/docs/components/service/service-base/" target="_blank">here</a>. You also must define which <code class="language-plaintext highlighter-rouge">columns</code> to retrieve.</p>
 
 <h2 id="nodes-text">Nodes text</h2>
-<p>You have to specify which text will be displayed in each tree node using the <code class="highlighter-rouge">description-columns</code> input. This columns are a subset of the <code class="highlighter-rouge">columns</code> and its content will be separed using the string specified in the <code class="highlighter-rouge">separator</code> input.</p>
+<p>You have to specify which text will be displayed in each tree node using the <code class="language-plaintext highlighter-rouge">description-columns</code> input. This columns are a subset of the <code class="language-plaintext highlighter-rouge">columns</code> and its content will be separed using the string specified in the <code class="language-plaintext highlighter-rouge">separator</code> input.</p>
 
-<p>The <code class="highlighter-rouge">o-tree</code> will show a base node if the <code class="highlighter-rouge">show-root</code> input is set to a true value, that node text is setted using the <code class="highlighter-rouge">root-title</code> input.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-tree</code> will show a base node if the <code class="language-plaintext highlighter-rouge">show-root</code> input is set to a true value, that node text is setted using the <code class="language-plaintext highlighter-rouge">root-title</code> input.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -536,26 +536,26 @@
 
 <h2 id="quick-filter">Quick filter</h2>
 
-<p>This option is enabled by default, the filter is visible in the top right. You can disable it setting <code class="highlighter-rouge">quick-filter="no"</code>.</p>
+<p>This option is enabled by default, the filter is visible in the top right. You can disable it setting <code class="language-plaintext highlighter-rouge">quick-filter="no"</code>.</p>
 
-<p>You can configure which columns will be affected by the filtering setting the <code class="highlighter-rouge">quick-filter-columns</code> attribute, which contains the columns separated by &#8216;;&#8217;. By default it contains all the columns of the <code class="highlighter-rouge">columns</code> attribute.</p>
+<p>You can configure which columns will be affected by the filtering setting the <code class="language-plaintext highlighter-rouge">quick-filter-columns</code> attribute, which contains the columns separated by &#8216;;&#8217;. By default it contains all the columns of the <code class="language-plaintext highlighter-rouge">columns</code> attribute.</p>
 
-<p>You can also configure filtering to be case sensitive with <code class="highlighter-rouge">filter-case-sensitive="yes"</code>. By default, it&#8217;s disabled.</p>
+<p>You can also configure filtering to be case sensitive with <code class="language-plaintext highlighter-rouge">filter-case-sensitive="yes"</code>. By default, it&#8217;s disabled.</p>
 
 <h2 id="tree-nodes-navigation">Tree nodes navigation</h2>
 
-<p>Setting the <code class="highlighter-rouge">route</code> attribute in the <code class="highlighter-rouge">o-tree</code> and <code class="highlighter-rouge">o-tree-node</code> components allows to trigger the navigation to the route indicated in its value.</p>
+<p>Setting the <code class="language-plaintext highlighter-rouge">route</code> attribute in the <code class="language-plaintext highlighter-rouge">o-tree</code> and <code class="language-plaintext highlighter-rouge">o-tree-node</code> components allows to trigger the navigation to the route indicated in its value.</p>
 
-<p>You can define static routes or/and wildcards (that must be included in the <code class="highlighter-rouge">columns</code> attribute). For example:</p>
+<p>You can define static routes or/and wildcards (that must be included in the <code class="language-plaintext highlighter-rouge">columns</code> attribute). For example:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-tree</span> <span class="err">#</span><span class="na">treeview</span> <span class="na">fxFlex</span> <span class="na">root-title=</span><span class="s">"CUSTOMERS"</span> <span class="na">service-type=</span><span class="s">"DummyService"</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-tree</span> <span class="na">#treeview</span> <span class="na">fxFlex</span> <span class="na">root-title=</span><span class="s">"CUSTOMERS"</span> <span class="na">service-type=</span><span class="s">"DummyService"</span>
       <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span>
       <span class="na">columns=</span><span class="s">"CUSTOMERID;SURNAME;NAME"</span> <span class="na">description-columns=</span><span class="s">"SURNAME;NAME"</span>
       <span class="na">separator=</span><span class="s">", "</span> <span class="na">query-on-init=</span><span class="s">"true"</span> <span class="na">route=</span><span class="s">"customers/:CUSTOMERID"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/o-tree&gt;</span>
 </code></pre></div></div>
 
-<p>Clicking on a node of this tree will triger the navigation to the current route appending the static path <code class="highlighter-rouge">customers/</code> followed by the record &#8216;CUSTOMERID&#8217; value.</p>
+<p>Clicking on a node of this tree will triger the navigation to the current route appending the static path <code class="language-plaintext highlighter-rouge">customers/</code> followed by the record &#8216;CUSTOMERID&#8217; value.</p>
 
 <p>You can see this working <a href="https://try.imatia.com/ontimizeweb/tree/main/detail/" target="_blank">here</a>.</p>
 
@@ -794,7 +794,7 @@
             
             
   <td class="" o-component-default >
-    <p class="first"><p><code class="highlighter-rouge">columns</code> attribute value</p>
+    <p class="first"><p><code class="language-plaintext highlighter-rouge">columns</code> attribute value</p>
 </p>
     
   </td>
@@ -1314,7 +1314,7 @@
             
             
   <td class="" o-component-default >
-    <p class="first"><p><code class="highlighter-rouge">columns</code> attribute value</p>
+    <p class="first"><p><code class="language-plaintext highlighter-rouge">columns</code> attribute value</p>
 </p>
     
   </td>
@@ -1686,7 +1686,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Separation character between <code class="highlighter-rouge">description-columns</code> values</p>
+    <p class="first"><p>Separation character between <code class="language-plaintext highlighter-rouge">description-columns</code> values</p>
 </p>
     
   </td>
@@ -2104,7 +2104,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -2166,7 +2166,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

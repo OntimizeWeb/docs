@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -886,7 +886,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -972,21 +972,21 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">DialogService</code> service can be used to open modal dialogs.</p>
+<p>The <code class="language-plaintext highlighter-rouge">DialogService</code> service can be used to open modal dialogs.</p>
 
 <p>There are five types of dialog</p>
 <ul>
-  <li><em>Alert</em> : In this case the dialog open it with the <code class="highlighter-rouge">alert()</code> method.</li>
-  <li><em>Info</em> : In this case the dialog open it with the <code class="highlighter-rouge">info()</code> method.</li>
-  <li><em>Warning</em> : In this case the dialog open it with the <code class="highlighter-rouge">info()</code> method.</li>
-  <li><em>Error</em> : In this case the dialog open it with the <code class="highlighter-rouge">error()</code> method.</li>
-  <li><em>Confirm</em> : In this case the dialog open it with the <code class="highlighter-rouge">confirm()</code> method.</li>
+  <li><em>Alert</em> : In this case the dialog open it with the <code class="language-plaintext highlighter-rouge">alert()</code> method.</li>
+  <li><em>Info</em> : In this case the dialog open it with the <code class="language-plaintext highlighter-rouge">info()</code> method.</li>
+  <li><em>Warning</em> : In this case the dialog open it with the <code class="language-plaintext highlighter-rouge">info()</code> method.</li>
+  <li><em>Error</em> : In this case the dialog open it with the <code class="language-plaintext highlighter-rouge">error()</code> method.</li>
+  <li><em>Confirm</em> : In this case the dialog open it with the <code class="language-plaintext highlighter-rouge">confirm()</code> method.</li>
 </ul>
 
 <p>Check the methods of the DialogService in the <strong>API</strong> section of this page.</p>
 
 <h2 id="basic-example">Basic example</h2>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-button</span> <span class="na">attr=</span><span class="s">"info"</span> <span class="na">type=</span><span class="s">"RAISED"</span> <span class="na">label=</span><span class="s">"DIALOG.INFO_DIALOG"</span> <span class="na">layout-padding</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">showInfo</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-button&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-button</span> <span class="na">attr=</span><span class="s">"info"</span> <span class="na">type=</span><span class="s">"RAISED"</span> <span class="na">label=</span><span class="s">"DIALOG.INFO_DIALOG"</span> <span class="na">layout-padding</span> <span class="na">(click)=</span><span class="s">"showInfo($event)"</span><span class="nt">&gt;&lt;/o-button&gt;</span>
 </code></pre></div></div>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
     <span class="kd">constructor</span><span class="p">(</span>
@@ -994,8 +994,8 @@
     <span class="p">}</span>
     <span class="nx">showInfo</span><span class="p">(</span><span class="nx">evt</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">'Info dialog title'</span><span class="p">,</span>
-            <span class="s1">'This is an amazing "Information" dialog'</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="dl">'</span><span class="s1">Info dialog title</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">This is an amazing "Information" dialog</span><span class="dl">'</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
@@ -1010,11 +1010,11 @@
 
 <p>For example</p>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">config</span><span class="p">:</span> <span class="nx">ODialogConfig</span> <span class="o">=</span> <span class="p">{</span>
-          <span class="na">icon</span><span class="p">:</span> <span class="s1">'alarm'</span><span class="p">,</span>
-          <span class="na">okButtonText</span><span class="p">:</span> <span class="s1">'It rocks!'</span>
+          <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">alarm</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">okButtonText</span><span class="p">:</span> <span class="dl">'</span><span class="s1">It rocks!</span><span class="dl">'</span>
         <span class="p">};</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">'Info dialog title'</span><span class="p">,</span>
-          <span class="s1">'This is an amazing "Information" dialog'</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="dl">'</span><span class="s1">Info dialog title</span><span class="dl">'</span><span class="p">,</span>
+          <span class="dl">'</span><span class="s1">This is an amazing "Information" dialog</span><span class="dl">'</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/dialog/dialog_info_customize.png" alt="Customize dialog component" class="comp-example-img" /></p>
@@ -1423,7 +1423,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -1486,7 +1486,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

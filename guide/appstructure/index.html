@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -739,7 +739,7 @@
     
     <meta itemprop="description" content="How an Ontimize Web app is organized and what all of the files are for.">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -904,29 +904,29 @@
 <p>The noteworthy sections here are:</p>
 
 <ul>
-  <li>The <code class="highlighter-rouge">loader-wrapper</code> element. Which in addition with <em>loader.css</em> file will load a spinner loader, visible during application load and hidden by Ontimize Web when the application is loaded.</li>
-  <li>The <code class="highlighter-rouge">o-app</code> tag in the <code class="highlighter-rouge">body</code> which is where your app lives!</li>
+  <li>The <code class="language-plaintext highlighter-rouge">loader-wrapper</code> element. Which in addition with <em>loader.css</em> file will load a spinner loader, visible during application load and hidden by Ontimize Web when the application is loaded.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">o-app</code> tag in the <code class="language-plaintext highlighter-rouge">body</code> which is where your app lives!</li>
 </ul>
 
 <h2 id="application-module">Application module</h2>
 
-<p>Angular apps are formed by blocks of functionality that are called <a href="https://angular.io/docs/ts/latest/guide/ngmodule.html" target="_blank">modules</a>. Ontimize Web apps keep this characteristic and every application has at least one module: the root module, which is named <code class="highlighter-rouge">AppModule</code> by convention.</p>
+<p>Angular apps are formed by blocks of functionality that are called <a href="https://angular.io/docs/ts/latest/guide/ngmodule.html" target="_blank">modules</a>. Ontimize Web apps keep this characteristic and every application has at least one module: the root module, which is named <code class="language-plaintext highlighter-rouge">AppModule</code> by convention.</p>
 
 <p>The root module definition is placen in the file <em>app/app.module.ts</em> and contains the following content:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">APP_INITIALIZER</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">NgModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">APP_INITIALIZER</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span>
   <span class="nx">APP_CONFIG</span><span class="p">,</span>
   <span class="nx">ONTIMIZE_MODULES</span><span class="p">,</span>
   <span class="nx">ONTIMIZE_PROVIDERS</span><span class="p">,</span>
   <span class="nx">OntimizeWebModule</span>
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">CONFIG</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./app.config'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./app.component'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">AppRoutingModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./app-routing.module'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CONFIG</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app.config</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AppComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app.component</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AppRoutingModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app-routing.module</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// Define custom providers if needed</span>
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">customProviders</span><span class="p">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="p">[</span>
@@ -953,13 +953,13 @@
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">NgModule</code> decorator uses the following metadata:</p>
+<p>The <code class="language-plaintext highlighter-rouge">NgModule</code> decorator uses the following metadata:</p>
 
 <ul>
-  <li><strong>imports:</strong> An array of modules that you want to use in your application. <code class="highlighter-rouge">ONTIMIZE_MODULES</code> includes standard Angular Modules (<code class="highlighter-rouge">HttpLoader</code>, <code class="highlighter-rouge">Http</code> and <code class="highlighter-rouge">TranslateHttpLoader</code>).</li>
+  <li><strong>imports:</strong> An array of modules that you want to use in your application. <code class="language-plaintext highlighter-rouge">ONTIMIZE_MODULES</code> includes standard Angular Modules (<code class="language-plaintext highlighter-rouge">HttpLoader</code>, <code class="language-plaintext highlighter-rouge">Http</code> and <code class="language-plaintext highlighter-rouge">TranslateHttpLoader</code>).</li>
   <li><strong>declarations:</strong> Specifies a list of directives/pipes that belong to this module.</li>
   <li><strong>boostrap:</strong> Defines the components that should be bootstrapped when this module is bootstrapped.</li>
-  <li><strong>providers:</strong> Define the set of injectable objects that are available in the injector of this module. You will include here all the services that you want to make available module-wide. Use the variable <code class="highlighter-rouge">customProviders</code> for including your application providers.</li>
+  <li><strong>providers:</strong> Define the set of injectable objects that are available in the injector of this module. You will include here all the services that you want to make available module-wide. Use the variable <code class="language-plaintext highlighter-rouge">customProviders</code> for including your application providers.</li>
 </ul>
 
 <p>The noteworthy variables here are:</p>
@@ -985,11 +985,11 @@
 
 <p>The file responsible for starting up the app is <em>app/main.ts</em>, with the content:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">enableProdMode</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">platformBrowserDynamic</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/platform-browser-dynamic'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">AppModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./app/app.module'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">environment</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./environments/environment'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">ontimizePostBootstrap</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">enableProdMode</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">platformBrowserDynamic</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/platform-browser-dynamic</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">AppModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app/app.module</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">environment</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./environments/environment</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ontimizePostBootstrap</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">environment</span><span class="p">.</span><span class="nx">production</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">enableProdMode</span><span class="p">();</span>
@@ -1012,7 +1012,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -1075,7 +1075,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

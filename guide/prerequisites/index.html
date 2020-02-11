@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+
+
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 
 <meta charset="utf-8">
@@ -842,14 +843,14 @@ C:<span class="se">\&gt;</span>npm <span class="nt">-v</span>
 <p>You need to have installed <a href="https://cli.angular.io/" target="_blank">Angular CLI</a> to build applications and to generate components and modules.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Installing angular CLI package globally</span>
-npm install <span class="nt">-g</span> @angular/cli@latest
+npm <span class="nb">install</span> <span class="nt">-g</span> @angular/cli@latest
 </code></pre></div></div>
 
 <p><em>Note</em>: ‘<em>ontimize-web-ngx@2.0.0</em>’ is using ‘<em>@angular/cli@1.3.2’</em></p>
 
 <h2 id="python">Python</h2>
 
-<p>You need to have Python installed (<code class="highlighter-rouge">v2.7</code> recommended, <code class="highlighter-rouge">v3.x.x</code> is <strong><em>not</em></strong> supported). Download the installer <a href="https://www.python.org/downloads/" target="_blank">here</a> according your operating system.</p>
+<p>You need to have Python installed (<code class="language-plaintext highlighter-rouge">v2.7</code> recommended, <code class="language-plaintext highlighter-rouge">v3.x.x</code> is <strong><em>not</em></strong> supported). Download the installer <a href="https://www.python.org/downloads/" target="_blank">here</a> according your operating system.</p>
 
 <h2 id="git">Git</h2>
 
@@ -867,12 +868,12 @@ npm install <span class="nt">-g</span> @angular/cli@latest
 
 <h3 id="nodejs-addons">Node.js addons</h3>
 
-<p>Install dependencies needed by the Node.js native addon build tool (<code class="highlighter-rouge">node-gyp</code>):</p>
+<p>Install dependencies needed by the Node.js native addon build tool (<code class="language-plaintext highlighter-rouge">node-gyp</code>):</p>
 
 <p>More information <a href="https://github.com/nodejs/node-gyp" target="_blank">here</a>.
-You can install with <code class="highlighter-rouge">npm</code>:</p>
+You can install with <code class="language-plaintext highlighter-rouge">npm</code>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm install <span class="nt">-g</span> node-gyp
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> node-gyp
 </code></pre></div></div>
 
 <p>You will also need to install:</p>
@@ -881,8 +882,8 @@ You can install with <code class="highlighter-rouge">npm</code>:</p>
   <li>On Unix:
     <ul>
       <li>
-<code class="highlighter-rouge">python</code> (<code class="highlighter-rouge">v2.7</code> recommended, <code class="highlighter-rouge">v3.x.x</code> is <strong><em>not</em></strong> supported)</li>
-      <li><code class="highlighter-rouge">make</code></li>
+<code class="language-plaintext highlighter-rouge">python</code> (<code class="language-plaintext highlighter-rouge">v2.7</code> recommended, <code class="language-plaintext highlighter-rouge">v3.x.x</code> is <strong><em>not</em></strong> supported)</li>
+      <li><code class="language-plaintext highlighter-rouge">make</code></li>
       <li>A proper C/C++ compiler toolchain, like <a href="https://gcc.gnu.org" target="_blank">GCC</a>
 </li>
     </ul>
@@ -890,13 +891,13 @@ You can install with <code class="highlighter-rouge">npm</code>:</p>
   <li>On Mac OS X:
     <ul>
       <li>
-<code class="highlighter-rouge">python</code> (<code class="highlighter-rouge">v2.7</code> recommended, <code class="highlighter-rouge">v3.x.x</code> is <strong><em>not</em></strong> supported) (already installed on Mac OS X)</li>
+<code class="language-plaintext highlighter-rouge">python</code> (<code class="language-plaintext highlighter-rouge">v2.7</code> recommended, <code class="language-plaintext highlighter-rouge">v3.x.x</code> is <strong><em>not</em></strong> supported) (already installed on Mac OS X)</li>
       <li>
 <a href="https://developer.apple.com/xcode/download/" target="_blank">Xcode</a>
         <ul>
-          <li>You also need to install the <code class="highlighter-rouge">Command Line Tools</code> via Xcode. You can find this under the menu <code class="highlighter-rouge">Xcode -&gt; Preferences -&gt; Downloads</code>
+          <li>You also need to install the <code class="language-plaintext highlighter-rouge">Command Line Tools</code> via Xcode. You can find this under the menu <code class="language-plaintext highlighter-rouge">Xcode -&gt; Preferences -&gt; Downloads</code>
 </li>
-          <li>This step will install <code class="highlighter-rouge">gcc</code> and the related toolchain containing <code class="highlighter-rouge">make</code>
+          <li>This step will install <code class="language-plaintext highlighter-rouge">gcc</code> and the related toolchain containing <code class="language-plaintext highlighter-rouge">make</code>
 </li>
         </ul>
       </li>
@@ -904,7 +905,7 @@ You can install with <code class="highlighter-rouge">npm</code>:</p>
   </li>
   <li>On Windows:
     <ul>
-      <li>Option 1: Install all the required tools and configurations using Microsoft’s <a href="https://github.com/felixrieseberg/windows-build-tools" target="_blank">windows-build-tools</a> using <code class="highlighter-rouge">npm install --global --production windows-build-tools</code> from an elevated PowerShell or CMD.exe (run as Administrator).</li>
+      <li>Option 1: Install all the required tools and configurations using Microsoft’s <a href="https://github.com/felixrieseberg/windows-build-tools" target="_blank">windows-build-tools</a> using <code class="language-plaintext highlighter-rouge">npm install --global --production windows-build-tools</code> from an elevated PowerShell or CMD.exe (run as Administrator).</li>
       <li>Option 2: Install tools and configuration manually:
         <ul>
           <li>Visual C++ Build Environment:
@@ -918,11 +919,11 @@ You can install with <code class="highlighter-rouge">npm</code>:</p>
             </ul>
 
             <blockquote>
-              <p><img class="emoji" title=":bulb:" alt=":bulb:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20"> [Windows Vista / 7 only] requires <a href="http://www.microsoft.com/en-us/download/details.aspx?id=40773" target="_blank">.NET Framework 4.5.1</a></p>
+              <p><img class="emoji" title=":bulb:" alt=":bulb:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20"> [Windows Vista / 7 only] requires <a href="http://www.microsoft.com/en-us/download/details.aspx?id=40773" target="_blank">.NET Framework 4.5.1</a></p>
             </blockquote>
           </li>
-          <li>Install <a href="https://www.python.org/downloads/" target="_blank">Python 2.7</a> (<code class="highlighter-rouge">v3.x.x</code> is not supported), and run <code class="highlighter-rouge">npm config set python python2.7</code> (or see below for further instructions on specifying the proper Python version and path.)</li>
-          <li>Launch cmd, <code class="highlighter-rouge">npm config set msvs_version 2015</code>
+          <li>Install <a href="https://www.python.org/downloads/" target="_blank">Python 2.7</a> (<code class="language-plaintext highlighter-rouge">v3.x.x</code> is not supported), and run <code class="language-plaintext highlighter-rouge">npm config set python python2.7</code> (or see below for further instructions on specifying the proper Python version and path.)</li>
+          <li>Launch cmd, <code class="language-plaintext highlighter-rouge">npm config set msvs_version 2015</code>
 </li>
         </ul>
       </li>
@@ -933,13 +934,13 @@ You can install with <code class="highlighter-rouge">npm</code>:</p>
 </ul>
 
 <p>If you have multiple Python versions installed, you can specify which Python
-version <code class="highlighter-rouge">node-gyp</code> uses by setting the ‘–python’ variable:</p>
+version <code class="language-plaintext highlighter-rouge">node-gyp</code> uses by setting the ‘–python’ variable:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>node-gyp <span class="nt">--python</span> /path/to/python2.7
 </code></pre></div></div>
 
-<p>If <code class="highlighter-rouge">node-gyp</code> is called by way of <code class="highlighter-rouge">npm</code> <em>and</em> you have multiple versions of
-Python installed, then you can set <code class="highlighter-rouge">npm</code>’s ‘python’ config key to the appropriate
+<p>If <code class="language-plaintext highlighter-rouge">node-gyp</code> is called by way of <code class="language-plaintext highlighter-rouge">npm</code> <em>and</em> you have multiple versions of
+Python installed, then you can set <code class="language-plaintext highlighter-rouge">npm</code>’s ‘python’ config key to the appropriate
 value:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm config <span class="nb">set </span>python /path/to/executable/python2.7
@@ -1000,7 +1001,7 @@ value:</p>
   </ul>
 </div>
 
-<div class="page__footer-copyright">© 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

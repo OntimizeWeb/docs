@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -896,7 +896,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -985,49 +985,49 @@
   </nav>
 </aside>
 
-<p>The <strong>OntimizeWeb</strong> context menu is compound of the <code class="highlighter-rouge">o-context-menu</code> component and the <code class="highlighter-rouge">oContextMenuData</code> directive which is attached to a DOM element in which the context menu component appears.</p>
+<p>The <strong>OntimizeWeb</strong> context menu is compound of the <code class="language-plaintext highlighter-rouge">o-context-menu</code> component and the <code class="language-plaintext highlighter-rouge">oContextMenuData</code> directive which is attached to a DOM element in which the context menu component appears.</p>
 
-<p>The <code class="highlighter-rouge">o-context-menu</code> component supports the ability for nested menu. To do so, you have to define <a href="#context-menu-group" target="_blank"><code class="highlighter-rouge">o-context-menu-group</code></a> component</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-context-menu</code> component supports the ability for nested menu. To do so, you have to define <a href="#context-menu-group" target="_blank"><code class="language-plaintext highlighter-rouge">o-context-menu-group</code></a> component</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/context-menu/context-menu.png" alt="Context Menu" class="comp-example-img" /></p>
 
 <p>For including the context menu in your application follow the next steps:</p>
 
 <ul>
-  <li>Include the <code class="highlighter-rouge">o-context-menu</code> component in the template where the context menu will appear. Add as many <a href="#context-menu-item" target="_blank"><code class="highlighter-rouge">o-context-menu-item</code></a>, <a href="#context-menu-item" target="_blank"><code class="highlighter-rouge">o-context-menu-group</code></a> and <a href="#context-menu-item" target="_blank"><code class="highlighter-rouge">o-context-menu-separator</code></a> components to the context menu as you desire.</li>
-  <li>Add the <code class="highlighter-rouge">oContextMenu</code> directive to the DOM element where the context menu will appear upon user right click and pass a referente to the previously defined <code class="highlighter-rouge">o-context-menu</code> component.</li>
+  <li>Include the <code class="language-plaintext highlighter-rouge">o-context-menu</code> component in the template where the context menu will appear. Add as many <a href="#context-menu-item" target="_blank"><code class="language-plaintext highlighter-rouge">o-context-menu-item</code></a>, <a href="#context-menu-item" target="_blank"><code class="language-plaintext highlighter-rouge">o-context-menu-group</code></a> and <a href="#context-menu-item" target="_blank"><code class="language-plaintext highlighter-rouge">o-context-menu-separator</code></a> components to the context menu as you desire.</li>
+  <li>Add the <code class="language-plaintext highlighter-rouge">oContextMenu</code> directive to the DOM element where the context menu will appear upon user right click and pass a referente to the previously defined <code class="language-plaintext highlighter-rouge">o-context-menu</code> component.</li>
 </ul>
 
 <h2 id="context-menu-group">Context menu group</h2>
 
-<p>The <code class="highlighter-rouge">o-context-menu-group</code> component represents a group of the <code class="highlighter-rouge">o-context-menu-group</code>, <code class="highlighter-rouge">o-context-menu-item</code> and <code class="highlighter-rouge">o-context-menu-separator</code> in the context menu component.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-context-menu-group</code> component represents a group of the <code class="language-plaintext highlighter-rouge">o-context-menu-group</code>, <code class="language-plaintext highlighter-rouge">o-context-menu-item</code> and <code class="language-plaintext highlighter-rouge">o-context-menu-separator</code> in the context menu component.</p>
 
 <h2 id="context-menu-item">Context menu item</h2>
 
-<p>The <code class="highlighter-rouge">o-context-menu-item</code> component represents each item of the context menu component.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-context-menu-item</code> component represents each item of the context menu component.</p>
 
-<p>In some cases you may need context information when executing the action triggered by the <code class="highlighter-rouge">o-context-menu-item</code>, use the <a href="#context-menu-data"><code class="highlighter-rouge">oContextMenuData</code></a> directive in the <code class="highlighter-rouge">oContextMenu</code> host element in order emit it in the <code class="highlighter-rouge">execute</code> event of the context menu items. Check the <strong>API</strong> section of this page for more information.</p>
+<p>In some cases you may need context information when executing the action triggered by the <code class="language-plaintext highlighter-rouge">o-context-menu-item</code>, use the <a href="#context-menu-data"><code class="language-plaintext highlighter-rouge">oContextMenuData</code></a> directive in the <code class="language-plaintext highlighter-rouge">oContextMenu</code> host element in order emit it in the <code class="language-plaintext highlighter-rouge">execute</code> event of the context menu items. Check the <strong>API</strong> section of this page for more information.</p>
 
 <h2 id="context-menu-separator">Context menu separator</h2>
 
-<p>The <code class="highlighter-rouge">o-context-menu-separator</code> component represents each separator of the context menu component.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-context-menu-separator</code> component represents each separator of the context menu component.</p>
 
 <h2 id="context-menu-data">Context menu data</h2>
 
-<p>The <code class="highlighter-rouge">oContextMenuData</code> is an attribute of the <code class="highlighter-rouge">oContextMenu</code> directive is used for propagating context information when the context menu item is activated or for modifiying the menu item status when this depends on that context information.</p>
+<p>The <code class="language-plaintext highlighter-rouge">oContextMenuData</code> is an attribute of the <code class="language-plaintext highlighter-rouge">oContextMenu</code> directive is used for propagating context information when the context menu item is activated or for modifiying the menu item status when this depends on that context information.</p>
 
 <h2 id="example">Example</h2>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="err">[</span><span class="na">oContextMenu</span><span class="err">]="</span><span class="na">myContextMenu</span><span class="err">"</span> <span class="err">[</span><span class="na">oContextMenuData</span><span class="err">]="</span><span class="na">customData</span><span class="err">"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">[oContextMenu]=</span><span class="s">"myContextMenu"</span> <span class="na">[oContextMenuData]=</span><span class="s">"customData"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;span&gt;</span>Right click me!<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 
-<span class="nt">&lt;o-context-menu</span> <span class="err">#</span><span class="na">myOContextMenu</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"face"</span> <span class="na">label=</span><span class="s">"Item 1"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">('</span><span class="na">Item</span> <span class="na">1</span><span class="err">',</span> <span class="err">$</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
+<span class="nt">&lt;o-context-menu</span> <span class="na">#myOContextMenu</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"face"</span> <span class="na">label=</span><span class="s">"Item 1"</span> <span class="na">(execute)=</span><span class="s">"onExecute('Item 1', $event)"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
   <span class="nt">&lt;o-context-menu-group</span> <span class="na">label=</span><span class="s">"Group"</span> <span class="na">icon=</span><span class="s">"priority_high"</span> <span class="nt">&gt;</span>
-      <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"star_rate"</span> <span class="na">label=</span><span class="s">"Item 2"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">('</span><span class="na">Item</span> <span class="na">2</span><span class="err">',$</span><span class="na">event</span><span class="err">)"</span>  <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
+      <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"star_rate"</span> <span class="na">label=</span><span class="s">"Item 2"</span> <span class="na">(execute)=</span><span class="s">"onExecute('Item 2',$event)"</span>  <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
       <span class="nt">&lt;o-context-menu-separator&gt;&lt;/o-context-menu-separator&gt;</span>
-      <span class="nt">&lt;o-context-menu-item</span> <span class="na">label=</span><span class="s">"Item 3"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">('</span><span class="na">Item</span> <span class="na">3</span><span class="err">',$</span><span class="na">event</span><span class="err">)"</span> <span class="err">[</span><span class="na">visible</span><span class="err">]="</span><span class="na">getVisible</span><span class="err">"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
+      <span class="nt">&lt;o-context-menu-item</span> <span class="na">label=</span><span class="s">"Item 3"</span> <span class="na">(execute)=</span><span class="s">"onExecute('Item 3',$event)"</span> <span class="na">[visible]=</span><span class="s">"getVisible"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
   <span class="nt">&lt;/o-context-menu-group&gt;</span>
 <span class="nt">&lt;/o-context-menu&gt;</span>
 </code></pre></div></div>
@@ -1038,7 +1038,7 @@
     */</span>
   <span class="p">}</span>
 
-  <span class="nx">getVisible</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nx">any</span><span class="p">):</span> <span class="kr">boolean</span> <span class="p">{</span>
+  <span class="nx">getVisible</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nx">any</span><span class="p">):</span> <span class="nx">boolean</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -1137,7 +1137,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Data passed to the context menu. It will be available as an attribute of the functions passed to <code class="highlighter-rouge">enable</code> and <code class="highlighter-rouge">visible</code> attributes on the <code class="highlighter-rouge">o-context-menu-item</code> component and in the <code class="highlighter-rouge">execute</code> event</p>
+    <p class="first"><p>Data passed to the context menu. It will be available as an attribute of the functions passed to <code class="language-plaintext highlighter-rouge">enable</code> and <code class="language-plaintext highlighter-rouge">visible</code> attributes on the <code class="language-plaintext highlighter-rouge">o-context-menu-item</code> component and in the <code class="language-plaintext highlighter-rouge">execute</code> event</p>
 </p>
     
   </td>
@@ -2162,7 +2162,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -2225,7 +2225,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -376,7 +376,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -411,10 +411,10 @@
 <p><img src="https://ontimizeweb.github.io/docs/images/map/basic-map.png" alt="Basic map" class="comp-example-img" width="60%" /></p>
 
 <h2 id="draw-controls">Draw controls</h2>
-<p>The <code class="highlighter-rouge">o-map</code> allow to add the draw toolbar into the map with the <code class="highlighter-rouge">o-map-draw-controls</code> component into <code class="highlighter-rouge">o-map</code>. You can <em>catch</em> events with the <code class="highlighter-rouge">onDrawEvent</code> output.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-map</code> allow to add the draw toolbar into the map with the <code class="language-plaintext highlighter-rouge">o-map-draw-controls</code> component into <code class="language-plaintext highlighter-rouge">o-map</code>. You can <em>catch</em> events with the <code class="language-plaintext highlighter-rouge">onDrawEvent</code> output.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-map</span> <span class="err">#</span><span class="na">oMap</span> <span class="na">center=</span><span class="s">"42.940599, -7.120727"</span> <span class="na">zoom=</span><span class="s">"8"</span> <span class="na">min-zoom=</span><span class="s">"3"</span> <span class="na">max-zoom=</span><span class="s">"20"</span> <span class="na">zoom-control=</span><span class="s">"yes"</span> <span class="na">search-control=</span><span class="s">"no"</span>
-    <span class="na">layer-panel-visible=</span><span class="s">"no"</span> <span class="na">fxFlex</span> <span class="na">draw-control=</span><span class="s">"no"</span> <span class="err">(</span><span class="na">onDrawEvent</span><span class="err">)="</span><span class="na">addDrawEvent</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-map</span> <span class="na">#oMap</span> <span class="na">center=</span><span class="s">"42.940599, -7.120727"</span> <span class="na">zoom=</span><span class="s">"8"</span> <span class="na">min-zoom=</span><span class="s">"3"</span> <span class="na">max-zoom=</span><span class="s">"20"</span> <span class="na">zoom-control=</span><span class="s">"yes"</span> <span class="na">search-control=</span><span class="s">"no"</span>
+    <span class="na">layer-panel-visible=</span><span class="s">"no"</span> <span class="na">fxFlex</span> <span class="na">draw-control=</span><span class="s">"no"</span> <span class="na">(onDrawEvent)=</span><span class="s">"addDrawEvent($event)"</span><span class="nt">&gt;</span>
     <span class="c">&lt;!-- [crs-configuration]="objeto" --&gt;</span>
     <span class="nt">&lt;o-map-crs</span> <span class="na">crs=</span><span class="s">"EPSG4326"</span><span class="nt">&gt;&lt;/o-map-crs&gt;</span>
     <span class="nt">&lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt;</span>
@@ -425,9 +425,9 @@
 
 <h2 id="markers">Markers</h2>
 
-<p>The <code class="highlighter-rouge">o-map</code> allow to put a custom marker beside tile layers, you can easy create a marker adding <code class="highlighter-rouge">layer-type="marker"</code> attribute into <code class="highlighter-rouge">o-map-layer</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-map</code> allow to put a custom marker beside tile layers, you can easy create a marker adding <code class="language-plaintext highlighter-rouge">layer-type="marker"</code> attribute into <code class="language-plaintext highlighter-rouge">o-map-layer</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;o-map #oMapMarker center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;o-map #oMapMarker center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes"
     search-control="no" layer-panel-visible="no" fxFlex&gt;
     &lt;o-map-layer layer-type="marker" layer-id="office_marker" layer-center="42.240599;-8.720727" layer-menu-label="Office headquarters "
     layer-menu-label-secondary="Location of office headquarters"&gt;&lt;/o-map-layer&gt;
@@ -438,9 +438,9 @@
 
 <h2 id="using-geojson">Using GeoJSON</h2>
 
-<p>GeoJSON is becoming a very popular data format among many GIS technologies and services and the <code class="highlighter-rouge">o-map</code> allow to create and interact with map vectors created from GeoJSON objects adding <code class="highlighter-rouge">layer-type="geoJSON"</code> and configuring the service in <code class="highlighter-rouge">layer-service</code> attribute.</p>
+<p>GeoJSON is becoming a very popular data format among many GIS technologies and services and the <code class="language-plaintext highlighter-rouge">o-map</code> allow to create and interact with map vectors created from GeoJSON objects adding <code class="language-plaintext highlighter-rouge">layer-type="geoJSON"</code> and configuring the service in <code class="language-plaintext highlighter-rouge">layer-service</code> attribute.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;o-map #oMapGeoJSON center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;o-map #oMapGeoJSON center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes"
     search-control="yes" layer-panel-visible="no" fxFlex&gt;
     &lt;o-map-layer layer-type="geoJSON" layer-service="geojson-train-lines" layer-id="train-lines" layer-menu-label="Train lines"
     layer-menu-label-secondary="Spain's' train lines."&gt;&lt;/o-map-layer&gt;
@@ -451,7 +451,7 @@
 &lt;/o-map&gt;
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    /*configure provide*/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    /*configure provide*/
     { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] },
     { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] },
     { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } 
@@ -461,9 +461,9 @@
 
 <h2 id="integrating-wms">Integrating WMS</h2>
 
-<p>To use a WMS service in <code class="highlighter-rouge">o-map</code>, we can use <code class="highlighter-rouge">o-map-layer</code> component that provide the base WMS URL with <code class="highlighter-rouge">layer-base-url</code> and <code class="highlighter-rouge">layer-base-url</code> attribute specify whatever WMS options you need.</p>
+<p>To use a WMS service in <code class="language-plaintext highlighter-rouge">o-map</code>, we can use <code class="language-plaintext highlighter-rouge">o-map-layer</code> component that provide the base WMS URL with <code class="language-plaintext highlighter-rouge">layer-base-url</code> and <code class="language-plaintext highlighter-rouge">layer-base-url</code> attribute specify whatever WMS options you need.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;o-map #oMapWMS center="40.712784,-74.005941" zoom="10" min-zoom="6" max-zoom="20" base-layer-ids="BasemapAT.basemap"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;o-map #oMapWMS center="40.712784,-74.005941" zoom="10" min-zoom="6" max-zoom="20" base-layer-ids="BasemapAT.basemap"
       zoom-control="yes" search-control="yes" layer-panel-visible="no" fxFlex&gt;
       &lt;o-map-layer layer-type="WMS" layer-id="wms-example-airports" layer-base-url="https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}"
         [`layer-base-url`]="getWMSLayerOptions()" layer-menu-label="National Hydrography Dataset"
@@ -493,7 +493,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -555,7 +555,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 

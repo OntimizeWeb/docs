@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2019-11-04T06:05:47-05:00">
+  <meta property="article:published_time" content="2020-02-11T10:51:14-05:00">
 
 
 
@@ -892,7 +892,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 04, 2019">
+    <meta itemprop="datePublished" content="February 11, 2020">
     
 
     <div class="page__inner-wrap">
@@ -978,19 +978,19 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-breadcrumb</code> component is used as a navigational aid when using <strong>OntimizeWeb</strong> <a href="https://ontimizeweb.github.io/docs/components/form/" target="_blank">forms</a>. This component listens to route changes on the application and builds links to keep track of the locations the user is navigating through.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-breadcrumb</code> component is used as a navigational aid when using <strong>OntimizeWeb</strong> <a href="https://ontimizeweb.github.io/docs/components/form/" target="_blank">forms</a>. This component listens to route changes on the application and builds links to keep track of the locations the user is navigating through.</p>
 
 <h2 id="initialize">Initialize</h2>
 
-<p>For using the breadcrum component it is necessary to initialize the <code class="highlighter-rouge">NavigationService</code> in order to gather the required information for building the breadcrumb component. For initializing the Navigation Service, just call the method <code class="highlighter-rouge">initialize</code> on the constructor of your application main component like the example below.</p>
+<p>For using the breadcrum component it is necessary to initialize the <code class="language-plaintext highlighter-rouge">NavigationService</code> in order to gather the required information for building the breadcrumb component. For initializing the Navigation Service, just call the method <code class="language-plaintext highlighter-rouge">initialize</code> on the constructor of your application main component like the example below.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">NavigationService</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">NavigationService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-    <span class="na">selector</span><span class="p">:</span> <span class="s1">'o-app'</span><span class="p">,</span>
-    <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./app.component.html'</span><span class="p">,</span>
-    <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./app.component.scss'</span><span class="p">]</span>
+    <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">o-app</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./app.component.html</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./app.component.scss</span><span class="dl">'</span><span class="p">]</span>
   <span class="p">})</span>
   <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
 
@@ -1003,16 +1003,16 @@
 
 <h2 id="example">Example</h2>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-breadcrumb</span> <span class="err">[</span><span class="na">form</span><span class="err">]="</span><span class="na">myForm</span><span class="err">"</span> <span class="na">label-columns=</span><span class="s">"NAME;SURNAME"</span> <span class="na">separator=</span><span class="s">" "</span><span class="nt">&gt;&lt;/o-breadcrumb&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-breadcrumb</span> <span class="na">[form]=</span><span class="s">"myForm"</span> <span class="na">label-columns=</span><span class="s">"NAME;SURNAME"</span> <span class="na">separator=</span><span class="s">" "</span><span class="nt">&gt;&lt;/o-breadcrumb&gt;</span>
 
-    <span class="nt">&lt;o-form</span> <span class="err">#</span><span class="na">myForm</span> <span class="na">service=</span><span class="s">"myService"</span> <span class="na">entity=</span><span class="s">"myEntity"</span> <span class="na">keys=</span><span class="s">"USERID"</span> <span class="na">columns=</span><span class="s">"USERID;NAME;SURNAME;ADDRESS"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;o-form</span> <span class="na">#myForm</span> <span class="na">service=</span><span class="s">"myService"</span> <span class="na">entity=</span><span class="s">"myEntity"</span> <span class="na">keys=</span><span class="s">"USERID"</span> <span class="na">columns=</span><span class="s">"USERID;NAME;SURNAME;ADDRESS"</span><span class="nt">&gt;</span>
 
         ...
 
     <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 <blockquote>
-  <p><strong>Note</strong> If the <code class="highlighter-rouge">form</code> attibute is not present, the text shown in the breadcrumb label will be the corresponding route item for the component where the breadcrumb is placed.</p>
+  <p><strong>Note</strong> If the <code class="language-plaintext highlighter-rouge">form</code> attibute is not present, the text shown in the breadcrumb label will be the corresponding route item for the component where the breadcrumb is placed.</p>
 </blockquote>
 
 </div>
@@ -1300,7 +1300,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-04T06:05:47-05:00">November 04, 2019</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:51:14-05:00">February 11, 2020</time></p>
         
       </footer>
 
@@ -1363,7 +1363,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 
