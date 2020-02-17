@@ -67,6 +67,12 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show a button on the header menu for exporting data"
 },{
+  name: "show-configuration-button",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "no",
+  description: "Indicates whether or not to show a button on the header menu for configuration"
+},{
   name: "quick-filter-function",
   type: "(filter: string) => IFilterExpression | Object",
   default: "",

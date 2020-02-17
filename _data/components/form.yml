@@ -78,7 +78,7 @@ attributes: [
   name: "after-insert-mode",
   type: "new | detail",
   default: "",
-  required: "",
+  required: "no",
   description: "Shows reseted form after insert a new record (new) or shows the inserted record after (detail). This property works in substitution of stay-in-record-after-insert (detail)"
 },{
   name: "layout-fill",
