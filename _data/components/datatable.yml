@@ -107,11 +107,11 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show a button for exporting table data (Excel, PDF, etc.)"
 },{
-  name: "show-configuration-button",
+  name: "show-configuration-option",
   type: "no | false | yes | true",
   default: "yes",
   required: "no",
-  description: "Indicates whether or not to show a button on the header menu for configuration"
+  description: "Indicates whether or not to show a option on the header menu for configuration"
 },{
   name: "detail-mode"
 },{
