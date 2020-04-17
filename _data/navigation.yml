@@ -21,6 +21,8 @@ versions:
   - title: "4.x.x"
     url: /docs
     active: true
+  - title: "8.x.x"
+    url: /docs/v8
 
 
 # documentation links
@@ -328,7 +330,7 @@ ontimize_web_ngx_map:
 
       - title: "Installation"
         url: /map/installation/
-        
+
 ontimize_web_ngx_gallery:
   - title: "Getting Started"
     children:
@@ -340,4 +342,4 @@ ontimize_web_ngx_gallery:
     children:
       - title: "Gallery"
         url: /gallery/components/gallery/
-    
+
