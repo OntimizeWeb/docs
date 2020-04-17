@@ -977,24 +977,22 @@ You can configure:
 This section explains how the table data exportation works.
 
 <h3 class="grey-color">Exportating the table data</h3>
-The `o-table` component is able to export its data in Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface. 
+The `o-table` component is able to export its data in Excel, HTML and PDF format by default. Extra formats can be configured using the <a href="#table-export-button">o-table-export-button</a> component. In order to perform the exportation of the table data, it is necessary to set up the services properly on your rest interface.
 
-Table allows export visible data by default. Using the `export-mode` input user can modify that default value to all data.
->**NOTE**: The `export-mode="all"` only work whether the table is not pageable, that is pageable="no" .
+The `o-table` component exports the shown data by default. Using the `export-mode` attribute, the user can modify this behaviour in order to export all the data the table stores in the browser (`export-mode="local"`) or all the data asociated to the table (`export-mode="all"`).
 
-
-The exportation process is performed as follows:
+<b>The exportation process is performed as follows:</b>
 
 <p>Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types...</p>
-<p>Then it sends the information data to the server in order to generate the file which contains the exported data.</p>
+<p>Then it sends this information to the server in order to generate the file that will contain the exported data.</p>
 
-<p>The rest interface used for this is like the following by default:
+<p>The rest interface used for this must be like the following by default:
 <br>
-{% raw %} https://{ your-api-endpoint }/export/{ format-selected } {% endraw %}
+{% raw %} https://{ your-api-endpoint }/{ table-service-path }/{ table-entity }/{ format-selected } {% endraw %}
 <br>
-Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b> depending on the format selected.
+Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b> depending on the format selected. You can also export the table data in other format using a <a href="#table-export-button">o-table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the `o-table-export-button` component.
 <br>
-You can change the <b>/export</b> end point. Please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
+If you want to customize this end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
 </p>
 
 <p>The service must send a response with an object containing an unique identifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.
@@ -1002,105 +1000,77 @@ You can change the <b>/export</b> end point. Please check the <a href="#customex
 You can see an example of the exportation method end point in the following example.</p>
 
 ```java
-@RequestMapping(value = "xlsx", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<EntityResult> generateExcel(@RequestBody ExportParameter data) {
-    EntityResult result = new EntityResult(EntityResult.OPERATION_SUCCESSFUL, EntityResult.NODATA_RESULT);
+@PostMapping(value = "/{extension}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity<JSONObject> export(@PathVariable("extension") String extension) {
 
-    Map<String, String> columnNames = data.getColumnNames();
-    Hashtable<String, Integer> sqlTypes = new Hashtable<>();
-    sqlTypes.putAll(data.getSqlTypes());
+  // Generate xlsx file ...
+  int id = generateXLSXFile();
 
-    List<String> columnNamesArray = new ArrayList<>();
-    for (String col : columnNames.keySet()) {
-        columnNamesArray.add(columnNames.get(col));
-    }
-
-    EntityResult er = this.prepareEntityResult(data);
-
-    try {
-        File xslxFile = this.exportService.generateExcel(er, columnNamesArray);
-        Hashtable<String, Object> erResult = new Hashtable<>();
-        String filename = xslxFile.getName();
-        erResult.put("xslxId", filename.substring(0, filename.indexOf(".")));
-        result.addRecord(erResult);
-        return new ResponseEntity<EntityResult>(result, HttpStatus.OK);
-    } catch (Exception e) {
-        e.printStackTrace();
-        result.setCode(EntityResult.OPERATION_WRONG);
-        result.setMessage(e.getMessage());
-        return new ResponseEntity<EntityResult>(result, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+  // Send response
+  JSONObject result = new JSONObject();
+  result.setInt(extension + "Id", id);
+  return new ResponseEntity<>(result, HttpStatus.OK);
 }
 ```
 
 <p>Finally, the table sends a request to the rest interface with the file identifier provided to perform the download of the file generated on the previous step.</p>
 <p>The rest interface used for downloading the file is like the following by default:
 <br>
-{% raw %} https://{ your-api-endpoint }/export/download/{ file-extension }/{ file-id } {% endraw %}
+{% raw %} https://{ your-api-endpoint }/{ table-service-path }/{ format-selected }/{ file-id } {% endraw %}
 <br>
-Where <b>file-extension</b> is the extension of the generated file and <b>file-id</b> is the file identifier obtained in the first request.
+Where <b>format-selected</b> is the same as in the first request and <b>file-id</b> is the file identifier obtained as response of the first request.
 <br>
-You can change the <b>/export/download</b> end point. Please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
+If you want to customize the download end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
 </p>
 <p>In the following example you ca see the download api end point method.</p>
 
 ```java
-@RequestMapping(value = "download/{extension}/{id}", method = RequestMethod.GET)
-public void downloadFile(@PathVariable(name = "extension", required = true) String fileExtension, @PathVariable(name = "id", required = true) String fileId, HttpServletResponse response) {
-    InputStream fis = null;
-    try {
-        File tmpDir = new File(System.getProperty("java.io.tmpdir"));
-        File[] matchingfiles = tmpDir.listFiles(new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                return name.startsWith(fileId) && name.endsWith(fileExtension);
-            }
-        });
+@GetMapping(value = "/{extension}/{id}")
+public void downloadFile(@PathVariable(name = "extension", required = true) final String fileExtension,
+    @PathVariable(name = "id", required = true) final String fileId, HttpServletResponse response) {
 
-        if (matchingfiles.length == 1 && matchingfiles[0].exists()) {
-            File file = matchingfiles[0];
-            if (IExportService.XLSX_EXTENSION.endsWith(fileExtension)) {
-                response.setHeader("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-            } else if (IExportService.HTML_EXTENSION.endsWith(fileExtension)) {
-                response.setHeader("Content-Type", "application/xhtml+xml");
-            } else if (IExportService.PDF_EXTENSION.endsWith(fileExtension)) {
-                response.setHeader("Content-Type", "application/pdf");
-            }
-            response.setHeader("Content-Disposition", "attachment; filename=\"" + file.getName() + "\"");
-            response.setContentLengthLong(file.length());
-            fis = new BufferedInputStream(new FileInputStream(file));
-            FileCopyUtils.copy(fis, response.getOutputStream());
-        } else {
-            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-        }
-    } catch (IOException e) {
-        e.printStackTrace();
-        response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-    } finally {
-        if (fis != null) {
-            try {
-                fis.close();
-            } catch (IOException e) {
-                ExportRestController.logger.error("{}", e.getMessage(), e);
-            }
-        }
-    }
+  // Get the file usint the file identifier
+  File file = getFile(fileId);
+
+  // Send response
+  response.setHeader("Content-Type", "application/octet-stream");
+  response.setHeader("Content-Disposition", "attachment; filename=\"" + file.getName() + "\"");
+  response.setContentLengthLong(file.length());
+  fis = new BufferedInputStream(new FileInputStream(file));
+  FileCopyUtils.copy(fis, response.getOutputStream());
 }
 ```
 
 <h3 id="customexportendpoint" class="grey-color">Custom exportation end point</h3>
 
-For changing the exportation end points simple add your end points on the service configuration object of the table with the keys <b>exportPath</b> and <b>downloadPath</b>. Check the following example.
+For customizing the exportation end points simply add your end points on the service configuration object of the table with the keys <b>exportPath</b> and <b>downloadPath</b>. Check the following example.
 
-```json
-export const SERVICE_CONFIG: Object = {
-    'users': {
-        'path': '/users',
-        'exportPath': '/usersExport',
-        'downloadPath': '/usersDownload'
-    }
+```javascript
+export const SERVICE_CONFIG = {
+  users: {
+    path: '/users',
+    exportPath: '/usersExport',
+    downloadPath: '/usersDownload'
+  }
 }
 ```
+
+Using the above configuration the enpoints would be as follows:
+
+{% raw %} https://{ your-api-endpoint }/{ exportPath }/{ table-service-path }/{ table-entity }/{ format-selected } {% endraw %}
+<br>
+{% raw %} https://{ your-api-endpoint }/{ downloadPath }/{ table-service-path }/{ format-selected }/{ file-id } {% endraw %}
+
+### Table export button
+The `o-table` component allows to add extra exportation buttons in the exportation dialog with the `o-table-export-button` component.
+
+You can configure:
+<ul>
+  <li> The icon using the `icon` property, this name must to be of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})) </li>
+  <li> The label with the `label` property</li>
+  <li> The exportation type by setting the `export-type` property. The value configured here will be used for making the requests to the backend and also al extension for the downloaded file. </li>
+</ul>
+
 
 ### Column titles alignment
 The `o-table` columns title texts are centered by default. Using the `o-column` component `title-align` input user can modify that default value.
