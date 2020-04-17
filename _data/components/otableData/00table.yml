@@ -9,7 +9,7 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "filter-case-sensitive", "quick-filter"]
 }]
 
 attributes: [{
@@ -25,17 +25,19 @@ attributes: [{
   required: "",
   description: "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
 },{
-  name: "quick-filter"
-},{
-  name: "filter-case-sensitive",
-},{
-  name: "refresh-button"
+  name: "quick-filter-function",
+  type: "(filter: string) => IFilterExpression | Object",
+  default: "",
+  required: "",
+  description: "Function for passing a custom filter value to paginated service queries"
 },{
   name: "delete-button",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
   description: "Indicates whether or not to show a button for deleting data"
+},{
+  name: "refresh-button"
 },{
   name: "show-table-buttons-text",
   type: "no | false | yes | true",
@@ -73,11 +75,11 @@ attributes: [{
   required: "no",
   description: "Indicates whether or not to show a option on the header menu for configuration"
 },{
-  name: "quick-filter-function",
-  type: "(filter: string) => IFilterExpression | Object",
-  default: "",
-  required: "",
-  description: "Function for passing a custom filter value to paginated service queries"
+  name: "show-buttons-text",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "no",
+  description: "Indicates whether or not to show text in header buttons"
 },{
   name: "columns-visibility-button",
   type: "no | false | yes | true",
@@ -108,7 +110,7 @@ attributes: [{
   default: "click",
   required: "no",
   description: "Action for access the edition screen. The priority between edition-mode, selection-mode and detail-mode is 1->detail-mode, 2->edition-mode, 3->selection-mode."
-},{  
+},{
   name: "horizontal-scroll",
   type: "no | false | yes | true",
   default: "no",
@@ -135,6 +137,8 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show the column of checkboxes for selecting table rows in the table"
 },{
+  name: "orderable"
+},{
   name: "enabled",
   type: "no | false | yes | true",
   default: "yes",
@@ -147,6 +151,8 @@ attributes: [{
   required: "",
   description: "Indicates whether or not the table columns are resizables"
 }, {
+  name: "keep-selected-items"
+},{
   name: "select-column-visible",
   type: "no | false | yes | true",
   default: "yes",
@@ -154,10 +160,16 @@ attributes: [{
   description: "Indicates whether or not the table columns are resizables"
 },{
   name: "export-mode",
-  type: "visible | all",
-  default: "yes",
+  type: "visible | local | all",
+  default: "visible",
   required: "",
   description: "Mode export data"
+},{
+  name: "show-filter-option",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the filter menu option in the header menu"
 }]
 
 outputs: [{
