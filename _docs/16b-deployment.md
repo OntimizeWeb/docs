@@ -35,9 +35,8 @@ Although deploying directly from the development environment works, you can gene
 ```bash
   npm run production-aot
 ```
-This command triggers the `production-aot` script defined in the *package.json* file of your application (`ontimize-web-ngx production-aot --href /my-app/`).
+This command triggers the `production-aot` script defined in the *package.json* file of your application (`ng build --aot`).
 
-The remaining copy deployment steps are the same as [before](#simplest-deployment-possible).
 
 ## Simple deployment vs. Optimized deployment
 
@@ -177,9 +176,21 @@ Note: if you already had these tags in your index, it will not replace them. You
 ```bash
 ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
 ```
-Note: if you are using a base-href in production, you’ll need to change the '/ngsw-worker.js' path to './ngsw.json' to prevent a 404 error.
 
-* It adds icons in your assets folder. You will of course need to change them if you don’t want your app to sport Angular logos as icons.
+* It adds icons in your assets folder. You will of course need to change them if you don’t want your app to show Angular logos as icons.
+
+* You must write this in yout angular.json
+
+```bash
+"serviceWorker": true
+```
+
+* Now you are ready to build your app:
+
+```bash
+ng build --prod
+```
+Note: If you are running your own build script you must add --prod flag to enable the service worker.
 
 
 ### Reference
