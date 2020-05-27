@@ -179,12 +179,6 @@ ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.productio
 
 * It adds icons in your assets folder. You will of course need to change them if you don’t want your app to show Angular logos as icons.
 
-* You must write this in yout angular.json
-
-```bash
-"serviceWorker": true
-```
-
 * Now you are ready to build your app:
 
 ```bash
