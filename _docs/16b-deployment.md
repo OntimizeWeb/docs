@@ -177,7 +177,7 @@ Note: if you already had these tags in your index, it will not replace them. You
 ```bash
 ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
 ```
-Note: if you are using a base-href in production, you’ll need to change the '/ngsw-worker.js' path to './ngsw-worker.js' to prevent a 404 error.
+Note: if you are using a base-href in production, you’ll need to change the '/ngsw-worker.js' path to './ngsw.json' to prevent a 404 error.
 
 * It adds icons in your assets folder. You will of course need to change them if you don’t want your app to sport Angular logos as icons.
 
