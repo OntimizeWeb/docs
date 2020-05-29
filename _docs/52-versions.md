@@ -9,6 +9,26 @@ In this secction you can check the different releases of **OntimizeWeb** and its
 
 ## Releases and dependencies
 
+### Angular 8
+<table>
+    <thead>
+        <tr>
+            <th>ontimize-web-ngx</th>
+            <th>filemanager*</th>
+            <th>map*</th>
+            <th>charts*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>8.0.0</td>
+            <td>8.0.0</td>
+            <td>8.0.0</td>
+            <td>8.0.0</td>
+        </tr>
+    </tbody>
+</table>
+
 ### Angular 6
 <table>
   <thead>

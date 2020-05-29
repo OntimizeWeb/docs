@@ -27,3 +27,7 @@ In this page you can download migration guides for specific versions where addit
 
   * [3.x.x to 4.x.x](https://drive.google.com/file/d/19pMUM6rXt2CEpWBPmBnskAusMv-fNmJL/view?usp=sharing){:target="_blank"}
   * [Resources](https://drive.google.com/file/d/1Vjedjvc0Khnf_HDBBneMf0s6DuXKQ20v/view?usp=sharing){:target="_blank"}
+
+* 4.x.x
+
+  * [4.x.x to 8.x.x](https://imatiainnovation.sharepoint.com/sites/OntimizeWeb/Documentos%20compartidos/Forms/AllItems.aspx?originalPath=aHR0cHM6Ly9pbWF0aWFpbm5vdmF0aW9uLnNoYXJlcG9pbnQuY29tLzpmOi9zL09udGltaXplV2ViL0VsUkQwVUpneVpwTnUzLVlvTEpkbnhBQklLSUdWOUFTd1ZKd0VzMDFvWHFEbkE%5FcnRpbWU9WGVzUlVaZ0QyRWc&id=%2Fsites%2FOntimizeWeb%2FDocumentos%20compartidos%2FDocumentaci%C3%B3n%20t%C3%A9cnica%2FMigraciones%2FMigracion%204%2Ex%2Ex%20a%208%2Ex%2Ex%2Epdf&parent=%2Fsites%2FOntimizeWeb%2FDocumentos%20compartidos%2FDocumentaci%C3%B3n%20t%C3%A9cnica%2FMigraciones){:target="_blank"}
