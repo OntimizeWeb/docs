@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -899,7 +901,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -986,11 +988,11 @@
 
 <p>Form service components are component that must be placed inside a <a href="https://ontimizeweb.github.io/docs/v3/docs/components/form/" target="_blank">form</a>. This components display a set of options provided by a service and allow the user to select one or more of them. The form service components offered by <strong>OntimizeWeb</strong> are combo, list picker and radio.</p>
 
-<p>All form service components in <strong>OntimizeWeb</strong> extend the <code class="highlighter-rouge">OFormServiceComponent</code> class, that is a subclass of <a href="https://ontimizeweb.github.io/docs/v3/components/input/overview/" target="_blank"><code class="highlighter-rouge">OFormDataComponent</code></a>. This class provides a set of methods and attributes inherited by all the form service components. This methods and attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>All form service components in <strong>OntimizeWeb</strong> extend the <code class="language-plaintext highlighter-rouge">OFormServiceComponent</code> class, that is a subclass of <a href="https://ontimizeweb.github.io/docs/v3/components/input/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">OFormDataComponent</code></a>. This class provides a set of methods and attributes inherited by all the form service components. This methods and attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <h2 id="parent-keys">Parent keys</h2>
 
-<p>The <code class="highlighter-rouge">parent-keys</code> attribute allows the developer to define filtering keys used in the request the component makes to the server in order to populate its options. This filtering keys must be defined as a string, separating them with a semicolon &#8216;;&#8217;. The component will look for this keys on its parent form and in the route parameters in order to build the filter for querying.</p>
+<p>The <code class="language-plaintext highlighter-rouge">parent-keys</code> attribute allows the developer to define filtering keys used in the request the component makes to the server in order to populate its options. This filtering keys must be defined as a string, separating them with a semicolon &#8216;;&#8217;. The component will look for this keys on its parent form and in the route parameters in order to build the filter for querying.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parent-keys="factory_id;device_id"
 </code></pre></div></div>
@@ -1011,7 +1013,7 @@
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
-<p>In this example there is a form for linking users and roles, the roles the user may be linked with depend on the type of the user. The user type is part of the user information queried in the first combo. Notice that the the parent keys attribute for the roles combo has an alias and a column defined for the alias. This will make the roles component to look for the value of its parent key in the component with attr <code class="highlighter-rouge">user</code> and it will take the <code class="highlighter-rouge">user_type</code> column value as its parent key value.</p>
+<p>In this example there is a form for linking users and roles, the roles the user may be linked with depend on the type of the user. The user type is part of the user information queried in the first combo. Notice that the the parent keys attribute for the roles combo has an alias and a column defined for the alias. This will make the roles component to look for the value of its parent key in the component with attr <code class="language-plaintext highlighter-rouge">user</code> and it will take the <code class="language-plaintext highlighter-rouge">user_type</code> column value as its parent key value.</p>
 
 </div>
 
@@ -1806,7 +1808,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Separation character between <code class="highlighter-rouge">description-columns</code> values</p>
+    <p class="first"><p>Separation character between <code class="language-plaintext highlighter-rouge">description-columns</code> values</p>
 </p>
     
   </td>
@@ -2001,7 +2003,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ‘;’. Accepted format: <code class="highlighter-rouge">attr | attr:columnName</code></p>
+    <p class="first"><p>Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ‘;’. Accepted format: <code class="language-plaintext highlighter-rouge">attr | attr:columnName</code></p>
 </p>
     
   </td>
@@ -2196,7 +2198,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p><code class="highlighter-rouge">value-column</code> value type</p>
+    <p class="first"><p><code class="language-plaintext highlighter-rouge">value-column</code> value type</p>
 </p>
     
   </td>
@@ -2400,7 +2402,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

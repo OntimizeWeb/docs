@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -749,7 +751,7 @@
     
     <meta itemprop="description" content="Include OntimizeWeb in your project as a dependency.">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -765,46 +767,46 @@
         
 <h2 id="install-ontimizeweb">Install OntimizeWeb</h2>
 
-<p>Install <code class="highlighter-rouge">ontimize-web-ngx</code> from <code class="highlighter-rouge">npm</code>:</p>
+<p>Install <code class="language-plaintext highlighter-rouge">ontimize-web-ngx</code> from <code class="language-plaintext highlighter-rouge">npm</code>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install ontimize-web-ngx <span class="nt">--save</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>ontimize-web-ngx <span class="nt">--save</span>
 </code></pre></div></div>
 
-<p>After installing <code class="highlighter-rouge">ontimize-web-ngx</code> you must install all its required dependencies.</p>
+<p>After installing <code class="language-plaintext highlighter-rouge">ontimize-web-ngx</code> you must install all its required dependencies.</p>
 
 <h2 id="add-ontimizeweb-to-your-application">Add OntimizeWeb to your application</h2>
 
 <p>Define the configuration for your application. Create the &#8216;app.config.ts` file whith the following default configuration. Read more about configuring the application <a href="https://ontimizeweb.github.io/docs/v3/guide/appconfig/">here</a>.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Config</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">CONFIG</span><span class="p">:</span> <span class="nx">Config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c1">// The base path of the URL used by app service.</span>
-    <span class="na">apiEndpoint</span><span class="p">:</span> <span class="s1">'http://mydomain.com/'</span><span class="p">,</span>
+    <span class="na">apiEndpoint</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://mydomain.com/</span><span class="dl">'</span><span class="p">,</span>
 
     <span class="c1">// Application identifier. Is the unique package identifier of the app. It is used when storing or managing temporal data related with the app. By default is set as 'ontimize-web-uuid'.</span>
-    <span class="na">uuid</span><span class="p">:</span> <span class="s1">'com.ontimize.web.ngx.myapp'</span><span class="p">,</span>
+    <span class="na">uuid</span><span class="p">:</span> <span class="dl">'</span><span class="s1">com.ontimize.web.ngx.myapp</span><span class="dl">'</span><span class="p">,</span>
 
     <span class="c1">// Title of the app</span>
-    <span class="na">title</span><span class="p">:</span> <span class="s1">'My app'</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">My app</span><span class="dl">'</span><span class="p">,</span>
 
     <span class="c1">// Language of the application.</span>
-    <span class="na">locale</span><span class="p">:</span> <span class="s1">'en'</span><span class="p">,</span>
+    <span class="na">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">en</span><span class="dl">'</span><span class="p">,</span>
 
     <span class="c1">// The service type used (Ontimize REST standard, Ontimize REST JEE or custom implementation) in the whole application.</span>
     <span class="c1">// serviceType</span>
 
-    <span class="na">applicationLocales</span><span class="p">:</span> <span class="p">[</span><span class="s1">'en'</span><span class="p">]</span>
+    <span class="na">applicationLocales</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">en</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
 <p>And include this configuration in the providers in the application module.</p>
 
-<p>Include the <code class="highlighter-rouge">OntimizeWebModule</code>, <code class="highlighter-rouge">ONTIMIZE_MODULES</code> and <code class="highlighter-rouge">ONTIMIZE_PROVIDERS</code> in your application module.</p>
+<p>Include the <code class="language-plaintext highlighter-rouge">OntimizeWebModule</code>, <code class="language-plaintext highlighter-rouge">ONTIMIZE_MODULES</code> and <code class="language-plaintext highlighter-rouge">ONTIMIZE_PROVIDERS</code> in your application module.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">APP_CONFIG</span><span class="p">,</span> <span class="nx">ONTIMIZE_MODULES</span><span class="p">,</span> <span class="nx">ONTIMIZE_PROVIDERS</span><span class="p">,</span> <span class="nx">OntimizeWebModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">APP_CONFIG</span><span class="p">,</span> <span class="nx">ONTIMIZE_MODULES</span><span class="p">,</span> <span class="nx">ONTIMIZE_PROVIDERS</span><span class="p">,</span> <span class="nx">OntimizeWebModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">CONFIG</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./app.config'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CONFIG</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./app.config</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
     <span class="p">...</span>
@@ -819,9 +821,9 @@
 
 <h2 id="add-the-ontimizeweb-styles-to-your-application">Add the OntimizeWeb styles to your application</h2>
 
-<p>Import the OntimizeWeb styles in your application. If you are using the <code class="highlighter-rouge">angular-cli</code> you must add the following styles in your <code class="highlighter-rouge">.angular-cli.json</code> file:</p>
+<p>Import the OntimizeWeb styles in your application. If you are using the <code class="language-plaintext highlighter-rouge">angular-cli</code> you must add the following styles in your <code class="language-plaintext highlighter-rouge">.angular-cli.json</code> file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
 "styles": [
   "../node_modules/ontimize-web-ngx/ontimize.scss"
   ...
@@ -855,7 +857,7 @@
   <span class="c1">// ...</span>
   <span class="na">map</span><span class="p">:</span> <span class="p">{</span>
     <span class="c1">// ...</span>
-    <span class="s1">'ontimize-web-ngx'</span><span class="p">:</span> <span class="s1">'node_modules/ontimize-web-ngx/bundles/ontimize-web-ngx.umd.min.js'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">node_modules/ontimize-web-ngx/bundles/ontimize-web-ngx.umd.min.js</span><span class="dl">'</span><span class="p">,</span>
     <span class="c1">// ...</span>
   <span class="p">},</span>
   <span class="c1">// ...</span>
@@ -874,7 +876,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

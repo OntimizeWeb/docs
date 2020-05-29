@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -878,7 +880,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -969,7 +971,7 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-app-layout</code> components builds a side navigator for application using the <a href="https://ontimizeweb.github.io/docs/v3/guide/appconfig/#menu-configuration" target="_blank">application menu configuration</a>. For adding it to the application you just have to wrap the content of the main page with this component like in the example below.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-app-layout</code> components builds a side navigator for application using the <a href="https://ontimizeweb.github.io/docs/v3/guide/appconfig/#menu-configuration" target="_blank">application menu configuration</a>. For adding it to the application you just have to wrap the content of the main page with this component like in the example below.</p>
 
 <h2 id="example">Example</h2>
 
@@ -991,31 +993,31 @@
 
 <h2 id="modes">Modes</h2>
 
-<p>The <code class="highlighter-rouge">o-app-layout</code> components has two performance modes designed for making this component more usable in desktop and mobile applications. This modes are the following:</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-app-layout</code> components has two performance modes designed for making this component more usable in desktop and mobile applications. This modes are the following:</p>
 
 <ul>
   <li><strong>Desktop</strong>
-This is the default mode of the <code class="highlighter-rouge">o-app-layout</code> component. This mode displays the side menu and allows the user to partially hide it.</li>
+This is the default mode of the <code class="language-plaintext highlighter-rouge">o-app-layout</code> component. This mode displays the side menu and allows the user to partially hide it.</li>
 </ul>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/layouts/app-layout/o-app-layout-desktop.gif" alt="App layout component in desktop mode" /></p>
 
 <ul>
   <li><strong>Mobile</strong>
-Configure this mode by setting the <strong>mobile</strong> value in the <code class="highlighter-rouge">mode</code> attribute in the <code class="highlighter-rouge">o-app-layout</code> component. This mode shows the side menu and a toolbar on the top with a button for show/hide the side menu.</li>
+Configure this mode by setting the <strong>mobile</strong> value in the <code class="language-plaintext highlighter-rouge">mode</code> attribute in the <code class="language-plaintext highlighter-rouge">o-app-layout</code> component. This mode shows the side menu and a toolbar on the top with a button for show/hide the side menu.</li>
 </ul>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/layouts/app-layout/o-app-layout-mobile.gif" alt="App layout component in mobile mode" /></p>
 
 <h2 id="toolbar">Toolbar</h2>
 
-<p>The application layout component may show a toolbar at the top of the screen by setting the <code class="highlighter-rouge">show-header</code> attribute to <strong>yes</strong>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>The application layout component may show a toolbar at the top of the screen by setting the <code class="language-plaintext highlighter-rouge">show-header</code> attribute to <strong>yes</strong>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
-<p>The <code class="highlighter-rouge">o-app-layout</code> can allows you  to configure whether or not the language selector shows flags by setting <code class="highlighter-rouge">use-flag-icons=yes</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-app-layout</code> can allows you  to configure whether or not the language selector shows flags by setting <code class="language-plaintext highlighter-rouge">use-flag-icons=yes</code>.</p>
 
 <blockquote>
-  <p><strong>NOTE:</strong> It is necessary install  <code class="highlighter-rouge">flag-icon-css</code> by NPM.</p>
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>npm install flag-icon-css
+  <p><strong>NOTE:</strong> It is necessary install  <code class="language-plaintext highlighter-rouge">flag-icon-css</code> by NPM.</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>npm <span class="nb">install </span>flag-icon-css
 </code></pre></div>  </div>
 </blockquote>
 
@@ -1028,7 +1030,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 <h3 id="adding-custom-content-to-the-toolbar">Adding custom content to the toolbar</h3>
 
-<p>If you want to add your own components to the layout toolbar you must use the <code class="highlighter-rouge">o-app-layout-header</code> component.</p>
+<p>If you want to add your own components to the layout toolbar you must use the <code class="language-plaintext highlighter-rouge">o-app-layout-header</code> component.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-app-layout</span> <span class="na">opened-sidenav-image=</span><span class="s">"assets/images/sidenav-opened.png"</span>
   <span class="na">closed-sidenav-image=</span><span class="s">"assets/images/sidenav-closed.png"</span>
@@ -1043,7 +1045,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 <h2 id="images">Images</h2>
 
-<p>You can set provide images to be shown in the side navigator using the attributes <code class="highlighter-rouge">opened-sidenav-image</code> and <code class="highlighter-rouge">closed-sidenav-image</code>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>You can set provide images to be shown in the side navigator using the attributes <code class="language-plaintext highlighter-rouge">opened-sidenav-image</code> and <code class="language-plaintext highlighter-rouge">closed-sidenav-image</code>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/layouts/app-layout/app_layout_images.png" alt="App layout component images" /></p>
 
@@ -1722,7 +1724,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

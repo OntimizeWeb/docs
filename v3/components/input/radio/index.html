@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -814,7 +816,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -900,32 +902,32 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-radio</code> component is used in <a href="https://ontimizeweb.github.io/docs/v3/components/form/">forms</a> for getting or displaying an option between multiple input submitted by the user.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-radio</code> component is used in <a href="https://ontimizeweb.github.io/docs/v3/components/form/">forms</a> for getting or displaying an option between multiple input submitted by the user.</p>
 
-<p>The radio component is automatically registered on its parent <code class="highlighter-rouge">o-form</code>, which provides the value for the radio programatically. Its value can be also set manually via the <code class="highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>The radio component is automatically registered on its parent <code class="language-plaintext highlighter-rouge">o-form</code>, which provides the value for the radio programatically. Its value can be also set manually via the <code class="language-plaintext highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <p>This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the optoins of the radio group and each element of the data array must be an object with at least one key/value pair.</p>
 
 <p>The data array can be provided in two ways:</p>
 <ul>
-  <li>Provide an array of objects to the <code class="highlighter-rouge">static-data</code> attribute (see the <a href="#basic-example">example</a> below).</li>
-  <li>Configure the component to query the data from a service. Using <code class="highlighter-rouge">service</code> and <code class="highlighter-rouge">entity</code> attributes.</li>
+  <li>Provide an array of objects to the <code class="language-plaintext highlighter-rouge">static-data</code> attribute (see the <a href="#basic-example">example</a> below).</li>
+  <li>Configure the component to query the data from a service. Using <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code> attributes.</li>
 </ul>
 
 <h2 id="basic-example">Basic example</h2>
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/inputs/o-radio.png" alt="Radio component" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"false"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-radio</span> <span class="na">attr=</span><span class="s">"radio-editable"</span> <span class="na">label=</span><span class="s">"INPUT.BUTTON.RADIO"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getDataArray</span><span class="err">()"</span>
-        <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span>
+    <span class="nt">&lt;o-radio</span> <span class="na">attr=</span><span class="s">"radio-editable"</span> <span class="na">label=</span><span class="s">"INPUT.BUTTON.RADIO"</span> <span class="na">[static-data]=</span><span class="s">"getDataArray()"</span>
+        <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span>
         <span class="na">tooltip=</span><span class="s">"This is an awesome tooltip!"</span> <span class="na">tooltip-position=</span><span class="s">"below"</span><span class="nt">&gt;&lt;/o-radio&gt;</span>
-    <span class="nt">&lt;o-radio</span> <span class="na">attr=</span><span class="s">"radio-disabled"</span> <span class="na">label=</span><span class="s">"INPUT.BUTTON.RADIO"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getDataArray</span><span class="err">()"</span>
-        <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-radio&gt;</span>
+    <span class="nt">&lt;o-radio</span> <span class="na">attr=</span><span class="s">"radio-disabled"</span> <span class="na">label=</span><span class="s">"INPUT.BUTTON.RADIO"</span> <span class="na">[static-data]=</span><span class="s">"getDataArray()"</span>
+        <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-radio&gt;</span>
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
 <h2 id="validation">Validation</h2>
-<p>The <code class="highlighter-rouge">o-radio</code> shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value selected.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-radio</code> shows automatically an error message when the <code class="language-plaintext highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value selected.</p>
 
 <p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/v3/playground/main/inputs/radio" target="_blank">OntimizeWeb playground</a>.</p>
 
@@ -1354,7 +1356,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

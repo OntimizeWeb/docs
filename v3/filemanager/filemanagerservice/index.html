@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -405,7 +407,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -452,18 +454,18 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">FileManagerService</code> class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting and searching from files, as well as creating and deleting folders for organising the work space.</p>
+<p>The <code class="language-plaintext highlighter-rouge">FileManagerService</code> class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting and searching from files, as well as creating and deleting folders for organising the work space.</p>
 
 <h2 id="file-data-model">File data model</h2>
 
-<p>The File Manager Service uses the class <code class="highlighter-rouge">FileClass</code> as the file data model. This class provides the following attributes:</p>
+<p>The File Manager Service uses the class <code class="language-plaintext highlighter-rouge">FileClass</code> as the file data model. This class provides the following attributes:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="nl">id</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
   <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
   <span class="nl">size</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
   <span class="nl">creationDate</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
-  <span class="nl">directory</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">;</span>
+  <span class="nl">directory</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -777,10 +779,10 @@
 
 <h2 id="extending-the-file-manager-service">Extending the File Manager Service</h2>
 
-<p>You can define <strong>your own file manager service</strong> by extending the <code class="highlighter-rouge">FileManagerService</code> class as follows.</p>
+<p>You can define <strong>your own file manager service</strong> by extending the <code class="language-plaintext highlighter-rouge">FileManagerService</code> class as follows.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">FileManagerService</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx-filemanager'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FileManagerService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx-filemanager</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">FileManagerExtendedService</span> <span class="kd">extends</span> <span class="nx">FileManagerService</span> <span class="p">{</span>
@@ -796,7 +798,7 @@
 
 <h2 id="file-manager-rest-api">File Manager REST API</h2>
 
-<p>In this section we describe the REST API used by the <code class="highlighter-rouge">FileManagerService</code>.</p>
+<p>In this section we describe the REST API used by the <code class="language-plaintext highlighter-rouge">FileManagerService</code>.</p>
 
 <h3 id="get-files-information">Get files information</h3>
 
@@ -1190,7 +1192,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

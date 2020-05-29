@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -747,7 +749,7 @@
     
     <meta itemprop="description" content="Deploy an Ontimize Web application.">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -771,15 +773,15 @@
   <li>Build the development version of the application by running the following command:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm run production
 </code></pre></div>    </div>
-    <p>This command triggers the <code class="highlighter-rouge">production</code> script defined in the <em>package.json</em> file of your application (<code class="highlighter-rouge">ng build --aot=false --target -prod</code>).</p>
+    <p>This command triggers the <code class="language-plaintext highlighter-rouge">production</code> script defined in the <em>package.json</em> file of your application (<code class="language-plaintext highlighter-rouge">ng build --aot=false --target -prod</code>).</p>
   </li>
   <li>
     <p>Copy everything within the output folder (<em>dist</em> by default) to a folder on the server.</p>
   </li>
   <li>
-    <p>If you copy the files into a server sub-folder, modify the <code class="highlighter-rouge">production</code> script in the <em>package.json</em> and append the build flag, <code class="highlighter-rouge">--base-href</code> and set the <code class="highlighter-rouge">&lt;base href&gt;</code> appropriately.</p>
+    <p>If you copy the files into a server sub-folder, modify the <code class="language-plaintext highlighter-rouge">production</code> script in the <em>package.json</em> and append the build flag, <code class="language-plaintext highlighter-rouge">--base-href</code> and set the <code class="language-plaintext highlighter-rouge">&lt;base href&gt;</code> appropriately.</p>
   </li>
-  <li>Configure the web server to redirect request for missing files to <code class="highlighter-rouge">index.html</code>. You can reed more about this topic in the <a href="https://angular.io/guide/deployment#routed-apps-must-fallback-to-indexhtml" target="_blank">Angular docs</a>.</li>
+  <li>Configure the web server to redirect request for missing files to <code class="language-plaintext highlighter-rouge">index.html</code>. You can reed more about this topic in the <a href="https://angular.io/guide/deployment#routed-apps-must-fallback-to-indexhtml" target="_blank">Angular docs</a>.</li>
 </ol>
 
 <blockquote>
@@ -792,7 +794,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  npm run production-aot
 </code></pre></div></div>
-<p>This command triggers the <code class="highlighter-rouge">production-aot</code> script defined in the <em>package.json</em> file of your application (<code class="highlighter-rouge">ontimize-web-ngx production-aot --href /my-app/</code>).</p>
+<p>This command triggers the <code class="language-plaintext highlighter-rouge">production-aot</code> script defined in the <em>package.json</em> file of your application (<code class="language-plaintext highlighter-rouge">ontimize-web-ngx production-aot --href /my-app/</code>).</p>
 
 <p>The remaining copy deployment steps are the same as <a href="#simplest-deployment-possible">before</a>.</p>
 
@@ -833,25 +835,25 @@
 
 <h3 id="copy-the-application-to-the-apache-cordova-project">Copy the application to the Apache Cordova project</h3>
 
-<p>Copy all files withing the output folder of your application to the <code class="highlighter-rouge">www</code> folder of your Cordova project.</p>
+<p>Copy all files withing the output folder of your application to the <code class="language-plaintext highlighter-rouge">www</code> folder of your Cordova project.</p>
 
-<p>Alternatively, you can modify the <code class="highlighter-rouge">production</code> script in the <code class="highlighter-rouge">package.json</code> file and add the <code class="highlighter-rouge">--output-path</code> option in order to indicate the directory where the output files must be placed. The <code class="highlighter-rouge">base-href</code> option should be set to <code class="highlighter-rouge">.</code>, this is due to Apache Cordova does not manage absolute paths inside Cordova projects. See the example below.</p>
+<p>Alternatively, you can modify the <code class="language-plaintext highlighter-rouge">production</code> script in the <code class="language-plaintext highlighter-rouge">package.json</code> file and add the <code class="language-plaintext highlighter-rouge">--output-path</code> option in order to indicate the directory where the output files must be placed. The <code class="language-plaintext highlighter-rouge">base-href</code> option should be set to <code class="language-plaintext highlighter-rouge">.</code>, this is due to Apache Cordova does not manage absolute paths inside Cordova projects. See the example below.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "production": "ng build --aot=false --target -prod --base-href . --output-path ./quickstart/www/",
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "production": "ng build --aot=false --target -prod --base-href . --output-path ./quickstart/www/",
 </code></pre></div></div>
 
 <h3 id="include-the-apache-cordova-script-in-your-application">Include the Apache Cordova script in your application</h3>
 
-<p>Add the <code class="highlighter-rouge">cordova.js</code> script to the <code class="highlighter-rouge">index.html</code> in the <code class="highlighter-rouge">www</code> directory of your Apache Cordova project.</p>
+<p>Add the <code class="language-plaintext highlighter-rouge">cordova.js</code> script to the <code class="language-plaintext highlighter-rouge">index.html</code> in the <code class="language-plaintext highlighter-rouge">www</code> directory of your Apache Cordova project.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">”text/javascript”</span> <span class="na">src=</span><span class="s">”cordova.js”</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div></div>
 
 <h3 id="set-the-default-url">Set the default URL</h3>
 
-<p>Update the <code class="highlighter-rouge">&lt;base href="./"&gt;</code> tag in the <code class="highlighter-rouge">index.html</code> file in the <code class="highlighter-rouge">www</code> directory of your Apache Cordova project, this will allow angular to access files in the directory since we are not hosting the Apache Cordova application in a web server.</p>
+<p>Update the <code class="language-plaintext highlighter-rouge">&lt;base href="./"&gt;</code> tag in the <code class="language-plaintext highlighter-rouge">index.html</code> file in the <code class="language-plaintext highlighter-rouge">www</code> directory of your Apache Cordova project, this will allow angular to access files in the directory since we are not hosting the Apache Cordova application in a web server.</p>
 
-<p>Example of the <code class="highlighter-rouge">index.html</code> file in the <code class="highlighter-rouge">www</code> folder of your Apache Cordova project:</p>
+<p>Example of the <code class="language-plaintext highlighter-rouge">index.html</code> file in the <code class="language-plaintext highlighter-rouge">www</code> folder of your Apache Cordova project:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 
@@ -915,7 +917,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

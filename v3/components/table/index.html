@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -838,7 +840,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -957,9 +959,9 @@
 </aside>
 
 <h2 id="introduction">Introduction</h2>
-<p>The <code class="highlighter-rouge">o-table</code> provides a table of data that can be used to display rows of data.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> provides a table of data that can be used to display rows of data.</p>
 
-<p>If the table also is <em>inside a form</em>, the <code class="highlighter-rouge">attr</code> property is required for registry the table in the form.</p>
+<p>If the table also is <em>inside a form</em>, the <code class="language-plaintext highlighter-rouge">attr</code> property is required for registry the table in the form.</p>
 
 <div class="notice--warning">
 
@@ -989,19 +991,19 @@
     
     <p>{% include base_path %}</p>
 
-<p>By default the filtering is <em>local</em>, you can enable <em>remote</em> filtering setting <code class="highlighter-rouge">pageable="yes"</code>.</p>
+<p>By default the filtering is <em>local</em>, you can enable <em>remote</em> filtering setting <code class="language-plaintext highlighter-rouge">pageable="yes"</code>.</p>
 
 <h2 id="quick-filter">Quick filter.</h2>
 
-<p>This option is enabled by default, the filter is visible in the top right. You can disable it setting <code class="highlighter-rouge">quick-filter="no"</code>.</p>
+<p>This option is enabled by default, the filter is visible in the top right. You can disable it setting <code class="language-plaintext highlighter-rouge">quick-filter="no"</code>.</p>
 
-<p>You can also configure filtering to be case sensitive with <code class="highlighter-rouge">filter-case-sensitive="yes"</code>. By default, it’s disabled.</p>
+<p>You can also configure filtering to be case sensitive with <code class="language-plaintext highlighter-rouge">filter-case-sensitive="yes"</code>. By default, it’s disabled.</p>
 
-<p>Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in <code class="highlighter-rouge">quick-filter-function</code> property.</p>
+<p>Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in <code class="language-plaintext highlighter-rouge">quick-filter-function</code> property.</p>
 
 <h2 id="filtering-by-columns">Filtering by columns</h2>
 
-<p>It is posible to configure filtering by columns with <code class="highlighter-rouge">o-table-columns-filter</code> selector adding filterable columns separated by ‘;’ in <code class="highlighter-rouge">columns</code> property.</p>
+<p>It is posible to configure filtering by columns with <code class="language-plaintext highlighter-rouge">o-table-columns-filter</code> selector adding filterable columns separated by ‘;’ in <code class="language-plaintext highlighter-rouge">columns</code> property.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1021,9 +1023,9 @@
 
 <h2 id="custom-filter">Custom filter</h2>
 
-<p><strong>OntimizeWeb</strong> allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the <a href="{{ base_path }}/components/filterbuilder/" target="_blank"><code class="highlighter-rouge">o-filter-builder</code></a> component to you application.</p>
+<p><strong>OntimizeWeb</strong> allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the <a href="{{ base_path }}/components/filterbuilder/" target="_blank"><code class="language-plaintext highlighter-rouge">o-filter-builder</code></a> component to you application.</p>
 
-<p>The <code class="highlighter-rouge">o-filter-builder</code> component uses the <code class="highlighter-rouge">IExpression</code> inserface that represents a filtering expression. You can read more about how to build complex filtering expressions <a href="{{ base_path }}/guide/filterexpression/" target="_blank">here</a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-filter-builder</code> component uses the <code class="language-plaintext highlighter-rouge">IExpression</code> inserface that represents a filtering expression. You can read more about how to build complex filtering expressions <a href="{{ base_path }}/guide/filterexpression/" target="_blank">here</a>.</p>
 
        
     </p>
@@ -1035,11 +1037,11 @@
 
 <p>You can define it as follows:</p>
 <ul>
-  <li>Using the input <code class="highlighter-rouge">columns</code>, adding the columns separated by ‘;’.</li>
-  <li>Using the <code class="highlighter-rouge">o-table-column</code> component. If <em>o-table</em> component contains inner <em>o-table-column</em> elements, using renderers and editors defined in them. If you use this option, the <code class="highlighter-rouge">attr</code> attribute is required. For more information see the API.</li>
+  <li>Using the input <code class="language-plaintext highlighter-rouge">columns</code>, adding the columns separated by ‘;’.</li>
+  <li>Using the <code class="language-plaintext highlighter-rouge">o-table-column</code> component. If <em>o-table</em> component contains inner <em>o-table-column</em> elements, using renderers and editors defined in them. If you use this option, the <code class="language-plaintext highlighter-rouge">attr</code> attribute is required. For more information see the API.</li>
 </ul>
 
-<p>With <code class="highlighter-rouge">visible-columns</code> you can indicate which columns will be visible.</p>
+<p>With <code class="language-plaintext highlighter-rouge">visible-columns</code> you can indicate which columns will be visible.</p>
 
 <p>Using default renderer (<em>o-table-cell-renderer-string</em>) if column attr is present in <em>visible-columns</em> attribute from its parent <em>o-table</em>.
 In the same way, using the default editor (<em>o-table-cell-editor-string</em>) if column attr is contained
@@ -1047,9 +1049,9 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <h2 id="define-columns">Define columns</h2>
 
-<p>Firstly, you must define the columns of the entity that queries the database in <code class="highlighter-rouge">columns</code>, in <code class="highlighter-rouge">visible-columns</code> you can configure the visible columns.</p>
+<p>Firstly, you must define the columns of the entity that queries the database in <code class="language-plaintext highlighter-rouge">columns</code>, in <code class="language-plaintext highlighter-rouge">visible-columns</code> you can configure the visible columns.</p>
 
-<p>You can represent the columns in extended mode with <code class="highlighter-rouge">o-table-column</code> component. To define a column it’s necessary to add the <code class="highlighter-rouge">attr</code> property in the <code class="highlighter-rouge">visible-columns</code> property, with the exception of the columns generated for the calculated columns. To consult all the parameters of the ‘o-table-column’ see the API.</p>
+<p>You can represent the columns in extended mode with <code class="language-plaintext highlighter-rouge">o-table-column</code> component. To define a column it’s necessary to add the <code class="language-plaintext highlighter-rouge">attr</code> property in the <code class="language-plaintext highlighter-rouge">visible-columns</code> property, with the exception of the columns generated for the calculated columns. To consult all the parameters of the ‘o-table-column’ see the API.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1092,9 +1094,9 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 </code></pre></div></div>
 
 <h2 id="sorting">Sorting</h2>
-<p>Since this functionality is built-in, all you have to do is to set the sorting configuration via <code class="highlighter-rouge">sort-columns</code> input in the <code class="highlighter-rouge">o-table</code> component using [ ASC or DESC ] format.</p>
+<p>Since this functionality is built-in, all you have to do is to set the sorting configuration via <code class="language-plaintext highlighter-rouge">sort-columns</code> input in the <code class="language-plaintext highlighter-rouge">o-table</code> component using [ ASC or DESC ] format.</p>
 
-<p><em>All columns are sortable</em> by default, if you don’t want to avoid to set column as sortable you must add  <code class="highlighter-rouge">sortable= "no"</code> in its column definition.</p>
+<p><em>All columns are sortable</em> by default, if you don’t want to avoid to set column as sortable you must add  <code class="language-plaintext highlighter-rouge">sortable= "no"</code> in its column definition.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1109,11 +1111,11 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 </code></pre></div></div>
 
 <h2 id="pagination">Pagination</h2>
-<p>By default, the table is paginating the data, but if you want avoid that behaviour you must set <code class="highlighter-rouge">pagination-controls= "no"</code> in the <code class="highlighter-rouge">o-table</code> component.</p>
+<p>By default, the table is paginating the data, but if you want avoid that behaviour you must set <code class="language-plaintext highlighter-rouge">pagination-controls= "no"</code> in the <code class="language-plaintext highlighter-rouge">o-table</code> component.</p>
 
-<p>You can configure the pagination using the <code class="highlighter-rouge">o-table-paginator</code> component inside the table. For more information see the API.</p>
+<p>You can configure the pagination using the <code class="language-plaintext highlighter-rouge">o-table-paginator</code> component inside the table. For more information see the API.</p>
 
-<p>You can also configure the number of records initially displayed with <code class="highlighter-rouge">query-rows</code> attribute.</p>
+<p>You can also configure the number of records initially displayed with <code class="language-plaintext highlighter-rouge">query-rows</code> attribute.</p>
 
 <p>Below is an example of how to define a paginator for the table.</p>
 
@@ -1137,12 +1139,12 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <h3 id="binding-to-local-data">Binding to local data</h3>
 
-<p>For local data binding you simply need to supply an array of TypeScript objects/JSON via the <code class="highlighter-rouge">static-data</code> property. Adicional, you need to set <code class="highlighter-rouge">query-on-init="false"</code> in the <code class="highlighter-rouge">o-table</code> component.</p>
+<p>For local data binding you simply need to supply an array of TypeScript objects/JSON via the <code class="language-plaintext highlighter-rouge">static-data</code> property. Adicional, you need to set <code class="language-plaintext highlighter-rouge">query-on-init="false"</code> in the <code class="language-plaintext highlighter-rouge">o-table</code> component.</p>
 
 <h3 class="grey-color">Example</h3>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
- <span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"accounts"</span> <span class="na">columns=</span><span class="s">"CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"</span> <span class="na">visible-columns=</span><span class="s">"NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getStaticData</span><span class="err">()"</span> <span class="na">sort-columns=</span><span class="s">"ACCOUNT:DESC"</span> <span class="na">query-on-init=</span><span class="s">"false"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"no"</span> <span class="na">export-button=</span><span class="s">"no"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"accounts"</span> <span class="na">columns=</span><span class="s">"CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"</span> <span class="na">visible-columns=</span><span class="s">"NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span> <span class="na">[static-data]=</span><span class="s">"getStaticData()"</span> <span class="na">sort-columns=</span><span class="s">"ACCOUNT:DESC"</span> <span class="na">query-on-init=</span><span class="s">"false"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"no"</span> <span class="na">export-button=</span><span class="s">"no"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;o-table-columns-filter</span> <span class="na">columns=</span><span class="s">"NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"</span><span class="nt">&gt;&lt;/o-table-columns-filter&gt;</span>
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NUMCARD"</span> <span class="na">title=</span><span class="s">"NUMCARD"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;o-table-column-renderer-cardtype&gt;&lt;/o-table-column-renderer-cardtype&gt;</span>
@@ -1159,21 +1161,21 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">getTableData</span><span class="p">(){</span>
   <span class="kd">const</span> <span class="nx">account</span> <span class="o">=</span>  <span class="p">[</span>
-    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'PRODUCTNAME'</span><span class="p">:</span> <span class="s1">'Alice Mutton'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'PRODUCTNAME'</span><span class="p">:</span> <span class="s1">'Gorgonzola Telino'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mf">12.5</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'PRODUCTNAME'</span><span class="p">:</span> <span class="s1">'Louisiana Hot Spiced Okra'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">'PRODUCTNAME'</span><span class="p">:</span> <span class="s1">'Sir Rodney Scones'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">'PRODUCTNAME'</span><span class="p">:</span> <span class="s1">'Alice Mutton'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
+    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">PRODUCTNAME</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alice Mutton</span><span class="dl">'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">PRODUCTNAME</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Gorgonzola Telino</span><span class="dl">'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mf">12.5</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">2</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="dl">'</span><span class="s1">PRODUCTNAME</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Louisiana Hot Spiced Okra</span><span class="dl">'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="dl">'</span><span class="s1">PRODUCTNAME</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sir Rodney Scones</span><span class="dl">'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">3</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">PRODUCTID</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">'</span><span class="s1">PRODUCTNAME</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Alice Mutton</span><span class="dl">'</span><span class="p">,</span> <span class="na">UNITPRICE</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span> <span class="na">UNITSINORDER</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="na">UNITSINSTOCK</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}</span>
     <span class="p">];</span>
     <span class="k">return</span> <span class="nx">account</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>If you need the data query to be performed after the <code class="highlighter-rouge">parent-keys</code> is updated, <code class="highlighter-rouge">query-on-init = false</code> and <code class="highlighter-rouge">query-on-bind = true</code> must be changed</p>
+<p>If you need the data query to be performed after the <code class="language-plaintext highlighter-rouge">parent-keys</code> is updated, <code class="language-plaintext highlighter-rouge">query-on-init = false</code> and <code class="language-plaintext highlighter-rouge">query-on-bind = true</code> must be changed</p>
 
 <h3 id="binding-to-remote-data">Binding to remote data</h3>
 
-<p>To manage server data, it is necessary to configure the <code class="highlighter-rouge">service</code> and the <code class="highlighter-rouge">entity</code> attributes. You may need configure the <code class="highlighter-rouge">service-type</code> attribute in case you don’t use the default <strong>OntimizeWebService</strong> to manage. For more information see in <a href="https://ontimizeweb.github.io/docs/v3/guide/appconfig/" target="_blank">App configuration</a>.</p>
+<p>To manage server data, it is necessary to configure the <code class="language-plaintext highlighter-rouge">service</code> and the <code class="language-plaintext highlighter-rouge">entity</code> attributes. You may need configure the <code class="language-plaintext highlighter-rouge">service-type</code> attribute in case you don’t use the default <strong>OntimizeWebService</strong> to manage. For more information see in <a href="https://ontimizeweb.github.io/docs/v3/guide/appconfig/" target="_blank">App configuration</a>.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1188,21 +1190,21 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 <span class="nt">&lt;/o-table&gt;</span>
 </code></pre></div></div>
 
-<p>You can configure the methods by default with the <code class="highlighter-rouge">ìnsert-method</code>,<code class="highlighter-rouge">update-method</code>,<code class="highlighter-rouge">delete-method</code></p>
+<p>You can configure the methods by default with the <code class="language-plaintext highlighter-rouge">ìnsert-method</code>,<code class="language-plaintext highlighter-rouge">update-method</code>,<code class="language-plaintext highlighter-rouge">delete-method</code></p>
 
-<p>By default the filtering is <em>local</em>, you can enable <em>remote</em> filtering setting <code class="highlighter-rouge">pageable="yes"</code>.</p>
+<p>By default the filtering is <em>local</em>, you can enable <em>remote</em> filtering setting <code class="language-plaintext highlighter-rouge">pageable="yes"</code>.</p>
 
 <h2 id="quick-filter">Quick filter</h2>
 
-<p>This option is enabled by default, the filter is visible in the top right. You can disable it setting <code class="highlighter-rouge">quick-filter="no"</code>.</p>
+<p>This option is enabled by default, the filter is visible in the top right. You can disable it setting <code class="language-plaintext highlighter-rouge">quick-filter="no"</code>.</p>
 
-<p>You can also configure filtering to be case sensitive with <code class="highlighter-rouge">filter-case-sensitive="yes"</code>. By default, it’s disabled.</p>
+<p>You can also configure filtering to be case sensitive with <code class="language-plaintext highlighter-rouge">filter-case-sensitive="yes"</code>. By default, it’s disabled.</p>
 
-<p>Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in <code class="highlighter-rouge">quick-filter-function</code> property.</p>
+<p>Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in <code class="language-plaintext highlighter-rouge">quick-filter-function</code> property.</p>
 
 <h3 id="filtering-by-columns">Filtering by columns</h3>
 
-<p>It is posible to configure filtering by columns with the <code class="highlighter-rouge">o-table-columns-filter</code> component, adding filterable columns separated by ‘;’ in its <code class="highlighter-rouge">columns</code> property.</p>
+<p>It is posible to configure filtering by columns with the <code class="language-plaintext highlighter-rouge">o-table-columns-filter</code> component, adding filterable columns separated by ‘;’ in its <code class="language-plaintext highlighter-rouge">columns</code> property.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1222,9 +1224,9 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <h3 id="custom-filter">Custom filter</h3>
 
-<p><strong>OntimizeWeb</strong> allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the <a href="https://ontimizeweb.github.io/docs/v3/components/filterbuilder/" target="_blank"><code class="highlighter-rouge">o-filter-builder</code></a> component to you application.</p>
+<p><strong>OntimizeWeb</strong> allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the <a href="https://ontimizeweb.github.io/docs/v3/components/filterbuilder/" target="_blank"><code class="language-plaintext highlighter-rouge">o-filter-builder</code></a> component to you application.</p>
 
-<p>The <code class="highlighter-rouge">o-filter-builder</code> component uses the <code class="highlighter-rouge">IExpression</code> interface that represents a filtering expression. You can read more about how to build complex filtering expressions <a href="https://ontimizeweb.github.io/docs/v3/guide/filterexpression/" target="_blank">here</a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-filter-builder</code> component uses the <code class="language-plaintext highlighter-rouge">IExpression</code> interface that represents a filtering expression. You can read more about how to build complex filtering expressions <a href="https://ontimizeweb.github.io/docs/v3/guide/filterexpression/" target="_blank">here</a>.</p>
 
 <h2 id="cell-renderers">Cell renderers</h2>
 
@@ -1258,13 +1260,13 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><strong>OntimizeWeb</strong> offers you a set of prebuilt table cell renderers to include in your table. This cell renderers are the following data types: <em>action</em>, <em>boolean</em>, <em>real</em>, <em>currency</em>, <em>date</em>, <em>integer</em>, <em>image</em>, <em>percentage</em> and <em>service</em>.</p>
 
-<p>For adding a cell renderer to the cells of a table column, you have to configure the attribute <code class="highlighter-rouge">type</code> in the desired table column with the value that indicates the cell render you want to use. You may need to configure additional parametres depending on the cell renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the <strong>API</strong> section of this page.</p>
+<p>For adding a cell renderer to the cells of a table column, you have to configure the attribute <code class="language-plaintext highlighter-rouge">type</code> in the desired table column with the value that indicates the cell render you want to use. You may need to configure additional parametres depending on the cell renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the <strong>API</strong> section of this page.</p>
 
 <p>You can see different predefined table cell renderers in the example below.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/tabla/renderers_table.png" alt="Predefined table cell renderers" class="comp-example-img" /></p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span>  <span class="na">attr=</span><span class="s">"accounts"</span> <span class="na">columns=</span><span class="s">"PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"</span> <span class="na">visible-columns=</span><span class="s">"PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getTableData</span><span class="err">()"</span> <span class="na">sort-columns=</span><span class="s">"ACCOUNT:DESC"</span> <span class="na">query-on-init=</span><span class="s">"false"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"no"</span> <span class="na">export-button=</span><span class="s">"no"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span>  <span class="na">attr=</span><span class="s">"accounts"</span> <span class="na">columns=</span><span class="s">"PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED"</span> <span class="na">visible-columns=</span><span class="s">"PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span> <span class="na">[static-data]=</span><span class="s">"getTableData()"</span> <span class="na">sort-columns=</span><span class="s">"ACCOUNT:DESC"</span> <span class="na">query-on-init=</span><span class="s">"false"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"no"</span> <span class="na">export-button=</span><span class="s">"no"</span><span class="nt">&gt;</span>
   <span class="c">&lt;!--Date Renderer--&gt;</span>
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"STARTDATE"</span> <span class="na">title=</span><span class="s">"STARTDATE"</span> <span class="na">type=</span><span class="s">"date"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-table-column&gt;</span>
   <span class="c">&lt;!--Currency Renderer--&gt;</span>
@@ -1282,25 +1284,25 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><strong>Action cell renderer</strong></p>
 
-<p>The action cell renderer is used for displaying a button in a table cell. Include this renderer in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>action</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-action</code> to the table column.</p>
+<p>The action cell renderer is used for displaying a button in a table cell. Include this renderer in your table column by configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>action</strong> or adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-action</code> to the table column.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span> <span class="na">type=</span><span class="s">"action"</span> <span class="na">icon=</span><span class="s">"person"</span> <span class="err">(</span><span class="na">onClick</span><span class="err">)="</span><span class="na">showMessage</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span> <span class="na">type=</span><span class="s">"action"</span> <span class="na">icon=</span><span class="s">"person"</span> <span class="na">(onClick)=</span><span class="s">"showMessage($event)"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
 <span class="c">&lt;!-- Equivalent code --&gt;</span>
 
 <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-table-cell-renderer-action</span> <span class="na">icon=</span><span class="s">"person"</span> <span class="err">(</span><span class="na">onClick</span><span class="err">)="</span><span class="na">showMessage</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-table-cell-renderer-action&gt;</span>
+  <span class="nt">&lt;o-table-cell-renderer-action</span> <span class="na">icon=</span><span class="s">"person"</span> <span class="na">(onClick)=</span><span class="s">"showMessage($event)"</span><span class="nt">&gt;&lt;/o-table-cell-renderer-action&gt;</span>
 <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 
-<p>You can display a <code class="highlighter-rouge">text</code> and/or a <code class="highlighter-rouge">icon</code> in the cell, also choosing the icon position using the <code class="highlighter-rouge">icon-position</code> attribute.</p>
+<p>You can display a <code class="language-plaintext highlighter-rouge">text</code> and/or a <code class="language-plaintext highlighter-rouge">icon</code> in the cell, also choosing the icon position using the <code class="language-plaintext highlighter-rouge">icon-position</code> attribute.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;o-table-cell-renderer-action</span> <span class="na">icon=</span><span class="s">"person"</span> <span class="na">text=</span><span class="s">"user"</span> <span class="na">icon-position=</span><span class="s">"right"</span><span class="nt">&gt;&lt;/o-table-cell-renderer-action&gt;</span>
 <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 
-<p>When an action cell is clicked you can trigger a predefined action or execute your custom callback. In the first case there are two predefined actions: <code class="highlighter-rouge">detail</code> or <code class="highlighter-rouge">edit</code>, that will trigger navigation to table detail or edition route. Otherwise, you can listen to the <code class="highlighter-rouge">onClick</code> event to perform your defined action. Check the definition of this and more attributes in the <strong>API</strong> section of this page.</p>
+<p>When an action cell is clicked you can trigger a predefined action or execute your custom callback. In the first case there are two predefined actions: <code class="language-plaintext highlighter-rouge">detail</code> or <code class="language-plaintext highlighter-rouge">edit</code>, that will trigger navigation to table detail or edition route. Otherwise, you can listen to the <code class="language-plaintext highlighter-rouge">onClick</code> event to perform your defined action. Check the definition of this and more attributes in the <strong>API</strong> section of this page.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Navigation to detail mode --&gt;</span>
 <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span><span class="nt">&gt;</span>
@@ -1309,13 +1311,13 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <span class="c">&lt;!-- Triggering showMessage method --&gt;</span>
 <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEENAME"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-table-cell-renderer-action</span> <span class="na">icon=</span><span class="s">"person"</span> <span class="err">(</span><span class="na">onClick</span><span class="err">)="</span><span class="na">showMessage</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-table-cell-renderer-action&gt;</span>
+  <span class="nt">&lt;o-table-cell-renderer-action</span> <span class="na">icon=</span><span class="s">"person"</span> <span class="na">(onClick)=</span><span class="s">"showMessage($event)"</span><span class="nt">&gt;&lt;/o-table-cell-renderer-action&gt;</span>
 <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 
 <p><strong>Boolean cell renderer</strong></p>
 
-<p>Include the table cell renderer boolean in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>boolean</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-boolean</code> to the table column. You can indicate the type of the retrieved data by configuring the <code class="highlighter-rouge">boolean-type</code> attribute. Display a custom value by configuring <code class="highlighter-rouge">false-value</code> and <code class="highlighter-rouge">true-value</code> attributes depending on the <code class="highlighter-rouge">false-value-type</code> and <code class="highlighter-rouge">true-value-type</code> attributes. Check the configuration of this attributes in the <strong>API</strong> section of this page.</p>
+<p>Include the table cell renderer boolean in your table column by configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>boolean</strong> or adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-boolean</code> to the table column. You can indicate the type of the retrieved data by configuring the <code class="language-plaintext highlighter-rouge">boolean-type</code> attribute. Display a custom value by configuring <code class="language-plaintext highlighter-rouge">false-value</code> and <code class="language-plaintext highlighter-rouge">true-value</code> attributes depending on the <code class="language-plaintext highlighter-rouge">false-value-type</code> and <code class="language-plaintext highlighter-rouge">true-value-type</code> attributes. Check the configuration of this attributes in the <strong>API</strong> section of this page.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"COMMISSION"</span> <span class="na">title=</span><span class="s">"COMMISSION"</span> <span class="na">type=</span><span class="s">"boolean"</span> <span class="na">true-value=</span><span class="s">"check_circle"</span> <span class="na">false-value=</span><span class="s">"highlight_off"</span> <span class="na">true-value-type=</span><span class="s">"icon"</span> <span class="na">false-value-type=</span><span class="s">"icon"</span> <span class="na">boolean-type=</span><span class="s">"string"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
@@ -1328,7 +1330,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><strong>Currency cell renderer</strong></p>
 
-<p>Include the table cell renderer currency in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>currency</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-currency</code> to the table column. Configure the currency symbol with the <code class="highlighter-rouge">currency-symbol</code> attribute. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>Include the table cell renderer currency in your table column by configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>currency</strong> or adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-currency</code> to the table column. Configure the currency symbol with the <code class="language-plaintext highlighter-rouge">currency-symbol</code> attribute. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"BALANCE"</span> <span class="na">title=</span><span class="s">"BALANCE"</span> <span class="na">type=</span><span class="s">"currency"</span> <span class="na">currency-symbol=</span><span class="s">"€"</span> <span class="na">currency-symbol-position=</span><span class="s">"right"</span> <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
@@ -1341,7 +1343,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><strong>Date cell renderer</strong></p>
 
-<p>You can include the table cell renderer date in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>date</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-date</code> to the table column. You may want to set the displaying date format by configuring the <code class="highlighter-rouge">format</code> attribute. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>You can include the table cell renderer date in your table column by configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>date</strong> or adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-date</code> to the table column. You may want to set the displaying date format by configuring the <code class="language-plaintext highlighter-rouge">format</code> attribute. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"STARTDATE"</span> <span class="na">title=</span><span class="s">"STARTDATE"</span> <span class="na">type=</span><span class="s">"date"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
@@ -1354,7 +1356,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><strong>Integer cell renderer</strong></p>
 
-<p>Include the table cell renderer integer in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>integer</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-integer</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
+<p>Include the table cell renderer integer in your table column by configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>integer</strong> or adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-integer</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NUMCARDS"</span> <span class="na">title=</span><span class="s">"NUMCARDS"</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
@@ -1367,7 +1369,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><strong>Image cell renderer</strong></p>
 
-<p>You can include the table cell renderer image in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>image</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-image</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
+<p>You can include the table cell renderer image in your table column by configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>image</strong> or adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-image</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"PHOTO"</span> <span class="na">orderable=</span><span class="s">"no"</span> <span class="na">searchable=</span><span class="s">"no"</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">image-type=</span><span class="s">"base64"</span> <span class="na">empty-image=</span><span class="s">"assets/images/no-image.png"</span> <span class="na">avatar=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
@@ -1380,7 +1382,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><strong>Percentage cell renderer</strong></p>
 
-<p>You can include the table cell renderer percentage in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>percentage</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-percentage</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
+<p>You can include the table cell renderer percentage in your table column by configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>percentage</strong> or adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-percentage</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="na">title=</span><span class="s">"INTERESRATE"</span> <span class="na">type=</span><span class="s">"percentage"</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">max-decimal-digits=</span><span class="s">"2"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
@@ -1393,7 +1395,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><strong>Real cell renderer</strong></p>
 
-<p>Include the table cell renderer real in your table column by configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>real</strong> or adding the <code class="highlighter-rouge">o-table-cell-renderer-real</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
+<p>Include the table cell renderer real in your table column by configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>real</strong> or adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-real</code> to the table column. Check the attributes of this component in the <strong>API</strong> section of this page.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"UNITPRICE"</span> <span class="na">title=</span><span class="s">"UNITPRICE"</span> <span class="na">type=</span><span class="s">"real"</span> <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
@@ -1411,8 +1413,8 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 <p>You can include this component in your table in two different ways:</p>
 
 <ol>
-  <li>Configuring the attribute <code class="highlighter-rouge">type</code> in the column with the value <strong>service</strong> and including the attributes of the table cell renderer service. Check all the attributes of the table cell renderer service in the <strong>API</strong> section of this page.</li>
-  <li>Adding the <code class="highlighter-rouge">o-table-cell-renderer-service</code> component to the table column like in the example below.</li>
+  <li>Configuring the attribute <code class="language-plaintext highlighter-rouge">type</code> in the column with the value <strong>service</strong> and including the attributes of the table cell renderer service. Check all the attributes of the table cell renderer service in the <strong>API</strong> section of this page.</li>
+  <li>Adding the <code class="language-plaintext highlighter-rouge">o-table-cell-renderer-service</code> component to the table column like in the example below.</li>
 </ol>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMPLOYEETYPEID"</span> <span class="na">title=</span><span class="s">"EMPLOYEETYPEID"</span><span class="nt">&gt;</span>
@@ -1439,47 +1441,47 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <ul>
   <li>
-    <p>The component must extend the <code class="highlighter-rouge">OBaseTableCellRenderer</code> class.</p>
+    <p>The component must extend the <code class="language-plaintext highlighter-rouge">OBaseTableCellRenderer</code> class.</p>
   </li>
   <li>
-    <p>Your renderer template must reference the template container. For this, wrap the content of your component HTML with the <code class="highlighter-rouge">ng-template</code> tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: <code class="highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code>. This will give your component a reference to acces the template container.</p>
+    <p>Your renderer template must reference the template container. For this, wrap the content of your component HTML with the <code class="language-plaintext highlighter-rouge">ng-template</code> tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: <code class="language-plaintext highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code>. This will give your component a reference to acces the template container.</p>
   </li>
   <li>
-    <p>If you want to customize the internal value of the cell (this value is used for filtering or exporting the table data), you must overwrite the <code class="highlighter-rouge">getCellData</code> method.</p>
+    <p>If you want to customize the internal value of the cell (this value is used for filtering or exporting the table data), you must overwrite the <code class="language-plaintext highlighter-rouge">getCellData</code> method.</p>
   </li>
 </ul>
 
-<p>You have an example of a custom renderer below. It displays a person full name in a table cell, for this, it concat the values in the <code class="highlighter-rouge">getCellData</code> method and displays its value in the template.</p>
+<p>You have an example of a custom renderer below. It displays a person full name in a table cell, for this, it concat the values in the <code class="language-plaintext highlighter-rouge">getCellData</code> method and displays its value in the template.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">TemplateRef</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">OBaseTableCellRenderer</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">TemplateRef</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OBaseTableCellRenderer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'custom-render'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./custom-render.component.html'</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">custom-render</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./custom-render.component.html</span><span class="dl">'</span>
 <span class="p">})</span>
 
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">OTableCellRendererName</span> <span class="kd">extends</span> <span class="nx">OBaseTableCellRenderer</span> <span class="p">{</span>
 
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="s1">'templateref'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">templateref</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">(</span><span class="kr">protected</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="nx">getCellData</span><span class="p">(</span><span class="nx">cellvalue</span><span class="p">:</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">rowvalue</span><span class="p">:</span> <span class="nb">Object</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">rowvalue</span><span class="p">[</span><span class="s1">'SURNAME'</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="s1">', '</span> <span class="o">+</span> <span class="nx">rowvalue</span><span class="p">[</span><span class="nx">NAME</span><span class="p">];</span>
+    <span class="k">return</span> <span class="nx">rowvalue</span><span class="p">[</span><span class="dl">'</span><span class="s1">SURNAME</span><span class="dl">'</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">rowvalue</span><span class="p">[</span><span class="nx">NAME</span><span class="p">];</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
 </code></pre></div></div>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;ng-template</span> <span class="err">#</span><span class="na">templateref</span> <span class="na">let-cellvalue=</span><span class="s">"cellvalue"</span> <span class="na">let-rowvalue=</span><span class="s">"rowvalue"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;ng-template</span> <span class="na">#templateref</span> <span class="na">let-cellvalue=</span><span class="s">"cellvalue"</span> <span class="na">let-rowvalue=</span><span class="s">"rowvalue"</span><span class="nt">&gt;</span>
     {{ getCellData(cellvalue, rowvalue) }}
   <span class="nt">&lt;/ng-template&gt;</span>
 </code></pre></div></div>
 
-<p>The <em>let</em> keyword declares a template input variable that you reference within the template. The input variables are <code class="highlighter-rouge">cellvalue</code> and <code class="highlighter-rouge">rowvalue</code>. The parser translates let cellvalue and let rowvalue into variables named, <code class="highlighter-rouge">let-cellvalue</code> and <code class="highlighter-rouge">let-rowvalue</code>.</p>
+<p>The <em>let</em> keyword declares a template input variable that you reference within the template. The input variables are <code class="language-plaintext highlighter-rouge">cellvalue</code> and <code class="language-plaintext highlighter-rouge">rowvalue</code>. The parser translates let cellvalue and let rowvalue into variables named, <code class="language-plaintext highlighter-rouge">let-cellvalue</code> and <code class="language-plaintext highlighter-rouge">let-rowvalue</code>.</p>
 
 <p>Finally, add the created component to your module for including it in your table.</p>
 
@@ -1493,10 +1495,10 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
   <li>Configure data binding</li>
 </ul>
 
-<p>If you need to disabled one operation, you can changing <code class="highlighter-rouge">insert-button= "no"</code>, <code class="highlighter-rouge">delete-button= "no"</code>.</p>
+<p>If you need to disabled one operation, you can changing <code class="language-plaintext highlighter-rouge">insert-button= "no"</code>, <code class="language-plaintext highlighter-rouge">delete-button= "no"</code>.</p>
 
 <blockquote>
-  <p><strong>NOTE</strong>: It is necessary to configure <code class="highlighter-rouge">detail-mode='none'</code> attribute for editing in a table column cell.</p>
+  <p><strong>NOTE</strong>: It is necessary to configure <code class="language-plaintext highlighter-rouge">detail-mode='none'</code> attribute for editing in a table column cell.</p>
 </blockquote>
 
 <h3 id="default-editors">Default editors</h3>
@@ -1505,7 +1507,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p>By default, the table will no define a editor for your data into a cell. If you want to be able to edit that data you have to use a cell editor. So, for editing your values, you have the following options.</p>
 
-<p><strong>1.</strong> Use one of the predefined cell editor, you should add <code class="highlighter-rouge">editable="yes"</code>. The predefined types are <em>boolean</em>, <em>date</em>, <em>integer</em>, <em>real</em> and <em>text</em>.</p>
+<p><strong>1.</strong> Use one of the predefined cell editor, you should add <code class="language-plaintext highlighter-rouge">editable="yes"</code>. The predefined types are <em>boolean</em>, <em>date</em>, <em>integer</em>, <em>real</em> and <em>text</em>.</p>
 
 <p>If a column haven’t type will be <em>string</em>. You can find all information <a href="https://ontimizeweb.github.io/docs/v3/components/table/#default-editors">here</a>.</p>
 
@@ -1534,44 +1536,44 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><em>Boolean</em></p>
 
-<p>The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the <code class="highlighter-rouge">o-table-cell-editor-boolean</code> component inside the <code class="highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
+<p>The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-boolean</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"CLOSED"</span> <span class="na">title=</span><span class="s">"CLOSED"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-table-cell-editor-boolean</span> <span class="na">true-value=</span><span class="s">"1"</span> <span class="na">false-value=</span><span class="s">"0"</span> <span class="na">boolean-type=</span><span class="s">"number"</span> <span class="err">(</span><span class="na">editionStarted</span><span class="err">)="</span><span class="na">editionStarted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
-    <span class="err">(</span><span class="na">editionCancelled</span><span class="err">)="</span><span class="na">editionCancelled</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="err">(</span><span class="na">editionCommitted</span><span class="err">)="</span><span class="na">editionCommitted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-table-cell-editor-boolean&gt;</span>
+    <span class="nt">&lt;o-table-cell-editor-boolean</span> <span class="na">true-value=</span><span class="s">"1"</span> <span class="na">false-value=</span><span class="s">"0"</span> <span class="na">boolean-type=</span><span class="s">"number"</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span>
+    <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span> <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;&lt;/o-table-cell-editor-boolean&gt;</span>
   <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">editionStarted</span><span class="p">(</span><span class="nx">arg</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'editionStarted'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">editionStarted</span><span class="dl">'</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="nx">editionCancelled</span><span class="p">(</span><span class="nx">arg</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'editionCancelled'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">editionCancelled</span><span class="dl">'</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="nx">editionCommitted</span><span class="p">(</span><span class="nx">arg</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'editionCommitted'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">editionCommitted</span><span class="dl">'</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
   <span class="p">}</span>
 </code></pre></div></div>
 <p><em>Date</em></p>
 
 <p>The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add
-<code class="highlighter-rouge">type="date" editable="yes"</code> in <code class="highlighter-rouge">o-table-column</code> component. To consult all the parameters of the editor see the API.</p>
+<code class="language-plaintext highlighter-rouge">type="date" editable="yes"</code> in <code class="language-plaintext highlighter-rouge">o-table-column</code> component. To consult all the parameters of the editor see the API.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"STARTDATE"</span> <span class="na">title=</span><span class="s">"STARTDATE"</span> <span class="na">format=</span><span class="s">"LL"</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">editable=</span><span class="s">"yes"</span> <span class="err">(</span><span class="na">editionStarted</span><span class="err">)="</span><span class="na">editionStarted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
-        <span class="err">(</span><span class="na">editionCancelled</span><span class="err">)="</span><span class="na">editionCancelled</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="err">(</span><span class="na">editionCommitted</span><span class="err">)="</span><span class="na">editionCommitted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"STARTDATE"</span> <span class="na">title=</span><span class="s">"STARTDATE"</span> <span class="na">format=</span><span class="s">"LL"</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">editable=</span><span class="s">"yes"</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span>
+        <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span> <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 
 <p><em>Integer</em></p>
 
-<p>The configuration is similar to the renderer integer. The following example uses the second option named before, adding the <code class="highlighter-rouge">o-table-cell-editor-integer</code> component inside the <code class="highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
+<p>The configuration is similar to the renderer integer. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-integer</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NUMCARDS"</span> <span class="na">title=</span><span class="s">"NUMCARDS"</span> <span class="na">class=</span><span class="s">"o-table-column-centered"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-table-cell-editor-integer</span> <span class="err">(</span><span class="na">editionStarted</span><span class="err">)="</span><span class="na">editionStarted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="err">(</span><span class="na">editionCancelled</span><span class="err">)="</span><span class="na">editionCancelled</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="err">(</span><span class="na">editionCommitted</span><span class="err">)="</span><span class="na">editionCommitted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;o-table-cell-editor-integer</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span> <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span> <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;/o-table-cell-editor-integer&gt;</span>
   <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
@@ -1579,20 +1581,20 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 <p><em>Real</em></p>
 
 <p>The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add
-<code class="highlighter-rouge">type="currency" editable="yes"</code> in <code class="highlighter-rouge">o-table-column</code> component. To consult all the parameters of the editor see the API.</p>
+<code class="language-plaintext highlighter-rouge">type="currency" editable="yes"</code> in <code class="language-plaintext highlighter-rouge">o-table-column</code> component. To consult all the parameters of the editor see the API.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"BALANCE"</span> <span class="na">title=</span><span class="s">"BALANCE"</span> <span class="na">editable=</span><span class="s">"yes"</span> <span class="na">type=</span><span class="s">"currency"</span> <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span>
-        <span class="na">currency-symbol=</span><span class="s">"€"</span> <span class="na">currency-symbol-position=</span><span class="s">"right"</span> <span class="err">(</span><span class="na">editionStarted</span><span class="err">)="</span><span class="na">editionStarted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="err">(</span><span class="na">editionCancelled</span><span class="err">)="</span><span class="na">editionCancelled</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
-        <span class="err">(</span><span class="na">editionCommitted</span><span class="err">)="</span><span class="na">editionCommitted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+        <span class="na">currency-symbol=</span><span class="s">"€"</span> <span class="na">currency-symbol-position=</span><span class="s">"right"</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span> <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span>
+        <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 
 <p><em>Text</em></p>
 
-<p>The configuration is similar to the renderer text. The following example uses the second option named before, adding the <code class="highlighter-rouge">o-table-cell-editor-integer</code> component inside the <code class="highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
+<p>The configuration is similar to the renderer text. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-integer</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NAME"</span> <span class="na">title=</span><span class="s">"NAME"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;o-table-cell-editor-text</span> <span class="err">(</span><span class="na">editionStarted</span><span class="err">)="</span><span class="na">editionStarted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="err">(</span><span class="na">editionCancelled</span><span class="err">)="</span><span class="na">editionCancelled</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="err">(</span><span class="na">editionCommitted</span><span class="err">)="</span><span class="na">editionCommitted</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-table-cell-editor-text&gt;</span>
+        <span class="nt">&lt;o-table-cell-editor-text</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span> <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span> <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;&lt;/o-table-cell-editor-text&gt;</span>
     <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 
@@ -1604,40 +1606,40 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <ul>
   <li>
-    <p>Your component must extend <code class="highlighter-rouge">OBaseTableCellEditor</code> class.</p>
+    <p>Your component must extend <code class="language-plaintext highlighter-rouge">OBaseTableCellEditor</code> class.</p>
   </li>
   <li>
-    <p>It also must get the <code class="highlighter-rouge">templateref</code> view child reference, using  <code class="highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code> where you’ll acquire the <code class="highlighter-rouge">&lt;ng-template&gt;</code> contents with a TemplateRef and access the view container.</p>
+    <p>It also must get the <code class="language-plaintext highlighter-rouge">templateref</code> view child reference, using  <code class="language-plaintext highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code> where you’ll acquire the <code class="language-plaintext highlighter-rouge">&lt;ng-template&gt;</code> contents with a TemplateRef and access the view container.</p>
   </li>
   <li>
     <p>If you want to customize the value of the columns in exports or filtering, you must overwrite the method <em>getCellData(cellvalue,rowvalue)</em>.</p>
   </li>
   <li>
-    <p>In your editor constructor you must set its <code class="highlighter-rouge">type</code> property value.</p>
+    <p>In your editor constructor you must set its <code class="language-plaintext highlighter-rouge">type</code> property value.</p>
   </li>
   <li>
-    <p>In your editor constructor you must register it as a new editor, using the <code class="highlighter-rouge">OTableColumnComponent</code> <code class="highlighter-rouge">addEditor</code> static method.</p>
+    <p>In your editor constructor you must register it as a new editor, using the <code class="language-plaintext highlighter-rouge">OTableColumnComponent</code> <code class="language-plaintext highlighter-rouge">addEditor</code> static method.</p>
   </li>
 </ul>
 
-<p>In the following example shows how to render two values of column in a cell (“SURNAME, name”) and how to override the <code class="highlighter-rouge">getCellData</code> method.</p>
+<p>In the following example shows how to render two values of column in a cell (“SURNAME, name”) and how to override the <code class="language-plaintext highlighter-rouge">getCellData</code> method.</p>
 
 <p>The o-table-cell-editor-name.ts file is as follows:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">TemplateRef</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">OBaseTableCellEditor</span><span class="p">,</span> <span class="nx">OTableColumnComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">TemplateRef</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OBaseTableCellEditor</span><span class="p">,</span> <span class="nx">OTableColumnComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'custom-editor'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./custom-editor.component.html'</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">custom-editor</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./custom-editor.component.html</span><span class="dl">'</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">OTableCellEditorName</span> <span class="kd">extends</span> <span class="nx">OBaseTableCellEditor</span> <span class="p">{</span>
 
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="s1">'templateref'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">templateref</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">(</span><span class="kr">protected</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'custom-editor'</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">custom-editor</span><span class="dl">'</span><span class="p">;</span>
     <span class="nx">OTableColumnComponent</span><span class="p">.</span><span class="nx">addEditor</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span> <span class="nx">OTableCellEditorName</span><span class="p">);</span>
   <span class="p">}</span>
 
@@ -1647,13 +1649,13 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 <p>Here’s how you might build your editor html template:</p>
 
 <ul>
-  <li>You must wrap your component template with <code class="highlighter-rouge">&lt;ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue"&gt;</code> and  <code class="highlighter-rouge">&lt;/ng-template&gt;</code>.
+  <li>You must wrap your component template with <code class="language-plaintext highlighter-rouge">&lt;ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue"&gt;</code> and  <code class="language-plaintext highlighter-rouge">&lt;/ng-template&gt;</code>.
 The <em>let</em> keyword declares a template input variable that you reference within the template. The input variables are <em>cellvalue</em> and <em>rowvalue</em>. The parser translates ‘let cellvalue’ and ‘let rowvalue’ into variables named, <em>let-cellvalue</em> and <em>let-rowvalue</em>.</li>
 </ul>
 
 <p>The o-table-cell-editor-name.html file is as follows:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ng-template</span> <span class="err">#</span><span class="na">templateref</span> <span class="na">let-cellvalue=</span><span class="s">"cellvalue"</span> <span class="na">let-rowvalue=</span><span class="s">"rowvalue"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ng-template</span> <span class="na">#templateref</span> <span class="na">let-cellvalue=</span><span class="s">"cellvalue"</span> <span class="na">let-rowvalue=</span><span class="s">"rowvalue"</span><span class="nt">&gt;</span>
   {{ rowvalue['SURNAME'] | uppercase }}, {{ rowvalue['NAME'] }}
 <span class="nt">&lt;/ng-template&gt;</span>
 </code></pre></div></div>
@@ -1663,20 +1665,20 @@ The <em>let</em> keyword declares a template input variable that you reference w
 <h2 id="features">Features</h2>
 <h3 id="checkbox-selection">Checkbox selection</h3>
 
-<p>The table supports checkbox selection with <code class="highlighter-rouge">select-all-checkbox-visible</code> property. If this property is activated will display the row checkboxes,including a master toggle checkbox for the header. It is disabled by default.</p>
+<p>The table supports checkbox selection with <code class="language-plaintext highlighter-rouge">select-all-checkbox-visible</code> property. If this property is activated will display the row checkboxes,including a master toggle checkbox for the header. It is disabled by default.</p>
 
-<p>You can configure show in the menu on the upper right the option of select row with <code class="highlighter-rouge">select-all-checkbox</code> property. It is disabled by default.</p>
+<p>You can configure show in the menu on the upper right the option of select row with <code class="language-plaintext highlighter-rouge">select-all-checkbox</code> property. It is disabled by default.</p>
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img" /></p>
 
 <h3 id="fixed-header-and-footer">Fixed header and footer</h3>
-<p>The <code class="highlighter-rouge">o-table</code> component supports <em>fixed header</em> and <em>footer</em> setting <code class="highlighter-rouge">fixed-header="yes"</code> when its content is greater than its own height. For that, you must set the height of the table, using, for example <code class="highlighter-rouge">[ngStyle]="height: 400px;"</code>. By default, it’s disabled.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> component supports <em>fixed header</em> and <em>footer</em> setting <code class="language-plaintext highlighter-rouge">fixed-header="yes"</code> when its content is greater than its own height. For that, you must set the height of the table, using, for example <code class="language-plaintext highlighter-rouge">[ngStyle]="height: 400px;"</code>. By default, it’s disabled.</p>
 
 <h3 class="grey-color">Example</h3>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="err">#</span><span class="na">table</span> <span class="na">attr=</span><span class="s">"table"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span> <span class="na">fixed-header=</span><span class="s">"yes"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getTableData</span><span class="err">()"</span> <span class="na">columns=</span><span class="s">"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">#table</span> <span class="na">attr=</span><span class="s">"table"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span> <span class="na">fixed-header=</span><span class="s">"yes"</span> <span class="na">[static-data]=</span><span class="s">"getTableData()"</span> <span class="na">columns=</span><span class="s">"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"</span>
     <span class="na">visible-columns=</span><span class="s">"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE"</span> <span class="na">layout-padding</span> <span class="na">sort-columns=</span><span class="s">"ANID"</span> <span class="na">query-on-init=</span><span class="s">"false"</span>
     <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"no"</span> <span class="na">export-button=</span><span class="s">"no"</span>
-    <span class="err">[</span><span class="na">ngStyle</span><span class="err">]="</span><span class="na">height:400px</span><span class="err">"</span><span class="nt">&gt;</span>
+    <span class="na">[ngStyle]=</span><span class="s">"height:400px"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"ENTITYID"</span> <span class="na">title=</span><span class="s">"ENTITYID"</span> <span class="na">width=</span><span class="s">"14%"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
     <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"OFFICEID"</span> <span class="na">title=</span><span class="s">"OFFICEID"</span> <span class="na">width=</span><span class="s">"14%"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
     <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"CDID"</span> <span class="na">title=</span><span class="s">"CDID"</span> <span class="na">width=</span><span class="s">"14%"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
@@ -1686,7 +1688,7 @@ The <em>let</em> keyword declares a template input variable that you reference w
 
 <h3 id="aggregates">Aggregates</h3>
 
-<p>Oftentimes, when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. The  <code class="highlighter-rouge">o-table</code> component has support for the mostly used aggregate functions (count,sum,avg,min,max).</p>
+<p>Oftentimes, when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. The  <code class="language-plaintext highlighter-rouge">o-table</code> component has support for the mostly used aggregate functions (count,sum,avg,min,max).</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1699,7 +1701,7 @@ The <em>let</em> keyword declares a template input variable that you reference w
     <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"BALANCE"</span> <span class="na">title=</span><span class="s">"BALANCE"</span> <span class="na">type=</span><span class="s">"currency"</span> <span class="na">currency-symbol=</span><span class="s">"€"</span> <span class="na">thousand-separator=</span><span class="s">","</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
     <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="na">title=</span><span class="s">"INTERESRATE"</span> <span class="na">type=</span><span class="s">"real"</span> <span class="nt">&gt;&lt;/o-table-column&gt;</span>
     <span class="nt">&lt;o-table-column-aggregate</span> <span class="na">attr=</span><span class="s">"BALANCE"</span> <span class="na">title=</span><span class="s">"sum"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-table-column-aggregate</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="err">[</span><span class="na">function-aggregate</span><span class="err">]="</span><span class="na">custom</span><span class="err">"</span><span class="nt">&gt;&lt;/o-table-column-aggregate&gt;</span>
+    <span class="nt">&lt;o-table-column-aggregate</span> <span class="na">attr=</span><span class="s">"INTERESRATE"</span> <span class="na">[function-aggregate]=</span><span class="s">"custom"</span><span class="nt">&gt;&lt;/o-table-column-aggregate&gt;</span>
 <span class="nt">&lt;/o-table&gt;</span>
 </code></pre></div></div>
 
@@ -1721,7 +1723,7 @@ The <em>let</em> keyword declares a template input variable that you reference w
 
 <h3 id="calculated-columns">Calculated columns</h3>
 
-<p>The <code class="highlighter-rouge">o-table</code> suppports calculated columns, used when user wants to show an additional column which contains a result of an operation.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> suppports calculated columns, used when user wants to show an additional column which contains a result of an operation.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1745,7 +1747,7 @@ The <em>let</em> keyword declares a template input variable that you reference w
     <span class="nt">&lt;o-table-column-calculated</span> <span class="na">attr=</span><span class="s">"BENEFIT"</span> <span class="na">title=</span><span class="s">"BENEFIT"</span> <span class="na">type=</span><span class="s">"currency"</span> <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">currency-symbol=</span><span class="s">"€"</span>
       <span class="na">currency-symbol-position=</span><span class="s">"right"</span> <span class="na">operation=</span><span class="s">"(BALANCE*INTERESRATE)"</span> <span class="nt">&gt;</span> <span class="nt">&lt;/o-table-column-calculated&gt;</span>
     <span class="nt">&lt;o-table-column-calculated</span> <span class="na">attr=</span><span class="s">"BENEFIT2"</span> <span class="na">title=</span><span class="s">"BENEFIT2"</span>  <span class="na">type=</span><span class="s">"currency"</span> <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span> <span class="na">currency-symbol=</span><span class="s">"€"</span>
-      <span class="na">currency-symbol-position=</span><span class="s">"right"</span> <span class="err">[</span><span class="na">operation-function</span><span class="err">]="</span><span class="na">calculateBenefit</span><span class="err">"</span> <span class="nt">&gt;</span> <span class="nt">&lt;/o-table-column-calculated&gt;</span>
+      <span class="na">currency-symbol-position=</span><span class="s">"right"</span> <span class="na">[operation-function]=</span><span class="s">"calculateBenefit"</span> <span class="nt">&gt;</span> <span class="nt">&lt;/o-table-column-calculated&gt;</span>
 
 
   <span class="nt">&lt;/o-table&gt;</span>
@@ -1759,7 +1761,7 @@ The <em>let</em> keyword declares a template input variable that you reference w
 
   <span class="nx">calculateBenefit</span><span class="p">(</span><span class="nx">rowData</span><span class="p">:</span> <span class="nx">any</span><span class="p">[]):</span> <span class="nx">number</span> <span class="p">{</span>
 
-    <span class="k">return</span> <span class="p">(</span><span class="nx">rowData</span><span class="p">[</span><span class="s1">'BALANCE'</span><span class="p">]</span> <span class="o">*</span> <span class="nx">rowData</span><span class="p">[</span><span class="s1">'INTERESRATE'</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">rowData</span><span class="p">[</span><span class="dl">'</span><span class="s1">BALANCE</span><span class="dl">'</span><span class="p">]</span> <span class="o">*</span> <span class="nx">rowData</span><span class="p">[</span><span class="dl">'</span><span class="s1">INTERESRATE</span><span class="dl">'</span><span class="p">]);</span>
   <span class="p">}</span>
 
 </code></pre></div></div>
@@ -1768,32 +1770,32 @@ The <em>let</em> keyword declares a template input variable that you reference w
 
 <h3 id="table-options">Table options</h3>
 
-<p>The <code class="highlighter-rouge">o-table-option</code> component allows to add extra options to the table menu. You only have to add the component to your table and subscribe to the <code class="highlighter-rouge">onClick</code> event in your component to perform the desired actions. Check the example below.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table-option</code> component allows to add extra options to the table menu. You only have to add the component to your table and subscribe to the <code class="language-plaintext highlighter-rouge">onClick</code> event in your component to perform the desired actions. Check the example below.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"ECustomers"</span> <span class="na">title=</span><span class="s">"CUSTOMERS"</span>
   <span class="na">columns=</span><span class="s">"CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"</span>
   <span class="na">visible-columns=</span><span class="s">"PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"</span><span class="nt">&gt;</span>
 
-  <span class="nt">&lt;o-table-option</span> <span class="err">#</span><span class="na">myOption</span> <span class="na">label=</span><span class="s">"My option"</span><span class="nt">&gt;&lt;/o-table-option&gt;</span>
+  <span class="nt">&lt;o-table-option</span> <span class="na">#myOption</span> <span class="na">label=</span><span class="s">"My option"</span><span class="nt">&gt;&lt;/o-table-option&gt;</span>
 
 <span class="nt">&lt;/o-table&gt;</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">OTableOptionComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">OTableOptionComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-    <span class="na">selector</span><span class="p">:</span> <span class="s1">'my-page'</span><span class="p">,</span>
-    <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'my-page.component.html'</span>
+    <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-page</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-page.component.html</span><span class="dl">'</span>
   <span class="p">})</span>
   <span class="k">export</span> <span class="kd">class</span> <span class="nx">MyPageComponent</span> <span class="p">{</span>
 
-    <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="s1">'myOption'</span><span class="p">)</span>
+    <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myOption</span><span class="dl">'</span><span class="p">)</span>
     <span class="kr">protected</span> <span class="nx">myOption</span><span class="p">:</span> <span class="nx">OTableOptionComponent</span><span class="p">;</span>
 
     <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">myButton</span><span class="p">.</span><span class="nx">onClick</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="s1">'my option click'</span><span class="p">);</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">my option click</span><span class="dl">'</span><span class="p">);</span>
       <span class="p">});</span>
     <span class="p">}</span>
 
@@ -1802,10 +1804,10 @@ The <em>let</em> keyword declares a template input variable that you reference w
 
 <h3 id="table-context-menu">Table context menu</h3>
 
-<p>The <code class="highlighter-rouge">o-table</code> allows to add a context menu to table rows, the menu is displayed by right clicking in the table row.
-For including the context menu in your table you have to include the <code class="highlighter-rouge">o-table-context-menu</code> component in your table.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> allows to add a context menu to table rows, the menu is displayed by right clicking in the table row.
+For including the context menu in your table you have to include the <code class="language-plaintext highlighter-rouge">o-table-context-menu</code> component in your table.</p>
 
-<p>By default, <code class="highlighter-rouge">o-table-context-menu</code> include the next options:</p>
+<p>By default, <code class="language-plaintext highlighter-rouge">o-table-context-menu</code> include the next options:</p>
 <ul>
   <li>Refresh</li>
   <li>View detail.</li>
@@ -1821,8 +1823,8 @@ For including the context menu in your table you have to include the <code class
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/tabla/table_contextual_default.png" alt="Table contextual by default " class="comp-example-img" /></p>
 
-<p>The <code class="highlighter-rouge">o-table-context-menu</code> allows to hide these options by setting  the attributes <code class="highlighter-rouge">insert</code>, <code class="highlighter-rouge">edit</code>, <code class="highlighter-rouge">view-detail</code>, <code class="highlighter-rouge">delete</code>,<code class="highlighter-rouge">copy</code>, <code class="highlighter-rouge">select-all</code>,<code class="highlighter-rouge">refresh</code>,<code class="highlighter-rouge">filter</code>  to <code class="highlighter-rouge">no</code>. 
-You can also include your own <code class="highlighter-rouge">context-menu</code> with the reference to a <a href="https://ontimizeweb.github.io/docs/v3/components/contextmenu/" target="_blank"><code class="highlighter-rouge">o-context-menu</code></a>component like in the example below.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table-context-menu</code> allows to hide these options by setting  the attributes <code class="language-plaintext highlighter-rouge">insert</code>, <code class="language-plaintext highlighter-rouge">edit</code>, <code class="language-plaintext highlighter-rouge">view-detail</code>, <code class="language-plaintext highlighter-rouge">delete</code>,<code class="language-plaintext highlighter-rouge">copy</code>, <code class="language-plaintext highlighter-rouge">select-all</code>,<code class="language-plaintext highlighter-rouge">refresh</code>,<code class="language-plaintext highlighter-rouge">filter</code>  to <code class="language-plaintext highlighter-rouge">no</code>. 
+You can also include your own <code class="language-plaintext highlighter-rouge">context-menu</code> with the reference to a <a href="https://ontimizeweb.github.io/docs/v3/components/contextmenu/" target="_blank"><code class="language-plaintext highlighter-rouge">o-context-menu</code></a>component like in the example below.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1837,26 +1839,26 @@ You can also include your own <code class="highlighter-rouge">context-menu</code
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NAME"</span> <span class="na">title=</span><span class="s">"NAME"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 
   ...
-   <span class="nt">&lt;o-table-context-menu</span> <span class="err">[</span><span class="na">context-menu</span><span class="err">]="</span><span class="na">myContextMenu</span><span class="err">"</span> <span class="na">insert=</span><span class="s">"no"</span> <span class="na">edit=</span><span class="s">"no"</span> <span class="na">view-details=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-table-context-menu&gt;</span>
+   <span class="nt">&lt;o-table-context-menu</span> <span class="na">[context-menu]=</span><span class="s">"myContextMenu"</span> <span class="na">insert=</span><span class="s">"no"</span> <span class="na">edit=</span><span class="s">"no"</span> <span class="na">view-details=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-table-context-menu&gt;</span>
 <span class="nt">&lt;/o-table&gt;</span>
 
-<span class="nt">&lt;o-context-menu</span> <span class="err">#</span><span class="na">myContextMenu</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"face"</span> <span class="na">label=</span><span class="s">"Item 1"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
+<span class="nt">&lt;o-context-menu</span> <span class="na">#myContextMenu</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"face"</span> <span class="na">label=</span><span class="s">"Item 1"</span> <span class="na">(execute)=</span><span class="s">"onExecute($event)"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
   <span class="nt">&lt;o-context-menu-item</span> <span class="na">icon=</span><span class="s">"star_rate"</span> <span class="na">label=</span><span class="s">"Item 2"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
-  <span class="nt">&lt;o-context-menu-item</span> <span class="na">label=</span><span class="s">"Item 3"</span> <span class="err">[</span><span class="na">visible</span><span class="err">]="</span><span class="na">getVisible</span><span class="err">"</span> <span class="err">(</span><span class="na">execute</span><span class="err">)="</span><span class="na">onExecute</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
+  <span class="nt">&lt;o-context-menu-item</span> <span class="na">label=</span><span class="s">"Item 3"</span> <span class="na">[visible]=</span><span class="s">"getVisible"</span> <span class="na">(execute)=</span><span class="s">"onExecute($event)"</span><span class="nt">&gt;&lt;/o-context-menu-item&gt;</span>
 <span class="nt">&lt;/o-context-menu&gt;</span>
 </code></pre></div></div>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/tabla/table_contextual.png" alt="Table contextual" class="comp-example-img" /></p>
 
-<p>For more information about the <code class="highlighter-rouge">o-context-menu</code> component definition, please read the <a href="https://ontimizeweb.github.io/docs/v3/components/contextmenu/" target="_blank">docs</a>.</p>
+<p>For more information about the <code class="language-plaintext highlighter-rouge">o-context-menu</code> component definition, please read the <a href="https://ontimizeweb.github.io/docs/v3/components/contextmenu/" target="_blank">docs</a>.</p>
 
 <p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/v3/playground/main/table/contextmenu" target="_blank">OntimizeWeb playground</a>.</p>
 
 <h3 id="insertable-row">Insertable row</h3>
 
-<p>The <code class="highlighter-rouge">o-table</code> component allow to insert rows adding the <code class="highlighter-rouge">o-table-insertable-row</code> component into the <code class="highlighter-rouge">o-table</code> definition.
-In this component you can define the columns and required columns with <code class="highlighter-rouge">columns</code> and <code class="highlighter-rouge">required-columns</code> attributes.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> component allow to insert rows adding the <code class="language-plaintext highlighter-rouge">o-table-insertable-row</code> component into the <code class="language-plaintext highlighter-rouge">o-table</code> definition.
+In this component you can define the columns and required columns with <code class="language-plaintext highlighter-rouge">columns</code> and <code class="language-plaintext highlighter-rouge">required-columns</code> attributes.</p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1875,7 +1877,7 @@ In this component you can define the columns and required columns with <code cla
 
 <h3 id="table-buttons">Table buttons</h3>
 
-<p>The <code class="highlighter-rouge">o-table</code> component allows to add extra buttons in the toolbar with the <code class="highlighter-rouge">o-table-button</code> component.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> component allows to add extra buttons in the toolbar with the <code class="language-plaintext highlighter-rouge">o-table-button</code> component.</p>
 
 <p>You can configure:</p>
 <ul>
@@ -1903,14 +1905,14 @@ In this component you can define the columns and required columns with <code cla
 <h3 class="grey-color">Typescript code</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">...</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">OTableButtonComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">OTableButtonComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
   <span class="p">...</span>
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="s1">'myButton'</span><span class="p">)</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myButton</span><span class="dl">'</span><span class="p">)</span>
   <span class="kr">protected</span> <span class="nx">myButton</span><span class="p">:</span> <span class="nx">OTableButtonComponent</span><span class="p">;</span>
   <span class="p">...</span>
   <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">myButton</span><span class="p">.</span><span class="nx">click</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="s1">'my button click'</span><span class="p">);</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">my button click</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">}</span>
 </code></pre></div></div>
@@ -1920,7 +1922,7 @@ In this component you can define the columns and required columns with <code cla
 <p>This section explains how the table data exportation works.</p>
 
 <h3 class="grey-color">Exportating the table data</h3>
-<p>The <code class="highlighter-rouge">o-table</code> component is able to export its data in Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> component is able to export its data in Excel, HTML and PDF format. For this, it is necessary to set up the services properly on your rest interface.</p>
 
 <p>The exportation process is performed as follows:</p>
 
@@ -1940,33 +1942,33 @@ You can change the <b>/export</b> end point. Please check the <a href="#customex
 <br />
 You can see an example of the exportation method end point in the following example.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"xlsx"</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">,</span> <span class="n">consumes</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="n">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
-<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">EntityResult</span><span class="o">&gt;</span> <span class="nf">generateExcel</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">ExportParameter</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">EntityResult</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EntityResult</span><span class="o">(</span><span class="n">EntityResult</span><span class="o">.</span><span class="na">OPERATION_SUCCESSFUL</span><span class="o">,</span> <span class="n">EntityResult</span><span class="o">.</span><span class="na">NODATA_RESULT</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"xlsx"</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="nc">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">,</span> <span class="n">consumes</span> <span class="o">=</span> <span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">EntityResult</span><span class="o">&gt;</span> <span class="nf">generateExcel</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="nc">ExportParameter</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">EntityResult</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">EntityResult</span><span class="o">(</span><span class="nc">EntityResult</span><span class="o">.</span><span class="na">OPERATION_SUCCESSFUL</span><span class="o">,</span> <span class="nc">EntityResult</span><span class="o">.</span><span class="na">NODATA_RESULT</span><span class="o">);</span>
 
-    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">columnNames</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getColumnNames</span><span class="o">();</span>
-    <span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">sqlTypes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="o">&lt;&gt;();</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">columnNames</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="na">getColumnNames</span><span class="o">();</span>
+    <span class="nc">Hashtable</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">sqlTypes</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Hashtable</span><span class="o">&lt;&gt;();</span>
     <span class="n">sqlTypes</span><span class="o">.</span><span class="na">putAll</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="na">getSqlTypes</span><span class="o">());</span>
 
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">columnNamesArray</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">col</span> <span class="o">:</span> <span class="n">columnNames</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">columnNamesArray</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">col</span> <span class="o">:</span> <span class="n">columnNames</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
         <span class="n">columnNamesArray</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">columnNames</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">col</span><span class="o">));</span>
     <span class="o">}</span>
 
-    <span class="n">EntityResult</span> <span class="n">er</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">prepareEntityResult</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+    <span class="nc">EntityResult</span> <span class="n">er</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">prepareEntityResult</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
 
     <span class="k">try</span> <span class="o">{</span>
-        <span class="n">File</span> <span class="n">xslxFile</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">exportService</span><span class="o">.</span><span class="na">generateExcel</span><span class="o">(</span><span class="n">er</span><span class="o">,</span> <span class="n">columnNamesArray</span><span class="o">);</span>
-        <span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">erResult</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="o">&lt;&gt;();</span>
-        <span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="n">xslxFile</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+        <span class="nc">File</span> <span class="n">xslxFile</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">exportService</span><span class="o">.</span><span class="na">generateExcel</span><span class="o">(</span><span class="n">er</span><span class="o">,</span> <span class="n">columnNamesArray</span><span class="o">);</span>
+        <span class="nc">Hashtable</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="n">erResult</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Hashtable</span><span class="o">&lt;&gt;();</span>
+        <span class="nc">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="n">xslxFile</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
         <span class="n">erResult</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"xslxId"</span><span class="o">,</span> <span class="n">filename</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">filename</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">"."</span><span class="o">)));</span>
         <span class="n">result</span><span class="o">.</span><span class="na">addRecord</span><span class="o">(</span><span class="n">erResult</span><span class="o">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">EntityResult</span><span class="o">&gt;(</span><span class="n">result</span><span class="o">,</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="na">OK</span><span class="o">);</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">EntityResult</span><span class="o">&gt;(</span><span class="n">result</span><span class="o">,</span> <span class="nc">HttpStatus</span><span class="o">.</span><span class="na">OK</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="n">result</span><span class="o">.</span><span class="na">setCode</span><span class="o">(</span><span class="n">EntityResult</span><span class="o">.</span><span class="na">OPERATION_WRONG</span><span class="o">);</span>
+        <span class="n">result</span><span class="o">.</span><span class="na">setCode</span><span class="o">(</span><span class="nc">EntityResult</span><span class="o">.</span><span class="na">OPERATION_WRONG</span><span class="o">);</span>
         <span class="n">result</span><span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">EntityResult</span><span class="o">&gt;(</span><span class="n">result</span><span class="o">,</span> <span class="n">HttpStatus</span><span class="o">.</span><span class="na">INTERNAL_SERVER_ERROR</span><span class="o">);</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">EntityResult</span><span class="o">&gt;(</span><span class="n">result</span><span class="o">,</span> <span class="nc">HttpStatus</span><span class="o">.</span><span class="na">INTERNAL_SERVER_ERROR</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
@@ -1982,43 +1984,43 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 </p>
 <p>In the following example you ca see the download api end point method.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"download/{extension}/{id}"</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">downloadFile</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"extension"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span> <span class="n">String</span> <span class="n">fileExtension</span><span class="o">,</span> <span class="nd">@PathVariable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"id"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span> <span class="n">String</span> <span class="n">fileId</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">InputStream</span> <span class="n">fis</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"download/{extension}/{id}"</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="nc">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">downloadFile</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"extension"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span> <span class="nc">String</span> <span class="n">fileExtension</span><span class="o">,</span> <span class="nd">@PathVariable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"id"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span> <span class="nc">String</span> <span class="n">fileId</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">InputStream</span> <span class="n">fis</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
     <span class="k">try</span> <span class="o">{</span>
-        <span class="n">File</span> <span class="n">tmpDir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"java.io.tmpdir"</span><span class="o">));</span>
-        <span class="n">File</span><span class="o">[]</span> <span class="n">matchingfiles</span> <span class="o">=</span> <span class="n">tmpDir</span><span class="o">.</span><span class="na">listFiles</span><span class="o">(</span><span class="k">new</span> <span class="n">FilenameFilter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">File</span> <span class="n">tmpDir</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"java.io.tmpdir"</span><span class="o">));</span>
+        <span class="nc">File</span><span class="o">[]</span> <span class="n">matchingfiles</span> <span class="o">=</span> <span class="n">tmpDir</span><span class="o">.</span><span class="na">listFiles</span><span class="o">(</span><span class="k">new</span> <span class="nc">FilenameFilter</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="o">(</span><span class="n">File</span> <span class="n">dir</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="o">(</span><span class="nc">File</span> <span class="n">dir</span><span class="o">,</span> <span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
                 <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="n">fileId</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">name</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="n">fileExtension</span><span class="o">);</span>
             <span class="o">}</span>
         <span class="o">});</span>
 
         <span class="k">if</span> <span class="o">(</span><span class="n">matchingfiles</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">matchingfiles</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
-            <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="n">matchingfiles</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">IExportService</span><span class="o">.</span><span class="na">XLSX_EXTENSION</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="n">fileExtension</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">File</span> <span class="n">file</span> <span class="o">=</span> <span class="n">matchingfiles</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+            <span class="k">if</span> <span class="o">(</span><span class="nc">IExportService</span><span class="o">.</span><span class="na">XLSX_EXTENSION</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="n">fileExtension</span><span class="o">))</span> <span class="o">{</span>
                 <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"</span><span class="o">);</span>
-            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">IExportService</span><span class="o">.</span><span class="na">HTML_EXTENSION</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="n">fileExtension</span><span class="o">))</span> <span class="o">{</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="nc">IExportService</span><span class="o">.</span><span class="na">HTML_EXTENSION</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="n">fileExtension</span><span class="o">))</span> <span class="o">{</span>
                 <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/xhtml+xml"</span><span class="o">);</span>
-            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">IExportService</span><span class="o">.</span><span class="na">PDF_EXTENSION</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="n">fileExtension</span><span class="o">))</span> <span class="o">{</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="nc">IExportService</span><span class="o">.</span><span class="na">PDF_EXTENSION</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="n">fileExtension</span><span class="o">))</span> <span class="o">{</span>
                 <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/pdf"</span><span class="o">);</span>
             <span class="o">}</span>
             <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Content-Disposition"</span><span class="o">,</span> <span class="s">"attachment; filename=\""</span> <span class="o">+</span> <span class="n">file</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\""</span><span class="o">);</span>
             <span class="n">response</span><span class="o">.</span><span class="na">setContentLengthLong</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
-            <span class="n">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedInputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">));</span>
-            <span class="n">FileCopyUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">fis</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">());</span>
+            <span class="n">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedInputStream</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">));</span>
+            <span class="nc">FileCopyUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">fis</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">());</span>
         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="n">HttpServletResponse</span><span class="o">.</span><span class="na">SC_NOT_FOUND</span><span class="o">);</span>
+            <span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_NOT_FOUND</span><span class="o">);</span>
         <span class="o">}</span>
-    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="n">HttpServletResponse</span><span class="o">.</span><span class="na">SC_INTERNAL_SERVER_ERROR</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_INTERNAL_SERVER_ERROR</span><span class="o">);</span>
     <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">fis</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
             <span class="k">try</span> <span class="o">{</span>
                 <span class="n">fis</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">ExportRestController</span><span class="o">.</span><span class="na">logger</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"{}"</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">e</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="nc">ExportRestController</span><span class="o">.</span><span class="na">logger</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"{}"</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span> <span class="n">e</span><span class="o">);</span>
             <span class="o">}</span>
         <span class="o">}</span>
     <span class="o">}</span>
@@ -2029,19 +2031,19 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 
 <p>For changing the exportation end points simple add your end points on the service configuration object of the table with the keys <b>exportPath</b> and <b>downloadPath</b>. Check the following example.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">export</span><span class="w"> </span><span class="err">const</span><span class="w"> </span><span class="err">SERVICE_CONFIG</span><span class="p">:</span><span class="w"> </span><span class="err">Object</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">'users'</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="err">'path'</span><span class="p">:</span><span class="w"> </span><span class="err">'/users'</span><span class="p">,</span><span class="w">
-        </span><span class="err">'exportPath'</span><span class="p">:</span><span class="w"> </span><span class="err">'/usersExport'</span><span class="p">,</span><span class="w">
-        </span><span class="err">'downloadPath'</span><span class="p">:</span><span class="w"> </span><span class="err">'/usersDownload'</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">export</span><span class="w"> </span><span class="err">const</span><span class="w"> </span><span class="err">SERVICE_CONFIG:</span><span class="w"> </span><span class="err">Object</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">'users':</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">'path':</span><span class="w"> </span><span class="err">'/users'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'exportPath':</span><span class="w"> </span><span class="err">'/usersExport'</span><span class="p">,</span><span class="w">
+        </span><span class="err">'downloadPath':</span><span class="w"> </span><span class="err">'/usersDownload'</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <h3 id="column-titles-alignment">Column titles alignment</h3>
-<p>The <code class="highlighter-rouge">o-table</code> columns title texts are centered by default. Using the <code class="highlighter-rouge">o-column</code> component <code class="highlighter-rouge">title-align</code> input user can modify that default value.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> columns title texts are centered by default. Using the <code class="language-plaintext highlighter-rouge">o-column</code> component <code class="language-plaintext highlighter-rouge">title-align</code> input user can modify that default value.</p>
 
-<p>There also exists the possibility of automatically align the table columns titles depending on the column type, using the <code class="highlighter-rouge">auto-align-titles</code> input:</p>
+<p>There also exists the possibility of automatically align the table columns titles depending on the column type, using the <code class="language-plaintext highlighter-rouge">auto-align-titles</code> input:</p>
 
 <ul>
   <li><strong>start</strong>: service types and default value when auto-align-titles is active.</li>
@@ -2049,16 +2051,16 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
   <li><strong>end</strong>: currency, integer, real and percentage types.</li>
 </ul>
 
-<p>When the <code class="highlighter-rouge">auto-align-titles</code> input is set to true, user can also define a <code class="highlighter-rouge">title-align</code> in the columns (its value has precedence over the default type alignment).</p>
+<p>When the <code class="language-plaintext highlighter-rouge">auto-align-titles</code> input is set to true, user can also define a <code class="language-plaintext highlighter-rouge">title-align</code> in the columns (its value has precedence over the default type alignment).</p>
 
 <h3 id="columns-multiple-sorting">Columns multiple sorting</h3>
-<p>Table allows multiple columns sorting by default. Using the <code class="highlighter-rouge">multiple-sort</code> input user can modify that default value.</p>
+<p>Table allows multiple columns sorting by default. Using the <code class="language-plaintext highlighter-rouge">multiple-sort</code> input user can modify that default value.</p>
 
 <p>A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state.</p>
 
 <h3 id="tooltip-in-columns">Tooltip in columns</h3>
 
-<p>The <code class="highlighter-rouge">o-table</code> component provides a text that is displayed when the user hovers over an column.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> component provides a text that is displayed when the user hovers over an column.</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
   <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NOTES"</span> <span class="na">title=</span><span class="s">"NOTES"</span> <span class="na">multiline=</span><span class="s">"no"</span> <span class="na">width=</span><span class="s">"300px"</span> <span class="na">tooltip=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
 ...
@@ -2066,9 +2068,9 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/tabla/table-tooltip.png" alt="Tooltip in table component" class="comp-example-img" /></p>
 
-<p>You can configure the value that is displayed with the attribute <code class="highlighter-rouge">tooltip-value</code> attribute. Additionally, you can specify default function to be applied when the user over column with <code class="highlighter-rouge">tooltip-function</code> attribute.</p>
+<p>You can configure the value that is displayed with the attribute <code class="language-plaintext highlighter-rouge">tooltip-value</code> attribute. Additionally, you can specify default function to be applied when the user over column with <code class="language-plaintext highlighter-rouge">tooltip-function</code> attribute.</p>
 
-<p>You can customize the tooltip styles by redefining the class <code class="highlighter-rouge">o-table-cell-tooltip</code>.</p>
+<p>You can customize the tooltip styles by redefining the class <code class="language-plaintext highlighter-rouge">o-table-cell-tooltip</code>.</p>
 
 <p>Note: If you have a custom render in the column and it is not overwritten the <em>getCelldata</em> method will show the internal value of the table.</p>
 
@@ -4254,7 +4256,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <code class="highlighter-rouge">editable-columns</code> from <code class="highlighter-rouge">o-table</code></p>
+    <p class="first"><p>Indicates whether or not the column content can be edited. Alternative (with higher priority) to attribute <code class="language-plaintext highlighter-rouge">editable-columns</code> from <code class="language-plaintext highlighter-rouge">o-table</code></p>
 </p>
     
   </td>
@@ -13115,7 +13117,7 @@ You can change the <b>/export/download</b> end point. Please check the <a href="
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

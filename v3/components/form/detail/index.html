@@ -215,6 +215,8 @@
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
             
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
+            
             </select>
           </li>
           
@@ -816,13 +818,13 @@
   </nav>
 </aside>
 
-<p>A detail form is an special usage of the form component. A form is called <em>detail form</em> when it is used for managing a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved by combining the <a href="https://ontimizeweb.github.io/docs/v3/components/form/" target="_blank"><code class="highlighter-rouge">o-form</code></a> and the <a href="https://ontimizeweb.github.io/docs/v3/components/table/" target="_blank"><code class="highlighter-rouge">o-table</code></a> components in your application. In this section we describe how <strong>OntimizeWeb</strong> manage the transitions between the table and the detail form.</p>
+<p>A detail form is an special usage of the form component. A form is called <em>detail form</em> when it is used for managing a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved by combining the <a href="https://ontimizeweb.github.io/docs/v3/components/form/" target="_blank"><code class="language-plaintext highlighter-rouge">o-form</code></a> and the <a href="https://ontimizeweb.github.io/docs/v3/components/table/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a> components in your application. In this section we describe how <strong>OntimizeWeb</strong> manage the transitions between the table and the detail form.</p>
 
-<p>As a developer, you can decide the behaviour of a detail form in you application. When the user opens a detail form, you can decide if the form will be in update or read only mode. You can select one of this behaviours by configuring the <code class="highlighter-rouge">editable-detail</code> attribute in your <code class="highlighter-rouge">o-form</code> component.</p>
+<p>As a developer, you can decide the behaviour of a detail form in you application. When the user opens a detail form, you can decide if the form will be in update or read only mode. You can select one of this behaviours by configuring the <code class="language-plaintext highlighter-rouge">editable-detail</code> attribute in your <code class="language-plaintext highlighter-rouge">o-form</code> component.</p>
 
 <h2 id="detail-form-editable">Detail form editable</h2>
 
-<p>This is the default behaviour of the detail form in <strong>OntimizeWeb</strong> and it is achieved by setting the value <strong>yes</strong> to the <code class="highlighter-rouge">editable-detail</code> attribute of the <code class="highlighter-rouge">o-form</code> component.</p>
+<p>This is the default behaviour of the detail form in <strong>OntimizeWeb</strong> and it is achieved by setting the value <strong>yes</strong> to the <code class="language-plaintext highlighter-rouge">editable-detail</code> attribute of the <code class="language-plaintext highlighter-rouge">o-form</code> component.</p>
 
 <p>The form modes for the <em>detail form editable</em> are the following:</p>
 
@@ -838,13 +840,13 @@ form toolbar shows the buttons to accept or reject the operation.</li>
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/form/editableDetailTRUE.png" alt="Detail form editable" class="align-center" /></p>
 
 <blockquote>
-  <p><strong>NOTE</strong> This behaviour affects the performance of the attributes <code class="highlighter-rouge">detail-button-in-row</code> and <code class="highlighter-rouge">edit-button-in-row</code> from the <code class="highlighter-rouge">o-table</code> component. When the form is configured as a <em>detail form editable</em> you should not use the edit button on the table row because the form will not parse the <em>edit</em> path.
+  <p><strong>NOTE</strong> This behaviour affects the performance of the attributes <code class="language-plaintext highlighter-rouge">detail-button-in-row</code> and <code class="language-plaintext highlighter-rouge">edit-button-in-row</code> from the <code class="language-plaintext highlighter-rouge">o-table</code> component. When the form is configured as a <em>detail form editable</em> you should not use the edit button on the table row because the form will not parse the <em>edit</em> path.
 <img src="https://ontimizeweb.github.io/docs/v3/images/components/form/modesEditableTRUE.png" alt="Detail form editable transitions" class="align-center padding-top" /></p>
 </blockquote>
 
 <h2 id="detail-form-not-editable">Detail form not editable</h2>
 
-<p>This is the old traditional behaviour for those familiarized with <strong>Ontimize</strong> applications and it achieved by setting the value <strong>no</strong> to the <code class="highlighter-rouge">editable-detail</code> attribute of the <code class="highlighter-rouge">o-form</code> component.</p>
+<p>This is the old traditional behaviour for those familiarized with <strong>Ontimize</strong> applications and it achieved by setting the value <strong>no</strong> to the <code class="language-plaintext highlighter-rouge">editable-detail</code> attribute of the <code class="language-plaintext highlighter-rouge">o-form</code> component.</p>
 
 <p>The form modes for the <em>detail form not editable</em> are the following:</p>
 

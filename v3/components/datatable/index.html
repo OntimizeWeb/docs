@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -836,7 +838,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -985,14 +987,14 @@ delete it <em>DataTables</em> entries in browser local storage.</p>
 <h3 class="grey-color">Typescript code</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">...</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">ODataTableButtonComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">ODataTableButtonComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
   <span class="p">...</span>
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="s1">'myButton'</span><span class="p">)</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myButton</span><span class="dl">'</span><span class="p">)</span>
   <span class="kr">protected</span> <span class="nx">myButton</span><span class="p">:</span> <span class="nx">ODataTableButtonComponent</span><span class="p">;</span>
   <span class="p">...</span>
   <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">myButton</span><span class="p">.</span><span class="nx">click</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="s1">'my button click'</span><span class="p">);</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">my button click</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">}</span>
 </code></pre></div></div>
@@ -1008,7 +1010,7 @@ delete it <em>DataTables</em> entries in browser local storage.</p>
   <span class="na">sort-columns=</span><span class="s">"SURNAME"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span> <span class="na">parent-keys=</span><span class="s">"n:NAME;CUSTOMERTYPEID"</span>
   <span class="na">query-on-init=</span><span class="s">"true"</span> <span class="na">query-rows=</span><span class="s">"6"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">insert-table=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
 
-  <span class="nt">&lt;o-datatable-option</span> <span class="err">#</span><span class="na">myOption</span> <span class="na">label=</span><span class="s">"My option"</span> <span class="na">icon=</span><span class="s">"account_circle"</span> <span class="na">icon-position=</span><span class="s">"after"</span><span class="nt">&gt;&lt;/o-datatable-option&gt;</span>
+  <span class="nt">&lt;o-datatable-option</span> <span class="na">#myOption</span> <span class="na">label=</span><span class="s">"My option"</span> <span class="na">icon=</span><span class="s">"account_circle"</span> <span class="na">icon-position=</span><span class="s">"after"</span><span class="nt">&gt;&lt;/o-datatable-option&gt;</span>
 
   <span class="nt">&lt;o-datatable-column</span> <span class="na">attr=</span><span class="s">"NAME"</span> <span class="na">title=</span><span class="s">"NAME"</span><span class="nt">&gt;&lt;/o-datatable-column&gt;</span>
   ...
@@ -1018,14 +1020,14 @@ delete it <em>DataTables</em> entries in browser local storage.</p>
 <h3 class="grey-color">Typescript code</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">...</span>
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">ODataTableOptionComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">ODataTableOptionComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">''</span><span class="p">;</span>
   <span class="p">...</span>
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="s1">'myOption'</span><span class="p">)</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myOption</span><span class="dl">'</span><span class="p">)</span>
   <span class="kr">protected</span> <span class="nx">myOption</span><span class="p">:</span> <span class="nx">ODataTableOptionComponent</span><span class="p">;</span>
   <span class="p">...</span>
   <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">myOption</span><span class="p">.</span><span class="nx">click</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="s1">'my option click'</span><span class="p">);</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">my option click</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">}</span>
 </code></pre></div></div>
@@ -1113,43 +1115,43 @@ defined on them.</p>
 
 <h3 id="default-renderers">Default renderers</h3>
 
-<p>The <code class="highlighter-rouge">o-datatable</code> component provides default renderers you can include in your application.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable</code> component provides default renderers you can include in your application.</p>
 
 <h4 id="cell-renderer-string">Cell renderer: string</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-renderer</code> is the default renderer.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-renderer</code> is the default renderer.</p>
 
 <h4 id="cell-renderer-boolean">Cell renderer: boolean</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-renderer-boolean</code> renders a boolean value into the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-renderer-boolean</code> renders a boolean value into the table cell.</p>
 
 <h4 id="cell-renderer-real">Cell renderer: real</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-real-boolean</code> renders a real value into the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-real-boolean</code> renders a real value into the table cell.</p>
 
 <h4 id="cell-renderer-currency">Cell renderer: currency</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-currency-boolean</code> renders a real value formated and with a currency symbol into the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-currency-boolean</code> renders a real value formated and with a currency symbol into the table cell.</p>
 
 <h4 id="cell-renderer-date">Cell renderer: date</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-date-boolean</code> renders a date value into the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-date-boolean</code> renders a date value into the table cell.</p>
 
 <h4 id="cell-renderer-image">Cell renderer: image</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-image-boolean</code> renders a image into the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-image-boolean</code> renders a image into the table cell.</p>
 
 <h4 id="cell-renderer-service">Cell renderer: service</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-service-boolean</code> gets the values to render from a service.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-service-boolean</code> gets the values to render from a service.</p>
 
 <h4 id="cell-renderer-action">Cell renderer: action</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-action-boolean</code> is a special renderer that allows the insertion of columns for handling some kind of action to be excecuted over the entire row: go to detail, edit, delete, etc.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-action-boolean</code> is a special renderer that allows the insertion of columns for handling some kind of action to be excecuted over the entire row: go to detail, edit, delete, etc.</p>
 
 <div class="notice--info">
 
-  <p><strong>IMPORTANT:</strong> <code class="highlighter-rouge">o-datatable-column</code> directives including this renderer must not have a <code class="highlighter-rouge">attr</code> attribute, because its not rendering a cell value.</p>
+  <p><strong>IMPORTANT:</strong> <code class="language-plaintext highlighter-rouge">o-datatable-column</code> directives including this renderer must not have a <code class="language-plaintext highlighter-rouge">attr</code> attribute, because its not rendering a cell value.</p>
 
 </div>
 
@@ -1223,12 +1225,12 @@ defined on them.</p>
 
 <p>For example: <em>movement-types-cell-renderer.component.ts</em></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">forwardRef</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">ITableCellRenderer</span><span class="p">,</span> <span class="nx">ODataTableColumnComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">forwardRef</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ITableCellRenderer</span><span class="p">,</span> <span class="nx">ODataTableColumnComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'movement-types-cell-renderer'</span><span class="p">,</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s1">''</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">movement-types-cell-renderer</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">template</span><span class="p">:</span> <span class="dl">''</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">MovementTypesCellRendererComponent</span> <span class="kr">implements</span> <span class="nx">ITableCellRenderer</span> <span class="p">{</span>
 
@@ -1243,9 +1245,9 @@ defined on them.</p>
   <span class="p">}</span>
 
   <span class="kr">public</span> <span class="nx">render</span><span class="p">(</span><span class="nx">cellData</span><span class="p">:</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">rowData</span><span class="p">:</span> <span class="nx">any</span><span class="p">):</span> <span class="nx">string</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">cellData</span><span class="p">)</span> <span class="o">!==</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">?</span>
-      <span class="p">(</span><span class="s1">'&lt;md-icon class="material-icons"&gt;filter_'</span> <span class="o">+</span>
-      <span class="nb">String</span><span class="p">(</span><span class="nx">cellData</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'&lt;/md-icon&gt;'</span><span class="p">)</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">cellData</span><span class="p">)</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">?</span>
+      <span class="p">(</span><span class="dl">'</span><span class="s1">&lt;md-icon class="material-icons"&gt;filter_</span><span class="dl">'</span> <span class="o">+</span>
+      <span class="nb">String</span><span class="p">(</span><span class="nx">cellData</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">&lt;/md-icon&gt;</span><span class="dl">'</span><span class="p">)</span> <span class="p">:</span> <span class="dl">''</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="kr">public</span> <span class="nx">handleCreatedCell</span><span class="p">(</span><span class="nx">cellElement</span><span class="p">:</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">rowData</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
@@ -1300,31 +1302,31 @@ defined on them.</p>
 
 <h3 id="default-editors">Default editors</h3>
 
-<p>The <code class="highlighter-rouge">o-datatable</code> component provides default cell editors you can include in your application.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable</code> component provides default cell editors you can include in your application.</p>
 
 <h4 id="cell-editor-string">Cell editor: string</h4>
 
-<p>The <code class="highlighter-rouge">o-table-cell-editor-string</code> is the default cell edito for the table.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-table-cell-editor-string</code> is the default cell edito for the table.</p>
 
 <h4 id="cell-editor-boolean">Cell editor: boolean</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-editor-boolean</code> allows to modify a boolean value in the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-editor-boolean</code> allows to modify a boolean value in the table cell.</p>
 
 <h4 id="cell-editor-integer">Cell editor: integer</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-editor-integer</code> allows to modify a integer value in the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-editor-integer</code> allows to modify a integer value in the table cell.</p>
 
 <h4 id="cell-editor-real">Cell editor: real</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-editor-real</code> allows to modify a real value in the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-editor-real</code> allows to modify a real value in the table cell.</p>
 
 <h4 id="cell-editor-date">Cell editor: date</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-editor-date</code> allows to modify a date value in the table cell.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-editor-date</code> allows to modify a date value in the table cell.</p>
 
 <h4 id="cell-editor-combo">Cell editor: combo</h4>
 
-<p>The <code class="highlighter-rouge">o-datatable-cell-editor-combo</code> allows to modify a value in a table cell that is provided by a service.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-datatable-cell-editor-combo</code> allows to modify a value in a table cell that is provided by a service.</p>
 
 <h2 id="creating-a-custom-editor">Creating a custom editor</h2>
 
@@ -1375,14 +1377,14 @@ so it is recommended using existing editors as reference.</p>
 
 <p>For example, a editor extending <em>o-datatable-cell-editor-string</em> and hiding its content: <em>password-cell-editor.ts</em></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">forwardRef</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">forwardRef</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span> <span class="nx">ODataTableColumnComponent</span><span class="p">,</span>
-  <span class="nx">ODataTableCellEditorStringComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+  <span class="nx">ODataTableCellEditorStringComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'password-cell-editor'</span><span class="p">,</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s1">''</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">password-cell-editor</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">template</span><span class="p">:</span> <span class="dl">''</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">PasswordCellEditorComponent</span> <span class="kd">extends</span> <span class="nx">ODataTableCellEditorStringComponent</span> <span class="p">{</span>
 
@@ -1392,12 +1394,12 @@ so it is recommended using existing editors as reference.</p>
   <span class="p">}</span>
 
   <span class="kr">public</span> <span class="nx">getHtml</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nx">any</span><span class="p">):</span> <span class="nx">string</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">html</span> <span class="o">=</span> <span class="s1">'&lt;input type="password" '</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">!==</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'value="'</span> <span class="o">+</span> <span class="nx">data</span> <span class="o">+</span> <span class="s1">'" '</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">html</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;input type="password" </span><span class="dl">'</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">html</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">value="</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">data</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">" </span><span class="dl">'</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'onclick="event.stopPropagation();" '</span><span class="p">;</span>
-    <span class="nx">html</span> <span class="o">+=</span> <span class="s1">'ondblclick="event.stopPropagation();" /&gt;'</span><span class="p">;</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">onclick="event.stopPropagation();" </span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">html</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">ondblclick="event.stopPropagation();" /&gt;</span><span class="dl">'</span><span class="p">;</span>
     <span class="k">return</span> <span class="nx">html</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -9000,7 +9002,7 @@ so it is recommended using existing editors as reference.</p>
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

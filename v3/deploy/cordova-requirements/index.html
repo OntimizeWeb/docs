@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -798,7 +800,7 @@
     
     <meta itemprop="description" content="Deploy an Ontimize Web application.">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -846,7 +848,7 @@
 
 <p>Install the cordova module using npm utility of Node.js. The cordova module will automatically be downloaded by the npm utility.
 on OS X and Linux:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    npm install <span class="nt">-g</span> cordova
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    npm <span class="nb">install</span> <span class="nt">-g</span> cordova
 </code></pre></div></div>
 <p>The -g flag above tells npm to install cordova globally. Otherwise it will be installed in the node_modules subdirectory of the current working directory.</p>
 
@@ -878,14 +880,14 @@ on OS X and Linux:</p>
 <p>Cordova’s CLI tools require some environment variables to be set in order to function correctly. The CLI will attempt to set these variables for you, but in certain cases you may need to set them manually. The following variables should be updated:</p>
 
 <ul>
-  <li>Set the <code class="highlighter-rouge">JAVA_HOME</code> environment variable to the location of your JDK installation.</li>
-  <li>Set the <code class="highlighter-rouge">ANDROID_HOME</code> environment variable to the location of your Android SDK installation.</li>
-  <li>It is also recommended that you add the Android SDK’s <code class="highlighter-rouge">tools</code>, <code class="highlighter-rouge">tools/bin</code>, and <code class="highlighter-rouge">platform-tools</code>directories to your PATH.</li>
+  <li>Set the <code class="language-plaintext highlighter-rouge">JAVA_HOME</code> environment variable to the location of your JDK installation.</li>
+  <li>Set the <code class="language-plaintext highlighter-rouge">ANDROID_HOME</code> environment variable to the location of your Android SDK installation.</li>
+  <li>It is also recommended that you add the Android SDK’s <code class="language-plaintext highlighter-rouge">tools</code>, <code class="language-plaintext highlighter-rouge">tools/bin</code>, and <code class="language-plaintext highlighter-rouge">platform-tools</code>directories to your PATH.</li>
 </ul>
 
 <p>Before building your project, you need to <em>accept the license agreements</em> and complete the installation of the missing components using the Android Studio SDK Manager.</p>
 
-<p>If you get the following aan error message indicates that “Application Error (file:///android_asset/www/index.html)”  when run the application add <code class="highlighter-rouge">&lt;preference name=”loadUrlTimeoutValue” value=”700000″ /&gt;</code> in config.xml.</p>
+<p>If you get the following aan error message indicates that “Application Error (file:///android_asset/www/index.html)”  when run the application add <code class="language-plaintext highlighter-rouge">&lt;preference name=”loadUrlTimeoutValue” value=”700000″ /&gt;</code> in config.xml.</p>
 <h2 id="installing-the-requirements-for-ios">Installing the requirements for IOS</h2>
 <p>Apple® tools required to build iOS applications only run on the OS X operating system on Intel-based Macs. Xcode® 7.0 (the minimum required version) runs only on OS X version 10.10.4 (Yosemite) or greater, and includes the iOS 9 SDK (Software Development Kit). To submit apps to the Apple App Store℠ requires the latest versions of the Apple tools.</p>
 
@@ -903,14 +905,14 @@ on OS X and Linux:</p>
 
 <p>Once Xcode is installed, several command-line tools need to be enabled for Cordova to run. From the command line, run:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --install
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ xcode-select --install
 </code></pre></div></div>
 
 <h3 id="deployment-tools">Deployment Tools</h3>
 <p>The ios-deploy tools allow you to launch iOS apps on an iOS Device from the command-line.</p>
 
 <p>To install it, run the following from command-line terminal:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install -g ios-deploy
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install -g ios-deploy
 </code></pre></div></div>
 
 <h2 id="installing-the-requirements-for-windows">Installing the requirements for Windows</h2>
@@ -986,7 +988,7 @@ If the supplied path is invalid or doesn’t contain a working MSBuild, the norm
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -899,7 +901,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -985,14 +987,14 @@
   </nav>
 </aside>
 
-<p>Components extending the <code class="highlighter-rouge">OServiceComponent</code> are components which extends the behaviour of the <code class="highlighter-rouge">OServiceBaseComponent</code> adding more features, mostly about navigation. New properties and methods are explained on the <strong>API</strong> section of this page.</p>
+<p>Components extending the <code class="language-plaintext highlighter-rouge">OServiceComponent</code> are components which extends the behaviour of the <code class="language-plaintext highlighter-rouge">OServiceBaseComponent</code> adding more features, mostly about navigation. New properties and methods are explained on the <strong>API</strong> section of this page.</p>
 
-<p>For using the <code class="highlighter-rouge">OntimizeService</code> configuration (explained <a href="https://ontimizeweb.github.io/docs/v3/guide/service/" target="_blank">here</a>) and have a unique instance of it in your component you shoud add it in the providers definition, as you can see in the following example. The class inputs are available in the static <code class="highlighter-rouge">DEFAULT_INPUTS_O_SERVICE_COMPONENT</code> variable, so a component implementing <code class="highlighter-rouge">OServiceComponent</code> class will look like:</p>
+<p>For using the <code class="language-plaintext highlighter-rouge">OntimizeService</code> configuration (explained <a href="https://ontimizeweb.github.io/docs/v3/guide/service/" target="_blank">here</a>) and have a unique instance of it in your component you shoud add it in the providers definition, as you can see in the following example. The class inputs are available in the static <code class="language-plaintext highlighter-rouge">DEFAULT_INPUTS_O_SERVICE_COMPONENT</code> variable, so a component implementing <code class="language-plaintext highlighter-rouge">OServiceComponent</code> class will look like:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'my-component'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./my-component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./my-component.scss'</span><span class="p">],</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-component</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./my-component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./my-component.scss</span><span class="dl">'</span><span class="p">],</span>
   <span class="na">inputs</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">...</span><span class="nx">OServiceComponent</span><span class="p">.</span><span class="nx">DEFAULT_INPUTS_O_SERVICE_COMPONENT</span><span class="p">,</span>
     <span class="c1">// more component inputs</span>
@@ -1014,12 +1016,12 @@ row-height
  -->
 
 <h2 id="navigation-to-record-detail">Navigation to record detail</h2>
-<p>In the service components, the default action when user clicks a item is to trigger the navigation to its record detail. For changing this behaviour, the user can change the <code class="highlighter-rouge">detail-mode</code> input value using one of the following values <code class="highlighter-rouge">none</code>, <code class="highlighter-rouge">click</code> or <code class="highlighter-rouge">doubleclick</code>.</p>
+<p>In the service components, the default action when user clicks a item is to trigger the navigation to its record detail. For changing this behaviour, the user can change the <code class="language-plaintext highlighter-rouge">detail-mode</code> input value using one of the following values <code class="language-plaintext highlighter-rouge">none</code>, <code class="language-plaintext highlighter-rouge">click</code> or <code class="language-plaintext highlighter-rouge">doubleclick</code>.</p>
 
 <h2 id="navigation-to-detail-edition-or-insertion-mode">Navigation to detail, edition or insertion mode</h2>
-<p><code class="highlighter-rouge">OServiceComponent</code> allows to navigate to a record for viewing its details or editing it using <code class="highlighter-rouge">viewDetail</code> or <code class="highlighter-rouge">editDetail</code> methods. It also allows to navigate to a insertion route using the <code class="highlighter-rouge">insertDetail</code> method.</p>
+<p><code class="language-plaintext highlighter-rouge">OServiceComponent</code> allows to navigate to a record for viewing its details or editing it using <code class="language-plaintext highlighter-rouge">viewDetail</code> or <code class="language-plaintext highlighter-rouge">editDetail</code> methods. It also allows to navigate to a insertion route using the <code class="language-plaintext highlighter-rouge">insertDetail</code> method.</p>
 
-<p>User can customize the path creation using the <code class="highlighter-rouge">detail-form-route</code> and <code class="highlighter-rouge">recursive-detail</code>, <code class="highlighter-rouge">edit-form-route</code> and <code class="highlighter-rouge">recursive-edit</code> or <code class="highlighter-rouge">insert-form-route</code> and <code class="highlighter-rouge">recursive-insert</code> inputs (depending on the navigation type).</p>
+<p>User can customize the path creation using the <code class="language-plaintext highlighter-rouge">detail-form-route</code> and <code class="language-plaintext highlighter-rouge">recursive-detail</code>, <code class="language-plaintext highlighter-rouge">edit-form-route</code> and <code class="language-plaintext highlighter-rouge">recursive-edit</code> or <code class="language-plaintext highlighter-rouge">insert-form-route</code> and <code class="language-plaintext highlighter-rouge">recursive-insert</code> inputs (depending on the navigation type).</p>
 
 <p>This and other inputs and methods are explained on the <strong>API</strong> section of this page.</p>
 
@@ -2360,7 +2362,7 @@ row-height
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

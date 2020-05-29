@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -818,7 +820,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -907,9 +909,9 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-slider</code> component is used in <a href="https://ontimizeweb.github.io/docs/v3/components/form/">forms</a> for selecting or displaying a value from a range via mouse, touch or keyboard.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-slider</code> component is used in <a href="https://ontimizeweb.github.io/docs/v3/components/form/">forms</a> for selecting or displaying a value from a range via mouse, touch or keyboard.</p>
 
-<p>The slider component is automatically registered on its parent <code class="highlighter-rouge">o-form</code>, which provides the value for the slide programatically. Its value can be also set manually via the <code class="highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>The slider component is automatically registered on its parent <code class="language-plaintext highlighter-rouge">o-form</code>, which provides the value for the slide programatically. Its value can be also set manually via the <code class="language-plaintext highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <h2 id="basic-example">Basic example</h2>
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/inputs/slider/o-slider.png" alt="Slider component" class="comp-example-img" /></p>
@@ -917,62 +919,62 @@
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"false"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">layout-padding</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-comp-title"</span><span class="nt">&gt;</span>INPUTS.READ_ONLY<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-slider&gt;</span>
+        <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span><span class="nt">&gt;&lt;/o-slider&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">layout-padding</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-comp-title"</span><span class="nt">&gt;</span>INPUTS.EDITABLE<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;o-slider</span> <span class="err">#</span><span class="na">slider</span> <span class="na">attr=</span><span class="s">"slider-editable"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span>
+        <span class="nt">&lt;o-slider</span> <span class="na">#slider</span> <span class="na">attr=</span><span class="s">"slider-editable"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span>
         <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">tooltip=</span><span class="s">"This is an awesome tooltip!"</span> <span class="na">read-only=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-slider&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">layout-padding</span><span class="nt">&gt;</span>
         <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-comp-title"</span><span class="nt">&gt;</span>INPUTS.DISABLED<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider-disabled"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="nt">&gt;&lt;/o-slider&gt;</span>
+        <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider-disabled"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="nt">&gt;&lt;/o-slider&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> getValue() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> getValue() {
     return 10;
   }
 </code></pre></div></div>
 
 <h2 id="selection-a-value">Selection a value</h2>
 
-<p>By default the minimum value of the slider is <em>0</em>, the maximum value is <em>100</em>, and the thumb moves in increments of <em>1</em>. These values can be changed by setting the <code class="highlighter-rouge">min</code>, <code class="highlighter-rouge">max</code>, and <code class="highlighter-rouge">step</code> attributes respectively. The initial value is set to the minimum value unless otherwise specified.</p>
+<p>By default the minimum value of the slider is <em>0</em>, the maximum value is <em>100</em>, and the thumb moves in increments of <em>1</em>. These values can be changed by setting the <code class="language-plaintext highlighter-rouge">min</code>, <code class="language-plaintext highlighter-rouge">max</code>, and <code class="language-plaintext highlighter-rouge">step</code> attributes respectively. The initial value is set to the minimum value unless otherwise specified.</p>
 
 <h2 id="orientation">Orientation</h2>
 
-<p>By default sliders are <em>horizontal</em> with the minimum value on the left and the maximum value on the right. The <code class="highlighter-rouge">vertical</code> attribute can be added to a slider to make it <em>vertical</em> with the minimum value on bottom and the maximum value on top.</p>
+<p>By default sliders are <em>horizontal</em> with the minimum value on the left and the maximum value on the right. The <code class="language-plaintext highlighter-rouge">vertical</code> attribute can be added to a slider to make it <em>vertical</em> with the minimum value on bottom and the maximum value on top.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/inputs/slider/o-slider-vertical.png" alt="Vertical slider component" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"false"</span> <span class="na">show-header=</span><span class="s">"no"</span> <span class="na">layout-direction=</span><span class="s">"row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">layout-padding</span> <span class="na">fxFlex=</span><span class="s">"30"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-comp-title"</span><span class="nt">&gt;</span>INPUTS.EDITABLE<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider-editable"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">tooltip=</span><span class="s">"This is an awesome tooltip!"</span> <span class="na">vertical=</span><span class="s">"true"</span> <span class="na">color=</span><span class="s">"warn"</span>  <span class="na">max=</span><span class="s">"100"</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">thumb-label=</span><span class="s">"true"</span> <span class="na">step=</span><span class="s">"1"</span> <span class="na">tick-interval=</span><span class="s">"auto"</span><span class="nt">&gt;&lt;/o-slider&gt;</span>
+      <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider-editable"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">tooltip=</span><span class="s">"This is an awesome tooltip!"</span> <span class="na">vertical=</span><span class="s">"true"</span> <span class="na">color=</span><span class="s">"warn"</span>  <span class="na">max=</span><span class="s">"100"</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">thumb-label=</span><span class="s">"true"</span> <span class="na">step=</span><span class="s">"1"</span> <span class="na">tick-interval=</span><span class="s">"auto"</span><span class="nt">&gt;&lt;/o-slider&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
-<p>An <code class="highlighter-rouge">invert</code> attribute is also available which can be specified to flip the axis that the thumb moves along. An inverted horizontal slider will have the minimum value on the right and the maximum value on the left, while an inverted vertical slider will have the minimum value on top and the maximum value on bottom.</p>
+<p>An <code class="language-plaintext highlighter-rouge">invert</code> attribute is also available which can be specified to flip the axis that the thumb moves along. An inverted horizontal slider will have the minimum value on the right and the maximum value on the left, while an inverted vertical slider will have the minimum value on top and the maximum value on bottom.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"false"</span> <span class="na">show-header=</span><span class="s">"no"</span> <span class="na">layout-direction=</span><span class="s">"row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">layout-padding</span> <span class="na">fxFlex=</span><span class="s">"30"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"input-comp-title"</span><span class="nt">&gt;</span>INPUTS.EDITABLE<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider-editable"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">tooltip=</span><span class="s">"This is an awesome tooltip!"</span> <span class="na">vertical=</span><span class="s">"true"</span> <span class="na">color=</span><span class="s">"warn"</span>  <span class="na">max=</span><span class="s">"100"</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">thumb-label=</span><span class="s">"true"</span> <span class="na">step=</span><span class="s">"1"</span> <span class="na">tick-interval=</span><span class="s">"auto"</span> <span class="na">invert=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-slider&gt;</span>
+      <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider-editable"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">tooltip=</span><span class="s">"This is an awesome tooltip!"</span> <span class="na">vertical=</span><span class="s">"true"</span> <span class="na">color=</span><span class="s">"warn"</span>  <span class="na">max=</span><span class="s">"100"</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">thumb-label=</span><span class="s">"true"</span> <span class="na">step=</span><span class="s">"1"</span> <span class="na">tick-interval=</span><span class="s">"auto"</span> <span class="na">invert=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-slider&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
 <h2 id="thumb-label">Thumb label</h2>
 
-<p>By default, the exact selected value of a slider is not visible to the user. However, this value can be added to the thumb by adding the <code class="highlighter-rouge">thumb-label</code> attribute.</p>
+<p>By default, the exact selected value of a slider is not visible to the user. However, this value can be added to the thumb by adding the <code class="language-plaintext highlighter-rouge">thumb-label</code> attribute.</p>
 
 <o-slider attr="slider-editable" read-only="no" thumb-label="true" tick-interval="1"></o-slider>
 
 <h2 id="tick-marks">Tick marks</h2>
 
-<p>By default, sliders do not show tick marks along the thumb track. This can be enabled using the <code class="highlighter-rouge">tick-interval</code> attribute. The value of <code class="highlighter-rouge">tick-interval</code> should be a number representing the number of steps between between ticks. For example a tick-interval of 3 with a step of 4 will draw tick marks at every 3 steps, which is the same as every 12 values.</p>
+<p>By default, sliders do not show tick marks along the thumb track. This can be enabled using the <code class="language-plaintext highlighter-rouge">tick-interval</code> attribute. The value of <code class="language-plaintext highlighter-rouge">tick-interval</code> should be a number representing the number of steps between between ticks. For example a tick-interval of 3 with a step of 4 will draw tick marks at every 3 steps, which is the same as every 12 values.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-slider</span> <span class="na">attr=</span><span class="s">"slider-editable"</span>  <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">thumb-label=</span><span class="s">"true"</span>  <span class="na">step=</span><span class="s">"4"</span> <span class="na">tickInterval=</span><span class="s">"3"</span><span class="nt">&gt;&lt;/o-slider&gt;</span>
 </code></pre></div></div>
@@ -1651,7 +1653,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

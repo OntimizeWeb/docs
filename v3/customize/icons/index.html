@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -763,7 +765,7 @@
     
     <meta itemprop="description" content="How you can add icons to your app.">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -881,19 +883,19 @@
 <p>If you want to add a svg icon to the ontimize icon set you must follow this steps:</p>
 
 <ul>
-  <li>Inject <code class="highlighter-rouge">OntimizeMatIconRegistry</code> service.</li>
+  <li>Inject <code class="language-plaintext highlighter-rouge">OntimizeMatIconRegistry</code> service.</li>
   <li>Define a name for your icon.</li>
   <li>Store your icon in your app resources.</li>
-  <li>Use the <code class="highlighter-rouge">OntimizeMatIconRegistry</code> service <code class="highlighter-rouge">addOntimizeSvgIcon</code> method (It is recommended to use it in the app main component).</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">OntimizeMatIconRegistry</code> service <code class="language-plaintext highlighter-rouge">addOntimizeSvgIcon</code> method (It is recommended to use it in the app main component).</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">Inject</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeMatIconRegistry</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">Inject</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeMatIconRegistry</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'o-app'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./app.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./app.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">o-app</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./app.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./app.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
   <span class="nl">ontimizeMatIconRegistry</span><span class="p">:</span> <span class="nx">OntimizeMatIconRegistry</span><span class="p">;</span>
@@ -904,7 +906,7 @@
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ontimizeMatIconRegistry</span><span class="p">.</span><span class="nx">addOntimizeSvgIcon</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">ontimizeMatIconRegistry</span><span class="p">.</span><span class="nx">addOntimizeSvgIcon</span><span class="p">(</span><span class="s1">'newIcon'</span><span class="p">,</span> <span class="s1">'assets/images/new-icon.svg'</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">ontimizeMatIconRegistry</span><span class="p">.</span><span class="nx">addOntimizeSvgIcon</span><span class="p">(</span><span class="dl">'</span><span class="s1">newIcon</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">assets/images/new-icon.svg</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -922,7 +924,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

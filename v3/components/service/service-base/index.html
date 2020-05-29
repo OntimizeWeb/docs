@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -899,7 +901,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -989,14 +991,14 @@
   </nav>
 </aside>
 
-<p>Components extending the <code class="highlighter-rouge">OServiceBaseComponent</code> class are components which have a service instance configured ready for ask for remote data. This class provides a set of inputs and methods and attributes inherited by all the service components. This properties are explained on the <strong>API</strong> section of this page.</p>
+<p>Components extending the <code class="language-plaintext highlighter-rouge">OServiceBaseComponent</code> class are components which have a service instance configured ready for ask for remote data. This class provides a set of inputs and methods and attributes inherited by all the service components. This properties are explained on the <strong>API</strong> section of this page.</p>
 
-<p>For using the <code class="highlighter-rouge">OntimizeService</code> configuration (explained <a href="https://ontimizeweb.github.io/docs/v3/guide/service/" target="_blank">here</a>) and have a unique instance of it in your component you shoud add it in the providers definition, as you can see in the following example. The class inputs are available in the static <code class="highlighter-rouge">DEFAULT_INPUTS_O_SERVICE_BASE_COMPONENT</code> variable, so a component implementing <code class="highlighter-rouge">OServiceBaseComponent</code> class will look like:</p>
+<p>For using the <code class="language-plaintext highlighter-rouge">OntimizeService</code> configuration (explained <a href="https://ontimizeweb.github.io/docs/v3/guide/service/" target="_blank">here</a>) and have a unique instance of it in your component you shoud add it in the providers definition, as you can see in the following example. The class inputs are available in the static <code class="language-plaintext highlighter-rouge">DEFAULT_INPUTS_O_SERVICE_BASE_COMPONENT</code> variable, so a component implementing <code class="language-plaintext highlighter-rouge">OServiceBaseComponent</code> class will look like:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'my-component'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./my-component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./my-component.scss'</span><span class="p">],</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-component</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./my-component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./my-component.scss</span><span class="dl">'</span><span class="p">],</span>
   <span class="na">inputs</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">...</span><span class="nx">OServiceBaseComponent</span><span class="p">.</span><span class="nx">DEFAULT_INPUTS_O_SERVICE_BASE_COMPONENT</span><span class="p">,</span>
     <span class="c1">// more component inputs</span>
@@ -1014,31 +1016,31 @@
 </code></pre></div></div>
 
 <h2 id="binding-to-remote-data">Binding to remote data</h2>
-<p>To manage server data, it is necessary to configure the <code class="highlighter-rouge">service</code> and the <code class="highlighter-rouge">entity</code> attributes. You may need configure the <code class="highlighter-rouge">service-type</code> attribute in case you don&#8217;t use the default <strong>OntimizeWebService</strong> to manage. For more information see in <a href="https://ontimizeweb.github.io/docs/v3/guide/appconfig/" target="_blank">App configuration</a>.</p>
+<p>To manage server data, it is necessary to configure the <code class="language-plaintext highlighter-rouge">service</code> and the <code class="language-plaintext highlighter-rouge">entity</code> attributes. You may need configure the <code class="language-plaintext highlighter-rouge">service-type</code> attribute in case you don&#8217;t use the default <strong>OntimizeWebService</strong> to manage. For more information see in <a href="https://ontimizeweb.github.io/docs/v3/guide/appconfig/" target="_blank">App configuration</a>.</p>
 
 <h2 id="binding-to-local-data">Binding to local data</h2>
-<p>For local data binding you simply need to supply an array of TypeScript objects/JSON via the <code class="highlighter-rouge">static-data</code> property. Adicional, you need to set <code class="highlighter-rouge">query-on-init="false"</code> in <code class="highlighter-rouge">o-table</code> component.</p>
+<p>For local data binding you simply need to supply an array of TypeScript objects/JSON via the <code class="language-plaintext highlighter-rouge">static-data</code> property. Adicional, you need to set <code class="language-plaintext highlighter-rouge">query-on-init="false"</code> in <code class="language-plaintext highlighter-rouge">o-table</code> component.</p>
 
-<p>If you need the data query to be performed after the <code class="highlighter-rouge">parent-keys</code> is updated, <code class="highlighter-rouge">query-on-init = false</code> and <code class="highlighter-rouge">query-on-bind = true</code> must be changed</p>
+<p>If you need the data query to be performed after the <code class="language-plaintext highlighter-rouge">parent-keys</code> is updated, <code class="language-plaintext highlighter-rouge">query-on-init = false</code> and <code class="language-plaintext highlighter-rouge">query-on-bind = true</code> must be changed</p>
 
 <h2 id="define-columns">Define columns</h2>
-<p>You have to define the <code class="highlighter-rouge">columns</code> of the database entity (if binding to remote data) or the properties of the static data items (when binding to local data).</p>
+<p>You have to define the <code class="language-plaintext highlighter-rouge">columns</code> of the database entity (if binding to remote data) or the properties of the static data items (when binding to local data).</p>
 
 <!-- ## query-on-init
 ## query-on-bind -->
 
 <h2 id="crud-methods">CRUD methods</h2>
-<p>There are a set of preconfigured method names for doing the <code class="highlighter-rouge">CRUD</code> operations that can be overrided using its inputs: <code class="highlighter-rouge">query-method</code>, <code class="highlighter-rouge">paginated-query-method</code>, <code class="highlighter-rouge">insert-method</code>, <code class="highlighter-rouge">update-method</code> or <code class="highlighter-rouge">delete-method</code>. You can learn more about Ontimize services configuration <a href="https://ontimizeweb.github.io/docs/v3/guide/service/" target="_blank">here</a>.</p>
+<p>There are a set of preconfigured method names for doing the <code class="language-plaintext highlighter-rouge">CRUD</code> operations that can be overrided using its inputs: <code class="language-plaintext highlighter-rouge">query-method</code>, <code class="language-plaintext highlighter-rouge">paginated-query-method</code>, <code class="language-plaintext highlighter-rouge">insert-method</code>, <code class="language-plaintext highlighter-rouge">update-method</code> or <code class="language-plaintext highlighter-rouge">delete-method</code>. You can learn more about Ontimize services configuration <a href="https://ontimizeweb.github.io/docs/v3/guide/service/" target="_blank">here</a>.</p>
 
-<p>This are the methods that will be invoked when the component needs to query, insert, update or delete data from its configured <code class="highlighter-rouge">service</code> and <code class="highlighter-rouge">entity</code>.</p>
+<p>This are the methods that will be invoked when the component needs to query, insert, update or delete data from its configured <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code>.</p>
 
 <h2 id="parent-keys-filter">Parent keys filter</h2>
-<p>When a service component is inside a form component you can configure the <code class="highlighter-rouge">parent-keys</code> attribute of the with the <code class="highlighter-rouge">attr</code> of the <a href="https://ontimizeweb.github.io/docs/v3/components/input/overview/" target="_blank">form fields</a> you want to include in the query filtering.</p>
+<p>When a service component is inside a form component you can configure the <code class="language-plaintext highlighter-rouge">parent-keys</code> attribute of the with the <code class="language-plaintext highlighter-rouge">attr</code> of the <a href="https://ontimizeweb.github.io/docs/v3/components/input/overview/" target="_blank">form fields</a> you want to include in the query filtering.</p>
 
-<p>Keep in mind that a service component will not send any request when the parent keys values are all null. You can configure the <code class="highlighter-rouge">query-with-null-parent-keys</code> to avoid that, but it is not always recommended, it might query for too many data.</p>
+<p>Keep in mind that a service component will not send any request when the parent keys values are all null. You can configure the <code class="language-plaintext highlighter-rouge">query-with-null-parent-keys</code> to avoid that, but it is not always recommended, it might query for too many data.</p>
 
 <h2 id="storing-component-state">Storing component state</h2>
-<p>Using the <code class="highlighter-rouge">store-state</code> boolean input allows user to choose whether or not to store the component configuration state in local storage. That state is returned by the <code class="highlighter-rouge">getDataToStore</code> method under the key returned in <code class="highlighter-rouge">getComponentKey</code> callback.</p>
+<p>Using the <code class="language-plaintext highlighter-rouge">store-state</code> boolean input allows user to choose whether or not to store the component configuration state in local storage. That state is returned by the <code class="language-plaintext highlighter-rouge">getDataToStore</code> method under the key returned in <code class="language-plaintext highlighter-rouge">getComponentKey</code> callback.</p>
 
 
 </div>
@@ -2697,7 +2699,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

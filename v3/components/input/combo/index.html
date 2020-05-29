@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -806,7 +808,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -897,70 +899,70 @@
   </nav>
 </aside>
 
-<p>The <code class="highlighter-rouge">o-combo</code> component is used in <a href="https://ontimizeweb.github.io/docs/v3/components/form/">forms</a> for getting or displaying an option between multiple input submitted by the user.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-combo</code> component is used in <a href="https://ontimizeweb.github.io/docs/v3/components/form/">forms</a> for getting or displaying an option between multiple input submitted by the user.</p>
 
-<p>The combo component is automatically registered on its parent <code class="highlighter-rouge">o-form</code>, which provides the value for the combo programatically. Its value can be also set manually via the <code class="highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>The combo component is automatically registered on its parent <code class="language-plaintext highlighter-rouge">o-form</code>, which provides the value for the combo programatically. Its value can be also set manually via the <code class="language-plaintext highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <p>This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the optoins on the drop down and each element of the data array must be an object with at least one key/value pair.</p>
 
 <p>The data array can be provided in two ways:</p>
 <ul>
-  <li>Provide an array of objects to the <code class="highlighter-rouge">static-data</code> attribute (see the <a href="#basic-example">example</a> below).</li>
-  <li>Configure the component to query the data from a service. Using <code class="highlighter-rouge">service</code> and <code class="highlighter-rouge">entity</code> attributes.</li>
+  <li>Provide an array of objects to the <code class="language-plaintext highlighter-rouge">static-data</code> attribute (see the <a href="#basic-example">example</a> below).</li>
+  <li>Configure the component to query the data from a service. Using <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code> attributes.</li>
 </ul>
 
 <h2 id="basic-example">Basic example</h2>
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/inputs/o-combo.png" alt="Combo component" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-combo</span> <span class="na">attr=</span><span class="s">"country"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">data=</span><span class="s">"Spain"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getStaticData</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"name"</span> <span class="na">columns=</span><span class="s">"id;name"</span> <span class="na">visible-columns=</span><span class="s">"name"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
-    <span class="nt">&lt;o-combo</span> <span class="na">attr=</span><span class="s">"country"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">data=</span><span class="s">"Spain"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getStaticData</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"name"</span> <span class="na">columns=</span><span class="s">"id;name"</span> <span class="na">visible-columns=</span><span class="s">"name"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
+    <span class="nt">&lt;o-combo</span> <span class="na">attr=</span><span class="s">"country"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">data=</span><span class="s">"Spain"</span> <span class="na">[static-data]=</span><span class="s">"getStaticData()"</span> <span class="na">value-column=</span><span class="s">"name"</span> <span class="na">columns=</span><span class="s">"id;name"</span> <span class="na">visible-columns=</span><span class="s">"name"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
+    <span class="nt">&lt;o-combo</span> <span class="na">attr=</span><span class="s">"country"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">data=</span><span class="s">"Spain"</span> <span class="na">[static-data]=</span><span class="s">"getStaticData()"</span> <span class="na">value-column=</span><span class="s">"name"</span> <span class="na">columns=</span><span class="s">"id;name"</span> <span class="na">visible-columns=</span><span class="s">"name"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
 <h2 id="multiple-selection">Multiple selection</h2>
 
-<p>The <code class="highlighter-rouge">o-combo</code> doesn&#8217;t allow multiple selection by default, you can configure the multiple selection by setting the value <strong>yes</strong> to the <code class="highlighter-rouge">multiple</code> attribute. This will allow the user to select multiple values at once.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-combo</code> doesn&#8217;t allow multiple selection by default, you can configure the multiple selection by setting the value <strong>yes</strong> to the <code class="language-plaintext highlighter-rouge">multiple</code> attribute. This will allow the user to select multiple values at once.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/inputs/o-combo-multiple.png" alt="Multiple selection" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-combo</span> <span class="err">#</span><span class="na">combo</span> <span class="na">attr=</span><span class="s">"combo-multiple"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getDataArray</span><span class="err">()"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValueMultiple</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">read-only=</span><span class="s">"false"</span> <span class="na">layout-padding</span> <span class="na">multiple=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
+  <span class="nt">&lt;o-combo</span> <span class="na">#combo</span> <span class="na">attr=</span><span class="s">"combo-multiple"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">[static-data]=</span><span class="s">"getDataArray()"</span> <span class="na">[data]=</span><span class="s">"getValueMultiple()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">read-only=</span><span class="s">"false"</span> <span class="na">layout-padding</span> <span class="na">multiple=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
 
-  <span class="nt">&lt;o-combo</span> <span class="err">#</span><span class="na">combo</span> <span class="na">attr=</span><span class="s">"combo-multiple-disabled"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getDataArray</span><span class="err">()"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValueMultiple</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">read-only=</span><span class="s">"false"</span> <span class="na">layout-padding</span> <span class="na">multiple=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
+  <span class="nt">&lt;o-combo</span> <span class="na">#combo</span> <span class="na">attr=</span><span class="s">"combo-multiple-disabled"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">[static-data]=</span><span class="s">"getDataArray()"</span> <span class="na">[data]=</span><span class="s">"getValueMultiple()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">read-only=</span><span class="s">"false"</span> <span class="na">layout-padding</span> <span class="na">multiple=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
 <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
 <h3 id="customize-the-trigger-label">Customize the trigger label</h3>
 
-<p>You can customize the combo label configuring the <code class="highlighter-rouge">multiple-trigger-label</code> attribute as in the example below.</p>
+<p>You can customize the combo label configuring the <code class="language-plaintext highlighter-rouge">multiple-trigger-label</code> attribute as in the example below.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/inputs/o-combo-multiple-trigger-label.png" alt="Multiple selection" class="comp-example-img" /></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-combo</span> <span class="err">#</span><span class="na">combo</span> <span class="na">attr=</span><span class="s">"combo-multiple2"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getDataArray</span><span class="err">()"</span>
-     <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValueMultiple</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> 
+    <span class="nt">&lt;o-combo</span> <span class="na">#combo</span> <span class="na">attr=</span><span class="s">"combo-multiple2"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">[static-data]=</span><span class="s">"getDataArray()"</span>
+     <span class="na">[data]=</span><span class="s">"getValueMultiple()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> 
      <span class="na">required=</span><span class="s">"yes"</span> <span class="na">read-only=</span><span class="s">"false"</span> <span class="na">layout-padding</span> <span class="na">multiple=</span><span class="s">"yes"</span> <span class="na">multiple-trigger-label=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
 
-    <span class="nt">&lt;o-combo</span> <span class="err">#</span><span class="na">combo</span> <span class="na">attr=</span><span class="s">"combo-multiple-disabled"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="err">[</span><span class="na">static-data</span><span class="err">]="</span><span class="na">getDataArray</span><span class="err">()"</span>
-     <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValueMultiple</span><span class="err">()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> 
+    <span class="nt">&lt;o-combo</span> <span class="na">#combo</span> <span class="na">attr=</span><span class="s">"combo-multiple-disabled"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="na">label=</span><span class="s">"Country"</span> <span class="na">[static-data]=</span><span class="s">"getDataArray()"</span>
+     <span class="na">[data]=</span><span class="s">"getValueMultiple()"</span> <span class="na">value-column=</span><span class="s">"key"</span> <span class="na">columns=</span><span class="s">"key;value"</span> <span class="na">visible-columns=</span><span class="s">"value"</span> 
      <span class="na">required=</span><span class="s">"yes"</span> <span class="na">read-only=</span><span class="s">"false"</span> <span class="na">layout-padding</span> <span class="na">multiple=</span><span class="s">"yes"</span> <span class="na">multiple-trigger-label=</span><span class="s">"yes"</span><span class="nt">&gt;&lt;/o-combo&gt;</span>
   <span class="nt">&lt;/o-form&gt;</span>
 </code></pre></div></div>
 
-<p>If you want to override the default trigger label, add the entry <code class="highlighter-rouge">INPUT.COMBO.MESSAGE_TRIGGER</code> in your bundle with the desired text.</p>
+<p>If you want to override the default trigger label, add the entry <code class="language-plaintext highlighter-rouge">INPUT.COMBO.MESSAGE_TRIGGER</code> in your bundle with the desired text.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 'INPUT.COMBO.MESSAGE_TRIGGER':' (+{0} others)'
 </code></pre></div></div>
 
 <h2 id="validation">Validation</h2>
-<p>The <code class="highlighter-rouge">o-combo</code> shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value selected.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-combo</code> shows automatically an error message when the <code class="language-plaintext highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value selected.</p>
 
 <p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/v3/playground/main/inputs/combo" target="_blank">OntimizeWeb playground</a>.</p>
 
 <h2 id="locker--new">Locker  <span class="menuitem-badge">new<span></span></span></h2>
 
-<p>OntimizeWeb offers the <code class="highlighter-rouge">oLocker</code> directive to the <code class="highlighter-rouge">o-combo</code> that should to lock the component when you configure the component to query the data from a service</p>
+<p>OntimizeWeb offers the <code class="language-plaintext highlighter-rouge">oLocker</code> directive to the <code class="language-plaintext highlighter-rouge">o-combo</code> that should to lock the component when you configure the component to query the data from a service</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-combo</span> <span class="na">attr=</span><span class="s">"EMPLOYEETYPEID LOAD"</span> <span class="na">oLocker</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">service=</span><span class="s">"employees"</span> <span class="na">entity=</span><span class="s">"employeeType"</span> <span class="na">columns=</span><span class="s">"EMPLOYEETYPEID;EMPLOYEETYPENAME"</span>
   <span class="na">value-column=</span><span class="s">"EMPLOYEETYPEID"</span> <span class="na">keys=</span><span class="s">"EMPLOYEETYPEID"</span> <span class="na">visible-columns=</span><span class="s">"EMPLOYEETYPENAME"</span> <span class="na">width=</span><span class="s">"33%"</span><span class="nt">&gt;</span>
@@ -972,7 +974,7 @@
 </code></pre></div></div>
 <p><img src="https://ontimizeweb.github.io/docs/v3/images/components/inputs/combo-oLocker.gif" alt="OLocker in  Combo component" class="comp-example-img" /></p>
 
-<p>Note you can configure the mode of the locker, there are two modes to block, <em>disable</em> and <em>load</em> mode. The mode by default is <em>load</em>. You can configure  delay service start with <code class="highlighter-rouge">oLockerDelay</code> attribute, by default this value is the <em>250ms</em>.</p>
+<p>Note you can configure the mode of the locker, there are two modes to block, <em>disable</em> and <em>load</em> mode. The mode by default is <em>load</em>. You can configure  delay service start with <code class="language-plaintext highlighter-rouge">oLockerDelay</code> attribute, by default this value is the <em>250ms</em>.</p>
 
 
 </div>
@@ -1672,7 +1674,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

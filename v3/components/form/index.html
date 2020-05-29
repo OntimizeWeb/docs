@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -828,7 +830,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -929,7 +931,7 @@
 
 <p>Forms are the pillar of management applications. They are used in applications for requesting information from the user or displaying data. <strong>OntimizeWeb</strong> allows you to add a form and insert <a href="https://ontimizeweb.github.io/docs/v3/components/input/overview/" target="_blank">form fields</a> on it in a very easy way.</p>
 
-<p>The <code class="highlighter-rouge">o-form</code> component allows you to display data from the server and also insert, update and delete records in the database. This can be achived easily by configuring few attributes like <code class="highlighter-rouge">service</code> and <code class="highlighter-rouge">entity</code>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-form</code> component allows you to display data from the server and also insert, update and delete records in the database. This can be achived easily by configuring few attributes like <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
 <!-- 
 ## Example
@@ -945,7 +947,7 @@
 
 <h2 id="modes">Modes</h2>
 
-<p>The <code class="highlighter-rouge">o-form</code> component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the <a href="#detail-form"><em>detail form</em></a> section. The common description of the different form modes is the following:</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-form</code> component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the <a href="#detail-form"><em>detail form</em></a> section. The common description of the different form modes is the following:</p>
 
 <h3 id="read-only-mode">Read only mode</h3>
 
@@ -961,17 +963,17 @@
 
 <h2 id="detail-form">Detail form</h2>
 
-<p>A detail form is an special usage of the form component. A form is called <em>detail form</em> when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved with <strong>OntimizeWeb</strong> by combining the <code class="highlighter-rouge">o-form</code> and the <a href="https://ontimizeweb.github.io/docs/v3/components/table/" target="_blank"><code class="highlighter-rouge">o-table</code></a> component.</p>
+<p>A detail form is an special usage of the form component. A form is called <em>detail form</em> when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved with <strong>OntimizeWeb</strong> by combining the <code class="language-plaintext highlighter-rouge">o-form</code> and the <a href="https://ontimizeweb.github.io/docs/v3/components/table/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a> component.</p>
 
 <p>You can read more about this topic in the <a href="https://ontimizeweb.github.io/docs/v3/components/form/detail/" target="_blank">detail form</a> section.</p>
 
 <h2 id="form-container">Form container</h2>
 
-<p>In some applications you may want to place a breadcrumb component on top of your form. <strong>OntimizeWeb</strong> allows this using the <code class="highlighter-rouge">o-form-container</code> component. Learn more about this component <a href="https://ontimizeweb.github.io/docs/v3/components/form/container/" target="_blank">here</a>.</p>
+<p>In some applications you may want to place a breadcrumb component on top of your form. <strong>OntimizeWeb</strong> allows this using the <code class="language-plaintext highlighter-rouge">o-form-container</code> component. Learn more about this component <a href="https://ontimizeweb.github.io/docs/v3/components/form/container/" target="_blank">here</a>.</p>
 
 <h2 id="form-layout-manager">Form layout manager</h2>
 
-<p>A very common feature on management applications is displaying a form with the details related to a row from a data table. As a solution for this, <strong>OntimizeWeb</strong> offers the <code class="highlighter-rouge">o-form-layout-manager</code> component, that allows you managing the transitions between the data table and the form with the row details.</p>
+<p>A very common feature on management applications is displaying a form with the details related to a row from a data table. As a solution for this, <strong>OntimizeWeb</strong> offers the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component, that allows you managing the transitions between the data table and the form with the row details.</p>
 
 <p>You can read more about this component <a href="https://ontimizeweb.github.io/docs/v3/components/formlayoutmanager/" target="_blank">here</a>.</p>
 
@@ -980,23 +982,23 @@
 <p>In some cases you may want to add of modify the form funtionality, <strong>OntimizeWeb</strong> allows you to extend the form component, for this, you must follow the next steps:</p>
 
 <ol>
-  <li>Define a new component and add the <code class="highlighter-rouge">@OComponent</code> decorator.</li>
-  <li>Include the <code class="highlighter-rouge">OFormComponent</code> class as a provider of your component.</li>
-  <li>Make your component extend <code class="highlighter-rouge">OFormComponent</code> class.</li>
+  <li>Define a new component and add the <code class="language-plaintext highlighter-rouge">@OComponent</code> decorator.</li>
+  <li>Include the <code class="language-plaintext highlighter-rouge">OFormComponent</code> class as a provider of your component.</li>
+  <li>Make your component extend <code class="language-plaintext highlighter-rouge">OFormComponent</code> class.</li>
 </ol>
 
-<p>Once this steps are done, you can override <code class="highlighter-rouge">OFormComponent</code> methods depending on your requirements.</p>
+<p>Once this steps are done, you can override <code class="language-plaintext highlighter-rouge">OFormComponent</code> methods depending on your requirements.</p>
 
-<p>The following example shows how to extend an <code class="highlighter-rouge">o-form</code> for creating a classical registration form including a captcha and password verification before submitting the data. The component class would look like the following:</p>
+<p>The following example shows how to extend an <code class="language-plaintext highlighter-rouge">o-form</code> for creating a classical registration form including a captcha and password verification before submitting the data. The component class would look like the following:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">forwardRef</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Location</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/common'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">ActivatedRoute</span><span class="p">,</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/router'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">forwardRef</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Location</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ActivatedRoute</span><span class="p">,</span> <span class="nx">Router</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/router</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">OComponent</span><span class="p">,</span> <span class="nx">dataServiceFactory</span><span class="p">,</span> <span class="nx">LoginService</span><span class="p">,</span> <span class="nx">OFormComponent</span><span class="p">,</span> <span class="nx">OntimizeService</span>  <span class="p">}</span> <span class="k">from</span> <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OComponent</span><span class="p">,</span> <span class="nx">dataServiceFactory</span><span class="p">,</span> <span class="nx">LoginService</span><span class="p">,</span> <span class="nx">OFormComponent</span><span class="p">,</span> <span class="nx">OntimizeService</span>  <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">OComponent</span><span class="p">({</span> <span class="c1">// &lt;- Include the `@OComponent` decorator</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'sign-in-form'</span><span class="p">,</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">sign-in-form</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="na">provide</span><span class="p">:</span> <span class="nx">OntimizeService</span><span class="p">,</span>
@@ -1026,22 +1028,22 @@
 
   <span class="kr">protected</span> <span class="nx">postCorrectInsert</span><span class="p">(</span><span class="nx">result</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">&amp;&amp;</span> <span class="nx">result</span><span class="p">.</span><span class="nx">confirmation_key</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'CONFIRM_PENDING'</span><span class="p">,</span> <span class="s1">'CONFIRM_PENDING_MESSAGE'</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="s1">'home'</span><span class="p">]));</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">CONFIRM_PENDING</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">CONFIRM_PENDING_MESSAGE</span><span class="dl">'</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_router</span><span class="p">.</span><span class="nx">navigate</span><span class="p">([</span><span class="dl">'</span><span class="s1">home</span><span class="dl">'</span><span class="p">]));</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'ERROR'</span><span class="p">,</span> <span class="s1">'ERROR_SIGN_IN'</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">ERROR</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ERROR_SIGN_IN</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
   <span class="kr">protected</span> <span class="nx">postIncorrectInsert</span><span class="p">(</span><span class="na">result</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s1">'ERROR_SIGN_IN'</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">&amp;&amp;</span> <span class="s1">'json'</span> <span class="k">in</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">msg</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">ERROR_SIGN_IN</span><span class="dl">'</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">&amp;&amp;</span> <span class="dl">'</span><span class="s1">json</span><span class="dl">'</span> <span class="k">in</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">msg</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'ERROR'</span><span class="p">,</span> <span class="nx">msg</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">ERROR</span><span class="dl">'</span><span class="p">,</span> <span class="nx">msg</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="cm">/* Add new methods depending on your requirements */</span>
@@ -1051,10 +1053,10 @@
   <span class="p">}</span>
 
   <span class="kr">public</span> <span class="nx">send</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">formGroup</span><span class="p">.</span><span class="nx">controls</span><span class="p">[</span><span class="s1">'password'</span><span class="p">].</span><span class="nx">value</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">formGroup</span><span class="p">.</span><span class="nx">controls</span><span class="p">[</span><span class="s1">'password2'</span><span class="p">].</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'ERROR'</span><span class="p">,</span> <span class="s1">'ERROR_PASSWORDS_NOT_MATCH'</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">recaptchaResponseToken</span><span class="p">)</span> <span class="o">===</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'ERROR'</span><span class="p">,</span> <span class="s1">'ERROR_CAPTCHA'</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">formGroup</span><span class="p">.</span><span class="nx">controls</span><span class="p">[</span><span class="dl">'</span><span class="s1">password</span><span class="dl">'</span><span class="p">].</span><span class="nx">value</span> <span class="o">!==</span> <span class="k">this</span><span class="p">.</span><span class="nx">formGroup</span><span class="p">.</span><span class="nx">controls</span><span class="p">[</span><span class="dl">'</span><span class="s1">password2</span><span class="dl">'</span><span class="p">].</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">ERROR</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ERROR_PASSWORDS_NOT_MATCH</span><span class="dl">'</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">recaptchaResponseToken</span><span class="p">)</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">ERROR</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">ERROR_CAPTCHA</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">_insertAction</span><span class="p">();</span>
     <span class="p">}</span>
@@ -1065,33 +1067,33 @@
 
 <p>Now, you can use the extended form in your template as follows:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sign-in-form</span> <span class="err">#</span><span class="na">registryForm</span> <span class="na">service=</span><span class="s">"pharmacy"</span> <span class="na">entity=</span><span class="s">"registerPharmacy"</span> <span class="na">keys=</span><span class="s">"username"</span> <span class="na">columns=</span><span class="s">"username;password;license;name_comercial;locality;province"</span> <span class="na">show-header=</span><span class="s">"no"</span> <span class="na">label-header=</span><span class="s">"REGISTRY"</span> <span class="na">header-actions=</span><span class="s">"I"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"license"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">getDataValue</span><span class="err">('</span><span class="na">license</span><span class="err">')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-text-input&gt;</span>
-  <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"name_comercial"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">getDataValue</span><span class="err">('</span><span class="na">name_comercial</span><span class="err">')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-text-input&gt;</span>
-  <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"locality"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">getDataValue</span><span class="err">('</span><span class="na">locality</span><span class="err">')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-text-input&gt;</span>
-  <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"province"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">getDataValue</span><span class="err">('</span><span class="na">province</span><span class="err">')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-text-input&gt;</span>
-  <span class="nt">&lt;o-email-input</span> <span class="na">attr=</span><span class="s">"username"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">getDataValue</span><span class="err">('</span><span class="na">username</span><span class="err">')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-email-input&gt;</span>
-  <span class="nt">&lt;o-password-input</span> <span class="na">attr=</span><span class="s">"password"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">min-length=</span><span class="s">"6"</span> <span class="na">max-length=</span><span class="s">"30"</span> <span class="na">flex</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">getDataValue</span><span class="err">('</span><span class="na">password</span><span class="err">')"</span><span class="nt">&gt;&lt;/o-password-input&gt;</span>
-  <span class="nt">&lt;o-password-input</span> <span class="na">attr=</span><span class="s">"password2"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">min-length=</span><span class="s">"6"</span> <span class="na">max-length=</span><span class="s">"30"</span> <span class="na">flex</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">getDataValue</span><span class="err">('</span><span class="na">password2</span><span class="err">')"</span><span class="nt">&gt;&lt;/o-password-input&gt;</span>
-  <span class="nt">&lt;re-captcha</span> <span class="na">siteKey=</span><span class="s">"{{ GOOGLE_RECAPTCHA_KEY }}"</span> <span class="err">(</span><span class="na">captchaResponse</span><span class="err">)="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">getCaptcha</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;&lt;/re-captcha&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sign-in-form</span> <span class="na">#registryForm</span> <span class="na">service=</span><span class="s">"pharmacy"</span> <span class="na">entity=</span><span class="s">"registerPharmacy"</span> <span class="na">keys=</span><span class="s">"username"</span> <span class="na">columns=</span><span class="s">"username;password;license;name_comercial;locality;province"</span> <span class="na">show-header=</span><span class="s">"no"</span> <span class="na">label-header=</span><span class="s">"REGISTRY"</span> <span class="na">header-actions=</span><span class="s">"I"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"license"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="na">[data]=</span><span class="s">"registryForm.getDataValue('license')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-text-input&gt;</span>
+  <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"name_comercial"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="na">[data]=</span><span class="s">"registryForm.getDataValue('name_comercial')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-text-input&gt;</span>
+  <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"locality"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="na">[data]=</span><span class="s">"registryForm.getDataValue('locality')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-text-input&gt;</span>
+  <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"province"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="na">[data]=</span><span class="s">"registryForm.getDataValue('province')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-text-input&gt;</span>
+  <span class="nt">&lt;o-email-input</span> <span class="na">attr=</span><span class="s">"username"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">flex</span> <span class="na">[data]=</span><span class="s">"registryForm.getDataValue('username')"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-email-input&gt;</span>
+  <span class="nt">&lt;o-password-input</span> <span class="na">attr=</span><span class="s">"password"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">min-length=</span><span class="s">"6"</span> <span class="na">max-length=</span><span class="s">"30"</span> <span class="na">flex</span> <span class="na">[data]=</span><span class="s">"registryForm.getDataValue('password')"</span><span class="nt">&gt;&lt;/o-password-input&gt;</span>
+  <span class="nt">&lt;o-password-input</span> <span class="na">attr=</span><span class="s">"password2"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">min-length=</span><span class="s">"6"</span> <span class="na">max-length=</span><span class="s">"30"</span> <span class="na">flex</span> <span class="na">[data]=</span><span class="s">"registryForm.getDataValue('password2')"</span><span class="nt">&gt;&lt;/o-password-input&gt;</span>
+  <span class="nt">&lt;re-captcha</span> <span class="na">siteKey=</span><span class="s">"{{ GOOGLE_RECAPTCHA_KEY }}"</span> <span class="na">(captchaResponse)=</span><span class="s">"registryForm.getCaptcha($event)"</span><span class="nt">&gt;&lt;/re-captcha&gt;</span>
   <span class="nt">&lt;o-row</span> <span class="na">layout-align=</span><span class="s">"end center"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-button</span> <span class="na">label=</span><span class="s">"SEND"</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">registryForm</span><span class="err">.</span><span class="na">send</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-button&gt;</span>
+    <span class="nt">&lt;o-button</span> <span class="na">label=</span><span class="s">"SEND"</span> <span class="na">(click)=</span><span class="s">"registryForm.send()"</span><span class="nt">&gt;&lt;/o-button&gt;</span>
   <span class="nt">&lt;/o-row&gt;</span>
 <span class="nt">&lt;/sign-in-form&gt;</span>
 </code></pre></div></div>
 
 <h2 id="form-to-filter-table">Form to filter table</h2>
 
-<p>A ver common use of a form is using the form data introduced by the user for requesting filtered information from a service and display it on a table. <strong>OntimizeWeb</strong> offers you two different solutions for filtering a table using the data of a form component. The simplest way of filtering a table is configuring the <code class="highlighter-rouge">parent-keys</code> attribute of the table we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we shoud use the <a href="#filter-builder">filter builder</a> component.</p>
+<p>A ver common use of a form is using the form data introduced by the user for requesting filtered information from a service and display it on a table. <strong>OntimizeWeb</strong> offers you two different solutions for filtering a table using the data of a form component. The simplest way of filtering a table is configuring the <code class="language-plaintext highlighter-rouge">parent-keys</code> attribute of the table we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we shoud use the <a href="#filter-builder">filter builder</a> component.</p>
 
 <h3 id="parent-keys-filter">Parent keys filter</h3>
 
-<p>Configuring the <code class="highlighter-rouge">parent-keys</code> attribute of the <a href="https://ontimizeweb.github.io/docs/v3/components/table/" target="_blank">table</a> with the <code class="highlighter-rouge">attr</code> of the <a href="https://ontimizeweb.github.io/docs/v3/components/input/overview/" target="_blank">form fields</a> we want to include on the filtering is the simplest and the fastest way of filtering table data. This aproach is not enough when you want to apply complex filters using logical operations.</p>
+<p>Configuring the <code class="language-plaintext highlighter-rouge">parent-keys</code> attribute of the <a href="https://ontimizeweb.github.io/docs/v3/components/table/" target="_blank">table</a> with the <code class="language-plaintext highlighter-rouge">attr</code> of the <a href="https://ontimizeweb.github.io/docs/v3/components/input/overview/" target="_blank">form fields</a> we want to include on the filtering is the simplest and the fastest way of filtering table data. This aproach is not enough when you want to apply complex filters using logical operations.</p>
 
-<p>In the following example we have a form component withe field for filtering the name, surname and the emplolyee type of a table of employees. Note that the table has configured the attributes <code class="highlighter-rouge">parent-keys</code> with the columns involved in the filtering and its corresponding form component attr&#8217;s. Remember that when the table column and the form component attr are the same, you only have to include it once.</p>
+<p>In the following example we have a form component withe field for filtering the name, surname and the emplolyee type of a table of employees. Note that the table has configured the attributes <code class="language-plaintext highlighter-rouge">parent-keys</code> with the columns involved in the filtering and its corresponding form component attr&#8217;s. Remember that when the table column and the form component attr are the same, you only have to include it once.</p>
 
 <blockquote>
-  <p><strong>NOTE</strong> Keep in mind that the table will not send any request when the parent keys values are all null. You can configure the <code class="highlighter-rouge">query-with-null-parent-keys</code> as in the example below to avoid this, but it is not always recommended. Check the <a href="https://ontimizeweb.github.io/docs/v3/components/table/" target="_blank">table</a> documentation page.</p>
+  <p><strong>NOTE</strong> Keep in mind that the table will not send any request when the parent keys values are all null. You can configure the <code class="language-plaintext highlighter-rouge">query-with-null-parent-keys</code> as in the example below to avoid this, but it is not always recommended. Check the <a href="https://ontimizeweb.github.io/docs/v3/components/table/" target="_blank">table</a> documentation page.</p>
 </blockquote>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
@@ -2646,7 +2648,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Include navigations buttons in form-toolbar. It’s not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about <code class="highlighter-rouge">o-form-layout-manager</code> <a href="https://ontimizeweb.github.io/docs/components/formlayoutmanager/" target="_blank">here</a>)</p>
+    <p class="first"><p>Include navigations buttons in form-toolbar. It’s not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> <a href="https://ontimizeweb.github.io/docs/components/formlayoutmanager/" target="_blank">here</a>)</p>
 </p>
     
   </td>
@@ -3711,7 +3713,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 

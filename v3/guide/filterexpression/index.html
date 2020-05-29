@@ -217,6 +217,8 @@
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
             
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
+            
             </select>
           </li>
           
@@ -821,26 +823,26 @@
   </nav>
 </aside>
 
-<p>This section describes the functionality of the utility class <code class="highlighter-rouge">FilterExpressionUtils</code>, that provides a set of methods and utilities for building complex filtering expressions used in <strong>OntimizeWeb</strong>.</p>
+<p>This section describes the functionality of the utility class <code class="language-plaintext highlighter-rouge">FilterExpressionUtils</code>, that provides a set of methods and utilities for building complex filtering expressions used in <strong>OntimizeWeb</strong>.</p>
 
 <h2 id="filtering-expression">Filtering expression</h2>
-<p>A filtering expression is an object that defines an operation between two operands. The interface <code class="highlighter-rouge">IExpression</code> contains the basic structure of a filtering expression. The second operand may be omitted in some expressions, for example, filtering with a NULL value.</p>
+<p>A filtering expression is an object that defines an operation between two operands. The interface <code class="language-plaintext highlighter-rouge">IExpression</code> contains the basic structure of a filtering expression. The second operand may be omitted in some expressions, for example, filtering with a NULL value.</p>
 
 <p>The filtering expression structure is the following;</p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="err">/**</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">left</span><span class="w"> </span><span class="err">operand.</span><span class="w"> </span><span class="err">*/</span><span class="w">
-  </span><span class="err">lop</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">IExpression</span><span class="w">
+  </span><span class="err">lop:</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">IExpression</span><span class="w">
 
   </span><span class="err">/**</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">operator.</span><span class="w"> </span><span class="err">*/</span><span class="w">
-  </span><span class="err">op</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
+  </span><span class="err">op:</span><span class="w"> </span><span class="err">string</span><span class="w">
   
   </span><span class="err">/**</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">right</span><span class="w"> </span><span class="err">operand.</span><span class="w"> </span><span class="err">*/</span><span class="w">
-  </span><span class="err">rop?</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">IExpression</span><span class="w">
+  </span><span class="err">rop?:</span><span class="w"> </span><span class="err">string</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">IExpression</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <h2 id="operators">Operators</h2>
-<p><strong>OntimizeWeb</strong> defines a set of operators used as the <code class="highlighter-rouge">op</code> parametter of <code class="highlighter-rouge">IExpression</code> for building <a href="#filtering-expression">filtering expressions</a>. This operators cover most important operations defined by every database management system and they are the following:</p>
+<p><strong>OntimizeWeb</strong> defines a set of operators used as the <code class="language-plaintext highlighter-rouge">op</code> parametter of <code class="language-plaintext highlighter-rouge">IExpression</code> for building <a href="#filtering-expression">filtering expressions</a>. This operators cover most important operations defined by every database management system and they are the following:</p>
 
 <table>
   <thead>
@@ -852,7 +854,7 @@
   <tbody>
     <tr>
       <td>AND</td>
-      <td><code class="highlighter-rouge">TRUE</code> if both logical expressions are <code class="highlighter-rouge">TRUE</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TRUE</code> if both logical expressions are <code class="language-plaintext highlighter-rouge">TRUE</code></td>
     </tr>
     <tr>
       <td>EQUAL</td>
@@ -868,7 +870,7 @@
     </tr>
     <tr>
       <td>LIKE</td>
-      <td><code class="highlighter-rouge">TRUE</code> if the operand matches a pattern</td>
+      <td><code class="language-plaintext highlighter-rouge">TRUE</code> if the operand matches a pattern</td>
     </tr>
     <tr>
       <td>MORE</td>
@@ -884,19 +886,19 @@
     </tr>
     <tr>
       <td>NOT LIKE</td>
-      <td><code class="highlighter-rouge">TRUE</code> if the operand not matches a pattern</td>
+      <td><code class="language-plaintext highlighter-rouge">TRUE</code> if the operand not matches a pattern</td>
     </tr>
     <tr>
       <td>NULL</td>
-      <td>is <code class="highlighter-rouge">NULL</code></td>
+      <td>is <code class="language-plaintext highlighter-rouge">NULL</code></td>
     </tr>
     <tr>
       <td>NOT NULL</td>
-      <td>is not <code class="highlighter-rouge">NULL</code></td>
+      <td>is not <code class="language-plaintext highlighter-rouge">NULL</code></td>
     </tr>
     <tr>
       <td>OR</td>
-      <td><code class="highlighter-rouge">TRUE</code> if either logical expression is <code class="highlighter-rouge">TRUE</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TRUE</code> if either logical expression is <code class="language-plaintext highlighter-rouge">TRUE</code></td>
     </tr>
   </tbody>
 </table>
@@ -919,7 +921,7 @@
 > * NULL: is `NULL`.
 > * NOT NULL: is not `NULL`. -->
 
-<p>All this operator are defined statically in <code class="highlighter-rouge">FilterExpressionUtils</code> class with the operator prefix <code class="highlighter-rouge">OP_</code> (<code class="highlighter-rouge">OP_AND</code>, <code class="highlighter-rouge">OP_EQUAL</code>, etc.).</p>
+<p>All this operator are defined statically in <code class="language-plaintext highlighter-rouge">FilterExpressionUtils</code> class with the operator prefix <code class="language-plaintext highlighter-rouge">OP_</code> (<code class="language-plaintext highlighter-rouge">OP_AND</code>, <code class="language-plaintext highlighter-rouge">OP_EQUAL</code>, etc.).</p>
 
 <h2 id="filter-building-methods">Filter building methods</h2>
 <p><strong>OntimizeWeb</strong> defines a set of methods for building filtering expressions automatically. This methods are the following:</p>
@@ -930,7 +932,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided keys LIKE the value provided.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided keys LIKE the value provided.</p>
 </td></tr>
 
     
@@ -956,9 +958,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -971,7 +973,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key EQUAL to the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key EQUAL to the provided value.</p>
 </td></tr>
 
     
@@ -997,9 +999,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1012,7 +1014,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key with a NOT NULL value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key with a NOT NULL value.</p>
 </td></tr>
 
     
@@ -1031,9 +1033,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1046,7 +1048,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key with a NULL value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key with a NULL value.</p>
 </td></tr>
 
     
@@ -1065,9 +1067,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1080,7 +1082,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key LESS than the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key LESS than the provided value.</p>
 </td></tr>
 
     
@@ -1106,9 +1108,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1121,7 +1123,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key LESS OR EQUAL to the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key LESS OR EQUAL to the provided value.</p>
 </td></tr>
 
     
@@ -1147,9 +1149,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1162,7 +1164,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key LIKE the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key LIKE the provided value.</p>
 </td></tr>
 
     
@@ -1188,9 +1190,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1203,7 +1205,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key ENDS LIKE the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key ENDS LIKE the provided value.</p>
 </td></tr>
 
     
@@ -1229,9 +1231,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1244,7 +1246,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key STARTS LIKE the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key STARTS LIKE the provided value.</p>
 </td></tr>
 
     
@@ -1270,9 +1272,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1285,7 +1287,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key MORE than the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key MORE than the provided value.</p>
 </td></tr>
 
     
@@ -1311,9 +1313,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1326,7 +1328,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key MORE OR EQUAL to the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key MORE OR EQUAL to the provided value.</p>
 </td></tr>
 
     
@@ -1352,9 +1354,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1367,7 +1369,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key NOT EQUAL to the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key NOT EQUAL to the provided value.</p>
 </td></tr>
 
     
@@ -1393,9 +1395,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1408,7 +1410,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key NOT LIKE to the provided value.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key NOT LIKE to the provided value.</p>
 </td></tr>
 
     
@@ -1434,9 +1436,9 @@
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1449,7 +1451,7 @@
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance for filtering the provided key with two conditions: * The first filter the provided key with a NULL value. * The second filter the provided key EQUAL to the provided value.
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance for filtering the provided key with two conditions: * The first filter the provided key with a NULL value. * The second filter the provided key EQUAL to the provided value.
 Both expressions are joined using the provided operator.</p>
 </td></tr>
 
@@ -1476,9 +1478,9 @@ Both expressions are joined using the provided operator.</p>
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1494,7 +1496,7 @@ Both expressions are joined using the provided operator.</p>
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds a <code class="highlighter-rouge">IBasicExpression</code> instance from the filtering expression (<code class="highlighter-rouge">IExpression</code>) provided.</p>
+    <tr><td colspan="2"><p>Builds a <code class="language-plaintext highlighter-rouge">IBasicExpression</code> instance from the filtering expression (<code class="language-plaintext highlighter-rouge">IExpression</code>) provided.</p>
 </td></tr>
 
     
@@ -1502,7 +1504,7 @@ Both expressions are joined using the provided operator.</p>
         <tr><td colspan="2"><strong>Parameters</strong></td></tr>
         
             <tr>
-                <td>exp <p><code class="highlighter-rouge">IExpression</code></p>
+                <td>exp <p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
                 <td><p>the filtering expression</p>
 </td>
@@ -1513,7 +1515,7 @@ Both expressions are joined using the provided operator.</p>
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">BasicExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">BasicExpression</code></p>
 </td>
             <td><p>the basic expression</p>
 </td>
@@ -1528,7 +1530,7 @@ Both expressions are joined using the provided operator.</p>
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds a complex <code class="highlighter-rouge">IExpression</code> instance joining two expressions with the provided operator.</p>
+    <tr><td colspan="2"><p>Builds a complex <code class="language-plaintext highlighter-rouge">IExpression</code> instance joining two expressions with the provided operator.</p>
 </td></tr>
 
     
@@ -1536,14 +1538,14 @@ Both expressions are joined using the provided operator.</p>
         <tr><td colspan="2"><strong>Parameters</strong></td></tr>
         
             <tr>
-                <td>expr1 <p><code class="highlighter-rouge">IExpression</code></p>
+                <td>expr1 <p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
                 <td><p>the first filtering expression to join</p>
 </td>
             </tr>
         
             <tr>
-                <td>expr2 <p><code class="highlighter-rouge">IExpression</code></p>
+                <td>expr2 <p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
                 <td><p>the second filtering expression to join</p>
 </td>
@@ -1561,7 +1563,7 @@ Both expressions are joined using the provided operator.</p>
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
             <td><p>the complex filtering expression</p>
 </td>
@@ -1576,7 +1578,7 @@ Both expressions are joined using the provided operator.</p>
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IExpression</code> instance from the provided object.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IExpression</code> instance from the provided object.</p>
 </td></tr>
 
     
@@ -1595,9 +1597,9 @@ Both expressions are joined using the provided operator.</p>
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
         </tr>
     
@@ -1610,7 +1612,7 @@ Both expressions are joined using the provided operator.</p>
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Builds an <code class="highlighter-rouge">IFilterExpression</code> instance from the filtering expression (<code class="highlighter-rouge">IExpression</code>) provided.</p>
+    <tr><td colspan="2"><p>Builds an <code class="language-plaintext highlighter-rouge">IFilterExpression</code> instance from the filtering expression (<code class="language-plaintext highlighter-rouge">IExpression</code>) provided.</p>
 </td></tr>
 
     
@@ -1618,7 +1620,7 @@ Both expressions are joined using the provided operator.</p>
         <tr><td colspan="2"><strong>Parameters</strong></td></tr>
         
             <tr>
-                <td>exp <p><code class="highlighter-rouge">IExpression</code></p>
+                <td>exp <p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
                 <td><p>the filtering expression</p>
 </td>
@@ -1629,9 +1631,9 @@ Both expressions are joined using the provided operator.</p>
     
         <tr><td colspan="2"><strong>Returns</strong></td></tr>
         <tr>
-            <td><p><code class="highlighter-rouge">IFilterExpression</code></p>
+            <td><p><code class="language-plaintext highlighter-rouge">IFilterExpression</code></p>
 </td>
-            <td><p>the <code class="highlighter-rouge">IFilterExpression</code></p>
+            <td><p>the <code class="language-plaintext highlighter-rouge">IFilterExpression</code></p>
 </td>
         </tr>
     
@@ -1644,7 +1646,7 @@ Both expressions are joined using the provided operator.</p>
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Evaluates if the the expression provided is an instance of <code class="highlighter-rouge">IBasicExpression</code>.</p>
+    <tr><td colspan="2"><p>Evaluates if the the expression provided is an instance of <code class="language-plaintext highlighter-rouge">IBasicExpression</code>.</p>
 </td></tr>
 
     
@@ -1652,7 +1654,7 @@ Both expressions are joined using the provided operator.</p>
         <tr><td colspan="2"><strong>Parameters</strong></td></tr>
         
             <tr>
-                <td>exp <p><code class="highlighter-rouge">IExpression</code></p>
+                <td>exp <p><code class="language-plaintext highlighter-rouge">IExpression</code></p>
 </td>
                 <td><p>the filtering expression</p>
 </td>
@@ -1665,7 +1667,7 @@ Both expressions are joined using the provided operator.</p>
         <tr>
             <td><p>boolean</p>
 </td>
-            <td><p><code class="highlighter-rouge">true</code> if the provided expression is an instance of <code class="highlighter-rouge">IBasicExpression</code>, <code class="highlighter-rouge">false</code> otherwise</p>
+            <td><p><code class="language-plaintext highlighter-rouge">true</code> if the provided expression is an instance of <code class="language-plaintext highlighter-rouge">IBasicExpression</code>, <code class="language-plaintext highlighter-rouge">false</code> otherwise</p>
 </td>
         </tr>
     
@@ -1678,7 +1680,7 @@ Both expressions are joined using the provided operator.</p>
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Evaluates if an expresion is instance of <code class="highlighter-rouge">IExpression</code>.</p>
+    <tr><td colspan="2"><p>Evaluates if an expresion is instance of <code class="language-plaintext highlighter-rouge">IExpression</code>.</p>
 </td></tr>
 
     
@@ -1699,7 +1701,7 @@ Both expressions are joined using the provided operator.</p>
         <tr>
             <td><p>boolean</p>
 </td>
-            <td><p><code class="highlighter-rouge">true</code> if the provided expression is an instance of <code class="highlighter-rouge">IExpression</code>, <code class="highlighter-rouge">false</code> otherwise</p>
+            <td><p><code class="language-plaintext highlighter-rouge">true</code> if the provided expression is an instance of <code class="language-plaintext highlighter-rouge">IExpression</code>, <code class="language-plaintext highlighter-rouge">false</code> otherwise</p>
 </td>
         </tr>
     
@@ -1712,7 +1714,7 @@ Both expressions are joined using the provided operator.</p>
 </strong></th></tr>
     </thead>
     <tbody>
-    <tr><td colspan="2"><p>Evaluates if an expresion is instance of <code class="highlighter-rouge">IFilterExpression</code>.</p>
+    <tr><td colspan="2"><p>Evaluates if an expresion is instance of <code class="language-plaintext highlighter-rouge">IFilterExpression</code>.</p>
 </td></tr>
 
     
@@ -1733,7 +1735,7 @@ Both expressions are joined using the provided operator.</p>
         <tr>
             <td><p>boolean</p>
 </td>
-            <td><p><code class="highlighter-rouge">true</code> if the provided expression is an instance of <code class="highlighter-rouge">IFilterExpression</code>, <code class="highlighter-rouge">false</code> otherwise</p>
+            <td><p><code class="language-plaintext highlighter-rouge">true</code> if the provided expression is an instance of <code class="language-plaintext highlighter-rouge">IFilterExpression</code>, <code class="language-plaintext highlighter-rouge">false</code> otherwise</p>
 </td>
         </tr>
     

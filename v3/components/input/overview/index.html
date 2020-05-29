@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-02-11T10:49:32-05:00">
+  <meta property="article:published_time" content="2020-05-29T09:50:28-04:00">
 
 
 
@@ -219,6 +219,8 @@
               <option value="https://ontimizeweb.github.io/docs/v3"  selected="selected" >3.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -774,7 +776,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 11, 2020">
+    <meta itemprop="datePublished" content="May 29, 2020">
     
 
     <div class="page__inner-wrap">
@@ -870,33 +872,33 @@
 
 <p>Form data components are components that must be placed inside a <a href="https://ontimizeweb.github.io/docs/v3/components/form/" target="_blank">form</a> and allow for an input of data. The form data components offered by <strong>OntimizeWeb</strong> are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, radio, real, slider, slide toggle, text, textarea and time.</p>
 
-<p>All input components in <strong>OntimizeWeb</strong> extend the <code class="highlighter-rouge">OFormDataComponent</code> class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>All input components in <strong>OntimizeWeb</strong> extend the <code class="language-plaintext highlighter-rouge">OFormDataComponent</code> class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <h2 id="data">Data</h2>
-<p>You can modify value by setting the <code class="highlighter-rouge">data</code> attribute or calling the <code class="highlighter-rouge">setData</code> method.</p>
+<p>You can modify value by setting the <code class="language-plaintext highlighter-rouge">data</code> attribute or calling the <code class="language-plaintext highlighter-rouge">setData</code> method.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input2"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input2"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span>
     <span class="na">tooltip=</span><span class="s">"This is an awesome tooltip!"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
 </code></pre></div></div>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">getValue</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s1">'John Doe'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">John Doe</span><span class="dl">'</span><span class="p">;</span>
   <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="validation">Validation</h2>
-<p>The input shows automatically an error message when the <code class="highlighter-rouge">required</code> attribute is set to <strong>yes</strong> and there is no value on the input.</p>
+<p>The input shows automatically an error message when the <code class="language-plaintext highlighter-rouge">required</code> attribute is set to <strong>yes</strong> and there is no value on the input.</p>
 
 <h3 id="input">Input</h3>
 
-<p>User can add its own validators to a input component using the <code class="highlighter-rouge">validators</code> input.</p>
+<p>User can add its own validators to a input component using the <code class="language-plaintext highlighter-rouge">validators</code> input.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> 
-   <span class="err">[</span><span class="na">validators</span><span class="err">]="</span><span class="na">validatorsArray</span><span class="err">"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
+   <span class="na">[validators]=</span><span class="s">"validatorsArray"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
 </code></pre></div></div>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="p">...</span>
 
-  <span class="k">import</span> <span class="p">{</span> <span class="nx">ValidatorFn</span><span class="p">,</span> <span class="nx">ValidationErrors</span><span class="p">,</span> <span class="nx">FormControl</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/forms'</span><span class="p">;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">ValidatorFn</span><span class="p">,</span> <span class="nx">ValidationErrors</span><span class="p">,</span> <span class="nx">FormControl</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="nl">validatorsArray</span><span class="p">:</span> <span class="nx">ValidatorFn</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
 
@@ -908,19 +910,19 @@
 
   <span class="nx">aValidator</span><span class="p">(</span><span class="nx">control</span><span class="p">:</span> <span class="nx">FormControl</span><span class="p">):</span> <span class="nx">ValidationErrors</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{};</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'a'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">result</span><span class="p">[</span><span class="s1">'requiredLowercaseA'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span><span class="p">[</span><span class="dl">'</span><span class="s1">requiredLowercaseA</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">result</span><span class="p">[</span><span class="s1">'requiredUppercaseA'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">result</span><span class="p">[</span><span class="dl">'</span><span class="s1">requiredUppercaseA</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="nx">bValidator</span><span class="p">(</span><span class="nx">control</span><span class="p">:</span> <span class="nx">FormControl</span><span class="p">):</span> <span class="nx">ValidationErrors</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'b'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">control</span><span class="p">.</span><span class="nx">value</span> <span class="o">&amp;&amp;</span> <span class="nx">control</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">)</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="p">{</span>
-        <span class="s1">'requiredB'</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="dl">'</span><span class="s1">requiredB</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span>
       <span class="p">};</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="p">{};</span>
@@ -930,30 +932,30 @@
 
 <h3 id="validation-component">Validation component</h3>
 
-<p>Using the <code class="highlighter-rouge">validators</code> input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the <a href="https://ontimizeweb.github.io/docs/v3/components/input/validator/" target="_blank"><code class="highlighter-rouge">o-validator</code></a> and <a href="https://ontimizeweb.github.io/docs/v3/components/input/error/" target="_blank"><code class="highlighter-rouge">o-error</code></a> components.</p>
+<p>Using the <code class="language-plaintext highlighter-rouge">validators</code> input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the <a href="https://ontimizeweb.github.io/docs/v3/components/input/validator/" target="_blank"><code class="language-plaintext highlighter-rouge">o-validator</code></a> and <a href="https://ontimizeweb.github.io/docs/v3/components/input/error/" target="_blank"><code class="language-plaintext highlighter-rouge">o-error</code></a> components.</p>
 
 <h2 id="enabled">Enabled</h2>
-<p>The <em>enabled</em> mode is actived by default. You can disabled the input by setting <code class="highlighter-rouge">enabled='no'</code>.</p>
+<p>The <em>enabled</em> mode is actived by default. You can disabled the input by setting <code class="language-plaintext highlighter-rouge">enabled='no'</code>.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input3"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input3"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="na">enabled=</span><span class="s">"no"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
 </code></pre></div></div>
 
 <h2 id="read-only">Read-only</h2>
-<p>The <em>readonly</em> mode represents an element that is no longer editable by the user. You can configure for an input to be reandonly <code class="highlighter-rouge">read-only="yes"</code>.</p>
+<p>The <em>readonly</em> mode represents an element that is no longer editable by the user. You can configure for an input to be reandonly <code class="language-plaintext highlighter-rouge">read-only="yes"</code>.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-text-input</span> <span class="na">fxFlex</span> <span class="na">attr=</span><span class="s">"input"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="na">read-only=</span><span class="s">"yes"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-text-input</span> <span class="na">fxFlex</span> <span class="na">attr=</span><span class="s">"input"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="na">read-only=</span><span class="s">"yes"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
 </code></pre></div></div>
 
 <h2 id="tooltip">Tooltip</h2>
-<p>To create a tooltip, add the <code class="highlighter-rouge">tooltip</code> attribute to an element. By default, the tooltip will appear on bottom of the element. Use <code class="highlighter-rouge">tooltip-position</code> attribute to set the position of the tooltip on <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong> or the <strong>right</strong> side of the element.</p>
+<p>To create a tooltip, add the <code class="language-plaintext highlighter-rouge">tooltip</code> attribute to an element. By default, the tooltip will appear on bottom of the element. Use <code class="language-plaintext highlighter-rouge">tooltip-position</code> attribute to set the position of the tooltip on <strong>top</strong>, <strong>bottom</strong>, <strong>left</strong> or the <strong>right</strong> side of the element.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input2"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">getValue</span><span class="err">()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-text-input</span> <span class="na">attr=</span><span class="s">"input2"</span> <span class="na">label=</span><span class="s">"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}"</span> <span class="na">[data]=</span><span class="s">"getValue()"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">required=</span><span class="s">"yes"</span>
     <span class="na">tooltip=</span><span class="s">"This is an awesome tooltip!"</span> <span class="na">tooltip-position=</span><span class="s">"left"</span><span class="nt">&gt;&lt;/o-text-input&gt;</span>
 </code></pre></div></div>
 
 <h2 id="width--new-">Width <span class="menuitem-badge"> new </span></h2>
 
-<p>All input conponents have the <code class="highlighter-rouge">width</code> atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.</p>
+<p>All input conponents have the <code class="language-plaintext highlighter-rouge">width</code> atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.</p>
 
 <!--
 extends OFormDataComponent
@@ -1231,7 +1233,7 @@ export interface IFormDataComponent extends IFormControlComponent {
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Indicates whether or not the component will bind its value to its <code class="highlighter-rouge">attr</code> when located inside a form</p>
+    <p class="first"><p>Indicates whether or not the component will bind its value to its <code class="language-plaintext highlighter-rouge">attr</code> when located inside a form</p>
 </p>
     
   </td>
@@ -1296,7 +1298,7 @@ export interface IFormDataComponent extends IFormControlComponent {
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Indicates whether or not the component will register itself (using its <code class="highlighter-rouge">attr</code>) when located inside a form</p>
+    <p class="first"><p>Indicates whether or not the component will register itself (using its <code class="language-plaintext highlighter-rouge">attr</code>) when located inside a form</p>
 </p>
     
   </td>
@@ -1572,7 +1574,7 @@ export interface IFormDataComponent extends IFormControlComponent {
             
             
   <td class="" o-component-default >
-    <p class="first"><p><code class="highlighter-rouge">attr</code> input</p>
+    <p class="first"><p><code class="language-plaintext highlighter-rouge">attr</code> input</p>
 </p>
     
   </td>
@@ -1619,7 +1621,7 @@ export interface IFormDataComponent extends IFormControlComponent {
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Indicates whether the input value is modifiable or not. This attribute may be ignored depending on the value of the <code class="highlighter-rouge">editable-detail</code> attribute of its parent <a href="https://ontimizeweb.github.io/docs/components/o-form.component/" target="_blank"><code class="highlighter-rouge">o-form</code> component</a></p>
+    <p class="first"><p>Indicates whether the input value is modifiable or not. This attribute may be ignored depending on the value of the <code class="language-plaintext highlighter-rouge">editable-detail</code> attribute of its parent <a href="https://ontimizeweb.github.io/docs/components/o-form.component/" target="_blank"><code class="language-plaintext highlighter-rouge">o-form</code> component</a></p>
 </p>
     
   </td>
@@ -2704,7 +2706,7 @@ export interface IFormDataComponent extends IFormControlComponent {
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-11T10:49:32-05:00">February 11, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-05-29T09:50:28-04:00">May 29, 2020</time></p>
         
       </footer>
 
