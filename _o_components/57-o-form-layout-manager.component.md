@@ -27,7 +27,7 @@ This is a summarized example of the customers module of the [OntimizeWeb QuickSt
 The `o-form-layout-manager`  component has two available modes: *tab* and *dialog*.
 
 ### Tab mode
-Selection the *tab* mode the data table and the detail form are displayed in *tabs*. This allows opening multiple form details at the same time and switch between the quickly.
+Selection the *tab* mode the data table and the detail form are displayed in *tabs*. This allows opening multiple form details at the same time and switch between them quickly.
 
 You can select this mode setting the value **tab** to the `mode` attribute. You can see a working example of this mode in the *customers* module of the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/customers){:target="_blank"}.
 
