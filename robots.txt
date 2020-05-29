@@ -1,1 +1,1 @@
-Sitemap: https://ontimizeweb.github.io/docs/v8/sitemap.xml
+Sitemap: https://ontimizeweb.github.io/docs/sitemap.xml
