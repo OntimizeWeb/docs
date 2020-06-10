@@ -62,6 +62,12 @@ attributes: [{
   default: "timestamp",
   required: "",
   description: "Type of the component data"
+},{
+  name: "date-class",
+  type: "(date: Moment) => MatCalendarCellCssClasses",
+  default: "",
+  required: "",
+  description: "Function that can be used to add custom CSS classes to dates. (see attribute [dateClass of DatePicker](https://material.angular.io/components/datepicker/overview#highlighting-specific-dates){:target='_blank'})"
 }]
 
 inheritedOutputs: [{
