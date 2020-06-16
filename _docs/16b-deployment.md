@@ -448,6 +448,9 @@ fs.copyFile('node_modules/@angular/service-worker/ngsw-worker.js', 'dist/ngsw-wo
 */
 ```
 
+
+
+
 * Serve your application with node server
 
 You can now serve you application to check that everything is working fine. To do this we will use lite-server npm package.(see [npm lite-server](https://www.npmjs.com/package/lite-server){:target='_blank'})
