@@ -463,7 +463,7 @@ So, the process will be:
 
 This will create a local server where you can check the application.
 
-*Notice: If you are using ´baseHref´ with a multilevel route, liteserver will fail. So, you have to use only one level to test your application.
+*Notice: If you are using ´baseHref´ or ´href´ flag with a multilevel route, liteserver will fail. So, you have to use only one level to serve your application.
 
 Use 
 
