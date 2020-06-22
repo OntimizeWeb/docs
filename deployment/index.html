@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-06-15T03:45:57-04:00">
+  <meta property="article:published_time" content="2020-06-22T03:01:42-04:00">
 
 
 
@@ -757,7 +757,7 @@
     
     <meta itemprop="description" content="Deploy an Ontimize Web application.">
     
-    <meta itemprop="datePublished" content="June 15, 2020">
+    <meta itemprop="datePublished" content="June 22, 2020">
     
 
     <div class="page__inner-wrap">
@@ -1214,7 +1214,7 @@ ngsw-config.json
 ...
  <span class="s2">"scripts"</span>: <span class="o">{</span>
    ...
-    <span class="s2">"production-aot-server"</span>: <span class="s2">"ontimize-web-ngx production-aot --project-name quickstart --href /quickstart/pwa/"</span>,
+    <span class="s2">"production-aot-server"</span>: <span class="s2">"ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/pwa/"</span>,
     <span class="s2">"build-ngsw"</span>: <span class="s2">"npm run build-ngsw-config &amp;&amp; node cp-ngsw-dist.js"</span>,
     <span class="s2">"build-ngsw-config"</span>: <span class="s2">"node_modules/.bin/ngsw-config dist src/ngsw-config.json /quickstart/pwa"</span>
     ...
@@ -1244,6 +1244,34 @@ fs.copyFile<span class="o">(</span><span class="s1">'node_modules/@angular/servi
 <span class="k">*</span>/
 </code></pre></div></div>
 
+<ul>
+  <li>Serve your application with node server</li>
+</ul>
+
+<p>You can now serve you application to check that everything is working fine. To do this we will use lite-server npm package.(see <a href="https://www.npmjs.com/package/lite-server" target="_blank">npm lite-server</a>)</p>
+
+<p>So, the process will be:</p>
+
+<ul>
+  <li>npm run production-aot-server</li>
+  <li>cd dist/</li>
+  <li>lite-server</li>
+</ul>
+
+<p>This will create a local server where you can check the application.</p>
+
+<p>*Notice: If you are using ´baseHref´ or ´href´ flag with a multilevel route, liteserver will fail. So, you have to use only one level in the definition of the script in your package.json</p>
+
+<p>Use</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/",
+</code></pre></div></div>
+
+<p>Instead of</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/pwa/",
+</code></pre></div></div>
+
         
       </section>
 
@@ -1255,7 +1283,7 @@ fs.copyFile<span class="o">(</span><span class="s1">'node_modules/@angular/servi
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-06-15T03:45:57-04:00">June 15, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-06-22T03:01:42-04:00">June 22, 2020</time></p>
         
       </footer>
 
