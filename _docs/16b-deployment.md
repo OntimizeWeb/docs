@@ -417,7 +417,7 @@ package.json
 ...
  "scripts": {
    ...
-    "production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --href /quickstart/pwa/",
+    "production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/pwa/",
     "build-ngsw": "npm run build-ngsw-config && node cp-ngsw-dist.js",
     "build-ngsw-config": "node_modules/.bin/ngsw-config dist src/ngsw-config.json /quickstart/pwa"
     ...
@@ -446,4 +446,33 @@ fs.copyFile('node_modules/@angular/service-worker/ngsw-worker.js', 'dist/ngsw-wo
 });
 
 */
+```
+
+
+
+
+* Serve your application with node server
+
+You can now serve you application to check that everything is working fine. To do this we will use lite-server npm package.(see [npm lite-server](https://www.npmjs.com/package/lite-server){:target='_blank'})
+
+So, the process will be:
+
+- npm run production-aot-server
+- cd dist/
+- lite-server
+
+This will create a local server where you can check the application.
+
+*Notice: If you are using ´baseHref´ or ´href´ flag with a multilevel route, liteserver will fail. So, you have to use only one level in the definition of the script in your package.json
+
+Use 
+
+```
+"production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/",
+```
+
+Instead of
+
+```
+"production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/pwa/",
 ```

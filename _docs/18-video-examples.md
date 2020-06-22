@@ -11,21 +11,27 @@ Here you can see explanatory videos about the development of applications with O
 
 * General application overview:
 
-  <iframe src="https://drive.google.com/file/d/0B5lrV0DE-eStN2hTTURiNmxTQzQ/preview" width="640" height="480"></iframe>
+  <iframe width="640" height="480" src="https://www.youtube.com/embed/4kYLqvdBoU4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 * Installation:
 
-  <iframe src="https://drive.google.com/file/d/0B5lrV0DE-eStMFlQVVY3WkpDd1k/preview" width="640" height="480"></iframe>
+  <iframe width="640" height="480" src="https://www.youtube.com/embed/sz3mXIEWlJQ" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 * Creation of customers module:
 
-  <iframe src="https://drive.google.com/file/d/0B5lrV0DE-eStRlVvTUo2SXhScTg/preview" width="640" height="480"></iframe>
+  <iframe width="640" height="480" src="https://www.youtube.com/embed/sLBXohbTNzU" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 * Customer detail basic form:
 
-  <iframe src="https://drive.google.com/file/d/0B5lrV0DE-eSta05TeGlZdEM5bWM/preview" width="640" height="480"></iframe>
+
+  <iframe width="640" height="480" src="https://www.youtube.com/embed/Ok75Xm_VueU" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 * Extended customer detail form:
 
-  <iframe src="https://drive.google.com/file/d/0B5lrV0DE-eStblF4MzlmVUdfM0k/preview" width="640" height="480"></iframe>
+
+  <iframe width="640" height="480" src="https://www.youtube.com/embed/zSikaPLz5GI" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
