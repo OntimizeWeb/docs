@@ -19,7 +19,7 @@
 
 
 
-<title>Run your application - Ontimize Web</title>
+<title>Typography - Ontimize Web</title>
 
 
 
@@ -29,22 +29,22 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ontimize Web">
-<meta property="og:title" content="Run your application">
+<meta property="og:title" content="Typography">
 
 
-  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/run-your-app/">
-  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/run-your-app/">
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/customize/typography/">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/customize/typography/">
 
 
 
-  <meta property="og:description" content="Run an Ontimize Web application.">
+  <meta property="og:description" content="web application framework based on Angular for building business software.">
 
 
 
   <meta name="twitter:site" content="@imatiainnova">
-  <meta name="twitter:title" content="Run your application">
-  <meta name="twitter:description" content="Run an Ontimize Web application.">
-  <meta name="twitter:url" content="https://ontimizeweb.github.io/run-your-app/">
+  <meta name="twitter:title" content="Typography">
+  <meta name="twitter:description" content="web application framework based on Angular for building business software.">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/customize/typography/">
 
   
     <meta name="twitter:card" content="summary">
@@ -316,10 +316,26 @@
                   
               
                   
-                      
-                      
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
+          
+              
+                  
+              
+                  
+              
+                  
+                      
+                      
                  
       
                  
@@ -398,10 +414,10 @@
 
       
        
-      <li class="nav-component-category active-component-category active-parent">
+      <li class="nav-component-category ">
         
           
-            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Guide</span>
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Guide</span>
           
 
         
@@ -473,7 +489,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v8/run-your-app/" class="active ">Run your app</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v8/run-your-app/" class=" ">Run your app</a></li>
           
             
             
@@ -515,10 +531,10 @@
 
       
        
-      <li class="nav-component-category ">
+      <li class="nav-component-category active-component-category active-parent">
         
           
-            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Customization</span>
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Customization</span>
           
 
         
@@ -550,7 +566,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v8/customize/typography/" class=" ">Typography</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v8/customize/typography/" class="active ">Typography</a></li>
           
             
             
@@ -759,9 +775,9 @@
 
   <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Run your application">
+    <meta itemprop="headline" content="Typography">
     
-    <meta itemprop="description" content="Run an Ontimize Web application.">
+    <meta itemprop="description" content="">
     
     <meta itemprop="datePublished" content="June 25, 2020">
     
@@ -769,7 +785,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 class="page__title" itemprop="headline">Run your application
+        <h1 class="page__title" itemprop="headline">Typography
 </h1>
         
       </header>
@@ -777,25 +793,66 @@
 
       <section class="page__content" itemprop="text">
         
-<p>To start your application in a live server, open a terminal, go to the project direectory and enter the following command:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
-</code></pre></div></div>
-<blockquote>
-  <p><strong>NOTE:</strong> Run this command with administrator privileges.</p>
-</blockquote>
-
-<p>This command runs the following two parallel node processes:</p>
-
-<ul>
-  <li>The TypeScript compiler in watch mode.</li>
-  <li>A static file server that loads <em>index.html</em> in a browser and refreshes the browser when application files change.</li>
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#what-is-typography" id="markdown-toc-what-is-typography">What is typography?</a></li>
+  <li><a href="#custom-typography-of-ontimize-web-framework" id="markdown-toc-custom-typography-of-ontimize-web-framework">Custom Typography of Ontimize Web framework.</a></li>
+  <li><a href="#customization" id="markdown-toc-customization">Customization</a></li>
 </ul>
 
-<p>In a browser navigate to <a href="http://localhost:4200" target="_blank">http://localhost:4200</a> and the app will be automatically loaded. After that it will be reloaded if you change any of the source files.</p>
+  </nav>
+</aside>
 
-<p>The <code class="language-plaintext highlighter-rouge">npm start</code> command triggers the script <code class="language-plaintext highlighter-rouge">start</code> defined in the <em>package.json</em> file, it launches the server on <code class="language-plaintext highlighter-rouge">http://localhost:4200/</code> by default but you can configure this with the options <code class="language-plaintext highlighter-rouge">--host</code> and <code class="language-plaintext highlighter-rouge">--port</code>. You can check these and more options <a href="https://github.com/angular/angular-cli/wiki/serve" target="_blank">here</a>.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ng serve <span class="nt">--host</span> 0.0.0.0 <span class="nt">--port</span> 4201
+<h2 id="what-is-typography">What is typography?</h2>
+<p>Typography is a way of arranging type to make text legible, readable, and appealing when displayed.</p>
+
+<h2 id="custom-typography-of-ontimize-web-framework">Custom Typography of Ontimize Web framework.</h2>
+
+<p>To change the typography it is neccesary to apply an extension of Angular Material&#8217;s (you can see spec in <a href="https://v6.material.angular.io/guide/typography" target="_blank">Angular Material&#8217;s typography</a>) and an extension of Ontimize Web Sass-based theming.</p>
+
+<p><em>The extension of Ontimize Web Sass-based theming.</em> is arranged into typography levels, as Angular Material&#8217;s typography. Each level has a font-size, line-height and font-weight. This custom typography is used to apply css about <a href="https://ontimizeweb.github.io/docs/v8/components/table/" target="_blank">o-table</a> depending of the <code class="language-plaintext highlighter-rouge">row-height</code> attribute. For more details about table typography and defaut config, see <a href="https://github.com/OntimizeWeb/ontimize-web-ngx-theming/blob/master/src/styles/lite/typography/o-table-typography.scss" target="_blank">the source</a>. The available levels are:</p>
+<ul>
+  <li><strong>small-header-height</strong>: table header height for 'small' predefined row height options.</li>
+  <li><strong>small-row-height</strong>: table row height for 'small' predefined row height options. </li>
+  <li><strong>small-header-font-size</strong> : table header font size  for 'small' predefined row height options. </li>
+  <li><strong>small-row-font-size</strong>:  table row font size for 'small' predefined row height options </li>
+
+<li><strong>medium-header-height</strong>:  table header height for 'medium' predefined row height options</li>
+<li><strong>medium-row-height</strong>: table row height for 'medium' predefined row height options.</li>
+<li><strong>medium-header-font-size</strong>:  table header font size for 'medium' predefined row height options </li>
+<li><strong>medium-row-font-size</strong>: table row font size for 'medium' predefined row height options</li>
+<li><strong>large-header-height</strong>:  table header height  for 'large' predefined row height options</li>
+<li><strong>large-row-height</strong>: table row height for 'large' predefined row height options.</li>
+<li><strong>large-header-font-size</strong>: table header font size for 'large' predefined row height options</li>
+<li><strong>large-row-font-size</strong>:  table row font size for 'large' predefined row height options </li>
+</ul>
+
+<h2 id="customization">Customization</h2>
+
+<p>First you must create a custom <em>typography configuration</em> of Angular Material&#8217;s Sass-based theming and another <em>typography configuration</em> of Ontimize Web Sass-based theming as the below example demonstrates</p>
+
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Include ontimize-lite theme</span>
+<span class="k">@import</span> <span class="s">'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';</span>
+
+<span class="c1">// Define a custom typography config that overrides the font-family as well as the</span>
+<span class="c1">// `headlines` and `title` levels.</span>
+<span class="nv">$custom-typography</span><span class="p">:</span> <span class="nf">mat-typography-config</span><span class="p">(</span> <span class="nv">$font-family</span><span class="o">:</span> <span class="s1">'Nunito Sans'</span><span class="o">,</span> <span class="nv">$headline</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">16px</span><span class="o">,</span> <span class="m">22px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="nv">$title</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">14px</span><span class="o">,</span> <span class="m">22px</span><span class="o">,</span> <span class="m">500</span><span class="p">))</span><span class="err">;</span>
+
+<span class="k">@include</span> <span class="nd">ontimize-theme-styles-lite</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="nv">$custom-typography</span><span class="p">)</span><span class="err">;</span>
+
+<span class="c1">// Define a custom typography config that overrides the header height, row height, header font size header and row </span>
+<span class="c1">// of the tables</span>
+<span class="nv">$custom-table-typography</span><span class="p">:</span> <span class="p">(</span> <span class="n">small-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">24px</span><span class="o">,</span> <span class="m">26px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">12px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">26px</span><span class="o">,</span> <span class="m">28px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">300</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">26px</span><span class="o">,</span> <span class="m">28px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">300</span><span class="p">)</span><span class="o">,</span> <span class="n">large-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span> <span class="p">)</span><span class="err">;</span>
+
+<span class="c1">// Merge both typographys</span>
+<span class="nv">$lite-typography</span><span class="p">:</span> <span class="nf">map-merge</span><span class="p">(</span><span class="nv">$custom-typography</span><span class="o">,</span> <span class="nv">$custom-table-typography</span><span class="p">)</span><span class="err">;</span>
+
+<span class="c1">// After define theme, it is necessary to transfer typography to tables of Ontimize Web framework</span>
+<span class="k">@import</span> <span class="s">'node_modules/ontimize-web-ngx/theme.scss';</span>
+<span class="k">@include</span> <span class="nd">o-material-theme</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="nv">$lite-typography</span><span class="p">)</span><span class="err">;</span>
+
 </code></pre></div></div>
 
         
@@ -820,14 +877,14 @@
 
   <nav class="pagination">
     
-      <a href="https://ontimizeweb.github.io/docs/v8/guide/permissions/" class="pagination--pager" title="Permissions
+      <a href="https://ontimizeweb.github.io/docs/v8/customize/theming/" class="pagination--pager" title="Theming
 ">
           <i class="fas fa-arrow-left margin-right"></i>
         Previous
       </a>
     
     
-      <a href="https://ontimizeweb.github.io/docs/v8/deployment/" class="pagination--pager" title="Deploy your application
+      <a href="https://ontimizeweb.github.io/docs/v8/customize/lite/" class="pagination--pager" title="Lite Theme
 ">
         Next
         <i class="fas fa-arrow-right margin-left"></i>
