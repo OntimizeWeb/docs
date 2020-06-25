@@ -71,6 +71,8 @@ docs:
         url: /customize/theming/
       - title: "Lite theme"
         url: /customize/lite/
+      - title: "Typography"
+        url: /customize/typography/
       - title: "Style guide"
         url: /customize/style-guide/
       - title: "Icons"
