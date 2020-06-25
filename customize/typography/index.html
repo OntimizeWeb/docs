@@ -19,7 +19,7 @@
 
 
 
-<title>Do something advanced - Ontimize Web</title>
+<title>Typography - Ontimize Web</title>
 
 
 
@@ -29,11 +29,11 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ontimize Web">
-<meta property="og:title" content="Do something advanced">
+<meta property="og:title" content="Typography">
 
 
-  <link rel="canonical" href="https://ontimizeweb.github.io/docs/advanced-changes/">
-  <meta property="og:url" content="https://ontimizeweb.github.io/docs/advanced-changes/">
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/customize/typography/">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/customize/typography/">
 
 
 
@@ -42,9 +42,9 @@
 
 
   <meta name="twitter:site" content="@imatiainnova">
-  <meta name="twitter:title" content="Do something advanced">
+  <meta name="twitter:title" content="Typography">
   <meta name="twitter:description" content="web application framework based on Angular for building business software.">
-  <meta name="twitter:url" content="https://ontimizeweb.github.io/advanced-changes/">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/customize/typography/">
 
   
     <meta name="twitter:card" content="summary">
@@ -296,12 +296,46 @@
                   
               
                   
-                      
-                      
+              
                  
       
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
+          
+              
+                  
+              
+                  
+              
+                  
+                      
+                      
                  
       
                  
@@ -319,10 +353,10 @@
 
       
        
-      <li class="nav-component-category active-component-category active-parent">
+      <li class="nav-component-category ">
         
           
-            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Getting Started</span>
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Getting Started</span>
           
 
         
@@ -370,7 +404,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/advanced-changes/" class="active ">Advanced topics</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/advanced-changes/" class=" ">Advanced topics</a></li>
           
         </ul>
         
@@ -497,10 +531,10 @@
 
       
        
-      <li class="nav-component-category ">
+      <li class="nav-component-category active-component-category active-parent">
         
           
-            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Customization</span>
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Customization</span>
           
 
         
@@ -532,7 +566,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/customize/typography/" class=" ">Typography</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/customize/typography/" class="active ">Typography</a></li>
           
             
             
@@ -741,18 +775,17 @@
 
   <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Do something advanced">
+    <meta itemprop="headline" content="Typography">
     
     <meta itemprop="description" content="">
     
     <meta itemprop="datePublished" content="June 25, 2020">
     
-    <meta itemprop="dateModified" content="December 12, 2016">
 
     <div class="page__inner-wrap">
       
       <header>
-        <h1 class="page__title" itemprop="headline">Do something advanced
+        <h1 class="page__title" itemprop="headline">Typography
 </h1>
         
       </header>
@@ -764,41 +797,63 @@
 <nav class="toc">
     <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
 <ul class="toc__menu" id="markdown-toc">
-  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#create-a-new-module" id="markdown-toc-create-a-new-module">Create a new module.</a></li>
-  <li><a href="#add-a-table-form" id="markdown-toc-add-a-table-form">Add a table form.</a></li>
-  <li><a href="#employee-details-form" id="markdown-toc-employee-details-form">Employee details form.</a></li>
-  <li><a href="#override-default-logic" id="markdown-toc-override-default-logic">Override default logic.</a></li>
+  <li><a href="#what-is-typography" id="markdown-toc-what-is-typography">What is typography?</a></li>
+  <li><a href="#custom-typography-of-ontimize-web-framework" id="markdown-toc-custom-typography-of-ontimize-web-framework">Custom Typography of Ontimize Web framework.</a></li>
+  <li><a href="#customization" id="markdown-toc-customization">Customization</a></li>
 </ul>
 
   </nav>
 </aside>
 
-<h2 id="overview">Overview</h2>
+<h2 id="what-is-typography">What is typography?</h2>
+<p>Typography is a way of arranging type to make text legible, readable, and appealing when displayed.</p>
 
-<p>In this section we are going to show you how to perform some more advanced changes to the QuickStart app code.</p>
+<h2 id="custom-typography-of-ontimize-web-framework">Custom Typography of Ontimize Web framework.</h2>
 
-<h2 id="create-a-new-module">Create a new module.</h2>
+<p>To change the typography it is neccesary to apply an extension of Angular Material&#8217;s (you can see spec in <a href="https://v6.material.angular.io/guide/typography" target="_blank">Angular Material&#8217;s typography</a>) and an extension of Ontimize Web Sass-based theming.</p>
 
-<p>This section explains how to add a new module for managing the employees of the Bank. You can find all
-information <a href="https://ontimizeweb.github.io/docs/getting-started/adv-changes-new-module/">here</a>.</p>
+<p><em>The extension of Ontimize Web Sass-based theming.</em> is arranged into typography levels, as Angular Material&#8217;s typography. Each level has a font-size, line-height and font-weight. This custom typography is used to apply css about <a href="https://ontimizeweb.github.io/docs/components/table/" target="_blank">o-table</a> depending of the <code class="language-plaintext highlighter-rouge">row-height</code> attribute. For more details about table typography and defaut config, see <a href="https://github.com/OntimizeWeb/ontimize-web-ngx-theming/blob/master/src/styles/lite/typography/o-table-typography.scss" target="_blank">the source</a>. The available levels are:</p>
+<ul>
+  <li><strong>small-header-height</strong>: table header height for 'small' predefined row height options.</li>
+  <li><strong>small-row-height</strong>: table row height for 'small' predefined row height options. </li>
+  <li><strong>small-header-font-size</strong> : table header font size  for 'small' predefined row height options. </li>
+  <li><strong>small-row-font-size</strong>:  table row font size for 'small' predefined row height options </li>
 
-<h2 id="add-a-table-form">Add a table form.</h2>
+<li><strong>medium-header-height</strong>:  table header height for 'medium' predefined row height options</li>
+<li><strong>medium-row-height</strong>: table row height for 'medium' predefined row height options.</li>
+<li><strong>medium-header-font-size</strong>:  table header font size for 'medium' predefined row height options </li>
+<li><strong>medium-row-font-size</strong>: table row font size for 'medium' predefined row height options</li>
+<li><strong>large-header-height</strong>:  table header height  for 'large' predefined row height options</li>
+<li><strong>large-row-height</strong>: table row height for 'large' predefined row height options.</li>
+<li><strong>large-header-font-size</strong>: table header font size for 'large' predefined row height options</li>
+<li><strong>large-row-font-size</strong>:  table row font size for 'large' predefined row height options </li>
+</ul>
 
-<p>In this section we will explain how to create the initial form where a full list of employees is shown.
-You can find all information <a href="https://ontimizeweb.github.io/docs/getting-started/adv-changes-table-form/">here</a>.</p>
+<h2 id="customization">Customization</h2>
 
-<h2 id="employee-details-form">Employee details form.</h2>
+<p>First you must create a custom <em>typography configuration</em> of Angular Material&#8217;s Sass-based theming and another <em>typography configuration</em> of Ontimize Web Sass-based theming as the below example demonstrates</p>
 
-<p>Once you have the full list of employees, the next logical step is to access the detail data of a determined employee. In this section you will configure the details form to do it. You can find all information <a href="https://ontimizeweb.github.io/docs/getting-started/adv-changes-drill-down/">here</a>.</p>
+<div class="language-sass highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Include ontimize-lite theme</span>
+<span class="k">@import</span> <span class="s">'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';</span>
 
-<h2 id="override-default-logic">Override default logic.</h2>
+<span class="c1">// Define a custom typography config that overrides the font-family as well as the</span>
+<span class="c1">// `headlines` and `title` levels.</span>
+<span class="nv">$custom-typography</span><span class="p">:</span> <span class="nf">mat-typography-config</span><span class="p">(</span> <span class="nv">$font-family</span><span class="o">:</span> <span class="s1">'Nunito Sans'</span><span class="o">,</span> <span class="nv">$headline</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">16px</span><span class="o">,</span> <span class="m">22px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="nv">$title</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">14px</span><span class="o">,</span> <span class="m">22px</span><span class="o">,</span> <span class="m">500</span><span class="p">))</span><span class="err">;</span>
 
-<p>Sometimes default behaviour of form is not sufficient for the requirements. It is therefore possible
-to override the default logic of the <em>o-form</em> component.
-You can find how to do it <a href="https://ontimizeweb.github.io/docs/getting-started/adv-changes-override/">here</a>.</p>
+<span class="k">@include</span> <span class="nd">ontimize-theme-styles-lite</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="nv">$custom-typography</span><span class="p">)</span><span class="err">;</span>
 
-<hr />
+<span class="c1">// Define a custom typography config that overrides the header height, row height, header font size header and row </span>
+<span class="c1">// of the tables</span>
+<span class="nv">$custom-table-typography</span><span class="p">:</span> <span class="p">(</span> <span class="n">small-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">24px</span><span class="o">,</span> <span class="m">26px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">12px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">26px</span><span class="o">,</span> <span class="m">28px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">300</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">26px</span><span class="o">,</span> <span class="m">28px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">300</span><span class="p">)</span><span class="o">,</span> <span class="n">large-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span> <span class="p">)</span><span class="err">;</span>
+
+<span class="c1">// Merge both typographys</span>
+<span class="nv">$lite-typography</span><span class="p">:</span> <span class="nf">map-merge</span><span class="p">(</span><span class="nv">$custom-typography</span><span class="o">,</span> <span class="nv">$custom-table-typography</span><span class="p">)</span><span class="err">;</span>
+
+<span class="c1">// After define theme, it is necessary to transfer typography to tables of Ontimize Web framework</span>
+<span class="k">@import</span> <span class="s">'node_modules/ontimize-web-ngx/theme.scss';</span>
+<span class="k">@include</span> <span class="nd">o-material-theme</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="nv">$lite-typography</span><span class="p">)</span><span class="err">;</span>
+
+</code></pre></div></div>
 
         
       </section>
@@ -811,7 +866,7 @@ You can find how to do it <a href="https://ontimizeweb.github.io/docs/getting-st
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-12-12">December 12, 2016</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-06-25T05:38:26-04:00">June 25, 2020</time></p>
         
       </footer>
 
@@ -822,14 +877,14 @@ You can find how to do it <a href="https://ontimizeweb.github.io/docs/getting-st
 
   <nav class="pagination">
     
-      <a href="https://ontimizeweb.github.io/docs/make-changes/" class="pagination--pager" title="Make some changes
+      <a href="https://ontimizeweb.github.io/docs/customize/theming/" class="pagination--pager" title="Theming
 ">
           <i class="fas fa-arrow-left margin-right"></i>
         Previous
       </a>
     
     
-      <a href="https://ontimizeweb.github.io/docs/guide/appstructure/" class="pagination--pager" title="Application structure
+      <a href="https://ontimizeweb.github.io/docs/customize/lite/" class="pagination--pager" title="Lite Theme
 ">
         Next
         <i class="fas fa-arrow-right margin-left"></i>
