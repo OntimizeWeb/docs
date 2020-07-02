@@ -94,11 +94,11 @@ ontimize-web-ngx-quickstart
 
 A typical project needs the following configuration files:
 
-* **[package.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/package.json){:target="_blank"}** identifies npm package dependencies for the project.
-* **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.json){:target="_blank"}** and **[tsconfig.aot.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.aot.json){:target="_blank"}** define how the TypeScript compiler generates JavaScript  from the project's files depending on type of compilation (JIT o AOT).
-* **[angular.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/.angular-cli.json){:target="_blank"}** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
-* **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tslint.json){:target="_blank"}** helps keep your code style consistent.
-* **[ngsw-config.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/ngsw-config.json){:target="_blank"}** specifies which files and data URLs the Angular service worker should cache and how it should update the cached files and data for PWA
+* **[package.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/package.json){:target="_blank"}** identifies npm package dependencies for the project.
+* **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/tsconfig.json){:target="_blank"}** define how the TypeScript compiler generates JavaScript from the project's files depending on type of compilation.
+* **[angular.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/.angular-cli.json){:target="_blank"}** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
+* **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/tslint.json){:target="_blank"}** helps keep your code style consistent.
+* **[ngsw-config.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/ngsw-config.json){:target="_blank"}** specifies which files and data URLs the Angular service worker should cache and how it should update the cached files and data for PWA
 
 ### Web app
 
