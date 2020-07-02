@@ -18,29 +18,25 @@ As you can see in the '*AppModule*' definition [here]({{ base_path }}/guide/apps
 
 ```bash
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
 
-import { LoginModule } from './login/login.module';
-import { MainModule } from './main/main.module';
-
-export function loadLoginModule() {
-  return LoginModule;
-}
-
-export function loadMainModule() {
-  return MainModule;
-}
-
 export const routes: Routes = [
-  { path: 'main', loadChildren: loadMainModule, canActivate: [AuthGuardService] },
-  { path: 'login', loadChildren: loadLoginModule },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'main',
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('./main/main.module').then(m => m.MainModule)
+  },
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
 const opt = {
   enableTracing: false
-  // set this to true if you want to print navigation routes
+  // true if you want to print navigation routes
 };
 
 @NgModule({
@@ -65,9 +61,10 @@ Below is the definition of the login module and its associated routing module.
 ```bash
 import { NgModule } from '@angular/core';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { LoginComponent } from './login.component';
-import { LoginRoutingModule } from './login-routing.module';
+
 import { SharedModule } from '../shared/shared.module';
+import { LoginRoutingModule } from './login-routing.module';
+import { LoginComponent } from './login.component';
 
 @NgModule({
   imports: [
@@ -86,11 +83,13 @@ The routing module:
 
 ```bash
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './login.component';
 
-const routes: Routes = [{ path: '', component: LoginComponent }];
+const routes: Routes = [
+  { path: '', component: LoginComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
@@ -109,37 +108,22 @@ Here is the '*MainRoutingModule*', which manages the redirection to other inner 
 
 ```bash
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
 import { MainComponent } from './main.component';
-
-import { HomeModule } from './home.module';
-import { AboutModule } from './about/about.module';
-import { SettingsModule } from './settings/settings.module';
-import { CustomersModule } from './customers/customers.module';
-import { AccountsModule } from './accounts/accounts.module';
-import { BranchesModule } from './branches/branches.module';
-import { EmployeesModule } from './employees/employees.module';
-
-export function loadHomeModule() { return HomeModule; }
-export function loadAboutModule() { return AboutModule; }
-export function loadSettingsModule() { return SettingsModule; }
-export function loadCustomersModule() { return CustomersModule; }
-export function loadAccountsModule() { return AccountsModule; }
-export function loadBranchesModule() { return BranchesModule; }
-export function loadEmployeesModule() { return EmployeesModule; }
 
 export const routes: Routes = [
   {
     path: '', component: MainComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: loadHomeModule },
-      { path: 'about', loadChildren: loadAboutModule },
-      { path: 'settings', loadChildren: loadSettingsModule },
-      { path: 'customers', loadChildren: loadCustomersModule },
-      { path: 'accounts', loadChildren: loadAccountsModule },
-      { path: 'branches', loadChildren: loadBranchesModule },
-      { path: 'employees', loadChildren: loadEmployeesModule }
+      { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
+      { path: 'accounts', loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsModule) },
+      { path: 'branches', loadChildren: () => import('./branches/branches.module').then(m => m.BranchesModule) },
+      { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+      { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) },
+      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+      { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) }
     ]
   }
 ];
@@ -192,5 +176,4 @@ In this file some of the more typical routes related with a logic block are defi
 * **'new':** View for inserting a new item into the collection. Uses *CustomersNewComponent*.
 * **':CUSTOMERID':** Details of selected item. The *:CUSTOMERID* is the token for a route parameter. For example, in a URL such as "/customers/22", "22" is the value of :CUSTOMERID parameter that is generally the customer’s entity primary key. The component *CustomersDetailComponent* will render the view  usually a form) with the details of the selected item. When the detailed data is displayed in a form all inputs contained in it are in read only mode and  cannot be edited.
 When the detail data is displayed into a form all inputs contained in it are in **read only** mode, that is, the inputs only displays data but can not be edited.
-* **':CUSTOMERID/edit':** View for editing values of the selected customer item. In this mode, the inputs with the form are editable.
 * **':CUSTOMERID/accounts':** Entry point for loading the '*AccountsModule*'.
