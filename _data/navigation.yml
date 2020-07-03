@@ -107,6 +107,8 @@ docs:
         url: /ontimize-web-ngx-seed/
   - title: Meta
     children:
+      - title: "FAQ"
+        url: /faq/
       - title: "Contributing"
         url: /contributing/
       - title: "License"
