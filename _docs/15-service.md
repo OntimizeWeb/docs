@@ -10,7 +10,9 @@ This section describes the **OntimizeWeb** services an how to extend them to add
 
 ## Ontimize services
 
-OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://www.ontimize.com/){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`. You must indicate which one the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
+OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://www.ontimize.com/){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`.
+You can also use your own type of service and then we will explain how to parse and adapt the response. 
+You must indicate which one the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
 
 ### Ontimize services methods
 
@@ -56,6 +58,7 @@ startsession(user: string, password: string): Observable<any>;
 endsession(user: string, sessionId: number): Observable<any>;
 redirectLogin?(sessionExpired?: boolean);
 ```
+
 
 ### CRUD methods
 The *CRUD* (Create, Read, Update and Delete) methods are used to perform standard Ontimize operations:
@@ -378,3 +381,133 @@ Each *CRUD* method has it owns successful and unsuccessful request callbacks, ca
 Both services `OntimizeService` and `OntimizeEEService` also have the generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained *CRUD* method callbacks so user can chose whether to override a particular or the generic callback.
 
 
+## Create new type of service
+
+To create a new type of service and to adapt the response to Ontimize format we must follow the next steps.
+First of all, you must indicate the name of the new type by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
+
+### Create the service
+
+First of all, you must create an interface that matches the response of the service.
+
+```javascript
+import { HttpHeaders } from '@angular/common/http';
+import { Injectable, Injector } from '@angular/core';
+import { OntimizeBaseService } from 'ontimize-web-ngx';
+import { Observable } from 'rxjs';
+import { CustomResponseAdapter } from './custom-service-response.adapter';
+
+export interface CustomResponse {
+  data?: Array<any>;
+  meta?: {
+    total_pages: number;
+    current_page: number;
+    next_page: number;
+    per_page: number;
+    total_count: number;
+  };
+  abbreviation?: string;
+  city?: string;    
+  full_name?: string;
+  id?: number;
+  name?: string;
+}
+```
+
+Create a new service that extends `OntimizeBaseService`, in this case we will name the service type as `CustomService`.
+
+```javascript
+export class CustomService extends OntimizeBaseService {
+  public configureAdapter() {
+    this.adapter = this.injector.get(CustomResponseAdapter);
+  }
+  public configureService(config: any): void {
+    super.configureService(config);
+    this.path = config.path;
+    this._urlBase = config.urlBase ? config.urlBase : 'https://your-api.com';
+  }
+  protected buildHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json;charset=UTF-8'
+    });
+  }
+  public query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<any> {
+    let url = this._urlBase + this.path;
+    if (entity && entity === 'detail') {
+      url += '/' + kv['id'];
+    }
+    return this.doRequest({
+      method: 'GET',
+      url
+    });
+  }
+  public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object,
+    offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
+    if (!offset) {
+      offset = 0;
+    }
+    let url = this._urlBase + this.path;
+    url += '?page=' + offset;
+    url += '&per_page=' + pagesize;
+    if (entity && entity === 'detail') {
+      url += '/' + kv['id'];
+    }
+    return this.doRequest({
+      method: 'GET',
+      url
+    });
+  }
+}
+```
+
+### Create the adapter
+
+Now, you must adapt the response of the service to be the same as it is in OntimizeWeb.
+
+```javascript
+import { HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { ServiceResponseAdapter } from 'ontimize-web-ngx';
+
+import { CustomServiceResponse } from './custom-service-response.class';
+import { CustomResponse } from './custom.service';
+
+@Injectable()
+export class CustomServiceResponseAdapter implements ServiceResponseAdapter<CustomServiceResponse> {
+
+  adapt(res: HttpResponse<CustomResponse>): CustomServiceResponse {
+    let code = 1;
+    let data = [];
+    let startRecordIndex = 0;
+    let totalQueryRecordsNumber = 0;
+    // Adapt response to OntimizeWeb format.
+    if (res.body && res.body.data) {
+      code = 0;
+      data = res.body.data;
+      if (res.body.meta) {
+        const meta = res.body.meta;
+        if (meta.total_count) {
+          totalQueryRecordsNumber = meta.total_count;
+        }
+        if (meta.current_page) {
+          startRecordIndex = meta.current_page;
+        }
+      }
+    } else if (res.body && res.body.id != null) {
+      code = 0;
+      data.push(res.body);
+    }
+
+    // Create new class element with the new data adapted.
+    return new CustomServiceResponse(
+      code,
+      data,
+      '',
+      {},
+      startRecordIndex,
+      totalQueryRecordsNumber
+    );
+  }
+}
+```
