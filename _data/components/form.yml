@@ -140,8 +140,13 @@ attributes: [
   default: "yes",
   required: "",
   description: "Indicates whether or not the form detects that there was a change in the blur event of the form components."
-
 },{
+  name: "query-fallback-function",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Function to execute on query error"
+},{  
   name: "confirm-exit",
   type: "no | false | yes | true",
   default: "yes",
