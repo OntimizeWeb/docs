@@ -488,11 +488,11 @@ import { CustomResponse } from './custom.service';
 export class CustomServiceResponseAdapter implements ServiceResponseAdapter<CustomServiceResponse> {
 
   adapt(res: HttpResponse<CustomResponse>): CustomServiceResponse {
+    // Adapt response to OntimizeWeb format.
     let code = 1;
     let data = [];
     let startRecordIndex = 0;
     let totalQueryRecordsNumber = 0;
-    // Adapt response to OntimizeWeb format.
     if (res.body && res.body.data) {
       code = 0;
       data = res.body.data;
@@ -525,7 +525,7 @@ export class CustomServiceResponseAdapter implements ServiceResponseAdapter<Cust
 
 ### Type of the response
 
-You must extend the behaviour of BaseServiceResponse.
+You can extend the behaviour of BaseServiceResponse.
 
 ```javascript
 import { BaseServiceResponse } from 'ontimize-web-ngx';
@@ -537,7 +537,7 @@ export class CustomServiceResponse extends BaseServiceResponse {
 }
 ```
 
-You will have 3 functions that returns true or false to check the response. This functions are:
+You will have 3 functions in BaseServiceResponse that returns true or false to check the response. This functions are:
 
 - isSuccessful()
 - isFailed()
