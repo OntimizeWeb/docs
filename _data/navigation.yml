@@ -209,8 +209,8 @@ components:
             url: /components/form/detail/
           - title: "Form container"
             url: /components/form/container/
-      - title: "DataTable <small>(deprecated)</small>"
-        url: /components/datatable/
+      # - title: "DataTable <small>(deprecated)</small>"
+      #   url: /components/datatable/
       - title: "Table"
         url: /components/table/
         children:
