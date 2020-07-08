@@ -11,7 +11,9 @@ This section describes the **OntimizeWeb** services an how to extend them to add
 ## Ontimize services
 
 OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://www.ontimize.com/){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`.
+
 You can also use your own type of service and then we will explain how to parse and adapt the response. 
+
 You must indicate which one the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
 
 ### Ontimize services methods
@@ -381,14 +383,14 @@ Each *CRUD* method has it owns successful and unsuccessful request callbacks, ca
 Both services `OntimizeService` and `OntimizeEEService` also have the generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained *CRUD* method callbacks so user can chose whether to override a particular or the generic callback.
 
 
-## Create new type of service
+## Example of custom type of service
 
 To create a new type of service and to adapt the response to Ontimize format we must follow the next steps.
 First of all, you must indicate the name of the new type by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
 
 ### Create the service
 
-First of all, you must create an interface that matches the response of the service.
+First of all, you must create an interface that matches the response of the API to type the `HttpResponse` as seen below.
 
 ```javascript
 import { HttpHeaders } from '@angular/common/http';
@@ -418,20 +420,24 @@ Create a new service that extends `OntimizeBaseService`, in this case we will na
 
 ```javascript
 export class CustomService extends OntimizeBaseService {
+
   public configureAdapter() {
     this.adapter = this.injector.get(CustomResponseAdapter);
   }
+
   public configureService(config: any): void {
     super.configureService(config);
     this.path = config.path;
     this._urlBase = config.urlBase ? config.urlBase : 'https://your-api.com';
   }
+
   protected buildHeaders(): HttpHeaders {
     return new HttpHeaders({
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json;charset=UTF-8'
     });
   }
+
   public query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<any> {
     let url = this._urlBase + this.path;
     if (entity && entity === 'detail') {
@@ -442,6 +448,7 @@ export class CustomService extends OntimizeBaseService {
       url
     });
   }
+
   public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object,
     offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
     if (!offset) {
@@ -461,16 +468,20 @@ export class CustomService extends OntimizeBaseService {
 }
 ```
 
-### Create the adapter
+### Create the adapter and adapt the response
 
-Now, you must adapt the response of the service to be the same as it is in OntimizeWeb.
+Now, you must adapt the response of the service to be the same as it is in OntimizeWeb. Here is where you have to use `CustomResponse` interface created in the first point.
+
+The function adapt() will return `Custom Service Response` in OntimizeWeb readable format.
+
+
 
 ```javascript
 import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ServiceResponseAdapter } from 'ontimize-web-ngx';
 
-import { CustomServiceResponse } from './custom-service-response.class';
+import { CustomServiceResponse } from './custom-service-response.class'; //Explained on next section
 import { CustomResponse } from './custom.service';
 
 @Injectable()
@@ -511,3 +522,21 @@ export class CustomServiceResponseAdapter implements ServiceResponseAdapter<Cust
   }
 }
 ```
+
+### Type of the response
+
+You must extend the behaviour of BaseServiceResponse.
+
+```javascript
+import { BaseServiceResponse } from 'ontimize-web-ngx';
+
+export class CustomServiceResponse extends BaseServiceResponse {
+
+}
+```
+
+You will have 3 functions that returns true or false to check the response. This functions are:
+
+- isSuccessful()
+- isFailed()
+- isUnauthorized()
