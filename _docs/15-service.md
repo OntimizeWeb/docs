@@ -532,6 +532,8 @@ import { BaseServiceResponse } from 'ontimize-web-ngx';
 
 export class CustomServiceResponse extends BaseServiceResponse {
 
+  ...
+
 }
 ```
 
