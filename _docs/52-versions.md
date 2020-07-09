@@ -21,10 +21,10 @@ In this secction you can check the different releases of **OntimizeWeb** and its
     </thead>
     <tbody>
         <tr>
-            <td>8.0.0</td>
-            <td>8.0.0</td>
-            <td>8.0.0</td>
-            <td>8.0.0</td>
+            <td>8.0.0-rc.0</td>
+            <td>8.0.0-SNAPSHOT-0</td>
+            <td>8.0.0-SNAPSHOT-0</td>
+            <td>8.0.0-SNAPSHOT-0</td>
         </tr>
     </tbody>
 </table>
