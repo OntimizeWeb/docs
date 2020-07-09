@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-06-25T07:00:43-04:00">
+  <meta property="article:published_time" content="2020-07-09T08:25:38-04:00">
 
 
 
@@ -716,6 +716,14 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/v8/faq/" class=" ">FAQ</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/v8/contributing/" class=" ">Contributing</a></li>
           
             
@@ -759,7 +767,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="June 25, 2020">
+    <meta itemprop="datePublished" content="July 09, 2020">
     
 
     <div class="page__inner-wrap">
@@ -794,6 +802,12 @@
       <li><a href="#define-your-own-successfulunsuccessful-request-callback-methods" id="markdown-toc-define-your-own-successfulunsuccessful-request-callback-methods">Define your own successful/unsuccessful request callback methods</a></li>
     </ul>
   </li>
+  <li><a href="#example-of-custom-type-of-service" id="markdown-toc-example-of-custom-type-of-service">Example of custom type of service</a>    <ul>
+      <li><a href="#create-the-service" id="markdown-toc-create-the-service">Create the service</a></li>
+      <li><a href="#create-the-adapter-and-adapt-the-response" id="markdown-toc-create-the-adapter-and-adapt-the-response">Create the adapter and adapt the response</a></li>
+      <li><a href="#type-of-the-response" id="markdown-toc-type-of-the-response">Type of the response</a></li>
+    </ul>
+  </li>
 </ul>
 
   </nav>
@@ -803,7 +817,11 @@
 
 <h2 id="ontimize-services">Ontimize services</h2>
 
-<p>OntimizeWeb services are used for fetching and saving data from servers based on <a href="https://www.ontimize.com/" target="_blank">Ontimize</a>. There is two types of Ontimize services depending on the server technology used: <code class="language-plaintext highlighter-rouge">OntimizeService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>. You must indicate which one the application will use by configuring the <code class="language-plaintext highlighter-rouge">serviceType</code> attribute in the <a href="https://ontimizeweb.github.io/docs/v8/guide/appconfig/#application-configuration" target="_blank">application configuration</a>.</p>
+<p>OntimizeWeb services are used for fetching and saving data from servers based on <a href="https://www.ontimize.com/" target="_blank">Ontimize</a>. There is two types of Ontimize services depending on the server technology used: <code class="language-plaintext highlighter-rouge">OntimizeService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>.</p>
+
+<p>You can also use your own type of service and then we will explain how to parse and adapt the response.</p>
+
+<p>You must indicate which one the application will use by configuring the <code class="language-plaintext highlighter-rouge">serviceType</code> attribute in the <a href="https://ontimizeweb.github.io/docs/v8/guide/appconfig/#application-configuration" target="_blank">application configuration</a>.</p>
 
 <h3 id="ontimize-services-methods">Ontimize services methods</h3>
 
@@ -1177,6 +1195,161 @@
 
 <p>Both services <code class="language-plaintext highlighter-rouge">OntimizeService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEService</code> also have the generic succesful and unsuccessful request callback which are <code class="language-plaintext highlighter-rouge">parseSuccessfulResponse</code> and <code class="language-plaintext highlighter-rouge">parseUnsuccessfulResponse</code>. This callbacks are called from the previous explained <em>CRUD</em> method callbacks so user can chose whether to override a particular or the generic callback.</p>
 
+<h2 id="example-of-custom-type-of-service">Example of custom type of service</h2>
+
+<p>To create a new type of service and to adapt the response to Ontimize format we must follow the next steps.
+First of all, you must indicate the name of the new type by configuring the <code class="language-plaintext highlighter-rouge">serviceType</code> attribute in the <a href="https://ontimizeweb.github.io/docs/v8/guide/appconfig/#application-configuration" target="_blank">application configuration</a>.</p>
+
+<h3 id="create-the-service">Create the service</h3>
+
+<p>First of all, you must create an interface that matches the response of the API to type the <code class="language-plaintext highlighter-rouge">HttpResponse</code> as seen below.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">HttpHeaders</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeBaseService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CustomResponseAdapter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./custom-service-response.adapter</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">CustomResponse</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nx">meta</span><span class="p">?:</span> <span class="p">{</span>
+    <span class="na">total_pages</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">current_page</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">next_page</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">per_page</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">total_count</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nx">abbreviation</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">city</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>    
+  <span class="nx">full_name</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">id</span><span class="p">?:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nx">name</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Create a new service that extends <code class="language-plaintext highlighter-rouge">OntimizeBaseService</code>, in this case we will name the service type as <code class="language-plaintext highlighter-rouge">CustomService</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
+
+  <span class="kr">public</span> <span class="nx">configureAdapter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">adapter</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">injector</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">CustomResponseAdapter</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">configureService</span><span class="p">(</span><span class="nx">config</span><span class="p">:</span> <span class="nx">any</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nx">configureService</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">path</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_urlBase</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">urlBase</span> <span class="p">?</span> <span class="nx">config</span><span class="p">.</span><span class="nx">urlBase</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">https://your-api.com</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kr">protected</span> <span class="nx">buildHeaders</span><span class="p">():</span> <span class="nx">HttpHeaders</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">HttpHeaders</span><span class="p">({</span>
+      <span class="dl">'</span><span class="s1">Access-Control-Allow-Origin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json;charset=UTF-8</span><span class="dl">'</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">query</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_urlBase</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">entity</span> <span class="o">&amp;&amp;</span> <span class="nx">entity</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">detail</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">url</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">kv</span><span class="p">[</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">doRequest</span><span class="p">({</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+      <span class="nx">url</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">advancedQuery</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span>
+    <span class="nx">offset</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">pagesize</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">orderby</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">offset</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_urlBase</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+    <span class="nx">url</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">?page=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">offset</span><span class="p">;</span>
+    <span class="nx">url</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">&amp;per_page=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">pagesize</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">entity</span> <span class="o">&amp;&amp;</span> <span class="nx">entity</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">detail</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">url</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">kv</span><span class="p">[</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">doRequest</span><span class="p">({</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+      <span class="nx">url</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="create-the-adapter-and-adapt-the-response">Create the adapter and adapt the response</h3>
+
+<p>Now, you must adapt the response of the service to be the same as it is in OntimizeWeb. Here is where you have to use <code class="language-plaintext highlighter-rouge">CustomResponse</code> interface created in the first point.</p>
+
+<p>The function adapt() will return <code class="language-plaintext highlighter-rouge">Custom Service Response</code> in OntimizeWeb readable format.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">HttpResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ServiceResponseAdapter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CustomServiceResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./custom-service-response.class</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//Explained on next section</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CustomResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./custom.service</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomServiceResponseAdapter</span> <span class="kr">implements</span> <span class="nx">ServiceResponseAdapter</span><span class="o">&lt;</span><span class="nx">CustomServiceResponse</span><span class="o">&gt;</span> <span class="p">{</span>
+
+  <span class="nx">adapt</span><span class="p">(</span><span class="na">res</span><span class="p">:</span> <span class="nx">HttpResponse</span><span class="o">&lt;</span><span class="nx">CustomResponse</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">CustomServiceResponse</span> <span class="p">{</span>
+    <span class="c1">// Adapt response to OntimizeWeb format.</span>
+    <span class="kd">let</span> <span class="nx">code</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kd">let</span> <span class="nx">startRecordIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">totalQueryRecordsNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">code</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">data</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">meta</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">meta</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">meta</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">meta</span><span class="p">.</span><span class="nx">total_count</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">totalQueryRecordsNumber</span> <span class="o">=</span> <span class="nx">meta</span><span class="p">.</span><span class="nx">total_count</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">meta</span><span class="p">.</span><span class="nx">current_page</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">startRecordIndex</span> <span class="o">=</span> <span class="nx">meta</span><span class="p">.</span><span class="nx">current_page</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">id</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">code</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Create new class element with the new data adapted.</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">CustomServiceResponse</span><span class="p">(</span>
+      <span class="nx">code</span><span class="p">,</span>
+      <span class="nx">data</span><span class="p">,</span>
+      <span class="dl">''</span><span class="p">,</span>
+      <span class="p">{},</span>
+      <span class="nx">startRecordIndex</span><span class="p">,</span>
+      <span class="nx">totalQueryRecordsNumber</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="type-of-the-response">Type of the response</h3>
+
+<p>You can extend the behaviour of BaseServiceResponse.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">BaseServiceResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomServiceResponse</span> <span class="kd">extends</span> <span class="nx">BaseServiceResponse</span> <span class="p">{</span>
+
+  <span class="p">...</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You will have 3 functions in BaseServiceResponse that returns true or false to check the response. This functions are:</p>
+
+<ul>
+  <li>isSuccessful()</li>
+  <li>isFailed()</li>
+  <li>isUnauthorized()</li>
+</ul>
 
         
       </section>
@@ -1189,7 +1362,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-06-25T07:00:43-04:00">June 25, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-09T08:25:38-04:00">July 09, 2020</time></p>
         
       </footer>
 
