@@ -1,6 +1,6 @@
 ---
 
-permalink: /components/faq/
+permalink: /faq/
 title: "Frequently asked questions"
 under_construction: true
 ---

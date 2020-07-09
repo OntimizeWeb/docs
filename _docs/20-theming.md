@@ -143,6 +143,9 @@ After that you can choose between the **light** or **dark** themes by calling th
 ## Theming your own components
 To style your own components with Angular Material’s tools, the component’s styles must be defined with Sass.
 
+## Using custom typography with your theme
+We can use use our custom typography following [*this steps*]({{ base_path }}/customize/typography/){:target="_blank"}
+
 ### Using @mixin to automatically apply a theme
 
 #### Advantages of using @mixin

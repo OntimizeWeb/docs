@@ -496,7 +496,7 @@ import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
 
 export class OTableCellRendererName extends OBaseTableCellRenderer {
 
-  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef<any>;
 
   constructor(protected injector: Injector) {
     super(injector);
@@ -645,7 +645,7 @@ Here's how you might begin in your file .ts:
 
 - Your component must extend ```OBaseTableCellEditor``` class.
 
-- It also must get the `templateref` view child reference, using  ``` @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any> ``` where you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
+- It also must get the `templateref` view child reference, using  ``` @ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef<any> ``` where you'll acquire the `<ng-template>` contents with a TemplateRef and access the view container.
 
 - In your editor constructor you must set its `type` property value.
 
@@ -668,7 +668,7 @@ import { OBaseTableCellEditor, OTableColumnComponent } from 'ontimize-web-ngx';
 })
 export class OTableCellEditorName extends OBaseTableCellEditor {
 
-  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef<any>;
 
   constructor(protected injector: Injector) {
     super(injector);
@@ -836,7 +836,7 @@ The `o-table-option` component allows to add extra options to the table menu. Yo
   })
   export class MyPageComponent {
 
-    @ViewChild('myOption')
+    @ViewChild('myOption', {static: false})
     protected myOption: OTableOptionComponent;
 
     ngAfterViewInit() {
@@ -962,7 +962,7 @@ You can configure:
   ...
   import { OTableButtonComponent } from 'ontimize-web-ngx';
   ...
-  @ViewChild('myButton')
+  @ViewChild('myButton', {static: false})
   protected myButton: OTableButtonComponent;
   ...
   ngAfterViewInit() {

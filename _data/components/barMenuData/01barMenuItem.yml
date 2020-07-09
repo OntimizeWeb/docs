@@ -12,7 +12,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "Icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+  description: "Icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})<br/><em>*Note: In this component you are required to use only Google Material Icons</em>"
 },{
   name: "route",
   type: "string",

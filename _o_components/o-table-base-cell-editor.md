@@ -23,7 +23,7 @@ import { OBaseTableCellEditor, OTableColumnComponent } from 'ontimize-web-ngx';
 })
 export class OTableCellEditorName extends OBaseTableCellEditor {
 
-  @ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>;
+  @ViewChild('templateref', { read: TemplateRef, static: true }) public templateref: TemplateRef<any>;
 
   constructor(protected injector: Injector) {
     super(injector);

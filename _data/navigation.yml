@@ -107,6 +107,8 @@ docs:
         url: /ontimize-web-ngx-seed/
   - title: Meta
     children:
+      - title: "FAQ"
+        url: /faq/
       - title: "Contributing"
         url: /contributing/
       - title: "License"
@@ -207,8 +209,8 @@ components:
             url: /components/form/detail/
           - title: "Form container"
             url: /components/form/container/
-      - title: "DataTable <small>(deprecated)</small>"
-        url: /components/datatable/
+      # - title: "DataTable <small>(deprecated)</small>"
+      #   url: /components/datatable/
       - title: "Table"
         url: /components/table/
         children:

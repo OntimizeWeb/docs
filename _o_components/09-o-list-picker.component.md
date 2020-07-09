@@ -51,3 +51,8 @@ OntimizeWeb offers the `oLocker` directive to the `o-list-picker` that should to
 ![OLocker in  Combo component]({{ "/images/components/inputs/listPicker-oLocker.gif" | absolute_url }}){: .comp-example-img}
 
 Note you can configure the mode of the locker, there are two modes to block, *disable* and *load* mode. The mode by default is *load*. You can configure  delay service start with `oLockerDelay` attribute, by default this value is the *250ms*.
+
+
+## Filtering
+
+You can check how to construct dependant list-pickers [here]({{ base_path }}/components/input/overviewservice/). You will need the attribute parent-keys to achieve this. 

@@ -74,6 +74,12 @@ attributes: [{
   required: "",
   description: "The amount of space between o-grid-items. This will be something like '10px' or '1em'."
 },{
+  name: "show-footer",
+  type: "no | false | yes | true",
+  default: "true",
+  required: "",
+  description: "Indicates whether or not to show the footer"
+},{
   name: "refresh-button"
 },{
   name: "quick-filter-columns"

@@ -21,7 +21,6 @@ Here is the default root directory structure of an Ontimize Web application:
 
 ```bash
 ontimize-web-ngx-quickstart
-|──  aot-config/    #Contains files needed for AoT compilation
 |──  src/
 |  ├──  app/                          # Contains all application code
 |  |  ├──  login/                     # Login module folder
@@ -71,20 +70,22 @@ ontimize-web-ngx-quickstart
 |  |──  environments/
 |  |
 |  |──  favicon.ico
-|  |──  index.html          # Web page that hosts the application
-|  |──  main.ts             # File that bootstraps the application and compiles the application with the JIT compiler
-|  |──  polyfills.ts        # File that help normalize the different browsers have different levels of support of the web standards
-|  |──  styles.scss         # Global styles file
-|  |──  test.ts             # Entry point for your unit tests. It has some custom configuration that might be unfamiliar, but it's not something you'll need to edit.
-|  |──  tsconfig.app.json   # TypeScript compiler configuration for the Angular app
-|  |──  tsconfig.spec.json  # TypeScript compiler configuration for the unit tests
-|  └──  typings.d.ts        # systemJS module definition
+|  |──  index.html           # Web page that hosts the application
+|  |──  main.ts              # File that bootstraps the application and compiles the application with the JIT compiler
+|  |──  polyfills.ts         # File that help normalize the different browsers have different levels of support of the web standards
+|  |──  styles.scss          # Global styles file
+|  |──  test.ts              # Entry point for your unit tests. It has some custom configuration that might be unfamiliar, but it's not something you'll need to edit.
+|  └──  manifest.webmanifest # The web app manifest is a file that tells the browser about your Progressive Web App (app name, icons, URL)
 |
-|──  angular-cli.json       # Angular CLI configuration
+|──  angular.json       # Angular CLI configuration
 |──  package.json           # npm package dependencies for the project
-|──  tsconfig.aot.json      # TypeScript AOT compiler configuration
-|──  tsconfig.json          # TypeScript JIT compiler configuration
+|──  tsconfig.app.json      # TypeScript Application configuration
+|──  tsconfig.json          # TypeScript General configuration
 └──  tslint.json            # Linting configuration for TSLint together with Codelyzer, used when running ng lint. Linting helps keep your code style consistent.
+└──  ngsw-config.json       # Specifies which files and data URLs the Angular service worker should cache and how it should update the cached files and data for PWA.
+└──  browserlist            # Config file to share target browsers between different front-end tools.
+└──  tsconfig.app.json    # TypeScript compiler configuration for the Angular app
+└──  tsconfig.spec.json   # TypeScript compiler configuration for the unit tests
 ```
 
 ## Project configuration
@@ -93,10 +94,11 @@ ontimize-web-ngx-quickstart
 
 A typical project needs the following configuration files:
 
-* **[package.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/package.json){:target="_blank"}** identifies npm package dependencies for the project.
-* **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.json){:target="_blank"}** and **[tsconfig.aot.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tsconfig.aot.json){:target="_blank"}** define how the TypeScript compiler generates JavaScript  from the project's files depending on type of compilation (JIT o AOT).
-* **[angular-cli.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/.angular-cli.json){:target="_blank"}** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
-* **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/tslint.json){:target="_blank"}** helps keep your code style consistent.
+* **[package.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/package.json){:target="_blank"}** identifies npm package dependencies for the project.
+* **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/tsconfig.json){:target="_blank"}** define how the TypeScript compiler generates JavaScript from the project's files depending on type of compilation.
+* **[angular.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/.angular.json){:target="_blank"}** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
+* **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/tslint.json){:target="_blank"}** helps keep your code style consistent.
+* **[ngsw-config.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/ngsw-config.json){:target="_blank"}** specifies which files and data URLs the Angular service worker should cache and how it should update the cached files and data for PWA
 
 ### Web app
 
@@ -104,36 +106,39 @@ Define the web app that hosts your application in the file *index.html*.
 
 ```html
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Ontimize Web QuickStart</title>
+  <title>Ontimize Web Quickstart</title>
 
   <base href="/">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Styling -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/loader.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 
-    <!-- Styling -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/loader.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <!-- PWA -->  
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#242424">
+</head>
 
-  </head>
-  <body>
-    <!-- Loader -->
-    <div id="loader-wrapper">
-      <div id="loader"></div>
+<body>
+  <!-- Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <!-- The application tag-->
+  <o-app></o-app>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+</body>
 
-      <div class="loader-section section-left"></div>
-      <div class="loader-section section-right"></div>
-
-    </div>
-
-    <!-- The application tag-->
-    <o-app></o-app>
-
-  </body>
 </html>
 
 ```
@@ -217,9 +222,10 @@ The file responsible for starting up the app is *app/main.ts*, with the content:
 ```javascript
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { ontimizePostBootstrap } from 'ontimize-web-ngx';
+
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import { ontimizePostBootstrap } from 'ontimize-web-ngx';
 
 if (environment.production) {
   enableProdMode();
@@ -229,4 +235,5 @@ const promise = platformBrowserDynamic().bootstrapModule(AppModule);
 promise.then(ontimizePostBootstrap).catch(err => {
   console.error(err.message);
 });
+
 ```
