@@ -29,6 +29,7 @@ export const CONFIG: Config = {
   servicesConfiguration: SERVICE_CONFIG,
   appMenuConfiguration: MENU_CONFIG,
   applicationLocales: ['es', 'en'],
+  defaultLocale: 'en',
   remoteConfig: { /* Optional */
     path: '/configPath',
     endpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest', /* Optional */
@@ -65,6 +66,7 @@ The noteworthy parameters here are:
 - **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 - **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
 - **applicationLocales:** Set of available locales for the application.
+- **defaultLocale:** Default language if browser language is not found on application.
 - **remoteConfig:** remote configuration object. You can read more about this [here](#remote-configuration).
   - **path:** remote configuration path.
   - **endpoint:** the base path of the URL used for the remote configuration requests. Default value is provided by `apiEndpoint`.
