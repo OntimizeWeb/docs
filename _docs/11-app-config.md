@@ -29,6 +29,7 @@ export const CONFIG: Config = {
   servicesConfiguration: SERVICE_CONFIG,
   appMenuConfiguration: MENU_CONFIG,
   applicationLocales: ['es', 'en'],
+  defaultLocale: 'en',
   remoteConfig: { /* Optional */
     path: '/configPath',
     endpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest', /* Optional */
