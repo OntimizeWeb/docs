@@ -66,7 +66,7 @@ The noteworthy parameters here are:
 - **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 - **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
 - **applicationLocales:** Set of available locales for the application.
-- **defaultLocale:** Default language if browser language is not found in application.
+- **defaultLocale:** Default language if browser language is not found in application. This value must exist into `applicationLocales`.
 - **remoteConfig:** remote configuration object. You can read more about this [here](#remote-configuration).
   - **path:** remote configuration path.
   - **endpoint:** the base path of the URL used for the remote configuration requests. Default value is provided by `apiEndpoint`.
