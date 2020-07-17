@@ -210,10 +210,9 @@ Now you can override the methods indicated in the previous section. The followin
 ```javascript
 import { Injectable, Injector } from '@angular/core';
 
-import { OntimizeEEService, Observable, Util } from 'ontimize-web-ngx';
+import { OntimizeEEService, Observable, Util, ServiceResponse } from 'ontimize-web-ngx';
 import { Observable}  from 'rxjs';
 import { share } from 'rxjs/operators';
-import { ServiceResponse } from '../../interfaces/service-response.interface';
 
 @Injectable()
 export class StarsWarsService extends OntimizeEEService {
