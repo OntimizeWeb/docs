@@ -299,7 +299,7 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
 
   <span>Example:</span>
   ```javascript
-  { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }
+  { id: 'userinfo', name: 'USER', user: 'Profile', avatar: '../../assets/images/user_profile.png' }
   ```
   </div>
 </details>
