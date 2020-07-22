@@ -27,11 +27,11 @@ configureService(config: any): void;
 
 /* CRUD methods */
 query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<any>;
-advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object,
-  offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any>;
-insert(av: Object, entity?: string, sqltypes?: Object): Observable<any>;
-update(kv: Object, av: Object, entity?: string, sqltypes?: Object): Observable<any>;
-delete(kv: Object, entity?: string, sqltypes?: Object): Observable<any>;
+advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: object,
+    offset?: number, pagesize?: number, orderby?: Array<object>): Observable<ServiceResponse>
+insert(av: Object = {}, entity: string, sqltypes?: object): Observable<ServiceResponse>
+update(kv: Object = {}, av: object = {}, entity?: string, sqltypes?: object): Observable<ServiceResponse>
+delete(kv: Object = {}, entity?: string, sqltypes?: Object): Observable<ServiceResponse>
 
 /**
 * Successful response parsers, there is one parser for each CRUD method which calls to the common parser.
@@ -210,7 +210,7 @@ Now you can override the methods indicated in the previous section. The followin
 ```javascript
 import { Injectable, Injector } from '@angular/core';
 
-import { OntimizeEEService, Observable, Util } from 'ontimize-web-ngx';
+import { OntimizeEEService, Observable, Util, ServiceResponse } from 'ontimize-web-ngx';
 import { Observable}  from 'rxjs';
 import { share } from 'rxjs/operators';
 
@@ -221,7 +221,7 @@ export class StarsWarsService extends OntimizeEEService {
     super(injector);
   }
 
-  public query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<any> {
+  public query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<ServiceResponse> {
     const url = 'https://swapi.co/api/' + entity + '/?format=json';
 
     let _innerObserver: any;
@@ -243,7 +243,7 @@ export class StarsWarsService extends OntimizeEEService {
     return dataObservable.pipe(share());
   }
 
-  public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object, offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
+public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object, offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<ServiceResponse> {
     offset = (Util.isDefined(offset)) ? offset : this.offset;
 
     // Calculate page
