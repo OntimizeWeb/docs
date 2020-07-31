@@ -176,6 +176,12 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to show the filter menu option in the header menu"
+},{
+  name: "row-class",
+  type: "(rowData: any, rowIndex: number) => string | string[]",
+  default: "",
+  required: "",
+  description: "Adds the CSS class or classes returned by the provided function to the table rows whose data and index are provided "
 }]
 
 outputs: [{
