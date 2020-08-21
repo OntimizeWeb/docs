@@ -160,14 +160,23 @@ getMovements(data) {
   }
 ```
 
-## Extending Ontimize services
+## Extending Ontimize Web services
 
-You may need extra functionality or changing the behaviour of a service, for doing this follow the next steps:
+You can override or extend the functionality of the services defined in **OntimizeWeb**. You should know that some services are used internally and they cannot be extended. The prepared-to-extend services are the following:
 
+| Service | Injection token | Description |
+| ------- | ------- | ------- |
+| `OntimizeService` and `OntimizeEEService` | `O_DATA_SERVICE` | Service used for making CRUD operation and authentication |
+| `OTranslateService` | `O_TRANSLATE_SERVICE` | Service for translating the information shown in the application |
+| `OntimizeFileService` | `O_FILE_SERVICE` | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/){:target="_blank"}  component |
+| `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/input/file/){:target="_blank"} component for exporting its data |
+| `OntimizePermissionsService` and `OntimizeEEPermissionsService` | `O_PERMISSION_SERVICE` | Service used for loading the application permissions |
 
-### Create an extended Ontimize service
+For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.
 
-Create a new service class that extends an Ontimize service (`OntimizeService` or `OntimizeEEService`). In the following example we are creating a service called `StarsWarsService` that extends the `OntimizeEEService`.
+### Create and extended a service
+
+Create a new service class that extends a service from **OntimizeWeb**. In the following example we are creating a service called `StarsWarsService` that extends the `OntimizeEEService`.
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
@@ -188,24 +197,22 @@ Once your service is created you must decide if it will be used [in the whole ap
 
 #### Use your service in the whole application
 
-In case you want all the components in your application to use your new service, you have to modify `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. Import your service class and include it in the `serviceType` attribute like in the example below.
+In case you want to use your service in the whole application, you have to provide it in you application module using the corresponding injection token.
 
 ```javascript
-import { StarsWarsService } from './shared/stars-wars.service';
-
-export const CONFIG: Config = {
-
+@NgModule({
   ...
-
-  // The service type used (Ontimize REST standart, Ontimize REST JEE or custom implementation) in the whole application.
-  serviceType: StarsWarsService,
-
-  ...
-
-};
+  providers: [
+    ...
+    { provide: O_DATA_SERVICE, useValue: StarsWarsService }
+  ]
+})
+export class AppModule { }
 ```
 
-Now you can override the methods indicated in the previous section. The following example shows the new service consuming the [Stars Wars API](https://swapi.co/){:target="_blank"} for querying different entities. We have override the `query` and the `advancedQuery` methods for making simple and paginated request to the API. Note that we must adapt the API response to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
+> **NOTE:** `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. There is one attribute for each type of service.
+
+Now you can add or override the methods of the service as you need. The following example shows the new service consuming the [Stars Wars API](https://swapi.co/){:target="_blank"} for querying different entities. We have override the `query` and the `advancedQuery` methods for making simple and paginated request to the API. Note that we must adapt the API response to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
