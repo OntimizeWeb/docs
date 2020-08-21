@@ -19,6 +19,12 @@ attributes: [{
   required: "",
   description: "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) displayed when the component has no value"
 },{
+  name: "not-found-image",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Image displayed when the component value returns a 404 error."
+},{
   name: "show-controls",
   type: "no | false | yes | true",
   default: "yes",
