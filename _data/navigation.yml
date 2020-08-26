@@ -20,9 +20,9 @@ versions:
     url: /docs/v3
     active: true
   - title: "4.x.x"
-    url: /docs/
+    url: /docs/v4
   - title: "8.x.x"
-    url: /docs/v8
+    url: /docs
 
 
 # documentation links
