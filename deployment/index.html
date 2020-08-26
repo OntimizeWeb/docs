@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-07-22T03:04:15-04:00">
+  <meta property="article:published_time" content="2020-08-26T07:12:08-04:00">
 
 
 
@@ -218,9 +218,9 @@
             
               <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs"  selected="selected" >4.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs" >4.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
             
             </select>
           </li>
@@ -722,6 +722,14 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/faq/" class=" ">FAQ</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/contributing/" class=" ">Contributing</a></li>
           
             
@@ -765,7 +773,7 @@
     
     <meta itemprop="description" content="Deploy an Ontimize Web application.">
     
-    <meta itemprop="datePublished" content="July 22, 2020">
+    <meta itemprop="datePublished" content="August 26, 2020">
     
 
     <div class="page__inner-wrap">
@@ -795,7 +803,10 @@
       <li><a href="#build-and-run-your-application" id="markdown-toc-build-and-run-your-application">Build and run your application</a></li>
     </ul>
   </li>
-  <li><a href="#pwa" id="markdown-toc-pwa">PWA</a></li>
+  <li><a href="#pwa" id="markdown-toc-pwa">PWA</a>    <ul>
+      <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+    </ul>
+  </li>
 </ul>
 
   </nav>
@@ -832,9 +843,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  npm run production-aot
 </code></pre></div></div>
-<p>This command triggers the <code class="language-plaintext highlighter-rouge">production-aot</code> script defined in the <em>package.json</em> file of your application (<code class="language-plaintext highlighter-rouge">ontimize-web-ngx production-aot --href /my-app/</code>).</p>
-
-<p>The remaining copy deployment steps are the same as <a href="#simplest-deployment-possible">before</a>.</p>
+<p>This command triggers the <code class="language-plaintext highlighter-rouge">production-aot</code> script defined in the <em>package.json</em> file of your application (<code class="language-plaintext highlighter-rouge">ng build --aot</code>).</p>
 
 <h2 id="simple-deployment-vs-optimized-deployment">Simple deployment vs. Optimized deployment</h2>
 
@@ -945,340 +954,59 @@
 </code></pre></div></div>
 
 <h2 id="pwa">PWA</h2>
+
 <p>To set up the Angular service worker in your project you need to follow next actions:</p>
 
-<ul>
-  <li>Adds the <code class="language-plaintext highlighter-rouge">@angular/service-worker</code> package to your project.</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-<span class="s2">"dependencies"</span>: <span class="o">{</span>
-  ...
-    <span class="s2">"@angular/service-worker"</span>: <span class="s2">"6.1.10"</span>,
-    ...
-  <span class="o">}</span>,
-...
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ng add @angular/pwa <span class="nt">--project</span> &lt;name of project as <span class="k">in </span>angular.json&gt;
 </code></pre></div></div>
+<p>Note: the project part is necessary if you have a multi project setup</p>
+
+<p>This command will do the following tasks:</p>
 
 <ul>
-  <li>Enables service worker build support in the CLI.</li>
+  <li>
+    <p>It creates a depencency of @angular/service-worker in package.json</p>
+  </li>
+  <li>
+    <p>It adds serviceWorker: true in the production configuration.</p>
+  </li>
+  <li>
+    <p>It creates two files at the root of the project: manifest.webmanifest and ngsw-config.json.</p>
+  </li>
+  <li>
+    <p>It adds the manifest.webmanifest that was just created in the registered assets of the project.</p>
+  </li>
+  <li>
+    <p>It adds two lines in the index.html: A &lt;meta name=”theme-color”&gt; tag (you’ll want to change its value) and a <link /> tag pointing to the manifest.json file.
+Note: if you already had these tags in your index, it will not replace them. You’ll have to do it yourself.</p>
+  </li>
+  <li>
+    <p>It imports the ServiceWorkerModule in your app (only in production). This is the service responsible for the automatic creation and use of a service worker. Look for this line in your app module:</p>
+  </li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ng <span class="nb">set </span>apps.0.serviceWorker <span class="o">=</span> <span class="nb">true</span>
-</code></pre></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//angular.json
-<span class="o">{</span>
-  ...
-  apps:[<span class="o">{</span>
-    ...
-    <span class="s2">"configurations"</span>: <span class="o">{</span>
-      <span class="s2">"production"</span>: <span class="o">{</span>
-      ...
-      <span class="s2">"serviceWorker"</span>:true,
-      ...
-      <span class="o">}</span>
-  <span class="o">}]</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>Imports and registers the service worker in the app module.</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-import <span class="o">{</span> environment <span class="o">}</span> from <span class="s1">'../environments/environment'</span><span class="p">;</span>
-import <span class="o">{</span> ServiceWorkerModule <span class="o">}</span> from <span class="s1">'@angular/service-worker'</span><span class="p">;</span>
-...
-
-@NgModule<span class="o">({</span>
-  imports: <span class="o">[</span>
-   ...
-    ServiceWorkerModule.register<span class="o">(</span><span class="s1">'ngsw-worker.js'</span>, <span class="o">{</span>enabled: environment.production <span class="o">})</span>
-    ...
-  <span class="o">]</span>,
- ...
-<span class="o">})</span>
-
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ServiceWorkerModule.register<span class="o">(</span><span class="s1">'/ngsw-worker.js'</span>, <span class="o">{</span> enabled: environment.production <span class="o">})</span>
 </code></pre></div></div>
 
 <ul>
   <li>
-    <p>Updates the index.html file:</p>
-
-    <ul>
-      <li>Create manifest.json file (see <a href="https://developers.google.com/web/fundamentals/web-app-manifes" target="_blank">The Web App Manifest</a>)</li>
-    </ul>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span>
-  <span class="s2">"name"</span>: <span class="s2">"Quickstart PWA App"</span>,
-  <span class="s2">"short_name"</span>: <span class="s2">"Quickstart"</span>,
-  <span class="s2">"orientation"</span>: <span class="s2">"landscape"</span>,
-  <span class="s2">"display"</span>: <span class="s2">"standalone"</span>,
-  <span class="s2">"start_url"</span>: <span class="s2">"index.html"</span>,
-  <span class="s2">"description"</span>: <span class="s2">"Quickstart app"</span>,
-  <span class="s2">"background_color"</span>: <span class="s2">"#ccd5dd"</span>,
-  <span class="s2">"theme_color"</span>: <span class="s2">"#242424"</span>
-  <span class="s2">"icons"</span>: <span class="o">[</span>
-    <span class="o">{</span>
-      <span class="s2">"src"</span>: <span class="s2">"icon_512x512.49b7c1068a3e823cafbbc93ee668cf90.png"</span>,
-      <span class="s2">"sizes"</span>: <span class="s2">"512x512"</span>,
-      <span class="s2">"type"</span>: <span class="s2">"image/png"</span>
-    <span class="o">}</span>,
-    <span class="o">{</span>
-      <span class="s2">"src"</span>: <span class="s2">"icon_256x256.5a33e6d514a214bd3c74a51b03915a29.png"</span>,
-      <span class="s2">"sizes"</span>: <span class="s2">"256x256"</span>,
-      <span class="s2">"type"</span>: <span class="s2">"image/png"</span>
-    <span class="o">}</span>,
-    <span class="o">{</span>
-      <span class="s2">"src"</span>: <span class="s2">"icon_192x192.b88c6ddd5e997a970106e207280f070a.png"</span>,
-      <span class="s2">"sizes"</span>: <span class="s2">"192x192"</span>,
-      <span class="s2">"type"</span>: <span class="s2">"image/png"</span>
-    <span class="o">}</span>,
-    <span class="o">{</span>
-      <span class="s2">"src"</span>: <span class="s2">"icon_128x128.e9d5cec6eb4af6cd09ba54d51342e1d0.png"</span>,
-      <span class="s2">"sizes"</span>: <span class="s2">"128x128"</span>,
-      <span class="s2">"type"</span>: <span class="s2">"image/png"</span>
-    <span class="o">}</span>,
-    <span class="o">{</span>
-      <span class="s2">"src"</span>: <span class="s2">"icon_96x96.3026e7eece02b69b3552da7513d93622.png"</span>,
-      <span class="s2">"sizes"</span>: <span class="s2">"96x96"</span>,
-      <span class="s2">"type"</span>: <span class="s2">"image/png"</span>
-    <span class="o">}</span>,
-    <span class="o">{</span>
-      <span class="s2">"src"</span>: <span class="s2">"icon_48x48.18f2efa3931f72b4c806607131ddca7b.png"</span>,
-      <span class="s2">"sizes"</span>: <span class="s2">"48x48"</span>,
-      <span class="s2">"type"</span>: <span class="s2">"image/png"</span>
-    <span class="o">}</span>
-  <span class="o">]</span>
-<span class="o">}</span>
-</code></pre></div>    </div>
-
-    <ul>
-      <li>Includes a link to add the <code class="language-plaintext highlighter-rouge">manifest.json</code> file.</li>
-    </ul>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;<span class="o">!</span>doctype html&gt;
-&lt;html <span class="nv">style</span><span class="o">=</span><span class="s2">"overflow: auto"</span><span class="o">&gt;</span>
-&lt;<span class="nb">head</span><span class="o">&gt;</span>
-  ....
-  &lt;<span class="o">!</span><span class="nt">--</span> PWA <span class="nt">--</span><span class="o">&gt;</span>
-  &lt;<span class="nb">link </span><span class="nv">rel</span><span class="o">=</span><span class="s2">"manifest"</span> <span class="nv">href</span><span class="o">=</span><span class="s2">"./manifest.json"</span><span class="o">&gt;</span>
-  ...
-&lt;/head&gt;
-...
-</code></pre></div>    </div>
-
-    <ul>
-      <li>Adds meta tags for theme-color.</li>
-    </ul>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;<span class="o">!</span>doctype html&gt;
-&lt;html <span class="nv">style</span><span class="o">=</span><span class="s2">"overflow: auto"</span><span class="o">&gt;</span>
-&lt;<span class="nb">head</span><span class="o">&gt;</span>
-  ....
-  &lt;meta <span class="nv">name</span><span class="o">=</span><span class="s2">"theme-color"</span> <span class="nv">content</span><span class="o">=</span><span class="s2">"#242424"</span><span class="o">&gt;</span>
-  ...
-&lt;/head&gt;
-...
-</code></pre></div>    </div>
+    <p>It adds icons in your assets folder. You will of course need to change them if you don’t want your app to show Angular logos as icons.</p>
   </li>
   <li>
-    <p>Adds the <code class="language-plaintext highlighter-rouge">webpack-pwa-manifest</code> package to your project.</p>
+    <p>Now you are ready to build your app:</p>
   </li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ...
-  <span class="s2">"devDependencies"</span>: <span class="o">{</span>
-    ...
-    <span class="s2">"webpack-pwa-manifest"</span>: <span class="s2">"4.0.0"</span>
-      ...
-    <span class="o">}</span>,
-  ...
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ng build <span class="nt">--prod</span>
 </code></pre></div></div>
-<ul>
-  <li>Adds configuration webpack plugin
-webpack-aot.config</li>
-</ul>
+<p>Note: If you are running your own build script you must add –prod flag to enable the service worker.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-var GlobCopyWebpackPlugin <span class="o">=</span> require<span class="o">(</span><span class="s2">"copy-webpack-plugin"</span><span class="o">)</span><span class="p">;</span>
-var WebpackPwaManifest <span class="o">=</span> require<span class="o">(</span><span class="s1">'webpack-pwa-manifest'</span><span class="o">)</span><span class="p">;</span>
-
-...
-var webpack <span class="o">=</span> require<span class="o">(</span><span class="s1">'webpack'</span><span class="o">)</span><span class="p">;</span>
-var path <span class="o">=</span> require<span class="o">(</span><span class="s1">'path'</span><span class="o">)</span><span class="p">;</span>
-
-module.exports <span class="o">=</span> <span class="o">{</span>
-  ... 
-  plugins: <span class="o">[</span>
-
-    new GlobCopyWebpackPlugin<span class="o">([</span>
-    ...
-      <span class="o">{</span> from: <span class="s2">"src/manifest.json"</span>, to: <span class="s2">"./"</span> <span class="o">}</span>,
-      <span class="o">{</span> from: <span class="s2">"src/manifest-mobile.json"</span>, to: <span class="s2">"./"</span><span class="o">}</span>,
-    ...
-    <span class="o">])</span>,
-
-  ....
-  
-    new WebpackPwaManifest<span class="o">({</span>
-      name: <span class="s2">"Quickstart Quickstart App"</span>,
-      short_name: <span class="s2">"Ibercisa"</span>,
-      description: <span class="s2">"Quickstart app"</span>,
-      background_color: <span class="s2">"#ccd5dd"</span>,
-      theme_color: <span class="s2">"#242424"</span>,
-      display: <span class="s2">"standalone"</span>,
-      orientation: <span class="s2">"landscape"</span>,
-      start_url: <span class="s2">"index.html"</span>,
-      icons: <span class="o">[</span>
-        <span class="o">{</span>
-          src: path.resolve<span class="o">(</span><span class="s1">'src/assets/icons/logo.png'</span><span class="o">)</span>,
-          sizes: <span class="o">[</span>48, 96, 128, 192, 256, 512]
-        <span class="o">}</span>
-      <span class="o">]</span>
-    <span class="o">})</span>,
-
-    ...
-  <span class="o">]</span>
-<span class="o">}</span><span class="p">;</span>
-</code></pre></div></div>
+<h3 id="reference">Reference</h3>
 
 <ul>
-  <li>Updates <code class="language-plaintext highlighter-rouge">index.ejs</code>
-```
-&lt;!doctype html&gt;</li>
+  <li><a href="https://cordova.apache.org/docs/en/latest/" target="_blank">Offical Documentation</a>.</li>
+  <li><a href="https://www.w3.org/TR/appmanifest/#webappmanifest-dictionary" target="_blank">WebApp Manifest Dictionary</a>.</li>
 </ul>
-<html>
-
-  <head>
-    <meta charset="utf-8" />
-    <title>Ontimize Web QuickStart</title>
-
-    ...
-    <!-- Manifest for PWA -->
-    <link rel="manifest" id="manifest-file" />
-    <meta name="theme-color" content="#242424" />
-  </head>
-  <body>
-  <script>
-    var linkManifest = document.querySelector('#manifest-file');
-    window.innerWidth < 960 
-      ? linkManifest.setAttribute('href', './manifest-mobile.json')
-      : linkManifest.setAttribute('href', './manifest.json');
-  </script>
-
-  <noscript>
-    <h3>Sorry, but app is not avaliable without JavaScript</h3>
-  </noscript>
-
-  </body>
-</html>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-* Installs icon files to support the installed Progressive Web App (PWA).
-
-* Creates the service worker configuration file called `ngsw-config.json`, which specifies the caching behaviors and other settings.(see [Service worker configuration](https://v6.angular.io/guide/service-worker-config){:target='_blank'})
-
-ngsw-config.json
-
-```bash
-  {
-  "index": "/index.html",
-  "assetGroups": [{
-    "name": "app",
-    "installMode": "prefetch",
-    "resources": {
-      "files": [
-        "/favicon.ico",
-        "/index.html",
-        "/ngsw-worker.js",
-        "/*.bundle.css",
-        "/*.bundle.js",
-        "/*.chunk.js"
-      ]
-    }
-  }, {
-    "name": "assets",
-    "installMode": "lazy",
-    "updateMode": "prefetch",
-    "resources": {
-      "files": [
-        "/assets/**",
-        "/logo.png",
-        "/*.png"
-      ],
-      "urls": [
-        "https://fonts.googleapis.com/**"
-      ]
-    }
-  }]
-}
-</code></pre></div></div>
-<ul>
-  <li>Adds service worker to dist folder</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package.json
-...
- <span class="s2">"scripts"</span>: <span class="o">{</span>
-   ...
-    <span class="s2">"production-aot-server"</span>: <span class="s2">"ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/pwa/"</span>,
-    <span class="s2">"build-ngsw"</span>: <span class="s2">"npm run build-ngsw-config &amp;&amp; node cp-ngsw-dist.js"</span>,
-    <span class="s2">"build-ngsw-config"</span>: <span class="s2">"node_modules/.bin/ngsw-config dist src/ngsw-config.json /quickstart/pwa"</span>
-    ...
-    <span class="o">}</span>,
-  ...
-   <span class="s2">"dependencies"</span>: <span class="o">{</span>
-    ...
-    <span class="s2">"file-system"</span>: <span class="s2">"2.2.2"</span>
-    ...
-   <span class="o">}</span>
-</code></pre></div></div>
-
-<p>The ngsw-worker.js file is the name of the service worker precompiled script, which the CLI copies to the dist folder to deploy the server.</p>
-
-<p>cp-sw-dist.js</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var fs <span class="o">=</span> require<span class="o">(</span><span class="s1">'fs'</span><span class="o">)</span><span class="p">;</span>
-
-fs.createReadStream<span class="o">(</span><span class="s1">'node_modules/@angular/service-worker/ngsw-worker.js'</span><span class="o">)</span>.pipe<span class="o">(</span>fs.createWriteStream<span class="o">(</span><span class="s1">'dist/ngsw-worker.js'</span><span class="o">))</span><span class="p">;</span>
-
-/<span class="k">*</span>  Use with node version <span class="o">&gt;=</span> 8.5
-
-fs.copyFile<span class="o">(</span><span class="s1">'node_modules/@angular/service-worker/ngsw-worker.js'</span>, <span class="s1">'dist/ngsw-worker.js'</span>, <span class="o">(</span>err<span class="o">)</span> <span class="o">=&gt;</span> <span class="o">{</span>
-    <span class="k">if</span><span class="o">(</span>err<span class="o">)</span> throw err<span class="p">;</span>
-    console.log<span class="o">(</span><span class="s1">'Copy SW in dist directory'</span><span class="o">)</span><span class="p">;</span>
-<span class="o">})</span><span class="p">;</span>
-
-<span class="k">*</span>/
-</code></pre></div></div>
-
-<ul>
-  <li>Serve your application with node server</li>
-</ul>
-
-<p>You can now serve you application to check that everything is working fine. To do this we will use lite-server npm package.(see <a href="https://www.npmjs.com/package/lite-server" target="_blank">npm lite-server</a>)</p>
-
-<p>So, the process will be:</p>
-
-<ul>
-  <li>npm run production-aot-server</li>
-  <li>cd dist/</li>
-  <li>lite-server</li>
-</ul>
-
-<p>This will create a local server where you can check the application.</p>
-
-<p>*Notice: If you are using ´baseHref´ or ´href´ flag with a multilevel route, liteserver will fail. So, you have to use only one level in the definition of the script in your package.json</p>
-
-<p>Use</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/",
-</code></pre></div></div>
-
-<p>Instead of</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"production-aot-server": "ontimize-web-ngx production-aot --project-name quickstart --baseHref /quickstart/pwa/",
-</code></pre></div></div>
 
         
       </section>
@@ -1291,7 +1019,7 @@ fs.copyFile<span class="o">(</span><span class="s1">'node_modules/@angular/servi
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-22T03:04:15-04:00">July 22, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-26T07:12:08-04:00">August 26, 2020</time></p>
         
       </footer>
 

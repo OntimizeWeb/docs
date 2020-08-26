@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-07-22T03:04:15-04:00">
+  <meta property="article:published_time" content="2020-08-26T07:12:08-04:00">
 
 
 
@@ -218,9 +218,9 @@
             
               <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs"  selected="selected" >4.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs" >4.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
             
             </select>
           </li>
@@ -736,6 +736,14 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/faq/" class=" ">FAQ</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/contributing/" class=" ">Contributing</a></li>
           
             
@@ -779,7 +787,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="July 22, 2020">
+    <meta itemprop="datePublished" content="August 26, 2020">
     
 
     <div class="page__inner-wrap">
@@ -840,7 +848,9 @@
 <span class="c1">// `headlines` and `title` levels.</span>
 <span class="nv">$custom-typography</span><span class="p">:</span> <span class="nf">mat-typography-config</span><span class="p">(</span> <span class="nv">$font-family</span><span class="o">:</span> <span class="s1">'Nunito Sans'</span><span class="o">,</span> <span class="nv">$headline</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">16px</span><span class="o">,</span> <span class="m">22px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="nv">$title</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">14px</span><span class="o">,</span> <span class="m">22px</span><span class="o">,</span> <span class="m">500</span><span class="p">))</span><span class="err">;</span>
 
-<span class="o">/</span> <span class="nt">Define</span> <span class="nt">a</span> <span class="nt">custom</span> <span class="nt">typography</span> <span class="nt">config</span> <span class="nt">that</span> <span class="nt">overrides</span> <span class="nt">the</span> <span class="nt">header</span> <span class="nt">height</span><span class="o">,</span> <span class="nt">row</span> <span class="nt">height</span><span class="o">,</span> <span class="nt">header</span> <span class="nt">font</span> <span class="nt">size</span> <span class="nt">header</span> <span class="nt">and</span> <span class="nt">row</span> 
+<span class="k">@include</span> <span class="nd">ontimize-theme-styles-lite</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="nv">$custom-typography</span><span class="p">)</span><span class="err">;</span>
+
+<span class="c1">// Define a custom typography config that overrides the header height, row height, header font size header and row</span>
 <span class="c1">// of the tables</span>
 <span class="nv">$custom-table-typography</span><span class="p">:</span> <span class="p">(</span> <span class="n">small-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">24px</span><span class="o">,</span> <span class="m">26px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">12px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">small-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">26px</span><span class="o">,</span> <span class="m">28px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">300</span><span class="p">)</span><span class="o">,</span> <span class="n">medium-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-header-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">30px</span><span class="o">,</span> <span class="m">32px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-row-height</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">26px</span><span class="o">,</span> <span class="m">28px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span><span class="o">,</span> <span class="n">large-header-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">12px</span><span class="o">,</span> <span class="m">300</span><span class="p">)</span><span class="o">,</span> <span class="n">large-row-font-size</span><span class="o">:</span> <span class="nf">mat-typography-level</span><span class="p">(</span><span class="m">11px</span><span class="o">,</span> <span class="m">11px</span><span class="o">,</span> <span class="m">400</span><span class="p">)</span> <span class="p">)</span><span class="err">;</span>
 
@@ -849,7 +859,6 @@
 
 <span class="c1">// After define theme, it is necessary to transfer typography to Ontimize Web framework and material components</span>
 <span class="k">@import</span> <span class="s">'node_modules/ontimize-web-ngx/theme.scss';</span>
-<span class="k">@include</span> <span class="nd">ontimize-theme-styles-lite</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="nv">$lite-typography</span><span class="p">)</span><span class="err">;</span>
 <span class="k">@include</span> <span class="nd">o-material-theme</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="nv">$lite-typography</span><span class="p">)</span><span class="err">;</span>
 
 </code></pre></div></div>
@@ -865,7 +874,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-22T03:04:15-04:00">July 22, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-26T07:12:08-04:00">August 26, 2020</time></p>
         
       </footer>
 

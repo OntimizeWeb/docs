@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-07-22T03:04:15-04:00">
+  <meta property="article:published_time" content="2020-08-26T07:12:08-04:00">
 
 
 
@@ -218,9 +218,9 @@
             
               <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs"  selected="selected" >4.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs" >4.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
             
             </select>
           </li>
@@ -353,8 +353,6 @@
                       
                             
                       
-                  
-              
                   
               
                   
@@ -693,14 +691,6 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/datatable/" class=" ">DataTable <small>(deprecated)</small></a></li>
-          
-            
-            
-
-            
-            
-
             <li><a href="https://ontimizeweb.github.io/docs/components/filterbuilder/" class=" ">Filter builder</a></li>
           
             
@@ -911,7 +901,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="July 22, 2020">
+    <meta itemprop="datePublished" content="August 26, 2020">
     
 
     <div class="page__inner-wrap">
@@ -1024,6 +1014,15 @@
 </code></pre></div></div>
 
 <p>In this example there is a form for linking users and roles, the roles the user may be linked with depend on the type of the user. The user type is part of the user information queried in the first combo. Notice that the the parent keys attribute for the roles combo has an alias and a column defined for the alias. This will make the roles component to look for the value of its parent key in the component with attr <code class="language-plaintext highlighter-rouge">user</code> and it will take the <code class="language-plaintext highlighter-rouge">user_type</code> column value as its parent key value.</p>
+
+<p>The construction of dependant list-pickers is the same as done in the combo component. The first one is the selector of users, this will be the one that affects the second one.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form&gt;</span>
+    <span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"user"</span> <span class="na">label=</span><span class="s">"User"</span> <span class="na">keys=</span><span class="s">"user_id"</span> <span class="na">columns=</span><span class="s">"user_id;user_name;user_type"</span><span class="nt">&gt;&lt;/o-list-picker&gt;</span>
+    <span class="nt">&lt;o-list-picker</span> <span class="na">attr=</span><span class="s">"role"</span> <span class="na">label=</span><span class="s">"Role"</span> <span class="na">keys=</span><span class="s">"role_id"</span> <span class="na">columns=</span><span class="s">"role_id;role_name;profile_id"</span>
+        <span class="na">parent-keys=</span><span class="s">"user_type_id:user[user_type]"</span><span class="nt">&gt;&lt;/o-list-picker&gt;</span>
+<span class="nt">&lt;/o-form&gt;</span>
+</code></pre></div></div>
 
 </div>
 
@@ -2412,7 +2411,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-22T03:04:15-04:00">July 22, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-26T07:12:08-04:00">August 26, 2020</time></p>
         
       </footer>
 

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-07-22T03:04:15-04:00">
+  <meta property="article:published_time" content="2020-08-26T07:12:08-04:00">
 
 
 
@@ -218,9 +218,9 @@
             
               <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs"  selected="selected" >4.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs" >4.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
             
             </select>
           </li>
@@ -353,8 +353,6 @@
                       
                             
                       
-                  
-              
                   
               
                   
@@ -632,14 +630,6 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/datatable/" class=" ">DataTable <small>(deprecated)</small></a></li>
-          
-            
-            
-
-            
-            
-
             <li><a href="https://ontimizeweb.github.io/docs/components/filterbuilder/" class=" ">Filter builder</a></li>
           
             
@@ -850,7 +840,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="July 22, 2020">
+    <meta itemprop="datePublished" content="August 26, 2020">
     
 
     <div class="page__inner-wrap">
@@ -1514,7 +1504,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">OTableCellRendererName</span> <span class="kd">extends</span> <span class="nx">OBaseTableCellRenderer</span> <span class="p">{</span>
 
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">templateref</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">templateref</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="p">,</span> <span class="na">static</span><span class="p">:</span> <span class="kc">false</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">(</span><span class="kr">protected</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
@@ -1660,7 +1650,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
     <p>Your component must extend <code class="language-plaintext highlighter-rouge">OBaseTableCellEditor</code> class.</p>
   </li>
   <li>
-    <p>It also must get the <code class="language-plaintext highlighter-rouge">templateref</code> view child reference, using  <code class="language-plaintext highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code> where you’ll acquire the <code class="language-plaintext highlighter-rouge">&lt;ng-template&gt;</code> contents with a TemplateRef and access the view container.</p>
+    <p>It also must get the <code class="language-plaintext highlighter-rouge">templateref</code> view child reference, using  <code class="language-plaintext highlighter-rouge">@ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef&lt;any&gt;</code> where you’ll acquire the <code class="language-plaintext highlighter-rouge">&lt;ng-template&gt;</code> contents with a TemplateRef and access the view container.</p>
   </li>
   <li>
     <p>In your editor constructor you must set its <code class="language-plaintext highlighter-rouge">type</code> property value.</p>
@@ -1686,7 +1676,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">OTableCellEditorName</span> <span class="kd">extends</span> <span class="nx">OBaseTableCellEditor</span> <span class="p">{</span>
 
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">templateref</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">templateref</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="p">,</span> <span class="na">static</span><span class="p">:</span> <span class="kc">false</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">(</span><span class="kr">protected</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
@@ -1846,7 +1836,7 @@ The <em>let</em> keyword declares a template input variable that you reference w
   <span class="p">})</span>
   <span class="k">export</span> <span class="kd">class</span> <span class="nx">MyPageComponent</span> <span class="p">{</span>
 
-    <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myOption</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myOption</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">static</span><span class="p">:</span> <span class="kc">false</span><span class="p">})</span>
     <span class="kr">protected</span> <span class="nx">myOption</span><span class="p">:</span> <span class="nx">OTableOptionComponent</span><span class="p">;</span>
 
     <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
@@ -1969,7 +1959,7 @@ In this component you can define the columns and required columns with <code cla
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">...</span>
   <span class="k">import</span> <span class="p">{</span> <span class="nx">OTableButtonComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
   <span class="p">...</span>
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myButton</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">myButton</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">static</span><span class="p">:</span> <span class="kc">false</span><span class="p">})</span>
   <span class="kr">protected</span> <span class="nx">myButton</span><span class="p">:</span> <span class="nx">OTableButtonComponent</span><span class="p">;</span>
   <span class="p">...</span>
   <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
@@ -3589,6 +3579,71 @@ If you want to customize the download end point, please check the <a href="#cust
             
             
   <td class="" o-component-name >
+    <p class="first"><p>row-class</p>
+</p>
+    
+      <p><i>(rowData: any, rowIndex: number) => string | string[]</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Adds the CSS class or classes returned by the provided function to the table rows whose data and index are provided</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
     <p class="first"><p>select-all-checkbox</p>
 </p>
     
@@ -4325,6 +4380,71 @@ If you want to customize the download end point, please check the <a href="#cust
             
   <td class="" o-component-description >
     <p class="first"><p>Visible columns. Separated by ‘;’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>visible-export-dialog-buttons</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Visible buttons in export dialog, separated by ‘;’</p>
 </p>
     
   </td>
@@ -15601,7 +15721,7 @@ If you want to customize the download end point, please check the <a href="#cust
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-22T03:04:15-04:00">July 22, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-26T07:12:08-04:00">August 26, 2020</time></p>
         
       </footer>
 

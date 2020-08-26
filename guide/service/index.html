@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-07-22T03:04:15-04:00">
+  <meta property="article:published_time" content="2020-08-26T07:12:08-04:00">
 
 
 
@@ -218,9 +218,9 @@
             
               <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs"  selected="selected" >4.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs" >4.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
             
             </select>
           </li>
@@ -716,6 +716,14 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/faq/" class=" ">FAQ</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/contributing/" class=" ">Contributing</a></li>
           
             
@@ -759,7 +767,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="July 22, 2020">
+    <meta itemprop="datePublished" content="August 26, 2020">
     
 
     <div class="page__inner-wrap">
@@ -784,14 +792,20 @@
       <li><a href="#example-of-ontimize-service-in-a-component" id="markdown-toc-example-of-ontimize-service-in-a-component">Example of Ontimize Service in a component</a></li>
     </ul>
   </li>
-  <li><a href="#extending-ontimize-services" id="markdown-toc-extending-ontimize-services">Extending Ontimize services</a>    <ul>
-      <li><a href="#create-an-extended-ontimize-service" id="markdown-toc-create-an-extended-ontimize-service">Create an extended Ontimize service</a>        <ul>
+  <li><a href="#extending-ontimize-web-services" id="markdown-toc-extending-ontimize-web-services">Extending Ontimize Web services</a>    <ul>
+      <li><a href="#create-and-extended-a-service" id="markdown-toc-create-and-extended-a-service">Create and extended a service</a>        <ul>
           <li><a href="#use-your-service-in-the-whole-application" id="markdown-toc-use-your-service-in-the-whole-application">Use your service in the whole application</a></li>
           <li><a href="#use-your-service-in-a-specific-component" id="markdown-toc-use-your-service-in-a-specific-component">Use your service in a specific component</a></li>
         </ul>
       </li>
       <li><a href="#define-your-own-crud-methods" id="markdown-toc-define-your-own-crud-methods">Define your own CRUD methods</a></li>
       <li><a href="#define-your-own-successfulunsuccessful-request-callback-methods" id="markdown-toc-define-your-own-successfulunsuccessful-request-callback-methods">Define your own successful/unsuccessful request callback methods</a></li>
+    </ul>
+  </li>
+  <li><a href="#example-of-custom-type-of-service" id="markdown-toc-example-of-custom-type-of-service">Example of custom type of service</a>    <ul>
+      <li><a href="#create-the-service" id="markdown-toc-create-the-service">Create the service</a></li>
+      <li><a href="#create-the-adapter-and-adapt-the-response" id="markdown-toc-create-the-adapter-and-adapt-the-response">Create the adapter and adapt the response</a></li>
+      <li><a href="#type-of-the-response" id="markdown-toc-type-of-the-response">Type of the response</a></li>
     </ul>
   </li>
 </ul>
@@ -803,7 +817,11 @@
 
 <h2 id="ontimize-services">Ontimize services</h2>
 
-<p>OntimizeWeb services are used for fetching and saving data from servers based on <a href="https://www.ontimize.com/" target="_blank">Ontimize</a>. There is two types of Ontimize services depending on the server technology used: <code class="language-plaintext highlighter-rouge">OntimizeService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>. You must indicate which one the application will use by configuring the <code class="language-plaintext highlighter-rouge">serviceType</code> attribute in the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#application-configuration" target="_blank">application configuration</a>.</p>
+<p>OntimizeWeb services are used for fetching and saving data from servers based on <a href="https://www.ontimize.com/" target="_blank">Ontimize</a>. There is two types of Ontimize services depending on the server technology used: <code class="language-plaintext highlighter-rouge">OntimizeService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>.</p>
+
+<p>You can also use your own type of service and then we will explain how to parse and adapt the response.</p>
+
+<p>You must indicate which one the application will use by configuring the <code class="language-plaintext highlighter-rouge">serviceType</code> attribute in the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#application-configuration" target="_blank">application configuration</a>.</p>
 
 <h3 id="ontimize-services-methods">Ontimize services methods</h3>
 
@@ -815,11 +833,11 @@
 
 <span class="cm">/* CRUD methods */</span>
 <span class="nx">query</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="nx">advancedQuery</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span>
-  <span class="nx">offset</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">pagesize</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">orderby</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="nx">insert</span><span class="p">(</span><span class="nx">av</span><span class="p">:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="nx">update</span><span class="p">(</span><span class="nx">kv</span><span class="p">:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">delete</span><span class="p">(</span><span class="nx">kv</span><span class="p">:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">advancedQuery</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nx">object</span><span class="p">,</span>
+    <span class="nx">offset</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">pagesize</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">orderby</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span>
+<span class="nx">insert</span><span class="p">(</span><span class="nx">av</span><span class="p">:</span> <span class="nb">Object</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">entity</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nx">object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span>
+<span class="nx">update</span><span class="p">(</span><span class="nx">kv</span><span class="p">:</span> <span class="nb">Object</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">av</span><span class="p">:</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nx">object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span>
+<span class="k">delete</span><span class="p">(</span><span class="nx">kv</span><span class="p">:</span> <span class="nb">Object</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span>
 
 <span class="cm">/**
 * Successful response parsers, there is one parser for each CRUD method which calls to the common parser.
@@ -964,13 +982,52 @@
   <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="extending-ontimize-services">Extending Ontimize services</h2>
+<h2 id="extending-ontimize-web-services">Extending Ontimize Web services</h2>
 
-<p>You may need extra functionality or changing the behaviour of a service, for doing this follow the next steps:</p>
+<p>You can override or extend the functionality of the services defined in <strong>OntimizeWeb</strong>. You should know that some services are used internally and they cannot be extended. The prepared-to-extend services are the following:</p>
 
-<h3 id="create-an-extended-ontimize-service">Create an extended Ontimize service</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Service</th>
+      <th>Injection token</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">OntimizeService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEService</code></td>
+      <td><code class="language-plaintext highlighter-rouge">O_DATA_SERVICE</code></td>
+      <td>Service used for making CRUD operation and authentication</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">OTranslateService</code></td>
+      <td><code class="language-plaintext highlighter-rouge">O_TRANSLATE_SERVICE</code></td>
+      <td>Service for translating the information shown in the application</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">OntimizeFileService</code></td>
+      <td><code class="language-plaintext highlighter-rouge">O_FILE_SERVICE</code></td>
+      <td>Service for uploading files, used by the <a href="https://ontimizeweb.github.io/docs/components/input/file/" target="_blank"><code class="language-plaintext highlighter-rouge">o-file-input</code></a>  component</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">OntimizeExportService</code></td>
+      <td><code class="language-plaintext highlighter-rouge">O_EXPORT_SERVICE</code></td>
+      <td>Service used by the <a href="https://ontimizeweb.github.io/docs/components/input/file/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a> component for exporting its data</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">OntimizePermissionsService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEPermissionsService</code></td>
+      <td><code class="language-plaintext highlighter-rouge">O_PERMISSION_SERVICE</code></td>
+      <td>Service used for loading the application permissions</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Create a new service class that extends an Ontimize service (<code class="language-plaintext highlighter-rouge">OntimizeService</code> or <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>). In the following example we are creating a service called <code class="language-plaintext highlighter-rouge">StarsWarsService</code> that extends the <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>.</p>
+<p>For extending a service you should create your own service that extends a service from <strong>OntimizeWeb</strong> and provide it in your application using the corresponding injection token from the table above.</p>
+
+<h3 id="create-and-extended-a-service">Create and extended a service</h3>
+
+<p>Create a new service class that extends a service from <strong>OntimizeWeb</strong>. In the following example we are creating a service called <code class="language-plaintext highlighter-rouge">StarsWarsService</code> that extends the <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
@@ -990,27 +1047,27 @@
 
 <h4 id="use-your-service-in-the-whole-application">Use your service in the whole application</h4>
 
-<p>In case you want all the components in your application to use your new service, you have to modify <code class="language-plaintext highlighter-rouge">serviceType</code> attribute in the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#application-configuration" target="_blank">application configuration</a>. Import your service class and include it in the <code class="language-plaintext highlighter-rouge">serviceType</code> attribute like in the example below.</p>
+<p>In case you want to use your service in the whole application, you have to provide it in you application module using the corresponding injection token.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">StarsWarsService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./shared/stars-wars.service</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">CONFIG</span><span class="p">:</span> <span class="nx">Config</span> <span class="o">=</span> <span class="p">{</span>
-
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
   <span class="p">...</span>
-
-  <span class="c1">// The service type used (Ontimize REST standart, Ontimize REST JEE or custom implementation) in the whole application.</span>
-  <span class="na">serviceType</span><span class="p">:</span> <span class="nx">StarsWarsService</span><span class="p">,</span>
-
-  <span class="p">...</span>
-
-<span class="p">};</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">O_DATA_SERVICE</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">StarsWarsService</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Now you can override the methods indicated in the previous section. The following example shows the new service consuming the <a href="https://swapi.co/" target="_blank">Stars Wars API</a> for querying different entities. We have override the <code class="language-plaintext highlighter-rouge">query</code> and the <code class="language-plaintext highlighter-rouge">advancedQuery</code> methods for making simple and paginated request to the API. Note that we must adapt the API response to the ontimize service response for using the retrieved data with the <strong>OntimizeWeb</strong> components.</p>
+<blockquote>
+  <p><strong>NOTE:</strong> <code class="language-plaintext highlighter-rouge">OntimizeService</code>, <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>, <code class="language-plaintext highlighter-rouge">OntimizeExportService</code>, <code class="language-plaintext highlighter-rouge">OntimizePermissionsService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEPermissionsService</code> can be extended and used in the whole application by indicating the class in the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#application-configuration" target="_blank">application configuration</a>. There is one attribute for each type of service.</p>
+</blockquote>
+
+<p>Now you can add or override the methods of the service as you need. The following example shows the new service consuming the <a href="https://swapi.co/" target="_blank">Stars Wars API</a> for querying different entities. We have override the <code class="language-plaintext highlighter-rouge">query</code> and the <code class="language-plaintext highlighter-rouge">advancedQuery</code> methods for making simple and paginated request to the API. Note that we must adapt the API response to the ontimize service response for using the retrieved data with the <strong>OntimizeWeb</strong> components.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeEEService</span><span class="p">,</span> <span class="nx">Observable</span><span class="p">,</span> <span class="nx">Util</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeEEService</span><span class="p">,</span> <span class="nx">Observable</span><span class="p">,</span> <span class="nx">Util</span><span class="p">,</span> <span class="nx">ServiceResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">Observable</span><span class="p">}</span>  <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">share</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs/operators</span><span class="dl">'</span><span class="p">;</span>
 
@@ -1021,7 +1078,7 @@
     <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="kr">public</span> <span class="nx">query</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kr">public</span> <span class="nx">query</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://swapi.co/api/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">entity</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/?format=json</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="kd">let</span> <span class="na">_innerObserver</span><span class="p">:</span> <span class="nx">any</span><span class="p">;</span>
@@ -1043,7 +1100,7 @@
     <span class="k">return</span> <span class="nx">dataObservable</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">share</span><span class="p">());</span>
   <span class="p">}</span>
 
-  <span class="kr">public</span> <span class="nx">advancedQuery</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">offset</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">pagesize</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">orderby</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="kr">public</span> <span class="nx">advancedQuery</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">offset</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">pagesize</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">orderby</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="nx">offset</span> <span class="o">=</span> <span class="p">(</span><span class="nx">Util</span><span class="p">.</span><span class="nx">isDefined</span><span class="p">(</span><span class="nx">offset</span><span class="p">))</span> <span class="p">?</span> <span class="nx">offset</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">offset</span><span class="p">;</span>
 
     <span class="c1">// Calculate page</span>
@@ -1177,6 +1234,161 @@
 
 <p>Both services <code class="language-plaintext highlighter-rouge">OntimizeService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEService</code> also have the generic succesful and unsuccessful request callback which are <code class="language-plaintext highlighter-rouge">parseSuccessfulResponse</code> and <code class="language-plaintext highlighter-rouge">parseUnsuccessfulResponse</code>. This callbacks are called from the previous explained <em>CRUD</em> method callbacks so user can chose whether to override a particular or the generic callback.</p>
 
+<h2 id="example-of-custom-type-of-service">Example of custom type of service</h2>
+
+<p>To create a new type of service and to adapt the response to Ontimize format we must follow the next steps.
+First of all, you must indicate the name of the new type by configuring the <code class="language-plaintext highlighter-rouge">serviceType</code> attribute in the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#application-configuration" target="_blank">application configuration</a>.</p>
+
+<h3 id="create-the-service">Create the service</h3>
+
+<p>First of all, you must create an interface that matches the response of the API to type the <code class="language-plaintext highlighter-rouge">HttpResponse</code> as seen below.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">HttpHeaders</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeBaseService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CustomResponseAdapter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./custom-service-response.adapter</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">CustomResponse</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nx">meta</span><span class="p">?:</span> <span class="p">{</span>
+    <span class="na">total_pages</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">current_page</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">next_page</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">per_page</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+    <span class="nl">total_count</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="nx">abbreviation</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">city</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>    
+  <span class="nx">full_name</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nx">id</span><span class="p">?:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nx">name</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Create a new service that extends <code class="language-plaintext highlighter-rouge">OntimizeBaseService</code>, in this case we will name the service type as <code class="language-plaintext highlighter-rouge">CustomService</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
+
+  <span class="kr">public</span> <span class="nx">configureAdapter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">adapter</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">injector</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">CustomResponseAdapter</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">configureService</span><span class="p">(</span><span class="nx">config</span><span class="p">:</span> <span class="nx">any</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nx">configureService</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">path</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_urlBase</span> <span class="o">=</span> <span class="nx">config</span><span class="p">.</span><span class="nx">urlBase</span> <span class="p">?</span> <span class="nx">config</span><span class="p">.</span><span class="nx">urlBase</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">https://your-api.com</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kr">protected</span> <span class="nx">buildHeaders</span><span class="p">():</span> <span class="nx">HttpHeaders</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">HttpHeaders</span><span class="p">({</span>
+      <span class="dl">'</span><span class="s1">Access-Control-Allow-Origin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">application/json;charset=UTF-8</span><span class="dl">'</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">query</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_urlBase</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">entity</span> <span class="o">&amp;&amp;</span> <span class="nx">entity</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">detail</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">url</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">kv</span><span class="p">[</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">doRequest</span><span class="p">({</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+      <span class="nx">url</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="kr">public</span> <span class="nx">advancedQuery</span><span class="p">(</span><span class="nx">kv</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span> <span class="nx">av</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">,</span>
+    <span class="nx">offset</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">pagesize</span><span class="p">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">orderby</span><span class="p">?:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">offset</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_urlBase</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+    <span class="nx">url</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">?page=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">offset</span><span class="p">;</span>
+    <span class="nx">url</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">&amp;per_page=</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">pagesize</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">entity</span> <span class="o">&amp;&amp;</span> <span class="nx">entity</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">detail</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">url</span> <span class="o">+=</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">kv</span><span class="p">[</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">doRequest</span><span class="p">({</span>
+      <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+      <span class="nx">url</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="create-the-adapter-and-adapt-the-response">Create the adapter and adapt the response</h3>
+
+<p>Now, you must adapt the response of the service to be the same as it is in OntimizeWeb. Here is where you have to use <code class="language-plaintext highlighter-rouge">CustomResponse</code> interface created in the first point.</p>
+
+<p>The function adapt() will return <code class="language-plaintext highlighter-rouge">Custom Service Response</code> in OntimizeWeb readable format.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">HttpResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/common/http</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ServiceResponseAdapter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CustomServiceResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./custom-service-response.class</span><span class="dl">'</span><span class="p">;</span> <span class="c1">//Explained on next section</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CustomResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./custom.service</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomServiceResponseAdapter</span> <span class="kr">implements</span> <span class="nx">ServiceResponseAdapter</span><span class="o">&lt;</span><span class="nx">CustomServiceResponse</span><span class="o">&gt;</span> <span class="p">{</span>
+
+  <span class="nx">adapt</span><span class="p">(</span><span class="na">res</span><span class="p">:</span> <span class="nx">HttpResponse</span><span class="o">&lt;</span><span class="nx">CustomResponse</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">CustomServiceResponse</span> <span class="p">{</span>
+    <span class="c1">// Adapt response to OntimizeWeb format.</span>
+    <span class="kd">let</span> <span class="nx">code</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kd">let</span> <span class="nx">startRecordIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">totalQueryRecordsNumber</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">code</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">data</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">meta</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">meta</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">meta</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">meta</span><span class="p">.</span><span class="nx">total_count</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">totalQueryRecordsNumber</span> <span class="o">=</span> <span class="nx">meta</span><span class="p">.</span><span class="nx">total_count</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">meta</span><span class="p">.</span><span class="nx">current_page</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">startRecordIndex</span> <span class="o">=</span> <span class="nx">meta</span><span class="p">.</span><span class="nx">current_page</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">id</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">code</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nx">data</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Create new class element with the new data adapted.</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">CustomServiceResponse</span><span class="p">(</span>
+      <span class="nx">code</span><span class="p">,</span>
+      <span class="nx">data</span><span class="p">,</span>
+      <span class="dl">''</span><span class="p">,</span>
+      <span class="p">{},</span>
+      <span class="nx">startRecordIndex</span><span class="p">,</span>
+      <span class="nx">totalQueryRecordsNumber</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="type-of-the-response">Type of the response</h3>
+
+<p>You can extend the behaviour of BaseServiceResponse.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">BaseServiceResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomServiceResponse</span> <span class="kd">extends</span> <span class="nx">BaseServiceResponse</span> <span class="p">{</span>
+
+  <span class="p">...</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You will have 3 functions in BaseServiceResponse that returns true or false to check the response. This functions are:</p>
+
+<ul>
+  <li>isSuccessful()</li>
+  <li>isFailed()</li>
+  <li>isUnauthorized()</li>
+</ul>
 
         
       </section>
@@ -1189,7 +1401,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-07-22T03:04:15-04:00">July 22, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-26T07:12:08-04:00">August 26, 2020</time></p>
         
       </footer>
 

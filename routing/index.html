@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-07-22T03:04:15-04:00">
+  <meta property="article:published_time" content="2020-08-26T07:12:08-04:00">
 
 
 
@@ -218,9 +218,9 @@
             
               <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs"  selected="selected" >4.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs" >4.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
             
             </select>
           </li>
@@ -712,6 +712,14 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/faq/" class=" ">FAQ</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/contributing/" class=" ">Contributing</a></li>
           
             
@@ -755,7 +763,7 @@
     
     <meta itemprop="description" content="Configuration of routing for an Ontimize Web app.">
     
-    <meta itemprop="datePublished" content="July 22, 2020">
+    <meta itemprop="datePublished" content="August 26, 2020">
     
     <meta itemprop="dateModified" content="September 29, 2016">
 
@@ -781,29 +789,25 @@
 <p>As you can see in the ‘<em>AppModule</em>’ definition <a href="https://ontimizeweb.github.io/docs/guide/appstructure/" target="_blank">here</a>, an ‘<em>AppRoutingModule</em>’ is in the imports array. This module is defined in ‘<em>src\app\app-routing.module.ts</em>’ and contains:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import <span class="o">{</span> NgModule <span class="o">}</span> from <span class="s1">'@angular/core'</span><span class="p">;</span>
-import <span class="o">{</span> Routes, RouterModule <span class="o">}</span> from <span class="s1">'@angular/router'</span><span class="p">;</span>
+import <span class="o">{</span> RouterModule, Routes <span class="o">}</span> from <span class="s1">'@angular/router'</span><span class="p">;</span>
 import <span class="o">{</span> AuthGuardService <span class="o">}</span> from <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
 
-import <span class="o">{</span> LoginModule <span class="o">}</span> from <span class="s1">'./login/login.module'</span><span class="p">;</span>
-import <span class="o">{</span> MainModule <span class="o">}</span> from <span class="s1">'./main/main.module'</span><span class="p">;</span>
-
-<span class="nb">export </span><span class="k">function </span>loadLoginModule<span class="o">()</span> <span class="o">{</span>
-  <span class="k">return </span>LoginModule<span class="p">;</span>
-<span class="o">}</span>
-
-<span class="nb">export </span><span class="k">function </span>loadMainModule<span class="o">()</span> <span class="o">{</span>
-  <span class="k">return </span>MainModule<span class="p">;</span>
-<span class="o">}</span>
-
 <span class="nb">export </span>const routes: Routes <span class="o">=</span> <span class="o">[</span>
-  <span class="o">{</span> path: <span class="s1">'main'</span>, loadChildren: loadMainModule, canActivate: <span class="o">[</span>AuthGuardService] <span class="o">}</span>,
-  <span class="o">{</span> path: <span class="s1">'login'</span>, loadChildren: loadLoginModule <span class="o">}</span>,
+  <span class="o">{</span>
+    path: <span class="s1">'login'</span>,
+    loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./login/login.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.LoginModule<span class="o">)</span>
+  <span class="o">}</span>,
+  <span class="o">{</span>
+    path: <span class="s1">'main'</span>,
+    canActivate: <span class="o">[</span>AuthGuardService],
+    loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./main/main.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.MainModule<span class="o">)</span>
+  <span class="o">}</span>,
   <span class="o">{</span> path: <span class="s1">''</span>, redirectTo: <span class="s1">'main'</span>, pathMatch: <span class="s1">'full'</span> <span class="o">}</span>
 <span class="o">]</span><span class="p">;</span>
 
 const opt <span class="o">=</span> <span class="o">{</span>
   enableTracing: <span class="nb">false</span>
-  // <span class="nb">set </span>this to <span class="nb">true </span><span class="k">if </span>you want to print navigation routes
+  // <span class="nb">true </span><span class="k">if </span>you want to print navigation routes
 <span class="o">}</span><span class="p">;</span>
 
 @NgModule<span class="o">({</span>
@@ -828,9 +832,10 @@ const opt <span class="o">=</span> <span class="o">{</span>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import <span class="o">{</span> NgModule <span class="o">}</span> from <span class="s1">'@angular/core'</span><span class="p">;</span>
 import <span class="o">{</span> OntimizeWebModule <span class="o">}</span> from <span class="s1">'ontimize-web-ngx'</span><span class="p">;</span>
-import <span class="o">{</span> LoginComponent <span class="o">}</span> from <span class="s1">'./login.component'</span><span class="p">;</span>
-import <span class="o">{</span> LoginRoutingModule <span class="o">}</span> from <span class="s1">'./login-routing.module'</span><span class="p">;</span>
+
 import <span class="o">{</span> SharedModule <span class="o">}</span> from <span class="s1">'../shared/shared.module'</span><span class="p">;</span>
+import <span class="o">{</span> LoginRoutingModule <span class="o">}</span> from <span class="s1">'./login-routing.module'</span><span class="p">;</span>
+import <span class="o">{</span> LoginComponent <span class="o">}</span> from <span class="s1">'./login.component'</span><span class="p">;</span>
 
 @NgModule<span class="o">({</span>
   imports: <span class="o">[</span>
@@ -848,11 +853,13 @@ import <span class="o">{</span> SharedModule <span class="o">}</span> from <span
 <p>The routing module:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import <span class="o">{</span> NgModule <span class="o">}</span> from <span class="s1">'@angular/core'</span><span class="p">;</span>
-import <span class="o">{</span> Routes, RouterModule <span class="o">}</span> from <span class="s1">'@angular/router'</span><span class="p">;</span>
+import <span class="o">{</span> RouterModule, Routes <span class="o">}</span> from <span class="s1">'@angular/router'</span><span class="p">;</span>
 
 import <span class="o">{</span> LoginComponent <span class="o">}</span> from <span class="s1">'./login.component'</span><span class="p">;</span>
 
-const routes: Routes <span class="o">=</span> <span class="o">[{</span> path: <span class="s1">''</span>, component: LoginComponent <span class="o">}]</span><span class="p">;</span>
+const routes: Routes <span class="o">=</span> <span class="o">[</span>
+  <span class="o">{</span> path: <span class="s1">''</span>, component: LoginComponent <span class="o">}</span>
+<span class="o">]</span><span class="p">;</span>
 
 @NgModule<span class="o">({</span>
   imports: <span class="o">[</span>RouterModule.forChild<span class="o">(</span>routes<span class="o">)]</span>,
@@ -869,37 +876,22 @@ const routes: Routes <span class="o">=</span> <span class="o">[{</span> path: <s
 <p>Here is the ‘<em>MainRoutingModule</em>’, which manages the redirection to other inner modules such as customers, accounts, branches, etc.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import <span class="o">{</span> NgModule <span class="o">}</span> from <span class="s1">'@angular/core'</span><span class="p">;</span>
-import <span class="o">{</span> Routes, RouterModule <span class="o">}</span> from <span class="s1">'@angular/router'</span><span class="p">;</span>
+import <span class="o">{</span> RouterModule, Routes <span class="o">}</span> from <span class="s1">'@angular/router'</span><span class="p">;</span>
+
 import <span class="o">{</span> MainComponent <span class="o">}</span> from <span class="s1">'./main.component'</span><span class="p">;</span>
-
-import <span class="o">{</span> HomeModule <span class="o">}</span> from <span class="s1">'./home.module'</span><span class="p">;</span>
-import <span class="o">{</span> AboutModule <span class="o">}</span> from <span class="s1">'./about/about.module'</span><span class="p">;</span>
-import <span class="o">{</span> SettingsModule <span class="o">}</span> from <span class="s1">'./settings/settings.module'</span><span class="p">;</span>
-import <span class="o">{</span> CustomersModule <span class="o">}</span> from <span class="s1">'./customers/customers.module'</span><span class="p">;</span>
-import <span class="o">{</span> AccountsModule <span class="o">}</span> from <span class="s1">'./accounts/accounts.module'</span><span class="p">;</span>
-import <span class="o">{</span> BranchesModule <span class="o">}</span> from <span class="s1">'./branches/branches.module'</span><span class="p">;</span>
-import <span class="o">{</span> EmployeesModule <span class="o">}</span> from <span class="s1">'./employees/employees.module'</span><span class="p">;</span>
-
-<span class="nb">export </span><span class="k">function </span>loadHomeModule<span class="o">()</span> <span class="o">{</span> <span class="k">return </span>HomeModule<span class="p">;</span> <span class="o">}</span>
-<span class="nb">export </span><span class="k">function </span>loadAboutModule<span class="o">()</span> <span class="o">{</span> <span class="k">return </span>AboutModule<span class="p">;</span> <span class="o">}</span>
-<span class="nb">export </span><span class="k">function </span>loadSettingsModule<span class="o">()</span> <span class="o">{</span> <span class="k">return </span>SettingsModule<span class="p">;</span> <span class="o">}</span>
-<span class="nb">export </span><span class="k">function </span>loadCustomersModule<span class="o">()</span> <span class="o">{</span> <span class="k">return </span>CustomersModule<span class="p">;</span> <span class="o">}</span>
-<span class="nb">export </span><span class="k">function </span>loadAccountsModule<span class="o">()</span> <span class="o">{</span> <span class="k">return </span>AccountsModule<span class="p">;</span> <span class="o">}</span>
-<span class="nb">export </span><span class="k">function </span>loadBranchesModule<span class="o">()</span> <span class="o">{</span> <span class="k">return </span>BranchesModule<span class="p">;</span> <span class="o">}</span>
-<span class="nb">export </span><span class="k">function </span>loadEmployeesModule<span class="o">()</span> <span class="o">{</span> <span class="k">return </span>EmployeesModule<span class="p">;</span> <span class="o">}</span>
 
 <span class="nb">export </span>const routes: Routes <span class="o">=</span> <span class="o">[</span>
   <span class="o">{</span>
     path: <span class="s1">''</span>, component: MainComponent,
     children: <span class="o">[</span>
       <span class="o">{</span> path: <span class="s1">''</span>, redirectTo: <span class="s1">'home'</span>, pathMatch: <span class="s1">'full'</span> <span class="o">}</span>,
-      <span class="o">{</span> path: <span class="s1">'home'</span>, loadChildren: loadHomeModule <span class="o">}</span>,
-      <span class="o">{</span> path: <span class="s1">'about'</span>, loadChildren: loadAboutModule <span class="o">}</span>,
-      <span class="o">{</span> path: <span class="s1">'settings'</span>, loadChildren: loadSettingsModule <span class="o">}</span>,
-      <span class="o">{</span> path: <span class="s1">'customers'</span>, loadChildren: loadCustomersModule <span class="o">}</span>,
-      <span class="o">{</span> path: <span class="s1">'accounts'</span>, loadChildren: loadAccountsModule <span class="o">}</span>,
-      <span class="o">{</span> path: <span class="s1">'branches'</span>, loadChildren: loadBranchesModule <span class="o">}</span>,
-      <span class="o">{</span> path: <span class="s1">'employees'</span>, loadChildren: loadEmployeesModule <span class="o">}</span>
+      <span class="o">{</span> path: <span class="s1">'about'</span>, loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./about/about.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.AboutModule<span class="o">)</span> <span class="o">}</span>,
+      <span class="o">{</span> path: <span class="s1">'accounts'</span>, loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./accounts/accounts.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.AccountsModule<span class="o">)</span> <span class="o">}</span>,
+      <span class="o">{</span> path: <span class="s1">'branches'</span>, loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./branches/branches.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.BranchesModule<span class="o">)</span> <span class="o">}</span>,
+      <span class="o">{</span> path: <span class="s1">'customers'</span>, loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./customers/customers.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.CustomersModule<span class="o">)</span> <span class="o">}</span>,
+      <span class="o">{</span> path: <span class="s1">'employees'</span>, loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./employees/employees.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.EmployeesModule<span class="o">)</span> <span class="o">}</span>,
+      <span class="o">{</span> path: <span class="s1">'home'</span>, loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./home/home.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.HomeModule<span class="o">)</span> <span class="o">}</span>,
+      <span class="o">{</span> path: <span class="s1">'settings'</span>, loadChildren: <span class="o">()</span> <span class="o">=&gt;</span> import<span class="o">(</span><span class="s1">'./settings/settings.module'</span><span class="o">)</span>.then<span class="o">(</span>m <span class="o">=&gt;</span> m.SettingsModule<span class="o">)</span> <span class="o">}</span>
     <span class="o">]</span>
   <span class="o">}</span>
 <span class="o">]</span><span class="p">;</span>
@@ -953,7 +945,6 @@ import <span class="o">{</span> AccountsModule <span class="o">}</span> from <sp
   <li><strong>‘new’:</strong> View for inserting a new item into the collection. Uses <em>CustomersNewComponent</em>.</li>
   <li><strong>‘:CUSTOMERID’:</strong> Details of selected item. The <em>:CUSTOMERID</em> is the token for a route parameter. For example, in a URL such as “/customers/22”, “22” is the value of :CUSTOMERID parameter that is generally the customer’s entity primary key. The component <em>CustomersDetailComponent</em> will render the view  usually a form) with the details of the selected item. When the detailed data is displayed in a form all inputs contained in it are in read only mode and  cannot be edited.
 When the detail data is displayed into a form all inputs contained in it are in <strong>read only</strong> mode, that is, the inputs only displays data but can not be edited.</li>
-  <li><strong>‘:CUSTOMERID/edit’:</strong> View for editing values of the selected customer item. In this mode, the inputs with the form are editable.</li>
   <li><strong>‘:CUSTOMERID/accounts’:</strong> Entry point for loading the ‘<em>AccountsModule</em>’.</li>
 </ul>
 
