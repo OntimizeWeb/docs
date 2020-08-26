@@ -17,14 +17,28 @@ In this secction you can check the different releases of **OntimizeWeb** and its
             <th>filemanager*</th>
             <th>map*</th>
             <th>charts*</th>
+            <th>gallery*</th>
+            <th>theming*</th>
         </tr>
     </thead>
     <tbody>
         <tr>
+            <td>8.0.0</td>
+            <td>8.0.0</td>
+            <td>8.0.0</td>
+            <td>8.0.0</td>
+            <td>8.0.0</td>
+            <td rowspan="3">4.0.2</td>
+        </tr>
+         <tr>
+            <td>8.0.0-rc.1</td>
+            <td rowspan="2">8.0.0-rc.0</td>
+            <td rowspan="2">8.0.0-rc.0</td>
+            <td rowspan="2">8.0.0-rc.0</td>
+            <td rowspan="2">-</td>
+        </tr>
+        <tr>
             <td>8.0.0-rc.0</td>
-            <td>8.0.0-SNAPSHOT-0</td>
-            <td>8.0.0-SNAPSHOT-0</td>
-            <td>8.0.0-SNAPSHOT-0</td>
         </tr>
     </tbody>
 </table>
@@ -47,22 +61,42 @@ In this secction you can check the different releases of **OntimizeWeb** and its
   </thead>
   <tbody>
    <tr>
-	  <td>4.0.7</td>
-	  <td>4.0.1</td>
-	  <td>4.0.1</td>
-	  <td>4.0.4</td>
-      <td rowspan="3">4.0.0</td>
-	  <td rowspan="5">4.0.0<br>4.0.1</td>
-      <td>4.0.1</td>
-      <td rowspan="6">4.0.2</td>
-	  <td rowspan="8">4.0.0</td>
-      <td>4.0.2</td>
+	  <td>4.1.3</td>
+	  <td>4.0.3</td>
+	  <td>4.1.3</td>
+	  <td>4.0.5</td>
+      <td rowspan="5">4.0.0</td>
+	  <td rowspan="7">4.0.0<br>4.0.1</td>
+      <td>4.1.0</td>
+      <td rowspan="8">4.0.2</td>
+	  <td rowspan="10">4.0.0</td>
+      <td rowspan="5">4.0.2</td>
+    </tr>
+    <tr rowspan="2">
+	  <td>4.1.2</td>
+      <td rowspan="3">4.0.2</td>
+	  <td rowspan="3">4.0.2</td>
+	  <td rowspan="4">4.0.4</td>
+      <td rowspan="2">4.0.1</td>
+	</tr>
+    <tr>
+        <td>4.1.1</td> 
+	</tr>
+     <tr>
+        <td>4.1.0</td> 
+	</tr>
+   <tr>
+    <td>4.0.7</td> 
+    <td>4.0.1</td>
+    <td>4.0.1</td>
+  
+    <td rowspan="8">4.0.0</td>
 	</tr>
   <tr>
 	  <td>4.0.6</td>
 	  <td>4.0.0</td>
 	  <td rowspan="7">4.0.0</td>
-	  <td rowspan="4">4.0.0</td>
+      <td rowspan="6">4.0.3 <br>4.0.2 <br>4.0.1</td>
 	  <td rowspan="4">4.0.0</td>
       <td rowspan="7">4.0.0</td>
 	</tr>
