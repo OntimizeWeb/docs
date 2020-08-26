@@ -19,9 +19,9 @@ versions:
   - title: "3.x.x"
     url: /docs/v3
   - title: "4.x.x"
-    url: /docs
+    url: /docs/v4
   - title: "8.x.x"
-    url: /docs/v8
+    url: /docs
     active: true
 
 
