@@ -87,10 +87,13 @@ Here is an example of configuration:
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
+/* Include ontimize theme*/
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+@include ontimize-theme-styles($theme);
 /*
 *  After defining the theme, you need to propagate the theme to the Ontimize Web framework
 */
-@import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
+@import 'node_modules/ontimize-web-ngx/theme.scss';
 @include o-material-theme($theme);
 
 /* Include the alternative theme styles inside of a block with a CSS class. You can make this
@@ -252,7 +255,7 @@ To use multiple themes we simply need to import additional themes and create res
   @include login-theme($theme);
 }
 
-```
+``` 
 
 
 ### Theme class and overlay handling
