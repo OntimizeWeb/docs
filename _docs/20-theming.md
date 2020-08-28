@@ -20,7 +20,7 @@ a theme consists of:
 * A background palette: colors used for element backgrounds.
 
  It can help you create a color theme that reflects your **brand** or **style**.
- 
+
  Each Ontimize Web application follows material design guidelines proposed by Google. In this chapter we will see how to configure these palettes by both using predefined ones and creating new ones.
 
 <style>
@@ -95,7 +95,6 @@ Here is an example of configuration:
 */
 @import 'node_modules/ontimize-web-ngx/theme.scss';
 @include o-material-theme($theme);
-
 
 /* Include the alternative theme styles inside of a block with a CSS class. You can make this
 * CSS class whatever you want. In this example, any component inside of an element with
@@ -280,7 +279,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // subscribe to some source of theme change events, then...
     this.themeClass = newThemeClass;
-    
+
     // remove old theme class and add new theme class
     // we're removing any css class that contains '-theme' string but your theme classes can follow any pattern
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
