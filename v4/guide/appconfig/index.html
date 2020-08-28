@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-08-28T07:37:17-04:00">
+  <meta property="article:published_time" content="2020-08-28T07:54:31-04:00">
 
 
 
@@ -769,6 +769,8 @@
     <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
 <ul class="toc__menu" id="markdown-toc">
   <li><a href="#application-configuration-file" id="markdown-toc-application-configuration-file">Application configuration file</a></li>
+  <li><a href="#packagejson-configuration" id="markdown-toc-packagejson-configuration">Package.json configuration</a></li>
+  <li><a href="#angularjson-configuration" id="markdown-toc-angularjson-configuration">Angular.json configuration</a></li>
   <li><a href="#services-configuration" id="markdown-toc-services-configuration">Services configuration</a></li>
   <li><a href="#internationalization-i18-configuration" id="markdown-toc-internationalization-i18-configuration">Internationalization (i18) configuration</a></li>
   <li><a href="#permissions-configuration" id="markdown-toc-permissions-configuration">Permissions configuration</a></li>
@@ -783,7 +785,7 @@
   </nav>
 </aside>
 
-<p>During the application development you will need to set some global parameters: application title, services paths, language, etc. Those parameters are configured into the application when angular bootstraps it.</p>
+<p>During the application development <em>you will need to set some global parameters</em>: application title, services paths, language, etc. Those parameters are configured into the application when angular bootstraps it.</p>
 
 <h1 id="application-configuration-file">Application configuration file</h1>
 
@@ -872,6 +874,98 @@
   </li>
   <li><strong>permissionsConfiguration:</strong> permissions service configuration object.</li>
 </ul>
+
+<h1 id="packagejson-configuration">Package.json configuration</h1>
+
+<p>This file configures npm package dependencies and contains all of the scripts for the project and you have to replace the references of &#8220;ontimize-web-ngx-jee-seed&#8221; by the name of your project &#8220;your_app_name&#8221;</p>
+
+<figure class="highlight">
+  <pre>
+    <code>
+    {
+      <del>"name": "ontimize-web-ngx-jee-seed",</del>
+      "name": "your_app_name",
+      "version": "1.0.0",
+      "scripts": {
+        "ng": "ng",
+        "start": "ng serve --port 4299",
+        "production": "ng build --aot=false --target -prod",
+        <del>"production-aot": "ontimize-web-ngx production-aot --project-name ontimize-web-ngx-jee-seed --href /ontimize-web-ngx-jee-seed/"</del>
+        "production-aot": "ontimize-web-ngx production-aot --project-name your_app_name--href /your_app_name/"
+      },
+    ..
+      "dependencies": {
+        ..
+      },
+      "devDependencies": {
+        ..
+      }
+    }
+    </code>
+  </pre>
+</figure>
+
+<h1 id="angularjson-configuration">Angular.json configuration</h1>
+
+<p>The file angular.json provides workspace-wide and project-specific configuration defaults for build and development tools provided by the Angular CLI.</p>
+
+<p>You have to replace the references of &#8220;ontimize-web-ngx-jee-seed&#8221; by the name of your project &#8220;your_app_name&#8221;</p>
+
+<figure class="highlight">
+  <pre>
+    <code>
+    ...
+    "projects": {
+      <del>"ontimize-web-ngx-jee-seed": {</del>
+      "your_app_name": {
+        ...
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              <del>"browserTarget": "ontimize-web-ngx-jee-seed:build"</del>
+              "browserTarget": "your_app_name:build"
+            },
+            "configurations": {
+              "production": {
+                <del>"browserTarget": "ontimize-web-ngx-jee-seed:build:production"</del>
+                "browserTarget": "your_app_name:build:production"
+              }
+            }
+          },
+          "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            <del>"browserTarget": "ontimize-web-ngx-jee-seed:build"</del>
+            "browserTarget": "your_app_name:build"
+          }
+          }
+          ....
+
+      <del>"ontimize-web-ngx-jee-seed-e2e": {</del>
+      "your_app_name-e2e": 
+      "root": "e2e",
+      "sourceRoot": "e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            <del>"devServerTarget": "ontimize-web-ngx-jee-seed:serve"</del>
+            "devServerTarget": "your_app_name:serve"
+          }
+        },
+        ..
+        }
+    ...
+    },
+  <del>"defaultProject": "ontimize-web-ngx-jee-seed"</del>
+  "defaultProject": "your_app_name
+  ...
+      }
+    </code>
+  </pre>
+</figure>
 
 <h1 id="services-configuration">Services configuration</h1>
 
@@ -1294,7 +1388,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-28T07:37:17-04:00">August 28, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-08-28T07:54:31-04:00">August 28, 2020</time></p>
         
       </footer>
 
