@@ -9,7 +9,7 @@ sidebar:
 
 {% include base_path %} {% include toc %}
 
-During the application development you will need to set some global parameters: application title, services paths, language, etc. Those parameters are configured into the application when angular bootstraps it.
+During the application development *you will need to set some global parameters*: application title, services paths, language, etc. Those parameters are configured into the application when angular bootstraps it.
 
 # Application configuration file
 
@@ -83,6 +83,105 @@ The noteworthy parameters here are:
   - **'OntimizeEEPermissions':** string that configures Ontimize REST JEE services.
   - **Custom class:** a service class reference that extends `OntimizePermissions` or `OntimizeEEPermissions` or implements the `IPermissionsService` interface.
 - **permissionsConfiguration:** permissions service configuration object.
+
+# Package.json configuration
+
+This file configures npm package dependencies and contains all of the scripts for the project and you have to replace the references of "ontimize-web-ngx-jee-seed" by the name of your project "your_app_name"
+
+<figure class="highlight">
+  <pre>
+    <code>
+    {
+      <del>"name": "ontimize-web-ngx-jee-seed",</del>
+      "name": "your_app_name",
+      "version": "1.0.0",
+      "scripts": {
+        "ng": "ng",
+        "start": "ng serve --port 4299",
+        "build": "ng build",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e",
+        <del>"production": "ng build --prod=true --baseHref=/ontimize-web-ngx-jee-seed/"</del>
+        "production": "ng build --prod=true --baseHref=/your_app_name/"
+      },
+    ..
+      "dependencies": {
+        ..
+      },
+      "devDependencies": {
+        ..
+      }
+    }
+    </code>
+  </pre>
+</figure>
+
+# Angular.json configuration
+
+The file angular.json provides workspace-wide and project-specific configuration defaults for build and development tools provided by the Angular CLI.
+
+You have to replace the references of "ontimize-web-ngx-jee-seed" by the name of your project "your_app_name"
+
+<figure class="highlight">
+  <pre>
+    <code>
+    "projects": {
+      <del>"ontimize-web-ngx-jee-seed": {</del>
+      "your_app_name": {
+        ...
+        "architect": {
+         "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+           <del>"outputPath": "dist/ontimize-web-ngx-jee-seed",</del>
+           "outputPath": "dist/your_app_name",
+           ...
+           "serve": {
+             "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
+                <del>"browserTarget": "ontimize-web-ngx-jee-seed:build"</del>
+                "browserTarget": "your_app_name:build"
+              },
+              "configurations": {
+                "production": {
+                  <del>"browserTarget": "ontimize-web-ngx-jee-seed:build:production"</del>
+                  "browserTarget": "your_app_name:build:production"
+                }
+              }
+           },
+           "extract-i18n": {
+            "builder": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              <del>"browserTarget": "ontimize-web-ngx-jee-seed:build"</del>
+              "browserTarget": "your_app_name:build"
+            }
+           }
+           ....
+
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            <del>"devServerTarget": "ontimize-web-ngx-jee-seed:serve"</del>
+            "devServerTarget": "your_app_name:serve"
+          },
+          "configurations": {
+            "production": {
+              <del>"devServerTarget": "ontimize-web-ngx-jee-seed:serve:production"</del>
+              "devServerTarget": "your_app_name:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  <del>"defaultProject": "ontimize-web-ngx-jee-seed"</del>
+  "defaultProject": "your_app_name
+      }
+    </code>
+  </pre>
+</figure>
+
 
 # Services configuration
 
