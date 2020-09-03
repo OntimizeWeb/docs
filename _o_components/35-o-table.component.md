@@ -1105,7 +1105,19 @@ You can customize the tooltip styles by redefining the class `o-table-cell-toolt
 
 Note: If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
 
+### Reinitialize method
 
+When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want `o-table`  to update the display to reflect these changes. This function is provided for that purpose.For more information see the API.
+
+```javascript
+...
+const columnsOfTable= 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS';
+const filterColumnsOfTable= 'NAME;EMAIL';
+
+this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTable, filterColumns:filterColumnsOfTable});
+...
+
+```
 ## Demo
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table){:target="_blank"}.

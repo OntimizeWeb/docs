@@ -1,0 +1,44 @@
+type : "OTableInitializationOptions"
+
+propertiesColumns: ["Name", "Type", "Description"]
+
+attributes: [{
+  name: "entity",
+  type: "string",
+  optional: true
+},{
+  name: "service",
+  optional: true,
+  type: "string"
+},{
+  name: "columns",
+  optional: true,
+  type: "string",
+ 
+},{
+  name: "visibleColumns",
+  type: "string",
+  optional: true
+},
+{
+  name: "keys",
+  type: "string",
+  optional: true
+
+},{
+  name: "sortColumns",
+  type: "string",
+  optional: true
+},{
+  name: "parentKeys",
+  type: "string",
+  optional: true
+},{
+  name: "filterColumns",
+  type: "string",
+  description : "The old value for the target."
+
+},]
+
+
+

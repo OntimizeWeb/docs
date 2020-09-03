@@ -61,16 +61,21 @@
       <ul class="toc__menu" id="markdown-toc">
         <li><a>Directives</a>
           <ul>
-            {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData %}
+            {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData type="directive" %}
           </ul>
         <li><a>Renderers</a>
           <ul>
-          {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.renderers %}
+          {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.renderers type="directive"  %}
           </ul>
         </li>
         <li><a>Editors</a>
           <ul>
-          {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.editors %}
+          {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.editors type="directive" %}
+          </ul>
+      </li>
+      <li><a>Types</a>
+          <ul>
+          {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.types type="type"  %}
           </ul>
       </li>
       </ul>
@@ -81,5 +86,7 @@
     {% include functions/o-table/directive-api.html folder=site.data.components.otableData %}
     {% include functions/o-table/directive-api.html folder=site.data.components.otableData.renderers %}
     {% include functions/o-table/directive-api.html folder=site.data.components.otableData.editors %}
+    {% include functions/o-table/type-api.html folder=site.data.components.otableData.types %}
+   
   </div>
 </div>
