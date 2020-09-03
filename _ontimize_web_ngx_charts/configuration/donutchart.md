@@ -1,0 +1,42 @@
+---
+permalink: /charts/configuration/donutchart/
+title: "Donut Chart"
+---
+
+{% include base_path %}
+
+## Introduction
+
+You can check a running example of this *Donut Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/other-charts/donut){:target="_blank"}.
+
+### HTML
+
+```html
+<o-chart type="donutChart" chart-height="400"  entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
+```
+
+### TS
+
+```ts
+import { Component, ViewChild} from '@angular/core';
+import { OChartComponent, DonutChartConfiguration } from 'ontimize-web-ngx-charts';
+
+@Component({
+  selector: 'donut',
+  templateUrl: './donut.component.html'
+})
+export class DonutComponent {
+
+  chartParameters: DonutChartConfiguration;
+
+  constructor(protected injector: Injector,
+    protected navigationService: NavigationBarService,
+    protected translateService: OTranslateService) {
+
+    this.chartParameters = new DonutChartConfiguration();
+    this.chartParameters.showLabels = false;
+    this.chartParameters.cornerRadius = 15;
+    this.chartParameters.donutRatio = 0.5;
+  }
+}
+```
