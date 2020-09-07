@@ -1,0 +1,13 @@
+class : "OTableColumnsFilterColumnComponent"
+
+directive : "o-table-columns-filter-column"
+
+attributes: [{
+  name: "attr"
+},{
+  name: "sort",
+  type: "asc|desc|''",
+  default : "''",
+  required : "",
+  description : "Indicates sorting default of the results."
+}]
