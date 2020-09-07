@@ -227,5 +227,10 @@ methods: [{
   type: "method",
   parameters: "any[]",
   description: "Returns the table renderer data."
+},{
+  name: "reinitialize()",
+  type: "method",
+  parameters: "OTableInitializationOptions",
+  description: "Allow reinitialize table options adding options "
 }
 ]
