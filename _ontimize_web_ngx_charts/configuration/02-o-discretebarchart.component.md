@@ -9,13 +9,27 @@ title: "Discrete Bar Chart"
 
 You can check a running example of this *Discrete Bar Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/discrete-bar){:target="_blank"}.
 
-### HTML
+All chart parameter for the Discrete Bar Chart are described [here](https://nvd3-community.github.io/nvd3/examples/documentation.html#discreteBarChart){:target="_blank"}.
+
+
+## Basic Example
+
+*HTML*
+
+```html
+<o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"></o-chart>
+```
+
+
+## Custom Configuration Example
+
+*HTML*
 
 ```html
 <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="data" layout-fill></o-chart>
 ```
 
-### TS
+*TS*
 
 ```ts
 import { Component, ViewChild, Injector } from '@angular/core';

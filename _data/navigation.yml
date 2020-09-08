@@ -308,6 +308,8 @@ ontimize_web_ngx_charts:
         url: /charts/installation/
   - title: "Configuration"
     children:
+      - title: "Overview"
+        url: /charts/configuration/overview/
       - title: "Line Chart"
         url: /charts/configuration/linechart/
       - title: "Line + Bar Chart"
@@ -317,9 +319,9 @@ ontimize_web_ngx_charts:
       - title: "Donut Chart"
         url: /charts/configuration/donutchart/
       - title: "Discrete Bar Chart"
-        url: /charts/configuration/disretebarchart/
+        url: /charts/configuration/discretebarchart/
       - title: "Multi Bar Chart"
-        url: /charts/configuration/mutibarchart/
+        url: /charts/configuration/multibarchart/
   #- title: "Components"
   #  children:
   #    - title: "Chart"
