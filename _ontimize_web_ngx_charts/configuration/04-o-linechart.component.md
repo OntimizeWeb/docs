@@ -9,13 +9,26 @@ title: "Line Chart"
 
 You can check a running example of this *Line Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/line){:target="_blank"}.
 
-### HTML
+All chart parameter for the Line Chart are described [here](https://nvd3-community.github.io/nvd3/examples/documentation.html#lineChart){:target="_blank"}.
+
+
+## Basic Example
+
+*HTML*
+
+```html
+<o-chart type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT" x-data-type="time"></o-chart>
+```
+
+## Custom Configuration Example
+
+*HTML*
 
 ```html
 <o-chart #lineChartBasic type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT" [chart-parameters]="chartParameters" x-data-type="time"></o-chart>
 ```
 
-### TS
+*TS*
 
 ```ts
 import { Component, ViewChild } from '@angular/core';
