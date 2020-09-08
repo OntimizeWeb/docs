@@ -9,13 +9,26 @@ title: "Multi Bar Chart"
 
 You can check a running example of this *Multi Bar Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/multi-bar){:target="_blank"}.
 
-### HTML
+All chart parameter for the Donut Chart are described [here](https://nvd3-community.github.io/nvd3/examples/documentation.html#pie){:target="_blank"}.
+
+## Basic Example
+
+*HTML*
+
+```html
+<o-chart type="multiBar" x-label="Time" y-label="Amount (€)" layout-fill entity="EMovementsGrouped" x-axis="DATE_" y-axis="MOVEMENT;AVERAGE;BALANCE" x-data-type="time"></o-chart>
+```
+
+
+## Custom Configuration Example
+
+*HTML*
 
 ```html
 <o-chart #multiBar type="multiBar" x-label="Time" y-label="Amount (€)" [data]="data" x-data-type="time" layout-fill></o-chart>
 ```
 
-### TS
+*TS*
 
 ```ts
 import { Component, Injector, ViewChild } from '@angular/core';
@@ -139,7 +152,7 @@ export class MultiBarComponent {
 }
 ```
 
-### CUSTOM DATA
+*JSON* (Custom Data)
 
 ```json
 [

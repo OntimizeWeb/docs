@@ -4,18 +4,33 @@ title: "Donut Chart"
 ---
 
 {% include base_path %}
+{% include toc %}
 
 ## Introduction
 
 You can check a running example of this *Donut Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/other-charts/donut){:target="_blank"}.
 
-### HTML
+All chart parameter for the Donut Chart are described [here](https://nvd3-community.github.io/nvd3/examples/documentation.html#pie){:target="_blank"}.
+
+
+## Basic Example
+
+*HTML*
+
+```html
+<o-chart type="donutChart" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" chart-height="400"></o-chart>
+```
+
+
+## Custom Configuration Example
+
+*HTML*
 
 ```html
 <o-chart type="donutChart" chart-height="400"  entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
 ```
 
-### TS
+*TS*
 
 ```ts
 import { Component, ViewChild} from '@angular/core';

@@ -1,0 +1,88 @@
+attributes: [{
+  name: "showLegend",
+  description: "Type of chart",
+  type: "boolean",
+  default: "true"
+},{
+  name: "legendPosition",
+  description: "Position of the legend (top, right, bottom)",
+  type: "string",
+  default: "top"
+},{
+  name: "duration",
+  description: "Duration in ms",
+  type: "number",
+  default: 500
+},{
+  name: "useInteractiveGuideline",
+  description: "Show interactive guideline",
+  type: "boolean",
+  default: true
+},{
+  name: "interactive",
+  description: "Enable / Disable interactive chart",
+  type: "boolean",
+  default: true
+},{
+  name: "isArea",
+  description: "",
+  type: "boolean",
+  default: "null"
+},{
+  name: "strokeWidth",
+  description: "Stroke width in pixels",
+  type: "number"
+},{
+  name: "classed",
+  description: "Set class",
+  type: "string"
+},{
+  name: "color",
+  description: "",
+  type: "string"
+},{
+  name: "showXAxis",
+  description: "Show or not X Axis",
+  type: "boolean",
+  default: "true"
+},{
+  name: "showYAxis",
+  description: "Show or not Y Axis",
+  type: "boolean",
+  default: "true"
+},{
+  name: "rightAlignYAxis",
+  description: "Right alignment for the Y Axis",
+  type: "boolean",
+  default: "false"
+},{
+  name: "focusEnable",
+  description: "Enable / Disable focus",
+  type: "boolean",
+  default: "false"
+},{
+  name: "focusShowAxisX",
+  description: "Show Axis X on focus",
+  type: "boolean",
+  default: "false"
+}]
+
+outputs: [{
+  name : "onTap",
+  description: "Event triggered when the chart is tapped"
+},{
+  name : "onDoubleTap",
+  description: "Event triggered when the chart is double-tapped"
+},{
+  name : "onPress",
+  description: "Event triggered when the chart is pressed"
+},{
+  name : "onSwipe",
+  description: "Event triggered on swipe"
+},{
+  name : "onRotate",
+  description: "Event triggered when the screen rotates"
+},{
+  name : "onPinch",
+  description: "Event triggered on pinch"  
+}]
