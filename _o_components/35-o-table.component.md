@@ -30,7 +30,7 @@ To define a table, it is necessary to define the columns
 
 You can define it as follows:
 - Using the input `columns`, adding the columns separated by ';'.
-- Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the API.
+- Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the **API**.
 
 With `visible-columns` you can indicate which columns will be visible.
 
@@ -205,7 +205,9 @@ Additionally, you can specify default filter function to be applied when the use
 
 ### Filtering by columns
 
-It is posible to configure filtering by columns with the `o-table-columns-filter` component, adding filterable columns separated by ‘;’ in its `columns` property.
+It is posible to configure filtering by columns as follows:
+- Using the input columns, adding the columns separated by ‘;’.
+- Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
 
 <h3 class="grey-color">Example</h3>
 
@@ -214,10 +216,26 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
     fxFlex layout-padding attr="accounts" title="ACCOUNTS"
-    sort-columns="ANID:DESC"  query-on-init="true"
-    quick-filter="yes"   filter-case-sensitive="true" >
-
+    sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
     <o-table-columns-filter columns="OFFICEID;ACCOUNTTYP" ></o-table-columns-filter>
+
+    ...
+
+</o-table>
+```
+
+<h3 class="grey-color">Example with o-table-columns-filter-column component</h3>
+
+```html
+<o-table service="branches" entity="account" keys="ACCOUNTID"
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
+    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
+    <o-table-columns-filter>
+      <o-table-columns-filter-column attr="OFFICEID"> </o-table-columns-filter-column>
+      <o-table-columns-filter-column attr="ACCOUNTTYP" sort="desc"> </o-table-columns-filter-column>
+    </o-table-columns-filter>
 
     ...
 
@@ -232,10 +250,7 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
 | custom| Allows filtering by a form control
 
 
-
-
 ![Filtering columns mode]({{ "/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
-
 
 ### Custom filter
 
@@ -569,7 +584,7 @@ For example:
 
 *Boolean*
 
-The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="CLOSED" title="CLOSED">
@@ -596,7 +611,7 @@ The configuration is similar to the renderer boolean. The following example uses
 *Date*
 
 The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add
-`type="date" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the API.
+`type="date" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes" (editionStarted)="editionStarted($event)"
@@ -606,7 +621,7 @@ The configuration is similar to the renderer date. The following example uses th
 
 *Integer*
 
-The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
@@ -618,7 +633,7 @@ The configuration is similar to the renderer integer. The following example uses
 *Real*
 
 The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add
-`type="currency" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the API.
+`type="currency" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the **API**.
 
  ```html
  <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
@@ -629,7 +644,7 @@ The configuration is similar to the renderer real. The following example uses th
 
 *Text*
 
-The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
  ```html
     <o-table-column attr="NAME" title="NAME">
