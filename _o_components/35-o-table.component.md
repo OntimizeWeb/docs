@@ -209,6 +209,10 @@ It is posible to configure filtering by columns as follows:
 - Using the input columns, adding the columns separated by ‘;’.
 - Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
 
+This option will be available in table menu by default. However, you can configure it is allways available in table header with `filter-column-active-by-default= 'yes'`.
+
+![Filte by Column]({{ "/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
+
 <h3 class="grey-color">Example</h3>
 
 ```html
@@ -217,7 +221,7 @@ It is posible to configure filtering by columns as follows:
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
     fxFlex layout-padding attr="accounts" title="ACCOUNTS"
     sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
-    <o-table-columns-filter columns="OFFICEID;ACCOUNTTYP" ></o-table-columns-filter>
+    <o-table-columns-filter columns="OFFICEID;NAME" ></o-table-columns-filter>
 
     ...
 
@@ -251,6 +255,8 @@ It is posible to configure filtering by columns as follows:
 
 
 ![Filtering columns mode]({{ "/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
+
+
 
 ### Custom filter
 
