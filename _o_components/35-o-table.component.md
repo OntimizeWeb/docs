@@ -211,7 +211,7 @@ It is posible to configure filtering by columns as follows:
 
 This option will be available in table menu by default. However, you can configure it is allways available in table header with `filter-column-active-by-default= 'yes'`.
 
-![Filte by Column]({{ "/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
+![Filter by Column]({{ "/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
 
 <h3 class="grey-color">Example</h3>
 
