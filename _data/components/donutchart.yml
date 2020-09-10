@@ -24,17 +24,17 @@ attributes: [{
   default: 500
 },{
   name: "donutRatio",
-  description: "Ratio of the donut",
+  description: "Percent of pie radius to cut out of the middle to make the donut. It is multiplied by the outer radius to calculate the inner radius, thus it should be between 0 and 1.",
   type: "number",
   default: 0.35
 },{
   name: "cornerRadius",
-  description: "Border radius of pie slices",
+  description: "Corner radius of donut slices",
   type: "number",
   default: 0
 },{
   name: "showLabels",
-  description: "Display pie labels",
+  description: "Display donut labels",
   type: "boolean",
   default: "true"
 },{
@@ -54,12 +54,12 @@ attributes: [{
   default: "true"
 },{
   name: "labelsOutside",
-  description: "Whether pie chart labels should be outside the slices instead of inside them",
+  description: "Whether donut chart labels should be outside the slices instead of inside them",
   type: "boolean",
   default: "false"
 },{
   name: "color",
-  description: "",
+  description: "Colors to use for the different data.",
   type: "string[]"
 },{
   name: "valueType",
@@ -67,9 +67,17 @@ attributes: [{
   type: "string"
 },{
   name: "showTooltip",
-  description: "Enables or disabled the tooltip",
+  description: "Enable or disable the tooltip",
   type: "boolean",
   default: true
+},{
+  name: "startAngle",
+  description: "Function used to manage the starting angle of the donut chart",
+  type: "function"
+},{
+  name: "endAngle",
+  description: "Function used to manage the ending angle of the donut chart",
+  type: "function"
 },{
   name: "colorData",
   description: "List of colors for each value in the Y axis of the chart",
@@ -80,12 +88,4 @@ inheritedOutputs: [{
   component: "ChartComponent",
   path: "charts/overview",
   outputs: ["onDoubleTap", "onPinch", "onPress", "onRotate", "onSwipe", "onTap"]
-}]
-
-methods: [{
-  name: "startAngle(d: number)",
-  description: "Function used to manage the starting angle of the pie/donut chart"
-},{
-  name: "endAngle(d: number)",
-  description: "Function used to manage the ending angle of the pie/donut chart"
 }]
