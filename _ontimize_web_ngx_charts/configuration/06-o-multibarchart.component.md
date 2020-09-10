@@ -1,6 +1,8 @@
 ---
 permalink: /charts/configuration/multibarchart/
 title: "Multi Bar Chart"
+comp: multibarchart
+layout: o-component
 ---
 
 {% include base_path %}
@@ -9,7 +11,7 @@ title: "Multi Bar Chart"
 
 You can check a running example of this *Multi Bar Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/multi-bar){:target="_blank"}.
 
-All chart parameter for the Donut Chart are described [here](https://nvd3-community.github.io/nvd3/examples/documentation.html#pie){:target="_blank"}.
+All chart parameters for the *Multi Bar Chart* can be checked in the API tab or in the [official documentation](https://nvd3-community.github.io/nvd3/examples/documentation.html#multiBarChart){:target="_blank"}.
 
 ## Basic Example
 
