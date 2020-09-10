@@ -1,6 +1,8 @@
 ---
 permalink: /charts/configuration/donutchart/
 title: "Donut Chart"
+comp: donutchart
+layout: o-component
 ---
 
 {% include base_path %}
@@ -10,7 +12,7 @@ title: "Donut Chart"
 
 You can check a running example of this *Donut Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/other-charts/donut){:target="_blank"}.
 
-All chart parameter for the Donut Chart are described [here](https://nvd3-community.github.io/nvd3/examples/documentation.html#pie){:target="_blank"}.
+All chart parameters for the *Donut Chart* can be checked in the API tab or in the [official documentation](https://nvd3-community.github.io/nvd3/examples/documentation.html#pie){:target="_blank"}.
 
 
 ## Basic Example
