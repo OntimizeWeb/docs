@@ -6,7 +6,6 @@ layout: o-component
 ---
 
 {% include base_path %}
-{% include toc %}
 
 ## Introduction
 
