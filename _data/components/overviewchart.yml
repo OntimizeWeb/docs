@@ -2,7 +2,7 @@ directive : "o-chart"
 
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
-  path: "components/service/service-base",
+  path: "charts/overview",
   attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
 }]
 
