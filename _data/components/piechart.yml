@@ -24,12 +24,12 @@ attributes: [{
   default: 500
 },{
   name: "cornerRadius",
-  description: "Border radius of pie slices",
+  description: "Corner radius of the slices",
   type: "number",
   default: 0
 },{
   name: "showLabels",
-  description: "Display pie labels",
+  description: "Specifies if labels are displayed",
   type: "boolean",
   default: "true"
 },{
@@ -54,7 +54,7 @@ attributes: [{
   default: "false"
 },{
   name: "color",
-  description: "",
+  description: "Colors to use for the different data.",
   type: "string[]"
 },{
   name: "valueType",

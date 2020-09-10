@@ -46,7 +46,7 @@ attributes: [{
   type: "string"
 },{
   name: "color",
-  description: "Colors to use for the different data. If an array is given, it is converted to a function automatically.",
+  description: "Colors to use for the different data.",
   type: "array"
 },{
   name: "showXAxis",
