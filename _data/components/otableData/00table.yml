@@ -187,7 +187,7 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not to show the filter icon by column in the table header by default"
+  description: "Indicates whether or not to show the filter by column icon in the table header by default"
 }]
 
 outputs: [{
