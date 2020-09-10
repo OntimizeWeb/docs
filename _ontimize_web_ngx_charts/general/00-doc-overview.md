@@ -7,9 +7,10 @@ permalink: /charts/overview/
 
 ## Introduction
 
-The **Ontimize Web Charts** is an an implementation of nvD3 and d3 charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
+The **Ontimize Web Charts** is an an implementation of [nvD3](https://nvd3.org/){:target="_blank"} and [D3](https://d3js.org/){:target="_blank"} charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
 
-Below you can see all list to the charts 
+Below you can see a list with link to examples of each chart:
+
 * **Line Charts**
     * [Line Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/line){:target="_blank"}
     * [Line + Bar Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/lineplusbar){:target="_blank"}
