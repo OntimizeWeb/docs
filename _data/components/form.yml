@@ -161,7 +161,7 @@ outputs: [{
   name: "beforeCloseDetail",
   description: "Event triggered before leaving form detail mode"
 },{
-  name: "beforeGoEditMode",
+  name: "beforeGoEditMode (deprecated)",
   description: "Event triggered befoe going to form edition mode"
 },{
   name: "onFormModeChange",
@@ -175,6 +175,24 @@ outputs: [{
 },{
   name: "onDelete",
   description: "Event triggered when the data is removed"
+},{
+  name: "beforeInsertMode",
+  description: "Event triggered before changing the form into insert mode"
+},{
+  name: "beforeUpdateMode",
+  description: "Event triggered before changing the form into update mode"
+},{
+  name: "beforeInitialMode",
+  description: "Event triggered before changing the form into initial mode"
+},{
+  name: "onInsertMode",
+  description: "Event triggered once the form has changed to insert mode"
+},{
+  name: "onUpdateMode",
+  description: "Event triggered once the form has changed to update mode"
+},{
+  name: "onInitialMode",
+  description: "Event triggered once the form has changed to initial mode"
 }]
 
 
