@@ -157,7 +157,7 @@ outputs: [{
   description: "Event triggered before leaving form detail mode"
 },{
   name: "beforeGoEditMode (deprecated)",
-  description: "Event triggered befoe going to form edition mode"
+  description: "Event triggered befoe going to form edition mode<br>This event is <b>deprecated</b>, use `beforeUpdateMode` instead"
 },{
   name: "onFormModeChange",
   description: "Event triggered when form mode changes"

@@ -38,7 +38,7 @@ This is the mode used by the form component to perform creation operations. In t
 
 There is use cases when it is necessary to perform any action right before or after the form changes from one mode to another. You can achieve this thanks to the events that the `o-form` emits before and after changing its mode. This events are the following: `beforeInsertMode`, `beforeUpdateMode`, `beforeInitialMode`, `onInsertMode`, `onUpdateMode` and `onInitialMode`.
 
-For xample, you can listen to the `onInsertMode` of the `o-form` component in your HTML:
+For example, you can listen to the `onInsertMode` of the `o-form` component in your HTML:
 
 ```html
 <o-form (onInserMode)="performAction()">
