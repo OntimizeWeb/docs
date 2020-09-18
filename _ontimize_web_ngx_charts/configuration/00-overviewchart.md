@@ -37,7 +37,7 @@ This is an example of a *Pie Chart* that shows to use the chart parameters to ch
 *HTML*
 
 ```html
-<o-chart type="pie" layout-fill entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"></o-chart>
+<o-chart type="pie" layout-fill entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
 ```
 
 *TS*
@@ -63,7 +63,7 @@ export class PieComponent{
 }
 ```
 
-You can check every *chart parameter* [here](https://nvd3-community.github.io/nvd3/examples/documentation.html).
+You can check every *chart parameter* available for the *Pie Chart* in the API tab section.
 
 
 ## Basic Example (Custom Data)

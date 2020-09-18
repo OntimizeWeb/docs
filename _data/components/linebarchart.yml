@@ -41,14 +41,17 @@ attributes: [{
   default: true
 },{
   name: "focusEnable",
+  description: "Enable or disable focus.",
   type: "boolean",
   default: "true"
 },{
   name: "focusShowAxisX",
+  description: "On focus show X axis",
   type: "boolean",
   default: "true"
 },{
   name: "focusShowAxisY",
+  description: "On focus show Y axis",
   type: "boolean",
   default: "false"
 },{
