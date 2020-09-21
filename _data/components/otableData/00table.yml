@@ -176,6 +176,12 @@ attributes: [{
   default: "",
   required: "",
   description: "Adds the CSS class or classes returned by the provided function to the table rows whose data and index are provided "
+},{
+  name: "filter-column-active-by-default",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the filter by column icon in the table header by default"
 }]
 
 outputs: [{
