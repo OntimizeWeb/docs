@@ -11,7 +11,7 @@ The `o-html-input` component is used in [forms]({{ base_path }}/components/form/
 
 This component wraps the [CKEditor 4](https://ckeditor.com/ckeditor-4/){:target="_blank"} component into an **OntimizeWeb** component. For using it you need to download the CKEditor library and include it in your application.
 
-1. Download the [CKEditor 4](https://ckeditor.com/ckeditor-4/download/){:target="_blank"}.
+1. Download the Basic Package or customize it by yourself [here](https://ckeditor.com/ckeditor-4/download/){:target="_blank"} with the components you need.
 2. Include it in your application:
   * Copy the CKEditor library to your *assets* folder.
   * Import the CKEditor library in the *index.html* file of your application.
@@ -47,6 +47,6 @@ The HTML input is automatically registered on its parent `o-form`, which provide
 </o-form>
 ```
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/html){:target="_blank"}.
-
+z
 ## Validation
 The `o-html-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.
