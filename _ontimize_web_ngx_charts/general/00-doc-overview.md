@@ -9,37 +9,37 @@ permalink: /charts/overview/
 
 The **Ontimize Web Charts** is an an implementation of [nvD3](https://nvd3.org/){:target="_blank"} and [D3](https://d3js.org/){:target="_blank"} charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
 
-Below you can see a list with link to examples of each chart:
+Below you can see a list with all available chart types:
 
 * **Line Charts**
-    * [Line Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/line){:target="_blank"}
-    * [Line + Bar Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/lineplusbar){:target="_blank"}
-    * [Parallel coordinates Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/parallelCoordinates){:target="_blank"}
-    * [Ohlc Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/ohlc){:target="_blank"}
+    * [Line Chart]({{ base_path }}/charts/configuration/linechart/)
+    * [Line + Bar Chart]({{ base_path }}/charts/configuration/linebarchart/)
+    * Parallel coordinates Chart
+    * Ohlc Chart
 
 * **Bar Charts**
-    * [Dicrete Bar Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/discrete-bar){:target="_blank"}
-    * [Multi Bar Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/multi-bar){:target="_blank"}
-    * [Multi Bar Horizontal Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/multi-bar-horizontal){:target="_blank"}
-    * [Bullet Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/bullet){:target="_blank"}
+    * [Dicrete Bar Chart]({{ base_path }}/charts/configuration/discretebarchart/)
+    * [Multi Bar Chart]({{ base_path }}/charts/configuration/multibarchart/)
+    * Multi Bar Horizontal Chart
+    * Bullet Chart
 
 * **Area Charts**
-    * [Stacked Area Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/area/stackedArea){:target="_blank"}
-    * [Radar Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/area/radar){:target="_blank"}
+    * Stacked Area Chart
+    * Radar Chart
 
 * **Bubble Charts**
-    * [Bubble Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/bubble/bubble){:target="_blank"}
-    * [Scartter Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/bubble/scatter){:target="_blank"}
+    * Bubble Chart
+    * Scartter Chart
 
 * **Gauge Charts**
-    * [Gauge Dashboard Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/gauge/gaugeDashboard){:target="_blank"}
-    * [Gauge Simple Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/gauge/gaugeSimple){:target="_blank"}
-    * [Gauge Slim Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/gauge/gaugeSlim){:target="_blank"}
-    * [Gauge Space Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/gauge/gaugeSpace){:target="_blank"}
-    * [Radial Percent Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/gauge/radialPercent){:target="_blank"}
+    * Gauge Dashboard Chart
+    * Gauge Simple Chart
+    * Gauge Slim Chart
+    * Gauge Space Chart
+    * Radial Percent Chart
 
 * **Other Charts**
-    * [Donut Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/other-charts/donut){:target="_blank"}
-    * [Pie Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/other-charts/pie){:target="_blank"}
-    * [Candlestick bar Chart](https://try.imatia.com/ontimizeweb/v8/charts/main/other-charts/candlestick){:target="_blank"}
-    * [Force Direct Graph](https://try.imatia.com/ontimizeweb/v8/charts/main/other-charts/directedGraph){:target="_blank"}
+    * [Donut Chart]({{ base_path }}/charts/configuration/donutchart/)
+    * [Pie Chart]({{ base_path }}/charts/configuration/piechart/)
+    * Candlestick bar Chart
+    * Force Direct Graph
