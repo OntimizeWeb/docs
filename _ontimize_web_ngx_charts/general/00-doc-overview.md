@@ -43,3 +43,6 @@ Below you can see a list with all available chart types:
     * [Pie Chart]({{ base_path }}/charts/configuration/piechart/)
     * Candlestick bar Chart
     * Force Direct Graph
+
+
+You can check all this examples [here](https://try.imatia.com/ontimizeweb/v8/charts/main/home){:target="_blank"}.
