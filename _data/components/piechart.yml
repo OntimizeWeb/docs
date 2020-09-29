@@ -3,7 +3,7 @@ chart: true
 
 inheritedAttributes: [{
   component: "OChartComponent",
-  path: "charts/overview",
+  path: "charts/configuration/overview",
   attributes: ["chart-height", "chart-width", "type", "x-axis", "y-axis", "x-label", "y-label", "x-data-type", "y-data-type", "data", "chart-parameters"]
 }]
 
