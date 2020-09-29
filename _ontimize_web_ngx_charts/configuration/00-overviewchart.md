@@ -14,8 +14,6 @@ layout: o-component
 The configuration is used to change how the chart behaves. There are properties to control the type of chart displayed, styling, fonts, the legend, etc.
 You can use inputs and outputs to configure your charts and to catch events when are triggered.
 
-You can check every *chart parameter* [here](https://nvd3-community.github.io/nvd3/examples/documentation.html).
-
 
 ## Basic Example
 
