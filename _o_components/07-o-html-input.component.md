@@ -47,6 +47,6 @@ The HTML input is automatically registered on its parent `o-form`, which provide
 </o-form>
 ```
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/html){:target="_blank"}.
-z
+
 ## Validation
 The `o-html-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.
