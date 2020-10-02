@@ -18,7 +18,7 @@ attributes: [{
 },{
   name: "icon-collapse",
   type: "string",
-  default : "no",
+  default : "remove",
   required : "",
   description : "Icon name to collapse of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
 },{
