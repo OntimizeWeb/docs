@@ -227,5 +227,16 @@ methods: [{
   type: "method",
   parameters: "any[]",
   description: "Returns the table renderer data."
+},{
+  name: "reinitialize()",
+  type: "method",
+  parameters: "OTableInitializationOptions",
+  description: "Allow reinitialize table options adding options "
+},{
+  name: "toogleRowExpandable()",
+  type: "method",
+  parameters: "row:data, rowIndex:number, event",
+  description: "Allow reinitialize table options adding options "
 }
 ]
+
