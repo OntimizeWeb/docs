@@ -11,7 +11,7 @@ layout: o-component
 
 You can check a running example of this *Discrete Bar Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/discrete-bar){:target="_blank"}.
 
-All chart parameters for the *Discrete Bar Chart* can be checked in the API tab or in the [official documentation](https://nvd3-community.github.io/nvd3/examples/documentation.html#discreteBarChart){:target="_blank"}.
+All chart parameters for the *Discrete Bar Chart* can be checked in the API tab.
 
 
 ## Basic Example
