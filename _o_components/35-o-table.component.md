@@ -1179,7 +1179,7 @@ The example below makes use of *simple template*, the content of the child row i
 
 **A template with context**
 
-It is possible to define a *template with context*, so that if the defined template contains a component that extends from `OServiceComponent` class (such as o-table, o-list, o-chart and o-grid), this context can solve functionalities like parent-keys and query the component data automatically when the row is expanded, for example.
+It is possible to define a *template with context*, so that if the defined template contains a component (such as o-table, o-list, o-chart and o-grid), this context provide functionalities like parent-keys and query the component data automatically when the row is expanded, for example.
 
 >NOTE: It is necessary define `targets` input and `[data]="row"` to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with `[data]="row"`
 
