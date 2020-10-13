@@ -1,0 +1,87 @@
+directive : "o-chart"
+chart: true
+
+inheritedAttributes: [{
+  component: "OChartComponent",
+  path: "charts/configuration/overview",
+  attributes: ["chart-height", "chart-width", "type", "x-axis", "y-axis", "x-label", "y-label", "x-data-type", "y-data-type", "data", "chart-parameters"]
+}]
+
+attributes: [{
+  name: "showLegend",
+  description: "Whether to display the legend or not",
+  type: "boolean",
+  default: "true"
+},{
+  name: "switchYAxisOrder",
+  description: "If two Y axis are used, this option changes the order of both axis.",
+  type: "boolean",
+  default: "false"
+},{
+  name: "duration",
+  description: "Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value.",
+  type: "number",
+  default: 500
+},{
+  name: "showLabels",
+  description: "Whether to display the legend or not",
+  type: "boolean",
+  default: false
+},{
+  name: "margin",
+  description: "Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts.",
+  type: "object"
+},{
+  name: "isArea",
+  description: "Function to define if a line is a normal line or if it fills in the area. Notice the default gets the value from the line's definition in data. If a non-function is given, it the value is used for all lines."
+},{
+  name: "interactive",
+  description: "A master flag for turning chart interaction on and off. This overrides all tooltip, voronoi, and guideline options.",
+  type: "boolean",
+  default: true
+},{
+  name: "focusEnable",
+  description: "Enable or disable focus.",
+  type: "boolean",
+  default: "true"
+},{
+  name: "focusShowAxisX",
+  description: "On focus show X axis",
+  type: "boolean",
+  default: "true"
+},{
+  name: "focusShowAxisY",
+  description: "On focus show Y axis",
+  type: "boolean",
+  default: "false"
+},{
+  name: "forceX",
+  description: "List of numbers to Force into the X scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option.",
+  type: "array"
+},{
+  name: "forceY",
+  description: "List of numbers to Force into the Y scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the Y domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the yDomain option.",
+  type: "array"
+},{
+  name: "color",
+  description: "Colors to use for the different data.",
+  type: "string[]"
+},{
+  name: "to_zero",
+  description: "Parameters for create equispaced points in chart to_zero is priority in the case of two parameters are activated",
+  type: "boolean[]"
+},{
+  name: "to_previousValue",
+  description: "Parameters for create equispaced points in chart to_zero is priority in the case of two parameters are activated",
+  type: "boolean[]"
+},{
+  name: "bars",
+  description: "Parameter for select chart with bars or line",
+  type: "boolean"
+}]
+
+inheritedOutputs: [{
+  component: "ChartComponent",
+  path: "charts/overview",
+  outputs: ["onDoubleTap", "onPinch", "onPress", "onRotate", "onSwipe", "onTap"]
+}]
