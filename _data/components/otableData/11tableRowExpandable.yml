@@ -22,9 +22,9 @@ attributes: [{
   required : "",
   description : "Icon name to collapse of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
 },{
-  name: "expandible-column-visible",
+  name: "expandable-column-visible",
   type: "boolean",
   default : "true",
   required : "no",
-  description : "Indicates whether or not to show a expandible column."
+  description : "Indicates whether or not to show a expandable column."
 }]
