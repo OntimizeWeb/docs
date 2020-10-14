@@ -1141,7 +1141,7 @@ this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTabl
 
 ### Expandable row <span class='menuitem-badge'>new<span>
 
-The `o-table-row-expandable` component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It's necessary to wrap the content of your template with the `<ng-template let-row></ng-template` tag and add the template definitio inside.
+The `o-table-row-expandable` component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It's necessary to wrap the content of your template with the `<ng-template let-row></ng-template` tag and add the template definition inside.
 
 *Ontimize Web* provides two posibilities for attaching child rows to a parent row in the `o-table`.
 * Simple template
