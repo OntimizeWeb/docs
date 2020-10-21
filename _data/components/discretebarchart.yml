@@ -1,0 +1,71 @@
+directive : "o-chart"
+chart: true
+
+inheritedAttributes: [{
+  component: "OChartComponent",
+  path: "charts/configuration/overview",
+  attributes: ["chart-height", "chart-width", "type", "x-axis", "y-axis", "x-label", "y-label", "x-data-type", "y-data-type", "data", "chart-parameters"]
+}]
+
+attributes: [
+{
+  name: "showValues",
+  description: "Type of chart",
+  type: "boolean",
+  default: "true"
+},{
+  name: "duration",
+  description: "Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value.",
+  type: "number",
+  default: 500
+},{
+  name: "showLegend",
+  description: "Show or not legend",
+  type: "boolean",
+  default: "false"
+},{
+  name: "staggerLabels",
+  description: "Makes the X labels stagger at different distances from the axis so they're less likely to overlap.",
+  type: "boolean",
+  default: false
+},{
+  name: "rotateLabels",
+  description: "Rotates the X axis labels by the specified degree.",
+  type: "number",
+  default: 0
+},{
+  name: "wrapLabels",
+  description: "Splits long X labels by new lines in order to prevent overlapping.",
+  type: "boolean",
+  default: "true"
+},{
+  name: "showXAxis",
+  description: "Display or hide the X axis",
+  type: "boolean",
+  default: "true"
+},{
+  name: "showYAxis",
+  description: "Display or hide the Y axis",
+  type: "boolean",
+  default: "true"
+},{
+  name: "rightAlignYAxis",
+  description: "When only one Y axis is used, this puts the Y axis on the right side instead of the left.",
+  type: "boolean",
+  default: "false"
+},{
+  name: "margin",
+  description: "Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts.",
+  type: "object",
+  default: ""
+},{
+  name: "agroup",
+  type: "boolean",
+  default: false
+}]
+
+inheritedOutputs: [{
+  component: "ChartComponent",
+  path: "charts/overview",
+  outputs: ["onDoubleTap", "onPinch", "onPress", "onRotate", "onSwipe", "onTap"]
+}]

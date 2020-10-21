@@ -59,4 +59,25 @@ const config: ODialogConfig = {
 
 ![Customize dialog component]({{ "/images/layouts/dialog/dialog_info_customize.png" | absolute_url }}){: .comp-example-img}
 
+
+## Get Response of Dialog
+
+You can get the response of the dialog, for example, in a confirm Dialog you can get that confirmation or cancellation.
+
+Example
+```js
+  showConfirm(evt: any) {
+    if (this.dialogService) {
+      this.dialogService.confirm('Confirm dialog title', 'Do you really want to accept?');
+      this.dialogService.dialogRef.afterClosed().subscribe( result => {
+        if(result) {
+          // Actions on confirmation
+        } else {
+          // Actions on cancellation
+        }
+      })
+    }
+  }
+```
+
 You can see examples of this section in the [OntimizeWeb playground]({{site.playgroundurl}}/main/dialogs){:target="_blank"}.
