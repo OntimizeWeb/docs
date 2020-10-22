@@ -29,4 +29,10 @@ attributes: [{
 },{
   name: "enabled",
   description : "Indicates whether or not the button is enabled"
+},{
+  name: "color",
+  type: "primary | accent | warn",
+  default: "",
+  required: "",
+  description: "Theme color palette for the component"
 }]
