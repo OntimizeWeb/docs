@@ -26,4 +26,7 @@ attributes: [{
   default: "",
   required: "",
   description: "Icon image"
+},{
+  name: "enabled",
+  description : "Indicates whether or not the button is enabled"
 }]
