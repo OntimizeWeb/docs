@@ -238,5 +238,11 @@ methods: [{
   type: "method",
   parameters: "OTableInitializationOptions",
   description: "Allow reinitialize table options adding options "
+},{
+  name: "toogleRowExpandable()",
+  type: "method",
+  parameters: "row:data, rowIndex:number, event:Event",
+  description: "Allow to expand or collapse the expandable row."
 }
+
 ]
