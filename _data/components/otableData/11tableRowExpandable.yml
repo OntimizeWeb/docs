@@ -1,0 +1,30 @@
+class: "OTableRowExpandableComponent"
+
+directive : "o-table-row-expandable"
+
+outputs: [{
+  name: "onExpanded",
+  description: "Event triggered when a row is expanded"
+},{name: "onCollapsed",
+  description: "Event triggered when a row is collapsed"
+}]
+
+attributes: [{
+  name: "icon-expand",
+  type: "string",
+  default : "add",
+  required : "",
+  description : "Icon name to expand of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "icon-collapse",
+  type: "string",
+  default : "remove",
+  required : "",
+  description : "Icon name to collapse of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "expandable-column-visible",
+  type: "boolean",
+  default : "true",
+  required : "no",
+  description : "Indicates whether or not to show a expandable column."
+}]

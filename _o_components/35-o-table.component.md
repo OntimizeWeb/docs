@@ -1127,6 +1127,86 @@ You can customize the tooltip styles by redefining the class `o-table-cell-toolt
 Note: If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
 
 
+When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want `o-table`  to update the display to reflect these changes. This function is provided for that purpose.For more information see the API.
+
+```javascript
+...
+const columnsOfTable= 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS';
+const filterColumnsOfTable= 'NAME;EMAIL';
+
+this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTable, filterColumns:filterColumnsOfTable});
+...
+
+```
+
+### Expandable row <span class='menuitem-badge'>new<span>
+
+The `o-table-row-expandable` component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It's necessary to wrap the content of your template with the `<ng-template let-row></ng-template>` tag and add the template definition inside.
+
+*Ontimize Web* provides two posibilities for attaching child rows to a parent row in the `o-table`.
+* Simple template
+* A template with context
+
+**Simple template**
+
+The example below makes use of *simple template*, the content of the child row in this example is defined by the `ng-template` with the `let-row` attribute so that exposes the variable `row` in the template to show the information.
+
+```html
+ <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+      title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
+      query-rows="10" fixed-header="yes">
+      <o-table-row-expandable>
+        <ng-template let-row>
+          <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="30%"><strong>{% raw %}{{'ADDRESS' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ADDRESS}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'COUNTRY' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.COUNTRY}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'STATE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.STATE}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'ZIPCODE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ZIPCODE}}{% endraw %}</span>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="20%"><strong>{% raw %}{{'EMAIL' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.EMAIL}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'PHONE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.PHONE}}{% endraw %}</span>
+            </div>
+          </o-column>
+        </ng-template>
+      </o-table-row-expandable>
+
+    </o-table>
+```
+
+![Row expanded]({{ "/images/components/tabla/row-expanded.png" | absolute_url }}){: .comp-example-img}
+
+**A template with context**
+
+It is possible to define a *template with context*, so that if the defined template contains a component (such as o-table, o-list, o-chart and o-grid), this context provide functionalities like parent-keys and query the component data automatically when the row is expanded, for example.
+
+>NOTE: It is necessary define `targets` input and `[data]="row"` to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with `[data]="row"`
+
+```html
+<o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+  title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
+  store-state="false" query-rows="10" fixed-header="yes">
+  <o-table-row-expandable>
+    <ng-template let-row>
+      <o-expandable-container [targets]="[accountsTable]" [data]="row">
+        <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
+          columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
+          title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" pageable="no" insert-button="no" delete-button="no"
+          detail-mode="none">
+          <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
+            thousand-separator="." decimal-separator=",">
+          </o-table-column>
+        </o-table>
+      </o-expandable-container>
+    </ng-template>
+  </o-table-row-expandable>
+</o-table>
+```
+
 ## Demo
+
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table){:target="_blank"}.
