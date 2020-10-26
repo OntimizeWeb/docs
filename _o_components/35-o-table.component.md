@@ -1207,11 +1207,13 @@ It is possible to define a *template with context*, so that if the defined templ
 </o-table>
 ```
 
+
+![Row expanded with a template with context]({{ "/images/components/tabla/row-expanded-context.png" | absolute_url }}){: .comp-example-img}
+
 ### Autoadjust <span class='menuitem-badge'>new<span>
 
 The `o-table` component supports automatically adjust to the content of the column setting `auto-adjust = yes`. This means that it will always take up the minimum width required to present its content.
 
-<h3 class="grey-color">Example</h3>
 <h3 class="grey-color">Example</h3>
 ```html
  <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
