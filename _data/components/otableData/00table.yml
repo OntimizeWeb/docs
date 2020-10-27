@@ -193,7 +193,7 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not to auto adjust column width to its content. Default: false"
+  description: "Indicates whether or not to auto adjust column width to its content."
 }]
 
 outputs: [{
