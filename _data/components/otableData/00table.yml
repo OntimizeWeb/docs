@@ -188,6 +188,12 @@ attributes: [{
   default: "no",
   required: "",
   description: "Indicates whether or not to show the filter by column icon in the table header by default"
+},{
+  name: "auto-adjust",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to auto adjust column width to its content."
 }]
 
 outputs: [{

@@ -1043,7 +1043,7 @@ Where <b>format-selected</b> is the same as in the first request and <b>file-id<
 <br>
 If you want to customize the download end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
 </p>
-<p>In the following example you ca see the download api end point method.</p>
+<p>In the following example you can see the download api end point method.</p>
 
 ```java
 @GetMapping(value = "/{extension}/{id}")
@@ -1206,6 +1206,65 @@ It is possible to define a *template with context*, so that if the defined templ
   </o-table-row-expandable>
 </o-table>
 ```
+
+
+![Row expanded with a template with context]({{ "/images/components/tabla/row-expanded-context.png" | absolute_url }}){: .comp-example-img}
+
+### Autoadjust <span class='menuitem-badge'>new<span>
+
+The `o-table` component supports automatically adjust to the content of the column setting `auto-adjust = yes`. This means that it will always take up the minimum width required to present its content.
+
+
+<h3 class="grey-color">Example</h3>
+```html
+ <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
+    columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
+    visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
+    row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes" query-rows="25" auto-adjust="yes">
+    <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
+    <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image"
+      image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+    </o-table-column>
+    <o-table-column attr="NAME" title="NAME" orderable="no"></o-table-column>
+    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+    <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
+      <o-table-cell-renderer-service service="customers" entity="customerType"
+        value-column="DESCRIPTION" translate="no"
+        columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
+      </o-table-cell-renderer-service>
+    </o-table-column>
+  </o-table>
+```
+
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust.png" | absolute_url }}){: .comp-example-img}
+
+There is a possibility that the content is **large** and the result is not what is expected like the example shown below.
+
+![Table width autoadjust]({{ "/images/components/tabla/table-autoadjust-overflow-hidden.PNG" | absolute_url }}){: .comp-example-img}
+
+However, if you want to control similar case, you can do so by configuring `auto-adjust="yes"` width several options such as:
+* `horizontal-scroll=yes`
+* `multiline=yes`
+* `max-width` of the `o-table-column`.
+
+1. In the next case we have applied `horizontal-scroll=yes` and  `auto-adjust="yes"`, the result would be the following.
+
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
+<!-- </div> -->
+
+{:start="2"}
+2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following..
+
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
+
+{:start="3"}
+3. In the next case we have applied `max-width="300px"` in `o-table-column` and  `auto-adjust="yes"`, the result would be the following..
+
+```html
+<o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
+```
+
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
 
 ## Theming
 ### The table headers
