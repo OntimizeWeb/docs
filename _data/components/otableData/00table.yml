@@ -176,6 +176,12 @@ attributes: [{
   default: "",
   required: "",
   description: "Adds the CSS class or classes returned by the provided function to the table rows whose data and index are provided "
+},{
+  name: "filter-column-active-by-default",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the filter by column icon in the table header by default"
 }]
 
 outputs: [{
@@ -221,5 +227,16 @@ methods: [{
   type: "method",
   parameters: "any[]",
   description: "Returns the table renderer data."
+},{
+  name: "reinitialize()",
+  type: "method",
+  parameters: "OTableInitializationOptions",
+  description: "Allow reinitialize table options adding options "
+},{
+  name: "toogleRowExpandable()",
+  type: "method",
+  parameters: "row:data, rowIndex:number, event:Event",
+  description: "Allow to expand or collapse the expandable row."
 }
 ]
+

@@ -30,7 +30,7 @@ To define a table, it is necessary to define the columns
 
 You can define it as follows:
 - Using the input `columns`, adding the columns separated by ';'.
-- Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the API.
+- Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the **API**.
 
 With `visible-columns` you can indicate which columns will be visible.
 
@@ -205,7 +205,13 @@ Additionally, you can specify default filter function to be applied when the use
 
 ### Filtering by columns
 
-It is posible to configure filtering by columns with the `o-table-columns-filter` component, adding filterable columns separated by ‘;’ in its `columns` property.
+It is posible to configure filtering by columns as follows:
+- Using the input columns, adding the columns separated by ‘;’.
+- Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
+
+This option will be available in table menu by default. However, you can configure it is allways available in table header with `filter-column-active-by-default= 'yes'`.
+
+![Filter by Column]({{ "/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
 
 <h3 class="grey-color">Example</h3>
 
@@ -214,10 +220,26 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
     fxFlex layout-padding attr="accounts" title="ACCOUNTS"
-    sort-columns="ANID:DESC"  query-on-init="true"
-    quick-filter="yes"   filter-case-sensitive="true" >
+    sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
+    <o-table-columns-filter columns="OFFICEID;NAME" ></o-table-columns-filter>
 
-    <o-table-columns-filter columns="OFFICEID;ACCOUNTTYP" ></o-table-columns-filter>
+    ...
+
+</o-table>
+```
+
+<h3 class="grey-color">Example with o-table-columns-filter-column component</h3>
+
+```html
+<o-table service="branches" entity="account" keys="ACCOUNTID"
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
+    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
+    <o-table-columns-filter>
+      <o-table-columns-filter-column attr="OFFICEID"> </o-table-columns-filter-column>
+      <o-table-columns-filter-column attr="ACCOUNTTYP" sort="desc"> </o-table-columns-filter-column>
+    </o-table-columns-filter>
 
     ...
 
@@ -232,9 +254,8 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
 | custom| Allows filtering by a form control
 
 
-
-
 ![Filtering columns mode]({{ "/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
+
 
 
 ### Custom filter
@@ -569,7 +590,7 @@ For example:
 
 *Boolean*
 
-The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="CLOSED" title="CLOSED">
@@ -596,7 +617,7 @@ The configuration is similar to the renderer boolean. The following example uses
 *Date*
 
 The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add
-`type="date" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the API.
+`type="date" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes" (editionStarted)="editionStarted($event)"
@@ -606,7 +627,7 @@ The configuration is similar to the renderer date. The following example uses th
 
 *Integer*
 
-The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
@@ -618,7 +639,7 @@ The configuration is similar to the renderer integer. The following example uses
 *Real*
 
 The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add
-`type="currency" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the API.
+`type="currency" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the **API**.
 
  ```html
  <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
@@ -629,7 +650,7 @@ The configuration is similar to the renderer real. The following example uses th
 
 *Text*
 
-The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
  ```html
     <o-table-column attr="NAME" title="NAME">
@@ -1106,6 +1127,86 @@ You can customize the tooltip styles by redefining the class `o-table-cell-toolt
 Note: If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
 
 
+When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want `o-table`  to update the display to reflect these changes. This function is provided for that purpose.For more information see the API.
+
+```javascript
+...
+const columnsOfTable= 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS';
+const filterColumnsOfTable= 'NAME;EMAIL';
+
+this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTable, filterColumns:filterColumnsOfTable});
+...
+
+```
+
+### Expandable row <span class='menuitem-badge'>new<span>
+
+The `o-table-row-expandable` component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It's necessary to wrap the content of your template with the `<ng-template let-row></ng-template>` tag and add the template definition inside.
+
+*Ontimize Web* provides two posibilities for attaching child rows to a parent row in the `o-table`.
+* Simple template
+* A template with context
+
+**Simple template**
+
+The example below makes use of *simple template*, the content of the child row in this example is defined by the `ng-template` with the `let-row` attribute so that exposes the variable `row` in the template to show the information.
+
+```html
+ <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+      title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
+      query-rows="10" fixed-header="yes">
+      <o-table-row-expandable>
+        <ng-template let-row>
+          <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="30%"><strong>{% raw %}{{'ADDRESS' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ADDRESS}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'COUNTRY' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.COUNTRY}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'STATE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.STATE}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'ZIPCODE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ZIPCODE}}{% endraw %}</span>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="20%"><strong>{% raw %}{{'EMAIL' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.EMAIL}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'PHONE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.PHONE}}{% endraw %}</span>
+            </div>
+          </o-column>
+        </ng-template>
+      </o-table-row-expandable>
+
+    </o-table>
+```
+
+![Row expanded]({{ "/images/components/tabla/row-expanded.png" | absolute_url }}){: .comp-example-img}
+
+**A template with context**
+
+It is possible to define a *template with context*, so that if the defined template contains a component (such as o-table, o-list, o-chart and o-grid), this context provide functionalities like parent-keys and query the component data automatically when the row is expanded, for example.
+
+>NOTE: It is necessary define `targets` input and `[data]="row"` to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with `[data]="row"`
+
+```html
+<o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+  title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
+  store-state="false" query-rows="10" fixed-header="yes">
+  <o-table-row-expandable>
+    <ng-template let-row>
+      <o-expandable-container [targets]="[accountsTable]" [data]="row">
+        <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
+          columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
+          title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" pageable="no" insert-button="no" delete-button="no"
+          detail-mode="none">
+          <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
+            thousand-separator="." decimal-separator=",">
+          </o-table-column>
+        </o-table>
+      </o-expandable-container>
+    </ng-template>
+  </o-table-row-expandable>
+</o-table>
+```
+
 ## Demo
+
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table){:target="_blank"}.
