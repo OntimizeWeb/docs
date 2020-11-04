@@ -1236,6 +1236,7 @@ First, create a Sass `mixin` that accepts an Angular Material color theme and ou
 ```
 
 >**Note: using the mat-color function to extract colors from a palette.**
+
 {:start="2"}
 2. Include the theme mixin in your application
 
