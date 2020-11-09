@@ -7,18 +7,19 @@ permalink: /charts/overview/
 
 ## Introduction
 
-The **Ontimize Web Charts** is an an implementation of nvD3 and d3 charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
+The **Ontimize Web Charts** is an an implementation of [nvD3](https://nvd3.org/){:target="_blank"} and [D3](https://d3js.org/){:target="_blank"} charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
 
-Below you can see all list to the charts 
+Below you can see a list with all available chart types:
+
 * **Line Charts**
-    * Line Chart
-    * Line + Bar Chart
+    * [Line Chart]({{ base_path }}/charts/configuration/linechart/)
+    * [Line + Bar Chart]({{ base_path }}/charts/configuration/linebarchart/)
     * Parallel coordinates Chart
     * Ohlc Chart
 
 * **Bar Charts**
-    * Dicrete Bar Chart
-    * Multi Bar Chart
+    * [Dicrete Bar Chart]({{ base_path }}/charts/configuration/discretebarchart/)
+    * [Multi Bar Chart]({{ base_path }}/charts/configuration/multibarchart/)
     * Multi Bar Horizontal Chart
     * Bullet Chart
 
@@ -38,8 +39,10 @@ Below you can see all list to the charts
     * Radial Percent Chart
 
 * **Other Charts**
-    * Donut Chart
-    * Pie Chart
+    * [Donut Chart]({{ base_path }}/charts/configuration/donutchart/)
+    * [Pie Chart]({{ base_path }}/charts/configuration/piechart/)
     * Candlestick bar Chart
-    * Gauge Space Chart
     * Force Direct Graph
+
+
+You can check running examples of each type [here](https://try.imatia.com/ontimizeweb/v8/charts/main/home){:target="_blank"}.

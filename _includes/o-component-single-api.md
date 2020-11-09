@@ -80,7 +80,11 @@
 
 
   {% if componentData.attributes %}
-  <h3 class="grey-color">Inputs</h3>
+    {% if componentData.chart %}
+      <h3 class="grey-color">Chart Parameters</h3>
+    {% else %}
+      <h3 class="grey-color">Inputs</h3>
+    {% endif %}
     {% assign emptyColumns = '' | split: '|' %}
     {% assign requiredInputs = '' | split: '|' %}
 
@@ -166,6 +170,7 @@
   {% endif %}
 
   {% endif %}
+
 
 
   {% if componentData.inheritedOutputs %}
