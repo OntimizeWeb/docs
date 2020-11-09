@@ -164,13 +164,13 @@
       color: #333;
       background-color: #f5f5f5;
       border-color: #ddd;
-
       border-bottom: 0;
-
+      
       padding: 10px 15px;
       border-bottom: 1px solid transparent;
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
+      cursor: pointer;
     }
 
     .panel-title {
@@ -183,6 +183,7 @@
 
   .panel-body {
     padding: 15px;
+    font-size: 14px;
   }
 
   .panel {

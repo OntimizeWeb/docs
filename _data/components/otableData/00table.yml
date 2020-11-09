@@ -165,6 +165,12 @@ attributes: [{
   required: "",
   description: "Mode export data"
 },{
+  name: "visible-export-dialog-buttons",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Visible buttons in export dialog, separated by ';'"
+  },{
   name: "show-filter-option",
   type: "no | false | yes | true",
   default: "yes",
