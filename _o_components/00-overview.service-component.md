@@ -38,3 +38,13 @@ Form service components extends this behaviour and go one step forward, they all
 ```
 
 In this example there is a form for linking users and roles, the roles the user may be linked with depend on the type of the user. The user type is part of the user information queried in the first combo. Notice that the the parent keys attribute for the roles combo has an alias and a column defined for the alias. This will make the roles component to look for the value of its parent key in the component with attr `user` and it will take the `user_type` column value as its parent key value.
+
+The construction of dependant list-pickers is the same as done in the combo component. The first one is the selector of users, this will be the one that affects the second one.
+
+```html
+<o-form>
+    <o-list-picker attr="user" label="User" keys="user_id" columns="user_id;user_name;user_type"></o-list-picker>
+    <o-list-picker attr="role" label="Role" keys="role_id" columns="role_id;role_name;profile_id"
+        parent-keys="user_type_id:user[user_type]"></o-list-picker>
+</o-form>
+```

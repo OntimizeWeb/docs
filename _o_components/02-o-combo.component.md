@@ -89,3 +89,7 @@ OntimizeWeb offers the `oLocker` directive to the `o-combo` that should to lock 
 
 Note you can configure the mode of the locker, there are two modes to block, *disable* and *load* mode. The mode by default is *load*. You can configure  delay service start with `oLockerDelay` attribute, by default this value is the *250ms*.
 
+
+## Filtering
+
+You can check how to construct dependant combos [here]({{ base_path }}/components/input/overviewservice/). You will need the attribute parent-keys to achieve this. 
