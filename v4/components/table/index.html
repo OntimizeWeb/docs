@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-03T09:28:57-05:00">
+  <meta property="article:published_time" content="2020-11-10T06:32:12-05:00">
 
 
 
@@ -850,7 +850,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 03, 2020">
+    <meta itemprop="datePublished" content="November 10, 2020">
     
 
     <div class="page__inner-wrap">
@@ -962,6 +962,10 @@
       <li><a href="#columns-multiple-sorting" id="markdown-toc-columns-multiple-sorting">Columns multiple sorting</a></li>
       <li><a href="#tooltip-in-columns" id="markdown-toc-tooltip-in-columns">Tooltip in columns</a></li>
       <li><a href="#expandable-row-new" id="markdown-toc-expandable-row-new">Expandable row <span class="menuitem-badge">new<span></span></span></a></li>
+    </ul>
+  </li>
+  <li><a href="#theming" id="markdown-toc-theming">Theming</a>    <ul>
+      <li><a href="#the-table-headers" id="markdown-toc-the-table-headers">The table headers</a></li>
     </ul>
   </li>
   <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
@@ -2212,6 +2216,70 @@ If you want to customize the download end point, please check the <a href="#cust
   <span class="nt">&lt;/o-table-row-expandable&gt;</span>
 <span class="nt">&lt;/o-table&gt;</span>
 </code></pre></div></div>
+<h2 id="theming">Theming</h2>
+<h3 id="the-table-headers">The table headers</h3>
+
+<p>You can customize the tables changing the color of the headers.
+For example with the primary palette by following the steps below.</p>
+
+<ol>
+  <li>Define the style of mat-header-cell in a “theme file”</li>
+</ol>
+
+<p>First, create a Sass <code class="language-plaintext highlighter-rouge">mixin</code> that accepts an Angular Material color theme and outputs the color-specific styles for the component.</p>
+
+<p><em>custom-row-header-theme.scss</em></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span> <span class="nt">Import</span> <span class="nt">library</span> <span class="nt">functions</span> <span class="nt">for</span> <span class="nt">theme</span> <span class="nt">creation</span><span class="o">.</span>
+<span class="k">@import</span> <span class="s2">'~@angular/material/theming'</span><span class="p">;</span>
+
+<span class="k">@mixin</span> <span class="n">custom-row-header-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="nt">Extract</span> <span class="nt">the</span> <span class="nt">palettes</span> <span class="nt">you</span> <span class="nt">need</span> <span class="nt">from</span> <span class="nt">the</span> <span class="nt">theme</span> <span class="nt">definition</span><span class="o">.</span>
+  <span class="err">$</span><span class="nt">primary</span><span class="o">:</span> <span class="nt">map-get</span><span class="o">(</span><span class="err">$</span><span class="nt">theme</span><span class="o">,</span> <span class="nt">primary</span><span class="o">);</span>
+  <span class="err">$</span><span class="nt">accent</span><span class="o">:</span> <span class="nt">map-get</span><span class="o">(</span><span class="err">$</span><span class="nt">theme</span><span class="o">,</span> <span class="nt">accent</span><span class="o">);</span>
+
+  <span class="o">//</span> <span class="nt">Define</span> <span class="nt">the</span> <span class="nt">styles</span> <span class="nt">that</span> <span class="nt">affect</span> <span class="nt">the</span> <span class="nt">table</span> <span class="nt">header</span> <span class="nt">by</span> <span class="nt">the</span> <span class="nt">theme</span>
+  <span class="nc">.o-table</span> <span class="nc">.o-table-body</span> <span class="nc">.mat-table</span> <span class="nc">.mat-header-roww</span><span class="p">{</span>
+      <span class="err">.mat-header-cell</span> <span class="err">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="n">mat-color</span><span class="p">(</span><span class="err">$</span><span class="n">primary</span><span class="p">);</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="n">mat-color</span><span class="p">(</span><span class="err">$</span><span class="n">primary</span><span class="p">,</span> <span class="n">default-contrast</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note: using the mat-color function to extract colors from a palette.</strong></p>
+</blockquote>
+
+<ol start="2">
+  <li>Include the theme mixin in your application</li>
+</ol>
+
+<p>Use the Sass <code class="language-plaintext highlighter-rouge">@include </code>keyword to include a component’s theme mixin wherever you’re already including Angular Material’s built-in theme mixins.</p>
+
+<p><strong>app.scss</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/</span>
+
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'</span><span class="p">;</span>
+<span class="c">/*
+* After define theme, it is necessary to transfer color to Ontimize Web framework
+*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">o-material-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+
+<span class="c">/*
+* Propagate theme to custom component definition.
+*/</span>
+<span class="k">@import</span> <span class="s2">'../../app/shared/custom-row-header-theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">custom-row-header-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/v4/images/components/tabla/customization.png" alt="Theming your table" class="comp-example-img" /></p>
 
 <h2 id="demo">Demo</h2>
 
@@ -2558,7 +2626,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -4602,6 +4674,71 @@ If you want to customize the download end point, please check the <a href="#cust
         
   </tr>
       
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>visible-export-dialog-buttons</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Visible buttons in export dialog, separated by ‘;’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
       </tbody>
   </table>
 
@@ -4890,7 +5027,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -6194,7 +6335,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -6454,7 +6599,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -6653,7 +6802,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -6783,7 +6936,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -7177,7 +7334,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -7506,7 +7667,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -7669,7 +7834,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -8323,7 +8492,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -8750,7 +8923,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -9209,7 +9386,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -9571,7 +9752,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -9888,7 +10073,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -10090,7 +10279,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -10546,7 +10739,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -11030,7 +11227,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -11579,7 +11780,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -11721,7 +11926,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -11945,7 +12154,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -12207,7 +12420,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -12664,7 +12881,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -13083,7 +13304,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -13630,7 +13855,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -13743,7 +13972,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -13905,7 +14138,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     <p>No additional inputs</p>
   
@@ -13984,7 +14221,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -14424,7 +14665,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -15124,7 +15369,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -15434,7 +15683,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -15716,7 +15969,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -16564,7 +16821,7 @@ If you want to customize the download end point, please check the <a href="#cust
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-03T09:28:57-05:00">November 03, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-10T06:32:12-05:00">November 10, 2020</time></p>
         
       </footer>
 

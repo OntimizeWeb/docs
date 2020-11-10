@@ -7455,6 +7455,7 @@ img.mfp-img {
   border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  cursor: pointer;
 }
 .faq-posts .panel-default .panel-title {
   margin-top: 0;
@@ -7464,6 +7465,7 @@ img.mfp-img {
 }
 .faq-posts .panel-body {
   padding: 15px;
+  font-size: 14px;
 }
 .faq-posts .panel {
   margin-bottom: 0;
