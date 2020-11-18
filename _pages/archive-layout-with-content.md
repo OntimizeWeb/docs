@@ -2,6 +2,7 @@
 title: "Archive Layout with Content"
 layout: archive
 permalink: /archive-layout-with-content/
+search_exclude: true
 ---
 
 A variety of common markup showing how the theme styles them.
@@ -66,8 +67,8 @@ Do It Live
 
 ## Unordered Lists (Nested)
 
-  * List item one 
-      * List item one 
+  * List item one
+      * List item one
           * List item one
           * List item two
           * List item three
@@ -81,8 +82,8 @@ Do It Live
 
 ## Ordered List (Nested)
 
-  1. List item one 
-      1. List item one 
+  1. List item one
+      1. List item one
           1. List item one
           2. List item two
           3. List item three
