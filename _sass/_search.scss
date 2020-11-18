@@ -2,10 +2,6 @@
 // Search input and autocomplete
 //
 
-//
-// Spacing
-//
-
 $spacing-unit: 1rem; // 1rem == 16px
 
 $spacers: ( sp-0: 0, sp-1: $spacing-unit * 0.25, sp-2: $spacing-unit * 0.5, sp-3: $spacing-unit * 0.75, sp-4: $spacing-unit, sp-5: $spacing-unit * 1.5, sp-6: $spacing-unit * 2, sp-7: $spacing-unit * 2.5, sp-8: $spacing-unit * 3, sp-9: $spacing-unit * 3.5, sp-10: $spacing-unit * 4, ) !default;
@@ -38,42 +34,27 @@ $transition-duration: 400ms;
   position: relative;
   z-index: 2;
   flex-grow: 1;
-  height: $sp-10;
-  padding: $sp-2;
   transition: padding linear #{$transition-duration / 2};
-  @include mq(md) {
-    position: relative !important;
-    width: auto !important;
-    height: 100% !important;
-    padding: 0;
-    transition: none;
-  }
+  width: auto !important;
+  padding: 0;
+  margin: 0 .5em;
 }
 
 .search-input-wrap {
   position: relative;
   z-index: 1;
-  height: $sp-8;
+  height: 100%;
   overflow: hidden;
-  //border-radius: $border-radius;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
   transition: height linear #{$transition-duration / 2};
-  @include mq(md) {
-    position: absolute;
-    width: 100%;
-    max-width: $search-results-width;
-    height: 100% !important;
-    border-radius: 0;
-    box-shadow: none;
-    transition: width ease $transition-duration;
-  }
+
 }
 
 .search-input {
   position: absolute;
   width: 100%;
-  height: 100%;
-  padding: $sp-2 $gutter-spacing-sm $sp-2 #{$gutter-spacing-sm + $sp-5};
+  padding: $sp-2 $gutter-spacing-sm $sp-2 #{$gutter-spacing-sm + $sp-4};
   font-size: 16px;
   background-color: $search-background-color;
   border-top: 0;
@@ -81,20 +62,13 @@ $transition-duration: 400ms;
   border-bottom: 0;
   border-left: 0;
   border-radius: 0;
-  @include mq(md) {
-    padding-top: $gutter-spacing-sm;
-    padding-bottom: $gutter-spacing-sm;
-    padding-left: #{$gutter-spacing + $sp-5};
-    font-size: 14px;
-    background-color: $body-background-color;
-    transition: padding-left linear #{$transition-duration / 2};
-  }
+  height: 100%;
 
   &:focus {
     outline: 0;
 
     + .search-label .search-icon {
-      color: $link-color;
+      color: #000000;
     }
   }
 }
@@ -103,17 +77,13 @@ $transition-duration: 400ms;
   position: absolute;
   display: flex;
   height: 100%;
-  padding-left: $gutter-spacing-sm;
-  @include mq(md) {
-    padding-left: $gutter-spacing;
-    transition: padding-left linear #{$transition-duration / 2};
-  }
+  padding-left: $sp-2;
 
   .search-icon {
-    width: #{$sp-4 * 1.2};
-    height: #{$sp-4 * 1.2};
     align-self: center;
-    color: $grey-dk-000;
+    color: $orange;
+    font-size: 16px;
+
   }
 }
 
@@ -122,27 +92,17 @@ $transition-duration: 400ms;
   left: 0;
   display: none;
   width: 100%;
-  max-height: calc(100% - #{$sp-10});
   overflow-y: auto;
+  overflow-x: hidden;
   background-color: $search-background-color;
-  // border-bottom-right-radius: $border-radius;
-  // border-bottom-left-radius: $border-radius;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
-  @include mq(md) {
-    top: 100%;
-    width: $search-results-width;
-    max-height: calc(100vh - 200%) !important;
-  }
+
 }
 
 .search-results-list {
   padding-left: 0;
   margin-bottom: $sp-1;
   list-style: none;
-  // @include fs-4;
-  // @include mq(md) {
-  //    @include fs-3;
-  // }
 }
 
 .search-results-list-item {
@@ -150,13 +110,18 @@ $transition-duration: 400ms;
   margin: 0;
 }
 
+a.search-result {
+  padding: $sp-1 $sp-3;
+}
+
 .search-result {
   display: block;
-  padding: $sp-1 $sp-3;
+
+  margin: 0;
 
   &.active,
   &:hover {
-    background-color: $feedback-color;
+    background-color: color($feedback-color,0.5);
   }
 }
 
@@ -164,12 +129,11 @@ $transition-duration: 400ms;
   display: block;
   padding-top: $sp-2;
   padding-bottom: $sp-2;
-  @include mq(sm) {
-    display: inline-block;
-    width: 40%;
-    padding-right: $sp-2;
-    vertical-align: top;
-  }
+  display: inline-block;
+  width: 40%;
+  padding-right: $sp-2;
+  vertical-align: top;
+
 }
 
 .search-result-doc {
@@ -179,17 +143,10 @@ $transition-duration: 400ms;
 
   &.search-result-doc-parent {
     opacity: .5;
-    // @include fs-3;
-    // @include mq(md) {
-    //    @include fs-2;
-    // }
   }
 
   .search-result-icon {
-    width: $sp-4;
-    height: $sp-4;
     margin-right: $sp-2;
-    color: $link-color;
     flex-shrink: 0;
   }
 
@@ -199,8 +156,9 @@ $transition-duration: 400ms;
 }
 
 .search-result-section {
-  margin-left: #{$sp-4 + $sp-2};
+  margin-left: #{$sp-4 + $sp-1};
   word-wrap: break-word;
+  color: $orange;
 }
 
 .search-result-rel-url {
@@ -210,27 +168,17 @@ $transition-duration: 400ms;
   color: $search-result-preview-color;
   text-overflow: ellipsis;
   white-space: nowrap;
-  // @include fs-1;
+  font-size: 12px;
 }
 
 .search-result-previews {
-  display: block;
-  padding-top: $sp-2;
-  padding-bottom: $sp-2;
-  padding-left: $sp-4;
-  margin-left: $sp-2;
-  color: $search-result-preview-color;
-  word-wrap: break-word;
-  // border-left: $border;
-  // border-left-color: $border-color;
-  // @include fs-2;
-  // @include mq(sm) {
-  //   display: inline-block;
-  //   width: 60%;
-  //   padding-left: $sp-2;
-  //   margin-left: 0;
-  //   vertical-align: top;
-  // }
+  display: inline-block;
+  width: 60%;
+  padding-left: $sp-2;
+  margin-left: 0;
+  vertical-align: top;
+  border-left: 1px solid $border-color;
+  font-size: 12px;
 }
 
 .search-result-preview + .search-result-preview {
@@ -239,11 +187,12 @@ $transition-duration: 400ms;
 
 .search-result-highlight {
   font-weight: bold;
+
 }
 
 .search-no-result {
   padding: $sp-2 $sp-3;
-  //@include fs-3;
+  font-size: $type-size-6;
 }
 
 .search-button {
@@ -275,38 +224,22 @@ $transition-duration: 400ms;
 
 .search-active {
   .search {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     padding: 0;
   }
 
   .search-input-wrap {
-    height: $sp-10;
     border-radius: 0;
-    // @include mq(md) {
-    //   width: $search-results-width;
-    //   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
-    // }
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
   }
 
   .search-input {
     background-color: $search-background-color;
-    // @include mq(md) {
-    //   padding-left: 2.3rem;
-    // }
-  }
-
-  .search-label {
-    // @include mq(md) {
-    //   padding-left: .6rem;
-    // }
   }
 
   .search-results {
     display: block;
+    font-size: $type-size-8;
+    max-height: 80vh;
   }
 
   .search-overlay {
@@ -315,18 +248,8 @@ $transition-duration: 400ms;
     opacity: 1;
     transition: opacity ease $transition-duration, width 0s, height 0s;
   }
-  // @include mq(md) {
-  //   .main {
-  //     position: fixed;
-  //     right: 0;
-  //     left: 0;
-  //   }
-  // }
 
   .main-header {
     padding-top: $sp-10;
-    // @include mq(md) {
-    //   padding-top: 0;
-    // }
   }
 }
