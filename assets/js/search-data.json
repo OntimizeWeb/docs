@@ -19,6 +19,13 @@ layout: none
   {%- for page in pages -%}
     {%- if page.title and page.search_exclude != true -%}
       {%- assign page_content = page.content -%}
+     {% if page.comp !='' %}
+      {% assign component = site.data.components[page.comp]%}
+      {% capture component_api %}
+        {% include o-component-single-api.md component = component %}
+      {% endcapture  %}
+      {%- assign page_content = page.content  | append:  component_api  -%}
+    {%- endif -%}
       {%- assign heading_level = site.search.heading_level | default: 2 -%}
       {%- for j in (2..heading_level) -%}
         {%- assign tag = '<h' | append: j -%}
@@ -50,7 +57,7 @@ layout: none
   "{{ i }}": {
         "doc": {{ page.title | jsonify }},
         "title": {{ title | jsonify }},
-        "content": {{ content | replace: '</h', ' . </h' | replace: '<hr', ' . <hr' | replace: '</p', ' . </p' | replace: '<ul', ' . <ul' | replace: '</ul', ' . </ul' | replace: '<ol', ' . <ol' | replace: '</ol', ' . </ol' | replace: '</tr', ' . </tr' | replace: '<li', ' | <li' | replace: '</li', ' | </li' | replace: '</td', ' | </td' | replace: '<td', ' | <td' | replace: '</th', ' | </th' | replace: '<th', ' | <th' | strip_html | remove: 'Table of contents' | normalize_whitespace | replace: '. . .', '.' | replace: '. .', '.' | replace: '| |', '|' | append: ' ' | jsonify }},
+        "content": {{ content | replace: '</h', ' . </h' | replace: '<hr', ' . <hr' | replace: '</p', ' . </p' | replace: '<ul', ' . <ul' | replace: '</ul', ' . </ul' | replace: '<ol', ' . <ol' | replace: '</ol', ' . </ol' | replace: '</tr', ' . </tr' | replace: '<li', ' | <li' | replace: '</li', ' | </li' | replace: '</td', ' | </td' | replace: '<td', ' | <td' | replace: '</th', ' | </th' | replace: '<th', ' | <th' | strip_html | remove: 'Table of contents' | remove: '|' | normalize_whitespace | replace: '. . .', '.' | replace: '. .', '.' | replace: '| |', '|' | append: ' ' | jsonify }},
         "url": "{{ url | absolute_url }}",
         "relUrl": "{{ url }}"
       }
@@ -61,7 +68,7 @@ layout: none
   "{{ i }}": {
         "doc": {{ page.title | jsonify}},
         "title": {{ page.title | jsonify}},
-        "content": {{ parts[0] | replace: '</h', ' . </h' | replace: '<hr', ' . <hr' | replace: '</p', ' . </p' | replace: '<ul', ' . <ul' | replace: '</ul', ' . </ul' | replace: '<ol', ' . <ol' | replace: '</ol', ' . </ol' | replace: '</tr', ' . </tr' | replace: '<li', ' | <li' | replace: '</li', ' | </li' | replace: '</td', ' | </td' | replace: '<td', ' | <td' | replace: '</th', ' | </th' | replace: '<th', ' | <th' | strip_html | remove: 'Table of contents' | normalize_whitespace | replace: '. . .', '.' | replace: '. .', '.' | replace: '| |', '|' | append: ' ' | jsonify }},
+        "content": {{ parts[0] | replace: '</h', ' . </h' | replace: '<hr', ' . <hr' | replace: '</p', ' . </p' | replace: '<ul', ' . <ul' | replace: '</ul', ' . </ul' | replace: '<ol', ' . <ol' | replace: '</ol', ' . </ol' | replace: '</tr', ' . </tr' | replace: '<li', ' | <li' | replace: '</li', ' | </li' | replace: '</td', ' | </td' | replace: '<td', ' | <td' | replace: '</th', ' | </th' | replace: '<th', ' | <th' | strip_html | remove: 'Table of contents' | remove: '|' | normalize_whitespace | replace: '. . .', '.' | replace: '. .', '.' | replace: '| |', '|' | append: ' ' | jsonify }},
         "url": "{{ page.url | absolute_url }}",
         "relUrl": "{{ page.url }}"
       }
