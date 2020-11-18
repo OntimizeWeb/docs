@@ -12,11 +12,27 @@
 
 {% if componentData %}
 
-{% assign inputsColumns = "Name|Description|Default" | split: "|" %} 
-{% assign outputsColumns = "Name|Description" | split: "|" %} 
-{% assign methodsColumns = "Name|Description|Parameters|Returns" | split: "|" %} 
+{% assign inputsColumns = "Name|Description|Default" | split: "|" %}
+{% assign outputsColumns = "Name|Description" | split: "|" %}
+{% assign methodsColumns = "Name|Description|Parameters|Returns" | split: "|" %}
 
 <script type="text/javascript">
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+  window.onload = function(){
+    console.log(getUrlVars()["tabSearch"]);
+    if(getUrlVars()["tabSearch"]=='api'){
+      var clickEvent = new Event('click'); // Create the event.
+      document.getElementById('tabApi').dispatchEvent(clickEvent);
+    }
+  };
+
   function openTab(evt, tabName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -44,7 +60,7 @@
 <!-- Tab links -->
 <div class="o-tab">
   <button class="o-tablinks active" onclick="openTab(event, 'overview')">Overview</button>
-  <button class="o-tablinks" onclick="openTab(event, 'api')">API</button>
+  <button id="tabApi" class="o-tablinks" onclick="openTab(event, 'api')">API</button>
 </div>
 
 <!-- OVERVIEW -->
@@ -56,10 +72,10 @@
     {{ componentData.description | markdownify }}
   {% endif %}
 
-  
+
   {% if componentData.example %}
     <h3 class="grey-color">Example</h3>
-    ```html 
+    ```html
       {{ componentData.example | markdownify }}
     ```
   {% endif %}
@@ -69,12 +85,11 @@
 
 <!-- API -->
 <div id="api" class="o-tabcontent">
-
   {% include o-component-single-api.md component=componentData %}
 
   {% if componentData.extraComponents %}
   {% assign extraComp = componentData.extraComponents %}
-    {% assign filenameArray = "" | split:"|"  %} 
+    {% assign filenameArray = "" | split:"|"  %}
     {% for files_hash in site.data.components[extraComp] %}
       {% assign filenameArray = filenameArray | push: files_hash[0] %}
     {% endfor %}
