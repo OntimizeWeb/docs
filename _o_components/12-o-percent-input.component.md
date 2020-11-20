@@ -1,11 +1,7 @@
 ---
-permalink: /components/input/percent/
+permalink: /components/input/percent/overview
 title: "Percent input"
 comp: percentInput
-<<<<<<< HEAD
-under_construction: false
-=======
->>>>>>> b11e89a5... Remove tab propertie
 ---
 
 {% include base_path %}

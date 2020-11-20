@@ -1,7 +1,8 @@
 ---
-permalink: /components/input/text/
+permalink: /components/input/text/overview
 title: "Text input"
 comp: textInput
+tab: overview
 ---
 
 {% include base_path %}

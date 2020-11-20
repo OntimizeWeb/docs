@@ -1,7 +1,8 @@
 ---
-permalink: /components/input/password/
+permalink: /components/input/password/overview
 title: "Password input"
 comp: passwordInput
+tab: overview
 ---
 
 {% include base_path %}

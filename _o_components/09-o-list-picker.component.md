@@ -1,7 +1,8 @@
 ---
-permalink: /components/input/listpicker/
+permalink: /components/input/listpicker/overview
 title: "List picker"
 comp: listPicker
+tab: overview
 ---
 
 {% include base_path %}
@@ -11,7 +12,7 @@ The `o-list-picker` component is used in [forms]({{ base_path }}/components/form
 
 The list picker component is automatically registered on its parent `o-form`, which provides the value for the list picker programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
-This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the optoins on the list and each element of the data array must be an object with at least one key/value pair. 
+This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the optoins on the list and each element of the data array must be an object with at least one key/value pair.
 
 The data array can be provided in two ways:
 * Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
@@ -55,4 +56,4 @@ Note you can configure the mode of the locker, there are two modes to block, *di
 
 ## Filtering
 
-You can check how to construct dependant list-pickers [here]({{ base_path }}/components/input/overviewservice/). You will need the attribute parent-keys to achieve this. 
+You can check how to construct dependant list-pickers [here]({{ base_path }}/components/input/overviewservice/). You will need the attribute parent-keys to achieve this.

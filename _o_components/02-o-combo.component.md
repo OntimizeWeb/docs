@@ -1,11 +1,7 @@
 ---
-permalink: /components/input/combo/
+permalink: /components/input/combo/overview
 title: "Combo"
 comp: combo
-<<<<<<< HEAD
-under_construction: false
-=======
->>>>>>> b11e89a5... Remove tab propertie
 ---
 
 {% include base_path %}
@@ -33,7 +29,7 @@ The data array can be provided in two ways:
 
 ## Multiple selection
 
-The `o-combo` doesn't allow multiple selection by default, you can configure the multiple selection by setting the value **yes** to the `multiple` attribute. This will allow the user to select multiple values at once. 
+The `o-combo` doesn't allow multiple selection by default, you can configure the multiple selection by setting the value **yes** to the `multiple` attribute. This will allow the user to select multiple values at once.
 
 ![Multiple selection]({{ "/images/components/inputs/o-combo-multiple.png" | absolute_url }}){: .comp-example-img}
 
@@ -54,11 +50,11 @@ You can customize the combo label configuring the `multiple-trigger-label` attri
 ```html
   <o-form editable-detail="no" show-header="no">
     <o-combo #combo attr="combo-multiple2" label="Country" [static-data]="getDataArray()"
-     [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" 
+     [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value"
      required="yes" read-only="false" layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
 
     <o-combo #combo attr="combo-multiple-disabled" enabled="no" label="Country" [static-data]="getDataArray()"
-     [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" 
+     [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value"
      required="yes" read-only="false" layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
   </o-form>
 ```
@@ -95,4 +91,4 @@ Note you can configure the mode of the locker, there are two modes to block, *di
 
 ## Filtering
 
-You can check how to construct dependant combos [here]({{ base_path }}/components/input/overviewservice/). You will need the attribute parent-keys to achieve this. 
+You can check how to construct dependant combos [here]({{ base_path }}/components/input/overviewservice/). You will need the attribute parent-keys to achieve this.

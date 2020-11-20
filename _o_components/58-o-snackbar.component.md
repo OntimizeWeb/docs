@@ -1,7 +1,8 @@
 ---
-permalink: /components/snackbar/
+permalink: /components/snackbar/overview
 title: "SnackBar"
 comp: snackbar
+tab: overview
 ---
 
 {% include base_path %}

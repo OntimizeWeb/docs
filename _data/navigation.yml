@@ -123,87 +123,87 @@ components:
   - title: Input
     children:
       - title: "Overview"
-        url: /components/input/overview/
+        url: /components/input/overview/overview
         order: "1"
         class: "overview"
       - title: "Text"
-        url: /components/input/text/
+        url: /components/input/text/overview
         order: "2"
       - title: "Integer"
-        url: /components/input/integer/
+        url: /components/input/integer/overview
         order: "2"
       - title: "Hour"
-        url: /components/input/hour/
+        url: /components/input/hour/overview
         order: "2"
       - title: "Real"
-        url: /components/input/real/
+        url: /components/input/real/overview
         order: "2"
       - title: "Percentage"
-        url: /components/input/percent/
+        url: /components/input/percent/overview
         order: "2"
       - title: "Currency"
-        url: /components/input/currency/
+        url: /components/input/currency/overview
         order: "2"
       - title: "Date"
-        url: /components/input/date/
+        url: /components/input/date/overview
         order: "2"
       - title: "Date range <span class='menuitem-badge'>new<span>"
-        url: /components/input/daterange/
+        url: /components/input/daterange/overview
         order: "2"
       - title: "NIF"
-        url: /components/input/nif/
+        url: /components/input/nif/overview
         order: "2"
       - title: "Email"
-        url: /components/input/email/
+        url: /components/input/email/overview
         order: "2"
       - title: "Password"
-        url: /components/input/password/
+        url: /components/input/password/overview
         order: "2"
       - title: "Textarea"
-        url: /components/input/textarea/
+        url: /components/input/textarea/overview
         order: "2"
       - title: "Time"
-        url: /components/input/time/
+        url: /components/input/time/overview
         order: "2"
       - title: "HTML"
-        url: /components/input/html/
+        url: /components/input/html/overview
         order: "2"
       - title: "File"
-        url: /components/input/file/
+        url: /components/input/file/overview
         order: "2"
       - title: "Checkbox"
-        url: /components/input/checkbox/
+        url: /components/input/checkbox/overview
         order: "2"
       - title: "Combo"
-        url: /components/input/combo/
+        url: /components/input/combo/overview
         order: "2"
       - title: "List picker"
-        url: /components/input/listpicker/
+        url: /components/input/listpicker/overview
         order: "2"
         children:
           - title: "List picker dialog"
-            url: /listpicker/listpickerdialog/
+            url: /listpicker/listpickerdialog/overview
       - title: "Radio"
-        url: /components/input/radio/
+        url: /components/input/radio/overview
         order: "2"
       - title: "Slide toggle"
-        url: /components/input/slidetoggle/
+        url: /components/input/slidetoggle/overview
         order: "2"
       - title: "Slider"
-        url: /components/input/slider/
+        url: /components/input/slider/overview
         order: "2"
 
   - title: Button
     children:
       - title: "Button"
-        url: /components/button/
+        url: /components/button/overview
       - title: "Button toggle"
         url: /components/buttontoggle/
 
   - title: Data
     children:
       - title: "Form"
-        url: /components/form/
+        url: /components/form/overview
         children:
           - title: "Detail form"
             url: /components/form/detail/
@@ -212,7 +212,7 @@ components:
       - title: "DataTable <small>(deprecated)</small>"
         url: /components/datatable/
       - title: "Table"
-        url: /components/table/
+        url: /components/table/overview
         children:
           - title: "Table buttons"
             url: '/components/table/buttons/'

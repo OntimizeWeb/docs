@@ -1,12 +1,7 @@
 ---
-permalink: /components/button
+permalink: /components/button/overview
 title: "Button"
 comp: button
-<<<<<<< HEAD
-parent: Button
-grand_parent: Components
-=======
->>>>>>> b11e89a5... Remove tab propertie
 ---
   The `o-button` component is a wrapper for Angular Material buttons. It allows add buttons to your application and configure them easily.
 

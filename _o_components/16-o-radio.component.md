@@ -1,7 +1,8 @@
 ---
-permalink: /components/input/radio/
+permalink: /components/input/radio/overview
 title: "Radio"
 comp: radio
+tab: overview
 ---
 
 {% include base_path %}

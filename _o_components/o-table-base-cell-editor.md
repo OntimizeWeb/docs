@@ -1,7 +1,8 @@
 ---
-permalink: /components/table/obasetablecelleditor/
+permalink: /components/table/obasetablecelleditor/overview
 title: "OBaseTableCellEditor"
 comp: obasetablecelleditor
+tab: overview
 ---
 {% include base_path %}
 
@@ -12,7 +13,7 @@ All cell editor in OntimizeWeb extend the *OBaseTableCellEditor class*. This cla
 Below we will show an example of the custom cell editor.
 
 
-Example 
+Example
 ```html
 import { Component, Injector, ViewChild, TemplateRef } from '@angular/core';
 import { OBaseTableCellEditor, OTableColumnComponent } from 'ontimize-web-ngx';
