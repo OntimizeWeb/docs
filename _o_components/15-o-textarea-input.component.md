@@ -1,8 +1,8 @@
 ---
-permalink: /components/input/textarea/
+permalink: /components/input/textarea/overview
 title: "Textarea input"
 comp: textareaInput
-under_construction: false
+tab: overview
 ---
 
 {% include base_path %}

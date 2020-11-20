@@ -1,7 +1,8 @@
 ---
-permalink: /components/input/slidetoggle/
+permalink: /components/input/slidetoggle/overview
 title: "Slide toggle"
 comp: slidetoggle
+tab: overview
 ---
 
 {% include base_path %}

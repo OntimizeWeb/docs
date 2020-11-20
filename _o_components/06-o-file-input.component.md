@@ -1,7 +1,8 @@
 ---
-permalink: /components/input/file/
+permalink: /components/input/file/overview
 title: "File input"
 comp: fileInput
+tab: overview
 ---
 
 {% include base_path %}

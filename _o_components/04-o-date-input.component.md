@@ -1,8 +1,8 @@
 ---
-permalink: /components/input/date/
+permalink: /components/input/date/overview
 title: "Date input"
 comp: dateInput
-under_construction: false
+tab: overview
 ---
 
 {% include base_path %}

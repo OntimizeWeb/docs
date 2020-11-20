@@ -1,7 +1,8 @@
 ---
-permalink: /components/grid/
+permalink: /components/grid/overview
 title: "Grid"
 comp: grid
+tab: overview
 ---
 
 {% include base_path %}
@@ -10,7 +11,7 @@ comp: grid
 ## Introduction
 The `o-grid` component is used to display a two-dimensional list view that arranges cells into grid-based layout.
 
-For adding a grid component to your application you must insert the `o-grid` in your page and include a `o-grid-item` component wrapping the desired grid item type you want to display. 
+For adding a grid component to your application you must insert the `o-grid` in your page and include a `o-grid-item` component wrapping the desired grid item type you want to display.
 
 ![Grid component]({{ "/images/components/grid/basic-grid.png" | absolute_url }}){: .comp-example-img width='65%'}
 
@@ -156,7 +157,7 @@ By default the filtering is local, you can enable remote filtering setting `page
 ```
 
 ```js
-... 
+...
 const self_2 = this;
 //overwrite filterdData method
 this.grid.filterData = function (value?: string, loadMore?: boolean) {
@@ -171,7 +172,7 @@ this.grid.filterData = function (value?: string, loadMore?: boolean) {
         return self.getQuickFilterColumns().some(col => {
           //Add this code to filter by the formatted value of the dates
           let valueOfColumn = item[col];
-          
+
           switch (this.sqlTypes[col]) {
             case 93:
               if (Util.isDefined(item[col])) {
@@ -192,7 +193,7 @@ this.grid.filterData = function (value?: string, loadMore?: boolean) {
 }
 ...
 
-``` 
+```
 
 ## Fixed header and footer
 The `o-grid` component supports *fixed header* and *footer* setting `fixed-header="yes"` when its content is greater than its own height. For that, you must set the height of the grid, using, for example `[ngStyle]="{height: 400px;}"`. By default, it's disabled.

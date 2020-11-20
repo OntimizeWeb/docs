@@ -1,7 +1,8 @@
 ---
-permalink: /components/formlayoutmanager/
+permalink: /components/formlayoutmanager/overview
 title: "Form layout manager"
 comp: formLayoutManager
+tab: overview
 ---
 
 {% include base_path %}
@@ -68,13 +69,13 @@ It is possible to configure dialog mode options with the `o-form-layout-dialog-o
 <o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="NAME" separator=""
   attr="o-form-layout-branches-home">
 
-  <o-form-layout-dialog-options width="600px" height="400px" 
+  <o-form-layout-dialog-options width="600px" height="400px"
   disable-close="false" ></o-form-layout-dialog-options>
 
   ...
 
 </o-form-layout-manager>
-``` 
+```
 
 
 

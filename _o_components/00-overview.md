@@ -1,7 +1,8 @@
 ---
-permalink: /components/input/overview/
+permalink: /components/input/overview/overview
 title: "Form data components"
 comp: "overview"
+tab : "overview"
 ---
 {% include base_path %}
 {% include toc %}
@@ -108,12 +109,12 @@ Form data components allow you to show or hide label with `label-visible` attrib
 
 >**NOTE**: This attribute *not* apply in `o-checkbox`,`o-radio`, `o-slider` and `o-html-input`.
 
-## Required 
+## Required
 A input can be market with a `required` attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the `hide-required-marker` property on *form data component*.
 
 ```html
 <o-text-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" required="yes" [data]="getValue()"></o-text-input>
-<o-text-input attr="input4" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" required="yes" 
+<o-text-input attr="input4" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" required="yes"
 hide-required-marker="yes" [data]="getValue()"></o-text-input>
 ```
 

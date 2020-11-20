@@ -1,8 +1,8 @@
 ---
-permalink: /components/input/checkbox/
+permalink: /components/input/checkbox/overview
 title: "Checkbox"
 comp: checkbox
-under_construction: false
+tab : overview
 ---
 
 {% include base_path %}

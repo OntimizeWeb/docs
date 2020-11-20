@@ -1,8 +1,8 @@
 ---
-permalink: /components/input/daterange/
+permalink: /components/input/daterange/overview
 title: "Date range input"
 comp: dateRangeInput
-under_construction: false
+tab: overview
 ---
 
 {% include base_path %}
@@ -19,7 +19,7 @@ The date range input is automatically registered on its parent `o-form`, which p
 ```html
 <o-form editable-detail="no" show-header="no" layout-direction="row">
    <o-daterange-input attr="daterange1" label="Date range" [data]="getValue()"> </o-daterange-input>
-   <o-daterange-input attr="daterange2" label="Date range" read-only="no"  required="yes" [data]="getValue()"></o-daterange-input>  
+   <o-daterange-input attr="daterange2" label="Date range" read-only="no"  required="yes" [data]="getValue()"></o-daterange-input>
    <o-daterange-input attr="daterange3" label="Date range" enabled="no" [data]="getValue()"></o-daterange-input>
 </o-form>
 ```
@@ -59,7 +59,7 @@ The `o-daterange-input` supports date Moments formats setting, all you have to d
 
 ![Format int daterang input component]({{ "/images/components/inputs/o-daterange-format.png" | absolute_url }}){: .comp-example-img}
 
-```html 
+```html
 <div fxLayout="column" layout-padding>
   <o-daterange-input attr="daterange" label="Date range" read-only="no"
     required="yes" [data]="getValue()" format="LL" separator=" to " text-input-enabled="no">
@@ -94,7 +94,7 @@ Specifying startKey and endKey would have different model.  For example, the mod
 ```html
 <o-daterange-input attr="daterange" label="Date range" read-only="no" startKey="start" endKey="end"
   required="yes" [data]="getValue()" format="LL" separator=" to "  text-input-enabled="no">
-</o-daterange-input> 
+</o-daterange-input>
 
 ```
 
@@ -111,7 +111,7 @@ The `o-daterange-input` have available 7 predefined date ranges that you can sel
 ![Touch UI in date range]({{ "/images/components/inputs/o-daterange-touchui.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-<o-daterange-input attr="daterange" label="Date range" read-only="no"  required="yes" 
+<o-daterange-input attr="daterange" label="Date range" read-only="no"  required="yes"
 [data]="getValue()" show-ranges="true" separator=" to " touch-ui="yes"></o-daterange-input>
 
 ```

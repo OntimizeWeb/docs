@@ -1,7 +1,8 @@
 ---
-permalink: /components/table/obasetablecellrenderer/
+permalink: /components/table/obasetablecellrenderer/overview
 title: "OBaseTableCellRenderer"
 comp: obasetablecellrenderer
+tab: overview
 ---
 {% include base_path %}
 

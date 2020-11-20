@@ -1,7 +1,8 @@
 ---
-permalink: /components/dialog/
+permalink: /components/dialog/overview
 title: "Dialog"
 comp: dialogLayout
+tab: overview
 ---
 
 {% include base_path %}
