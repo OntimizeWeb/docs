@@ -30,7 +30,7 @@ To define a table, it is necessary to define the columns
 
 You can define it as follows:
 - Using the input `columns`, adding the columns separated by ';'.
-- Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the API.
+- Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the **API**.
 
 With `visible-columns` you can indicate which columns will be visible.
 
@@ -205,7 +205,13 @@ Additionally, you can specify default filter function to be applied when the use
 
 ### Filtering by columns
 
-It is posible to configure filtering by columns with the `o-table-columns-filter` component, adding filterable columns separated by ‘;’ in its `columns` property.
+It is posible to configure filtering by columns as follows:
+- Using the input columns, adding the columns separated by ‘;’.
+- Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
+
+This option will be available in table menu by default. However, you can configure it is allways available in table header with `filter-column-active-by-default= 'yes'`.
+
+![Filter by Column]({{ "/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
 
 <h3 class="grey-color">Example</h3>
 
@@ -214,10 +220,26 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
     fxFlex layout-padding attr="accounts" title="ACCOUNTS"
-    sort-columns="ANID:DESC"  query-on-init="true"
-    quick-filter="yes"   filter-case-sensitive="true" >
+    sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
+    <o-table-columns-filter columns="OFFICEID;NAME" ></o-table-columns-filter>
 
-    <o-table-columns-filter columns="OFFICEID;ACCOUNTTYP" ></o-table-columns-filter>
+    ...
+
+</o-table>
+```
+
+<h3 class="grey-color">Example with o-table-columns-filter-column component</h3>
+
+```html
+<o-table service="branches" entity="account" keys="ACCOUNTID"
+    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+    visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
+    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
+    <o-table-columns-filter>
+      <o-table-columns-filter-column attr="OFFICEID"> </o-table-columns-filter-column>
+      <o-table-columns-filter-column attr="ACCOUNTTYP" sort="desc"> </o-table-columns-filter-column>
+    </o-table-columns-filter>
 
     ...
 
@@ -232,9 +254,8 @@ It is posible to configure filtering by columns with the `o-table-columns-filter
 | custom| Allows filtering by a form control
 
 
-
-
 ![Filtering columns mode]({{ "/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
+
 
 
 ### Custom filter
@@ -569,7 +590,7 @@ For example:
 
 *Boolean*
 
-The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the `o-table-cell-editor-boolean` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="CLOSED" title="CLOSED">
@@ -596,7 +617,7 @@ The configuration is similar to the renderer boolean. The following example uses
 *Date*
 
 The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add
-`type="date" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the API.
+`type="date" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="STARTDATE" title="STARTDATE" format="LL" type="date" editable="yes" (editionStarted)="editionStarted($event)"
@@ -606,7 +627,7 @@ The configuration is similar to the renderer date. The following example uses th
 
 *Integer*
 
-The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer integer. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
 ```html
   <o-table-column attr="NUMCARDS" title="NUMCARDS" class="o-table-column-centered">
@@ -618,7 +639,7 @@ The configuration is similar to the renderer integer. The following example uses
 *Real*
 
 The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add
-`type="currency" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the API.
+`type="currency" editable="yes"` in `o-table-column` component. To consult all the parameters of the editor see the **API**.
 
  ```html
  <o-table-column attr="BALANCE" title="BALANCE" editable="yes" type="currency" thousand-separator="." decimal-separator=","
@@ -629,7 +650,7 @@ The configuration is similar to the renderer real. The following example uses th
 
 *Text*
 
-The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the API.
+The configuration is similar to the renderer text. The following example uses the second option named before, adding the `o-table-cell-editor-integer` component inside the `o-table-column`. To consult all the parameters of the editor see the **API**.
 
  ```html
     <o-table-column attr="NAME" title="NAME">
@@ -1022,7 +1043,7 @@ Where <b>format-selected</b> is the same as in the first request and <b>file-id<
 <br>
 If you want to customize the download end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
 </p>
-<p>In the following example you ca see the download api end point method.</p>
+<p>In the following example you can see the download api end point method.</p>
 
 ```java
 @GetMapping(value = "/{extension}/{id}")
@@ -1105,7 +1126,208 @@ You can customize the tooltip styles by redefining the class `o-table-cell-toolt
 
 Note: If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
 
+### Reinitialize method
+
+When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want `o-table`  to update the display to reflect these changes. This function is provided for that purpose.For more information see the API.
+
+```javascript
+...
+const columnsOfTable= 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS';
+const filterColumnsOfTable= 'NAME;EMAIL';
+
+this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTable, filterColumns:filterColumnsOfTable});
+...
+
+```
+
+### Expandable row <span class='menuitem-badge'>new<span>
+
+The `o-table-row-expandable` component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It's necessary to wrap the content of your template with the `<ng-template let-row></ng-template>` tag and add the template definition inside.
+
+*Ontimize Web* provides two posibilities for attaching child rows to a parent row in the `o-table`.
+* Simple template
+* A template with context
+
+**Simple template**
+
+The example below makes use of *simple template*, the content of the child row in this example is defined by the `ng-template` with the `let-row` attribute so that exposes the variable `row` in the template to show the information.
+
+```html
+ <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+      title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="yes" detail-mode="none" export-button="no"
+      query-rows="10" fixed-header="yes">
+      <o-table-row-expandable>
+        <ng-template let-row>
+          <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="30%"><strong>{% raw %}{{'ADDRESS' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ADDRESS}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'COUNTRY' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.COUNTRY}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'STATE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.STATE}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'ZIPCODE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ZIPCODE}}{% endraw %}</span>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="14px">
+              <span fxFlex="20%"><strong>{% raw %}{{'EMAIL' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.EMAIL}}{% endraw %}</span>
+              <span fxFlex="20%"><strong>{% raw %}{{'PHONE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.PHONE}}{% endraw %}</span>
+            </div>
+          </o-column>
+        </ng-template>
+      </o-table-row-expandable>
+
+    </o-table>
+```
+
+![Row expanded]({{ "/images/components/tabla/row-expanded.png" | absolute_url }}){: .comp-example-img}
+
+**A template with context**
+
+It is possible to define a *template with context*, so that if the defined template contains a component (such as o-table, o-list, o-chart and o-grid), this context provide functionalities like parent-keys and query the component data automatically when the row is expanded, for example.
+
+>NOTE: It is necessary define `targets` input and `[data]="row"` to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with `[data]="row"`
+
+```html
+<o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
+  title="CUSTOMERS" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" detail-mode="none" export-button="no"
+  store-state="false" query-rows="10" fixed-header="yes">
+  <o-table-row-expandable>
+    <ng-template let-row>
+      <o-expandable-container [targets]="[accountsTable]" [data]="row">
+        <o-table #accountsTable service-type="DummyService" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
+          columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE" visible-columns="ACCOUNT;BALANCE;STARTDATE"
+          title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false" query-rows="6" pageable="no" insert-button="no" delete-button="no"
+          detail-mode="none">
+          <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
+            thousand-separator="." decimal-separator=",">
+          </o-table-column>
+        </o-table>
+      </o-expandable-container>
+    </ng-template>
+  </o-table-row-expandable>
+</o-table>
+```
+
+
+![Row expanded with a template with context]({{ "/images/components/tabla/row-expanded-context.png" | absolute_url }}){: .comp-example-img}
+
+### Autoadjust <span class='menuitem-badge'>new<span>
+
+The `o-table` component supports automatically adjust to the content of the column setting `auto-adjust = yes`. This means that it will always take up the minimum width required to present its content.
+
+
+<h3 class="grey-color">Example</h3>
+```html
+ <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
+    columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
+    visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
+    row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes" query-rows="25" auto-adjust="yes">
+    <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
+    <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image"
+      image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+    </o-table-column>
+    <o-table-column attr="NAME" title="NAME" orderable="no"></o-table-column>
+    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+    <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" editable="true">
+      <o-table-cell-renderer-service service="customers" entity="customerType"
+        value-column="DESCRIPTION" translate="no"
+        columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION">
+      </o-table-cell-renderer-service>
+    </o-table-column>
+  </o-table>
+```
+
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust.png" | absolute_url }}){: .comp-example-img}
+
+There is a possibility that the content is **large** and the result is not what is expected like the example shown below.
+
+![Table width autoadjust]({{ "/images/components/tabla/table-autoadjust-overflow-hidden.PNG" | absolute_url }}){: .comp-example-img}
+
+However, if you want to control similar case, you can do so by configuring `auto-adjust="yes"` width several options such as:
+* `horizontal-scroll=yes`
+* `multiline=yes`
+* `max-width` of the `o-table-column`.
+
+1. In the next case we have applied `horizontal-scroll=yes` and  `auto-adjust="yes"`, the result would be the following.
+
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
+<!-- </div> -->
+
+{:start="2"}
+2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following..
+
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
+
+{:start="3"}
+3. In the next case we have applied `max-width="300px"` in `o-table-column` and  `auto-adjust="yes"`, the result would be the following..
+
+```html
+<o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
+```
+
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
+
+## Theming
+### The table headers
+
+You can customize the tables changing the color of the headers.
+For example with the primary palette by following the steps below.
+
+1. Define the style of mat-header-cell in a "theme file"
+
+First, create a Sass `mixin` that accepts an Angular Material color theme and outputs the color-specific styles for the component.
+
+*custom-row-header-theme.scss*
+```css
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
+
+@mixin custom-row-header-theme($theme) {
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  // Define the styles that affect the table header by the theme
+  .o-table .o-table-body .mat-table .mat-header-roww{
+      .mat-header-cell {
+        background-color: mat-color($primary);
+        color: mat-color($primary, default-contrast);
+      }
+  }
+}
+```
+
+>**Note: using the mat-color function to extract colors from a palette.**
+
+2. Include the theme mixin in your application
+
+Use the Sass `@include `keyword to include a component's theme mixin wherever you're already including Angular Material's built-in theme mixins.
+
+**app.scss**
+```css
+/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
+
+@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+/*
+* After define theme, it is necessary to transfer color to Ontimize Web framework
+*/
+@import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
+@include o-material-theme($theme);
+
+/*
+* Propagate theme to custom component definition.
+*/
+@import '../../app/shared/custom-row-header-theme.scss';
+@include custom-row-header-theme($theme);
+
+```
+
+![Theming your table]({{ "/images/components/tabla/customization.png" | absolute_url }}){: .comp-example-img}
 
 ## Demo
+
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table){:target="_blank"}.

@@ -53,7 +53,13 @@
     </ul>
   {% endif %}
 
-  <h3 class="grey-color">Inputs</h3>
+
+  {% if componentAPI.chart %}
+    <h3 class="grey-color">Chart Parameters</h3>
+  {% else %}
+    <h3 class="grey-color">Inputs 123</h3>
+  {% endif %}
+  
   {% if componentAPI.attributes %}
     {% assign emptyColumns = '' | split: '|' %}
     {% assign requiredInputs = '' | split: '|' %}

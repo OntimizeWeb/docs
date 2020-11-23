@@ -11,7 +11,7 @@ Forms are the pillar of management applications. They are used in applications f
 
 The `o-form` component allows you to display data from the server and also insert, update and delete records in the database. This can be achived easily by configuring few attributes like `service` and `entity`. Check this and other attributes in the **API** section of this page.
 
-<!-- 
+<!--
 ## Example
 
 ```html
@@ -27,17 +27,30 @@ The `o-form` component allows you to display data from the server and also inser
 
 The `o-form` component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the [*detail form*](#detail-form) section. The common description of the different form modes is the following:
 
-### Read only mode
-
+* **Read only mode**:
 The read only mode is used for displaying data. In this mode the form components are not modifiable and the form toolbar shows the buttons to perform *CRUD* (Create, Read, Update and Delete) operations.
 
-### Edit mode
+* **Update mode**:
+The form component adopts the update mode when the data is about to be modified. In this mode the form components are modifiable and the form toolbar shows the buttons to accept or reject changes.
 
-The form component adopts the edition mode when the data is about to be modified. In this mode the form components are modifiable and the form toolbar shows the buttons to accept or reject changes.
-
-### Insert mode
-
+* **Insert mode**
 This is the mode used by the form component to perform creation operations. In this mode, all de form components are empty and modifiable. The form toolbar shows buttons to accept or reject the operation.
+
+There is use cases when it is necessary to perform any action right before or after the form changes from one mode to another. You can achieve this thanks to the events that the `o-form` emits before and after changing its mode. This events are the following: `beforeInsertMode`, `beforeUpdateMode`, `beforeInitialMode`, `onInsertMode`, `onUpdateMode` and `onInitialMode`.
+
+For example, you can listen to the `onInsertMode` of the `o-form` component in your HTML:
+
+```html
+<o-form (onInserMode)="performAction()">
+```
+
+And perform an action each time the event is emited:
+
+```javascript
+  performAction() {
+    alert("The form has changed to insert mode!")
+  }
+```
 
 ## Detail form
 

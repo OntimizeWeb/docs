@@ -2,7 +2,11 @@
 {% for file in files %}
   {% assign filename =  file[0] %}
   {% assign directive = include.folder[filename];%}  
-  {% if directive.directive %}
+  {% if  include.type=='directive' %}
   <li><a href="#{{directive.directive}}">{{directive.directive}}</a></li>
+  {% endif %}
+  {% if  include.type=='type' %}
+
+  <li><a href="#{{directive.type}}">{{directive.type}}</a></li>
   {% endif %}
 {% endfor %}
