@@ -198,7 +198,7 @@ components:
       - title: "Button"
         url: /components/button/overview
       - title: "Button toggle"
-        url: /components/buttontoggle/
+        url: /components/buttontoggle/overview
 
   - title: Data
     children:
@@ -235,50 +235,50 @@ components:
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
       - title: "Filter builder"
-        url: /components/filterbuilder/
+        url: /components/filterbuilder/overview
 
       - title: "Grid <span class='menuitem-badge'>new<span>"
-        url: /components/grid/
+        url: /components/grid/overview
       - title: "List"
-        url: /components/list/
+        url: /components/list/overview
   - title: Media
     children:
       - title: "Image"
-        url: /components/image/
+        url: /components/image/overview
 
   - title: Layout
     children:
       - title: "Containers"
-        url: /components/containers/
+        url: /components/containers/overview
       - title: "Dialog"
-        url: /components/dialog/
+        url: /components/dialog/overview
       - title: "App layout"
-        url: /components/applayout/
+        url: /components/applayout/overview
       - title: "Form layout mngr."
-        url: /components/formlayoutmanager/
+        url: /components/formlayoutmanager/overview
       - title: "Breadcrumb"
-        url: /components/breadcrumb/
+        url: /components/breadcrumb/overview
       - title: "SnackBar"
-        url: /components/snackbar/
+        url: /components/snackbar/overview
       - title: "Context menu"
-        url: /components/contextmenu/
+        url: /components/contextmenu/overview
   - title: Menu
     children:
       - title: "Overview"
-        url: /components/menu/
+        url: /components/menu/overview
         order: "1"
         class: "overview"
       - title: "Card menu layout"
-        url: /components/cardmenulayout/
+        url: /components/cardmenulayout/overview
         children:
           - title: "Card menu item"
-            url: /components/cardmenulayout/cardmenuitem/
+            url: /components/cardmenulayout/cardmenuitem/overview
         order: "2"
       - title: "Bar menu"
         url: /components/barmenu/overview
         order: "2"
       - title: "Side menu <small>(deprecated)</small>"
-        url: /components/sidemenu/
+        url: /components/sidemenu/overview
         order: "2"
 
 
