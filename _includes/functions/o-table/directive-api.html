@@ -2,12 +2,12 @@
 
 {% for file in files%}
   {% assign filename =  file[0] %}
-  {% assign componentAPI = include.folder[filename];%}  
+  {% assign componentAPI = include.folder[filename];%}
   {% if componentAPI.directive %}
-  <h2 id="{{ componentAPI.directive }}"> 
+  <h2 id="{{ componentAPI.directive }}">
     <span>{{ componentAPI.class }} </span>
     {% if componentAPI.extends %}
-      extends {{ componentAPI.extends }} 
+      extends {{ componentAPI.extends }}
     {% endif %}
   </h2>
   {% if componentAPI.directive %}
@@ -15,7 +15,7 @@
   {% endif %}
 
   {% if componentAPI.inherit_properties %}
-  <h3 class="grey-color">Inherited properties</h3>
+  <h3 class="grey-color" id="inherited-properties">Inherited properties</h3>
   <ul>
     {% assign inherit_properties = componentAPI.inherit_properties %}
 
@@ -23,7 +23,6 @@
     <li>
         from <a href="{{ base_path }}/components/{{inheritedObj.path}}/" rel="permalink">{{ inheritedObj.component }}:</a>
         <ul class="attributes-list">
-           
             {% assign sortedInheritedProperties = (inheritedObj.properties | sort: 'name') %}
             {% for inheritedAttr in sortedInheritedProperties %}
               <li> {{ inheritedAttr.name }} </li>
@@ -36,7 +35,7 @@
 {% endif %}
 
   {% if componentAPI.inheritedAttributes %}
-    <h3 class="grey-color">Inherited inputs</h3>
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
     <ul>
     {% assign sortedInheritedAttributes = (componentAPI.inheritedAttributes | sort: 'name') %}
       {% for inheritedObj in sortedInheritedAttributes %}
@@ -55,11 +54,11 @@
 
 
   {% if componentAPI.chart %}
-    <h3 class="grey-color">Chart Parameters</h3>
+    <h3 id="chart-parameters" class="grey-color">Chart Parameters</h3>
   {% else %}
-    <h3 class="grey-color">Inputs 123</h3>
+    <h3 id="inputs" class="grey-color">Inputs</h3>
   {% endif %}
-  
+
   {% if componentAPI.attributes %}
     {% assign emptyColumns = '' | split: '|' %}
     {% assign requiredInputs = '' | split: '|' %}
@@ -69,13 +68,13 @@
       {% assign emptyCol = componentAPI.attributes | where: columnKey, "" | size %}
       {% if emptyCol == componentAPI.attributes.size %}
         {% assign emptyColumns = emptyColumns | push: columnKey %}
-      {% endif %}     
+      {% endif %}
     {% endfor %}
     {% for attributeObject in componentAPI.attributes %}
       {% assign commonAttributeObject = site.data.components.common.attributes[attributeObject.name] | default : {} %}
       {% if attributeObject['required'] == 'yes' %}
         {% assign requiredInputs = requiredInputs | push: attributeObject['name'] %}
-      {% endif %} 
+      {% endif %}
       {% if commonAttributeObject['required'] == 'yes' %}
         {% assign requiredInputs = requiredInputs | push: attributeObject['name'] %}
       {% endif %}
@@ -151,9 +150,9 @@
     <p>No additional inputs</p>
   {% endif %}
 
-  
+
   {% if componentAPI.inheritedOutputs %}
-    <h3 class="grey-color">Inherited outputs</h3>
+    <h3 id="inherited-outputs" class="grey-color">Inherited outputs</h3>
     <ul>
       {% assign sortedInheritedOutputs = (componentAPI.inheritedOutputs | sort: 'name') %}
       {% for inheritedObj in sortedInheritedOutputs %}
@@ -171,7 +170,7 @@
   {% endif %}
 
   {% if componentAPI.outputs %}
-    <h3 class="grey-color">Outputs</h3>
+    <h3 id="outputs" class="grey-color">Outputs</h3>
     <table class="attributes-table mdl-data-table table-adaptable">
       <thead>
         <tr>
@@ -200,7 +199,7 @@
 
 
   {% if componentAPI.methods %}
-    <h3 class="grey-color">Methods</h3>
+    <h3 id="methods" class="grey-color">Methods</h3>
       {% for outputObject in componentAPI.methods %}
     <table>
       <thead>
@@ -208,7 +207,7 @@
         </thead>
       <tbody>
         <tr><td>{{outputObject['description']}}</td></tr>
-        
+
         {% if outputObject['parameters'] %}
         <tr><td><strong>Parameters</strong></td></tr>
         <tr><td>{{outputObject['parameters']}}</td></tr>
