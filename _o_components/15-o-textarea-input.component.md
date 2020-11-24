@@ -2,7 +2,10 @@
 permalink: /components/input/textarea/
 title: "Textarea input"
 comp: textareaInput
+<<<<<<< HEAD
 under_construction: false
+=======
+>>>>>>> b11e89a5... Remove tab propertie
 ---
 
 {% include base_path %}

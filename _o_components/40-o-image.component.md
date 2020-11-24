@@ -2,7 +2,10 @@
 permalink: /components/image/
 title: "Image"
 comp: image
+<<<<<<< HEAD
 under_construction: false
+=======
+>>>>>>> b11e89a5... Remove tab propertie
 ---
 {% include base_path %}
 {% include toc %}

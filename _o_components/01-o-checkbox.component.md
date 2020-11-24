@@ -2,7 +2,10 @@
 permalink: /components/input/checkbox/
 title: "Checkbox"
 comp: checkbox
+<<<<<<< HEAD
 under_construction: false
+=======
+>>>>>>> b11e89a5... Remove tab propertie
 ---
 
 {% include base_path %}

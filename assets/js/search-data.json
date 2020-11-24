@@ -19,8 +19,8 @@ layout: none
   {%- for page in pages -%}
     {%- if page.title and page.search_exclude != true -%}
       {%- assign page_content = page.content -%}
-
-     {% if page.comp !='' and page.tab =='api' %}
+      {% assign tabName = page.url | split:'/' | last %}
+      {% if page.comp !='' and tabName =='api' %}
       {% assign content = '' %}
        {% if page.comp =='table' %}
         {% capture component_table_api %}

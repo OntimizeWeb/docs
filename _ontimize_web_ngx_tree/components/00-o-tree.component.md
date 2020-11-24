@@ -1,5 +1,5 @@
 ---
-permalink: /tree/components/o-tree.component/
+permalink: /tree/components/o-tree.component/overview
 title: "Tree"
 comp: tree
 layout: o-component

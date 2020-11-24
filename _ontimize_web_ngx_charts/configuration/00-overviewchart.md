@@ -3,7 +3,7 @@ permalink: /charts/configuration/overview/overview
 title: "Overview"
 comp: overviewchart
 layout: o-component
-tab: overview
+
 ---
 
 {% include base_path %}

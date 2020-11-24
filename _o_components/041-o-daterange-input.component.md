@@ -2,7 +2,10 @@
 permalink: /components/input/daterange/
 title: "Date range input"
 comp: dateRangeInput
+<<<<<<< HEAD
 under_construction: false
+=======
+>>>>>>> b11e89a5... Remove tab propertie
 ---
 
 {% include base_path %}

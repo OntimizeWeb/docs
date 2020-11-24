@@ -4,6 +4,8 @@
 {% if componentData %}
  {% if componentData.title %}
   <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+  {% else %}
+  <h2 id="{{page.title}}" >{{ page.title }}</h2>
  {% endif %}
 
   {% if componentData.directive %}

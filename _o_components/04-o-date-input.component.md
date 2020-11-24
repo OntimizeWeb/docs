@@ -2,7 +2,10 @@
 permalink: /components/input/date/
 title: "Date input"
 comp: dateInput
+<<<<<<< HEAD
 under_construction: false
+=======
+>>>>>>> b11e89a5... Remove tab propertie
 ---
 
 {% include base_path %}

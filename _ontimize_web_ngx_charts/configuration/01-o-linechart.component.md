@@ -3,7 +3,7 @@ permalink: /charts/configuration/linechart/overview
 title: "Line Chart"
 comp: linechart
 layout: o-component
-tab: overview
+
 ---
 
 {% include base_path %}

@@ -17,7 +17,8 @@
   }
 </script>
 
-{% if page.tab=='api' %}
+{% assign tabName = page.url | split:'/' | last %}
+{% if tabName=='api' %}
   {% assign style_overview='display:none'%}
   {% assign style_api='display:block'%}
   {% assign api_class='active'%}
