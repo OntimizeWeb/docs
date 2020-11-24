@@ -22,16 +22,15 @@ layout: none
 
      {% if page.comp !='' and page.tab =='api' %}
       {% assign content = '' %}
-      {% assign component = site.data.components[page.comp]%}
-      {% if page.comp =='table' %}
+       {% if page.comp =='table' %}
         {% capture component_table_api %}
-          {% include o-component-table.md component = page.comp %}
+          {% include o-component-table.md comp = page.comp %}
         {% endcapture %}
         {%- assign page_content  = page_content | append: component_table_api -%}
 
       {% else %}
         {% capture component_api %}
-          {% include o-component-single-api.md component = component %}
+          {% include o-component-single.md comp = page.comp  %}
         {% endcapture %}
         {%- assign page_content  = page_content | append: component_api -%}
       {%- endif -%}
