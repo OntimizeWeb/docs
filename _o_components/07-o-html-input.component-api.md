@@ -2,7 +2,6 @@
 permalink: /components/input/html/api
 title: "HTML input"
 comp: HTMLInput
-tab: api
 ---
 
 {% include base_path %}

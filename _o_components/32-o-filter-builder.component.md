@@ -2,7 +2,6 @@
 permalink: /components/filterbuilder/overview
 title: "Filter builder"
 comp: filterbuilder
-tab: overview
 ---
 
 {% include base_path %}

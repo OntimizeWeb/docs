@@ -2,7 +2,6 @@
 permalink: /components/input/html/overview
 title: "HTML input"
 comp: HTMLInput
-tab: overview
 ---
 
 {% include base_path %}

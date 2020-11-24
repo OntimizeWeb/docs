@@ -338,9 +338,9 @@ ontimize_web_ngx_tree:
   - title: "Components"
     children:
       - title: "Tree"
-        url: /tree/components/o-tree.component/
+        url: /tree/components/o-tree.component/overview
       - title: "Tree node"
-        url: /tree/components/o-tree-node.component/
+        url: /tree/components/o-tree-node.component/overview
 
 ontimize_web_ngx_map:
   - title: "Getting Started"
@@ -361,5 +361,5 @@ ontimize_web_ngx_gallery:
   - title: "Components"
     children:
       - title: "Gallery"
-        url: /gallery/components/gallery/
+        url: /gallery/components/gallery/overview
 

@@ -2,7 +2,6 @@
 permalink: /components/input/checkbox/overview
 title: "Checkbox"
 comp: checkbox
-tab : overview
 ---
 
 {% include base_path %}

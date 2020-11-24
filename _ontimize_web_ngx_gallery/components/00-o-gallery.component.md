@@ -1,5 +1,5 @@
 ---
-permalink: /gallery/components/gallery/
+permalink: /gallery/components/gallery/overview
 title: "Gallery"
 comp: gallery
 layout: o-component
@@ -42,7 +42,7 @@ By itself, the `<o-gallery>` element does not render anything, it's necessary to
       }
     ];
     ...
-``` 
+```
 ### Options
 
 The `o-gallery` component allow multiple options for configurating with `gallery-options` input such as width, height, thumbnails configuration, preview  configuration, ...
@@ -52,7 +52,7 @@ The `o-gallery` component allow multiple options for configurating with `gallery
 ```
 
 ```
-... 
+...
   this.galleryImages = [
       {
         small: 'assets/images/photo1.jpg',
@@ -87,13 +87,13 @@ The `o-gallery` component allow multiple options for configurating with `gallery
       }
     ];
     ...
-``` 
+```
 
 #### Actions
 
 You can add "actions" to the gallery, it shows icons on the top right corner and trigger your custom method.
 
-Form example 
+Form example
 
 ```
 constructor(

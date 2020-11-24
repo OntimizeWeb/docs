@@ -2,7 +2,6 @@
 permalink: /components/barmenu/overview
 title: "Bar menu"
 comp: barMenu
-tab: overview
 ---
 
 {% include base_path %}

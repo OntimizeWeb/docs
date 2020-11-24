@@ -2,7 +2,6 @@
 permalink: /components/formlayoutmanager/overview
 title: "Form layout manager"
 comp: formLayoutManager
-tab: overview
 ---
 
 {% include base_path %}

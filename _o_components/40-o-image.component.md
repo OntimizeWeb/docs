@@ -2,7 +2,6 @@
 permalink: /components/image/overview
 title: "Image"
 comp: image
-tab: overview
 ---
 {% include base_path %}
 {% include toc %}

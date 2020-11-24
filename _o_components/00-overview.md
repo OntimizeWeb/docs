@@ -2,7 +2,6 @@
 permalink: /components/input/overview/overview
 title: "Form data components"
 comp: "overview"
-tab : "overview"
 ---
 {% include base_path %}
 {% include toc %}

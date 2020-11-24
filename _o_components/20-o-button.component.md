@@ -2,7 +2,6 @@
 permalink: /components/button/overview
 title: "Button"
 comp: button
-tab: overview
 ---
   The `o-button` component is a wrapper for Angular Material buttons. It allows add buttons to your application and configure them easily.
 

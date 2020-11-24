@@ -2,7 +2,6 @@
 permalink: /components/list/overview
 title: "List"
 comp: list
-tab: overview
 ---
 
 {% include base_path %}

@@ -2,7 +2,6 @@
 permalink: /components/input/slider/overview
 title: "Slider"
 comp: slider
-tab: overview
 ---
 
 {% include base_path %}

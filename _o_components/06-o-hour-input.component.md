@@ -2,7 +2,6 @@
 permalink: /components/input/hour/overview
 title: "Hour"
 comp: hour
-tab: overview
 ---
 
 {% include base_path %}

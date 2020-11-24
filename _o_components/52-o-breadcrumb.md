@@ -2,7 +2,6 @@
 permalink: /components/breadcrumb/overview
 title: "Breadcrumb"
 comp: breadcrumb
-tab: overview
 ---
 
 {% include base_path %}

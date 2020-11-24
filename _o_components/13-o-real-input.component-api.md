@@ -2,7 +2,6 @@
 permalink: /components/input/real/api
 title: "Real input"
 comp: realInput
-tab: api
 ---
 
 {% include base_path %}

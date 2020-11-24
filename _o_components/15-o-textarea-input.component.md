@@ -2,7 +2,6 @@
 permalink: /components/input/textarea/overview
 title: "Textarea input"
 comp: textareaInput
-tab: overview
 ---
 
 {% include base_path %}

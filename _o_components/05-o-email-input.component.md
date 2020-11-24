@@ -2,7 +2,6 @@
 permalink: /components/input/email/overview
 title: "Email input"
 comp: emailInput
-tab: overview
 ---
 
 {% include base_path %}

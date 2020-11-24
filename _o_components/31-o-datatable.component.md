@@ -2,7 +2,6 @@
 permalink: /components/datatable/overview
 title: "DataTable"
 comp: datatable
-tab: overview
 ---
 
 {% include base_path %}

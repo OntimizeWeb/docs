@@ -2,7 +2,6 @@
 permalink: /components/input/combo/overview
 title: "Combo"
 comp: combo
-tab: overview
 ---
 
 {% include base_path %}

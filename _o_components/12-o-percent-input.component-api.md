@@ -2,7 +2,6 @@
 permalink: /components/input/percent/api
 title: "Percent input"
 comp: percentInput
-tab: api
 ---
 
 {% include base_path %}

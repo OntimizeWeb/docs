@@ -2,7 +2,6 @@
 permalink: /components/input/email/api
 title: "Email input"
 comp: emailInput
-tab: api
 ---
 
 {% include base_path %}

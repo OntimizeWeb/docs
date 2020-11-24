@@ -2,7 +2,6 @@
 permalink: /components/table/obasetablecelleditor/overview
 title: "OBaseTableCellEditor"
 comp: obasetablecelleditor
-tab: overview
 ---
 {% include base_path %}
 

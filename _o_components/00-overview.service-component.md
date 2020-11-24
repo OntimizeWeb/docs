@@ -2,7 +2,6 @@
 permalink: /components/input/overviewservice/overview
 title: "Form service components"
 comp: "overviewService"
-tab: "overview"
 ---
 
 {% include base_path %}

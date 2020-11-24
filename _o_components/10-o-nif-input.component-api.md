@@ -2,7 +2,6 @@
 permalink: /components/input/nif/api
 title: "Nif input"
 comp: nifInput
-tab: api
 ---
 
 {% include base_path %}

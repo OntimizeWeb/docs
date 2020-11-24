@@ -2,7 +2,6 @@
 permalink: /components/input/integer/overview
 title: "Integer input"
 comp: integerInput
-tab: overview
 ---
 
 {% include base_path %}

@@ -2,7 +2,6 @@
 permalink: /components/form/overview
 title: "Form"
 comp: form
-tab: overview
 ---
 
 {% include base_path %}

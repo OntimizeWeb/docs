@@ -2,7 +2,6 @@
 permalink: /components/input/file/api
 title: "File input"
 comp: fileInput
-tab: api
 ---
 
 {% include base_path %}

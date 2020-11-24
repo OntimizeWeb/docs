@@ -2,7 +2,6 @@
 permalink: /components/input/daterange/overview
 title: "Date range input"
 comp: dateRangeInput
-tab: overview
 ---
 
 {% include base_path %}

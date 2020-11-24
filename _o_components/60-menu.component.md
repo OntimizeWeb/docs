@@ -2,7 +2,6 @@
 layout: single
 permalink: /components/menu/overview
 title: "Menu"
-tab: overview
 ---
 
 {% include base_path %}

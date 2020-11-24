@@ -2,7 +2,6 @@
 permalink: /components/input/listpicker/api
 title: "List picker"
 comp: listPicker
-tab: api
 ---
 
 {% include base_path %}

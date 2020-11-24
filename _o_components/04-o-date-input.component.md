@@ -2,7 +2,6 @@
 permalink: /components/input/date/overview
 title: "Date input"
 comp: dateInput
-tab: overview
 ---
 
 {% include base_path %}

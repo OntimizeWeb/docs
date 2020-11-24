@@ -2,7 +2,6 @@
 permalink: /components/input/text/api
 title: "Text input"
 comp: textInput
-tab: api
 ---
 
 {% include base_path %}

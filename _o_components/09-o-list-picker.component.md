@@ -2,7 +2,6 @@
 permalink: /components/input/listpicker/overview
 title: "List picker"
 comp: listPicker
-tab: overview
 ---
 
 {% include base_path %}

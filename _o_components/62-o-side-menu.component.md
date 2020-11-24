@@ -2,7 +2,6 @@
 permalink: /components/sidemenu/overview
 title: "Side menu"
 comp: sideMenu
-tab: overview
 ---
 
 {% include base_path %}

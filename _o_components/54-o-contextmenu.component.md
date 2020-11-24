@@ -2,7 +2,6 @@
 permalink: /components/contextmenu/overview
 title: "Context menu"
 comp: contextmenu
-tab: overview
 ---
 
 {% include base_path %}

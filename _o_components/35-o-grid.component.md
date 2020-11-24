@@ -2,7 +2,6 @@
 permalink: /components/grid/overview
 title: "Grid"
 comp: grid
-tab: overview
 ---
 
 {% include base_path %}

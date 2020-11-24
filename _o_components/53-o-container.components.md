@@ -2,7 +2,6 @@
 permalink: /components/containers/overview
 title: "Containers"
 comp: container
-tab: overview
 ---
 
 {% include base_path %}

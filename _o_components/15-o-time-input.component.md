@@ -2,7 +2,6 @@
 permalink: /components/input/time/overview
 title: "Time"
 comp: time
-tab: overview
 ---
 
 {% include base_path %}

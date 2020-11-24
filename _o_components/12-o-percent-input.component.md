@@ -2,7 +2,6 @@
 permalink: /components/input/percent/overview
 title: "Percent input"
 comp: percentInput
-tab: overview
 ---
 
 {% include base_path %}
