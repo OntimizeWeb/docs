@@ -99,7 +99,7 @@ function getUrlVars() {
       {% capture dataFileCapture %}
         {% include o-component-single-api.md component=dataFile %}
       {% endcapture %}
-  <h2 class="">{{ dataFile.title }}</h2>
+
       {{ dataFileCapture | replace: '    ', '' }}
     {% endfor %}
   {% endif %}

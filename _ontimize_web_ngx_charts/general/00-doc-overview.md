@@ -12,14 +12,14 @@ The **Ontimize Web Charts** is an an implementation of [nvD3](https://nvd3.org/)
 Below you can see a list with all available chart types:
 
 * **Line Charts**
-    * [Line Chart]({{ base_path }}/charts/configuration/linechart/)
+    * [Line Chart]({{ base_path }}/charts/configuration/linechart/overview)
     * [Line + Bar Chart]({{ base_path }}/charts/configuration/linebarchart/)
     * Parallel coordinates Chart
     * Ohlc Chart
 
 * **Bar Charts**
-    * [Dicrete Bar Chart]({{ base_path }}/charts/configuration/discretebarchart/)
-    * [Multi Bar Chart]({{ base_path }}/charts/configuration/multibarchart/)
+    * [Dicrete Bar Chart]({{ base_path }}/charts/configuration/discretebarchart/overview)
+    * [Multi Bar Chart]({{ base_path }}/charts/configuration/multibarchart/overview)
     * Multi Bar Horizontal Chart
     * Bullet Chart
 
@@ -39,8 +39,8 @@ Below you can see a list with all available chart types:
     * Radial Percent Chart
 
 * **Other Charts**
-    * [Donut Chart]({{ base_path }}/charts/configuration/donutchart/)
-    * [Pie Chart]({{ base_path }}/charts/configuration/piechart/)
+    * [Donut Chart]({{ base_path }}/charts/configuration/donutchart/overview)
+    * [Pie Chart]({{ base_path }}/charts/configuration/piechart/overview)
     * Candlestick bar Chart
     * Force Direct Graph
 

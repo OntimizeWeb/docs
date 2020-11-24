@@ -275,7 +275,7 @@ components:
             url: /components/cardmenulayout/cardmenuitem/
         order: "2"
       - title: "Bar menu"
-        url: /components/barmenu/
+        url: /components/barmenu/overview
         order: "2"
       - title: "Side menu <small>(deprecated)</small>"
         url: /components/sidemenu/
@@ -309,19 +309,19 @@ ontimize_web_ngx_charts:
   - title: "Configuration"
     children:
       - title: "Overview"
-        url: /charts/configuration/overview/
+        url: /charts/configuration/overview/overview
       - title: "Line Chart"
-        url: /charts/configuration/linechart/
+        url: /charts/configuration/linechart/overview
       - title: "Line + Bar Chart"
-        url: /charts/configuration/linebarchart/
+        url: /charts/configuration/linebarchart/overview
       - title: "Pie Chart"
-        url: /charts/configuration/piechart/
+        url: /charts/configuration/piechart/overview
       - title: "Donut Chart"
-        url: /charts/configuration/donutchart/
+        url: /charts/configuration/donutchart/overview
       - title: "Discrete Bar Chart"
-        url: /charts/configuration/discretebarchart/
+        url: /charts/configuration/discretebarchart/overview
       - title: "Multi Bar Chart"
-        url: /charts/configuration/multibarchart/
+        url: /charts/configuration/multibarchart/overview
   #- title: "Components"
   #  children:
   #    - title: "Chart"
