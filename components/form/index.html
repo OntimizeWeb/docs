@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-10T06:32:43-05:00">
+  <meta property="article:published_time" content="2020-11-24T01:37:46-05:00">
 
 
 
@@ -832,7 +832,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 10, 2020">
+    <meta itemprop="datePublished" content="November 24, 2020">
     
 
     <div class="page__inner-wrap">
@@ -911,12 +911,7 @@
 <nav class="toc">
     <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
 <ul class="toc__menu" id="markdown-toc">
-  <li><a href="#modes" id="markdown-toc-modes">Modes</a>    <ul>
-      <li><a href="#read-only-mode" id="markdown-toc-read-only-mode">Read only mode</a></li>
-      <li><a href="#edit-mode" id="markdown-toc-edit-mode">Edit mode</a></li>
-      <li><a href="#insert-mode" id="markdown-toc-insert-mode">Insert mode</a></li>
-    </ul>
-  </li>
+  <li><a href="#modes" id="markdown-toc-modes">Modes</a></li>
   <li><a href="#detail-form" id="markdown-toc-detail-form">Detail form</a></li>
   <li><a href="#form-container" id="markdown-toc-form-container">Form container</a></li>
   <li><a href="#form-layout-manager" id="markdown-toc-form-layout-manager">Form layout manager</a></li>
@@ -936,7 +931,7 @@
 
 <p>The <code class="language-plaintext highlighter-rouge">o-form</code> component allows you to display data from the server and also insert, update and delete records in the database. This can be achived easily by configuring few attributes like <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
 
-<!-- 
+<!--
 ## Example
 
 ```html
@@ -952,17 +947,34 @@
 
 <p>The <code class="language-plaintext highlighter-rouge">o-form</code> component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the <a href="#detail-form"><em>detail form</em></a> section. The common description of the different form modes is the following:</p>
 
-<h3 id="read-only-mode">Read only mode</h3>
+<ul>
+  <li>
+    <p><strong>Read only mode</strong>:
+The read only mode is used for displaying data. In this mode the form components are not modifiable and the form toolbar shows the buttons to perform <em>CRUD</em> (Create, Read, Update and Delete) operations.</p>
+  </li>
+  <li>
+    <p><strong>Update mode</strong>:
+The form component adopts the update mode when the data is about to be modified. In this mode the form components are modifiable and the form toolbar shows the buttons to accept or reject changes.</p>
+  </li>
+  <li>
+    <p><strong>Insert mode</strong>
+This is the mode used by the form component to perform creation operations. In this mode, all de form components are empty and modifiable. The form toolbar shows buttons to accept or reject the operation.</p>
+  </li>
+</ul>
 
-<p>The read only mode is used for displaying data. In this mode the form components are not modifiable and the form toolbar shows the buttons to perform <em>CRUD</em> (Create, Read, Update and Delete) operations.</p>
+<p>There is use cases when it is necessary to perform any action right before or after the form changes from one mode to another. You can achieve this thanks to the events that the <code class="language-plaintext highlighter-rouge">o-form</code> emits before and after changing its mode. This events are the following: <code class="language-plaintext highlighter-rouge">beforeInsertMode</code>, <code class="language-plaintext highlighter-rouge">beforeUpdateMode</code>, <code class="language-plaintext highlighter-rouge">beforeInitialMode</code>, <code class="language-plaintext highlighter-rouge">onInsertMode</code>, <code class="language-plaintext highlighter-rouge">onUpdateMode</code> and <code class="language-plaintext highlighter-rouge">onInitialMode</code>.</p>
 
-<h3 id="edit-mode">Edit mode</h3>
+<p>For example, you can listen to the <code class="language-plaintext highlighter-rouge">onInsertMode</code> of the <code class="language-plaintext highlighter-rouge">o-form</code> component in your HTML:</p>
 
-<p>The form component adopts the edition mode when the data is about to be modified. In this mode the form components are modifiable and the form toolbar shows the buttons to accept or reject changes.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">(onInserMode)=</span><span class="s">"performAction()"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
 
-<h3 id="insert-mode">Insert mode</h3>
+<p>And perform an action each time the event is emited:</p>
 
-<p>This is the mode used by the form component to perform creation operations. In this mode, all de form components are empty and modifiable. The form toolbar shows buttons to accept or reject the operation.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">performAction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">The form has changed to insert mode!</span><span class="dl">"</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="detail-form">Detail form</h2>
 
@@ -1176,7 +1188,9 @@
 
 
   
-  <h3 class="grey-color">Inputs</h3>
+    
+      <h3 class="grey-color">Inputs</h3>
+    
     
     
 
@@ -3364,6 +3378,7 @@
   
 
 
+
   
 
   
@@ -3415,7 +3430,7 @@
             
 
             <td class="" o-component-name>
-              <p>beforeGoEditMode</p>
+              <p>beforeGoEditMode (deprecated)</p>
  
               
             </td>
@@ -3426,7 +3441,85 @@
             
 
             <td class="" o-component-description>
-              <p>Event triggered befoe going to form edition mode</p>
+              <p>Event triggered befoe going to form edition mode<br />This event is <b>deprecated</b>, use <code class="language-plaintext highlighter-rouge">beforeUpdateMode</code> instead</p>
+ 
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
+              <p>beforeInitialMode</p>
+ 
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered before changing the form into initial mode</p>
+ 
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
+              <p>beforeInsertMode</p>
+ 
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered before changing the form into insert mode</p>
+ 
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
+              <p>beforeUpdateMode</p>
+ 
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered before changing the form into update mode</p>
  
               
             </td>
@@ -3519,6 +3612,32 @@
             
 
             <td class="" o-component-name>
+              <p>onInitialMode</p>
+ 
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered once the form has changed to initial mode</p>
+ 
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
               <p>onInsert</p>
  
               
@@ -3545,6 +3664,32 @@
             
 
             <td class="" o-component-name>
+              <p>onInsertMode</p>
+ 
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered once the form has changed to insert mode</p>
+ 
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
               <p>onUpdate</p>
  
               
@@ -3557,6 +3702,32 @@
 
             <td class="" o-component-description>
               <p>Event triggered when the data is updated</p>
+ 
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
+              <p>onUpdateMode</p>
+ 
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered once the form has changed to update mode</p>
  
               
             </td>
@@ -3722,7 +3893,9 @@
 
 
   
+
   <h3 class="grey-color">Inputs</h3>
+
 
 
 
@@ -3860,6 +4033,7 @@
   
 
 
+
   
 
   
@@ -3892,7 +4066,9 @@
 
 
   
+
   <h3 class="grey-color">Inputs</h3>
+
 
 
 
@@ -4179,6 +4355,7 @@
   
 
 
+
   
 
   
@@ -4209,7 +4386,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-10T06:32:43-05:00">November 10, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-24T01:37:46-05:00">November 24, 2020</time></p>
         
       </footer>
 

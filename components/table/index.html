@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-10T06:32:43-05:00">
+  <meta property="article:published_time" content="2020-11-24T01:37:46-05:00">
 
 
 
@@ -840,7 +840,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 10, 2020">
+    <meta itemprop="datePublished" content="November 24, 2020">
     
 
     <div class="page__inner-wrap">
@@ -951,6 +951,13 @@
       <li><a href="#column-titles-alignment" id="markdown-toc-column-titles-alignment">Column titles alignment</a></li>
       <li><a href="#columns-multiple-sorting" id="markdown-toc-columns-multiple-sorting">Columns multiple sorting</a></li>
       <li><a href="#tooltip-in-columns" id="markdown-toc-tooltip-in-columns">Tooltip in columns</a></li>
+      <li><a href="#reinitialize-method" id="markdown-toc-reinitialize-method">Reinitialize method</a></li>
+      <li><a href="#expandable-row-new" id="markdown-toc-expandable-row-new">Expandable row <span class="menuitem-badge">new<span></span></span></a></li>
+      <li><a href="#autoadjust-new" id="markdown-toc-autoadjust-new">Autoadjust <span class="menuitem-badge">new<span></span></span></a></li>
+    </ul>
+  </li>
+  <li><a href="#theming" id="markdown-toc-theming">Theming</a>    <ul>
+      <li><a href="#the-table-headers" id="markdown-toc-the-table-headers">The table headers</a></li>
     </ul>
   </li>
   <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
@@ -1040,7 +1047,7 @@
 <p>You can define it as follows:</p>
 <ul>
   <li>Using the input <code class="language-plaintext highlighter-rouge">columns</code>, adding the columns separated by ‘;’.</li>
-  <li>Using the <code class="language-plaintext highlighter-rouge">o-table-column</code> component. If <em>o-table</em> component contains inner <em>o-table-column</em> elements, using renderers and editors defined in them. If you use this option, the <code class="language-plaintext highlighter-rouge">attr</code> attribute is required. For more information see the API.</li>
+  <li>Using the <code class="language-plaintext highlighter-rouge">o-table-column</code> component. If <em>o-table</em> component contains inner <em>o-table-column</em> elements, using renderers and editors defined in them. If you use this option, the <code class="language-plaintext highlighter-rouge">attr</code> attribute is required. For more information see the <strong>API</strong>.</li>
 </ul>
 
 <p>With <code class="language-plaintext highlighter-rouge">visible-columns</code> you can indicate which columns will be visible.</p>
@@ -1206,7 +1213,15 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <h3 id="filtering-by-columns">Filtering by columns</h3>
 
-<p>It is posible to configure filtering by columns with the <code class="language-plaintext highlighter-rouge">o-table-columns-filter</code> component, adding filterable columns separated by ‘;’ in its <code class="language-plaintext highlighter-rouge">columns</code> property.</p>
+<p>It is posible to configure filtering by columns as follows:</p>
+<ul>
+  <li>Using the input columns, adding the columns separated by ‘;’.</li>
+  <li>Using the <code class="language-plaintext highlighter-rouge">o-table-columns-filter-column</code> component. If <code class="language-plaintext highlighter-rouge">o-table-columns-filter</code> component contains inner <code class="language-plaintext highlighter-rouge">o-table-columns-filter-column</code> elements, the <code class="language-plaintext highlighter-rouge">attr</code> of the columns attribute is required. For more information see the API.</li>
+</ul>
+
+<p>This option will be available in table menu by default. However, you can configure it is allways available in table header with <code class="language-plaintext highlighter-rouge">filter-column-active-by-default= 'yes'</code>.</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/filter-by-column.png" alt="Filter by Column" class="comp-example-img" /></p>
 
 <h3 class="grey-color">Example</h3>
 
@@ -1214,10 +1229,25 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
     <span class="na">columns=</span><span class="s">"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"</span>
     <span class="na">visible-columns=</span><span class="s">"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"</span>
     <span class="na">fxFlex</span> <span class="na">layout-padding</span> <span class="na">attr=</span><span class="s">"accounts"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span>
-    <span class="na">sort-columns=</span><span class="s">"ANID:DESC"</span>  <span class="na">query-on-init=</span><span class="s">"true"</span>
-    <span class="na">quick-filter=</span><span class="s">"yes"</span>   <span class="na">filter-case-sensitive=</span><span class="s">"true"</span> <span class="nt">&gt;</span>
+    <span class="na">sort-columns=</span><span class="s">"ANID:DESC"</span> <span class="na">query-on-init=</span><span class="s">"true"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">filter-case-sensitive=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;o-table-columns-filter</span> <span class="na">columns=</span><span class="s">"OFFICEID;NAME"</span> <span class="nt">&gt;&lt;/o-table-columns-filter&gt;</span>
 
-    <span class="nt">&lt;o-table-columns-filter</span> <span class="na">columns=</span><span class="s">"OFFICEID;ACCOUNTTYP"</span> <span class="nt">&gt;&lt;/o-table-columns-filter&gt;</span>
+    ...
+
+<span class="nt">&lt;/o-table&gt;</span>
+</code></pre></div></div>
+
+<h3 class="grey-color">Example with o-table-columns-filter-column component</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">service=</span><span class="s">"branches"</span> <span class="na">entity=</span><span class="s">"account"</span> <span class="na">keys=</span><span class="s">"ACCOUNTID"</span>
+    <span class="na">columns=</span><span class="s">"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"</span>
+    <span class="na">visible-columns=</span><span class="s">"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"</span>
+    <span class="na">fxFlex</span> <span class="na">layout-padding</span> <span class="na">attr=</span><span class="s">"accounts"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span>
+    <span class="na">sort-columns=</span><span class="s">"ANID:DESC"</span> <span class="na">query-on-init=</span><span class="s">"true"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">filter-case-sensitive=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;o-table-columns-filter&gt;</span>
+      <span class="nt">&lt;o-table-columns-filter-column</span> <span class="na">attr=</span><span class="s">"OFFICEID"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-table-columns-filter-column&gt;</span>
+      <span class="nt">&lt;o-table-columns-filter-column</span> <span class="na">attr=</span><span class="s">"ACCOUNTTYP"</span> <span class="na">sort=</span><span class="s">"desc"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-table-columns-filter-column&gt;</span>
+    <span class="nt">&lt;/o-table-columns-filter&gt;</span>
 
     ...
 
@@ -1577,7 +1607,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><em>Boolean</em></p>
 
-<p>The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-boolean</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
+<p>The configuration is similar to the renderer boolean. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-boolean</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the <strong>API</strong>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"CLOSED"</span> <span class="na">title=</span><span class="s">"CLOSED"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;o-table-cell-editor-boolean</span> <span class="na">true-value=</span><span class="s">"1"</span> <span class="na">false-value=</span><span class="s">"0"</span> <span class="na">boolean-type=</span><span class="s">"number"</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span>
@@ -1602,7 +1632,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 <p><em>Date</em></p>
 
 <p>The configuration is similar to the renderer date. The following example uses the first option named before, in this case its required to add
-<code class="language-plaintext highlighter-rouge">type="date" editable="yes"</code> in <code class="language-plaintext highlighter-rouge">o-table-column</code> component. To consult all the parameters of the editor see the API.</p>
+<code class="language-plaintext highlighter-rouge">type="date" editable="yes"</code> in <code class="language-plaintext highlighter-rouge">o-table-column</code> component. To consult all the parameters of the editor see the <strong>API</strong>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"STARTDATE"</span> <span class="na">title=</span><span class="s">"STARTDATE"</span> <span class="na">format=</span><span class="s">"LL"</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">editable=</span><span class="s">"yes"</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span>
         <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span> <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;</span>
@@ -1611,7 +1641,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><em>Integer</em></p>
 
-<p>The configuration is similar to the renderer integer. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-integer</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
+<p>The configuration is similar to the renderer integer. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-integer</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the <strong>API</strong>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NUMCARDS"</span> <span class="na">title=</span><span class="s">"NUMCARDS"</span> <span class="na">class=</span><span class="s">"o-table-column-centered"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;o-table-cell-editor-integer</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span> <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span> <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;</span>
@@ -1622,7 +1652,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 <p><em>Real</em></p>
 
 <p>The configuration is similar to the renderer real. The following example uses the first option named before, in this case its required to add
-<code class="language-plaintext highlighter-rouge">type="currency" editable="yes"</code> in <code class="language-plaintext highlighter-rouge">o-table-column</code> component. To consult all the parameters of the editor see the API.</p>
+<code class="language-plaintext highlighter-rouge">type="currency" editable="yes"</code> in <code class="language-plaintext highlighter-rouge">o-table-column</code> component. To consult all the parameters of the editor see the <strong>API</strong>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"BALANCE"</span> <span class="na">title=</span><span class="s">"BALANCE"</span> <span class="na">editable=</span><span class="s">"yes"</span> <span class="na">type=</span><span class="s">"currency"</span> <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span>
         <span class="na">currency-symbol=</span><span class="s">"€"</span> <span class="na">currency-symbol-position=</span><span class="s">"right"</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span> <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span>
@@ -1632,7 +1662,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
 
 <p><em>Text</em></p>
 
-<p>The configuration is similar to the renderer text. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-integer</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the API.</p>
+<p>The configuration is similar to the renderer text. The following example uses the second option named before, adding the <code class="language-plaintext highlighter-rouge">o-table-cell-editor-integer</code> component inside the <code class="language-plaintext highlighter-rouge">o-table-column</code>. To consult all the parameters of the editor see the <strong>API</strong>.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NAME"</span> <span class="na">title=</span><span class="s">"NAME"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;o-table-cell-editor-text</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span> <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span> <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;&lt;/o-table-cell-editor-text&gt;</span>
@@ -2018,7 +2048,7 @@ Where <b>format-selected</b> is the same as in the first request and <b>file-id<
 <br />
 If you want to customize the download end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
 </p>
-<p>In the following example you ca see the download api end point method.</p>
+<p>In the following example you can see the download api end point method.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/{extension}/{id}"</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">downloadFile</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"extension"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">fileExtension</span><span class="o">,</span>
@@ -2099,6 +2129,214 @@ If you want to customize the download end point, please check the <a href="#cust
 
 <p>Note: If you have a custom render in the column and it is not overwritten the <em>getCelldata</em> method will show the internal value of the table.</p>
 
+<h3 id="reinitialize-method">Reinitialize method</h3>
+
+<p>When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want <code class="language-plaintext highlighter-rouge">o-table</code>  to update the display to reflect these changes. This function is provided for that purpose.For more information see the API.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="kd">const</span> <span class="nx">columnsOfTable</span><span class="o">=</span> <span class="dl">'</span><span class="s1">PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">filterColumnsOfTable</span><span class="o">=</span> <span class="dl">'</span><span class="s1">NAME;EMAIL</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">reinitialize</span><span class="p">({</span> <span class="na">columns</span><span class="p">:</span> <span class="nx">columnsOfTable</span><span class="p">,</span> <span class="na">visibleColumns</span><span class="p">:</span> <span class="nx">columnsOfTable</span><span class="p">,</span> <span class="na">filterColumns</span><span class="p">:</span><span class="nx">filterColumnsOfTable</span><span class="p">});</span>
+<span class="p">...</span>
+
+</code></pre></div></div>
+
+<h3 id="expandable-row-new">Expandable row <span class="menuitem-badge">new<span></span></span></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-table-row-expandable</code> component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It’s necessary to wrap the content of your template with the <code class="language-plaintext highlighter-rouge">&lt;ng-template let-row&gt;&lt;/ng-template&gt;</code> tag and add the template definition inside.</p>
+
+<p><em>Ontimize Web</em> provides two posibilities for attaching child rows to a parent row in the <code class="language-plaintext highlighter-rouge">o-table</code>.</p>
+<ul>
+  <li>Simple template</li>
+  <li>A template with context</li>
+</ul>
+
+<p><strong>Simple template</strong></p>
+
+<p>The example below makes use of <em>simple template</em>, the content of the child row in this example is defined by the <code class="language-plaintext highlighter-rouge">ng-template</code> with the <code class="language-plaintext highlighter-rouge">let-row</code> attribute so that exposes the variable <code class="language-plaintext highlighter-rouge">row</code> in the template to show the information.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-table</span> <span class="na">fxFill</span> <span class="na">#table</span> <span class="na">service-type=</span><span class="s">"DummyService"</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span> <span class="na">columns=</span><span class="s">"CUSTOMERID;SURNAME;NAME"</span>
+      <span class="na">title=</span><span class="s">"CUSTOMERS"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"yes"</span> <span class="na">detail-mode=</span><span class="s">"none"</span> <span class="na">export-button=</span><span class="s">"no"</span>
+      <span class="na">query-rows=</span><span class="s">"10"</span> <span class="na">fixed-header=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-table-row-expandable&gt;</span>
+        <span class="nt">&lt;ng-template</span> <span class="na">let-row</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;o-column</span> <span class="na">title=</span><span class="s">"CONTACT_DATA"</span> <span class="na">icon=</span><span class="s">"info"</span> <span class="na">class=</span><span class="s">"vertical-margin-10"</span> <span class="na">layout-gap=</span><span class="s">"12px"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"row wrap"</span> <span class="na">fxLayoutGap=</span><span class="s">"14px"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">fxFlex=</span><span class="s">"30%"</span><span class="nt">&gt;&lt;strong&gt;</span>{{'ADDRESS' | oTranslate}}<span class="nt">&lt;/strong&gt;</span>: {{row.ADDRESS}}<span class="nt">&lt;/span&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">fxFlex=</span><span class="s">"20%"</span><span class="nt">&gt;&lt;strong&gt;</span>{{'COUNTRY' | oTranslate}}<span class="nt">&lt;/strong&gt;</span>: {{row.COUNTRY}}<span class="nt">&lt;/span&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">fxFlex=</span><span class="s">"20%"</span><span class="nt">&gt;&lt;strong&gt;</span>{{'STATE' | oTranslate}}<span class="nt">&lt;/strong&gt;</span>: {{row.STATE}}<span class="nt">&lt;/span&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">fxFlex=</span><span class="s">"20%"</span><span class="nt">&gt;&lt;strong&gt;</span>{{'ZIPCODE' | oTranslate}}<span class="nt">&lt;/strong&gt;</span>: {{row.ZIPCODE}}<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">fxLayout=</span><span class="s">"row wrap"</span> <span class="na">fxLayoutGap=</span><span class="s">"14px"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">fxFlex=</span><span class="s">"20%"</span><span class="nt">&gt;&lt;strong&gt;</span>{{'EMAIL' | oTranslate}}<span class="nt">&lt;/strong&gt;</span>: {{row.EMAIL}}<span class="nt">&lt;/span&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">fxFlex=</span><span class="s">"20%"</span><span class="nt">&gt;&lt;strong&gt;</span>{{'PHONE' | oTranslate}}<span class="nt">&lt;/strong&gt;</span>: {{row.PHONE}}<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/o-column&gt;</span>
+        <span class="nt">&lt;/ng-template&gt;</span>
+      <span class="nt">&lt;/o-table-row-expandable&gt;</span>
+
+    <span class="nt">&lt;/o-table&gt;</span>
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/row-expanded.png" alt="Row expanded" class="comp-example-img" /></p>
+
+<p><strong>A template with context</strong></p>
+
+<p>It is possible to define a <em>template with context</em>, so that if the defined template contains a component (such as o-table, o-list, o-chart and o-grid), this context provide functionalities like parent-keys and query the component data automatically when the row is expanded, for example.</p>
+
+<blockquote>
+  <p>NOTE: It is necessary define <code class="language-plaintext highlighter-rouge">targets</code> input and <code class="language-plaintext highlighter-rouge">[data]="row"</code> to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with <code class="language-plaintext highlighter-rouge">[data]="row"</code></p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">fxFill</span> <span class="na">#table</span> <span class="na">service-type=</span><span class="s">"DummyService"</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span> <span class="na">columns=</span><span class="s">"CUSTOMERID;SURNAME;NAME"</span>
+  <span class="na">title=</span><span class="s">"CUSTOMERS"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"no"</span> <span class="na">detail-mode=</span><span class="s">"none"</span> <span class="na">export-button=</span><span class="s">"no"</span>
+  <span class="na">store-state=</span><span class="s">"false"</span> <span class="na">query-rows=</span><span class="s">"10"</span> <span class="na">fixed-header=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-table-row-expandable&gt;</span>
+    <span class="nt">&lt;ng-template</span> <span class="na">let-row</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-expandable-container</span> <span class="na">[targets]=</span><span class="s">"[accountsTable]"</span> <span class="na">[data]=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;o-table</span> <span class="na">#accountsTable</span> <span class="na">service-type=</span><span class="s">"DummyService"</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customerAccount"</span> <span class="na">parent-keys=</span><span class="s">"CUSTOMERID"</span> <span class="na">keys=</span><span class="s">"ACCOUNTID"</span>
+          <span class="na">columns=</span><span class="s">"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE"</span> <span class="na">visible-columns=</span><span class="s">"ACCOUNT;BALANCE;STARTDATE"</span>
+          <span class="na">title=</span><span class="s">"ACCOUNTS"</span> <span class="na">sort-columns=</span><span class="s">"STARTDATE"</span> <span class="na">query-on-init=</span><span class="s">"false"</span> <span class="na">query-rows=</span><span class="s">"6"</span> <span class="na">pageable=</span><span class="s">"no"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span>
+          <span class="na">detail-mode=</span><span class="s">"none"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"ACCOUNT"</span> <span class="na">title=</span><span class="s">"ACCOUNT"</span> <span class="na">class=</span><span class="s">"o-table-column-centered"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+          <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"STARTDATE"</span> <span class="na">title=</span><span class="s">"STARTDATE"</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">format=</span><span class="s">"LL"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+          <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"BALANCE"</span> <span class="na">title=</span><span class="s">"BALANCE"</span> <span class="na">type=</span><span class="s">"currency"</span> <span class="na">currency-symbol=</span><span class="s">"€"</span> <span class="na">currency-symbol-position=</span><span class="s">"right"</span>
+            <span class="na">thousand-separator=</span><span class="s">"."</span> <span class="na">decimal-separator=</span><span class="s">","</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;/o-table-column&gt;</span>
+        <span class="nt">&lt;/o-table&gt;</span>
+      <span class="nt">&lt;/o-expandable-container&gt;</span>
+    <span class="nt">&lt;/ng-template&gt;</span>
+  <span class="nt">&lt;/o-table-row-expandable&gt;</span>
+<span class="nt">&lt;/o-table&gt;</span>
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/row-expanded-context.png" alt="Row expanded with a template with context" class="comp-example-img" /></p>
+
+<h3 id="autoadjust-new">Autoadjust <span class="menuitem-badge">new<span></span></span></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> component supports automatically adjust to the content of the column setting <code class="language-plaintext highlighter-rouge">auto-adjust = yes</code>. This means that it will always take up the minimum width required to present its content.</p>
+
+<h3 class="grey-color">Example</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;o-table</span> <span class="na">fxFlex</span> <span class="na">attr=</span><span class="s">"customers"</span> <span class="na">title=</span><span class="s">"CUSTOMERS"</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span>
+    <span class="na">columns=</span><span class="s">"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"</span>
+    <span class="na">visible-columns=</span><span class="s">"PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID"</span> <span class="na">sort-columns=</span><span class="s">"SURNAME"</span> <span class="na">query-rows=</span><span class="s">"10"</span> <span class="na">quick-filter=</span><span class="s">"yes"</span>
+    <span class="na">row-height=</span><span class="s">"medium"</span> <span class="na">select-all-checkbox=</span><span class="s">"true"</span> <span class="na">pageable=</span><span class="s">"yes"</span> <span class="na">fixed-header=</span><span class="s">"yes"</span> <span class="na">query-rows=</span><span class="s">"25"</span> <span class="na">auto-adjust=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;o-table-columns-filter</span> <span class="na">columns=</span><span class="s">"STARTDATE;SURNAME"</span><span class="nt">&gt;&lt;/o-table-columns-filter&gt;</span>
+    <span class="nt">&lt;o-table-column</span> <span class="na">async-load=</span><span class="s">"true"</span> <span class="na">width=</span><span class="s">"48px"</span> <span class="na">attr=</span><span class="s">"PHOTO"</span> <span class="na">orderable=</span><span class="s">"no"</span> <span class="na">searchable=</span><span class="s">"no"</span> <span class="na">type=</span><span class="s">"image"</span>
+      <span class="na">image-type=</span><span class="s">"base64"</span> <span class="na">empty-image=</span><span class="s">"assets/images/no-image.png"</span> <span class="na">avatar=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/o-table-column&gt;</span>
+    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NAME"</span> <span class="na">title=</span><span class="s">"NAME"</span> <span class="na">orderable=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"STARTDATE"</span> <span class="na">title=</span><span class="s">"STARTDATE"</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">format=</span><span class="s">"LL"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"CUSTOMERTYPEID"</span> <span class="na">title=</span><span class="s">"CUSTOMERTYPEID"</span> <span class="na">editable=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-table-cell-renderer-service</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customerType"</span>
+        <span class="na">value-column=</span><span class="s">"DESCRIPTION"</span> <span class="na">translate=</span><span class="s">"no"</span>
+        <span class="na">columns=</span><span class="s">"CUSTOMERTYPEID;DESCRIPTION"</span> <span class="na">visible-columns=</span><span class="s">"DESCRIPTION"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/o-table-cell-renderer-service&gt;</span>
+    <span class="nt">&lt;/o-table-column&gt;</span>
+  <span class="nt">&lt;/o-table&gt;</span>
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table_autoadjust.png" alt="Table width autoadjust" class="comp-example-img" /></p>
+
+<p>There is a possibility that the content is <strong>large</strong> and the result is not what is expected like the example shown below.</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table-autoadjust-overflow-hidden.PNG" alt="Table width autoadjust" class="comp-example-img" /></p>
+
+<p>However, if you want to control similar case, you can do so by configuring <code class="language-plaintext highlighter-rouge">auto-adjust="yes"</code> width several options such as:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">horizontal-scroll=yes</code></li>
+  <li><code class="language-plaintext highlighter-rouge">multiline=yes</code></li>
+  <li><code class="language-plaintext highlighter-rouge">max-width</code> of the <code class="language-plaintext highlighter-rouge">o-table-column</code>.</li>
+</ul>
+
+<ol>
+  <li>In the next case we have applied <code class="language-plaintext highlighter-rouge">horizontal-scroll=yes</code> and  <code class="language-plaintext highlighter-rouge">auto-adjust="yes"</code>, the result would be the following.</li>
+</ol>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" alt="Table width autoadjust" class="comp-example-img" />
+<!-- </div> --></p>
+
+<ol start="2">
+  <li>As you can see, in the next case we have applied <code class="language-plaintext highlighter-rouge">multiline=yes</code> and  <code class="language-plaintext highlighter-rouge">auto-adjust="yes"</code>, the result would be the following..</li>
+</ol>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table_autoadjust-with-multiline.PNG" alt="Table width autoadjust" class="comp-example-img" /></p>
+
+<ol start="3">
+  <li>In the next case we have applied <code class="language-plaintext highlighter-rouge">max-width="300px"</code> in <code class="language-plaintext highlighter-rouge">o-table-column</code> and  <code class="language-plaintext highlighter-rouge">auto-adjust="yes"</code>, the result would be the following..</li>
+</ol>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"NOTES"</span> <span class="na">title=</span><span class="s">"NOTES"</span> <span class="na">multiline=</span><span class="s">"no"</span> <span class="na">max-width=</span><span class="s">"300px"</span><span class="nt">&gt;&lt;/o-table-column&gt;</span>
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table_autoadjust_maxwidth.PNG" alt="Table width autoadjust" class="comp-example-img" /></p>
+
+<h2 id="theming">Theming</h2>
+<h3 id="the-table-headers">The table headers</h3>
+
+<p>You can customize the tables changing the color of the headers.
+For example with the primary palette by following the steps below.</p>
+
+<ol>
+  <li>Define the style of mat-header-cell in a “theme file”</li>
+</ol>
+
+<p>First, create a Sass <code class="language-plaintext highlighter-rouge">mixin</code> that accepts an Angular Material color theme and outputs the color-specific styles for the component.</p>
+
+<p><em>custom-row-header-theme.scss</em></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span> <span class="nt">Import</span> <span class="nt">library</span> <span class="nt">functions</span> <span class="nt">for</span> <span class="nt">theme</span> <span class="nt">creation</span><span class="o">.</span>
+<span class="k">@import</span> <span class="s2">'~@angular/material/theming'</span><span class="p">;</span>
+
+<span class="k">@mixin</span> <span class="n">custom-row-header-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="nt">Extract</span> <span class="nt">the</span> <span class="nt">palettes</span> <span class="nt">you</span> <span class="nt">need</span> <span class="nt">from</span> <span class="nt">the</span> <span class="nt">theme</span> <span class="nt">definition</span><span class="o">.</span>
+  <span class="err">$</span><span class="nt">primary</span><span class="o">:</span> <span class="nt">map-get</span><span class="o">(</span><span class="err">$</span><span class="nt">theme</span><span class="o">,</span> <span class="nt">primary</span><span class="o">);</span>
+  <span class="err">$</span><span class="nt">accent</span><span class="o">:</span> <span class="nt">map-get</span><span class="o">(</span><span class="err">$</span><span class="nt">theme</span><span class="o">,</span> <span class="nt">accent</span><span class="o">);</span>
+
+  <span class="o">//</span> <span class="nt">Define</span> <span class="nt">the</span> <span class="nt">styles</span> <span class="nt">that</span> <span class="nt">affect</span> <span class="nt">the</span> <span class="nt">table</span> <span class="nt">header</span> <span class="nt">by</span> <span class="nt">the</span> <span class="nt">theme</span>
+  <span class="nc">.o-table</span> <span class="nc">.o-table-body</span> <span class="nc">.mat-table</span> <span class="nc">.mat-header-roww</span><span class="p">{</span>
+      <span class="err">.mat-header-cell</span> <span class="err">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="n">mat-color</span><span class="p">(</span><span class="err">$</span><span class="n">primary</span><span class="p">);</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="n">mat-color</span><span class="p">(</span><span class="err">$</span><span class="n">primary</span><span class="p">,</span> <span class="n">default-contrast</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note: using the mat-color function to extract colors from a palette.</strong></p>
+</blockquote>
+
+<ol>
+  <li>Include the theme mixin in your application</li>
+</ol>
+
+<p>Use the Sass <code class="language-plaintext highlighter-rouge">@include </code>keyword to include a component’s theme mixin wherever you’re already including Angular Material’s built-in theme mixins.</p>
+
+<p><strong>app.scss</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/</span>
+
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'</span><span class="p">;</span>
+<span class="c">/*
+* After define theme, it is necessary to transfer color to Ontimize Web framework
+*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">o-material-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+
+<span class="c">/*
+* Propagate theme to custom component definition.
+*/</span>
+<span class="k">@import</span> <span class="s2">'../../app/shared/custom-row-header-theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">custom-row-header-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/customization.png" alt="Theming your table" class="comp-example-img" /></p>
+
 <h2 id="demo">Demo</h2>
 
 <p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/table" target="_blank">OntimizeWeb playground</a>.</p>
@@ -2120,11 +2358,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table">o-table</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-column">o-table-column</a></li>
+  
   
 
   
@@ -2132,11 +2372,20 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-columns-filter">o-table-columns-filter</a></li>
   
+  
+
+  
+    
+  
+  <li><a href="#o-table-columns-filter-column">o-table-columns-filter-column</a></li>
+  
+  
 
   
     
   
   <li><a href="#o-table-paginator">o-table-paginator</a></li>
+  
   
 
   
@@ -2144,11 +2393,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-option">o-table-option</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-column-aggregate">o-table-column-aggregate</a></li>
+  
   
 
   
@@ -2156,11 +2407,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-column-calculated">o-table-column-calculated</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-context-menu">o-table-context-menu</a></li>
+  
   
 
   
@@ -2168,11 +2421,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-insertable-row">o-table-insertable-row</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-button">o-table-button</a></li>
+  
   
 
   
@@ -2180,13 +2435,41 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-export-button">o-table-export-button</a></li>
   
-
-  
-    
   
 
   
     
+  
+  <li><a href="#o-table-row-expandable">o-table-row-expandable</a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#o-expandable-container">o-expandable-container</a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#"></a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#"></a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#"></a></li>
+  
   
 
           </ul>
@@ -2199,11 +2482,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-cell-renderer-action">o-table-cell-renderer-action</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-renderer-boolean">o-table-cell-renderer-boolean</a></li>
+  
   
 
   
@@ -2211,11 +2496,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-cell-renderer-currency">o-table-cell-renderer-currency</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-renderer-date">o-table-cell-renderer-date</a></li>
+  
   
 
   
@@ -2223,11 +2510,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-cell-renderer-integer">o-table-cell-renderer-integer</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-renderer-image">o-table-cell-renderer-image</a></li>
+  
   
 
   
@@ -2235,11 +2524,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-cell-renderer-percentage">o-table-cell-renderer-percentage</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-renderer-real">o-table-cell-renderer-real</a></li>
+  
   
 
   
@@ -2247,17 +2538,20 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-cell-renderer-service">o-table-cell-renderer-service</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-renderer-translate">o-table-cell-renderer-translate</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-renderer-time">o-table-cell-renderer-time</a></li>
+  
   
 
           </ul>
@@ -2271,11 +2565,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-cell-editor-text">o-table-cell-editor-text</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-editor-boolean">o-table-cell-editor-boolean</a></li>
+  
   
 
   
@@ -2283,11 +2579,13 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-cell-editor-date">o-table-cell-editor-date</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-editor-integer">o-table-cell-editor-integer</a></li>
+  
   
 
   
@@ -2295,11 +2593,27 @@ If you want to customize the download end point, please check the <a href="#cust
   
   <li><a href="#o-table-cell-editor-real">o-table-cell-editor-real</a></li>
   
+  
 
   
     
   
   <li><a href="#o-table-cell-editor-time">o-table-cell-editor-time</a></li>
+  
+  
+
+          </ul>
+      </li>
+      <li><a>Types</a>
+          <ul>
+          
+
+  
+    
+  
+  
+
+  <li><a href="#OTableInitializationOptions">OTableInitializationOptions</a></li>
   
 
           </ul>
@@ -2426,7 +2740,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -2458,6 +2776,71 @@ If you want to customize the download end point, please check the <a href="#cust
     </thead>
     <tbody>
       
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>auto-adjust</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to auto adjust column width to its content.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
       
 
         
@@ -2972,6 +3355,71 @@ If you want to customize the download end point, please check the <a href="#cust
             
   <td class="" o-component-default >
     <p class="first"><p>visible</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>filter-column-active-by-default</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show the filter by column icon in the table header by default</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
 </p>
     
   </td>
@@ -4708,6 +5156,38 @@ If you want to customize the download end point, please check the <a href="#cust
       </tbody>
     </table>
       
+    <table>
+      <thead>
+        <tr><th>reinitialize()</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Allow reinitialize table options adding options </td></tr>
+        
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>OTableInitializationOptions</td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>toogleRowExpandable()</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Allow to expand or collapse the expandable row.</td></tr>
+        
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>row:data, rowIndex:number, event:Event</td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
   
   
 
@@ -4726,7 +5206,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -6030,7 +6514,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -6278,6 +6766,209 @@ If you want to customize the download end point, please check the <a href="#cust
   
     
   
+  <h2 id="o-table-columns-filter-column"> 
+    <span>OTableColumnsFilterColumnComponent </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-table-columns-filter-column</p>
+  
+
+  
+
+  
+
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+            <th class=""> Default</th>
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr required>
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name required>
+    <p class="first"><p>attr</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Field identifier. Registry property if component is inside a form.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>sort</p>
+</p>
+    
+      <p><i>asc|desc|''</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates sorting default of the results.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>’’</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+    <div class="notice--info" markdown="1">
+    * required inputs.
+    </div>
+  
+
+
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+    
+  
   <h2 id="o-table-paginator"> 
     <span>OTablePaginatorComponent </span>
     
@@ -6290,7 +6981,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -6420,7 +7115,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -6814,7 +7513,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -7143,7 +7846,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -7306,7 +8013,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -7960,7 +8671,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -8387,7 +9102,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -8846,7 +9565,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -9196,6 +9919,498 @@ If you want to customize the download end point, please check the <a href="#cust
   
     
   
+  <h2 id="o-table-row-expandable"> 
+    <span>OTableRowExpandableComponent </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-table-row-expandable</p>
+  
+
+  
+
+  
+
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+            <th class=""> Default</th>
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>expandable-column-visible</p>
+</p>
+    
+      <p><i>boolean</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show a expandable column.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>true</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>icon-collapse</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Icon name to collapse of google icon (see <a href="https://design.google.com/icons/" target="_blank">Google material design icons</a>)</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>remove</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>icon-expand</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Icon name to expand of google icon (see <a href="https://design.google.com/icons/" target="_blank">Google material design icons</a>)</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>add</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+
+
+  
+
+  
+  
+
+  
+    <h3 class="grey-color">Outputs</h3>
+    <table class="attributes-table mdl-data-table table-adaptable">
+      <thead>
+        <tr>
+        
+            <th class=""> Name</th>
+        
+            <th class=""> Description</th>
+        
+        </tr>
+      </thead>
+        <tbody>
+        
+        
+          <tr>
+          
+            
+            
+            
+
+            <td class="" o-component-name><p>onCollapsed</p>
+</td>
+
+          
+            
+            
+            
+
+            <td class="" o-component-description><p>Event triggered when a row is collapsed</p>
+</td>
+
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+
+            <td class="" o-component-name><p>onExpanded</p>
+</td>
+
+          
+            
+            
+            
+
+            <td class="" o-component-description><p>Event triggered when a row is expanded</p>
+</td>
+
+          
+          </tr>
+        
+      </tbody>
+    </table>
+  
+
+
+  
+  
+
+  
+    
+  
+  <h2 id="o-expandable-container"> 
+    <span>OExpandableContainerComponent </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-expandable-container</p>
+  
+
+  
+
+  
+
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>data</p>
+</p>
+    
+      <p><i>object</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+          
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>targets</p>
+</p>
+    
+      <p><i>Array<OServiceComponent></i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Components whose query will be launched when expanding the row</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+
+
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+    
+  
+
+  
+    
+  
 
   
     
@@ -9247,7 +10462,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -9703,7 +10922,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -10187,7 +11410,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -10736,7 +11963,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -10878,7 +12109,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -11102,7 +12337,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -11364,7 +12603,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -11821,7 +13064,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -12240,7 +13487,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -12787,7 +14038,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -12900,7 +14155,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -13062,7 +14321,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     <p>No additional inputs</p>
   
@@ -13141,7 +14404,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -13581,7 +14848,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -14281,7 +15552,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -14591,7 +15866,11 @@ If you want to customize the download end point, please check the <a href="#cust
     </ul>
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -14873,7 +16152,11 @@ If you want to customize the download end point, please check the <a href="#cust
 
   
 
-  <h3 class="grey-color">Inputs</h3>
+
+  
+    <h3 class="grey-color">Inputs 123</h3>
+  
+  
   
     
     
@@ -15704,6 +16987,50 @@ If you want to customize the download end point, please check the <a href="#cust
   
 
 
+    
+
+
+  
+    
+
+  
+  <h2 id="OTableInitializationOptions"> 
+    <span>OTableInitializationOptions </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Type:</strong> OTableInitializationOptions</p>
+  
+
+
+  OTableInitializationOptions {
+    
+    <ul class="attributes-list">  
+      
+      
+        <li> columns?: string </li>
+      
+        <li> entity?: string </li>
+      
+        <li> filterColumns: string </li>
+      
+        <li> keys?: string </li>
+      
+        <li> parentKeys?: string </li>
+      
+        <li> service?: string </li>
+      
+        <li> sortColumns?: string </li>
+      
+        <li> visibleColumns?: string </li>
+      
+    </ul>
+    
+  }
+  
+
+  
+   
   </div>
 </div>
 
@@ -15721,7 +17048,7 @@ If you want to customize the download end point, please check the <a href="#cust
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-10T06:32:43-05:00">November 10, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-24T01:37:46-05:00">November 24, 2020</time></p>
         
       </footer>
 

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-10T06:32:43-05:00">
+  <meta property="article:published_time" content="2020-11-24T01:37:46-05:00">
 
 
 
@@ -878,7 +878,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 10, 2020">
+    <meta itemprop="datePublished" content="November 24, 2020">
     
 
     <div class="page__inner-wrap">
@@ -959,6 +959,7 @@
 <ul class="toc__menu" id="markdown-toc">
   <li><a href="#basic-example" id="markdown-toc-basic-example">Basic example</a></li>
   <li><a href="#odialogconfig" id="markdown-toc-odialogconfig">ODialogConfig</a></li>
+  <li><a href="#get-response-of-dialog" id="markdown-toc-get-response-of-dialog">Get Response of Dialog</a></li>
 </ul>
 
   </nav>
@@ -1011,6 +1012,25 @@
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/dialog/dialog_info_customize.png" alt="Customize dialog component" class="comp-example-img" /></p>
 
+<h2 id="get-response-of-dialog">Get Response of Dialog</h2>
+
+<p>You can get the response of the dialog, for example, in a confirm Dialog you can get that confirmation or cancellation.</p>
+
+<p>Example</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">showConfirm</span><span class="p">(</span><span class="nx">evt</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="dl">'</span><span class="s1">Confirm dialog title</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Do you really want to accept?</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dialogService</span><span class="p">.</span><span class="nx">dialogRef</span><span class="p">.</span><span class="nx">afterClosed</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">(</span> <span class="nx">result</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// Actions on confirmation</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="c1">// Actions on cancellation</span>
+        <span class="p">}</span>
+      <span class="p">})</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
 <p>You can see examples of this section in the <a href="https://try.imatia.com/ontimizeweb/playground/main/dialogs" target="_blank">OntimizeWeb playground</a>.</p>
 
 </div>
@@ -1035,6 +1055,7 @@
 
 
   
+
 
 
   
@@ -1148,7 +1169,9 @@
 
 
   
+
   <h3 class="grey-color">Inputs</h3>
+
 
 
 
@@ -1385,6 +1408,7 @@
   
 
 
+
   
 
   
@@ -1415,7 +1439,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-10T06:32:43-05:00">November 10, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-24T01:37:46-05:00">November 24, 2020</time></p>
         
       </footer>
 

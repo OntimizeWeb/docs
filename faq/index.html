@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-10T06:32:43-05:00">
+  <meta property="article:published_time" content="2020-11-24T01:37:46-05:00">
 
 
 
@@ -823,7 +823,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="November 10, 2020">
+    <meta itemprop="datePublished" content="November 24, 2020">
     
 
     <div class="page__inner-wrap">
@@ -997,6 +997,69 @@
   
 
 
+    
+
+
+
+
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to get information from url?
+</a>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse">
+      <div class="panel-body">While working with angular, many times we need to get data from URL. Data in url can be passed in two ways, first as a parameter and second as a query string.<br /> We can get the value of query parameters using ActivatedRoute object, queryParamMap.<br /><br /> <b>Accessing Query String Values From URL</b><br /> Test URL: <b>http://test-url.com/user-list?type=normal&amp;list=active</b><br /><br /> <code> ngOnInit() {<br /> &nbsp;&nbsp;&nbsp;&nbsp;this.route.queryParamMap.subscribe(queryParams =&gt; {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.type = queryParams.get('type');<br /> &nbsp;&nbsp;&nbsp;&nbsp;this.list = queryParams.get('list');<br /> &nbsp;&nbsp;})<br /> } </code><br /> <b>Accessing the URL Parameters</b><br /> Test URL: <b>http://test-url.com/user-list/{type}/active</b><br /><br /> <code> ngOnInit() {<br /> &nbsp;&nbsp;this.route.paramMap.subscribe(params =&gt; {<br /> &nbsp;&nbsp;&nbsp;&nbsp;this.userType = params.get('type')<br /> &nbsp;&nbsp;}) } </code>
+</div>
+    </div>
+  </div>
+  
+
+
+    
+
+
+
+
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How can I configure environments for my application?
+</a>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse">
+      <div class="panel-body">An Angular Application Environment is JSON configuration information that tells the build system which files to change when you use ng build and ng serve.<br /> You can also create variables with different values in each of the environment files.<br /> Check the <a href="https://angular.io/guide/build" target="blank">official documentation</a> to understand more about the environment configuration.
+</div>
+    </div>
+  </div>
+  
+
+
+    
+
+
+
+
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to change row header color by the primary palette?
+</a>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse">
+      <div class="panel-body">You can check <a href="../components/table/#the-table-headers">here</a> how change row header color by the primary palette as seen in the example.
+</div>
+    </div>
+  </div>
+  
+
+
 </div>
 
         
@@ -1010,7 +1073,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-10T06:32:43-05:00">November 10, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-24T01:37:46-05:00">November 24, 2020</time></p>
         
       </footer>
 
