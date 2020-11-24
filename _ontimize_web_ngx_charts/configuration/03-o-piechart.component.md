@@ -1,8 +1,9 @@
 ---
-permalink: /charts/configuration/piechart/
+permalink: /charts/configuration/piechart/overview
 title: "Pie Chart"
 comp: piechart
 layout: o-component
+tab: overview
 ---
 
 {% include base_path %}

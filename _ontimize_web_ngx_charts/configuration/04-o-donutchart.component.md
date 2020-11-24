@@ -1,8 +1,9 @@
 ---
-permalink: /charts/configuration/donutchart/
+permalink: /charts/configuration/donutchart/overview
 title: "Donut Chart"
 comp: donutchart
 layout: o-component
+tab: overview
 ---
 
 {% include base_path %}

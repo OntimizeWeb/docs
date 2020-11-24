@@ -1,14 +1,16 @@
 
 {% assign inputsColumns = "Name|Description|Default" | split: "|" %}
-
 {% assign componentData = include.component %}
 {% if componentData %}
+ {% if componentData.title %}
+  <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+ {% endif %}
 
   {% if componentData.directive %}
-    <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
+    <p><strong class="grey-color" id="{{componentData.directive}}">Directive:</strong> {{ componentData.directive }}</p>
   {% endif %}
   {% if componentData.class %}
-    <p><strong class="grey-color">Class:</strong> {{ componentData.class }}</p>
+    <p><strong class="grey-color" id="{{componentData.class }}">Class:</strong> {{ componentData.class }}</p>
   {% endif %}
 
 

@@ -1,8 +1,9 @@
 ---
-permalink: /charts/configuration/multibarchart/
+permalink: /charts/configuration/multibarchart/overview
 title: "Multi Bar Chart"
 comp: multibarchart
 layout: o-component
+tab: overview
 ---
 
 {% include base_path %}
