@@ -1,5 +1,5 @@
 ---
-permalink: /components/table/obasetablecelleditor/
+permalink: /components/table/obasetablecelleditor/api
 title: "OBaseTableCellEditor"
 comp: obasetablecelleditor
 ---
