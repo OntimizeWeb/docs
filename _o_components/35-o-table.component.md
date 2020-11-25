@@ -1240,7 +1240,7 @@ The `o-table` component supports automatically adjust to the content of the colu
 
 There is a possibility that the content is **large** and the result is not what is expected like the example shown below.
 
-![Table width autoadjust]({{ "/images/components/tabla/table-autoadjust-overflow-hidden.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table-autoadjust-overflow-hidden.png" | absolute_url }}){: .comp-example-img}
 
 However, if you want to control similar case, you can do so by configuring `auto-adjust="yes"` width several options such as:
 * `horizontal-scroll=yes`
@@ -1249,13 +1249,13 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 1. In the next case we have applied `horizontal-scroll=yes` and  `auto-adjust="yes"`, the result would be the following.
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-horizontal-scroll.png" | absolute_url }}){: .comp-example-img}
 <!-- </div> -->
 
 {:start="2"}
 2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following..
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-multiline.png" | absolute_url }}){: .comp-example-img}
 
 {:start="3"}
 3. In the next case we have applied `max-width="300px"` in `o-table-column` and  `auto-adjust="yes"`, the result would be the following..
@@ -1264,7 +1264,7 @@ However, if you want to control similar case, you can do so by configuring `auto
 <o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
 ```
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.png" | absolute_url }}){: .comp-example-img}
 
 ## Theming
 ### The table headers
