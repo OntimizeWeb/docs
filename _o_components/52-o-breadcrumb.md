@@ -1,5 +1,5 @@
 ---
-permalink: /components/breadcrumb/
+permalink: /components/breadcrumb/overview
 title: "Breadcrumb"
 comp: breadcrumb
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /components/applayout/
+permalink: /components/applayout/overview
 title: "App layout"
 comp: appLayout
 ---

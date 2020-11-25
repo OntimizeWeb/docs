@@ -1,8 +1,7 @@
 ---
-permalink: /components/image/
+permalink: /components/image/overview
 title: "Image"
 comp: image
-under_construction: false
 ---
 {% include base_path %}
 {% include toc %}

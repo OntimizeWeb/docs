@@ -1,5 +1,5 @@
 ---
-permalink: /components/list/
+permalink: /components/list/overview
 title: "List"
 comp: list
 ---

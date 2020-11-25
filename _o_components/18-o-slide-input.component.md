@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/slider/
+permalink: /components/input/slider/overview
 title: "Slider"
 comp: slider
 ---
@@ -38,7 +38,7 @@ The slider component is automatically registered on its parent `o-form`, which p
   }
 ```
 
-## Selection a value 
+## Selection a value
 
 By default the minimum value of the slider is *0*, the maximum value is *100*, and the thumb moves in increments of *1*. These values can be changed by setting the `min`, `max`, and `step` attributes respectively. The initial value is set to the minimum value unless otherwise specified.
 
@@ -55,7 +55,7 @@ By default sliders are *horizontal* with the minimum value on the left and the m
       <o-slider attr="slider-editable" [data]="getValue()" read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" step="1" tick-interval="auto"></o-slider>
     </div>
   </o-form>
-``` 
+```
 
 An `invert` attribute is also available which can be specified to flip the axis that the thumb moves along. An inverted horizontal slider will have the minimum value on the right and the maximum value on the left, while an inverted vertical slider will have the minimum value on top and the maximum value on bottom.
 
@@ -66,7 +66,7 @@ An `invert` attribute is also available which can be specified to flip the axis 
       <o-slider attr="slider-editable" [data]="getValue()" read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" step="1" tick-interval="auto" invert="yes"></o-slider>
     </div>
   </o-form>
-``` 
+```
 
 ## Thumb label
 

@@ -1,5 +1,5 @@
 ---
-permalink: /components/filterbuilder/
+permalink: /components/filterbuilder/overview
 title: "Filter builder"
 comp: filterbuilder
 ---

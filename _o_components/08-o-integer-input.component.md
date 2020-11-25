@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/integer/
+permalink: /components/input/integer/overview
 title: "Integer input"
 comp: integerInput
 ---
@@ -16,9 +16,9 @@ The integer input is automatically registered on its parent `o-form`, which prov
 
 ```html
 <o-form editable-detail="no" show-header="no">
-    <o-integer-input attr="age" label="Age"></o-integer-input>  
+    <o-integer-input attr="age" label="Age"></o-integer-input>
     <o-integer-input attr="zipcode" label="ZIP code" read-only="no" required="yes"></o-integer-input>
-    <o-integer-input attr="year" label="Year" enable="no"></o-integer-input>  
+    <o-integer-input attr="year" label="Year" enable="no"></o-integer-input>
 </o-form>
 ```
 

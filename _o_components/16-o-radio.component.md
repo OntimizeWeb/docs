@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/radio/
+permalink: /components/input/radio/overview
 title: "Radio"
 comp: radio
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/html/
+permalink: /components/input/html/overview
 title: "HTML input"
 comp: HTMLInput
 ---

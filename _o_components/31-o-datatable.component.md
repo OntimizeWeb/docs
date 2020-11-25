@@ -1,5 +1,5 @@
 ---
-permalink: /components/datatable/
+permalink: /components/datatable/overview
 title: "DataTable"
 comp: datatable
 ---
@@ -232,12 +232,12 @@ The `o-datatable-cell-action-boolean` is a special renderer that allows the inse
 </div>
 
 ```html
-  <o-datatable attr="customers" entity="ECustomers" title="CUSTOMERS" 
-    columns="CUSTOMERID;SURNAME;NAME;STARTDATE;ADDRESS;EMAIL;CUSTOMERTYPEID;PHOTO;LATITUDE;LONGITUDE" 
-    visible-columns="PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID;LATITUDE;LONGITUDE" 
-    editable-columns="NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;LATITUDE;LONGITUDE" 
-    sort-columns="SURNAME" keys="CUSTOMERID" 
-    query-on-init="true" query-rows="10" quick-filter="yes" 
+  <o-datatable attr="customers" entity="ECustomers" title="CUSTOMERS"
+    columns="CUSTOMERID;SURNAME;NAME;STARTDATE;ADDRESS;EMAIL;CUSTOMERTYPEID;PHOTO;LATITUDE;LONGITUDE"
+    visible-columns="PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID;LATITUDE;LONGITUDE"
+    editable-columns="NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;LATITUDE;LONGITUDE"
+    sort-columns="SURNAME" keys="CUSTOMERID"
+    query-on-init="true" query-rows="10" quick-filter="yes"
     insert-table="yes" detail-mode="none" edit-on-focus="no">
 
     <o-datatable-column>

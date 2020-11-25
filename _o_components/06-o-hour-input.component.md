@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/hour/
+permalink: /components/input/hour/overview
 title: "Hour"
 comp: hour
 ---

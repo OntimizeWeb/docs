@@ -1,6 +1,6 @@
 ---
 layout: single
-permalink: /components/menu/
+permalink: /components/menu/overview
 title: "Menu"
 ---
 

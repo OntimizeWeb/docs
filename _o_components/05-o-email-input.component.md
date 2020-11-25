@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/email/
+permalink: /components/input/email/overview
 title: "Email input"
 comp: emailInput
 ---

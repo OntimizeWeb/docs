@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/password/
+permalink: /components/input/password/overview
 title: "Password input"
 comp: passwordInput
 ---

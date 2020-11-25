@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/real/
+permalink: /components/input/real/overview
 title: "Real input"
 comp: realInput
 ---

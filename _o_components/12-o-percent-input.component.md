@@ -1,8 +1,7 @@
 ---
-permalink: /components/input/percent/
+permalink: /components/input/percent/overview
 title: "Percent input"
 comp: percentInput
-under_construction: false
 ---
 
 {% include base_path %}
