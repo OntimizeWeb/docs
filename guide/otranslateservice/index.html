@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-24T01:37:46-05:00">
+  <meta property="article:published_time" content="2020-11-25T05:56:21-05:00">
 
 
 
@@ -162,7 +162,27 @@
           <a href="https://ontimizeweb.github.io/docs/">
             <div class="main_icon"></div>
         </a>
-        <span class="fill_remaing_space"></span>
+
+        <script src="https://ontimizeweb.github.io/docs/assets/js/lunr.js"></script>
+<script type="text/javascript" src="/docs/assets/js/ontimize.js"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Ontimize Web" aria-label="Search Ontimize Web"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+
+
+<div class="search-overlay"></div>
+
+
+
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
           <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/">Ontimize Web</a></li>-->
@@ -830,7 +850,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 24, 2020">
+    <meta itemprop="datePublished" content="November 25, 2020">
     
 
     <div class="page__inner-wrap">
@@ -856,41 +876,35 @@
 
 
 
- 
- 
- 
+
+
+
 
 <script type="text/javascript">
+
   function openTab(evt, tabName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("o-tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+    var url="https://ontimizeweb.github.io/docs/guide/otranslateservice/";
+    url+='/../'+tabName;
+    var loc_array = document.location.href.split('/');
+    if (loc_array[loc_array.length - 1] !== tabName) {
+      window.location.href=url;
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("o-tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
   }
 </script>
  
+
+
+
+
 <!-- Tab links -->
 <div class="o-tab">
-  <button class="o-tablinks active" onclick="openTab(event, 'overview')">Overview</button>
-  <button class="o-tablinks" onclick="openTab(event, 'api')">API</button>
+  <button class="o-tablinks active"  onclick="openTab(event, 'overview')">Overview</button>
+  <button class="o-tablinks " class="o-tablinks" onclick="openTab(event, 'api')">API</button>
 </div>
 
 <!-- OVERVIEW -->
-<div id="overview" class="o-tabcontent" style="display:block;">
+<div id="overview" class="o-tabcontent" style="display:block">
  <!-- <aside class="sidebar__right">
 <nav class="toc" markdown="1">
 <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
@@ -901,7 +915,7 @@
 
   
 
-  
+
   
 
   <aside class="sidebar__right">
@@ -982,15 +996,18 @@
 </div>
 
 <!-- API -->
-<div id="api" class="o-tabcontent">
-
+<div id="api" class="o-tabcontent" style="display:none">
   
 
 
 
+ 
+  <h2 id="OTranslateService" >OTranslateService</h2>
+ 
+
   
   
-    <p><strong class="grey-color">Class:</strong> OTranslateService</p>
+    <p><strong class="grey-color" id="OTranslateService">Class:</strong> OTranslateService</p>
   
 
 
@@ -1002,7 +1019,7 @@
 
   
     
-      <h3 class="grey-color">Inputs</h3>
+      <h3 id="inputs" class="grey-color">Inputs</h3>
     
     
     
@@ -2149,7 +2166,7 @@
   
 
   
-    <h3 class="grey-color">Outputs</h3>
+    <h3 id="outputs" class="grey-color">Outputs</h3>
     <table class="attributes-table mdl-data-table">
       <thead>
         <tr>
@@ -2172,7 +2189,7 @@
 
             <td class="" o-component-name>
               <p>onLanguageChanged</p>
- 
+
               
             </td>
           
@@ -2183,7 +2200,7 @@
 
             <td class="" o-component-description>
               <p>Event triggered when the lang change events</p>
- 
+
               
             </td>
           
@@ -2195,7 +2212,7 @@
 
 
   
-    <h3 class="grey-color">Methods</h3>
+    <h3 id="methods" class="grey-color">Methods</h3>
       
       
     <table>
@@ -2300,13 +2317,13 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-24T01:37:46-05:00">November 24, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-25T05:56:21-05:00">November 25, 2020</time></p>
         
       </footer>
 
       
 
-      
+      <!-- 
 
 
   <nav class="pagination">
@@ -2325,7 +2342,7 @@
       </a>
     
   </nav>
-
+ -->
     </div>
 
     

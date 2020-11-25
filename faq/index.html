@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-24T01:37:46-05:00">
+  <meta property="article:published_time" content="2020-11-25T05:56:21-05:00">
 
 
 
@@ -162,7 +162,27 @@
           <a href="https://ontimizeweb.github.io/docs/">
             <div class="main_icon"></div>
         </a>
-        <span class="fill_remaing_space"></span>
+
+        <script src="https://ontimizeweb.github.io/docs/assets/js/lunr.js"></script>
+<script type="text/javascript" src="/docs/assets/js/ontimize.js"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Ontimize Web" aria-label="Search Ontimize Web"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+
+
+<div class="search-overlay"></div>
+
+
+
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
           <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/">Ontimize Web</a></li>-->
@@ -823,7 +843,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="November 24, 2020">
+    <meta itemprop="datePublished" content="November 25, 2020">
     
 
     <div class="page__inner-wrap">
@@ -876,20 +896,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to solve javaScript heap out of memory error?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">There is a strict standard limit for the memory usage in V8 of around 1.7 GB, if you do not increase it manually.<br /> To increase this limit you have to use this flag on building or serving the application:<br /> <code>--max_old_space_size=8048</code><br /> Example: <code>npm run production-aot --max_old_space_size=8048</code>
 </div>
     </div>
   </div>
-  
+
 
 
     
@@ -897,20 +917,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to use dependant combos or dependant list-pickers?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">You can check <a href="../components/input/overviewservice/">here</a> how to use parent-keys parameter to construct dependant <a href="../components/input/combo/">combos</a> or dependant <a href="../components/input/listpicker/">list-pickers</a> as seen in the example.
 </div>
     </div>
   </div>
-  
+
 
 
     
@@ -918,20 +938,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to use query-method?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">All the OntimizeWeb components that use services for retrieving data have the attributes <i>query-method</i>, <i>paginated-query-method</i>, <i>insert-method</i>, <i>update-method</i> and <i>deleted-method</i>. The purpose of these attributes is allowing the component to use your own CRUD methods defined in your service. With this you can define, for example, as many query methods as you want. You can see the complete documentation <a href="../guide/service/">here</a>.
 </div>
     </div>
   </div>
-  
+
 
 
     
@@ -939,20 +959,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to use query-on-event?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body"><code>query-on-event</code> is an input of the <i>OServiceBaseComponent</i>. This input will reference to an event of the component that must listen to in order to perform its query. You can check how to use it <a href="../input/overviewservice/">here</a>.
 </div>
     </div>
   </div>
-  
+
 
 
     
@@ -960,20 +980,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How can I customize my app and set typography?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">Ontimize Web application follows material design guidelines proposed by Google. You can check <a href="../customize/theming/" title="Custom Theme">here</a> how to configure these palettes by both using predefined ones and creating new ones.<br /> You can also change the typography of the app by following the steps described <a href="../customize/typography/">here</a>.
 </div>
     </div>
   </div>
-  
+
 
 
     
@@ -981,20 +1001,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to get backend info after login?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">You can get that backend information in your login function by creating a function that returns the values that you need from the backend or from an API.<br /> You can check the normal login function <a href="https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/src/app/login/login.component.ts" target="blank">here</a><br /> It will be something like this:<br /><br /> <code>if (userName &amp;&amp; userName.length &gt; 0 &amp;&amp; password &amp;&amp; password.length &gt; 0) {<br /> &nbsp;&nbsp;const self = this;<br /> &nbsp;&nbsp;&nbsp;&nbsp;this.loginService.login(userName, password).subscribe(() =&gt; {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.getInfoFromBackend() //In this function is where you can get info from backend, connect to an API ...<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(res =&gt; {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.sessionExpired = false;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.router.navigate(['../'], { relativeTo: this.actRoute });<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.catch(e =&gt; console.log(e));<br /> &nbsp;&nbsp;}, this.handleError);<br /> }</code>
 </div>
     </div>
   </div>
-  
+
 
 
     
@@ -1002,20 +1022,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to get information from url?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">While working with angular, many times we need to get data from URL. Data in url can be passed in two ways, first as a parameter and second as a query string.<br /> We can get the value of query parameters using ActivatedRoute object, queryParamMap.<br /><br /> <b>Accessing Query String Values From URL</b><br /> Test URL: <b>http://test-url.com/user-list?type=normal&amp;list=active</b><br /><br /> <code> ngOnInit() {<br /> &nbsp;&nbsp;&nbsp;&nbsp;this.route.queryParamMap.subscribe(queryParams =&gt; {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.type = queryParams.get('type');<br /> &nbsp;&nbsp;&nbsp;&nbsp;this.list = queryParams.get('list');<br /> &nbsp;&nbsp;})<br /> } </code><br /> <b>Accessing the URL Parameters</b><br /> Test URL: <b>http://test-url.com/user-list/{type}/active</b><br /><br /> <code> ngOnInit() {<br /> &nbsp;&nbsp;this.route.paramMap.subscribe(params =&gt; {<br /> &nbsp;&nbsp;&nbsp;&nbsp;this.userType = params.get('type')<br /> &nbsp;&nbsp;}) } </code>
 </div>
     </div>
   </div>
-  
+
 
 
     
@@ -1023,20 +1043,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How can I configure environments for my application?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">An Angular Application Environment is JSON configuration information that tells the build system which files to change when you use ng build and ng serve.<br /> You can also create variables with different values in each of the environment files.<br /> Check the <a href="https://angular.io/guide/build" target="blank">official documentation</a> to understand more about the environment configuration.
 </div>
     </div>
   </div>
-  
+
 
 
     
@@ -1044,20 +1064,20 @@
 
 
 
-  
+
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
+      <h2 id="title" class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">How to change row header color by the primary palette?
 </a>
-      </h4>
+      </h2>
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">You can check <a href="../components/table/#the-table-headers">here</a> how change row header color by the primary palette as seen in the example.
 </div>
     </div>
   </div>
-  
+
 
 
 </div>
@@ -1073,13 +1093,13 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-24T01:37:46-05:00">November 24, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-25T05:56:21-05:00">November 25, 2020</time></p>
         
       </footer>
 
       
 
-      
+      <!-- 
 
 
   <nav class="pagination">
@@ -1098,7 +1118,7 @@
       </a>
     
   </nav>
-
+ -->
     </div>
 
     

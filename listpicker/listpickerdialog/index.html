@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-24T01:37:46-05:00">
+  <meta property="article:published_time" content="2020-11-25T05:56:21-05:00">
 
 
 
@@ -162,7 +162,27 @@
           <a href="https://ontimizeweb.github.io/docs/">
             <div class="main_icon"></div>
         </a>
-        <span class="fill_remaing_space"></span>
+
+        <script src="https://ontimizeweb.github.io/docs/assets/js/lunr.js"></script>
+<script type="text/javascript" src="/docs/assets/js/ontimize.js"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Ontimize Web" aria-label="Search Ontimize Web"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+
+
+<div class="search-overlay"></div>
+
+
+
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
           <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/">Ontimize Web</a></li>-->
@@ -325,9 +345,58 @@
               
                   
                       
-                                                                            
                             
+                      
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+                      
                             
+                      
+                            
+                      
+                  
+              
+                  
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
                   
               
                   
@@ -338,14 +407,44 @@
               
                  
       
+          
+              
+                  
+              
                  
       
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
-                 
-      
-                 
-      
+          
+              
+                  
+              
+                  
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
                  
       
     
@@ -359,10 +458,10 @@
 
       
        
-      <li class="nav-component-category active-component-category active-parent">
+      <li class="nav-component-category ">
         
           
-            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Input</span>
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Input</span>
           
 
         
@@ -378,7 +477,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/overview/" class=" overview">Overview</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/overview/overview" class=" overview">Overview</a></li>
           
             
             
@@ -386,7 +485,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/checkbox/" class=" ">Checkbox</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/checkbox/overview" class=" ">Checkbox</a></li>
           
             
             
@@ -394,7 +493,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/combo/" class=" ">Combo</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/combo/overview" class=" ">Combo</a></li>
           
             
             
@@ -402,7 +501,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/currency/" class=" ">Currency</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/currency/overview" class=" ">Currency</a></li>
           
             
             
@@ -410,7 +509,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/date/" class=" ">Date</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/date/overview" class=" ">Date</a></li>
           
             
             
@@ -418,7 +517,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/daterange/" class=" ">Date range <span class='menuitem-badge'>new<span></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/daterange/overview" class=" ">Date range <span class='menuitem-badge'>new<span></a></li>
           
             
             
@@ -426,7 +525,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/email/" class=" ">Email</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/email/overview" class=" ">Email</a></li>
           
             
             
@@ -434,7 +533,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/file/" class=" ">File</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/file/overview" class=" ">File</a></li>
           
             
             
@@ -442,7 +541,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/html/" class=" ">HTML</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/html/overview" class=" ">HTML</a></li>
           
             
             
@@ -450,7 +549,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/hour/" class=" ">Hour</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/hour/overview" class=" ">Hour</a></li>
           
             
             
@@ -458,7 +557,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/integer/" class=" ">Integer</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/integer/overview" class=" ">Integer</a></li>
           
             
             
@@ -466,7 +565,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/listpicker/" class=" ">List picker</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/listpicker/overview" class=" ">List picker</a></li>
           
             
             
@@ -474,7 +573,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/nif/" class=" ">NIF</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/nif/overview" class=" ">NIF</a></li>
           
             
             
@@ -482,7 +581,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/password/" class=" ">Password</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/password/overview" class=" ">Password</a></li>
           
             
             
@@ -490,7 +589,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/percent/" class=" ">Percentage</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/percent/overview" class=" ">Percentage</a></li>
           
             
             
@@ -498,7 +597,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/radio/" class=" ">Radio</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/radio/overview" class=" ">Radio</a></li>
           
             
             
@@ -506,7 +605,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/real/" class=" ">Real</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/real/overview" class=" ">Real</a></li>
           
             
             
@@ -514,7 +613,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/slidetoggle/" class=" ">Slide toggle</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/slidetoggle/overview" class=" ">Slide toggle</a></li>
           
             
             
@@ -522,7 +621,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/slider/" class=" ">Slider</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/slider/overview" class=" ">Slider</a></li>
           
             
             
@@ -530,7 +629,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/text/" class=" ">Text</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/text/overview" class=" ">Text</a></li>
           
             
             
@@ -538,7 +637,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/textarea/" class=" ">Textarea</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/textarea/overview" class=" ">Textarea</a></li>
           
             
             
@@ -546,7 +645,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/time/" class=" ">Time</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/time/overview" class=" ">Time</a></li>
           
         </ul>
         
@@ -575,7 +674,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/button/" class=" ">Button</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/button/overview" class=" ">Button</a></li>
           
             
             
@@ -583,7 +682,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/buttontoggle/" class=" ">Button toggle</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/buttontoggle/overview" class=" ">Button toggle</a></li>
           
         </ul>
         
@@ -612,7 +711,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/filterbuilder/" class=" ">Filter builder</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/filterbuilder/overview" class=" ">Filter builder</a></li>
           
             
             
@@ -620,7 +719,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/form/" class=" ">Form</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/form/overview" class=" ">Form</a></li>
           
             
             
@@ -628,7 +727,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/grid/" class=" ">Grid <span class='menuitem-badge'>new<span></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/grid/overview" class=" ">Grid <span class='menuitem-badge'>new<span></a></li>
           
             
             
@@ -636,7 +735,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/list/" class=" ">List</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/list/overview" class=" ">List</a></li>
           
             
             
@@ -644,7 +743,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/table/" class=" ">Table</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/table/overview" class=" ">Table</a></li>
           
         </ul>
         
@@ -673,7 +772,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/image/" class=" ">Image</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/image/overview" class=" ">Image</a></li>
           
         </ul>
         
@@ -702,7 +801,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/applayout/" class=" ">App layout</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/applayout/overview" class=" ">App layout</a></li>
           
             
             
@@ -710,7 +809,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/breadcrumb/" class=" ">Breadcrumb</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/breadcrumb/overview" class=" ">Breadcrumb</a></li>
           
             
             
@@ -718,7 +817,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/containers/" class=" ">Containers</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/containers/overview" class=" ">Containers</a></li>
           
             
             
@@ -726,7 +825,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/contextmenu/" class=" ">Context menu</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/contextmenu/overview" class=" ">Context menu</a></li>
           
             
             
@@ -734,7 +833,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/dialog/" class=" ">Dialog</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/dialog/overview" class=" ">Dialog</a></li>
           
             
             
@@ -742,7 +841,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/formlayoutmanager/" class=" ">Form layout mngr.</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/formlayoutmanager/overview" class=" ">Form layout mngr.</a></li>
           
             
             
@@ -750,7 +849,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/snackbar/" class=" ">SnackBar</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/snackbar/overview" class=" ">SnackBar</a></li>
           
         </ul>
         
@@ -779,7 +878,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/menu/" class=" overview">Overview</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/menu/overview" class=" overview">Overview</a></li>
           
             
             
@@ -787,7 +886,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/barmenu/" class=" ">Bar menu</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/barmenu/overview" class=" ">Bar menu</a></li>
           
             
             
@@ -795,7 +894,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/cardmenulayout/" class=" ">Card menu layout</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/cardmenulayout/overview" class=" ">Card menu layout</a></li>
           
             
             
@@ -803,7 +902,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/sidemenu/" class=" ">Side menu <small>(deprecated)</small></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/sidemenu/overview" class=" ">Side menu <small>(deprecated)</small></a></li>
           
         </ul>
         
@@ -822,7 +921,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="November 24, 2020">
+    <meta itemprop="datePublished" content="November 25, 2020">
     
 
     <div class="page__inner-wrap">
@@ -860,15 +959,15 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-24T01:37:46-05:00">November 24, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-25T05:56:21-05:00">November 25, 2020</time></p>
         
       </footer>
 
       
 
-      
+      <!-- 
 
-
+ -->
     </div>
 
     

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-24T01:37:46-05:00">
+  <meta property="article:published_time" content="2020-11-25T05:56:21-05:00">
 
 
 
@@ -162,7 +162,27 @@
           <a href="https://ontimizeweb.github.io/docs/">
             <div class="main_icon"></div>
         </a>
-        <span class="fill_remaing_space"></span>
+
+        <script src="https://ontimizeweb.github.io/docs/assets/js/lunr.js"></script>
+<script type="text/javascript" src="/docs/assets/js/ontimize.js"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Ontimize Web" aria-label="Search Ontimize Web"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+
+
+<div class="search-overlay"></div>
+
+
+
         <button><div class="navicon"></div></button>
         <ul class="visible-links">
           <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/">Ontimize Web</a></li>-->
@@ -398,7 +418,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/overview/" class=" ">Overview</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/overview/overview" class=" ">Overview</a></li>
           
             
             
@@ -406,7 +426,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/linechart/" class=" ">Line Chart</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/linechart/overview" class=" ">Line Chart</a></li>
           
             
             
@@ -414,7 +434,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/linebarchart/" class=" ">Line + Bar Chart</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/linebarchart/overview" class=" ">Line + Bar Chart</a></li>
           
             
             
@@ -422,7 +442,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/piechart/" class=" ">Pie Chart</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/piechart/overview" class=" ">Pie Chart</a></li>
           
             
             
@@ -430,7 +450,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/donutchart/" class=" ">Donut Chart</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/donutchart/overview" class=" ">Donut Chart</a></li>
           
             
             
@@ -438,7 +458,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/discretebarchart/" class="active ">Discrete Bar Chart</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/discretebarchart/overview" class=" ">Discrete Bar Chart</a></li>
           
             
             
@@ -446,7 +466,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/multibarchart/" class=" ">Multi Bar Chart</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/charts/configuration/multibarchart/overview" class=" ">Multi Bar Chart</a></li>
           
         </ul>
         
@@ -465,7 +485,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="November 24, 2020">
+    <meta itemprop="datePublished" content="November 25, 2020">
     
 
     <div class="page__inner-wrap">
@@ -491,41 +511,35 @@
 
 
 
- 
- 
- 
+
+
+
 
 <script type="text/javascript">
+
   function openTab(evt, tabName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("o-tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+    var url="https://ontimizeweb.github.io/docs/charts/configuration/discretebarchart/";
+    url+='/../'+tabName;
+    var loc_array = document.location.href.split('/');
+    if (loc_array[loc_array.length - 1] !== tabName) {
+      window.location.href=url;
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("o-tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
   }
 </script>
  
+
+
+
+
 <!-- Tab links -->
 <div class="o-tab">
-  <button class="o-tablinks active" onclick="openTab(event, 'overview')">Overview</button>
-  <button class="o-tablinks" onclick="openTab(event, 'api')">API</button>
+  <button class="o-tablinks active"  onclick="openTab(event, 'overview')">Overview</button>
+  <button class="o-tablinks " class="o-tablinks" onclick="openTab(event, 'api')">API</button>
 </div>
 
 <!-- OVERVIEW -->
-<div id="overview" class="o-tabcontent" style="display:block;">
+<div id="overview" class="o-tabcontent" style="display:block">
  <!-- <aside class="sidebar__right">
 <nav class="toc" markdown="1">
 <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
@@ -536,148 +550,25 @@
 
   
 
-  
-  
 
   
-<h2 id="introduction">Introduction</h2>
 
-<p>You can check a running example of this <em>Discrete Bar Chart</em> <a href="https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/discrete-bar" target="_blank">here</a>.</p>
-
-<p>All chart parameters for the <em>Discrete Bar Chart</em> can be checked in the API tab.</p>
-
-<h2 id="basic-example">Basic Example</h2>
-
-<p><em>HTML</em></p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-chart</span> <span class="na">type=</span><span class="s">"discreteBar"</span> <span class="na">x-label=</span><span class="s">"Axis x"</span> <span class="na">y-label=</span><span class="s">"Axis Y"</span> <span class="na">entity=</span><span class="s">"EMovementTypesTotal"</span> <span class="na">x-axis=</span><span class="s">"MOVEMENTTYPES"</span> <span class="na">y-axis=</span><span class="s">"MOVEMENT"</span><span class="nt">&gt;&lt;/o-chart&gt;</span>
-</code></pre></div></div>
-
-<h2 id="custom-configuration-example">Custom Configuration Example</h2>
-
-<p><em>HTML</em></p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-chart</span> <span class="na">type=</span><span class="s">"discreteBar"</span> <span class="na">x-label=</span><span class="s">"Axis x"</span> <span class="na">y-label=</span><span class="s">"Axis Y"</span> <span class="na">[data]=</span><span class="s">"data"</span> <span class="na">layout-fill</span><span class="nt">&gt;&lt;/o-chart&gt;</span>
-</code></pre></div></div>
-
-<p><em>TS</em></p>
-
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeService</span><span class="p">,</span> <span class="nx">ChartService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
-<span class="kr">declare</span> <span class="kd">var</span> <span class="nx">d3</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
-
-<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">discrete-bar</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./discrete-bar.component.html</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./discrete-bar.component.scss</span><span class="dl">'</span><span class="p">]</span>
-<span class="p">})</span>
-
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">DiscreteBarComponent</span> <span class="p">{</span>
-
-  <span class="k">protected</span> <span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">;</span>
-
-  <span class="k">protected</span> <span class="nx">yAxis</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MOVEMENT</span><span class="dl">'</span><span class="p">;</span>
-  <span class="k">protected</span> <span class="nx">xAxis</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MOVEMENTTYPES</span><span class="dl">'</span><span class="p">;</span>
-
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">discreteBar</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">static</span><span class="p">:</span> <span class="kc">false</span><span class="p">})</span>
-  <span class="k">protected</span> <span class="nx">discreteBar</span><span class="p">:</span> <span class="nx">OChartComponent</span><span class="p">;</span>
-
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
-
-  <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// Configuring Ontimize service instance...</span>
-    <span class="kd">let</span> <span class="nx">service</span><span class="p">:</span> <span class="nx">OntimizeService</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">injector</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">OntimizeService</span><span class="p">);</span>
-    <span class="cm">/*
-    * 'getDefaultServiceConfiguration' method provides session, endpoint,.. data from
-    * application configuration object.
-    */</span>
-    <span class="kd">let</span> <span class="nx">conf</span> <span class="o">=</span> <span class="nx">service</span><span class="p">.</span><span class="nx">getDefaultServiceConfiguration</span><span class="p">();</span>
-    <span class="nx">conf</span><span class="p">[</span><span class="dl">'</span><span class="s1">entity</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">EMovementTypes</span><span class="dl">'</span><span class="p">;</span>
-    <span class="nx">service</span><span class="p">.</span><span class="nx">configureService</span><span class="p">(</span><span class="nx">conf</span><span class="p">);</span>
-
-    <span class="c1">// Performing ontimize query...</span>
-    <span class="kd">let</span> <span class="nx">filter</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="dl">'</span><span class="s1">ACCOUNTID</span><span class="dl">'</span><span class="p">:</span> <span class="mi">7310</span>
-    <span class="p">};</span>
-    <span class="kd">let</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">MOVEMENT</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">MOVEMENTTYPES</span><span class="dl">'</span><span class="p">];</span>
-    <span class="nx">service</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">filter</span><span class="p">,</span> <span class="nx">columns</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">((</span><span class="nx">resp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="c1">// response ok</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">adaptResult</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Impossible to query data!</span><span class="dl">'</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-
-    <span class="kd">let</span> <span class="nx">chartService</span><span class="p">:</span> <span class="nx">ChartService</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">discreteBar</span><span class="p">.</span><span class="nx">getChartService</span><span class="p">();</span>
-    <span class="kd">let</span> <span class="nx">chartOps</span> <span class="o">=</span> <span class="nx">chartService</span><span class="p">.</span><span class="nx">getChartOptions</span><span class="p">();</span>
-    <span class="c1">// Configuring x axis...</span>
-    <span class="nx">chartOps</span><span class="p">[</span><span class="dl">'</span><span class="s1">yAxis</span><span class="dl">'</span><span class="p">][</span><span class="dl">'</span><span class="s1">tickFormat</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span><span class="dl">'</span><span class="s1">,f</span><span class="dl">'</span><span class="p">)(</span><span class="nx">d</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">€</span><span class="dl">'</span><span class="p">;</span>
-    <span class="p">};</span>
-
-  <span class="p">}</span>
-
-  <span class="cm">/**
-   * Creates chart data grouping movements by category 'Movement type'
-   *  */</span>
-  <span class="nx">adaptResult</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">values</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">processValues</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-      <span class="c1">// chart data</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span>
-          <span class="dl">'</span><span class="s1">key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Discrete serie</span><span class="dl">'</span><span class="p">,</span>
-          <span class="dl">'</span><span class="s1">values</span><span class="dl">'</span><span class="p">:</span> <span class="nx">values</span>
-        <span class="p">}</span>
-      <span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="nx">processValues</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span> <span class="p">)</span> <span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-    <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="na">item</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="na">index</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nx">filterCategory</span><span class="p">(</span><span class="nx">item</span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="nx">xAxis</span><span class="p">],</span> <span class="nx">values</span><span class="p">);</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">filtered</span> <span class="o">&amp;&amp;</span> <span class="nx">filtered</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="p">{</span>
-          <span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">:</span> <span class="nx">item</span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="nx">xAxis</span><span class="p">],</span>
-          <span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">:</span> <span class="nx">item</span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="nx">yAxis</span><span class="p">]</span>
-        <span class="p">};</span>
-        <span class="nx">values</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">filtered</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="dl">'</span><span class="s1">y</span><span class="dl">'</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">item</span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="nx">yAxis</span><span class="p">];</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
-    <span class="k">return</span> <span class="nx">values</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="nx">filterCategory</span><span class="p">(</span><span class="nx">category</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">values</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">values</span> <span class="o">&amp;&amp;</span> <span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">filtered</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">val</span><span class="p">:</span> <span class="nb">Object</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">val</span><span class="p">[</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">]</span> <span class="o">===</span> <span class="nx">category</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-        <span class="p">}</span>
-      <span class="p">});</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">filtered</span><span class="p">;</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-</code></pre></div></div>
+  
 
 </div>
 
 <!-- API -->
-<div id="api" class="o-tabcontent">
-
+<div id="api" class="o-tabcontent" style="display:none">
   
 
 
 
+ 
+  <h2 id="Discrete Bar Chart" >Discrete Bar Chart</h2>
+ 
+
   
-    <p><strong class="grey-color">Directive:</strong> o-chart</p>
+    <p><strong class="grey-color" id="o-chart">Directive:</strong> o-chart</p>
   
   
 
@@ -686,7 +577,7 @@
 
 
   
-    <h3 class="grey-color">Inherited inputs</h3>
+    <h3 id="inherited-inputs" class="grey-color">Inherited inputs</h3>
     <ul>
     
       
@@ -726,7 +617,7 @@
 
   
     
-      <h3 class="grey-color">Chart Parameters</h3>
+      <h3 id="chart-parameters" class="grey-color">Chart Parameters</h3>
     
     
     
@@ -1537,32 +1428,32 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-24T01:37:46-05:00">November 24, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-25T05:56:21-05:00">November 25, 2020</time></p>
         
       </footer>
 
       
 
-      
+      <!-- 
 
 
   <nav class="pagination">
     
-      <a href="https://ontimizeweb.github.io/docs/charts/configuration/donutchart/" class="pagination--pager" title="Donut Chart
+      <a href="https://ontimizeweb.github.io/docs/charts/configuration/donutchart/overview" class="pagination--pager" title="Donut Chart
 ">
           <i class="fas fa-arrow-left margin-right"></i>
         Previous
       </a>
     
     
-      <a href="https://ontimizeweb.github.io/docs/charts/configuration/multibarchart/" class="pagination--pager" title="Multi Bar Chart
+      <a href="https://ontimizeweb.github.io/docs/charts/configuration/discretebarchart/overview" class="pagination--pager" title="Discrete Bar Chart
 ">
         Next
         <i class="fas fa-arrow-right margin-left"></i>
       </a>
     
   </nav>
-
+ -->
     </div>
 
     
