@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/overviewservice/
+permalink: /components/input/overviewservice/overview
 title: "Form service components"
 comp: "overviewService"
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/file/
+permalink: /components/input/file/overview
 title: "File input"
 comp: fileInput
 ---

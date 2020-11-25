@@ -1,5 +1,5 @@
 ---
-permalink: /components/barmenu/
+permalink: /components/barmenu/overview
 title: "Bar menu"
 comp: barMenu
 ---

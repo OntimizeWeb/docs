@@ -1,5 +1,5 @@
 ---
-permalink: /components/snackbar/
+permalink: /components/snackbar/overview
 title: "SnackBar"
 comp: snackbar
 ---

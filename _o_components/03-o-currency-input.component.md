@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/currency/
+permalink: /components/input/currency/overview
 title: "Currency input"
 comp: currencyInput
 ---

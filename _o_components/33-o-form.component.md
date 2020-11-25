@@ -1,5 +1,5 @@
 ---
-permalink: /components/form/
+permalink: /components/form/overview
 title: "Form"
 comp: form
 ---

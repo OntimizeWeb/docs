@@ -1,5 +1,5 @@
 ---
-permalink: /components/cardmenulayout/
+permalink: /components/cardmenulayout/overview
 title: "Card menu layout"
 comp: cardMenuLayout
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /components/buttontoggle/
+permalink: /components/buttontoggle/overview
 title: "Button toggle"
 comp: buttontoggle
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /components/contextmenu/
+permalink: /components/contextmenu/overview
 title: "Context menu"
 comp: contextmenu
 ---
@@ -7,7 +7,7 @@ comp: contextmenu
 {% include base_path %}
 {% include toc %}
 
-The **OntimizeWeb** context menu is compound of the `o-context-menu` component and the `oContextMenuData` directive which is attached to a DOM element in which the context menu component appears. 
+The **OntimizeWeb** context menu is compound of the `o-context-menu` component and the `oContextMenuData` directive which is attached to a DOM element in which the context menu component appears.
 
 The `o-context-menu` component supports the ability for nested menu. To do so, you have to define [`o-context-menu-group`](#context-menu-group){:target='_blank'} component
 

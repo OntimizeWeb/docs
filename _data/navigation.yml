@@ -123,87 +123,87 @@ components:
   - title: Input
     children:
       - title: "Overview"
-        url: /components/input/overview/
+        url: /components/input/overview/overview
         order: "1"
         class: "overview"
       - title: "Text"
-        url: /components/input/text/
+        url: /components/input/text/overview
         order: "2"
       - title: "Integer"
-        url: /components/input/integer/
+        url: /components/input/integer/overview
         order: "2"
       - title: "Hour"
-        url: /components/input/hour/
+        url: /components/input/hour/overview
         order: "2"
       - title: "Real"
-        url: /components/input/real/
+        url: /components/input/real/overview
         order: "2"
       - title: "Percentage"
-        url: /components/input/percent/
+        url: /components/input/percent/overview
         order: "2"
       - title: "Currency"
-        url: /components/input/currency/
+        url: /components/input/currency/overview
         order: "2"
       - title: "Date"
-        url: /components/input/date/
+        url: /components/input/date/overview
         order: "2"
       - title: "Date range <span class='menuitem-badge'>new<span>"
-        url: /components/input/daterange/
+        url: /components/input/daterange/overview
         order: "2"
       - title: "NIF"
-        url: /components/input/nif/
+        url: /components/input/nif/overview
         order: "2"
       - title: "Email"
-        url: /components/input/email/
+        url: /components/input/email/overview
         order: "2"
       - title: "Password"
-        url: /components/input/password/
+        url: /components/input/password/overview
         order: "2"
       - title: "Textarea"
-        url: /components/input/textarea/
+        url: /components/input/textarea/overview
         order: "2"
       - title: "Time"
-        url: /components/input/time/
+        url: /components/input/time/overview
         order: "2"
       - title: "HTML"
-        url: /components/input/html/
+        url: /components/input/html/overview
         order: "2"
       - title: "File"
-        url: /components/input/file/
+        url: /components/input/file/overview
         order: "2"
       - title: "Checkbox"
-        url: /components/input/checkbox/
+        url: /components/input/checkbox/overview
         order: "2"
       - title: "Combo"
-        url: /components/input/combo/
+        url: /components/input/combo/overview
         order: "2"
       - title: "List picker"
-        url: /components/input/listpicker/
+        url: /components/input/listpicker/overview
         order: "2"
         children:
           - title: "List picker dialog"
-            url: /listpicker/listpickerdialog/
+            url: /listpicker/listpickerdialog/overview
       - title: "Radio"
-        url: /components/input/radio/
+        url: /components/input/radio/overview
         order: "2"
       - title: "Slide toggle"
-        url: /components/input/slidetoggle/
+        url: /components/input/slidetoggle/overview
         order: "2"
       - title: "Slider"
-        url: /components/input/slider/
+        url: /components/input/slider/overview
         order: "2"
 
   - title: Button
     children:
       - title: "Button"
-        url: /components/button/
+        url: /components/button/overview
       - title: "Button toggle"
-        url: /components/buttontoggle/
+        url: /components/buttontoggle/overview
 
   - title: Data
     children:
       - title: "Form"
-        url: /components/form/
+        url: /components/form/overview
         children:
           - title: "Detail form"
             url: /components/form/detail/
@@ -212,7 +212,7 @@ components:
       # - title: "DataTable <small>(deprecated)</small>"
       #   url: /components/datatable/
       - title: "Table"
-        url: /components/table/
+        url: /components/table/overview
         children:
           - title: "Table buttons"
             url: '/components/table/buttons/'
@@ -235,50 +235,50 @@ components:
           - title: "OBaseTableCellEditor"
             url: '/components/table/obasetablecellrenderer/'
       - title: "Filter builder"
-        url: /components/filterbuilder/
+        url: /components/filterbuilder/overview
 
       - title: "Grid <span class='menuitem-badge'>new<span>"
-        url: /components/grid/
+        url: /components/grid/overview
       - title: "List"
-        url: /components/list/
+        url: /components/list/overview
   - title: Media
     children:
       - title: "Image"
-        url: /components/image/
+        url: /components/image/overview
 
   - title: Layout
     children:
       - title: "Containers"
-        url: /components/containers/
+        url: /components/containers/overview
       - title: "Dialog"
-        url: /components/dialog/
+        url: /components/dialog/overview
       - title: "App layout"
-        url: /components/applayout/
+        url: /components/applayout/overview
       - title: "Form layout mngr."
-        url: /components/formlayoutmanager/
+        url: /components/formlayoutmanager/overview
       - title: "Breadcrumb"
-        url: /components/breadcrumb/
+        url: /components/breadcrumb/overview
       - title: "SnackBar"
-        url: /components/snackbar/
+        url: /components/snackbar/overview
       - title: "Context menu"
-        url: /components/contextmenu/
+        url: /components/contextmenu/overview
   - title: Menu
     children:
       - title: "Overview"
-        url: /components/menu/
+        url: /components/menu/overview
         order: "1"
         class: "overview"
       - title: "Card menu layout"
-        url: /components/cardmenulayout/
+        url: /components/cardmenulayout/overview
         children:
           - title: "Card menu item"
-            url: /components/cardmenulayout/cardmenuitem/
+            url: /components/cardmenulayout/cardmenuitem/overview
         order: "2"
       - title: "Bar menu"
-        url: /components/barmenu/
+        url: /components/barmenu/overview
         order: "2"
       - title: "Side menu <small>(deprecated)</small>"
-        url: /components/sidemenu/
+        url: /components/sidemenu/overview
         order: "2"
 
 
@@ -309,19 +309,19 @@ ontimize_web_ngx_charts:
   - title: "Configuration"
     children:
       - title: "Overview"
-        url: /charts/configuration/overview/
+        url: /charts/configuration/overview/overview
       - title: "Line Chart"
-        url: /charts/configuration/linechart/
+        url: /charts/configuration/linechart/overview
       - title: "Line + Bar Chart"
-        url: /charts/configuration/linebarchart/
+        url: /charts/configuration/linebarchart/overview
       - title: "Pie Chart"
-        url: /charts/configuration/piechart/
+        url: /charts/configuration/piechart/overview
       - title: "Donut Chart"
-        url: /charts/configuration/donutchart/
+        url: /charts/configuration/donutchart/overview
       - title: "Discrete Bar Chart"
-        url: /charts/configuration/discretebarchart/
+        url: /charts/configuration/discretebarchart/overview
       - title: "Multi Bar Chart"
-        url: /charts/configuration/multibarchart/
+        url: /charts/configuration/multibarchart/overview
   #- title: "Components"
   #  children:
   #    - title: "Chart"
@@ -338,9 +338,9 @@ ontimize_web_ngx_tree:
   - title: "Components"
     children:
       - title: "Tree"
-        url: /tree/components/o-tree.component/
+        url: /tree/components/o-tree.component/overview
       - title: "Tree node"
-        url: /tree/components/o-tree-node.component/
+        url: /tree/components/o-tree-node.component/overview
 
 ontimize_web_ngx_map:
   - title: "Getting Started"
@@ -361,5 +361,5 @@ ontimize_web_ngx_gallery:
   - title: "Components"
     children:
       - title: "Gallery"
-        url: /gallery/components/gallery/
+        url: /gallery/components/gallery/overview
 

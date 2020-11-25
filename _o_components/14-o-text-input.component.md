@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/text/
+permalink: /components/input/text/overview
 title: "Text input"
 comp: textInput
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /components/containers/
+permalink: /components/containers/overview
 title: "Containers"
 comp: container
 ---
@@ -8,7 +8,7 @@ comp: container
 
 Container components are used to wrap components and organize the application layout. This components are `o-column` and `o-row` and affect their children's layout or flow as the direction alon the cross-axis or the main-axis respectively.
 
-This components also apply basic styling 
+This components also apply basic styling
 
 ## Example
 
@@ -31,7 +31,7 @@ This components also apply basic styling
 ```
 ## Appearance <span class='menuitem-badge'> new </span>
 
-The `appearance` input indicates which of the different `container` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants), 
+The `appearance` input indicates which of the different `container` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants),
 only has a possible *outline* value.
 ```html
  <o-column title-label="Dirección fiscal" appearance='outline'>

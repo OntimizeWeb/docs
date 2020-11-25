@@ -1,5 +1,5 @@
 ---
-permalink: /components/sidemenu/
+permalink: /components/sidemenu/overview
 title: "Side menu"
 comp: sideMenu
 ---
