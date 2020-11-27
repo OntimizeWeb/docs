@@ -1,7 +1,8 @@
 ---
-permalink: /components/input/nif/
+permalink: /components/input/nif/overview
 title: "Nif input"
 comp: nifInput
+tab: overview
 ---
 
 {% include base_path %}

@@ -1,8 +1,9 @@
 ---
-permalink: /charts/configuration/discretebarchart/
+permalink: /charts/configuration/discretebarchart/overview
 title: "Discrete Bar Chart"
 comp: discretebarchart
 layout: o-component
+
 ---
 
 {% include base_path %}

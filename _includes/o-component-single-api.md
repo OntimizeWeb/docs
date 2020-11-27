@@ -1,17 +1,23 @@
 
+{% assign inputsColumns = "Name|Description|Default" | split: "|" %}
 {% assign componentData = include.component %}
 {% if componentData %}
+ {% if componentData.title %}
+  <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+  {% else %}
+  <h2 id="{{page.title}}" >{{ page.title }}</h2>
+ {% endif %}
 
   {% if componentData.directive %}
-    <p><strong class="grey-color">Directive:</strong> {{ componentData.directive }}</p>
+    <p><strong class="grey-color" id="{{componentData.directive}}">Directive:</strong> {{ componentData.directive }}</p>
   {% endif %}
   {% if componentData.class %}
-    <p><strong class="grey-color">Class:</strong> {{ componentData.class }}</p>
+    <p><strong class="grey-color" id="{{componentData.class }}">Class:</strong> {{ componentData.class }}</p>
   {% endif %}
 
 
   {% if componentData.properties %}
-    <h3 class="grey-color">Properties</h3>
+    <h3 id="properties" class="grey-color">Properties</h3>
     {% assign emptyColumns = '' | split: '|' %}
 
     {% for column in componentData.propertiesColumns %}
@@ -42,14 +48,14 @@
             {% assign columnKey = column | downcase %}
             {% unless emptyColumns contains columnKey %}
               {% assign columnData = 'o-component-' | append: columnKey %}
-              
+
               {% assign cellValue = commonData[columnKey] %}
               {% if attributeObject[columnKey] != undefined %}
                 {% assign cellValue = attributeObject[columnKey] %}
               {% endif %}
-            
+
               {% assign cellContent = cellValue | default: ''  | markdownify %}
-          
+
               <td class="" {{ columnData }}>{{ cellContent }}</td>
             {% endunless %}
           {% endfor %}
@@ -61,7 +67,7 @@
 
 
   {% if componentData.inheritedAttributes %}
-    <h3 class="grey-color">Inherited inputs</h3>
+    <h3 id="inherited-inputs" class="grey-color">Inherited inputs</h3>
     <ul>
     {% assign sortedInheritedAttributes = (componentData.inheritedAttributes | sort: 'name') %}
       {% for inheritedObj in sortedInheritedAttributes %}
@@ -81,9 +87,9 @@
 
   {% if componentData.attributes %}
     {% if componentData.chart %}
-      <h3 class="grey-color">Chart Parameters</h3>
+      <h3 id="chart-parameters" class="grey-color">Chart Parameters</h3>
     {% else %}
-      <h3 class="grey-color">Inputs</h3>
+      <h3 id="inputs" class="grey-color">Inputs</h3>
     {% endif %}
     {% assign emptyColumns = '' | split: '|' %}
     {% assign requiredInputs = '' | split: '|' %}
@@ -93,13 +99,13 @@
       {% assign emptyCol = componentData.attributes | where: columnKey, "" | size %}
       {% if emptyCol == componentData.attributes.size %}
         {% assign emptyColumns = emptyColumns | push: columnKey %}
-      {% endif %}     
+      {% endif %}
     {% endfor %}
     {% for attributeObject in componentData.attributes %}
       {% assign commonAttributeObject = site.data.components.common.attributes[attributeObject.name] | default : {} %}
       {% if attributeObject['required'] == 'yes' %}
         {% assign requiredInputs = requiredInputs | push: attributeObject['name'] %}
-      {% endif %} 
+      {% endif %}
       {% if commonAttributeObject['required'] == 'yes' %}
         {% assign requiredInputs = requiredInputs | push: attributeObject['name'] %}
       {% endif %}
@@ -192,7 +198,7 @@
   {% endif %}
 
   {% if componentData.outputs %}
-    <h3 class="grey-color">Outputs</h3>
+    <h3 id="outputs" class="grey-color">Outputs</h3>
     <table class="attributes-table mdl-data-table">
       <thead>
         <tr>
@@ -216,7 +222,7 @@
             {% endif %}
 
             <td class="" {{ columnData }}>
-              {{ cellContent | markdownify  }} 
+              {{ cellContent | markdownify  }}
               {% if secondLine != '' %}
                 <p><i>{{ secondLine }}</i></p>
               {% endif %}
@@ -230,7 +236,7 @@
 
 
   {% if componentData.methods %}
-    <h3 class="grey-color">Methods</h3>
+    <h3 id="methods" class="grey-color">Methods</h3>
       {% assign sortedMethods = (componentData.methods | sort: 'name') %}
       {% for outputObject in sortedMethods %}
     <table>

@@ -1,7 +1,8 @@
 ---
-permalink: /components/buttontoggle/
+permalink: /components/buttontoggle/overview
 title: "Button toggle"
 comp: buttontoggle
+tab: overview
 ---
 
 The `o-button-toggle` component is an on/off toggle with the appearance of a button. They can be standalone or grouped with the `mat-button-toggle-group` component.

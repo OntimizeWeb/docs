@@ -1,8 +1,9 @@
 ---
-permalink: /charts/configuration/overview/
+permalink: /charts/configuration/overview/overview
 title: "Overview"
 comp: overviewchart
 layout: o-component
+
 ---
 
 {% include base_path %}

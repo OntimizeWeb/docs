@@ -1,7 +1,8 @@
 ---
-permalink: /components/applayout/
+permalink: /components/applayout/overview
 title: "App layout"
 comp: appLayout
+tab: overview
 ---
 
 {% include base_path %}

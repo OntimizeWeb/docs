@@ -1,7 +1,8 @@
 ---
-permalink: /components/cardmenulayout/
+permalink: /components/cardmenulayout/overview
 title: "Card menu layout"
 comp: cardMenuLayout
+tab: overview
 ---
 
 {% include base_path %}
