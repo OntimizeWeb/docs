@@ -214,87 +214,87 @@ outputs: [{
 }]
 
 methods: [{
-  name: "getValue()",
+  name: "getValue",
   type: "method",
   description: "Returns the current page table data.",
   returns: "any[]"
 },{
-  name: "getRenderedValue()",
+  name: "getRenderedValue",
   type: "method",
   parameters: "any[]",
    description: "Returns the current page table renderer data.",
 },{
-  name: "getAllValues()",
+  name: "getAllValues",
   type: "method",
   parameters: "any[]",
   description: "Returns the table data."
 },{
-  name: "getAllRenderedValues()",
+  name: "getAllRenderedValues",
   type: "method",
   parameters: "any[]",
   description: "Returns the table renderer data."
 },{
-  name: "reinitialize()",
+  name: "reinitialize",
   type: "method",
   parameters: "OTableInitializationOptions",
   description: "Allow reinitialize table options adding options "
 },{
-  name: "toogleRowExpandable()",
+  name: "toogleRowExpandable",
   type: "method",
   parameters: "row:data, rowIndex:number, event:Event",
   description: "Allow to expand or collapse the expandable row."
 },{
-  name: "queryData()",
+  name: "queryData",
   type: "method",
   parameters: "filter:any, ovrrArgs?: OQueryDataArgs",
   description: "Allow to manage the call to the service data."
 },{
-  name: "add()",
+  name: "add",
   type: "method",
   parameters: "",
   description: "Triggers navigation to new item insertion"
 },{
-  name: "remove()",
+  name: "remove",
   type: "method",
   parameters: "clearSelectedItems: boolean = false",
   description: "Remove selected rows"
 },{
-  name: "showAndSelectAllCheckbox()",
+  name: "showAndSelectAllCheckbox",
   type: "method",
   parameters: "",
   description: "Select all rows."
 },{
-  name: "reloadData()",
+  name: "reloadData",
   type: "method",
   parameters: "",
   description: "Reload table data."
 },{
-  name: "editDetail()",
+  name: "editDetail",
   type: "method",
   parameters: "item: any",
   description: "Triggers navigation to item edition, receiving item data"
 },{
-  name: "viewDetail()",
+  name: "viewDetail",
   type: "method",
   parameters: "item: any",
   description: "Triggers navigation to item detail, receiving item data"
 },{
-  name: "clearFilters()",
+  name: "clearFilters",
   type: "method",
   parameters: "riggerDatasourceUpdate: boolean = true",
   description: "Clear all filters(column filter and quickfilter) and reload data"
 },{
-  name: "setDataArray()",
+  name: "setDataArray",
   type: "method",
   parameters: "data: Array<any>",
   description: "Set static data."
 },{
-  name: "getDataArray()",
+  name: "getDataArray",
   type: "method",
   return: "data: Array<any>",
   description: "Get data table"
 },{
-  name: "getSqlTypes()",
+  name: "getSqlTypes",
   type: "method",
   parameters: "",
   description: "Get sqlTypes from data source "
