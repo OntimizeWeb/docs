@@ -83,25 +83,25 @@ properties: [{
 }]
 
 methods: [{
-  name: "getCellData()",
+  name: "getCellData",
   type: "method",
   description: "This default method returns the value of the column as *a string*",
   returns: "string"
 },{
-  name: "createFormControl()",
+  name: "createFormControl",
   type: "method",
   description: "Create form field control if not exists",
 },{
-  name: "initialize()",
+  name: "initialize",
   type: "method",
   description: "Initialize the cell editor of the column",
 },{
-  name: "resolveValidators()",
+  name: "resolveValidators",
   type: "method",
   description: "Resolve validators*",
   returns: "ValidatorFn[]"
 }, {
-  name: "hasError()",
+  name: "hasError",
   type: "method",
   param: "error:string",
   description: "Whether the form-field has errors",

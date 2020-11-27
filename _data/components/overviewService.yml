@@ -75,7 +75,7 @@ outputs: [{
 }]
 
 methods: [{
-  name: "getSelectedRecord()",
+  name: "getSelectedRecord",
   type: "method",
   description: "Returns the data related to the selected item."
 }]

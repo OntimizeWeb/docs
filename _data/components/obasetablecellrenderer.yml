@@ -36,12 +36,12 @@ attributes: [{
 }]
 
 methods: [{
-  name: "getCellData()",
+  name: "getCellData",
   type: "method",
   description: "This default method returns the value of the column as *a string*. This method is used to obtain the value of the column in the exports or filtering, so that if you want to customize the value of the column you must overwrite it.",
   returns: "string"
 }, {
-  name: "registerRenderer()",
+  name: "registerRenderer",
   type: "method",
   description: "Register the renderer on the table"
 }, {

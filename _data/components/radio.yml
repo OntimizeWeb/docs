@@ -41,11 +41,12 @@ attributes: [{
 }]
 
 methods: [{
-  name: "getOptionDescriptionValue(element)",
+  name: "getOptionDescriptionValue",
   description: "Returns the displayed text for the provided radio group element",
+  parameters: "element",
   returns: "string"
 },{
-  name: "getDescriptionValue()",
+  name: "getDescriptionValue",
   description: "Returns the displayed text for the selected radio group element",
   returns: "string"
 }]

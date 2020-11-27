@@ -94,58 +94,58 @@ outputs: [{
 }]
 
 methods: [{
-  name: "getSQLType()",
+  name: "getSQLType",
   type: "method",
   description : "Returns the code of sqltype of the input.",
   returns: "number"
 },{
-  name: "setValue()",
+  name: "setValue",
   type: "method",
   parameters : "any",
   description : "Set value of the component."
 },{
-  name: "getValue()",
+  name: "getValue",
   type: "method",
   description : "Returns the selected items of the component.",
   returns: "any"
 },{
-  name: "getFormGroup()",
+  name: "getFormGroup",
   type: "method",
   description : "Returns the form group of the input.",
   returns: "FormControl"
 },{
-  name: "getFormControl()",
+  name: "getFormControl",
   type: "method",
   returns: "FormControl",
   description : "Returns the form control of the input."
 },{
-  name: "hasError()",
+  name: "hasError",
   type: "method",
   parameters : "string",
   returns: "boolean",
   description : "Set the selected items of the component."
 },{
-  name: "isAutomaticBinding()",
+  name: "isAutomaticBinding",
   type: "method",
   description : "Returns the input is automatic binding.",
   returns: "boolean"
 },{
-  name: "isAutomaticRegistering()",
+  name: "isAutomaticRegistering",
   type: "method",
   description : "Returns the input is automatic registering.",
   returns: "boolean"
 },{
-  name: "getSelectedItems()",
+  name: "getSelectedItems",
   type: "method",
   description : "Returns the selected items of the component.",
   returns: "any[]"
 },{
-  name: "setSelectedItems()",
+  name: "setSelectedItems",
   type: "method",
   parameters : "any[]",
   description : "Set the selected items of the component."
 },{
-  name: "getActiveOErrors()",
+  name: "getActiveOErrors",
   type: "method",
   returns: "IErrorData[]",
   description : "Returns a array containing the customized error values that the component has. Each element has a 'name' and a 'text' properties"

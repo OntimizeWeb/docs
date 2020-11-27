@@ -53,12 +53,12 @@ attributes: [{
 }]
 
 methods: [{
-  name: "getSelectedItems()",
+  name: "getSelectedItems",
   type: "method",
   description: "Return the selected items of the component.",
   returns: "any[]"
 },{
-  name: "setSelectedItems()",
+  name: "setSelectedItems",
   type: "method",
   parameters: "any[]",
   description: "Set the selected items of the component."
