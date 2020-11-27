@@ -47,4 +47,83 @@ attributes: [{
   name: "enabled"
 }]
 
+propertiesColumns: ["Name", "Type",  "Description"]
+properties: [{
+  name: "column",
+  type: "string",
+  description : "Name of the column"
+},{
+  name: "table",
+  type: "OTableComponent",
+  description: "Reference to the component OTableComponent"
+},{
+  name: "tableColumn",
+  type: "property",
+  description: "Reference to the component OTableColumnComponent"
+},{
+  name: "tableColumnAttr",
+  type: "property",
+  description: "The attr from the component OTableColumnComponent"
+},{
+  name: "inputRef",
+  type: "ElementRef",
+  description: "The element Reference of the input. An ElementRef is backed by a render-specific element. In the browser, this is usually a DOM element."
+},{
+  name: "rowData",
+  type: "any",
+  description: "Table row data"
+},{
+  name: "formControl",
+  type: "FormControl",
+  description: "Reference to form field control instance"
+},{
+  name: "formGroup",
+  type: "FormGroup ",
+    description: "Reference to form group instance"
+}]
+
+methods: [{
+  name: "getCellData()",
+  type: "method",
+  description: "This default method returns the value of the column as *a string*",
+  returns: "string"
+},{
+  name: "createFormControl()",
+  type: "method",
+  description: "Create form field control if not exists",
+},{
+  name: "initialize()",
+  type: "method",
+  description: "Initialize the cell editor of the column",
+},{
+  name: "resolveValidators()",
+  type: "method",
+  description: "Resolve validators*",
+  returns: "ValidatorFn[]"
+}, {
+  name: "hasError()",
+  type: "method",
+  param: "error:string",
+  description: "Whether the form-field has errors",
+  returns: "boolean"
+}, {
+  name: "registerEditor",
+  type: "method",
+  description: "Register editor on the table",
+}, {
+  name: "startEdition",
+  type: "method",
+  params: "data: any",
+  description: "Start edition with given the data"
+}, {
+  name: "endEdition",
+  type: "method",
+  params: "saveChanges:boolean",
+  description: "End edition in the editor with the ability to skip or save changes"
+}, {
+  name: "commitEdition",
+  type: "method",
+  description: "Commit edition",
+}]
+
 
