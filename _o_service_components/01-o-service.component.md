@@ -1,5 +1,5 @@
 ---
-permalink : /components/service/service/
+permalink : /components/service/service/overview
 title : "Service component"
 comp: "service"
 ---

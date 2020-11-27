@@ -10,13 +10,13 @@ properties: [{
 
 inheritedAttributes: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "validators"]
 }]
 
 inheritedOutputs: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   outputs: ["onChange", "onValueChange"]
 }]
 

@@ -2,13 +2,13 @@ directive : "o-time-input"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only", "validators","label-visible", "hide-required-marker"]
 }]
 
 inheritedOutputs: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   outputs: ["onChange", "onValueChange"]
 }]
 
