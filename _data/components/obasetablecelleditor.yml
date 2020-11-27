@@ -67,7 +67,7 @@ properties: [{
 },{
   name: "inputRef",
   type: "ElementRef",
-  description: "The element Reference of the input. An ElementRef is backed by a render-specific element. In the browser, this is usually a DOM element."
+  description: "The element reference of the input. An elementRef is backed by a render-specific element. In the browser, this is usually a DOM element."
 },{
   name: "rowData",
   type: "any",

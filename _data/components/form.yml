@@ -246,11 +246,11 @@ methods: [{
   name: "reinitialize",
   type: "method",
   parameters: "OFormInitializationOptions",
-  description: "Allow reinitialize form options adding options"
+  description: "Allow reinitialize form adding options"
 },{
   name: "setData",
   parameters: "data:any",
-  description: "Sets a new data for the form "
+  description: "Sets new data for the form "
 },{
   name: "back",
   description: "Navigate back"
