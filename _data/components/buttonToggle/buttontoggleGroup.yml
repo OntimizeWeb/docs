@@ -40,12 +40,12 @@ outputs: [{
 }]
 
 methods: [{
-  name: "getValue()",
+  name: "getValue",
   type: "method",
   description: "Return the value of the component",
   returns: "any"
 },{
-  name: "setValue()",
+  name: "setValue",
   type: "method",
   parameters: "val: any | any[]",
   description: "Sets the value of the component"

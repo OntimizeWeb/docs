@@ -57,31 +57,31 @@ outputs: [{
 }]
 
 methods: [{
-  name: "setDefaultLang()",
+  name: "setDefaultLang",
   type: "method",
   parameters: "lang: string",
   description: "Sets the default language to use as a fallback"
 },{
-  name: "get()",
+  name: "get",
   type: "method",
   parameters: "text: string, values: any[]",
   description:  "Gets the translated value of a key or the key if the value was not found"
 },{
-  name: "setAppLang()",
+  name: "setAppLang",
   type: "method",
   parameters: "lang: string",
   description:  ""
 },{
-  name: "use()",
+  name: "use",
   type: "method",
   parameters: "lang: string, observer?: Subscriber<any>",
   description:  ""
 },{
-  name: "getCurrentLang()",
+  name: "getCurrentLang",
   type: "method",
   description:  "Returns the lang  currently used."
 },{
-  name: "getBrowserLang()",
+  name: "getBrowserLang",
   type: "method",
   description:  "Returns the current browser lang if available."
 }

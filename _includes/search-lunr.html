@@ -1,0 +1,22 @@
+<script src="{{ base_path }}/assets/js/lunr.js"></script>
+<script type="text/javascript" src="{{'/assets/js/ontimize.js' | relative_url }}"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search {{ site.title }}" aria-label="Search {{ site.title }}"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+{% if site.search_enabled != false %}
+{% if site.search.button %}
+<a href="#" id="search-button" class="search-button">
+  <i class="fa fa-fw fa-search" class="icon"></i>
+</a>
+{% endif %}
+
+<div class="search-overlay"></div>
+{% endif %}

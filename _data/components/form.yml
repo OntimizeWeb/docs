@@ -146,7 +146,7 @@ attributes: [
   default: "",
   required: "",
   description: "Function to execute on query error"
-},{  
+},{
   name: "confirm-exit",
   type: "no | false | yes | true",
   default: "yes",
@@ -242,4 +242,58 @@ methods: [{
   type: "method",
   parameters : "attrs: string[]",
   description : "Retrieves the reference of each control in the form."
+},{
+  name: "reinitialize",
+  type: "method",
+  parameters: "OFormInitializationOptions",
+  description: "Allow reinitialize form options adding options"
+},{
+  name: "setData",
+  parameters: "data:any",
+  description: "Sets a new data for the form "
+},{
+  name: "back",
+  description: "Navigate back"
+},{
+  name: "closeDetail",
+  description: "Close current detail form"
+},{
+  name: "reload",
+  parameters: "useFilter:boolean=false",
+  description: "Reload the form data"
+},{
+  name: "insert",
+  description: " Performs insert action."
+},{
+  name: "update",
+  description: "Performs 'update' action"
+},{
+  name: "delete",
+  description: "Performs 'delete' action"
+},{
+  name: "queryData",
+  parameters: "filter:any",
+  description: "Allow to manage the call to the service data"
+},{
+  name: "insertData",
+  parameters: "values, sqlTypes?: object",
+  return: "Observable<any>",
+  description: "Allow to manage the call to the insert service"
+},{
+  name: "updateData",
+  parameters: "filter, values, sqlTypes?: object",
+  return: "Observable<any>",
+  description: "Allow to manage the call to the update service"
+},{
+  name: "deleteData",
+  parameters: "filter",
+  return: "Observable<any>",
+  description: "Allow to manage the call to the delete service"
+},{
+  name: "getKeysValues",
+  description: "Get keys values",
+  return: "Array<any>"
+},{
+  name: "undo",
+  description: "Undo last change"
 }]

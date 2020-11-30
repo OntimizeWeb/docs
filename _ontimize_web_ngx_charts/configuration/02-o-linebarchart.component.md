@@ -1,8 +1,9 @@
 ---
-permalink: /charts/configuration/linebarchart/
+permalink: /charts/configuration/linebarchart/overview
 title: "Line + Bar Chart"
 comp: linebarchart
 layout: o-component
+
 ---
 
 {% include base_path %}

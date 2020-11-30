@@ -12,43 +12,45 @@
 
 {% if componentData %}
 
-{% assign inputsColumns = "Name|Description|Default" | split: "|" %} 
-{% assign outputsColumns = "Name|Description" | split: "|" %} 
-{% assign methodsColumns = "Name|Description|Parameters|Returns" | split: "|" %} 
+{% assign inputsColumns = "Name|Description|Default" | split: "|" %}
+{% assign outputsColumns = "Name|Description" | split: "|" %}
+{% assign methodsColumns = "Name|Description|Parameters|Returns" | split: "|" %}
 
 <script type="text/javascript">
+
   function openTab(evt, tabName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("o-tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+    var url="{{base_path}}{{page.url}}";
+    url+='/../'+tabName;
+    var loc_array = document.location.href.split('/');
+    if (loc_array[loc_array.length - 1] !== tabName) {
+      window.location.href=url;
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("o-tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
   }
 </script>
  {% if componentData.version %}
  <p> This component is available since version <i>{{componentData.version}}</i>.</p>
  {% endif %}
+
+{% assign tabName = page.url | split:'/' | last %}
+{% if tabName=='api' %}
+  {% assign style_overview='display:none'%}
+  {% assign style_api='display:block'%}
+  {% assign api_class='active'%}
+{% else %}
+  {% assign style_overview='display:block'%}
+  {% assign style_api='display:none'%}
+  {% assign overview_class='active'%}
+{% endif%}
+
 <!-- Tab links -->
 <div class="o-tab">
-  <button class="o-tablinks active" onclick="openTab(event, 'overview')">Overview</button>
-  <button class="o-tablinks" onclick="openTab(event, 'api')">API</button>
+  <button class="o-tablinks {{overview_class}}"  onclick="openTab(event, 'overview')">Overview</button>
+  <button class="o-tablinks {{api_class}}" class="o-tablinks" onclick="openTab(event, 'api')">API</button>
 </div>
 
 <!-- OVERVIEW -->
-<div id="overview" class="o-tabcontent" style="display:block;">
+<div id="overview" class="o-tabcontent" style="{{style_overview}}">
  <!-- {% include toc %} -->
 
   {% if componentData.description %}
@@ -56,10 +58,10 @@
     {{ componentData.description | markdownify }}
   {% endif %}
 
-  
+
   {% if componentData.example %}
     <h3 class="grey-color">Example</h3>
-    ```html 
+    ```html
       {{ componentData.example | markdownify }}
     ```
   {% endif %}
@@ -68,13 +70,12 @@
 </div>
 
 <!-- API -->
-<div id="api" class="o-tabcontent">
-
+<div id="api" class="o-tabcontent" style="{{style_api}}">
   {% include o-component-single-api.md component=componentData %}
 
   {% if componentData.extraComponents %}
   {% assign extraComp = componentData.extraComponents %}
-    {% assign filenameArray = "" | split:"|"  %} 
+    {% assign filenameArray = "" | split:"|"  %}
     {% for files_hash in site.data.components[extraComp] %}
       {% assign filenameArray = filenameArray | push: files_hash[0] %}
     {% endfor %}
@@ -84,7 +85,7 @@
       {% capture dataFileCapture %}
         {% include o-component-single-api.md component=dataFile %}
       {% endcapture %}
-  <h2 class="">{{ dataFile.title }}</h2>
+
       {{ dataFileCapture | replace: '    ', '' }}
     {% endfor %}
   {% endif %}

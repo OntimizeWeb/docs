@@ -1,7 +1,8 @@
 ---
-permalink: /components/table/
+permalink: /components/table/overview
 title: "Table"
 comp: table
+tab: overview
 ---
 
 {% include base_path %}

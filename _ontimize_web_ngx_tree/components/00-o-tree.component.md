@@ -1,5 +1,5 @@
 ---
-permalink: /tree/components/o-tree.component/
+permalink: /tree/components/o-tree.component/overview
 title: "Tree"
 comp: tree
 layout: o-component
@@ -12,7 +12,7 @@ The `o-tree` component allows to show data with a tree structure.
 
 If the component is *inside a form*, the `attr` property is required for registry the tree in the form components.
 
-This component extends the `OServiceBaseComponent` class, so you can bind the data origin to a remote server or to local data, as seen [here]({{ base_path }}/components/service/service-base/){:target='_blank'}. You also must define which `columns` to retrieve.
+This component extends the `OServiceBaseComponent` class, so you can bind the data origin to a remote server or to local data, as seen [here]({{ base_path }}/components/service/service-base/overview){:target='_blank'}. You also must define which `columns` to retrieve.
 
 ## Nodes text
 You have to specify which text will be displayed in each tree node using the `description-columns` input. This columns are a subset of the `columns` and its content will be separed using the string specified in the `separator` input.
