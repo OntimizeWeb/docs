@@ -1,6 +1,6 @@
 class: 'OTableCellEditorRealComponent'
 
-extends: "OTableCellRendererIntegerComponent" 
+extends: "OTableCellRendererIntegerComponent"
 
 directive: "o-table-cell-renderer-real"
 
@@ -14,4 +14,28 @@ attributes: [{
   name: "min-decimal-digits"
 },{
   name: "max-decimal-digits"
+}]
+
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
 }]

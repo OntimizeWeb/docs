@@ -4,11 +4,11 @@ directive: "o-table"
 
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
-  path: "components/service/service-base",
+  path: "components/service/service-base/api",
   attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
 },{
   component: "OServiceComponent",
-  path: "components/service/service",
+  path: "components/service/service/api",
   attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "filter-case-sensitive", "quick-filter"]
 }]
 
@@ -214,35 +214,90 @@ outputs: [{
 }]
 
 methods: [{
-  name: "getValue()",
+  name: "getValue",
   type: "method",
   description: "Returns the current page table data.",
   returns: "any[]"
 },{
-  name: "getRenderedValue()",
+  name: "getRenderedValue",
   type: "method",
   parameters: "any[]",
    description: "Returns the current page table renderer data.",
 },{
-  name: "getAllValues()",
+  name: "getAllValues",
   type: "method",
   parameters: "any[]",
   description: "Returns the table data."
 },{
-  name: "getAllRenderedValues()",
+  name: "getAllRenderedValues",
   type: "method",
   parameters: "any[]",
   description: "Returns the table renderer data."
 },{
-  name: "reinitialize()",
+  name: "reinitialize",
   type: "method",
   parameters: "OTableInitializationOptions",
   description: "Allow reinitialize table options adding options "
 },{
-  name: "toogleRowExpandable()",
+  name: "toogleRowExpandable",
   type: "method",
   parameters: "row:data, rowIndex:number, event:Event",
   description: "Allow to expand or collapse the expandable row."
+},{
+  name: "queryData",
+  type: "method",
+  parameters: "filter:any, ovrrArgs?: OQueryDataArgs",
+  description: "Allow to manage the call to the service data."
+},{
+  name: "add",
+  type: "method",
+  parameters: "",
+  description: "Triggers navigation to new item insertion"
+},{
+  name: "remove",
+  type: "method",
+  parameters: "clearSelectedItems: boolean = false",
+  description: "Remove selected rows"
+},{
+  name: "showAndSelectAllCheckbox",
+  type: "method",
+  parameters: "",
+  description: "Select all rows."
+},{
+  name: "reloadData",
+  type: "method",
+  parameters: "",
+  description: "Reload table data."
+},{
+  name: "editDetail",
+  type: "method",
+  parameters: "item: any",
+  description: "Triggers navigation to item edition, receiving item data"
+},{
+  name: "viewDetail",
+  type: "method",
+  parameters: "item: any",
+  description: "Triggers navigation to item detail, receiving item data"
+},{
+  name: "clearFilters",
+  type: "method",
+  parameters: "riggerDatasourceUpdate: boolean = true",
+  description: "Clear all filters(column filter and quickfilter) and reload data"
+},{
+  name: "setDataArray",
+  type: "method",
+  parameters: "data: Array<any>",
+  description: "Set static data."
+},{
+  name: "getDataArray",
+  type: "method",
+  return: "data: Array<any>",
+  description: "Get data table"
+},{
+  name: "getSqlTypes",
+  type: "method",
+  parameters: "",
+  description: "Get sqlTypes from data source "
 }
 ]
 

@@ -3,7 +3,7 @@ version: "4.0.6"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker"]
 }]
 
@@ -55,10 +55,10 @@ attributes: [{
 
 inheritedOutputs: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   outputs: ["onChange", "onValueChange"]
 },{
   component: "o-text-input",
-  path: "components/input/text",
+  path: "components/input/text/api",
   outputs: [ "onFocus", "onBlur"]
 }]

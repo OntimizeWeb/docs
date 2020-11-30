@@ -4,7 +4,7 @@ propertiesColumns: ["Name", "Type", "Required", "Description"]
 
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
-  path: "components/service/service-base",
+  path: "components/service/service-base/api",
   attributes: ["attr", "static-data", "service", "service-type","query-fallback-function", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state", "query-with-null-parent-keys"]
 }]
 
