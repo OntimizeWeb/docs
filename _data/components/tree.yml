@@ -55,7 +55,7 @@ attributes: [{
   name: "recursive",
   type: "no | false | yes | true",
   default : "no",
-  description : "Indicates wheter or not to do recursive queries over the selected node"
+  description : "Indicates whether or not to do recursive queries over the selected node"
 },{
   name: "recursive-levels",
   type: "number",
