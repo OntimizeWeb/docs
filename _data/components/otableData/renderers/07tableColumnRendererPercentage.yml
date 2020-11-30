@@ -22,3 +22,26 @@ attributes: [{
   required: "",
   description: "Indicates whether de numeral system of the value received by the cell renderer is 1 or 100"
 }]
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
+}]

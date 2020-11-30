@@ -3,7 +3,7 @@ directive : "o-tree"
 
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
-  path: "components/service/service-base",
+  path: "components/service/service-base/api",
   attributes: ["attr", "static-data", "service", "service-type","query-fallback-function", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state"]
 }]
 
@@ -55,7 +55,7 @@ attributes: [{
   name: "recursive",
   type: "no | false | yes | true",
   default : "no",
-  description : "Indicates wheter or not to do recursive queries over the selected node"
+  description : "Indicates whether or not to do recursive queries over the selected node"
 },{
   name: "recursive-levels",
   type: "number",
@@ -73,6 +73,11 @@ attributes: [{
    type: "string",
    default : "",
    description : "Navigation route activated when the node is clicked"
+},{
+   name: "expand-all",
+   type: "no | false | yes | true",
+   default : "false",
+   description : "Indicates whether or not to expand all nodes."
 },{
   name: "quick-filter"
 },{

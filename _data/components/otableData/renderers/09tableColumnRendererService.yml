@@ -1,6 +1,6 @@
 class: "OTableCellRendererServiceComponent"
 
-extends: "OBaseTableCellRenderer" 
+extends: "OBaseTableCellRenderer"
 
 directive: "o-table-cell-renderer-service"
 
@@ -26,7 +26,7 @@ attributes: [{
 
 inherit_properties: [{
   component: "OBaseTableCellRenderer",
-  path: "table/obasetablecellrenderer",
+  path: "table/obasetablecellrenderer/api",
   properties: [{
     name: "column",
     type: "property",
@@ -38,12 +38,12 @@ inherit_properties: [{
     name: "tableColumn",
     type: "property"
   },{
-    name: "initialize()",
-    type: "method",
-    description: "Required method to render the column "
-  },{
-    name: "getCellData(cellvalue,rowvalue)",
-    type: "method",
-    description: "This default method returns the value of the column as *a string*. This method is used to obtain the value of the column in the exports or filtering, so that if you want to customize the value of the column you must overwrite it. "
+    name: "templateref"
   }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
 }]

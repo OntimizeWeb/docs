@@ -2,7 +2,7 @@ directive: "o-file-input"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "enabled", "required", "width", "read-only", "clear-button", "validators", "label-visible", "hide-required-marker"]
 }]
 
@@ -58,7 +58,7 @@ attributes: [{
 
 inheritedOutputs: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   outputs: ["onChange", "onValueChange"]
 }]
 

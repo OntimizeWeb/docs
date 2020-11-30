@@ -11,10 +11,9 @@ attributes: [{
   required: "",
   description: "Function that receives the row data and return the parameters for the translate pipe"
 }]
-
 inherit_properties: [{
   component: "OBaseTableCellRenderer",
-  path: "table/obasetablecellrenderer",
+  path: "table/obasetablecellrenderer/api",
   properties: [{
     name: "column",
     type: "property",
@@ -26,8 +25,12 @@ inherit_properties: [{
     name: "tableColumn",
     type: "property"
   },{
-    name: "initialize()",
-    type: "method",
-    description: "Required method to render the column "
+    name: "templateref"
   }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
 }]
