@@ -2,17 +2,17 @@ directive : "o-html-input"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   attributes: ["attr", "automatic-binding", "automatic-registering", "data", "required", "sql-type", "read-only", "label-visible", "hide-required-marker"]
 },{
   component: "o-text-input",
-  path: "components/input/text",
+  path: "components/input/text/api",
   attributes: [ "min-length", "max-length"]
 }]
 
 inheritedOutputs: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   outputs: ["onChange", "onValueChange"]
 }]
 

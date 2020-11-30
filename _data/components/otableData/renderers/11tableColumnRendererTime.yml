@@ -1,3 +1,7 @@
+class: "OTableCellRendererTimeComponent"
+
+extends: "OBaseTableCellRenderer"
+
 directive: "o-table-cell-renderer-time"
 title: "Cell renderer: time"
 
@@ -7,4 +11,27 @@ attributes: [{
   default: "L HH:hh a",
   required: "",
   description: "Date and time format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+}]
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
 }]
