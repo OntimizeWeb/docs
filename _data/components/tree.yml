@@ -77,7 +77,7 @@ attributes: [{
    name: "expand-all",
    type: "no | false | yes | true",
    default : "false",
-   description : "Indicates wheter or not to expand all nodes."
+   description : "Indicates whether or not to expand all nodes."
 },{
   name: "quick-filter"
 },{
