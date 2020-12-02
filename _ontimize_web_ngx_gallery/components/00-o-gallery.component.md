@@ -29,16 +29,24 @@ By itself, the `<o-gallery>` element does not render anything, it's necessary to
         small: 'assets/images/photo1.jpg',
         medium: 'assets/images/photo1.jpg',
         big: 'assets/images/photo1.jpg'
-      },
-      {
+      }, {
         small: 'assets/images/photo2.jpg',
         medium: 'assets/images/photo2.jpg',
         big: 'assets/images/photo2.jpg'
-      },
-      {
+      }, {
         small: 'assets/images/photo3.jpg',
         medium: 'assets/images/photo3.jpg',
         big: 'assets/images/photo3.jpg'
+      }
+    ];
+  or
+   this.galleryImages = [
+      {
+        medium: 'assets/images/photo1.jpg'
+      }, {
+        medium: 'assets/images/photo2.jpg',
+      }, {
+        medium: 'assets/images/photo3.jpg'
       }
     ];
     ...
