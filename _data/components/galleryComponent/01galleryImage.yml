@@ -5,17 +5,18 @@ attributes: [{
   name: "small",
   type: "string | SafeResourceUrl",
   default : "",
-  description : "Url used in thumbnails"
+  description : "Url used in thumbnails. By default it is set to the value of the medium attribute"
 },{
   name: "medium",
   type: "string | SafeResourceUrl",
   default : "",
+  required : "",
   description : "Url used in image"
 },{
   name: "big",
   type: "string | SafeResourceUrl",
   default : "",
-  description : "Url used in preview"
+  description : "Url used in preview.  By default it is set to the value of the medium attribute"
 },{
   name: "description",
   type: "string",
