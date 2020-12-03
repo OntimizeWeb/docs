@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2020-11-25T05:56:21-05:00">
+  <meta property="article:published_time" content="2020-12-03T06:02:26-05:00">
 
 
 
@@ -921,7 +921,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="November 25, 2020">
+    <meta itemprop="datePublished" content="December 03, 2020">
     
 
     <div class="page__inner-wrap">
@@ -1286,7 +1286,7 @@
     
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/service/service-base/" rel="permalink">OServiceBaseComponent:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/components/service/service-base/api/" rel="permalink">OServiceBaseComponent:</a>
         <ul class="attributes-list">
           
           
@@ -1333,7 +1333,7 @@
         </ul>
         
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/service/service/" rel="permalink">OServiceComponent:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/components/service/service/api/" rel="permalink">OServiceComponent:</a>
         <ul class="attributes-list">
           
           
@@ -3735,7 +3735,7 @@
       
     <table>
       <thead>
-        <tr><th>getValue()</th></tr>
+        <tr><th>getValue</th></tr>
         </thead>
       <tbody>
         <tr><td>Returns the current page table data.</td></tr>
@@ -3751,7 +3751,7 @@
       
     <table>
       <thead>
-        <tr><th>getRenderedValue()</th></tr>
+        <tr><th>getRenderedValue</th></tr>
         </thead>
       <tbody>
         <tr><td>Returns the current page table renderer data.</td></tr>
@@ -3767,7 +3767,7 @@
       
     <table>
       <thead>
-        <tr><th>getAllValues()</th></tr>
+        <tr><th>getAllValues</th></tr>
         </thead>
       <tbody>
         <tr><td>Returns the table data.</td></tr>
@@ -3783,7 +3783,7 @@
       
     <table>
       <thead>
-        <tr><th>getAllRenderedValues()</th></tr>
+        <tr><th>getAllRenderedValues</th></tr>
         </thead>
       <tbody>
         <tr><td>Returns the table renderer data.</td></tr>
@@ -3799,7 +3799,7 @@
       
     <table>
       <thead>
-        <tr><th>reinitialize()</th></tr>
+        <tr><th>reinitialize</th></tr>
         </thead>
       <tbody>
         <tr><td>Allow reinitialize table options adding options </td></tr>
@@ -3815,7 +3815,7 @@
       
     <table>
       <thead>
-        <tr><th>toogleRowExpandable()</th></tr>
+        <tr><th>toogleRowExpandable</th></tr>
         </thead>
       <tbody>
         <tr><td>Allow to expand or collapse the expandable row.</td></tr>
@@ -3823,6 +3823,179 @@
         
         <tr><td><strong>Parameters</strong></td></tr>
         <tr><td>row:data, rowIndex:number, event:Event</td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>queryData</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Allow to manage the call to the service data.</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>filter:any, ovrrArgs?: OQueryDataArgs</td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>add</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Triggers navigation to new item insertion</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td></td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>remove</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Remove selected rows</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>clearSelectedItems: boolean = false</td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>showAndSelectAllCheckbox</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Select all rows.</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td></td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>reloadData</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Reload table data.</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td></td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>editDetail</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Triggers navigation to item edition, receiving item data</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>item: any</td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>viewDetail</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Triggers navigation to item detail, receiving item data</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>item: any</td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>clearFilters</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Clear all filters(column filter and quickfilter) and reload data</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>riggerDatasourceUpdate: boolean = true</td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>setDataArray</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Set static data.</td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>data: Array<any></td></tr>
+          
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>getDataArray</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Get data table</td></tr>
+
+        
+
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+        <tr><th>getSqlTypes</th></tr>
+        </thead>
+      <tbody>
+        <tr><td>Get sqlTypes from data source </td></tr>
+
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td></td></tr>
           
 
         
@@ -9081,17 +9254,17 @@
 
     
     <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
         <ul class="attributes-list">
             
             
               <li> column </li>
             
-              <li> initialize() </li>
-            
               <li> table </li>
             
               <li> tableColumn </li>
+            
+              <li> templateref </li>
             
           </ul>
     </li>
@@ -9100,6 +9273,24 @@
   </ul>
 
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -9538,19 +9729,17 @@
 
     
     <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
         <ul class="attributes-list">
             
             
               <li> column </li>
             
-              <li> getCellData(cellvalue,rowvalue) </li>
-            
-              <li> initialize() </li>
-            
               <li> table </li>
             
               <li> tableColumn </li>
+            
+              <li> templateref </li>
             
           </ul>
     </li>
@@ -9559,6 +9748,24 @@
   </ul>
 
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -10025,19 +10232,17 @@
 
     
     <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
         <ul class="attributes-list">
             
             
               <li> column </li>
             
-              <li> getCellData(cellvalue,rowvalue) </li>
-            
-              <li> initialize() </li>
-            
               <li> table </li>
             
               <li> tableColumn </li>
+            
+              <li> templateref </li>
             
           </ul>
     </li>
@@ -10046,6 +10251,24 @@
   </ul>
 
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -10577,19 +10800,17 @@
 
     
     <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
         <ul class="attributes-list">
             
             
               <li> column </li>
             
-              <li> getCellData(cellvalue,rowvalue) </li>
-            
-              <li> initialize() </li>
-            
               <li> table </li>
             
               <li> tableColumn </li>
+            
+              <li> templateref </li>
             
           </ul>
     </li>
@@ -10598,6 +10819,24 @@
   </ul>
 
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -10722,19 +10961,17 @@
 
     
     <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
         <ul class="attributes-list">
             
             
               <li> column </li>
             
-              <li> getCellData(cellvalue,rowvalue) </li>
-            
-              <li> initialize() </li>
-            
               <li> table </li>
             
               <li> tableColumn </li>
+            
+              <li> templateref </li>
             
           </ul>
     </li>
@@ -10743,6 +10980,24 @@
   </ul>
 
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -10949,19 +11204,17 @@
 
     
     <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
         <ul class="attributes-list">
             
             
               <li> column </li>
             
-              <li> getCellData(cellvalue,rowvalue) </li>
-            
-              <li> initialize() </li>
-            
               <li> table </li>
             
               <li> tableColumn </li>
+            
+              <li> templateref </li>
             
           </ul>
     </li>
@@ -10970,6 +11223,24 @@
   </ul>
 
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -11235,7 +11506,49 @@
   
 
   
+  <h3 class="grey-color" id="inherited-properties">Inherited properties</h3>
+  <ul>
+    
 
+    
+    <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+            
+            
+              <li> column </li>
+            
+              <li> table </li>
+            
+              <li> tableColumn </li>
+            
+              <li> templateref </li>
+            
+          </ul>
+    </li>
+
+    
+  </ul>
+
+
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -11696,7 +12009,49 @@
   
 
   
+  <h3 class="grey-color" id="inherited-properties">Inherited properties</h3>
+  <ul>
+    
 
+    
+    <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+            
+            
+              <li> column </li>
+            
+              <li> table </li>
+            
+              <li> tableColumn </li>
+            
+              <li> templateref </li>
+            
+          </ul>
+    </li>
+
+    
+  </ul>
+
+
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -12098,19 +12453,17 @@
 
     
     <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
         <ul class="attributes-list">
             
             
               <li> column </li>
             
-              <li> getCellData(cellvalue,rowvalue) </li>
-            
-              <li> initialize() </li>
-            
               <li> table </li>
             
               <li> tableColumn </li>
+            
+              <li> templateref </li>
             
           </ul>
     </li>
@@ -12119,6 +12472,24 @@
   </ul>
 
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -12650,17 +13021,17 @@
 
     
     <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/" rel="permalink">OBaseTableCellRenderer:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
         <ul class="attributes-list">
             
             
               <li> column </li>
             
-              <li> initialize() </li>
-            
               <li> table </li>
             
               <li> tableColumn </li>
+            
+              <li> templateref </li>
             
           </ul>
     </li>
@@ -12669,6 +13040,24 @@
   </ul>
 
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -12777,7 +13166,9 @@
   
   
   <h2 id="o-table-cell-renderer-time">
-    <span> </span>
+    <span>OTableCellRendererTimeComponent </span>
+    
+      extends OBaseTableCellRenderer
     
   </h2>
   
@@ -12785,7 +13176,49 @@
   
 
   
+  <h3 class="grey-color" id="inherited-properties">Inherited properties</h3>
+  <ul>
+    
 
+    
+    <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+            
+            
+              <li> column </li>
+            
+              <li> table </li>
+            
+              <li> tableColumn </li>
+            
+              <li> templateref </li>
+            
+          </ul>
+    </li>
+
+    
+  </ul>
+
+
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecellrenderer/api/" rel="permalink">OBaseTableCellRenderer:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> filter-source </li>
+          
+            <li> filterFunction </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -12932,7 +13365,7 @@
     
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -12970,7 +13403,7 @@
       
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -13015,7 +13448,7 @@
     
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -13414,7 +13847,7 @@
       
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -13459,7 +13892,7 @@
     
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -14118,7 +14551,7 @@
       
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -14163,7 +14596,7 @@
     
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -14432,7 +14865,7 @@
       
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -14477,7 +14910,7 @@
     
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -14746,7 +15179,7 @@
       
       
       <li>
-        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/" rel="permalink">OBaseTableCellEditor:</a>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
         <ul class="attributes-list">
           
           
@@ -14774,7 +15207,9 @@
   
   
   <h2 id="o-table-cell-editor-time">
-    <span> </span>
+    <span>OTableCellEditorTimeComponent </span>
+    
+      extends OBaseTableCellEditor
     
   </h2>
   
@@ -14783,6 +15218,32 @@
 
   
 
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> enabled </li>
+          
+            <li> label </li>
+          
+            <li> required </li>
+          
+            <li> show-notification-on-edit </li>
+          
+            <li> show-placeholder </li>
+          
+            <li> update-record-on-edit </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
   
 
 
@@ -15612,6 +16073,28 @@
 
 
   
+    <h3 id="inherited-outputs" class="grey-color">Inherited outputs</h3>
+    <ul>
+      
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/api/" rel="permalink">OBaseTableCellEditor:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> editionCancelled </li>
+          
+            <li> editionCommitted </li>
+          
+            <li> editionStarted </li>
+          
+            <li> onPostUpdateRecord </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
+  
 
   
 
@@ -15680,7 +16163,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-11-25T05:56:21-05:00">November 25, 2020</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-12-03T06:02:26-05:00">December 03, 2020</time></p>
         
       </footer>
 

@@ -1,0 +1,2804 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Service base component - Ontimize Web</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ontimize Web">
+<meta property="og:title" content="Service base component">
+
+
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v4/components/service/service-base/api">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v4/components/service/service-base/api">
+
+
+
+  <meta property="og:description" content="">
+
+
+
+  <meta name="twitter:site" content="@imatiainnova">
+  <meta name="twitter:title" content="Service base component">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/components/service/service-base/api">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://ontimizeweb.github.io/docs/v4/images/site-logo.png">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="https://ontimizeweb.github.io/docs/v4/images/site-logo.png">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2020-12-03T06:00:26-05:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://ontimizeweb.github.io/docs/v4",
+      "logo": "https://ontimizeweb.github.io/docs/v4/images/site-logo.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ontimize Web",
+      "url" : "https://ontimizeweb.github.io/docs/v4",
+      "sameAs" : ["https://twitter.com/imatiainnova"]
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ontimizeweb.github.io/docs/v4/feed.xml" type="application/atom+xml" rel="alternate" title="Ontimize Web Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script defer src="https://ontimizeweb.github.io/docs/v4/assets/js/fontawesome-all.min.js"></script>
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ontimizeweb.github.io/docs/v4/assets/css/main.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ontimizeweb.github.io/docs/v4/images/apple-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v4/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v4/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v4/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v4/images/android-icon-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="manifest" href="https://ontimizeweb.github.io/docs/v4/images/manifest.json?v=M44lzPylqQ">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://ontimizeweb.github.io/docs/v4/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://ontimizeweb.github.io/docs/v4/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--o-component">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+          <a href="https://ontimizeweb.github.io/docs/v4/">
+            <div class="main_icon"></div>
+        </a>
+
+        <script src="https://ontimizeweb.github.io/docs/v4/assets/js/lunr.js"></script>
+<script type="text/javascript" src="/docs/v4/assets/js/ontimize.js"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Ontimize Web" aria-label="Search Ontimize Web"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+
+
+<div class="search-overlay"></div>
+
+
+
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/v4/">Ontimize Web</a></li>-->
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v4/doc-overview/">Getting started</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item masthead__menu-item-active"><a href="https://ontimizeweb.github.io/docs/v4/components/">Components</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v4/about/">About</a>
+            
+            </li>
+
+
+            
+            
+
+          
+
+          
+          <li class="masthead__menu-item masthead__menu-item-active">
+            <select onchange="window.location = this.options[this.selectedIndex].value">
+            
+              <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v4"  selected="selected" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs" >8.x.x</option>
+            
+            </select>
+          </li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+
+ <script type="text/javascript" style="display:none;">
+  var onNavigationItemClick = function (element) {
+
+    var parentNav = $(element).parents('nav.nav__list');
+    var icons = parentNav.find('svg');
+    icons.addClass('fa-folder');
+    icons.addClass('orange-icon');
+    icons.removeClass('fa-folder-open');
+
+    var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.addClass('active-component-category');
+/*
+    parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
+    parentLi.toggleClass('active-component-category');
+*/    
+    var currentIcon = parentLi.find('svg:first');
+    currentIcon.addClass('fa-folder-open');
+    currentIcon.removeClass('orange-icon');
+    currentIcon.removeClass('fa-folder');
+
+  };
+</script>
+
+<nav class="nav__list">
+  
+  <ul>
+    
+    
+    
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+                      
+                            
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+    
+ 
+    
+
+    
+
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Input</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/overview/overview" class=" overview">Overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/checkbox/overview" class=" ">Checkbox</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/combo/overview" class=" ">Combo</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/currency/overview" class=" ">Currency</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/date/overview" class=" ">Date</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/daterange/overview" class=" ">Date range <span class='menuitem-badge'>new<span></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/email/overview" class=" ">Email</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/file/overview" class=" ">File</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/html/overview" class=" ">HTML</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/hour/overview" class=" ">Hour</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/integer/overview" class=" ">Integer</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/listpicker/overview" class=" ">List picker</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/nif/overview" class=" ">NIF</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/password/overview" class=" ">Password</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/percent/overview" class=" ">Percentage</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/radio/overview" class=" ">Radio</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/real/overview" class=" ">Real</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/slidetoggle/overview" class=" ">Slide toggle</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/slider/overview" class=" ">Slider</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/text/overview" class=" ">Text</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/textarea/overview" class=" ">Textarea</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/input/time/overview" class=" ">Time</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Button</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/button/overview" class=" ">Button</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/buttontoggle/overview" class=" ">Button toggle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Data</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/datatable/" class=" ">DataTable <small>(deprecated)</small></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/filterbuilder/overview" class=" ">Filter builder</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/form/overview" class=" ">Form</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/grid/overview" class=" ">Grid <span class='menuitem-badge'>new<span></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/list/overview" class=" ">List</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/table/overview" class=" ">Table</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Media</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/image/overview" class=" ">Image</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Layout</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/applayout/overview" class=" ">App layout</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/breadcrumb/overview" class=" ">Breadcrumb</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/containers/overview" class=" ">Containers</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/contextmenu/overview" class=" ">Context menu</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/dialog/overview" class=" ">Dialog</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/formlayoutmanager/overview" class=" ">Form layout mngr.</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/snackbar/overview" class=" ">SnackBar</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Menu</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/menu/overview" class=" overview">Overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/barmenu/overview" class=" ">Bar menu</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/cardmenulayout/overview" class=" ">Card menu layout</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v4/components/sidemenu/overview" class=" ">Side menu <small>(deprecated)</small></a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+  <article class="page  o-component " itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Service base component">
+    
+    <meta itemprop="description" content="">
+    
+    <meta itemprop="datePublished" content="December 03, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 class="page__title" itemprop="headline">Service base component
+</h1>
+        
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <div class="o-component-container">
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  function openTab(evt, tabName) {
+    var url="https://ontimizeweb.github.io/docs/v4/components/service/service-base/api";
+    url+='/../'+tabName;
+    var loc_array = document.location.href.split('/');
+    if (loc_array[loc_array.length - 1] !== tabName) {
+      window.location.href=url;
+    }
+
+  }
+</script>
+ 
+
+
+
+
+<!-- Tab links -->
+<div class="o-tab">
+  <button class="o-tablinks "  onclick="openTab(event, 'overview')">Overview</button>
+  <button class="o-tablinks active" class="o-tablinks" onclick="openTab(event, 'api')">API</button>
+</div>
+
+<!-- OVERVIEW -->
+<div id="overview" class="o-tabcontent" style="display:none">
+ <!-- <aside class="sidebar__right">
+<nav class="toc" markdown="1">
+<header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
+*  Auto generated table of contents
+{:toc .toc__menu}
+</nav>
+</aside> -->
+
+  
+
+
+  
+
+  
+
+</div>
+
+<!-- API -->
+<div id="api" class="o-tabcontent" style="display:block">
+  
+
+
+
+ 
+  <h2 id="Service base component" >Service base component</h2>
+ 
+
+  
+  
+    <p><strong class="grey-color" id="OServiceBaseComponent">Class:</strong> OServiceBaseComponent</p>
+  
+
+
+  
+
+
+  
+
+
+  
+    
+      <h3 id="inputs" class="grey-color">Inputs</h3>
+    
+    
+    
+
+    
+    
+
+  <table class="attributes-table mdl-data-table">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+            <th class=""> Default</th>
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr required>
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name required>
+    <p class="first"><p>attr</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Field identifier. Registry property if component is inside a form.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>columns</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Entity columns. Separated by ‘;’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>delete-method</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Service method name for deletions</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>delete</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>entity</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Service entity name</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>insert-method</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Service method name for insertions</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>insert</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>keys</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Entity keys. Separated by ‘;’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>pageable</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to do paginated queries for getting the data</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>paginated-query-method</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Service method name for paginated queries</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>advancedQuery</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>parent-keys</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Form field attributes used for filtering the table data. Separated by ‘;’. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-fallback-function</p>
+</p>
+    
+      <p><i>Function</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Function to execute on query error</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>No value</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-method</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Service method name for queries</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>query</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-on-bind</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Query table data on bind</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-on-event</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>A component event reference the component must listen to in order to perform its query</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-on-init</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Query table data on init</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-rows</p>
+</p>
+    
+      <p><i>number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Number of records by page. Initial number of registries in queries when using pagination in server side</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>10</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-with-null-parent-keys</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to trigger query method when the filter generated from parent-keys is null. The use of this attribute is not recommended when the component may request a big amount of information</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>service</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>JEE service path</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>service-type</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Injection token indicated in the provider of the service</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>static-data</p>
+</p>
+    
+      <p><i>array<object></i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Static data for filling the table</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>store-state</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to store component state</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>update-method</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Service method name for updates</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>update</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+      </tbody>
+  </table>
+
+  
+    <div class="notice--info" markdown="1">
+    * required inputs.
+    </div>
+  
+
+  
+
+
+
+  
+
+  
+
+
+  
+    <h3 id="methods" class="grey-color">Methods</h3>
+      
+      
+    <table>
+      <thead>
+       <tr><th>afterViewInit</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Method for inputs and listeners parsing that must be called inside ngAfterViewInit</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>configureService</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Method needed for Ontimize service initialization, already called in initialize method</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>destroy</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Method for unsuscribing listeners that must be called inside ngOnDestroy</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>extractKeysFromRecord</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Extracting the given record keys properties</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>record: any</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>Object</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getAttribute</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns component attr, used as identifier</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>string</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getAttributesValuesToQuery</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns a list of attributes to be queried. This list includes the columns array and the keys array</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>string[]</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getComponentKey</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns component identifier for state storage, attr value by default</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>string</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getDataArray</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns component data array</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>any[]</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getDataToStore</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Method returning component data that will be stored as its state</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>any</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getKeys</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns parsed keys input ass array</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>string[]</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getQueryArguments</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns the array of arguments needed for making a query</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td></td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>any[]</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getSqlTypes</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Getting stored sql types</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td></td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getTotalRecordsNumber</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns total number of records if the component is paginated</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>number</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>initialize</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Method for inputs and listeners initialization that must be called inside ngOnInit</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>onLanguageChangeCallback</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Callback for app locale change, receiving the selected locale as parameter</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>lang: string</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>queryData</th></tr>
+       </thead>
+      <tbody>
+        <tr><td></td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td></td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>setDataArray</th></tr>
+       </thead>
+      <tbody>
+        <tr><td></td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td></td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>setFormComponent</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Setting parent form reference, already called in initialize method</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>form: OFormComponent</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>updatePaginationInfo</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Updating pagination internal information, only if the component is pageable</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>queryResponse: any</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+  
+
+
+
+
+  
+
+</div>
+
+
+  
+
+</div>
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+
+        
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-12-03T06:00:26-05:00">December 03, 2020</time></p>
+        
+      </footer>
+
+      
+
+      <!-- 
+
+
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">
+          <i class="fas fa-arrow-left margin-right"></i>
+        Previous
+      </a>
+    
+    
+      <a href="https://ontimizeweb.github.io/docs/v4/components/service/service-base/overview" class="pagination--pager" title="Service base component
+">
+        Next
+        <i class="fas fa-arrow-right margin-left"></i>
+      </a>
+    
+  </nav>
+ -->
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<a href="#" class="scrollToTop"><i class="fa fa-fw fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/imatiainnova" target="_blank"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+    
+    
+      <li><a href="http://github.com/OntimizeWeb" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="https://ontimizeweb.github.io/docs/v4/feed.xml" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+      </footer>
+    </div>
+
+    <script src="https://ontimizeweb.github.io/docs/v4/assets/js/main.min.js"></script>
+
+
+
+
+
+  </body>
+</html>
