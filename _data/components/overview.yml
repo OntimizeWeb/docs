@@ -49,7 +49,7 @@ attributes: [{
   name: "validators",
   type: "ValidatorFn[]",
   default: "[]",
-  description: "Array of custom validators to apply to the component value. Each elemnent must be a Angular [ValidatorFn](https://v6.angular.io/api/forms/ValidatorFn)"
+  description: "Array of custom validators to apply to the component value. Each elemnent must be a Angular [ValidatorFn](https://v8.angular.io/api/forms/ValidatorFn)"
 },{
   name: "placeholder",
   type: "string ",
