@@ -7,7 +7,7 @@ comp: form
 {% include base_path %}
 {% include toc %}
 
-Forms are the pillar of management applications. They are used in applications for requesting information from the user or displaying data. **OntimizeWeb** allows you to add a form and insert [form fields]({{ base_path }}/components/input/overview/){:target="_blank"} on it in a very easy way.
+Forms are the pillar of management applications. They are used in applications for requesting information from the user or displaying data. **OntimizeWeb** allows you to add a form and insert [form fields]({{ base_path }}/components/input/overview/overview/){:target="_blank"} on it in a very easy way.
 
 The `o-form` component allows you to display data from the server and also insert, update and delete records in the database. This can be achived easily by configuring few attributes like `service` and `entity`. Check this and other attributes in the **API** section of this page.
 
@@ -54,19 +54,19 @@ And perform an action each time the event is emited:
 
 ## Detail form
 
-A detail form is an special usage of the form component. A form is called *detail form* when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved with **OntimizeWeb** by combining the `o-form` and the [`o-table`]({{ base_path }}/components/table/){:target="_blank"} component.
+A detail form is an special usage of the form component. A form is called *detail form* when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved with **OntimizeWeb** by combining the `o-form` and the [`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"} component.
 
 You can read more about this topic in the [detail form]({{ base_path }}/components/form/detail/){:target="_blank"} section.
 
 ## Form container
 
-In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/form/container/){:target="_blank"}.
+In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/form/container/overview/){:target="_blank"}.
 
 ## Form layout manager
 
 A very common feature on management applications is displaying a form with the details related to a row from a data table. As a solution for this, **OntimizeWeb** offers the `o-form-layout-manager` component, that allows you managing the transitions between the data table and the form with the row details.
 
-You can read more about this component [here]({{ base_path }}/components/formlayoutmanager/){:target="_blank"}.
+You can read more about this component [here]({{ base_path }}/components/formlayoutmanager/overview/){:target="_blank"}.
 
 ## Extending a form
 
@@ -179,11 +179,11 @@ A common use of a form is using the form data introduced by the user for request
 
 ### Parent keys filter
 
-Configuring the `parent-keys` attribute of the [table]({{ base_path }}/components/table/){:target="_blank"} with the `attr` of the [form fields]({{ base_path }}/components/input/overview/){:target="_blank"} we want to include on the filtering is the simplest and the fastest way of filtering table data. This aproach is not enough when you want to apply complex filters using logical operations.
+Configuring the `parent-keys` attribute of the [table]({{ base_path }}/components/table/api/){:target="_blank"} with the `attr` of the [form fields]({{ base_path }}/components/input/overview/api/){:target="_blank"} we want to include on the filtering is the simplest and the fastest way of filtering table data. This aproach is not enough when you want to apply complex filters using logical operations.
 
 In the following example we have a form component with the field for filtering the name, surname and the employee type of a table of employees. Note that the table has configured the attributes `parent-keys` with the columns involved in the filtering and its corresponding form component attr's. Remember that when the table column and the form component attr are the same, you only have to include it once.
 
->**NOTE** Keep in mind that the table will not send any request when the parent keys values are all null. You can configure the `query-with-null-parent-keys` as in the example below to avoid this, but it is not always recommended. Check the [table]({{ base_path }}/components/table/){:target="_blank"} documentation page.
+>**NOTE** Keep in mind that the table will not send any request when the parent keys values are all null. You can configure the `query-with-null-parent-keys` as in the example below to avoid this, but it is not always recommended. Check the [table]({{ base_path }}/components/table/api){:target="_blank"} documentation page.
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -214,7 +214,7 @@ In the following example we have a form component with the field for filtering t
 
 ### Filter builder
 
-The filter builder is a component whose purpose is solving the problem described above. It allows you to build complex filtering expressions using the data introduced in a form component. Read more about the filter builder component on its [documentarion page]({{ base_path }}/components/filterbuilder/){:target="_blank"}.
+The filter builder is a component whose purpose is solving the problem described above. It allows you to build complex filtering expressions using the data introduced in a form component. Read more about the filter builder component on its [documentarion page]({{ base_path }}/components/filterbuilder/overview/){:target="_blank"}.
 
 ## Custom form toolbar buttons
 
