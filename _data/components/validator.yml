@@ -9,7 +9,7 @@ attributes: [{
   name: "validator-function",
   type: "ValidatorFn",
   default: "[]",
-  description: "Custom validators to apply to the component value. It must be a Angular [ValidatorFn](https://v5.angular.io/api/forms/ValidatorFn)"
+  description: "Custom validators to apply to the component value. It must be a Angular [ValidatorFn](https://v6.angular.io/api/forms/ValidatorFn)"
 },{
   name: "error-name",
   type: "string",
