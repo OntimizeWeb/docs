@@ -7,7 +7,7 @@ comp: realInput
 {% include base_path %}
 {% include toc %}
 
-The `o-real-input` component is used in [forms]({{ base_path }}/components/form/) for getting or displaying numeric input submitted by the user.
+The `o-real-input` component is used in [forms]({{ base_path }}/components/form/overview/) for getting or displaying numeric input submitted by the user.
 
 The real input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
