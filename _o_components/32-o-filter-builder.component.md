@@ -8,7 +8,7 @@ tab: overview
 {% include base_path %}
 {% include toc %}
 
-The `o-filter-builder` component is used for easily building complex structures for filtering the data of a [table]({{ base_path }}/components/table/). It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/components/form/). All the attributes are explained on the **API** section of this page.
+The `o-filter-builder` component is used for easily building complex structures for filtering the data of a [table]({{ base_path }}/components/table/overview/). It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/components/form/overview/). All the attributes are explained on the **API** section of this page.
 
 > **NOTE:** Do not add elements to your screen but is a component that allows to build [complex filtering expressions]({{base_path}}/guide/filterexpression/).
 

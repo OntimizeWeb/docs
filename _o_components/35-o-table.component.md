@@ -261,7 +261,7 @@ This option will be available in table menu by default. However, you can configu
 
 ### Custom filter
 
-**OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/filterbuilder/){:target='_blank'} component to you application.
+**OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/filterbuilder/overview/){:target='_blank'} component to you application.
 
 The `o-filter-builder` component uses the `IExpression` interface that represents a filtering expression. You can read more about how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
 
@@ -563,11 +563,11 @@ By default, the table will no define a editor for your data into a cell. If you 
 
 **1.** Use one of the predefined cell editor, you should add `editable="yes"`. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
 
-If a column haven't type will be *string*. You can find all information [here]({{ base_path }}/components/table/#default-editors).
+If a column haven't type will be *string*. You can find all information [here]({{ base_path }}/components/table/overview/#default-editors).
 
 **2.** Use equivalent code.
 
-**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/components/table/#custom-editors).
+**3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/components/table/overview/#custom-editors).
 
 You can see examples of this section in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/editor){:target="_blank"}.
 
@@ -891,7 +891,7 @@ Below an example.
 ![Table contextual by default ]({{ "/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
 
 The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `delete`,`copy`, `select-all`,`refresh`,`filter`  to `no`.
-You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/){:target='_blank'}component like in the example below.
+You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/overview/){:target='_blank'}component like in the example below.
 
 <h3 class="grey-color">Example</h3>
 
@@ -919,7 +919,7 @@ You can also include your own `context-menu` with the reference to a [`o-context
 
 ![Table contextual]({{ "/images/components/tabla/table_contextual.png" | absolute_url }}){: .comp-example-img}
 
-For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/){:target='_blank'}.
+For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/overview/){:target='_blank'}.
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/contextmenu){:target="_blank"}.
 

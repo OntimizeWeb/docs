@@ -7,7 +7,7 @@ comp: combo
 {% include base_path %}
 {% include toc %}
 
-The `o-combo` component is used in [forms]({{ base_path }}/components/form/) for getting or displaying an option between multiple input submitted by the user.
+The `o-combo` component is used in [forms]({{ base_path }}/components/form/overview/) for getting or displaying an option between multiple input submitted by the user.
 
 The combo component is automatically registered on its parent `o-form`, which provides the value for the combo programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
@@ -91,4 +91,4 @@ Note you can configure the mode of the locker, there are two modes to block, *di
 
 ## Filtering
 
-You can check how to construct dependant combos [here]({{ base_path }}/components/input/overviewservice/). You will need the attribute parent-keys to achieve this.
+You can check how to construct dependant combos [here]({{ base_path }}/components/input/overviewservice/overview). You will need the attribute parent-keys to achieve this.

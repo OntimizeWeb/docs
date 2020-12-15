@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/error/
+permalink: /components/input/error/overview
 title: "OErrorComponent"
 comp: error
 ---

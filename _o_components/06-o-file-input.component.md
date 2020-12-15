@@ -8,7 +8,7 @@ tab: overview
 {% include base_path %}
 {% include toc %}
 
-The `o-file-input` component is used in [forms]({{ base_path }}/components/form/) for uploading files to a server.
+The `o-file-input` component is used in [forms]({{ base_path }}/components/form/overview/) for uploading files to a server.
 
 The file input is automatically registered on its parent `o-form`. The configuration attributes for this component are explained on the **API** section of this page.
 
