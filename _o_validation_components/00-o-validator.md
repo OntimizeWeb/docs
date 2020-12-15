@@ -1,5 +1,5 @@
 ---
-permalink: /components/input/validator/
+permalink: /components/input/validator/overview
 title: "OValidatorComponent"
 comp: validator
 ---
@@ -12,7 +12,7 @@ Using the `o-validator` component allows to define a validator function that wil
 
 ```html
    <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}">
-        <o-validator error-name="requiredB" error-text="Must contain a 'b'" 
+        <o-validator error-name="requiredB" error-text="Must contain a 'b'"
           [validator-function]="bValidator">
         </o-validator>
   </o-text-input>
@@ -35,4 +35,4 @@ Using the `o-validator` component allows to define a validator function that wil
   ...
 ```
 
-If the new validator has more than one possible error result, user must use the [`o-error`]({{ base_path }}/components/input/error/){:target='_blank'} component to define the multiple errors messages.
+If the new validator has more than one possible error result, user must use the [`o-error`]({{ base_path }}/components/input/error/overview/){:target='_blank'} component to define the multiple errors messages.

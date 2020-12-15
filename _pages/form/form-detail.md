@@ -9,7 +9,7 @@ sidebar:
 {% include base_path %}
 {% include toc %}
 
-A detail form is an special usage of the form component. A form is called *detail form* when it is used for managing a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved by combining the [`o-form`]({{ base_path }}/components/form/){:target="_blank"} and the [`o-table`]({{ base_path }}/components/table/){:target="_blank"} components in your application. In this section we describe how **OntimizeWeb** manage the transitions between the table and the detail form.
+A detail form is an special usage of the form component. A form is called *detail form* when it is used for managing a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved by combining the [`o-form`]({{ base_path }}/components/form/overview/){:target="_blank"} and the [`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"} components in your application. In this section we describe how **OntimizeWeb** manage the transitions between the table and the detail form.
 
 As a developer, you can decide the behaviour of a detail form in you application. When the user opens a detail form, you can decide if the form will be in update or read only mode. You can select one of this behaviours by configuring the `editable-detail` attribute in your `o-form` component.
 
