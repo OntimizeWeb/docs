@@ -23,4 +23,4 @@ You can see an example of this component working in the [OntimizeWeb QuickStart]
 
 ## Card menu item
 
-The [`o-card-menu-item`]({{ base_path }}/components/cardmenulayout/cardmenuitem/){:target="_blank"} component is the child component for the `o-card-menu-layout` component. You can read more about this component [here]({{ base_path }}/components/cardmenulayout/cardmenuitem/){:target="_blank"}.
+The [`o-card-menu-item`]({{ base_path }}/components/cardmenulayout/cardmenuitem/overview/){:target="_blank"} component is the child component for the `o-card-menu-layout` component. You can read more about this component [here]({{ base_path }}/components/cardmenulayout/cardmenuitem/overview/){:target="_blank"}.

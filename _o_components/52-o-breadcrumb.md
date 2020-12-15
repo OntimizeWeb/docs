@@ -8,7 +8,7 @@ tab: overview
 {% include base_path %}
 {% include toc %}
 
-The `o-breadcrumb` component is used as a navigational aid when using **OntimizeWeb** [forms]({{ base_path }}/components/form/){:target="_blank"}. This component listens to route changes on the application and builds links to keep track of the locations the user is navigating through.
+The `o-breadcrumb` component is used as a navigational aid when using **OntimizeWeb** [forms]({{ base_path }}/components/form/overview/){:target="_blank"}. This component listens to route changes on the application and builds links to keep track of the locations the user is navigating through.
 
 ## Initialize
 

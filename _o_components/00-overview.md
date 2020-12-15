@@ -7,7 +7,7 @@ tab : "overview"
 {% include base_path %}
 {% include toc %}
 
-Form data components are components that must be placed inside a [form]({{ base_path }}/components/form/){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, radio, real, slider, slide toggle, text, textarea and time.
+Form data components are components that must be placed inside a [form]({{ base_path }}/components/form/overview){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, radio, real, slider, slide toggle, text, textarea and time.
 
 All input components in **OntimizeWeb** extend the `OFormDataComponent` class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the **API** section of this page.
 
@@ -102,7 +102,7 @@ User can add its own validators to a input component using the `validators` inpu
 
 ### Validation component
 
-Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/){:target='_blank'} components.
+Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/overview/){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/overview/){:target='_blank'} components.
 
 ## Label visible <span class='menuitem-badge'> new </span>
 Form data components allow you to show or hide label with `label-visible` attribute. By default, this value is *true*.
