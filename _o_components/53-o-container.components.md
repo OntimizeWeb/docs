@@ -31,7 +31,7 @@ This components also apply basic styling
 ```
 ## Appearance <span class='menuitem-badge'> new </span>
 
-The `appearance` input indicates which of the different `container` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v6.material.angular.io/components/form-field/overview#form-field-appearance-variants),
+The `appearance` input indicates which of the different `container` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v8.material.angular.io/components/form-field/overview#form-field-appearance-variants),
 only has a possible *outline* value.
 ```html
  <o-column title-label="Dirección fiscal" appearance='outline'>

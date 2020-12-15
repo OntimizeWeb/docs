@@ -109,7 +109,7 @@ attributes: [
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/components/formlayoutmanager/){:target='_blank'})"
+  description: "Include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/components/formlayoutmanager/overview){:target='_blank'})"
 },{
   name: "undo-button",
   type: "no | false | yes | true",

@@ -5,7 +5,7 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not to show the breadcrumb on the top of the form. Read more about the `o-breadcrub` component [here](https://ontimizeweb.github.io/docs/components/breadcrumb/){:target='_blank'})."
+  description: "Indicates whether or not to show the breadcrumb on the top of the form. Read more about the `o-breadcrub` component [here](https://ontimizeweb.github.io/docs/components/breadcrumb/overview){:target='_blank'})."
 },{
   name: "breadcrumb-label-columns",
   type: "string",
