@@ -7,7 +7,7 @@ comp: HTMLInput
 {% include base_path %}
 {% include toc %}
 
-The `o-html-input` component is used in [forms]({{ base_path }}/components/form/overview/) for getting or displaying html text submitted by the user.
+The `o-html-input` component is used in [forms]({{ base_path }}/components/form/overview) for getting or displaying html text submitted by the user.
 
 This component wraps the [CKEditor 4](https://ckeditor.com/ckeditor-4/){:target="_blank"} component into an **OntimizeWeb** component. For using it you need to download the CKEditor library and include it in your application.
 

@@ -6,7 +6,7 @@ comp: checkbox
 
 {% include base_path %}
 
-The `o-checkbox` component is used in [forms]({{ base_path }}/components/form/overview/) for getting or displaying multiple option selection input submitted by the user.
+The `o-checkbox` component is used in [forms]({{ base_path }}/components/form/overview) for getting or displaying multiple option selection input submitted by the user.
 
 The checkbox is automatically registered on its parent `o-form`, which provides the value for the checkbox programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
