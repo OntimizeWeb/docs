@@ -7,7 +7,7 @@ comp: slider
 {% include base_path %}
 {% include toc %}
 
-The `o-slider` component is used in [forms]({{ base_path }}/components/form/overview/) for selecting or displaying a value from a range via mouse, touch or keyboard.
+The `o-slider` component is used in [forms]({{ base_path }}/components/form/overview) for selecting or displaying a value from a range via mouse, touch or keyboard.
 
 The slider component is automatically registered on its parent `o-form`, which provides the value for the slide programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 

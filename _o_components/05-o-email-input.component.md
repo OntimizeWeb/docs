@@ -7,7 +7,7 @@ comp: emailInput
 {% include base_path %}
 {% include toc %}
 
-The `o-email-input` component is used in [forms]({{ base_path }}/components/form/overview/) for getting or displaying email addresses input submitted by the user.
+The `o-email-input` component is used in [forms]({{ base_path }}/components/form/overview) for getting or displaying email addresses input submitted by the user.
 
 The email input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
