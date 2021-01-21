@@ -1269,7 +1269,9 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 ### Row grouping <span class='menuitem-badge'>new<span>
 
-For grouping by one o more columns, you can:
+Ontimize Web allows merge fields belonging to one column so that the consecutive fields have the same value through the **row grouping**. Each group will be marked with one row with joined cells above containing the group value.
+
+For grouping/ungrouping by one o more columns, you can:
 1. Configure **grouped columns by default** with the `grouped-columns` property.
 As you can see in the example below, as soon as there is at least one active row group, the table will add an additional row for displaying the group in a tree structure with expand/collapse navigation.
 
@@ -1277,7 +1279,6 @@ As you can see in the example below, as soon as there is at least one active row
 <o-table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
   columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" title="ACCOUNTS"
   quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" detail-mode="none">
-
   <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
 </o-table>
 ```
