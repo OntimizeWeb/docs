@@ -44,14 +44,14 @@ attributes: [{
   type: "'bottom' | 'top'",
   default: "bottom",
   required: "",
-  description: "Indicates whether or not the insert button is attached at the top or at the bottom of the list"
+  description: "Indicates the insert button is attached at the top or at the bottom of the list when the button is floatable"
 },
 {
   name: "insert-button-floatable",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Indicates whether or not the insert button is floating"
+  description: "Indicates whether or not the insert button is floatable."
 }]
 
 outputs: [{
