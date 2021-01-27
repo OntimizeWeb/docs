@@ -118,5 +118,5 @@ attributes: [{
   type: "no | yes | true | false",
   default: "yes",
   required: "",
-  description: "Indicates whether or not to groupable the column"
+  description: "Indicates whether or not the column is groupable"
 }]
