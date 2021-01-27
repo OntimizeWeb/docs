@@ -237,7 +237,7 @@ components:
       - title: "Filter builder"
         url: /components/filterbuilder/overview
 
-      - title: "Grid <span class='menuitem-badge'>new<span>"
+      - title: "Grid"
         url: /components/grid/overview
       - title: "List"
         url: /components/list/overview
