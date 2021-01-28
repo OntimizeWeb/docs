@@ -54,6 +54,13 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not to show the language selector"
-}]
+},{
+  name: "header-color",
+  type: "ThemePalette",
+  default: "",
+  required: "",
+  description: "Theme color palette for the application header.""
+}
+]
 
 extraComponents: "appLayoutData"
