@@ -88,6 +88,43 @@ If you want to add your own components to the layout toolbar you must use the `o
 </o-app-layout>
 ```
 
+### Adding custom user info
+**OntimizeWeb** allows to customize the user info to the toolbar with the `o-user-info-configuration` and `o-user-info-configuration-item` components. Check the *API* section of this page for more information.
+
+**Example**
+```html
+<o-app-layout show-header="yes" opened-sidenav-image="assets/images/sidenav-opened.png"
+  closed-sidenav-image="assets/images/sidenav-closed.png">
+  <o-user-info-configuration show-profile="yes">
+    <o-user-info-configuration-item name="test" icon="home" [action]="myAction" confirm="yes">
+    </o-user-info-configuration-item>
+  </o-user-info-configuration>
+  <router-outlet></router-outlet>
+</o-app-layout>
+```
+
+```ts
+import { Component, ViewEncapsulation } from '@angular/core';
+
+@Component({
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss'],
+  encapsulation: ViewEncapsulation.None
+})
+export class MainComponent  {
+
+  constructor() { }
+
+  myAction() {
+    alert('Test')
+  }
+}
+
+```
+
+![Custom user info]({{ "/images/layouts/app-layout/custom_user_info.png" | absolute_url }})
+
 ## Images
 
 You can set provide images to be shown in the side navigator using the attributes `opened-sidenav-image` and `closed-sidenav-image`. Check this and other attributes in the **API** section of this page.
