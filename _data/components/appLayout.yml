@@ -59,7 +59,7 @@ attributes: [{
   type: "ThemePalette",
   default: "",
   required: "",
-  description: "Theme color palette for the application header.""
+  description: "Theme color palette for the application header."
 }
 ]
 
