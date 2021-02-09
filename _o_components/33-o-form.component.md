@@ -60,13 +60,13 @@ You can read more about this topic in the [detail form]({{ base_path }}/componen
 
 ## Form container
 
-In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/form/container/overview/){:target="_blank"}.
+In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/form/container/overview){:target="_blank"}.
 
 ## Form layout manager
 
 A very common feature on management applications is displaying a form with the details related to a row from a data table. As a solution for this, **OntimizeWeb** offers the `o-form-layout-manager` component, that allows you managing the transitions between the data table and the form with the row details.
 
-You can read more about this component [here]({{ base_path }}/components/formlayoutmanager/overview/){:target="_blank"}.
+You can read more about this component [here]({{ base_path }}/components/formlayoutmanager/overview){:target="_blank"}.
 
 ## Extending a form
 
