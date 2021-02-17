@@ -13,7 +13,7 @@ attributes: [
   {
   name: "page-size-options", 
   type: "array",
-  default : "[10, 25, 50, 100]",
+  default : "10; 25; 50; 100",
   required : "",
   description : "The set of provided page size options to display to the user."
   }
