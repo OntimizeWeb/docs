@@ -59,8 +59,8 @@ attributes: [{
   description: "Type of the component data"
 },{
   name: "mode",
-  type: "desktop | mobile",
-  default: "desktop",
+  type: "auto | desktop | mobile",
+  default: "auto",
   required: "",
   description: "Indicates the component performance mode"
 }]

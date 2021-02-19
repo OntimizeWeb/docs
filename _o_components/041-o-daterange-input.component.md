@@ -55,8 +55,10 @@ The `o-daterange-input` can render in two differents ways based on the `mode` pr
 |------|--------------|
 | *desktop* | Show **two** calendars to select date range |
 | *mobile* | Show **one** calendar to select date range |
+| *auto* | Show  **mode mobile** if the device is a mobile otherwise **mode desktop**.
 
 
+<h3>Mode mobile example</h3>
 ![Date range mode ]({{ "/images/components/inputs/o-daterange-mode-mobile.png" | absolute_url }}){: .comp-example-img}
 ```html
 <div fxLayout="row" fxLayoutAlign="end center" class="selector-mode">
