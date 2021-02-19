@@ -47,6 +47,30 @@ export class InputDateRangeComponent {
 
 It is possible to disable the date range input by adding the `text-input-enabled` property  is set to “no”. By default, the value is true .
 
+## Changing the date range's behaviour <span class='menuitem-badge'>new<span>
+
+The `o-daterange-input` can render in two differents ways based on the `mode` property.
+
+| Mode | Description |
+|------|--------------|
+| *desktop* | Show **two** calendars to select date range |
+| *mobile* | Show **one** calendar to select date range |
+
+
+![Date range mode ]({{ "/images/components/inputs/o-daterange-mode-mobile.png" | absolute_url }}){: .comp-example-img}
+```html
+<div fxLayout="row" fxLayoutAlign="end center" class="selector-mode">
+  <mat-icon>desktop_mac</mat-icon>{{'MODE.DESKTOP' | oTranslate}}
+  <mat-slide-toggle #mode>
+    <mat-icon>smartphone</mat-icon> {{'MODE.MOBILE'| oTranslate}}
+  </mat-slide-toggle>
+</div>
+
+
+<o-daterange-input attr="daterange" label="DATERANGE" read-only="no" required="yes" [data]="getValue()"
+  clear-button="yes" format="LL" separator=" to " [mode]="mode.checked?'mobile':'desktop'">
+</o-daterange-input>
+```
 ## Touch UI mode
 
 The `o-daterange-input` normally opens as a popup under the input, however the component has a `touch-ui` property that can be set to `true` where the calendar opens in a large dialog.

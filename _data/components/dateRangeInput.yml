@@ -57,6 +57,12 @@ attributes: [{
   default: "timestamp",
   required: "",
   description: "Type of the component data"
+},{
+  name: "mode",
+  type: "desktop | mobile",
+  default: "desktop",
+  required: "",
+  description: "Indicates the component performance mode"
 }]
 
 inheritedOutputs: [{

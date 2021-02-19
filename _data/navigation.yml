@@ -147,7 +147,7 @@ components:
       - title: "Date"
         url: /components/input/date/overview
         order: "2"
-      - title: "Date range <span class='menuitem-badge'>new<span>"
+      - title: "Date range"
         url: /components/input/daterange/overview
         order: "2"
       - title: "NIF"
