@@ -10,4 +10,10 @@ attributes: [{
   default : "''",
   required : "",
   description : "Indicates sorting default of the results."
+},{
+  name: "start-view",
+  type: "month|year|multi-year",
+  default : "month",
+  required : "",
+  description : "Indicates initial view for datepicker."
 }]
