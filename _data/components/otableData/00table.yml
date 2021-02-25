@@ -236,6 +236,9 @@ outputs: [{
 },{
   name: "onPaginatedDataLoaded",
   description: "Event triggered when the paginated data is updated"
+},{
+  name: "onCellClick",
+  description: "Event triggered when a cell is clicked"
 }]
 
 methods: [{
