@@ -194,7 +194,26 @@ attributes: [{
   default: "no",
   required: "",
   description: "Indicates whether or not to auto adjust column width to its content."
+},{
+  name: "groupable",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to group by column"
+},{
+  name: "grouped-columns",
+  type: "string",
+  description: "Grouped columns separated by ';'. Default: no value",
+  required: "",
+  default: ""
+},{
+  name: "collapse-grouped-columns",
+  type: "yes|no|true|false",
+  description: "Whether collapse the grouped columns by default",
+  required: "",
+  default: "no"
 }]
+
 
 outputs: [{
   name: "onClick",
