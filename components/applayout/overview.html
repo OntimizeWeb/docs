@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-01-12T08:45:29-05:00">
+  <meta property="article:published_time" content="2021-02-26T06:58:38-05:00">
 
 
 
@@ -496,7 +496,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/input/daterange/overview" class=" ">Date range <span class='menuitem-badge'>new<span></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/input/daterange/overview" class=" ">Date range</a></li>
           
             
             
@@ -706,7 +706,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/components/grid/overview" class=" ">Grid <span class='menuitem-badge'>new<span></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/components/grid/overview" class=" ">Grid</a></li>
           
             
             
@@ -900,7 +900,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="January 12, 2021">
+    <meta itemprop="datePublished" content="February 26, 2021">
     
 
     <div class="page__inner-wrap">
@@ -980,6 +980,7 @@
   <li><a href="#modes" id="markdown-toc-modes">Modes</a></li>
   <li><a href="#toolbar" id="markdown-toc-toolbar">Toolbar</a>    <ul>
       <li><a href="#adding-custom-content-to-the-toolbar" id="markdown-toc-adding-custom-content-to-the-toolbar">Adding custom content to the toolbar</a></li>
+      <li><a href="#adding-custom-user-info" id="markdown-toc-adding-custom-user-info">Adding custom user info</a></li>
     </ul>
   </li>
   <li><a href="#images" id="markdown-toc-images">Images</a></li>
@@ -1067,6 +1068,41 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
   <span class="nt">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
 <span class="nt">&lt;/o-app-layout&gt;</span>
 </code></pre></div></div>
+
+<h3 id="adding-custom-user-info">Adding custom user info</h3>
+<p><strong>OntimizeWeb</strong> allows to customize the user info to the toolbar with the <code class="language-plaintext highlighter-rouge">o-user-info-configuration</code> and <code class="language-plaintext highlighter-rouge">o-user-info-configuration-item</code> components. Check the <em>API</em> section of this page for more information.</p>
+
+<p><strong>Example</strong></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-app-layout</span> <span class="na">show-header=</span><span class="s">"yes"</span> <span class="na">opened-sidenav-image=</span><span class="s">"assets/images/sidenav-opened.png"</span>
+  <span class="na">closed-sidenav-image=</span><span class="s">"assets/images/sidenav-closed.png"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-user-info-configuration</span> <span class="na">show-profile=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;o-user-info-configuration-item</span> <span class="na">name=</span><span class="s">"test"</span> <span class="na">icon=</span><span class="s">"home"</span> <span class="na">[action]=</span><span class="s">"myAction"</span> <span class="na">confirm=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/o-user-info-configuration-item&gt;</span>
+  <span class="nt">&lt;/o-user-info-configuration&gt;</span>
+  <span class="nt">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span>
+<span class="nt">&lt;/o-app-layout&gt;</span>
+</code></pre></div></div>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewEncapsulation</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app-main</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./main.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./main.component.scss</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">encapsulation</span><span class="p">:</span> <span class="nx">ViewEncapsulation</span><span class="p">.</span><span class="nx">None</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">MainComponent</span>  <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="nx">myAction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Test</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/layouts/app-layout/custom_user_info.png" alt="Custom user info" /></p>
 
 <h2 id="images">Images</h2>
 
@@ -1172,6 +1208,71 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
             
   <td class="" o-component-description >
     <p class="first"><p>Sidenav header image when it is closed</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>header-color</p>
+</p>
+    
+      <p><i>ThemePalette</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Theme color palette for the application header.</p>
 </p>
     
   </td>
@@ -1885,6 +1986,877 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
   
     
+      
+      
+
+      
+
+
+
+
+ 
+  <h2 id="User info configuration" >User info configuration</h2>
+  
+
+  
+<p><strong class="grey-color" id="o-user-info-configuration">Directive:</strong> o-user-info-configuration</p>
+  
+  
+
+
+  
+
+
+  
+
+
+  
+
+  <h3 id="inputs" class="grey-color">Inputs</h3>
+
+
+
+
+
+
+
+  <table class="attributes-table mdl-data-table">
+<thead>
+  <tr>
+  
+
+  
+<th class=""> Name</th>
+  
+  
+
+  
+<th class=""> Description</th>
+  
+  
+
+  
+<th class=""> Default</th>
+  
+  
+  </tr>
+</thead>
+<tbody>
+  
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>show-logout</p>
+</p>
+
+  <p><i>no | false | yes | true</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Indicates whether or not to show the logout item</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>yes</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>show-profile</p>
+</p>
+
+  <p><i>no | false | yes | true</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Indicates whether or not to show the my profile item</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>no</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>show-settings</p>
+</p>
+
+  <p><i>no | false | yes | true</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Indicates whether or not to show the settings item</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>yes</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+  </tbody>
+  </table>
+
+  
+
+  
+
+
+
+  
+
+  
+
+
+  
+
+
+
+  
+    
+      
+      
+
+      
+
+
+
+
+ 
+  <h2 id="User info configuration item" >User info configuration item</h2>
+  
+
+  
+<p><strong class="grey-color" id="o-user-info-configuration-item">Directive:</strong> o-user-info-configuration-item</p>
+  
+  
+
+
+  
+
+
+  
+
+
+  
+
+  <h3 id="inputs" class="grey-color">Inputs</h3>
+
+
+
+
+
+
+
+  <table class="attributes-table mdl-data-table">
+<thead>
+  <tr>
+  
+
+  
+<th class=""> Name</th>
+  
+  
+
+  
+<th class=""> Description</th>
+  
+  
+
+  
+<th class=""> Default</th>
+  
+  
+  </tr>
+</thead>
+<tbody>
+  
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>action</p>
+</p>
+
+  <p><i>()=>void</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Method to execute when the menu item is selected</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>class</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>The CSS class applied to the menu item</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>confirm</p>
+</p>
+
+  <p><i>no | false | yes | true</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Indicates whether or not the user must confirm the menu action</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>no</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>confirm-text</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>The confirmation text</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>icon</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Icon name (see <a href="https://design.google.com/icons/" target="_blank">Google material design icons</a>)<br /><em>*Note: In this component you are required to use only Google Material Icons</em></p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>name</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Item title</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>route</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>App navigation route when the menu item is selected</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>tooltip</p>
+</p>
+
+  <p><i>no | false | yes | true</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Indicates whether the tooltip text showed on the menu item</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>no</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+  </tbody>
+  </table>
+
+  
+
+  
+
+
+
+  
+
+  
+
+
+  
+
+
+
+  
+    
   
 
 </div>
@@ -1904,7 +2876,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-01-12T08:45:29-05:00">January 12, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-02-26T06:58:38-05:00">February 26, 2021</time></p>
         
       </footer>
 
