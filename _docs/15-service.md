@@ -168,8 +168,8 @@ You can override or extend the functionality of the services defined in **Ontimi
 | ------- | ------- | ------- |
 | `OntimizeService` and `OntimizeEEService` | `O_DATA_SERVICE` | Service used for making CRUD operation and authentication |
 | `OTranslateService` | `O_TRANSLATE_SERVICE` | Service for translating the information shown in the application |
-| `OntimizeFileService` | `O_FILE_SERVICE` | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/overview/){:target="_blank"}  component |
-| `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/input/file/overview/){:target="_blank"} component for exporting its data |
+| `OntimizeFileService` | `O_FILE_SERVICE` | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/overview){:target="_blank"}  component |
+| `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
 | `OntimizePermissionsService` and `OntimizeEEPermissionsService` | `O_PERMISSION_SERVICE` | Service used for loading the application permissions |
 
 For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.
@@ -212,7 +212,7 @@ export class AppModule { }
 
 > **NOTE:** `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. There is one attribute for each type of service.
 
-Now you can add or override the methods of the service as you need. The following example shows the new service consuming the [Stars Wars API](https://swapi.co/){:target="_blank"} for querying different entities. We have override the `query` and the `advancedQuery` methods for making simple and paginated request to the API. Note that we must adapt the API response to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
+Now you can add or override the methods of the service as you need. The following example shows the new service consuming the [Stars Wars API](https://swapi.dev/){:target="_blank"} for querying different entities. We have override the `query` and the `advancedQuery` methods for making simple and paginated request to the API. Note that we must adapt the API response to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
@@ -284,7 +284,7 @@ public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?
 }
 ```
 
-The following example shows a [`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"} component configured for retrieving *starships* using the new service.
+The following example shows a [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component configured for retrieving *starships* using the new service.
 
 ```html
 <o-table attr="starships" entity="starships" columns="name;model;manufacturer;starship_class;crew;passengers"
