@@ -53,11 +53,63 @@ Global default label options can be specified by providing a value for *MAT_LABE
 })
 ```
 ## Validation
+
+You can setup validation on input using:
+* Validation **input in template-driven forms**
+* **Ontimize validators**
+* Create your **custom validator**
+
+### Validation input in template-driven forms
+
+To add validation to a template-driven form, you add the validation attributes specific for each input and **Ontimize Web** match these attributes with validator functions in the framework (such as required, min-length, max-length, max-decimal-digits,min-decimal-digits...)
+
 The input shows automatically an error message when the `required` attribute is set to **yes** and there is no value on the input.
 
-### Input
+```html
+<o-password-input #newpassword attr="NEW_PASSWORD" required="yes" min-length="8" ></o-password-input>
+```
+![Input required validator]({{ "/images/components/inputs/validators/required.png" | absolute_url }}){: .comp-example-img}
 
-User can add its own validators to a input component using the `validators` input.
+### Ontimize validators
+
+Ontimize Web providers the following *build-in validators* in the framework:
+* **twelveHourFormatValidator**: Hour validator hh:mm am/pm format
+* **twentyFourHourFormatValidator**:  Hour validator HH:mm format
+* **emailValidator**: Email validator
+* **nifValidator**: NIF validator
+* **patternValidator**:  Pattern validator
+
+Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/overview/){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/overview/){:target='_blank'} components.
+
+Below is an example of using the **pattern validator**.
+```html
+ <o-password-input #newpassword attr="NEW_PASSWORD" required="yes" min-length="8" [validators]="validatorsNewPasswordArray">
+    <o-validator error-name="hasCapitalCase" error-text="VALIDATOR.HASCAPITALCASE"></o-validator>
+    <o-validator error-name="hasNumber" error-text="VALIDATOR.HASNUMBER"></o-validator>
+    <o-validator error-name="hasSmallCase" error-text="VALIDATOR.HASSMALLCASE"></o-validator>
+    <o-validator error-name="hasSpecialCharacters" error-text="VALIDATOR.HASSPECIALCHARACTERS"></o-validator>
+  </o-password-input>
+```
+
+```ts
+...
+  validatorsNewPasswordArray: ValidatorFn[] = [];
+  constructor() {
+    // check whether the entered password has a number
+    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\d/, 'hasNumber'));
+    // check whether the entered password has upper case letter
+    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase'));
+    // check whether the entered password has a special character
+    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase'));
+    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/, 'hasSpecialCharacters'));
+  }
+...
+```
+![Input pattern validator]({{ "/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
+
+### Custom validator
+
+Also user can add its own validators to a input component using the `validators` input.
 
 ```html
    <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}"
@@ -98,11 +150,6 @@ User can add its own validators to a input component using the `validators` inpu
   }
    ...
 ```
-
-### Validation component
-
-Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/overview/){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/overview/){:target='_blank'} components.
-
 ## Label visible <span class='menuitem-badge'> new </span>
 Form data components allow you to show or hide label with `label-visible` attribute. By default, this value is *true*.
 
