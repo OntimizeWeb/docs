@@ -99,8 +99,9 @@ Below is an example of using the **pattern validator**.
     this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\d/, 'hasNumber'));
     // check whether the entered password has upper case letter
     this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase'));
-    // check whether the entered password has a special character
+    // check whether the entered password has small case letter
     this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase'));
+    // check whether the entered password has a special character
     this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/, 'hasSpecialCharacters'));
   }
 ...
