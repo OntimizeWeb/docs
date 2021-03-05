@@ -54,10 +54,10 @@ Global default label options can be specified by providing a value for *MAT_LABE
 ```
 ## Validation
 
-You can setup validation on input using:
-* Validation **input in template-driven forms**
-* **Ontimize validators**
-* Create your **custom validator**
+You can setup validation on input:
+* Using validation **input in template-driven forms**
+* Using the **Ontimize validators**
+* Creating your **custom validator**
 
 ### Validation input in template-driven forms
 
