@@ -189,7 +189,7 @@ export class StarsWarsService extends OntimizeBaseService {
 }
 ```
 
-Once your service is created you cand [override the Ontimize CRUD methods](#override-crud-methods-using-a-third-party-api) and/or [define new methods](#define-your-own-crud-methods). After that you must decide if the service will be used [in the whole application](#use-your-service-in-the-whole-application) or only in [specific components](#use-your-service-in-a-specific-component).
+Once your service is created you can [override the Ontimize CRUD methods](#override-crud-methods-using-a-third-party-api) and/or [define new methods](#define-your-own-crud-methods). After that you must decide if the service will be used [in the whole application](#use-your-service-in-the-whole-application) or only in [specific components](#use-your-service-in-a-specific-component).
 
 ### Override CRUD methods using a third party API
 
@@ -237,7 +237,7 @@ export class StarsWarsService extends OntimizeBaseService {
 }
 ```
 
-> **NOTE:** In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [addapt the response](#adapt-your-service-response).
+> **NOTE:** In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [adapt the response](#adapt-your-service-response).
 
 ### Define your own CRUD methods
 
@@ -357,7 +357,7 @@ In case you want to use your service in the whole application, you have to provi
 export class AppModule { }
 ```
 
-At this point every **OptimizeWeb** component will use your recently created `StarsWarsService` service for communicating with the backend.
+At this point every **OntimizeWeb** component will use your recently created `StarsWarsService` service for communicating with the backend.
 
 > **NOTE:** `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. There is one attribute for each type of service.
 
@@ -401,4 +401,4 @@ Once the service is included in the providers of your module, an instance of it 
 
 **OntimizeWeb** defines a successful and unsuccessful request callbacks for each CRUD method, this methods are called when the service receives the response from the API. You can override this methods in order to modify its behaviour. This methods are: `parseSuccessfulMETHODResponse` and `parseUnsuccessfulMETHODResponse` where `METHOD` is `query`, `advancedQuery`, `update`, `insert` or `delete`.
 
-Both services `OntimizeService` and `OntimizeEEService` also have a generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained CRUD method callbacks so user can chose whether to override a particular or the generic method.
+Both services `OntimizeService` and `OntimizeEEService` also have a generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained CRUD method callbacks so user can choose whether to override a particular or the generic method.
