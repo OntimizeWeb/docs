@@ -72,7 +72,7 @@
     {% assign sortedInheritedAttributes = (componentData.inheritedAttributes | sort: 'name') %}
       {% for inheritedObj in sortedInheritedAttributes %}
       <li>
-        from {% if inheritedObj.path %} <a href="{{ base_path }}/{{inheritedObj.path}}/" rel="permalink">{% endif %}{{ inheritedObj.component }}:{% if inheritedObj.path %}</a>{% endif %}
+        from {% if inheritedObj.path %} <a href="{{ base_path }}/{{inheritedObj.path}}" rel="permalink">{% endif %}{{ inheritedObj.component }}:{% if inheritedObj.path %}</a>{% endif %}
         <ul class="attributes-list">
           {% assign sortedInheritedAttrs = (inheritedObj.attributes | sort) %}
           {% for inheritedAttr in sortedInheritedAttrs %}
@@ -185,7 +185,7 @@
       {% assign sortedInheritedOutputs = (componentData.inheritedOutputs | sort: 'name') %}
       {% for inheritedObj in sortedInheritedOutputs %}
       <li>
-        from {% if inheritedObj.path %} <a href="{{ base_path }}/{{inheritedObj.path}}/" rel="permalink">{% endif %}{{ inheritedObj.component }}:{% if inheritedObj.path %}</a>{% endif %}
+        from {% if inheritedObj.path %} <a href="{{ base_path }}/{{inheritedObj.path}}" rel="permalink">{% endif %}{{ inheritedObj.component }}:{% if inheritedObj.path %}</a>{% endif %}
         <ul class="attributes-list">
           {% assign sortedInheritedOuts = (inheritedObj.outputs | sort) %}
           {% for inheritedOutput in sortedInheritedOuts %}

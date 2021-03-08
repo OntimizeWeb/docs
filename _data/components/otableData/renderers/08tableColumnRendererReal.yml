@@ -18,7 +18,7 @@ attributes: [{
 
 inherit_properties: [{
   component: "OBaseTableCellRenderer",
-  path: "table/obasetablecellrenderer/api",
+  path: "components/table/obasetablecellrenderer/api",
   properties: [{
     name: "column",
     type: "property",
@@ -36,6 +36,6 @@ inherit_properties: [{
 
 inheritedAttributes: [{
   component: "OBaseTableCellRenderer",
-  path: "table/obasetablecellrenderer/api",
+  path: "components/table/obasetablecellrenderer/api",
   attributes: ['filter-source', "filterFunction"]
 }]
