@@ -10,11 +10,9 @@ This section describes the **OntimizeWeb** services an how to extend them to add
 
 ## Ontimize services
 
-OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://www.ontimize.com/){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`.
+OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://www.ontimize.com/){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`. You must indicate which type of service the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
 
-You can also use your own type of service and then we will explain how to parse and adapt the response.
-
-You must indicate which one the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
+You can also use your own service and adapt its response to OntimizeWeb's standard response. This will be explained later in this section.
 
 ### Ontimize services methods
 
@@ -119,9 +117,9 @@ You can see an example of a Ontimize service request response in the image below
 
 ![Ontimize service response example]({{ base_path }}/images/request.png){: .align-center}
 
-### Example of Ontimize Service in a component
+### Use OntimizeService in your application
 
-Below we will show an example of how to configure and use an `Ontimize service`.
+Check the example below about how to configure and use the `OntimizeService` for querying data in your application.
 
 ```javascript
 protected service: OntimizeService;
@@ -135,8 +133,8 @@ ngOnInit() {
 }
 
 protected configureService() {
-  const conf = this.service.getDefaultServiceConfiguration();
-  conf['path'] = '/movements';
+  // Configure the service using the configuration defined in the `app.services.config.ts` file
+  const conf = this.service.getDefaultServiceConfiguration('movements');
   this.service.configureService(conf);
 }
 
@@ -146,17 +144,15 @@ getMovements(data) {
       'ACCOUNTID': data['ACCOUNTID']
     };
     const columns = [this.yAxis, this.xAxis, 'DATE_'];
-    this.service.query(filter, columns, 'movement').subscribe((resp) => {
+    this.service.query(filter, columns, 'movement').subscribe(resp => {
       if (resp.code === 0) {
-        this.adaptResult(resp.data);
+
+        // resp.data contains the data retrieved from the server
+
       } else {
         alert('Impossible to query data!');
       }
     });
-  }
-
-  this.adaptResult(data){
-    ...
   }
 ```
 
@@ -168,23 +164,23 @@ You can override or extend the functionality of the services defined in **Ontimi
 | ------- | ------- | ------- |
 | `OntimizeService` and `OntimizeEEService` | `O_DATA_SERVICE` | Service used for making CRUD operation and authentication |
 | `OTranslateService` | `O_TRANSLATE_SERVICE` | Service for translating the information shown in the application |
-| `OntimizeFileService` | `O_FILE_SERVICE` | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/overview/){:target="_blank"}  component |
-| `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/input/file/overview/){:target="_blank"} component for exporting its data |
+| `OntimizeFileService` | `O_FILE_SERVICE` | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/overview){:target="_blank"}  component |
+| `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
 | `OntimizePermissionsService` and `OntimizeEEPermissionsService` | `O_PERMISSION_SERVICE` | Service used for loading the application permissions |
 
 For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.
 
-### Create and extended a service
+### Create and extend a service
 
-Create a new service class that extends a service from **OntimizeWeb**. In the following example we are creating a service called `StarsWarsService` that extends the `OntimizeEEService`.
+Create a new service class that extends a service from **OntimizeWeb**. In the following example we are creating a service called `StarsWarsService` that extends the class `OntimizeBaseService` (`OntimizeBaseService` is the super class for different services in **OntimizeWeb**).
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
 
-import { OntimizeEEService } from 'ontimize-web-ngx';
+import { OntimizeBaseService } from 'ontimize-web-ngx';
 
 @Injectable()
-export class StarsWarsService extends OntimizeEEService {
+export class StarsWarsService extends OntimizeBaseService {
 
   constructor(protected injector: Injector) {
     super(injector);
@@ -193,9 +189,160 @@ export class StarsWarsService extends OntimizeEEService {
 }
 ```
 
-Once your service is created you must decide if it will be used [in the whole application](#use-your-service-in-the-whole-application) or only in [specific components](#use-your-service-in-a-specific-component).
+Once your service is created you can [override the Ontimize CRUD methods](#override-crud-methods-using-a-third-party-api) and/or [define new methods](#define-your-own-crud-methods). After that you must decide if the service will be used [in the whole application](#use-your-service-in-the-whole-application) or only in [specific components](#use-your-service-in-a-specific-component).
 
-#### Use your service in the whole application
+### Override CRUD methods using a third party API
+
+You can use your service to retrieve or send data to a third party API. The following example shows the service from the previous step consuming the [Stars Wars API](https://swapi.dev/){:target="_blank"} for querying different entities. We have overridden the `query` and `advancedQuery` methods for making simple and paginated request to the API. Note that you must [adapt the API response](#adapt-your-service-response) to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
+
+```javascript
+import { Injectable, Injector } from '@angular/core';
+import { Observable, OntimizeBaseService, Util } from 'ontimize-web-ngx';
+
+@Injectable()
+export class StarsWarsService extends OntimizeBaseService {
+
+  constructor(protected injector: Injector) {
+    super(injector);
+  }
+
+  public query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<any> {
+    const url = 'https://swapi.dev/api/' + entity + '/?format=json';
+
+    return this.doRequest({
+      method: 'GET',
+      url: url,
+      options: {}
+    });
+  }
+
+  public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object, offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
+    offset = (Util.isDefined(offset)) ? offset : this.offset;
+
+    // Calculate page
+    let page = 0;
+    if (Util.isDefined(offset)) {
+      page = Math.trunc(offset / 10) + 1;
+    }
+
+    let url = 'https://swapi.dev/api/' + entity + '/?format=json' + '&page=' + page;
+
+    return this.doRequest({
+      method: 'GET',
+      url: url,
+      options: {}
+    });
+  }
+
+}
+```
+
+> **NOTE:** In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [adapt the response](#adapt-your-service-response).
+
+### Define your own CRUD methods
+
+All the **OntimizeWeb** components that use services for retrieving data have the attributes `query-method`, `paginated-query-method`, `insert-method`, `update-method` and `deleted-method`. The purpose of these attributes is allowing the component to use your own CRUD methods defined in your service. With this you can define, for example, as many *query* methods as you want.
+
+In the example below we have defined the `getSkywalker` method that retrieves information from the API.
+
+```javascript
+import { Injectable, Injector } from '@angular/core';
+import { Observable, OntimizeBaseService, Util } from 'ontimize-web-ngx';
+
+@Injectable()
+export class StarsWarsService extends OntimizeBaseService {
+
+  ...
+
+  public getSkywalker(): Observable<any> {
+    const url = 'https://swapi.dev/api/people/1/?format=json';
+
+    return this.doRequest({
+      method: 'GET',
+      url: url,
+      options: {}
+    });
+  }
+
+}
+```
+
+Now you can configure a component from  **OntimizeWeb** to use your method. Read more about this in the section [*Use your service in a specific component*](#use-your-service-in-a-specific-component).
+
+> **NOTE:** In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [addapt the response](#adapt-your-service-response).
+
+### Adapt your service response
+
+This section describes how to adapt the response of a third party API in order to use it with **OntimizeWeb** components.
+
+First of all, you have to implement an adapter. An adapter is a service that implements the interface `ServiceResponseAdapter<BaseServiceResponse>` that contains the method `adapt(resp: HttpResponse<T>): BaseServiceResponse`, this method receives the response from the API and returns an instance of `BaseServiceResponse` that is recognized by **OntimizeWeb** components.
+
+```javascript
+import { HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { BaseServiceResponse, OntimizeServiceResponse, ServiceResponseAdapter, Util } from 'ontimize-web-ngx';
+
+import { StarsWarsResponse } from './stars-wars-response.type';
+
+@Injectable({ providedIn: 'root' })
+export class StarsWarsResponseAdapter implements ServiceResponseAdapter<BaseServiceResponse> {
+
+  adapt(resp: HttpResponse<StarsWarsResponse>): BaseServiceResponse {
+    let code = 1;
+    let data = [];
+    let message = '';
+    let sqlTypes = {};
+    let startRecordIndex = 0;
+    let totalQueryRecordsNumber = 0;
+
+    // Adapt the data received from the service
+    if (resp.body) {
+      code = 0;
+      if (resp.body.results) {
+        data = resp.body.results;
+        startRecordIndex = Util.isDefined(resp.body.previous) ? (10 * (this.getPage(resp.body.previous, resp.body.next) - 1)) + 1 : 0;
+        totalQueryRecordsNumber = resp.body.count;
+      } else {
+        data = [resp.body];
+      }
+    }
+
+    // Create Ontimize service response with the data adapted
+    return new OntimizeServiceResponse(code, data, message, sqlTypes, startRecordIndex, totalQueryRecordsNumber);
+  }
+
+  ...
+
+}
+```
+
+The second step is to make your service use the adapter. Your service should extend the class `OntimizeBaseService` or any of its child classes (`OntimizeService`, `OntimizeEEService`, `OntimizeExportService` and `OntimizeFileService`). This class implements the method `configureAdapter` that has to be overwritten in order to provide your adapter.
+
+```javascript
+import { StarsWarsResponseAdapter } from './stars-wars-response-adapter';
+
+@Injectable()
+export class StarsWarsService extends OntimizeBaseService {
+
+  ...
+
+  public configureAdapter() {
+    this.adapter = this.injector.get(StarsWarsResponseAdapter);
+  }
+
+  ...
+
+}
+```
+
+After this, your adapter will be called every time your service receives a response.
+
+You can also extend the `BaseServiceResponse` according to your needs. Just remember to respect this three methods that are used internally in **OntimizeWeb**:
+- isSuccessful()
+- isFailed()
+- isUnauthorized()
+
+### Use your service in the whole application
 
 In case you want to use your service in the whole application, you have to provide it in you application module using the corresponding injection token.
 
@@ -210,92 +357,11 @@ In case you want to use your service in the whole application, you have to provi
 export class AppModule { }
 ```
 
+At this point every **OntimizeWeb** component will use your recently created `StarsWarsService` service for communicating with the backend.
+
 > **NOTE:** `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. There is one attribute for each type of service.
 
-Now you can add or override the methods of the service as you need. The following example shows the new service consuming the [Stars Wars API](https://swapi.co/){:target="_blank"} for querying different entities. We have override the `query` and the `advancedQuery` methods for making simple and paginated request to the API. Note that we must adapt the API response to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
-
-```javascript
-import { Injectable, Injector } from '@angular/core';
-
-import { OntimizeEEService, Observable, Util, ServiceResponse } from 'ontimize-web-ngx';
-import { Observable}  from 'rxjs';
-import { share } from 'rxjs/operators';
-
-@Injectable()
-export class StarsWarsService extends OntimizeEEService {
-
-  constructor(protected injector: Injector) {
-    super(injector);
-  }
-
-  public query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<ServiceResponse> {
-    const url = 'https://swapi.co/api/' + entity + '/?format=json';
-
-    let _innerObserver: any;
-    const dataObservable = new Observable(observer => _innerObserver = observer).pipe(share());
-
-    const self = this;
-    this.httpClient.get(url).subscribe(resp => {
-
-      // Prepare response for ontimize components
-      let response = {
-        code: 0,
-        data: resp['results'],
-        message: ''
-      };
-      _innerObserver.next(response);
-    }, error => {
-      self.parseUnsuccessfulQueryResponse(error, _innerObserver);
-    }, () => _innerObserver.complete());
-    return dataObservable.pipe(share());
-  }
-
-public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object, offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<ServiceResponse> {
-    offset = (Util.isDefined(offset)) ? offset : this.offset;
-
-    // Calculate page
-    let page = 0;
-    if (Util.isDefined(offset)) {
-      page = Math.trunc(offset / 10) + 1;
-    }
-
-    let url = 'https://swapi.co/api/' + entity + '/?format=json' + '&page=' + page;
-
-    let _innerObserver: any;
-    const dataObservable = new Observable(observer => _innerObserver = observer);
-
-    const self = this;
-    this.httpClient.get(url).subscribe(resp => {
-      // Prepare response for ontimize components
-      let response = {
-        code: 0,
-        data: resp['results'],
-        message: '',
-        startRecordIndex: Util.isDefined(resp['previous']) ? (10 * (page - 1)) + 1 : 0,
-        totalQueryRecordsNumber: resp['count']
-      };
-      _innerObserver.next(response);
-    }, error => {
-      self.parseUnsuccessfulQueryResponse(error, _innerObserver);
-    }, () => _innerObserver.complete());
-    return dataObservable.pipe(share());
-  }
-
-}
-```
-
-The following example shows a [`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"} component configured for retrieving *starships* using the new service.
-
-```html
-<o-table attr="starships" entity="starships" columns="name;model;manufacturer;starship_class;crew;passengers"
-  visible-columns="name;model;manufacturer;starship_class;passengers" pageable="yes" quick-filter="no" insert-button="no" fxFlex>
-
-  ...
-
-</o-table>
-```
-
-#### Use your service in a specific component
+### Use your service in a specific component
 
 If you want to use your service in a specific component instead of using it in the whole application, you have to create a factory method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
 
@@ -331,221 +397,8 @@ Once the service is included in the providers of your module, an instance of it 
 </o-table>
 ```
 
-### Define your own CRUD methods
-
-All the **OntimizeWeb** components that use services for retrieving data have the attributes `query-method`, `paginated-query-method`, `insert-method`, `update-method` and `deleted-method`. The purpose of these attributes is allowing the component to use your own CRUD methods defined in your service. With this you can define, for example, as many *query* methods as you want.
-
-In the example below we have defined the `getSkywalker` method that retrieves information from the API.
-
-```javascript
-import { Injectable, Injector } from '@angular/core';
-
-import { OntimizeEEService, Observable, Util } from 'ontimize-web-ngx';
-
-@Injectable()
-export class StarsWarsService extends OntimizeEEService {
-
-  ...
-
-  public getSkywalker(): Observable<any> {
-    const url = 'https://swapi.co/api/people/1/';
-
-    let _innerObserver: any;
-    const dataObservable = new Observable(observer => _innerObserver = observer).share();
-
-    const self = this;
-    this.httpClient.get(url).subscribe(resp => {
-      // Prepare response for ontimize components
-      let response = {
-        code: 0,
-        data: resp,
-        message: ''
-      };
-      _innerObserver.next(response);
-    }, error => {
-      self.parseUnsuccessfulQueryResponse(error, _innerObserver);
-    }, () => _innerObserver.complete());
-    return dataObservable;
-  }
-
-}
-```
-
-Now you can configure the `query-method` attribute of your component to use the method defined previously.
-
-```html
-<o-form service-type="starsWars" query-method="getSkywalker" header-actions="R">
-  <o-text-input attr="name" read-only="yes"></o-text-input>
-  <o-text-input attr="birth_year" read-only="yes"></o-text-input>
-  <o-text-input attr="gender" read-only="yes"></o-text-input>
-  <o-text-input attr="height" read-only="yes"></o-text-input>
-  <o-text-input attr="mass" read-only="yes"></o-text-input>
-</o-form>
-```
-
 ### Define your own successful/unsuccessful request callback methods
 
-Each *CRUD* method has it owns successful and unsuccessful request callbacks, called when the request ends. User can override or extends this methods to modify its behaviour. This methods are: `parseSuccessfulMETHODResponse` and `parseUnsuccessfulMETHODResponse` where `METHOD` is `query`, `advancedQuery`, `update`,`insert` or `delete`.
+**OntimizeWeb** defines a successful and unsuccessful request callbacks for each CRUD method, this methods are called when the service receives the response from the API. You can override this methods in order to modify its behaviour. This methods are: `parseSuccessfulMETHODResponse` and `parseUnsuccessfulMETHODResponse` where `METHOD` is `query`, `advancedQuery`, `update`, `insert` or `delete`.
 
-Both services `OntimizeService` and `OntimizeEEService` also have the generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained *CRUD* method callbacks so user can chose whether to override a particular or the generic callback.
-
-
-## Example of custom type of service
-
-To create a new type of service and to adapt the response to Ontimize format we must follow the next steps.
-First of all, you must indicate the name of the new type by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
-
-### Create the service
-
-First of all, you must create an interface that matches the response of the API to type the `HttpResponse` as seen below.
-
-```javascript
-import { HttpHeaders } from '@angular/common/http';
-import { Injectable, Injector } from '@angular/core';
-import { OntimizeBaseService } from 'ontimize-web-ngx';
-import { Observable } from 'rxjs';
-import { CustomResponseAdapter } from './custom-service-response.adapter';
-
-export interface CustomResponse {
-  data?: Array<any>;
-  meta?: {
-    total_pages: number;
-    current_page: number;
-    next_page: number;
-    per_page: number;
-    total_count: number;
-  };
-  abbreviation?: string;
-  city?: string;
-  full_name?: string;
-  id?: number;
-  name?: string;
-}
-```
-
-Create a new service that extends `OntimizeBaseService`, in this case we will name the service type as `CustomService`.
-
-```javascript
-export class CustomService extends OntimizeBaseService {
-
-  public configureAdapter() {
-    this.adapter = this.injector.get(CustomResponseAdapter);
-  }
-
-  public configureService(config: any): void {
-    super.configureService(config);
-    this.path = config.path;
-    this._urlBase = config.urlBase ? config.urlBase : 'https://your-api.com';
-  }
-
-  protected buildHeaders(): HttpHeaders {
-    return new HttpHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json;charset=UTF-8'
-    });
-  }
-
-  public query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<any> {
-    let url = this._urlBase + this.path;
-    if (entity && entity === 'detail') {
-      url += '/' + kv['id'];
-    }
-    return this.doRequest({
-      method: 'GET',
-      url
-    });
-  }
-
-  public advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object,
-    offset?: number, pagesize?: number, orderby?: Array<Object>): Observable<any> {
-    if (!offset) {
-      offset = 0;
-    }
-    let url = this._urlBase + this.path;
-    url += '?page=' + offset;
-    url += '&per_page=' + pagesize;
-    if (entity && entity === 'detail') {
-      url += '/' + kv['id'];
-    }
-    return this.doRequest({
-      method: 'GET',
-      url
-    });
-  }
-}
-```
-
-### Create the adapter and adapt the response
-
-Now, you must adapt the response of the service to be the same as it is in OntimizeWeb. Here is where you have to use `CustomResponse` interface created in the first point.
-
-The function adapt() will return `Custom Service Response` in OntimizeWeb readable format.
-
-
-
-```javascript
-import { HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { ServiceResponseAdapter } from 'ontimize-web-ngx';
-
-import { CustomServiceResponse } from './custom-service-response.class'; //Explained on next section
-import { CustomResponse } from './custom.service';
-
-@Injectable()
-export class CustomServiceResponseAdapter implements ServiceResponseAdapter<CustomServiceResponse> {
-
-  adapt(res: HttpResponse<CustomResponse>): CustomServiceResponse {
-    // Adapt response to OntimizeWeb format.
-    let code = 1;
-    let data = [];
-    let startRecordIndex = 0;
-    let totalQueryRecordsNumber = 0;
-    if (res.body && res.body.data) {
-      code = 0;
-      data = res.body.data;
-      if (res.body.meta) {
-        const meta = res.body.meta;
-        if (meta.total_count) {
-          totalQueryRecordsNumber = meta.total_count;
-        }
-        if (meta.current_page) {
-          startRecordIndex = meta.current_page;
-        }
-      }
-    } else if (res.body && res.body.id != null) {
-      code = 0;
-      data.push(res.body);
-    }
-
-    // Create new class element with the new data adapted.
-    return new CustomServiceResponse(
-      code,
-      data,
-      '',
-      {},
-      startRecordIndex,
-      totalQueryRecordsNumber
-    );
-  }
-}
-```
-
-### Type of the response
-
-You can extend the behaviour of BaseServiceResponse.
-
-```javascript
-import { BaseServiceResponse } from 'ontimize-web-ngx';
-
-export class CustomServiceResponse extends BaseServiceResponse {
-
-  ...
-
-}
-```
-
-You will have 3 functions in BaseServiceResponse that returns true or false to check the response. This functions are:
-
-- isSuccessful()
-- isFailed()
-- isUnauthorized()
+Both services `OntimizeService` and `OntimizeEEService` also have a generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained CRUD method callbacks so user can choose whether to override a particular or the generic method.
