@@ -180,7 +180,7 @@ A common use of a form is using the form data introduced by the user for request
 
 ### Parent keys filter
 
-Configuring the `parent-keys` attribute of the [table]({{ base_path }}/components/table/api/){:target="_blank"} with the `attr` of the [form fields]({{ base_path }}/components/input/overview/api/){:target="_blank"} we want to include on the filtering is the simplest and the fastest way of filtering table data. This aproach is not enough when you want to apply complex filters using logical operations.
+Configuring the `parent-keys` attribute of the [table]({{ base_path }}/components/table/api){:target="_blank"} with the `attr` of the [form fields]({{ base_path }}/components/input/overview/api){:target="_blank"} we want to include on the filtering is the simplest and the fastest way of filtering table data. This aproach is not enough when you want to apply complex filters using logical operations.
 
 In the following example we have a form component with the field for filtering the name, surname and the employee type of a table of employees. Note that the table has configured the attributes `parent-keys` with the columns involved in the filtering and its corresponding form component attr's. Remember that when the table column and the form component attr are the same, you only have to include it once.
 
