@@ -77,3 +77,48 @@ All this operator are defined statically in `FilterExpressionUtils` class with t
 **OntimizeWeb** also defines a set of utility methos to help you building complex filtering expressions. This methods are the following:
 
 {% include o-method.md file="filterexpressionmethods" collection="utilityMethods" %}
+
+## Examples
+
+The following example shows how to buid a *Basic expression* for querying a table using the `FilterExpressionUtils` class. The expressions passed to the method `buildBasicExpression` or `buildFilterExpression` can be as complex as you need, in this case it is a simple *like* expression.
+
+```js
+const filterExpr = FilterExpressionUtils.buildExpressionLike('EMPLOYEENAME', 'Caroline');
+const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
+
+this.table.queryData(basicExpr);
+```
+
+The **filter* sent to the backend results like the following:
+
+```json
+"filter": {
+  "@basic_expression": {
+    "lop": "EMPLOYEENAME",
+    "op": "LIKE",
+    "rop": "%Caroline%"
+  }
+}
+```
+
+It is possible to include additional filters that doesn't belong to the *Basic expression*:
+
+```js
+const filterExpr = FilterExpressionUtils.buildExpressionLike('EMPLOYEENAME', 'Caroline');
+const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
+
+basicExpr['EMPLOYEETYPEID'] = 1;
+
+this.table.queryData(basicExpr);
+```
+
+```json
+"filter": {
+  "@basic_expression": {
+    "lop": "EMPLOYEENAME",
+    "op": "LIKE",
+    "rop": "%Caroline%"
+  },
+  "EMPLOYEETYPEID": 1
+}
+```
