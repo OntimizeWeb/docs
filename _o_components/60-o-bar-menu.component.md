@@ -8,7 +8,7 @@ comp: barMenu
 {% include toc %}
 
 The `o-bar-menu` component builds automatically a dashboard page based on the application menu configuration (read more about how to configure the application menu [here]({{ base_path }}/guide/appconfig/#menu-configuration){:target="_blank"}).
-You can also include your own menu adding  [`o-bar-menu-group`](#bar-menu-group), [`o-bar-menu-item`](#bar-menu-item) and [`o-locale-bar-menu-item`](#locale-bar-menu-item) into `o-bar-menu` component. You can see a example [here](#example)
+You can also include your own menu adding  [`o-bar-menu-group`](#bar-menu-group), [`o-bar-menu-item`](#bar-menu-item) and [`o-locale-bar-menu-item`](#bar-menu-locale-item) into `o-bar-menu` component. You can see a example [here](#example).
 
 It is recommended to include it in the main component of you **OntimizeWeb** application, where the `router-outlet` is placed, so the bar menu will be always visible.
 
