@@ -868,6 +868,7 @@
   <li><a href="#operators" id="markdown-toc-operators">Operators</a></li>
   <li><a href="#filter-building-methods" id="markdown-toc-filter-building-methods">Filter building methods</a></li>
   <li><a href="#utility-methods" id="markdown-toc-utility-methods">Utility methods</a></li>
+  <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
 </ul>
 
   </nav>
@@ -1837,6 +1838,46 @@ Both expressions are joined using the provided operator.</p>
     </tbody>
 </table>
 
+<h2 id="examples">Examples</h2>
+
+<p>The following example shows how to buid a <em>Basic expression</em> for querying a table using the <code class="language-plaintext highlighter-rouge">FilterExpressionUtils</code> class. The expressions passed to the method <code class="language-plaintext highlighter-rouge">buildBasicExpression</code> or <code class="language-plaintext highlighter-rouge">buildFilterExpression</code> can be as complex as you need, in this case it is a simple <em>like</em> expression.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">filterExpr</span> <span class="o">=</span> <span class="nx">FilterExpressionUtils</span><span class="p">.</span><span class="nx">buildExpressionLike</span><span class="p">(</span><span class="dl">'</span><span class="s1">EMPLOYEENAME</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Caroline</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">basicExpr</span> <span class="o">=</span> <span class="nx">FilterExpressionUtils</span><span class="p">.</span><span class="nx">buildBasicExpression</span><span class="p">(</span><span class="nx">filterExpr</span><span class="p">);</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">queryData</span><span class="p">(</span><span class="nx">basicExpr</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The <em>*filter</em> sent to the backend results like the following:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"@basic_expression"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"lop"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMPLOYEENAME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIKE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rop"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Caroline%"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>It is possible to include additional filters that doesn&#8217;t belong to the <em>Basic expression</em>:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">filterExpr</span> <span class="o">=</span> <span class="nx">FilterExpressionUtils</span><span class="p">.</span><span class="nx">buildExpressionLike</span><span class="p">(</span><span class="dl">'</span><span class="s1">EMPLOYEENAME</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Caroline</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">basicExpr</span> <span class="o">=</span> <span class="nx">FilterExpressionUtils</span><span class="p">.</span><span class="nx">buildBasicExpression</span><span class="p">(</span><span class="nx">filterExpr</span><span class="p">);</span>
+
+<span class="nx">basicExpr</span><span class="p">[</span><span class="dl">'</span><span class="s1">EMPLOYEETYPEID</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">queryData</span><span class="p">(</span><span class="nx">basicExpr</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"@basic_expression"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"lop"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMPLOYEENAME"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIKE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rop"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Caroline%"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"EMPLOYEETYPEID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
         
       </section>
