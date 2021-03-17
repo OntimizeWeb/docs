@@ -1,0 +1,142 @@
+directive : "o-map"
+
+attributes: [{
+  name: "center",
+  description: "Initialize the map with a given center in latitude and longitude",
+  type: "LatLng"
+},{
+  name: "zoom",
+  description: "Initial map zoom level.",
+  type: "number"
+},{
+  name: "min-zoom",
+  description: "Minimum zoom level of the map.",
+  type: "string"
+},{
+  name: "max-zoom",
+  description: "Maximum zoom level of the map.",
+  type: "string"
+},{
+  name: "zoom-control",
+  description: "Show or not zoom controls.",
+  type: "boolean",
+  default: true
+},{
+  name: "search-control",
+  description: "Show or not search control.",
+  type: "boolean",
+  default: true
+},{
+  name: "search-control-button-visible",
+  description: "Show or not button in search control",
+  type: "boolean"
+},{
+  name: "draw-control",
+  description: "Enable or disable draw controls",
+  type: "string"
+},{
+  name: "layer-panel-visible",
+  description: "Type of data displayed on Y axis",
+  type: "string"
+},{
+  name: "base-layer-ids",
+  description: "Defines the array of base layer ids",
+  type: "array"
+},{
+  name: "sidenav-mode",
+  description: "Mode of the sidenav",
+  type: "['over' | 'push' | 'side']",
+  default: "over"
+},{
+  name: "show-base-layers-menu",
+  description: "Enable or disable base layers menu",
+  type: "boolean",
+  default: true
+},{
+  name: "show-layers-menu",
+  description: "Enable or disable layers menu",
+  type: "boolean",
+  default: true
+},{
+  name: "show-workspace-menu",
+  description: "Enable or disable workspace menu",
+  type: "boolean",
+  default: true
+},{
+  name: "layer-contextmenu",
+  description: "Show or not context menu",
+  type: ""
+},{
+  name: "group-markers",
+  description: "Enable to display a large number of markers on a map.",
+  type: "boolean",
+  default: false
+}]
+
+outputs: [{
+  name : "onClick",
+  description: "Fired when the user clicks (or taps) the map."
+},{
+  name : "onDrag",
+  description: "Fired repeatedly while the user drags."
+},{
+  name : "onMove",
+  description: "Fired repeatedly during any movement of the map, including pan and fly animations."
+},{
+  name : "onMoveEnd",
+  description: "Fired when the center of the map stops changing (e.g. user stopped dragging the map)."
+},{
+  name : "onZoomLevelsChange",
+  description: "Fired repeatedly during any change in zoom level."
+},{
+  name : "onZoomStart",
+  description: "Fired when the map zoom is about to change (e.g. before zoom animation)."
+},{
+  name : "onZoomEnd",
+  description: "Fired when the map has changed, after any animations."
+},{
+  name : "onZoom",
+  description: "Fired repeatedly during any change in zoom level, including zoom and fly animations."
+},{
+  name : "onDrawEvent",
+  description: "Triggered when a vector or marker has been manipulated."
+},{
+  name : "onDrawCreated",
+  description: "Triggered when a new vector or marker has been created."
+},{
+  name : "onDrawEdited",
+  description: "Triggered when layers have been edited and saved."
+},{
+  name : "onDrawDeleted",
+  description: "Triggered when layers have been removed (and saved)."
+},{
+  name : "onDrawDrawStart",
+  description: "Triggered when the user has chosen to draw a particular vector or marker."
+},{
+  name : "onDrawDrawstop",
+  description: "Triggered when the user has finished a particular vector or marker."
+},{
+  name : "onDrawvertex",
+  description: "Triggered when a vertex is edited on a polyline or polygon."
+},{
+  name : "onDrawEditStart",
+  description: "Triggered when the user starts edit mode by clicking the edit tool button."
+},{
+  name : "onDrawEditMove",
+  description: "Layer that was just moved. Triggered as the user moves a rectangle; circle or marker."
+},{
+  name : "onDrawEditResize",
+  description: "Triggered as the user resizes a rectangle or circle."
+},{
+  name : "onDrawEditvertex",
+  description: "Triggered when a vertex is edited on a polyline or polygon."
+},{
+  name : "onDrawEditStop",
+  description: "Triggered when the user has finshed editing (edit mode) and saves edits."
+},{
+  name : "onDrawDeleteStart",
+  description: "Triggered when the user starts remove mode by clicking the remove tool button."
+},{
+  name : "onDrawDeleteStop",
+  description: "Triggered when the user has finished removing shapes (remove mode) and saves."
+}]
