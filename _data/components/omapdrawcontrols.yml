@@ -1,0 +1,50 @@
+directive : "o-map-draw-controls"
+
+attributes: [{
+  name: "position",
+  description: "Toolbar position",
+  type: "['topleft' | 'topright' | 'bottomleft' | 'bottomright']",
+  default: "topright"
+},{
+  name: "polyline-options",
+  description: "Show or not polyline options",
+  type: "boolean",
+  default: true
+},{
+  name: "polygon-options",
+  description: "Show or not polygon options",
+  type: "boolean",
+  default: true
+},{
+  name: "rectangle-options",
+  description: "Show or not rectangle options.",
+  type: "boolean",
+  default: true
+},{
+  name: "circle-options",
+  description: "Show or not circle options.",
+  type: "boolean",
+  default: true
+},{
+  name: "circlemarker-options",
+  description: "Show or not circle marker options.",
+  type: "boolean",
+  default: true
+},{
+  name: "marker-options",
+  description: "Show or not marker options",
+  type: "boolean",
+  default: true
+},{
+  name: "edit-poly-options",
+  description: "Edit polygon options",
+  type: "any"
+},{
+  name: "edit-handler-options",
+  description: "Edit handler options",
+  type: "any"
+},{
+  name: "delete-handler-options",
+  description: "Delete handler options",
+  type: "any"
+}]

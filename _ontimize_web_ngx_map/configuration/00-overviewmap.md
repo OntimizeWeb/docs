@@ -30,7 +30,7 @@ This is a basic example of a *Map* using inputs to display data.
 In the API tab you can check all inputs and outputs allowed.
 
 
-## Basic Example (Custom Configuration)
+## Basic Example with base layers
 
 This is an example of a *Map* with the base layers of the map indicated in the attribute. By default, if none is provided it is used 'OpenStreetMap' base layer.
 
