@@ -316,6 +316,17 @@ export class StarsWarsResponseAdapter implements ServiceResponseAdapter<BaseServ
 }
 ```
 
+This is the StarWarsResponse referred above.
+
+```javascript
+export interface StarWarsResponse {
+  count: number;
+  next: string;
+  previous: string;
+  results: any[];
+}
+```
+
 The second step is to make your service use the adapter. Your service should extend the class `OntimizeBaseService` or any of its child classes (`OntimizeService`, `OntimizeEEService`, `OntimizeExportService` and `OntimizeFileService`). This class implements the method `configureAdapter` that has to be overwritten in order to provide your adapter.
 
 ```javascript
