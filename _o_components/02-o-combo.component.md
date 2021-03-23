@@ -73,9 +73,9 @@ You can see this and more examples of this component in the [OntimizeWeb playgro
 
 ## Renderers <span class='menuitem-badge'>new<span>
 
-**OntimizeWeb** offers you a set of prebuilt table cell renderers to include in your table. This cell renderers are the following data types: *boolean*, *real*, *currency*, *date*, *integer* and *percentage*.
+**OntimizeWeb** offers you a set of prebuilt combo renderers to include in your o-combo component. This combo renderers are the following data types: *boolean*, *real*, *currency*, *date*, *integer* and *percentage*.
 
-You may need to configure additional parametres depending on the combo renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the **API** section of this page.
+You may need to configure additional parametres depending on the combo renderer configured. Check the examples in the following sections and the attributes for each combo renderer in the **API** section of this page.
 
 ### Predefined renderers <span class='menuitem-badge'>new<span>
 
