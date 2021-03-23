@@ -59,3 +59,6 @@ export class WMSLayerComponent  {
 ```
 
 In the API tab you can check all inputs and outputs allowed.
+
+
+![Integrating WMS]({{ "/images/map/wms.png" | absolute_url }}){: .comp-example-img }

@@ -16,7 +16,7 @@ The component *o-map-layer* is used to add a new layer to the map.
 ## Basic Example
 
 This is a basic example of a *Map* using the component *o-map-layer* inside to create a new marker.
-You can check a working example of *o-map-layer* component [here](https://try.imatia.com/ontimizeweb/v8/map/main/geojson)
+You can check a working example of *o-map-layer* component [here](https://try.imatia.com/ontimizeweb/v8/map/main/marker)
 
 *HTML*
 

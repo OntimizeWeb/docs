@@ -68,3 +68,6 @@ export class MapEventsComponent {
 ```
 
 In the API tab you can check all inputs and outputs allowed.
+
+
+![Map Draw Controls]({{ "/images/map/draw-controls.png" | absolute_url }}){: .comp-example-img }

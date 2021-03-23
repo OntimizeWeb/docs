@@ -176,6 +176,7 @@ export class GeoServerService implements IGeoJSONLayerService {
 }
 ```
 
-
-
 In the API tab you can check all inputs and outputs allowed.
+
+
+![Map Draw Controls]({{ "/images/map/geojson.png" | absolute_url }}){: .comp-example-img }

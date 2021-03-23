@@ -29,3 +29,6 @@ You can check a working example of a marker layer [here](https://try.imatia.com/
 ```
 
 In the API tab you can check all inputs and outputs allowed.
+
+
+![Adding Marker]({{ "/images/map/map-marker.png" | absolute_url }}){: .comp-example-img }
