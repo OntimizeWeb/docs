@@ -34,6 +34,70 @@ You can see this and more examples of this component in the [OntimizeWeb playgro
 ## Validation
 The `o-list-picker` shows automatically an error message when the `required` attribute is set to "yes" and there is no value selected.
 
+## Renderers <span class='menuitem-badge'>new<span>
+
+**OntimizeWeb** offers you a set of prebuilt table cell renderers to include in your table. This cell renderers are the following data types: *action*, *boolean*, *real*, *currency*, *date*, *integer*, *image*, *percentage* and *service*.
+
+For adding a cell renderer to the cells of a table column, you have to configure the attribute `type` in the desired table column with the value that indicates the cell render you want to use. You may need to configure additional parametres depending on the cell renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the **API** section of this page.
+
+### Predefined renderers <span class='menuitem-badge'>new<span>
+
+**Boolean cell renderer**
+
+Include the table cell renderer boolean in your table column by configuring the attribute `type` in the column with the value **boolean** or adding the `o-table-cell-renderer-boolean` to the table column. You can indicate the type of the retrieved data by configuring the `boolean-type` attribute. Display a custom value by configuring `false-value` and `true-value` attributes depending on the `false-value-type` and `true-value-type` attributes. Check the configuration of this attributes in the **API** section of this page.
+
+ ```html
+<o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="COMMISSION" title="COMMISSION">
+  <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean>
+</o-table-column>
+```
+
+**Currency cell renderer**
+
+Include the table cell renderer currency in your table column by configuring the attribute `type` in the column with the value **currency** or adding the `o-table-cell-renderer-currency` to the table column. Configure the currency symbol with the `currency-symbol` attribute. Check this and other attributes in the **API** section of this page.
+
+```html
+<o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column a ttr="BALANCE" title="BALANCE">
+  <o-table-cell-renderer-currency currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-cell-renderer-currency>
+</o-table-column>
+```
+
+**Date cell renderer**
+
+You can include the table cell renderer date in your table column by configuring the attribute `type` in the column with the value **date** or adding the `o-table-cell-renderer-date` to the table column. You may want to set the displaying date format by configuring the `format` attribute. Check this and other attributes in the **API** section of this page.
+
+```html
+<o-table-column attr="STARTDATE" title="STARTDATE" type="date"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="STARTDATE" title="STARTDATE">
+  <o-table-cell-renderer-date></o-table-cell-renderer-date>
+</o-table-column>
+```
+
+**Integer cell renderer**
+
+Include the table cell renderer integer in your table column by configuring the attribute `type` in the column with the value **integer** or adding the `o-table-cell-renderer-integer` to the table column. Check the attributes of this component in the **API** section of this page.
+
+```html
+<o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="NUMCARDS" title="NUMCARDS">
+  <o-table-cell-renderer-integer></o-table-cell-renderer-integer>
+</o-table-column>
+```
+
 ## Custom renderers <span class='menuitem-badge'>new<span>
 
 A custom renderer allows you to display the value of a list-picker formatted as you desire. For this, you need to create a new component that extends the custom list-picker renderer class and place it into your o-list-picker component.

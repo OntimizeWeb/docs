@@ -71,7 +71,294 @@ The `o-combo` shows automatically an error message when the `required` attribute
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/combo){:target="_blank"}.
 
-## Custom renderers <span class='menuitem-badge'>new<span>
+## Renderers <span class='menuitem-badge'>new<span>
+
+**OntimizeWeb** offers you a set of prebuilt table cell renderers to include in your table. This cell renderers are the following data types: *boolean*, *real*, *currency*, *date*, *integer* and *percentage*.
+
+You may need to configure additional parametres depending on the combo renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the **API** section of this page.
+
+### Predefined renderers <span class='menuitem-badge'>new<span>
+
+
+**Boolean combo renderer**
+
+Display a custom value by configuring `render-false-value` and `render-true-value` attributes depending on the `false-value-type` and `true-value-type` attributes. Check the configuration of this attributes in the **API** section of this page.
+
+ ```html
+<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  <o-combo-renderer-boolean boolean-type="boolean" render-true-value="Yes" render-false-value="No"></o-combo-renderer-boolean>
+</o-combo>
+```
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public array: Object[] = [{
+    key: 0,
+    value: 0
+  }, {
+    key: 1,
+    value: 1
+  }];
+
+  public getDataArray(): any[] {
+    return this.array;
+  }
+
+  public getValueSimple(): any {
+    return 1;
+  }
+
+}
+```
+
+
+**Currency combo renderer**
+
+Configure the currency symbol with the `currency-symbol` attribute. Check this and other attributes in the **API** section of this page.
+
+ ```html
+<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  <o-combo-renderer-currency></o-combo-renderer-currency>
+</o-combo>
+```
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public array: Object[] = [{
+    key: 1,
+    value: '1615472370'
+  }, {
+    key: 2,
+    value: '1515472370'
+  }, {
+    key: 3,
+    value: '1415472370'
+  }, {
+    key: 4,
+    value: '1215472370'
+  }, {
+    key: 5,
+    value: '1115472370'
+  }];
+
+  public getDataArray(): any[] {
+    return this.array;
+  }
+
+  public getValueSimple(): any {
+    return 2;
+  }
+
+}
+```
+
+
+**Date combo renderer**
+
+You may want to set the displaying date format by configuring the `format` attribute. Check this and other attributes in the **API** section of this page.
+
+```html
+<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  <o-combo-renderer-date></o-combo-renderer-date>
+</o-combo>
+```
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public array: Object[] = [{
+    key: 0,
+    value: "10/05/2005"
+  }, {
+    key: 1,
+    value: "04/03/1980"
+  }, {
+    key: 2,
+    value: "24/08/2011"
+  }, {
+    key: 3,
+    value: "01/12/1980"
+  }, {
+    key: 4,
+    value: "30/01/2016"
+  }];
+
+  public getDataArray(): any[] {
+    return this.array;
+  }
+
+  public getValueSimple(): any {
+    return 1;
+  }
+
+}
+```
+
+
+**Integer combo renderer**
+
+```html
+<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  <o-combo-renderer-integer></o-combo-renderer-integer>
+</o-combo>
+```
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public array: Object[] = [{
+    key: 1,
+    value: '1615472370'
+  }, {
+    key: 2,
+    value: '1515472370'
+  }, {
+    key: 3,
+    value: '1415472370'
+  }, {
+    key: 4,
+    value: '1215472370'
+  }, {
+    key: 5,
+    value: '1115472370'
+  }];
+
+  public getDataArray(): any[] {
+    return this.array;
+  }
+
+  public getValueSimple(): any {
+    return 2;
+  }
+
+}
+```
+
+
+**Real combo renderer**
+
+```html
+<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  <o-combo-renderer-real></o-combo-renderer-real>
+</o-combo>
+```
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public array: Object[] = [{
+    key: 1,
+    value: '1615472370'
+  }, {
+    key: 2,
+    value: '1515472370'
+  }, {
+    key: 3,
+    value: '1415472370'
+  }, {
+    key: 4,
+    value: '1215472370'
+  }, {
+    key: 5,
+    value: '1115472370'
+  }];
+
+  public getDataArray(): any[] {
+    return this.array;
+  }
+
+  public getValueSimple(): any {
+    return 2;
+  }
+
+}
+```
+
+
+**Percentage combo renderer**
+
+```html
+<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  <o-combo-renderer-percentage value-base="100"></o-combo-renderer-percentage>
+</o-combo>
+```
+
+```ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'input-combo',
+  templateUrl: './input-combo.component.html'
+})
+export class InputComboComponent {
+
+  public array: Object[] = [{
+    key: 16,
+    value: "16"
+  }, {
+    key: 23,
+    value: "23"
+  }, {
+    key: 45,
+    value: "45"
+  }, {
+    key: 68,
+    value: "68"
+  }, {
+    key: 97,
+    value: "97"
+  }];
+
+  public getDataArray(): any[] {
+    return this.array;
+  }
+
+  public getValueSimple(): any {
+    return 16;
+  }
+
+}
+```
+
+### Custom renderers <span class='menuitem-badge'>new<span>
 
 A custom renderer allows you to display the data of a combo formatted as you desire. For this, you need to create a new component that extends the custom combo renderer class and place it into your o-combo component.
 
