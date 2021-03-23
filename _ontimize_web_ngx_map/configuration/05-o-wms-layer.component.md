@@ -1,6 +1,7 @@
 ---
 permalink: /map/configuration/o-wms-layer/overview
 title: "WMS Layer"
+comp: owmslayer
 layout: o-component
 
 ---
