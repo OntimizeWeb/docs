@@ -1,6 +1,6 @@
 class: "OComboRendererBooleanComponent"
 
-extends: "OCustomComboRenderer"
+extends: "OComboCustomRenderer"
 
 directive: "o-combo-renderer-boolean"
 
