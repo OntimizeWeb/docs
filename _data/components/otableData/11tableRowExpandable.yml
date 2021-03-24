@@ -23,8 +23,14 @@ attributes: [{
   description : "Icon name to collapse of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
 },{
   name: "expandable-column-visible",
-  type: "boolean",
-  default : "true",
+  default: "yes",
+  type: "no | false | yes | true",
   required : "no",
   description : "Indicates whether or not to show a expandable column."
+},{
+  name: "multiple",
+  default: "yes",
+  type: "no | false | yes | true",
+  required : "no",
+  description : "Indicates whether or not to show multiple expanded rows at once."
 }]
