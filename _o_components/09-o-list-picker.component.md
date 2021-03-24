@@ -247,7 +247,7 @@ The requisites for a custom list-picker renderer component are the following:
 
 - The component must extend the `OListPickerCustomRenderer` class.
 
-- Your renderer template must reference the template container. For this, wrap the content of your component HTML with the `ng-template` tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: `@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>`. This will give your component a reference to acces the template container.
+- Your renderer template must reference the template container. For this, wrap the content of your component HTML with the `ng-template` tag and define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: `@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef<any>`. This will give your component a reference to acces the template container.
 
 - If you want to customize the internal values of the list-picker, you must overwrite the `getListPickerValue` method.
 
