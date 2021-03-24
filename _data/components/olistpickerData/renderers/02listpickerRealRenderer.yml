@@ -1,0 +1,17 @@
+class: "OListPickerRendererRealComponent"
+
+extends: "OListPickerRendererIntegerComponent"
+
+directive: "o-list-picker-renderer-real"
+
+attributes: [{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+},{
+  name: "decimal-separator"
+},{
+  name: "min-decimal-digits"
+},{
+  name: "max-decimal-digits"
+}]

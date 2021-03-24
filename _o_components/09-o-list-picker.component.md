@@ -1,7 +1,7 @@
 ---
 permalink: /components/input/listpicker/overview
-title: "List picker"
-comp: listPicker
+title: "List-picker"
+comp: listpicker
 tab: overview
 ---
 
@@ -36,9 +36,10 @@ The `o-list-picker` shows automatically an error message when the `required` att
 
 ## Renderers <span class='menuitem-badge'>new<span>
 
-**OntimizeWeb** offers you a set of prebuilt list-picker renderers to include in your table. This list-picker renderers are the following data types: *boolean*, *real*, *currency*, *date*, *integer* and *percentage*.
+**OntimizeWeb** offers you a set of prebuilt list-picker renderers to include in your list-picker. This list-picker renderers are the following data types: *real*, *currency*, *date*, *integer* and *percentage*.
 
 You may need to configure additional parametres depending on the list-picker renderer configured. Check the examples in the following sections and the attributes for each list-picker renderer in the **API** section of this page.
+
 
 ### Predefined renderers <span class='menuitem-badge'>new<span>
 
@@ -48,10 +49,10 @@ You may need to configure additional parametres depending on the list-picker ren
 Configure the currency symbol with the `currency-symbol` attribute. Check this and other attributes in the **API** section of this page.
 
  ```html
-<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
-  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
-  <o-listpicker-renderer-currency></o-listpicker-renderer-currency>
-</o-combo>
+<o-list-picker #listpicker attr="listpicker" [static-data]="getDataArray()"
+[data]="getValue()" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
+    <o-listpicker-renderer-currency></o-listpicker-renderer-currency>
+</o-list-picker>
 ```
 
 ```ts
@@ -61,30 +62,30 @@ templateUrl: './input-listpicker.component.html'
 })
 export class InputListpickerComponent {
 
-getDataArray() {
-    const array: Array<Object> = [];
-    array.push({
-        'key': 1,
-        'value': '1615363293'
-    });
-    array.push({
-        'key': 2,
-        'value': '1415363293'
-    });
-    array.push({
-        'key': 3,
-        'value': '1315363293'
-    });
-    array.push({
-        'key': 4,
-        'value': '1215363293'
-    });
-    return array;
-}
+    getDataArray() {
+        const array: Array<Object> = [];
+        array.push({
+            'key': 1,
+            'value': '1615363293'
+        });
+        array.push({
+            'key': 2,
+            'value': '1415363293'
+        });
+        array.push({
+            'key': 3,
+            'value': '1315363293'
+        });
+        array.push({
+            'key': 4,
+            'value': '1215363293'
+        });
+        return array;
+    }
 
-getValue() {
-    return 1;
-}
+    getValue() {
+        return 1;
+    }
 
 }
 ```
@@ -227,7 +228,7 @@ export class InputListpickerComponent {
 ```
 
 
-**Percentage combo renderer**
+**Percentage list-picker renderer**
 
 ```html
 <o-list-picker #listpicker attr="listpicker" [static-data]="getDataArray()"
@@ -270,7 +271,8 @@ export class InputListpickerComponent {
 
 }
 ```
-## Custom renderers <span class='menuitem-badge'>new<span>
+
+### Custom renderers <span class='menuitem-badge'>new<span>
 
 A custom renderer allows you to display the value of a list-picker formatted as you desire. For this, you need to create a new component that extends the custom list-picker renderer class and place it into your o-list-picker component.
 
