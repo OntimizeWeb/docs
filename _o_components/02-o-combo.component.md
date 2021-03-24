@@ -11,7 +11,7 @@ The `o-combo` component is used in [forms]({{ base_path }}/components/form/overv
 
 The combo component is automatically registered on its parent `o-form`, which provides the value for the combo programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
-This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the optoins on the drop down and each element of the data array must be an object with at least one key/value pair.
+This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the options on the drop down and each element of the data array must be an object with at least one key/value pair.
 
 The data array can be provided in two ways:
 * Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
@@ -22,8 +22,8 @@ The data array can be provided in two ways:
 
 ```html
 <o-form editable-detail="no" show-header="no">
-    <o-combo attr="country" label="Country" data="Spain" [static-data]="getStaticData()" value-column="name" columns="id;name" visible-columns="name" read-only="no" required="yes"></o-combo>
-    <o-combo attr="country" label="Country" data="Spain" [static-data]="getStaticData()" value-column="name" columns="id;name" visible-columns="name" enabled="no"></o-combo>
+    <o-combo attr="country" label="Country" data="Spain" [static-data]="staticData" value-column="name" columns="id;name" visible-columns="name" read-only="no" required="yes"></o-combo>
+    <o-combo attr="country" label="Country" data="Spain" [static-data]="staticData" value-column="name" columns="id;name" visible-columns="name" enabled="no"></o-combo>
 </o-form>
 ```
 
@@ -35,9 +35,9 @@ The `o-combo` doesn't allow multiple selection by default, you can configure the
 
 ```html
 <o-form editable-detail="no" show-header="no">
-  <o-combo #combo attr="combo-multiple" label="Country" [static-data]="getDataArray()" [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false" layout-padding multiple="yes"></o-combo>
+  <o-combo #combo attr="combo-multiple" label="Country" [static-data]="dataArray" [data]="valueMultiple" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false" layout-padding multiple="yes"></o-combo>
 
-  <o-combo #combo attr="combo-multiple-disabled" enabled="no" label="Country" [static-data]="getDataArray()" [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false" layout-padding multiple="yes"></o-combo>
+  <o-combo #combo attr="combo-multiple-disabled" enabled="no" label="Country" [static-data]="dataArray" [data]="valueMultiple" value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="false" layout-padding multiple="yes"></o-combo>
 </o-form>
 ```
 
@@ -49,12 +49,12 @@ You can customize the combo label configuring the `multiple-trigger-label` attri
 
 ```html
   <o-form editable-detail="no" show-header="no">
-    <o-combo #combo attr="combo-multiple2" label="Country" [static-data]="getDataArray()"
-     [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value"
+    <o-combo #combo attr="combo-multiple2" label="Country" [static-data]="dataArray"
+     [data]="valueMultiple" value-column="key" columns="key;value" visible-columns="value"
      required="yes" read-only="false" layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
 
-    <o-combo #combo attr="combo-multiple-disabled" enabled="no" label="Country" [static-data]="getDataArray()"
-     [data]="getValueMultiple()" value-column="key" columns="key;value" visible-columns="value"
+    <o-combo #combo attr="combo-multiple-disabled" enabled="no" label="Country" [static-data]="dataArray"
+     [data]="valueMultiple" value-column="key" columns="key;value" visible-columns="value"
      required="yes" read-only="false" layout-padding multiple="yes" multiple-trigger-label="yes"></o-combo>
   </o-form>
 ```
@@ -85,7 +85,7 @@ You may need to configure additional parametres depending on the combo renderer 
 Display a custom value by configuring `render-false-value` and `render-true-value` attributes depending on the `false-value-type` and `true-value-type` attributes. Check the configuration of this attributes in the **API** section of this page.
 
  ```html
-<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+<o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
   value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
   <o-combo-renderer-boolean boolean-type="boolean" render-true-value="Yes" render-false-value="No"></o-combo-renderer-boolean>
 </o-combo>
@@ -100,7 +100,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 0,
     value: 0
   }, {
@@ -108,13 +108,7 @@ export class InputComboComponent {
     value: 1
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 1;
-  }
+  public valueSimple: any = 1;
 
 }
 ```
@@ -125,7 +119,7 @@ export class InputComboComponent {
 Configure the currency symbol with the `currency-symbol` attribute. Check this and other attributes in the **API** section of this page.
 
  ```html
-<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+<o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
   value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
   <o-combo-renderer-currency></o-combo-renderer-currency>
 </o-combo>
@@ -140,7 +134,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 1,
     value: '1615472370'
   }, {
@@ -157,13 +151,7 @@ export class InputComboComponent {
     value: '1115472370'
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 2;
-  }
+  public valueSimple: any = 2;
 
 }
 ```
@@ -174,7 +162,7 @@ export class InputComboComponent {
 You may want to set the displaying date format by configuring the `format` attribute. Check this and other attributes in the **API** section of this page.
 
 ```html
-<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+<o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
   value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
   <o-combo-renderer-date></o-combo-renderer-date>
 </o-combo>
@@ -189,7 +177,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 0,
     value: "10/05/2005"
   }, {
@@ -206,13 +194,7 @@ export class InputComboComponent {
     value: "30/01/2016"
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 1;
-  }
+  public valueSimple: any = 1;
 
 }
 ```
@@ -221,7 +203,7 @@ export class InputComboComponent {
 **Integer combo renderer**
 
 ```html
-<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+<o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
   value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
   <o-combo-renderer-integer></o-combo-renderer-integer>
 </o-combo>
@@ -236,7 +218,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 1,
     value: '1615472370'
   }, {
@@ -253,13 +235,7 @@ export class InputComboComponent {
     value: '1115472370'
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 2;
-  }
+  public getValueSimple: any = 2;
 
 }
 ```
@@ -268,7 +244,7 @@ export class InputComboComponent {
 **Real combo renderer**
 
 ```html
-<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+<o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
   value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
   <o-combo-renderer-real></o-combo-renderer-real>
 </o-combo>
@@ -283,7 +259,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 1,
     value: '1615472370'
   }, {
@@ -300,13 +276,7 @@ export class InputComboComponent {
     value: '1115472370'
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 2;
-  }
+  public valueSimple: any : 2;
 
 }
 ```
@@ -315,7 +285,7 @@ export class InputComboComponent {
 **Percentage combo renderer**
 
 ```html
-<o-combo attr="combo-editable-search" [static-data]="getDataArray()" [data]="getValueSimple()"
+<o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
   value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
   <o-combo-renderer-percentage value-base="100"></o-combo-renderer-percentage>
 </o-combo>
@@ -330,7 +300,7 @@ import { Component } from '@angular/core';
 })
 export class InputComboComponent {
 
-  public array: Object[] = [{
+  public dataArray: Object[] = [{
     key: 16,
     value: "16"
   }, {
@@ -347,13 +317,7 @@ export class InputComboComponent {
     value: "97"
   }];
 
-  public getDataArray(): any[] {
-    return this.array;
-  }
-
-  public getValueSimple(): any {
-    return 16;
-  }
+  public valueSimple: any = 16;
 
 }
 ```
