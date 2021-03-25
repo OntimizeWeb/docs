@@ -7,7 +7,7 @@ inheritedAttributes: [{
 },{
   component: "OFormServiceComponent",
   path: "components/input/overviewservice/api",
-  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys", "set-value-on-value-change"]
+  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys", "set-value-on-value-change", "translate", "sort"]
 }]
 
 inheritedOutputs: [{
@@ -21,12 +21,6 @@ inheritedOutputs: [{
 }]
 
 attributes: [{
-  name: "translate",
-  type: "no | false | yes | true",
-  default: "no",
-  required: "",
-  description: "Indicates whether or not to translate the values shown on the drop down"
-},{
   name: "multiple",
   type: "no | false | yes | true",
   default: "no",
