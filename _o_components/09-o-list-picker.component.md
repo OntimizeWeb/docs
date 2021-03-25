@@ -159,7 +159,7 @@ Finally, add the created component to your module for including it in your list-
 
 You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
 
-## Locker <span class='menuitem-badge'>new<span>
+## Locker
 
 OntimizeWeb offers the `oLocker` directive to the `o-list-picker` that should to lock the component when you configure the component to query the data from a service.
 

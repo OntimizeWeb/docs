@@ -209,7 +209,7 @@ Finally, add the created component to your module for including it in your combo
 
 You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
-## Locker  <span class='menuitem-badge'>new<span>
+## Locker
 
 OntimizeWeb offers the `oLocker` directive to the `o-combo` that should to lock the component when you configure the component to query the data from a service
 
