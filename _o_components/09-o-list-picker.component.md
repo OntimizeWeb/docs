@@ -55,34 +55,7 @@ Configure the currency symbol with the `currency-symbol` attribute. Check this a
 </o-list-picker>
 ```
 
-```ts
-@Component({
-selector: 'input-listpicker',
-templateUrl: './input-listpicker.component.html'
-})
-export class InputListpickerComponent {
-
-  public dataArray: Object[] = [{
-    key: 1,
-    value: '1615472370'
-  }, {
-    key: 2,
-    value: '1515472370'
-  }, {
-    key: 3,
-    value: '1415472370'
-  }, {
-    key: 4,
-    value: '1215472370'
-  }, {
-    key: 5,
-    value: '1115472370'
-  }];
-
-  public valueSimple: any : 2;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
 
 
 **Date list-picker renderer**
@@ -96,31 +69,7 @@ You may want to set the displaying date format by configuring the `format` attri
 </o-list-picker>
 ```
 
-```ts
-@Component({
-  selector: 'input-listpicker',
-  templateUrl: './input-listpicker.component.html'
-})
-export class InputListpickerComponent {
-
-  public dataArray: Object[] = [{
-    key: 1,
-    value: '15/06/2005'
-  }, {
-    key: 2,
-    value: '10/05/2015'
-  }, {
-    key: 3,
-    value: '22/10/2009'
-  }, {
-    key: 4,
-    value: '01/11/2002'
-  }];
-
-  public valueSimple: any : 2;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
 
 
 **Integer list-picker renderer**
@@ -132,34 +81,7 @@ export class InputListpickerComponent {
 </o-list-picker>
 ```
 
-```ts
-  @Component({
-    selector: 'input-listpicker',
-    templateUrl: './input-listpicker.component.html'
-  })
-  export class InputListpickerComponent {
-
-    public dataArray: Object[] = [{
-      key: 1,
-      value: '1615472370'
-    }, {
-      key: 2,
-      value: '1515472370'
-    }, {
-      key: 3,
-      value: '1415472370'
-    }, {
-      key: 4,
-      value: '1215472370'
-    }, {
-      key: 5,
-      value: '1115472370'
-    }];
-
-    public valueSimple: any : 2;
-
-  }
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
 
 
 **Real list-picker renderer**
@@ -171,34 +93,7 @@ export class InputListpickerComponent {
 </o-list-picker>
 ```
 
-```ts
-@Component({
-selector: 'input-listpicker',
-templateUrl: './input-listpicker.component.html'
-})
-export class InputListpickerComponent {
-
-  public dataArray: Object[] = [{
-    key: 1,
-    value: '1615472370'
-  }, {
-    key: 2,
-    value: '1515472370'
-  }, {
-    key: 3,
-    value: '1415472370'
-  }, {
-    key: 4,
-    value: '1215472370'
-  }, {
-    key: 5,
-    value: '1115472370'
-  }];
-
-  public valueSimple: any : 2;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
 
 
 **Percentage list-picker renderer**
@@ -210,34 +105,7 @@ export class InputListpickerComponent {
 </o-list-picker>
 ```
 
-```ts
-@Component({
-selector: 'input-listpicker',
-templateUrl: './input-listpicker.component.html'
-})
-export class InputListpickerComponent {
-
-  public dataArray: Object[] = [{
-    key: 16,
-    value: '16'
-  }, {
-    key: 23,
-    value: '23'
-  }, {
-    key: 54,
-    value: '54'
-  }, {
-    key: 72,
-    value: '72'
-  }, {
-    key: 87,
-    value: '87'
-  }];
-
-  public valueSimple: any : 23;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
 
 ### Custom renderers <span class='menuitem-badge'>new<span>
 
@@ -288,6 +156,8 @@ export class CustomRendererComponent extends OListPickerCustomRenderer {
 The *let* keyword declares a template input variable that you reference within the template.
 
 Finally, add the created component to your module for including it in your list-picker.
+
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
 
 ## Locker <span class='menuitem-badge'>new<span>
 

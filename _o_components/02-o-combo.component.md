@@ -91,27 +91,7 @@ Display a custom value by configuring `render-false-value` and `render-true-valu
 </o-combo>
 ```
 
-```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'input-combo',
-  templateUrl: './input-combo.component.html'
-})
-export class InputComboComponent {
-
-  public dataArray: Object[] = [{
-    key: 0,
-    value: 0
-  }, {
-    key: 1,
-    value: 1
-  }];
-
-  public valueSimple: any = 1;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
 
 **Currency combo renderer**
@@ -125,36 +105,7 @@ Configure the currency symbol with the `currency-symbol` attribute. Check this a
 </o-combo>
 ```
 
-```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'input-combo',
-  templateUrl: './input-combo.component.html'
-})
-export class InputComboComponent {
-
-  public dataArray: Object[] = [{
-    key: 1,
-    value: '1615472370'
-  }, {
-    key: 2,
-    value: '1515472370'
-  }, {
-    key: 3,
-    value: '1415472370'
-  }, {
-    key: 4,
-    value: '1215472370'
-  }, {
-    key: 5,
-    value: '1115472370'
-  }];
-
-  public valueSimple: any = 2;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
 
 **Date combo renderer**
@@ -168,36 +119,7 @@ You may want to set the displaying date format by configuring the `format` attri
 </o-combo>
 ```
 
-```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'input-combo',
-  templateUrl: './input-combo.component.html'
-})
-export class InputComboComponent {
-
-  public dataArray: Object[] = [{
-    key: 0,
-    value: "10/05/2005"
-  }, {
-    key: 1,
-    value: "04/03/1980"
-  }, {
-    key: 2,
-    value: "24/08/2011"
-  }, {
-    key: 3,
-    value: "01/12/1980"
-  }, {
-    key: 4,
-    value: "30/01/2016"
-  }];
-
-  public valueSimple: any = 1;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
 
 **Integer combo renderer**
@@ -209,36 +131,7 @@ export class InputComboComponent {
 </o-combo>
 ```
 
-```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'input-combo',
-  templateUrl: './input-combo.component.html'
-})
-export class InputComboComponent {
-
-  public dataArray: Object[] = [{
-    key: 1,
-    value: '1615472370'
-  }, {
-    key: 2,
-    value: '1515472370'
-  }, {
-    key: 3,
-    value: '1415472370'
-  }, {
-    key: 4,
-    value: '1215472370'
-  }, {
-    key: 5,
-    value: '1115472370'
-  }];
-
-  public getValueSimple: any = 2;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
 
 **Real combo renderer**
@@ -250,36 +143,7 @@ export class InputComboComponent {
 </o-combo>
 ```
 
-```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'input-combo',
-  templateUrl: './input-combo.component.html'
-})
-export class InputComboComponent {
-
-  public dataArray: Object[] = [{
-    key: 1,
-    value: '1615472370'
-  }, {
-    key: 2,
-    value: '1515472370'
-  }, {
-    key: 3,
-    value: '1415472370'
-  }, {
-    key: 4,
-    value: '1215472370'
-  }, {
-    key: 5,
-    value: '1115472370'
-  }];
-
-  public valueSimple: any : 2;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
 
 **Percentage combo renderer**
@@ -291,36 +155,7 @@ export class InputComboComponent {
 </o-combo>
 ```
 
-```ts
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'input-combo',
-  templateUrl: './input-combo.component.html'
-})
-export class InputComboComponent {
-
-  public dataArray: Object[] = [{
-    key: 16,
-    value: "16"
-  }, {
-    key: 23,
-    value: "23"
-  }, {
-    key: 45,
-    value: "45"
-  }, {
-    key: 68,
-    value: "68"
-  }, {
-    key: 97,
-    value: "97"
-  }];
-
-  public valueSimple: any = 16;
-
-}
-```
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
 ### Custom renderers <span class='menuitem-badge'>new<span>
 
@@ -371,6 +206,8 @@ export class CustomRendererComponent extends OComboCustomRenderer {
 The *let* keyword declares a template input variable that you reference within the template.
 
 Finally, add the created component to your module for including it in your combo.
+
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
 ## Locker  <span class='menuitem-badge'>new<span>
 
