@@ -67,6 +67,18 @@ attributes: [{
   default: "",
   required: "",
   description: "Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ';'. Accepted format: `attr | attr:columnName`"
+},{
+  name: "translate",
+  type: "yes | no | true | false",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to translate the option values"
+}, {
+  name: "sort",
+  type: "ASC | DESC",
+  default: "",
+  required: "",
+  description: "Indicates the order ascending or descending of the option values"
 }]
 
 outputs: [{
