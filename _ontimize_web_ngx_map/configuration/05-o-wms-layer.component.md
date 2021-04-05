@@ -1,8 +1,6 @@
 ---
 permalink: /map/configuration/o-wms-layer/overview
 title: "WMS Layer"
-comp: owmslayer
-layout: o-component
 
 ---
 
@@ -57,8 +55,6 @@ export class WMSLayerComponent  {
     };
   }
 ```
-
-In the API tab you can check all inputs and outputs allowed.
 
 
 ![Integrating WMS]({{ "/images/map/wms.png" | absolute_url }}){: .comp-example-img }

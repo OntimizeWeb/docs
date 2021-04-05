@@ -2,7 +2,7 @@ directive : "o-map"
 
 attributes: [{
   name: "center",
-  description: "Initialize the map with a given center in latitude and longitude",
+  description: "Initialize the map with a given center in latitude and longitude. e.g center='42.240599;-8.720727'",
   type: "LatLng"
 },{
   name: "zoom",
@@ -40,7 +40,7 @@ attributes: [{
   type: "string"
 },{
   name: "base-layer-ids",
-  description: "Defines the array of base layer ids",
+  description: "Defines the array of base layer ids. e.g. base-layer-ids='basemap.nationalmap.gov'",
   type: "array"
 },{
   name: "sidenav-mode",

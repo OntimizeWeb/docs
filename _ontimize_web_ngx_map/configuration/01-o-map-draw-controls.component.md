@@ -9,7 +9,7 @@ layout: o-component
 ## Introduction
 
 
-The component *o-map-draw-controls* is used to show a draw toolbar into the map. You can catch the events triggered with
+The component *o-map-draw-controls* is used to show a draw toolbar into the map. You can catch the events triggered with the outputs described in API section.
 
 
 ## Basic Example
@@ -67,7 +67,7 @@ export class MapEventsComponent {
 
 ```
 
-In the API tab you can check all inputs and outputs allowed.
+In the API tab you can check all inputs and outputs allowed.  
 
 
 ![Map Draw Controls]({{ "/images/map/draw-controls.png" | absolute_url }}){: .comp-example-img }

@@ -2,30 +2,28 @@ directive : "o-map-layer"
 
 attributes: [{
   name: "layer-center",
-  description: "Center the position of the layer",
+  description: "Center the position of the layer. The structure is latitude, longitude. e.g layer-center='42.240599;-8.720727'",
   type: "string"
 },{
   name: "layer-points",
-  description: "Initial map zoom level.",
+  description: "Number of points in layer.",
   type: "string"
 },{
   name: "layer-radius",
-  description: "Minimum zoom level of the map.",
+  description: "Radius of the circle, in meters.",
   type: "string"
 },{
   name: "layer-bounds",
-  description: "Maximum zoom level of the map.",
+  description: "Number of bounds in layer.",
   type: "string"
 },{
   name: "layer-service",
-  description: "Show or not zoom controls.",
-  type: "boolean",
-  default: true
+  description: "Service of the layer",
+  type: "string"
 },{
   name: "layer-base-url",
-  description: "Show or not search control.",
-  type: "string",
-  default: true
+  description: "Base URL of the layer.",
+  type: "string"
 },{
   name: "layer-selected",
   description: "Layer selected or not",
