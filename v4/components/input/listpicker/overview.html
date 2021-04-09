@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-03-16T08:48:09-04:00">
+  <meta property="article:published_time" content="2021-04-09T07:21:30-04:00">
 
 
 
@@ -840,7 +840,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="March 16, 2021">
+    <meta itemprop="datePublished" content="April 09, 2021">
     
 
     <div class="page__inner-wrap">
@@ -915,6 +915,7 @@
 <ul class="toc__menu" id="markdown-toc">
   <li><a href="#basic-example" id="markdown-toc-basic-example">Basic example</a></li>
   <li><a href="#validation" id="markdown-toc-validation">Validation</a></li>
+  <li><a href="#custom-renderers-new" id="markdown-toc-custom-renderers-new">Custom renderers <span class="menuitem-badge">new<span></span></span></a></li>
   <li><a href="#locker-new" id="markdown-toc-locker-new">Locker <span class="menuitem-badge">new<span></span></span></a></li>
   <li><a href="#filtering" id="markdown-toc-filtering">Filtering</a></li>
 </ul>
@@ -948,6 +949,60 @@
 
 <h2 id="validation">Validation</h2>
 <p>The <code class="language-plaintext highlighter-rouge">o-list-picker</code> shows automatically an error message when the <code class="language-plaintext highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value selected.</p>
+
+<h2 id="custom-renderers-new">Custom renderers <span class="menuitem-badge">new<span></span></span></h2>
+
+<p>A custom renderer allows you to display the value of a list-picker formatted as you desire. For this, you need to create a new component that extends the custom list-picker renderer class and place it into your o-list-picker component.</p>
+
+<p>The requisites for a custom list-picker renderer component are the following:</p>
+
+<ul>
+  <li>
+    <p>The component must extend the <code class="language-plaintext highlighter-rouge">OListPickerCustomRenderer</code> class.</p>
+  </li>
+  <li>
+    <p>Your renderer template must reference the template container. For this, wrap the content of your component HTML with the <code class="language-plaintext highlighter-rouge">ng-template</code> tag and define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: <code class="language-plaintext highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code>. This will give your component a reference to acces the template container.</p>
+  </li>
+  <li>
+    <p>If you want to customize the internal values of the list-picker, you must overwrite the <code class="language-plaintext highlighter-rouge">getListPickerValue</code> method.</p>
+  </li>
+</ul>
+
+<p>You have an example of a custom renderer below. It displays a formatted date (the value is a timestamp) as the list-picker value.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">TemplateRef</span> <span class="nx">ViewChild</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">moment</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">moment</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OBaseTableCellRenderer</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">custom-render</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./custom-render.component.html</span><span class="dl">'</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomRendererComponent</span> <span class="kd">extends</span> <span class="nx">OListPickerCustomRenderer</span> <span class="p">{</span>
+
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">templateref</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="nx">TemplateRef</span> <span class="p">})</span> <span class="kr">public</span> <span class="nx">templateref</span><span class="p">:</span> <span class="nx">TemplateRef</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">protected</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
+  <span class="p">}</span>
+
+ <span class="nx">getListPickerValue</span><span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">theDate</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">.</span><span class="nx">unix</span><span class="p">(</span><span class="nx">value</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="dl">"</span><span class="s2">DD/MM/YYYY</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">theDate</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;ng-template</span> <span class="na">#templateref</span> <span class="na">let-value=</span><span class="s">"value"</span><span class="nt">&gt;</span>
+    {{ getListPickerValue(value) }}
+  <span class="nt">&lt;/ng-template&gt;</span>
+</code></pre></div></div>
+
+<p>The <em>let</em> keyword declares a template input variable that you reference within the template.</p>
+
+<p>Finally, add the created component to your module for including it in your list-picker.</p>
 
 <h2 id="locker-new">Locker <span class="menuitem-badge">new<span></span></span></h2>
 
@@ -1982,7 +2037,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-03-16T08:48:09-04:00">March 16, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-09T07:21:30-04:00">April 09, 2021</time></p>
         
       </footer>
 

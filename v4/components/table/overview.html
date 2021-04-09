@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-03-16T08:48:09-04:00">
+  <meta property="article:published_time" content="2021-04-09T07:21:30-04:00">
 
 
 
@@ -870,7 +870,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="March 16, 2021">
+    <meta itemprop="datePublished" content="April 09, 2021">
     
 
     <div class="page__inner-wrap">
@@ -1534,7 +1534,7 @@ in the <em>editable-columns</em> attribute from its parent <em>o-table</em>.</p>
     <p>The component must extend the <code class="language-plaintext highlighter-rouge">OBaseTableCellRenderer</code> class.</p>
   </li>
   <li>
-    <p>Your renderer template must reference the template container. For this, wrap the content of your component HTML with the <code class="language-plaintext highlighter-rouge">ng-template</code> tag and add define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: <code class="language-plaintext highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code>. This will give your component a reference to acces the template container.</p>
+    <p>Your renderer template must reference the template container. For this, wrap the content of your component HTML with the <code class="language-plaintext highlighter-rouge">ng-template</code> tag and define a template variable. Then create an attribute to your component referencing the template container defined previously, add this line to your component: <code class="language-plaintext highlighter-rouge">@ViewChild('templateref', { read: TemplateRef }) public templateref: TemplateRef&lt;any&gt;</code>. This will give your component a reference to acces the template container.</p>
   </li>
   <li>
     <p>If you want to customize the internal value of the cell (this value is used for filtering or exporting the table data), you must overwrite the <code class="language-plaintext highlighter-rouge">getCellData</code> method.</p>
@@ -9995,7 +9995,7 @@ For example with the primary palette by following the steps below.</p>
     <p class="first"><p>expandable-column-visible</p>
 </p>
     
-      <p><i>boolean</i></p>
+      <p><i>no | false | yes | true</i></p>
     
   </td>
           
@@ -10030,7 +10030,7 @@ For example with the primary palette by following the steps below.</p>
             
             
   <td class="" o-component-default >
-    <p class="first"><p>true</p>
+    <p class="first"><p>yes</p>
 </p>
     
   </td>
@@ -10161,6 +10161,71 @@ For example with the primary palette by following the steps below.</p>
             
   <td class="" o-component-default >
     <p class="first"><p>add</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>multiple</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show multiple expanded rows at once.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
 </p>
     
   </td>
@@ -17307,7 +17372,7 @@ For example with the primary palette by following the steps below.</p>
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-03-16T08:48:09-04:00">March 16, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-09T07:21:30-04:00">April 09, 2021</time></p>
         
       </footer>
 

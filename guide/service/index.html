@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-03-16T08:49:27-04:00">
+  <meta property="article:published_time" content="2021-04-09T07:23:45-04:00">
 
 
 
@@ -787,7 +787,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="March 16, 2021">
+    <meta itemprop="datePublished" content="April 09, 2021">
     
 
     <div class="page__inner-wrap">
@@ -1037,14 +1037,14 @@
 
 <h3 id="create-and-extend-a-service">Create and extend a service</h3>
 
-<p>Create a new service class that extends a service from <strong>OntimizeWeb</strong>. In the following example we are creating a service called <code class="language-plaintext highlighter-rouge">StarsWarsService</code> that extends the class <code class="language-plaintext highlighter-rouge">OntimizeBaseService</code> (<code class="language-plaintext highlighter-rouge">OntimizeBaseService</code> is the super class for different services in <strong>OntimizeWeb</strong>).</p>
+<p>Create a new service class that extends a service from <strong>OntimizeWeb</strong>. In the following example we are creating a service called <code class="language-plaintext highlighter-rouge">StarWarsService</code> that extends the class <code class="language-plaintext highlighter-rouge">OntimizeBaseService</code> (<code class="language-plaintext highlighter-rouge">OntimizeBaseService</code> is the super class for different services in <strong>OntimizeWeb</strong>).</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeBaseService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarsWarsService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarWarsService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
 
   <span class="kd">constructor</span><span class="p">(</span><span class="kr">protected</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
@@ -1057,13 +1057,13 @@
 
 <h3 id="override-crud-methods-using-a-third-party-api">Override CRUD methods using a third party API</h3>
 
-<p>You can use your service to retrieve or send data to a third party API. The following example shows the service from the previous step consuming the <a href="https://swapi.dev/" target="_blank">Stars Wars API</a> for querying different entities. We have overridden the <code class="language-plaintext highlighter-rouge">query</code> and <code class="language-plaintext highlighter-rouge">advancedQuery</code> methods for making simple and paginated request to the API. Note that you must <a href="#adapt-your-service-response">adapt the API response</a> to the ontimize service response for using the retrieved data with the <strong>OntimizeWeb</strong> components.</p>
+<p>You can use your service to retrieve or send data to a third party API. The following example shows the service from the previous step consuming the <a href="https://swapi.dev/" target="_blank">Star Wars API</a> for querying different entities. We have overridden the <code class="language-plaintext highlighter-rouge">query</code> and <code class="language-plaintext highlighter-rouge">advancedQuery</code> methods for making simple and paginated request to the API. Note that you must <a href="#adapt-your-service-response">adapt the API response</a> to the ontimize service response for using the retrieved data with the <strong>OntimizeWeb</strong> components.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">Observable</span><span class="p">,</span> <span class="nx">OntimizeBaseService</span><span class="p">,</span> <span class="nx">Util</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarsWarsService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarWarsService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
 
   <span class="kd">constructor</span><span class="p">(</span><span class="kr">protected</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
@@ -1114,7 +1114,7 @@
 <span class="k">import</span> <span class="p">{</span> <span class="nx">Observable</span><span class="p">,</span> <span class="nx">OntimizeBaseService</span><span class="p">,</span> <span class="nx">Util</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarsWarsService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarWarsService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
 
   <span class="p">...</span>
 
@@ -1147,12 +1147,12 @@
 <span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">BaseServiceResponse</span><span class="p">,</span> <span class="nx">OntimizeServiceResponse</span><span class="p">,</span> <span class="nx">ServiceResponseAdapter</span><span class="p">,</span> <span class="nx">Util</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">StarsWarsResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./stars-wars-response.type</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">StarWarsResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./star-wars-response.type</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">({</span> <span class="na">providedIn</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span> <span class="p">})</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarsWarsResponseAdapter</span> <span class="kr">implements</span> <span class="nx">ServiceResponseAdapter</span><span class="o">&lt;</span><span class="nx">BaseServiceResponse</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarWarsResponseAdapter</span> <span class="kr">implements</span> <span class="nx">ServiceResponseAdapter</span><span class="o">&lt;</span><span class="nx">BaseServiceResponse</span><span class="o">&gt;</span> <span class="p">{</span>
 
-  <span class="nx">adapt</span><span class="p">(</span><span class="na">resp</span><span class="p">:</span> <span class="nx">HttpResponse</span><span class="o">&lt;</span><span class="nx">StarsWarsResponse</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">BaseServiceResponse</span> <span class="p">{</span>
+  <span class="nx">adapt</span><span class="p">(</span><span class="na">resp</span><span class="p">:</span> <span class="nx">HttpResponse</span><span class="o">&lt;</span><span class="nx">StarWarsResponse</span><span class="o">&gt;</span><span class="p">):</span> <span class="nx">BaseServiceResponse</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">code</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
@@ -1181,17 +1181,27 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
+<p>This is the StarWarsResponse referred above.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">interface</span> <span class="nx">StarWarsResponse</span> <span class="p">{</span>
+  <span class="nl">count</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nl">next</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">previous</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">results</span><span class="p">:</span> <span class="nx">any</span><span class="p">[];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <p>The second step is to make your service use the adapter. Your service should extend the class <code class="language-plaintext highlighter-rouge">OntimizeBaseService</code> or any of its child classes (<code class="language-plaintext highlighter-rouge">OntimizeService</code>, <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>, <code class="language-plaintext highlighter-rouge">OntimizeExportService</code> and <code class="language-plaintext highlighter-rouge">OntimizeFileService</code>). This class implements the method <code class="language-plaintext highlighter-rouge">configureAdapter</code> that has to be overwritten in order to provide your adapter.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">StarsWarsResponseAdapter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./stars-wars-response-adapter</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">StarWarsResponseAdapter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./star-wars-response-adapter</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarsWarsService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">StarWarsService</span> <span class="kd">extends</span> <span class="nx">OntimizeBaseService</span> <span class="p">{</span>
 
   <span class="p">...</span>
 
   <span class="kr">public</span> <span class="nx">configureAdapter</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">adapter</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">injector</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">StarsWarsResponseAdapter</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">adapter</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">injector</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">StarWarsResponseAdapter</span><span class="p">);</span>
   <span class="p">}</span>
 
   <span class="p">...</span>
@@ -1216,13 +1226,13 @@
   <span class="p">...</span>
   <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">...</span>
-    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">O_DATA_SERVICE</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">StarsWarsService</span> <span class="p">}</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">O_DATA_SERVICE</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">StarWarsService</span> <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div></div>
 
-<p>At this point every <strong>OntimizeWeb</strong> component will use your recently created <code class="language-plaintext highlighter-rouge">StarsWarsService</code> service for communicating with the backend.</p>
+<p>At this point every <strong>OntimizeWeb</strong> component will use your recently created <code class="language-plaintext highlighter-rouge">StarWarsService</code> service for communicating with the backend.</p>
 
 <blockquote>
   <p><strong>NOTE:</strong> <code class="language-plaintext highlighter-rouge">OntimizeService</code>, <code class="language-plaintext highlighter-rouge">OntimizeEEService</code>, <code class="language-plaintext highlighter-rouge">OntimizeExportService</code>, <code class="language-plaintext highlighter-rouge">OntimizePermissionsService</code> and <code class="language-plaintext highlighter-rouge">OntimizeEEPermissionsService</code> can be extended and used in the whole application by indicating the class in the <a href="https://ontimizeweb.github.io/docs/guide/appconfig/#application-configuration" target="_blank">application configuration</a>. There is one attribute for each type of service.</p>
@@ -1232,10 +1242,10 @@
 
 <p>If you want to use your service in a specific component instead of using it in the whole application, you have to create a factory method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">StarsWarsService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../shared/stars-wars.service</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">StarWarsService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../shared/star-wars.service</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">starsWarsServiceFactory</span><span class="p">(</span><span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">):</span> <span class="nx">StarsWarsService</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nx">StarsWarsService</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">starWarsServiceFactory</span><span class="p">(</span><span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">):</span> <span class="nx">StarWarsService</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nx">StarWarsService</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
@@ -1243,8 +1253,8 @@
   <span class="p">...</span>
 
   <span class="na">providers</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">starsWars</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">useFactory</span><span class="p">:</span> <span class="nx">starsWarsServiceFactory</span><span class="p">,</span>
+    <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">starWars</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">useFactory</span><span class="p">:</span> <span class="nx">starWarsServiceFactory</span><span class="p">,</span>
     <span class="na">deps</span><span class="p">:</span> <span class="p">[</span><span class="nx">Injector</span><span class="p">]</span>
   <span class="p">}]</span>
 <span class="p">})</span>
@@ -1255,7 +1265,7 @@
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"starships"</span> <span class="na">entity=</span><span class="s">"starships"</span> <span class="na">columns=</span><span class="s">"name;model;manufacturer;starship_class;crew;passengers"</span>
   <span class="na">visible-columns=</span><span class="s">"name;model;manufacturer;starship_class;passengers"</span>  <span class="na">pageable=</span><span class="s">"yes"</span> <span class="na">quick-filter=</span><span class="s">"no"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">fxFlex</span>
-  <span class="na">service-type=</span><span class="s">"starsWars"</span><span class="nt">&gt;</span>
+  <span class="na">service-type=</span><span class="s">"starWars"</span><span class="nt">&gt;</span>
 
   ...
 
@@ -1279,7 +1289,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-03-16T08:49:27-04:00">March 16, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-09T07:23:45-04:00">April 09, 2021</time></p>
         
       </footer>
 
