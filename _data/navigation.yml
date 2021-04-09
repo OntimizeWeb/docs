@@ -350,6 +350,21 @@ ontimize_web_ngx_map:
 
       - title: "Installation"
         url: /map/installation/
+  - title: "Configuration"
+    children:
+      - title: "Map"
+        url: /map/configuration/overview/overview
+      - title: "Layer"
+        url: /map/configuration/o-map-layer/overview
+      - title: "GeoJson Layer"
+        url: /map/configuration/o-geojson-layer/overview
+      - title: "WMS Layer"
+        url: /map/configuration/o-wms-layer/overview
+      - title: "Marker"
+        url: /map/configuration/o-marker/overview
+      - title: "Draw Controls"
+        url: /map/configuration/o-map-draw-controls/overview
+      
 
 ontimize_web_ngx_gallery:
   - title: "Getting Started"

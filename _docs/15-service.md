@@ -172,7 +172,7 @@ For extending a service you should create your own service that extends a servic
 
 ### Create and extend a service
 
-Create a new service class that extends a service from **OntimizeWeb**. In the following example we are creating a service called `StarsWarsService` that extends the class `OntimizeBaseService` (`OntimizeBaseService` is the super class for different services in **OntimizeWeb**).
+Create a new service class that extends a service from **OntimizeWeb**. In the following example we are creating a service called `StarWarsService` that extends the class `OntimizeBaseService` (`OntimizeBaseService` is the super class for different services in **OntimizeWeb**).
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
@@ -180,7 +180,7 @@ import { Injectable, Injector } from '@angular/core';
 import { OntimizeBaseService } from 'ontimize-web-ngx';
 
 @Injectable()
-export class StarsWarsService extends OntimizeBaseService {
+export class StarWarsService extends OntimizeBaseService {
 
   constructor(protected injector: Injector) {
     super(injector);
@@ -193,14 +193,14 @@ Once your service is created you can [override the Ontimize CRUD methods](#overr
 
 ### Override CRUD methods using a third party API
 
-You can use your service to retrieve or send data to a third party API. The following example shows the service from the previous step consuming the [Stars Wars API](https://swapi.dev/){:target="_blank"} for querying different entities. We have overridden the `query` and `advancedQuery` methods for making simple and paginated request to the API. Note that you must [adapt the API response](#adapt-your-service-response) to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
+You can use your service to retrieve or send data to a third party API. The following example shows the service from the previous step consuming the [Star Wars API](https://swapi.dev/){:target="_blank"} for querying different entities. We have overridden the `query` and `advancedQuery` methods for making simple and paginated request to the API. Note that you must [adapt the API response](#adapt-your-service-response) to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
 import { Observable, OntimizeBaseService, Util } from 'ontimize-web-ngx';
 
 @Injectable()
-export class StarsWarsService extends OntimizeBaseService {
+export class StarWarsService extends OntimizeBaseService {
 
   constructor(protected injector: Injector) {
     super(injector);
@@ -250,7 +250,7 @@ import { Injectable, Injector } from '@angular/core';
 import { Observable, OntimizeBaseService, Util } from 'ontimize-web-ngx';
 
 @Injectable()
-export class StarsWarsService extends OntimizeBaseService {
+export class StarWarsService extends OntimizeBaseService {
 
   ...
 
@@ -282,12 +282,12 @@ import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BaseServiceResponse, OntimizeServiceResponse, ServiceResponseAdapter, Util } from 'ontimize-web-ngx';
 
-import { StarsWarsResponse } from './stars-wars-response.type';
+import { StarWarsResponse } from './star-wars-response.type';
 
 @Injectable({ providedIn: 'root' })
-export class StarsWarsResponseAdapter implements ServiceResponseAdapter<BaseServiceResponse> {
+export class StarWarsResponseAdapter implements ServiceResponseAdapter<BaseServiceResponse> {
 
-  adapt(resp: HttpResponse<StarsWarsResponse>): BaseServiceResponse {
+  adapt(resp: HttpResponse<StarWarsResponse>): BaseServiceResponse {
     let code = 1;
     let data = [];
     let message = '';
@@ -316,18 +316,29 @@ export class StarsWarsResponseAdapter implements ServiceResponseAdapter<BaseServ
 }
 ```
 
+This is the StarWarsResponse referred above.
+
+```javascript
+export interface StarWarsResponse {
+  count: number;
+  next: string;
+  previous: string;
+  results: any[];
+}
+```
+
 The second step is to make your service use the adapter. Your service should extend the class `OntimizeBaseService` or any of its child classes (`OntimizeService`, `OntimizeEEService`, `OntimizeExportService` and `OntimizeFileService`). This class implements the method `configureAdapter` that has to be overwritten in order to provide your adapter.
 
 ```javascript
-import { StarsWarsResponseAdapter } from './stars-wars-response-adapter';
+import { StarWarsResponseAdapter } from './star-wars-response-adapter';
 
 @Injectable()
-export class StarsWarsService extends OntimizeBaseService {
+export class StarWarsService extends OntimizeBaseService {
 
   ...
 
   public configureAdapter() {
-    this.adapter = this.injector.get(StarsWarsResponseAdapter);
+    this.adapter = this.injector.get(StarWarsResponseAdapter);
   }
 
   ...
@@ -351,13 +362,13 @@ In case you want to use your service in the whole application, you have to provi
   ...
   providers: [
     ...
-    { provide: O_DATA_SERVICE, useValue: StarsWarsService }
+    { provide: O_DATA_SERVICE, useValue: StarWarsService }
   ]
 })
 export class AppModule { }
 ```
 
-At this point every **OntimizeWeb** component will use your recently created `StarsWarsService` service for communicating with the backend.
+At this point every **OntimizeWeb** component will use your recently created `StarWarsService` service for communicating with the backend.
 
 > **NOTE:** `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. There is one attribute for each type of service.
 
@@ -366,10 +377,10 @@ At this point every **OntimizeWeb** component will use your recently created `St
 If you want to use your service in a specific component instead of using it in the whole application, you have to create a factory method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
 
 ```javascript
-import { StarsWarsService } from '../../shared/stars-wars.service';
+import { StarWarsService } from '../../shared/star-wars.service';
 
-export function starsWarsServiceFactory(injector: Injector): StarsWarsService {
-  return new StarsWarsService(injector);
+export function starWarsServiceFactory(injector: Injector): StarWarsService {
+  return new StarWarsService(injector);
 }
 
 @NgModule({
@@ -377,8 +388,8 @@ export function starsWarsServiceFactory(injector: Injector): StarsWarsService {
   ...
 
   providers: [{
-    provide: 'starsWars',
-    useFactory: starsWarsServiceFactory,
+    provide: 'starWars',
+    useFactory: starWarsServiceFactory,
     deps: [Injector]
   }]
 })
@@ -390,7 +401,7 @@ Once the service is included in the providers of your module, an instance of it 
 ```html
 <o-table attr="starships" entity="starships" columns="name;model;manufacturer;starship_class;crew;passengers"
   visible-columns="name;model;manufacturer;starship_class;passengers"  pageable="yes" quick-filter="no" insert-button="no" fxFlex
-  service-type="starsWars">
+  service-type="starWars">
 
   ...
 

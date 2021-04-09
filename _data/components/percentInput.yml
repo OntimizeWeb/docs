@@ -1,5 +1,13 @@
 directive : "o-percent-input"
 
+attributes: [{
+  name: "value-base",
+  type: "1 | 100",
+  default: "1",
+  required: "",
+  description: "Indicates whether de numeral system of the value received is 1 or 100"
+}]
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",
