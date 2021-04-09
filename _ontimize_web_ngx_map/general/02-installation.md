@@ -37,6 +37,30 @@ export class ExampleModule { }
 ```
 
 
+### Configure angular.json dependencies
+
+You must add the module styles definition and the leaflet images in your '*.angular.json*':
+
+```bash
+...
+"assets": [
+  ....
+  {
+    "glob": "**/*",
+    "input": "node_modules/leaflet/dist/images",
+    "output": "/assets"
+  }
+  ....
+],
+"styles": [
+  ...
+  "node_modules/ontimize-web-ngx-map/styles.scss",
+  ....
+],
+...
+```
+
+
 ### Add  a map to your component
 
 Insert the `o-map` component in your application component template.
