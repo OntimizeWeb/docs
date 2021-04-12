@@ -212,7 +212,7 @@ export class StarWarsService extends OntimizeBaseService {
     return this.doRequest({
       method: 'GET',
       url: url,
-      options: {}
+      options: {} // This overrides the default http headers. Remove it if you are using an ontimize based API in the backend
     });
   }
 
@@ -230,7 +230,7 @@ export class StarWarsService extends OntimizeBaseService {
     return this.doRequest({
       method: 'GET',
       url: url,
-      options: {}
+      options: {} // This overrides the default http headers. Remove it if you are using an ontimize based API in the backend
     });
   }
 
@@ -260,7 +260,7 @@ export class StarWarsService extends OntimizeBaseService {
     return this.doRequest({
       method: 'GET',
       url: url,
-      options: {}
+      options: {} // This overrides the default http headers. Remove it if you are using an ontimize based API in the backend
     });
   }
 
