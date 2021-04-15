@@ -157,6 +157,19 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 
 You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
 
+
+**Icon combo renderer**
+
+```html
+<o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  <o-combo-renderer-icon icon-position="right" icon-key="materialIcon"></o-combo-renderer-percentage>
+</o-combo>
+```
+This renderer uses Material Icons to display each icon, you can see the complete set of icons [here](https://fonts.google.com/icons).
+
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+
 ### Custom renderers <span class='menuitem-badge'>new<span>
 
 A custom renderer allows you to display the data of a combo formatted as you desire. For this, you need to create a new component that extends the custom combo renderer class and place it into your o-combo component.
