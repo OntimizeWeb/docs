@@ -8,7 +8,7 @@ attributes: [{
   name: "icon-key",
   type: "string",
   default: "icon",
-  description: "Indicates the key to indicate which icon is displayed in each option."
+  description: "Indicates the key of which icon is displayed in each option."
 },{
   name: "icon-position",
   type: "left | right",
