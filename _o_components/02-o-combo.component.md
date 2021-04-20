@@ -163,7 +163,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 ```html
 <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
   value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
-  <o-combo-renderer-icon icon-position="right" icon-key="materialIcon"></o-combo-renderer-percentage>
+  <o-combo-renderer-icon icon-position="right" icon-column="materialIcon"></o-combo-renderer-percentage>
 </o-combo>
 ```
 This renderer uses Material Icons to display each icon, you can see the complete set of icons [here](https://fonts.google.com/icons).

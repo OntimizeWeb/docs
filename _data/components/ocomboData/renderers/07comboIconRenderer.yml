@@ -5,10 +5,10 @@ extends: "OComboCustomRenderer"
 directive: "o-combo-renderer-icon"
 
 attributes: [{
-  name: "icon-key",
+  name: "icon-column",
   type: "string",
   default: "icon",
-  description: "Indicates the key of which icon is displayed in each option."
+  description: "Indicates the column of which icon is displayed in each option."
 },{
   name: "icon-position",
   type: "left | right",
