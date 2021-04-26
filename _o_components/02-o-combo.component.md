@@ -162,7 +162,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 
 ```html
 <o-combo attr="combo-editable-search"
-  value-column="key" columns="EMPLOYEE_TYPE_ID;EMPLOYEE_TYPE_VALUE;EMPLOYEE_TYPE_ICON" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  value-column="EMPLOYEE_TYPE_ID" columns="EMPLOYEE_TYPE_ID;EMPLOYEE_TYPE_VALUE;EMPLOYEE_TYPE_ICON" visible-columns="EMPLOYEE_TYPE_VALUE" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
   <o-combo-renderer-icon icon-position="right" icon-column="EMPLOYEE_TYPE_ICON"></o-combo-renderer-percentage>
 </o-combo>
 ```
