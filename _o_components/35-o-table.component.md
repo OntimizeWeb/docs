@@ -200,6 +200,13 @@ This option is enabled by default, the filter is visible in the top right. You c
 
 You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
+---
+**NOTE**
+
+The quick filter displays a checkbox list (click on the icon) where you can select which column to filter by, at the end of this list will appear a checkbox selector to be case sensitive. This option may not appear if `pageable` attribute is setted to false in table component.
+
+---
+
 Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in `quick-filter-function` property.
 
 
