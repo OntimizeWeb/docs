@@ -7,7 +7,7 @@ title: "Charts"
 {% include toc %}
 
 ## Introduction
-The **Ontimize Web Charts** is an an implementation of nvD3 and d3 charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
+The **Ontimize Web Charts** is an implementation of nvD3 and d3 charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
 
 ## Support
 The Ontimize Web Charts module is available in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-charts){:target="_blank"} where you can start discussions, add bug reports or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-charts/issues){:target="_blank"} section.
