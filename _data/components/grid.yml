@@ -8,12 +8,10 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "quick-filter", "quick-filter-placeholder"]
 }]
 
 attributes: [{
-  name: "quick-filter"
-},{
   name: "cols",
   type: "number",
   default: "By default, the number of columns will be automatically determined based mediaQuery of Flex Layout. See more [here](https://github.com/angular/flex-layout/wiki/Responsive-API#mediaqueries-and-aliases).",
@@ -99,6 +97,9 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the insert button is floatable."
+},{
+  name: "quick-filter-placeholder",
+  default: "'SEARCH'"
 }]
 
 outputs: [{

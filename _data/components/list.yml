@@ -7,7 +7,7 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "quick-filter"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "quick-filter", "quick-filter-placeholder"]
 }]
 
 attributes: [{
@@ -52,6 +52,9 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the insert button is floatable."
+},{
+  name: "quick-filter-placeholder",
+  default: "'SEARCH'"
 }]
 
 outputs: [{
