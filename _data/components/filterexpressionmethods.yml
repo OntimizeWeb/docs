@@ -1,7 +1,7 @@
 methods: [
   {
     name: "buildArrayExpressionLike",
-    description: "Builds an `IExpression` instance for filtering the provided keys LIKE the value provided.",
+    description: "Builds an `Expression` instance for filtering the provided keys LIKE the value provided.",
     params: [
       {
         name: "keys",
@@ -15,13 +15,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionEquals",
-    description: "Builds an `IExpression` instance for filtering the provided key EQUAL to the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key EQUAL to the provided value.",
     params: [
       {
         name: "key",
@@ -35,13 +35,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionIsNotNull",
-    description: "Builds an `IExpression` instance for filtering the provided key with a NOT NULL value.",
+    description: "Builds an `Expression` instance for filtering the provided key with a NOT NULL value.",
     params: [
       {
         name: "key",
@@ -50,13 +50,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionIsNull",
-    description: "Builds an `IExpression` instance for filtering the provided key with a NULL value.",
+    description: "Builds an `Expression` instance for filtering the provided key with a NULL value.",
     params: [
       {
         name: "key",
@@ -65,13 +65,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionLess",
-    description: "Builds an `IExpression` instance for filtering the provided key LESS than the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key LESS than the provided value.",
     params: [
       {
         name: "key",
@@ -85,13 +85,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionLessEqual",
-    description: "Builds an `IExpression` instance for filtering the provided key LESS OR EQUAL to the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key LESS OR EQUAL to the provided value.",
     params: [
       {
         name: "key",
@@ -105,13 +105,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionLike",
-    description: "Builds an `IExpression` instance for filtering the provided key LIKE the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key LIKE the provided value.",
     params: [
       {
         name: "key",
@@ -125,13 +125,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionLikeEnd",
-    description: "Builds an `IExpression` instance for filtering the provided key ENDS LIKE the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key ENDS LIKE the provided value.",
     params: [
       {
         name: "key",
@@ -145,13 +145,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionLikeStart",
-    description: "Builds an `IExpression` instance for filtering the provided key STARTS LIKE the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key STARTS LIKE the provided value.",
     params: [
       {
         name: "key",
@@ -165,13 +165,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionMore",
-    description: "Builds an `IExpression` instance for filtering the provided key MORE than the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key MORE than the provided value.",
     params: [
       {
         name: "key",
@@ -185,13 +185,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionMoreEqual",
-    description: "Builds an `IExpression` instance for filtering the provided key MORE OR EQUAL to the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key MORE OR EQUAL to the provided value.",
     params: [
       {
         name: "key",
@@ -205,13 +205,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionNotEquals",
-    description: "Builds an `IExpression` instance for filtering the provided key NOT EQUAL to the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key NOT EQUAL to the provided value.",
     params: [
       {
         name: "key",
@@ -225,13 +225,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionNotLike",
-    description: "Builds an `IExpression` instance for filtering the provided key NOT LIKE to the provided value.",
+    description: "Builds an `Expression` instance for filtering the provided key NOT LIKE to the provided value.",
     params: [
       {
         name: "key",
@@ -245,13 +245,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionNullAndValue",
-    description: "Builds an `IExpression` instance for filtering the provided key with two conditions:
+    description: "Builds an `Expression` instance for filtering the provided key with two conditions:
       * The first filter the provided key with a NULL value.
       * The second filter the provided key EQUAL to the provided value.
 
@@ -269,13 +269,13 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildExpressionIn",
-    description: "Builds an `IExpression` instance for filtering the provided key IN the provided values.",
+    description: "Builds an `Expression` instance for filtering the provided key IN the provided values.",
     params: [
       {
         name: "key",
@@ -289,8 +289,8 @@ methods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   }
 ]
@@ -298,11 +298,11 @@ methods: [
 utilityMethods: [
   {
     name: "buildBasicExpression",
-    description: "Builds a `IBasicExpression` instance from the filtering expression (`IExpression`) provided.",
+    description: "Builds a `IBasicExpression` instance from the filtering expression (`Expression`) provided.",
     params: [
       {
         name: "exp",
-        type: "`IExpression`",
+        type: "`Expression`",
         description: "the filtering expression"
       }
     ],
@@ -313,16 +313,16 @@ utilityMethods: [
   },
   {
     name: "buildComplexExpression",
-    description: "Builds a complex `IExpression` instance joining two expressions with the provided operator.",
+    description: "Builds a complex `Expression` instance joining two expressions with the provided operator.",
     params: [
       {
         name: "expr1",
-        type: "`IExpression`",
+        type: "`Expression`",
         description: "the first filtering expression to join"
       },
       {
         name: "expr2",
-        type: "`IExpression`",
+        type: "`Expression`",
         description: "the second filtering expression to join"
       },
       {
@@ -332,13 +332,13 @@ utilityMethods: [
       }
     ],
     return: {
-      name: "`IExpression`",
+      name: "`Expression`",
       description: "the complex filtering expression"
     }
   },
   {
     name: "buildExpressionFromObject",
-    description: "Builds an `IExpression` instance from the provided object.",
+    description: "Builds an `Expression` instance from the provided object.",
     params: [
       {
         name: "obj",
@@ -347,17 +347,17 @@ utilityMethods: [
       }
     ],
     return: {
-      name: "`IExpression`",
-      description: "the `IExpression`"
+      name: "`Expression`",
+      description: "the `Expression`"
     }
   },
   {
     name: "buildFilterExpression",
-    description: "Builds an `IFilterExpression` instance from the filtering expression (`IExpression`) provided.",
+    description: "Builds an `IFilterExpression` instance from the filtering expression (`Expression`) provided.",
     params: [
       {
         name: "exp",
-        type: "`IExpression`",
+        type: "`Expression`",
         description: "the filtering expression"
       }
     ],
@@ -372,7 +372,7 @@ utilityMethods: [
     params: [
       {
         name: "exp",
-        type: "`IExpression`",
+        type: "`Expression`",
         description: "the filtering expression"
       }
     ],
@@ -383,7 +383,7 @@ utilityMethods: [
   },
   {
     name: "instanceofExpression",
-    description: "Evaluates if an expresion is instance of `IExpression`.",
+    description: "Evaluates if an expresion is instance of `Expression`.",
     params: [
       {
         name: "exp",
@@ -393,7 +393,7 @@ utilityMethods: [
     ],
     return: {
       name: "boolean",
-      description: "`true` if the provided expression is an instance of `IExpression`, `false` otherwise"
+      description: "`true` if the provided expression is an instance of `Expression`, `false` otherwise"
     }
   },
   {

@@ -14,10 +14,10 @@ attributes: [{
   description: "Component whose that will be filtered."
 },{
   name: "expression-builder",
-  type: "(values: Array<{ attr, value }>) => IExpression",
+  type: "(values: Array<{ attr, value }>) => Expression",
   default: "",
   required: "",
-  description: "Funtion called for creating the expression. The function receives an array of objects that contains the target column attribute and the value of the respective form component and must return an instance of `IExpression`. Read about how to build complex filter structures [here](https://ontimizeweb.github.io/docs/guide/filterexpression/){:target='_blank'}."
+  description: "Funtion called for creating the expression. The function receives an array of objects that contains the target column attribute and the value of the respective form component and must return an instance of `Expression`. Read about how to build complex filter structures [here](https://ontimizeweb.github.io/docs/guide/filterexpression/){:target='_blank'}."
 },{
   name: "query-on-change",
   type: "yes | no | true | false",
@@ -42,8 +42,8 @@ outputs: [{
 
 methods: [{
   name: "getExpression",
-  description: "Returns an `IExpression` object with the filter.",
-  returns: "The `IExpression` object with the filter."
+  description: "Returns an `Expression` object with the filter.",
+  returns: "The `Expression` object with the filter."
 },{
   name: "getBasicExpression",
   description: "Returns an `IBasicExpression` object with the filter.",
