@@ -196,14 +196,28 @@ By default the filtering is *local*, you can enable *remote* filtering setting `
 
 ## Quick filter
 
-This option is enabled by default, the filter is visible in the top right. You can disable it setting `quick-filter="no"`.
+This option is enabled by default and the filter is visible in the top right. You can disable it setting `quick-filter="no"`. You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
-You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
+This option creates the `o-table-quickfilter` component within the `o-table`. This component displays a checkbox list (when you click on the icon) where you can select which columns to filter by when the input value changes, also allows to change the filter case sensitive option during execution.
+
+![Table quickfilter]({{ "/images/components/tabla/o-table-quickfilter.png" | absolute_url }}){: .comp-example-img}
+
+If you want to override this component to configure its options you can define your own quickfilter within your `o-table` and it will replace the default implementation. You can see its properties configuration in the API section.
+
+```html
+<o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
+  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY">
+
+  <o-table-quickfilter placeholder="{{ 'MY_OWN_PLACEHOLDER' | oTranslate }}" (onChange)="myOnChangeMethod()">
+  </o-table-quickfilter>
+
+</o-table>
+```
 
 ---
 **NOTE**
-
-The quick filter displays a checkbox list (click on the icon) where you can select which column to filter by, at the end of this list will appear a checkbox selector to be case sensitive. This option may not appear if `pageable` attribute is setted to false in table component.
+The option to change the filter case sensitive filtering may not appear if `pageable` attribute is setted to false in table component.
 
 ---
 
