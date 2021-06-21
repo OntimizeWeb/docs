@@ -437,5 +437,12 @@
     default: "`columns` attribute value",
     required: "",
     description: "Columns used by the quick filter. Separated by ';'"
+  },
+  "quick-filter-placeholder":{
+    name: "quick-filter-placeholder",
+    type: "string",
+    default: "",
+    required: "",
+    description: "Quick filter input placeholder text"
   }
 }

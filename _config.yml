@@ -182,9 +182,6 @@ collections:
   o_validation_components:
     output: true
     permalink: /components/:path/
-  o_datatable_components:
-    output: true
-    permalink: /:collection/:path/
   o_table_components:
     output: true
     permalink: /:collection/:path/
@@ -294,17 +291,6 @@ defaults:
     values:
       layout: o-component
       layoutClass: o-component
-      author_profile: false
-      share: false
-      comments: false
-      sidebar:
-        nav: "components"
-  # _o_datatable_components
-  - scope:
-      path: ""
-      type: o_datatable_components
-    values:
-      layout: single
       author_profile: false
       share: false
       comments: false

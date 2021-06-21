@@ -13,24 +13,24 @@ sidebar:
 This section describes the functionality of the utility class `FilterExpressionUtils`, that provides a set of methods and utilities for building complex filtering expressions used in **OntimizeWeb**.
 
 ## Filtering expression
-A filtering expression is an object that defines an operation between two operands. The interface `IExpression` contains the basic structure of a filtering expression. The second operand may be omitted in some expressions, for example, filtering with a NULL value.
+A filtering expression is an object that defines an operation between two operands. The interface `Expression` contains the basic structure of a filtering expression. The second operand may be omitted in some expressions, for example, filtering with a NULL value.
 
 The filtering expression structure is the following;
 ```json
 {
   /** The left operand. */
-  lop: string | IExpression
+  lop: string | Expression
 
   /** The operator. */
   op: string
 
   /** The right operand. */
-  rop?: string | IExpression
+  rop?: string | Expression
 }
 ```
 
 ## Operators
-**OntimizeWeb** defines a set of operators used as the `op` parametter of `IExpression` for building [filtering expressions](#filtering-expression). This operators cover most important operations defined by every database management system and they are the following:
+**OntimizeWeb** defines a set of operators used as the `op` parametter of `Expression` for building [filtering expressions](#filtering-expression). This operators cover most important operations defined by every database management system and they are the following:
 
 | Operators                                                  |
 |------------|-----------------------------------------------|
