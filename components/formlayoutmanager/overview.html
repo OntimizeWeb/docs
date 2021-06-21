@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-05-05T12:52:25-04:00">
+  <meta property="article:published_time" content="2021-06-21T12:09:02-04:00">
 
 
 
@@ -902,7 +902,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="May 05, 2021">
+    <meta itemprop="datePublished" content="June 21, 2021">
     
 
     <div class="page__inner-wrap">
@@ -979,22 +979,27 @@
 <ul class="toc__menu" id="markdown-toc">
   <li><a href="#basic-example" id="markdown-toc-basic-example">Basic example</a></li>
   <li><a href="#tab-mode" id="markdown-toc-tab-mode">Tab mode</a>    <ul>
-      <li><a href="#configure-tab-mode-options" id="markdown-toc-configure-tab-mode-options">Configure tab mode options</a></li>
+      <li><a href="#options" id="markdown-toc-options">Options</a></li>
     </ul>
   </li>
   <li><a href="#dialog-mode" id="markdown-toc-dialog-mode">Dialog mode</a>    <ul>
-      <li><a href="#configure-dialog-mode-options" id="markdown-toc-configure-dialog-mode-options">Configure dialog mode options</a></li>
+      <li><a href="#options-1" id="markdown-toc-options-1">Options</a></li>
     </ul>
   </li>
+  <li><a href="#split-pane-mode" id="markdown-toc-split-pane-mode">Split pane mode</a>    <ul>
+      <li><a href="#options-2" id="markdown-toc-options-2">Options</a></li>
+    </ul>
+  </li>
+  <li><a href="#options-definition" id="markdown-toc-options-definition">Options definition</a></li>
 </ul>
 
   </nav>
 </aside>
 
-<p>A very common feature on management applications is displaying a form with the details related to a row from a data table. As a solution for this, <strong>OntimizeWeb</strong> offers the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component, that allows you managing the transitions between the data table and the form with the row details.</p>
+<p>A very common feature on management applications is to display a form with the details related to a row from a data collection component. As a solution for this, <strong>OntimizeWeb</strong> offers the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component, that allows you managing the transitions between a data collection and the form that displays a record detail data.</p>
 
 <h3 id="basic-example">Basic example</h3>
-<p>For including the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component in your application you just have to wrap the desired data table with the form layout manager and it will manage the transitions between the table view and the detail forms.</p>
+<p>To include the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component in your application you just have to wrap the desired data collection component with the form layout manager and it will manage the transitions between that component view and its detail component (without having to modify the routing module).</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form-layout-manager</span> <span class="na">attr=</span><span class="s">"formLayoutMngr"</span> <span class="na">mode=</span><span class="s">"tab"</span> <span class="na">title=</span><span class="s">"Customers"</span> <span class="na">label-columns=</span><span class="s">"SURNAME;NAME"</span> <span class="na">separator=</span><span class="s">","</span><span class="nt">&gt;</span>
 
@@ -1007,19 +1012,20 @@
 
 <p>This is a summarized example of the customers module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/customers" target="_blank">OntimizeWeb QuickStart</a>.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code>  component has two available modes: <em>tab</em> and <em>dialog</em>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component has three available modes: <em>tab</em>, <em>dialog</em> and <em>split-pane</em>.</p>
 
 <h3 id="tab-mode">Tab mode</h3>
-<p>Selection the <em>tab</em> mode the data table and the detail form are displayed in <em>tabs</em>. This allows opening multiple form details at the same time and switch between them quickly.</p>
+<p>Select the <em>tab</em> mode and the data collection component and its detail form will be displayed in <em>tabs</em>. This allows opening multiple form details at the same time and switch between them quickly.</p>
 
-<p>You can select this mode setting the value <strong>tab</strong> to the <code class="language-plaintext highlighter-rouge">mode</code> attribute. You can see a working example of this mode in the <em>customers</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/customers" target="_blank">OntimizeWeb QuickStart</a>.</p>
+<p>You can select this mode setting the value <strong>tab</strong> to the <code class="language-plaintext highlighter-rouge">mode</code> input. You can see a working example of this mode in the 
+<a href="https://try.imatia.com/ontimizeweb/v8/playground/main/layout-manager/tab" target="_blank">OntimizeWeb Playground</a> or the <em>customers</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/customers" target="_blank">OntimizeWeb QuickStart</a>.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/form-layout-manager/formLayoutManagerTAB.png" alt="Form layout manager in *tab* mode" /></p>
 
-<h4 id="configure-tab-mode-options">Configure tab mode options</h4>
-<p>It is possible to configure tab mode options with the <code class="language-plaintext highlighter-rouge">o-form-layout-tabgroup-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
+<h4 id="options">Options</h4>
+<p>It is possible to configure tab mode options with the <code class="language-plaintext highlighter-rouge">o-form-layout-tabgroup-options</code> component. This attributes are explained in the <strong>API</strong> section of this page.</p>
 
-<p>For complex labels, you can add <code class="language-plaintext highlighter-rouge">&lt;ng-template let-tabData="tabData"&gt;...&lt;/ng-template&gt;</code>  and inside you can define your template. It&#8217;s <em>important</em> than the tabData attributes are including in <code class="language-plaintext highlighter-rouge">labe-columns</code>.</p>
+<p>For complex labels, you can add <code class="language-plaintext highlighter-rouge">&lt;ng-template let-tabData="tabData"&gt;...&lt;/ng-template&gt;</code> and inside you can define your template. It&#8217;s <em>important</em> than the tabData attributes are including in <code class="language-plaintext highlighter-rouge">labe-columns</code>.</p>
 
 <h3 class="grey-color">Example</h3>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form-layout-manager</span> <span class="na">mode=</span><span class="s">"tab"</span> <span class="na">title=</span><span class="s">"CUSTOMERS"</span> <span class="na">label-columns=</span><span class="s">"SURNAME;NAME"</span> <span class="na">separator=</span><span class="s">","</span>
@@ -1033,14 +1039,15 @@
  ................
 <span class="nt">&lt;/o-form-layout-manager&gt;</span>
 </code></pre></div></div>
-<h3 id="dialog-mode">Dialog mode</h3>
-<p>The <em>dialog</em> mode consists of displaying the form detail in a dialog over the data table.</p>
 
-<p>Select this mode setting the value <strong>dialog</strong> to the <code class="language-plaintext highlighter-rouge">mode</code> attribute. You can see a working example of this mode in the <em>branches</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/branches" target="_blank">OntimizeWeb QuickStart</a>.</p>
+<h3 id="dialog-mode">Dialog mode</h3>
+<p>The <em>dialog</em> mode consists in displaying the form detail in a dialog over the data collection component.</p>
+
+<p>Select this mode setting the value <strong>dialog</strong> to the <code class="language-plaintext highlighter-rouge">mode</code> input. You can see a working example of this mode in the <a href="https://try.imatia.com/ontimizeweb/v8/playground/main/layout-manager/dialog" target="_blank">OntimizeWeb Playground</a>  or in the <em>branches</em> module of the <a href="https://try.imatia.com/ontimizeweb/quickstart/main/branches" target="_blank">OntimizeWeb QuickStart</a>.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/layouts/form-layout-manager/formLayoutManagerDIALOG.png" alt="Form layout manager in *dialog* mode" /></p>
 
-<h4 id="configure-dialog-mode-options">Configure dialog mode options</h4>
+<h4 id="options-1">Options</h4>
 
 <p>It is possible to configure dialog mode options with the <code class="language-plaintext highlighter-rouge">o-form-layout-dialog-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
 
@@ -1057,6 +1064,52 @@
 <span class="nt">&lt;/o-form-layout-manager&gt;</span>
 </code></pre></div></div>
 
+<h3 id="split-pane-mode">Split pane mode</h3>
+<p>Select the <em>split-pane</em> mode and the collection component and the detail form will be displayed in a splitted screen. This allows seeing both components at the same time and also being able to resize the display.</p>
+
+<p>You can select this mode setting the value <strong>split-pane</strong> to the <code class="language-plaintext highlighter-rouge">mode</code> input. You can see a working example of this mode in the <em>form-layout-manager</em> module of the <a href="https://try.imatia.com/ontimizeweb/v8/playground/main/layout-manager/split-pane" target="_blank">OntimizeWeb Playground</a>.</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/layouts/form-layout-manager/formLayoutManagerSPLITPANE.png" alt="Form layout manager in *split-pane* mode" class="align-center" /></p>
+
+<h4 id="options-2">Options</h4>
+
+<p>It is possible to configure split pane mode options with the <code class="language-plaintext highlighter-rouge">o-form-layout-split-pane-options</code> component. This attributes are explained on the <strong>API</strong> section of this page.</p>
+
+<h3 class="grey-color">Example</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form-layout-manager</span> <span class="na">mode=</span><span class="s">"split-pane"</span> <span class="na">attr=</span><span class="s">"o-form-layout-split-pane-form"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;o-form-layout-split-pane-options</span> <span class="na">width=</span><span class="s">"600px"</span><span class="nt">&gt;&lt;/o-form-layout-split-pane-options&gt;</span>
+
+  ...
+
+<span class="nt">&lt;/o-form-layout-manager&gt;</span>
+</code></pre></div></div>
+
+<h3 id="options-definition">Options definition</h3>
+
+<p>The different available modes options can be setted in two ways: using the mode option tag or including the mode inputs in the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> tag.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-form-layout-manager</span> <span class="na">mode=</span><span class="s">"tab"</span> <span class="na">attr=</span><span class="s">"o-form-layout-customer-home"</span>
+   <span class="na">title=</span><span class="s">"CUSTOMERS"</span> <span class="na">label-columns=</span><span class="s">"SURNAME;NAME"</span> <span class="na">separator=</span><span class="s">","</span> <span class="na">icon=</span><span class="s">"info"</span> <span class="na">color=</span><span class="s">"warn"</span><span class="nt">&gt;</span>
+  
+  ...
+
+  <span class="nt">&lt;/o-form-layout-manager&gt;</span>
+</code></pre></div></div>
+
+<p>Is equivalent to:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-form-layout-manager</span> <span class="na">mode=</span><span class="s">"tab"</span> <span class="na">attr=</span><span class="s">"o-form-layout-customer-home"</span><span class="nt">&gt;</span>
+    
+    <span class="nt">&lt;o-form-layout-tabgroup-options</span> <span class="na">color=</span><span class="s">"accent"</span> <span class="na">title=</span><span class="s">"CUSTOMERS"</span> 
+      <span class="na">label-columns=</span><span class="s">"SURNAME;NAME"</span> <span class="na">separator=</span><span class="s">","</span> <span class="na">icon=</span><span class="s">"info"</span> <span class="na">color=</span><span class="s">"warn"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/o-form-layout-tabgroup-options&gt;</span>
+
+    ...
+    
+  <span class="nt">&lt;/o-form-layout-manager&gt;</span>
+</code></pre></div></div>
 
 </div>
 
@@ -1675,7 +1728,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Form data columns used in the detail form title. Separated by ‘;’</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. Form data columns used in the detail form title. Separated by ‘;’</p>
 </p>
     
   </td>
@@ -1723,7 +1776,7 @@
     <p class="first"><p>mode</p>
 </p>
     
-      <p><i>tab | dialog</i></p>
+      <p><i>tab | dialog | split-pane</i></p>
     
   </td>
           
@@ -1805,7 +1858,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Separator between multiple label columns values</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. Separator between multiple label columns values</p>
 </p>
     
   </td>
@@ -1935,7 +1988,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Detail form main title</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. Detail form main title</p>
 </p>
     
   </td>
@@ -2000,7 +2053,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p><code class="language-plaintext highlighter-rouge">attr</code> of the form component used for retrieving the data used on the tabs title</p>
+    <p class="first"><p><b><i>Deprecated</i></b>. <code class="language-plaintext highlighter-rouge">attr</code> of the form component used for retrieving the data used on the tabs title</p>
 </p>
     
   </td>
@@ -2108,6 +2161,32 @@
           
           </tr>
         
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
+              <p>onSelectedTabChange</p>
+
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered when a detail tab is changed</p>
+
+              
+            </td>
+          
+          </tr>
+        
       </tbody>
     </table>
   
@@ -2133,8 +2212,8 @@
 
 
  
-  <h2 id="Form layout manager" >Form layout manager</h2>
- 
+  <h2 id="Dialog mode" >Dialog mode</h2>
+  
 
   
 <p><strong class="grey-color" id="o-form-layout-dialog-options">Directive:</strong> o-form-layout-dialog-options</p>
@@ -2526,6 +2605,71 @@
 
 
   <td class="" o-component-name >
+<p class="first"><p>label-columns</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Form data columns used in the detail form title. Separated by ‘;’</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
 <p class="first"><p>max-height</p>
 </p>
 
@@ -2611,7 +2755,7 @@
 
 
   <td class="" o-component-description >
-<p class="first"><p>Max width of the dialog</p>
+<p class="first"><p>Max width of the dialog.</p>
 </p>
 
   </td>
@@ -2741,7 +2885,7 @@
 
 
   <td class="" o-component-description >
-<p class="first"><p>Form layout manager mode.</p>
+<p class="first"><p>Min width of the dialog.</p>
 </p>
 
   </td>
@@ -2807,6 +2951,136 @@
 
   <td class="" o-component-description >
 <p class="first"><p>Position overrides</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>separator</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Separator between multiple label columns values</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>’ ‘ (blank space)</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>title</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Detail form main title</p>
 </p>
 
   </td>
@@ -2926,8 +3200,476 @@
 
 
  
-  <h2 id="Form layout manager" >Form layout manager</h2>
+  <h2 id="Split pane mode" >Split pane mode</h2>
+  
+
+  
+<p><strong class="grey-color" id="o-form-layout-split-pane-options">Directive:</strong> o-form-layout-split-pane-options</p>
+  
+  
+
+
+  
+
+
+  
+
+
+  
+
+  <h3 id="inputs" class="grey-color">Inputs</h3>
+
+
+
+
+
+
+
+  <table class="attributes-table mdl-data-table">
+<thead>
+  <tr>
+  
+
+  
+<th class=""> Name</th>
+  
+  
+
+  
+<th class=""> Description</th>
+  
+  
+
+  
+<th class=""> Default</th>
+  
+  
+  </tr>
+</thead>
+<tbody>
+  
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>detail-max-width</p>
+</p>
+
+  <p><i>string | number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Max width of the detail container.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>detail-min-width</p>
+</p>
+
+  <p><i>string | number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Min width of the detail container.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>detail-width</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Width of the detail container.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>main-max-width</p>
+</p>
+
+  <p><i>string | number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Max width of the main container.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>main-min-width</p>
+</p>
+
+  <p><i>string | number</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Min width of the main container.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>main-width</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Width of the main container.</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+  </tbody>
+  </table>
+
+  
+
+  
+
+
+
+  
+
+  
+
+
+  
+
+
+
+  
+    
+      
+      
+
+      
+
+
+
+
  
+  <h2 id="Tabgroup mode" >Tabgroup mode</h2>
+  
 
   
 <p><strong class="grey-color" id="o-form-layout-tabgroup-options">Directive:</strong> o-form-layout-tabgroup-options</p>
@@ -2997,7 +3739,7 @@
 <p class="first"><p>background-color</p>
 </p>
 
-  <p><i>ThemePalette</i></p>
+  <p><i>ThemePalette ('primary' | 'accent' | 'warn')</i></p>
 
   </td>
   
@@ -3062,7 +3804,7 @@
 <p class="first"><p>color</p>
 </p>
 
-  <p><i>ThemePalette</i></p>
+  <p><i>ThemePalette ('primary' | 'accent' | 'warn')</i></p>
 
   </td>
   
@@ -3192,7 +3934,7 @@
 <p class="first"><p>header-position</p>
 </p>
 
-  <p><i> 'above' | 'below'</i></p>
+  <p><i>'above' | 'below'</i></p>
 
   </td>
   
@@ -3365,6 +4107,266 @@
 
 </tr>
   
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>label-columns</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Form data columns used in the detail form title. Separated by ‘;’</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>separator</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Separator between multiple label columns values</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first"><p>’ ‘ (blank space)</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>title</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Detail form main title</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>title-data-origin</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p><code class="language-plaintext highlighter-rouge">attr</code> of the form component used for retrieving the data used on the tabs title</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
+</p>
+
+  </td>
+  
+
+</tr>
+  
   </tbody>
   </table>
 
@@ -3407,7 +4409,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-05T12:52:25-04:00">May 05, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-06-21T12:09:02-04:00">June 21, 2021</time></p>
         
       </footer>
 

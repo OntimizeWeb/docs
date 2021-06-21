@@ -1,0 +1,1013 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Form lifecylce - Ontimize Web</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ontimize Web">
+<meta property="og:title" content="Form lifecylce">
+
+
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/components/form/lifecycle/">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/components/form/lifecycle/">
+
+
+
+
+
+  <meta name="twitter:site" content="@imatiainnova">
+  <meta name="twitter:title" content="Form lifecylce">
+  <meta name="twitter:description" content="web application framework based on Angular for building business software.">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/components/form/lifecycle/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://ontimizeweb.github.io/docs/images/site-logo.png">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="https://ontimizeweb.github.io/docs/images/site-logo.png">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://ontimizeweb.github.io/docs",
+      "logo": "https://ontimizeweb.github.io/docs/images/site-logo.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ontimize Web",
+      "url" : "https://ontimizeweb.github.io/docs",
+      "sameAs" : ["https://twitter.com/imatiainnova"]
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ontimizeweb.github.io/docs/feed.xml" type="application/atom+xml" rel="alternate" title="Ontimize Web Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script defer src="https://ontimizeweb.github.io/docs/assets/js/fontawesome-all.min.js"></script>
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ontimizeweb.github.io/docs/assets/css/main.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://ontimizeweb.github.io/docs/images/apple-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://ontimizeweb.github.io/docs/images/apple-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://ontimizeweb.github.io/docs/images/apple-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://ontimizeweb.github.io/docs/images/apple-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://ontimizeweb.github.io/docs/images/apple-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://ontimizeweb.github.io/docs/images/apple-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://ontimizeweb.github.io/docs/images/apple-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://ontimizeweb.github.io/docs/images/apple-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ontimizeweb.github.io/docs/images/apple-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/images/android-icon-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="manifest" href="https://ontimizeweb.github.io/docs/images/manifest.json?v=M44lzPylqQ">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://ontimizeweb.github.io/docs/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://ontimizeweb.github.io/docs/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+          <a href="https://ontimizeweb.github.io/docs/">
+            <div class="main_icon"></div>
+        </a>
+
+        <script src="https://ontimizeweb.github.io/docs/assets/js/lunr.js"></script>
+<script type="text/javascript" src="/docs/assets/js/ontimize.js"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Ontimize Web" aria-label="Search Ontimize Web"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+
+
+<div class="search-overlay"></div>
+
+
+
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/">Ontimize Web</a></li>-->
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/doc-overview/">Getting started</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item masthead__menu-item-active"><a href="https://ontimizeweb.github.io/docs/components/">Components</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/about/">About</a>
+            
+            </li>
+
+
+            
+            
+
+          
+
+          
+          <li class="masthead__menu-item masthead__menu-item-active">
+            <select onchange="window.location = this.options[this.selectedIndex].value">
+            
+              <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v4" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs"  selected="selected" >8.x.x</option>
+            
+            </select>
+          </li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+
+ <script type="text/javascript" style="display:none;">
+  var onNavigationItemClick = function (element) {
+
+    var parentNav = $(element).parents('nav.nav__list');
+    var icons = parentNav.find('svg');
+    icons.addClass('fa-folder');
+    icons.addClass('orange-icon');
+    icons.removeClass('fa-folder-open');
+
+    var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.addClass('active-component-category');
+/*
+    parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
+    parentLi.toggleClass('active-component-category');
+*/    
+    var currentIcon = parentLi.find('svg:first');
+    currentIcon.addClass('fa-folder-open');
+    currentIcon.removeClass('orange-icon');
+    currentIcon.removeClass('fa-folder');
+
+  };
+</script>
+
+<nav class="nav__list">
+  
+  <ul>
+    
+    
+    
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+    
+ 
+    
+
+    
+
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Getting Started</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/doc-overview/" class=" ">Document overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/example-overview/" class=" ">Example overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/install-and-run/" class=" ">Run an example</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/make-changes/" class=" ">Make some changes</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/advanced-changes/" class=" ">Advanced topics</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Guide</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/guide/appstructure/" class=" ">App structure</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/guide/appconfig/" class=" ">App configuration</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/app-modules/" class=" ">Modules</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/routing/" class=" ">Routing</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/forms/" class=" ">Forms</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/guide/service/" class=" ">Services</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/guide/permissions/" class=" ">Permissions</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/run-your-app/" class=" ">Run your app</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/deployment/" class=" ">Deploy your app</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/add-to-project/" class=" ">OntimizeWeb library</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/video-examples/" class=" ">Video examples</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/migrations/" class=" ">Migration guides</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Customization</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/theming/" class=" ">Theming</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/lite/" class=" ">Lite theme</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/typography/" class=" ">Typography</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/style-guide/" class=" ">Style guide</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/icons/" class=" ">Icons</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/customize/tabs/" class=" ">Tabs</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Add-ons</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-tools/" class=" ">Tools</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/theming/" class=" ">Theming</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-datatable/" class=" ">DataTable <small>(deprecated)</small></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/charts/" class=" ">Charts</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/map/" class=" ">Map</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-dynamicform/" class=" ">Dynamicform</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-dynamicform-builder/" class=" ">Dynamicform Builder</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/filemanager/" class=" ">File Manager</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/tree/" class=" ">Tree</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/gallery/" class=" ">Gallery <span class='menuitem-badge'>new<span></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-jee-seed/" class=" ">JEE app seed</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/ontimize-web-ngx-seed/" class=" ">App seed</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/keycloak/" class=" ">Keycloak <span class='menuitem-badge'>new<span></a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Meta</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/faq/" class=" ">FAQ</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/contributing/" class=" ">Contributing</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/license/" class=" ">License</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/versions/" class=" ">Versions</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/about/" class=" ">About</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+  <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Form lifecylce">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 class="page__title" itemprop="headline">Form lifecylce
+</h1>
+        
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#editable-detail-form" id="markdown-toc-editable-detail-form">Editable detail form</a>    <ul>
+      <li><a href="#states-diagram" id="markdown-toc-states-diagram">States diagram</a></li>
+      <li><a href="#example" id="markdown-toc-example">Example</a></li>
+    </ul>
+  </li>
+  <li><a href="#not-editable-detail-form" id="markdown-toc-not-editable-detail-form">Not editable detail form</a>    <ul>
+      <li><a href="#states-diagram-1" id="markdown-toc-states-diagram-1">States diagram</a></li>
+      <li><a href="#example-1" id="markdown-toc-example-1">Example</a></li>
+    </ul>
+  </li>
+</ul>
+
+  </nav>
+</aside>
+
+<p>A form is called <em>detail form</em> when it is used for managing a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a data collection record. This can be achieved by combining the <a href="https://ontimizeweb.github.io/docs/components/form/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-form</code></a> and a collection component (<a href="https://ontimizeweb.github.io/docs/components/table/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a>, <a href="https://ontimizeweb.github.io/docs/components/list/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-list</code></a> or <a href="https://ontimizeweb.github.io/docs/components/grid/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-grid</code></a>) in your application. In this section we describe how <strong>OntimizeWeb</strong> manage the transitions between the data collection and the detail form.</p>
+
+<p>As a developer, you can decide the behaviour of a detail form in you application. When the user opens a form, you can decide if the form will be in update or read only mode. You can select one of this behaviours by configuring the <code class="language-plaintext highlighter-rouge">editable-detail</code> input in your <code class="language-plaintext highlighter-rouge">o-form</code> component.</p>
+
+<h2 id="editable-detail-form">Editable detail form</h2>
+
+<p>This is the default behaviour of the detail form in <strong>OntimizeWeb</strong> and it is achieved by setting the value <strong>yes</strong>/<strong>true</strong> to the <code class="language-plaintext highlighter-rouge">editable-detail</code> input of the <code class="language-plaintext highlighter-rouge">o-form</code> component.</p>
+
+<p>The form modes for the <em>editable detail form</em> are the following:</p>
+
+<ul>
+  <li><strong>Edition mode (default)</strong>: This is the mode that the form adopts when data is about to be modified. In this mode the form fields are modifiable, and the form toolbar displays the buttons to undo or save data besides the <em>CRUD</em> operations (<em>Create, Read, Update and Delete</em>) setted in the <code class="language-plaintext highlighter-rouge">header-actions</code> form input. However, the save and undo buttons will be disabled until the user modifies some of the fields.</li>
+  <li><strong>Edition mode with save and undo buttons enabled</strong>: The form adopts this mode after any of the form fields contained within it is modified. Now the save and undo buttons are enabled, allowing the user to save or undo the modified data.</li>
+  <li><strong>Insertion mode</strong>: This is the mode used to perform the <em>creation</em> operation. Here, all the contained fields are blank and they are modifiable. The form toolbar shows the buttons to accept or reject the operation.</li>
+</ul>
+
+<h3 id="states-diagram">States diagram</h3>
+
+<p>You can see the states and transitions between a table and the detail form for the <em>editable detail form</em> in the following diagram:</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/form/editableDetailTRUE.png" alt="Detail form editable" class="align-center" /></p>
+
+<h3 id="example">Example</h3>
+
+<blockquote>
+  <p><img src="https://ontimizeweb.github.io/docs/images/components/form/editableDetailYES-gif.gif" alt="Detail form editable example" class="align-center padding-top" /></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>NOTE</strong> This behaviour affects the performance of the attributes <code class="language-plaintext highlighter-rouge">detail-button-in-row</code> and <code class="language-plaintext highlighter-rouge">edit-button-in-row</code> from the <code class="language-plaintext highlighter-rouge">o-table</code> component. When the form is configured as a <em>editable detail form</em> you should not use the edit button on the table row because the form will not parse the <em>edit</em> path.
+<img src="https://ontimizeweb.github.io/docs/images/components/form/modesEditableTRUE.png" alt="Detail form editable transitions" class="align-center padding-top" /></p>
+</blockquote>
+
+<h2 id="not-editable-detail-form">Not editable detail form</h2>
+
+<p>This is the old traditional behaviour for those familiarized with <strong>Ontimize</strong> applications and its achieved by setting the value <strong>no</strong>/<strong>false</strong> to the <code class="language-plaintext highlighter-rouge">editable-detail</code> input in the <code class="language-plaintext highlighter-rouge">o-form</code> component.</p>
+
+<p>The form modes for the <em>not editable detail form</em> are the following:</p>
+
+<ul>
+  <li><strong>Read only (default)</strong>: This is the initial mode used for displaying a record data. In this mode the contained fields are not modifiable, and the form toolbar shows the buttons to perform the edition or the deletion of the data (if those options are present in the <code class="language-plaintext highlighter-rouge">header-actions</code> input).</li>
+  <li><strong>Edition mode (default)</strong>: This is the mode that the form adopts when data is about to be modified after clicking the edit toolbar button. In this mode the fields are modifiable and the form toolbar shows the buttons to undo and accept or reject the changes. However, the undo button will be disabled until the user modifies some of the fields.</li>
+  <li><strong>Edition mode with undo button enabled</strong>: the form adopts this mode after any of the form fields contained within it is modified. Now the undo button is enabled, allowing the user to undo the modified data.</li>
+  <li><strong>Insertion mode</strong>: This is the mode used to perform the <em>creation</em> operation. Here, all the fields are blank and they are modifiable. The form toolbar shows the buttons to accept or reject the operation.</li>
+</ul>
+
+<h3 id="states-diagram-1">States diagram</h3>
+
+<p>You can see the states and trasitions between the table and the detail form for the <em>not editable detail form</em> in the following diagram:</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/form/editableDetailFALSE.png" alt="Detail form not editable" class="align-center" /></p>
+
+<h3 id="example-1">Example</h3>
+
+<blockquote>
+  <p><img src="https://ontimizeweb.github.io/docs/images/components/form/editableDetailNO-gif.gif" alt="Detail form NOT editable example" class="align-center padding-top" /></p>
+</blockquote>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+
+        
+      </footer>
+
+      
+
+      <!-- 
+
+ -->
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<a href="#" class="scrollToTop"><i class="fa fa-fw fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/imatiainnova" target="_blank"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+    
+    
+      <li><a href="http://github.com/OntimizeWeb" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="https://ontimizeweb.github.io/docs/feed.xml" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+      </footer>
+    </div>
+
+    <script src="https://ontimizeweb.github.io/docs/assets/js/main.min.js"></script>
+
+
+
+
+
+  </body>
+</html>

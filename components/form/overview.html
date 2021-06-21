@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-05-05T12:52:25-04:00">
+  <meta property="article:published_time" content="2021-06-21T12:09:02-04:00">
 
 
 
@@ -852,7 +852,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="May 05, 2021">
+    <meta itemprop="datePublished" content="June 21, 2021">
     
 
     <div class="page__inner-wrap">
@@ -928,11 +928,14 @@
     <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
 <ul class="toc__menu" id="markdown-toc">
   <li><a href="#modes" id="markdown-toc-modes">Modes</a></li>
-  <li><a href="#detail-form" id="markdown-toc-detail-form">Detail form</a></li>
-  <li><a href="#form-container" id="markdown-toc-form-container">Form container</a></li>
-  <li><a href="#form-layout-manager" id="markdown-toc-form-layout-manager">Form layout manager</a></li>
+  <li><a href="#form-lifecycle" id="markdown-toc-form-lifecycle">Form lifecycle</a></li>
+  <li><a href="#related-components" id="markdown-toc-related-components">Related components</a>    <ul>
+      <li><a href="#form-container" id="markdown-toc-form-container">Form container</a></li>
+      <li><a href="#form-layout-manager" id="markdown-toc-form-layout-manager">Form layout manager</a></li>
+    </ul>
+  </li>
   <li><a href="#extending-a-form" id="markdown-toc-extending-a-form">Extending a form</a></li>
-  <li><a href="#form-to-filter-table" id="markdown-toc-form-to-filter-table">Form to filter table</a>    <ul>
+  <li><a href="#filtering-of-a-collection-component" id="markdown-toc-filtering-of-a-collection-component">Filtering of a collection component</a>    <ul>
       <li><a href="#parent-keys-filter" id="markdown-toc-parent-keys-filter">Parent keys filter</a></li>
       <li><a href="#filter-builder" id="markdown-toc-filter-builder">Filter builder</a></li>
     </ul>
@@ -943,9 +946,9 @@
   </nav>
 </aside>
 
-<p>Forms are the pillar of management applications. They are used in applications for requesting information from the user or displaying data. <strong>OntimizeWeb</strong> allows you to add a form and insert <a href="https://ontimizeweb.github.io/docs/components/input/overview/overview/" target="_blank">form fields</a> on it in a very easy way.</p>
+<p>Forms are the backbone of management applications. They are used in applications to request information from the user or display data. <strong>OntimizeWeb</strong> allows you to add a form and insert <a href="https://ontimizeweb.github.io/docs/components/input/overview/overview/" target="_blank">form fields</a> into it very easily.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">o-form</code> component allows you to display data from the server and also insert, update and delete records in the database. This can be achived easily by configuring few attributes like <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-form</code> component allows to display data from the server and also to insert, update and delete records in the database. This can be easily achieved by setting some attributes such as <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code>. Check these and other attributes in the <strong>API</strong> section of this page.</p>
 
 <!--
 ## Example
@@ -960,25 +963,24 @@
 -->
 
 <h2 id="modes">Modes</h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">o-form</code> component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the <a href="#detail-form"><em>detail form</em></a> section. The common description of the different form modes is the following:</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-form</code> component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the <a href="#form-lifecycle"><em>form lifecylce</em></a> section. The common description of the different form modes is as follows:</p>
 
 <ul>
   <li>
     <p><strong>Read only mode</strong>:
-The read only mode is used for displaying data. In this mode the form components are not modifiable and the form toolbar shows the buttons to perform <em>CRUD</em> (Create, Read, Update and Delete) operations.</p>
+The read only mode is used for displaying data. In this mode the form components are not modifiable and the form toolbar shows the buttons to perform <em>CRUD</em> operations (Create, Read, Update and Delete).</p>
   </li>
   <li>
     <p><strong>Update mode</strong>:
-The form component adopts the update mode when the data is about to be modified. In this mode the form components are modifiable and the form toolbar shows the buttons to accept or reject changes.</p>
+The form component adopts the update mode when the data is going to be modified. In this mode the form components are modifiable and the form toolbar shows the buttons to accept or reject the changes.</p>
   </li>
   <li>
     <p><strong>Insert mode</strong>
-This is the mode used by the form component to perform creation operations. In this mode, all de form components are empty and modifiable. The form toolbar shows buttons to accept or reject the operation.</p>
+This is the mode used by the form to perform creation operations. In this mode, all the components of the form are empty and modifiable. The form toolbar shows buttons to accept or reject the operation.</p>
   </li>
 </ul>
 
-<p>There is use cases when it is necessary to perform any action right before or after the form changes from one mode to another. You can achieve this thanks to the events that the <code class="language-plaintext highlighter-rouge">o-form</code> emits before and after changing its mode. This events are the following: <code class="language-plaintext highlighter-rouge">beforeInsertMode</code>, <code class="language-plaintext highlighter-rouge">beforeUpdateMode</code>, <code class="language-plaintext highlighter-rouge">beforeInitialMode</code>, <code class="language-plaintext highlighter-rouge">onInsertMode</code>, <code class="language-plaintext highlighter-rouge">onUpdateMode</code> and <code class="language-plaintext highlighter-rouge">onInitialMode</code>.</p>
+<p>There are use cases when it is necessary to perform any action right before or after the form changes from one mode to another. You can achieve this thanks to the events that the <code class="language-plaintext highlighter-rouge">o-form</code> emits before and after changing its mode. This events are the following: <code class="language-plaintext highlighter-rouge">beforeInsertMode</code>, <code class="language-plaintext highlighter-rouge">beforeUpdateMode</code>, <code class="language-plaintext highlighter-rouge">beforeInitialMode</code>, <code class="language-plaintext highlighter-rouge">onInsertMode</code>, <code class="language-plaintext highlighter-rouge">onUpdateMode</code> and <code class="language-plaintext highlighter-rouge">onInitialMode</code>.</p>
 
 <p>For example, you can listen to the <code class="language-plaintext highlighter-rouge">onInsertMode</code> of the <code class="language-plaintext highlighter-rouge">o-form</code> component in your HTML:</p>
 
@@ -992,19 +994,19 @@ This is the mode used by the form component to perform creation operations. In t
   <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="detail-form">Detail form</h2>
+<h2 id="form-lifecycle">Form lifecycle</h2>
+<p>A form is called <em>detail form</em> when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table, list or grid record. This use case can be achieved with <strong>OntimizeWeb</strong> by combining the <code class="language-plaintext highlighter-rouge">o-form</code> and the <a href="https://ontimizeweb.github.io/docs/components/table/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a>, <a href="https://ontimizeweb.github.io/docs/components/list/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-list</code></a> or <a href="https://ontimizeweb.github.io/docs/components/grid/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-grid</code></a> component.</p>
 
-<p>A detail form is an special usage of the form component. A form is called <em>detail form</em> when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table record. This use case can be achieved with <strong>OntimizeWeb</strong> by combining the <code class="language-plaintext highlighter-rouge">o-form</code> and the <a href="https://ontimizeweb.github.io/docs/components/table/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a> component.</p>
+<p>You can read more about this topic in the <a href="https://ontimizeweb.github.io/docs/components/form/lifecycle/" target="_blank">form lifecycle</a> section.</p>
 
-<p>You can read more about this topic in the <a href="https://ontimizeweb.github.io/docs/components/form/detail/" target="_blank">detail form</a> section.</p>
+<h2 id="related-components">Related components</h2>
+<p>There are some components that improve the <code class="language-plaintext highlighter-rouge">o-form</code> usage adding some features without having to implement them.</p>
 
-<h2 id="form-container">Form container</h2>
-
+<h3 id="form-container">Form container</h3>
 <p>In some applications you may want to place a breadcrumb component on top of your form. <strong>OntimizeWeb</strong> allows this using the <code class="language-plaintext highlighter-rouge">o-form-container</code> component. Learn more about this component <a href="https://ontimizeweb.github.io/docs/components/form/container/overview" target="_blank">here</a>.</p>
 
-<h2 id="form-layout-manager">Form layout manager</h2>
-
-<p>A very common feature on management applications is displaying a form with the details related to a row from a data table. As a solution for this, <strong>OntimizeWeb</strong> offers the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component, that allows you managing the transitions between the data table and the form with the row details.</p>
+<h3 id="form-layout-manager">Form layout manager</h3>
+<p>A very common feature in management applications is to display a form with the details related to a record from a data collection. As a solution to this, <strong>OntimizeWeb</strong> offers the <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> component, which allows to manage the transitions between the data collection and the form with the detail view with the data record details.</p>
 
 <p>You can read more about this component <a href="https://ontimizeweb.github.io/docs/components/formlayoutmanager/overview" target="_blank">here</a>.</p>
 
@@ -1113,18 +1115,18 @@ This is the mode used by the form component to perform creation operations. In t
 <span class="nt">&lt;/sign-in-form&gt;</span>
 </code></pre></div></div>
 
-<h2 id="form-to-filter-table">Form to filter table</h2>
+<h2 id="filtering-of-a-collection-component">Filtering of a collection component</h2>
 
-<p>A common use of a form is using the form data introduced by the user for requesting filtered information from a service and display it on a table. <strong>OntimizeWeb</strong> offers you two different solutions for filtering a table using the data of a form component. The simplest way of filtering a table is configuring the <code class="language-plaintext highlighter-rouge">parent-keys</code> attribute of the table we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we shoud use the <a href="#filter-builder">filter builder</a> component.</p>
+<p>A common use of a form is to use the form data entered by the user to request filtered information from a service and display it in a collection component (<a href="https://ontimizeweb.github.io/docs/components/table/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a>, <a href="https://ontimizeweb.github.io/docs/components/list/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-list</code></a> or <a href="https://ontimizeweb.github.io/docs/components/grid/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-grid</code></a>). <strong>OntimizeWeb</strong> offers two different solutions for doing this. The simplest way to do this filtering is to set the <code class="language-plaintext highlighter-rouge">parent-keys</code> input of the collection component we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we have to use the <a href="#filter-builder">filter builder</a> component.</p>
 
 <h3 id="parent-keys-filter">Parent keys filter</h3>
 
-<p>Configuring the <code class="language-plaintext highlighter-rouge">parent-keys</code> attribute of the <a href="https://ontimizeweb.github.io/docs/components/table/api" target="_blank">table</a> with the <code class="language-plaintext highlighter-rouge">attr</code> of the <a href="https://ontimizeweb.github.io/docs/components/input/overview/api" target="_blank">form fields</a> we want to include on the filtering is the simplest and the fastest way of filtering table data. This aproach is not enough when you want to apply complex filters using logical operations.</p>
+<p>Setting the <code class="language-plaintext highlighter-rouge">parent-keys</code> input of the <a href="https://ontimizeweb.github.io/docs/components/table/api" target="_blank">table</a> with the <code class="language-plaintext highlighter-rouge">attr</code> of the <a href="https://ontimizeweb.github.io/docs/components/input/overview/api" target="_blank">form fields</a> we want to include in the filtering is the simplest and fastest way to filter the collection component data. This approach is not sufficient when you want to apply complex filters using logical operations.</p>
 
-<p>In the following example we have a form component with the field for filtering the name, surname and the employee type of a table of employees. Note that the table has configured the attributes <code class="language-plaintext highlighter-rouge">parent-keys</code> with the columns involved in the filtering and its corresponding form component attr&#8217;s. Remember that when the table column and the form component attr are the same, you only have to include it once.</p>
+<p>In the following example we have a form component with the field to filter the first name, surname and employee type of an employees table. Note that the table has the <code class="language-plaintext highlighter-rouge">parent-keys</code> input configured with the columns involved in the filtering and their corresponding attr&#8217;s of the form component. Remember that when the table column and the attr of the form component are the same, you only have to include it once.</p>
 
 <blockquote>
-  <p><strong>NOTE</strong> Keep in mind that the table will not send any request when the parent keys values are all null. You can configure the <code class="language-plaintext highlighter-rouge">query-with-null-parent-keys</code> as in the example below to avoid this, but it is not always recommended. Check the <a href="https://ontimizeweb.github.io/docs/components/table/api" target="_blank">table</a> documentation page.</p>
+  <p><strong>NOTE</strong> Keep in mind that the table will not send any request when the parent keys values are all null. You have to configure the <code class="language-plaintext highlighter-rouge">query-with-null-parent-keys</code> as in the example below to avoid this, but it is not always recommended. Check the <a href="https://ontimizeweb.github.io/docs/components/table/api" target="_blank">table</a> documentation page.</p>
 </blockquote>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
@@ -1154,12 +1156,11 @@ This is the mode used by the form component to perform creation operations. In t
 </code></pre></div></div>
 
 <h3 id="filter-builder">Filter builder</h3>
-
-<p>The filter builder is a component whose purpose is solving the problem described above. It allows you to build complex filtering expressions using the data introduced in a form component. Read more about the filter builder component on its <a href="https://ontimizeweb.github.io/docs/components/filterbuilder/overview/" target="_blank">documentarion page</a>.</p>
+<p>The filter builder is a component whose purpose is to solve the problem described above. It allows to build complex filtering expressions using the data entered in a form component. Read more about the filter builder component <a href="https://ontimizeweb.github.io/docs/components/filterbuilder/overview/" target="_blank">here</a>.</p>
 
 <h2 id="custom-form-toolbar-buttons">Custom form toolbar buttons</h2>
 
-<p><code class="language-plaintext highlighter-rouge">o-form-toolbar-buttons</code> is a directive that allows to add custom buttons in the toolbar form.</p>
+<p><code class="language-plaintext highlighter-rouge">o-form-toolbar-buttons</code> is a directive that allows adding custom buttons to the form toolbar.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">attr=</span><span class="s">"customers_form_edit"</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">fxLayout=</span><span class="s">"column"</span> <span class="na">show-header=</span><span class="s">"yes"</span>
   <span class="na">header-actions=</span><span class="s">"R;I;U;D"</span> <span class="na">#oDetailForm</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span> <span class="na">keys-sql-types=</span><span class="s">"INTEGER"</span> <span class="na">columns=</span><span class="s">"ID_DMS_DOC"</span>
@@ -1734,7 +1735,7 @@ This is the mode used by the form component to perform creation operations. In t
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the <a href="https://ontimizeweb.github.io/docs/components/form/detail/" target="_blank">form detail</a>) section</p>
+    <p class="first"><p>Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the <a href="https://ontimizeweb.github.io/docs/components/form/lifecycle/" target="_blank">form lifecycle</a>) section</p>
 </p>
     
   </td>
@@ -1864,7 +1865,7 @@ This is the mode used by the form component to perform creation operations. In t
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Available action buttons in form toolbar of standard CRUD operations, separated by ‘;’. Available options are R;I;U;D (Refresh, Insert, Update, Delete)</p>
+    <p class="first"><p>Available action buttons in form toolbar of standard CRUD operations, separated by ‘;’. Available options are R;I;U;D (Refresh, Insert, Update, Delete). Also ‘all’ is available (showing all buttons).</p>
 </p>
     
   </td>
@@ -1882,7 +1883,7 @@ This is the mode used by the form component to perform creation operations. In t
             
             
   <td class="" o-component-default >
-    <p class="first"><p>R;I;U;D</p>
+    <p class="first">
 </p>
     
   </td>
@@ -3099,7 +3100,7 @@ This is the mode used by the form component to perform creation operations. In t
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Include navigations buttons in form-toolbar. It’s not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> <a href="https://ontimizeweb.github.io/docs/components/formlayoutmanager/overview" target="_blank">here</a>)</p>
+    <p class="first"><p>Indicates whether or not to include navigations buttons in form-toolbar. It’s not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about <code class="language-plaintext highlighter-rouge">o-form-layout-manager</code> <a href="https://ontimizeweb.github.io/docs/components/formlayoutmanager/overview" target="_blank">here</a>)</p>
 </p>
     
   </td>
@@ -3229,7 +3230,7 @@ This is the mode used by the form component to perform creation operations. In t
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Indicates whether or not to show detail form after insert new record. Will be deprecated on version 8.x.x</p>
+    <p class="first"><p>Indicates whether or not to show the detail form after inserting a new record. Will be deprecated on version 8.x.x</p>
 </p>
     
   </td>
@@ -4591,7 +4592,7 @@ This is the mode used by the form component to perform creation operations. In t
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-05T12:52:25-04:00">May 05, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-06-21T12:09:02-04:00">June 21, 2021</time></p>
         
       </footer>
 

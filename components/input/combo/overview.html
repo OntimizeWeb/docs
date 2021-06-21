@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-05-05T12:52:25-04:00">
+  <meta property="article:published_time" content="2021-06-21T12:09:02-04:00">
 
 
 
@@ -830,7 +830,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="May 05, 2021">
+    <meta itemprop="datePublished" content="June 21, 2021">
     
 
     <div class="page__inner-wrap">
@@ -1048,6 +1048,17 @@
 
 <p>You can check a working example of this renderer <a href="https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo">here</a>.</p>
 
+<p><strong>Icon combo renderer</strong></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-combo</span> <span class="na">attr=</span><span class="s">"combo-editable-search"</span>
+  <span class="na">value-column=</span><span class="s">"EMPLOYEE_TYPE_ID"</span> <span class="na">columns=</span><span class="s">"EMPLOYEE_TYPE_ID;EMPLOYEE_TYPE_VALUE;EMPLOYEE_TYPE_ICON"</span> <span class="na">visible-columns=</span><span class="s">"EMPLOYEE_TYPE_VALUE"</span> <span class="na">required=</span><span class="s">"yes"</span> <span class="na">read-only=</span><span class="s">"no"</span> <span class="na">null-selection=</span><span class="s">"no"</span> <span class="na">searchable=</span><span class="s">"yes"</span> <span class="na">fxFlex</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;o-combo-renderer-icon</span> <span class="na">icon-position=</span><span class="s">"right"</span> <span class="na">icon-column=</span><span class="s">"EMPLOYEE_TYPE_ICON"</span><span class="nt">&gt;&lt;/o-combo-renderer-percentage&gt;</span>
+<span class="nt">&lt;/o-combo&gt;</span>
+</code></pre></div></div>
+<p>This renderer uses Material Icons to display each icon, you can see the complete set of icons <a href="https://fonts.google.com/icons">here</a>.</p>
+
+<p>You can check a working example of this renderer <a href="https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo">here</a>.</p>
+
 <h3 id="custom-renderers-new">Custom renderers <span class="menuitem-badge">new<span></span></span></h3>
 
 <p>A custom renderer allows you to display the data of a combo formatted as you desire. For this, you need to create a new component that extends the custom combo renderer class and place it into your o-combo component.</p>
@@ -1194,6 +1205,13 @@
     
   
   <li><a href="#o-combo-renderer-percentage">o-combo-renderer-percentage</a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#o-combo-renderer-icon">o-combo-renderer-icon</a></li>
   
   
 
@@ -3861,6 +3879,207 @@
   
   
 
+  
+  
+  
+  <h2 id="o-combo-renderer-icon">
+    <span>OComboRendererIconComponent </span>
+    
+      extends OComboCustomRenderer
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-combo-renderer-icon</p>
+  
+
+  
+
+  
+
+
+  
+    <h3 id="inputs" class="grey-color">Inputs</h3>
+  
+
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+            <th class=""> Default</th>
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>icon-column</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates the column of which icon is displayed in each option.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>icon</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>icon-position</p>
+</p>
+    
+      <p><i>left | right</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates the position of the icon.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>left</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+
+
+  
+
+
+  
+
+  
+
+
+  
+  
+
 
   </div>
 </div>
@@ -3881,7 +4100,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-05-05T12:52:25-04:00">May 05, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-06-21T12:09:02-04:00">June 21, 2021</time></p>
         
       </footer>
 
