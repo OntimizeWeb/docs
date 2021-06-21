@@ -53,9 +53,9 @@ attributes: [
 },{
   name: "header-actions",
   type: "string",
-  default: "R;I;U;D",
+  default: "",
   required: "",
-  description: "Available action buttons in form toolbar of standard CRUD operations, separated by ';'. Available options are R;I;U;D (Refresh, Insert, Update, Delete)"
+  description: "Available action buttons in form toolbar of standard CRUD operations, separated by ';'. Available options are R;I;U;D (Refresh, Insert, Update, Delete). Also 'all' is available (showing all buttons)."
 },{
   name: "show-header-actions-text",
   type: "no | false | yes | true",
@@ -67,7 +67,7 @@ attributes: [
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not to show detail form after insert new record. Will be deprecated on version 8.x.x"
+  description: "Indicates whether or not to show the detail form after inserting a new record. Will be deprecated on version 8.x.x"
 },{
   name: "stay-in-record-after-edit",
   type: "no | false | yes | true",
@@ -103,13 +103,13 @@ attributes: [
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the [form detail](https://ontimizeweb.github.io/docs/components/form/detail/){:target='_blank'}) section"
+  description: "Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the [form lifecycle](https://ontimizeweb.github.io/docs/components/form/lifecycle/){:target='_blank'}) section"
 },{
   name: "show-header-navigation",
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/components/formlayoutmanager/overview){:target='_blank'})"
+  description: "Indicates whether or not to include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/components/formlayoutmanager/overview){:target='_blank'})"
 },{
   name: "undo-button",
   type: "no | false | yes | true",

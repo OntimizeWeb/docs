@@ -207,8 +207,8 @@ components:
       - title: "Form"
         url: /components/form/overview
         children:
-          - title: "Detail form"
-            url: /components/form/detail/
+          - title: "Form lifecycle"
+            url: /components/form/lifecycle/
           - title: "Form container"
             url: /components/form/container/
       # - title: "DataTable <small>(deprecated)</small>"

@@ -1,6 +1,25 @@
 directive: "o-form-layout-dialog-options"
+title: "Dialog mode"
 
 attributes: [{
+  name: "label-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Form data columns used in the detail form title. Separated by ';'"
+},{
+  name: "separator",
+  type: "string",
+  default: "' ' (blank space)",
+  required: "",
+  description: "Separator between multiple label columns values"
+},{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Detail form main title"
+},{
   name: "width",
   type: "string",
   description : "Width of the dialog."
@@ -8,7 +27,7 @@ attributes: [{
   name: "min-width",
   type: "string | number",
   required: "",
-  description: "Form layout manager mode."
+  description: "Min width of the dialog."
 },{
   name: "backdrop-class",
   type: "string",
@@ -19,7 +38,7 @@ attributes: [{
   type: "string | number",
   default: "",
   required: "",
-  description: "Max width of the dialog"
+  description: "Max width of the dialog."
 },{
   name: "height",
   type: "string",
