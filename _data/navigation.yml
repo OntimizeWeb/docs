@@ -105,6 +105,8 @@ docs:
         url: /ontimize-web-ngx-jee-seed/
       - title: "App seed"
         url: /ontimize-web-ngx-seed/
+      - title: "Keycloak <span class='menuitem-badge'>new<span>"
+        url: /keycloak/
   - title: Meta
     children:
       - title: "FAQ"
@@ -205,8 +207,8 @@ components:
       - title: "Form"
         url: /components/form/overview
         children:
-          - title: "Detail form"
-            url: /components/form/detail/
+          - title: "Form lifecycle"
+            url: /components/form/lifecycle/
           - title: "Form container"
             url: /components/form/container/
       # - title: "DataTable <small>(deprecated)</small>"
@@ -364,7 +366,6 @@ ontimize_web_ngx_map:
         url: /map/configuration/o-marker/overview
       - title: "Draw Controls"
         url: /map/configuration/o-map-draw-controls/overview
-      
 
 ontimize_web_ngx_gallery:
   - title: "Getting Started"
@@ -378,3 +379,10 @@ ontimize_web_ngx_gallery:
       - title: "Gallery"
         url: /gallery/components/gallery/overview
 
+ontimize_web_ngx_keycloak:
+  - title: Keycloak
+    children:
+      - title: "Overview"
+        url: /keycloak/overview/
+      - title: "Installation"
+        url: /keycloak/installation/

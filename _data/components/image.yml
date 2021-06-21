@@ -54,6 +54,12 @@ attributes: [{
   default: "image/*",
   required: "",
   description: "File types allowed on the image input, serparated by ';'. Accepted values: <image_extension>, 'image/*'"
+},{
+  name: "max-file-size",
+  type: "number",
+  default: "",
+  required: "",
+  description: "Maximum file size (bytes) allowed"
 }]
 
 inheritedOutputs: [{

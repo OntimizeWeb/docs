@@ -196,9 +196,30 @@ By default the filtering is *local*, you can enable *remote* filtering setting `
 
 ## Quick filter
 
-This option is enabled by default, the filter is visible in the top right. You can disable it setting `quick-filter="no"`.
+This option is enabled by default and the filter is visible in the top right. You can disable it setting `quick-filter="no"`. You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
-You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
+This option creates the `o-table-quickfilter` component within the `o-table`. This component displays a checkbox list (when you click on the icon) where you can select which columns to filter by when the input value changes, also allows to change the filter case sensitive option during execution.
+
+![Table quickfilter]({{ "/images/components/tabla/o-table-quickfilter.png" | absolute_url }}){: .comp-example-img}
+
+If you want to override this component to configure its options you can define your own quickfilter within your `o-table` and it will replace the default implementation. You can see its properties configuration in the API section.
+
+```html
+<o-table attr="customers" entity="ECustomers" title="CUSTOMERS"
+  columns="CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY"
+  visible-columns="PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY">
+
+  <o-table-quickfilter placeholder="{{ 'MY_OWN_PLACEHOLDER' | oTranslate }}" (onChange)="myOnChangeMethod()">
+  </o-table-quickfilter>
+
+</o-table>
+```
+
+---
+**NOTE**
+The option to change the filter case sensitive filtering may not appear if `pageable` attribute is setted to false in table component.
+
+---
 
 Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in `quick-filter-function` property.
 
@@ -262,7 +283,7 @@ This option will be available in table menu by default. However, you can configu
 
 **OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/filterbuilder/overview/){:target='_blank'} component to you application.
 
-The `o-filter-builder` component uses the `IExpression` interface that represents a filtering expression. You can read more about how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
+The `o-filter-builder` component uses the `Expression` interface that represents a filtering expression. You can read more about how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.
 
 ## Cell renderers
 

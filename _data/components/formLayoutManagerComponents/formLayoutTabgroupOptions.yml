@@ -1,16 +1,41 @@
 directive: "o-form-layout-tabgroup-options"
+title: "Tabgroup mode"
 
 attributes: [{
+  name: "label-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Form data columns used in the detail form title. Separated by ';'"
+},{
+  name: "separator",
+  type: "string",
+  default: "' ' (blank space)",
+  required: "",
+  description: "Separator between multiple label columns values"
+},{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Detail form main title"
+},{
+  name: "title-data-origin",
+  type: "string",
+  default: "",
+  required: "",
+  description: "`attr` of the form component used for retrieving the data used on the tabs title"
+},{
   name: "background-color",
-  type: "ThemePalette",
+  type: "ThemePalette ('primary' | 'accent' | 'warn')",
   description: "Background color of the tab nav."
 },{
   name: "color",
-  type: "ThemePalette",
+  type: "ThemePalette ('primary' | 'accent' | 'warn')",
   description: "Theme color palette for the component."
 },{
   name: "header-position",
-  type: " 'above' | 'below'",
+  type: "'above' | 'below'",
   default: "above",
   required: "",
   description: "Position of the tab header."

@@ -6,7 +6,7 @@ attributes: [{
   name: "attr"
 },{
   name: "mode",
-  type: "tab | dialog",
+  type: "tab | dialog | split-pane",
   default: "dialog",
   required: "",
   description: "Form layout manager mode"
@@ -15,25 +15,25 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "Form data columns used in the detail form title. Separated by ';'"
+  description: "<b><i>Deprecated</i></b>. Form data columns used in the detail form title. Separated by ';'"
 },{
   name: "separator",
   type: "string",
   default: "' ' (blank space)",
   required: "",
-  description: "Separator between multiple label columns values"
+  description: "<b><i>Deprecated</i></b>. Separator between multiple label columns values"
 },{
   name: "title",
   type: "string",
   default: "",
   required: "",
-  description: "Detail form main title"
+  description: "<b><i>Deprecated</i></b>. Detail form main title"
 },{
   name: "title-data-origin",
   type: "string",
   default: "",
   required: "",
-  description: "`attr` of the form component used for retrieving the data used on the tabs title"
+  description: "<b><i>Deprecated</i></b>. `attr` of the form component used for retrieving the data used on the tabs title"
 },{
   name: "dialog-class",
   type: "string",
@@ -83,6 +83,9 @@ attributes: [{
 outputs: [{
   name: "onMainTabSelected",
   description: "Event triggered when the main tab is selected"
+},{
+  name: "onSelectedTabChange",
+  description: "Event triggered when a detail tab is changed"
 },{
   name: "onCloseTab",
   description: "Event triggered when a detail tab is closed"

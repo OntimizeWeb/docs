@@ -50,7 +50,9 @@ attributes: [{
   name: "filter-case-sensitive"
 },{
   name: "quick-filter"
-},]
+},{
+  name: "quick-filter-placeholder"
+}]
 
 methods: [{
   name: "initialize",

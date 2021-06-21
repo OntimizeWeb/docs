@@ -31,7 +31,7 @@ The `oFilterBuilderClear` directive is used to clear the form components that pa
 ## Building the filter
 This `o-filter-builder` component builds automatically [complex filtering expressions]({{ base_path }}/guide/filterexpression/){:target='_blank'} considering the values provided by the form components included in the `filters` attribute. For building this complex expression, the component ignores **null** and **undefined** values and join all the simple expressions with the **OR** operator by default.
 
-For building custom complex filtering expressions, set the `expression-builder` attribute with a function that returns an `IExpression` object like in the example below.
+For building custom complex filtering expressions, set the `expression-builder` attribute with a function that returns an `Expression` object like in the example below.
 
 ```html
 <o-filter-builder #filterBuilder attr="thefilter" filters="NAME:EMPLOYEENAME;SURNAME:EMPLOYEESURNAME;EMPLOYEETYPEID" [target]="tableEmployees"
@@ -81,7 +81,7 @@ In the following example there is a `o-form` component that contains two `o-text
 ```javascript
 import { Component, } from '@angular/core';
 
-import { FilterExpressionUtils, IExpression } from 'ontimize-web-ngx';
+import { FilterExpressionUtils, Expression } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'employees-home',
@@ -90,9 +90,9 @@ import { FilterExpressionUtils, IExpression } from 'ontimize-web-ngx';
 })
 export class EmployeesHomeComponent {
 
-  createFilter(values: Array<{ attr, value }>): IExpression {
+  createFilter(values: Array<{ attr, value }>): Expression {
     // Prepare simple expressions from the filter components values
-    let filters: Array<IExpression> = [];
+    let filters: Array<Expression> = [];
     values.forEach(fil => {
       if (fil.value) {
         if (fil.attr === 'EMPLOYEENAME' || fil.attr === 'EMPLOYEESURNAME') {

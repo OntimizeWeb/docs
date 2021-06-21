@@ -7,7 +7,7 @@ permalink: /charts/overview/
 
 ## Introduction
 
-The **Ontimize Web Charts** is an an implementation of [nvD3](https://nvd3.org/){:target="_blank"} and [D3](https://d3js.org/){:target="_blank"} charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
+The **Ontimize Web Charts** is an implementation of [nvD3](https://nvd3.org/){:target="_blank"} and [D3](https://d3js.org/){:target="_blank"} charts library using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
 
 Below you can see a list with all available chart types:
 
