@@ -19,6 +19,12 @@ attributes: [{
   required: "",
   description: "Visible columns. Separated by ';'"
 },{
+  name: "default-visible-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Initial visible columns. Separated by ';'"
+},{
   name: "sort-columns",
   type: "string",
   default: "",
