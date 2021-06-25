@@ -37,7 +37,7 @@ Ontimize Web Keycloak provides an implementation of the service `AuthService` fr
 
 ```javascript
 import { O_AUTH_SERVICE } from 'ontimize-web-ngx';
-import { OKeycloakAuthService OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak';
+import { OKeycloakAuthService, OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak';
 
 @NgModule({
   imports: [
@@ -60,7 +60,7 @@ Use the injection token `O_KEYCLOAK_OPTIONS` for providing the configuration of 
 
 ```javascript
 import { O_AUTH_SERVICE } from 'ontimize-web-ngx';
-import { KeycloakOptions, O_KEYCLOAK_OPTIONS, OKeycloakAuthService OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak';
+import { KeycloakOptions, O_KEYCLOAK_OPTIONS, OKeycloakAuthService, OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak';
 
 const keycloakOptions: KeycloakOptions = {
   config: {
