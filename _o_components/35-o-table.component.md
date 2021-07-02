@@ -666,6 +666,16 @@ The configuration is similar to the renderer text. The following example uses th
     </o-table-column>
   ```
 
+*Email*
+
+The configuration is similar to the text editor. To consult all the parameters of the editor see the **API**.
+
+ ```html
+    <o-table-column attr="EMAIL" title="EMAIL">
+        <o-table-cell-editor-email (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-email>
+    </o-table-column>
+  ```
+
 ### Custom editors
 
 To create a custom editor, you need to create a new component to display custom editor information and place it inside a cell.
