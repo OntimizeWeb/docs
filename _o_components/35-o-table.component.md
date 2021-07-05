@@ -200,7 +200,7 @@ This option is enabled by default and the filter is visible in the top right. Yo
 
 This option creates the `o-table-quickfilter` component within the `o-table`. This component displays a checkbox list (when you click on the icon) where you can select which columns to filter by when the input value changes, also allows to change the filter case sensitive option during execution.
 
-![Table quickfilter]({{ "/images/components/tabla/o-table-quickfilter.png" | absolute_url }}){: .comp-example-img}
+![Table quickfilter]({{ "/images/components/tabla/o-table-quickfilter.PNG" | absolute_url }}){: .comp-example-img}
 
 If you want to override this component to configure its options you can define your own quickfilter within your `o-table` and it will replace the default implementation. You can see its properties configuration in the API section.
 
@@ -1230,7 +1230,7 @@ It is possible to define a *template with context*, so that if the defined templ
 ```
 
 
-![Row expanded with a template with context]({{ "/images/components/tabla/row-expanded-context.png" | absolute_url }}){: .comp-example-img}
+![Row expanded with a template with context]({{ "/images/components/tabla/row-expanded-context.PNG" | absolute_url }}){: .comp-example-img}
 
 ### Autoadjust <span class='menuitem-badge'>new<span>
 
@@ -1258,11 +1258,11 @@ The `o-table` component supports automatically adjust to the content of the colu
   </o-table>
 ```
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust.png" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust.PNG" | absolute_url }}){: .comp-example-img}
 
 There is a possibility that the content is **large** and the result is not what is expected like the example shown below.
 
-![Table width autoadjust]({{ "/images/components/tabla/table-autoadjust-overflow-hidden.png" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table-autoadjust-overflow-hidden.PNG" | absolute_url }}){: .comp-example-img}
 
 However, if you want to control similar case, you can do so by configuring `auto-adjust="yes"` width several options such as:
 * `horizontal-scroll=yes`
@@ -1271,13 +1271,13 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 1. In the next case we have applied `horizontal-scroll=yes` and  `auto-adjust="yes"`, the result would be the following.
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-horizontal-scroll.png" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
 <!-- </div> -->
 
 {:start="2"}
 2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following..
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-multiline.png" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
 
 {:start="3"}
 3. In the next case we have applied `max-width="300px"` in `o-table-column` and  `auto-adjust="yes"`, the result would be the following..
@@ -1286,7 +1286,7 @@ However, if you want to control similar case, you can do so by configuring `auto
 <o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
 ```
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.png" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
 
 ### Row grouping <span class='menuitem-badge'>new<span>
 

@@ -227,12 +227,12 @@ In the [permissions]({{ base_path }}/guide/permissions/){:target="_blank"} secti
 
 <!-- ## OntimizePermissions For using the `OntimizePermissions` service the `permissionsConfiguration` configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page). ```javascript ... permissionsConfiguration: { entity: , keyColumn: string, valueColumn: string } ... ``` -->
 
- ## OntimizeEEPermissions
+## OntimizeEEPermissions
 
 For using the **OntimizeEEPermissions** service, the `permissionsConfiguration` configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page).
 
 ```javascript
-...
+  ...
   permissionsConfiguration: {
     service: 'permissions'
   }
