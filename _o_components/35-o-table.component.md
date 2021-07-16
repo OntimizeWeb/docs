@@ -688,6 +688,7 @@ The configuration is similar to the text editor. To consult all the parameters o
         <o-table-cell-editor-email (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-email>
     </o-table-column>
   ```
+
 ### Custom editors
 
 To create a custom editor, you need to create a new component to display custom editor information and place it inside a cell.
@@ -749,6 +750,42 @@ The o-table-cell-editor-name.html file is as follows:
 ```
 
 Finally, add the *OTableCellEditorName* component to your module.
+
+### Validators on editors
+
+You can setup validation on the editors configured in the table with `o-validator` component.
+
+Using the `o-validator` component has the advantage that the user can define any validation error message for their editors. For doing that user has to include the  [`o-validator`]({{ base_path }}/components/input/validator/overview/){:target='_blank'} component inside the HTML definition of the `o-table-cell-editor`.
+
+Below is an example of using the **pattern validator**.
+```html
+  <o-table-column attr="PASSWORD" title="PASSWORD" [validators]="validatorsNewPasswordArray">
+    <o-table-cell-editor-text>
+      <o-validator error-name="hasCapitalCase" error-text="Must have a capital case"></o-validator>
+      <o-validator error-name="hasNumber" error-text="Must have a number"></o-validator>
+      <o-validator error-name="hasSmallCase" error-text="Must have a small case"></o-validator>
+      <o-validator error-name="hasSpecialCharacters" error-text="Must have one special character"></o-validator>
+    </o-table-cell-editor-text>
+  </o-table-column>
+```
+
+```ts
+...
+  validatorsNewPasswordArray: ValidatorFn[] = [];
+  constructor() {
+    // check whether the entered password has a number
+    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\d/, 'hasNumber'));
+    // check whether the entered password has upper case letter
+    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase'));
+    // check whether the entered password has small case letter
+    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase'));
+    // check whether the entered password has a special character
+    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/, 'hasSpecialCharacters'));
+  }
+...
+```
+![Input pattern validator]({{ "/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
+
 
 ## Features
 ### Checkbox selection
@@ -977,6 +1014,8 @@ In the following example the table has a insertable row where the user may intro
 The `o-table-insertable-row` support 2 differnent positions which can be set via the `position` input, `first` and `last`. By default, it's `last`.
 
 To create a custom insertable column, you must define a custom editor for the column following the same steps as in <a href="#custom-editors"> Custom editors</a> and add the column attr column in `columns` attribute in `o-table-insertable-row`.
+
+If you add validators to your `o-table-cell-editor` this validation will work also in the insertable row editors.
 
 You can see more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/insertablerow){:target="_blank"}.
 
