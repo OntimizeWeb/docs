@@ -223,7 +223,7 @@ attributes: [{
   type: "yes|no|true|false",
   description:  Whether enabled or not virtual scrolling by default",
   required: "",
-  default: "no"
+  default: "yes"
 }]
 
 
