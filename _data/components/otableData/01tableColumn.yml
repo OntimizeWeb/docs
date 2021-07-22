@@ -119,4 +119,9 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the column is groupable"
+},{
+  name: "validators",
+  type: "ValidatorFn[]",
+  default: "[]",
+  description: "Array of custom validators to apply to the component value. Each elemnent must be a Angular [ValidatorFn](https://v8.angular.io/api/forms/ValidatorFn)"
 }]
