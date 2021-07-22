@@ -218,6 +218,12 @@ attributes: [{
   description: "Whether collapse the grouped columns by default",
   required: "",
   default: "no"
+},{
+  name: "virtual-scroll",
+  type: "yes|no|true|false",
+  description:  Whether enabled or not virtual scrolling by default",
+  required: "",
+  default: "yes"
 }]
 
 
