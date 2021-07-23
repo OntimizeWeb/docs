@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-07-05T04:42:23-04:00">
+  <meta property="article:published_time" content="2021-07-23T08:23:52-04:00">
 
 
 
@@ -860,7 +860,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="July 05, 2021">
+    <meta itemprop="datePublished" content="July 23, 2021">
     
 
     <div class="page__inner-wrap">
@@ -946,6 +946,7 @@
   <li><a href="#editing" id="markdown-toc-editing">Editing</a>    <ul>
       <li><a href="#default-editors" id="markdown-toc-default-editors">Default editors</a></li>
       <li><a href="#custom-editors" id="markdown-toc-custom-editors">Custom editors</a></li>
+      <li><a href="#validators-on-editors" id="markdown-toc-validators-on-editors">Validators on editors</a></li>
     </ul>
   </li>
   <li><a href="#features" id="markdown-toc-features">Features</a>    <ul>
@@ -1701,6 +1702,15 @@ The option to change the filter case sensitive filtering may not appear if <code
     <span class="nt">&lt;/o-table-column&gt;</span>
 </code></pre></div></div>
 
+<p><em>Email</em></p>
+
+<p>The configuration is similar to the text editor. To consult all the parameters of the editor see the <strong>API</strong>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"EMAIL"</span> <span class="na">title=</span><span class="s">"EMAIL"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;o-table-cell-editor-email</span> <span class="na">(editionStarted)=</span><span class="s">"editionStarted($event)"</span> <span class="na">(editionCancelled)=</span><span class="s">"editionCancelled($event)"</span> <span class="na">(editionCommitted)=</span><span class="s">"editionCommitted($event)"</span><span class="nt">&gt;&lt;/o-table-cell-editor-email&gt;</span>
+    <span class="nt">&lt;/o-table-column&gt;</span>
+</code></pre></div></div>
+
 <h3 id="custom-editors">Custom editors</h3>
 
 <p>To create a custom editor, you need to create a new component to display custom editor information and place it inside a cell.</p>
@@ -1769,6 +1779,39 @@ The <em>let</em> keyword declares a template input variable that you reference w
 </code></pre></div></div>
 
 <p>Finally, add the <em>OTableCellEditorName</em> component to your module.</p>
+
+<h3 id="validators-on-editors">Validators on editors</h3>
+
+<p>You can setup validation on the editors configured in the table with <code class="language-plaintext highlighter-rouge">o-validator</code> component.</p>
+
+<p>Using the <code class="language-plaintext highlighter-rouge">o-validator</code> component has the advantage that the user can define any validation error message for their editors. For doing that user has to include the  <a href="https://ontimizeweb.github.io/docs/components/input/validator/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-validator</code></a> component inside the HTML definition of the <code class="language-plaintext highlighter-rouge">o-table-cell-editor</code>.</p>
+
+<p>Below is an example of using the <strong>pattern validator</strong>.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table-column</span> <span class="na">attr=</span><span class="s">"PASSWORD"</span> <span class="na">title=</span><span class="s">"PASSWORD"</span> <span class="na">[validators]=</span><span class="s">"validatorsNewPasswordArray"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;o-table-cell-editor-text&gt;</span>
+      <span class="nt">&lt;o-validator</span> <span class="na">error-name=</span><span class="s">"hasCapitalCase"</span> <span class="na">error-text=</span><span class="s">"Must have a capital case"</span><span class="nt">&gt;&lt;/o-validator&gt;</span>
+      <span class="nt">&lt;o-validator</span> <span class="na">error-name=</span><span class="s">"hasNumber"</span> <span class="na">error-text=</span><span class="s">"Must have a number"</span><span class="nt">&gt;&lt;/o-validator&gt;</span>
+      <span class="nt">&lt;o-validator</span> <span class="na">error-name=</span><span class="s">"hasSmallCase"</span> <span class="na">error-text=</span><span class="s">"Must have a small case"</span><span class="nt">&gt;&lt;/o-validator&gt;</span>
+      <span class="nt">&lt;o-validator</span> <span class="na">error-name=</span><span class="s">"hasSpecialCharacters"</span> <span class="na">error-text=</span><span class="s">"Must have one special character"</span><span class="nt">&gt;&lt;/o-validator&gt;</span>
+    <span class="nt">&lt;/o-table-cell-editor-text&gt;</span>
+  <span class="nt">&lt;/o-table-column&gt;</span>
+</code></pre></div></div>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+  <span class="nx">validatorsNewPasswordArray</span><span class="p">:</span> <span class="nx">ValidatorFn</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// check whether the entered password has a number</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">validatorsNewPasswordArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">OValidators</span><span class="p">.</span><span class="nx">patternValidator</span><span class="p">(</span><span class="sr">/</span><span class="se">\d</span><span class="sr">/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hasNumber</span><span class="dl">'</span><span class="p">));</span>
+    <span class="c1">// check whether the entered password has upper case letter</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">validatorsNewPasswordArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">OValidators</span><span class="p">.</span><span class="nx">patternValidator</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">A-Z</span><span class="se">]</span><span class="sr">/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hasCapitalCase</span><span class="dl">'</span><span class="p">));</span>
+    <span class="c1">// check whether the entered password has small case letter</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">validatorsNewPasswordArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">OValidators</span><span class="p">.</span><span class="nx">patternValidator</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">a-z</span><span class="se">]</span><span class="sr">/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hasSmallCase</span><span class="dl">'</span><span class="p">));</span>
+    <span class="c1">// check whether the entered password has a special character</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">validatorsNewPasswordArray</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">OValidators</span><span class="p">.</span><span class="nx">patternValidator</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr"> `!@#$%^&amp;*()_+</span><span class="se">\-</span><span class="sr">=</span><span class="se">\[\]</span><span class="sr">{};':"</span><span class="se">\\</span><span class="sr">|,.&lt;&gt;</span><span class="se">\/</span><span class="sr">?~</span><span class="se">]</span><span class="sr">/</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hasSpecialCharacters</span><span class="dl">'</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">...</span>
+</code></pre></div></div>
+<p><img src="https://ontimizeweb.github.io/docs/images/components/inputs/validators/pattern.png" alt="Input pattern validator" class="comp-example-img" /></p>
 
 <h2 id="features">Features</h2>
 <h3 id="checkbox-selection">Checkbox selection</h3>
@@ -1987,6 +2030,8 @@ In this component you can define the columns and required columns with <code cla
 <p>The <code class="language-plaintext highlighter-rouge">o-table-insertable-row</code> support 2 differnent positions which can be set via the <code class="language-plaintext highlighter-rouge">position</code> input, <code class="language-plaintext highlighter-rouge">first</code> and <code class="language-plaintext highlighter-rouge">last</code>. By default, it’s <code class="language-plaintext highlighter-rouge">last</code>.</p>
 
 <p>To create a custom insertable column, you must define a custom editor for the column following the same steps as in <a href="#custom-editors"> Custom editors</a> and add the column attr column in <code class="language-plaintext highlighter-rouge">columns</code> attribute in <code class="language-plaintext highlighter-rouge">o-table-insertable-row</code>.</p>
+
+<p>If you add validators to your <code class="language-plaintext highlighter-rouge">o-table-cell-editor</code> this validation will work also in the insertable row editors.</p>
 
 <p>You can see more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/table/insertablerow" target="_blank">OntimizeWeb playground</a>.</p>
 
@@ -2676,6 +2721,13 @@ For example with the primary palette by following the steps below.</p>
     
   
   <li><a href="#o-table-cell-editor-time">o-table-cell-editor-time</a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#o-table-cell-editor-email">o-table-cell-editor-email</a></li>
   
   
 
@@ -3683,7 +3735,7 @@ For example with the primary palette by following the steps below.</p>
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Indicates whether or not to have a fixed header and footer when the content is greather than its own height</p>
+    <p class="first"><p>Indicates whether or not to have a fixed header when the content is greather than its own height</p>
 </p>
     
   </td>
@@ -3701,7 +3753,7 @@ For example with the primary palette by following the steps below.</p>
             
             
   <td class="" o-component-default >
-    <p class="first"><p>no</p>
+    <p class="first"><p>yes</p>
 </p>
     
   </td>
@@ -5128,6 +5180,71 @@ For example with the primary palette by following the steps below.</p>
             
   <td class="" o-component-default >
     <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>virtual-scroll</p>
+</p>
+    
+      <p><i>yes|no|true|false</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Whether enabled or not virtual scrolling by default”</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
 </p>
     
   </td>
@@ -6991,6 +7108,71 @@ For example with the primary palette by following the steps below.</p>
             
   <td class="" o-component-default >
     <p class="first"><p>string</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>validators</p>
+</p>
+    
+      <p><i>ValidatorFn[]</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Array of custom validators to apply to the component value. Each elemnent must be a Angular <a href="https://v8.angular.io/api/forms/ValidatorFn">ValidatorFn</a></p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>[]</p>
 </p>
     
   </td>
@@ -18222,6 +18404,89 @@ For example with the primary palette by following the steps below.</p>
   
   
 
+  
+  
+  
+  <h2 id="o-table-cell-editor-email">
+    <span>OTableCellEditorEmailComponent </span>
+    
+      extends OBaseTableCellEditor
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-table-cell-editor-email</p>
+  
+
+  
+
+  
+    <h3 class="grey-color" id="inherited-inputs">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/api" rel="permalink">OBaseTableCellEditor:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> enabled </li>
+          
+            <li> label </li>
+          
+            <li> required </li>
+          
+            <li> show-notification-on-edit </li>
+          
+            <li> show-placeholder </li>
+          
+            <li> update-record-on-edit </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
+  
+
+
+  
+    <h3 id="inputs" class="grey-color">Inputs</h3>
+  
+
+  
+    <p>No additional inputs</p>
+  
+
+
+  
+    <h3 id="inherited-outputs" class="grey-color">Inherited outputs</h3>
+    <ul>
+      
+      
+      <li>
+        from <a href="https://ontimizeweb.github.io/docs/components/table/obasetablecelleditor/api" rel="permalink">OBaseTableCellEditor:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> editionCancelled </li>
+          
+            <li> editionCommitted </li>
+          
+            <li> editionStarted </li>
+          
+            <li> onPostUpdateRecord </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
+  
+
+  
+
+
+  
+  
+
 
     
 
@@ -18319,7 +18584,7 @@ For example with the primary palette by following the steps below.</p>
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-05T04:42:23-04:00">July 05, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-23T08:23:52-04:00">July 23, 2021</time></p>
         
       </footer>
 
