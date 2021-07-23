@@ -65,7 +65,7 @@ attributes: [{
 },{
   name: "fixed-header",
   type: "no | false | yes | true",
-  default: "true",
+  default: "yes",
   required: "",
   description: "Indicates whether or not to have a fixed header when the content is greather than its own height"
 },{
