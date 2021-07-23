@@ -65,9 +65,9 @@ attributes: [{
 },{
   name: "fixed-header",
   type: "no | false | yes | true",
-  default: "no",
+  default: "yes",
   required: "",
-  description: "Indicates whether or not to have a fixed header and footer when the content is greather than its own height"
+  description: "Indicates whether or not to have a fixed header when the content is greather than its own height"
 },{
   name: "export-button",
   type: "no | false | yes | true",
@@ -218,6 +218,12 @@ attributes: [{
   description: "Whether collapse the grouped columns by default",
   required: "",
   default: "no"
+},{
+  name: "virtual-scroll",
+  type: "yes|no|true|false",
+  description:  Whether enabled or not virtual scrolling by default",
+  required: "",
+  default: "yes"
 }]
 
 
