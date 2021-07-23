@@ -65,9 +65,9 @@ attributes: [{
 },{
   name: "fixed-header",
   type: "no | false | yes | true",
-  default: "no",
+  default: "true",
   required: "",
-  description: "Indicates whether or not to have a fixed header and footer when the content is greather than its own height"
+  description: "Indicates whether or not to have a fixed header when the content is greather than its own height"
 },{
   name: "export-button",
   type: "no | false | yes | true",
