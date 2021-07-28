@@ -32,7 +32,7 @@ You can define it as follows:
 - Using the input `columns`, adding the columns separated by ';'.
 - Using the `o-table-column` component. If *o-table* component contains inner *o-table-column* elements, using renderers and editors defined in them. If you use this option, the `attr` attribute is required. For more information see the **API**.
 
-With `visible-columns` you can indicate which columns will be visible. You can also use `default-visible-columns` input to select which columns of the setted ones in `visible-columns` will be visible on first load, user will be able to show or not columns in context menu of the table. 
+With `visible-columns` you can indicate which columns will be visible. You can also use `default-visible-columns` input to select which columns of the setted ones in `visible-columns` will be visible on first load, user will be able to show or not columns in context menu of the table.
 
 Using default renderer (*o-table-cell-renderer-string*) if column attr is present in *visible-columns* attribute from its parent *o-table*.
 In the same way, using the default editor (*o-table-cell-editor-string*) if column attr is contained
@@ -1057,7 +1057,7 @@ You can configure:
   protected myButton: OTableButtonComponent;
   ...
   ngAfterViewInit() {
-    this.myButton.click.subscribe(event => {
+    this.myButton.onClick.subscribe(event => {
       alert('my button click');
     });
   }
