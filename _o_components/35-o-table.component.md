@@ -1338,31 +1338,24 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 ### Row grouping <span class='menuitem-badge'>new<span>
 
-Ontimize Web allows merge fields belonging to one column so that the consecutive fields have the same value through the **row grouping**. Each group will be marked with one row with joined cells above containing the group value.
+Ontimize Web allows to merge fields belonging to one column so that the consecutive fields have the same value through the **row grouping**. Each group will be marked with one row with joined cells above containing the group value.
 
 For grouping/ungrouping by one o more columns, you can:
 1. Configure **grouped columns by default** with the `grouped-columns` property.
-As you can see in the example below, as soon as there is at least one active row group, the table will add an additional row for displaying the group in a tree structure with expand/collapse navigation.
-
-```html
-<o-table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
-  columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" title="ACCOUNTS"
-  quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" detail-mode="none">
-  <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
-</o-table>
-```
+	@@ -1354,15 +1354,16 @@ As you can see in the example below, as soon as there is at least one active row
 ![Table row group]({{ "/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
 
 {:start="2"}
-2. Use the **table menu** : click the *Group / Ungroup by* option to configure the columns you need to group / ungroup by.
+2. Use the **table menu**: click the *Group / Ungroup by* option to configure the columns you need to group / ungroup by.
 
 ![Dialog group by column]({{ "/images/components/tabla/table-menu-group-by-column.gif" | absolute_url }}){: .comp-example-img}
 
 {:start="3"}
-3. Use the **table context menu** : Right-click the column data to invoke context menu and  click on *Group by -> Group by column* . The context menu also allows you to ungroup by a column or by all.
+3. Use the **table context menu**: Right-click the column data to invoke context menu and  click on *Group by -> Group by column* . The context menu also allows you to ungroup by a column or by all.
 
 ![Context menu group by column]({{ "/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
 
+4. Use the **o-table-columns-grouping** and **o-table-columns-grouping-column** components: this components are used to configure the initial state of the row grouping and override the table grouping configuration.
 
 If the table is *groupable* but you want the column isn't groupable you must add `groupable=false` in this column definition.
 You can also configure if you want the groups to appear by default expanded or collapsed with `collapse-grouped-columns` property.

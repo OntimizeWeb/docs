@@ -1,0 +1,48 @@
+class: "OTableColumnsGroupingColumnComponent"
+
+directive: "o-table-columns-grouping-column"
+attributes: [{
+  name: "attr",
+  type: "string",
+  default: "",
+  required: "",
+  description: ""
+},{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: ""
+},{
+  name: "aggregate-name",
+  type: "string",
+  default: "",
+  required: "",
+  description: ""
+},{
+  name: "aggregate",
+  type: "sum | count | avg | min |max",
+  default: "",
+  required: "",
+  description: ""
+},{
+  name: "aggregate-function",
+  type: "",
+  default: "",
+  required: "",
+  description: ""
+},{
+  name: "expand-groups-same-level",
+  type: "boolean",
+  default: "",
+  required: "",
+  description: ""
+},{
+  name: "change-aggregate-same-level",
+  type: "boolean",
+  default: "",
+  required: "",
+  description: ""
+}]
+
+outputs: []

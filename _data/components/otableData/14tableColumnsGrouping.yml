@@ -1,0 +1,18 @@
+class: "OTableColumnsGroupingComponent"
+
+directive: "o-table-columns-grouping"
+attributes: [{
+    name: "columns",
+    type: "string",
+    default: "",
+    required: "",
+    description: ""
+}, {
+    name: "excluded-aggregate-columns",
+    type: "string[]",
+    default: "",
+    required: "",
+    description: ""
+}]
+
+outputs: []
