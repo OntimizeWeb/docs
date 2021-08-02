@@ -294,6 +294,9 @@ methods: [{
   description: "Get keys values",
   return: "Array<any>"
 },{
+  name: "undo",
+  description: "Undo last change"
+},{
   name: "setFormMode",
   parameters: "mode: number",
   description: "Sets form operation mode"
