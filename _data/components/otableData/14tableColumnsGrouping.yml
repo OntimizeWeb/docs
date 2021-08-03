@@ -6,13 +6,11 @@ attributes: [{
     type: "string",
     default: "",
     required: "",
-    description: ""
+    description: "Grouped columns separated by ‘;’. Default: no value"
 }, {
     name: "excluded-aggregate-columns",
     type: "string[]",
     default: "",
     required: "",
-    description: ""
+    description: "Excluded excluded from aggregation operations separated by ‘;’. Default: no value"
 }]
-
-outputs: []

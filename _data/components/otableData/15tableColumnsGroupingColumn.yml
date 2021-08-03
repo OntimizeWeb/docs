@@ -6,43 +6,41 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: ""
+  description: "The column name"
 },{
   name: "title",
   type: "string",
   default: "",
   required: "",
-  description: ""
+  description: " Title for the header aggregate column"
 },{
   name: "aggregate-name",
   type: "string",
   default: "",
   required: "",
-  description: ""
+  description: "Name of the aggregate option"
 },{
   name: "aggregate",
-  type: "sum | count | avg | min |max",
-  default: "",
-  required: "",
-  description: ""
+  type: "sum | count | avg | min | max",
+  default : "sum",
+  required : "",
+  description : "Default functions aggregate"
 },{
   name: "aggregate-function",
-  type: "",
+  type: " (value: any[]) => number",
   default: "",
   required: "",
-  description: ""
+  description: "Function that calculates a value on the values of the column 'attr'"
 },{
   name: "expand-groups-same-level",
   type: "boolean",
-  default: "",
+  default: "true",
   required: "",
-  description: ""
+  description: "Whether click in row expands/collapses all rows on same level. By default: true"
 },{
   name: "change-aggregate-same-level",
   type: "boolean",
-  default: "",
+  default: "true",
   required: "",
-  description: ""
+  description: "Whether change the aggregate function on all grouped rows of the same level"
 }]
-
-outputs: []
