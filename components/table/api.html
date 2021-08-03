@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-07-23T08:23:52-04:00">
+  <meta property="article:published_time" content="2021-08-03T05:49:19-04:00">
 
 
 
@@ -921,7 +921,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="July 23, 2021">
+    <meta itemprop="datePublished" content="August 03, 2021">
     
 
     <div class="page__inner-wrap">
@@ -1096,6 +1096,20 @@
     
   
   <li><a href="#o-table-quickfilter">o-table-quickfilter</a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#o-table-columns-grouping">o-table-columns-grouping</a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#o-table-columns-grouping-column">o-table-columns-grouping-column</a></li>
   
   
 
@@ -10049,6 +10063,701 @@
   
   
   
+  <h2 id="o-table-columns-grouping">
+    <span>OTableColumnsGroupingComponent </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-table-columns-grouping</p>
+  
+
+  
+
+  
+
+
+  
+    <h3 id="inputs" class="grey-color">Inputs</h3>
+  
+
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>columns</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Grouped columns separated by ‘;’. Default: no value</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>excluded-aggregate-columns</p>
+</p>
+    
+      <p><i>string[]</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Excluded columns from aggregation operations separated by ‘;’. Default: no value</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+
+
+  
+
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+  
+  <h2 id="o-table-columns-grouping-column">
+    <span>OTableColumnsGroupingColumnComponent </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-table-columns-grouping-column</p>
+  
+
+  
+
+  
+
+
+  
+    <h3 id="inputs" class="grey-color">Inputs</h3>
+  
+
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+            <th class=""> Default</th>
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>aggregate</p>
+</p>
+    
+      <p><i>sum | count | avg | min | max</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Default functions aggregate</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>sum</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>aggregate-function</p>
+</p>
+    
+      <p><i> (value: any[]) => number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Function that calculates a value on the values of the column ‘attr’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>aggregate-name</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Name of the aggregate option</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr required>
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name required>
+    <p class="first"><p>attr</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>The column name</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>change-aggregate-same-level</p>
+</p>
+    
+      <p><i>boolean</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Whether change the aggregate function on all grouped rows of the same level</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>true</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>expand-groups-same-level</p>
+</p>
+    
+      <p><i>boolean</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Whether click in row expands/collapses all rows on same level. By default: true</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>true</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>title</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Title for the header aggregate column</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+    <div class="notice--info" markdown="1">
+    * required inputs.
+    </div>
+  
+
+
+  
+
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+  
 
   
   
@@ -17110,7 +17819,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-23T08:23:52-04:00">July 23, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-03T05:49:19-04:00">August 03, 2021</time></p>
         
       </footer>
 

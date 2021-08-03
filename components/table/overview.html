@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-07-23T08:23:52-04:00">
+  <meta property="article:published_time" content="2021-08-03T05:49:19-04:00">
 
 
 
@@ -860,7 +860,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="July 23, 2021">
+    <meta itemprop="datePublished" content="August 03, 2021">
     
 
     <div class="page__inner-wrap">
@@ -2071,7 +2071,7 @@ In this component you can define the columns and required columns with <code cla
   <span class="kr">protected</span> <span class="nx">myButton</span><span class="p">:</span> <span class="nx">OTableButtonComponent</span><span class="p">;</span>
   <span class="p">...</span>
   <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">myButton</span><span class="p">.</span><span class="nx">click</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">myButton</span><span class="p">.</span><span class="nx">onClick</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">my button click</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">}</span>
@@ -2336,7 +2336,7 @@ If you want to customize the download end point, please check the <a href="#cust
 <!-- </div> --></p>
 
 <ol start="2">
-  <li>As you can see, in the next case we have applied <code class="language-plaintext highlighter-rouge">multiline=yes</code> and  <code class="language-plaintext highlighter-rouge">auto-adjust="yes"</code>, the result would be the following..</li>
+  <li>As you can see, in the next case we have applied <code class="language-plaintext highlighter-rouge">multiline=yes</code> and  <code class="language-plaintext highlighter-rouge">auto-adjust="yes"</code>, the result would be the following.</li>
 </ol>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table_autoadjust-with-multiline.PNG" alt="Table width autoadjust" class="comp-example-img" /></p>
@@ -2352,36 +2352,65 @@ If you want to customize the download end point, please check the <a href="#cust
 
 <h3 id="row-grouping-new">Row grouping <span class="menuitem-badge">new<span></span></span></h3>
 
-<p>Ontimize Web allows merge fields belonging to one column so that the consecutive fields have the same value through the <strong>row grouping</strong>. Each group will be marked with one row with joined cells above containing the group value.</p>
+<p>Ontimize Web allows to merge fields belonging to one column so that the consecutive fields have the same value through the <strong>row grouping</strong>. Each group will be marked with one row with joined cells above containing the group value.</p>
 
-<p>For grouping/ungrouping by one o more columns, you can:</p>
+<p>By default, the table is <em>groupable</em> and for grouping/ungrouping by one o more columns, you can:</p>
+
 <ol>
   <li>Configure <strong>grouped columns by default</strong> with the <code class="language-plaintext highlighter-rouge">grouped-columns</code> property.
-As you can see in the example below, as soon as there is at least one active row group, the table will add an additional row for displaying the group in a tree structure with expand/collapse navigation.</li>
+As you can see in the example below, as soon as there is at least one active row.</li>
 </ol>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">service-type=</span><span class="s">"DummyService"</span> <span class="na">service=</span><span class="s">"olympicWinners"</span> <span class="na">entity=</span><span class="s">"olympicWinners"</span>
-  <span class="na">columns=</span><span class="s">"athlete;age;country;year;date;sport;gold;silver;bronze"</span> <span class="na">grouped-columns=</span><span class="s">"country;year;date;sport"</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span>
-  <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"no"</span> <span class="na">export-button=</span><span class="s">"no"</span> <span class="na">detail-mode=</span><span class="s">"none"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;o-table-context-menu</span> <span class="na">insert=</span><span class="s">"no"</span> <span class="na">edit=</span><span class="s">"no"</span> <span class="na">view-detail=</span><span class="s">"no"</span> <span class="na">refresh=</span><span class="s">"no"</span> <span class="na">delete=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-table-context-menu&gt;</span>
-<span class="nt">&lt;/o-table&gt;</span>
-</code></pre></div></div>
 <p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table-basic-row-group.png" alt="Table row group" class="comp-example-img" /></p>
 
 <ol start="2">
-  <li>Use the <strong>table menu</strong> : click the <em>Group / Ungroup by</em> option to configure the columns you need to group / ungroup by.</li>
+  <li>Use the <strong>table menu</strong>: click the <em>Group / Ungroup by</em> option to configure the columns you need to group / ungroup by.</li>
 </ol>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table-menu-group-by-column.gif" alt="Dialog group by column" class="comp-example-img" /></p>
 
 <ol start="3">
-  <li>Use the <strong>table context menu</strong> : Right-click the column data to invoke context menu and  click on <em>Group by -&gt; Group by column</em> . The context menu also allows you to ungroup by a column or by all.</li>
+  <li>Use the <strong>table context menu</strong>: Right-click the column data to invoke context menu and  click on <em>Group by -&gt; Group by column</em> . The context menu also allows you to ungroup by a column or by all.</li>
 </ol>
 
 <p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/group-by-column-context-menu.gif" alt="Context menu group by column" class="comp-example-img" /></p>
 
-<p>If the table is <em>groupable</em> but you want the column isn’t groupable you must add <code class="language-plaintext highlighter-rouge">groupable=false</code> in this column definition.
-You can also configure if you want the groups to appear by default expanded or collapsed with <code class="language-plaintext highlighter-rouge">collapse-grouped-columns</code> property.</p>
+<p>You can collapse/expand all grouped rows if you right-click on the <em>grouped row</em>.</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table-grouping-change-function-aggregate.gif" alt="Context menu in grouped row" class="comp-example-img" /></p>
+
+<ol start="4">
+  <li>Use the <strong>o-table-columns-grouping</strong> and <strong>o-table-columns-grouping-column</strong> components: this components are used to configure the initial state of the row grouping and override the table grouping configuration.</li>
+</ol>
+
+<p>If there is at least one grouping, the table automatically applies the <em>sum function</em> on those of type <code class="language-plaintext highlighter-rouge">currency</code>, <code class="language-plaintext highlighter-rouge">integer</code> and <code class="language-plaintext highlighter-rouge">real</code> and whose value will be displayed in the grouped row.
+If you want to exclude this function from being performed, you must add this column in the <code class="language-plaintext highlighter-rouge">excluded-aggregate-columns</code> attribute in <code class="language-plaintext highlighter-rouge">o-table-columns-grouping</code> component.</p>
+
+<p>You can configure the <em>aggregate functions</em> (count,sum,avg,min,max) in the <code class="language-plaintext highlighter-rouge">o-table-columns-grouping</code> component. Additionally, you can specify aggregate function to be applied with <code class="language-plaintext highlighter-rouge">function-aggregate</code> attribute.</p>
+
+<p>By default, when you change the aggregate function in a column, it will change in all grouped rows of the same level, if you want to avoid this behavior you must add <code class="language-plaintext highlighter-rouge">change-aggregate-same-level="no"</code>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-table</span> <span class="na">fxFill</span> <span class="na">#table</span> <span class="na">service-type=</span><span class="s">"DummyService"</span> <span class="na">service=</span><span class="s">"olympicWinners"</span> <span class="na">entity=</span><span class="s">"olympicWinners"</span>
+      <span class="na">columns=</span><span class="s">"athlete;age;country;year;date;sport;gold;silver;bronze"</span> <span class="na">grouped-columns=</span><span class="s">"country;year;date;sport"</span> <span class="na">layout-padding</span> <span class="na">title=</span><span class="s">"ACCOUNTS"</span>
+      <span class="na">quick-filter=</span><span class="s">"yes"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">delete-button=</span><span class="s">"no"</span> <span class="na">refresh-button=</span><span class="s">"no"</span> <span class="na">pagination-controls=</span><span class="s">"no"</span> <span class="na">export-button=</span><span class="s">"no"</span>
+      <span class="na">detail-mode=</span><span class="s">"none"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-table-columns-grouping</span> <span class="na">columns=</span><span class="s">"country;sport"</span> <span class="na">excluded-aggregate-columns=</span><span class="s">''</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;o-table-columns-grouping-column</span> <span class="na">attr=</span><span class="s">"age"</span> <span class="na">title=</span><span class="s">"edad"</span> <span class="na">aggregate=</span><span class="s">"max"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-table-columns-grouping-column&gt;</span>
+        <span class="nt">&lt;o-table-columns-grouping-column</span> <span class="na">attr=</span><span class="s">"gold"</span> <span class="na">aggregate=</span><span class="s">"max"</span><span class="nt">&gt;</span> <span class="nt">&lt;/o-table-columns-grouping-column&gt;</span>
+      <span class="nt">&lt;/o-table-columns-grouping&gt;</span>
+      <span class="nt">&lt;o-table-context-menu</span> <span class="na">insert=</span><span class="s">"no"</span> <span class="na">edit=</span><span class="s">"no"</span> <span class="na">view-detail=</span><span class="s">"no"</span> <span class="na">refresh=</span><span class="s">"no"</span> <span class="na">delete=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-table-context-menu&gt;</span>
+    <span class="nt">&lt;/o-table&gt;</span>
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/images/components/tabla/table-basic-row-group.png" alt="Table row group" class="comp-example-img" /></p>
+
+<p>If the table is <em>groupable</em> but you want the column isn’t groupable you must add <code class="language-plaintext highlighter-rouge">groupable=false</code> in this column definition.</p>
+
+<p>Table allows expands/collapses all rows on same level by default. Using <code class="language-plaintext highlighter-rouge">expand-groups-same-level</code> property you can modify the default value.</p>
+
+<p>You can configure if you want the groups to appear by default expanded or collapsed with <code class="language-plaintext highlighter-rouge">collapse-grouped-columns</code> property.</p>
+
+<p>For more information see the API.</p>
 
 <blockquote>
   <p>NOTE: There is no limit on the number of columns that the table can group by.</p>
@@ -2570,6 +2599,20 @@ For example with the primary palette by following the steps below.</p>
     
   
   <li><a href="#o-table-quickfilter">o-table-quickfilter</a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#o-table-columns-grouping">o-table-columns-grouping</a></li>
+  
+  
+
+  
+    
+  
+  <li><a href="#o-table-columns-grouping-column">o-table-columns-grouping-column</a></li>
   
   
 
@@ -11523,6 +11566,701 @@ For example with the primary palette by following the steps below.</p>
   
   
   
+  <h2 id="o-table-columns-grouping">
+    <span>OTableColumnsGroupingComponent </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-table-columns-grouping</p>
+  
+
+  
+
+  
+
+
+  
+    <h3 id="inputs" class="grey-color">Inputs</h3>
+  
+
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>columns</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Grouped columns separated by ‘;’. Default: no value</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>excluded-aggregate-columns</p>
+</p>
+    
+      <p><i>string[]</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Excluded columns from aggregation operations separated by ‘;’. Default: no value</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+
+
+  
+
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+  
+  <h2 id="o-table-columns-grouping-column">
+    <span>OTableColumnsGroupingColumnComponent </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Directive:</strong> o-table-columns-grouping-column</p>
+  
+
+  
+
+  
+
+
+  
+    <h3 id="inputs" class="grey-color">Inputs</h3>
+  
+
+  
+    
+    
+
+    
+    
+
+
+  <table class="attributes-table mdl-data-table table-adaptable">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+            <th class=""> Default</th>
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>aggregate</p>
+</p>
+    
+      <p><i>sum | count | avg | min | max</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Default functions aggregate</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>sum</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>aggregate-function</p>
+</p>
+    
+      <p><i> (value: any[]) => number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Function that calculates a value on the values of the column ‘attr’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>aggregate-name</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Name of the aggregate option</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr required>
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name required>
+    <p class="first"><p>attr</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>The column name</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>change-aggregate-same-level</p>
+</p>
+    
+      <p><i>boolean</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Whether change the aggregate function on all grouped rows of the same level</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>true</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>expand-groups-same-level</p>
+</p>
+    
+      <p><i>boolean</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Whether click in row expands/collapses all rows on same level. By default: true</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>true</p>
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>title</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Title for the header aggregate column</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+  </tr>
+      
+      </tbody>
+  </table>
+
+  
+    <div class="notice--info" markdown="1">
+    * required inputs.
+    </div>
+  
+
+
+  
+
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+  
 
   
   
@@ -18584,7 +19322,7 @@ For example with the primary palette by following the steps below.</p>
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-07-23T08:23:52-04:00">July 23, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-08-03T05:49:19-04:00">August 03, 2021</time></p>
         
       </footer>
 
