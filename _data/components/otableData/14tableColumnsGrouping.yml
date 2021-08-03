@@ -12,5 +12,5 @@ attributes: [{
     type: "string[]",
     default: "",
     required: "",
-    description: "Excluded excluded from aggregation operations separated by ‘;’. Default: no value"
+    description: "Excluded columns from aggregation operations separated by ‘;’. Default: no value"
 }]
