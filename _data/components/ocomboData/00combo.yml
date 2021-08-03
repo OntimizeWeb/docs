@@ -13,11 +13,11 @@ inheritedAttributes: [{
 inheritedOutputs: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",
-  outputs: ["onChange", "onValueChange"]
+  outputs: ["onChange", "onValueChange","onFocus","onBlur"]
 },{
   component: "OFormServiceComponent",
   path: "components/input/overviewservice/api",
-  outputs: ["onSetValueOnValueChange"]
+  outputs: ["onSetValueOnValueChange", "onDataLoaded"]
 }]
 
 attributes: [{

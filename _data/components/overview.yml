@@ -89,8 +89,13 @@ outputs: [{
 },{
   name: "onValueChange",
   type: "EventEmitter<OValueChangeEvent>",
-  description: "Event triggered when component value changes, eventobject emitted by OValueChangeEvent object.
-  "
+  description: "Event triggered when component value changes, eventobject emitted by OValueChangeEvent object.",
+},{
+  name: "onFocus",
+  description: "Event triggered when component gains the focus"
+},{
+  name: "onBlur",
+  description: "Event triggered when component loses the focus"
 }]
 
 methods: [{

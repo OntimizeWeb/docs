@@ -56,22 +56,24 @@ attributes: [{
   description: "Indicates whether the user can use escape or clicking on the backdrop to close the modal"
 }]
 
+
+outputs: [{
+  name: "onDialogAccept",
+  description: "Event triggered when the dialog has been accepted"
+},{
+  name: "onDialogCancel",
+  description: "Event triggered when the dialog has been canceled"
+}]
+
 inheritedOutputs: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",
-  outputs: ["onChange", "onValueChange"]
+  outputs: ["onChange", "onValueChange","onFocus","onBlur"]
 },{
   component: "OFormServiceComponent",
   path: "components/input/overviewservice/api",
-  outputs: ["onSetValueOnValueChange"]
+  outputs: ["onSetValueOnValueChange", "onDataLoaded"]
 }]
 
-outputs: [{
-  name: "onFocus",
-  description: "Event triggered when component gains the focus"
-},{
-  name: "onBlur",
-  description: "Event triggered when component loses the focus"
-}]
 
 extraComponents: "locker"

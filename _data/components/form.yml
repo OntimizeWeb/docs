@@ -152,6 +152,12 @@ attributes: [
   default: "yes",
   required: "",
   description: "Indicates whether or not the form  confirm when it exit"
+},{
+  name: "ignore-on-exit",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Fields attr's that will be ignored when the form is closed, separated by ';'."
 }]
 
 outputs: [{
@@ -213,8 +219,7 @@ methods: [{
   type: "method",
   parameters : "attr: string, value:any, options: IFormValueOptions",
   description : "Sets the value of the control in the form."
-}
-,{
+},{
   name: "setFieldValues",
   type: "method",
   parameters : "values:any, options: IFormValueOptions",
@@ -296,4 +301,39 @@ methods: [{
 },{
   name: "undo",
   description: "Undo last change"
+},{
+  name: "setFormMode",
+  parameters: "mode: number",
+  description: "Sets form operation mode"
+},{
+  name: "setQueryMode",
+  description: "Set read mode"
+},{
+  name: "setInsertMode",
+  description: "Set insert mode"
+},{
+  name: "setUpdateMode",
+  description: "Set update mode"
+},{
+  name: "setInitialMode",
+  description: "Set initial mode"
+},{
+  name: "isInQueryMode",
+  description: "Determines whether in read mode",
+  return: "boolean"
+},{
+  name: "isInInsertMode",
+  description: "Determines whether in insert mode",
+  return: "boolean"
+},{
+  name: "isInUpdateMode",
+  description: "Determines whether in update mode",
+  return: "boolean"
+},{
+  name: "isInInitialMode",
+  description: "Determines whether in initial mode",
+  return: "boolean"
 }]
+
+
+
