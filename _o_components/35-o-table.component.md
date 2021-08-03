@@ -1323,7 +1323,8 @@ However, if you want to control similar case, you can do so by configuring `auto
 <!-- </div> -->
 
 {:start="2"}
-2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following..
+2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following.
+
 
 ![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
 
@@ -1338,34 +1339,62 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 ### Row grouping <span class='menuitem-badge'>new<span>
 
-Ontimize Web allows merge fields belonging to one column so that the consecutive fields have the same value through the **row grouping**. Each group will be marked with one row with joined cells above containing the group value.
+Ontimize Web allows to merge fields belonging to one column so that the consecutive fields have the same value through the **row grouping**. Each group will be marked with one row with joined cells above containing the group value.
 
-For grouping/ungrouping by one o more columns, you can:
+By default, the table is *groupable* and for grouping/ungrouping by one o more columns, you can:
+
 1. Configure **grouped columns by default** with the `grouped-columns` property.
-As you can see in the example below, as soon as there is at least one active row group, the table will add an additional row for displaying the group in a tree structure with expand/collapse navigation.
+As you can see in the example below, as soon as there is at least one active row.
 
-```html
-<o-table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
-  columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" title="ACCOUNTS"
-  quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no" detail-mode="none">
-  <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
-</o-table>
-```
 ![Table row group]({{ "/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
 
 {:start="2"}
-2. Use the **table menu** : click the *Group / Ungroup by* option to configure the columns you need to group / ungroup by.
+2. Use the **table menu**: click the *Group / Ungroup by* option to configure the columns you need to group / ungroup by.
 
 ![Dialog group by column]({{ "/images/components/tabla/table-menu-group-by-column.gif" | absolute_url }}){: .comp-example-img}
 
 {:start="3"}
-3. Use the **table context menu** : Right-click the column data to invoke context menu and  click on *Group by -> Group by column* . The context menu also allows you to ungroup by a column or by all.
+3. Use the **table context menu**: Right-click the column data to invoke context menu and  click on *Group by -> Group by column* . The context menu also allows you to ungroup by a column or by all.
 
 ![Context menu group by column]({{ "/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
 
+You can collapse/expand all grouped rows if you right-click on the *grouped row*.
+
+![Context menu in grouped row]({{ "/images/components/tabla/table-grouping-change-function-aggregate.gif" | absolute_url }}){: .comp-example-img}
+
+{:start="4"}
+4. Use the **o-table-columns-grouping** and **o-table-columns-grouping-column** components: this components are used to configure the initial state of the row grouping and override the table grouping configuration.
+
+If there is at least one grouping, the table automatically applies the *sum function* on those of type `currency`, `integer` and `real` and whose value will be displayed in the grouped row.
+If you want to exclude this function from being performed, you must add this column in the `excluded-aggregate-columns` attribute in `o-table-columns-grouping` component.
+
+ You can configure the *aggregate functions* (count,sum,avg,min,max) in the `o-table-columns-grouping` component. Additionally, you can specify aggregate function to be applied with `function-aggregate` attribute.
+
+ By default, when you change the aggregate function in a column, it will change in all grouped rows of the same level, if you want to avoid this behavior you must add `change-aggregate-same-level="no"`.
+
+
+```html
+  <o-table fxFill #table service-type="DummyService" service="olympicWinners" entity="olympicWinners"
+      columns="athlete;age;country;year;date;sport;gold;silver;bronze" grouped-columns="country;year;date;sport" layout-padding title="ACCOUNTS"
+      quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
+      detail-mode="none">
+      <o-table-columns-grouping columns="country;sport" excluded-aggregate-columns=''>
+        <o-table-columns-grouping-column attr="age" title="edad" aggregate="max"> </o-table-columns-grouping-column>
+        <o-table-columns-grouping-column attr="gold" aggregate="max"> </o-table-columns-grouping-column>
+      </o-table-columns-grouping>
+      <o-table-context-menu insert="no" edit="no" view-detail="no" refresh="no" delete="no"></o-table-context-menu>
+    </o-table>
+```
+
+![Table row group]({{ "/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
 
 If the table is *groupable* but you want the column isn't groupable you must add `groupable=false` in this column definition.
-You can also configure if you want the groups to appear by default expanded or collapsed with `collapse-grouped-columns` property.
+
+Table allows expands/collapses all rows on same level by default. Using `expand-groups-same-level` property you can modify the default value.
+
+You can configure if you want the groups to appear by default expanded or collapsed with `collapse-grouped-columns` property.
+
+For more information see the API.
 
 > NOTE: There is no limit on the number of columns that the table can group by.
 
