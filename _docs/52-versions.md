@@ -22,14 +22,17 @@ In this section you can check the different releases of **OntimizeWeb** and its 
         </tr>
     </thead>
     <tbody>
-    <tr>
-            <td>8.4.0</td>
-            <td>8.4.0</td>
-            <td rowspan="10">8.0.1</td>
-            <td rowspan="11">8.0.0</td>
-            <td rowspan="11">8.0.0</td>
-            <td rowspan="8">8.0.1</td>
-        </tr>
+     <tr>
+        <td>8.4.1</td>
+        <td rowspan="2">8.4.0</td>
+        <td rowspan="11">8.0.1</td>
+        <td rowspan="12">8.0.0</td>
+        <td rowspan="12">8.0.0</td>
+        <td rowspan="9">8.0.1</td>
+      </tr>
+      <tr>
+        <td>8.4.0</td>
+      </tr>
         <tr>
             <td>8.3.1</td>
             <td rowspan="2">8.3.0</td>
