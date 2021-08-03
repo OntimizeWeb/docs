@@ -152,6 +152,12 @@ attributes: [
   default: "yes",
   required: "",
   description: "Indicates whether or not the form  confirm when it exit"
+},{
+  name: "ignore-on-exit",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Fields attr's that will be ignored when the form is closed, separated by ';'."
 }]
 
 outputs: [{
@@ -322,7 +328,7 @@ methods: [{
   return: "boolean"
 },{
   name: "isInUpdateMode",
-  description: "Determines whether in update mode,
+  description: "Determines whether in update mode",
   return: "boolean"
 },{
   name: "isInInitialMode",
