@@ -1358,7 +1358,7 @@ As you can see in the example below, as soon as there is at least one active row
 
 ![Context menu group by column]({{ "/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
 
-You can modify the aggregation function or collapse/expand all grouped rows if you right-click on the *grouped row*.
+You can collapse/expand all grouped rows if you right-click on the *grouped row*.
 
 ![Context menu in grouped row]({{ "/images/components/tabla/table-grouping-change-function-aggregate.gif" | absolute_url }}){: .comp-example-img}
 

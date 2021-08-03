@@ -12,7 +12,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: " Title for the header aggregate column"
+  description: "Title for the header aggregate column"
 },{
   name: "aggregate-name",
   type: "string",
