@@ -213,8 +213,7 @@ methods: [{
   type: "method",
   parameters : "attr: string, value:any, options: IFormValueOptions",
   description : "Sets the value of the control in the form."
-}
-,{
+},{
   name: "setFieldValues",
   type: "method",
   parameters : "values:any, options: IFormValueOptions",
@@ -322,7 +321,7 @@ methods: [{
   return: "boolean"
 },{
   name: "isInUpdateMode",
-  description: "Determines whether in update mode,
+  description: "Determines whether in update mode",
   return: "boolean"
 },{
   name: "isInInitialMode",
