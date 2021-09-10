@@ -158,6 +158,12 @@ attributes: [
   default: "",
   required: "",
   description: "Fields attr's that will be ignored when the form is closed, separated by ';'."
+},{
+  name: "ignore-default-navigation",
+  type: "yes | no | true | false",
+  default: "no",
+  required: "",
+  description: "ignore default navigation when user click the toolbar buttons."
 }]
 
 outputs: [{
