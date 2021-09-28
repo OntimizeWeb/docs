@@ -120,6 +120,11 @@ attributes: [{
   required: "",
   description: "Indicates whether or not the column is groupable"
 },{
+  name: "show-notification-on-edit",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether or not to show a toast indicating the succesfull update on editable columns"
+},{
   name: "validators",
   type: "ValidatorFn[]",
   default: "[]",
