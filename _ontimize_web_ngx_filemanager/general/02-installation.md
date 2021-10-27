@@ -13,6 +13,16 @@ title: "Installation"
 
 ## Usage
 
+### Add the library theming
+Include the library theme in your application by adding the following code to the '*app.scss*' file:
+
+```bash
+...
+@import '~ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
+@include o-filemanager-table-theme($theme);
+...
+```
+
 ### Import the File Manager into your application
 
 Import the Ontimize Web file manager module in the module you want to use it.
