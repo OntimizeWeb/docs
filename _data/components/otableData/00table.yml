@@ -221,9 +221,15 @@ attributes: [{
 },{
   name: "virtual-scroll",
   type: "yes|no|true|false",
-  description:  Whether enabled or not virtual scrolling by default",
+  description: "Whether enabled or not virtual scrolling by default",
   required: "",
   default: "yes"
+},{
+  name: "show-expandable-icon-function",
+  type: "Function",
+  description: "Indicates a function that will be executed on table creation to show or not icon to expand or collapse expandable rows. The function must return a boolean observable.",
+  required: "",
+  default: ""
 }]
 
 

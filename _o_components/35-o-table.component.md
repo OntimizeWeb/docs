@@ -1280,6 +1280,10 @@ It is possible to define a *template with context*, so that if the defined templ
 
 ![Row expanded with a template with context]({{ "/images/components/tabla/row-expanded-context.PNG" | absolute_url }}){: .comp-example-img}
 
+The `o-table` component has an input to control expandable row and show or not the expansion icon. This input `show-expandable-icon-function` must set a function that will receive data of expandable row and has to return a boolean observable. You can check a complete example [here](https://try.imatia.com/ontimizeweb/v8/playground/main/table/rowexpandable){:target='_blank'}.
+
+
+
 ### Autoadjust <span class='menuitem-badge'>new<span>
 
 The `o-table` component supports automatically adjust to the content of the column setting `auto-adjust = yes`. This means that it will always take up the minimum width required to present its content.
