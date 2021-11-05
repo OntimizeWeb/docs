@@ -60,6 +60,12 @@ attributes: [{
   default: "",
   required: "",
   description: "Theme color palette for the application header."
+},{
+  name: "show-title",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the header title"
 }
 ]
 
