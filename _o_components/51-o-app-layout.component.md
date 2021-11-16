@@ -68,7 +68,7 @@ The `o-app-layout` component allows you to configure whether or not to show flag
 ```
 And import the flag icon styles in your application's **angular.json** file:
 ```bash
-  "node_modules/flag-icon-css/css/flag-icon.css"
+  "node_modules/flag-icon-css/css/flag-icons.css"
 ```
 
 ![App layout component toolbar]({{ "/images/layouts/app-layout/app_layout_header.png" | absolute_url }})
