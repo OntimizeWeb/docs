@@ -201,6 +201,13 @@ This option is enabled by default, the filter is visible in the top right. You c
 
 You can also configure filtering to be case sensitive with `filter-case-sensitive="yes"`. By default, it's disabled.
 
+---
+**NOTE**
+
+The quick filter displays a checkbox list (click on the icon) where you can select which column to filter by, at the end of this list will appear a checkbox selector to be case sensitive. This option may not appear if `pageable` attribute is setted to false in table component.
+
+---
+
 Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in `quick-filter-function` property.
 
 
@@ -656,6 +663,16 @@ The configuration is similar to the renderer text. The following example uses th
  ```html
     <o-table-column attr="NAME" title="NAME">
         <o-table-cell-editor-text (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-text>
+    </o-table-column>
+  ```
+
+*Email*
+
+The configuration is similar to the text editor. To consult all the parameters of the editor see the **API**.
+
+ ```html
+    <o-table-column attr="EMAIL" title="EMAIL">
+        <o-table-cell-editor-email (editionStarted)="editionStarted($event)" (editionCancelled)="editionCancelled($event)" (editionCommitted)="editionCommitted($event)"></o-table-cell-editor-email>
     </o-table-column>
   ```
 
