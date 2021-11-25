@@ -200,6 +200,8 @@ This option is enabled by default and the filter is visible in the top right. Yo
 
 This option creates the `o-table-quickfilter` component within the `o-table`. This component displays a checkbox list (when you click on the icon) where you can select which columns to filter by when the input value changes, also allows to change the filter case sensitive option during execution.
 
+All columns will be searchable by quickfilter component. The only way to remove columns of beeing searched is by setting searchable input to false in `o-column` definition.
+
 ![Table quickfilter]({{ "/images/components/tabla/o-table-quickfilter.PNG" | absolute_url }}){: .comp-example-img}
 
 If you want to override this component to configure its options you can define your own quickfilter within your `o-table` and it will replace the default implementation. You can see its properties configuration in the API section.
