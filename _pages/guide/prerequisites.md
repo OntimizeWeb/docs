@@ -11,7 +11,7 @@ sidebar:
 
 ## Node.js & npm ##
 
-Make sure you have Node.js installed. Download the installer [here](http://nodejs.org/){:target="_blank"} or use your favorite package manager. You must download the installer according to your platform and operating system. It’s suggested to use the **6.x.x** version of node along with the **5.x.x** version of npm. We've found this combination to be the fastest and most stable for Ontimize Web.
+Make sure you have Node.js installed. Download the installer [here](http://nodejs.org/){:target="_blank"} or use your favorite package manager. You must download the installer according to your platform and operating system. It’s suggested to use the *12.x.x** version of node along with the **6.x.x** version of npm. We've found this combination to be the fastest and most stable for Ontimize Web.
 
 Following installation, make sure you have correctly installed Node.js by invoking the following commands in the command-line:
 
@@ -20,10 +20,10 @@ Following installation, make sure you have correctly installed Node.js by invoki
 ```bash
 # Checking node version
 C:\>node -v
-v6.10.2
+v12.10.0
 # Checking npm version
 C:\>npm -v
-5.0.3
+6.10.3
 ```
 
 If you want to know more about npm you can find more information [here](https://docs.npmjs.com/getting-started/what-is-npm){:target="_blank"}.
@@ -36,7 +36,7 @@ You need to have installed [Angular CLI](https://cli.angular.io/){:target="_blan
 npm install -g @angular/cli@latest
 ```
 
-*Note*: '*ontimize-web-ngx@2.0.0*' is using '*@angular/cli@1.3.2'*
+*Note*: '*ontimize-web-ngx@8.0.0*' is using '*@angular/cli@8.3.25'*
 
 ## Python ##
 
