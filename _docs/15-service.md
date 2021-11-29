@@ -237,6 +237,28 @@ export class StarWarsService extends OntimizeBaseService {
 
 }
 ```
+#### doRequest method
+
+This `doRequest` method is used to retrieve data from a URL. You can use this method with parameters to configurate the request.
+You can check the options available in this example:
+
+```javascript
+export type ServiceRequestParam = {
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE',
+  url: string,
+  body?: any,
+  options?: HttpRequestOptions,
+  successCallback?: (resp: ServiceResponse, observer: Subscriber<ServiceResponse>) => void,
+  errorCallBack?: (resp: ServiceResponse, observer: Subscriber<ServiceResponse>) => void
+};
+
+// this.doRequest(ServiceRequestParam)
+return this.doRequest({
+  method: 'GET',
+  url: url,
+  options: {} // This overrides the default http headers. Remove it if you are using an ontimize based API in the backend
+});
+```
 
 > **NOTE:** In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [adapt the response](#adapt-your-service-response).
 

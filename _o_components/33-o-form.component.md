@@ -172,6 +172,14 @@ Now, you can use the extended form in your template as follows:
 </sign-in-form>
 ```
 
+You can change the default options of the form by using `MAT_FORM_FIELD_DEFAULT_OPTIONS` injection token. You have to set this `MAT_FORM_FIELD_DEFAULT_OPTIONS` in your providers as you can check in the example above that sets the appearance outline for the form:
+
+```js
+  providers: [ 
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } } 
+  ]
+```
+
 ## Filtering of a collection component
 
 A common use of a form is to use the form data entered by the user to request filtered information from a service and display it in a collection component ([`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"}, [`o-list`]({{ base_path }}/components/list/overview/){:target="_blank"} or [`o-grid`]({{ base_path }}/components/grid/overview/){:target="_blank"}). **OntimizeWeb** offers two different solutions for doing this. The simplest way to do this filtering is to set the `parent-keys` input of the collection component we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we have to use the [filter builder](#filter-builder) component.
