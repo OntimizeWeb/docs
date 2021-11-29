@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-11-17T06:59:41-05:00">
+  <meta property="article:published_time" content="2021-11-29T10:43:19-05:00">
 
 
 
@@ -795,7 +795,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="November 17, 2021">
+    <meta itemprop="datePublished" content="November 29, 2021">
     
 
     <div class="page__inner-wrap">
@@ -822,7 +822,10 @@
   </li>
   <li><a href="#extending-ontimize-web-services" id="markdown-toc-extending-ontimize-web-services">Extending Ontimize Web services</a>    <ul>
       <li><a href="#create-and-extend-a-service" id="markdown-toc-create-and-extend-a-service">Create and extend a service</a></li>
-      <li><a href="#override-crud-methods-using-a-third-party-api" id="markdown-toc-override-crud-methods-using-a-third-party-api">Override CRUD methods using a third party API</a></li>
+      <li><a href="#override-crud-methods-using-a-third-party-api" id="markdown-toc-override-crud-methods-using-a-third-party-api">Override CRUD methods using a third party API</a>        <ul>
+          <li><a href="#dorequest-method" id="markdown-toc-dorequest-method">doRequest method</a></li>
+        </ul>
+      </li>
       <li><a href="#define-your-own-crud-methods" id="markdown-toc-define-your-own-crud-methods">Define your own CRUD methods</a></li>
       <li><a href="#adapt-your-service-response" id="markdown-toc-adapt-your-service-response">Adapt your service response</a></li>
       <li><a href="#use-your-service-in-the-whole-application" id="markdown-toc-use-your-service-in-the-whole-application">Use your service in the whole application</a></li>
@@ -1112,6 +1115,27 @@
 
 <span class="p">}</span>
 </code></pre></div></div>
+<h4 id="dorequest-method">doRequest method</h4>
+
+<p>This <code class="language-plaintext highlighter-rouge">doRequest</code> method is used to retrieve data from a URL. You can use this method with parameters to configurate the request.
+You can check the options available in this example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">ServiceRequestParam</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">PUT</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">DELETE</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+  <span class="nx">body</span><span class="p">?:</span> <span class="nx">any</span><span class="p">,</span>
+  <span class="nx">options</span><span class="p">?:</span> <span class="nx">HttpRequestOptions</span><span class="p">,</span>
+  <span class="nx">successCallback</span><span class="p">?:</span> <span class="p">(</span><span class="na">resp</span><span class="p">:</span> <span class="nx">ServiceResponse</span><span class="p">,</span> <span class="na">observer</span><span class="p">:</span> <span class="nx">Subscriber</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">,</span>
+  <span class="nx">errorCallBack</span><span class="p">?:</span> <span class="p">(</span><span class="na">resp</span><span class="p">:</span> <span class="nx">ServiceResponse</span><span class="p">,</span> <span class="na">observer</span><span class="p">:</span> <span class="nx">Subscriber</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+<span class="p">};</span>
+
+<span class="c1">// this.doRequest(ServiceRequestParam)</span>
+<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">doRequest</span><span class="p">({</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="nx">url</span><span class="p">,</span>
+  <span class="na">options</span><span class="p">:</span> <span class="p">{}</span> <span class="c1">// This overrides the default http headers. Remove it if you are using an ontimize based API in the backend</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <blockquote>
   <p><strong>NOTE:</strong> In most cases the third party API won&#8217;t offer the same response as OntimizeWeb components need so you have to <a href="#adapt-your-service-response">adapt the response</a>.</p>
@@ -1302,7 +1326,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-11-17T06:59:41-05:00">November 17, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-11-29T10:43:19-05:00">November 29, 2021</time></p>
         
       </footer>
 
