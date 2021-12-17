@@ -39,8 +39,4 @@ attributes: [{
 outputs: [{
   name: "onClick",
   description: "Event triggered when the button is clicked"
-},
-{
-  name: "click",
-  description: "Event triggered when the button is clicked"
 }]
