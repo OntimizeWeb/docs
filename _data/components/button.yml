@@ -36,3 +36,7 @@ attributes: [{
   required: "",
   description: "Theme color palette for the component"
 }]
+outputs: [{
+  name: "onClick",
+  description: "Event triggered when the button is clicked"
+}]
