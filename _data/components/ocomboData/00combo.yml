@@ -44,6 +44,12 @@ attributes: [{
   default: "no",
   required: "",
   description: "Displays an input field for searching between the dropdown options"
+},{
+  name: "null-selection-label",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Text to none selection in a combo"
 }]
 
 methods: [{
