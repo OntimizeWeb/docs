@@ -76,8 +76,8 @@ attributes: [
   description: "Indicates whether or not to stay in the edited detail form after a successful edition"
 },{
   name: "after-insert-mode",
-  type: "new | detail",
-  default: "",
+  type: "new | detail | close",
+  default: "close",
   required: "no",
   description: "Shows reseted form after insert a new record (new) or shows the inserted record after (detail). This property works in substitution of stay-in-record-after-insert (detail)"
 },{
