@@ -16,13 +16,11 @@ main:
   #   url: /collection-archive/
 
 versions:
-  - title: "3.x.x"
-    url: /docs/v3
   - title: "4.x.x"
     url: /docs/v4
     active: true
   - title: "8.x.x"
-    url: /docs
+    url: /docs/v8
 
 
 # documentation links
