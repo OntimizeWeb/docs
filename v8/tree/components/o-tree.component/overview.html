@@ -1,0 +1,2295 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Tree - Ontimize Web</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ontimize Web">
+<meta property="og:title" content="Tree">
+
+
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview">
+
+
+
+  <meta property="og:description" content="     On This Page  ">
+
+
+
+  <meta name="twitter:site" content="@imatiainnova">
+  <meta name="twitter:title" content="Tree">
+  <meta name="twitter:description" content="     On This Page  ">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/tree/components/o-tree.component/overview">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://ontimizeweb.github.io/docs/v8/images/site-logo.png">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="https://ontimizeweb.github.io/docs/v8/images/site-logo.png">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-01-20T06:32:14-05:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://ontimizeweb.github.io/docs/v8",
+      "logo": "https://ontimizeweb.github.io/docs/v8/images/site-logo.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ontimize Web",
+      "url" : "https://ontimizeweb.github.io/docs/v8",
+      "sameAs" : ["https://twitter.com/imatiainnova"]
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ontimizeweb.github.io/docs/v8/feed.xml" type="application/atom+xml" rel="alternate" title="Ontimize Web Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script defer src="https://ontimizeweb.github.io/docs/v8/assets/js/fontawesome-all.min.js"></script>
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ontimizeweb.github.io/docs/v8/assets/css/main.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v8/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v8/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v8/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v8/images/android-icon-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="manifest" href="https://ontimizeweb.github.io/docs/v8/images/manifest.json?v=M44lzPylqQ">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://ontimizeweb.github.io/docs/v8/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://ontimizeweb.github.io/docs/v8/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--o-component">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+          <a href="https://ontimizeweb.github.io/docs/v8/">
+            <div class="main_icon"></div>
+        </a>
+
+        <script src="https://ontimizeweb.github.io/docs/v8/assets/js/lunr.js"></script>
+<script type="text/javascript" src="/docs/v8/assets/js/ontimize.js"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Ontimize Web" aria-label="Search Ontimize Web"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+
+
+<div class="search-overlay"></div>
+
+
+
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/v8/">Ontimize Web</a></li>-->
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v8/doc-overview/">Getting started</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item masthead__menu-item-active"><a href="https://ontimizeweb.github.io/docs/v8/components/">Components</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v8/about/">About</a>
+            
+            </li>
+
+
+            
+            
+
+          
+
+          
+          <li class="masthead__menu-item masthead__menu-item-active">
+            <select onchange="window.location = this.options[this.selectedIndex].value">
+            
+              <option value="https://ontimizeweb.github.io/docs/v4" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
+            
+            </select>
+          </li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+  
+    
+
+
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://ontimizeweb.github.io/docs/v8/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        
+        <span class="sep">></span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://ontimizeweb.github.io/docs/v8/tree" itemprop="item"><span itemprop="name">Tree</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://ontimizeweb.github.io/docs/v8/components" itemprop="item"><span itemprop="name">Components</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://ontimizeweb.github.io/docs/v8/o-tree.component" itemprop="item"><span itemprop="name">O tree.component</span></a>
+          <meta itemprop="position" content="4" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        <li class="current">Tree</li>
+      
+    
+  </ol>
+</nav>
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+
+ <script type="text/javascript" style="display:none;">
+  var onNavigationItemClick = function (element) {
+
+    var parentNav = $(element).parents('nav.nav__list');
+    var icons = parentNav.find('svg');
+    icons.addClass('fa-folder');
+    icons.addClass('orange-icon');
+    icons.removeClass('fa-folder-open');
+
+    var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.addClass('active-component-category');
+/*
+    parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
+    parentLi.toggleClass('active-component-category');
+*/    
+    var currentIcon = parentLi.find('svg:first');
+    currentIcon.addClass('fa-folder-open');
+    currentIcon.removeClass('orange-icon');
+    currentIcon.removeClass('fa-folder');
+
+  };
+</script>
+
+<nav class="nav__list">
+  
+  <ul>
+    
+    
+    
+ 
+    
+
+    
+
+    
+    
+
+      
+       
+      <li class=" ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Getting Started</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/tree/overview/" class=" ">Overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/tree/installation/" class=" ">Installation</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class=" ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Components</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview" class="active ">Tree</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview" class=" ">Tree node</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+  <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Tree">
+    
+    <meta itemprop="description" content="     On This Page  ">
+    
+    <meta itemprop="datePublished" content="January 20, 2022">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 class="page__title" itemprop="headline">Tree
+</h1>
+        
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <div class="o-component-container">
+
+  
+
+  
+    
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+  function openTab(evt, tabName) {
+    var url="https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview";
+    url+='/../'+tabName;
+    var loc_array = document.location.href.split('/');
+    if (loc_array[loc_array.length - 1] !== tabName) {
+      window.location.href=url;
+    }
+
+  }
+</script>
+ 
+
+
+
+
+<!-- Tab links -->
+<div class="o-tab">
+  <button class="o-tablinks active"  onclick="openTab(event, 'overview')">Overview</button>
+  <button class="o-tablinks " class="o-tablinks" onclick="openTab(event, 'api')">API</button>
+</div>
+
+<!-- OVERVIEW -->
+<div id="overview" class="o-tabcontent" style="display:block">
+ <!-- <aside class="sidebar__right">
+<nav class="toc" markdown="1">
+<header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
+*  Auto generated table of contents
+{:toc .toc__menu}
+</nav>
+</aside> -->
+
+  
+
+
+  
+
+  
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#nodes-text" id="markdown-toc-nodes-text">Nodes text</a></li>
+  <li><a href="#quick-filter" id="markdown-toc-quick-filter">Quick filter</a></li>
+  <li><a href="#tree-nodes-navigation" id="markdown-toc-tree-nodes-navigation">Tree nodes navigation</a></li>
+  <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
+</ul>
+
+  </nav>
+</aside>
+
+<h2 id="introduction">Introduction</h2>
+<p>The <code class="language-plaintext highlighter-rouge">o-tree</code> component allows to show data with a tree structure.</p>
+
+<p>If the component is <em>inside a form</em>, the <code class="language-plaintext highlighter-rouge">attr</code> property is required for registry the tree in the form components.</p>
+
+<p>This component extends the <code class="language-plaintext highlighter-rouge">OServiceBaseComponent</code> class, so you can bind the data origin to a remote server or to local data, as seen <a href="https://ontimizeweb.github.io/docs/v8/components/service/service-base/overview" target="_blank">here</a>. You also must define which <code class="language-plaintext highlighter-rouge">columns</code> to retrieve.</p>
+
+<h2 id="nodes-text">Nodes text</h2>
+<p>You have to specify which text will be displayed in each tree node using the <code class="language-plaintext highlighter-rouge">description-columns</code> input. This columns are a subset of the <code class="language-plaintext highlighter-rouge">columns</code> and its content will be separed using the string specified in the <code class="language-plaintext highlighter-rouge">separator</code> input.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-tree</code> will show a base node if the <code class="language-plaintext highlighter-rouge">show-root</code> input is set to a true value, that node text is setted using the <code class="language-plaintext highlighter-rouge">root-title</code> input.</p>
+
+<h3 class="grey-color">Example</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-tree</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span>
+    <span class="na">columns=</span><span class="s">"CUSTOMERID;SURNAME;NAME"</span> <span class="na">description-columns=</span><span class="s">"SURNAME;NAME"</span>
+    <span class="na">separator=</span><span class="s">", "</span> <span class="na">root-title=</span><span class="s">"CUSTOMERS"</span> <span class="na">show-root=</span><span class="s">"yes"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/o-tree&gt;</span>
+</code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/v8/images/components/tree/basic.png" alt="Tree component" class="comp-example-img" /></p>
+
+<h2 id="quick-filter">Quick filter</h2>
+
+<p>This option is enabled by default, the filter is visible in the top right. You can disable it setting <code class="language-plaintext highlighter-rouge">quick-filter="no"</code>.</p>
+
+<p>You can configure which columns will be affected by the filtering setting the <code class="language-plaintext highlighter-rouge">quick-filter-columns</code> attribute, which contains the columns separated by &#8216;;&#8217;. By default it contains all the columns of the <code class="language-plaintext highlighter-rouge">columns</code> attribute.</p>
+
+<p>You can also configure filtering to be case sensitive with <code class="language-plaintext highlighter-rouge">filter-case-sensitive="yes"</code>. By default, it&#8217;s disabled.</p>
+
+<h2 id="tree-nodes-navigation">Tree nodes navigation</h2>
+
+<p>Setting the <code class="language-plaintext highlighter-rouge">route</code> attribute in the <code class="language-plaintext highlighter-rouge">o-tree</code> and <code class="language-plaintext highlighter-rouge">o-tree-node</code> components allows to trigger the navigation to the route indicated in its value.</p>
+
+<p>You can define static routes or/and wildcards (that must be included in the <code class="language-plaintext highlighter-rouge">columns</code> attribute). For example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-tree</span> <span class="na">#treeview</span> <span class="na">fxFlex</span> <span class="na">root-title=</span><span class="s">"CUSTOMERS"</span> <span class="na">service-type=</span><span class="s">"DummyService"</span>
+      <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span>
+      <span class="na">columns=</span><span class="s">"CUSTOMERID;SURNAME;NAME"</span> <span class="na">description-columns=</span><span class="s">"SURNAME;NAME"</span>
+      <span class="na">separator=</span><span class="s">", "</span> <span class="na">query-on-init=</span><span class="s">"true"</span> <span class="na">route=</span><span class="s">"customers/:CUSTOMERID"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/o-tree&gt;</span>
+</code></pre></div></div>
+
+<p>Clicking on a node of this tree will triger the navigation to the current route appending the static path <code class="language-plaintext highlighter-rouge">customers/</code> followed by the record &#8216;CUSTOMERID&#8217; value.</p>
+
+<p>You can see this working <a href="https://try.imatia.com/ontimizeweb/tree/main/detail/" target="_blank">here</a>.</p>
+
+<h2 id="demo">Demo</h2>
+
+<p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/tree" target="_blank">OntimizeWeb tree quickstart</a>.</p>
+
+<!-- recursive -->
+
+<!-- <img src="https://ontimizeweb.github.io/docs/v8/images/components/tree/detail.png" alt="detail"> -->
+
+</div>
+
+<!-- API -->
+<div id="api" class="o-tabcontent" style="display:none">
+  
+
+
+
+ 
+  <h2 id="Tree" >Tree</h2>
+ 
+
+  
+    <p><strong class="grey-color" id="o-tree">Directive:</strong> o-tree</p>
+  
+  
+
+
+  
+
+
+  
+    <h3 id="inherited-inputs" class="grey-color">Inherited inputs</h3>
+    <ul>
+    
+      
+      <li>
+        from  <a href="https://ontimizeweb.github.io/docs/v8/components/service/service-base/api" rel="permalink">OServiceBaseComponent:</a>
+        <ul class="attributes-list">
+          
+          
+            <li> attr </li>
+          
+            <li> columns </li>
+          
+            <li> delete-method </li>
+          
+            <li> entity </li>
+          
+            <li> insert-method </li>
+          
+            <li> keys </li>
+          
+            <li> pageable </li>
+          
+            <li> paginated-query-method </li>
+          
+            <li> parent-keys </li>
+          
+            <li> query-fallback-function </li>
+          
+            <li> query-method </li>
+          
+            <li> query-on-bind </li>
+          
+            <li> query-on-init </li>
+          
+            <li> query-rows </li>
+          
+            <li> service </li>
+          
+            <li> service-type </li>
+          
+            <li> static-data </li>
+          
+            <li> store-state </li>
+          
+            <li> update-method </li>
+          
+        </ul>
+        
+      </li>
+    </ul>
+  
+
+
+  
+    
+      <h3 id="inputs" class="grey-color">Inputs</h3>
+    
+    
+    
+
+    
+    
+
+  <table class="attributes-table mdl-data-table">
+    <thead>
+      <tr>
+      
+        
+          
+            <th class=""> Name</th>
+          
+      
+        
+          
+            <th class=""> Description</th>
+          
+      
+        
+          
+            <th class=""> Default</th>
+          
+      
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>controls</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show a controls bar. Including component actions or the quickfilter</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>description-columns</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Tree node visible text columns</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p><code class="language-plaintext highlighter-rouge">columns</code> attribute value</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>expand-all</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to expand all nodes.</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>false</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>filter-case-sensitive</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to do a case sensitive quickfilter search</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>pageable</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to do paginated queries for getting the data</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>parent-column</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-on-bind</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Query table data on bind</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-on-init</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Query table data on init</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>quick-filter</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show a input for filtering data</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>quick-filter</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show a input for filtering data</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>quick-filter-columns</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Columns used by the quick filter. Separated by ‘;’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p><code class="language-plaintext highlighter-rouge">columns</code> attribute value</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>recursive</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to do recursive queries over the selected node</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>recursive-levels</p>
+</p>
+    
+      <p><i>number</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Number of recursive levels</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>1</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>refresh-button</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show a button for refreshing data</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>root-title</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Title of the root node</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>route</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Navigation route activated when the node is clicked</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>separator</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Separation character between <code class="language-plaintext highlighter-rouge">description-columns</code> values</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>show-root</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to show the root node</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>sort-columns</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Initial ordering, using [ ASC or DESC ] format. Separated by ‘;’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>title</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Title in the tree toolbar</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>translate</p>
+</p>
+    
+      <p><i>no | false | yes | true</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Indicates whether or not to automatically translate the tree nodes values</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>no</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+      </tbody>
+  </table>
+
+  
+
+  
+
+
+
+  
+
+  
+    <h3 id="outputs" class="grey-color">Outputs</h3>
+    <table class="attributes-table mdl-data-table">
+      <thead>
+        <tr>
+        
+          <th class=""> Name</th>
+        
+          <th class=""> Description</th>
+        
+        </tr>
+      </thead>
+        <tbody>
+        
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
+              <p>onNodeCollapsed</p>
+
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered when a tree node is collapsed</p>
+
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
+              <p>onNodeExpanded</p>
+
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered when a tree node is expanded</p>
+
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
+              <p>onNodeSelected</p>
+
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered when a tree node is selected</p>
+
+              
+            </td>
+          
+          </tr>
+        
+      </tbody>
+    </table>
+  
+
+
+  
+
+
+
+
+  
+
+</div>
+
+
+      
+    
+  
+
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+
+        
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-01-20T06:32:14-05:00">January 20, 2022</time></p>
+        
+      </footer>
+
+      
+
+      <!-- 
+
+
+  <nav class="pagination">
+    
+      <a href="https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/api" class="pagination--pager" title="Tree
+">
+          <i class="fas fa-arrow-left margin-right"></i>
+        Previous
+      </a>
+    
+    
+      <a href="https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/api" class="pagination--pager" title="Tree
+">
+        Next
+        <i class="fas fa-arrow-right margin-left"></i>
+      </a>
+    
+  </nav>
+ -->
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<a href="#" class="scrollToTop"><i class="fa fa-fw fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/imatiainnova" target="_blank"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+    
+    
+      <li><a href="http://github.com/OntimizeWeb" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="https://ontimizeweb.github.io/docs/v8/feed.xml" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+      </footer>
+    </div>
+
+    <script src="https://ontimizeweb.github.io/docs/v8/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2011187-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
