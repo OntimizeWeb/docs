@@ -17,7 +17,7 @@ attributes: [{
   type: "(values: Array<{ attr, value }>) => IExpression",
   default: "",
   required: "",
-  description: "Funtion called for creating the expression. The function receives an array of objects that contains the target column attribute and the value of the respective form component and must return an instance of `IExpression`. Read about how to build complex filter structures [here](https://ontimizeweb.github.io/docs/guide/filterexpression/){:target='_blank'}."
+  description: "Funtion called for creating the expression. The function receives an array of objects that contains the target column attribute and the value of the respective form component and must return an instance of `IExpression`. Read about how to build complex filter structures [here](https://ontimizeweb.github.io/docs/v4/guide/filterexpression/){:target='_blank'}."
 },{
   name: "query-on-change",
   type: "yes | no | true | false",
