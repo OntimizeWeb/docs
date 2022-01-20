@@ -1,1 +1,0 @@
-Sitemap: http://10.7.0.227:4000/docs/sitemap.xml
