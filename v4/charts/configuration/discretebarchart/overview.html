@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-12-20T11:02:52-05:00">
+  <meta property="article:published_time" content="2022-01-20T06:37:12-05:00">
 
 
 
@@ -236,11 +236,9 @@
           <li class="masthead__menu-item masthead__menu-item-active">
             <select onchange="window.location = this.options[this.selectedIndex].value">
             
-              <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
-            
               <option value="https://ontimizeweb.github.io/docs/v4"  selected="selected" >4.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs" >8.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -495,7 +493,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="December 20, 2021">
+    <meta itemprop="datePublished" content="January 20, 2022">
     
 
     <div class="page__inner-wrap">
@@ -588,7 +586,7 @@
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeService</span><span class="p">,</span> <span class="nx">ChartService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
-<span class="kr">declare</span> <span class="kd">var</span> <span class="nx">d3</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
+<span class="nx">declare</span> <span class="kd">var</span> <span class="nx">d3</span><span class="p">:</span> <span class="nx">any</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
   <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">discrete-bar</span><span class="dl">'</span><span class="p">,</span>
@@ -598,13 +596,13 @@
 
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">DiscreteBarComponent</span> <span class="p">{</span>
 
-  <span class="k">protected</span> <span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="kr">protected</span> <span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">;</span>
 
-  <span class="k">protected</span> <span class="nx">yAxis</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MOVEMENT</span><span class="dl">'</span><span class="p">;</span>
-  <span class="k">protected</span> <span class="nx">xAxis</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MOVEMENTTYPES</span><span class="dl">'</span><span class="p">;</span>
+  <span class="kr">protected</span> <span class="nx">yAxis</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MOVEMENT</span><span class="dl">'</span><span class="p">;</span>
+  <span class="kr">protected</span> <span class="nx">xAxis</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">MOVEMENTTYPES</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">discreteBar</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">static</span><span class="p">:</span> <span class="kc">false</span><span class="p">})</span>
-  <span class="k">protected</span> <span class="nx">discreteBar</span><span class="p">:</span> <span class="nx">OChartComponent</span><span class="p">;</span>
+  <span class="kr">protected</span> <span class="nx">discreteBar</span><span class="p">:</span> <span class="nx">OChartComponent</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
 
@@ -633,7 +631,7 @@
       <span class="p">}</span>
     <span class="p">});</span>
 
-    <span class="kd">let</span> <span class="nx">chartService</span><span class="p">:</span> <span class="nx">ChartService</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">discreteBar</span><span class="p">.</span><span class="nx">getChartService</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="na">chartService</span><span class="p">:</span> <span class="nx">ChartService</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">discreteBar</span><span class="p">.</span><span class="nx">getChartService</span><span class="p">();</span>
     <span class="kd">let</span> <span class="nx">chartOps</span> <span class="o">=</span> <span class="nx">chartService</span><span class="p">.</span><span class="nx">getChartOptions</span><span class="p">();</span>
     <span class="c1">// Configuring x axis...</span>
     <span class="nx">chartOps</span><span class="p">[</span><span class="dl">'</span><span class="s1">yAxis</span><span class="dl">'</span><span class="p">][</span><span class="dl">'</span><span class="s1">tickFormat</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
@@ -645,7 +643,7 @@
   <span class="cm">/**
    * Creates chart data grouping movements by category 'Movement type'
    *  */</span>
-  <span class="nx">adaptResult</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">adaptResult</span><span class="p">(</span><span class="na">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">let</span> <span class="nx">values</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">processValues</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
       <span class="c1">// chart data</span>
@@ -658,10 +656,10 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="nx">processValues</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span> <span class="p">)</span> <span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">processValues</span><span class="p">(</span><span class="na">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span> <span class="p">)</span> <span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-    <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="na">item</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="na">index</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="na">item</span><span class="p">:</span> <span class="nx">any</span><span class="p">,</span> <span class="na">index</span><span class="p">:</span> <span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="kd">let</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nx">filterCategory</span><span class="p">(</span><span class="nx">item</span><span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="nx">xAxis</span><span class="p">],</span> <span class="nx">values</span><span class="p">);</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">filtered</span> <span class="o">&amp;&amp;</span> <span class="nx">filtered</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="p">{</span>
@@ -676,10 +674,10 @@
     <span class="k">return</span> <span class="nx">values</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="nx">filterCategory</span><span class="p">(</span><span class="nx">category</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">values</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">filterCategory</span><span class="p">(</span><span class="na">category</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="na">values</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">filtered</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">values</span> <span class="o">&amp;&amp;</span> <span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">filtered</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">val</span><span class="p">:</span> <span class="nb">Object</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">filtered</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="na">val</span><span class="p">:</span> <span class="nb">Object</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">val</span><span class="p">[</span><span class="dl">'</span><span class="s1">x</span><span class="dl">'</span><span class="p">]</span> <span class="o">===</span> <span class="nx">category</span><span class="p">)</span> <span class="p">{</span>
           <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
         <span class="p">}</span>
@@ -1564,7 +1562,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-12-20T11:02:52-05:00">December 20, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-01-20T06:37:12-05:00">January 20, 2022</time></p>
         
       </footer>
 
@@ -1627,11 +1625,25 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2022 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 
     <script src="https://ontimizeweb.github.io/docs/v4/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2011187-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
 
 
 

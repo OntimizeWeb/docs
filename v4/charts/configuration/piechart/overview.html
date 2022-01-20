@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2021-12-20T11:02:52-05:00">
+  <meta property="article:published_time" content="2022-01-20T06:37:12-05:00">
 
 
 
@@ -236,11 +236,9 @@
           <li class="masthead__menu-item masthead__menu-item-active">
             <select onchange="window.location = this.options[this.selectedIndex].value">
             
-              <option value="https://ontimizeweb.github.io/docs/v3" >3.x.x</option>
-            
               <option value="https://ontimizeweb.github.io/docs/v4"  selected="selected" >4.x.x</option>
             
-              <option value="https://ontimizeweb.github.io/docs" >8.x.x</option>
+              <option value="https://ontimizeweb.github.io/docs/v8" >8.x.x</option>
             
             </select>
           </li>
@@ -495,7 +493,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="December 20, 2021">
+    <meta itemprop="datePublished" content="January 20, 2022">
     
 
     <div class="page__inner-wrap">
@@ -628,9 +626,9 @@
   <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./pie.component.html</span><span class="dl">'</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">PieComponent</span>  <span class="p">{</span>
-  <span class="k">protected</span> <span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="kr">protected</span> <span class="nx">data</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nb">Object</span><span class="o">&gt;</span><span class="p">;</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="k">protected</span> <span class="nx">http</span><span class="p">:</span> <span class="nx">Http</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">protected</span> <span class="nx">http</span><span class="p">:</span> <span class="nx">Http</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 
 
   <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
@@ -639,21 +637,21 @@
     <span class="p">})</span>
   <span class="p">}</span>
 
- <span class="k">protected</span> <span class="nx">loadJSONData</span><span class="p">()</span> <span class="p">{</span>
+ <span class="kr">protected</span> <span class="nx">loadJSONData</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">headers</span><span class="p">:</span> <span class="nx">HttpHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HttpHeaders</span><span class="p">();</span>
     <span class="nx">headers</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">Access-Control-Allow-Origin</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">*</span><span class="dl">'</span><span class="p">);</span>
 
     <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">./assets/dummy-data/dummy-pie-data.json</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-    <span class="kd">let</span> <span class="nx">innerObserver</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">innerObserver</span><span class="p">:</span> <span class="nx">any</span><span class="p">;</span>
     <span class="kd">let</span> <span class="nx">dataObservable</span> <span class="o">=</span> <span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">observer</span> <span class="o">=&gt;</span>
       <span class="nx">innerObserver</span> <span class="o">=</span> <span class="nx">observer</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">share</span><span class="p">());</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">http</span>
       <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span> <span class="p">})</span>
       <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="na">data</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="nx">res</span><span class="p">;</span>
+        <span class="kd">let</span> <span class="na">data</span><span class="p">:</span> <span class="nx">any</span> <span class="o">=</span> <span class="nx">res</span><span class="p">;</span>
         <span class="nb">self</span><span class="p">.</span><span class="nx">serviceResponse</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
         <span class="nx">innerObserver</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">values</span><span class="p">);</span>
       <span class="p">},</span> <span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">innerObserver</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
@@ -1665,7 +1663,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-12-20T11:02:52-05:00">December 20, 2021</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-01-20T06:37:12-05:00">January 20, 2022</time></p>
         
       </footer>
 
@@ -1728,11 +1726,25 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2022 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 
     <script src="https://ontimizeweb.github.io/docs/v4/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2011187-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
 
 
 
