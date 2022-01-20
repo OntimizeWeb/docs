@@ -1,0 +1,44 @@
+name: Release Docs
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [closed]
+    branches:
+      - 4.x.x
+
+env:
+  OWEB_EMAIL: ontimize-web@imatia.com
+  OWEB_TOKEN: ${{ secrets.OWEB_GH_TOKEN_PUSH }}
+  OWEB_USERNAME: ontimize-web
+  TARGET_PATH: v4
+
+jobs:
+  build-docs:
+    name: Publish doc
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true && contains(join(github.event.pull_request.labels.*.name, ', '), 'release-docs'))
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 4.x.x
+          fetch-depth: 0
+          token: ${{ env.OWEB_TOKEN }}
+
+      - name: Bundler Cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Jekyll
+        uses: helaili/jekyll-action@master
+        with:
+          jekyll_env: deploy
+          jekyll_build_options: --baseurl /docs/${{ env.TARGET_PATH }}
+          target_branch: gh-pages
+          target_path: ${{ env.TARGET_PATH }}
+          keep_history: true
+          token: ${{ env.OWEB_TOKEN }}

@@ -103,13 +103,13 @@ attributes: [
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the [form detail](https://ontimizeweb.github.io/docs/components/form/detail/){:target='_blank'}) section"
+  description: "Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the [form detail](https://ontimizeweb.github.io/docs/v4/components/form/detail/){:target='_blank'}) section"
 },{
   name: "show-header-navigation",
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/components/formlayoutmanager/overview){:target='_blank'})"
+  description: "Include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/v4/components/formlayoutmanager/overview){:target='_blank'})"
 },{
   name: "undo-button",
   type: "no | false | yes | true",
