@@ -1,0 +1,9 @@
+directive: "o-app-layout-header"
+
+attributes: [{
+  name: "position",
+  type: "start | center | end",
+  default: "start",
+  required: "",
+  description: "Indicates whether the custom header content is attached to the beginning, middle, or end of the header"
+}]
