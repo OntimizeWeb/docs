@@ -2270,206 +2270,212 @@
       ,"358": {
             "doc": "App layout",
             "title": "App layout",
-            "content": "Directive: o-app-layout . Inputs . Name Description Default . closed-sidenav-image . string . Sidenav header image when it is closed . header-color . ThemePalette . Theme color palette for the application header. . mode . desktop mobile . Indicates the component performance mode . desktop . opened-sidenav-image . string . Sidenav header image when it is opened . show-header . no false yes true . Indicates whether or not to show an application header. The default value is no when the app layout mode is desktop and yes when the app layout mode is mobile . no . show-language-selector . no false yes true . Indicates whether or not to show the language selector . yes . show-title . no false yes true . Indicates whether or not to show the header title . no . show-user-info . no false yes true . Indicates whether or not to show a component with logged user information . yes . sidenav-mode . over push side . Indicates the angular material sidenav mode. The default value is side when app layout mode is desktop and over when app layout mode is mobile . side . sidenav-opened . no false yes true . Indicates whether or not to the sidenav is initially opened . yes . use-flag-icons . no false yes true . Indicates whether or not the language selector shows flags . ",
+            "content": "Directive: o-app-layout . Inputs . Name Description Default . closed-sidenav-image . string . Sidenav header image when it is closed . header-color . ThemePalette . Theme color palette for the application header. . mode . desktop mobile . Indicates the component performance mode . desktop . opened-sidenav-image . string . Sidenav header image when it is opened . show-header . no false yes true . Indicates whether or not to show an application header. The default value is no when the app layout mode is desktop and yes when the app layout mode is mobile . no . show-language-selector . no false yes true . Indicates whether or not to show the language selector . yes . show-static-title . no false yes true . Indicates whether or not to show the static header title . no . show-title . no false yes true . Indicates whether or not to show the header title . no . show-user-info . no false yes true . Indicates whether or not to show a component with logged user information . yes . sidenav-mode . over push side . Indicates the angular material sidenav mode. The default value is side when app layout mode is desktop and over when app layout mode is mobile . side . sidenav-opened . no false yes true . Indicates whether or not to the sidenav is initially opened . yes . static-title . string . Static header title . use-flag-icons . no false yes true . Indicates whether or not the language selector shows flags . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/api#App%20layout",
             "relUrl": "/components/applayout/api#App layout"
           },"359": {
             "doc": "App layout",
             "title": "App layout",
-            "content": "Directive: o-app-layout-sidenav . Inputs . Name Description Default . position . start end . Indicates whether the custom content of the side menu is attached at the top or at the end of the menu . end . ",
+            "content": "Directive: o-app-layout-header . Inputs . Name Description Default . position . start end . Indicates whether the custom header content is attached to the beginning or end of the header . start . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/api#App%20layout",
             "relUrl": "/components/applayout/api#App layout"
           },"360": {
+            "doc": "App layout",
+            "title": "App layout",
+            "content": "Directive: o-app-layout-sidenav . Inputs . Name Description Default . position . start end . Indicates whether the custom content of the side menu is attached at the top or at the end of the menu . end . ",
+            "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/api#App%20layout",
+            "relUrl": "/components/applayout/api#App layout"
+          },"361": {
             "doc": "App layout",
             "title": "User info configuration",
             "content": "Directive: o-user-info-configuration . Inputs . Name Description Default . show-logout . no false yes true . Indicates whether or not to show the logout item . yes . show-profile . no false yes true . Indicates whether or not to show the my profile item . no . show-settings . no false yes true . Indicates whether or not to show the settings item . yes . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/api#User%20info%20configuration",
             "relUrl": "/components/applayout/api#User info configuration"
-          },"361": {
+          },"362": {
             "doc": "App layout",
             "title": "User info configuration item",
             "content": "Directive: o-user-info-configuration-item . Inputs . Name Description Default . action . ()=>void . Method to execute when the menu item is selected . class . string . The CSS class applied to the menu item . confirm . no false yes true . Indicates whether or not the user must confirm the menu action . no . confirm-text . string . The confirmation text . icon . string . Icon name (see Google material design icons)*Note: In this component you are required to use only Google Material Icons . name . string . Item title . route . string . App navigation route when the menu item is selected . tooltip . no false yes true . Indicates whether the tooltip text showed on the menu item . no . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/api#User%20info%20configuration%20item",
             "relUrl": "/components/applayout/api#User info configuration item"
           }
-      ,"362": {
+      ,"363": {
             "doc": "App layout",
             "title": "Example",
             "content": "&lt;o-app-layout opened-sidenav-image=\"assets/images/sidenav-opened.png\" closed-sidenav-image=\"assets/images/sidenav-closed.png\" mode=\"desktop\"&gt; &lt;router-outlet&gt;&lt;/router-outlet&gt; &lt;/o-app-layout&gt; . The result of this example is shown below. You can see a working example of this in the OntimizeWeb QuickStart or check the code in GitHub. Custom content . You can attach your own content to the side navigator using the o-app-layout-sidenav component inside the o-app-layout-sidenav of you application. &lt;o-app-layout opened-sidenav-image=\"assets/images/sidenav-opened.png\" closed-sidenav-image=\"assets/images/sidenav-closed.png\"&gt; &lt;o-app-layout-sidenav&gt; &lt;!-- YOUR CUSTOM CONTENT HERE --&gt; &lt;/o-app-layout-sidenav&gt; &lt;router-outlet&gt;&lt;/router-outlet&gt; &lt;/o-app-layout&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/overview#example",
             "relUrl": "/components/applayout/overview#example"
-          },"363": {
+          },"364": {
             "doc": "App layout",
             "title": "Modes",
             "content": "The o-app-layout components has two performance modes designed for making this component more usable in desktop and mobile applications. This modes are the following: . Desktop This is the default mode of the o-app-layout component. This mode displays the side menu and allows the user to partially hide it. Mobile Configure this mode by setting the mobile value in the mode attribute in the o-app-layout component. This mode shows the side menu and a toolbar on the top with a button for show/hide the side menu. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/overview#modes",
             "relUrl": "/components/applayout/overview#modes"
-          },"364": {
+          },"365": {
             "doc": "App layout",
             "title": "Toolbar",
             "content": "The application layout component may show a toolbar at the top of the screen by setting the show-header attribute to yes. Check this and other attributes in the API section of this page. The o-app-layout component allows you to configure whether or not to show flags on the language selector by setting the attribute use-flag-icons to yes. In order to show the language flags, it is necessary install the dependency flag-icon-css: . $ npm install flag-icon-css . And import the flag icon styles in your application&#8217;s angular.json file: . \"node_modules/flag-icon-css/css/flag-icons.css\" . Adding custom content to the toolbar . If you want to add your own components to the layout toolbar you must use the o-app-layout-header component. &lt;o-app-layout opened-sidenav-image=\"assets/images/sidenav-opened.png\" closed-sidenav-image=\"assets/images/sidenav-closed.png\" mode=\"desktop\" show-header=\"yes\"&gt; &lt;o-app-layout-header&gt; &lt;!-- YOUR CUSTOM CONTENT HERE --&gt; &lt;/o-app-layout-header&gt; &lt;router-outlet&gt;&lt;/router-outlet&gt; &lt;/o-app-layout&gt; . Adding custom user info . OntimizeWeb allows to customize the user info to the toolbar with the o-user-info-configuration and o-user-info-configuration-item components. Check the API section of this page for more information. Example . &lt;o-app-layout show-header=\"yes\" opened-sidenav-image=\"assets/images/sidenav-opened.png\" closed-sidenav-image=\"assets/images/sidenav-closed.png\"&gt; &lt;o-user-info-configuration show-profile=\"yes\"&gt; &lt;o-user-info-configuration-item name=\"test\" icon=\"home\" [action]=\"myAction\" confirm=\"yes\"&gt; &lt;/o-user-info-configuration-item&gt; &lt;/o-user-info-configuration&gt; &lt;router-outlet&gt;&lt;/router-outlet&gt; &lt;/o-app-layout&gt; . import { Component, ViewEncapsulation } from '@angular/core'; @Component({ selector: 'app-main', templateUrl: './main.component.html', styleUrls: ['./main.component.scss'], encapsulation: ViewEncapsulation.None }) export class MainComponent { constructor() { } myAction() { alert('Test') } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/overview#toolbar",
             "relUrl": "/components/applayout/overview#toolbar"
-          },"365": {
+          },"366": {
             "doc": "App layout",
             "title": "Images",
             "content": "You can set provide images to be shown in the side navigator using the attributes opened-sidenav-image and closed-sidenav-image. Check this and other attributes in the API section of this page. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/applayout/overview#images",
             "relUrl": "/components/applayout/overview#images"
           }
-      ,"366": {
+      ,"367": {
             "doc": "Breadcrumb",
             "title": "Breadcrumb",
             "content": "Directive: o-breadcrumb . Inputs . Name Description Default . form . OFormComponent . Form component reference from which breadcrumb takes the labeling values . label-columns . string . Form data columns used for breadcrum labels. Separated by ‘;’ . separator . string . Separator between multiple label column values . ’ ‘ (space) . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/breadcrumb/api#Breadcrumb",
             "relUrl": "/components/breadcrumb/api#Breadcrumb"
           }
-      ,"367": {
+      ,"368": {
             "doc": "Breadcrumb",
             "title": "Initialize",
             "content": "For using the breadcrum component it is necessary to initialize the NavigationService in order to gather the required information for building the breadcrumb component. For initializing the Navigation Service, just call the method initialize on the constructor of your application main component like the example below. import { Component, Injector } from '@angular/core'; import { NavigationService } from 'ontimize-web-ngx'; @Component({ selector: 'o-app', templateUrl: './app.component.html', styleUrls: ['./app.component.scss'] }) export class AppComponent { constructor(protected injector: Injector) { this.injector.get(NavigationService).initialize(); } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/breadcrumb/overview#initialize",
             "relUrl": "/components/breadcrumb/overview#initialize"
-          },"368": {
+          },"369": {
             "doc": "Breadcrumb",
             "title": "Example",
             "content": "&lt;o-breadcrumb [form]=\"myForm\" label-columns=\"NAME;SURNAME\" separator=\" \"&gt;&lt;/o-breadcrumb&gt; &lt;o-form #myForm service=\"myService\" entity=\"myEntity\" keys=\"USERID\" columns=\"USERID;NAME;SURNAME;ADDRESS\"&gt; ... &lt;/o-form&gt; . Note If the form attibute is not present, the text shown in the breadcrumb label will be the corresponding route item for the component where the breadcrumb is placed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/breadcrumb/overview#example",
             "relUrl": "/components/breadcrumb/overview#example"
           }
-      ,"369": {
+      ,"370": {
             "doc": "Containers",
             "title": "Containers",
             "content": "Directive: o-column, o-row . Inputs . Name Description Default . appearance . string . Indicates the appearance of the container, similar to the form fiel appearance . attr . string . Field identifier. Registry property if component is inside a form. . elevation . number . Number indicating elevation according to predefined CSS classes in Angular Material Elevation . icon . string . Name of google icon (see Google material design icons) . layout-align . string . Layout align value according to flex-layout library, see fxLayoutAlign API for more information . layout-gap . string . Specify margin gaps on children within the container. This attribute refers to the fxLayoutGap directive from flex-layout library, see fxLayoutGap API for more information . title . string . Container title . * required inputs. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/containers/api#Containers",
             "relUrl": "/components/containers/api#Containers"
-          },"370": {
+          },"371": {
             "doc": "Containers",
             "title": "Collapsible containers",
             "content": "Directive: o-column-collapsible, o-row-collapsible . Inputs . Name Description Default . appearance . string . Indicates the appearance of the container, similar to the form fiel appearance . attr . string . Field identifier. Registry property if component is inside a form. . description . string . Container description . elevation . number . Number indicating elevation according to predefined CSS classes in Angular Material Elevation . expanded . no false yes true . Indicates wether the collapsible container will be expanded or not . yes . icon . string . Name of google icon (see Google material design icons) . layout-align . string . Layout align value according to flex-layout library see Flex Layout . title . string . Container title . * required inputs. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/containers/api#Collapsible%20containers",
             "relUrl": "/components/containers/api#Collapsible containers"
           }
-      ,"371": {
+      ,"372": {
             "doc": "Containers",
             "title": "Example",
             "content": "&lt;o-column attr=\"col\" title=\"This is a column\"&gt; &lt;!-- Children displayed along Y axis --&gt; &lt;/o-column&gt; &lt;o-row attr=\"row\" title=\"This is a row\"&gt; &lt;!-- Children displayed along X axis --&gt; &lt;/o-row&gt; &lt;o-column-collapsible attr=\"collapsible-col\" title=\"Column\" description=\"This is a collapsible column\"&gt; &lt;!-- Children displayed along Y axis --&gt; &lt;/o-column-collapsible&gt; &lt;o-row-collapsible attr=\"collapsible-row\" title=\"Row\" description=\"This is a collapsible row\"&gt; &lt;!-- Children displayed along X axis --&gt; &lt;/o-row-collapsible&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/containers/overview#example",
             "relUrl": "/components/containers/overview#example"
-          },"372": {
+          },"373": {
             "doc": "Containers",
             "title": "Appearance  new ",
             "content": "The appearance input indicates which of the different container appearance is used. It has the same features that Angular Material appearance input, watch it here, only has a possible outline value. &lt;o-column title-label=\"Dirección fiscal\" appearance='outline'&gt; &lt;o-row fxFlex=\"100\"&gt; &lt;o-text-input fxFlex=\"75\" layout-padding attr=\"Dirección\" enabled=\"no\" data=\"C/ José Manuel Guimerá, 3-4º\"&gt;&lt;/o-text-input&gt; &lt;o-text-input fxFlex=\"25\" layout-padding attr=\"C.P.\" enabled=\"no\" data=\"38003\"&gt;&lt;/o-text-input&gt; &lt;/o-row&gt; &lt;o-row fxFlex=\"100\"&gt; &lt;o-combo fxFlex layout-padding attr=\"País\" value-column=\"id\" columns=\"id;name\" visible-columns=\"name\" [static-data]=\"countryData\" data=\"1\" enabled=\"no\"&gt;&lt;/o-combo&gt; &lt;o-combo fxFlex layout-padding attr=\"Provincia\" query-on-init=\"no\" query-on-bind=\"no\" enabled=\"no\"&gt;&lt;/o-combo&gt; &lt;o-text-input fxFlex layout-padding attr=\"Localidad\" data=\"Tenerife\" enabled=\"no\"&gt;&lt;/o-text-input&gt; &lt;/o-row&gt; &lt;/o-column&gt; . If you have used the injector token to set a global default appearance option this will not work in o-columns and o-rows. You will need to set the appearance using the input. You can interact with different options of this components in the OntimizeWeb playground. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/containers/overview#appearance--new-",
             "relUrl": "/components/containers/overview#appearance--new-"
           }
-      ,"373": {
+      ,"374": {
             "doc": "Context menu",
             "title": "Context menu",
             "content": "Directive: oContextMenu . Inputs . Name Description . oContextMenuData . object . Data passed to the context menu. It will be available as an attribute of the functions passed to enable and visible attributes on the o-context-menu-item component and in the execute event . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/api#Context%20menu",
             "relUrl": "/components/contextmenu/api#Context menu"
-          },"374": {
+          },"375": {
             "doc": "Context menu",
             "title": "Context menu group",
             "content": "Directive: o-context-menu-group . Inputs . Name Description Default . data . object . Data passed to the context menu. It will be available as an attribute of the execute event on the context menu . enabled . no false yes true function . Indicates whether or not the context menu item is enabled . yes . icon . string . Name of google icon (see Google material design icons) . label . string . Text shown on the menu item . visible . no false yes true function . Indicates whether or not the context menu item is visible . yes . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/api#Context%20menu%20group",
             "relUrl": "/components/contextmenu/api#Context menu group"
-          },"375": {
+          },"376": {
             "doc": "Context menu",
             "title": "Context menu item",
             "content": "Directive: o-context-menu-item . Inputs . Name Description Default . data . object . Data passed to the context menu. It will be available as an attribute of the execute event on the context menu . enabled . no false yes true function . Indicates whether or not the context menu item is enabled . yes . icon . string . Name of google icon (see Google material design icons) . label . string . Text shown on the menu item . visible . no false yes true function . Indicates whether or not the context menu item is visible . yes . Outputs . Name Description . execute . Event triggered when a item is clicked . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/api#Context%20menu%20item",
             "relUrl": "/components/contextmenu/api#Context menu item"
-          },"376": {
+          },"377": {
             "doc": "Context menu",
             "title": "Context menu separator",
             "content": "Directive: o-context-menu-separator . Inputs . Name Description Default . visible . no false yes true function . Indicates whether or not the context menu item is visible . yes . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/api#Context%20menu%20separator",
             "relUrl": "/components/contextmenu/api#Context menu separator"
           }
-      ,"377": {
+      ,"378": {
             "doc": "Context menu",
             "title": "Context menu group",
             "content": "The o-context-menu-group component represents a group of the o-context-menu-group, o-context-menu-item and o-context-menu-separator in the context menu component. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/overview#context-menu-group",
             "relUrl": "/components/contextmenu/overview#context-menu-group"
-          },"378": {
+          },"379": {
             "doc": "Context menu",
             "title": "Context menu item",
             "content": "The o-context-menu-item component represents each item of the context menu component. In some cases you may need context information when executing the action triggered by the o-context-menu-item, use the oContextMenuData directive in the oContextMenu host element in order emit it in the execute event of the context menu items. Check the API section of this page for more information. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/overview#context-menu-item",
             "relUrl": "/components/contextmenu/overview#context-menu-item"
-          },"379": {
+          },"380": {
             "doc": "Context menu",
             "title": "Context menu separator",
             "content": "The o-context-menu-separator component represents each separator of the context menu component. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/overview#context-menu-separator",
             "relUrl": "/components/contextmenu/overview#context-menu-separator"
-          },"380": {
+          },"381": {
             "doc": "Context menu",
             "title": "Context menu data",
             "content": "The oContextMenuData is an attribute of the oContextMenu directive is used for propagating context information when the context menu item is activated or for modifiying the menu item status when this depends on that context information. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/overview#context-menu-data",
             "relUrl": "/components/contextmenu/overview#context-menu-data"
-          },"381": {
+          },"382": {
             "doc": "Context menu",
             "title": "Example",
             "content": "&lt;div [oContextMenu]=\"myContextMenu\" [oContextMenuData]=\"customData\"&gt; &lt;span&gt;Right click me!&lt;/span&gt; &lt;/div&gt; &lt;o-context-menu #myOContextMenu&gt; &lt;o-context-menu-item icon=\"face\" label=\"Item 1\" (execute)=\"onExecute('Item 1', $event)\"&gt;&lt;/o-context-menu-item&gt; &lt;o-context-menu-group label=\"Group\" icon=\"priority_high\" &gt; &lt;o-context-menu-item icon=\"star_rate\" label=\"Item 2\" (execute)=\"onExecute('Item 2',$event)\" enabled=\"no\"&gt;&lt;/o-context-menu-item&gt; &lt;o-context-menu-separator&gt;&lt;/o-context-menu-separator&gt; &lt;o-context-menu-item label=\"Item 3\" (execute)=\"onExecute('Item 3',$event)\" [visible]=\"getVisible\"&gt;&lt;/o-context-menu-item&gt; &lt;/o-context-menu-group&gt; &lt;/o-context-menu&gt; . onExecute(customData: any) { /* do whatever you want */ } getVisible(data: any): boolean { return true; } . You can see a live example of this component in the OntimizeWeb playground. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/contextmenu/overview#example",
             "relUrl": "/components/contextmenu/overview#example"
           }
-      ,"382": {
+      ,"383": {
             "doc": "Dialog",
             "title": "Dialog",
             "content": "Class: DialogService . Methods . alert . Opens a alert modal dialog. Parameters . title: string, message: string, config?: ODialogConfig . confirm . Opens a confirm modal dialog. Parameters . title: string, message: string, config?: ODialogConfig . error . Opens a error modal dialog. Parameters . title: string, message: string, config?: ODialogConfig . info . Opens a info modal dialog. Parameters . title: string, message: string, config?: ODialogConfig . warn . Opens a warm modal dialog. Parameters . title: string, message: string, config?: ODialogConfig . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/dialog/api#Dialog",
             "relUrl": "/components/dialog/api#Dialog"
-          },"383": {
+          },"384": {
             "doc": "Dialog",
             "title": "Dialog",
             "content": "Class: ODialogConfig . Inputs . Name Description . alertType . AlertType => 'info' 'warn' 'error' . The type of preconfigured alert dialogs . cancelButtonText . string . The text of ‘cancel’ button . icon . string . The material icon of the dialog . okButtonText . string . The text of ‘ok’ button . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/dialog/api#Dialog",
             "relUrl": "/components/dialog/api#Dialog"
           }
-      ,"384": {
+      ,"385": {
             "doc": "Dialog",
             "title": "Basic example",
             "content": "&lt;o-button attr=\"info\" type=\"RAISED\" label=\"DIALOG.INFO_DIALOG\" layout-padding (click)=\"showInfo($event)\"&gt;&lt;/o-button&gt; . constructor( protected dialogService: DialogService) { } showInfo(evt: any) { if (this.dialogService) { this.dialogService.info('Info dialog title', 'This is an amazing \"Information\" dialog'); } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/dialog/overview#basic-example",
             "relUrl": "/components/dialog/overview#basic-example"
-          },"385": {
+          },"386": {
             "doc": "Dialog",
             "title": "ODialogConfig",
             "content": "Through ODialogConfig you can configure component parameters as type of alert, the text of &#8216;ok&#8217; button, the text of &#8216;cancel&#8217; button and the icon. For example . const config: ODialogConfig = { icon: 'alarm', okButtonText: 'It rocks!' }; this.dialogService.info('Info dialog title', 'This is an amazing \"Information\" dialog', config); . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/dialog/overview#odialogconfig",
             "relUrl": "/components/dialog/overview#odialogconfig"
-          },"386": {
+          },"387": {
             "doc": "Dialog",
             "title": "Get Response of Dialog",
             "content": "You can get the response of the dialog, for example, in a confirm Dialog you can get that confirmation or cancellation. Example . showConfirm(evt: any) { if (this.dialogService) { this.dialogService.confirm('Confirm dialog title', 'Do you really want to accept?'); this.dialogService.dialogRef.afterClosed().subscribe( result =&gt; { if(result) { // Actions on confirmation } else { // Actions on cancellation } }) } } . You can see examples of this section in the OntimizeWeb playground. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/dialog/overview#get-response-of-dialog",
             "relUrl": "/components/dialog/overview#get-response-of-dialog"
           }
-      ,"387": {
+      ,"388": {
             "doc": "Form layout manager",
             "title": "Form layout manager",
             "content": "Directive: o-form-layout-manager . Inputs . Name Description Default . attr . string . Field identifier. Registry property if component is inside a form. . dialog-class . string . Deprecated. CSS class attached to the dialog when the dialog mode is active . dialog-height . string . Deprecated. The dialog height . dialog-max-height . string . Deprecated. The dialog maximum height . dialog-max-width . string . Deprecated. The dialog maximum width . dialog-min-height . string . Deprecated. The dialog minimum height . dialog-min-width . string . Deprecated. The dialog minimum width . dialog-width . string . Deprecated. The dialog width . label-columns . string . Deprecated. Form data columns used in the detail form title. Separated by ‘;’ . mode . tab dialog split-pane . Form layout manager mode . dialog . separator . string . Deprecated. Separator between multiple label columns values . ’ ‘ (blank space) . store-state . no false yes true . Indicates whether or not to store component state . yes . title . string . Deprecated. Detail form main title . title-data-origin . string . Deprecated. attr of the form component used for retrieving the data used on the tabs title . * required inputs. Outputs . Name Description . onCloseTab . Event triggered when a detail tab is closed . onMainTabSelected . Event triggered when the main tab is selected . onSelectedTabChange . Event triggered when a detail tab is changed . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/formlayoutmanager/api#Form%20layout%20manager",
             "relUrl": "/components/formlayoutmanager/api#Form layout manager"
-          },"388": {
+          },"389": {
             "doc": "Form layout manager",
             "title": "Dialog mode",
             "content": "Directive: o-form-layout-dialog-options . Inputs . Name Description Default . backdrop-class . string . Custom class for the backdrop. . class . string string[] . Custom class for the overlay pane. . close-on-navigation . no false yes true . Whether the dialog should close when the user goes backwards/forwards in history. Note that this usually doesn’t include clicking on links . yes . disable-close . no false yes true . Whether the user can use escape or clicking on the backdrop to close the modal . no . height . string . Height of the dialog. . label-columns . string . Form data columns used in the detail form title. Separated by ‘;’ . max-height . string number . Max height of the dialog . max-width . string number . Max width of the dialog. . min-height . string number . Min height of the dialog . min-width . string number . Min width of the dialog. . position . DialogPosition . Position overrides . separator . string . Separator between multiple label columns values . ’ ‘ (blank space) . title . string . Detail form main title . width . string . Width of the dialog. . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/formlayoutmanager/api#Dialog%20mode",
             "relUrl": "/components/formlayoutmanager/api#Dialog mode"
-          },"389": {
+          },"390": {
             "doc": "Form layout manager",
             "title": "Split pane mode",
             "content": "Directive: o-form-layout-split-pane-options . Inputs . Name Description Default . detail-max-width . string number . Max width of the detail container. . detail-min-width . string number . Min width of the detail container. . detail-width . string . Width of the detail container. . main-max-width . string number . Max width of the main container. . main-min-width . string number . Min width of the main container. . main-width . string . Width of the main container. . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/formlayoutmanager/api#Split%20pane%20mode",
             "relUrl": "/components/formlayoutmanager/api#Split pane mode"
-          },"390": {
+          },"391": {
             "doc": "Form layout manager",
             "title": "Tabgroup mode",
             "content": "Directive: o-form-layout-tabgroup-options . Inputs . Name Description Default . background-color . ThemePalette ('primary' 'accent' 'warn') . Background color of the tab nav. . color . ThemePalette ('primary' 'accent' 'warn') . Theme color palette for the component. . disable-animation . no false yes true . Disable the animations in the tabs . no . header-position . 'above' 'below' . Position of the tab header. above . icon . string . Icon name (see Google material design icons) . icon-position . 'left' right . Icon position . label-columns . string . Form data columns used in the detail form title. Separated by ‘;’ . separator . string . Separator between multiple label columns values . ’ ‘ (blank space) . title . string . Detail form main title . title-data-origin . string . attr of the form component used for retrieving the data used on the tabs title . ",
@@ -2477,21 +2483,21 @@
             "relUrl": "/components/formlayoutmanager/api#Tabgroup mode"
           }
       
-      ,"391": {
+      ,"392": {
             "doc": "SnackBar",
             "title": "SnackBar",
             "content": "Class: OSnackBarConfig . Inputs . Name Description Default . action . string . Text for the action button . cssClass . string . CSS class to be added to the snack bar container . icon . string . Name of google icon (see Google material design icons) . iconPosition . left right . Position of the icon . left . milliseconds . number . Time the snack-bar will be shown . 2000 . * required inputs. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/snackbar/api#SnackBar",
             "relUrl": "/components/snackbar/api#SnackBar"
           }
-      ,"392": {
+      ,"393": {
             "doc": "SnackBar",
             "title": "Example",
             "content": "import { OSnackBarConfig, SnackBarService } from 'ontimize-web-ngx'; ... export class MyComponent { constructor( protected snackBarService: SnackBarService ) {} showSimple() { // Simple message this.snackBarService.open('Snackbar message'); } showConfigured() { // SnackBar configuration const configuration: OSnackBarConfig = { action: 'Done', milliseconds: 5000, icon: 'check_circle', iconPosition: 'left' }; // Simple message with icon on the left and action this.snackBarService.open('Snackbar text', configuration); } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/snackbar/overview#example",
             "relUrl": "/components/snackbar/overview#example"
           }
-      ,"393": {
+      ,"394": {
             "doc": "Menu",
             "title": "Menu",
             "content": "Class: OSnackBarConfig . Inputs . Name Description Default . action . string . Text for the action button . cssClass . string . CSS class to be added to the snack bar container . icon . string . Name of google icon (see Google material design icons) . iconPosition . left right . Position of the icon . left . milliseconds . number . Time the snack-bar will be shown . 2000 . * required inputs. ",
@@ -2499,174 +2505,174 @@
             "relUrl": "/components/menu/api#Menu"
           }
       
-      ,"394": {
+      ,"395": {
             "doc": "Bar menu",
             "title": "Bar menu",
             "content": "Directive: o-bar-menu . Inputs . Name Description . title . string . Menu title . tooltip . string . Bar menu tooltip. Default: ‘title’ value. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/api#Bar%20menu",
             "relUrl": "/components/barmenu/api#Bar menu"
-          },"395": {
+          },"396": {
             "doc": "Bar menu",
             "title": "Bar menu item",
             "content": "Directive: o-bar-menu-item . Inputs . Name Description . action . string . Method to execute when the menu item is selected . icon . string . Icon name (see Google material design icons)*Note: In this component you are required to use only Google Material Icons . route . string . App navigation route when the menu item is selected . title . string . Item title . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/api#Bar%20menu%20item",
             "relUrl": "/components/barmenu/api#Bar menu item"
-          },"396": {
+          },"397": {
             "doc": "Bar menu",
             "title": "Bar menu group",
             "content": "Directive: o-bar-menu-group . Inputs . Name Description . icon . string . Icon name (see Google material design icons)*Note: In this component you are required to use only Google Material Icons . title . string . Group title . tooltip . string . Menu group tooltip. Default: ‘title’ value. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/api#Bar%20menu%20group",
             "relUrl": "/components/barmenu/api#Bar menu group"
-          },"397": {
+          },"398": {
             "doc": "Bar menu",
             "title": "Bar menu separator",
             "content": "Directive: o-bar-menu-separator . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/api#Bar%20menu%20separator",
             "relUrl": "/components/barmenu/api#Bar menu separator"
-          },"398": {
+          },"399": {
             "doc": "Bar menu",
             "title": "Bar menu locale",
             "content": "Directive: o-locale-bar-menu-item . Inputs . Name Description . icon . string . Icon name (see Google material design icons)*Note: In this component you are required to use only Google Material Icons . locale . string . Language. For example: es . title . string . Item title . tooltip . string . Menu locale tooltip. Default: ‘title’ value. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/api#Bar%20menu%20locale",
             "relUrl": "/components/barmenu/api#Bar menu locale"
           }
-      ,"399": {
+      ,"400": {
             "doc": "Bar menu",
             "title": "Bar menu item",
             "content": "The o-bar-menu-item component represents each item of the bar menu component. It can be grouped with the o-bar-menu-group component. This component is the responsible of executing the actions on the bar menu, the action can be navigating to the configured route or executing an action provided by the user. Check the API section of this page for more information. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/overview#bar-menu-item",
             "relUrl": "/components/barmenu/overview#bar-menu-item"
-          },"400": {
+          },"401": {
             "doc": "Bar menu",
             "title": "Bar menu group",
             "content": "The o-bar-menu-group component is used to group a set of o-bar-menu-item components. It displays the contained menu items as a drop down list when the cursor pass over it. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/overview#bar-menu-group",
             "relUrl": "/components/barmenu/overview#bar-menu-group"
-          },"401": {
+          },"402": {
             "doc": "Bar menu",
             "title": "Bar menu separator",
             "content": "The o-bar-menu-separator component is used only for styling purposes. It displays a separator between two o-bar-menu-item or o-bar-menu-group components. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/overview#bar-menu-separator",
             "relUrl": "/components/barmenu/overview#bar-menu-separator"
-          },"402": {
+          },"403": {
             "doc": "Bar menu",
             "title": "Bar menu locale item",
             "content": "The o-locale-bar-menu-item component represents each language element in bar menu component. It can be grouped with the o-bar-menu-group component. This component is the responsible for changing the language of the application. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/overview#bar-menu-locale-item",
             "relUrl": "/components/barmenu/overview#bar-menu-locale-item"
-          },"403": {
+          },"404": {
             "doc": "Bar menu",
             "title": "Example",
             "content": "&lt;o-bar-menu title=\"APP_TITLE\"&gt; &lt;o-bar-menu-group title=\"OPTIONS\"&gt; &lt;o-bar-menu-group title=\"LANGUAGE\"&gt; &lt;o-locale-bar-menu-item locale=\"en\" title=\"English\"&gt;&lt;/o-locale-bar-menu-item&gt; &lt;o-locale-bar-menu-item locale=\"es\" title=\"Español\"&gt;&lt;/o-locale-bar-menu-item&gt; &lt;/o-bar-menu-group&gt; &lt;o-bar-menu-separator&gt;&lt;/o-bar-menu-separator&gt; &lt;o-bar-menu-item title=\"LOGOUT\" icon=\"power_settings_new\" route=\"/login\" confirm=\"MESSAGES.CONFIRM_LOGOUT\"&gt;&lt;/o-bar-menu-item&gt; &lt;/o-bar-menu-group&gt; &lt;/o-bar-menu&gt; . export const MENU_CONFIG: MenuRootItem[] = [ { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' }, { id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true, items: [ { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people', image: 'assets/images/ic_clientes.png' }, { id: 'accounts', name: 'ACCOUNTS', tooltip: 'ACCOUNTS_CONTENT', route: '/main/accounts', icon: 'credit_card', image: 'assets/images/ic_cuentas.png' }, { id: 'branches', name: 'BRANCHES', tooltip: 'BRANCHES_CONTENT', route: '/main/branches', icon: 'account_balance', image: 'assets/images/ic_sucursales.png' }, { id: 'employees', name: 'EMPLOYEES', tooltip: 'EMPLOYEES_CONTENT', route: '/main/employees', icon: 'person', image: 'assets/images/ic_empleados.png' } ] }, { id: 'general', name: 'GENERAL', icon: 'info_outline', opened: false, items: [ { id: 'about', name: 'ABOUT', route: '/main/about', icon: 'help_outline' } ] }, { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' } ]; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/barmenu/overview#example",
             "relUrl": "/components/barmenu/overview#example"
           }
-      ,"404": {
+      ,"405": {
             "doc": "Card menu layout",
             "title": "Card menu layout",
             "content": "Directive: o-card-menu-layout . Inputs . Name Description . parent-menu-id . string . The menu item identifier whose children are rendered. When this attribute is not configured, the component builds a card for the root elements of the menu . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/cardmenulayout/api#Card%20menu%20layout",
             "relUrl": "/components/cardmenulayout/api#Card menu layout"
           }
-      ,"405": {
+      ,"406": {
             "doc": "Card menu layout",
             "title": "Example",
             "content": "&lt;o-card-menu-layout parent-menu-id=\"views\"&gt; &lt;o-card-menu-item button-text=\"Show\" title=\"Documentation\" tooltip=\"Check the OntimizeWeb documentation\" image=\"assets/images/ontimize.png\"&gt;&lt;/o-card-menu-item&gt; &lt;/o-card-menu-layout&gt; . You can see an example of this component working in the OntimizeWeb QuickStart. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/cardmenulayout/overview#example",
             "relUrl": "/components/cardmenulayout/overview#example"
-          },"406": {
+          },"407": {
             "doc": "Card menu layout",
             "title": "Card menu item",
             "content": "The o-card-menu-item component is the child component for the o-card-menu-layout component. You can read more about this component here. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/cardmenulayout/overview#card-menu-item",
             "relUrl": "/components/cardmenulayout/overview#card-menu-item"
           }
-      ,"407": {
+      ,"408": {
             "doc": "Card menu item",
             "title": "Card menu item",
             "content": "Directive: o-card-menu-item . Inputs . Name Description Default . action . function . A function defined in your component called when the card button is clicked and the route attribute is not configured . button-text . string . Card button text. If it has no value, the card will have no button . detail-component . Component reference . Component displayed on the lower side of the card menu item . detail-component-inputs . Object . Object containing the attributes for the component provided to the detail-component attribute . {} . disabled-button . no false yes true . Indicates whether or not to the card button is enabled . no . icon . string . Card icon. Card image have preference over it . image . string . Card image . main-container-layout . string . Card upper container layout direction . column . route . string . App navigation route when the menu card is selected (clicking on button, if exists, or in the card) . secondary-container-layout . string . Card lower container layout direction . column . title . string . Card title . tooltip . string . Card tooltip . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/cardmenulayout/cardmenuitem/api#Card%20menu%20item",
             "relUrl": "/components/cardmenulayout/cardmenuitem/api#Card menu item"
           }
-      ,"408": {
+      ,"409": {
             "doc": "Card menu item",
             "title": "Example",
             "content": "&lt;o-card-menu-item button-text=\"button text\" title=\"Card title\" tooltip=\"Tooltip information\" image=\"assets/images/ontimize.png\"&gt;&lt;/o-card-menu-item&gt; &lt;o-card-menu-item button-text=\"button text\" title=\"Card title\" tooltip=\"Tooltip information\" image=\"assets/images/ontimize.png\" [detail-component]=\"cardContent\" [detail-component-inputs]=\"cardContentAttributes\"&gt; &lt;/o-card-menu-item&gt; . import { Component, Injector } from '@angular/core'; import { CardContentComponent } from '../../shared/card-content/card-content.component'; @Component({ selector: 'home', templateUrl: './home.component.html', styleUrls: ['./home.component.scss'] }) export class HomeComponent { cardContent = CardContentComponent; cardContentAttributes: Object = { color: 'gray' }; } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/cardmenulayout/cardmenuitem/overview#example",
             "relUrl": "/components/cardmenulayout/cardmenuitem/overview#example"
           }
-      ,"409": {
+      ,"410": {
             "doc": "Side menu",
             "title": "Side menu",
             "content": "Directive: o-side-menu . Inputs . Name Description . title . string . Menu title . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/sidemenu/api#Side%20menu",
             "relUrl": "/components/sidemenu/api#Side menu"
-          },"410": {
+          },"411": {
             "doc": "Side menu",
             "title": "Side menu item",
             "content": "Directive: o-side-menu-item . Inputs . Name Description . action . string . Method to execute when the menu item is selected . icon . string . Icon name (see Google material design icons) . route . string . App navigation route when the menu item is selected . title . string . Item title . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/sidemenu/api#Side%20menu%20item",
             "relUrl": "/components/sidemenu/api#Side menu item"
-          },"411": {
+          },"412": {
             "doc": "Side menu",
             "title": "Side menu group",
             "content": "Directive: o-side-menu-group . Inputs . Name Description . title . string . Group title . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/sidemenu/api#Side%20menu%20group",
             "relUrl": "/components/sidemenu/api#Side menu group"
-          },"412": {
+          },"413": {
             "doc": "Side menu",
             "title": "Side menu separator",
             "content": "Directive: o-side-menu-separator . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/sidemenu/api#Side%20menu%20separator",
             "relUrl": "/components/sidemenu/api#Side menu separator"
           }
-      ,"413": {
+      ,"414": {
             "doc": "Side menu",
             "title": "Side menu item",
             "content": "The o-side-menu-item component represents each item of the side menu component. It can be grouped with the o-side-menu-group component. This component is the responsible of executing the actions on the side menu, the action can be navigating to the configured route or executing an action provided by the user. Check the API section of this page for more information. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/sidemenu/overview#side-menu-item",
             "relUrl": "/components/sidemenu/overview#side-menu-item"
-          },"414": {
+          },"415": {
             "doc": "Side menu",
             "title": "Side menu group",
             "content": "The o-side-menu-group component is used to group a set of o-side-menu-item components. It displays the contained menu items as a drop down list when the cursor pass over it. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/sidemenu/overview#side-menu-group",
             "relUrl": "/components/sidemenu/overview#side-menu-group"
-          },"415": {
+          },"416": {
             "doc": "Side menu",
             "title": "Side menu separator",
             "content": "The o-side-menu-separator component is used only for styling purposes. It displays a separator between two o-side-menu-item or o-side-menu-group components. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/sidemenu/overview#side-menu-separator",
             "relUrl": "/components/sidemenu/overview#side-menu-separator"
-          },"416": {
+          },"417": {
             "doc": "Side menu",
             "title": "Example",
             "content": "&lt;o-side-menu title=\"APP_TITLE\"&gt; &lt;o-side-menu-group title=\"VIEW\"&gt; &lt;o-side-menu-item title=\"HOME\" icon=\"home\" route=\"/main/home\"&gt;&lt;/o-side-menu-item&gt; &lt;o-side-menu-item title=\"CUSTOMERS\" icon=\"people\" route=\"/main/customers\"&gt;&lt;/o-side-menu-item&gt; &lt;o-side-menu-item title=\"ACCOUNTS\" icon=\"credit_card\" route=\"/main/accounts\"&gt;&lt;/o-side-menu-item&gt; &lt;o-side-menu-item title=\"BRANCHES\" icon=\"account_balance\" route=\"/main/branches\"&gt;&lt;/o-side-menu-item&gt; &lt;o-side-menu-item title=\"EMPLOYEES\" icon=\"airline_seat_recline_normal\" route=\"/main/employees\"&gt;&lt;/o-side-menu-item&gt; &lt;/o-side-menu-group&gt; &lt;o-side-menu-group title=\"OPTIONS\"&gt; &lt;o-side-menu-group title=\"LANGUAGE\"&gt; &lt;o-side-menu-item title=\"English\"&gt;&lt;/o-side-menu-item&gt; &lt;o-side-menu-item title=\"Español\"&gt;&lt;/o-side-menu-item&gt; &lt;/o-side-menu-group&gt; &lt;o-side-menu-separator&gt;&lt;/o-side-menu-separator&gt; &lt;o-side-menu-item title=\"LOGOUT\" icon=\"power_settings_new\" route=\"/login\" confirm=\"MESSAGES.CONFIRM_LOGOUT\"&gt;&lt;/o-side-menu-item&gt; &lt;/o-side-menu-group&gt; &lt;o-side-menu-item title=\"VERSION\" [action]=\"showVersionCallback\"&gt;&lt;/o-side-menu-item&gt; &lt;/o-side-menu&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/sidemenu/overview#example",
             "relUrl": "/components/sidemenu/overview#example"
           }
-      ,"417": {
+      ,"418": {
             "doc": "OBaseTableCellEditor",
             "title": "OBaseTableCellEditor",
             "content": "Class: OBaseTableCellEditor . Properties . Name Type Description . column . string . Name of the column . table . OTableComponent . Reference to the component OTableComponent . tableColumn . property . Reference to the component OTableColumnComponent . tableColumnAttr . property . The attr from the component OTableColumnComponent . inputRef . ElementRef . The element reference of the input. An elementRef is backed by a render-specific element. In the browser, this is usually a DOM element. rowData . any . Table row data . formControl . FormControl . Reference to form field control instance . formGroup . FormGroup . Reference to form group instance . Inputs . Name Description Default . enabled . no false yes true . Indicates whether or not the field is enabled . yes . label . string . The placeholder text form a editor. attr input . required . no false yes true . Indicates whether or not required. no . show-notification-on-edit . no false yes true . Indicates whether or not to show a toast indicating the succesfull update . no . show-placeholder . no false yes true . Indicates whether or not to show placeholder in form control. no . update-record-on-edit . no false yes true . Indicates whether or not to update cell data in server after it edition ends . yes . Outputs . Name Description . editionCancelled . Event triggered when component input is canceled. editionCommitted . Event triggered when component input is committed. editionStarted . Event triggered when component input element started. onPostUpdateRecord . Event triggered after component record is succesfully updated. Methods . commitEdition . Commit edition . createFormControl . Create form field control if not exists . endEdition . End edition in the editor with the ability to skip or save changes . getCellData . This default method returns the value of the column as *a string* . Returns . string . hasError . Whether the form-field has errors . Returns . boolean . initialize . Initialize the cell editor of the column . registerEditor . Register editor on the table . resolveValidators . Resolve validators* . Returns . ValidatorFn[] . startEdition . Start edition with given the data . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/table/obasetablecelleditor/api#OBaseTableCellEditor",
             "relUrl": "/components/table/obasetablecelleditor/api#OBaseTableCellEditor"
           }
-      ,"418": {
+      ,"419": {
             "doc": "OBaseTableCellEditor",
             "title": "Description",
             "content": "All cell editor in OntimizeWeb extend the OBaseTableCellEditor class. This class provides a set of methods and attributes inherited by all the cell editor components. This methods and attributes are explained on the API section of this page. Below we will show an example of the custom cell editor. Example . import { Component, Injector, ViewChild, TemplateRef } from '@angular/core'; import { OBaseTableCellEditor, OTableColumnComponent } from 'ontimize-web-ngx'; @Component({ selector: 'custom-editor', templateUrl: './custom-editor.component.html' }) export class OTableCellEditorName extends OBaseTableCellEditor { @ViewChild('templateref', { read: TemplateRef, static: true }) public templateref: TemplateRef&lt;any&gt;; constructor(protected injector: Injector) { super(injector); this.type = 'custom-editor'; OTableColumnComponent.addEditor(this.type, OTableCellEditorName); } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/table/obasetablecelleditor/overview#description",
             "relUrl": "/components/table/obasetablecelleditor/overview#description"
           }
-      ,"419": {
+      ,"420": {
             "doc": "OBaseTableCellRenderer",
             "title": "OBaseTableCellRenderer",
             "content": "Class: OBaseTableCellRenderer . Properties . Name Type Description . column . string . Name of the column . table . OTableComponent . Reference to the component OTableComponent . tableColumn . property . Reference to the component OTableColumnComponent . templateref . TemplateRef . Reference to template . Inputs . Name Description Default . filter-source . render data both . Indicates whether filter source is by render value, by source data or both . render . filterFunction . (cellValue: any, rowValue: any, quickFilter?: string) => boolean . Callback used to filter cell value in filter by column and quick filter . Methods . getCellData . This default method returns the value of the column as *a string*. This method is used to obtain the value of the column in the exports or filtering, so that if you want to customize the value of the column you must overwrite it. Returns . string . getFilter . Return the values to filter . Returns . any[] . registerRenderer . Register the renderer on the table . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/table/obasetablecellrenderer/api#OBaseTableCellRenderer",
             "relUrl": "/components/table/obasetablecellrenderer/api#OBaseTableCellRenderer"
           }
-      ,"420": {
+      ,"421": {
             "doc": "OBaseTableCellRenderer",
             "title": "Description",
             "content": "All cell renderers in OntimizeWeb extend the OBaseTableCellRenderer class. This class provides a set of methods and properties by all the cell renderers components. This methods and attributes are explained on the API section of this page. Below we will show an example of the custom cell renderer. Example . import { Component, Injector, TemplateRef, ViewChild } from '@angular/core'; import { OBaseTableCellRenderer, OCurrencyPipe } from 'ontimize-web-ngx'; @Component({ selector: 'o-table-column-renderer-balance', templateUrl: './o-table-column-renderer-balance.component.html', host: { 'o-mat-column-currency': 'true' } }) export class OTableColumnRendererBalanceComponent extends OBaseTableCellRenderer { @ViewChild('templateref', { read: TemplateRef, static: true }) public templateref: TemplateRef&lt;any&gt;; constructor(protected injector: Injector) { super(injector); this.setComponentPipe(); } setComponentPipe() { this.componentPipe = new OCurrencyPipe(this.injector); } ngOnInit() { this.pipeArguments = { currencySimbol: '€', currencySymbolPosition: 'right', decimalDigits: 2, decimalSeparator: ',', grouping: true, thousandSeparator: '.' }; } getCellData(value: any) { let parsedValue: string; if (this.componentPipe &amp;&amp; typeof this.pipeArguments !== 'undefined' &amp;&amp; value !== undefined) { parsedValue = this.componentPipe.transform(value, this.pipeArguments); } return parsedValue; } } . ",
@@ -2686,90 +2692,90 @@
       
       
       
-      ,"421": {
+      ,"422": {
             "doc": "Service base component",
             "title": "Service base component",
             "content": "Class: OServiceBaseComponent . Inputs . Name Description Default . attr . string . Field identifier. Registry property if component is inside a form. . columns . string . Entity columns. Separated by ‘;’ . delete-method . string . Service method name for deletions . delete . entity . string . Service entity name . insert-method . string . Service method name for insertions . insert . keys . string . Entity keys. Separated by ‘;’ . pageable . no false yes true . Indicates whether or not to do paginated queries for getting the data . no . paginated-query-method . string . Service method name for paginated queries . advancedQuery . parent-keys . string . Form field attributes used for filtering the table data. Separated by ‘;’. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields. . query-fallback-function . Function . Function to execute on query error . No value . query-method . string . Service method name for queries . query . query-on-bind . no false yes true . Query table data on bind . yes . query-on-event . A component event reference the component must listen to in order to perform its query . query-on-init . no false yes true . Query table data on init . yes . query-rows . number . Number of records by page. Initial number of registries in queries when using pagination in server side . 10 . query-with-null-parent-keys . no false yes true . Indicates whether or not to trigger query method when the filter generated from parent-keys is null. The use of this attribute is not recommended when the component may request a big amount of information . no . service . string . JEE service path . service-type . string . Injection token indicated in the provider of the service . static-data . array . Static data for filling the table . store-state . no false yes true . Indicates whether or not to store component state . yes . update-method . string . Service method name for updates . update . * required inputs. Methods . afterViewInit . Method for inputs and listeners parsing that must be called inside ngAfterViewInit . configureService . Method needed for Ontimize service initialization, already called in initialize method . destroy . Method for unsuscribing listeners that must be called inside ngOnDestroy . extractKeysFromRecord . Extracting the given record keys properties . Parameters . record: any . Returns . Object . getAttribute . Returns component attr, used as identifier . Returns . string . getAttributesValuesToQuery . Returns a list of attributes to be queried. This list includes the columns array and the keys array . Returns . string[] . getComponentKey . Returns component identifier for state storage, attr value by default . Returns . string . getDataArray . Returns component data array . Returns . any[] . getDataToStore . Method returning component data that will be stored as its state . Returns . any . getKeys . Returns parsed keys input ass array . Returns . string[] . getQueryArguments . Returns the array of arguments needed for making a query . Parameters . Returns . any[] . getSqlTypes . Getting stored sql types . Parameters . getTotalRecordsNumber . Returns total number of records if the component is paginated . Returns . number . initialize . Method for inputs and listeners initialization that must be called inside ngOnInit . onLanguageChangeCallback . Callback for app locale change, receiving the selected locale as parameter . Parameters . lang: string . queryData . Parameters . setDataArray . Parameters . setFormComponent . Setting parent form reference, already called in initialize method . Parameters . form: OFormComponent . updatePaginationInfo . Updating pagination internal information, only if the component is pageable . Parameters . queryResponse: any . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service-base/api#Service%20base%20component",
             "relUrl": "/components/service/service-base/api#Service base component"
           }
-      ,"422": {
+      ,"423": {
             "doc": "Service base component",
             "title": "Binding to remote data",
             "content": "To manage server data, it is necessary to configure the service and the entity attributes. You may need configure the service-type attribute in case you don&#8217;t use the default OntimizeWebService to manage. For more information see in App configuration. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service-base/overview#binding-to-remote-data",
             "relUrl": "/components/service/service-base/overview#binding-to-remote-data"
-          },"423": {
+          },"424": {
             "doc": "Service base component",
             "title": "Binding to local data",
             "content": "For local data binding you simply need to supply an array of TypeScript objects/JSON via the static-data property. Adicional, you need to set query-on-init=\"false\" in o-table component. If you need the data query to be performed after the parent-keys is updated, query-on-init = false and query-on-bind = true must be changed . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service-base/overview#binding-to-local-data",
             "relUrl": "/components/service/service-base/overview#binding-to-local-data"
-          },"424": {
+          },"425": {
             "doc": "Service base component",
             "title": "Define columns",
             "content": "You have to define the columns of the database entity (if binding to remote data) or the properties of the static data items (when binding to local data). ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service-base/overview#define-columns",
             "relUrl": "/components/service/service-base/overview#define-columns"
-          },"425": {
+          },"426": {
             "doc": "Service base component",
             "title": "CRUD methods",
             "content": "There are a set of preconfigured method names for doing the CRUD operations that can be overrided using its inputs: query-method, paginated-query-method, insert-method, update-method or delete-method. You can learn more about Ontimize services configuration here. This are the methods that will be invoked when the component needs to query, insert, update or delete data from its configured service and entity. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service-base/overview#crud-methods",
             "relUrl": "/components/service/service-base/overview#crud-methods"
-          },"426": {
+          },"427": {
             "doc": "Service base component",
             "title": "Parent keys filter",
             "content": "When a service component is inside a form component you can configure the parent-keys attribute of the with the attr of the form fields you want to include in the query filtering. Keep in mind that a service component will not send any request when the parent keys values are all null. You can configure the query-with-null-parent-keys to avoid that, but it is not always recommended, it might query for too many data. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service-base/overview#parent-keys-filter",
             "relUrl": "/components/service/service-base/overview#parent-keys-filter"
-          },"427": {
+          },"428": {
             "doc": "Service base component",
             "title": "Storing component state",
             "content": "Using the store-state boolean input allows user to choose whether or not to store the component configuration state in local storage. That state is returned by the getDataToStore method under the key returned in getComponentKey callback. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service-base/overview#storing-component-state",
             "relUrl": "/components/service/service-base/overview#storing-component-state"
           }
-      ,"428": {
+      ,"429": {
             "doc": "Service component",
             "title": "Service component",
             "content": "Class: OServiceComponent . Inherited inputs . from OServiceBaseComponent: . attr columns delete-method entity insert-method keys pageable paginated-query-method parent-keys query-fallback-function query-method query-on-bind query-on-init query-rows query-with-null-parent-keys service service-type static-data store-state update-method . Inputs . Name Description Default . controls . no false yes true . Indicates whether or not to show a controls bar. Including component actions or the quickfilter . yes . detail-button-in-row . no false yes true . Indicates whether or not to add a button in each row for opening the detail form . no . detail-button-in-row-icon . string . Detail icon name (see Google material design icons) . search . detail-form-route . string . Detail form path appended to the current route . detail . detail-mode . none click dblclick . Action for opening the detail form of a row . click . edit-button-in-row . no false yes true . Indicates whether or not to add a button in each row for opening the edit form . no . edit-button-in-row-icon . string . Edit icon name (see Google material design icons) . edit . edit-form-route . string . Edit form path appended to the current route . edit . enabled . no false yes true . Indicates whether or not the field is enabled . yes . filter-case-sensitive . no false yes true . Indicates whether or not to do a case sensitive quickfilter search . no . insert-button . no false yes true . Indicates whether or not to show a button for inserting data . yes . insert-form-route . string . Insert form path appended to the current route . new . quick-filter . no false yes true . Indicates whether or not to show a input for filtering data . yes . quick-filter-placeholder . string . Quick filter input placeholder text . recursive-detail . no false yes true . Indicates whether or not to add a detail key to current url path (overwrite) . no . recursive-edit . no false yes true . Indicates whether or not to add a edit key to current url path (overwrite) . no . recursive-insert . no false yes true . Indicates whether or not to add a insert key to current url path (overwrite) . no . row-height . small medium large . Predefined row height options . medium . title . string . Title in exported files . visible . no false yes true . Indicates whether or not the component is visible . yes . Methods . afterViewInit . Method for inputs and listeners parsing that must be called inside ngAfterViewInit . destroy . Method for unsuscribing listeners that must be called inside ngOnDestroy . editDetail . Triggers navigation to item edition, receiving item data . Parameters . item: any . initialize . Method for inputs and listeners initialization that must be called inside ngOnInit . insertDetail . Triggers navigation to new item insertion . onLanguageChangeCallback . Callback for app locale change, receiving the selected locale as parameter . Parameters . lang: string . viewDetail . Triggers navigation to item detail, receiving item data . Parameters . item: any . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service/api#Service%20component",
             "relUrl": "/components/service/service/api#Service component"
           }
-      ,"429": {
+      ,"430": {
             "doc": "Service component",
             "title": "Navigation to record detail",
             "content": "In the service components, the default action when user clicks a item is to trigger the navigation to its record detail. For changing this behaviour, the user can change the detail-mode input value using one of the following values none, click or doubleclick. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service/overview#navigation-to-record-detail",
             "relUrl": "/components/service/service/overview#navigation-to-record-detail"
-          },"430": {
+          },"431": {
             "doc": "Service component",
             "title": "Navigation to detail, edition or insertion mode",
             "content": "OServiceComponent allows to navigate to a record for viewing its details or editing it using viewDetail or editDetail methods. It also allows to navigate to a insertion route using the insertDetail method. User can customize the path creation using the detail-form-route and recursive-detail, edit-form-route and recursive-edit or insert-form-route and recursive-insert inputs (depending on the navigation type). This and other inputs and methods are explained on the API section of this page. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/service/service/overview#navigation-to-detail-edition-or-insertion-mode",
             "relUrl": "/components/service/service/overview#navigation-to-detail-edition-or-insertion-mode"
           }
-      ,"431": {
+      ,"432": {
             "doc": "Filtering",
             "title": "Quick filter.",
             "content": "This option is enabled by default, the filter is visible in the top right. You can disable it setting quick-filter=\"no\". You can also configure filtering to be case sensitive with filter-case-sensitive=\"yes\". By default, it’s disabled. Additionally, you can specify default filter function to be applied when the user enters value in the filter textbox in quick-filter-function property. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/table/options/#quick-filter",
             "relUrl": "/components/table/options/#quick-filter"
-          },"432": {
+          },"433": {
             "doc": "Filtering",
             "title": "Filtering by columns",
             "content": "It is posible to configure filtering by columns with o-table-columns-filter selector adding filterable columns separated by ‘;’ in columns property. Example . &lt;o-table service=\"branches\" entity=\"account\" keys=\"ACCOUNTID\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP\" visible-columns=\"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE\" fxFlex layout-padding attr=\"accounts\" title=\"ACCOUNTS\" sort-columns=\"ANID:DESC\" query-on-init=\"true\" quick-filter=\"yes\" filter-case-sensitive=\"true\" &gt; &lt;o-table-columns-filter columns=\"OFFICEID;ACCOUNTTYP\" &gt;&lt;/o-table-columns-filter&gt; ... &lt;/o-table&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/table/options/#filtering-by-columns",
             "relUrl": "/components/table/options/#filtering-by-columns"
-          },"433": {
+          },"434": {
             "doc": "Filtering",
             "title": "Custom filter",
             "content": "OntimizeWeb allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the o-filter-builder component to you application. The o-filter-builder component uses the Expression interface that represents a filtering expression. You can read more about how to build complex filtering expressions here. ",
             "url": "https://ontimizeweb.github.io/docs/v8/components/table/options/#custom-filter",
             "relUrl": "/components/table/options/#custom-filter"
           }
-      ,"434": {
+      ,"435": {
             "doc": "OValidatorComponent",
             "title": "OValidatorComponent",
             "content": "Directive: o-validator . Inputs . Name Description Default . error-name . string . Name of the configured error . error-text . string . Message displayed when the configured error is present in the component . validator-function . ValidatorFn . Custom validators to apply to the component value. It must be a Angular ValidatorFn . [] . ",
@@ -2777,7 +2783,7 @@
             "relUrl": "/components/input/validator/api#OValidatorComponent"
           }
       
-      ,"435": {
+      ,"436": {
             "doc": "OErrorComponent",
             "title": "OErrorComponent",
             "content": "Directive: o-error . Inputs . Name Description . name . string . Name of the configured error . text . string . Message displayed when the configured error is present in the component . ",
@@ -2785,142 +2791,142 @@
             "relUrl": "/components/input/error/api#OErrorComponent"
           }
       
-      ,"436": {
+      ,"437": {
             "doc": "Overview",
             "title": "Overview",
             "content": "Directive: o-chart . Inherited inputs . from OServiceBaseComponent: . attr columns entity keys pageable parent-keys query-fallback-function query-method query-on-bind query-on-init query-rows query-with-null-parent-keys service service-type static-data store-state . Inputs . Name Description Default . chart-height . number . Set the height of the chart in pixels. . chart-parameters . Control properties of styling, fonts, the legend, etc. . chart-width . number . Set the width of the chart in pixels. . data . array . Defines the array of data to be displayed on the chart . type . string . Defines the type of graph to be painted (bubbleChart, bulletChart, candlestickBarChart, discreteBar, donutChart, forceDirectedGraph, gaugeDashboardChart, gaugeSimpleChart, gaugeSlimChart, gaugeSpaceChart, line, linePlusBarWithFocusChart, multiBar, multiBarHorizontalChart, ohlcBarChart, parallelCoordinatesChart, pie, radarChart, radialPercentChart, scatterChart, stackedAreaChart) . x-axis . string . Defines the data to be displayed on X axis . x-data-type . string . Type of data displayed on X axis . x-label . string . Label to be displayed on X axis . y-axis . string . Defines the data to be displayed on Y axis . y-data-type . string . Type of data displayed on Y axis . y-label . string . Label to be displayed on Y axis . Outputs . Name Description . onDoubleTap . Event triggered when the chart is double-tapped . onPinch . Event triggered on pinch . onPress . Event triggered when the chart is pressed . onRotate . Event triggered when the screen rotates . onSwipe . Event triggered on swipe . onTap . Event triggered when the chart is tapped . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/overview/api#Overview",
             "relUrl": "/charts/configuration/overview/api#Overview"
           }
-      ,"437": {
+      ,"438": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The configuration is used to change how the chart behaves. There are properties to control the type of chart displayed, styling, fonts, the legend, etc. You can use inputs and outputs to configure your charts and to catch events when are triggered. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/overview/overview#introduction",
             "relUrl": "/charts/configuration/overview/overview#introduction"
-          },"438": {
+          },"439": {
             "doc": "Overview",
             "title": "Basic Example",
             "content": "This is a basic example of a Line Chart using inputs to display data. HTML . &lt;o-chart type=\"line\" x-label=\"Time\" y-label=\"Amount (€)\" entity=\"EMovements\" x-axis=\"DATE_\" y-axis=\"MOVEMENT\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/overview/overview#basic-example",
             "relUrl": "/charts/configuration/overview/overview#basic-example"
-          },"439": {
+          },"440": {
             "doc": "Overview",
             "title": "Basic Example (Custom Configuration)",
             "content": "This is an example of a Pie Chart that shows to use the chart parameters to change the styles, margins, legend and its position, label type etc. HTML . &lt;o-chart type=\"pie\" layout-fill entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { PieChartConfiguration } from 'ontimize-web-ngx-charts' @Component({ selector: 'pie', templateUrl: './pie.component.html' }) export class PieComponent{ chartParameters: PieChartConfiguration; constructor() { this.chartParameters = new PieChartConfiguration(); this.chartParameters.cornerRadius = 20; this.chartParameters.legendPosition = \"bottom\"; this.chartParameters.labelType = \"value\"; } } . You can check every chart parameter available for the Pie Chart in the API tab section. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/overview/overview#basic-example-custom-configuration",
             "relUrl": "/charts/configuration/overview/overview#basic-example-custom-configuration"
-          },"440": {
+          },"441": {
             "doc": "Overview",
             "title": "Basic Example (Custom Data)",
             "content": "This is an example of the Candlestick Chart with custom data provided through an Ontimize service. HTML . &lt;o-chart #candlestick type=\"ohlcBarChart\" chart-height=\"600\" x-data-type=\"time\" [chart-parameters]=\"chartParameters\"&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild } from '@angular/core'; import { OChartComponent, CandlestickChartConfiguration, DataAdapterUtils } from 'ontimize-web-ngx-charts';; @Component({ selector: 'app-ohlc', templateUrl: './candlestick.component.html' }) export class CandlestickComponent { @ViewChild('candlestick') protected candlestick: OChartComponent; chartParameters: CandlestickChartConfiguration; constructor() { } ngAfterViewInit() { let data = [ { \"date\": 1511111115707, \"open\": 145.11, \"high\": 146.15, \"low\": 144.73, \"close\": 146.06, }, { \"date\": 1511111115708, \"open\": 145.99, \"high\": 146.37, \"low\": 145.34, \"close\": 145.73 }, { \"date\": 1511111115709, \"open\": 145.97, \"high\": 146.61, \"low\": 145.67, \"close\": 146.37 }, { \"date\": 1511111115712, \"open\": 145.85, \"high\": 146.11, \"low\": 145.43, \"close\": 145.97 }, { \"date\": 1511111115713, \"open\": 145.71, \"high\": 145.91, \"low\": 144.98, \"close\": 145.55 }, { \"date\": 1511111115714, \"open\": 145.87, \"high\": 146.32, \"low\": 145.64, \"close\": 145.92 }, { \"date\": 1511111115715, \"open\": 146.73, \"high\": 147.09, \"low\": 145.97, \"close\": 147.08 }, { \"date\": 1511111115716, \"open\": 147.04, \"high\": 147.15, \"low\": 146.61, \"close\": 147.07 }, { \"date\": 1511111115719, \"open\": 146.89, \"high\": 147.07, \"low\": 146.43, \"close\": 146.97 }, { \"date\": 1511111115720, \"open\": 146.29, \"high\": 147.21, \"low\": 146.2, \"close\": 147.07 }, { \"date\": 1511111115721, \"open\": 146.77, \"high\": 147.28, \"low\": 146.61, \"close\": 147.05 }, { \"date\": 1511111115722, \"open\": 147.7, \"high\": 148.42, \"low\": 147.15, \"close\": 148 }, { \"date\": 1511111115723, \"open\": 147.97, \"high\": 148.49, \"low\": 147.43, \"close\": 148.33 }, { \"date\": 1511111115727, \"open\": 148.33, \"high\": 149.13, \"low\": 147.98, \"close\": 149.1 }, { \"date\": 1511111115728, \"open\": 149.13, \"high\": 149.5, \"low\": 148.86, \"close\": 149.37 }, { \"date\": 1511111115729, \"open\": 149.15, \"high\": 150.14, \"low\": 149.01, \"close\": 149.41 } ]; this.chartParameters = new CandlestickChartConfiguration(); this.chartParameters.xColumn = 'date'; this.chartParameters.openAxis = 'open'; this.chartParameters.highAxis = 'high'; this.chartParameters.lowAxis = 'low'; this.chartParameters.closeAxis = 'close'; DataAdapterUtils.createDataAdapter(this.chartParameters); this.candlestick.setDataArray(DataAdapterUtils.adapter.adaptResult(data)); } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/overview/overview#basic-example-custom-data",
             "relUrl": "/charts/configuration/overview/overview#basic-example-custom-data"
           }
-      ,"441": {
+      ,"442": {
             "doc": "Line Chart",
             "title": "Line Chart",
             "content": "Directive: o-chart . Inherited inputs . from OChartComponent: . chart-height chart-parameters chart-width data type x-axis x-data-type x-label y-axis y-data-type y-label . Chart Parameters . Name Description Default . classed . string . Set class . color . array . Colors to use for the different data. . duration . number . Duration in ms . 500 . focusEnable . boolean . Enable / Disable focus . false . focusShowAxisX . boolean . Show Axis X on focus . false . interactive . boolean . A master flag for turning chart interaction on and off. This overrides all tooltip, voronoi, and guideline options. true . isArea . boolean . Function to define if a line is a normal line or if it fills in the area. Notice the default gets the value from the line’s definition in data. If a non-function is given, it the value is used for all lines. . legendPosition . string . Position of the legend (top, right, bottom) . top . rightAlignYAxis . boolean . When only one Y axis is used, this puts the Y axis on the right side instead of the left. false . showLegend . boolean . Whether to display the legend or not . true . showXAxis . boolean . Show or not X Axis . true . showYAxis . boolean . Show or not Y Axis . true . strokeWidth . number . Stroke width in pixels . useInteractiveGuideline . boolean . Sets the chart to use a guideline and floating tooltip instead of requiring the user to hover over specific hotspots. Turning this on will set the ‘interactive’ and ‘useVoronoi’ options to false to avoid conflicting. true . Inherited outputs . from ChartComponent: . onDoubleTap onPinch onPress onRotate onSwipe onTap . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/linechart/api#Line%20Chart",
             "relUrl": "/charts/configuration/linechart/api#Line Chart"
           }
-      ,"442": {
+      ,"443": {
             "doc": "Line Chart",
             "title": "Introduction",
             "content": "You can check a running example of this Line Chart here. All chart parameters for the Line Chart can be checked in the API tab. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/linechart/overview#introduction",
             "relUrl": "/charts/configuration/linechart/overview#introduction"
-          },"443": {
+          },"444": {
             "doc": "Line Chart",
             "title": "Basic Example",
             "content": "HTML . &lt;o-chart type=\"line\" x-label=\"Time\" y-label=\"Amount (€)\" entity=\"EMovements\" x-axis=\"DATE_\" y-axis=\"MOVEMENT\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/linechart/overview#basic-example",
             "relUrl": "/charts/configuration/linechart/overview#basic-example"
-          },"444": {
+          },"445": {
             "doc": "Line Chart",
             "title": "Custom Configuration Example",
             "content": "HTML . &lt;o-chart #lineChartBasic type=\"line\" x-label=\"Time\" y-label=\"Amount (€)\" entity=\"EMovements\" x-axis=\"DATE_\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild } from '@angular/core'; import { OChartComponent, LineChartConfiguration, ChartService } from 'ontimize-web-ngx-charts'; @Component({ selector: 'line', templateUrl: './line.component.html' }) export class LineComponent { chartParameters: LineChartConfiguration; constructor() { this.chartParameters = new LineChartConfiguration(); this.chartParameters.isArea = [true]; this.chartParameters.interactive = false; this.chartParameters.useInteractiveGuideline = false; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/linechart/overview#custom-configuration-example",
             "relUrl": "/charts/configuration/linechart/overview#custom-configuration-example"
           }
-      ,"445": {
+      ,"446": {
             "doc": "Line + Bar Chart",
             "title": "Line + Bar Chart",
             "content": "Directive: o-chart . Inherited inputs . from OChartComponent: . chart-height chart-parameters chart-width data type x-axis x-data-type x-label y-axis y-data-type y-label . Chart Parameters . Name Description Default . bars . boolean . Parameter for select chart with bars or line . color . string[] . Colors to use for the different data. . duration . number . Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value. 500 . focusEnable . boolean . Enable or disable focus. true . focusShowAxisX . boolean . On focus show X axis . true . focusShowAxisY . boolean . On focus show Y axis . false . forceX . array . List of numbers to Force into the X scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn’t override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option. . forceY . array . List of numbers to Force into the Y scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the Y domain but doesn’t override the whole domain. This option only applies if you have not overridden the whole domain with the yDomain option. . interactive . boolean . A master flag for turning chart interaction on and off. This overrides all tooltip, voronoi, and guideline options. true . isArea . Function to define if a line is a normal line or if it fills in the area. Notice the default gets the value from the line’s definition in data. If a non-function is given, it the value is used for all lines. . margin . object . Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts. . showLabels . boolean . Whether to display the legend or not . showLegend . boolean . Whether to display the legend or not . true . switchYAxisOrder . boolean . If two Y axis are used, this option changes the order of both axis. false . to_previousValue . boolean[] . Parameters for create equispaced points in chart to_zero is priority in the case of two parameters are activated . to_zero . boolean[] . Parameters for create equispaced points in chart to_zero is priority in the case of two parameters are activated . Inherited outputs . from ChartComponent: . onDoubleTap onPinch onPress onRotate onSwipe onTap . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/linebarchart/api#Line%20+%20Bar%20Chart",
             "relUrl": "/charts/configuration/linebarchart/api#Line + Bar Chart"
           }
-      ,"446": {
+      ,"447": {
             "doc": "Line + Bar Chart",
             "title": "Introduction",
             "content": "You can check a running example of this Line + Bar Chart here. All chart parameters for the Line + Bar Chart can be checked in the API tab. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/linebarchart/overview#introduction",
             "relUrl": "/charts/configuration/linebarchart/overview#introduction"
-          },"447": {
+          },"448": {
             "doc": "Line + Bar Chart",
             "title": "Basic Example",
             "content": "HTML . &lt;o-chart type=\"linePlusBarWithFocusChart\" entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;BALANCE\" x-data-type=\"time\" [chart-parameters]=\"chartParameters\" chart-height=\"500\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { LinePlusBarFocusChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'app-lineplusbar', templateUrl: './lineplusbar.component.html' }) export class LineplusbarComponent { chartParameters: LinePlusBarFocusChartConfiguration; constructor() { this.chartParameters = new LinePlusBarFocusChartConfiguration(); this.chartParameters.bars = [true, false]; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/linebarchart/overview#basic-example",
             "relUrl": "/charts/configuration/linebarchart/overview#basic-example"
-          },"448": {
+          },"449": {
             "doc": "Line + Bar Chart",
             "title": "Custom Configuration Example",
             "content": "HTML . &lt;o-chart type=\"linePlusBarWithFocusChart\" entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;BALANCE\" x-data-type=\"time\" [chart-parameters]=\"chartParameters\" chart-height=\"500\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { LinePlusBarFocusChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'app-lineplusbar', templateUrl: './lineplusbar.component.html' }) export class LineplusbarComponent { chartParameters: LinePlusBarFocusChartConfiguration; constructor() { this.chartParameters = new LinePlusBarFocusChartConfiguration(); this.chartParameters.bars = [ true, false]; this.chartParameters.to_zero = [true, false]; this.chartParameters.to_previusValue = [false, true]; this.chartParameters.colors = [\"blue\", \"red\"] } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/linebarchart/overview#custom-configuration-example",
             "relUrl": "/charts/configuration/linebarchart/overview#custom-configuration-example"
           }
-      ,"449": {
+      ,"450": {
             "doc": "Pie Chart",
             "title": "Pie Chart",
             "content": "Directive: o-chart . Inherited inputs . from OChartComponent: . chart-height chart-parameters chart-width data type x-axis x-data-type x-label y-axis y-data-type y-label . Chart Parameters . Name Description Default . color . string[] . Colors to use for the different data. . colorData . OColorData[] = { value: string, color: string } . List of colors for each value in the Y axis of the chart . cornerRadius . number . Corner radius of the slices . 0 . duration . number . Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value. 500 . labelSunbeamLayout . boolean . true . labelThreshold . number . Configure the minimum slice size for labels to show up . 0.01 . labelType . string . Type of data shown in the label (key, value, percent) . 0 . labelsOutside . boolean . Whether pie chart labels should be outside the slices instead of inside them . false . legendPosition . string . Position of the legend (top, right, bottom) . top . showLabels . boolean . Specifies if labels are displayed . true . showLegend . boolean . Whether to display the legend or not . true . showTooltip . boolean . Enables or disabled the tooltip . true . valueType . string . Formats value(s) . Inherited outputs . from ChartComponent: . onDoubleTap onPinch onPress onRotate onSwipe onTap . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/piechart/api#Pie%20Chart",
             "relUrl": "/charts/configuration/piechart/api#Pie Chart"
           }
-      ,"450": {
+      ,"451": {
             "doc": "Pie Chart",
             "title": "Introduction",
             "content": "You can check a running example of this Pie Chart here. All chart parameters for the Pie Chart can be checked in the API tab. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/piechart/overview#introduction",
             "relUrl": "/charts/configuration/piechart/overview#introduction"
-          },"451": {
+          },"452": {
             "doc": "Pie Chart",
             "title": "Basic Example",
             "content": "HTML . &lt;o-chart type=\"pie\" layout-fill entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/piechart/overview#basic-example",
             "relUrl": "/charts/configuration/piechart/overview#basic-example"
-          },"452": {
+          },"453": {
             "doc": "Pie Chart",
             "title": "Custom Configuration Example",
             "content": "HTML . &lt;o-chart type=\"pie\" layout-fill entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { PieChartConfiguration } from 'ontimize-web-ngx-charts' @Component({ selector: 'pie', templateUrl: './pie.component.html' }) export class PieComponent{ chartParameters: PieChartConfiguration; constructor() { this.chartParameters = new PieChartConfiguration(); this.chartParameters.cornerRadius = 20; this.chartParameters.legendPosition = \"bottom\"; this.chartParameters.labelType = \"value\"; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/piechart/overview#custom-configuration-example",
             "relUrl": "/charts/configuration/piechart/overview#custom-configuration-example"
-          },"453": {
+          },"454": {
             "doc": "Pie Chart",
             "title": "Custom Service Example",
             "content": "HTML . &lt;o-chart #pieChart type=\"pie\" [data]=\"data\" layout-fill&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { Headers, Http } from '@angular/http'; import { PieChartConfiguration } from 'ontimize-web-ngx-charts'; import { Observable } from 'rxjs'; import { share } from 'rxjs/operators'; import { OChartComponent } from 'ontimize-web-ngx-charts'; @Component({ selector: 'pie', templateUrl: './pie.component.html' }) export class PieComponent { protected data: Array&lt;Object&gt;; constructor(protected http: Http) { } ngAfterViewInit() { this.loadJSONData().subscribe(data =&gt; { this.data = data; }) } protected loadJSONData() { let headers: HttpHeaders = new HttpHeaders(); headers.append('Access-Control-Allow-Origin', '*'); let url = './assets/dummy-data/dummy-pie-data.json'; var self = this; let innerObserver: any; let dataObservable = Observable.create(observer =&gt; innerObserver = observer).pipe(share()); this.http .get(url, { headers: headers }) .subscribe(res =&gt; { let data: any = res; self.serviceResponse = JSON.stringify(data, undefined, 2); innerObserver.next(data.values); }, error =&gt; innerObserver.error(error)); return dataObservable; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/piechart/overview#custom-service-example",
             "relUrl": "/charts/configuration/piechart/overview#custom-service-example"
           }
-      ,"454": {
+      ,"455": {
             "doc": "Donut Chart",
             "title": "Donut Chart",
             "content": "Directive: o-chart . Inherited inputs . from OChartComponent: . chart-height chart-parameters chart-width data type x-axis x-data-type x-label y-axis y-data-type y-label . Chart Parameters . Name Description Default . color . string[] . Colors to use for the different data. . colorData . OColorData[] = { value: string, color: string } . List of colors for each value in the Y axis of the chart . cornerRadius . number . Corner radius of donut slices . 0 . donutRatio . number . Percent of pie radius to cut out of the middle to make the donut. It is multiplied by the outer radius to calculate the inner radius, thus it should be between 0 and 1. 0.35 . duration . number . Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value. 500 . endAngle . function . Function used to manage the ending angle of the donut chart . labelSunbeamLayout . boolean . Enable or disable Sunbeam layout for labels . true . labelThreshold . number . Configure the minimum slice size for labels to show up . 0.01 . labelType . string . Type of data shown in the label (key, value, percent) . 0 . labelsOutside . boolean . Whether donut chart labels should be outside the slices instead of inside them . false . legendPosition . string . Position of the legend (top, right, bottom) . top . showLabels . boolean . Display donut labels . true . showLegend . boolean . Whether to display the legend or not . true . showTooltip . boolean . Enable or disable the tooltip . true . startAngle . function . Function used to manage the starting angle of the donut chart . valueType . string . Formats value(s) . Inherited outputs . from ChartComponent: . onDoubleTap onPinch onPress onRotate onSwipe onTap . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/donutchart/api#Donut%20Chart",
             "relUrl": "/charts/configuration/donutchart/api#Donut Chart"
           }
-      ,"455": {
+      ,"456": {
             "doc": "Donut Chart",
             "title": "Introduction",
             "content": "You can check a running example of this Donut Chart here. All chart parameters for the Donut Chart can be checked in the API tab. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/donutchart/overview#introduction",
             "relUrl": "/charts/configuration/donutchart/overview#introduction"
-          },"456": {
+          },"457": {
             "doc": "Donut Chart",
             "title": "Basic Example",
             "content": "HTML . &lt;o-chart type=\"donutChart\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" chart-height=\"400\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/donutchart/overview#basic-example",
             "relUrl": "/charts/configuration/donutchart/overview#basic-example"
-          },"457": {
+          },"458": {
             "doc": "Donut Chart",
             "title": "Custom Configuration Example",
             "content": "HTML . &lt;o-chart type=\"donutChart\" chart-height=\"400\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\"&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild} from '@angular/core'; import { OChartComponent, DonutChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'donut', templateUrl: './donut.component.html' }) export class DonutComponent { chartParameters: DonutChartConfiguration; constructor(protected injector: Injector, protected navigationService: NavigationBarService, protected translateService: OTranslateService) { this.chartParameters = new DonutChartConfiguration(); this.chartParameters.showLabels = false; this.chartParameters.cornerRadius = 15; this.chartParameters.donutRatio = 0.5; } } . ",
@@ -2928,59 +2934,59 @@
             "relUrl": "/charts/configuration/donutchart/overview#custom-configuration-example"
           }
       
-      ,"458": {
+      ,"459": {
             "doc": "Discrete Bar Chart",
             "title": "Introduction",
             "content": "You can check a running example of this Discrete Bar Chart here. All chart parameters for the Discrete Bar Chart can be checked in the API tab. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/discretebarchart/overview#introduction",
             "relUrl": "/charts/configuration/discretebarchart/overview#introduction"
-          },"459": {
+          },"460": {
             "doc": "Discrete Bar Chart",
             "title": "Basic Example",
             "content": "HTML . &lt;o-chart type=\"discreteBar\" x-label=\"Axis x\" y-label=\"Axis Y\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/discretebarchart/overview#basic-example",
             "relUrl": "/charts/configuration/discretebarchart/overview#basic-example"
-          },"460": {
+          },"461": {
             "doc": "Discrete Bar Chart",
             "title": "Custom Configuration Example",
             "content": "HTML . &lt;o-chart type=\"discreteBar\" x-label=\"Axis x\" y-label=\"Axis Y\" [data]=\"data\" layout-fill&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild, Injector } from '@angular/core'; import { OntimizeService, ChartService } from 'ontimize-web-ngx'; declare var d3: any; @Component({ selector: 'discrete-bar', templateUrl: './discrete-bar.component.html', styleUrls: ['./discrete-bar.component.scss'] }) export class DiscreteBarComponent { protected data: Array&lt;Object&gt;; protected yAxis: string = 'MOVEMENT'; protected xAxis: string = 'MOVEMENTTYPES'; @ViewChild('discreteBar', {static: false}) protected discreteBar: OChartComponent; constructor() {} ngAfterViewInit() { // Configuring Ontimize service instance... let service: OntimizeService = this.injector.get(OntimizeService); /* * 'getDefaultServiceConfiguration' method provides session, endpoint,.. data from * application configuration object. */ let conf = service.getDefaultServiceConfiguration(); conf['entity'] = 'EMovementTypes'; service.configureService(conf); // Performing ontimize query... let filter = { 'ACCOUNTID': 7310 }; let columns = ['MOVEMENT', 'MOVEMENTTYPES']; service.query(filter, columns).subscribe((resp) =&gt; { // response ok if (resp.code === 0) { this.adaptResult(resp.data); } else { alert('Impossible to query data!'); } }); let chartService: ChartService = this.discreteBar.getChartService(); let chartOps = chartService.getChartOptions(); // Configuring x axis... chartOps['yAxis']['tickFormat'] = function (d) { return d3.format(',f')(d) + '€'; }; } /** * Creates chart data grouping movements by category 'Movement type' * */ adaptResult(data: Array&lt;any&gt;) { if (data &amp;&amp; data.length) { let values = this.processValues(data); // chart data this.data = [ { 'key': 'Discrete serie', 'values': values } ] } } processValues(data: Array&lt;Object&gt; ) : Array&lt;Object&gt; { let values = []; var self = this; data.forEach((item: any, index: number) =&gt; { let filtered = self.filterCategory(item[self.xAxis], values); if (filtered &amp;&amp; filtered.length === 0) { let val = { 'x': item[self.xAxis], 'y': item[self.yAxis] }; values.push(val); } else { filtered[0]['y'] += item[self.yAxis]; } }); return values; } filterCategory(category: string, values: Array&lt;Object&gt;) { let filtered = []; if (values &amp;&amp; values.length) { filtered = values.filter((val: Object) =&gt; { if (val['x'] === category) { return true; } }); } return filtered; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/discretebarchart/overview#custom-configuration-example",
             "relUrl": "/charts/configuration/discretebarchart/overview#custom-configuration-example"
           }
-      ,"461": {
+      ,"462": {
             "doc": "Multi Bar Chart",
             "title": "Multi Bar Chart",
             "content": "Directive: o-chart . Inherited inputs . from OChartComponent: . chart-height chart-parameters chart-width data type x-axis x-data-type x-label y-axis y-data-type y-label . Chart Parameters . Name Description Default . color . array . Colors to use for the different data. If an array is given, it is converted to a function automatically. . duration . number . Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value. 500 . groupSpacing . number . The padding between bar groups, this is passed as the padding attribute of rangeBands . 0.1 . hideable . boolean . false . margin . object . Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts. . reduceXTicks . boolean . true . rightAlignYAxis . boolean . When only one Y axis is used, this puts the Y axis on the right side instead of the left. . rotateLabels . number . Rotates the X axis labels by the specified degree. 0 . showControls . boolean . Whether to show extra controls or not. Extra controls include things like making mulitBar charts stacked or side by side. true . showLegend . boolean . Whether to display the legend or not . true . showXAxis . boolean . Display or hide the X axis . true . showYAxis . boolean . Display or hide the Y axis . true . stacked . boolean . true . wrapLabels . boolean . Splits long X labels by new lines in order to prevent overlapping. . Inherited outputs . from ChartComponent: . onDoubleTap onPinch onPress onRotate onSwipe onTap . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/multibarchart/api#Multi%20Bar%20Chart",
             "relUrl": "/charts/configuration/multibarchart/api#Multi Bar Chart"
           }
-      ,"462": {
+      ,"463": {
             "doc": "Multi Bar Chart",
             "title": "Introduction",
             "content": "You can check a running example of this Multi Bar Chart here. All chart parameters for the Multi Bar Chart can be checked in the API tab. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/multibarchart/overview#introduction",
             "relUrl": "/charts/configuration/multibarchart/overview#introduction"
-          },"463": {
+          },"464": {
             "doc": "Multi Bar Chart",
             "title": "Basic Example",
             "content": "HTML . &lt;o-chart type=\"multiBar\" x-label=\"Time\" y-label=\"Amount (€)\" layout-fill entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;AVERAGE;BALANCE\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/multibarchart/overview#basic-example",
             "relUrl": "/charts/configuration/multibarchart/overview#basic-example"
-          },"464": {
+          },"465": {
             "doc": "Multi Bar Chart",
             "title": "Custom Configuration Example",
             "content": "HTML . &lt;o-chart #multiBar type=\"multiBar\" x-label=\"Time\" y-label=\"Amount (€)\" [data]=\"data\" x-data-type=\"time\" layout-fill&gt;&lt;/o-chart&gt; . TS . import { Component, Injector, ViewChild } from '@angular/core'; import { OntimizeService } from 'ontimize-web-ngx'; import { OChartComponent, ChartService } from 'ontimize-web-ngx-charts'; declare var d3: any; @Component({ selector: 'multi-bar', templateUrl: './multi-bar.component.html' }) export class MultiBarComponent { @ViewChild('multiBar', {static: false}) protected multiBar: OChartComponent; protected yAxis: string = 'MOVEMENT'; protected xAxis: string = 'DATE_'; protected data: Array&lt;Object&gt;; constructor(protected injector: Injector) { } ngAfterViewInit() { if (this.multiBar) { let chartService: ChartService = this.multiBar.getChartService(); if (chartService) { let chartOps = chartService.getChartOptions(); // Configuring x axis... chartOps['xAxis']['tickFormat'] = function (d) { return d3.time.format('%d/%m/%y')(new Date(d)); }; chartOps['yAxis']['tickFormat'] = function (d) { return d3.format(',f')(d) + '€'; }; // Configuring y axis... var yScale = d3.scale.linear(); chartOps['yScale'] = yScale; chartOps['yDomain'] = [-1000, 6000]; } } // Ontimize service query... let service: OntimizeService = this.injector.get(OntimizeService); let conf = service.getDefaultServiceConfiguration(); conf['entity'] = 'EMovements'; service.configureService(conf); let filter = { 'ACCOUNTID': 7310 } service.query(filter, []).subscribe((resp) =&gt; { if (resp.code === 0) { this.adaptResult(resp.data); } }); } adaptResult(data: Array&lt;any&gt;) { if (data &amp;&amp; data.length) { let values = this.processValues(data); this.data = [ { 'key': 'Movement', 'values': values['movement'], 'color': '#3498db' }, { 'key': 'Average Balance', 'values': values['average'], 'color': '#e74c3c' }, { 'key': 'Total Balance', 'values': values['total'], 'color': '#f9c922' } ]; } } processValues(data: Array&lt;Object&gt;): Object { let values = { 'movement': [], 'average': [], 'total': [] }; var self = this; let balance = 0.0; let average = 0.0; data.forEach((item: any, index: number) =&gt; { let val = { 'x': item[self.xAxis], 'y': item[self.yAxis] }; balance += val.y; let val2 = { 'x': val.x, 'y': balance }; average += balance; let val3 = { 'x': val.x, 'y': (average / (index + 1)) }; values['movement'].push(val); values['average'].push(val3); values['total'].push(val2); }); return values; } } . JSON (Custom Data) . [ { \"key\": \"Movement\", \"values\": [ { \"x\": 1235490657851, \"y\": 951 }, { \"x\": 1236110357961, \"y\": -80 }, { \"x\": 1236402213822, \"y\": 653 }, { \"x\": 1236611284898, \"y\": -548 }, { \"x\": 1242673437363, \"y\": -949 }, { \"x\": 1245260962425, \"y\": 552 }, { \"x\": 1246875825338, \"y\": 432 }, { \"x\": 1254322811810, \"y\": 1756 }, { \"x\": 1254388791367, \"y\": -169 }, { \"x\": 1255948329905, \"y\": -23 } ] }, { \"key\": \"Average Balance\", \"values\": [ { \"x\": 1235490657851, \"y\": 951 }, { \"x\": 1236110357961, \"y\": 911 }, { \"x\": 1236402213822, \"y\": 1115.3333333333333 }, { \"x\": 1236611284898, \"y\": 1080.5 }, { \"x\": 1242673437363, \"y\": 869.8 }, { \"x\": 1245260962425, \"y\": 821.3333333333334 }, { \"x\": 1246875825338, \"y\": 848.4285714285714 }, { \"x\": 1254322811810, \"y\": 1088.25 }, { \"x\": 1254388791367, \"y\": 1256 }, { \"x\": 1255948329905, \"y\": 1387.9 } ] }, { \"key\": \"Total Balance\", \"values\": [ { \"x\": 1235490657851, \"y\": 951 }, { \"x\": 1236110357961, \"y\": 871 }, { \"x\": 1236402213822, \"y\": 1524 }, { \"x\": 1236611284898, \"y\": 976 }, { \"x\": 1242673437363, \"y\": 27 }, { \"x\": 1245260962425, \"y\": 579 }, { \"x\": 1246875825338, \"y\": 1011 }, { \"x\": 1254322811810, \"y\": 2767 }, { \"x\": 1254388791367, \"y\": 2598 }, { \"x\": 1255948329905, \"y\": 2575 } ] } ] . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/multibarchart/overview#custom-configuration-example",
             "relUrl": "/charts/configuration/multibarchart/overview#custom-configuration-example"
           }
-      ,"465": {
+      ,"466": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The Ontimize Web Charts is an implementation of nvD3 and D3 charts library using OntimizeWeb. Below you can see a list with all available chart types: . Line Charts . Line Chart Line + Bar Chart Parallel coordinates Chart Ohlc Chart . Bar Charts . Dicrete Bar Chart Multi Bar Chart Multi Bar Horizontal Chart Bullet Chart . Area Charts . Stacked Area Chart Radar Chart . Bubble Charts . Bubble Chart Scartter Chart . Gauge Charts . Gauge Dashboard Chart Gauge Simple Chart Gauge Slim Chart Gauge Space Chart Radial Percent Chart . Other Charts . Donut Chart Pie Chart Candlestick bar Chart Force Direct Graph . You can check running examples of each type here. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/overview/#introduction",
             "relUrl": "/charts/overview/#introduction"
           }
-      ,"466": {
+      ,"467": {
             "doc": "Installation",
             "title": "Installation",
             "content": "Step 1 - Install the module . npm install ontimize-web-ngx-charts --save . Step 2 - Import in an application module . Include the library chart module into your app in the module where you want to use it... import { OChartModule } from 'ontimize-web-ngx-charts'; ... @NgModule({ imports: [ OChartModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Step 3 - Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"styles\": [ ... \"node_modules/ontimize-web-ngx-charts/styles.scss\", .... ], ... ",
@@ -2988,397 +2994,397 @@
             "relUrl": "/charts/installation/#installation"
           }
       
-      ,"467": {
+      ,"468": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The OntimizeWeb file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#introduction",
             "relUrl": "/filemanager/overview/#introduction"
-          },"468": {
+          },"469": {
             "doc": "Overview",
             "title": "Upload",
             "content": "You can upload files since the button Upload. While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value auto-hide-timeout in ms and also auto hide the message by setting the value auto-hide-upload=\"no\". ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#upload",
             "relUrl": "/filemanager/overview/#upload"
-          },"469": {
+          },"470": {
             "doc": "Overview",
             "title": "Create folders",
             "content": "The o-filemanager-table allows to create a folder using the New folder button or the table menu. The button it&#8217;s disabled by default, you can enable it by setting the value new-folder-button=\"yes\". ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#create-folders",
             "relUrl": "/filemanager/overview/#create-folders"
-          },"470": {
+          },"471": {
             "doc": "Overview",
             "title": "Delete folder or files",
             "content": "The o-filemanager-table allow delete simple or multiple by a context menu or button &#8216;Delete&#8217; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#delete-folder-or-files",
             "relUrl": "/filemanager/overview/#delete-folder-or-files"
-          },"471": {
+          },"472": {
             "doc": "Overview",
             "title": "Multiple download support",
             "content": "The o-filemanager-table allow download simple or multiple files by a context menu. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#multiple-download-support",
             "relUrl": "/filemanager/overview/#multiple-download-support"
-          },"472": {
+          },"473": {
             "doc": "Overview",
             "title": "Rename files or folders",
             "content": "The o-filemanager-table allow rename files or folders by a context menu. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#rename-files-or-folders",
             "relUrl": "/filemanager/overview/#rename-files-or-folders"
-          },"473": {
+          },"474": {
             "doc": "Overview",
             "title": "Browsing between folders",
             "content": "You can browse between folder with double click or by content menu over the folder and selecting the Open option. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#browsing-between-folders",
             "relUrl": "/filemanager/overview/#browsing-between-folders"
-          },"474": {
+          },"475": {
             "doc": "Overview",
             "title": "Selection multiple",
             "content": "The o-filemanager-table support selection multiple with row selection or checkbox selection with select-all-checkbox=\"yes\" property. If this property is activated in the menu on the upper right, the option will be active. By default is no. Example . &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\" new-folder-button=\"yes\" select-all-checkbox=\"yes\"&gt;&lt;/o-filemanager-table&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#selection-multiple",
             "relUrl": "/filemanager/overview/#selection-multiple"
-          },"475": {
+          },"476": {
             "doc": "Overview",
             "title": "Textbox Search filter",
             "content": "The o-filemanager-table allow filter by name of files or folders. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#textbox-search-filter",
             "relUrl": "/filemanager/overview/#textbox-search-filter"
           }
-      ,"476": {
+      ,"477": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-filemanager --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/installation/#installation",
             "relUrl": "/filemanager/installation/#installation"
-          },"477": {
+          },"478": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Add the library theming . Include the library theme in your application by adding the following code to the &#8216;app.scss&#8217; file: ... @import '~ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'; @include o-filemanager-table-theme($theme); ... Import the File Manager into your application . Import the Ontimize Web file manager module in the module you want to use it. import { OFileManagerModule } from 'ontimize-web-ngx-filemanager'; @NgModule({ imports: [ OFileManagerModule ], declarations: ... providers: ... }) export class ExampleModule { } . Add the File Manager to your component . Insert the o-filemanager-table component in your application component template. You must configure the service attribute within the name of the service that manages the files in the server. You must indicate also the column name that stores the work space identifier in the workspace-key attribute. &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\"&gt;&lt;/o-filemanager-table&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/installation/#usage",
             "relUrl": "/filemanager/installation/#usage"
           }
-      ,"478": {
+      ,"479": {
             "doc": "File Manager Service",
             "title": "File data model",
             "content": "The File Manager Service uses the class FileClass as the file data model. This class provides the following attributes: . { id: number; name: string; size: number; creationDate: number; directory: boolean; } . Where the attributes indicates the following: . id: The file identifier. name: The file name. size: The file size. creationDate: Timestamp that represents the date of creation of the file. directory: Indicates wether a file is a folder or not. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/#file-data-model",
             "relUrl": "/filemanager/filemanagerservice/#file-data-model"
-          },"479": {
+          },"480": {
             "doc": "File Manager Service",
             "title": "Methods",
             "content": "configureService . Configure de Ontimize Web File Manager service. Parameters . Name Type Required Description . config Map yes The configuration object parameter . queryFiles . Get the files in the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . kv Object no A key/value object for filtering the results requested . attrs string[] no An array of string wi the searching fields requested . Return Observable&lt;FileClass[]&gt; . download . Download de requested files. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . downloadMultiple . Download de requested files in a zip file. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . upload . Upload the provided files and place them in the provided flder. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . folderId &#160; yes The folder identifier . files FileClass[] yes The downloading files data . Return Observable . deleteFiles . Delete the provided files from the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . insertFolder . Create a folder in the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . name string yes The folder name . kv Map no A key/value object for filtering where the folder will be created . Return Observable . fileUpdate . Update a folder or file name. Parameters . Name Type Required Description . name string yes The file/folder name . file FileClass yes The file for changin the name . Return Observable . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/#methods",
             "relUrl": "/filemanager/filemanagerservice/#methods"
-          },"480": {
+          },"481": {
             "doc": "File Manager Service",
             "title": "Extending the File Manager Service",
             "content": "You can define your own file manager service by extending the FileManagerService class as follows. import { Injectable, Injector } from '@angular/core'; import { FileManagerService } from 'ontimize-web-ngx-filemanager'; @Injectable() export class FileManagerExtendedService extends FileManagerService { constructor( protected injector: Injector ) { super(injector); } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/#extending-the-file-manager-service",
             "relUrl": "/filemanager/filemanagerservice/#extending-the-file-manager-service"
-          },"481": {
+          },"482": {
             "doc": "File Manager Service",
             "title": "File Manager REST API",
             "content": "In this section we describe the REST API used by the FileManagerService. Get files information . Path: /queryFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . queryParams Map A map with the search parameters definde as follows Name Type Description . filter Map A key/value object for filtering the results requested . attributes String[] Array containing the requested fields . Response: FileClass[] . Download a single file . Path: /getFile/:fileId Method: GET URL params: . Name Type Description . fileId &#160; Array of files information for downloading . Download multiple files and/or folders . Path: /getFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . files FileClass[] A list of files data for downloading . Response: Map containing the zip file name generated. Download zip file . Path: /getZipFile/:file Method: GET URL params: . Name Type Description . file string The file for downloading . Response: . Upload file . Path: /insertFile/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . file &#160; The uploading file . folderId &#160; The forlder identifier that will contains the file uploading file . Response: The inserted file identifier. Delete files and/or folders . Path: /deleteFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . deleteParams Map A map with the delete parameters defined as follows Name Type Description . fileList FileClass[] A list of files data for deleting . Create folder . Path: /insertFolder/:workspaceId/:folderName Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . name string The folder name . Data params: . Name Type Description . insertParams Map A map with the following parameters described as follows Name Type Description . data Map A map with the insert extra information . Change file/folder name . Path: /fileUpdate Method: POST Data params: . Name Type Description . fileParams Map A map with the following parameters described as follows Name Type Description . file FileClass The file data for changing name . params Map A map with a 'name' key containing the new name for the file . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/#file-manager-rest-api",
             "relUrl": "/filemanager/filemanagerservice/#file-manager-rest-api"
           }
-      ,"482": {
+      ,"483": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "Directive: o-gallery . Inputs . Name Description . images . GalleryImage[] . Array of images . options . GalleryOptions[] . Array of custom options . Outputs . Name Description . onChange . Event triggered when on image change . onImagesReady . Event triggered when images length &gt; 0 . onPreviewChange . Event triggered when on preview image change . onPreviewClose . Event triggered when on preview close . onPreviewOpen . Event triggered when on preview open . Methods . canMoveThumbnailsLeft() . Returns true if you can move thumbnails to left . Returns . boolean . canMoveThumbnailsRight() . Returns true if you can move thumbnails to right . Returns . boolean . canShowNext() . Returns true if there is next image . canShowPrev() . Returns true if there is prev image . moveThumbnailsLeft() . Moves thumbnails to left . moveThumbnailsRight() . Moves thumbnails to right . openPreview(index: number) . Opens preview at index . show(index: number) . Shows image at index . showNext() . Shows next image . showPrev() . Shows prev image . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/api#Gallery",
             "relUrl": "/gallery/components/gallery/api#Gallery"
-          },"483": {
+          },"484": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "Class: GalleryOptions . Inputs . Name Description Default . actions . GalleryAction[] . Array of new custom actions that will be added to the left of the current close/zoom/fullscreen icons . [] . arrowNextIcon . string . Icon for next arrow (see Google material design icons) . navigate_next . arrowPrevIcon . string . Icon for prev arrow (see Google material design icons) . navigate_before . breakpoint . number . Responsive breakpoint, works like media query max-width . undefined . closeIcon . string . Icon for close button (see Google material design icons) . close . downloadIcon . string . Icon for download (see Google material design icons) . cloud_download . fullWidth . boolean . Sets the same width as browser . false . fullscreenIcon . string . Icon for fullscreen button (see Google material design icons) . fullscreen . height . string . Gallery height . 400px . image . boolean . Enables or disables image . true . imageActions . GalleryAction[] . Array of custom actions . [] . imageAnimation . GalleryAnimation.Fade GalleryAnimation.Slide GalleryAnimation.Rotate GalleryAnimation.Zoom . Animation type . GalleryAnimation.Fade . imageArrows . boolean . Enables or disables arrows . true . imageArrowsAutoHide . boolean . Enables or disables arrows auto hide . false . imageAutoPlay . boolean . Enables or disables auto play . false . imageAutoPlayInterval . number . Interval for auto play (ms) . 2000 . imageAutoPlayPauseOnHover . boolean . Enables or disables pause auto play on hover . false . imageBullets . boolean . Enables or disables navigation bullets . false . imageDescription . boolean . Enables or disables description for images . true . imageInfinityMove . boolean . Enables or disables infinity move by arrows . false . imagePercent . number . Percentage height . 75 . imageSize . GalleryImageSize.Cover GalleryImageSize.Contain . Image size . GalleryImageSize.Cover . imageSwipe . boolean . enables or disables swipe . false . layout . GalleryLayout.ThumbnailsTop GalleryLayout.ThumbnailsBottom . Sets thumbnails position . GalleryLayout.ThumbnailsBottom . lazyLoading . boolean . Enables or disables lazy loading for images . true . linkTarget . string . Sets target attribute of link . _blank . preview . boolean . Enables or disables description for images . true . previewAnimation . boolean . Enables or disables image loading animation . true . previewArrows . boolean . Enables or disables arrows . true . previewArrowsAutoHide . boolean . Enables or disables arrows auto hide . false . previewAutoPlay . boolean . Enables or disables auto play . false . previewAutoPlayInterval . number . Interval for auto play (ms) . 2000 . previewAutoPlayPauseOnHover . boolean . Enables or disables pause auto play on hover . false . previewBullets . boolean . Enables or disables navigation bullets . false . previewCloseOnClick . boolean . Enables or disables closing preview by click . false . previewCloseOnEsc . boolean . Enables or disables closing preview by esc keyboard . false . previewDescription . boolean . Enables or disables description for images . true . previewDownload . boolean . Enables or disables download button . false . previewForceFullscreen . boolean . Enables or disables opening preview in fullscreen mode . false . previewFullscreen . boolean . Enables or disables fullscreen icon . false . previewInfinityMove . boolean . Enables or disables infinity move by arrows . false . previewKeyboardNavigation . boolean . Enables or disables navigation by keyboard . false . previewRotate . boolean . Enables or disables rotate buttons . false . previewSwipe . boolean . Enables or disables swipe . false . previewZoom . boolean . Enables or disables zoom in and zoom out . false . previewZoomMax . number . Max value for zoom . 2 . previewZoomMin . number . Min value for zoom . 0.5 . previewZoomStep . number . Enables or disables step for zoom change . 0.1 . rotateLeftIcon . string . Icon for rotate left (see Google material design icons) . rotate_left . rotateRightIcon . string . Icon for rotate right (see Google material design icons) . rotate_right . spinnerIcon . string . Icon for spinner (see Google material design icons) . loop . startIndex . number . Sets index of selected image on start . 0 . thumbnailActions . GalleryAction[] . Array of custom actions . [] . thumbnailMargin . number . Margin between images in thumbnails . 10 . thumbnailSize . GalleryImageSize.Cover GalleryImageSize.Contain . Thumbnail size . GalleryImageSize.Cover . thumbnails . boolean . Enables or disables thumbnails . true . thumbnailsArrows . boolean . Enables or disables arrows in layout thumbnail” . true . thumbnailsArrowsAutoHide . boolean . Enables or disables arrows auto hide in layout thumbnail . false . thumbnailsAsLinks . boolean . Enables or disables links on thumbnails . false . thumbnailsAutoHide . boolean . Hides thumbnails if there is only one image . false . thumbnailsColumns . number . Columns count . 4 . thumbnailsMargin . number . margin between thumbnails and image . 10 . thumbnailsMoveSize . number . Number of items to move on arrow click. 1 . thumbnailsOrder . GalleryOrder.Column GalleryOrder.Row GalleryOrder.Page . Images order . GalleryOrder.Column . thumbnailsPercent . number . Percentage height . 25 . thumbnailsRemainingCount . boolean . Whether true arrows are disabled and last item has label with remaining count . false . thumbnailsRows . number . Rows count . 1 . thumbnailsSwipe . boolean . Enables or disables swipe . false . width . string . Gallery width . 500px . zoomInIcon . string . Icon for zoom in (see Google material design icons) . zoom_in . zoomOutIcon . string . Icon for zoom out (see Google material design icons) . zoom_out . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/api#Gallery",
             "relUrl": "/gallery/components/gallery/api#Gallery"
-          },"484": {
+          },"485": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "Class: GalleryImage . Inputs . Name Description Default . big . string SafeResourceUrl . Url used in preview. By default it is set to the value of the medium attribute . description . string . Description used in preview . label . string . Label used for aria-label when thumbnail is a link . medium . string SafeResourceUrl . Url used in image . small . string SafeResourceUrl . Url used in thumbnails. By default it is set to the value of the medium attribute . url . string . Description used in preview . Url used in link . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/api#Gallery",
             "relUrl": "/gallery/components/gallery/api#Gallery"
-          },"485": {
+          },"486": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "Class: GalleryAction . Inputs . Name Description Default . disabled . boolean . Tf the icon should be disabled . false . icon . string . Icon for custom action . onClick . (event: Event, index: number) => void . Output function to call when custom action icon is clicked . titleText . string . Text to set the title attribute to . ’’ . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/api#Gallery",
             "relUrl": "/gallery/components/gallery/api#Gallery"
           }
-      ,"486": {
+      ,"487": {
             "doc": "Gallery",
             "title": "Introduction",
             "content": "The o-gallery component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel. ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/overview#introduction",
             "relUrl": "/gallery/components/gallery/overview#introduction"
-          },"487": {
+          },"488": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "By itself, the &lt;o-gallery&gt; element does not render anything, it&#8217;s necessary to configure the array de images in gallery-images input. For more information see the API. &lt;o-gallery [gallery-images]=\"galleryImages\"&gt;&lt;/o-gallery&gt; . this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' } ]; or this.galleryImages = [ { medium: 'assets/images/photo1.jpg' }, { medium: 'assets/images/photo2.jpg', }, { medium: 'assets/images/photo3.jpg' } ]; ... Options . The o-gallery component allow multiple options for configurating with gallery-options input such as width, height, thumbnails configuration, preview configuration, &#8230; . &lt;o-gallery [gallery-images]=\"galleryImages\" [gallery-options]=\"galleryOptions\"&gt;&lt;/o-gallery&gt; ... this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' }, { small: 'assets/images/i_video.jpg', medium: 'assets/videos/video1.mp4', big: 'assets/videos/video1.mp4' } ]; this.galleryOptions = [ { breakpoint: 1920, height: \"200px\", width: \"300px\", image: true, thumbnails: false, preview: false } ]; ... Actions . You can add &#8220;actions&#8221; to the gallery, it shows icons on the top right corner and trigger your custom method. Form example . constructor( protected dialogService: DialogService) { } showInfo(event: Event, i: number): void { this.dialogService.info('INFO', 'Image ' + i); } ngOnInit(): void { // bind \"this\" to the method callback before assign if not lost context this.showInfo = this.showInfo.bind(this); this.galleryOptions = [ { ... actions: [ { icon: 'info', onClick: this.showInfo, titleText: 'info' } ] ... } ] } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/overview#gallery",
             "relUrl": "/gallery/components/gallery/overview#gallery"
           }
-      ,"488": {
+      ,"489": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The o-gallery component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel. &lt;o-gallery [gallery-images]=\"galleryImages\" [gallery-options]=\"galleryOptions\"&gt;&lt;/o-gallery&gt; ... this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' }, { small: 'assets/images/i_video.jpg', medium: 'assets/videos/video1.mp4', big: 'assets/videos/video1.mp4' } ]; this.galleryOptions = [ { breakpoint: 1920, height: \"200px\", width: \"300px\", image: true, thumbnails: false, preview: false } ]; ... ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/overview/#introduction",
             "relUrl": "/gallery/overview/#introduction"
           }
-      ,"489": {
+      ,"490": {
             "doc": "Gallery",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-gallery --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/installation/#installation",
             "relUrl": "/gallery/installation/#installation"
-          },"490": {
+          },"491": {
             "doc": "Gallery",
             "title": "Usage",
             "content": "Import in an application module . Import the Ontimize Web gallery module in the app module where you want to use it. import { OGalleryModule } from 'ontimize-web-ngx-gallery'; @NgModule({ imports: [ OGalleryModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/installation/#usage",
             "relUrl": "/gallery/installation/#usage"
           }
-      ,"491": {
+      ,"492": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The module Ontimize Web Keycloak provides authentication for your OntimizeWeb applications using Keycloak. It triggers keycloak login and logout and attachs the authentication bearer token to every request to the backend. ",
             "url": "https://ontimizeweb.github.io/docs/v8/keycloak/overview/#introduction",
             "relUrl": "/keycloak/overview/#introduction"
           }
-      ,"492": {
+      ,"493": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-keycloak --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/keycloak/installation/#installation",
             "relUrl": "/keycloak/installation/#installation"
-          },"493": {
+          },"494": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Import the Ontimize Keycloak module into your application . Import the OntimizeKeycloakModule into the main module of your application. import { OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OntimizeKeycloakModule, ... ], declarations: ... providers: ... }) export class AppModule { } . Replace Ontimize Web default authentication . Ontimize Web Keycloak provides an implementation of the service AuthService from OntimizeWeb for working with keycloak. Provide the Keycloak implementaion of the authentication service using the injection token O_AUTH_SERVICE for replacing the default authentication service by OKeycloakAuthService. import { O_AUTH_SERVICE } from 'ontimize-web-ngx'; import { OKeycloakAuthService, OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OntimizeKeycloakModule, ... ], declarations: ... providers: [ { provide: O_AUTH_SERVICE, useValue: OKeycloakAuthService } ] }) export class AppModule { } . If you want to extend the functionality of the module, you can extend the OKeycloakAuthService and provide your own service using the same injection token. Provide the Keycloak configuration . Use the injection token O_KEYCLOAK_OPTIONS for providing the configuration of the keycloak server you want to connect to. import { O_AUTH_SERVICE } from 'ontimize-web-ngx'; import { KeycloakOptions, O_KEYCLOAK_OPTIONS, OKeycloakAuthService, OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak'; const keycloakOptions: KeycloakOptions = { config: { url: '&lt;KEYCLOAK_SERVER_URL&gt;', realm: '&lt;KEYCLOAK_REALM&gt;', clientId: '&lt;CLIENT_ID&gt;' }, initOptions: { onLoad: 'login-required' } }; @NgModule({ imports: [ OntimizeKeycloakModule, ... ], declarations: ... providers: [ { provide: O_AUTH_SERVICE, useValue: OKeycloakAuthService }, { provide: O_KEYCLOAK_OPTIONS, useValue: keycloakOptions } ] }) export class AppModule { } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/keycloak/installation/#usage",
             "relUrl": "/keycloak/installation/#usage"
           }
-      ,"494": {
+      ,"495": {
             "doc": "OMap",
             "title": "OMap",
             "content": "Directive: o-map . Inputs . Name Description Default . base-layer-ids . array . Defines the array of base layer ids. e.g. base-layer-ids=’basemap.nationalmap.gov’ . center . LatLng . Initialize the map with a given center in latitude and longitude. e.g center=’42.240599;-8.720727’ . draw-control . string . Enable or disable draw controls . group-markers . boolean . Enable to display a large number of markers on a map. . layer-contextmenu . Show or not context menu . layer-panel-visible . string . Type of data displayed on Y axis . max-zoom . string . Maximum zoom level of the map. . min-zoom . string . Minimum zoom level of the map. . search-control . boolean . Show or not search control. true . search-control-button-visible . boolean . Show or not button in search control . show-base-layers-menu . boolean . Enable or disable base layers menu . true . show-layers-menu . boolean . Enable or disable layers menu . true . show-workspace-menu . boolean . Enable or disable workspace menu . true . sidenav-mode . ['over' 'push' 'side'] . Mode of the sidenav . over . zoom . number . Initial map zoom level. . zoom-control . boolean . Show or not zoom controls. true . Outputs . Name Description . onClick . Fired when the user clicks (or taps) the map. onDrag . Fired repeatedly while the user drags. onDrawCreated . Triggered when a new vector or marker has been created. onDrawDeleteStart . Triggered when the user starts remove mode by clicking the remove tool button. onDrawDeleteStop . Triggered when the user has finished removing shapes (remove mode) and saves. onDrawDeleted . Triggered when layers have been removed (and saved). onDrawDrawStart . Triggered when the user has chosen to draw a particular vector or marker. onDrawDrawstop . Triggered when the user has finished a particular vector or marker. onDrawEditMove . Layer that was just moved. Triggered as the user moves a rectangle; circle or marker. onDrawEditResize . Triggered as the user resizes a rectangle or circle. onDrawEditStart . Triggered when the user starts edit mode by clicking the edit tool button. onDrawEditStop . Triggered when the user has finshed editing (edit mode) and saves edits. onDrawEdited . Triggered when layers have been edited and saved. onDrawEditvertex . Triggered when a vertex is edited on a polyline or polygon. onDrawEvent . Triggered when a vector or marker has been manipulated. onDrawvertex . Triggered when a vertex is edited on a polyline or polygon. onMove . Fired repeatedly during any movement of the map, including pan and fly animations. onMoveEnd . Fired when the center of the map stops changing (e.g. user stopped dragging the map). onZoom . Fired repeatedly during any change in zoom level, including zoom and fly animations. onZoomEnd . Fired when the map has changed, after any animations. onZoomLevelsChange . Fired repeatedly during any change in zoom level. onZoomStart . Fired when the map zoom is about to change (e.g. before zoom animation). ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/overview/api#OMap",
             "relUrl": "/map/configuration/overview/api#OMap"
           }
-      ,"495": {
+      ,"496": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The configuration is used to change how the map behaves. There are properties to control the type of map displayed, styling, fonts, the legend, etc. You can use inputs and outputs to configure your map and to catch events when are triggered. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/overview/overview#introduction",
             "relUrl": "/map/configuration/overview/overview#introduction"
-          },"496": {
+          },"497": {
             "doc": "Overview",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using inputs to display data. HTML . &lt;o-map #oMapBasic attr=\"basic-usage-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" fxFlex&gt; &lt;/o-map&gt; . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/overview/overview#basic-example",
             "relUrl": "/map/configuration/overview/overview#basic-example"
-          },"497": {
+          },"498": {
             "doc": "Overview",
             "title": "Basic Example with base layers",
             "content": "This is an example of a Map with the base layers of the map indicated in the attribute. By default, if none is provided it is used &#8216;OpenStreetMap&#8217; base layer. HTML . &lt;o-map #oMapBaseLayers attr=\"base-layers-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" base-layer-ids=\"CartoDB.Positron;Esri;OpenStreetMap.HOT;OpenStreetMap.BlackAndWhite\" zoom-control=\"yes\" search-control=\"no\" fxFlex&gt; &lt;/o-map&gt; . You can check every map parameter available for the o-map in the API tab section. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/overview/overview#basic-example-with-base-layers",
             "relUrl": "/map/configuration/overview/overview#basic-example-with-base-layers"
           }
-      ,"498": {
+      ,"499": {
             "doc": "o-map-draw-controls",
             "title": "o-map-draw-controls",
             "content": "Directive: o-map-draw-controls . Inputs . Name Description Default . circle-options . boolean . Show or not circle options. true . circlemarker-options . boolean . Show or not circle marker options. true . delete-handler-options . any . Delete handler options . edit-handler-options . any . Edit handler options . edit-poly-options . any . Edit polygon options . marker-options . boolean . Show or not marker options . true . polygon-options . boolean . Show or not polygon options . true . polyline-options . boolean . Show or not polyline options . true . position . ['topleft' 'topright' 'bottomleft' 'bottomright'] . Toolbar position . topright . rectangle-options . boolean . Show or not rectangle options. true . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-draw-controls/api#o-map-draw-controls",
             "relUrl": "/map/configuration/o-map-draw-controls/api#o-map-draw-controls"
           }
-      ,"499": {
+      ,"500": {
             "doc": "o-map-draw-controls",
             "title": "Introduction",
             "content": "The component o-map-draw-controls is used to show a draw toolbar into the map. You can catch the events triggered with the outputs described in API section. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-draw-controls/overview#introduction",
             "relUrl": "/map/configuration/o-map-draw-controls/overview#introduction"
-          },"500": {
+          },"501": {
             "doc": "o-map-draw-controls",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-draw-controls inside. HTML . &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" (onDrawEvent)=\"addDrawEvent($event)\" fxFlex&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . TYPESCRIPT . @Component({ selector: 'map-events', templateUrl: './map-events.component.html' }) export class MapEventsComponent { _eventsArray: Array&lt;any&gt; = []; @ViewChild('oMap') protected oMap: OMapComponent; constructor() { } ngAfterViewInit() { this.getDrawLayer(); } getDrawLayer() { console.log(this.oMap.getMapService().getDrawLayer()); } addDrawEvent(arg) { this._eventsArray.push(arg); } get eventsArray(): Array&lt;any&gt; { return this._eventsArray; } set eventsArray(arg: Array&lt;any&gt;) { this._eventsArray = arg; } } . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-draw-controls/overview#basic-example",
             "relUrl": "/map/configuration/o-map-draw-controls/overview#basic-example"
           }
-      ,"501": {
+      ,"502": {
             "doc": "o-map-layer",
             "title": "o-map-layer",
             "content": "Directive: o-map-layer . Inputs . Name Description Default . crs . string . CRS . crs-configuration . ICRSConfiguration . CRS configuration . layer-base-url . string . Base URL of the layer. . layer-bounds . string . Number of bounds in layer. . layer-center . string . Center the position of the layer. The structure is latitude, longitude. e.g layer-center=’42.240599;-8.720727’ . layer-contextmenu . any . Layer in context menu . layer-group-id . string . Set layer group id . layer-icon . string . Icon of layer . layer-id . string . Set layer id . layer-in-menu . string . Show or not layer in menu . layer-in-ws . boolean . Layer in WS . true . layer-menu-label . string . Label of the layer in menu . layer-menu-label-secondary . string . Secondary label of layer in menu . layer-points . string . Number of points in layer. . layer-popup . string . Set layer popup . layer-popup-url . string . URL of the popup . layer-radius . string . Radius of the circle, in meters. . layer-selected . boolean . Layer selected or not . layer-service . string . Service of the layer . layer-type . string . Type of layer . layer-visible . boolean . Show or not layer . true . query-features-in-bounds . boolean . Query features in bounds . true . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-layer/api#o-map-layer",
             "relUrl": "/map/configuration/o-map-layer/api#o-map-layer"
           }
-      ,"502": {
+      ,"503": {
             "doc": "o-map-layer",
             "title": "Introduction",
             "content": "The component o-map-layer is used to add a new layer to the map. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-layer/overview#introduction",
             "relUrl": "/map/configuration/o-map-layer/overview#introduction"
-          },"503": {
+          },"504": {
             "doc": "o-map-layer",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-layer inside to create a new marker. You can check a working example of o-map-layer component here . HTML . &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters\" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-layer/overview#basic-example",
             "relUrl": "/map/configuration/o-map-layer/overview#basic-example"
           }
-      ,"504": {
+      ,"505": {
             "doc": "Marker",
             "title": "Introduction",
             "content": "This type of layer is used to add a new marker to the map, you can add as many markers as you want. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-marker/overview#introduction",
             "relUrl": "/map/configuration/o-marker/overview#introduction"
-          },"505": {
+          },"506": {
             "doc": "Marker",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-layer inside to create a new marker. You can check a working example of a marker layer here . HTML . &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-marker/overview#basic-example",
             "relUrl": "/map/configuration/o-marker/overview#basic-example"
           }
-      ,"506": {
+      ,"507": {
             "doc": "GeoJson Layer",
             "title": "Introduction",
             "content": "You can add multiple WMS layers to your map. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-geojson-layer/overview#introduction",
             "relUrl": "/map/configuration/o-geojson-layer/overview#introduction"
-          },"507": {
+          },"508": {
             "doc": "GeoJson Layer",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-layer inside to add new GeoJson layers to the map. You can check a working example of GeoJson layers here . HTML . &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . TYPESCRIPT . import { Component, OnInit } from '@angular/core'; import { OMapLayerOptions } from 'ontimize-web-ngx-map'; @Component({ selector: 'geojson-layer', templateUrl: './geojson-layer.component.html' }) export class GeoJSONLayerComponent implements OnInit { public trainLinesStyle: OMapLayerOptions; constructor() { } ngOnInit(): void { this.trainLinesStyle = { layerStyles: { 'color': '#388E3C', 'weight': 2, 'opacity': 0.65 } }; } getTrainLinesLayerStyle() { return this.trainLinesStyle; } } . Providers . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] . GeoServerService . import { Injector } from '@angular/core'; import { Headers, Http } from '@angular/http'; import { APP_CONFIG, Config } from 'ontimize-web-ngx'; import { IFeature, IGeoJSONLayerService, LayerConfiguration } from 'ontimize-web-ngx-map'; import { Observable, Observer } from 'rxjs'; import { map, share } from 'rxjs/operators'; export class GeoServerService implements IGeoJSONLayerService { private dataObservable: Observable&lt;IFeature[]&gt;; private innerObserver: Observer&lt;IFeature[]&gt;; public dataStore: { features: IFeature[]; }; public test: string; private appConfig: Config; private http: Http; constructor( protected injector: Injector ) { this.http = this.injector.get(Http); this.appConfig = this.injector.get(APP_CONFIG); this.dataStore = { features: [] }; this.test = new Date().toISOString(); } public load(ctxt: [LayerConfiguration]): Observable&lt;IFeature[]&gt; { let [layerConf] = ctxt; this.dataObservable = new Observable&lt;IFeature[]&gt;(observer =&gt; this.innerObserver = observer ).pipe(share()); this.loadFeaturesFrom( this.initHeaders(), this.getBaseUrl(layerConf) ); return this.dataObservable; } public getBaseUrl(layerConf: LayerConfiguration): string { let baseUrl = './assets/dummy-data/'; return baseUrl + layerConf.type + '/' + layerConf.layerId + '.json'; } private loadFeaturesFrom(headers: Headers, url: string) { this.http.get(url, { headers: headers }) .pipe(map(response =&gt; response.json())) .subscribe(data =&gt; { let features = data.features; if (features) { // Filtering features to show only Galician features... features.forEach((feature: any, index: number) =&gt; { if (feature &amp;&amp; feature.geometry) { let type = feature.geometry.type; if (type === 'MultiPoint') { let coordX = feature.geometry.coordinates[0][0]; let coordY = feature.geometry.coordinates[0][1]; if (coordX &lt;= -6.0 &amp;&amp; coordX &gt;= -10.0 &amp;&amp; coordY &gt;= 41.75) { this.dataStore.features.push(feature); } } else if (type === 'MultiLineString') { let coordX = feature.geometry.coordinates[0][0][0]; let coordY = feature.geometry.coordinates[0][0][1]; if (coordX &lt;= -6.0 &amp;&amp; coordX &gt;= -10.0 &amp;&amp; coordY &gt;= 41.75) { this.dataStore.features.push(feature); } } else { this.dataStore.features.push(feature); } } }); } // this.dataStore.features = data.features; this.innerObserver.next(this.dataStore.features); }, error =&gt; console.log('Could not load features.')); } private initHeaders(): Headers { var headers: Headers = new Headers(); headers.append('Access-Control-Allow-Origin', '*'); headers.append('Content-Type', 'application/json;charset=UTF-8'); return headers; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-geojson-layer/overview#basic-example",
             "relUrl": "/map/configuration/o-geojson-layer/overview#basic-example"
           }
-      ,"508": {
+      ,"509": {
             "doc": "WMS Layer",
             "title": "Introduction",
             "content": "You can add multiple WMS layers to your map. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-wms-layer/overview#introduction",
             "relUrl": "/map/configuration/o-wms-layer/overview#introduction"
-          },"509": {
+          },"510": {
             "doc": "WMS Layer",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-layer inside to add new WMS layers to the map. You can check a working example of WMS layers here . HTML . &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"basemap.nationalmap.gov\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . TYPESCRIPT . import { Component } from '@angular/core'; @Component({ selector: 'wms-layer', templateUrl: './wms-layer.component.html' }) export class WMSLayerComponent { constructor(){ } getWMSLayerOptions() { return { \"maxZoom\": \"18\", \"attribution\": \"&lt;a href='https:usgs.gov'&gt;USGS&lt;/a&gt; National Map Data\" }; } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-wms-layer/overview#basic-example",
             "relUrl": "/map/configuration/o-wms-layer/overview#basic-example"
           }
-      ,"510": {
+      ,"511": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The OntimizeWeb map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#introduction",
             "relUrl": "/map/overview/#introduction"
-          },"511": {
+          },"512": {
             "doc": "Overview",
             "title": "Draw controls",
             "content": "The o-map allow to add the draw toolbar into the map with the o-map-draw-controls component into o-map. You can catch events with the onDrawEvent output. &lt;o-map #oMap center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex draw-control=\"no\" (onDrawEvent)=\"addDrawEvent($event)\"&gt; &lt;!-- [crs-configuration]=\"objeto\" --&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#draw-controls",
             "relUrl": "/map/overview/#draw-controls"
-          },"512": {
+          },"513": {
             "doc": "Overview",
             "title": "Markers",
             "content": "The o-map allow to put a custom marker beside tile layers, you can easy create a marker adding layer-type=\"marker\" attribute into o-map-layer. &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#markers",
             "relUrl": "/map/overview/#markers"
-          },"513": {
+          },"514": {
             "doc": "Overview",
             "title": "Using GeoJSON",
             "content": "GeoJSON is becoming a very popular data format among many GIS technologies and services and the o-map allow to create and interact with map vectors created from GeoJSON objects adding layer-type=\"geoJSON\" and configuring the service in layer-service attribute. &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#using-geojson",
             "relUrl": "/map/overview/#using-geojson"
-          },"514": {
+          },"515": {
             "doc": "Overview",
             "title": "Integrating WMS",
             "content": "To use a WMS service in o-map, we can use o-map-layer component that provide the base WMS URL with layer-base-url and layer-base-url attribute specify whatever WMS options you need. &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"BasemapAT.basemap\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [`layer-base-url`]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#integrating-wms",
             "relUrl": "/map/overview/#integrating-wms"
           }
-      ,"515": {
+      ,"516": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-map --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/installation/#installation",
             "relUrl": "/map/installation/#installation"
-          },"516": {
+          },"517": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Finally, you can use ontimize-web-ngx-map in your Ontimize Web project. Import into your application . Include the library map module into your app in the module where you want to use it... import { OMapModule } from 'ontimize-web-ngx-map'; ... @NgModule({ imports: [ OMapModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Configure angular.json dependencies . You must add the module styles definition and the leaflet images in your &#8216;.angular.json&#8217;: ... \"assets\": [ .... { \"glob\": \"**/*\", \"input\": \"node_modules/leaflet/dist/images\", \"output\": \"/assets\" } .... ], \"styles\": [ ... \"node_modules/ontimize-web-ngx-map/styles.scss\", .... ], ... Add a map to your component . Insert the o-map component in your application component template. &lt;o-map #oMapBasic attr=\"basic-usage-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" fxFlex&gt;&lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/installation/#usage",
             "relUrl": "/map/installation/#usage"
           }
-      ,"517": {
+      ,"518": {
             "doc": "Tree",
             "title": "Tree",
             "content": "Directive: o-tree . Inherited inputs . from OServiceBaseComponent: . attr columns delete-method entity insert-method keys pageable paginated-query-method parent-keys query-fallback-function query-method query-on-bind query-on-init query-rows service service-type static-data store-state update-method . Inputs . Name Description Default . controls . no false yes true . Indicates whether or not to show a controls bar. Including component actions or the quickfilter . yes . description-columns . string . Tree node visible text columns . columns attribute value . expand-all . no false yes true . Indicates whether or not to expand all nodes. false . filter-case-sensitive . no false yes true . Indicates whether or not to do a case sensitive quickfilter search . no . pageable . no false yes true . Indicates whether or not to do paginated queries for getting the data . no . parent-column . string . query-on-bind . no false yes true . Query table data on bind . yes . query-on-init . no false yes true . Query table data on init . yes . quick-filter . no false yes true . Indicates whether or not to show a input for filtering data . yes . quick-filter . no false yes true . Indicates whether or not to show a input for filtering data . yes . quick-filter-columns . string . Columns used by the quick filter. Separated by ‘;’ . columns attribute value . recursive . no false yes true . Indicates whether or not to do recursive queries over the selected node . no . recursive-levels . number . Number of recursive levels . 1 . refresh-button . no false yes true . Indicates whether or not to show a button for refreshing data . yes . root-title . string . Title of the root node . route . string . Navigation route activated when the node is clicked . separator . string . Separation character between description-columns values . show-root . no false yes true . Indicates whether or not to show the root node . sort-columns . string . Initial ordering, using [ ASC or DESC ] format. Separated by ‘;’ . title . string . Title in the tree toolbar . translate . no false yes true . Indicates whether or not to automatically translate the tree nodes values . no . Outputs . Name Description . onNodeCollapsed . Event triggered when a tree node is collapsed . onNodeExpanded . Event triggered when a tree node is expanded . onNodeSelected . Event triggered when a tree node is selected . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/api#Tree",
             "relUrl": "/tree/components/o-tree.component/api#Tree"
           }
-      ,"518": {
+      ,"519": {
             "doc": "Tree",
             "title": "Introduction",
             "content": "The o-tree component allows to show data with a tree structure. If the component is inside a form, the attr property is required for registry the tree in the form components. This component extends the OServiceBaseComponent class, so you can bind the data origin to a remote server or to local data, as seen here. You also must define which columns to retrieve. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#introduction",
             "relUrl": "/tree/components/o-tree.component/overview#introduction"
-          },"519": {
+          },"520": {
             "doc": "Tree",
             "title": "Nodes text",
             "content": "You have to specify which text will be displayed in each tree node using the description-columns input. This columns are a subset of the columns and its content will be separed using the string specified in the separator input. The o-tree will show a base node if the show-root input is set to a true value, that node text is setted using the root-title input. Example . &lt;o-tree service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" description-columns=\"SURNAME;NAME\" separator=\", \" root-title=\"CUSTOMERS\" show-root=\"yes\"&gt; &lt;/o-tree&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#nodes-text",
             "relUrl": "/tree/components/o-tree.component/overview#nodes-text"
-          },"520": {
+          },"521": {
             "doc": "Tree",
             "title": "Quick filter",
             "content": "This option is enabled by default, the filter is visible in the top right. You can disable it setting quick-filter=\"no\". You can configure which columns will be affected by the filtering setting the quick-filter-columns attribute, which contains the columns separated by &#8216;;&#8217;. By default it contains all the columns of the columns attribute. You can also configure filtering to be case sensitive with filter-case-sensitive=\"yes\". By default, it&#8217;s disabled. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#quick-filter",
             "relUrl": "/tree/components/o-tree.component/overview#quick-filter"
-          },"521": {
+          },"522": {
             "doc": "Tree",
             "title": "Tree nodes navigation",
             "content": "Setting the route attribute in the o-tree and o-tree-node components allows to trigger the navigation to the route indicated in its value. You can define static routes or/and wildcards (that must be included in the columns attribute). For example: . &lt;o-tree #treeview fxFlex root-title=\"CUSTOMERS\" service-type=\"DummyService\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" description-columns=\"SURNAME;NAME\" separator=\", \" query-on-init=\"true\" route=\"customers/:CUSTOMERID\"&gt; &lt;/o-tree&gt; . Clicking on a node of this tree will triger the navigation to the current route appending the static path customers/ followed by the record &#8216;CUSTOMERID&#8217; value. You can see this working here. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#tree-nodes-navigation",
             "relUrl": "/tree/components/o-tree.component/overview#tree-nodes-navigation"
-          },"522": {
+          },"523": {
             "doc": "Tree",
             "title": "Demo",
             "content": "You can see this and more examples of this component in the OntimizeWeb tree quickstart. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#demo",
             "relUrl": "/tree/components/o-tree.component/overview#demo"
           }
-      ,"523": {
+      ,"524": {
             "doc": "Tree",
             "title": "Tree",
             "content": "Directive: o-tree-node . Inherited inputs . from o-tree: . attr columns delete-method description-columns entity filter-case-sensitive insert-method keys pageable paginated-query-method parent-column parent-keys query-method query-on-bind query-on-init query-rows query-with-null-parent-keys quick-filter quick-filter-columns recursive recursive-levels root-title route separator service service-type show-root sort-columns static-data store-state translate update-method . Inherited outputs . from o-tree: . onNodeCollapsed onNodeExpanded onNodeSelected . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/api#Tree",
             "relUrl": "/tree/components/o-tree-node.component/api#Tree"
           }
-      ,"524": {
+      ,"525": {
             "doc": "Tree",
             "title": "Introduction",
             "content": "The o-tree-node component allows to define inner nodes of another o-tree-node or the root o-tree component. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview#introduction",
             "relUrl": "/tree/components/o-tree-node.component/overview#introduction"
-          },"525": {
+          },"526": {
             "doc": "Tree",
             "title": "Parent keys",
             "content": "When using a remote data binded tree component, a o-tree-node must specify in its parent-keys attribute which parent node registry property is going to use for doing its data query. Example . &lt;o-tree #treeview fxFlex root-title=\"CUSTOMERS\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" description-columns=\"SURNAME;NAME\" separator=\", \"&gt; &lt;o-tree-node root-title=\"ACCOUNTS\" show-root=\"no\" service=\"customers\" entity=\"customerAccount\" columns=\"ACCOUNTID;CUSTOMERID;ACCOUNT\" description-columns=\"ACCOUNT\" keys=\"ACCOUNTID\" parent-keys=\"CUSTOMERID\"&gt; &lt;o-tree-node root-title=\"ACCOUNT_CONCEPTS\" show-root=\"no\" service=\"branches\" entity=\"accountConcepts\" columns=\"CONCEPT;ACCOUNTID\" description-columns=\"CONCEPT\" keys=\"CONCEPT;ACCOUNTID\" parent-keys=\"ACCOUNTID\"&gt; &lt;/o-tree-node&gt; &lt;o-tree-node root-title=\"ACCOUNT_MOVEMENTTYPES\" show-root=\"no\" service=\"branches\" entity=\"accountMovementTypes\" columns=\"DESCRIPTION;ACCOUNTID\" description-columns=\"DESCRIPTION\" keys=\"DESCRIPTION;ACCOUNTID\" parent-keys=\"ACCOUNTID\"&gt; &lt;/o-tree-node&gt; &lt;/o-tree-node&gt; &lt;/o-tree&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview#parent-keys",
             "relUrl": "/tree/components/o-tree-node.component/overview#parent-keys"
-          },"526": {
+          },"527": {
             "doc": "Tree",
             "title": "Quick filter",
             "content": "You can configure the same o-tree component filtering properties, that will only affect to this tree node. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview#quick-filter",
             "relUrl": "/tree/components/o-tree-node.component/overview#quick-filter"
-          },"527": {
+          },"528": {
             "doc": "Tree",
             "title": "Demo",
             "content": "You can see an example of this component behaviour in this OntimizeWeb tree quickstart section. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview#demo",
             "relUrl": "/tree/components/o-tree-node.component/overview#demo"
           }
-      ,"528": {
+      ,"529": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The o-tree component allows to manage a tree that can be used to display hierarchy data. ",
@@ -3386,13 +3392,13 @@
             "relUrl": "/tree/overview/#introduction"
           }
       
-      ,"529": {
+      ,"530": {
             "doc": "Tree",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-tree --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/installation/#installation",
             "relUrl": "/tree/installation/#installation"
-          },"530": {
+          },"531": {
             "doc": "Tree",
             "title": "Usage",
             "content": "Configure angular-cli.json dependencies . You must add the module styles definition in your &#8216;.angular-cli.json&#8217; file styles array: ... \"styles\": [ ... \"../node_modules/ontimize-web-ngx-tree/styles.scss\", .... ], ... Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-tree/o-tree-theme.scss'; @include o-tree-theme($theme); ... Import in an application module . Import the Ontimize Web tree module in the app module where you want to use it. import { OTreeModule } from 'ontimize-web-ngx-tree'; @NgModule({ imports: [ OTreeModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
