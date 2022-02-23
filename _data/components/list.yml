@@ -55,6 +55,12 @@ attributes: [{
 },{
   name: "quick-filter-placeholder",
   default: "'SEARCH'"
+},{
+  name: "quick-filter-appearance",
+  type: "legacy | standard | fill | outline",
+  default : "outline",
+  required : "",
+  description : "Indicates which of the mat-form-field different [appearance variants](https://v8.material.angular.io/components/form-field/overview#form-field-appearance-variants) will be used."
 }]
 
 outputs: [{
