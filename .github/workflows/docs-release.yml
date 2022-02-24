@@ -37,3 +37,4 @@ jobs:
           target_branch: gh-pages
           target_path: ${{ env.TARGET_PATH }}
           keep_history: true
+          token: ${{ secrets.GITHUB_TOKEN }}
