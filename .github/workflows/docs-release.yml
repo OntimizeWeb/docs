@@ -7,9 +7,6 @@ on:
       - 8.x.x
 
 env:
-  OWEB_EMAIL: ontimize-web@imatia.com
-  OWEB_TOKEN: ${{ secrets.OWEB_GH_TOKEN_PUSH }}
-  OWEB_USERNAME: ontimize-web
   TARGET_PATH: v8
 
 jobs:
@@ -23,7 +20,6 @@ jobs:
         with:
           ref: 8.x.x
           fetch-depth: 0
-          token: ${{ env.OWEB_TOKEN }}
 
       - name: Bundler Cache
         uses: actions/cache@v1
@@ -41,4 +37,4 @@ jobs:
           target_branch: gh-pages
           target_path: ${{ env.TARGET_PATH }}
           keep_history: true
-          token: ${{ env.OWEB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
