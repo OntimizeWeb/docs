@@ -444,5 +444,12 @@
     default: "",
     required: "",
     description: "Quick filter input placeholder text"
+  },
+  "show-buttons-text":{
+  name: "show-buttons-text",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "no",
+  description: "Indicates whether or not to show text in header buttons"
   }
 }
