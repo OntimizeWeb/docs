@@ -95,4 +95,18 @@ attributes:
     }
   ]
 
+outputs: [{
+  name: "beforeOpenSidenav",
+  description: "Event triggered before the sidenav is opened"
+},{
+  name: "afterOpenSidenav",
+  description: "Event triggered after the sidenav is opened"
+},{
+  name: "beforeCloseSidenav",
+  description: "Event triggered before the sidenav is closed"
+},{
+  name: "afterCloseSidenav",
+ description: "Event triggered after the sidenav is closed"
+}]
+
 extraComponents: "appLayoutData"
