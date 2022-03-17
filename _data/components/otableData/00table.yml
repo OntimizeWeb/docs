@@ -81,11 +81,7 @@ attributes: [{
   required: "no",
   description: "Indicates whether or not to show a option on the header menu for configuration"
 },{
-  name: "show-buttons-text",
-  type: "no | false | yes | true",
-  default: "yes",
-  required: "no",
-  description: "Indicates whether or not to show text in header buttons"
+  name: "show-buttons-text"
 },{
   name: "columns-visibility-button",
   type: "no | false | yes | true",

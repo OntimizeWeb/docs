@@ -106,6 +106,9 @@ attributes: [{
   default : "outline",
   required : "",
   description : "Indicates which of the mat-form-field different [appearance variants](https://v8.material.angular.io/components/form-field/overview#form-field-appearance-variants) will be used."
+},{
+  name: "show-buttons-text",
+  default: "no"
 }]
 
 outputs: [{
