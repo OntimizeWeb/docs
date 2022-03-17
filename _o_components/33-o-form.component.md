@@ -51,13 +51,23 @@ And perform an action each time the event is emited:
   }
 ```
 
+However, in case you want to change the mode at the time the screen loads, you can subscribe to the public emitter `onFormInitStream` thats is emitted when the form is load and use the functions to change the mode such as functions `setQueryMode`, `setInsertMode`,`setUpdateMode`, `setInitialMode`.
+
+For example:
+
+```javascript
+  this.form.onFormInitStream.subscribe(() => {
+      this.form.setInsertMode();
+    });
+```
+
 ## Form lifecycle
 A form is called *detail form* when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table, list or grid record. This use case can be achieved with **OntimizeWeb** by combining the `o-form` and the [`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"}, [`o-list`]({{ base_path }}/components/list/overview/){:target="_blank"} or [`o-grid`]({{ base_path }}/components/grid/overview/){:target="_blank"} component.
 
 You can read more about this topic in the [form lifecycle]({{ base_path }}/components/form/lifecycle/){:target="_blank"} section.
 
-## Related components 
-There are some components that improve the `o-form` usage adding some features without having to implement them. 
+## Related components
+There are some components that improve the `o-form` usage adding some features without having to implement them.
 
 ### Form container
 In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/form/container/overview){:target="_blank"}.
@@ -175,8 +185,8 @@ Now, you can use the extended form in your template as follows:
 You can change the default options of the form by using `MAT_FORM_FIELD_DEFAULT_OPTIONS` injection token. You have to set this `MAT_FORM_FIELD_DEFAULT_OPTIONS` in your providers as you can check in the example above that sets the appearance outline for the form:
 
 ```js
-  providers: [ 
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } } 
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
   ]
 ```
 
@@ -247,3 +257,15 @@ The filter builder is a component whose purpose is to solve the problem describe
 ```
 
 ![Custom form toolbar buttons]({{ "/images/components/form/customtoolbarform.png" | absolute_url }}){: .comp-example-img}
+
+## CSS class
+
+To extend the form in your screen, you can use the CSS class `fill-form` in o-form component.
+
+
+For example
+```html
+<o-form class="fill-form" ...>
+  ...
+</o-form>
+```
