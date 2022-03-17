@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-02-24T02:40:34-05:00">
+  <meta property="article:published_time" content="2022-03-17T09:13:52-04:00">
 
 
 
@@ -851,7 +851,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="February 24, 2022">
+    <meta itemprop="datePublished" content="March 17, 2022">
     
 
     <div class="page__inner-wrap">
@@ -1145,7 +1145,7 @@
     </div>
     <div class="panel-collapse collapse">
       <div class="panel-body">You can use the specific methods <a href="../components/form/api#methods">setQueryMode, setInsertMode, setUpdateMode</a> or <a href="../components/form/api#methods">setFormMode </a> general method to change the form mode that you want. You can check how the form modes <a href="../components/form/overview#modes">here</a>.<br /><br />
-It will be something like this:<br /> <code> &lt;o-form ... (onFormModeChange)="setFormMode($event)" ..&gt;<br /> ...<br /> &lt;/o-form&gt;<br /> </code> <br /> <code> public setFormMode(mode: number): void {<br /> &nbsp;&nbsp;&nbsp;&nbsp;if (mode !== OFormComponent.Mode().INSERT) {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.form.setInsertMode(); // this.form.setFormMode(OFormComponent.Mode().INSERT);<br /> &nbsp;&nbsp;&nbsp;&nbsp;}<br /> } </code>
+It will be something like this:<br /> <code> &lt;o-form ... (onFormModeChange)="setFormMode($event)" ..&gt;<br /> ...<br /> &lt;/o-form&gt;<br /> </code> <br /> <code> public setFormMode(mode: number): void {<br /> &nbsp;&nbsp;&nbsp;&nbsp;if (mode !== OFormComponent.Mode().INSERT) {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.form.setInsertMode(); // this.form.setFormMode(OFormComponent.Mode().INSERT);<br /> &nbsp;&nbsp;&nbsp;&nbsp;}<br /> } </code> <br /> However, if you want to change the mode at the time the form loads.<br /><br /> It will be something like this:<br /> <code> &nbsp;&nbsp;&nbsp;&nbsp;@ViewChild('form', { static: true }) form: OFormComponent; &nbsp;&nbsp;&nbsp;&nbsp;this.form.onFormInitStream.subscribe(() =&gt; { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.form.setInsertMode(); &nbsp;&nbsp;&nbsp;&amp;nbsp}); </code>
 </div>
     </div>
   </div>
@@ -1165,7 +1165,7 @@ It will be something like this:<br /> <code> &lt;o-form ... (onFormModeChange)="
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-02-24T02:40:34-05:00">February 24, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-03-17T09:13:52-04:00">March 17, 2022</time></p>
         
       </footer>
 

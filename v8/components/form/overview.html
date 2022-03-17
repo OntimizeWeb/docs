@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-02-24T02:40:34-05:00">
+  <meta property="article:published_time" content="2022-03-17T09:13:52-04:00">
 
 
 
@@ -850,7 +850,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="February 24, 2022">
+    <meta itemprop="datePublished" content="March 17, 2022">
     
 
     <div class="page__inner-wrap">
@@ -939,6 +939,7 @@
     </ul>
   </li>
   <li><a href="#custom-form-toolbar-buttons" id="markdown-toc-custom-form-toolbar-buttons">Custom form toolbar buttons</a></li>
+  <li><a href="#css-class" id="markdown-toc-css-class">CSS class</a></li>
 </ul>
 
   </nav>
@@ -990,6 +991,15 @@ This is the mode used by the form to perform creation operations. In this mode, 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">performAction</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">The form has changed to insert mode!</span><span class="dl">"</span><span class="p">)</span>
   <span class="p">}</span>
+</code></pre></div></div>
+
+<p>However, in case you want to change the mode at the time the screen loads, you can subscribe to the public emitter <code class="language-plaintext highlighter-rouge">onFormInitStream</code> thats is emitted when the form is load and use the functions to change the mode such as functions <code class="language-plaintext highlighter-rouge">setQueryMode</code>, <code class="language-plaintext highlighter-rouge">setInsertMode</code>,<code class="language-plaintext highlighter-rouge">setUpdateMode</code>, <code class="language-plaintext highlighter-rouge">setInitialMode</code>.</p>
+
+<p>For example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">onFormInitStream</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">setInsertMode</span><span class="p">();</span>
+    <span class="p">});</span>
 </code></pre></div></div>
 
 <h2 id="form-lifecycle">Form lifecycle</h2>
@@ -1115,8 +1125,8 @@ This is the mode used by the form to perform creation operations. In this mode, 
 
 <p>You can change the default options of the form by using <code class="language-plaintext highlighter-rouge">MAT_FORM_FIELD_DEFAULT_OPTIONS</code> injection token. You have to set this <code class="language-plaintext highlighter-rouge">MAT_FORM_FIELD_DEFAULT_OPTIONS</code> in your providers as you can check in the example above that sets the appearance outline for the form:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">providers</span><span class="p">:</span> <span class="p">[</span> 
-    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">MAT_FORM_FIELD_DEFAULT_OPTIONS</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="p">{</span> <span class="na">appearance</span><span class="p">:</span> <span class="dl">'</span><span class="s1">outline</span><span class="dl">'</span> <span class="p">}</span> <span class="p">}</span> 
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">MAT_FORM_FIELD_DEFAULT_OPTIONS</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="p">{</span> <span class="na">appearance</span><span class="p">:</span> <span class="dl">'</span><span class="s1">outline</span><span class="dl">'</span> <span class="p">}</span> <span class="p">}</span>
   <span class="p">]</span>
 </code></pre></div></div>
 
@@ -1187,6 +1197,16 @@ This is the mode used by the form to perform creation operations. In this mode, 
 </code></pre></div></div>
 
 <p><img src="https://ontimizeweb.github.io/docs/v8/images/components/form/customtoolbarform.png" alt="Custom form toolbar buttons" class="comp-example-img" /></p>
+
+<h2 id="css-class">CSS class</h2>
+
+<p>To extend the form in your screen, you can use the CSS class <code class="language-plaintext highlighter-rouge">fill-form</code> in o-form component.</p>
+
+<p>For example</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">class=</span><span class="s">"fill-form"</span> <span class="err">...</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/o-form&gt;</span>
+</code></pre></div></div>
 
 </div>
 
@@ -3689,6 +3709,32 @@ This is the mode used by the form to perform creation operations. In this mode, 
             
 
             <td class="" o-component-name>
+              <p>onCancel</p>
+
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-description>
+              <p>Event triggered when the form has been cancel</p>
+
+              
+            </td>
+          
+          </tr>
+        
+          <tr>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-name>
               <p>onDataLoaded</p>
 
               
@@ -4829,7 +4875,7 @@ This is the mode used by the form to perform creation operations. In this mode, 
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-02-24T02:40:34-05:00">February 24, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-03-17T09:13:52-04:00">March 17, 2022</time></p>
         
       </footer>
 
