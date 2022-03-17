@@ -205,6 +205,9 @@ outputs: [{
 },{
   name: "onInitialMode",
   description: "Event triggered once the form has changed to initial mode"
+},{
+  name: "onCancel",
+  description: "Event triggered when the form has been cancel"
 }]
 
 
