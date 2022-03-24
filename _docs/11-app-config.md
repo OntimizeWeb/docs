@@ -318,12 +318,38 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
   | Name  | Type   | Description |
   | ----- | ------ | ----------- |
   | route | string | The route the application will navigate when the menu item is clicked |
+  | pathMach | 'full' \| 'prefix'  | Match criteria to mark the menu item as active in case of multiple routes matching |
 
   <span>Example:</span>
   ```javascript
-  { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' }
+{ 
+  id: 'customers', 
+  name: 'CUSTOMERS', 
+  tooltip: 'CUSTOMERS_CONTENT', 
+  route: '/main/customers', 
+  icon: 'people' 
+}
   ```
-  </div>
+
+  <span>Example using pathMach: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the '/main/customers/new' because its prefix matches. User would need to set the value 'full' to the patchMach in the second route.</span>
+  ```javascript
+{ 
+  id: 'customers', 
+  name: 'CUSTOMERS', 
+  tooltip: 'CUSTOMERS_CONTENT', 
+  route: '/main/customers', 
+  icon: 'people' 
+},
+{ 
+  id: 'customers', 
+  name: 'CUSTOMERS', 
+  tooltip: 'CUSTOMERS_CONTENT', 
+  route: '/main/customers/new', 
+  icon: 'people' 
+  pathMatch: 'full'
+}
+  ```
+  </div>  
 </details>
 
 <details class="collapsible">
