@@ -318,7 +318,7 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
   | Name  | Type   | Description |
   | ----- | ------ | ----------- |
   | route | string | The route the application will navigate when the menu item is clicked |
-  | pathMach | 'full' \| 'prefix'  | Match criteria to mark the menu item as active in case of multiple routes matching |
+  | pathMatch | 'full' \| 'prefix'  | Match criteria to mark the menu item as active in case of multiple routes matching |
 
   <span>Example:</span>
   ```javascript
@@ -331,7 +331,7 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
 }
   ```
 
-  <span>pathMach: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is 'prefix' (default value) a item will be marked as active if its route stars as the active application route. If the value is 'full', the route has to be exactly the same.
+  <span>pathMatch: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is 'prefix' (default value) a item will be marked as active if its route stars as the active application route. If the value is 'full', the route has to be exactly the same.
   
   Example: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the '/main/customers/new' because its prefix matches. User would need to set the value 'full' to the patchMach in the second route.</span>
   ```javascript
