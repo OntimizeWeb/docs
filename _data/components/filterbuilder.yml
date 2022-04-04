@@ -23,7 +23,7 @@ attributes: [{
   type: "yes | no | true | false",
   default: "no",
   required: "",
-  description: "Indicates whether or not to trigger the target component refresh when a filter component change event is fired. you can define the change event in attribute `query-on-change-event-type`."
+  description: "Indicates whether or not to trigger the target component refresh when a filter component change event is fired. You can define the change event in attribute `query-on-change-event-type`."
 },{
   name: "query-on-change-delay",
   type: "number",
