@@ -7,7 +7,7 @@ comp: filterbuilder
 {% include base_path %}
 {% include toc %}
 
-The `o-filter-builder` component is used for easily building complex structures for filtering the data of a [table]({{ base_path }}/components/table/overview). It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/components/form/overview). All the attributes are explained on the **API** section of this page.
+The `o-filter-builder` component is used for easily building complex structures for filtering the data of the component that extends from  [OServiceComponent]({{ base_path }}/components/service/service/overview)) such as [list]({{ base_path }}/components/list/overview), [table]({{ base_path }}/components/table/overview) and [grid]({{ base_path }}/components/grid/overview) . It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/components/form/overview). All the attributes are explained on the **API** section of this page.
 
 > **NOTE:** Do not add elements to your screen but is a component that allows to build [complex filtering expressions]({{base_path}}/guide/filterexpression/).
 
@@ -19,7 +19,7 @@ The `oFilterBuilderQuery` directive is used to trigger the `reloadData` method o
 ```
 The use of this directive is optional, this behaviour can be achived in some other ways. Some of them are the following:
 * Calling the `triggerReload` method of the `o-filter-builder` component.
-* Setting the `query-on-change` attribute of the `o-filter-builder` component to **yes** will make the fillter be applied each time the value of a form component included in the filter changes.
+* Setting the `query-on-change` attribute of the `o-filter-builder` component to **yes** will make the filter be applied each time the value of a form component included in the filter changes, by default with the `onValueChange` event but you can modify `query-on-change-event-type` attribute to fired with the `onChange` event of angular. For more information see the **API** section in this page.
 
 ## Clear directive
 The `oFilterBuilderClear` directive is used to clear the form components that participate on the filter. This directive must be attached to a clickable component. You must provide the reference of the `o-filter-builder`component as parameter, so the directive know which filter builder must notify to clear the form components.
