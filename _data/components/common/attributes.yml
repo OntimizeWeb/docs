@@ -186,7 +186,7 @@
     type: "",
     default: "",
     required: "",
-    description: "A component event reference the component must listen to in order to perform its query"
+    description: "A component event reference the component must listen to in order to perform its query. The component will wait until the event you choose is fired to perform the request of the data."
   },
   "sql-type": {
     name: "sql-type",
