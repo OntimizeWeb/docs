@@ -23,13 +23,19 @@ attributes: [{
   type: "yes | no | true | false",
   default: "no",
   required: "",
-  description: "Indicates whether or not to trigger the target component refresh when a filter component `onChange` event is fired."
+  description: "Indicates whether or not to trigger the target component refresh when a filter component change event is fired. You can define the change event in attribute `query-on-change-event-type`."
 },{
   name: "query-on-change-delay",
   type: "number",
   default: "0",
   required: "",
   description: "Delay time in milliseconds `query-on-change` method is triggered."
+},{
+  name: "query-on-change-event-type",
+  type: "onValueChange' | onChange",
+  default: "onValueChange",
+  required: "",
+  description: "If query-on-change-event-type is `onValueChange`, the target component refresh when a filter component fired *onValueChanged* event else fired with the *onChange* event of angular"
 }]
 
 outputs: [{
