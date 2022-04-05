@@ -9,7 +9,7 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "filter-case-sensitive", "quick-filter", "quick-filter-placeholder"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "filter-case-sensitive", "quick-filter", "quick-filter-placeholder", "pagination-controls", "page-size-options"]
 }]
 
 attributes: [{
@@ -58,10 +58,7 @@ attributes: [{
   description: "Indicates whether or not to show a option in the menu of the table that it have capacity show a column of checkboxes for selecting table rows"
 },{
   name: "pagination-controls",
-  type: "no | false | yes | true",
-  default: "yes",
-  required: "",
-  description: "Indicates whether or not to show the pagination controls"
+  default: "yes"
 },{
   name: "fixed-header",
   type: "no | false | yes | true",

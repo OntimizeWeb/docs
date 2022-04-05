@@ -65,6 +65,15 @@ You can also configure the page size options by configuring the `show-page-size`
 </o-grid>
 ```
 
+
+## Pagination
+
+By default, the grid is not paginating the data, but if you want that behaviour you must set `pagination-controls= "yes"` in the o-grid component.
+
+The paginator displays a dropdown of page sizes for you to choose from. The options for this dropdown can be set via `page-size-options`. For more information see the **API**.
+
+You can also configure the number of records initially displayed with query-rows attribute.
+
 ## Sorting
 The `o-grid` component allows you to sort the grid items by configuring the `orderable` attribute. You must also configure the `sortable-columns` attribute in order to indicate which columns would be sortable.
 
@@ -98,10 +107,10 @@ The height of the rows in a grid list can be set via the `grid-item-height` attr
 - *Ratio*: This ratio is *column-width:row-height*, and must be passed in with a colon, not a decimal (e.g. 4:3).
 - *Fit*: Setting `grid-item-height` to fit automatically divides the available height by the number of rows. Please note the height of the o-grid or its container must be set.
 
-## Gutter size <span class="menuitem-badge">new</span>
+## Gutter size
 The gutter size can be set to any px, em, or rem value with the `gutter-size` property. If no units are specified, px units are assumed. By default the gutter size is 1px.
 
-## Multiple rows or columns <span class="menuitem-badge">new</span>
+## Multiple rows or columns
 
 It is possible to set the `rowspan` and `colspan` of each o-grid-item individually, using the rowspan and colspan properties. By default its values are 1. The `colspan` must not exceed the number of cols in the `o-grid`. There is no such restriction on the rowspan however, more rows will simply be added for it the tile to fill.
 ```html
