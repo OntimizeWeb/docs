@@ -19,7 +19,7 @@ The `oFilterBuilderQuery` directive is used to trigger the `reloadData` method o
 ```
 The use of this directive is optional, this behaviour can be achived in some other ways. Some of them are the following:
 * Calling the `triggerReload` method of the `o-filter-builder` component.
-* Setting the `query-on-change` attribute of the `o-filter-builder` component to **yes** will make the filter be applied each time the value of a form component included in the filter changes, by default the filter is fired when the `onValueChange` event is triggering for a form componet but you can modify `query-on-change-event-type` attribute to fired with the `onChange` event of angular. For more information see the **API** section in this page.
+* Setting the value of the `o-filter-builder` component's `query-on-change` input to **yes** will cause the filter to be applied whenever the value of a form component included in the filter changes. By default, the filtering is triggered when the `onValueChange` event is emitted for a form component. You can modify the `query-on-change-event-type` attribute to make the filtering to be triggered with the `onChange` components output. For more information see the **API** section in this page.
 
 ## Clear directive
 The `oFilterBuilderClear` directive is used to clear the form components that participate on the filter. This directive must be attached to a clickable component. You must provide the reference of the `o-filter-builder`component as parameter, so the directive know which filter builder must notify to clear the form components.
