@@ -52,6 +52,10 @@ attributes: [{
   name: "quick-filter"
 },{
   name: "quick-filter-placeholder"
+},{
+  name: "pagination-controls"
+},{
+  name: "page-size-options"
 }]
 
 methods: [{

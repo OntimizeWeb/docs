@@ -8,7 +8,7 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "quick-filter", "quick-filter-placeholder"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "quick-filter", "quick-filter-placeholder", "pagination-controls", "page-size-options"]
 }]
 
 attributes: [{
@@ -19,10 +19,7 @@ attributes: [{
   description: "Number of items to display on a page. By default set to 32."
 },{
   name: "page-size-options",
-  type: "array",
-  default: "8;16;24;32;64",
-  required: "",
-  description: "Page size options separated by ';'."
+  default: "8;16;24;32;64"
 },{
   name: "show-page-size",
   type: "no | false | yes | true",
@@ -55,10 +52,7 @@ attributes: [{
   description: "Set internal representation of row height from the user-provided value (see attribute `rowHeight` of [MatGridList](https://material.angular.io/components/grid-list/api#MatGridList))."
 },{
   name: "pagination-controls",
-  type: "no | false | yes | true",
-  default: "no",
-  required: "",
-  description: "Indicates whether or not to show the pagination controls"
+  default: "no"
 },{
   name: "fixed-header",
   type: "no | false | yes | true",

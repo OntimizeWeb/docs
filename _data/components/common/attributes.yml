@@ -446,10 +446,24 @@
     description: "Quick filter input placeholder text"
   },
   "show-buttons-text":{
-  name: "show-buttons-text",
-  type: "no | false | yes | true",
-  default: "yes",
-  required: "no",
-  description: "Indicates whether or not to show text in header buttons"
+    name: "show-buttons-text",
+    type: "no | false | yes | true",
+    default: "yes",
+    required: "no",
+    description: "Indicates whether or not to show text in header buttons"
+  },
+  "pagination-controls":{
+    name: "pagination-controls",
+    type: "no | false | yes | true",
+    default: "no",
+    required: "",
+    description: "Indicates whether or not to show the pagination controls"
+  },
+  "page-size-options":{
+    name: "page-size-options",
+    type: "array",
+    default: "[10, 25, 50, 100]",
+    required: "",
+    description: "Page size options separated by ';'."
   }
 }
