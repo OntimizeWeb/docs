@@ -18,7 +18,7 @@ The Ontimize Web components uses a set of icons stored internally in svg format.
 <mat-icon svgIcon="ontimize:ICON_NAME"></mat-icon>
 ```
 
-Where you can replace 'ICON_NAME' for one of the following icons (stored [here](https://github.com/OntimizeWeb/ontimize-web-ngx/tree/master/assets/svg){:target='_blank'}):
+Where you can replace 'ICON_NAME' for one of the following icons (stored [here](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/projects/ontimize-web-ngx/assets/svg/ontimize-icon-set.svg){:target='_blank'}):
 
 | BTC | USD | EUR | LIR | PERCENT | GBP | INR | ILS |
 | KRW | JPY | add | LIR | keyboard_arrow_left | keyboard_arrow_right | keyboard_arrow_down | keyboard_arrow_up |
@@ -26,7 +26,7 @@ Where you can replace 'ICON_NAME' for one of the following icons (stored [here](
 | perm_identity | vpn_key | arrow_back | mail_outline | search | today | visibility | visibility_off |
 | more_vert | filter_list | power_settings_new | settings | drag_handle | first_page | last_page | info_outline |
 | error_outline | check_circle | close | EXCEL | PERCENT | HTML | PDF | clock |
-| folder_open | fullscreen |   |   |   |   |   |   |
+| folder_open | fullscreen | sort_by_alpha_desc  | sort_by_alpha_asc  | sort_by_alpha  |   |   |   |
 
 ### Adding a svg icon
 If you want to add a svg icon to the ontimize icon set you must follow this steps:
