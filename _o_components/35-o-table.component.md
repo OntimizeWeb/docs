@@ -563,19 +563,25 @@ The *let* keyword declares a template input variable that you reference within t
 
 Finally, add the created component to your module for including it in your table.
 
-## Editing
+## Cell editing
 
-The *o-table component* supports data editing operations (create, update, destroy) via a simple configuration of its data source. By default, this operations are enabled.
+The *o-table component* supports data editing operations (update and destroy) via a simple configuration of its data source. By default, this operations are enabled. If you need to disabled delete operation, you can changing `delete-button= "no"`.
 
 All you have to do to enable data editing capabilities for the component is to:
-<ul>
-  <li>Include the table within an o-form component</li>
-  <li>Configure data binding</li>
-</ul>
 
-If you need to disabled one operation, you can changing `insert-button= "no"`, `delete-button= "no"`.
+- Configure `edition-mode="click"` and `detail-mode='none'`
+- Configure data binding
 
 >**NOTE**: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
+
+Cell editing results in the following events.
+
+| Event | Description |
+| ------  | ------- |
+| editionCancelled  | Event triggered when component input is canceled|
+| editionCommitted  | Event triggered when component input is committed |
+| editionStarted  | Event triggered when component input element started |
+| onPostUpdateRecord | Event triggered after component record is succesfully updated|
 
 ### Default editors
 
@@ -583,7 +589,7 @@ Next we are specifing how to add a editor for a table column cell.
 
 By default, the table will no define a editor for your data into a cell. If you want to be able to edit that data you have to use a cell editor. So, for editing your values, you have the following options.
 
-**1.** Use one of the predefined cell editor, you should add `editable="yes"`. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
+**1.** Use one of the predefined cell editor, you should add **`editable="yes"`** in `o-table-column`. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
 
 If a column haven't type will be *string*. You can find all information [here]({{ base_path }}/components/table/overview/#default-editors).
 
