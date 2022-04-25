@@ -8,7 +8,7 @@ comp: table
 {% include toc %}
 
 ## Introduction
-The `o-table` provides a table of data that can be used to display rows of data and include a ready-to-use features like paging, filtering, sorting, editing, grouping, resizing, exporting to PDF and excel, and virtual scrolling
+The `o-table` provides a table of data that can be used to display rows of data and include a ready-to-use features like crud operations, paging, filtering, sorting, editing, grouping, resizing, exporting to PDF and excel, and virtual scrolling.
 
 If the table also is *inside a form*, the `attr` property is required for registry the table in the form.
 
