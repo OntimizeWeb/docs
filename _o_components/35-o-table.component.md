@@ -8,7 +8,7 @@ comp: table
 {% include toc %}
 
 ## Introduction
-The `o-table` provides a table of data that can be used to display rows of data.
+The `o-table` provides a table of data that can be used to display rows of data and include a ready-to-use features like paging, filtering, sorting, editing, grouping, resizing, exporting to PDF and excel, and virtual scrolling
 
 If the table also is *inside a form*, the `attr` property is required for registry the table in the form.
 
@@ -86,6 +86,15 @@ You can represent the columns in extended mode with `o-table-column` component. 
 
 </o-table>
 ```
+
+## CRUD operations
+The `o-table` allows to perform the basic operations like **create**, **read**, **update** and **delete**. There are various ways you can use for editing like cell editing by click on them or use an `o-form` component to edit the currently selected item.
+
+*Ontimize Web* provides several modes for editing its data by o-form like *editable detail*, *dialog*, *split pane*, *tabs*. For more information about `o-form` lifecycle you can see this [url](/components/form/overview#form-lifecycle){:target="_blank"} and the *dialog*, *split pane*, *tabs* modes are explained in [o-form-layout-manager]({{ base_path }}/components/formlayoutmanager/overview){:target="_blank"} component.
+
+These operations are available from the table toolbar or from the context menu. This operations are configured by default if detail-mode is other than `none` but you can disable them with `delete-button='no'`, `insert-button='no'`, `refresh-button='no'`
+
+![Crud operations]({{ "/images/components/tabla/table-cruds.png" | absolute_url }}){: .comp-example-img}
 
 ## Sorting
 Since this functionality is built-in, all you have to do is to set the sorting configuration via `sort-columns` input in the `o-table` component using [ ASC or DESC ] format.
@@ -583,6 +592,7 @@ Cell editing results in the following events.
 | editionStarted  | Event triggered when component input element started |
 | onPostUpdateRecord | Event triggered after component record is succesfully updated|
 
+![Cell editing]({{ "/images/components/tabla/editing-cell.gif" | absolute_url }}){: .comp-example-img}
 ### Default editors
 
 Next we are specifing how to add a editor for a table column cell.
