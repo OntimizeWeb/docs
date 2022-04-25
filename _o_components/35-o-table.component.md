@@ -574,7 +574,7 @@ Finally, add the created component to your module for including it in your table
 
 ## Cell editing
 
-The *o-table component* supports data editing operations (update and destroy) via a simple configuration of its data source. By default, this operations are enabled. If you need to disabled delete operation, you can changing `delete-button= "no"`.
+The *o-table component* supports cell editing.
 
 All you have to do to enable data editing capabilities for the component is to:
 
@@ -1191,6 +1191,11 @@ There also exists the possibility of automatically align the table columns title
 * **end**: currency, integer, real and percentage types.
 
 When the `auto-align-titles` input is set to true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
+
+### Column resizing
+The `o-table` component allows column resizing by default. Using the `resizable` input you can modify that default value on the table. To disabled resizing for each column, set `resizable='no'` on the column definition.
+
+![Column resizing]({{ "/images/components/tabla/resizing-column.gif" | absolute_url }}){: .comp-example-img}
 
 ### Columns multiple sorting
 Table allows multiple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
