@@ -3,7 +3,7 @@ directive : "o-html-input"
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",
-  attributes: ["attr", "automatic-binding", "automatic-registering", "data", "required", "sql-type", "read-only", "label-visible", "hide-required-marker"]
+  attributes: ["attr", "automatic-binding", "automatic-registering", "data", "required", "sql-type", "read-only", "label-visible", "hide-required-marker","select-all-on-click"]
 },{
   component: "o-text-input",
   path: "components/input/text/api",

@@ -80,6 +80,11 @@ attributes: [{
   default : "yes",
   required : "",
   description : "Whether the label should be shown"
+},{
+  name: "select-all-on-click",
+  type: "no | false | yes | true",
+  default : "no",
+  description : "Select all the text when clicking on an input"
 }]
 
 
