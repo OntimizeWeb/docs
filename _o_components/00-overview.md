@@ -193,7 +193,7 @@ To create a tooltip, add the `tooltip` attribute to an element. By default, the 
 All input conponents have the `width` atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.
 
 ## Global default options <span class='menuitem-badge'> new </span>
-Global default options in input components can be specifie by providing a value for `O_INPUT_OPTIONS` in your application's module as  the color of input icons with `iconColor` attribute or to select the value of an input when clicked with `selectAllOnClick` attribute.
+Global default options in input components can be specified by providing a value for the `O_INPUT_OPTIONS` token in a module. The color of input icons can be configured using the `iconColor` attribute and the selection of the value of an input when clicked using the `selectAllOnClick` attribute.
 
 ```js
 @NgModule({
