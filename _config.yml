@@ -218,7 +218,7 @@ collections:
   ontimize_web_ngx_keycloak:
     output: true
     permalink: /:collection/:path/
-  ontimize_web_ngx_report_on_demand:
+  ontimize_web_ngx_report:
     output: true
     permalink: /:collection/:path/
 
@@ -426,10 +426,10 @@ defaults:
       sidebar:
         nav: "ontimize_web_ngx_keycloak"
 
-  #ontimize_web_ngx_report_on_demand
+  #ontimize_web_ngx_report
   - scope:
       path: ""
-      type: ontimize_web_ngx_report_on_demand
+      type: ontimize_web_ngx_report
     values:
       layout: single
       read_time: false
@@ -438,7 +438,7 @@ defaults:
       comments: false
       breadcrumbs: true
       sidebar:
-        nav: "ontimize_web_ngx_report_on_demand"
+        nav: "ontimize_web_ngx_report"
 
 
 
