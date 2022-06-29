@@ -1,5 +1,5 @@
 ---
-permalink: /report-on-demand/installation/
+permalink: /report/installation/
 title: "Installation"
 ---
 
@@ -8,12 +8,12 @@ title: "Installation"
 ## Installation
 
 ```bash
-  npm install ontimize-web-ngx-report-on-demand --save
+  npm install ontimize-web-ngx-report --save
 ```
 
 ## Usage
 
-### Import the Ontimize Web Report on-Demand module into your application
+### Import the Ontimize Web Report module into your application
 
 Import the `OReportModule ` into the main module of your application.
 

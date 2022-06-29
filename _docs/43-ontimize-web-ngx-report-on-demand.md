@@ -1,6 +1,6 @@
 ---
-permalink: /report-on-demand/
-title: "Report on-demand"
+permalink: /report/
+title: "Report"
 ---
 
 {% include base_path %}
@@ -8,13 +8,14 @@ title: "Report on-demand"
 
 ## Introduction
 
-The module **Ontimize Web Report on-Demand** allow to create a custom report that the user selects a particular profile from a table using [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
+The module **Ontimize Web Report** is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}, allowing **pre-generated** and **on-demand** reporting
+
 
 ## Support
 
-The Ontimize Web Report on-Demand module is available in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-report){:target="_blank"} where you can start discussions, add bug reports or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-report/issues){:target="_blank"} section.
+The Ontimize Web Report module is available in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-report){:target="_blank"} where you can start discussions, add bug reports or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-report/issues){:target="_blank"} section.
 
 ## Documentation
 
-You can see the complete documentation [here]({{ base_path }}/report-on-demand/overview/){:target="_blank"}.
+You can see the complete documentation [here]({{ base_path }}/report/overview/){:target="_blank"}.
 
