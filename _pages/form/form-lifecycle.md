@@ -1,6 +1,6 @@
 ---
 permalink: /components/form/lifecycle/
-title: "Form lifecylce"
+title: "Form lifecycle"
 author_profile: false
 sidebar:
         nav: "docs"

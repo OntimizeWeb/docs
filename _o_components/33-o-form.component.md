@@ -24,7 +24,7 @@ The `o-form` component allows to display data from the server and also to insert
 -->
 
 ## Modes
-The `o-form` component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the [*form lifecylce*](#form-lifecycle) section. The common description of the different form modes is as follows:
+The `o-form` component has different modes depending on the operation that is going to be performed. The form modes may suffer little modifications depending on the form configuration, this is explained in the [*form lifecycle*](#form-lifecycle) section. The common description of the different form modes is as follows:
 
 * **Read only mode**:
 The read only mode is used for displaying data. In this mode the form components are not modifiable and the form toolbar shows the buttons to perform *CRUD* operations (Create, Read, Update and Delete).

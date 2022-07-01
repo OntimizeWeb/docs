@@ -1,6 +1,7 @@
 ---
 permalink: /report/
 title: "Report"
+
 ---
 
 {% include base_path %}
@@ -18,4 +19,5 @@ The Ontimize Web Report module is available in [github](https://github.com/Ontim
 ## Documentation
 
 You can see the complete documentation [here]({{ base_path }}/report/overview/){:target="_blank"}.
+
 
