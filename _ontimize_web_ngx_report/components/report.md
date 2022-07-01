@@ -90,7 +90,7 @@ Now you should a new option similar to where you can management the reports
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OReportService } from 'ontimize-web-ngx-report';
 
-constructor( private reportService: OReportService) {}
+constructor( private reportService: OReportStoreService) {}
 
  getParameters() {
     let params = {
