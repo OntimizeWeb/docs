@@ -1,5 +1,5 @@
 ---
-title: "Report with templates pre-generated"
+title: "Reports stored"
 permalink: /report/components/report/overview
 ---
 To add that in your application run a reports with jasper template you have to follow the following steps
@@ -83,14 +83,14 @@ Now you should a new option similar to where you can management the reports
 5. Add a button and on its click event generate the PDF document.The method `openFillReport` takes as parameter the `UUID` of the report.
 
 ```html
-  <o-button (click)="fillReportFilter()" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate"></o-button>
+  <o-button (click)="fillReport($event)" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate"></o-button>
 ```
 
 ```ts
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { OFillReportService } from 'ontimize-web-ngx-report';
+import { OReportService } from 'ontimize-web-ngx-report';
 
-constructor( private fillService: OFillReportService) {}
+constructor( private reportService: OReportService) {}
 
  getParameters() {
     let params = {
@@ -100,7 +100,7 @@ constructor( private fillService: OFillReportService) {}
   }
 
   fillReport(e: Event){
-    this.fillService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.params, {});
+    this.reportService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.params, {});
   }
 ```
 

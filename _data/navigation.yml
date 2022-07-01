@@ -396,7 +396,7 @@ ontimize_web_ngx_report:
         url: /report/installation/
   - title: "Components"
     children:
-      - title: "Report with templates pre-generated"
+      - title: "Reports stored"
         url: /report/components/report/overview
       - title: "Report on demand"
         url: /report/components/report-on-demand/overview
