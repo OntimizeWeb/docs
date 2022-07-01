@@ -12,7 +12,7 @@ The module **Ontimize Web Report**  is a set of reporting tools for web applicat
 **Ontimize Web Report** implements reporting with:
 
 * Reports **stored**
-The pre-generated reports in jasper templates can be generated from anywhere in the application, for this you have to follow a series of steps listed in this [link]({{ base_path }}/report/components/report/overview)
+The reports **stored** in jasper templates can be generated from anywhere in the application, for this you have to follow a series of steps listed in this [link]({{ base_path }}/report/components/report/overview)
 
 * Report **on-demand**
 Allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application.

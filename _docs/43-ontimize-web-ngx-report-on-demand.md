@@ -9,7 +9,7 @@ title: "Report"
 
 ## Introduction
 
-The module **Ontimize Web Report** is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}, allowing **pre-generated** and **on-demand** reporting
+The module **Ontimize Web Report** is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}, allowing **stored** and **on-demand** reporting to be generated.
 
 
 ## Support
