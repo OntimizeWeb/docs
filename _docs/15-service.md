@@ -168,6 +168,7 @@ You can override or extend the functionality of the services defined in **Ontimi
 | `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
 | `OntimizePermissionsService` and `OntimizeEEPermissionsService` | `O_PERMISSION_SERVICE` | Service used for loading the application permissions |
 | `AuthService` | `O_AUTH_SERVICE` | Service used for authentication (since *ontimize-web-ngx@8.3.0*) |
+| `OReportService` | `O_REPORT_SERVICE` | Service used to generate reports (since *ontimize-web-ngx@8.7.0*) |
 
 For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.
 

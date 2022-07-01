@@ -105,8 +105,9 @@ docs:
         url: /ontimize-web-ngx-seed/
       - title: "Keycloak <span class='menuitem-badge'>new<span>"
         url: /keycloak/
-      - title: "Report on-demand <span class='menuitem-badge'>new<span>"
-        url: /report-on-demand/
+      - title: "Report <span class='menuitem-badge'>new<span>"
+        url: /report/
+
   - title: Meta
     children:
       - title: "FAQ"
@@ -387,11 +388,18 @@ ontimize_web_ngx_keycloak:
       - title: "Installation"
         url: /keycloak/installation/
 
-ontimize_web_ngx_report_on_demand:
-  - title: Report on-demand
+ontimize_web_ngx_report:
+  - title: Report
     children:
       - title: "Overview"
-        url: /report-on-demand/overview/
+        url: /report/overview/
       - title: "Installation"
-        url: /report-on-demand/installation/
+        url: /report/installation/
+  - title: "Components"
+    children:
+      - title: "Reports stored"
+        url: /report/components/report/overview
+      - title: "Report on demand"
+        url: /report/components/report-on-demand/overview
+
 
