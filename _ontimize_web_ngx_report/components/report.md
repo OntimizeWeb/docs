@@ -1,5 +1,5 @@
 ---
-title: "Reports stored"
+title: "Reports store"
 permalink: /report/components/report/overview
 ---
 To add that in your application run a reports with jasper template you have to follow the following steps
@@ -79,11 +79,19 @@ Now you should a new option similar to where you can management the reports
 
 ![Report management module ]({{ "/images/report/report_management.png" | absolute_url }}){: .comp-example-img}
 
+When you add a report, you must add a .zip file that contains a .jrxml file.
+
+![New report ]({{ "/images/report/newReportStore.png" | absolute_url }}){: .comp-example-img}
+
+In the report detail view, the report can be generated and if you decide to use the parameters, they will appear in the detail report as an option.
+
+![Detail report ]({{ "/images/report/reportDetailStore.png" | absolute_url }}){: .comp-example-img}
+
 {:start="5"}
-5. Add a button and on its click event generate the PDF document.The method `openFillReport` takes as parameter the `UUID` of the report.
+5. Add a button and on its click event generate the PDF document. The method `openFillReport` takes as parameter the `UUID`, the parameters values and the filter of the report.
 
 ```html
-  <o-button (click)="fillReport($event)" label="FILL_REPORT" type="STROKED" icon="description" [matTooltip]="'FILL_REPORT' | oTranslate"></o-button>
+  <o-button (click)="generateReport()" label="Generate report" type="STROKED" icon="description" [matTooltip]="Generate report"></o-button>
 ```
 
 ```ts
@@ -91,17 +99,26 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OReportService } from 'ontimize-web-ngx-report';
 
 constructor( private reportService: OReportStoreService) {}
-
- getParameters() {
-    let params = {
+  public id;
+  public onFormDataLoaded(data: any): void {
+      this.id = data.ACCOUNTID;
+  }
+  getParameters() {
+    const params = {
       'id': this.id
     }
     return params;
   }
 
-  fillReport(e: Event){
-    this.reportService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", this.params, {});
+  generateReport(){
+    const params = this.getParameters();
+    this.reportService.openFillReport("e34fd752-8093-4c86-a223-4004bc13ae0f", params, {});
   }
 ```
 
+| openFillReport  |
+| --------------  |
+| Generate the stored report     |
+| Parameters     |
+| reportId: string, parametersValues: object, filter: object       |
 
