@@ -79,7 +79,7 @@ The noteworthy parameters here are:
   - **endpoint:** the base path of the URL used in the remote bundles query.
   - **path:** bundle query method path.
 - **permissionsServiceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
-  - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
+  - **'OntimizePermissions'** string that configures Ontimize REST standard services.
   - **'OntimizeEEPermissions':** string that configures Ontimize REST JEE services.
   - **Custom class:** a service class reference that extends `OntimizePermissions` or `OntimizeEEPermissions` or implements the `IPermissionsService` interface.
 - **permissionsConfiguration:** permissions service configuration object.
@@ -221,7 +221,7 @@ For clarification, if your `apiEndpoint` is the one in the [application configur
 
 # Permissions configuration
 
-The Ontimize Web application permissions are queried if the configuration file contains a valid `permissionsConfiguration` object. The service used for that is configured in the `permissionsServiceType` (using **OntimizePermissions** by default, following the same philosophy as `serviceType` attribute).
+The Ontimize Web application permissions are queried if the configuration file contains a valid `permissionsConfiguration` object and the service used for that is configured in the `permissionsServiceType`.
 
 In the [permissions]({{ base_path }}/guide/permissions/){:target="_blank"} section you can see which components can use permissions and its defition.
 
@@ -229,13 +229,15 @@ In the [permissions]({{ base_path }}/guide/permissions/){:target="_blank"} secti
 
 ## OntimizeEEPermissions
 
-For using the **OntimizeEEPermissions** service, the `permissionsConfiguration` configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page).
+For using the **OntimizeEEPermissions** service, the `permissionsConfiguration` configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page) and `permissionsServiceType`.
 
 ```javascript
   ...
+  permissionsServiceType: 'OntimizeEEPermissions',
   permissionsConfiguration: {
     service: 'permissions'
   }
+
   ...
 ```
 

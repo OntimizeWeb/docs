@@ -6,7 +6,7 @@ comp: "overview"
 {% include base_path %}
 {% include toc %}
 
-Form data components are components that must be placed inside a [form]({{ base_path }}/components/form/overview){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, radio, real, slider, slide toggle, text, textarea and time.
+Form data components are components that must be placed inside a [form]({{ base_path }}/components/form/overview){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, phone, radio, real, slider, slide toggle, text, textarea and time.
 
 All input components in **OntimizeWeb** extend the `OFormDataComponent` class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the **API** section of this page.
 
@@ -23,7 +23,7 @@ You can modify value by setting the `data` attribute or calling the `setData` me
   }
 ```
 
-## Appearance <span class='menuitem-badge'> new </span>
+## Appearance
 
 You can configure multiple appearance variants changing the `appearance` and `float-label` input values.
 
@@ -151,7 +151,7 @@ Also user can add its own validators to a input component using the `validators`
   }
    ...
 ```
-## Label visible <span class='menuitem-badge'> new </span>
+## Label visible
 Form data components allow you to show or hide label with `label-visible` attribute. By default, this value is *true*.
 
 >**NOTE**: This attribute *not* apply in `o-checkbox`,`o-radio`, `o-slider` and `o-html-input`.
@@ -190,48 +190,23 @@ To create a tooltip, add the `tooltip` attribute to an element. By default, the 
 ```
 
 ## Width
-
 All input conponents have the `width` atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.
 
-<!--
-extends OFormDataComponent
+## Global default options <span class='menuitem-badge'> new </span>
+Global default options in input components can be specified by providing a value for the `O_INPUT_OPTIONS` token in a module. The color of input icons can be configured using the `iconColor` attribute and the selection of the value of an input when clicked using the `selectAllOnClick` attribute.
 
+```js
+@NgModule({
+  providers: [
+    {provide: O_INPUTS_OPTIONS, useValue: { iconColor:'accent' } }
+  ]
+})
 
-export const DEFAULT_INPUTS_O_FORM_DATA_COMPONENT = [
-  'oattr: attr',
-  'olabel: label',
-  'tooltip',
-  'tooltipPosition: tooltip-position',
-  'tooltipShowDelay: tooltip-show-delay',
-  'data',
-  'autoBinding: automatic-binding',
-  'autoRegistering: automatic-registering',
-  'oenabled: enabled',
-  'orequired: required',
-  // sqltype[string]: Data type according to Java standard. See SQLType ngClass. Default: 'OTHER'
-  'sqlType: sql-type',
-  'width',
-  'readOnly: read-only'
-];
+or
 
-
-export interface IMultipleSelection extends IComponent {
-  getSelectedItems(): Array<any>;
-  setSelectedItems(values: Array<any>);
-}
-
-export interface IFormDataTypeComponent extends IComponent {
-  getSQLType(): number;
-}
-
-export interface IFormControlComponent extends IComponent {
-  getControl(): FormControl;
-  getFormControl(): FormControl;
-  hasError(error: string): boolean;
-}
-
-export interface IFormDataComponent extends IFormControlComponent {
-  data(value: any);
-  isAutomaticBinding(): boolean;
-  isAutomaticRegistering(): boolean;
-}-->
+@NgModule({
+  providers: [
+    {provide: O_INPUTS_OPTIONS, useValue: { selectAllOnClick: true } }
+  ]
+})
+```

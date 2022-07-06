@@ -111,3 +111,11 @@ When building an `o-list` component you can include one of the predefined list i
 ```
 
 ![List item custom]({{ "/images/components/list/list-item-custom.png" | absolute_url }}){: .comp-example-img}
+
+## Pagination <span class='menuitem-badge'>new<span>
+
+By default, the list is not paginating the data, but if you want that behaviour you must set `pagination-controls= "yes"` in the o-list component.
+
+The paginator displays a dropdown of page sizes for you to choose from. The options for this dropdown can be set via `page-size-options`. For more information see the **API**.
+
+You can also configure the number of records initially displayed with query-rows attribute.

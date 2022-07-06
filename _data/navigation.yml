@@ -97,7 +97,7 @@ docs:
         url: /filemanager/
       - title: "Tree"
         url: /tree/
-      - title: "Gallery <span class='menuitem-badge'>new<span>"
+      - title: "Gallery"
         url: /gallery/
       - title: "JEE app seed"
         url: /ontimize-web-ngx-jee-seed/
@@ -105,6 +105,9 @@ docs:
         url: /ontimize-web-ngx-seed/
       - title: "Keycloak <span class='menuitem-badge'>new<span>"
         url: /keycloak/
+      - title: "Report <span class='menuitem-badge'>new<span>"
+        url: /report/
+
   - title: Meta
     children:
       - title: "FAQ"
@@ -140,6 +143,9 @@ components:
         order: "2"
       - title: "Percentage"
         url: /components/input/percent/overview
+        order: "2"
+      - title: "Phone <span class='menuitem-badge'>new<span>"
+        url: /components/input/phone/overview
         order: "2"
       - title: "Currency"
         url: /components/input/currency/overview
@@ -384,3 +390,19 @@ ontimize_web_ngx_keycloak:
         url: /keycloak/overview/
       - title: "Installation"
         url: /keycloak/installation/
+
+ontimize_web_ngx_report:
+  - title: Report
+    children:
+      - title: "Overview"
+        url: /report/overview/
+      - title: "Installation"
+        url: /report/installation/
+  - title: "Components"
+    children:
+      - title: "Report store"
+        url: /report/components/report-store/overview
+      - title: "Report on-demand"
+        url: /report/components/report-on-demand/overview
+
+

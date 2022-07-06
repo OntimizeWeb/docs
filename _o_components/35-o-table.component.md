@@ -8,7 +8,7 @@ comp: table
 {% include toc %}
 
 ## Introduction
-The `o-table` provides a table of data that can be used to display rows of data.
+The `o-table` provides a table of data that can be used to display rows of data and include a ready-to-use features like crud operations, paging, filtering, sorting, editing, grouping, resizing, exporting to PDF and excel, and virtual scrolling.
 
 If the table also is *inside a form*, the `attr` property is required for registry the table in the form.
 
@@ -86,6 +86,15 @@ You can represent the columns in extended mode with `o-table-column` component. 
 
 </o-table>
 ```
+
+## CRUD operations
+The `o-table` allows to perform the basic operations like **create**, **read**, **update** and **delete**. There are various ways you can use for editing like cell editing by click on them or use an `o-form` component to edit the currently selected item.
+
+*Ontimize Web* provides several modes for editing its data by o-form like *editable detail*, *dialog*, *split pane*, *tabs*. For more information about `o-form` lifecycle you can see this [url](/components/form/overview#form-lifecycle){:target="_blank"} and the *dialog*, *split pane*, *tabs* modes are explained in [o-form-layout-manager]({{ base_path }}/components/formlayoutmanager/overview){:target="_blank"} component.
+
+These operations are available from the table toolbar or from the context menu. This operations are configured by default if detail-mode is other than `none` but you can disable them with `delete-button='no'`, `insert-button='no'`, `refresh-button='no'`
+
+![Crud operations]({{ "/images/components/tabla/table-cruds.png" | absolute_url }}){: .comp-example-img}
 
 ## Sorting
 Since this functionality is built-in, all you have to do is to set the sorting configuration via `sort-columns` input in the `o-table` component using [ ASC or DESC ] format.
@@ -563,27 +572,34 @@ The *let* keyword declares a template input variable that you reference within t
 
 Finally, add the created component to your module for including it in your table.
 
-## Editing
+## Cell editing
 
-The *o-table component* supports data editing operations (create, update, destroy) via a simple configuration of its data source. By default, this operations are enabled.
+The *o-table component* supports cell editing.
 
 All you have to do to enable data editing capabilities for the component is to:
-<ul>
-  <li>Include the table within an o-form component</li>
-  <li>Configure data binding</li>
-</ul>
 
-If you need to disabled one operation, you can changing `insert-button= "no"`, `delete-button= "no"`.
+- Configure `edition-mode="click"` and `detail-mode='none'`
+- Configure data binding
 
 >**NOTE**: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
 
+Cell editing results in the following events.
+
+| Event | Description |
+| ------  | ------- |
+| editionCancelled  | Event triggered when component input is canceled|
+| editionCommitted  | Event triggered when component input is committed |
+| editionStarted  | Event triggered when component input element started |
+| onPostUpdateRecord | Event triggered after component record is succesfully updated|
+
+![Cell editing]({{ "/images/components/tabla/editing-cell.gif" | absolute_url }}){: .comp-example-img}
 ### Default editors
 
 Next we are specifing how to add a editor for a table column cell.
 
 By default, the table will no define a editor for your data into a cell. If you want to be able to edit that data you have to use a cell editor. So, for editing your values, you have the following options.
 
-**1.** Use one of the predefined cell editor, you should add `editable="yes"`. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
+**1.** Use one of the predefined cell editor, you should add **`editable="yes"`** in `o-table-column`. The predefined types are *boolean*, *date*, *integer*, *real* and *text*.
 
 If a column haven't type will be *string*. You can find all information [here]({{ base_path }}/components/table/overview/#default-editors).
 
@@ -1175,6 +1191,11 @@ There also exists the possibility of automatically align the table columns title
 * **end**: currency, integer, real and percentage types.
 
 When the `auto-align-titles` input is set to true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
+
+### Column resizing
+The `o-table` component allows column resizing by default. Using the `resizable` input you can modify that default value on the table. To disabled resizing for each column, set `resizable='no'` on the column definition.
+
+![Column resizing]({{ "/images/components/tabla/resizing-column.gif" | absolute_url }}){: .comp-example-img}
 
 ### Columns multiple sorting
 Table allows multiple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
