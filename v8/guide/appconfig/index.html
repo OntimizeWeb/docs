@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-03-17T09:13:52-04:00">
+  <meta property="article:published_time" content="2022-07-06T07:49:37-04:00">
 
 
 
@@ -681,7 +681,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v8/gallery/" class=" ">Gallery <span class='menuitem-badge'>new<span></a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v8/gallery/" class=" ">Gallery</a></li>
           
             
             
@@ -706,6 +706,14 @@
             
 
             <li><a href="https://ontimizeweb.github.io/docs/v8/keycloak/" class=" ">Keycloak <span class='menuitem-badge'>new<span></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/report/" class=" ">Report <span class='menuitem-badge'>new<span></a></li>
           
         </ul>
         
@@ -785,7 +793,7 @@
     
     <meta itemprop="description" content="How tow configure an OntimizeWeb application.">
     
-    <meta itemprop="datePublished" content="March 17, 2022">
+    <meta itemprop="datePublished" content="July 06, 2022">
     
 
     <div class="page__inner-wrap">
@@ -904,7 +912,7 @@
   </li>
   <li><strong>permissionsServiceType:</strong> The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
     <ul>
-      <li><strong>Not configured (by default):</strong> if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.</li>
+      <li><strong>&#8216;OntimizePermissions&#8217;</strong> string that configures Ontimize REST standard services.</li>
       <li><strong>&#8216;OntimizeEEPermissions&#8217;:</strong> string that configures Ontimize REST JEE services.</li>
       <li><strong>Custom class:</strong> a service class reference that extends <code class="language-plaintext highlighter-rouge">OntimizePermissions</code> or <code class="language-plaintext highlighter-rouge">OntimizeEEPermissions</code> or implements the <code class="language-plaintext highlighter-rouge">IPermissionsService</code> interface.</li>
     </ul>
@@ -1046,7 +1054,7 @@
 
 <h1 id="permissions-configuration">Permissions configuration</h1>
 
-<p>The Ontimize Web application permissions are queried if the configuration file contains a valid <code class="language-plaintext highlighter-rouge">permissionsConfiguration</code> object. The service used for that is configured in the <code class="language-plaintext highlighter-rouge">permissionsServiceType</code> (using <strong>OntimizePermissions</strong> by default, following the same philosophy as <code class="language-plaintext highlighter-rouge">serviceType</code> attribute).</p>
+<p>The Ontimize Web application permissions are queried if the configuration file contains a valid <code class="language-plaintext highlighter-rouge">permissionsConfiguration</code> object and the service used for that is configured in the <code class="language-plaintext highlighter-rouge">permissionsServiceType</code>.</p>
 
 <p>In the <a href="https://ontimizeweb.github.io/docs/v8/guide/permissions/" target="_blank">permissions</a> section you can see which components can use permissions and its defition.</p>
 
@@ -1054,12 +1062,14 @@
 
 <h2 id="ontimizeeepermissions">OntimizeEEPermissions</h2>
 
-<p>For using the <strong>OntimizeEEPermissions</strong> service, the <code class="language-plaintext highlighter-rouge">permissionsConfiguration</code> configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page).</p>
+<p>For using the <strong>OntimizeEEPermissions</strong> service, the <code class="language-plaintext highlighter-rouge">permissionsConfiguration</code> configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page) and <code class="language-plaintext highlighter-rouge">permissionsServiceType</code>.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">...</span>
+  <span class="nx">permissionsServiceType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OntimizeEEPermissions</span><span class="dl">'</span><span class="p">,</span>
   <span class="nx">permissionsConfiguration</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">service</span><span class="p">:</span> <span class="dl">'</span><span class="s1">permissions</span><span class="dl">'</span>
   <span class="p">}</span>
+
   <span class="p">...</span>
 </code></pre></div></div>
 
@@ -1238,13 +1248,44 @@
           <td>string</td>
           <td>The route the application will navigate when the menu item is clicked</td>
         </tr>
+        <tr>
+          <td>pathMatch</td>
+          <td>&#8216;full&#8217; | &#8216;prefix&#8217;</td>
+          <td>Match criteria to mark the menu item as active in case of multiple routes matching</td>
+        </tr>
       </tbody>
     </table>
 
     <p><span>Example:</span></p>
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="p">{</span> <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">customers</span><span class="dl">'</span><span class="p">,</span> <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS</span><span class="dl">'</span><span class="p">,</span> <span class="nx">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS_CONTENT</span><span class="dl">'</span><span class="p">,</span> <span class="nx">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/customers</span><span class="dl">'</span><span class="p">,</span> <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">people</span><span class="dl">'</span> <span class="p">}</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> 
+  <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">customers</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="nx">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS_CONTENT</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="nx">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/customers</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">people</span><span class="dl">'</span> 
+<span class="p">}</span>
 </code></pre></div>    </div>
-  </div>
+
+    <p><span>pathMatch: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is &#8216;prefix&#8217; (default value) a item will be marked as active if its route starts as the active application route. If the value is &#8216;full&#8217;, the route has to be exactly the same.</span></p>
+
+    <p>Example: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the &#8216;/main/customers/new&#8217; because its prefix matches. User would need to set the value &#8216;full&#8217; to the pathMatch in the second route.&lt;/span&gt;</p>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> 
+  <span class="nl">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">customers</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="nx">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="nx">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS_CONTENT</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="nx">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/customers</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="nx">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">people</span><span class="dl">'</span> 
+<span class="p">},</span>
+<span class="p">{</span> 
+  <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">customers</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="na">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CUSTOMERS_CONTENT</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="na">route</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/main/customers/new</span><span class="dl">'</span><span class="p">,</span> 
+  <span class="na">icon</span><span class="p">:</span> <span class="dl">'</span><span class="s1">people</span><span class="dl">'</span> 
+  <span class="na">pathMatch</span><span class="p">:</span> <span class="dl">'</span><span class="s1">full</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </div>  
 </details>
 
 <details class="collapsible">
@@ -1431,7 +1472,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-03-17T09:13:52-04:00">March 17, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-07-06T07:49:37-04:00">July 06, 2022</time></p>
         
       </footer>
 

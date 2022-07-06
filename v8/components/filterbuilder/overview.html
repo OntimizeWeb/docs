@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-03-17T09:13:52-04:00">
+  <meta property="article:published_time" content="2022-07-06T07:49:37-04:00">
 
 
 
@@ -342,6 +342,8 @@
                   
               
                   
+              
+                  
                       
                             
                       
@@ -551,6 +553,14 @@
             
 
             <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/percent/overview" class=" ">Percentage</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/phone/overview" class=" ">Phone <span class='menuitem-badge'>new<span></a></li>
           
             
             
@@ -882,7 +892,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="March 17, 2022">
+    <meta itemprop="datePublished" content="July 06, 2022">
     
 
     <div class="page__inner-wrap">
@@ -967,7 +977,7 @@
   </nav>
 </aside>
 
-<p>The <code class="language-plaintext highlighter-rouge">o-filter-builder</code> component is used for easily building complex structures for filtering the data of a <a href="https://ontimizeweb.github.io/docs/v8/components/table/overview">table</a>. It uses the values of the form components provided on its <code class="language-plaintext highlighter-rouge">filters</code> attribute and placed on its parent <a href="https://ontimizeweb.github.io/docs/v8/components/form/overview">form</a>. All the attributes are explained on the <strong>API</strong> section of this page.</p>
+<p>The <code class="language-plaintext highlighter-rouge">o-filter-builder</code> component is used for easily building complex structures for filtering the data of the component that extends from  <a href="https://ontimizeweb.github.io/docs/v8/components/service/service/overview">OServiceComponent</a>) such as <a href="https://ontimizeweb.github.io/docs/v8/components/list/overview">list</a>, <a href="https://ontimizeweb.github.io/docs/v8/components/table/overview">table</a> and <a href="https://ontimizeweb.github.io/docs/v8/components/grid/overview">grid</a> . It uses the values of the form components provided on its <code class="language-plaintext highlighter-rouge">filters</code> attribute and placed on its parent <a href="https://ontimizeweb.github.io/docs/v8/components/form/overview">form</a>. All the attributes are explained on the <strong>API</strong> section of this page.</p>
 
 <blockquote>
   <p><strong>NOTE:</strong> Do not add elements to your screen but is a component that allows to build <a href="https://ontimizeweb.github.io/docs/v8/guide/filterexpression/">complex filtering expressions</a>.</p>
@@ -981,7 +991,7 @@
 <p>The use of this directive is optional, this behaviour can be achived in some other ways. Some of them are the following:</p>
 <ul>
   <li>Calling the <code class="language-plaintext highlighter-rouge">triggerReload</code> method of the <code class="language-plaintext highlighter-rouge">o-filter-builder</code> component.</li>
-  <li>Setting the <code class="language-plaintext highlighter-rouge">query-on-change</code> attribute of the <code class="language-plaintext highlighter-rouge">o-filter-builder</code> component to <strong>yes</strong> will make the fillter be applied each time the value of a form component included in the filter changes.</li>
+  <li>Setting the value of the <code class="language-plaintext highlighter-rouge">o-filter-builder</code> component&#8217;s <code class="language-plaintext highlighter-rouge">query-on-change</code> input to <strong>yes</strong> will cause the filter to be applied whenever the value of a form component included in the filter changes. By default, the filtering is triggered when the <code class="language-plaintext highlighter-rouge">onValueChange</code> event is emitted for a form component. You can modify the <code class="language-plaintext highlighter-rouge">query-on-change-event-type</code> attribute to make the filtering to be triggered with the <code class="language-plaintext highlighter-rouge">onChange</code> components output. For more information see the <strong>API</strong> section in this page.</li>
 </ul>
 
 <h2 id="clear-directive">Clear directive</h2>
@@ -1304,7 +1314,7 @@
             
             
   <td class="" o-component-description >
-    <p class="first"><p>Indicates whether or not to trigger the target component refresh when a filter component <code class="language-plaintext highlighter-rouge">onChange</code> event is fired.</p>
+    <p class="first"><p>Indicates whether or not to trigger the target component refresh when a filter component change event is fired. You can define the change event in attribute <code class="language-plaintext highlighter-rouge">query-on-change-event-type</code>.</p>
 </p>
     
   </td>
@@ -1388,6 +1398,71 @@
             
   <td class="" o-component-default >
     <p class="first"><p>0</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>query-on-change-event-type</p>
+</p>
+    
+      <p><i>onValueChange' | onChange</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>If query-on-change-event-type is <code class="language-plaintext highlighter-rouge">onValueChange</code>, the target component refresh when a filter component fired <em>onValueChanged</em> event else fired with the <em>onChange</em> event of angular</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first"><p>onValueChange</p>
 </p>
     
   </td>
@@ -1638,7 +1713,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-03-17T09:13:52-04:00">March 17, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-07-06T07:49:37-04:00">July 06, 2022</time></p>
         
       </footer>
 
