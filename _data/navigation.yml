@@ -144,7 +144,7 @@ components:
       - title: "Percentage"
         url: /components/input/percent/overview
         order: "2"
-      - title: "Phone"
+      - title: "Phone <span class='menuitem-badge'>new<span>"
         url: /components/input/phone/overview
         order: "2"
       - title: "Currency"
