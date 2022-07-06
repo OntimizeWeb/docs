@@ -144,6 +144,9 @@ components:
       - title: "Percentage"
         url: /components/input/percent/overview
         order: "2"
+      - title: "Phone"
+        url: /components/input/phone/overview
+        order: "2"
       - title: "Currency"
         url: /components/input/currency/overview
         order: "2"
