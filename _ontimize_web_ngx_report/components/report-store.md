@@ -1,7 +1,10 @@
 ---
-title: "Reports store"
-permalink: /report/components/report/overview
+title: "Report store"
+permalink: /report/components/report-store/overview
 ---
+
+>**NOTE:** Remember to complete the steps you need to perform on your backend server to complete the report store configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/reports/report-store)
+
 To add that in your application run a reports with jasper template you have to follow the following steps
 
 
