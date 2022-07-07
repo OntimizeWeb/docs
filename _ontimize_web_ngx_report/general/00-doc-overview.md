@@ -11,12 +11,12 @@ The module **Ontimize Web Report**  is a set of reporting tools for web applicat
 
 **Ontimize Web Report** implements reporting with:
 
-* Report **store**: A jasper template can store and be generated from anywhere in the application, for this you have to follow a series of steps listed in this [link]({{ base_path }}/report/components/report/overview). Ontimize is version [v6.17.0](https://community.jaspersoft.com/project/jaspersoft-studio/releases) compatible
+* Report **store**: A jasper template can store and be generated from anywhere in the application, for this you have to follow a series of steps listed in this [link]({{ base_path }}/report/components/report-store/overview). Ontimize is version [v6.17.0](https://community.jaspersoft.com/project/jaspersoft-studio/releases){:target="_blank"} compatible
 
 * Report **on-demand**: Allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application.
 This visual tool will allow users to define parameters of the report such as **title, subtitle, columns to display, styling options, sorting, grouping and data aggregate functions** of the report. With these parameters and the data of the table, this component will dynamically generate the report and present it to the user. In addition, all these settings are stored automatically in database by Ontimize services.
 
-You need to configure your backend server and you can consult the documentation in this [link](https://ontimize.github.io/ontimize-boot/basics/reports/)
+You need to configure your backend server and you can consult the documentation in this [link](https://ontimize.github.io/ontimize-boot/basics/reports/){:target="_blank"}
 
 > **NOTE:**
 What is JasperReports Library?
