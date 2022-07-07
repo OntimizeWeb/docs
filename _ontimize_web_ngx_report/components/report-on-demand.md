@@ -24,7 +24,7 @@ This visual tool will allow users to define parameters of the report such as:
 
 8.- Preferences (allows to save a configuration, apply an existing one or update it)
 
-**NOTE:** Remember to complete the steps you need to perform on your backend server to complete the report on-demand configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/reports/report-on-demand)
+>**NOTE:** Remember to complete the steps you need to perform on your backend server to complete the report on-demand configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/reports/report-on-demand){:target="_blank"}
 
 ## Menu option
 
