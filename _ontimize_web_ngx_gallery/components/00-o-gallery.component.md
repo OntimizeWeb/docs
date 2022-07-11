@@ -136,5 +136,4 @@ ngOnInit(): void {
 }
 ```
 
-
 ![Action Gallery]({{ "/images/components/gallery/gallery-actions.png" | absolute_url }}){: .comp-example-img}
