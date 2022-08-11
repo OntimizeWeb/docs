@@ -223,6 +223,13 @@ attributes: [{
   description: "Indicates a function that will be executed on table creation to show or not icon to expand or collapse expandable rows. The function must return a boolean observable.",
   required: "",
   default: ""
+},
+{
+  name: "show-reset-width-button",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the reset width menu option in the header menu",
+  required: "",
+  default: "yes"
 }]
 
 

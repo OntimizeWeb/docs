@@ -1425,6 +1425,12 @@ For more information see the API.
 
 > NOTE: There is no limit on the number of columns that the table can group by.
 
+### Reset columns width <span class='menuitem-badge'>new<span>
+
+The `o-table` component has a new option in table menu that allows the width of the table columns to be reset to their initial width. This menu option is enabled by default.  Using `show-reset-width-button` property you can modify the default value. For more information see the **API**.
+
+![Reset columns width]({{ "/images/components/tabla/reset-columns-width.gif" | absolute_url }}){: .comp-example-img}
+
 ## Theming
 ### The table headers
 
