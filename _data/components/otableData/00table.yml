@@ -225,7 +225,7 @@ attributes: [{
   default: ""
 },
 {
-  name: "show-reset-width-button",
+  name: "show-reset-width-option",
   type: "yes|no|true|false",
   description: "Indicates whether or not to show the reset width menu option in the header menu",
   required: "",
