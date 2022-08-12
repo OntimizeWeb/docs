@@ -48,6 +48,9 @@ export const CONFIG: Config = {
   permissionsServiceType: 'OntimizePermissions' | 'OntimizeEEPermissions', /* Optional */
   permissionsConfiguration: { /* Optional */
     service: 'permissions'
+  },
+  exportConfiguration: { /* Required only for Ontimize Boot version 3.7.0 or above */
+    path:'/export'
   }
 };
 ```
@@ -83,6 +86,8 @@ The noteworthy parameters here are:
   - **'OntimizeEEPermissions':** string that configures Ontimize REST JEE services.
   - **Custom class:** a service class reference that extends `OntimizePermissions` or `OntimizeEEPermissions` or implements the `IPermissionsService` interface.
 - **permissionsConfiguration:** permissions service configuration object.
+- **exportConfiguration**: export configuration object required only with `Ontimize Boot version 3.7.0 or above`
+  -  **path**: the export path used in the remote package query compatible.
 
 # Package.json configuration
 
@@ -324,36 +329,36 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
 
   <span>Example:</span>
   ```javascript
-{ 
-  id: 'customers', 
-  name: 'CUSTOMERS', 
-  tooltip: 'CUSTOMERS_CONTENT', 
-  route: '/main/customers', 
-  icon: 'people' 
+{
+  id: 'customers',
+  name: 'CUSTOMERS',
+  tooltip: 'CUSTOMERS_CONTENT',
+  route: '/main/customers',
+  icon: 'people'
 }
   ```
 
   <span>pathMatch: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is 'prefix' (default value) a item will be marked as active if its route starts as the active application route. If the value is 'full', the route has to be exactly the same.
-  
+
   Example: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the '/main/customers/new' because its prefix matches. User would need to set the value 'full' to the pathMatch in the second route.</span>
   ```javascript
-{ 
-  id: 'customers', 
-  name: 'CUSTOMERS', 
-  tooltip: 'CUSTOMERS_CONTENT', 
-  route: '/main/customers', 
-  icon: 'people' 
+{
+  id: 'customers',
+  name: 'CUSTOMERS',
+  tooltip: 'CUSTOMERS_CONTENT',
+  route: '/main/customers',
+  icon: 'people'
 },
-{ 
-  id: 'customers', 
-  name: 'CUSTOMERS', 
-  tooltip: 'CUSTOMERS_CONTENT', 
-  route: '/main/customers/new', 
-  icon: 'people' 
+{
+  id: 'customers',
+  name: 'CUSTOMERS',
+  tooltip: 'CUSTOMERS_CONTENT',
+  route: '/main/customers/new',
+  icon: 'people'
   pathMatch: 'full'
 }
   ```
-  </div>  
+  </div>
 </details>
 
 <details class="collapsible">
