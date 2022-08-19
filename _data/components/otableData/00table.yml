@@ -157,13 +157,15 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the table columns are resizables"
-},{
-  name: "export-mode",
-  type: "visible | local | all",
-  default: "visible",
-  required: "",
-  description: "Mode export data"
-},{
+},
+# {
+#   name: "export-mode",
+#   type: "visible | local | all",
+#   default: "visible",
+#   required: "",
+#   description: "Mode export data"
+# },
+{
   name: "visible-export-dialog-buttons",
   type: "string",
   default: "",
