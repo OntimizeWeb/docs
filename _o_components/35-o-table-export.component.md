@@ -15,7 +15,8 @@ The `o-table` component is able to export its data in *Excel, HTML and PDF* form
 
 The exportation process is performed as follows:
 
-- Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types... using the <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider, this provider can replace using <a href="/docs/guide/service#extending-ontimize-web-services" target="_blank">O_EXPORT_DATA.
+- Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types... using the <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider.
+
 - Then it sends this information to the server in order to generate the file that will contain the exported data.
 
 The rest interface used for this must be like the following by default:
@@ -105,7 +106,7 @@ The `o-table` component is able to export its data in *Excel* and *CSV* format b
 
 <b>The exportation process is performed as follows:</b>
 
-- Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types... using the <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider-3x.service.ts" target="_blank">OntimizeExportDataProviderService3X</a> service provider, this provider can replace using <a href="/docs/guide/service#extending-ontimize-web-services" target="_blank">O_EXPORT_DATA.
+- Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types... using the <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider-3x.service.ts" target="_blank">OntimizeExportDataProviderService3X</a> service provider.
 
 
 - Then it sends this information to the server in order to generate the file that will contain the exported data.
@@ -152,3 +153,43 @@ By default, **Ontimize Web** use the service `OntimizeExportService` or `Ontimiz
 ### Customizing export service for a specific table
 In addition, it is possible to configure the use of an export service for a specific table with the `export-service-type` input in `o-table` component with service defining with the corresponding injection token [`O_EXPORT_SERVICE`]({{base_path}}/guide/service#extending-ontimize-web-services)
 
+
+## Customizing export provider data
+
+In the first step of the exportation process, the table collects all the required information to perform the exportation with service provider **OntimizeExportDataProviderService** or **OntimizeExportDataProviderService3X** and **Ontimize Web** allows to replace with the provider defined with the corresponding injection token [`O_EXPORT_DATA`]({{base_path}}/guide/service#extending-ontimize-web-services) and in this way customize the data to be sent to the rest api of the export service
+
+The following example extends the provider by taking into account the marked rows in a table
+
+app.module.ts
+
+```ts
+
+export const customProviders: any = [
+ { provide: O_EXPORT_DATA_SERVICE, useValue: CustomOntimizeExportDataProviderService },
+...
+];
+
+```
+
+```
+import { Injectable, Injector } from '@angular/core';
+import { OntimizeExportDataProviderService, OTableExportData } from 'ontimize-web-ngx';
+
+@Injectable()
+export class CustomOntimizeExportDataProviderService extends OntimizeExportDataProviderService {
+
+  constructor(injector: Injector) {
+    super(injector);
+  }
+
+  getExportConfiguration() {
+    let tableExportConfiguration: OTableExportData = super.getExportConfiguration();
+    let selectedItems = this.table.getSelectedItems();
+    if (selectedItems.length > 0) {
+      tableExportConfiguration.data = this.table.getSelectedItems();
+    }
+    return tableExportConfiguration;
+  }
+}
+
+```
