@@ -1233,7 +1233,7 @@ this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTabl
 
 ```
 
-### Expandable row <span class='menuitem-badge'>new<span>
+### Expandable row
 
 The `o-table-row-expandable` component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It's necessary to wrap the content of your template with the `<ng-template let-row></ng-template>` tag and add the template definition inside.
 
@@ -1307,7 +1307,7 @@ The `o-table` component has an input to control expandable row and show or not t
 
 
 
-### Autoadjust <span class='menuitem-badge'>new<span>
+### Autoadjust
 
 The `o-table` component supports automatically adjust to the content of the column setting `auto-adjust = yes`. This means that it will always take up the minimum width required to present its content.
 
@@ -1364,7 +1364,7 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 ![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
 
-### Row grouping <span class='menuitem-badge'>new<span>
+### Row grouping
 
 Ontimize Web allows to merge fields belonging to one column so that the consecutive fields have the same value through the **row grouping**. Each group will be marked with one row with joined cells above containing the group value.
 
@@ -1424,6 +1424,12 @@ You can configure if you want the groups to appear by default expanded or collap
 For more information see the API.
 
 > NOTE: There is no limit on the number of columns that the table can group by.
+
+### Report on demand <span class='menuitem-badge'>new<span>
+
+The `o-table` component has a new option in table menu that allows the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This menu option is enabled by default.  Using `show-report-on-demand-option` property you can modify the default value. For more information see the **API**. You can also find more information about reports in their documentation following this [link](https://ontimizeweb.github.io/docs/v8/report/components/report-on-demand/overview){:target="_blank"}.
+
+![Report on-demand example ]({{ "/images/report/basicReportOnDemand.PNG" | absolute_url }}){: .comp-example-img}
 
 ### Reset columns width <span class='menuitem-badge'>new<span>
 

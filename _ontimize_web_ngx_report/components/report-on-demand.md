@@ -28,7 +28,7 @@ This visual tool will allow users to define parameters of the report such as:
 
 ## Menu option
 
-![Report on demand menu option]({{ "/images/report/menuOption.png" | absolute_url }}){: .comp-example-img}
+![Report on demand menu option]({{ "/images/report/menuOption.PNG" | absolute_url }}){: .comp-example-img}
 
 ## Basic example
 
