@@ -1086,11 +1086,24 @@ You can configure:
 
 
 ### Export table data
+The table data can be exported to *EXCEL*, *CSV*,.. using the option Export in the table menu.
+
+![Export table data]({{ "/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
+
+The same data that is in the table gets exported but none the values ​​processed in GUI, ie:
+- the values ​​obtained by the formatters of the cell renderers
+- header, cell and row styles
+- calculated columns
+- cell aligment
+- column sorting
+- if row grouping, all data will be exported without grouping
+- if expandable rows exist, all data will be exported without expanding
+
+The operation of the exports depends on whether **Ontimize, OntimizeJEE** or **Ontimize Boot** servers are used. You can read more about this topic in the [export table data](export){:target='_blank'}.
 
 
 >NOTE: Ontimize Web data export is compatible with _Ontimize, OntimizeEE and Ontimize Boot_ servers from `ontimize-web-ngx: 8.8.0`, with previous versions it is compatible with Ontimize and OntimizeEE servers.
 
-The operation of the exports depends on whether **Ontimize, OntimizeEE** or **Ontimize Boot** servers are used. You can read more about this topic in the [export table data](export){:target='_blank'}.
 
 ### Table export button
 The `o-table` component allows to add extra exportation buttons in the exportation dialog with the `o-table-export-button` component.
