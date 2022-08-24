@@ -7,7 +7,7 @@ layout: single
 {% include base_path %}
 {% include toc %}
 
-Since `8.8.0` version **Ontimize Web** is compatible with the version **Ontimize Boot 3.7.0 or above**.
+Since `8.8.0` version **Ontimize Web** is compatible with the version **Ontimize Boot 3.9.0 or above**.
 
 ## Compatibility between Ontimize server and Ontimize Web
 
@@ -15,14 +15,16 @@ Version compatibility table Ontimize server and Ontimize Web
 
 | Ontimize server version | Ontimize Web version |
 |-------------------------|----------------------|
-| Ontimize JEE/Ontimize Boot 2.7.0 or lower | >=2.1.0 |
-| Any version of ontimize ( Ontimize JEE/Ontimize Boot) | >=8.8.0 |
+| Ontimize JEE | >=8.0.0 |
+| Ontimize Boot 2.x.x | >=8.0.0 |
+| Ontimize Boot between 3.0.0 and 3.6.0 | >=8.0.0 |
+| Ontimize Boot 3.9.0 or higher  | >=8.8.0 |
 {: .table-adaptable}
 
 Depending on the server **Ontimize Web** supports customization differents options and next we describe the two versions.
 
 
-## Ontimize JEE/Ontimize Boot 2.7.0 or lower
+## Ontimize JEE and Ontimize Boot 3.6.0 or lower
 With these server versions, the `o-table` component is able to export its data in *Excel, HTML and PDF* format by default
 
 ![Export table data]({{ "/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
@@ -39,8 +41,53 @@ export type OTableExportData = {
 }
 ```
 
+Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the export.
 
-The exportation process is performed as follows:
+- **URL:** http://localhost:8080/qsallcomponents-jee/services/rest/customers/customer/xlsx
+- **HTTP Method:** POST
+- **Authorization:** User: demo, Password: demouser
+- **Body:** JSON
+
+
+```
+{
+    "data": [],
+    "columns": [
+        "NAME",
+        "SURNAME",
+        "STARTDATE",
+        "EMAIL",
+        "ADDRESS",
+        "CUSTOMERTYPEID"
+    ],
+    "columnNames": {
+        "NAME": "Name",
+        "SURNAME": "Surname",
+        "STARTDATE": "Start date",
+        "EMAIL": "Email",
+        "ADDRESS": "Address",
+        "CUSTOMERTYPEID": "Type"
+    },
+    "sqlTypes": {
+        "SURNAME": 12,
+        "EMAIL": 12,
+        "CUSTOMERTYPEID": 4,
+        "ADDRESS": 12,
+        "NAME": 12,
+        "CUSTOMERID": 4,
+        "STARTDATE": 93
+    },
+    "filter": {
+        "@basic_expression": {
+            "lop": "CUSTOMERTYPEID",
+            "op": "=",
+            "rop": 2
+        }
+    }
+}
+```
+
+**The exportation process is performed as follows:**
 
 - Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types, filter... using the <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider. If you want to customize this data provider, please check the <a href="#customizing-data-provider">Custom data provider</a> section.
 
@@ -129,7 +176,7 @@ Using the above configuration the enpoints would be as follows:
 
 ### Customizing data provider
 
-Implementing the export data, you can customize differents options such as **columns, column names, query filter, column types, and the specific data**. for this you should:
+Implementing the export data, you can customize differents options such as **columns, column names, query filter, column types, and the specific data**, for this you should:
 
 - Extend the export service provider <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> and customize the table export configuration that sending REST request.
 
@@ -157,7 +204,7 @@ export class CustomOntimizeExportDataProviderService extends OntimizeExportDataP
 
 ```
 
-- Add the extended service in the previous point in the app.module.ts with the injection token O_EXPORT_DATA_SERVICE
+- Add the extended service in the previous point in the app.module.ts with the injection token `O_EXPORT_DATA_SERVICE`
 
 ```ts
 // Defining custom providers (if needed)...
@@ -186,7 +233,7 @@ export const customProviders: any = [
 })
 ```
 
-## Ontimize Boot 3.7.0 or higher
+## Ontimize Boot 3.9.0 or higher
 
 The `o-table` component is able to export its data in *Excel* and *CSV* format by default.
 
@@ -208,6 +255,52 @@ export type OTableExportData3X = {
   columnStyles: { columnId?: string, styleId?: string };
   rowStyles: { rowId?: string, styleId?: string };
   cellStyles: { cellNumber?: string, styleId?: string };
+}
+```
+
+Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the export.
+
+- **URL:** http://localhost:8080/qsallcomponents-jee/services/rest/export/xlsx
+- **HTTP Method:** POST
+- **Authorization:** User: demo, Password: demouser
+- **Body:** JSON
+
+
+```
+{
+    "data": [],
+    "columns": [
+        "NAME",
+        "SURNAME",
+        "STARTDATE",
+        "EMAIL",
+        "ADDRESS",
+        "CUSTOMERTYPEID"
+    ],
+    "columnNames": {
+        "NAME": "Name",
+        "SURNAME": "Surname",
+        "STARTDATE": "Start date",
+        "EMAIL": "Email",
+        "ADDRESS": "Address",
+        "CUSTOMERTYPEID": "Type"
+    },
+    "sqlTypes": {
+        "SURNAME": 12,
+        "EMAIL": 12,
+        "CUSTOMERTYPEID": 4,
+        "ADDRESS": 12,
+        "NAME": 12,
+        "CUSTOMERID": 4,
+        "STARTDATE": 93
+    },
+    "filter": {
+        "@basic_expression": {
+            "lop": "CUSTOMERTYPEID",
+            "op": "=",
+            "rop": 2
+        }
+    }
 }
 ```
 
@@ -359,8 +452,160 @@ export class CustomOntimizeExportDataProviderService extends OntimizeExportDataP
 
 ## Customizing export service
 ### Customizing export service in the whole application
-By default, **Ontimize Web** use the service `OntimizeExportService` or `OntimizeExportService3X` in the whole application depending on whether it should support Ontimize and OntimizeEE servers or Ontimize Boot but the framework allows to modify the export service used by setting the property `exportServiceType` in `app.config.ts` with service defining with the corresponding injection token [`O_EXPORT_SERVICE`]({{base_path}}/guide/service#extending-ontimize-web-services)
+By default, **Ontimize Web** use the service `OntimizeExportService` or `OntimizeExportService3X`  in the whole application depending the Ontimize server version already explained in the section [Compatibility between Ontimize server and Ontimize Web](#compatibility-between-ontimize-server-and-ontimize-web) but the framework allows to modify the export service used by setting the property `exportServiceType` in `app.config.ts` or with service defining with the corresponding injection token [`O_EXPORT_SERVICE`]({{base_path}}/guide/service#extending-ontimize-web-services)
 
+
+| Ontimize server | Service | Injection token | Description |
+| ------- | ------- | ------- |
+| Ontimize EE, Ontimize Boot 3.6.0 or lower version | `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
+| Ontimize Boot 3.9.0 or higher |  `OntimizeExportService3X` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
+
+```ts
+// Defining custom providers (if needed)...
+export const customProviders: any = [
+  ...
+  { provide: O_EXPORT_SERVICE, useValue: ExportServiceExtService }
+  ...
+];
+
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    ONTIMIZE_MODULES,
+    OntimizeWebModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+  ],
+  providers: [
+    { provide: APP_CONFIG, useValue: CONFIG },
+    ...ONTIMIZE_PROVIDERS,
+    ...customProviders
+  ],
+  bootstrap: [AppComponent]
+})
+
+export class AppModule { }
+
+```
+
+```
+import { Injectable, Injector } from '@angular/core';
+import { HttpRequestOptions, Observable, OntimizeExportService, ServiceResponse } from 'ontimize-web-ngx';
+import { Subscriber } from 'rxjs';
+import { map, share } from 'rxjs/operators';
+
+@Injectable()
+export class ExportServiceExtService extends OntimizeExportService {
+
+  constructor(injector: Injector) {
+    super(injector)
+  }
+  public exportData(format: string): Observable<any> {
+    const entity = this.exportDataProvider.entity;
+    const url = `${this.urlBase}${this.exportPath ? this.exportPath : ''}${this.servicePath}/${entity}/${format}`;
+
+    const options: HttpRequestOptions = {
+      headers: this.buildHeaders().append('Content-Type', 'application/json;charset=UTF-8'),
+      observe: 'response'
+    };
+
+
+    const exportData: any = this.exportDataProvider.getExportConfiguration();
+    exportData.data = this.exportDataProvider.table.getSelectedItems();
+    const body = JSON.stringify(exportData);
+    // TODO: try multipart
+    const dataObservable: Observable<ServiceResponse> = new Observable((observer: Subscriber<ServiceResponse>) => {
+      this.httpClient.post<ServiceResponse>(url, body, options).pipe(
+        map((resData: any) => this.adapter.adapt(resData))
+      ).subscribe(resp => {
+        this.parseSuccessfulExportDataResponse(format, resp, observer);
+      }, error => {
+        this.parseUnsuccessfulResponse(error, observer);
+      });
+    });
+    return dataObservable.pipe(share());
+  }
+}
+```
+```
+import { Injectable, Injector } from '@angular/core';
+import { HttpRequestOptions, Observable, OntimizeExportService3X, ServiceResponse } from 'ontimize-web-ngx';
+import { Subscriber } from 'rxjs';
+import { map, share } from 'rxjs/operators';
+
+@Injectable()
+export class ExportServiceExtService extends OntimizeExportService3X {
+
+  constructor(injector: Injector) {
+    super(injector)
+  }
+  public exportData(format: string): Observable<any> {
+    const entity = this.exportDataProvider.entity;
+    const url = `${this.urlBase}${this.exportPath ? this.exportPath : ''}${this.servicePath}/${entity}/${format}`;
+
+    const options: HttpRequestOptions = {
+      headers: this.buildHeaders().append('Content-Type', 'application/json;charset=UTF-8'),
+      observe: 'response'
+    };
+
+
+    const exportData: any = this.exportDataProvider.getExportConfiguration();
+    exportData.data = this.exportDataProvider.table.getSelectedItems();
+    const body = JSON.stringify(exportData);
+    // TODO: try multipart
+    const dataObservable: Observable<ServiceResponse> = new Observable((observer: Subscriber<ServiceResponse>) => {
+      this.httpClient.post<ServiceResponse>(url, body, options).pipe(
+        map((resData: any) => this.adapter.adapt(resData))
+      ).subscribe(resp => {
+        this.parseSuccessfulExportDataResponse(format, resp, observer);
+      }, error => {
+        this.parseUnsuccessfulResponse(error, observer);
+      });
+    });
+    return dataObservable.pipe(share());
+  }
+}
+
+```
 ### Customizing export service for a specific table
-In addition, it is possible to configure the use of an export service for a specific table with the `export-service-type` input in `o-table` component with service defining with the corresponding injection token [`O_EXPORT_SERVICE`]({{base_path}}/guide/service#extending-ontimize-web-services)
+In addition, it is possible to configure the use of an export service for a specific table with the `export-service-type` input in `o-table` component with service defining in the `app.module.ts` file.
+
+```ts
+....
+
+// Defining custom providers (if needed)...
+export const customProviders: any = [
+...
+  { provide: "ExportServiceExtService"},
+...
+];
+
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    ONTIMIZE_MODULES,
+    OntimizeWebModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+  ],
+  providers: [
+    { provide: APP_CONFIG, useValue: CONFIG },
+    ...ONTIMIZE_PROVIDERS,
+    ...customProviders
+  ],
+  bootstrap: [AppComponent]
+})
+
+export class AppModule { }
+
+```
+```html
+<o-table ...   export-service-type="ExportServiceExtService" ... >
+      ...
+</o-table>
+```
 
