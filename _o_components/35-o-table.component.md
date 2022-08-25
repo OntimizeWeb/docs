@@ -237,11 +237,11 @@ Additionally, you can specify default filter function to be applied when the use
 
 ### Filtering by columns
 
-It is posible to configure filtering by columns as follows:
-- Using the input columns, adding the columns separated by ‘;’.
+This option is active by default but it is also possible to configure filtering by columns as follows:
+- Using the input columns of the component `o-table-columns-filter`, adding the columns separated by ‘;’.
 - Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
 
-This option will be available in table menu by default. However, you can configure it is allways available in table header with `filter-column-active-by-default= 'yes'`.
+This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.
 
 ![Filter by Column]({{ "/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
 

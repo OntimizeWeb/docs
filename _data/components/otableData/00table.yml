@@ -184,7 +184,7 @@ attributes: [{
 },{
   name: "filter-column-active-by-default",
   type: "no | false | yes | true",
-  default: "no",
+  default: "yes",
   required: "",
   description: "Indicates whether or not to show the filter by column icon in the table header by default"
 },{
