@@ -238,7 +238,7 @@ Additionally, you can specify default filter function to be applied when the use
 ### Filtering by columns
 
 This option is active by default but it is also possible to configure filtering by columns as follows:
-- Using the input columns of the component `o-table-columns-filter`, adding the columns separated by ‘;’.
+- Using the input `columns` of the component `o-table-columns-filter`, adding the columns separated by ‘;’.
 - Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
 
 This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.
