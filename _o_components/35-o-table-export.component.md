@@ -17,14 +17,14 @@ Version compatibility table Ontimize server and Ontimize Web
 |-------------------------|----------------------|
 | Ontimize JEE | >=8.0.0 |
 | Ontimize Boot 2.x.x | >=8.0.0 |
-| Ontimize Boot between 3.0.0 and 3.6.0 | >=8.0.0 |
+| Ontimize Boot between 3.0.0 and 3.6.0 | none |
 | Ontimize Boot 3.9.0 or higher  | >=8.8.0 |
 {: .table-adaptable}
 
 Depending on the server **Ontimize Web** supports customization differents options and next we describe the two versions.
 
 
-## Ontimize JEE and Ontimize Boot 3.6.0 or lower
+## Ontimize JEE and Ontimize Boot 2.X.X or lower
 With these server versions, the `o-table` component is able to export its data in *Excel, HTML and PDF* format by default
 
 ![Export table data]({{ "/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
@@ -41,7 +41,15 @@ export type OTableExportData = {
 }
 ```
 
-Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the export.
+| Attribute | Meaning |
+|-----------|---------|
+| data      | Custom export data |
+| columns      | An array that indicates which columns to query in the database |
+| columnNames | Translates the name of the column to be exported, replacing it with the value of the key|
+| sqlTypes | An object containing the key-value pairs for the data type contained in the database. As a key, the column name and as a value, the integer corresponding to the database data type, which can be found at this link.|
+| filter | Un object containing the basic expression for querying |
+
+Next a POST request example will be made to the previously configured url and the body of the request containing all the necessary information for the export.
 
 - **URL:** http://localhost:8080/qsallcomponents-jee/services/rest/customers/customer/xlsx
 - **HTTP Method:** POST
@@ -89,9 +97,9 @@ Next a POST request will be made to the previously configured url and the body o
 
 **The exportation process is performed as follows:**
 
-- Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types, filter... using the <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider. If you want to customize this data provider, please check the <a href="#customizing-data-provider">Custom data provider</a> section.
+- Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider collects all the required information to perform the exportation, the table data, column names, column types, filter... If you want to customize this data provider, please check the <a href="#customizing-data-provider">Custom data provider</a> section.
 
-- Then it sends this information to the server in order to generate the file that will contain the exported data using <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export.service.ts" target="_blank">OntimizeExportService</a>. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section.
+- Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export.service.ts" target="_blank">OntimizeExportService</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section.
 
 The rest interface used for this must be like the following by default:
 ```
@@ -176,14 +184,15 @@ Using the above configuration the enpoints would be as follows:
 
 ### Customizing data provider
 
-Implementing the export data, you can customize differents options such as **columns, column names, query filter, column types, and the specific data**, for this you should:
+When implementing export data, you can customize the OTableExportData object explained in the <a href="#ontimize-jee-and-ontimize-boot-2xx-or-lower">Ontimize JEE and Ontimize Boot 2.X.X or lower</a> section for this you should:
 
 - Extend the export service provider <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> and customize the table export configuration that sending REST request.
 
 
 ```ts
 import { Injectable, Injector } from '@angular/core';
-import { OntimizeExportDataProviderService, OTableExportData } from 'ontimize-web-ngx';
+import { OntimizeExportDataProviderService
+ } from 'ontimize-web-ngx';
 
 @Injectable()
 export class CustomOntimizeExportDataProviderService extends OntimizeExportDataProviderService {
@@ -193,7 +202,7 @@ export class CustomOntimizeExportDataProviderService extends OntimizeExportDataP
   }
 
   getExportConfiguration() {
-    let tableExportConfiguration: OTableExportData = super.getExportConfiguration();
+    let tableExportConfiguration: any = super.getExportConfiguration();
     let selectedItems = this.table.getSelectedItems();
     if (selectedItems.length > 0) {
       tableExportConfiguration.data = this.table.getSelectedItems();
@@ -306,12 +315,12 @@ Next a POST request will be made to the previously configured url and the body o
 
 <b>The exportation process is performed as follows:</b>
 
-- Firstly, the table collects all the required information to perform the exportation, the column names, column types, query params, service... except cell, column and row styles using the <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider-3x.service.ts" target="_blank">OntimizeExportDataProviderService3X</a> service provider .
+- Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider-3x.service.ts" target="_blank">OntimizeExportDataProviderService3X</a> service provider collects all the required information to perform the exportation, the column names, column types, query params, service... except cell, column and row styles  .
 
 The server allows you to customize the styles of the cells, columns or rows and if you want these additional options you can customize extending this data provider, please check the <a href="#customizing-data-provider-1">Custom data provider</a> section.
 
 
-- Then it sends this information to the server in order to generate the file that will contain the exported data using <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-3X.service.ts" target="_blank">OntimizeExportServic3X</a>. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section.e that will contain the exported data.
+- Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-3X.service.ts" target="_blank">OntimizeExportServic3X</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section that will contain the exported data.
 
 The rest interface used for this must be like the following by default:
 
@@ -411,7 +420,7 @@ export const customProviders: any = [
 })
 ```
 
-The following example extends the provider by taking into account the marked rows in a table
+The following example extends the provider by taking into account the marked rows in a table and nd sets the background to green in the first column.
 
 app.module.ts
 
@@ -426,24 +435,34 @@ export const customProviders: any = [
 
 ```ts
 import { Injectable, Injector } from '@angular/core';
-import { OntimizeExportDataProviderService, OTableExportData } from 'ontimize-web-ngx';
+import { OntimizeExportDataProviderService3X} from 'ontimize-web-ngx';
 
 @Injectable()
-export class CustomOntimizeExportDataProviderService extends OntimizeExportDataProviderService {
+export class CustomOntimizeExportDataProviderService extends OntimizeExportDataProviderService3X {
 
   constructor(injector: Injector) {
     super(injector);
   }
 
   getExportConfiguration() {
-    let tableExportConfiguration: OTableExportData = super.getExportConfiguration();
+    let exportData: any = super.getExportConfiguration();
     let selectedItems = this.table.getSelectedItems();
     if (selectedItems.length > 0) {
-      tableExportConfiguration.data = this.table.getSelectedItems();
+      exportData.data = this.table.getSelectedItems();
     }
-    return tableExportConfiguration;
+    exportData.styles = {
+      "greenBG": {
+        "fillBackgroundColor": "GREEN"
+      }
+    };
+    exportData.rowStyles = {
+      "1": "greenBG"
+    };
+
+    return exportData;
   }
 }
+
 
 ```
 
@@ -457,14 +476,32 @@ By default, **Ontimize Web** use the service `OntimizeExportService` or `Ontimiz
 
 | Ontimize server | Service | Injection token | Description |
 | ------- | ------- | ------- |
-| Ontimize EE, Ontimize Boot 3.6.0 or lower version | `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
+| Ontimize EE, Ontimize Boot 2.X.X or lower version | `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
 | Ontimize Boot 3.9.0 or higher |  `OntimizeExportService3X` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
+
+<h4>Setting the property `exportServiceType` in `app.config.ts` </h4>
+```
+...
+export const CONFIG: Config = {
+  // The base path of the URL used by app services.
+  apiEndpoint:environment.apiEndpoint,
+
+  ...
+  exportServiceType: ExportServiceExtService3X
+  or
+  exportServiceType: ExportServiceExtService
+  ...
+```
+
+<h4>Service defining with the `O_EXPORT_SERVICE` injection token </h4>
 
 ```ts
 // Defining custom providers (if needed)...
 export const customProviders: any = [
   ...
   { provide: O_EXPORT_SERVICE, useValue: ExportServiceExtService }
+  or
+  { provide: O_EXPORT_SERVICE, useValue: ExportServiceExtService3X }
   ...
 ];
 
@@ -490,45 +527,9 @@ export class AppModule { }
 
 ```
 
-```
-import { Injectable, Injector } from '@angular/core';
-import { HttpRequestOptions, Observable, OntimizeExportService, ServiceResponse } from 'ontimize-web-ngx';
-import { Subscriber } from 'rxjs';
-import { map, share } from 'rxjs/operators';
 
-@Injectable()
-export class ExportServiceExtService extends OntimizeExportService {
+<h4>Ontimize Boot 3.9.0 or higher</h4>
 
-  constructor(injector: Injector) {
-    super(injector)
-  }
-  public exportData(format: string): Observable<any> {
-    const entity = this.exportDataProvider.entity;
-    const url = `${this.urlBase}${this.exportPath ? this.exportPath : ''}${this.servicePath}/${entity}/${format}`;
-
-    const options: HttpRequestOptions = {
-      headers: this.buildHeaders().append('Content-Type', 'application/json;charset=UTF-8'),
-      observe: 'response'
-    };
-
-
-    const exportData: any = this.exportDataProvider.getExportConfiguration();
-    exportData.data = this.exportDataProvider.table.getSelectedItems();
-    const body = JSON.stringify(exportData);
-    // TODO: try multipart
-    const dataObservable: Observable<ServiceResponse> = new Observable((observer: Subscriber<ServiceResponse>) => {
-      this.httpClient.post<ServiceResponse>(url, body, options).pipe(
-        map((resData: any) => this.adapter.adapt(resData))
-      ).subscribe(resp => {
-        this.parseSuccessfulExportDataResponse(format, resp, observer);
-      }, error => {
-        this.parseUnsuccessfulResponse(error, observer);
-      });
-    });
-    return dataObservable.pipe(share());
-  }
-}
-```
 ```
 import { Injectable, Injector } from '@angular/core';
 import { HttpRequestOptions, Observable, OntimizeExportService3X, ServiceResponse } from 'ontimize-web-ngx';
@@ -549,7 +550,6 @@ export class ExportServiceExtService extends OntimizeExportService3X {
       headers: this.buildHeaders().append('Content-Type', 'application/json;charset=UTF-8'),
       observe: 'response'
     };
-
 
     const exportData: any = this.exportDataProvider.getExportConfiguration();
     exportData.data = this.exportDataProvider.table.getSelectedItems();
@@ -578,7 +578,7 @@ In addition, it is possible to configure the use of an export service for a spec
 // Defining custom providers (if needed)...
 export const customProviders: any = [
 ...
-  { provide: "ExportServiceExtService"},
+  { provide: ExportServiceExtService},
 ...
 ];
 
@@ -603,8 +603,10 @@ export const customProviders: any = [
 export class AppModule { }
 
 ```
+Modify `o-table` component
+
 ```html
-<o-table ...   export-service-type="ExportServiceExtService" ... >
+<o-table attr="table" export-service-type="ExportServiceExtService" ... >
       ...
 </o-table>
 ```

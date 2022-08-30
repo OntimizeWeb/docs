@@ -1095,7 +1095,6 @@ The same data that is in the table gets exported but none the values ​​proce
 - header, cell and row styles
 - calculated columns
 - cell aligment
-- column sorting
 - if row grouping, all data will be exported without grouping
 - if expandable rows exist, all data will be exported without expanding
 
