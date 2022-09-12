@@ -30,4 +30,11 @@ attributes: [{
   description : "Maximum number of decimals required"
 },{
   name: "decimal-separator"
-}]
+},
+{
+  name: "strict",
+  type: "boolean",
+  default : "false",
+  required : "",
+  description : "Indicates whether the component should be strict when displaying errors"
+  }]
