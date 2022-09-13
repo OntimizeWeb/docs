@@ -17,7 +17,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "File types allowed on the file input, serparated by ';'. Accepted values: <file_extension>, 'audio/*', 'video/*', 'image/*'"
+  description: "File types allowed on the file input, serparated by ';'. Accepted values: file extension as '.pdf', '.doc', '.jpg'; MIME type as 'audio/*', 'video/*', 'image/*'"
 },{
   name: "max-file-size",
   type: "number",
