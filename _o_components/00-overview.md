@@ -212,7 +212,7 @@ or
 ```
 
 ## Visibility <span class='menuitem-badge'> new </span>
-The `oHidden` directive is used to hide oform fields.
+The `oHidden` directive is used to hide form data components.
 
 ```html
  <o-text-input oHidden attr="NAME" width="160px" class="form-field"></o-text-input>
