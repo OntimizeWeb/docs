@@ -36,5 +36,5 @@ attributes: [{
   type: "boolean",
   default : "false",
   required : "",
-  description : "Indicates whether the component should be strict when displaying errors"
+  description : "With the attribute set to true, the component only accepts the number of decimal digits configured in the rendered view and data model."
   }]
