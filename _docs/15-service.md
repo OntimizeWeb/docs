@@ -398,14 +398,11 @@ At this point every **OntimizeWeb** component will use your recently created `St
 
 ### Use your service in a specific component
 
-If you want to use your service in a specific component instead of using it in the whole application, you have to create a factory method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
+If you want to use your service in a specific component instead of using it in the whole application, you have to create a provide  method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
 
 ```javascript
 import { StarWarsService } from '../../shared/star-wars.service';
 
-export function starWarsServiceFactory(injector: Injector): StarWarsService {
-  return new StarWarsService(injector);
-}
 
 @NgModule({
 
@@ -413,14 +410,14 @@ export function starWarsServiceFactory(injector: Injector): StarWarsService {
 
   providers: [{
     provide: 'starWars',
-    useFactory: starWarsServiceFactory,
-    deps: [Injector]
+    useValue: StarWarsService
   }]
 })
 export class MyModule { }
 ```
 
-Once the service is included in the providers of your module, an instance of it will be available in the module, so you can configure the components for using it. For this, configure the `service-type` attribute in the component with the value of the `provide` attribute indicated in the previous step. Check the example below.
+Once the service is included in the providers of your module, it will be created an instance of the service for each component. For this, configure the `service-type` attribute in the component with the value of the `provide` attribute indicated in the previous step. Check the example below.
+
 
 ```html
 <o-table attr="starships" entity="starships" columns="name;model;manufacturer;starship_class;crew;passengers"
