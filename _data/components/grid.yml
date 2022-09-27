@@ -8,7 +8,7 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "quick-filter", "quick-filter-placeholder", "pagination-controls", "page-size-options"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "quick-filter", "quick-filter-placeholder", "quick-filter-appearance", "pagination-controls", "page-size-options"]
 }]
 
 attributes: [{
@@ -91,15 +91,6 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the insert button is floatable."
-},{
-  name: "quick-filter-placeholder",
-  default: "'SEARCH'"
-},{
-  name: "quick-filter-appearance",
-  type: "legacy | standard | fill | outline",
-  default : "outline",
-  required : "",
-  description : "Indicates which of the mat-form-field different [appearance variants](https://v8.material.angular.io/components/form-field/overview#form-field-appearance-variants) will be used."
 },{
   name: "show-buttons-text",
   default: "no"
