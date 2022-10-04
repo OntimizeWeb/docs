@@ -25,7 +25,7 @@ export const CONFIG: Config = {
   uuid: 'com.ontimize.web.quickstart',
   title: 'Ontimize Web QuickStart',
   locale: 'es', /* Optional */
-  serviceType: 'Ontimize' | 'OntimizeEE',
+  serviceType: 'Ontimize' | 'OntimizeEE',/* Optional */
   servicesConfiguration: SERVICE_CONFIG,
   appMenuConfiguration: MENU_CONFIG,
   applicationLocales: ['es', 'en'],
@@ -60,8 +60,9 @@ The noteworthy parameters here are:
 - **title:** The title of the application.
 - **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, etc.).
 - **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
-  - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST standard services.
-  - **'OntimizeEE':** string that configures Ontimize REST JEE services.
+  - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures  Ontimize REST JEE services.
+  - **'Ontimize':** string that configures Ontimize REST services.
+  - **'OntimizeEE':** string that configures Ontimize REST JEE services and is the default value.
   - **Custom class:** a service class reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface.
 - **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 - **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
@@ -79,8 +80,9 @@ The noteworthy parameters here are:
   - **endpoint:** the base path of the URL used in the remote bundles query.
   - **path:** bundle query method path.
 - **permissionsServiceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
+  - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures Ontimize REST JEE services.
   - **'OntimizePermissions'** string that configures Ontimize REST standard services.
-  - **'OntimizeEEPermissions':** string that configures Ontimize REST JEE services.
+  - **'OntimizeEEPermissions':** string that configures Ontimize REST JEE services and is the default value
   - **Custom class:** a service class reference that extends `OntimizePermissions` or `OntimizeEEPermissions` or implements the `IPermissionsService` interface.
 - **permissionsConfiguration:** permissions service configuration object.
 
@@ -221,7 +223,7 @@ For clarification, if your `apiEndpoint` is the one in the [application configur
 
 # Permissions configuration
 
-The Ontimize Web application permissions are queried if the configuration file contains a valid `permissionsConfiguration` object and the service used for that is configured in the `permissionsServiceType`.
+The Ontimize Web application permissions are queried if the configuration file contains a valid `permissionsConfiguration` object and the service used for that is configured in the `permissionsServiceType`. If you do not configure or specify this parameter, the framework configures Ontimize REST JEE services
 
 In the [permissions]({{ base_path }}/guide/permissions/){:target="_blank"} section you can see which components can use permissions and its defition.
 
@@ -229,11 +231,11 @@ In the [permissions]({{ base_path }}/guide/permissions/){:target="_blank"} secti
 
 ## OntimizeEEPermissions
 
-For using the **OntimizeEEPermissions** service, the `permissionsConfiguration` configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page) and `permissionsServiceType`.
+For using the **OntimizeEEPermissions** service, the `permissionsConfiguration` configuration object must contain the service path defined in the SERVICE_CONFIG (defined in the previous section of this page) and `permissionsServiceType` must contain `OntimizeEEPermissions` value, otherwise is configured the framework configures Ontimize REST JEE services by default.
 
 ```javascript
   ...
-  permissionsServiceType: 'OntimizeEEPermissions',
+  permissionsServiceType: 'OntimizeEEPermissions',/* Optional, OntimizeEEPermissions is the default value */
   permissionsConfiguration: {
     service: 'permissions'
   }
@@ -324,36 +326,36 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
 
   <span>Example:</span>
   ```javascript
-{ 
-  id: 'customers', 
-  name: 'CUSTOMERS', 
-  tooltip: 'CUSTOMERS_CONTENT', 
-  route: '/main/customers', 
-  icon: 'people' 
+{
+  id: 'customers',
+  name: 'CUSTOMERS',
+  tooltip: 'CUSTOMERS_CONTENT',
+  route: '/main/customers',
+  icon: 'people'
 }
   ```
 
   <span>pathMatch: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is 'prefix' (default value) a item will be marked as active if its route starts as the active application route. If the value is 'full', the route has to be exactly the same.
-  
+
   Example: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the '/main/customers/new' because its prefix matches. User would need to set the value 'full' to the pathMatch in the second route.</span>
   ```javascript
-{ 
-  id: 'customers', 
-  name: 'CUSTOMERS', 
-  tooltip: 'CUSTOMERS_CONTENT', 
-  route: '/main/customers', 
-  icon: 'people' 
+{
+  id: 'customers',
+  name: 'CUSTOMERS',
+  tooltip: 'CUSTOMERS_CONTENT',
+  route: '/main/customers',
+  icon: 'people'
 },
-{ 
-  id: 'customers', 
-  name: 'CUSTOMERS', 
-  tooltip: 'CUSTOMERS_CONTENT', 
-  route: '/main/customers/new', 
-  icon: 'people' 
+{
+  id: 'customers',
+  name: 'CUSTOMERS',
+  tooltip: 'CUSTOMERS_CONTENT',
+  route: '/main/customers/new',
+  icon: 'people'
   pathMatch: 'full'
 }
   ```
-  </div>  
+  </div>
 </details>
 
 <details class="collapsible">
