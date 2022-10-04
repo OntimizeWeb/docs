@@ -24,73 +24,80 @@ In this section you can check the different releases of **OntimizeWeb** and its 
         </tr>
     </thead>
     <tbody>
-     <tr>
+      <tr>
         <td>8.8.0</td>
         <td>8.5.5</td>
         <td rowspan="27">8.0.1</td>
-        <td rowspan="7">8.0.1</td>
-        <td rowspan="28">8.0.0<br>8.0.1<br>8.0.2<br>8.0.3<br>8.1.0<br>8.1.1<br></td>
-        <td rowspan="3">8.3.0</td>
+        <td rowspan="9">8.0.1</td>
+        <td rowspan="32">8.1.1<br>8.1.0<br>8.0.3<br>8.0.2<br>8.0.1<br>8.0.0</td>
+        <td rowspan="5">8.3.0</td>
         <td>8.0.2</td>
-        <td rowspan="28">8.0.0<br>8.0.1</td>
-    </tr>
+        <td>8.0.2</td>
+      </tr>
       <tr>
-        <td>8.7.0<br>8.7.1<br>8.7.2</td>
-        <td rowspan="11">8.5.4</td>
-        <td>8.0.0<br>8.0.1</td>
-    </tr>
-     <tr>
+        <td>8.7.2</td>
+        <td rowspan="13">8.5.4</td>
+        <td rowspan="3">8.0.1<br>8.0.0</td>
+        <td rowspan="29">8.0.1<br>8.0.0</td>
+      </tr>
+      <tr>
+        <td>8.7.1</td>
+      </tr>
+      <tr>
+        <td>8.7.0</td>
+      </tr>
+      <tr>
         <td>8.7.0-rc.0</td>
         <td>8.0.0-rc.0</td>
-    </tr>
-     <tr>
-        <td>8.6.1</td>
-        <td>8.2.2</td>
-        <td rowspan="27">-</td>
-    </tr>
+      </tr>
+      <tr>
+          <td>8.6.1</td>
+          <td>8.2.2</td>
+          <td rowspan="27">-</td>
+      </tr>
       <tr>
         <td>8.6.0</td>
         <td rowspan="2">8.2.1</td>
-    </tr>
-     <tr>
-        <td>8.5.10</td>
-    </tr>
-     <tr>
-        <td>8.5.9</td>
-        <td rowspan="2">8.2.0</td>
-    </tr>
-     <tr>
-        <td>8.5.8</td>
-        <td rowspan="20">8.0.1</td>
-    </tr>
-    <tr>
-        <td>8.5.7</td>
-        <td rowspan="8">8.1.0</td>
-    </tr>
-     <tr>
-        <td>8.5.6</td>
-    </tr>
-    <tr>
-        <td>8.5.5</td>
-    </tr>
-    <tr>
-        <td>8.5.4</td>
-    </tr>
-    <tr>
-        <td>8.5.3</td>
-        <td rowspan="2">8.5.2</td>
-    </tr>
-    <tr>
-        <td>8.5.2</td>
-    </tr>
-    <tr>
-        <td>8.5.1</td>
-        <td>8.5.1</td>
-    </tr>
-    <tr>
-        <td>8.5.0</td>
-        <td>8.5.0</td>
-    </tr>
+      </tr>
+      <tr>
+          <td>8.5.10</td>
+      </tr>
+      <tr>
+          <td>8.5.9</td>
+          <td rowspan="2">8.2.0</td>
+      </tr>
+      <tr>
+          <td>8.5.8</td>
+          <td rowspan="20">8.0.1</td>
+      </tr>
+      <tr>
+          <td>8.5.7</td>
+          <td rowspan="8">8.1.0</td>
+      </tr>
+      <tr>
+          <td>8.5.6</td>
+      </tr>
+      <tr>
+          <td>8.5.5</td>
+      </tr>
+      <tr>
+          <td>8.5.4</td>
+      </tr>
+      <tr>
+          <td>8.5.3</td>
+          <td rowspan="2">8.5.2</td>
+      </tr>
+      <tr>
+          <td>8.5.2</td>
+      </tr>
+      <tr>
+          <td>8.5.1</td>
+          <td>8.5.1</td>
+      </tr>
+      <tr>
+          <td>8.5.0</td>
+          <td>8.5.0</td>
+      </tr>
      <tr>
         <td>8.4.1</td>
         <td rowspan="2">8.4.0</td>
@@ -127,12 +134,12 @@ In this section you can check the different releases of **OntimizeWeb** and its 
             <td>8.1.1</td>
             <td rowspan="2">8.1.0</td>
             <td rowspan="5">8.0.0</td>
+            <td rowspan="3">8.0.0</td>
         </tr>
         <tr>
             <td>8.1.0</td>
         </tr>
         <tr>
-            <td>8.0.0</td>
             <td>8.0.0</td>
             <td>8.0.0</td>
             <td>8.0.0</td>
@@ -142,7 +149,6 @@ In this section you can check the different releases of **OntimizeWeb** and its 
             <td rowspan="2">8.0.0-rc.0</td>
             <td rowspan="2">8.0.0-rc.0</td>
             <td rowspan="2">8.0.0-rc.0</td>
-            <td rowspan="2">-</td>
             <td rowspan="2">-</td>
         </tr>
         <tr>
