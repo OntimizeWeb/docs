@@ -1309,8 +1309,23 @@ The `o-table` component has an input to control expandable row and show or not t
 
 ### Autoadjust <span class='menuitem-badge'>new<span>
 
-The `o-table` component supports automatically adjust to the content of the column setting `auto-adjust = yes`. This means that it will always take up the minimum width required to present its content.
+The `o-table` component supports automatically adjust to the content of the column. This means that it will always take up the minimum width required to present its content. If you want avoid that behaviour setting `auto-adjust = no` in the `o-table` component.
 
+Global default autoadjust can be specified by providing a value for O_TABLE_GLOBAL_CONFIG in your application's root module.
+```ts
+@NgModule({
+  declarations: [
+  ...
+  ],
+  ...
+  providers: [
+    ...
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAdjust: false } },
+    ...
+  ],
+  ...
+})
+```
 
 <h3 class="grey-color">Example</h3>
 ```html
@@ -1339,7 +1354,7 @@ There is a possibility that the content is **large** and the result is not what 
 
 ![Table width autoadjust]({{ "/images/components/tabla/table-autoadjust-overflow-hidden.PNG" | absolute_url }}){: .comp-example-img}
 
-However, if you want to control similar case, you can do so by configuring `auto-adjust="yes"` width several options such as:
+However, if you want to control similar case, you can do so by configuring `auto-adjust="yes"` with several options such as:
 * `horizontal-scroll=yes`
 * `multiline=yes`
 * `max-width` of the `o-table-column`.
