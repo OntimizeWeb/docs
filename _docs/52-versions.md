@@ -139,7 +139,6 @@ In this section you can check the different releases of **OntimizeWeb** and its 
         <tr>
             <td>8.0.0</td>
             <td>8.0.0</td>
-
         </tr>
          <tr>
             <td>8.0.0-rc.1</td>
