@@ -256,9 +256,9 @@ When building an `o-grid` component you can define your own grid item. For inclu
 
 ## Custom content in toolbar <span class='menuitem-badge'>new<span>
 
-The `o-grid` component allows to add content in the toolbar with the selector `o-grid-toolbar` selector at start position with the `position='start'` selector or at the end with the `position='end' selector.
+The `o-grid` component allows to add content in the toolbar with the selector `o-grid-toolbar`  at start position by default but you can configure the position with `position='start'` at the start or at the end with the `position='end'.
 
-If the selector `o-grid-toolbar` is used together with `position='start'` the content will always be placed to the left of the Refresh/New/Delete buttons and is used together with `position='end'` the content will always be placed to the right of the quickfilter
+If the selector `o-grid-toolbar` is used together with `position='start'` the content will always be placed to the right of the Refresh/New/Delete buttons, page selector and sort selector aand if used together with `position='end'` the content will always be placed to the right of the quickfilter
 
 ```ts
   <o-grid #grid attr="grid" title="Grid" cols="2" show-page-size="no" refresh-button="yes"...>

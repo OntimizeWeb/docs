@@ -114,9 +114,9 @@ When building an `o-list` component you can include one of the predefined list i
 
 ## Custom content in toolbar <span class='menuitem-badge'>new<span>
 
-The `o-list` component allows to add content in the toolbar with the selector `o-list-toolbar` selector at start position with the `position='start'` selector or at the end with the `position='end' selector.
+The `o-list` component allows to add content in the toolbar with the selector `o-list-toolbar` at start position by default but you can configure the position with `position='start'` at the start or at the end with the `position='end'.
 
-If the selector `o-list-toolbar` is used together with `position='start'` the content will always be placed to the left of the Refresh/New/Delete buttons and is used together with `position='end'` the content will always be placed to the right of the quickfilter
+If the selector `o-list-toolbar` is used together with `position='start'` the content will always be placed to the right of the New/Refresh/Delete buttons and if used together with `position='end'` the content will always be placed to the left of the quickfilter
 
 ```ts
 <o-list #list attr="list" ... refresh-button="yes" quick-filter="yes"...>

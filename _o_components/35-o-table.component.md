@@ -1439,9 +1439,9 @@ The `o-table` component has a new option in table menu that allows the width of 
 
 ### Custom content in toolbar <span class='menuitem-badge'>new<span>
 
-The `o-table` component allows to add content in the toolbar with the selector `o-table-toolbar` selector at start position with the `position='start'` selector or at the end with the `position='end' selector.
+The `o-table` component allows to add content in the toolbar with the selector `o-table-toolbar` at start position by default but you can configure the position with `position='start'` at the start or at the end with the `position='end'.
 
-If the selector `o-table-toolbar` is used together with `position='start'` the content will always be placed to the left of the Refresh/New/Delete and `o-table-buttons` buttons and is used together with `position='end'` the content will always be placed to the right of the quickfilter
+If the selector `o-table-toolbar` is used together with `position='start'` the content will always be placed to the right of the New/Refresh/Delete and `o-table-buttons` buttons and if used together with  `position='end'` the content will always be placed to the left of the quickfilter
 
 ```ts
  <o-table #table fxFlex attr="table" title="Table" quick-filter="true" insert-button="false"  delete-button="false" refresh-button="false" ..>
