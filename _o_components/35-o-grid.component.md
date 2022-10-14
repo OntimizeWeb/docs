@@ -254,5 +254,23 @@ When building an `o-grid` component you can define your own grid item. For inclu
 
 ![Grid item custom]({{ "/images/components/grid/grid-sortable.png" | absolute_url }}){: .comp-example-img}
 
+## Custom content in toolbar <span class='menuitem-badge'>new<span>
+
+The `o-grid` component allows to add content in the toolbar with the selector `o-grid-toolbar` selector at start position with the `position='start'` selector or at the end with the `position='end' selector.
+
+If the selector `o-grid-toolbar` is used together with `position='start'` the content will always be placed to the left of the Refresh/New/Delete buttons and is used together with `position='end'` the content will always be placed to the right of the quickfilter
+
+```ts
+  <o-grid #grid attr="grid" title="Grid" cols="2" show-page-size="no" refresh-button="yes"...>
+    <!-- Custom content toolbar in position start -->
+    <o-combo o-grid-toolbar position="start" label="Sort" width="100px"...></o-combo>
+    <!-- Custom content toolbar in position end -->
+    <o-slide-toggle o-grid-toolbar position="end"....></o-slide-toggle>
+    ...
+  </o-grid>
+```
+
+![Add custom content in toolbar in position start]({{ "/images/components/grid/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
+
 ## Demo
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/grid/).
