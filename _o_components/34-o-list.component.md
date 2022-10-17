@@ -112,6 +112,25 @@ When building an `o-list` component you can include one of the predefined list i
 
 ![List item custom]({{ "/images/components/list/list-item-custom.png" | absolute_url }}){: .comp-example-img}
 
+## Custom content in toolbar <span class='menuitem-badge'>new<span>
+
+The `o-list` component allows to add content in the toolbar with the selector `o-list-toolbar` at start position by default but you can configure the position with `position='start'` at the start or at the end with the `position='end'`.
+
+If the selector `o-list-toolbar` is used together with `position='start'` the content will always be placed to the right of the New/Refresh/Delete buttons and if used together with `position='end'` the content will always be placed to the left of the quickfilter
+
+```ts
+<o-list #list attr="list" ... refresh-button="yes" quick-filter="yes"...>
+  <!-- Custom content toolbar in position start -->
+  <o-combo o-grid-toolbar position="start" label="Sort" width="100px"...></o-combo>
+  <!-- Custom content toolbar in position end -->
+  <o-slide-toggle o-grid-toolbar position="end"....></o-slide-toggle>
+</o-list>
+```
+
+![Add custom content in toolbar in position start]({{ "/images/components/list/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
+
+
+
 ## Pagination <span class='menuitem-badge'>new<span>
 
 By default, the list is not paginating the data, but if you want that behaviour you must set `pagination-controls= "yes"` in the o-list component.
