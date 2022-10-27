@@ -1090,7 +1090,7 @@ The table data can be exported to *EXCEL*, *CSV*,.. using the option Export in t
 
 ![Export table data]({{ "/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
 
-The same data that is in the table gets exported but none the values ​​processed in GUI, ie:
+The same data that is in the table gets exported but `none` the values ​​processed in GUI, ie:
 - the values ​​obtained by the formatters of the cell renderers
 - header, cell and row styles
 - calculated columns

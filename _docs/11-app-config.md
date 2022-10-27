@@ -49,7 +49,7 @@ export const CONFIG: Config = {
   permissionsConfiguration: { /* Optional */
     service: 'permissions'
   },
-  exportConfiguration: { /* Required only for Ontimize Boot version 3.7.0 or above */
+  exportConfiguration: { /* Required only for Ontimize Boot version 3.9.0 or above */
     path:'/export'
   }
 };
@@ -86,7 +86,7 @@ The noteworthy parameters here are:
   - **'OntimizeEEPermissions':** string that configures Ontimize REST JEE services.
   - **Custom class:** a service class reference that extends `OntimizePermissions` or `OntimizeEEPermissions` or implements the `IPermissionsService` interface.
 - **permissionsConfiguration:** permissions service configuration object.
-- **exportConfiguration**: export configuration object required only with `Ontimize Boot version 3.7.0 or above`
+- **exportConfiguration**: export configuration object required only with `Ontimize Boot version 3.9.0 or above`
   -  **path**: the export path used in the remote package query compatible.
 
 # Package.json configuration

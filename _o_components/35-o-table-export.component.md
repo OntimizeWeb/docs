@@ -43,7 +43,7 @@ export type OTableExportData = {
 
 | Attribute | Meaning |
 |-----------|---------|
-| data      | Custom export data |
+| data      | Export data |
 | columns      | An array that indicates which columns to query in the database |
 | columnNames | Translates the name of the column to be exported, replacing it with the value of the key|
 | sqlTypes | An object containing the key-value pairs for the data type contained in the database. As a key, the column name and as a value, the integer corresponding to the database data type, which can be found at this link.|
@@ -244,20 +244,25 @@ export const customProviders: any = [
 
 ## Ontimize Boot 3.9.0 or higher
 
-The `o-table` component is able to export its data in *Excel* and *CSV* format by default.
+The `o-table` component is able to export its data in *Excel*, *PDF* and *CSV* format by default.
 
 ![Export table data]({{ "/images/components/tabla/export-data-table-3x.png" | absolute_url }}){: .comp-example-img}
 
-By default, the `o-table` component export **all data** with **the columns names defined in the table, the sqltypes** and **the filter** if used, the component execute the REST(POST) export request in which an object of type `OTableExportData3X` is sent in the body.
+The `o-table` component exports *all the data* if the table has `pageable=no` configured or the page data otherwise
+with **the columns names defined in the table, the sqltypes** and **the filter** if used, the component execute the REST(POST) export request in which an object of type `OTableExportData3X` is sent in the body in case export CSV or `OTableFormattedExportData3X` in case export PDF or EXCEL.
 
 ```ts
-export type OTableExportData3X = {
-  queryParam: OTableExportQueryParam;
+export interface OTableExportData3X {
+  type: string;
+  queryParam: QueryParameter | AdvancedQueryParameter;
   service?: string;
   path: string;
   dao: string;
-  advQuery: boolean;
-  excelColumns: { [columnId: string]: string; };
+  advQuery: boolean
+}
+
+export interface OTableFormattedExportData3X extends OTableExportData3X {
+  columns: { [columnId: string]: string; };
   columnTitles: { [columnId: string]: string; };
   columnTypes: { cellNumber?: string, styleId?: string };
   styles: { styleId?: string, style?: OTableExportColumnStyle };
@@ -267,7 +272,7 @@ export type OTableExportData3X = {
 }
 ```
 
-Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the export.
+Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the EXCEL export.
 
 - **URL:** http://localhost:8080/qsallcomponents-jee/services/rest/export/xlsx
 - **HTTP Method:** POST
@@ -328,7 +333,7 @@ The rest interface used for this must be like the following by default:
  https://{ your-api-endpoint }/{ export-path }/{ format-selected }
 ```
 
-Where <b>format-selected</b> can be: <b>'xlsx'</b> or <b>'csv'</b> depending on the format selected. You can also export the table data in other format using a [table-export-button]({{base}}), in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the `o-table-export-button` component.
+Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'pdf'</b> or <b>'csv'</b> depending on the format selected. You can also export the table data in other format using a [table-export-button]({{base}}), in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the `o-table-export-button` component.
 
 
 And <b> export-path</b> is <b>export</b> by default, if you want to customize this end point, please check the <a href="#custom-exportation-end-point-1">Custom exportation end point</a> section.
@@ -420,7 +425,7 @@ export const customProviders: any = [
 })
 ```
 
-The following example extends the provider by taking into account the marked rows in a table and nd sets the background to green in the first column.
+The following example extends the provider by taking into account the marked rows in a table and nd sets the background to green in the first row.
 
 app.module.ts
 
@@ -487,9 +492,9 @@ export const CONFIG: Config = {
   apiEndpoint:environment.apiEndpoint,
 
   ...
-  exportServiceType: ExportServiceExtService3X
+  exportServiceType: ExportServiceExtService //Ontimize EE, Ontimize Boot 2.X.X or lower version
   or
-  exportServiceType: ExportServiceExtService
+  exportServiceType: ExportServiceExtService3X //Ontimize Boot 3.9.0 or higher
   ...
 ```
 
@@ -499,9 +504,9 @@ export const CONFIG: Config = {
 // Defining custom providers (if needed)...
 export const customProviders: any = [
   ...
-  { provide: O_EXPORT_SERVICE, useValue: ExportServiceExtService }
+  { provide: O_EXPORT_SERVICE, useValue: ExportServiceExtService } //Ontimize EE, Ontimize Boot 2.X.X or lower version
   or
-  { provide: O_EXPORT_SERVICE, useValue: ExportServiceExtService3X }
+  { provide: O_EXPORT_SERVICE, useValue: ExportServiceExtService3X } //Ontimize Boot 3.9.0 or higher
   ...
 ];
 
@@ -527,47 +532,100 @@ export class AppModule { }
 
 ```
 
+<h4>Export service example for Ontimize EE, Ontimize Boot 2.X.X or lower version</h4>
 
-<h4>Ontimize Boot 3.9.0 or higher</h4>
-
-```
+```ts
 import { Injectable, Injector } from '@angular/core';
-import { HttpRequestOptions, Observable, OntimizeExportService3X, ServiceResponse } from 'ontimize-web-ngx';
+import { HttpRequestOptions, Observable, OntimizeExportService, ServiceResponse } from 'ontimize-web-ngx';
 import { Subscriber } from 'rxjs';
 import { map, share } from 'rxjs/operators';
 
 @Injectable()
-export class ExportServiceExtService extends OntimizeExportService3X {
+export class ExportServiceExtService extends OntimizeExportService {
 
-  constructor(injector: Injector) {
-    super(injector)
-  }
-  public exportData(format: string): Observable<any> {
-    const entity = this.exportDataProvider.entity;
-    const url = `${this.urlBase}${this.exportPath ? this.exportPath : ''}${this.servicePath}/${entity}/${format}`;
+   constructor(injector: Injector) {
+     super(injector)
+   }
+   public exportData(format: string): Observable<any> {
+     const entity = this.exportDataProvider.entity;
+     const url = `${this.urlBase}${this.exportPath ? this.exportPath : ''}${this.servicePath}/${entity}/${format}`;
 
-    const options: HttpRequestOptions = {
-      headers: this.buildHeaders().append('Content-Type', 'application/json;charset=UTF-8'),
-      observe: 'response'
-    };
+     const options: HttpRequestOptions = {
+       headers: this.buildHeaders().append('Content-Type', 'application/json;charset=UTF-8'),
+       observe: 'response'
+     };
 
-    const exportData: any = this.exportDataProvider.getExportConfiguration();
-    exportData.data = this.exportDataProvider.table.getSelectedItems();
-    const body = JSON.stringify(exportData);
-    // TODO: try multipart
-    const dataObservable: Observable<ServiceResponse> = new Observable((observer: Subscriber<ServiceResponse>) => {
-      this.httpClient.post<ServiceResponse>(url, body, options).pipe(
-        map((resData: any) => this.adapter.adapt(resData))
-      ).subscribe(resp => {
-        this.parseSuccessfulExportDataResponse(format, resp, observer);
-      }, error => {
-        this.parseUnsuccessfulResponse(error, observer);
-      });
-    });
-    return dataObservable.pipe(share());
-  }
-}
 
+     const exportData: any = this.exportDataProvider.getExportConfiguration();
+     exportData.data = this.exportDataProvider.table.getSelectedItems();
+     const body = JSON.stringify(exportData);
+     const dataObservable: Observable<ServiceResponse> = new Observable((observer: Subscriber<ServiceResponse>) => {
+       this.httpClient.post<ServiceResponse>(url, body, options).pipe(
+         map((resData: any) => this.adapter.adapt(resData))
+       ).subscribe(resp => {
+         this.parseSuccessfulExportDataResponse(format, resp, observer);
+       }, error => {
+         this.parseUnsuccessfulResponse(error, observer);
+       });
+     });
+     return dataObservable.pipe(share());
+   }
+ }
+ ```
+
+<h4>Export service example for Ontimize Boot 3.9.0 or higher</h4>
+
+```
+import { Injectable, Injector } from '@angular/core';
+import { HttpRequestOptions, Observable, OntimizeExportService3X } from 'ontimize-web-ngx';
+import { share } from 'rxjs/operators';
+
+@Injectable()
+export class ExportServiceExtService3X extends OntimizeExportService3X {
+
+   constructor(injector: Injector) {
+     super(injector)
+   }
+   public exportData(format: string): Observable<any> {
+     const url = `${this.urlBase}${this.exportPath}/${format}`;
+
+     const options: HttpRequestOptions = {
+       headers: this.buildHeaders().append('Content-Type', 'application/json;charset=UTF-8'),
+       observe: 'response',
+       responseType: 'blob'
+     };
+
+
+     let exportData: any = this.exportDataProvider.getExportConfiguration();
+     exportData.path = this.servicePath;
+
+     const body = JSON.stringify(exportData);
+     const dataObservable = new Observable(observer => {
+       this.httpClient.post(url, body, options).subscribe(
+         (resp: any) => {
+           const fileData = resp.body;
+           const contentDisposition = resp.headers.get('content-disposition');
+           let fileName = 'file.' + format;
+           const fileNameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+           const matches = fileNameRegex.exec(contentDisposition);
+           if (matches != null && matches[1]) {
+             fileName = matches[1].replace(/['"]/g, '');
+           }
+           const fileURL = URL.createObjectURL(fileData);
+           const a = document.createElement('a');
+           document.body.appendChild(a);
+           a.href = fileURL;
+           a.download = fileName;
+           a.click();
+           document.body.removeChild(a);
+           observer.next(fileData);
+           URL.revokeObjectURL(fileURL);
+         }, error => observer.error(error),
+         () => observer.complete()
+       );
+     });
+     return dataObservable.pipe(share());
+   }
 ```
 ### Customizing export service for a specific table
 In addition, it is possible to configure the use of an export service for a specific table with the `export-service-type` input in `o-table` component with service defining in the `app.module.ts` file.
