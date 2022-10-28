@@ -4,68 +4,75 @@ directive : "o-table-context-menu"
 
 attributes: [
   {
-  name: "context-menu", 
+  name: "context-menu",
   type: "OContextMenuComponent",
   default : "",
   required : "yes",
   description : "Context menu component reference."
 },
 {
-  name: 'insert', 
+  name: 'insert',
   type: "boolean",
   default : "yes",
   required : "",
   description : "Indicates whether the option to insert in the contextual menu is shown."
 },
 {
-  name: 'edit', 
+  name: 'edit',
   type: "boolean",
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the option edit in the contextual menu."
 },
 {
-  name: 'view-detail', 
+  name: 'view-detail',
   type: "boolean",
   default : "no",
   required : "",
   description : "Indicates whether or not to show the option view details in the contextual menu."
 },
 {
-  name: 'copy', 
+  name: 'copy',
   type: "boolean",
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the option copy in the contextual menu."
 },
 {
-  name: 'select-all', 
+  name: 'select-all',
   type: "boolean",
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the option to select all in the contextual menu."
 },
 {
-  name: 'refresh', 
+  name: 'refresh',
   type: "boolean",
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the option to refresh all in the contextual menu."
 },
 {
-  name: 'delete', 
+  name: 'delete',
   type: "boolean",
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the option to delete all in the contextual menu."
 },
 {
-  name: 'filter', 
+  name: 'filter',
   type: "boolean",
   default : "yes",
   required : "",
   description : "Indicates whether or not to show the filtering options in the contextual menu."
 },
+{
+  name: 'group-by-row',
+  type: "boolean",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the option to group by row in the contextual menu."
+}
 ]
 
 title : "OTableContextMenu"

@@ -165,10 +165,12 @@ You can override or extend the functionality of the services defined in **Ontimi
 | `OntimizeService` and `OntimizeEEService` | `O_DATA_SERVICE` | Service used for making CRUD operation and authentication |
 | `OTranslateService` | `O_TRANSLATE_SERVICE` | Service for translating the information shown in the application |
 | `OntimizeFileService` | `O_FILE_SERVICE` | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/overview){:target="_blank"}  component |
-| `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
+| `OntimizeExportService` and `OntimizeExportService3X` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
 | `OntimizePermissionsService` and `OntimizeEEPermissionsService` | `O_PERMISSION_SERVICE` | Service used for loading the application permissions |
 | `AuthService` | `O_AUTH_SERVICE` | Service used for authentication (since *ontimize-web-ngx@8.3.0*) |
 | `OReportService` | `O_REPORT_SERVICE` | Service used to generate reports (since *ontimize-web-ngx@8.7.0*) |
+| `OntimizeExportDataProviderService` and `OntimizeExportDataProviderService3X` | `O_EXPORT_DATA_SERVICE` | Service used to provide data and styles to table exports (since *ontimize-web-ngx@8.8.0*) |
+
 
 For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.
 
@@ -398,14 +400,11 @@ At this point every **OntimizeWeb** component will use your recently created `St
 
 ### Use your service in a specific component
 
-If you want to use your service in a specific component instead of using it in the whole application, you have to create a factory method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
+If you want to use your service in a specific component instead of using it in the whole application, you have to create a provide  method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
 
 ```javascript
 import { StarWarsService } from '../../shared/star-wars.service';
 
-export function starWarsServiceFactory(injector: Injector): StarWarsService {
-  return new StarWarsService(injector);
-}
 
 @NgModule({
 
@@ -413,14 +412,14 @@ export function starWarsServiceFactory(injector: Injector): StarWarsService {
 
   providers: [{
     provide: 'starWars',
-    useFactory: starWarsServiceFactory,
-    deps: [Injector]
+    useValue: StarWarsService
   }]
 })
 export class MyModule { }
 ```
 
-Once the service is included in the providers of your module, an instance of it will be available in the module, so you can configure the components for using it. For this, configure the `service-type` attribute in the component with the value of the `provide` attribute indicated in the previous step. Check the example below.
+Once the service is included in the providers of your module, it will be created an instance of the service for each component. For this, configure the `service-type` attribute in the component with the value of the `provide` attribute indicated in the previous step. Check the example below.
+
 
 ```html
 <o-table attr="starships" entity="starships" columns="name;model;manufacturer;starship_class;crew;passengers"

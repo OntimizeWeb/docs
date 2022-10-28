@@ -157,13 +157,20 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the table columns are resizables"
-},{
-  name: "export-mode",
-  type: "visible | local | all",
-  default: "visible",
-  required: "",
-  description: "Mode export data"
-},{
+},
+# {
+#   name: "export-mode",
+#   type: "visible | local | all",
+#   default: "visible",
+#   required: "",
+#   description: "Mode export data"
+# },
+{
+  name: "export-service-type",
+  type: "string",
+  description: "The service used by the table for exporting it's data, it must implement 'IExportService' interface. Default: 'OntimizeExportService'"
+},
+{
   name: "visible-export-dialog-buttons",
   type: "string",
   default: "",
@@ -184,7 +191,7 @@ attributes: [{
 },{
   name: "filter-column-active-by-default",
   type: "no | false | yes | true",
-  default: "no",
+  default: "yes",
   required: "",
   description: "Indicates whether or not to show the filter by column icon in the table header by default"
 },{
@@ -223,6 +230,20 @@ attributes: [{
   description: "Indicates a function that will be executed on table creation to show or not icon to expand or collapse expandable rows. The function must return a boolean observable.",
   required: "",
   default: ""
+},
+{
+  name: "show-report-on-demand-option",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the report on demand menu option in the header menu",
+  required: "",
+  default: "yes"
+},
+{
+  name: "show-reset-width-option",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the reset width menu option in the header menu",
+  required: "",
+  default: "yes"
 }]
 
 

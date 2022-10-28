@@ -237,11 +237,11 @@ Additionally, you can specify default filter function to be applied when the use
 
 ### Filtering by columns
 
-It is posible to configure filtering by columns as follows:
-- Using the input columns, adding the columns separated by ‘;’.
+This option is active by default but it is also possible to configure filtering by columns as follows:
+- Using the input `columns` of the component `o-table-columns-filter`, adding the columns separated by ‘;’.
 - Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
 
-This option will be available in table menu by default. However, you can configure it is allways available in table header with `filter-column-active-by-default= 'yes'`.
+This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.
 
 ![Filter by Column]({{ "/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
 
@@ -1047,6 +1047,8 @@ You can configure:
   <li> The label in `label` property</li>
 </ul>
 
+
+
 <h3 class="grey-color">Example</h3>
 
 ```html
@@ -1081,94 +1083,26 @@ You can configure:
   }
 ```
 
+
+
 ### Export table data
+The table data can be exported to *EXCEL*, *CSV*,.. using the option Export in the table menu.
 
-This section explains how the table data exportation works.
+![Export table data]({{ "/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
 
-<h3 class="grey-color">Exportating the table data</h3>
-The `o-table` component is able to export its data in Excel, HTML and PDF format by default. Extra formats can be configured using the <a href="#table-export-button">o-table-export-button</a> component. In order to perform the exportation of the table data, it is necessary to set up the services properly on your rest interface.
+The same data that is in the table gets exported but `none` the values ​​processed in GUI, ie:
+- the values ​​obtained by the formatters of the cell renderers
+- header, cell and row styles
+- calculated columns
+- cell aligment
+- if row grouping, all data will be exported without grouping
+- if expandable rows exist, all data will be exported without expanding
 
-The `o-table` component exports the shown data by default. Using the `export-mode` attribute, the user can modify this behaviour in order to export all the data the table stores in the browser (`export-mode="local"`) or all the data asociated to the table (`export-mode="all"`).
+The operation of the exports depends on whether **Ontimize, OntimizeJEE** or **Ontimize Boot** servers are used. You can read more about this topic in the [export table data](export){:target='_blank'}.
 
-<b>The exportation process is performed as follows:</b>
 
-<p>Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types...</p>
-<p>Then it sends this information to the server in order to generate the file that will contain the exported data.</p>
+>NOTE: Ontimize Web data export is compatible with _Ontimize, OntimizeEE and Ontimize Boot_ servers from `ontimize-web-ngx: 8.8.0`, with previous versions it is compatible with Ontimize and OntimizeEE servers.
 
-<p>The rest interface used for this must be like the following by default:
-<br>
-{% raw %} https://{ your-api-endpoint }/{ table-service-path }/{ table-entity }/{ format-selected } {% endraw %}
-<br>
-Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b> depending on the format selected. You can also export the table data in other format using a <a href="#table-export-button">o-table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the `o-table-export-button` component.
-<br>
-If you want to customize this end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
-</p>
-
-<p>The service must send a response with an object containing an unique identifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.
-<br>
-You can see an example of the exportation method end point in the following example.</p>
-
-```java
-@PostMapping(value = "/{extension}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<JSONObject> export(@PathVariable("extension") String extension) {
-
-  // Generate xlsx file ...
-  int id = generateXLSXFile();
-
-  // Send response
-  JSONObject result = new JSONObject();
-  result.setInt(extension + "Id", id);
-  return new ResponseEntity<>(result, HttpStatus.OK);
-}
-```
-
-<p>Finally, the table sends a request to the rest interface with the file identifier provided to perform the download of the file generated on the previous step.</p>
-<p>The rest interface used for downloading the file is like the following by default:
-<br>
-{% raw %} https://{ your-api-endpoint }/{ table-service-path }/{ format-selected }/{ file-id } {% endraw %}
-<br>
-Where <b>format-selected</b> is the same as in the first request and <b>file-id</b> is the file identifier obtained as response of the first request.
-<br>
-If you want to customize the download end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
-</p>
-<p>In the following example you can see the download api end point method.</p>
-
-```java
-@GetMapping(value = "/{extension}/{id}")
-public void downloadFile(@PathVariable(name = "extension", required = true) final String fileExtension,
-    @PathVariable(name = "id", required = true) final String fileId, HttpServletResponse response) {
-
-  // Get the file usint the file identifier
-  File file = getFile(fileId);
-
-  // Send response
-  response.setHeader("Content-Type", "application/octet-stream");
-  response.setHeader("Content-Disposition", "attachment; filename=\"" + file.getName() + "\"");
-  response.setContentLengthLong(file.length());
-  fis = new BufferedInputStream(new FileInputStream(file));
-  FileCopyUtils.copy(fis, response.getOutputStream());
-}
-```
-
-<h3 id="customexportendpoint" class="grey-color">Custom exportation end point</h3>
-
-For customizing the exportation end points simply add your end points on the service configuration object of the table with the keys <b>exportPath</b> and <b>downloadPath</b>. Check the following example.
-
-```javascript
-export const SERVICE_CONFIG = {
-  users: {
-    path: '/users',
-    exportPath: '/usersExport',
-    downloadPath: '/usersDownload'
-  }
-}
-```
-
-Using the above configuration the enpoints would be as follows:
-
-{% raw %} https://{ your-api-endpoint }/{ exportPath }/{ table-service-path }/{ table-entity }/{ format-selected } {% endraw %}
-<br>
-{% raw %} https://{ your-api-endpoint }/{ downloadPath }/{ table-service-path }/{ format-selected }/{ file-id } {% endraw %}
 
 ### Table export button
 The `o-table` component allows to add extra exportation buttons in the exportation dialog with the `o-table-export-button` component.
@@ -1179,7 +1113,6 @@ You can configure:
   <li> The label with the `label` property</li>
   <li> The exportation type by setting the `export-type` property. The value configured here will be used for making the requests to the backend and also al extension for the downloaded file. </li>
 </ul>
-
 
 ### Column titles alignment
 The `o-table` columns title texts are centered by default. Using the `o-column` component `title-align` input user can modify that default value.
@@ -1233,7 +1166,7 @@ this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTabl
 
 ```
 
-### Expandable row <span class='menuitem-badge'>new<span>
+### Expandable row
 
 The `o-table-row-expandable` component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It's necessary to wrap the content of your template with the `<ng-template let-row></ng-template>` tag and add the template definition inside.
 
@@ -1307,7 +1240,7 @@ The `o-table` component has an input to control expandable row and show or not t
 
 
 
-### Autoadjust <span class='menuitem-badge'>new<span>
+### Autoadjust
 
 The `o-table` component supports automatically adjust to the content of the column. This means that it will always take up the minimum width required to present its content. If you want avoid that behaviour setting `auto-adjust = no` in the `o-table` component.
 
@@ -1379,7 +1312,7 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 ![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
 
-### Row grouping <span class='menuitem-badge'>new<span>
+### Row grouping
 
 Ontimize Web allows to merge fields belonging to one column so that the consecutive fields have the same value through the **row grouping**. Each group will be marked with one row with joined cells above containing the group value.
 
@@ -1439,6 +1372,39 @@ You can configure if you want the groups to appear by default expanded or collap
 For more information see the API.
 
 > NOTE: There is no limit on the number of columns that the table can group by.
+
+### Report on demand <span class='menuitem-badge'>new<span>
+
+The `o-table` component has a new option in table menu that allows the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This menu option is enabled by default.  Using `show-report-on-demand-option` property you can modify the default value. For more information see the **API**. You can also find more information about reports in their documentation following this [link](https://ontimizeweb.github.io/docs/v8/report/components/report-on-demand/overview){:target="_blank"}.
+
+![Report on-demand example ]({{ "/images/report/basicReportOnDemand.PNG" | absolute_url }}){: .comp-example-img}
+
+### Reset columns width <span class='menuitem-badge'>new<span>
+
+The `o-table` component has a new option in table menu that allows the width of the table columns to be reset to their initial width. This menu option is enabled by default.  Using `show-reset-width-option` property you can modify the default value. For more information see the **API**.
+
+![Reset columns width]({{ "/images/components/tabla/reset-columns-width.gif" | absolute_url }}){: .comp-example-img}
+
+### Custom content in toolbar <span class='menuitem-badge'>new<span>
+
+The `o-table` component allows to add content in the toolbar with the selector `o-table-toolbar` at start position by default but you can configure the position with `position='start'` at the start or at the end with the `position='end'`.
+
+If the selector `o-table-toolbar` is used together with `position='start'` the content will always be placed to the right of the New/Refresh/Delete and `o-table-buttons` buttons and if used together with  `position='end'` the content will always be placed to the left of the quickfilter
+
+```ts
+ <o-table #table fxFlex attr="table" title="Table" quick-filter="true" insert-button="false"  delete-button="false" refresh-button="false" ..>
+    <!-- Custom definition button -->
+    <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
+    <!-- Custom content toolbar in position start -->
+    <o-combo o-grid-toolbar position="start" label="Sort" width="100px"...></o-combo>
+    <!-- Custom content toolbar in position end -->
+    <o-slide-toggle o-grid-toolbar position="end"....></o-slide-toggle>
+    ...
+  </o-grid>
+```
+
+![Add custom content in toolbar in position start]({{ "/images/components/tabla/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
+
 
 ## Theming
 ### The table headers

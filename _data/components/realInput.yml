@@ -30,4 +30,11 @@ attributes: [{
   description : "Maximum number of decimals required"
 },{
   name: "decimal-separator"
-}]
+},
+{
+  name: "strict",
+  type: "boolean",
+  default : "false",
+  required : "",
+  description : "With the attribute set to true, the component only accepts the number of decimal digits configured in the rendered view and data model. With false value, data model accepts as many decimal digits as you want but the renderer view shows the number of decimal digits configured"
+  }]

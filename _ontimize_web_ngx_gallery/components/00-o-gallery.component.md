@@ -97,6 +97,11 @@ The `o-gallery` component allow multiple options for configurating with `gallery
     ...
 ```
 
+#### Swipe <span class='menuitem-badge'>new<span>
+The `o-gallery` component allows to navigate images and videos with *mouse*, *touch*, and *keyboard* events in the thumbnail, image slider or/and preview section with `thumbnailsSwipe`, `imageSwipe`, `previewSwipe` in `gallery-options` input. The default values are `true`.
+
+![Gallery swipe]({{ "/images/components/gallery/swipe-gallery.gif" | absolute_url }}){: .comp-example-img}
+
 #### Actions
 
 You can add "actions" to the gallery, it shows icons on the top right corner and trigger your custom method.
@@ -130,6 +135,5 @@ ngOnInit(): void {
   ]
 }
 ```
-
 
 ![Action Gallery]({{ "/images/components/gallery/gallery-actions.png" | absolute_url }}){: .comp-example-img}
