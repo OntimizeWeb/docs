@@ -1047,6 +1047,8 @@ You can configure:
   <li> The label in `label` property</li>
 </ul>
 
+
+
 <h3 class="grey-color">Example</h3>
 
 ```html
@@ -1081,94 +1083,26 @@ You can configure:
   }
 ```
 
+
+
 ### Export table data
+The table data can be exported to *EXCEL*, *CSV*,.. using the option Export in the table menu.
 
-This section explains how the table data exportation works.
+![Export table data]({{ "/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
 
-<h3 class="grey-color">Exportating the table data</h3>
-The `o-table` component is able to export its data in Excel, HTML and PDF format by default. Extra formats can be configured using the <a href="#table-export-button">o-table-export-button</a> component. In order to perform the exportation of the table data, it is necessary to set up the services properly on your rest interface.
+The same data that is in the table gets exported but `none` the values ​​processed in GUI, ie:
+- the values ​​obtained by the formatters of the cell renderers
+- header, cell and row styles
+- calculated columns
+- cell aligment
+- if row grouping, all data will be exported without grouping
+- if expandable rows exist, all data will be exported without expanding
 
-The `o-table` component exports the shown data by default. Using the `export-mode` attribute, the user can modify this behaviour in order to export all the data the table stores in the browser (`export-mode="local"`) or all the data asociated to the table (`export-mode="all"`).
+The operation of the exports depends on whether **Ontimize, OntimizeJEE** or **Ontimize Boot** servers are used. You can read more about this topic in the [export table data](export){:target='_blank'}.
 
-<b>The exportation process is performed as follows:</b>
 
-<p>Firstly, the table collects all the required information to perform the exportation, the table data, column names, column types...</p>
-<p>Then it sends this information to the server in order to generate the file that will contain the exported data.</p>
+>NOTE: Ontimize Web data export is compatible with _Ontimize, OntimizeEE and Ontimize Boot_ servers from `ontimize-web-ngx: 8.8.0`, with previous versions it is compatible with Ontimize and OntimizeEE servers.
 
-<p>The rest interface used for this must be like the following by default:
-<br>
-{% raw %} https://{ your-api-endpoint }/{ table-service-path }/{ table-entity }/{ format-selected } {% endraw %}
-<br>
-Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b> depending on the format selected. You can also export the table data in other format using a <a href="#table-export-button">o-table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the `o-table-export-button` component.
-<br>
-If you want to customize this end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
-</p>
-
-<p>The service must send a response with an object containing an unique identifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.
-<br>
-You can see an example of the exportation method end point in the following example.</p>
-
-```java
-@PostMapping(value = "/{extension}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<JSONObject> export(@PathVariable("extension") String extension) {
-
-  // Generate xlsx file ...
-  int id = generateXLSXFile();
-
-  // Send response
-  JSONObject result = new JSONObject();
-  result.setInt(extension + "Id", id);
-  return new ResponseEntity<>(result, HttpStatus.OK);
-}
-```
-
-<p>Finally, the table sends a request to the rest interface with the file identifier provided to perform the download of the file generated on the previous step.</p>
-<p>The rest interface used for downloading the file is like the following by default:
-<br>
-{% raw %} https://{ your-api-endpoint }/{ table-service-path }/{ format-selected }/{ file-id } {% endraw %}
-<br>
-Where <b>format-selected</b> is the same as in the first request and <b>file-id</b> is the file identifier obtained as response of the first request.
-<br>
-If you want to customize the download end point, please check the <a href="#customexportendpoint">Custom exportation end point</a> section.
-</p>
-<p>In the following example you can see the download api end point method.</p>
-
-```java
-@GetMapping(value = "/{extension}/{id}")
-public void downloadFile(@PathVariable(name = "extension", required = true) final String fileExtension,
-    @PathVariable(name = "id", required = true) final String fileId, HttpServletResponse response) {
-
-  // Get the file usint the file identifier
-  File file = getFile(fileId);
-
-  // Send response
-  response.setHeader("Content-Type", "application/octet-stream");
-  response.setHeader("Content-Disposition", "attachment; filename=\"" + file.getName() + "\"");
-  response.setContentLengthLong(file.length());
-  fis = new BufferedInputStream(new FileInputStream(file));
-  FileCopyUtils.copy(fis, response.getOutputStream());
-}
-```
-
-<h3 id="customexportendpoint" class="grey-color">Custom exportation end point</h3>
-
-For customizing the exportation end points simply add your end points on the service configuration object of the table with the keys <b>exportPath</b> and <b>downloadPath</b>. Check the following example.
-
-```javascript
-export const SERVICE_CONFIG = {
-  users: {
-    path: '/users',
-    exportPath: '/usersExport',
-    downloadPath: '/usersDownload'
-  }
-}
-```
-
-Using the above configuration the enpoints would be as follows:
-
-{% raw %} https://{ your-api-endpoint }/{ exportPath }/{ table-service-path }/{ table-entity }/{ format-selected } {% endraw %}
-<br>
-{% raw %} https://{ your-api-endpoint }/{ downloadPath }/{ table-service-path }/{ format-selected }/{ file-id } {% endraw %}
 
 ### Table export button
 The `o-table` component allows to add extra exportation buttons in the exportation dialog with the `o-table-export-button` component.
@@ -1179,7 +1113,6 @@ You can configure:
   <li> The label with the `label` property</li>
   <li> The exportation type by setting the `export-type` property. The value configured here will be used for making the requests to the backend and also al extension for the downloaded file. </li>
 </ul>
-
 
 ### Column titles alignment
 The `o-table` columns title texts are centered by default. Using the `o-column` component `title-align` input user can modify that default value.

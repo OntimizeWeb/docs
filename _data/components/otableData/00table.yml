@@ -157,13 +157,20 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the table columns are resizables"
-},{
-  name: "export-mode",
-  type: "visible | local | all",
-  default: "visible",
-  required: "",
-  description: "Mode export data"
-},{
+},
+# {
+#   name: "export-mode",
+#   type: "visible | local | all",
+#   default: "visible",
+#   required: "",
+#   description: "Mode export data"
+# },
+{
+  name: "export-service-type",
+  type: "string",
+  description: "The service used by the table for exporting it's data, it must implement 'IExportService' interface. Default: 'OntimizeExportService'"
+},
+{
   name: "visible-export-dialog-buttons",
   type: "string",
   default: "",
