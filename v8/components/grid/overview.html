@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-10-07T08:03:08-04:00">
+  <meta property="article:published_time" content="2022-10-28T08:16:17-04:00">
 
 
 
@@ -894,7 +894,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="October 07, 2022">
+    <meta itemprop="datePublished" content="October 28, 2022">
     
 
     <div class="page__inner-wrap">
@@ -984,6 +984,7 @@
   <li><a href="#quickfilter" id="markdown-toc-quickfilter">QuickFilter</a></li>
   <li><a href="#fixed-header-and-footer" id="markdown-toc-fixed-header-and-footer">Fixed header and footer</a></li>
   <li><a href="#custom-grid-item" id="markdown-toc-custom-grid-item">Custom grid item</a></li>
+  <li><a href="#custom-content-in-toolbar-new" id="markdown-toc-custom-content-in-toolbar-new">Custom content in toolbar <span class="menuitem-badge">new<span></span></span></a></li>
   <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
 </ul>
 
@@ -1231,6 +1232,23 @@
 
 <p><img src="https://ontimizeweb.github.io/docs/v8/images/components/grid/grid-sortable.png" alt="Grid item custom" class="comp-example-img" /></p>
 
+<h2 id="custom-content-in-toolbar-new">Custom content in toolbar <span class="menuitem-badge">new<span></span></span></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-grid</code> component allows to add content in the toolbar with the selector <code class="language-plaintext highlighter-rouge">o-grid-toolbar</code>  at start position by default but you can configure the position with <code class="language-plaintext highlighter-rouge">position='start'</code> at the start or at the end with the <code class="language-plaintext highlighter-rouge">position='end'</code>.</p>
+
+<p>If the selector <code class="language-plaintext highlighter-rouge">o-grid-toolbar</code> is used together with <code class="language-plaintext highlighter-rouge">position='start'</code> the content will always be placed to the right of the Refresh/New/Delete buttons, page selector and sort selector and if used together with <code class="language-plaintext highlighter-rouge">position='end'</code> the content will always be placed to the left of the quickfilter</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">o</span><span class="o">-</span><span class="nx">grid</span> <span class="err">#</span><span class="nx">grid</span> <span class="nx">attr</span><span class="o">=</span><span class="dl">"</span><span class="s2">grid</span><span class="dl">"</span> <span class="nx">title</span><span class="o">=</span><span class="dl">"</span><span class="s2">Grid</span><span class="dl">"</span> <span class="nx">cols</span><span class="o">=</span><span class="dl">"</span><span class="s2">2</span><span class="dl">"</span> <span class="nx">show</span><span class="o">-</span><span class="nx">page</span><span class="o">-</span><span class="nx">size</span><span class="o">=</span><span class="dl">"</span><span class="s2">no</span><span class="dl">"</span> <span class="nx">refresh</span><span class="o">-</span><span class="nx">button</span><span class="o">=</span><span class="dl">"</span><span class="s2">yes</span><span class="dl">"</span><span class="p">...</span><span class="o">&gt;</span>
+    <span class="c">&lt;!--</span> <span class="nx">Custom</span> <span class="nx">content</span> <span class="nx">toolbar</span> <span class="k">in</span> <span class="nx">position</span> <span class="nx">start</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="nx">o</span><span class="o">-</span><span class="nx">combo</span> <span class="nx">o</span><span class="o">-</span><span class="nx">grid</span><span class="o">-</span><span class="nx">toolbar</span> <span class="nx">position</span><span class="o">=</span><span class="dl">"</span><span class="s2">start</span><span class="dl">"</span> <span class="nx">label</span><span class="o">=</span><span class="dl">"</span><span class="s2">Sort</span><span class="dl">"</span> <span class="nx">width</span><span class="o">=</span><span class="dl">"</span><span class="s2">100px</span><span class="dl">"</span><span class="p">...</span><span class="o">&gt;&lt;</span><span class="sr">/o-combo</span><span class="err">&gt;
+</span>    <span class="c">&lt;!--</span> <span class="nx">Custom</span> <span class="nx">content</span> <span class="nx">toolbar</span> <span class="k">in</span> <span class="nx">position</span> <span class="nx">end</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="nx">o</span><span class="o">-</span><span class="nx">slide</span><span class="o">-</span><span class="nx">toggle</span> <span class="nx">o</span><span class="o">-</span><span class="nx">grid</span><span class="o">-</span><span class="nx">toolbar</span> <span class="nx">position</span><span class="o">=</span><span class="dl">"</span><span class="s2">end</span><span class="dl">"</span><span class="p">....</span><span class="o">&gt;&lt;</span><span class="sr">/o-slide-toggle</span><span class="err">&gt;
+</span>    <span class="p">...</span>
+  <span class="o">&lt;</span><span class="sr">/o-grid</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><img src="https://ontimizeweb.github.io/docs/v8/images/components/grid/add-content-toolbar.png" alt="Add custom content in toolbar in position start" class="comp-example-img" /></p>
+
 <h2 id="demo">Demo</h2>
 <p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/grid/">OntimizeWeb playground</a>.</p>
 
@@ -1319,6 +1337,8 @@
             <li> pagination-controls </li>
           
             <li> quick-filter </li>
+          
+            <li> quick-filter-appearance </li>
           
             <li> quick-filter-placeholder </li>
           
@@ -2038,71 +2058,6 @@
             
             
   <td class="" o-component-name >
-    <p class="first"><p>quick-filter-appearance</p>
-</p>
-    
-      <p><i>legacy | standard | fill | outline</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Indicates which of the mat-form-field different <a href="https://v8.material.angular.io/components/form-field/overview#form-field-appearance-variants">appearance variants</a> will be used.</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>outline</p>
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
     <p class="first"><p>quick-filter-columns</p>
 </p>
     
@@ -2142,71 +2097,6 @@
             
   <td class="" o-component-default >
     <p class="first"><p><code class="language-plaintext highlighter-rouge">columns</code> attribute value</p>
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>quick-filter-placeholder</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Quick filter input placeholder text</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>‘SEARCH’</p>
 </p>
     
   </td>
@@ -2948,7 +2838,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-07T08:03:08-04:00">October 07, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-28T08:16:17-04:00">October 28, 2022</time></p>
         
       </footer>
 
@@ -2966,7 +2856,7 @@
       </a>
     
     
-      <a href="https://ontimizeweb.github.io/docs/v8/components/table/api" class="pagination--pager" title="Table
+      <a href="https://ontimizeweb.github.io/docs/v8/components/table/export" class="pagination--pager" title="Export table data
 ">
         Next
         <i class="fas fa-arrow-right margin-left"></i>

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-10-07T08:03:08-04:00">
+  <meta property="article:published_time" content="2022-10-28T08:16:17-04:00">
 
 
 
@@ -801,7 +801,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="October 07, 2022">
+    <meta itemprop="datePublished" content="October 28, 2022">
     
 
     <div class="page__inner-wrap">
@@ -1038,7 +1038,7 @@
       <td>Service for uploading files, used by the <a href="https://ontimizeweb.github.io/docs/v8/components/input/file/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-file-input</code></a>  component</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">OntimizeExportService</code></td>
+      <td><code class="language-plaintext highlighter-rouge">OntimizeExportService</code> and <code class="language-plaintext highlighter-rouge">OntimizeExportService3X</code></td>
       <td><code class="language-plaintext highlighter-rouge">O_EXPORT_SERVICE</code></td>
       <td>Service used by the <a href="https://ontimizeweb.github.io/docs/v8/components/table/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a> component for exporting its data</td>
     </tr>
@@ -1056,6 +1056,11 @@
       <td><code class="language-plaintext highlighter-rouge">OReportService</code></td>
       <td><code class="language-plaintext highlighter-rouge">O_REPORT_SERVICE</code></td>
       <td>Service used to generate reports (since <em>ontimize-web-ngx@8.7.0</em>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">OntimizeExportDataProviderService</code> and <code class="language-plaintext highlighter-rouge">OntimizeExportDataProviderService3X</code></td>
+      <td><code class="language-plaintext highlighter-rouge">O_EXPORT_DATA_SERVICE</code></td>
+      <td>Service used to provide data and styles to table exports (since <em>ontimize-web-ngx@8.8.0</em>)</td>
     </tr>
   </tbody>
 </table>
@@ -1288,13 +1293,10 @@ You can check the options available in this example:</p>
 
 <h3 id="use-your-service-in-a-specific-component">Use your service in a specific component</h3>
 
-<p>If you want to use your service in a specific component instead of using it in the whole application, you have to create a factory method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.</p>
+<p>If you want to use your service in a specific component instead of using it in the whole application, you have to create a provide  method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">StarWarsService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../../shared/star-wars.service</span><span class="dl">'</span><span class="p">;</span>
 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">starWarsServiceFactory</span><span class="p">(</span><span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">):</span> <span class="nx">StarWarsService</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nx">StarWarsService</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
-<span class="p">}</span>
 
 <span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
 
@@ -1302,14 +1304,13 @@ You can check the options available in this example:</p>
 
   <span class="na">providers</span><span class="p">:</span> <span class="p">[{</span>
     <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">starWars</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">useFactory</span><span class="p">:</span> <span class="nx">starWarsServiceFactory</span><span class="p">,</span>
-    <span class="na">deps</span><span class="p">:</span> <span class="p">[</span><span class="nx">Injector</span><span class="p">]</span>
+    <span class="na">useValue</span><span class="p">:</span> <span class="nx">StarWarsService</span>
   <span class="p">}]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">MyModule</span> <span class="p">{</span> <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Once the service is included in the providers of your module, an instance of it will be available in the module, so you can configure the components for using it. For this, configure the <code class="language-plaintext highlighter-rouge">service-type</code> attribute in the component with the value of the <code class="language-plaintext highlighter-rouge">provide</code> attribute indicated in the previous step. Check the example below.</p>
+<p>Once the service is included in the providers of your module, it will be created an instance of the service for each component. For this, configure the <code class="language-plaintext highlighter-rouge">service-type</code> attribute in the component with the value of the <code class="language-plaintext highlighter-rouge">provide</code> attribute indicated in the previous step. Check the example below.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"starships"</span> <span class="na">entity=</span><span class="s">"starships"</span> <span class="na">columns=</span><span class="s">"name;model;manufacturer;starship_class;crew;passengers"</span>
   <span class="na">visible-columns=</span><span class="s">"name;model;manufacturer;starship_class;passengers"</span>  <span class="na">pageable=</span><span class="s">"yes"</span> <span class="na">quick-filter=</span><span class="s">"no"</span> <span class="na">insert-button=</span><span class="s">"no"</span> <span class="na">fxFlex</span>
@@ -1337,7 +1338,7 @@ You can check the options available in this example:</p>
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-07T08:03:08-04:00">October 07, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-28T08:16:17-04:00">October 28, 2022</time></p>
         
       </footer>
 

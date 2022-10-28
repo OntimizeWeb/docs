@@ -1,0 +1,1778 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Export table data - Ontimize Web</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Ontimize Web">
+<meta property="og:title" content="Export table data">
+
+
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/components/table/export">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/components/table/export">
+
+
+
+  <meta property="og:description" content="     On This Page  ">
+
+
+
+  <meta name="twitter:site" content="@imatiainnova">
+  <meta name="twitter:title" content="Export table data">
+  <meta name="twitter:description" content="     On This Page  ">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/components/table/export">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://ontimizeweb.github.io/docs/v8/images/site-logo.png">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  <meta property="og:image" content="https://ontimizeweb.github.io/docs/v8/images/site-logo.png">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-10-28T08:16:17-04:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://ontimizeweb.github.io/docs/v8",
+      "logo": "https://ontimizeweb.github.io/docs/v8/images/site-logo.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Ontimize Web",
+      "url" : "https://ontimizeweb.github.io/docs/v8",
+      "sameAs" : ["https://twitter.com/imatiainnova"]
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ontimizeweb.github.io/docs/v8/feed.xml" type="application/atom+xml" rel="alternate" title="Ontimize Web Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script defer src="https://ontimizeweb.github.io/docs/v8/assets/js/fontawesome-all.min.js"></script>
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ontimizeweb.github.io/docs/v8/assets/css/main.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-57x57.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="60x60" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-60x60.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="72x72" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-72x72.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="76x76" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-76x76.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="114x114" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-114x114.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="120x120" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-120x120.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="144x144" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-144x144.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="152x152" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-152x152.png?v=M44lzPylqQ">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ontimizeweb.github.io/docs/v8/images/apple-icon-180x180.png?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v8/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v8/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v8/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
+<link rel="icon" type="image/png" href="https://ontimizeweb.github.io/docs/v8/images/android-icon-192x192.png?v=M44lzPylqQ" sizes="192x192">
+<link rel="manifest" href="https://ontimizeweb.github.io/docs/v8/images/manifest.json?v=M44lzPylqQ">
+<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileImage" content="https://ontimizeweb.github.io/docs/v8/images/mstile-144x144.png?v=M44lzPylqQ">
+<meta name="msapplication-config" content="https://ontimizeweb.github.io/docs/v8/images/browserconfig.xml?v=M44lzPylqQ">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+          <a href="https://ontimizeweb.github.io/docs/v8/">
+            <div class="main_icon"></div>
+        </a>
+
+        <script src="https://ontimizeweb.github.io/docs/v8/assets/js/lunr.js"></script>
+<script type="text/javascript" src="/docs/v8/assets/js/ontimize.js"></script>
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Ontimize Web" aria-label="Search Ontimize Web"
+      autocomplete="off">
+    <label for="search-input" class="search-label">
+      <i class="fa fa-fw fa-search search-icon" aria-hidden="true"></i>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+
+
+<div class="search-overlay"></div>
+
+
+
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <!--<li class="masthead__menu-item masthead__menu-item--lg"><a href="https://ontimizeweb.github.io/docs/v8/">Ontimize Web</a></li>-->
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v8/doc-overview/">Getting started</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item masthead__menu-item-active"><a href="https://ontimizeweb.github.io/docs/v8/components/">Components</a>
+            
+            </li>
+
+
+            
+              <div class="masthead__menu-separator"></div>
+            
+
+          
+            
+
+
+
+            
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v8/about/">About</a>
+            
+            </li>
+
+
+            
+            
+
+          
+
+          
+          <li class="masthead__menu-item masthead__menu-item-active">
+            <select onchange="window.location = this.options[this.selectedIndex].value">
+            
+              <option value="https://ontimizeweb.github.io/docs/v4" >4.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
+            
+            </select>
+          </li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+
+ <script type="text/javascript" style="display:none;">
+  var onNavigationItemClick = function (element) {
+
+    var parentNav = $(element).parents('nav.nav__list');
+    var icons = parentNav.find('svg');
+    icons.addClass('fa-folder');
+    icons.addClass('orange-icon');
+    icons.removeClass('fa-folder-open');
+
+    var parentLi = $(element).parents('li.nav-component-category:first');
+    parentLi.siblings().removeClass('active-component-category');
+    parentLi.addClass('active-component-category');
+/*
+    parentLi.siblings(':not(.active-parent)').removeClass('active-component-category');
+    parentLi.toggleClass('active-component-category');
+*/    
+    var currentIcon = parentLi.find('svg:first');
+    currentIcon.addClass('fa-folder-open');
+    currentIcon.removeClass('orange-icon');
+    currentIcon.removeClass('fa-folder');
+
+  };
+</script>
+
+<nav class="nav__list">
+  
+  <ul>
+    
+    
+    
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+                      
+                            
+                      
+                            
+                      
+                  
+              
+                  
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+          
+              
+                  
+              
+                  
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
+                 
+      
+    
+ 
+    
+
+    
+
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Input</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/overview/overview" class=" overview">Overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/combo/overview" class=" ">Combo</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/checkbox/overview" class=" ">Checkbox</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/date/overview" class=" ">Date</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/currency/overview" class=" ">Currency</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/email/overview" class=" ">Email</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/file/overview" class=" ">File</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/html/overview" class=" ">HTML</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/daterange/overview" class=" ">Date range</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/hour/overview" class=" ">Hour</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/listpicker/overview" class=" ">List picker</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/integer/overview" class=" ">Integer</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/nif/overview" class=" ">NIF</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/password/overview" class=" ">Password</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/percent/overview" class=" ">Percentage</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/phone/overview" class=" ">Phone <span class='menuitem-badge'>new<span></a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/radio/overview" class=" ">Radio</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/real/overview" class=" ">Real</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/slidetoggle/overview" class=" ">Slide toggle</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/slider/overview" class=" ">Slider</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/text/overview" class=" ">Text</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/textarea/overview" class=" ">Textarea</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/time/overview" class=" ">Time</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Button</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/button/overview" class=" ">Button</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/buttontoggle/overview" class=" ">Button toggle</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Data</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/filterbuilder/overview" class=" ">Filter builder</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/form/overview" class=" ">Form</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/grid/overview" class=" ">Grid</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/list/overview" class=" ">List</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/table/overview" class=" ">Table</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Media</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/image/overview" class=" ">Image</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Layout</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/applayout/overview" class=" ">App layout</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/breadcrumb/overview" class=" ">Breadcrumb</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/containers/overview" class=" ">Containers</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/contextmenu/overview" class=" ">Context menu</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/dialog/overview" class=" ">Dialog</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/formlayoutmanager/overview" class=" ">Form layout mngr.</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/snackbar/overview" class=" ">SnackBar</a></li>
+          
+        </ul>
+        
+      </li>
+    
+    
+
+      
+       
+      <li class="nav-component-category ">
+        
+          
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Menu</span>
+          
+
+        
+
+        
+        <ul class="category-components-list">
+          
+
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/menu/overview" class=" overview">Overview</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/cardmenulayout/overview" class=" ">Card menu layout</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/barmenu/overview" class=" ">Bar menu</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/sidemenu/overview" class=" ">Side menu <small>(deprecated)</small></a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+  <article class="page  o-component " itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <meta itemprop="headline" content="Export table data">
+    
+    <meta itemprop="description" content="     On This Page  ">
+    
+    <meta itemprop="datePublished" content="October 28, 2022">
+    
+
+    <div class="page__inner-wrap">
+      
+      <header>
+        <h1 class="page__title" itemprop="headline">Export table data
+</h1>
+        
+      </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#compatibility-between-ontimize-server-and-ontimize-web" id="markdown-toc-compatibility-between-ontimize-server-and-ontimize-web">Compatibility between Ontimize server and Ontimize Web</a></li>
+  <li><a href="#ontimize-jee-and-ontimize-boot-2xx-or-lower" id="markdown-toc-ontimize-jee-and-ontimize-boot-2xx-or-lower">Ontimize JEE and Ontimize Boot 2.X.X or lower</a>    <ul>
+      <li><a href="#custom-exportation-end-point" id="markdown-toc-custom-exportation-end-point">Custom exportation end point</a></li>
+      <li><a href="#customizing-data-provider" id="markdown-toc-customizing-data-provider">Customizing data provider</a></li>
+    </ul>
+  </li>
+  <li><a href="#ontimize-boot-390-or-higher" id="markdown-toc-ontimize-boot-390-or-higher">Ontimize Boot 3.9.0 or higher</a>    <ul>
+      <li><a href="#custom-exportation-end-point-1" id="markdown-toc-custom-exportation-end-point-1">Custom exportation end point</a></li>
+      <li><a href="#customizing-data-provider-1" id="markdown-toc-customizing-data-provider-1">Customizing data provider</a></li>
+    </ul>
+  </li>
+  <li><a href="#customizing-export-service" id="markdown-toc-customizing-export-service">Customizing export service</a>    <ul>
+      <li><a href="#customizing-export-service-in-the-whole-application" id="markdown-toc-customizing-export-service-in-the-whole-application">Customizing export service in the whole application</a></li>
+      <li><a href="#customizing-export-service-for-a-specific-table" id="markdown-toc-customizing-export-service-for-a-specific-table">Customizing export service for a specific table</a></li>
+    </ul>
+  </li>
+</ul>
+
+  </nav>
+</aside>
+
+<p>Since <code class="language-plaintext highlighter-rouge">8.8.0</code> version <strong>Ontimize Web</strong> is compatible with the version <strong>Ontimize Boot 3.9.0 or above</strong>.</p>
+
+<h2 id="compatibility-between-ontimize-server-and-ontimize-web">Compatibility between Ontimize server and Ontimize Web</h2>
+
+<p>Version compatibility table Ontimize server and Ontimize Web</p>
+
+<table class="table-adaptable">
+  <thead>
+    <tr>
+      <th>Ontimize server version</th>
+      <th>Ontimize Web version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ontimize JEE</td>
+      <td>&gt;=8.0.0</td>
+    </tr>
+    <tr>
+      <td>Ontimize Boot 2.x.x</td>
+      <td>&gt;=8.0.0</td>
+    </tr>
+    <tr>
+      <td>Ontimize Boot between 3.0.0 and 3.6.0</td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>Ontimize Boot 3.9.0 or higher</td>
+      <td>&gt;=8.8.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Depending on the server <strong>Ontimize Web</strong> supports customization differents options and next we describe the two versions.</p>
+
+<h2 id="ontimize-jee-and-ontimize-boot-2xx-or-lower">Ontimize JEE and Ontimize Boot 2.X.X or lower</h2>
+<p>With these server versions, the <code class="language-plaintext highlighter-rouge">o-table</code> component is able to export its data in <em>Excel, HTML and PDF</em> format by default</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/v8/images/components/tabla/export-data-table.png" alt="Export table data" class="comp-example-img" /></p>
+
+<p>By default, the <code class="language-plaintext highlighter-rouge">o-table</code> component export <strong>all data</strong> with <strong>the columns names defined in the table, the sqltypes</strong> and <strong>the filter</strong> if used, the component execute the REST(POST) export request in which an object of type <code class="language-plaintext highlighter-rouge">OTableExportData</code> is sent in the body.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">type</span> <span class="nx">OTableExportData</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">data</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
+  <span class="nl">columns</span><span class="p">:</span> <span class="kr">string</span><span class="p">[],</span>
+  <span class="na">columnNames</span><span class="p">:</span> <span class="nx">object</span><span class="p">,</span>
+  <span class="na">sqlTypes</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="na">columnId</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="kr">string</span><span class="p">;</span> <span class="p">};</span>
+  <span class="nl">filter</span><span class="p">:</span> <span class="nx">object</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data</td>
+      <td>Export data</td>
+    </tr>
+    <tr>
+      <td>columns</td>
+      <td>An array that indicates which columns to query in the database</td>
+    </tr>
+    <tr>
+      <td>columnNames</td>
+      <td>Translates the name of the column to be exported, replacing it with the value of the key</td>
+    </tr>
+    <tr>
+      <td>sqlTypes</td>
+      <td>An object containing the key-value pairs for the data type contained in the database. As a key, the column name and as a value, the integer corresponding to the database data type, which can be found at this link.</td>
+    </tr>
+    <tr>
+      <td>filter</td>
+      <td>Un object containing the basic expression for querying</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Next a POST request example will be made to the previously configured url and the body of the request containing all the necessary information for the export.</p>
+
+<ul>
+  <li><strong>URL:</strong> http://localhost:8080/qsallcomponents-jee/services/rest/customers/customer/xlsx</li>
+  <li><strong>HTTP Method:</strong> POST</li>
+  <li><strong>Authorization:</strong> User: demo, Password: demouser</li>
+  <li><strong>Body:</strong> JSON</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "data": [],
+    "columns": [
+        "NAME",
+        "SURNAME",
+        "STARTDATE",
+        "EMAIL",
+        "ADDRESS",
+        "CUSTOMERTYPEID"
+    ],
+    "columnNames": {
+        "NAME": "Name",
+        "SURNAME": "Surname",
+        "STARTDATE": "Start date",
+        "EMAIL": "Email",
+        "ADDRESS": "Address",
+        "CUSTOMERTYPEID": "Type"
+    },
+    "sqlTypes": {
+        "SURNAME": 12,
+        "EMAIL": 12,
+        "CUSTOMERTYPEID": 4,
+        "ADDRESS": 12,
+        "NAME": 12,
+        "CUSTOMERID": 4,
+        "STARTDATE": 93
+    },
+    "filter": {
+        "@basic_expression": {
+            "lop": "CUSTOMERTYPEID",
+            "op": "=",
+            "rop": 2
+        }
+    }
+}
+</code></pre></div></div>
+
+<p><strong>The exportation process is performed as follows:</strong></p>
+
+<ul>
+  <li>
+    <p>Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider collects all the required information to perform the exportation, the table data, column names, column types, filter&#8230; If you want to customize this data provider, please check the <a href="#customizing-data-provider">Custom data provider</a> section.</p>
+  </li>
+  <li>
+    <p>Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export.service.ts" target="_blank">OntimizeExportService</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section.</p>
+  </li>
+</ul>
+
+<p>The rest interface used for this must be like the following by default:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://{ your-api-endpoint }/{ table-service-path }/{ table-entity }/{ format-selected }
+</code></pre></div></div>
+
+<p>Where <b>format-selected</b> can be: <b>&#8216;xlsx&#8217;</b>, <b>&#8216;html&#8217;</b> or <b>&#8216;pdf&#8217;</b> depending on the format selected. You can also export the table data in other format using a <a href="https://ontimizeweb.github.io/docs/v8/components/table#table-export-button">o-table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute <code class="language-plaintext highlighter-rouge">export-type</code> of the <a href="https://ontimizeweb.github.io/docs/v8/components/table#table-export-button">o-table-export-button</a> component.</p>
+
+<p>If you want to customize this end point, please check the <a href="https://ontimizeweb.github.io/docs/v8/components/table/export#custom-exportation-end-point">Custom exportation end point</a> section.</p>
+
+<p>The service must send a response with an object containing an unique identifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.</p>
+
+<p>You can see an example of the exportation method end point in the following example.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/{extension}"</span><span class="o">,</span> <span class="n">consumes</span> <span class="o">=</span> <span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON_VALUE</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">ResponseEntity</span><span class="o">&lt;</span><span class="nc">JSONObject</span><span class="o">&gt;</span> <span class="nf">export</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="s">"extension"</span><span class="o">)</span> <span class="nc">String</span> <span class="n">extension</span><span class="o">)</span> <span class="o">{</span>
+
+  <span class="c1">// Generate xlsx file ...</span>
+  <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">generateXLSXFile</span><span class="o">();</span>
+
+  <span class="c1">// Send response</span>
+  <span class="nc">JSONObject</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JSONObject</span><span class="o">();</span>
+  <span class="n">result</span><span class="o">.</span><span class="na">setInt</span><span class="o">(</span><span class="n">extension</span> <span class="o">+</span> <span class="s">"Id"</span><span class="o">,</span> <span class="n">id</span><span class="o">);</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nc">ResponseEntity</span><span class="o">&lt;&gt;(</span><span class="n">result</span><span class="o">,</span> <span class="nc">HttpStatus</span><span class="o">.</span><span class="na">OK</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Finally, the table sends a request to the rest interface with the file identifier provided to perform the download of the file generated on the previous step.
+The rest interface used for downloading the file is like the following by default:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://{ your-api-endpoint }/{ table-service-path }/{ format-selected }/{ file-id }
+</code></pre></div></div>
+
+<p>Where <b>format-selected</b> is the same as in the first request and <b>file-id</b> is the file identifier obtained as response of the first request.</p>
+
+<p>If you want to customize the download end point, please check the <a href="https://ontimizeweb.github.io/docs/v8/components/table/export#custom-exportation-end-point">Custom exportation end point</a> section.</p>
+
+<p>In the following example you can see the download api end point method.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/{extension}/{id}"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">downloadFile</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"extension"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">fileExtension</span><span class="o">,</span>
+    <span class="nd">@PathVariable</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"id"</span><span class="o">,</span> <span class="n">required</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">fileId</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+
+  <span class="c1">// Get the file usint the file identifier</span>
+  <span class="nc">File</span> <span class="n">file</span> <span class="o">=</span> <span class="n">getFile</span><span class="o">(</span><span class="n">fileId</span><span class="o">);</span>
+
+  <span class="c1">// Send response</span>
+  <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/octet-stream"</span><span class="o">);</span>
+  <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Content-Disposition"</span><span class="o">,</span> <span class="s">"attachment; filename=\""</span> <span class="o">+</span> <span class="n">file</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\""</span><span class="o">);</span>
+  <span class="n">response</span><span class="o">.</span><span class="na">setContentLengthLong</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+  <span class="n">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedInputStream</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">));</span>
+  <span class="nc">FileCopyUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">fis</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="custom-exportation-end-point">Custom exportation end point</h3>
+
+<p>For customizing the exportation end points simply add your end points on the service configuration object of the table with the keys <b>exportPath</b> and <b>downloadPath</b>. Check the following example.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">SERVICE_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">users</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/users</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">exportPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/usersExport</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">downloadPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/usersDownload</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Using the above configuration the enpoints would be as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> https://{ your-api-endpoint }/{ exportPath }/{ table-service-path }/{ table-entity }/{ format-selected }
+
+ https://{ your-api-endpoint }/{ downloadPath }/{ table-service-path }/{ format-selected }/{ file-id }
+
+</code></pre></div></div>
+
+<h3 id="customizing-data-provider">Customizing data provider</h3>
+
+<p>When implementing export data, you can customize the OTableExportData object explained in the <a href="#ontimize-jee-and-ontimize-boot-2xx-or-lower">Ontimize JEE and Ontimize Boot 2.X.X or lower</a> section for this you should:</p>
+
+<ul>
+  <li>Extend the export service provider <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> and customize the table export configuration that sending REST request.</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeExportDataProviderService</span>
+ <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomOntimizeExportDataProviderService</span> <span class="kd">extends</span> <span class="nx">OntimizeExportDataProviderService</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">getExportConfiguration</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">tableExportConfiguration</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">super</span><span class="p">.</span><span class="nx">getExportConfiguration</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="nx">selectedItems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">getSelectedItems</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">selectedItems</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">tableExportConfiguration</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">getSelectedItems</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">tableExportConfiguration</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>Add the extended service in the previous point in the app.module.ts with the injection token <code class="language-plaintext highlighter-rouge">O_EXPORT_DATA_SERVICE</code></li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Defining custom providers (if needed)...</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">customProviders</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="p">...</span>
+  <span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="nx">O_EXPORT_DATA_SERVICE</span><span class="p">,</span> <span class="nx">useValue</span><span class="p">:</span> <span class="nx">CustomOntimizeExportDataProviderService</span> <span class="p">},</span>
+  <span class="p">....</span>
+<span class="p">];</span>
+
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">],</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">ONTIMIZE_MODULES</span><span class="p">,</span>
+    <span class="nx">OntimizeWebModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">HttpClientModule</span><span class="p">,</span>
+    <span class="nx">ServiceWorkerModule</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">ngsw-worker.js</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">enabled</span><span class="p">:</span> <span class="nx">environment</span><span class="p">.</span><span class="nx">production</span> <span class="p">})</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">APP_CONFIG</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">CONFIG</span> <span class="p">},</span>
+    <span class="p">...</span><span class="nx">ONTIMIZE_PROVIDERS</span><span class="p">,</span>
+    <span class="p">...</span><span class="nx">customProviders</span>
+  <span class="p">],</span>
+  <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="ontimize-boot-390-or-higher">Ontimize Boot 3.9.0 or higher</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> component is able to export its data in <em>Excel</em>, <em>PDF</em> and <em>CSV</em> format by default.</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/v8/images/components/tabla/export-data-table-3x.png" alt="Export table data" class="comp-example-img" /></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-table</code> component exports <em>all the data</em> if the table has <code class="language-plaintext highlighter-rouge">pageable=no</code> configured or the page data otherwise
+with <strong>the columns names defined in the table, the sqltypes</strong> and <strong>the filter</strong> if used, the component execute the REST(POST) export request in which an object of type <code class="language-plaintext highlighter-rouge">OTableExportData3X</code> is sent in the body in case export CSV or <code class="language-plaintext highlighter-rouge">OTableFormattedExportData3X</code> in case export PDF or EXCEL.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">interface</span> <span class="nx">OTableExportData3X</span> <span class="p">{</span>
+  <span class="nl">type</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">queryParam</span><span class="p">:</span> <span class="nx">QueryParameter</span> <span class="o">|</span> <span class="nx">AdvancedQueryParameter</span><span class="p">;</span>
+  <span class="nl">service</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">path</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">dao</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">advQuery</span><span class="p">:</span> <span class="nx">boolean</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">OTableFormattedExportData3X</span> <span class="kd">extends</span> <span class="nx">OTableExportData3X</span> <span class="p">{</span>
+  <span class="nl">columns</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="na">columnId</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="kr">string</span><span class="p">;</span> <span class="p">};</span>
+  <span class="nl">columnTitles</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="na">columnId</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="kr">string</span><span class="p">;</span> <span class="p">};</span>
+  <span class="nl">columnTypes</span><span class="p">:</span> <span class="p">{</span> <span class="nx">cellNumber</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">styleId</span><span class="p">?:</span> <span class="kr">string</span> <span class="p">};</span>
+  <span class="nl">styles</span><span class="p">:</span> <span class="p">{</span> <span class="nx">styleId</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">style</span><span class="p">?:</span> <span class="nx">OTableExportColumnStyle</span> <span class="p">};</span>
+  <span class="nl">columnStyles</span><span class="p">:</span> <span class="p">{</span> <span class="nx">columnId</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">styleId</span><span class="p">?:</span> <span class="kr">string</span> <span class="p">};</span>
+  <span class="nl">rowStyles</span><span class="p">:</span> <span class="p">{</span> <span class="nx">rowId</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">styleId</span><span class="p">?:</span> <span class="kr">string</span> <span class="p">};</span>
+  <span class="nl">cellStyles</span><span class="p">:</span> <span class="p">{</span> <span class="nx">cellNumber</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">styleId</span><span class="p">?:</span> <span class="kr">string</span> <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the EXCEL export.</p>
+
+<ul>
+  <li><strong>URL:</strong> http://localhost:8080/qsallcomponents-jee/services/rest/export/xlsx</li>
+  <li><strong>HTTP Method:</strong> POST</li>
+  <li><strong>Authorization:</strong> User: demo, Password: demouser</li>
+  <li><strong>Body:</strong> JSON</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "data": [],
+    "columns": [
+        "NAME",
+        "SURNAME",
+        "STARTDATE",
+        "EMAIL",
+        "ADDRESS",
+        "CUSTOMERTYPEID"
+    ],
+    "columnNames": {
+        "NAME": "Name",
+        "SURNAME": "Surname",
+        "STARTDATE": "Start date",
+        "EMAIL": "Email",
+        "ADDRESS": "Address",
+        "CUSTOMERTYPEID": "Type"
+    },
+    "sqlTypes": {
+        "SURNAME": 12,
+        "EMAIL": 12,
+        "CUSTOMERTYPEID": 4,
+        "ADDRESS": 12,
+        "NAME": 12,
+        "CUSTOMERID": 4,
+        "STARTDATE": 93
+    },
+    "filter": {
+        "@basic_expression": {
+            "lop": "CUSTOMERTYPEID",
+            "op": "=",
+            "rop": 2
+        }
+    }
+}
+</code></pre></div></div>
+
+<p><b>The exportation process is performed as follows:</b></p>
+
+<ul>
+  <li>Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider-3x.service.ts" target="_blank">OntimizeExportDataProviderService3X</a> service provider collects all the required information to perform the exportation, the column names, column types, query params, service&#8230; except cell, column and row styles  .</li>
+</ul>
+
+<p>The server allows you to customize the styles of the cells, columns or rows and if you want these additional options you can customize extending this data provider, please check the <a href="#customizing-data-provider-1">Custom data provider</a> section.</p>
+
+<ul>
+  <li>Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-3X.service.ts" target="_blank">OntimizeExportServic3X</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section that will contain the exported data.</li>
+</ul>
+
+<p>The rest interface used for this must be like the following by default:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> https://{ your-api-endpoint }/{ export-path }/{ format-selected }
+</code></pre></div></div>
+
+<p>Where <b>format-selected</b> can be: <b>&#8216;xlsx&#8217;</b>, <b>&#8216;pdf&#8217;</b> or <b>&#8216;csv&#8217;</b> depending on the format selected. You can also export the table data in other format using a <a href="">table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute <code class="language-plaintext highlighter-rouge">export-type</code> of the <code class="language-plaintext highlighter-rouge">o-table-export-button</code> component.</p>
+
+<p>And <b> export-path</b> is <b>export</b> by default, if you want to customize this end point, please check the <a href="#custom-exportation-end-point-1">Custom exportation end point</a> section.</p>
+
+<p>The service must send a response with the generated file.</p>
+
+<p>You need to configure your backend server and you can consult the documentation in this <a href="https://ontimize.github.io/ontimize-boot/basics/excelexport/" target="_blank">link</a></p>
+
+<h3 id="custom-exportation-end-point-1">Custom exportation end point</h3>
+
+<p>For using the exportation with Ontimize Boot 3.7.0 version or above server, the exportConfiguration configuration object must contain the service path.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">app</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">ts</span>
+<span class="p">{</span>
+ <span class="p">...</span>
+ <span class="nx">exportConfiguration</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">path</span><span class="p">:</span><span class="dl">'</span><span class="s1">/customExport</span><span class="dl">'</span>
+ <span class="p">}</span>
+ <span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Using the above configuration the enpoint would be as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> http://{ your-api-endpoint }/customExport/{ format-selected }
+</code></pre></div></div>
+
+<h3 id="customizing-data-provider-1">Customizing data provider</h3>
+
+<p>Implementing the export data, you can customize differents options such as <strong>columns, column names, query filter, and column types</strong>.  <strong>Ontimize Web</strong> allows to replace with the provider defined with the corresponding injection token <a href="https://ontimizeweb.github.io/docs/v8/guide/service#extending-ontimize-web-services"><code class="language-plaintext highlighter-rouge">O_EXPORT_DATA</code></a> and in this way customize the data to be sent to the rest api of the export service</p>
+
+<p>The following example extends the provider by taking into account the marked rows in a table</p>
+
+<ul>
+  <li>Extend the export service provider <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> and customize the table export configuration that sending REST request.</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeExportDataProviderService</span><span class="p">,</span> <span class="nx">OTableExportData3X</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomOntimizeExportDataProviderService</span> <span class="kd">extends</span> <span class="nx">OntimizeExportDataProviderService3X</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">getExportConfiguration</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">tableExportConfiguration</span><span class="p">:</span> <span class="nx">OTableExportData3X</span> <span class="o">=</span> <span class="k">super</span><span class="p">.</span><span class="nx">getExportConfiguration</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="nx">selectedItems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">getSelectedItems</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">selectedItems</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">tableExportConfiguration</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">getSelectedItems</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">tableExportConfiguration</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>Add the extended service in the previous point in the app.module.ts with the injection token <code class="language-plaintext highlighter-rouge">O_EXPORT_DATA_SERVICE</code>.</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Defining custom providers (if needed)...</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">customProviders</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="p">...</span>
+  <span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="nx">O_EXPORT_DATA_SERVICE</span><span class="p">,</span> <span class="nx">useValue</span><span class="p">:</span> <span class="nx">CustomOntimizeExportDataProviderService</span> <span class="p">},</span>
+  <span class="p">....</span>
+<span class="p">];</span>
+
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">],</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">ONTIMIZE_MODULES</span><span class="p">,</span>
+    <span class="nx">OntimizeWebModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">HttpClientModule</span><span class="p">,</span>
+    <span class="nx">ServiceWorkerModule</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">ngsw-worker.js</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">enabled</span><span class="p">:</span> <span class="nx">environment</span><span class="p">.</span><span class="nx">production</span> <span class="p">})</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">APP_CONFIG</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">CONFIG</span> <span class="p">},</span>
+    <span class="p">...</span><span class="nx">ONTIMIZE_PROVIDERS</span><span class="p">,</span>
+    <span class="p">...</span><span class="nx">customProviders</span>
+  <span class="p">],</span>
+  <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>The following example extends the provider by taking into account the marked rows in a table and nd sets the background to green in the first row.</p>
+
+<p>app.module.ts</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">customProviders</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">O_EXPORT_DATA_SERVICE</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">CustomOntimizeExportDataProviderService</span> <span class="p">},</span>
+<span class="p">...</span>
+<span class="p">];</span>
+
+</code></pre></div></div>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeExportDataProviderService3X</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomOntimizeExportDataProviderService</span> <span class="kd">extends</span> <span class="nx">OntimizeExportDataProviderService3X</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">getExportConfiguration</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">exportData</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">super</span><span class="p">.</span><span class="nx">getExportConfiguration</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="nx">selectedItems</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">getSelectedItems</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">selectedItems</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">exportData</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">getSelectedItems</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">exportData</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">greenBG</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">fillBackgroundColor</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GREEN</span><span class="dl">"</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="nx">exportData</span><span class="p">.</span><span class="nx">rowStyles</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">greenBG</span><span class="dl">"</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="nx">exportData</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre></div></div>
+
+<h2 id="customizing-export-service">Customizing export service</h2>
+<h3 id="customizing-export-service-in-the-whole-application">Customizing export service in the whole application</h3>
+<p>By default, <strong>Ontimize Web</strong> use the service <code class="language-plaintext highlighter-rouge">OntimizeExportService</code> or <code class="language-plaintext highlighter-rouge">OntimizeExportService3X</code>  in the whole application depending the Ontimize server version already explained in the section <a href="#compatibility-between-ontimize-server-and-ontimize-web">Compatibility between Ontimize server and Ontimize Web</a> but the framework allows to modify the export service used by setting the property <code class="language-plaintext highlighter-rouge">exportServiceType</code> in <code class="language-plaintext highlighter-rouge">app.config.ts</code> or with service defining with the corresponding injection token <a href="https://ontimizeweb.github.io/docs/v8/guide/service#extending-ontimize-web-services"><code class="language-plaintext highlighter-rouge">O_EXPORT_SERVICE</code></a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ontimize server</th>
+      <th>Service</th>
+      <th>Injection token</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ontimize EE, Ontimize Boot 2.X.X or lower version</td>
+      <td><code class="language-plaintext highlighter-rouge">OntimizeExportService</code></td>
+      <td><code class="language-plaintext highlighter-rouge">O_EXPORT_SERVICE</code></td>
+      <td>Service used by the <a href="https://ontimizeweb.github.io/docs/v8/components/table/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a> component for exporting its data</td>
+    </tr>
+    <tr>
+      <td>Ontimize Boot 3.9.0 or higher</td>
+      <td><code class="language-plaintext highlighter-rouge">OntimizeExportService3X</code></td>
+      <td><code class="language-plaintext highlighter-rouge">O_EXPORT_SERVICE</code></td>
+      <td>Service used by the <a href="https://ontimizeweb.github.io/docs/v8/components/table/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a> component for exporting its data</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Setting the property `exportServiceType` in `app.config.ts` </h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+export const CONFIG: Config = {
+  // The base path of the URL used by app services.
+  apiEndpoint:environment.apiEndpoint,
+
+  ...
+  exportServiceType: ExportServiceExtService //Ontimize EE, Ontimize Boot 2.X.X or lower version
+  or
+  exportServiceType: ExportServiceExtService3X //Ontimize Boot 3.9.0 or higher
+  ...
+</code></pre></div></div>
+
+<h4>Service defining with the `O_EXPORT_SERVICE` injection token </h4>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Defining custom providers (if needed)...</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">customProviders</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">...</span>
+  <span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="nx">O_EXPORT_SERVICE</span><span class="p">,</span> <span class="nx">useValue</span><span class="p">:</span> <span class="nx">ExportServiceExtService</span> <span class="p">}</span> <span class="c1">//Ontimize EE, Ontimize Boot 2.X.X or lower version</span>
+  <span class="nx">or</span>
+  <span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="nx">O_EXPORT_SERVICE</span><span class="p">,</span> <span class="nx">useValue</span><span class="p">:</span> <span class="nx">ExportServiceExtService3X</span> <span class="p">}</span> <span class="c1">//Ontimize Boot 3.9.0 or higher</span>
+  <span class="p">...</span>
+<span class="p">];</span>
+
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">],</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">ONTIMIZE_MODULES</span><span class="p">,</span>
+    <span class="nx">OntimizeWebModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">HttpClientModule</span><span class="p">,</span>
+    <span class="nx">ServiceWorkerModule</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">ngsw-worker.js</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">enabled</span><span class="p">:</span> <span class="nx">environment</span><span class="p">.</span><span class="nx">production</span> <span class="p">})</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">APP_CONFIG</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">CONFIG</span> <span class="p">},</span>
+    <span class="p">...</span><span class="nx">ONTIMIZE_PROVIDERS</span><span class="p">,</span>
+    <span class="p">...</span><span class="nx">customProviders</span>
+  <span class="p">],</span>
+  <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+
+</code></pre></div></div>
+
+<h4>Export service example for Ontimize EE, Ontimize Boot 2.X.X or lower version</h4>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">HttpRequestOptions</span><span class="p">,</span> <span class="nx">Observable</span><span class="p">,</span> <span class="nx">OntimizeExportService</span><span class="p">,</span> <span class="nx">ServiceResponse</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Subscriber</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">map</span><span class="p">,</span> <span class="nx">share</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs/operators</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">ExportServiceExtService</span> <span class="kd">extends</span> <span class="nx">OntimizeExportService</span> <span class="p">{</span>
+
+   <span class="kd">constructor</span><span class="p">(</span><span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">)</span>
+   <span class="p">}</span>
+   <span class="k">public</span> <span class="nx">exportData</span><span class="p">(</span><span class="nx">format</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span class="kd">const</span> <span class="nx">entity</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">exportDataProvider</span><span class="p">.</span><span class="nx">entity</span><span class="p">;</span>
+     <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">urlBase</span><span class="p">}${</span><span class="k">this</span><span class="p">.</span><span class="nx">exportPath</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">exportPath</span> <span class="p">:</span> <span class="dl">''</span><span class="p">}${</span><span class="k">this</span><span class="p">.</span><span class="nx">servicePath</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">entity</span><span class="p">}</span><span class="s2">/</span><span class="p">${</span><span class="nx">format</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+
+     <span class="kd">const</span> <span class="na">options</span><span class="p">:</span> <span class="nx">HttpRequestOptions</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="na">headers</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">buildHeaders</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">application/json;charset=UTF-8</span><span class="dl">'</span><span class="p">),</span>
+       <span class="na">observe</span><span class="p">:</span> <span class="dl">'</span><span class="s1">response</span><span class="dl">'</span>
+     <span class="p">};</span>
+
+
+     <span class="kd">const</span> <span class="na">exportData</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">exportDataProvider</span><span class="p">.</span><span class="nx">getExportConfiguration</span><span class="p">();</span>
+     <span class="nx">exportData</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">exportDataProvider</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">getSelectedItems</span><span class="p">();</span>
+     <span class="kd">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">exportData</span><span class="p">);</span>
+     <span class="kd">const</span> <span class="na">dataObservable</span><span class="p">:</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Observable</span><span class="p">((</span><span class="na">observer</span><span class="p">:</span> <span class="nx">Subscriber</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+       <span class="k">this</span><span class="p">.</span><span class="nx">httpClient</span><span class="p">.</span><span class="nx">post</span><span class="o">&lt;</span><span class="nx">ServiceResponse</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">options</span><span class="p">).</span><span class="nx">pipe</span><span class="p">(</span>
+         <span class="nx">map</span><span class="p">((</span><span class="na">resData</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">adapt</span><span class="p">(</span><span class="nx">resData</span><span class="p">))</span>
+       <span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">resp</span> <span class="o">=&gt;</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">parseSuccessfulExportDataResponse</span><span class="p">(</span><span class="nx">format</span><span class="p">,</span> <span class="nx">resp</span><span class="p">,</span> <span class="nx">observer</span><span class="p">);</span>
+       <span class="p">},</span> <span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="nx">parseUnsuccessfulResponse</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">observer</span><span class="p">);</span>
+       <span class="p">});</span>
+     <span class="p">});</span>
+     <span class="k">return</span> <span class="nx">dataObservable</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">share</span><span class="p">());</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<h4>Export service example for Ontimize Boot 3.9.0 or higher</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import { Injectable, Injector } from '@angular/core';
+import { HttpRequestOptions, Observable, OntimizeExportService3X } from 'ontimize-web-ngx';
+import { share } from 'rxjs/operators';
+
+@Injectable()
+export class ExportServiceExtService3X extends OntimizeExportService3X {
+
+   constructor(injector: Injector) {
+     super(injector)
+   }
+   public exportData(format: string): Observable&lt;any&gt; {
+     const url = `${this.urlBase}${this.exportPath}/${format}`;
+
+     const options: HttpRequestOptions = {
+       headers: this.buildHeaders().append('Content-Type', 'application/json;charset=UTF-8'),
+       observe: 'response',
+       responseType: 'blob'
+     };
+
+
+     let exportData: any = this.exportDataProvider.getExportConfiguration();
+     exportData.path = this.servicePath;
+
+     const body = JSON.stringify(exportData);
+     const dataObservable = new Observable(observer =&gt; {
+       this.httpClient.post(url, body, options).subscribe(
+         (resp: any) =&gt; {
+           const fileData = resp.body;
+           const contentDisposition = resp.headers.get('content-disposition');
+           let fileName = 'file.' + format;
+           const fileNameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+           const matches = fileNameRegex.exec(contentDisposition);
+           if (matches != null &amp;&amp; matches[1]) {
+             fileName = matches[1].replace(/['"]/g, '');
+           }
+           const fileURL = URL.createObjectURL(fileData);
+           const a = document.createElement('a');
+           document.body.appendChild(a);
+           a.href = fileURL;
+           a.download = fileName;
+           a.click();
+           document.body.removeChild(a);
+           observer.next(fileData);
+           URL.revokeObjectURL(fileURL);
+         }, error =&gt; observer.error(error),
+         () =&gt; observer.complete()
+       );
+     });
+     return dataObservable.pipe(share());
+   }
+</code></pre></div></div>
+<h3 id="customizing-export-service-for-a-specific-table">Customizing export service for a specific table</h3>
+<p>In addition, it is possible to configure the use of an export service for a specific table with the <code class="language-plaintext highlighter-rouge">export-service-type</code> input in <code class="language-plaintext highlighter-rouge">o-table</code> component with service defining in the <code class="language-plaintext highlighter-rouge">app.module.ts</code> file.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">....</span>
+
+<span class="c1">// Defining custom providers (if needed)...</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">customProviders</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">...</span>
+  <span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="nx">ExportServiceExtService</span><span class="p">},</span>
+<span class="p">...</span>
+<span class="p">];</span>
+
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">],</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">ONTIMIZE_MODULES</span><span class="p">,</span>
+    <span class="nx">OntimizeWebModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">HttpClientModule</span><span class="p">,</span>
+    <span class="nx">ServiceWorkerModule</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">ngsw-worker.js</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">enabled</span><span class="p">:</span> <span class="nx">environment</span><span class="p">.</span><span class="nx">production</span> <span class="p">})</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">APP_CONFIG</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">CONFIG</span> <span class="p">},</span>
+    <span class="p">...</span><span class="nx">ONTIMIZE_PROVIDERS</span><span class="p">,</span>
+    <span class="p">...</span><span class="nx">customProviders</span>
+  <span class="p">],</span>
+  <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+
+</code></pre></div></div>
+<p>Modify <code class="language-plaintext highlighter-rouge">o-table</code> component</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-table</span> <span class="na">attr=</span><span class="s">"table"</span> <span class="na">export-service-type=</span><span class="s">"ExportServiceExtService"</span> <span class="err">...</span> <span class="nt">&gt;</span>
+      ...
+<span class="nt">&lt;/o-table&gt;</span>
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+
+        
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-28T08:16:17-04:00">October 28, 2022</time></p>
+        
+      </footer>
+
+      
+
+      <!-- 
+
+
+  <nav class="pagination">
+    
+      <a href="https://ontimizeweb.github.io/docs/v8/components/grid/overview" class="pagination--pager" title="Grid
+">
+          <i class="fas fa-arrow-left margin-right"></i>
+        Previous
+      </a>
+    
+    
+      <a href="https://ontimizeweb.github.io/docs/v8/components/table/api" class="pagination--pager" title="Table
+">
+        Next
+        <i class="fas fa-arrow-right margin-left"></i>
+      </a>
+    
+  </nav>
+ -->
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<a href="#" class="scrollToTop"><i class="fa fa-fw fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/imatiainnova" target="_blank"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+    
+    
+      <li><a href="http://github.com/OntimizeWeb" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    <li><a href="https://ontimizeweb.github.io/docs/v8/feed.xml" target="_blank"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+      </footer>
+    </div>
+
+    <script src="https://ontimizeweb.github.io/docs/v8/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2011187-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
