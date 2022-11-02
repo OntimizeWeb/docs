@@ -258,6 +258,46 @@ The filter builder is a component whose purpose is to solve the problem describe
 
 ![Custom form toolbar buttons]({{ "/images/components/form/customtoolbarform.png" | absolute_url }}){: .comp-example-img}
 
+## Custom form messages
+The `o-form` component displays different messages after ending some actions. `OntimizeWeb` provides a custom set of messages for this actions that might be overrided using the `message-service-type` input. For doing that,
+the user has to define that service as a provider (inside the component module definition, or even the app module, in the same way user might define a `service-type`) and implement it extending the `OFormMessageService` class, overriding
+the methods that returns those messages that want to be changed. User can see the implementation of the `OFormMessageService` [here](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/components/form/services/o-form-message.service.ts).
+
+```js
+...
+  providers: [
+    { provide: 'customMessageServiceType', useValue: CustomMessageService },
+  ]
+...
+```
+
+```js
+import { Injectable } from "@angular/core";
+import { OFormMessageService } from "ontimize-web-ngx";
+
+@Injectable()
+export class CustomMessageService extends OFormMessageService {
+  
+  getDiscardChangesConfirmationMessage(): string {
+    return 'Are you really sure you want to do this? All changes will be lost';
+  }
+
+  getUpdateErrorMessage(): string {
+    return 'Saving data failed';
+  }
+
+  ...
+}
+```
+
+```html
+<o-form attr="customers_form_edit" service="customers" entity="customer" keys="CUSTOMERID" 
+  message-service-type="customMessageServiceType">
+  ...
+</o-form>  
+```
+
+
 ## CSS class
 
 To extend the form in your screen, you can use the CSS class `fill-form` in o-form component.
