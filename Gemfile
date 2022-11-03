@@ -27,4 +27,4 @@ end
 
 gem "ffi", ">= 1.11.1"
 gem "rubyzip", ">= 1.3.0"
-gem "nokogiri", ">= 1.12.5"
+gem "nokogiri", ">= 1.10.8"
