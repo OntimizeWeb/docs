@@ -164,6 +164,12 @@ attributes: [
   default: "no",
   required: "",
   description: "ignore default navigation when user click the toolbar buttons."
+},{
+  name: "message-service-type",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Custom service to display CRUD and other actions form messages"
 }]
 
 outputs: [{
