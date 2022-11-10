@@ -16,13 +16,13 @@ jobs:
     if: github.event_name == 'workflow_dispatch' ||
       (github.event.pull_request.merged == true && contains(join(github.event.pull_request.labels.*.name, ', '), 'release-docs'))
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: 8.x.x
           fetch-depth: 0
 
       - name: Bundler Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
