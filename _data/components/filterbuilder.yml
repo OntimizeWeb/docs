@@ -1,6 +1,11 @@
 directive : "o-filter-builder"
 
-attributes: [{
+extraComponents: "filterBuilderMenu"
+
+attributes: [
+  {
+  name: "attr"
+  },{
   name: "filters",
   type: "string",
   default: "",

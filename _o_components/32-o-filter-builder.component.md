@@ -114,6 +114,35 @@ export class EmployeesHomeComponent {
 
 }
 ```
+## Load/Save/Clear filter builder configuration <span class='menuitem-badge'>new<span>
+The `o-filter-builder-menu` component allows to **Filter/Save/Load/Clear** the filter values ​​of a specific filter builder.
+
+Here is an example
+
+```html
+  <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
+  ...
+      <div fxLayout="row wrap" fxLayoutGap="32px">
+        <o-text-input attr="NAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
+        <o-text-input attr="SURNAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
+        <o-combo #type attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+          value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" fxFlex="calc(25% - 32px)"></o-combo>
+        <o-text-input attr="EMAIL" read-only="no" fxFlex="25%"></o-text-input>
+      </div>
+        ...
+          <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="STROKED" label="Clear" layout-padding>
+          </o-button>
+          <o-button attr="filter" [oFilterBuilderQuery]="filterBuilder" type="STROKED" label="Filter" layout-padding color="accent">
+          </o-button>
+          <!-- ADDING FILTER BUILDER MENU-->
+          <o-filter-builder-menu [oFilterBuilder]="filterBuilder" show-filter-option="no" show-clear-filter-option="no" layout-padding></o-filter-builder-menu>
+        ...
+      <o-filter-builder #filterBuilder attr="thefilter" ... [target]=...></o-filter-builder>
+    </o-form>
+```
+
+
+![Filter builder menu]({{ "/images/components/filter-builder/filter-builder-menu.png" | absolute_url }}){: .comp-example-img}
 
 ## Demo
 You can see this working example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/employees){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home){:target="_blank"}.
