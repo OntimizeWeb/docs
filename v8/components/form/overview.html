@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-10-28T08:16:17-04:00">
+  <meta property="article:published_time" content="2022-11-11T04:23:59-05:00">
 
 
 
@@ -860,7 +860,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="October 28, 2022">
+    <meta itemprop="datePublished" content="November 11, 2022">
     
 
     <div class="page__inner-wrap">
@@ -949,6 +949,7 @@
     </ul>
   </li>
   <li><a href="#custom-form-toolbar-buttons" id="markdown-toc-custom-form-toolbar-buttons">Custom form toolbar buttons</a></li>
+  <li><a href="#custom-form-messages" id="markdown-toc-custom-form-messages">Custom form messages</a></li>
   <li><a href="#css-class" id="markdown-toc-css-class">CSS class</a></li>
 </ul>
 
@@ -1207,6 +1208,42 @@ This is the mode used by the form to perform creation operations. In this mode, 
 </code></pre></div></div>
 
 <p><img src="https://ontimizeweb.github.io/docs/v8/images/components/form/customtoolbarform.png" alt="Custom form toolbar buttons" class="comp-example-img" /></p>
+
+<h2 id="custom-form-messages">Custom form messages</h2>
+<p>The <code class="language-plaintext highlighter-rouge">o-form</code> component displays different messages after ending some actions. <code class="language-plaintext highlighter-rouge">OntimizeWeb</code> provides a custom set of messages for this actions that might be overrided using the <code class="language-plaintext highlighter-rouge">message-service-type</code> input. For doing that,
+the user has to define that service as a provider (inside the component module definition, or even the app module, in the same way user might define a <code class="language-plaintext highlighter-rouge">service-type</code>) and implement it extending the <code class="language-plaintext highlighter-rouge">OFormMessageService</code> class, overriding
+the methods that returns those messages that want to be changed. User can see the implementation of the <code class="language-plaintext highlighter-rouge">OFormMessageService</code> <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/components/form/services/o-form-message.service.ts">here</a>.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+  <span class="nx">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">customMessageServiceType</span><span class="dl">'</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">CustomMessageService</span> <span class="p">},</span>
+  <span class="p">]</span>
+<span class="p">...</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@angular/core</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OFormMessageService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">ontimize-web-ngx</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomMessageService</span> <span class="kd">extends</span> <span class="nx">OFormMessageService</span> <span class="p">{</span>
+  
+  <span class="nx">getDiscardChangesConfirmationMessage</span><span class="p">():</span> <span class="nx">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Are you really sure you want to do this? All changes will be lost</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">getUpdateErrorMessage</span><span class="p">():</span> <span class="nx">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">Saving data failed</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">attr=</span><span class="s">"customers_form_edit"</span> <span class="na">service=</span><span class="s">"customers"</span> <span class="na">entity=</span><span class="s">"customer"</span> <span class="na">keys=</span><span class="s">"CUSTOMERID"</span> 
+  <span class="na">message-service-type=</span><span class="s">"customMessageServiceType"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/o-form&gt;</span>  
+</code></pre></div></div>
 
 <h2 id="css-class">CSS class</h2>
 
@@ -2699,6 +2736,71 @@ This is the mode used by the form to perform creation operations. In this mode, 
             
   <td class="" o-component-default >
     <p class="first"><p>yes</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>message-service-type</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Custom service to display CRUD and other actions form messages</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
 </p>
     
   </td>
@@ -4885,7 +4987,7 @@ This is the mode used by the form to perform creation operations. In this mode, 
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-10-28T08:16:17-04:00">October 28, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-11-11T04:23:59-05:00">November 11, 2022</time></p>
         
       </footer>
 
