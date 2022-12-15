@@ -360,7 +360,7 @@ methods: [{
   type: "(row: any) => boolean",
   default: "",
   required: "",
-  description: "Function that will be used to disable the enable/disable state of the checkboxes of the rows."
+  description: "Function that will be used to allow row selection by changing the enable/disable state of the checkboxes of the rows."
 }
 
 
