@@ -814,7 +814,7 @@ You can configure show in the menu on the upper right the option of select row w
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
-Additionally, you can specify a function setting the input `disable-selection-function` to disable the checkboxes.
+Additionally, you can specify a function setting the input `disable-selection-function` to disable the checkboxes depending on a condition. This function receives full data record for allowing you to enable/disable selection checkbox depending on value/s of the record.
 
 ### Fixed header and footer
 The `o-table` component supports *fixed header* and *footer* setting `fixed-header="yes"` when its content is greater than its own height. For that, you must set the height of the table, using, for example `[ngStyle]="height: 400px;"`. By default, it's disabled.
