@@ -808,11 +808,13 @@ Below is an example of using the **pattern validator**.
 ## Features
 ### Checkbox selection
 
-The table supports checkbox selection with `select-all-checkbox-visible` property. If this property is activated will display the row checkboxes,including a master toggle checkbox for the header. It is disabled by default.
+The table supports checkbox selection with `select-all-checkbox-visible` property. If this property is activated will display the row checkboxes, including a master toggle checkbox for the header. It is disabled by default.
 
 You can configure show in the menu on the upper right the option of select row with `select-all-checkbox` property. It is disabled by default.
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
+
+Additionally, you can specify a function setting the input `disable-selection-function` to disable the checkboxes.
 
 ### Fixed header and footer
 The `o-table` component supports *fixed header* and *footer* setting `fixed-header="yes"` when its content is greater than its own height. For that, you must set the height of the table, using, for example `[ngStyle]="height: 400px;"`. By default, it's disabled.

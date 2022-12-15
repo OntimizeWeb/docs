@@ -355,6 +355,12 @@ methods: [{
   type: "method",
   parameters: "",
   description: "Get sqlTypes from data source "
+},{
+  name: "disable-selection-function",
+  type: "(row: any) => boolean",
+  default: "",
+  required: "",
+  description: "Function that will be used to disable the enable/disable state of the checkboxes of the rows."
 }
 
 
