@@ -319,10 +319,10 @@ There is different types of `MenuRootItem` depending on the task they are define
 In addition to the attributes of the `MenuItem`, you can include other attributes depending on what kind of menu item you want. All the following menu item types extend from the `MenuItem`, all its attributes are inherited.
 
 <details class="collapsible">
-  <summary markdown="span">MenuItemRoute</summary>
+  <summary markdown="span">MenuItemRoute or MenuGroupRoute</summary>
   <div class="collapsible-content" markdown="1">
 
-  For navigating the different modules of your application you must include a <code>MenuItemRoute</code>, its attributes are the following:
+  For navigating the different modules of your application you must include a <code>MenuItemRoute</code> or <code>MenuGroupRoute</code>, its attributes are the following:
 
   | Name  | Type   | Description |
   | ----- | ------ | ----------- |
