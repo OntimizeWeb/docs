@@ -1,6 +1,6 @@
 {% include base_path %}
 
-{% assign inputsColumns = "Name|Description|Default" | split: "|" %}
+{% assign inputsColumns = "Name|Since|Description|Default" | split: "|" %}
 {% assign outputsColumns = "Name|Description" | split: "|" %}
 {% assign methodsColumns = "Name|Description|Parameters|Returns" | split: "|" %}
 
