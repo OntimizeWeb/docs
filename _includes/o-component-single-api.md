@@ -1,5 +1,5 @@
 
-{% assign inputsColumns = "Name|Description|Default" | split: "|" %}
+{% assign inputsColumns = "Name|Since|Description|Default" | split: "|" %}
 {% assign componentData = include.component %}
 {% if componentData %}
  {% if componentData.title %}
@@ -138,9 +138,11 @@
           {% unless emptyColumns contains columnKey %}
             {% assign columnData = 'o-component-' | append: columnKey %}
             {% assign requiredData = '' %}
-
             {% assign cellValue = commonData[columnKey] %}
             {% if attributeObject[columnKey] != undefined %}
+              {% if attributeObject[columnKey] == 'since' %}
+               {% assign cellValue = attributeObject[columnKey] | default:'-' %}
+              {% endif %}
               {% assign cellValue = attributeObject[columnKey] %}
             {% endif %}
             {% assign cellContent = cellValue | default: '' %}

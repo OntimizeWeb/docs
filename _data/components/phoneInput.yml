@@ -12,7 +12,15 @@ attributes: [{
   default : "",
   required : "",
   description : "Specifies the countries code that will appear in the country selection combo, if this input is not present the combo will be filled with a predefined list of countries."
-}]
+},{
+   name: "gap",
+  type: "string",
+  default : "14px",
+  required : "",
+  description : " Specify gap between fields in px",
+  since: "8.8.3"
+}
+]
 
 inheritedOutputs: [{
   component: "FormDataComponent",
