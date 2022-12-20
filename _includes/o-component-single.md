@@ -13,7 +13,7 @@
 {% if componentData %}
 
 {% assign inputsColumns = "Name|Description|Default" | split: "|" %}
-{% assign outputsColumns = "Name|Description" | split: "|" %}
+{% assign outputsColumns = "Name|Sice|Description" | split: "|" %}
 {% assign methodsColumns = "Name|Description|Parameters|Returns" | split: "|" %}
 
 <script type="text/javascript">
