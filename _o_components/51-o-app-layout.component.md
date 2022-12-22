@@ -59,7 +59,44 @@ Configure this mode by setting the **mobile** value in the `mode` attribute in t
 
 ## Toolbar
 
-The application layout component may show a toolbar at the top of the screen by setting the `show-header` attribute to **yes**. Check this and other attributes in the **API** section of this page.
+The application layout component show a toolbar at the top of the screen by default, but if you want avoid displaing you must set the `show-header` attribute to **no**. Check this and other attributes in the **API** section of this page.
+
+In the toolbar, it can show a title.
+
+![App layout title]({{ "/images/layouts/app-layout/app_layout_title.png" | absolute_url }})
+
+There are two ways to show the title in the toolbar:
+* Display a **static title**: The same title is displaing in whole application. To configure this option you must set `static-title` and `show-static-title` to `yes`.
+
+```html
+<o-app-layout [static-title]="staticTitle" show-static-title="yes"... ></o-app-layout>
+```
+
+* Display a **no static title**: The title based on the route configuration. To configure this option you must set `show-title` to `yes` and add `oAppHeaderTitle` property in data object during route declaration
+
+```html
+  <o-app-layout ... show-title="yes" ... ></o-app-layout>
+```
+
+```ts
+  export const routes: Routes = [
+  {
+    path: '', component: MainComponent,
+    children: [
+    ...
+      { path: 'about',
+        loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
+        //uses 'no static' title
+        data: { oAppHeaderTitle:'About'}
+      },
+      { path: 'accounts',
+        loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsModule),
+         //uses 'no static' title
+        data: { oAppHeaderTitle: 'Accounts' }
+      },
+      ...
+```
+
 
 The `o-app-layout` component allows you to configure whether or not to show flags on the language selector by setting  the attribute `use-flag-icons` to **yes**. In order to show the language flags, it is necessary install the dependency `flag-icon-css`:
 ```bash
