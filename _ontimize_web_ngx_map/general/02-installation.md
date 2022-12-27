@@ -47,7 +47,7 @@ You must add the module styles definition and the leaflet images in your '*.angu
   ....
   {
     "glob": "**/*",
-    "input": "node_modules/leaflet/dist/images",
+    "input": "node_modules/ontimize-web-ngx-map/images",
     "output": "/assets"
   }
   ....
