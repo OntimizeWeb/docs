@@ -47,7 +47,7 @@ You must add the module styles definition in your '*.angular.json*' file styles 
           ...
           {
             "glob": "**/*",
-            "input": "node_modules/ngx-extended-pdf-viewer/assets",
+            "input": "node_modules/ontimize-web-ngx-report/assets",
             "output": "/assets"
           }
           ...
