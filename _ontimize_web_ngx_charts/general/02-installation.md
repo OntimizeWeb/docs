@@ -47,5 +47,14 @@ You must add the module styles definition in your '*.angular.json*' file styles 
   "node_modules/ontimize-web-ngx-charts/styles.scss",
   ....
 ],
+"assets": [
+  ...
+{
+  "glob": "**/*",
+  "input": "node_modules/ontimize-web-ngx-charts/assets",
+  "output": "/assets"
+},
+  ...
+]
 ...
 ```
