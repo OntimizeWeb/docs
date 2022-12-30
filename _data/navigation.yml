@@ -85,7 +85,7 @@ docs:
         url: /theming/
       - title: "DataTable <small>(deprecated)</small>"
         url: /ontimize-web-ngx-datatable/
-      - title: "Charts"
+      - title: "Charts <span class='menuitem-badge'>new<span>"
         url: /charts/
       - title: "Map"
         url: /map/
@@ -328,6 +328,10 @@ ontimize_web_ngx_charts:
         url: /charts/configuration/discretebarchart/overview
       - title: "Multi Bar Chart"
         url: /charts/configuration/multibarchart/overview
+  - title: "Chart on demand"
+    children:
+      - title: "Overview <span class='menuitem-badge'>new<span>"
+        url: /charts/chart_on_demand/overview
   #- title: "Components"
   #  children:
   #    - title: "Chart"
