@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-12-19T10:08:01-05:00">
+  <meta property="article:published_time" content="2022-12-30T06:13:59-05:00">
 
 
 
@@ -908,7 +908,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="December 19, 2022">
+    <meta itemprop="datePublished" content="December 30, 2022">
     
 
     <div class="page__inner-wrap">
@@ -1053,7 +1053,44 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 <h2 id="toolbar">Toolbar</h2>
 
-<p>The application layout component may show a toolbar at the top of the screen by setting the <code class="language-plaintext highlighter-rouge">show-header</code> attribute to <strong>yes</strong>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+<p>The application layout component show a toolbar at the top of the screen by default, but if you want avoid displaing you must set the <code class="language-plaintext highlighter-rouge">show-header</code> attribute to <strong>no</strong>. Check this and other attributes in the <strong>API</strong> section of this page.</p>
+
+<p>In the toolbar, it can show a title.</p>
+
+<p><img src="https://ontimizeweb.github.io/docs/v8/images/layouts/app-layout/app_layout_title.png" alt="App layout title" /></p>
+
+<p>There are two ways to show the title in the toolbar:</p>
+<ul>
+  <li>Display a <strong>static title</strong>: The same title is displaing in whole application. To configure this option you must set <code class="language-plaintext highlighter-rouge">static-title</code> and <code class="language-plaintext highlighter-rouge">show-static-title</code> to <code class="language-plaintext highlighter-rouge">yes</code>.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-app-layout</span> <span class="na">[static-title]=</span><span class="s">"staticTitle"</span> <span class="na">show-static-title=</span><span class="s">"yes"</span><span class="err">...</span> <span class="nt">&gt;&lt;/o-app-layout&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Display a <strong>no static title</strong>: The title based on the route configuration. To configure this option you must set <code class="language-plaintext highlighter-rouge">show-title</code> to <code class="language-plaintext highlighter-rouge">yes</code> and add <code class="language-plaintext highlighter-rouge">oAppHeaderTitle</code> property in data object during route declaration</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-app-layout</span> <span class="err">...</span> <span class="na">show-title=</span><span class="s">"yes"</span> <span class="err">...</span> <span class="nt">&gt;&lt;/o-app-layout&gt;</span>
+</code></pre></div></div>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">export</span> <span class="kd">const</span> <span class="nx">routes</span><span class="p">:</span> <span class="nx">Routes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="na">component</span><span class="p">:</span> <span class="nx">MainComponent</span><span class="p">,</span>
+    <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+      <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">about</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">loadChildren</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">./about/about.module</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="o">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">AboutModule</span><span class="p">),</span>
+        <span class="c1">//uses 'no static' title</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="na">oAppHeaderTitle</span><span class="p">:</span><span class="dl">'</span><span class="s1">About</span><span class="dl">'</span><span class="p">}</span>
+      <span class="p">},</span>
+      <span class="p">{</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">accounts</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">loadChildren</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="dl">'</span><span class="s1">./accounts/accounts.module</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="o">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">AccountsModule</span><span class="p">),</span>
+         <span class="c1">//uses 'no static' title</span>
+        <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="na">oAppHeaderTitle</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Accounts</span><span class="dl">'</span> <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="p">...</span>
+</code></pre></div></div>
 
 <p>The <code class="language-plaintext highlighter-rouge">o-app-layout</code> component allows you to configure whether or not to show flags on the language selector by setting  the attribute <code class="language-plaintext highlighter-rouge">use-flag-icons</code> to <strong>yes</strong>. In order to show the language flags, it is necessary install the dependency <code class="language-plaintext highlighter-rouge">flag-icon-css</code>:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>npm <span class="nb">install </span>flag-icon-css
@@ -2229,6 +2266,8 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
         
           <th class=""> Name</th>
         
+          <th class=""> Since</th>
+        
           <th class=""> Description</th>
         
         </tr>
@@ -2245,6 +2284,17 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
             <td class="" o-component-name>
               <p>afterCloseSidenav</p>
+
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-since>
+              
 
               
             </td>
@@ -2280,6 +2330,17 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
             
             
 
+            <td class="" o-component-since>
+              
+
+              
+            </td>
+          
+            
+            
+            
+            
+
             <td class="" o-component-description>
               <p>Event triggered after the sidenav is opened</p>
 
@@ -2306,6 +2367,17 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
             
             
 
+            <td class="" o-component-since>
+              
+
+              
+            </td>
+          
+            
+            
+            
+            
+
             <td class="" o-component-description>
               <p>Event triggered before the sidenav is closed</p>
 
@@ -2323,6 +2395,17 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
             <td class="" o-component-name>
               <p>beforeOpenSidenav</p>
+
+              
+            </td>
+          
+            
+            
+            
+            
+
+            <td class="" o-component-since>
+              
 
               
             </td>
@@ -3737,7 +3820,7 @@ Configure this mode by setting the <strong>mobile</strong> value in the <code cl
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-12-19T10:08:01-05:00">December 19, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-12-30T06:13:59-05:00">December 30, 2022</time></p>
         
       </footer>
 
