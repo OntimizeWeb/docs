@@ -45,12 +45,6 @@ This basic example shows a multi bar chart of movements types and movements
 
 ![Chart on-demand multibarexample ]({{ "/images/charts/multiBar.PNG" | absolute_url }}){: .comp-example-img}
 
-## Basic example of Area chart
-
-This basic example shows a area chart of customers type
-
-![Chart on-demand areaexample ]({{ "/images/charts/areaChart.PNG" | absolute_url }}){: .comp-example-img}
-
 ## Basic example of Pie chart
 
 This basic example shows a pie chart of customers type
