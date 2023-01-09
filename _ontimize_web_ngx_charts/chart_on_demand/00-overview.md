@@ -43,7 +43,7 @@ This basic example shows a Discrete bar chart of movements types and movements
 
 This basic example shows a multi bar chart of movements types and movements
 
-![Chart on-demand multibarexample ]({{ "/images/charts/multiBar.PNG" | absolute_url }}){: .comp-example-img}
+![Chart on-demand multibarexample ]({{ "/images/charts/multiBarChart.PNG" | absolute_url }}){: .comp-example-img}
 
 ## Basic example of Pie chart
 
