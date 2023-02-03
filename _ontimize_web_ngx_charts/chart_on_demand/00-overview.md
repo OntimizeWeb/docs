@@ -13,13 +13,15 @@ This visual tool will allow users to define parameters of the chart such as:
 
 2.- Type of graph (line, discretebar, multibar, area, pie, donut)
 
-3.- Column to display on the x-axis
+3.- Color palette for multi bar, pie and donut charts
 
-4.- Column to display on the y-axis
+4.- Column to display on the x-axis
 
-5.- Data source (current page, filtered data, all data)
+5.- Column to display on the y-axis
 
-6.- Preferences (allows to save a configuration, apply an existing one or update it)
+6.- Data source (current page, filtered data, all data)
+
+7.- Preferences (allows to save a configuration, apply an existing one or update it)
 
 >**NOTE:** Remember to complete the steps you need to perform on your backend server to complete the charts on-demand configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/charts/chart-on-demand){:target="_blank"}
 
