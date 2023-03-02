@@ -111,18 +111,166 @@ Here is an example of configuration:
 The [*OntimizeWeb Theming*]({{ base_path }}/theming/){:target="_blank"} module provides predefined themes. All of them
 are stored in their corresponding files in the path *node_modules/ontimize-web-ngx-theming/src/themes/*
 
+* **implatform-fashion-default-theme.scss**
 * **mat-deeppurple-amber.scss**
 * **mat-indigo-pink.scss**
 * **mat-pink-bluegrey.scss**
 * **mat-purple-green.scss**
+* **ontimize-black-yellow.scss**
+* **ontimize.scss**
 
 > **Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.
 
-## Custom theme definition
+## Custom theme definition for older versions than 8.5.0
 
-If none of predefined themes satisfies your needs, you can define your own stylesheet. Depending on which version of `ontimize-web-ngx-theming` are you using choose one of the links below:
-* Click [here]({{ base_path }}/customize/theming/customtheme){:target="_blank"} for older versions to 8.5.0.
-* Click [here]({{ base_path }}/customize/theming/customtheme/new){:target="_blank"} for 8.5.0 (included) or newer.
+If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
+
+**app.css**
+<figure class="highlight">
+  <pre>
+    <code>
+    <del>/** Importing ontimize-web-ngx-theming prebuilt theme **/</del>
+    <del>@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';</del>
+    /** Import custom theme **/
+    import 'my-custom-app-theme.scss';
+    </code>
+  </pre>
+</figure>
+
+Here is the content of the theme file:
+
+**my-custom-app-theme.scss**
+```css
+@import 'node_modules/@angular/material/theming';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+/* Color definitions */
+$mat-custom-primary: (
+  50: #bdf5b3,
+  100: #82eb6f,
+  200: #57e53e,
+  300: #33c11a,
+  400: #2ca617,
+  500: #258b13,
+  600: #1e700f,
+  700: #17550c,
+  800: #103a08,
+  900: #081f04,
+  A100: #bdf5b3,
+  A200: #82eb6f,
+  A400: #2ca617,
+  A700: #17550c,
+
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+/* Define a theme for your theme using the Material Design palettes available in palette.scss
+* (imported above). For each palette, you can optionally specify a default, lighter, and darker
+* hue. Available color palettes: https://material.io/design/color/ */
+$primary: mat-palette($mat-custom-primary);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
+
+/* The warn palette is optional (defaults to red).*/
+$warn:    mat-palette($mat-red);
+
+/* Create the theme object (a Sass map containing all of the palettes). */
+/* Light theme */
+$theme: mat-light-theme($primary, $accent, $warn);
+
+/* Dark theme */
+/*$theme: mat-dark-theme($primary, $accent, $warn);*/
+```
+
+## Custom theme definition for 8.5.0 and newer versions
+
+If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
+
+**app.css**
+<figure class="highlight">
+  <pre>
+    <code>
+    <del>/** Importing ontimize-web-ngx-theming prebuilt theme **/</del>
+    <del>@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';</del>
+    /** Import custom theme **/
+    import 'my-custom-app-theme.scss';
+    </code>
+  </pre>
+</figure>
+
+Here is the content of the theme file:
+
+**my-custom-app-theme.scss**
+```css
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+
+/* Color definitions */
+$mat-custom-primary: (
+  50: #bdf5b3,
+  100: #82eb6f,
+  200: #57e53e,
+  300: #33c11a,
+  400: #2ca617,
+  500: #258b13,
+  600: #1e700f,
+  700: #17550c,
+  800: #103a08,
+  900: #081f04,
+  A100: #bdf5b3,
+  A200: #82eb6f,
+  A400: #2ca617,
+  A700: #17550c,
+
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: white,
+    400: white,
+    500: $white-87-opacity,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+/* Define a theme for your theme using the Material Design palettes available in palette.scss
+* (imported above). For each palette, you can optionally specify a default, lighter, and darker
+* hue. Available color palettes: https://material.io/design/color/ */
+$primary: mat-palette($mat-custom-primary);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
+
+/* The warn palette is optional (defaults to red).*/
+$warn:    mat-palette($mat-red);
+
+/* Create the theme object (a Sass map containing all of the palettes). */
+/* Light theme */
+$theme: o-mat-light-theme($primary, $accent, $warn);
+
+/* Dark theme */
+/*$theme: o-mat-dark-theme($primary, $accent, $warn);*/
+```
 
 ## Tools for picking colors
 
@@ -186,6 +334,7 @@ To use multiple themes we simply need to import additional themes and create res
 }
 
 ```
+
 
 ### Theme class and overlay handling
 Depending on our particular use case we might need to implement some dynamic css class switching (with *class*) to enable user to switch themes using application preferences during runtime or use parametrized build to build our application using desired theme by adding correct css class to the <body> tag during build.

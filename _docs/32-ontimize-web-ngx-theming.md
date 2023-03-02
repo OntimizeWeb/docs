@@ -27,12 +27,15 @@ Ontimize Web Theming module is stored in [github](https://github.com/OntimizeWeb
 
 In your application main style file ('*app.scss*' if you are using ontimize-web pre-built apps) import one of the available themes file for loading its content:
 
-* If you only want to load a pre-built theme of '*@angular/material*', load one of the following files:
+* If you only want to load a pre-built theme load one of the following files:
 
   * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss';`
   * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss';`
   * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';`
   * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';`
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-black-yellow.scss';`
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';`
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/implatform-fashion-default-theme.scss';`
 
 * Finally if you want to use the default ontimize theme and styles, just load:
 
