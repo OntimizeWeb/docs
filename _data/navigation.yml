@@ -67,8 +67,6 @@ docs:
     children:
       - title: "Theming"
         url: /customize/theming/
-      - title: "Lite theme"
-        url: /customize/lite/
       - title: "Typography"
         url: /customize/typography/
       - title: "Style guide"

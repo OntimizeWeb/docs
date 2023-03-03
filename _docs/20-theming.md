@@ -33,20 +33,20 @@ a theme consists of:
 Below you can see an application with several different themes and variants
 
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/ontimize-theme.png" title="Ontimize Theme">
-<img src="{{ base_path }}/images/customization/themes/ontimize-theme.png" alt="Ontimize Theme" title="Ontimize Theme" />
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" title="Ontimize Theme">
+<img src="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" alt="Ontimize Theme" title="Ontimize Theme" />
 <span>Ontimize Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/blue-theme.png" title="Custom 1 Theme">
-<img src="{{ base_path }}/images/customization/themes/blue-theme.png" alt="Custom 1 Theme" title="Custom 1 Theme" />
-<span>Custom 1 Theme</span></a></li>
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" title="Ontimize Dark Theme">
+<img src="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" alt="Ontimize Dark Theme" title="Ontimize Dark Theme" />
+<span>Ontimize Dark Theme</span></a></li>
 </ul>
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/green-theme.png" title="Custom 2 Theme">
-<img src="{{ base_path }}/images/customization/themes/green-theme.png" alt="Custom 2 Theme" title="Custom 2 Theme" />
-<span>Custom 2 Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/brown-theme.png" title="Custom 3 Theme">
-<img src="{{ base_path }}/images/customization/themes/brown-theme.png" alt="Custom 3 Theme" title="Custom 3 Theme" />
-<span>Custom 3 Theme</span></a></li>
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" title="Implatform Fashion Theme">
+<img src="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" alt="Implatform Fashion Theme" title="Implatform Fashion Theme" />
+<span>Implatform Fashion Theme</span></a></li>
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" title="Implatform Fashion Dark Theme">
+<img src="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" alt="Implatform Fashion Dark Theme" title="Implatform Fashion Dark Theme" />
+<span>Implatform Fashion Dark Theme</span></a></li>
 </ul>
 
 
@@ -111,7 +111,6 @@ Here is an example of configuration:
 The [*OntimizeWeb Theming*]({{ base_path }}/theming/){:target="_blank"} module provides predefined themes. All of them
 are stored in their corresponding files in the path *node_modules/ontimize-web-ngx-theming/src/themes/*
 
-* **implatform-fashion-default-theme.scss**
 * **mat-deeppurple-amber.scss**
 * **mat-indigo-pink.scss**
 * **mat-pink-bluegrey.scss**
@@ -121,7 +120,9 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 
 > **Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.
 
-## Custom theme definition for older versions than 8.5.0
+## Custom theme definition
+
+### Custom theme definition for older versions than 8.5.0
 
 If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
 
@@ -198,7 +199,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 /*$theme: mat-dark-theme($primary, $accent, $warn);*/
 ```
 
-## Custom theme definition for 8.5.0 and newer versions
+### Custom theme definition for 8.5.0 and newer versions
 
 If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
 
@@ -272,7 +273,7 @@ $theme: o-mat-light-theme($primary, $accent, $warn);
 /*$theme: o-mat-dark-theme($primary, $accent, $warn);*/
 ```
 
-## Tools for picking colors
+### Tools for picking colors
 
 To help with defining color palettes, you can use these online tools:
 
@@ -285,97 +286,62 @@ as you can see in the example ($mat-custom-primary) or you can reuse one of the 
 
 After that you can choose between the **light** or **dark** themes by calling their corresponding functions *o-mat-light-theme(...)* or *o-mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
 
-## Multiples themes
-### Adding multiples themes
-To use multiple themes we simply need to import additional themes and create respective css classes for each theme.
+## Predefined styles on Ontimize
 
-**app.css**
-```scss
-@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';
-/* any component inside of an element with`.my-pink-bluegrey-theme` will be affected by mat-pink-bluegrey theme */
-.my-pink-bluegrey-theme {
-  @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
-  @include ontimize-theme-styles($theme);
-  // After define theme, it is necessary to transfer color to Ontimize Web framework
-  @import 'node_modules/ontimize-web-ngx/theme.scss';
-  @include o-material-theme($theme);
+### Lite theme styles
 
-  // Propagate theme to screen styles definition.
-  @import '../../app/login/login.theme.scss';
-  @include login-theme($theme);
-}
+The Lite Theme defines *compact* styles for the **OntimizeWeb** components.
 
-@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';
-/* any component inside of an element with`.my-purple-green-theme` will be affected by mat-purple-green theme */
-.my-purple-green-theme {
-  @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
-  @include ontimize-theme-styles($theme);
-  // After define theme, it is necessary to transfer color to Ontimize Web framework
-  @import 'node_modules/ontimize-web-ngx/theme.scss';
-  @include o-material-theme($theme);
+##### Usage
 
-  // Propagate theme to screen styles definition.
-  @import '../../app/login/login.theme.scss';
-  @include login-theme($theme);
-}
+Modify your application main styles file (*app.scss* if you are using ontimize-web pre-built apps) and apply the following changes:
 
-@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
-/* any component inside of an element with`.my-ontimize-theme` will be affected by ontimize theme */
-.my-ontimize-theme {
-  @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
-  @include ontimize-theme-styles($theme);
-  // After define theme, it is necessary to transfer color to Ontimize Web framework
-  @import 'node_modules/ontimize-web-ngx/theme.scss';
-  @include o-material-theme($theme);
+* Apply the *Lite Theme* to your application theme:
 
-  // Propagate theme to screen styles definition.
-  @import '../../app/login/login.theme.scss';
-  @include login-theme($theme);
-}
-
+{:.table-list}
+```css
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
+@include ontimize-theme-styles-lite($theme);
 ```
 
+* Override the material typography with the *Lite Theme* typography (`$lite-typography`):
 
-### Theme class and overlay handling
-Depending on our particular use case we might need to implement some dynamic css class switching (with *class*) to enable user to switch themes using application preferences during runtime or use parametrized build to build our application using desired theme by adding correct css class to the <body> tag during build.
+{:.table-list}
+```css
+@include o-material-theme($theme, $lite-typography);
+```
 
-Angular Material contains components like dropdown or dialog which create overlay over the application's default layout, to theme these elements we have to set theme class also on the overlayContainer
+##### Additional steps
 
-```ts
-import { OverlayContainer } from '@angular/cdk/overlay';
+You must also apply the following changes in order to make **Lite Theme** working with all **OntimizeWeb** components features.
 
-export class AppComponent implements OnInit {
+* Display the form component error messages on tooltips. For this,  provide the **lite** value for the `type` property for `O_MAT_ERROR_OPTIONS` in your application root module like in the example below.
 
-  // use this to set correct theme class on app holder
-  // eg: <div [class]="themeClass">...</div>
-  themeClass: string;
+{:.table-list}
+```javascript
+import { O_MAT_ERROR_OPTIONS } from 'ontimize-web-ngx';
 
-  constructor(
-    private overlayContainer: OverlayContainer
-  ) {}
+@NgModule({
+  providers: [
+    { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } }
+  ],
+  ...
+```
 
-  ngOnInit(): void {
-    // subscribe to some source of theme change events, then...
-    this.themeClass = newThemeClass;
+### Implatform Fashion styles
 
-    // remove old theme class and add new theme class
-    // we're removing any css class that contains '-theme' string but your theme classes can follow any pattern
-    const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
-    const themeClassesToRemove = Array.from(classList).filter((item: string) => item.includes('-theme'));
-    if (themeClassesToRemove.length) {
-       overlayContainerClasses.remove(...themeClassesToRemove);
-    }
-    overlayContainerClasses.add(newThemeClass);
-  }
+The Implatform Fashiom style is a most minimalistic style who changes the button styles, the foreground colors and the background surfaces.
+To implement this style you should insert the mixin `implatform-fashion-theme-styles` on your `app.scss` file. Also you gonna need to use the predefined Fashion theme `implatform-fashion-default-theme.scss`. If you want to change the Implatform Fashion colors you need to implement the Implatform function on you own theme file using the `fashion-mat-ligth-theme` and, if you need dark theme, `fashion-mat-dark-theme` functions as we see on the [theme definition](#custom-theme-definition-for-older-versions-than-850) paragraph.
 
-}
+* `app.scss`:
+
+```css
+@import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
+@include implatform-fashion-theme-styles($theme, $typography);
 ```
 
 ## Theming your own components
 To style your own components with Angular Material’s tools, the component’s styles must be defined with Sass.
-
-## Using custom typography with your theme
-We can use use our custom typography following [*this steps*]({{ base_path }}/customize/typography/){:target="_blank"}
 
 ### Using @mixin to automatically apply a theme
 
@@ -432,3 +398,88 @@ Now you just have have to call the `@mixin` function to apply the theme definiti
 
 For more details about the theming functions, see the comments in the
 [source](https://github.com/angular/material2/blob/master/src/lib/core/theming/_theming.scss){:target="_blank"}.
+
+## Multiples themes
+### Adding multiples themes
+To use multiple themes we simply need to import additional themes and create respective css classes for each theme.
+
+**app.css**
+```scss
+@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';
+/* any component inside of an element with`.my-pink-bluegrey-theme` will be affected by mat-pink-bluegrey theme */
+.my-pink-bluegrey-theme {
+  @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+  @include ontimize-theme-styles($theme);
+  // After define theme, it is necessary to transfer color to Ontimize Web framework
+  @import 'node_modules/ontimize-web-ngx/theme.scss';
+  @include o-material-theme($theme);
+
+  // Propagate theme to screen styles definition.
+  @import '../../app/login/login.theme.scss';
+  @include login-theme($theme);
+}
+
+@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';
+/* any component inside of an element with`.my-purple-green-theme` will be affected by mat-purple-green theme */
+.my-purple-green-theme {
+  @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+  @include ontimize-theme-styles($theme);
+  // After define theme, it is necessary to transfer color to Ontimize Web framework
+  @import 'node_modules/ontimize-web-ngx/theme.scss';
+  @include o-material-theme($theme);
+
+  // Propagate theme to screen styles definition.
+  @import '../../app/login/login.theme.scss';
+  @include login-theme($theme);
+}
+
+@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+/* any component inside of an element with`.my-ontimize-theme` will be affected by ontimize theme */
+.my-ontimize-theme {
+  @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+  @include ontimize-theme-styles($theme);
+  // After define theme, it is necessary to transfer color to Ontimize Web framework
+  @import 'node_modules/ontimize-web-ngx/theme.scss';
+  @include o-material-theme($theme);
+
+  // Propagate theme to screen styles definition.
+  @import '../../app/login/login.theme.scss';
+  @include login-theme($theme);
+}
+
+```
+
+### Theme class and overlay handling
+Depending on our particular use case we might need to implement some dynamic css class switching (with *class*) to enable user to switch themes using application preferences during runtime or use parametrized build to build our application using desired theme by adding correct css class to the <body> tag during build.
+
+Angular Material contains components like dropdown or dialog which create overlay over the application's default layout, to theme these elements we have to set theme class also on the overlayContainer
+
+```ts
+import { OverlayContainer } from '@angular/cdk/overlay';
+
+export class AppComponent implements OnInit {
+
+  // use this to set correct theme class on app holder
+  // eg: <div [class]="themeClass">...</div>
+  themeClass: string;
+
+  constructor(
+    private overlayContainer: OverlayContainer
+  ) {}
+
+  ngOnInit(): void {
+    // subscribe to some source of theme change events, then...
+    this.themeClass = newThemeClass;
+
+    // remove old theme class and add new theme class
+    // we're removing any css class that contains '-theme' string but your theme classes can follow any pattern
+    const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
+    const themeClassesToRemove = Array.from(classList).filter((item: string) => item.includes('-theme'));
+    if (themeClassesToRemove.length) {
+       overlayContainerClasses.remove(...themeClassesToRemove);
+    }
+    overlayContainerClasses.add(newThemeClass);
+  }
+
+}
+```
