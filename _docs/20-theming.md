@@ -64,7 +64,7 @@ A dark variant is a low-light UI that displays mostly dark surfaces.
 Below an exemplary Angular application can be found that has implemented the Pure Sass approach. If you enable the Dark Mode in the settings of your operating system, the app will appear in dark colors, otherwise in bright colors.
 
 
-![Dark Mode]({{ base_path }}/images/customization/dark-theme-appearancce.gif){: .align-center}
+![Dark Mode]({{ base_path }}/images/customization/playground_dark_light.gif){: .align-center}
 
 
 ## Configuration
@@ -122,7 +122,7 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 
 ## Custom theme definition
 
-### Custom theme definition for older versions than 8.5.0
+### For older versions than 8.5.0
 
 If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
 
@@ -199,7 +199,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 /*$theme: mat-dark-theme($primary, $accent, $warn);*/
 ```
 
-### Custom theme definition for 8.5.0 and newer versions
+### For 8.5.0 and newer versions
 
 If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
 
@@ -292,7 +292,7 @@ After that you can choose between the **light** or **dark** themes by calling th
 
 The Lite Theme defines *compact* styles for the **OntimizeWeb** components.
 
-##### Usage
+<h3>Usage</h3>
 
 Modify your application main styles file (*app.scss* if you are using ontimize-web pre-built apps) and apply the following changes:
 
@@ -311,7 +311,7 @@ Modify your application main styles file (*app.scss* if you are using ontimize-w
 @include o-material-theme($theme, $lite-typography);
 ```
 
-##### Additional steps
+<h3>Additional steps</h3>
 
 You must also apply the following changes in order to make **Lite Theme** working with all **OntimizeWeb** components features.
 
@@ -331,7 +331,7 @@ import { O_MAT_ERROR_OPTIONS } from 'ontimize-web-ngx';
 ### Implatform Fashion styles
 
 The Implatform Fashiom style is a most minimalistic style who changes the button styles, the foreground colors and the background surfaces.
-To implement this style you should insert the mixin `implatform-fashion-theme-styles` on your `app.scss` file. Also you gonna need to use the predefined Fashion theme `implatform-fashion-default-theme.scss`. If you want to change the Implatform Fashion colors you need to implement the Implatform function on you own theme file using the `fashion-mat-ligth-theme` and, if you need dark theme, `fashion-mat-dark-theme` functions as we see on the [theme definition](#custom-theme-definition-for-older-versions-than-850) paragraph.
+To implement this style you should insert the mixin `implatform-fashion-theme-styles` on your `app.scss` file. Also you gonna need to use the predefined Fashion theme `implatform-fashion-default-theme.scss`. If you want to change the Implatform Fashion colors you need to implement the Implatform function on you own theme file using the `fashion-mat-ligth-theme` and, if you need dark theme, `fashion-mat-dark-theme` functions as we see on the [theme definition](#for-older-versions-than-850) paragraph.
 
 * `app.scss`:
 
