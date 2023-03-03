@@ -35,7 +35,6 @@ In your application main style file ('*app.scss*' if you are using ontimize-web 
   * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';`
   * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-black-yellow.scss';`
   * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';`
-  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/implatform-fashion-default-theme.scss';`
 
 * Finally if you want to use the default ontimize theme and styles, just load:
 
