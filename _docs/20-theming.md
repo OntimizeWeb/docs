@@ -33,18 +33,18 @@ a theme consists of:
 Below you can see an application with several different themes and variants
 
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" title="Ontimize Theme">
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" title="Ontimize Theme" target="_blank">
 <img src="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" alt="Ontimize Theme" title="Ontimize Theme" />
 <span>Ontimize Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" title="Ontimize Dark Theme">
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" title="Ontimize Dark Theme" target="_blank">
 <img src="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" alt="Ontimize Dark Theme" title="Ontimize Dark Theme" />
 <span>Ontimize Dark Theme</span></a></li>
 </ul>
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" title="Implatform Fashion Theme">
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" title="Implatform Fashion Theme" target="_blank">
 <img src="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" alt="Implatform Fashion Theme" title="Implatform Fashion Theme" />
 <span>Implatform Fashion Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" title="Implatform Fashion Dark Theme">
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" title="Implatform Fashion Dark Theme" target="_blank">
 <img src="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" alt="Implatform Fashion Dark Theme" title="Implatform Fashion Dark Theme" />
 <span>Implatform Fashion Dark Theme</span></a></li>
 </ul>
@@ -122,156 +122,7 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 
 ## Custom theme definition
 
-### For older versions than 8.5.0
-
-If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
-
-**app.css**
-<figure class="highlight">
-  <pre>
-    <code>
-    <del>/** Importing ontimize-web-ngx-theming prebuilt theme **/</del>
-    <del>@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';</del>
-    /** Import custom theme **/
-    import 'my-custom-app-theme.scss';
-    </code>
-  </pre>
-</figure>
-
-Here is the content of the theme file:
-
-**my-custom-app-theme.scss**
-```css
-@import 'node_modules/@angular/material/theming';
-
-// Include non-theme styles for core.
-@include mat-core();
-
-/* Color definitions */
-$mat-custom-primary: (
-  50: #bdf5b3,
-  100: #82eb6f,
-  200: #57e53e,
-  300: #33c11a,
-  400: #2ca617,
-  500: #258b13,
-  600: #1e700f,
-  700: #17550c,
-  800: #103a08,
-  900: #081f04,
-  A100: #bdf5b3,
-  A200: #82eb6f,
-  A400: #2ca617,
-  A700: #17550c,
-
-  contrast: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: white,
-    400: white,
-    500: $white-87-opacity,
-    600: $white-87-opacity,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  )
-);
-
-/* Define a theme for your theme using the Material Design palettes available in palette.scss
-* (imported above). For each palette, you can optionally specify a default, lighter, and darker
-* hue. Available color palettes: https://material.io/design/color/ */
-$primary: mat-palette($mat-custom-primary);
-$accent:  mat-palette($mat-amber, A200, A100, A400);
-
-/* The warn palette is optional (defaults to red).*/
-$warn:    mat-palette($mat-red);
-
-/* Create the theme object (a Sass map containing all of the palettes). */
-/* Light theme */
-$theme: mat-light-theme($primary, $accent, $warn);
-
-/* Dark theme */
-/*$theme: mat-dark-theme($primary, $accent, $warn);*/
-```
-
-### For 8.5.0 and newer versions
-
-If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
-
-**app.css**
-<figure class="highlight">
-  <pre>
-    <code>
-    <del>/** Importing ontimize-web-ngx-theming prebuilt theme **/</del>
-    <del>@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';</del>
-    /** Import custom theme **/
-    import 'my-custom-app-theme.scss';
-    </code>
-  </pre>
-</figure>
-
-Here is the content of the theme file:
-
-**my-custom-app-theme.scss**
-```css
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
-
-/* Color definitions */
-$mat-custom-primary: (
-  50: #bdf5b3,
-  100: #82eb6f,
-  200: #57e53e,
-  300: #33c11a,
-  400: #2ca617,
-  500: #258b13,
-  600: #1e700f,
-  700: #17550c,
-  800: #103a08,
-  900: #081f04,
-  A100: #bdf5b3,
-  A200: #82eb6f,
-  A400: #2ca617,
-  A700: #17550c,
-
-  contrast: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: white,
-    400: white,
-    500: $white-87-opacity,
-    600: $white-87-opacity,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  )
-);
-
-/* Define a theme for your theme using the Material Design palettes available in palette.scss
-* (imported above). For each palette, you can optionally specify a default, lighter, and darker
-* hue. Available color palettes: https://material.io/design/color/ */
-$primary: mat-palette($mat-custom-primary);
-$accent:  mat-palette($mat-amber, A200, A100, A400);
-
-/* The warn palette is optional (defaults to red).*/
-$warn:    mat-palette($mat-red);
-
-/* Create the theme object (a Sass map containing all of the palettes). */
-/* Light theme */
-$theme: o-mat-light-theme($primary, $accent, $warn);
-
-/* Dark theme */
-/*$theme: o-mat-dark-theme($primary, $accent, $warn);*/
-```
+If none of predefined themes satisfies your needs, you can define your own stylesheet. The code examples to define the themes are [here]({{ base_path }}/customize/theming/customtheme){:target="_blank"} **for older versions to 8.5.0** or [here]({{ base_path }}/customize/theming/customtheme/new){:target="_blank"} **for 8.5.0 or newer**.
 
 ### Tools for picking colors
 
@@ -292,7 +143,7 @@ After that you can choose between the **light** or **dark** themes by calling th
 
 The Lite Theme defines *compact* styles for the **OntimizeWeb** components.
 
-<h3>Usage</h3>
+<h3>&emsp;Usage</h3>
 
 Modify your application main styles file (*app.scss* if you are using ontimize-web pre-built apps) and apply the following changes:
 
@@ -311,7 +162,7 @@ Modify your application main styles file (*app.scss* if you are using ontimize-w
 @include o-material-theme($theme, $lite-typography);
 ```
 
-<h3>Additional steps</h3>
+<h3>&emsp;Additional steps</h3>
 
 You must also apply the following changes in order to make **Lite Theme** working with all **OntimizeWeb** components features.
 
@@ -333,7 +184,7 @@ import { O_MAT_ERROR_OPTIONS } from 'ontimize-web-ngx';
 The Implatform Fashiom style is a most minimalistic style who changes the button styles, the foreground colors and the background surfaces.
 To implement this style you should insert the mixin `implatform-fashion-theme-styles` on your `app.scss` file. Also you gonna need to use the predefined Fashion theme `implatform-fashion-default-theme.scss`. If you want to change the Implatform Fashion colors you need to implement the Implatform function on you own theme file using the `fashion-mat-ligth-theme` and, if you need dark theme, `fashion-mat-dark-theme` functions as we see on the [theme definition](#for-older-versions-than-850) paragraph.
 
-* `app.scss`:
+**app.scss`:**
 
 ```css
 @import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
@@ -376,11 +227,6 @@ Now you just have have to call the `@mixin` function to apply the theme definiti
 
 **app.scss**
 ```css
-/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
 
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 /*
