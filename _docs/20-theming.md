@@ -20,7 +20,7 @@ a theme consists of:
 * A background palette: colors used for element backgrounds.
 
  It can help you create a color theme that reflects your **brand** or **style**.
- 
+
  Each Ontimize Web application follows material design guidelines proposed by Google. In this chapter we will see how to configure these palettes by both using predefined ones and creating new ones.
 
 <style>
@@ -33,20 +33,20 @@ a theme consists of:
 Below you can see an application with several different themes and variants
 
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/ontimize-theme.png" title="Ontimize Theme">
-<img src="{{ base_path }}/images/customization/themes/ontimize-theme.png" alt="Ontimize Theme" title="Ontimize Theme" />
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" title="Ontimize Theme">
+<img src="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" alt="Ontimize Theme" title="Ontimize Theme" />
 <span>Ontimize Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/blue-theme.png" title="Custom 1 Theme">
-<img src="{{ base_path }}/images/customization/themes/blue-theme.png" alt="Custom 1 Theme" title="Custom 1 Theme" />
-<span>Custom 1 Theme</span></a></li>
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" title="Ontimize Dark Theme">
+<img src="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" alt="Ontimize Dark Theme" title="Ontimize Dark Theme" />
+<span>Ontimize Dark Theme</span></a></li>
 </ul>
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/green-theme.png" title="Custom 2 Theme">
-<img src="{{ base_path }}/images/customization/themes/green-theme.png" alt="Custom 2 Theme" title="Custom 2 Theme" />
-<span>Custom 2 Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/brown-theme.png" title="Custom 3 Theme">
-<img src="{{ base_path }}/images/customization/themes/brown-theme.png" alt="Custom 3 Theme" title="Custom 3 Theme" />
-<span>Custom 3 Theme</span></a></li>
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" title="Implatform Fashion Theme">
+<img src="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" alt="Implatform Fashion Theme" title="Implatform Fashion Theme" />
+<span>Implatform Fashion Theme</span></a></li>
+<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" title="Implatform Fashion Dark Theme">
+<img src="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" alt="Implatform Fashion Dark Theme" title="Implatform Fashion Dark Theme" />
+<span>Implatform Fashion Dark Theme</span></a></li>
 </ul>
 
 
@@ -64,7 +64,7 @@ A dark variant is a low-light UI that displays mostly dark surfaces.
 Below an exemplary Angular application can be found that has implemented the Pure Sass approach. If you enable the Dark Mode in the settings of your operating system, the app will appear in dark colors, otherwise in bright colors.
 
 
-![Dark Mode]({{ base_path }}/images/customization/dark-theme-appearancce.gif){: .align-center}
+![Dark Mode]({{ base_path }}/images/customization/playground_dark_light.gif){: .align-center}
 
 
 ## Configuration
@@ -87,7 +87,7 @@ Here is an example of configuration:
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
-/* Include ontimize theme*/
+/* Include ontimize theme styles*/
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 @include ontimize-theme-styles($theme);
 /*
@@ -115,87 +115,18 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 * **mat-indigo-pink.scss**
 * **mat-pink-bluegrey.scss**
 * **mat-purple-green.scss**
+* **ontimize-black-yellow.scss**
+* **ontimize.scss**
 
 > **Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.
 
 ## Custom theme definition
 
-If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
+If none of predefined themes satisfies your needs, you can define your own stylesheet. Depending on which version of `ontimize-web-ngx-theming` are you using choose one of the links below:
+* Click [here]({{ base_path }}/customize/theming/customtheme){:target="_blank"} for older versions to 8.5.0.
+* Click [here]({{ base_path }}/customize/theming/customtheme/new){:target="_blank"} for 8.5.0 (included) or newer.
 
-**app.css**
-<figure class="highlight">
-  <pre>
-    <code>
-    <del>/** Importing ontimize-web-ngx-theming prebuilt theme **/</del>
-    <del>@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';</del>
-    /** Import custom theme **/
-    import 'my-custom-app-theme.scss';
-    </code>
-  </pre>
-</figure>
-
-Here is the content of the theme file:
-
-**my-custom-app-theme.scss**
-```css
-@import 'node_modules/@angular/material/theming';
-
-// Include non-theme styles for core.
-@include mat-core();
-
-/* Color definitions */
-$mat-custom-primary: (
-  50: #bdf5b3,
-  100: #82eb6f,
-  200: #57e53e,
-  300: #33c11a,
-  400: #2ca617,
-  500: #258b13,
-  600: #1e700f,
-  700: #17550c,
-  800: #103a08,
-  900: #081f04,
-  A100: #bdf5b3,
-  A200: #82eb6f,
-  A400: #2ca617,
-  A700: #17550c,
-
-  contrast: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: white,
-    400: white,
-    500: $white-87-opacity,
-    600: $white-87-opacity,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  )
-);
-
-/* Define a theme for your theme using the Material Design palettes available in palette.scss
-* (imported above). For each palette, you can optionally specify a default, lighter, and darker
-* hue. Available color palettes: https://material.io/design/color/ */
-$primary: mat-palette($mat-custom-primary);
-$accent:  mat-palette($mat-amber, A200, A100, A400);
-
-/* The warn palette is optional (defaults to red).*/
-$warn:    mat-palette($mat-red);
-
-/* Create the theme object (a Sass map containing all of the palettes). */
-/* Light theme */
-$theme: mat-light-theme($primary, $accent, $warn);
-
-/* Dark theme */
-/*$theme: mat-dark-theme($primary, $accent, $warn);*/
-```
-
-## Tools for picking colors
+### Tools for picking colors
 
 To help with defining color palettes, you can use these online tools:
 
@@ -206,7 +137,115 @@ To help with defining color palettes, you can use these online tools:
 To define a theme, you just need to declare three palettes: **primary, accent and warn**. You can declare a new palette
 as you can see in the example ($mat-custom-primary) or you can reuse one of the [standard palettes][1].
 
-After that you can choose between the **light** or **dark** themes by calling their corresponding functions *mat-light-theme(...)* or *mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
+After that you can choose between the **light** or **dark** themes by calling their corresponding functions *o-mat-light-theme(...)* or *o-mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
+
+## Predefined styles on Ontimize
+
+### Lite theme styles
+
+The Lite Theme defines *compact* styles for the **OntimizeWeb** components.
+
+<h3>&emsp;Usage</h3>
+
+Modify your application main styles file (*app.scss* if you are using ontimize-web pre-built apps) and apply the following changes:
+
+* Apply the *Lite Theme* to your application theme:
+
+{:.table-list}
+```css
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
+@include ontimize-theme-styles-lite($theme);
+```
+
+* Override the material typography with the *Lite Theme* typography (`$lite-typography`):
+
+{:.table-list}
+```css
+@include o-material-theme($theme, $lite-typography);
+```
+
+<h3>&emsp;Additional steps</h3>
+
+You must also apply the following changes in order to make **Lite Theme** working with all **OntimizeWeb** components features.
+
+* Display the form component error messages on tooltips. For this,  provide the **lite** value for the `type` property for `O_MAT_ERROR_OPTIONS` in your application root module like in the example below.
+
+{:.table-list}
+```javascript
+import { O_MAT_ERROR_OPTIONS } from 'ontimize-web-ngx';
+
+@NgModule({
+  providers: [
+    { provide: O_MAT_ERROR_OPTIONS, useValue: { type: 'lite' } }
+  ],
+  ...
+```
+
+### Implatform Fashion styles
+
+The Implatform Fashiom style is a most minimalistic style who changes the button styles, the foreground colors and the background surfaces.
+To implement this style you should insert the mixin `implatform-fashion-theme-styles` on your `app.scss` file. Also you gonna need to use the predefined Fashion theme `implatform-fashion-default-theme.scss`. If you want to change the Implatform Fashion colors you need to implement the Implatform function on you own theme file using the `fashion-mat-ligth-theme` and, if you need dark theme, `fashion-mat-dark-theme` functions as we see on the [theme definition](#for-older-versions-than-850) paragraph.
+
+**app.scss`:**
+
+```css
+@import 'node_modules/ontimize-web-ngx-theming/implatform-fashion-theme.scss';
+@include implatform-fashion-theme-styles($theme, $typography);
+```
+
+## Theming your own components
+To style your own components with Angular Material’s tools, the component’s styles must be defined with Sass.
+
+### Using @mixin to automatically apply a theme
+
+#### Advantages of using @mixin
+The advantage of using a `@mixin` function is that when you change your theme, every file that uses it will be updated automatically.
+Calling it with a different theme argument allow multiple themes within the app or component.
+
+#### How to use @mixin
+We can more modularly theme our custom components adding a `@mixin` function to its theme file and then calling this function to apply a theme.
+
+All you need is to create a `@mixin` function in the *custom-component-theme.scss*
+
+**custom-component-theme.scss**
+```css
+/* Import all the tools needed to customize the theme and extract parts of it*/
+@import 'node_modules/@angular/material/theming';
+
+/* Define a mixin that accepts a theme and outputs the color styles for the component.*/
+@mixin custom-component-theme($theme) {
+  /* Extract whichever individual palettes you need from the theme.*/
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  /* Use mat-color to extract individual colors from a palette as necessary.*/
+  .foo-class {
+    background-color: mat-color($primary);
+    border-color: mat-color($accent, A400);
+  }
+}
+```
+Now you just have have to call the `@mixin` function to apply the theme definition in *app.scss*:
+
+**app.scss**
+```css
+
+@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+/*
+* After define theme, it is necessary to transfer color to Ontimize Web framework
+*/
+@import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
+@include o-material-theme($theme);
+
+/*
+* Propagate theme to custom component definition.
+*/
+@import '../../app/shared/custom-component-theme.scss';
+@include custom-component-theme($theme);
+```
+
+For more details about the theming functions, see the comments in the
+[source](https://github.com/angular/material2/blob/master/src/lib/core/theming/_theming.scss){:target="_blank"}.
 
 ## Multiples themes
 ### Adding multiples themes
@@ -256,8 +295,7 @@ To use multiple themes we simply need to import additional themes and create res
   @include login-theme($theme);
 }
 
-``` 
-
+```
 
 ### Theme class and overlay handling
 Depending on our particular use case we might need to implement some dynamic css class switching (with *class*) to enable user to switch themes using application preferences during runtime or use parametrized build to build our application using desired theme by adding correct css class to the <body> tag during build.
@@ -280,7 +318,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // subscribe to some source of theme change events, then...
     this.themeClass = newThemeClass;
-    
+
     // remove old theme class and add new theme class
     // we're removing any css class that contains '-theme' string but your theme classes can follow any pattern
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
@@ -293,65 +331,3 @@ export class AppComponent implements OnInit {
 
 }
 ```
-
-## Theming your own components
-To style your own components with Angular Material’s tools, the component’s styles must be defined with Sass.
-
-## Using custom typography with your theme
-We can use use our custom typography following [*this steps*]({{ base_path }}/customize/typography/){:target="_blank"}
-
-### Using @mixin to automatically apply a theme
-
-#### Advantages of using @mixin
-The advantage of using a `@mixin` function is that when you change your theme, every file that uses it will be updated automatically.
-Calling it with a different theme argument allow multiple themes within the app or component.
-
-#### How to use @mixin
-We can more modularly theme our custom components adding a `@mixin` function to its theme file and then calling this function to apply a theme.
-
-All you need is to create a `@mixin` function in the *custom-component-theme.scss*
-
-**custom-component-theme.scss**
-```css
-/* Import all the tools needed to customize the theme and extract parts of it*/
-@import 'node_modules/@angular/material/theming';
-
-/* Define a mixin that accepts a theme and outputs the color styles for the component.*/
-@mixin custom-component-theme($theme) {
-  /* Extract whichever individual palettes you need from the theme.*/
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-
-  /* Use mat-color to extract individual colors from a palette as necessary.*/
-  .foo-class {
-    background-color: mat-color($primary);
-    border-color: mat-color($accent, A400);
-  }
-}
-```
-Now you just have have to call the `@mixin` function to apply the theme definition in *app.scss*:
-
-**app.scss**
-```css
-/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
-
-@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
-/*
-* After define theme, it is necessary to transfer color to Ontimize Web framework
-*/
-@import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
-@include o-material-theme($theme);
-
-/*
-* Propagate theme to custom component definition.
-*/
-@import '../../app/shared/custom-component-theme.scss';
-@include custom-component-theme($theme);
-```
-
-For more details about the theming functions, see the comments in the
-[source](https://github.com/angular/material2/blob/master/src/lib/core/theming/_theming.scss){:target="_blank"}.
