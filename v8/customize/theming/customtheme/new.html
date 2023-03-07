@@ -19,7 +19,7 @@
 
 
 
-<title>Lite Theme - Ontimize Web</title>
+<title>Custom theme definition for 8.5.0 version or newer - Ontimize Web</title>
 
 
 
@@ -29,22 +29,22 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ontimize Web">
-<meta property="og:title" content="Lite Theme">
+<meta property="og:title" content="Custom theme definition for 8.5.0 version or newer">
 
 
-  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/customize/lite/">
-  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/customize/lite/">
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/customize/theming/customtheme/new">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/customize/theming/customtheme/new">
 
 
 
-  <meta property="og:description" content="web application framework based on Angular for building business software.">
+  <meta property="og:description" content="How you can customize palette colors of your app.">
 
 
 
   <meta name="twitter:site" content="@imatiainnova">
-  <meta name="twitter:title" content="Lite Theme">
-  <meta name="twitter:description" content="web application framework based on Angular for building business software.">
-  <meta name="twitter:url" content="https://ontimizeweb.github.io/customize/lite/">
+  <meta name="twitter:title" content="Custom theme definition for 8.5.0 version or newer">
+  <meta name="twitter:description" content="How you can customize palette colors of your app.">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/customize/theming/customtheme/new">
 
   
     <meta name="twitter:card" content="summary">
@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2022-12-30T06:13:59-05:00">
+  <meta property="article:published_time" content="2023-03-07T09:38:54-05:00">
 
 
 
@@ -350,12 +350,59 @@
                   
               
                   
-                      
-                      
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
     
@@ -547,10 +594,10 @@
 
       
        
-      <li class="nav-component-category active-component-category active-parent">
+      <li class="nav-component-category ">
         
           
-            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Customization</span>
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Customization</span>
           
 
         
@@ -567,14 +614,6 @@
             
 
             <li><a href="https://ontimizeweb.github.io/docs/v8/customize/theming/" class=" ">Theming</a></li>
-          
-            
-            
-
-            
-            
-
-            <li><a href="https://ontimizeweb.github.io/docs/v8/customize/lite/" class="active ">Lite theme</a></li>
           
             
             
@@ -815,71 +854,92 @@
 
   <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Lite Theme">
+    <meta itemprop="headline" content="Custom theme definition for 8.5.0 version or newer">
     
-    <meta itemprop="description" content="">
+    <meta itemprop="description" content="How you can customize palette colors of your app.">
     
-    <meta itemprop="datePublished" content="December 30, 2022">
+    <meta itemprop="datePublished" content="March 07, 2023">
     
 
     <div class="page__inner-wrap">
       
       <header>
-        <h1 class="page__title" itemprop="headline">Lite Theme
+        <h1 class="page__title" itemprop="headline">Custom theme definition for 8.5.0 version or newer
 </h1>
         
       </header>
       
 
       <section class="page__content" itemprop="text">
-        
-<aside class="sidebar__right">
-<nav class="toc">
-    <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
-<ul class="toc__menu" id="markdown-toc">
-  <li><a href="#usage" id="markdown-toc-usage">Usage</a></li>
-  <li><a href="#additional-steps" id="markdown-toc-additional-steps">Additional steps</a></li>
-</ul>
+        <p>Here we create an example theme file in <em>/assets/css</em> folder named <em>my-custom-app-theme.scss</em>. Later its imported and loaded instead of the default theme:</p>
 
-  </nav>
-</aside>
+<p><strong>app.css</strong></p>
+<figure class="highlight">
+  <pre>
+    <code>
+    <del>/** Importing ontimize-web-ngx-theming prebuilt theme **/</del>
+    <del>@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';</del>
+    /** Import custom theme **/
+    import 'my-custom-app-theme.scss';
+    </code>
+  </pre>
+</figure>
 
-<p>The Lite Theme defines <em>compact</em> styles for the <strong>OntimizeWeb</strong> components. It is one of the predefined themes in the <a href="https://ontimizeweb.github.io/docs/v8/theming/" target="_blank"><em>OntimizeWeb Theming</em></a> module.</p>
+<p>Here is the content of the theme file:</p>
 
-<h2 id="usage">Usage</h2>
+<p><strong>my-custom-app-theme.scss</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss'</span><span class="p">;</span>
 
-<p>Modify your application main styles file (<em>app.scss</em> if you are using ontimize-web pre-built apps) and apply the following changes:</p>
+<span class="c">/* Color definitions */</span>
+<span class="err">$</span><span class="nt">mat-custom-primary</span><span class="o">:</span> <span class="o">(</span>
+  <span class="err">50</span><span class="o">:</span> <span class="nf">#bdf5b3</span><span class="o">,</span>
+  <span class="err">100</span><span class="o">:</span> <span class="err">#82</span><span class="nt">eb6f</span><span class="o">,</span>
+  <span class="err">200</span><span class="o">:</span> <span class="err">#57</span><span class="nt">e53e</span><span class="o">,</span>
+  <span class="err">300</span><span class="o">:</span> <span class="err">#33</span><span class="nt">c11a</span><span class="o">,</span>
+  <span class="err">400</span><span class="o">:</span> <span class="err">#2</span><span class="nt">ca617</span><span class="o">,</span>
+  <span class="err">500</span><span class="o">:</span> <span class="err">#258</span><span class="nt">b13</span><span class="o">,</span>
+  <span class="err">600</span><span class="o">:</span> <span class="err">#1</span><span class="nt">e700f</span><span class="o">,</span>
+  <span class="err">700</span><span class="o">:</span> <span class="err">#17550</span><span class="nt">c</span><span class="o">,</span>
+  <span class="err">800</span><span class="o">:</span> <span class="err">#103</span><span class="nt">a08</span><span class="o">,</span>
+  <span class="err">900</span><span class="o">:</span> <span class="err">#081</span><span class="nt">f04</span><span class="o">,</span>
+  <span class="nt">A100</span><span class="o">:</span> <span class="nf">#bdf5b3</span><span class="o">,</span>
+  <span class="nt">A200</span><span class="o">:</span> <span class="err">#82</span><span class="nt">eb6f</span><span class="o">,</span>
+  <span class="nt">A400</span><span class="o">:</span> <span class="err">#2</span><span class="nt">ca617</span><span class="o">,</span>
+  <span class="nt">A700</span><span class="o">:</span> <span class="err">#17550</span><span class="nt">c</span><span class="o">,</span>
 
-<ul>
-  <li>Apply the <em>Lite Theme</em> to your application theme:</li>
-</ul>
+  <span class="nt">contrast</span><span class="o">:</span> <span class="o">(</span>
+    <span class="err">50</span><span class="o">:</span> <span class="err">$</span><span class="nt">black-87-opacity</span><span class="o">,</span>
+    <span class="err">100</span><span class="o">:</span> <span class="err">$</span><span class="nt">black-87-opacity</span><span class="o">,</span>
+    <span class="err">200</span><span class="o">:</span> <span class="err">$</span><span class="nt">black-87-opacity</span><span class="o">,</span>
+    <span class="err">300</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+    <span class="err">400</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+    <span class="err">500</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="err">600</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="err">700</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="err">800</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="err">900</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="nt">A100</span><span class="o">:</span> <span class="err">$</span><span class="nt">black-87-opacity</span><span class="o">,</span>
+    <span class="nt">A200</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+    <span class="nt">A400</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+    <span class="nt">A700</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+  <span class="o">)</span>
+<span class="o">);</span>
 
-<div class="language-css table-list highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss'</span><span class="p">;</span>
-<span class="k">@include</span> <span class="n">ontimize-theme-styles-lite</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
-</code></pre></div></div>
+<span class="c">/* Define a theme for your theme using the Material Design palettes available in palette.scss
+* (imported above). For each palette, you can optionally specify a default, lighter, and darker
+* hue. Available color palettes: https://material.io/design/color/ */</span>
+<span class="err">$</span><span class="nt">primary</span><span class="o">:</span> <span class="nt">mat-palette</span><span class="o">(</span><span class="err">$</span><span class="nt">mat-custom-primary</span><span class="o">);</span>
+<span class="err">$</span><span class="nt">accent</span><span class="o">:</span>  <span class="nt">mat-palette</span><span class="o">(</span><span class="err">$</span><span class="nt">mat-amber</span><span class="o">,</span> <span class="nt">A200</span><span class="o">,</span> <span class="nt">A100</span><span class="o">,</span> <span class="nt">A400</span><span class="o">);</span>
 
-<ul>
-  <li>Override the material typography with the <em>Lite Theme</em> typography (<code class="language-plaintext highlighter-rouge">$lite-typography</code>):</li>
-</ul>
+<span class="c">/* The warn palette is optional (defaults to red).*/</span>
+<span class="err">$</span><span class="nt">warn</span><span class="o">:</span>    <span class="nt">mat-palette</span><span class="o">(</span><span class="err">$</span><span class="nt">mat-red</span><span class="o">);</span>
 
-<div class="language-css table-list highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@include</span> <span class="n">o-material-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">,</span> <span class="err">$</span><span class="n">lite-typography</span><span class="p">);</span>
-</code></pre></div></div>
+<span class="c">/* Create the theme object (a Sass map containing all of the palettes). */</span>
+<span class="c">/* Light theme */</span>
+<span class="err">$</span><span class="nt">theme</span><span class="o">:</span> <span class="nt">o-mat-light-theme</span><span class="o">(</span><span class="err">$</span><span class="nt">primary</span><span class="o">,</span> <span class="err">$</span><span class="nt">accent</span><span class="o">,</span> <span class="err">$</span><span class="nt">warn</span><span class="o">);</span>
 
-<h2 id="additional-steps">Additional steps</h2>
-
-<p>You must also apply the following changes in order to make <strong>Lite Theme</strong> working with all <strong>OntimizeWeb</strong> components features.</p>
-
-<ul>
-  <li>Display the form component error messages on tooltips. For this,  provide the <strong>lite</strong> value for the <code class="language-plaintext highlighter-rouge">type</code> property for <code class="language-plaintext highlighter-rouge">O_MAT_ERROR_OPTIONS</code> in your application root module like in the example below.</li>
-</ul>
-
-<div class="language-javascript table-list highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">O_MAT_ERROR_OPTIONS</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
-
-<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
-  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">O_MAT_ERROR_OPTIONS</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="p">{</span> <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">lite</span><span class="dl">'</span> <span class="p">}</span> <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="p">...</span>
+<span class="c">/* Dark theme */</span>
+<span class="c">/*$theme: o-mat-dark-theme($primary, $accent, $warn);*/</span>
 </code></pre></div></div>
 
         
@@ -893,7 +953,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-12-30T06:13:59-05:00">December 30, 2022</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-03-07T09:38:54-05:00">March 07, 2023</time></p>
         
       </footer>
 
@@ -904,7 +964,7 @@
 
   <nav class="pagination">
     
-      <a href="https://ontimizeweb.github.io/docs/v8/customize/theming/" class="pagination--pager" title="Theming
+      <a href="https://ontimizeweb.github.io/docs/v8/customize/theming/customtheme" class="pagination--pager" title="Custom theme definition for older versions than 8.5.0
 ">
           <i class="fas fa-arrow-left margin-right"></i>
         Previous
@@ -956,7 +1016,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2023 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 
