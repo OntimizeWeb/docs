@@ -87,7 +87,7 @@ Here is an example of configuration:
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
-/* Include ontimize theme*/
+/* Include ontimize theme styles*/
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 @include ontimize-theme-styles($theme);
 /*
