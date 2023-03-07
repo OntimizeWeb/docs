@@ -20,7 +20,7 @@ a theme consists of:
 * A background palette: colors used for element backgrounds.
 
  It can help you create a color theme that reflects your **brand** or **style**.
- 
+
  Each Ontimize Web application follows material design guidelines proposed by Google. In this chapter we will see how to configure these palettes by both using predefined ones and creating new ones.
 
 <style>
@@ -120,80 +120,9 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 
 ## Custom theme definition
 
-If none of predefined themes satisfies your needs, you can define your own stylesheet. Here we create an example theme file in */assets/css* folder named *my-custom-app-theme.scss*. Later its imported and loaded instead of the default theme:
-
-**app.css**
-<figure class="highlight">
-  <pre>
-    <code>
-    <del>/** Importing ontimize-web-ngx-theming prebuilt theme **/</del>
-    <del>@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';</del>
-    /** Import custom theme **/
-    import 'my-custom-app-theme.scss';
-    </code>
-  </pre>
-</figure>
-
-Here is the content of the theme file:
-
-**my-custom-app-theme.scss**
-```css
-@import 'node_modules/@angular/material/theming';
-
-// Include non-theme styles for core.
-@include mat-core();
-
-/* Color definitions */
-$mat-custom-primary: (
-  50: #bdf5b3,
-  100: #82eb6f,
-  200: #57e53e,
-  300: #33c11a,
-  400: #2ca617,
-  500: #258b13,
-  600: #1e700f,
-  700: #17550c,
-  800: #103a08,
-  900: #081f04,
-  A100: #bdf5b3,
-  A200: #82eb6f,
-  A400: #2ca617,
-  A700: #17550c,
-
-  contrast: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: white,
-    400: white,
-    500: $white-87-opacity,
-    600: $white-87-opacity,
-    700: $white-87-opacity,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  )
-);
-
-/* Define a theme for your theme using the Material Design palettes available in palette.scss
-* (imported above). For each palette, you can optionally specify a default, lighter, and darker
-* hue. Available color palettes: https://material.io/design/color/ */
-$primary: mat-palette($mat-custom-primary);
-$accent:  mat-palette($mat-amber, A200, A100, A400);
-
-/* The warn palette is optional (defaults to red).*/
-$warn:    mat-palette($mat-red);
-
-/* Create the theme object (a Sass map containing all of the palettes). */
-/* Light theme */
-$theme: mat-light-theme($primary, $accent, $warn);
-
-/* Dark theme */
-/*$theme: mat-dark-theme($primary, $accent, $warn);*/
-```
+If none of predefined themes satisfies your needs, you can define your own stylesheet. Depending on which version of `ontimize-web-ngx-theming` are you using choose one of the links below:
+* Click [here]({{ base_path }}/customize/theming/customtheme){:target="_blank"} for older versions to 8.5.0.
+* Click [here]({{ base_path }}/customize/theming/customtheme/new){:target="_blank"} for 8.5.0 (included) or newer.
 
 ## Tools for picking colors
 
@@ -206,7 +135,7 @@ To help with defining color palettes, you can use these online tools:
 To define a theme, you just need to declare three palettes: **primary, accent and warn**. You can declare a new palette
 as you can see in the example ($mat-custom-primary) or you can reuse one of the [standard palettes][1].
 
-After that you can choose between the **light** or **dark** themes by calling their corresponding functions *mat-light-theme(...)* or *mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
+After that you can choose between the **light** or **dark** themes by calling their corresponding functions *o-mat-light-theme(...)* or *o-mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
 
 ## Multiples themes
 ### Adding multiples themes
@@ -256,8 +185,7 @@ To use multiple themes we simply need to import additional themes and create res
   @include login-theme($theme);
 }
 
-``` 
-
+```
 
 ### Theme class and overlay handling
 Depending on our particular use case we might need to implement some dynamic css class switching (with *class*) to enable user to switch themes using application preferences during runtime or use parametrized build to build our application using desired theme by adding correct css class to the <body> tag during build.
@@ -280,7 +208,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // subscribe to some source of theme change events, then...
     this.themeClass = newThemeClass;
-    
+
     // remove old theme class and add new theme class
     // we're removing any css class that contains '-theme' string but your theme classes can follow any pattern
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
