@@ -15,7 +15,8 @@ attributes: [{
   name: "query-on-bind",
   default: "yes",
 },{
-  name: "columns"
+  name: "columns",
+  required: "yes"
 },{
   name: "keys"
 },{
