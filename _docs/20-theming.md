@@ -122,7 +122,9 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 
 ## Custom theme definition
 
-If none of predefined themes satisfies your needs, you can define your own stylesheet. The code examples to define the themes are [here]({{ base_path }}/customize/theming/customtheme){:target="_blank"} **for older versions to 8.5.0** or [here]({{ base_path }}/customize/theming/customtheme/new){:target="_blank"} **for 8.5.0 or newer**.
+If none of predefined themes satisfies your needs, you can define your own stylesheet. Depending on which version of `ontimize-web-ngx-theming` are you using choose one of the links below:
+* Click [here]({{ base_path }}/customize/theming/customtheme){:target="_blank"} for older versions to 8.5.0.
+* Click [here]({{ base_path }}/customize/theming/customtheme/new){:target="_blank"} for 8.5.0 (included) or newer.
 
 ### Tools for picking colors
 
