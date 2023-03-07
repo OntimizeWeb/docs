@@ -122,7 +122,9 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 
 ## Custom theme definition
 
-If none of predefined themes satisfies your needs, you can define your own stylesheet. The code examples to define the themes are [here]({{ base_path }}/customize/theming/customtheme){:target="_blank"} **for older versions to 8.5.0** or [here]({{ base_path }}/customize/theming/customtheme/new){:target="_blank"} **for 8.5.0 or newer**.
+If none of predefined themes satisfies your needs, you can define your own stylesheet. Depending on which version of `ontimize-web-ngx-theming` are you using choose one of the links below:
+* Click [here]({{ base_path }}/customize/theming/customtheme){:target="_blank"} for older versions to 8.5.0.
+* Click [here]({{ base_path }}/customize/theming/customtheme/new){:target="_blank"} for 8.5.0 (included) or newer.
 
 ### Tools for picking colors
 
@@ -135,7 +137,7 @@ To help with defining color palettes, you can use these online tools:
 To define a theme, you just need to declare three palettes: **primary, accent and warn**. You can declare a new palette
 as you can see in the example ($mat-custom-primary) or you can reuse one of the [standard palettes][1].
 
-After that you can choose between the **light** or **dark** themes by calling their corresponding functions *mat-light-theme(...)* or *mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
+After that you can choose between the **light** or **dark** themes by calling their corresponding functions *o-mat-light-theme(...)* or *o-mat-dark-theme(...)*. The function returns the theme configuration that you need to pass to the angular material library to configure the component colors.
 
 ## Predefined styles on Ontimize
 
