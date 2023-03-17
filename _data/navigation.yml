@@ -67,6 +67,8 @@ docs:
     children:
       - title: "Theming"
         url: /customize/theming/
+      - title: "Theming migration"
+        url: /customize/theming/migration
       - title: "Typography"
         url: /customize/typography/
       - title: "Style guide"

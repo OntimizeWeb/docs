@@ -71,24 +71,51 @@ Below an exemplary Angular application can be found that has implemented the Pur
 
 In order to make theming job easier, **OntimizeWeb** provides a theming module. You can read more about the *OntimizeWeb Theming module* [here]({{ base_path }}/theming/){:target="_blank"}.
 
-The configuration of the application theme is done in the file *app.scss* in */assets/css* folder in two steps:
-
-1. Import the theme file (predefined or custom).
-2. Propagate the theme to the Ontimize Web framework.
-
 Here is an example of configuration:
 
-**app.css**
+**app.css for older versions than 8.5.0 (not included)**
 ```css
 /***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-black-yellow.scss';*/
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
 
 /* Include ontimize theme styles*/
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+@include ontimize-theme-styles($theme);
+/*
+*  After defining the theme, you need to propagate the theme to the Ontimize Web framework
+*/
+@import 'node_modules/ontimize-web-ngx/theme.scss';
+@include o-material-theme($theme);
+
+
+/* Include the alternative theme styles inside of a block with a CSS class. You can make this
+* CSS class whatever you want. In this example, any component inside of an element with
+`.your-dark-theme` will be affected by this alternate dark theme instead of the default theme.*/
+.your-dark-theme {
+  @include ontimize-theme-styles($dark_theme);
+  @include o-material-theme($dark_theme);
+}
+```
+
+**app.css for 8.5.0 (included) or newer versions**
+```css
+/*Import the file who have the theme functions and the ontimize-theme-styles mixin.*/
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
+
+/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
+/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-black-yellow.scss';*/
+@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+
+/* Include ontimize theme styles*/
 @include ontimize-theme-styles($theme);
 /*
 *  After defining the theme, you need to propagate the theme to the Ontimize Web framework
