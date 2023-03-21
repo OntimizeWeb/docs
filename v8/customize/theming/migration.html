@@ -19,7 +19,7 @@
 
 
 
-<title>Custom theme definition for older versions than 8.5.0 - Ontimize Web</title>
+<title>Theming migration - Ontimize Web</title>
 
 
 
@@ -29,22 +29,22 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ontimize Web">
-<meta property="og:title" content="Custom theme definition for older versions than 8.5.0">
+<meta property="og:title" content="Theming migration">
 
 
-  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/customize/theming/customtheme">
-  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/customize/theming/customtheme">
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/customize/theming/migration">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/customize/theming/migration">
 
 
 
-  <meta property="og:description" content="How you can customize palette colors of your app.">
+  <meta property="og:description" content="Steps to change theming versions.">
 
 
 
   <meta name="twitter:site" content="@imatiainnova">
-  <meta name="twitter:title" content="Custom theme definition for older versions than 8.5.0">
-  <meta name="twitter:description" content="How you can customize palette colors of your app.">
-  <meta name="twitter:url" content="https://ontimizeweb.github.io/customize/theming/customtheme">
+  <meta name="twitter:title" content="Theming migration">
+  <meta name="twitter:description" content="Steps to change theming versions.">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/customize/theming/migration">
 
   
     <meta name="twitter:card" content="summary">
@@ -350,61 +350,12 @@
                   
               
                   
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
+                      
+                      
                  
       
-          
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
                  
       
-          
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
-                  
-              
                  
       
     
@@ -596,10 +547,10 @@
 
       
        
-      <li class="nav-component-category ">
+      <li class="nav-component-category active-component-category active-parent">
         
           
-            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Customization</span>
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Customization</span>
           
 
         
@@ -623,7 +574,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v8/customize/theming/migration" class=" ">Theming migration</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v8/customize/theming/migration" class="active ">Theming migration</a></li>
           
             
             
@@ -864,9 +815,9 @@
 
   <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Custom theme definition for older versions than 8.5.0">
+    <meta itemprop="headline" content="Theming migration">
     
-    <meta itemprop="description" content="How you can customize palette colors of your app.">
+    <meta itemprop="description" content="Steps to change theming versions.">
     
     <meta itemprop="datePublished" content="March 21, 2023">
     
@@ -874,28 +825,110 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 class="page__title" itemprop="headline">Custom theme definition for older versions than 8.5.0
+        <h1 class="page__title" itemprop="headline">Theming migration
 </h1>
         
       </header>
       
 
       <section class="page__content" itemprop="text">
-        <p>Here we create an example theme file in <em>/assets/css</em> folder named <em>my-custom-app-theme.scss</em>. Later its imported and loaded instead of the default theme:</p>
+        
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#appscss-scructure" id="markdown-toc-appscss-scructure"><code class="language-plaintext highlighter-rouge">app.scss</code> scructure</a>    <ul>
+      <li><a href="#older-than-850-not-included" id="markdown-toc-older-than-850-not-included">Older than 8.5.0 (not included)</a></li>
+      <li><a href="#850-or-newer-versions" id="markdown-toc-850-or-newer-versions">8.5.0 or newer versions</a></li>
+    </ul>
+  </li>
+  <li><a href="#custom-theme-definition-structure" id="markdown-toc-custom-theme-definition-structure">Custom theme definition structure</a>    <ul>
+      <li><a href="#older-than-850-not-included-1" id="markdown-toc-older-than-850-not-included-1">Older than 8.5.0 (not included)</a></li>
+      <li><a href="#850-or-newer-versions-1" id="markdown-toc-850-or-newer-versions-1">8.5.0 or newer versions</a></li>
+    </ul>
+  </li>
+</ul>
 
-<p><strong>app.css</strong></p>
-<figure class="highlight">
-  <pre>
-    <code>
-    <del>/** Importing ontimize-web-ngx-theming prebuilt theme **/</del>
-    <del>@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';</del>
-    /** Import custom theme **/
-    import 'my-custom-app-theme.scss';
-    </code>
-  </pre>
-</figure>
+  </nav>
+</aside>
 
-<p>Here is the content of the theme file:</p>
+<h2 id="appscss-scructure"><code class="language-plaintext highlighter-rouge">app.scss</code> scructure</h2>
+
+<p>The structure of <code class="language-plaintext highlighter-rouge">app.scss</code> file depend on the version of theming that is installed. The diferences on <code class="language-plaintext highlighter-rouge">app.scss</code> are between the <strong>8.5.0</strong> (or newer) and the older versions.</p>
+
+<h3 id="older-than-850-not-included">Older than 8.5.0 (not included)</h3>
+
+<p>As we see on the example below in previous versions to 8.5.0 the first line of the file should be the theme import, then we import the <code class="language-plaintext highlighter-rouge">ontimize-theme.scss</code> file to call the mixin <code class="language-plaintext highlighter-rouge">ontimize-theme-styles</code> and finally we propagate the theme to the Onitmize Web framework.</p>
+
+<p><strong>app.scss</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-black-yellow.scss';*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'</span><span class="p">;</span>
+
+<span class="c">/* Include ontimize theme styles*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">ontimize-theme-styles</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+<span class="c">/*
+*  After defining the theme, you need to propagate the theme to the Ontimize Web framework
+*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx/theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">o-material-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+
+
+<span class="c">/* Include the alternative theme styles inside of a block with a CSS class. You can make this
+* CSS class whatever you want. In this example, any component inside of an element with
+`.your-dark-theme` will be affected by this alternate dark theme instead of the default theme.*/</span>
+<span class="nc">.your-dark-theme</span> <span class="p">{</span>
+  <span class="err">@include</span> <span class="err">ontimize-theme-styles($dark_theme);</span>
+  <span class="err">@include</span> <span class="err">o-material-theme($dark_theme);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="850-or-newer-versions">8.5.0 or newer versions</h3>
+
+<p>In this case the first import we should do is to import the <code class="language-plaintext highlighter-rouge">ontimize-theme.scss</code> file which have inside the theme creation functions and the <code class="language-plaintext highlighter-rouge">ontimize-theme-styles</code> mixin. Then we should import the theme file, include the <code class="language-plaintext highlighter-rouge">ontimize-theme-styles</code> mixin and finally propagate the theme to the Ontimize Web framework.</p>
+
+<p><strong>app.scss</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/*Import the file who have the theme functions and the ontimize-theme-styles mixin.*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss'</span><span class="p">;</span>
+
+<span class="c">/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-black-yellow.scss';*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'</span><span class="p">;</span>
+
+<span class="c">/* Include ontimize theme styles*/</span>
+<span class="k">@include</span> <span class="n">ontimize-theme-styles</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+<span class="c">/*
+*  After defining the theme, you need to propagate the theme to the Ontimize Web framework
+*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx/theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">o-material-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+
+
+<span class="c">/* Include the alternative theme styles inside of a block with a CSS class. You can make this
+* CSS class whatever you want. In this example, any component inside of an element with
+`.your-dark-theme` will be affected by this alternate dark theme instead of the default theme.*/</span>
+<span class="nc">.your-dark-theme</span> <span class="p">{</span>
+  <span class="err">@include</span> <span class="err">ontimize-theme-styles($dark_theme);</span>
+  <span class="err">@include</span> <span class="err">o-material-theme($dark_theme);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="custom-theme-definition-structure">Custom theme definition structure</h2>
+
+<p>If we want to have custom colors in our app we can create themes to customize it. Depeding on the theming version that we have installed there are two ways to create the file.</p>
+
+<h3 id="older-than-850-not-included-1">Older than 8.5.0 (not included)</h3>
+
+<p>As we see in the example below in this versions we need to import <code class="language-plaintext highlighter-rouge">theming</code> and the <code class="language-plaintext highlighter-rouge">core</code> of material in the first lines. Then to create the theme we use the material functions <code class="language-plaintext highlighter-rouge">mat-light-theme</code> and <code class="language-plaintext highlighter-rouge">mat-dark-theme</code>. Code example:</p>
 
 <p><strong>my-custom-app-theme.scss</strong></p>
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="s2">'node_modules/@angular/material/theming'</span><span class="p">;</span>
@@ -955,6 +988,65 @@
 <span class="c">/*$theme: mat-dark-theme($primary, $accent, $warn);*/</span>
 </code></pre></div></div>
 
+<h3 id="850-or-newer-versions-1">8.5.0 or newer versions</h3>
+
+<p>In newer versions we only need one import on the custom theme file, the import of <code class="language-plaintext highlighter-rouge">ontimize-theme.scss</code> file. Other diference with the older versions is that the functions which create the theme are custom now, the names of the functions are <code class="language-plaintext highlighter-rouge">o-mat-light-theme</code> and <code class="language-plaintext highlighter-rouge">o-mat-dark-theme</code>. Code example:</p>
+
+<p><strong>my-custom-app-theme.scss</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss'</span><span class="p">;</span>
+
+<span class="c">/* Color definitions */</span>
+<span class="err">$</span><span class="nt">mat-custom-primary</span><span class="o">:</span> <span class="o">(</span>
+  <span class="err">50</span><span class="o">:</span> <span class="nf">#bdf5b3</span><span class="o">,</span>
+  <span class="err">100</span><span class="o">:</span> <span class="err">#82</span><span class="nt">eb6f</span><span class="o">,</span>
+  <span class="err">200</span><span class="o">:</span> <span class="err">#57</span><span class="nt">e53e</span><span class="o">,</span>
+  <span class="err">300</span><span class="o">:</span> <span class="err">#33</span><span class="nt">c11a</span><span class="o">,</span>
+  <span class="err">400</span><span class="o">:</span> <span class="err">#2</span><span class="nt">ca617</span><span class="o">,</span>
+  <span class="err">500</span><span class="o">:</span> <span class="err">#258</span><span class="nt">b13</span><span class="o">,</span>
+  <span class="err">600</span><span class="o">:</span> <span class="err">#1</span><span class="nt">e700f</span><span class="o">,</span>
+  <span class="err">700</span><span class="o">:</span> <span class="err">#17550</span><span class="nt">c</span><span class="o">,</span>
+  <span class="err">800</span><span class="o">:</span> <span class="err">#103</span><span class="nt">a08</span><span class="o">,</span>
+  <span class="err">900</span><span class="o">:</span> <span class="err">#081</span><span class="nt">f04</span><span class="o">,</span>
+  <span class="nt">A100</span><span class="o">:</span> <span class="nf">#bdf5b3</span><span class="o">,</span>
+  <span class="nt">A200</span><span class="o">:</span> <span class="err">#82</span><span class="nt">eb6f</span><span class="o">,</span>
+  <span class="nt">A400</span><span class="o">:</span> <span class="err">#2</span><span class="nt">ca617</span><span class="o">,</span>
+  <span class="nt">A700</span><span class="o">:</span> <span class="err">#17550</span><span class="nt">c</span><span class="o">,</span>
+
+  <span class="nt">contrast</span><span class="o">:</span> <span class="o">(</span>
+    <span class="err">50</span><span class="o">:</span> <span class="err">$</span><span class="nt">black-87-opacity</span><span class="o">,</span>
+    <span class="err">100</span><span class="o">:</span> <span class="err">$</span><span class="nt">black-87-opacity</span><span class="o">,</span>
+    <span class="err">200</span><span class="o">:</span> <span class="err">$</span><span class="nt">black-87-opacity</span><span class="o">,</span>
+    <span class="err">300</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+    <span class="err">400</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+    <span class="err">500</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="err">600</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="err">700</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="err">800</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="err">900</span><span class="o">:</span> <span class="err">$</span><span class="nt">white-87-opacity</span><span class="o">,</span>
+    <span class="nt">A100</span><span class="o">:</span> <span class="err">$</span><span class="nt">black-87-opacity</span><span class="o">,</span>
+    <span class="nt">A200</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+    <span class="nt">A400</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+    <span class="nt">A700</span><span class="o">:</span> <span class="nt">white</span><span class="o">,</span>
+  <span class="o">)</span>
+<span class="o">);</span>
+
+<span class="c">/* Define a theme for your theme using the Material Design palettes available in palette.scss
+* (imported above). For each palette, you can optionally specify a default, lighter, and darker
+* hue. Available color palettes: https://material.io/design/color/ */</span>
+<span class="err">$</span><span class="nt">primary</span><span class="o">:</span> <span class="nt">mat-palette</span><span class="o">(</span><span class="err">$</span><span class="nt">mat-custom-primary</span><span class="o">);</span>
+<span class="err">$</span><span class="nt">accent</span><span class="o">:</span>  <span class="nt">mat-palette</span><span class="o">(</span><span class="err">$</span><span class="nt">mat-amber</span><span class="o">,</span> <span class="nt">A200</span><span class="o">,</span> <span class="nt">A100</span><span class="o">,</span> <span class="nt">A400</span><span class="o">);</span>
+
+<span class="c">/* The warn palette is optional (defaults to red).*/</span>
+<span class="err">$</span><span class="nt">warn</span><span class="o">:</span>    <span class="nt">mat-palette</span><span class="o">(</span><span class="err">$</span><span class="nt">mat-red</span><span class="o">);</span>
+
+<span class="c">/* Create the theme object (a Sass map containing all of the palettes). */</span>
+<span class="c">/* Light theme */</span>
+<span class="err">$</span><span class="nt">theme</span><span class="o">:</span> <span class="nt">o-mat-light-theme</span><span class="o">(</span><span class="err">$</span><span class="nt">primary</span><span class="o">,</span> <span class="err">$</span><span class="nt">accent</span><span class="o">,</span> <span class="err">$</span><span class="nt">warn</span><span class="o">);</span>
+
+<span class="c">/* Dark theme */</span>
+<span class="c">/*$theme: o-mat-dark-theme($primary, $accent, $warn);*/</span>
+</code></pre></div></div>
+
         
       </section>
 
@@ -977,14 +1069,14 @@
 
   <nav class="pagination">
     
-      <a href="https://ontimizeweb.github.io/docs/v8/customize/theming/" class="pagination--pager" title="Theming
+      <a href="https://ontimizeweb.github.io/docs/v8/customize/theming/customtheme/new" class="pagination--pager" title="Custom theme definition for 8.5.0 version or newer
 ">
           <i class="fas fa-arrow-left margin-right"></i>
         Previous
       </a>
     
     
-      <a href="https://ontimizeweb.github.io/docs/v8/customize/theming/customtheme/new" class="pagination--pager" title="Custom theme definition for 8.5.0 version or newer
+      <a href="https://ontimizeweb.github.io/docs/v8/customize/typography/" class="pagination--pager" title="Typography
 ">
         Next
         <i class="fas fa-arrow-right margin-left"></i>

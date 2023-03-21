@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2023-03-07T09:38:54-05:00">
+  <meta property="article:published_time" content="2023-03-21T05:30:52-04:00">
 
 
 
@@ -572,6 +572,14 @@
             
             
 
+            <li><a href="https://ontimizeweb.github.io/docs/v8/customize/theming/migration" class=" ">Theming migration</a></li>
+          
+            
+            
+
+            
+            
+
             <li><a href="https://ontimizeweb.github.io/docs/v8/customize/typography/" class=" ">Typography</a></li>
           
             
@@ -809,7 +817,7 @@
     
     <meta itemprop="description" content="How you can customize palette colors of your app.">
     
-    <meta itemprop="datePublished" content="March 07, 2023">
+    <meta itemprop="datePublished" content="March 21, 2023">
     
 
     <div class="page__inner-wrap">
@@ -925,25 +933,49 @@ a theme consists of:</p>
 
 <p>In order to make theming job easier, <strong>OntimizeWeb</strong> provides a theming module. You can read more about the <em>OntimizeWeb Theming module</em> <a href="https://ontimizeweb.github.io/docs/v8/theming/" target="_blank">here</a>.</p>
 
-<p>The configuration of the application theme is done in the file <em>app.scss</em> in <em>/assets/css</em> folder in two steps:</p>
-
-<ol>
-  <li>Import the theme file (predefined or custom).</li>
-  <li>Propagate the theme to the Ontimize Web framework.</li>
-</ol>
-
 <p>Here is an example of configuration:</p>
 
-<p><strong>app.css</strong></p>
+<p><strong>app.css for older versions than 8.5.0 (not included)</strong></p>
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/</span>
 <span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */</span>
 <span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/</span>
 <span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/</span>
 <span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-black-yellow.scss';*/</span>
 <span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'</span><span class="p">;</span>
 
 <span class="c">/* Include ontimize theme styles*/</span>
 <span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">ontimize-theme-styles</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+<span class="c">/*
+*  After defining the theme, you need to propagate the theme to the Ontimize Web framework
+*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx/theme.scss'</span><span class="p">;</span>
+<span class="k">@include</span> <span class="n">o-material-theme</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
+
+
+<span class="c">/* Include the alternative theme styles inside of a block with a CSS class. You can make this
+* CSS class whatever you want. In this example, any component inside of an element with
+`.your-dark-theme` will be affected by this alternate dark theme instead of the default theme.*/</span>
+<span class="nc">.your-dark-theme</span> <span class="p">{</span>
+  <span class="err">@include</span> <span class="err">ontimize-theme-styles($dark_theme);</span>
+  <span class="err">@include</span> <span class="err">o-material-theme($dark_theme);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>app.css for 8.5.0 (included) or newer versions</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/*Import the file who have the theme functions and the ontimize-theme-styles mixin.*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss'</span><span class="p">;</span>
+
+<span class="c">/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/</span>
+<span class="c">/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-black-yellow.scss';*/</span>
+<span class="k">@import</span> <span class="s2">'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss'</span><span class="p">;</span>
+
+<span class="c">/* Include ontimize theme styles*/</span>
 <span class="k">@include</span> <span class="n">ontimize-theme-styles</span><span class="p">(</span><span class="err">$</span><span class="n">theme</span><span class="p">);</span>
 <span class="c">/*
 *  After defining the theme, you need to propagate the theme to the Ontimize Web framework
@@ -1201,7 +1233,7 @@ Calling it with a different theme argument allow multiple themes within the app 
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-03-07T09:38:54-05:00">March 07, 2023</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-03-21T05:30:52-04:00">March 21, 2023</time></p>
         
       </footer>
 
