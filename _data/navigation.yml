@@ -65,8 +65,6 @@ docs:
         url: /migrations/
   - title: Customization
     children:
-      - title: "Surfaces"
-        url: /customize/surfaces/
       - title: "Theming"
         url: /customize/theming/
       - title: "Typography"
