@@ -98,6 +98,6 @@ $color: mat-color($background, level-04);
 
 The other way is to use the clases defined in our style file. The name of each color it's defined [here](#how-many-levels-of-surfaces-do-we-have). See the example below:
 
-```css
+```html
 <div class="bg-level-04">Container with background<div>
 ```
