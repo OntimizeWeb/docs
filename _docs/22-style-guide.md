@@ -56,6 +56,12 @@ The goal of whitespace is to maximize readability and understanding of content/d
 
 We call surface to the different levels of background colors on the aplication. As you can see in the examples below there is a difference between the background of the aplication and the background of the table, those diference of colors are different surfaces.
 
+When the content is at different elevations it is for different reasons:
+
+* Contain more important content.
+* Focus attention, like a dialogue.
+* Control the surfaces behind it, like the actions on an app bar.
+
 <style>
     .image-gallery {overflow: auto; margin-left: 0!important;}
     .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 280px;}
@@ -93,7 +99,7 @@ There are two difference ways to get the surface colors in our aplications, one 
 ```css
 $theme: o-mat-light-theme($primary, $accent);
 $background: map-get($theme, background);
-$color: mat-color($background, level-04);
+$my-custom-bg-color: mat-color($background, level-04);
 ```
 
 The other way is to use the clases defined in our style file. The name of each color it's defined [here](#how-many-levels-of-surfaces-do-we-have). See the example below:
