@@ -277,7 +277,7 @@ import { OFormMessageService } from "ontimize-web-ngx";
 
 @Injectable()
 export class CustomMessageService extends OFormMessageService {
-  
+
   getDiscardChangesConfirmationMessage(): string {
     return 'Are you really sure you want to do this? All changes will be lost';
   }
@@ -291,10 +291,10 @@ export class CustomMessageService extends OFormMessageService {
 ```
 
 ```html
-<o-form attr="customers_form_edit" service="customers" entity="customer" keys="CUSTOMERID" 
+<o-form attr="customers_form_edit" service="customers" entity="customer" keys="CUSTOMERID"
   message-service-type="customMessageServiceType">
   ...
-</o-form>  
+</o-form>
 ```
 
 
@@ -307,5 +307,17 @@ For example
 ```html
 <o-form class="fill-form" ...>
   ...
+</o-form>
+```
+
+### Support JDBC UUID <span class='menuitem-badge'>new<span>
+
+Ontimize web now supports the JDBC **UUID** sql type. To indicate that a key column is of type UUID, all you have to do is to set to set the **UUID** via input `keys-sql-types` in the `o-form` as indicated in the following example.
+
+```html
+ <o-form #form service="..." entity="..." keys="ID" keys-sql-types="UUID" header-position="bottom"
+ ... stay-in-record-after-insert="true" header-actions="R;I;U;D">
+
+  ....
 </o-form>
 ```

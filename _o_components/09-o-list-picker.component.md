@@ -174,7 +174,7 @@ OntimizeWeb offers the `oLocker` directive to the `o-list-picker` that should to
     keys="CUSTOMERID" visible-columns="NAME" width="30%">
 </o-list-picker>
 ```
-![OLocker in  Combo component]({{ "/images/components/inputs/listPicker-oLocker.gif" | absolute_url }}){: .comp-example-img}
+![OLocker in list picker component]({{ "/images/components/inputs/listPicker-oLocker.gif" | absolute_url }}){: .comp-example-img}
 
 Note you can configure the mode of the locker, there are two modes to block, *disable* and *load* mode. The mode by default is *load*. You can configure  delay service start with `oLockerDelay` attribute, by default this value is the *250ms*.
 
@@ -182,3 +182,16 @@ Note you can configure the mode of the locker, there are two modes to block, *di
 ## Filtering
 
 You can check how to construct dependant list-pickers [here]({{ base_path }}/components/input/overviewservice/overview). You will need the attribute parent-keys to achieve this.
+
+### Support JDBC UUID <span class='menuitem-badge'>new<span>
+
+Ontimize web now supports the JDBC **UUID** sql type. To indicate that a combo column is of type UUID, all you have to do is to set `sql-type="UUID"`  in the `o-combo` component as indicated in the following example.
+
+```html
+    <o-form #form ...>
+      <o-list-picker attr="REFID" service="..." entity="..." sql-type="UUID" value-column="REFID"
+        columns="REFID;DESCRIPTION" visible-columns="DESCRIPTION">
+      </<o-list-picker>
+      ...
+    </o-form>
+```
