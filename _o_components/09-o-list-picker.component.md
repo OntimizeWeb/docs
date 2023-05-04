@@ -185,7 +185,7 @@ You can check how to construct dependant list-pickers [here]({{ base_path }}/com
 
 ### Support JDBC UUID <span class='menuitem-badge'>new<span>
 
-Ontimize web now supports the JDBC **UUID** sql type. To indicate that a combo column is of type UUID, all you have to do is to set `sql-type="UUID"`  in the `o-combo` component as indicated in the following example.
+Ontimize web now supports the JDBC **UUID** sql type. To indicate that a combo column is of type UUID, all you have to do is to set `sql-type="UUID"`  in the `o-list-picker` component as indicated in the following example.
 
 ```html
     <o-form #form ...>
