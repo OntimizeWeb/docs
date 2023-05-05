@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2023-04-17T04:54:54-04:00">
+  <meta property="article:published_time" content="2023-05-05T09:05:51-04:00">
 
 
 
@@ -896,7 +896,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="April 17, 2023">
+    <meta itemprop="datePublished" content="May 05, 2023">
     
 
     <div class="page__inner-wrap">
@@ -980,7 +980,10 @@
     </ul>
   </li>
   <li><a href="#custom-content-in-toolbar-new" id="markdown-toc-custom-content-in-toolbar-new">Custom content in toolbar <span class="menuitem-badge">new<span></span></span></a></li>
-  <li><a href="#pagination-new" id="markdown-toc-pagination-new">Pagination <span class="menuitem-badge">new<span></span></span></a></li>
+  <li><a href="#pagination-new" id="markdown-toc-pagination-new">Pagination <span class="menuitem-badge">new<span></span></span></a>    <ul>
+      <li><a href="#support-jdbc-uuid-new" id="markdown-toc-support-jdbc-uuid-new">Support JDBC UUID <span class="menuitem-badge">new<span></span></span></a></li>
+    </ul>
+  </li>
 </ul>
 
   </nav>
@@ -1109,6 +1112,17 @@
 <p>The paginator displays a dropdown of page sizes for you to choose from. The options for this dropdown can be set via <code class="language-plaintext highlighter-rouge">page-size-options</code>. For more information see the <strong>API</strong>.</p>
 
 <p>You can also configure the number of records initially displayed with query-rows attribute.</p>
+
+<h3 id="support-jdbc-uuid-new">Support JDBC UUID <span class="menuitem-badge">new<span></span></span></h3>
+
+<p>Ontimize web now supports the JDBC <strong>UUID</strong> sql type. To indicate that a key column is of type UUID, all you have to do is to set to set the <strong>UUID</strong> via input <code class="language-plaintext highlighter-rouge">keys-sql-types</code> in the <code class="language-plaintext highlighter-rouge">o-list</code> as indicated in the following example.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-list</span>  <span class="na">#list</span> <span class="na">service=</span><span class="s">"..."</span> <span class="na">entity=</span><span class="s">"..."</span> <span class="na">keys=</span><span class="s">"ID"</span> <span class="na">keys-sql-types=</span><span class="s">"UUID"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;o-list-item</span> <span class="na">*ngFor=</span><span class="s">"let list of list.dataArray"</span><span class="nt">&gt;</span>
+       ....
+      <span class="nt">&lt;/o-list-item&gt;</span>
+    <span class="nt">&lt;/o-list&gt;</span>
+</code></pre></div></div>
 
 </div>
 
@@ -1587,6 +1601,85 @@
             
   <td class="" o-component-default >
     <p class="first"><p>bottom</p>
+</p>
+    
+  </td>
+          
+        
+</tr>
+      
+
+        
+        
+
+  <tr >
+        
+        
+          
+          
+            
+            
+            
+            
+            
+
+            
+            
+  <td class="" o-component-name >
+    <p class="first"><p>keys-sql-types</p>
+</p>
+    
+      <p><i>string</i></p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+            
+            
+            
+
+            
+            
+  <td class="" o-component-since >
+    <p class="first">
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+            
+            
+            
+
+            
+            
+  <td class="" o-component-description >
+    <p class="first"><p>Entity keys SQL types, separated by ‘;’</p>
+</p>
+    
+  </td>
+          
+        
+          
+          
+            
+            
+            
+            
+            
+
+            
+            
+  <td class="" o-component-default >
+    <p class="first">
 </p>
     
   </td>
@@ -3953,7 +4046,7 @@ from List item card:
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-04-17T04:54:54-04:00">April 17, 2023</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-05-05T09:05:51-04:00">May 05, 2023</time></p>
         
       </footer>
 
