@@ -138,3 +138,15 @@ By default, the list is not paginating the data, but if you want that behaviour 
 The paginator displays a dropdown of page sizes for you to choose from. The options for this dropdown can be set via `page-size-options`. For more information see the **API**.
 
 You can also configure the number of records initially displayed with query-rows attribute.
+
+### Support JDBC UUID <span class='menuitem-badge'>new<span>
+
+Ontimize web now supports the JDBC **UUID** sql type. To indicate that a key column is of type UUID, all you have to do is to set to set the **UUID** via input `keys-sql-types` in the `o-list` as indicated in the following example.
+
+```html
+  <o-list  #list service="..." entity="..." keys="ID" keys-sql-types="UUID">
+      <o-list-item *ngFor="let list of list.dataArray">
+       ....
+      </o-list-item>
+    </o-list>
+```

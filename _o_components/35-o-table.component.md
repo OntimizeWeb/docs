@@ -1419,6 +1419,16 @@ If the selector `o-table-toolbar` is used together with `position='start'` the c
 
 ![Add custom content in toolbar in position start]({{ "/images/components/tabla/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
 
+### Support JDBC UUID <span class='menuitem-badge'>new<span>
+
+Ontimize web now supports the JDBC **UUID** sql type. To indicate that a table column is of type UUID, all you have to do is to set `sql-type="UUID"`  in the `o-table-column` component as indicated in the following example.
+
+```html
+    <o-table #table ...>
+      <o-table-column attr="ID" sql-type="UUID"> </o-table-column>
+      ...
+    </o-table>
+```
 
 ## Theming
 ### The table headers

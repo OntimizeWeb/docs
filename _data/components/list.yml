@@ -58,6 +58,12 @@ attributes: [{
 },{
   name: "pagination-controls",
   default: "no"
+},{
+  name: "keys-sql-types",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Entity keys SQL types, separated by ';'"
 }]
 
 outputs: [{
