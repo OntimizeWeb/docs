@@ -810,6 +810,18 @@ Below is an example of using the **pattern validator**.
 
 The table supports checkbox selection with `select-all-checkbox-visible` property. If this property is activated will display the row checkboxes, including a master toggle checkbox for the header. It is disabled by default.
 
+**OntimizeWeb** allows to customize the title, resizing, width, minwidth and maxwidth  of the master toggle checkbox for the header by adding the `o-table-column-select-all` directive to you application. For more information see the API.
+
+```html
+<o-table fxFlex attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
+      visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
+      row-height="medium" select-all-checkbox-visible="true" pageable="no" virtual-scroll="no">
+     <o-table-column-select-all title="Omit"></o-table-column-select-all>
+</o-table>
+```
+
+![Custom select all]({{ "/images/components/tabla/custom-selectall.png" | absolute_url }}){: .comp-example-img}
+
 You can configure show in the menu on the upper right the option of select row with `select-all-checkbox` property. It is disabled by default.
 
 <p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
@@ -1407,6 +1419,16 @@ If the selector `o-table-toolbar` is used together with `position='start'` the c
 
 ![Add custom content in toolbar in position start]({{ "/images/components/tabla/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
 
+### Support JDBC UUID <span class='menuitem-badge'>new<span>
+
+Ontimize web now supports the JDBC **UUID** sql type. To indicate that a table column is of type UUID, all you have to do is to set `sql-type="UUID"`  in the `o-table-column` component as indicated in the following example.
+
+```html
+    <o-table #table ...>
+      <o-table-column attr="ID" sql-type="UUID"> </o-table-column>
+      ...
+    </o-table>
+```
 
 ## Theming
 ### The table headers

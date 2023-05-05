@@ -243,3 +243,16 @@ Note you can configure the mode of the locker, there are two modes to block, *di
 ## Filtering
 
 You can check how to construct dependant combos [here]({{ base_path }}/components/input/overviewservice/overview). You will need the attribute parent-keys to achieve this.
+
+### Support JDBC UUID <span class='menuitem-badge'>new<span>
+
+Ontimize web now supports the JDBC **UUID** sql type. To indicate that a combo column is of type UUID, all you have to do is to set `sql-type="UUID"`  in the `o-combo` component as indicated in the following example.
+
+```html
+    <o-form #form ...>
+       <o-combo attr="REFID" service="..." entity="..." sql-type="UUID" value-column="REFID"
+        columns="REFID;DESCRIPTION" visible-columns="DESCRIPTION">
+      </o-combo>
+      ...
+    </o-form>
+```
