@@ -53,6 +53,8 @@ docs:
         url: /guide/service/
       - title: "Permissions"
         url: /guide/permissions/
+      - title: "Permission example"
+        url: /guide/permissions/example/
       - title: "Run your app"
         url: /run-your-app/
       - title: "Deploy your app"
