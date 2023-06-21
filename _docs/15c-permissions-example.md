@@ -7,7 +7,7 @@ permalink: /guide/permissions/example/
 
 # Overview
 
-In this section you gonna see the creation of an Ontimize application from cero using permissions on backend and frontend.
+In this section you are going to see the creation of an Ontimize application from cero using permissions on backend and frontend.
 
 # Creation of the application
 
@@ -19,8 +19,8 @@ To start the project we begin from a totally new Ontimize application. To see th
 
 ### Candidate entity creation
 
-First we gonna do is to add an entity called Candidate and add it's service and rest controller as you can see [here](https://www.ontimize.com/xwiki/bin/view/Ontimize+Boot+Training/Creating+DAO%2C+Service%2C+Controller){:target="_blank"}. Then we gonna add records to our table candidate on the database.
-Once we got the previus steps we gonna create the user *candidate* on the database and  define his permissions and the admin permissions as you can see [here](https://ontimize.github.io/ontimize-boot/basics/security/){:target="_blank"}. In this example also you can see the tags that we use to secure the application and the methods. We use `@EnableAspectJAutoProxy(proxyTargetClass = false)` once on the `ServerAplication` class and `@Secured({ PermissionsProviderSecured.SECURED })` on all methods that you wanna protect.
+First we are goint to do is to add an entity called Candidate and add it's service and rest controller as you can see [here](https://www.ontimize.com/xwiki/bin/view/Ontimize+Boot+Training/Creating+DAO%2C+Service%2C+Controller){:target="_blank"}. Then we will add records to our table candidate on the database.
+Once we got the previus steps we will create the user *candidate* on the database and  define his permissions and the admin permissions as you can see [here](https://ontimize.github.io/ontimize-boot/basics/security/){:target="_blank"}. In this example also you can see the tags that we use to secure the application and the methods. We use `@EnableAspectJAutoProxy(proxyTargetClass = false)` once on the `ServerAplication` class and `@Secured({ PermissionsProviderSecured.SECURED })` on all methods that you wanna protect.
 
 `com.ontimize.projectwiki.ServerApplication`:
 ```java
@@ -68,7 +68,7 @@ As we can see on the last screenshot the only user that have access to the CRUD 
 
 ### Server permissions
 
-Now it's time to define the server permissions. In our application we got two users, Demo and Candidate. The only user that we wanna have permission to access the candidates table it's the demo user so we gonna need to define it's permissions.
+Now it's time to define the server permissions. In our application we got two users, Demo and Candidate. The only user that we want to have permission to access the candidates table it's the demo user so we will need to define it's permissions.
 
 #### Creating the permission service
 
@@ -170,7 +170,7 @@ Once we create the service we can add our JSON permission files. We can see more
 }
 ```
 
-With this permissions if we log into the application with the candidate user we gonna see the application like this:
+With this permissions if we log into the application with the candidate user we will see the application like this:
 
 ![candidate home]({{ base_path }}/images/permissions/candidate_home.png){: .align-center}
 
@@ -210,3 +210,4 @@ export const SERVICE_CONFIG: Object = {
   }
 };
 ```
+
