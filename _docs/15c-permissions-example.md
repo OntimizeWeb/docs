@@ -19,7 +19,7 @@ To start the project we begin from a totally new Ontimize application. To see th
 
 ### Candidate entity creation
 
-First we are goint to do is to add an entity called Candidate and add it's service and rest controller as you can see [here](https://www.ontimize.com/xwiki/bin/view/Ontimize+Boot+Training/Creating+DAO%2C+Service%2C+Controller){:target="_blank"}. Then we will add records to our table candidate on the database.
+First we are going to do is to add an entity called Candidate and add it's service and rest controller as you can see [here](https://www.ontimize.com/xwiki/bin/view/Ontimize+Boot+Training/Creating+DAO%2C+Service%2C+Controller){:target="_blank"}. Then we will add records to our table candidate on the database.
 Once we got the previus steps we will create the user *candidate* on the database and  define his permissions and the admin permissions as you can see [here](https://ontimize.github.io/ontimize-boot/basics/security/){:target="_blank"}. In this example also you can see the tags that we use to secure the application and the methods. We use `@EnableAspectJAutoProxy(proxyTargetClass = false)` once on the `ServerAplication` class and `@Secured({ PermissionsProviderSecured.SECURED })` on all methods that you wanna protect.
 
 `com.ontimize.projectwiki.ServerApplication`:
