@@ -1,4 +1,4 @@
-class: "OTableCellRendererImageComponent"
+class: "OTableCellRendererBooleanComponent"
 
 extends: "OBaseTableCellRenderer"
 
