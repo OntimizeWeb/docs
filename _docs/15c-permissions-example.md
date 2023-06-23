@@ -128,7 +128,7 @@ public class PermissionService implements IPermissionService {
 }
 ```
 
-#### Defining our server permissions
+#### Defining our client permissions
 
 Once we create the service we can add our JSON permission files. We can see more examples of this files [here](https://ontimizeweb.github.io/docs/v8/guide/permissions/#permissions-definition-example){:target="_blank"}.
 
