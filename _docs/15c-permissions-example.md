@@ -13,7 +13,7 @@ In this section you are going to see the creation of an Ontimize application fro
 
 ## First steps
 
-To start the project we begin from a totally new Ontimize application. To see the complete example finished click the [following link](https://github.com/ontimize/ontimize-examples/tree/boot-web-permissions){:target="_blank"}.
+This tutorial starts using an empty Ontimize application project and it is going to reach final configuration step by step. To see the complete example click the [following link](https://github.com/ontimize/ontimize-examples/tree/boot-web-permissions){:target="_blank"}.
 
 ## Configuring the backend
 
