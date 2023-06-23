@@ -9,15 +9,13 @@ permalink: /guide/permissions/example/
 
 In this section you are going to see the creation of an Ontimize application from cero using permissions on backend and frontend.
 
-# Creation of the application
-
 ## First steps
 
 This tutorial starts using an empty Ontimize application project and it is going to reach final configuration step by step. To see the complete example click the [following link](https://github.com/ontimize/ontimize-examples/tree/boot-web-permissions){:target="_blank"}.
 
-## Configuring the backend
+# Configuring the backend
 
-### Candidate entity creation
+## Candidate entity creation
 
 First, we are going to add all stuff related with a Candidate: an entity, a service and the rest controller as you can see [here](https://www.ontimize.com/xwiki/bin/view/Ontimize+Boot+Training/Creating+DAO%2C+Service%2C+Controller){:target="_blank"}. Then, we will add records to our table candidate on the database.
 Next step is to create the user *candidate* on the database and  define his permissions and the admin permissions as you can see [here](https://ontimize.github.io/ontimize-boot/basics/security/){:target="_blank"}. In this example also you can see the tags that we use to secure the application and the methods. We use `@EnableAspectJAutoProxy(proxyTargetClass = false)` once on the `ServerAplication` class and `@Secured({ PermissionsProviderSecured.SECURED })` on all methods that you want to protect.
@@ -45,7 +43,7 @@ public EntityResult candidateQuery(Map<String, Object> keyMap, List<String> attr
 }
 ```
 
-### Database records
+## Database records
 
 Here are the rows that we added to our database on each table.
 
@@ -66,11 +64,11 @@ Here are the rows that we added to our database on each table.
 
 As we can see on the last screenshot the only user that have access to the CRUD operations on the table is the `demo` user.
 
-### Server permissions
+## Server permissions
 
 Now it's time to define the server permissions. In our application we have two users, 'Demo' and 'Candidate'. The unique user that we want to have permission to access the candidates table is the 'Demo' user. So we will need to define it's permissions.
 
-#### Creating the permission service
+### Creating the permission service
 
 Previous to define our permissions, we need to create a rest controller with its service to provide the permissions to the frontend.
 
@@ -128,7 +126,7 @@ public class PermissionService implements IPermissionService {
 }
 ```
 
-#### Defining our client permissions
+### Defining our client permissions
 
 Client permissions are defined by a JSON file (you can find more detailed information  [here](https://ontimizeweb.github.io/docs/v8/guide/permissions/#permissions-definition-example){:target="_blank"}).
 In this turorial, we are going to create a set of simple preconfigured JSON permission files. Into a real application, this permission object could be retrived from database or created dynamically by code depending on the user, the role, etc. We can see more examples of this files
@@ -179,7 +177,7 @@ And if we log with de demo user we gonna see a different menu:
 
 ![demo home]({{ base_path }}/images/permissions/demo_home.png){: .align-center}
 
-## Configuring the frontend
+# Configuring the frontend
 
 First file we need to configure on our frontend it's the `app.config.ts`, inside we need to define the type of permission we wanna use (see [here](https://ontimizeweb.github.io/docs/v8/guide/appconfig/#permissions-configuration){:target="_blank"} for the different types) and the service used to get the server permissions.
 
