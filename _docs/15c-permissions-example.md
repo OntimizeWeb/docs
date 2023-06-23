@@ -72,7 +72,7 @@ Now it's time to define the server permissions. In our application we have two u
 
 #### Creating the permission service
 
-Previous to define our permissions we need to create a rest controller with it's service to provide the permissions to the frontend.
+Previous to define our permissions, we need to create a rest controller with its service to provide the permissions to the frontend.
 
 `com.ontimize.projectwiki.ws.core.rest.PermissionRestController`:
 ```java
