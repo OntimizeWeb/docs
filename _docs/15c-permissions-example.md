@@ -68,7 +68,7 @@ As we can see on the last screenshot the only user that have access to the CRUD 
 
 ### Server permissions
 
-Now it's time to define the server permissions. In our application we got two users, Demo and Candidate. The only user that we want to have permission to access the candidates table it's the demo user so we will need to define it's permissions.
+Now it's time to define the server permissions. In our application we have two users, 'Demo' and 'Candidate'. The unique user that we want to have permission to access the candidates table is the 'Demo' user. So we will need to define it's permissions.
 
 #### Creating the permission service
 
