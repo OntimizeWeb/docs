@@ -344,7 +344,7 @@ You can see different predefined table cell renderers in the example below.
   <!--Integer Renderer-->
   <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
   <!--Boolean Renderer-->
-  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-column>
+  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string"></o-table-column>
 </o-table>
 ```
 
@@ -388,15 +388,17 @@ When an action cell is clicked you can trigger a predefined action or execute yo
 
 **Boolean cell renderer**
 
-Include the table cell renderer boolean in your table column by configuring the attribute `type` in the column with the value **boolean** or adding the `o-table-cell-renderer-boolean` to the table column. You can indicate the type of the retrieved data by configuring the `boolean-type` attribute. Display a custom value by configuring `false-value` and `true-value` attributes depending on the `false-value-type` and `true-value-type` attributes. Check the configuration of this attributes in the **API** section of this page.
+Include the table cell renderer boolean in your table column by configuring the attribute `type` in the column with the value **boolean** or adding the `o-table-cell-renderer-boolean` to the table column. You can indicate the type of the retrieved data by configuring the `boolean-type` attribute. Display a custom value by configuring `false-value` and `true-value` attributes depending on the `false-value-type` and `true-value-type` attributes.
+Display a custom value by configuring `render-false-value` and `render-true-value` attributes depending on the `false-value-type` and `true-value-type` attributes. Check the configuration of this attributes in the **API** section of this page.
 
  ```html
-<o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-column>
+<o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string"></o-table-column>
 
 <!-- Equivalent code -->
 
 <o-table-column attr="COMMISSION" title="COMMISSION">
-  <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean>
+  <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string">
+  </o-table-cell-renderer-boolean>
 </o-table-column>
 ```
 
