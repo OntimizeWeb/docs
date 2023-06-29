@@ -1,12 +1,12 @@
 ---
-permalink: /filemanager/filemanagerservice/dms
+permalink: /filemanager/filemanagerservice/sdms
 title: "File Manager Service"
 ---
 
 {% include base_path %}
 {% include toc %}
 
-The `FileManagerOntimizeService` class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting and searching from files, as well as creating and deleting folders for organising the work space.
+The `FileManagerS3Service` class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting, coping, moving and searching from files, as well as creating and deleting folders for organising the work space.
 
 
 ## File data model
@@ -119,17 +119,45 @@ Create a folder in the work space.
 * **Return** Observable<any>
 
 ### *changeFileName*
-Update a folder or file name.
+Change the name of a file.
 
 * **Parameters**
 
-| Name | Type      | Required | Description                   |
-| ---- | --------- | -------- | ----------------------------- |
-| name | string    | yes      | The file/folder name          |
-| file | FileClass | yes      | The file for changin the name |
+| Name        | Type        | Required | Description                 |
+| ----------- | ----------- | -------- | --------------------------- |
+| name        | string      | yes      | The new name of the file    |
+| file        | FileClass   | yes      | The file to be name changed |
+| workspace   | WordspaceS3 | yes      | The work space              |
 
 * **Return** Observable<any>
 
+### *copyFiles*
+Copy files to a folder.
+
+* **Parameters**
+
+| Name        | Type        | Required | Description                                            |
+| ----------- | ----------- | -------- | ------------------------------------------------------ |
+| workspace   | WordspaceS3 | yes      | The work space                                         |
+| files       | FileClass[] | yes      | The files to be copied                                 |
+| folder      | string      | yes      | The final folder of the files copied                   |
+| kv          | Object      | no       | A key/value object for filtering the results requested |
+
+* **Return** Observable<any>
+
+### *moveFiles*
+Move files to a folder.
+
+* **Parameters**
+
+| Name        | Type        | Required | Description                                            |
+| ----------- | ----------- | -------- | ------------------------------------------------------ |
+| workspace   | WordspaceS3 | yes      | The work space                                         |
+| files       | FileClass[] | yes      | The files to be copied                                 |
+| folder      | string      | yes      | The final folder of the files copied                   |
+| kv          | Object      | no       | A key/value object for filtering the results requested |
+
+* **Return** Observable<any>
 
 ## Extending the File Manager Service
 
@@ -140,7 +168,7 @@ import { Injectable, Injector } from '@angular/core';
 import { FileManagerService } from 'ontimize-web-ngx-filemanager';
 
 @Injectable()
-export class FileManagerExtendedService extends FileManagerOntimizeService {
+export class FileManagerExtendedService extends FileManagerS3Service {
 
   constructor(
     protected injector: Injector
