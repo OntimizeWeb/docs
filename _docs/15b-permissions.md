@@ -11,6 +11,10 @@ In this section we are going to show how to define components permissions.
 
 Ontimize Web has the feature of controlling components presence, state or its actions by the use of server defined permissions.
 
+## First steps
+
+To start defining your own permissions first you need to configure your backend following [this steps](https://ontimize.github.io/ontimize-boot/basics/security/){:target="_blank"}. To see a complete tutorial of how to configure an application on frontend and backend see the [following example]({{ base_path }}/guide/permissions/example/){:target="_blank"}.
+
 ## Permissions configuration
 
 In the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"} section you can see how to configure the permissions service for getting the permissions data from server.
