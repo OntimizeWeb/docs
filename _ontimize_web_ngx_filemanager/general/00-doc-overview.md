@@ -12,7 +12,7 @@ The **OntimizeWeb** file manager allows you to manage files stored in your appli
 
 ![Filemanager]({{ "/images/filemanager/filemanager_default.png" | absolute_url }}){: .comp-example-img width='60%' }
 
-We provide two different types of file manager engines on Ontimize: the DMS file manager that uses a database to store de files and de SDMS file manager wich is based con Amazon S3 cloud.
+We provide two different types of file manager engines on Ontimize: the **DMS** file manager that uses a database to store de files and de **SDMS** file manager (since `ontimize-web-ngx-filemanager 8.6.0` and `ontimize-boot 3.12.0`) wich is based con Amazon S3 cloud.
 
 ## Upload
 
