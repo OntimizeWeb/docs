@@ -1131,15 +1131,32 @@ You can configure:
 </ul>
 
 ### Column titles alignment
-The `o-table` columns title texts are centered by default. Using the `o-column` component `title-align` input user can modify that default value.
 
-There also exists the possibility of automatically align the table columns titles depending on the column type, using the `auto-align-titles` input:
-
+By default, the `o-table` columns title texts are aligned depending on the column type.
 * **start**: service types and default value when auto-align-titles is active.
 * **center**: image, date, action and boolean types.
 * **end**: currency, integer, real and percentage types.
 
-When the `auto-align-titles` input is set to true, user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
+Using the `o-table-column` component `title-align` input user can modify that default value.
+
+When the `auto-align-titles` input is set to false in `o-table`, the title of the table column is aligned centered. The user can also define a `title-align` in the columns (its value has precedence over the default type alignment).
+
+Global title alignment settings can be specified by providing a value for `O_TABLE_GLOBAL_CONFIG` in your application root or in a specific module.
+
+```ts
+@NgModule({
+  declarations: [
+  ...
+  ],
+  ...
+  providers: [
+    ...
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAlignTitles: false } },
+    ...
+  ],
+  ...
+})
+```
 
 ### Column resizing
 The `o-table` component allows column resizing by default. Using the `resizable` input you can modify that default value on the table. To disabled resizing for each column, set `resizable='no'` on the column definition.

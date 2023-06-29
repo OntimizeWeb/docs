@@ -122,7 +122,7 @@ attributes: [{
 },{
   name: "auto-align-titles",
   type: "no | false | yes | true",
-  default: "no",
+  default: "yes",
   description: "Indicates whether or not to auto align the table header cells"
 },{
   name: "multiple-sort",
