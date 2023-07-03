@@ -309,6 +309,15 @@ For example
   ...
 </o-form>
 ```
+![Form with fill-form class]({{ "/images/components/form/o-form_fill-form.png" | absolute_url }}){: .comp-example-img}
+
+And whithout the `fill-form` class:
+```html
+<o-form ...>
+  ...
+</o-form>
+```
+![Form with fill-form class]({{ "/images/components/form/o-form_no_fill-form.png" | absolute_url }}){: .comp-example-img}
 
 ### Support JDBC UUID <span class='menuitem-badge'>new<span>
 
