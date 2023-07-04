@@ -133,7 +133,7 @@ Update a folder or file name.
 
 ## Extending the File Manager Service
 
-You can define **your own file manager service** by extending the `FileManagerService` class as follows.
+You can define **your own file manager service** by extending the `FileManagerOntimizeService` class as follows.
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
