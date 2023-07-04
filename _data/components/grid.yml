@@ -61,7 +61,7 @@ attributes: [{
   description: "Indicates whether or not to have a fixed header and footer when the content is greather than its own height"
 },{
   name: "gutter-size",
-  type: "boolean",
+  type: "string",
   default: "1px",
   required: "",
   description: "The amount of space between o-grid-items. This will be something like '10px' or '1em'."
