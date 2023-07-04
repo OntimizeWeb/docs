@@ -57,7 +57,7 @@ Also you must indicate also the form column name that stores the work space iden
 `customers-detail.component.html`:
 ```html
 ...
-<o-filemanager-table type="S3" service="customers" workspace-key="ID_DMS_DOC" workspaceS3="setWorkspaceS3(form.data)"></o-filemanager-table>
+<o-filemanager-table type="S3" service="customers" [workspace-s3]="setWorkspaceS3"></o-filemanager-table>
 ...
 ```
 
