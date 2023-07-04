@@ -1,6 +1,6 @@
 ---
 permalink: /filemanager/filemanagerservice/sdms
-title: "File Manager Service"
+title: "File Manager SDMS Service"
 ---
 
 {% include base_path %}
