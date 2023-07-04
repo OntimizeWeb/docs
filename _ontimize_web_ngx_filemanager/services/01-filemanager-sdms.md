@@ -35,7 +35,7 @@ Where the attributes indicates the following:
 ## Methods
 
 ### *configureService*
-Configure de Ontimize Web File Manager service.
+Configure de Ontimize Web File Manager SDMS Service.
 
 * **Parameters**
 
