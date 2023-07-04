@@ -61,7 +61,7 @@ Also you must indicate also the form column name that stores the work space iden
 ...
 ```
 
-`customers-home.ts`:
+`customers-detail.component.ts`:
 ```typescript
 ...
   setWorkspaceS3(data: any) {
