@@ -65,7 +65,7 @@ Also you must indicate also the form column name that stores the work space iden
 ```typescript
 ...
   setWorkspaceS3(data: any) {
-    return { name: 'default', data: { id: [1] } };
+    return { name: 'default', data: { id: data['CUSTOMERID'] } };
   }
 ...
 ```
