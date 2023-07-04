@@ -54,7 +54,7 @@ If you want to use the SDMS file manager engine you need to add the `type='S3'` 
 
 Also you must indicate also the form column name that stores the work space identifier in the workspace-key attribute or define the `workspace-S3` function as the example bellow
 
-`cutomers-home.html`:
+`customers-detail.component.html`:
 ```html
 ...
 <o-filemanager-table type="S3" service="customers" workspace-key="ID_DMS_DOC" workspaceS3="setWorkspaceS3(form.data)"></o-filemanager-table>
