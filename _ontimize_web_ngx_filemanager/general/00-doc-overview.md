@@ -12,10 +12,11 @@ The **OntimizeWeb** file manager allows you to manage files stored in your appli
 
 ![Filemanager]({{ "/images/filemanager/filemanager_default.png" | absolute_url }}){: .comp-example-img width='60%' }
 
+We provide two different types of file manager engines on Ontimize: the **DMS** file manager that uses a database to store de files and de **SDMS** file manager (since `ontimize-web-ngx-filemanager 8.6.0` and `ontimize-boot 3.12.0`) wich is based con Amazon S3 cloud.
 
 ## Upload
 
-You can *upload* files since the button *Upload*. 
+You can *upload* files since the button *Upload*.
 
 While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value `auto-hide-timeout` in ms and also auto hide the message by setting the value `auto-hide-upload="no"`.
 
@@ -40,7 +41,7 @@ The `o-filemanager-table` allow download simple or multiple files by a context m
 
 ![Download mulitple]({{ "/images/filemanager/filemanager_selectedmultiple.png" | absolute_url }}){: .comp-example-img }
 
-## Rename files or folders 
+## Rename files or folders
 
 The `o-filemanager-table` allow rename files or folders by a context menu.
 
@@ -55,6 +56,7 @@ You can browse between folder with double click or by content menu over the fold
 
 
 ## Selection multiple
+
 The `o-filemanager-table` support selection multiple with *row selection* or *checkbox selection* with `select-all-checkbox="yes"` property. If this property is activated in the menu on the upper right, the option will be active. By default is no.
 
 Example
@@ -70,4 +72,11 @@ Example
 
 The `o-filemanager-table` allow filter by name of files or folders.
 
----
+
+## Copy files or folders (only for SDMS)
+
+The `o-filemanager-table` configured as SMDS allows you to copy files and folders.
+
+## Move files or folders (only for SDMS)
+
+The `o-filemanager-table` configured as SMDS allows you to move files and folders.
