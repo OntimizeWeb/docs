@@ -182,7 +182,7 @@ export class FileManagerExtendedService extends FileManagerS3Service {
 
 ## File Manager REST API
 
-In this section we describe the REST API used by the `FileManagerService`.
+In this section we describe the REST API used by the `FileManagerS3Service `.
 
 ### Get files information
 
