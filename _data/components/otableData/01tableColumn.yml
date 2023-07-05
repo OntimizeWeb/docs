@@ -74,7 +74,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "Indicates the min width of the column in px"
+  description: "Indicates the max width of the column in px"
 },{
   name: "async-load",
   type: "no | yes | true | false",

@@ -309,8 +309,17 @@ For example
   ...
 </o-form>
 ```
+![Form with fill-form class]({{ "/images/components/form/o-form_fill-form.png" | absolute_url }}){: .comp-example-img}
 
-### Support JDBC UUID <span class='menuitem-badge'>new<span>
+And whithout the `fill-form` class:
+```html
+<o-form ...>
+  ...
+</o-form>
+```
+![Form with fill-form class]({{ "/images/components/form/o-form_no_fill-form.png" | absolute_url }}){: .comp-example-img}
+
+## Support JDBC UUID <span class='menuitem-badge'>new<span>
 
 Ontimize web now supports the JDBC **UUID** sql type. To indicate that a key column is of type UUID, all you have to do is to set to set the **UUID** via input `keys-sql-types` in the `o-form` as indicated in the following example.
 
