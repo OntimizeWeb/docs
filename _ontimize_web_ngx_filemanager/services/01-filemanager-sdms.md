@@ -1,12 +1,12 @@
 ---
-permalink: /filemanager/filemanagerservice/dms
-title: "File Manager DMS Service"
+permalink: /filemanager/filemanagerservice/sdms
+title: "File Manager SDMS Service"
 ---
 
 {% include base_path %}
 {% include toc %}
 
-The `FileManagerOntimizeService` class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting and searching from files, as well as creating and deleting folders for organising the work space.
+The `FileManagerS3Service` class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting, coping, moving and searching from files, as well as creating and deleting folders for organising the work space.
 
 
 ## File data model
@@ -35,7 +35,7 @@ Where the attributes indicates the following:
 ## Methods
 
 ### *configureService*
-Configure de Ontimize Web File Manager service.
+Configure de Ontimize Web File Manager SDMS Service.
 
 * **Parameters**
 
@@ -119,28 +119,56 @@ Create a folder in the work space.
 * **Return** Observable<any>
 
 ### *changeFileName*
-Update a folder or file name.
+Change the name of a file.
 
 * **Parameters**
 
-| Name | Type      | Required | Description                   |
-| ---- | --------- | -------- | ----------------------------- |
-| name | string    | yes      | The file/folder name          |
-| file | FileClass | yes      | The file for changin the name |
+| Name        | Type        | Required | Description                 |
+| ----------- | ----------- | -------- | --------------------------- |
+| name        | string      | yes      | The new name of the file    |
+| file        | FileClass   | yes      | The file to be name changed |
+| workspace   | WordspaceS3 | yes      | The work space              |
 
 * **Return** Observable<any>
 
+### *copyFiles*
+Copy files to a folder.
+
+* **Parameters**
+
+| Name        | Type        | Required | Description                                            |
+| ----------- | ----------- | -------- | ------------------------------------------------------ |
+| workspace   | WordspaceS3 | yes      | The work space                                         |
+| files       | FileClass[] | yes      | The files to be copied                                 |
+| folder      | string      | yes      | The final folder of the files copied                   |
+| kv          | Object      | no       | A key/value object for filtering the results requested |
+
+* **Return** Observable<any>
+
+### *moveFiles*
+Move files to a folder.
+
+* **Parameters**
+
+| Name        | Type        | Required | Description                                            |
+| ----------- | ----------- | -------- | ------------------------------------------------------ |
+| workspace   | WordspaceS3 | yes      | The work space                                         |
+| files       | FileClass[] | yes      | The files to be copied                                 |
+| folder      | string      | yes      | The final folder of the files copied                   |
+| kv          | Object      | no       | A key/value object for filtering the results requested |
+
+* **Return** Observable<any>
 
 ## Extending the File Manager Service
 
-You can define **your own file manager service** by extending the `FileManagerOntimizeService` class as follows.
+You can define **your own file manager service** by extending the `FileManagerService` class as follows.
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
-import { FileManagerOntimizeService } from 'ontimize-web-ngx-filemanager';
+import { FileManagerS3Service } from 'ontimize-web-ngx-filemanager';
 
 @Injectable()
-export class FileManagerExtendedService extends FileManagerOntimizeService {
+export class FileManagerExtendedService extends FileManagerS3Service {
 
   constructor(
     protected injector: Injector
@@ -154,7 +182,7 @@ export class FileManagerExtendedService extends FileManagerOntimizeService {
 
 ## File Manager REST API
 
-In this section we describe the REST API used by the `FileManagerService`.
+In this section we describe the REST API used by the `FileManagerS3Service `.
 
 ### Get files information
 

@@ -18,7 +18,7 @@ title: "Installation"
 Import the `OReportModule ` into the main module of your application.
 
 ```javascript
-import { OReportModule } from 'ontimize-web-ngx-keycloak';
+import { OReportModule } from 'ontimize-web-ngx-report';
 
 @NgModule({
   imports: [

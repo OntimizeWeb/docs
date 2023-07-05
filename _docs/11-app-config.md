@@ -307,7 +307,6 @@ There is different types of `MenuRootItem` depending on the task they are define
   | icon                | string              | The menu item icon (see <a href="https://design.google.com/icons/">Google material design icons</a>{:target='_blank'}) |
   | tooltip             | string              | The tooltip text showed on the menu item when the menu is callapsed |
   | class               | string  | The CSS class applied to the menu item |
-  | show-in-app-sidenav | boolean             | Indicates whether or not to show the menu item in the side menu |
   | show-in-card-menu   | boolean             | Indicates whether or not to show the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
   | image               | string              | The image displayed on the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
   | component           | component reference | The component for the corresonding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |

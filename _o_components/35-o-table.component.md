@@ -344,7 +344,7 @@ You can see different predefined table cell renderers in the example below.
   <!--Integer Renderer-->
   <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
   <!--Boolean Renderer-->
-  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-column>
+  <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string"></o-table-column>
 </o-table>
 ```
 
@@ -388,15 +388,17 @@ When an action cell is clicked you can trigger a predefined action or execute yo
 
 **Boolean cell renderer**
 
-Include the table cell renderer boolean in your table column by configuring the attribute `type` in the column with the value **boolean** or adding the `o-table-cell-renderer-boolean` to the table column. You can indicate the type of the retrieved data by configuring the `boolean-type` attribute. Display a custom value by configuring `false-value` and `true-value` attributes depending on the `false-value-type` and `true-value-type` attributes. Check the configuration of this attributes in the **API** section of this page.
+Include the table cell renderer boolean in your table column by configuring the attribute `type` in the column with the value **boolean** or adding the `o-table-cell-renderer-boolean` to the table column. You can indicate the type of the retrieved data by configuring the `boolean-type` attribute. Display a custom value by configuring `false-value` and `true-value` attributes depending on the `false-value-type` and `true-value-type` attributes.
+Display a custom value by configuring `render-false-value` and `render-true-value` attributes depending on the `false-value-type` and `true-value-type` attributes. Check the configuration of this attributes in the **API** section of this page.
 
  ```html
-<o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-column>
+<o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string"></o-table-column>
 
 <!-- Equivalent code -->
 
 <o-table-column attr="COMMISSION" title="COMMISSION">
-  <o-table-cell-renderer-boolean true-value="check_circle" false-value="highlight_off" true-value-type="icon" false-value-type="icon" boolean-type="string"></o-table-cell-renderer-boolean>
+  <o-table-cell-renderer-boolean render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string">
+  </o-table-cell-renderer-boolean>
 </o-table-column>
 ```
 
@@ -824,7 +826,7 @@ The table supports checkbox selection with `select-all-checkbox-visible` propert
 
 You can configure show in the menu on the upper right the option of select row with `select-all-checkbox` property. It is disabled by default.
 
-<p><img src="/docs/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
+<p><img src="{{ base_path }}/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
 Additionally, you can specify a function setting the input `disable-selection-function` to disable the checkboxes depending on a condition. This function receives full data record for allowing you to enable/disable selection checkbox depending on value/s of the record.
 

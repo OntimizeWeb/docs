@@ -49,3 +49,23 @@ You must configure the `service` attribute within the name of the service that m
 ```html
 <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC"></o-filemanager-table>
 ```
+
+If you want to use the SDMS file manager engine you need to add the `type='S3'` attribute to yours `o-filemanager-table` component. 
+
+Also you must indicate also the form column name that stores the work space identifier in the workspace-key attribute or define the `workspace-S3` function as the example bellow
+
+`customers-detail.component.html`:
+```html
+...
+<o-filemanager-table type="S3" service="customers" [workspace-s3]="setWorkspaceS3"></o-filemanager-table>
+...
+```
+
+`customers-detail.component.ts`:
+```typescript
+...
+  setWorkspaceS3(data: any) {
+    return { name: 'default', data: { id: data['CUSTOMERID'] } };
+  }
+...
+```
