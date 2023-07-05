@@ -19,7 +19,7 @@
 
 
 
-<title>File Manager Service - Ontimize Web</title>
+<title>File Manager SDMS Service - Ontimize Web</title>
 
 
 
@@ -29,11 +29,11 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ontimize Web">
-<meta property="og:title" content="File Manager Service">
+<meta property="og:title" content="File Manager SDMS Service">
 
 
-  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/">
-  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/">
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/sdms">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/sdms">
 
 
 
@@ -42,9 +42,9 @@
 
 
   <meta name="twitter:site" content="@imatiainnova">
-  <meta name="twitter:title" content="File Manager Service">
+  <meta name="twitter:title" content="File Manager SDMS Service">
   <meta name="twitter:description" content="     On This Page  ">
-  <meta name="twitter:url" content="https://ontimizeweb.github.io/filemanager/filemanagerservice/">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/filemanager/filemanagerservice/sdms">
 
   
     <meta name="twitter:card" content="summary">
@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2023-05-05T09:05:51-04:00">
+  <meta property="article:published_time" content="2023-07-05T04:39:13-04:00">
 
 
 
@@ -286,7 +286,17 @@
     
       
       
-        <li class="current">File Manager Service</li>
+        
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+          <a href="https://ontimizeweb.github.io/docs/v8/filemanagerservice" itemprop="item"><span itemprop="name">Filemanagerservice</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        <li class="current">File Manager SDMS Service</li>
       
     
   </ol>
@@ -406,7 +416,15 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/" class="active ">File Manager Service</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/dms" class=" ">File Manager DMS Service</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/sdms" class="active ">File Manager SDMS Service</a></li>
           
         </ul>
         
@@ -421,17 +439,17 @@
 
   <article class="page " itemscope itemtype="http://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="File Manager Service">
+    <meta itemprop="headline" content="File Manager SDMS Service">
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="May 05, 2023">
+    <meta itemprop="datePublished" content="July 05, 2023">
     
 
     <div class="page__inner-wrap">
       
       <header>
-        <h1 class="page__title" itemprop="headline">File Manager Service
+        <h1 class="page__title" itemprop="headline">File Manager SDMS Service
 </h1>
         
       </header>
@@ -452,7 +470,9 @@
       <li><a href="#upload" id="markdown-toc-upload"><em>upload</em></a></li>
       <li><a href="#deletefiles" id="markdown-toc-deletefiles"><em>deleteFiles</em></a></li>
       <li><a href="#insertfolder" id="markdown-toc-insertfolder"><em>insertFolder</em></a></li>
-      <li><a href="#fileupdate" id="markdown-toc-fileupdate"><em>fileUpdate</em></a></li>
+      <li><a href="#changefilename" id="markdown-toc-changefilename"><em>changeFileName</em></a></li>
+      <li><a href="#copyfiles" id="markdown-toc-copyfiles"><em>copyFiles</em></a></li>
+      <li><a href="#movefiles" id="markdown-toc-movefiles"><em>moveFiles</em></a></li>
     </ul>
   </li>
   <li><a href="#extending-the-file-manager-service" id="markdown-toc-extending-the-file-manager-service">Extending the File Manager Service</a></li>
@@ -472,7 +492,7 @@
   </nav>
 </aside>
 
-<p>The <code class="language-plaintext highlighter-rouge">FileManagerService</code> class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting and searching from files, as well as creating and deleting folders for organising the work space.</p>
+<p>The <code class="language-plaintext highlighter-rouge">FileManagerS3Service</code> class provide a collection of methods to manage files and folders. The most common operations performed on files include uploading, downloading, deleting, coping, moving and searching from files, as well as creating and deleting folders for organising the work space.</p>
 
 <h2 id="file-data-model">File data model</h2>
 
@@ -500,7 +520,7 @@
 <h2 id="methods">Methods</h2>
 
 <h3 id="configureservice"><em>configureService</em></h3>
-<p>Configure de Ontimize Web File Manager service.</p>
+<p>Configure de Ontimize Web File Manager SDMS Service.</p>
 
 <ul>
   <li><strong>Parameters</strong></li>
@@ -759,8 +779,8 @@
   <li><strong>Return</strong> Observable<any></any></li>
 </ul>
 
-<h3 id="fileupdate"><em>fileUpdate</em></h3>
-<p>Update a folder or file name.</p>
+<h3 id="changefilename"><em>changeFileName</em></h3>
+<p>Change the name of a file.</p>
 
 <ul>
   <li><strong>Parameters</strong></li>
@@ -780,13 +800,115 @@
       <td>name</td>
       <td>string</td>
       <td>yes</td>
-      <td>The file/folder name</td>
+      <td>The new name of the file</td>
     </tr>
     <tr>
       <td>file</td>
       <td>FileClass</td>
       <td>yes</td>
-      <td>The file for changin the name</td>
+      <td>The file to be name changed</td>
+    </tr>
+    <tr>
+      <td>workspace</td>
+      <td>WordspaceS3</td>
+      <td>yes</td>
+      <td>The work space</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>Return</strong> Observable<any></any></li>
+</ul>
+
+<h3 id="copyfiles"><em>copyFiles</em></h3>
+<p>Copy files to a folder.</p>
+
+<ul>
+  <li><strong>Parameters</strong></li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>workspace</td>
+      <td>WordspaceS3</td>
+      <td>yes</td>
+      <td>The work space</td>
+    </tr>
+    <tr>
+      <td>files</td>
+      <td>FileClass[]</td>
+      <td>yes</td>
+      <td>The files to be copied</td>
+    </tr>
+    <tr>
+      <td>folder</td>
+      <td>string</td>
+      <td>yes</td>
+      <td>The final folder of the files copied</td>
+    </tr>
+    <tr>
+      <td>kv</td>
+      <td>Object</td>
+      <td>no</td>
+      <td>A key/value object for filtering the results requested</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>Return</strong> Observable<any></any></li>
+</ul>
+
+<h3 id="movefiles"><em>moveFiles</em></h3>
+<p>Move files to a folder.</p>
+
+<ul>
+  <li><strong>Parameters</strong></li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>workspace</td>
+      <td>WordspaceS3</td>
+      <td>yes</td>
+      <td>The work space</td>
+    </tr>
+    <tr>
+      <td>files</td>
+      <td>FileClass[]</td>
+      <td>yes</td>
+      <td>The files to be copied</td>
+    </tr>
+    <tr>
+      <td>folder</td>
+      <td>string</td>
+      <td>yes</td>
+      <td>The final folder of the files copied</td>
+    </tr>
+    <tr>
+      <td>kv</td>
+      <td>Object</td>
+      <td>no</td>
+      <td>A key/value object for filtering the results requested</td>
     </tr>
   </tbody>
 </table>
@@ -800,10 +922,10 @@
 <p>You can define <strong>your own file manager service</strong> by extending the <code class="language-plaintext highlighter-rouge">FileManagerService</code> class as follows.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">FileManagerService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx-filemanager</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FileManagerS3Service</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx-filemanager</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">FileManagerExtendedService</span> <span class="kd">extends</span> <span class="nx">FileManagerService</span> <span class="p">{</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">FileManagerExtendedService</span> <span class="kd">extends</span> <span class="nx">FileManagerS3Service</span> <span class="p">{</span>
 
   <span class="kd">constructor</span><span class="p">(</span>
     <span class="kr">protected</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span>
@@ -816,7 +938,7 @@
 
 <h2 id="file-manager-rest-api">File Manager REST API</h2>
 
-<p>In this section we describe the REST API used by the <code class="language-plaintext highlighter-rouge">FileManagerService</code>.</p>
+<p>In this section we describe the REST API used by the <code class="language-plaintext highlighter-rouge">FileManagerS3Service </code>.</p>
 
 <h3 id="get-files-information">Get files information</h3>
 
@@ -1210,7 +1332,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-05-05T09:05:51-04:00">May 05, 2023</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-05T04:39:13-04:00">July 05, 2023</time></p>
         
       </footer>
 
@@ -1221,7 +1343,7 @@
 
   <nav class="pagination">
     
-      <a href="https://ontimizeweb.github.io/docs/v8/filemanager/installation/" class="pagination--pager" title="Installation
+      <a href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/dms" class="pagination--pager" title="File Manager DMS Service
 ">
           <i class="fas fa-arrow-left margin-right"></i>
         Previous

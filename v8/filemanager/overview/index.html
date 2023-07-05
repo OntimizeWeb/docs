@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2023-05-05T09:05:51-04:00">
+  <meta property="article:published_time" content="2023-07-05T04:39:13-04:00">
 
 
 
@@ -406,7 +406,15 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/" class=" ">File Manager Service</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/dms" class=" ">File Manager DMS Service</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/sdms" class=" ">File Manager SDMS Service</a></li>
           
         </ul>
         
@@ -425,7 +433,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="May 05, 2023">
+    <meta itemprop="datePublished" content="July 05, 2023">
     
 
     <div class="page__inner-wrap">
@@ -452,6 +460,8 @@
   <li><a href="#browsing-between-folders" id="markdown-toc-browsing-between-folders">Browsing between folders</a></li>
   <li><a href="#selection-multiple" id="markdown-toc-selection-multiple">Selection multiple</a></li>
   <li><a href="#textbox-search-filter" id="markdown-toc-textbox-search-filter">Textbox Search filter</a></li>
+  <li><a href="#copy-files-or-folders-only-for-sdms" id="markdown-toc-copy-files-or-folders-only-for-sdms">Copy files or folders (only for SDMS)</a></li>
+  <li><a href="#move-files-or-folders-only-for-sdms" id="markdown-toc-move-files-or-folders-only-for-sdms">Move files or folders (only for SDMS)</a></li>
 </ul>
 
   </nav>
@@ -462,6 +472,8 @@
 <p>The <strong>OntimizeWeb</strong> file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/v8/images/filemanager/filemanager_default.png" alt="Filemanager" class="comp-example-img" width="60%" /></p>
+
+<p>We provide two different types of file manager engines on Ontimize: the <strong>DMS</strong> file manager that uses a database to store de files and de <strong>SDMS</strong> file manager (since <code class="language-plaintext highlighter-rouge">ontimize-web-ngx-filemanager 8.6.0</code> and <code class="language-plaintext highlighter-rouge">ontimize-boot 3.12.0</code>) wich is based con Amazon S3 cloud.</p>
 
 <h2 id="upload">Upload</h2>
 
@@ -502,6 +514,7 @@
 <p><img src="https://ontimizeweb.github.io/docs/v8/images/filemanager/filemanager_browser.png" alt="Context menu" class="comp-example-img" /></p>
 
 <h2 id="selection-multiple">Selection multiple</h2>
+
 <p>The <code class="language-plaintext highlighter-rouge">o-filemanager-table</code> support selection multiple with <em>row selection</em> or <em>checkbox selection</em> with <code class="language-plaintext highlighter-rouge">select-all-checkbox="yes"</code> property. If this property is activated in the menu on the upper right, the option will be active. By default is no.</p>
 
 <p>Example</p>
@@ -515,7 +528,13 @@
 
 <p>The <code class="language-plaintext highlighter-rouge">o-filemanager-table</code> allow filter by name of files or folders.</p>
 
-<hr />
+<h2 id="copy-files-or-folders-only-for-sdms">Copy files or folders (only for SDMS)</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-filemanager-table</code> configured as SMDS allows you to copy files and folders.</p>
+
+<h2 id="move-files-or-folders-only-for-sdms">Move files or folders (only for SDMS)</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-filemanager-table</code> configured as SMDS allows you to move files and folders.</p>
 
         
       </section>
@@ -528,7 +547,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-05-05T09:05:51-04:00">May 05, 2023</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-05T04:39:13-04:00">July 05, 2023</time></p>
         
       </footer>
 
