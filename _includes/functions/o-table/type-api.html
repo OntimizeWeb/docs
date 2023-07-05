@@ -2,23 +2,26 @@
 
 {% for file in files%}
   {% assign filename =  file[0] %}
-  {% assign componentAPI = include.folder[filename];%}  
+  {% assign componentAPI = include.folder[filename];%}
 
   {% if componentAPI.type %}
-  <h2 id="{{ componentAPI.type }}"> 
+  <h2 id="{{ componentAPI.type }}">
     <span>{{ componentAPI.type }} </span>
     {% if componentAPI.extends %}
-      extends {{ componentAPI.extends }} 
+      extends {{ componentAPI.extends }}
     {% endif %}
   </h2>
   {% if componentAPI.type %}
     <p><strong class="grey-color">Type:</strong> {{ componentAPI.type }}</p>
   {% endif %}
+  {% if componentAPI.description %}
+    <p>{{ componentAPI.description }}</p>
+  {% endif %}
 
 
   {{ componentAPI.type }} {
     {% if componentAPI.attributes %}
-    <ul class="attributes-list">  
+    <ul class="attributes-list">
       {% assign sortedAttributes = (componentAPI.attributes | sort: 'name') %}
       {% for sortedAttr in sortedAttributes %}
         <li> {{ sortedAttr.name }}{% if sortedAttr.optional %}?{% endif %}: {{ sortedAttr.type }} </li>
@@ -28,4 +31,3 @@
   }
   {% endif %}
 {% endfor %}
-  

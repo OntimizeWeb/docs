@@ -1,0 +1,7 @@
+constant : "O_TABLE_GLOBAL_CONFIG"
+
+description: Injection token that can be used to set global options for the table or within an application or module.
+<div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
+const O_TABLE_GLOBAL_CONFIG:InjectionToken<OTableGlobalConfig>;
+</code></pre></div></div>
+

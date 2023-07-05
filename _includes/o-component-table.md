@@ -71,12 +71,18 @@
           <ul>
           {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.editors type="directive" %}
           </ul>
-      </li>
-      <li><a>Types</a>
+        </li>
+        <li><a>Types</a>
+            <ul>
+            {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.types type="type"  %}
+            </ul>
+        </li>
+        <li>
+          <a>Constants</a>
           <ul>
-          {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.types type="type"  %}
+          {% include functions/o-table/sidenav-item-api.html folder=site.data.components.otableData.constants type="constant" %}
           </ul>
-      </li>
+        </li>
       </ul>
     </nav>
   </aside>
@@ -86,5 +92,6 @@
     {% include functions/o-table/directive-api.html folder=site.data.components.otableData.renderers %}
     {% include functions/o-table/directive-api.html folder=site.data.components.otableData.editors %}
     {% include functions/o-table/type-api.html folder=site.data.components.otableData.types %}
+    {% include functions/o-table/constant-api.html folder=site.data.components.otableData.constants %}
   </div>
 </div>

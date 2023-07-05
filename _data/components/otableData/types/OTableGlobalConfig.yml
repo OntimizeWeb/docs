@@ -1,0 +1,23 @@
+type: "OTableGlobalConfig"
+description: "Represents the default options for the table that can be configured using the  <a href='#O_TABLE_GLOBAL_CONFIG'>O_TABLE_GLOBAL_CONFIG</a> injection token.
+<div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
+type OTableGlobalConfig = {
+  autoAdjust: boolean;
+  autoAlignTitles: boolean;
+};
+</code></pre></div></div>
+"
+
+attributes: [{
+  name: "autoAlignTitles",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to auto align the table header cells",
+  required : "",
+},{
+  name: "autoAdjust",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to auto adjust column width to its content."
+}]
