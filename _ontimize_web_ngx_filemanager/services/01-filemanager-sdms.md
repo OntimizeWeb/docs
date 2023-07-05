@@ -165,7 +165,7 @@ You can define **your own file manager service** by extending the `FileManagerSe
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
-import { FileManagerService } from 'ontimize-web-ngx-filemanager';
+import { FileManagerS3Service } from 'ontimize-web-ngx-filemanager';
 
 @Injectable()
 export class FileManagerExtendedService extends FileManagerS3Service {
