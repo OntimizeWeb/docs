@@ -21,17 +21,23 @@ attributes: [{
   required: "",
   description: ""
 },{
-  name: "min",
-  type: "string",
+  name: "data",
+  type: "string | date | timestamp | iso-8601",
   default: "",
   required: "",
-  description: "Minimum selectable date"
+  description: "Manually setted component value. Must have the type of the 'value-type' input"
+},{
+  name: "min",
+  type: "string | date | timestamp | iso-8601",
+  default: "",
+  required: "",
+  description: "Minimum selectable date. Must have the type of the 'value-type' input"
 },{
   name: "max",
-  type: "string",
+  type: "string | date | timestamp | iso-8601",
   default: "",
   required: "",
-  description: "Maximum selectable date"
+  description: "Maximum selectable date. Must have the type of the 'value-type' input"
 },{
   name: "touch-ui",
   type: "no | false | yes | true",
