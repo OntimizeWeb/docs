@@ -92,13 +92,16 @@ public class PermissionRestController extends ORestController<IPermissionService
 ```java
 @Service("PermissionService")
 @Lazy
-
 public class PermissionService implements IPermissionService {
 
     public final String CANDIDATE_PERMISSION;
     public final String DEMO_PERMISSION;
 
-    private String readFromInputStream(InputStream inputStream) throws IOException {
+    private String readFromInputStream(String fileName) throws IOException {
+        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
+        if(inputStream == null){
+            return "";
+        }
         StringBuilder resultStringBuilder = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
@@ -111,8 +114,8 @@ public class PermissionService implements IPermissionService {
 
     public PermissionService (){
         try {
-            CANDIDATE_PERMISSION = readFromInputStream(this.getClass().getClassLoader().getResourceAsStream("candidate_permissions.json"));
-            DEMO_PERMISSION = readFromInputStream(this.getClass().getClassLoader().getResourceAsStream("demo_permissions.json"));
+            CANDIDATE_PERMISSION = readFromInputStream("candidate_permissions.json");
+            DEMO_PERMISSION = readFromInputStream("demo_permissions.json");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
