@@ -98,16 +98,21 @@ public class PermissionService implements IPermissionService {
     public final String CANDIDATE_PERMISSION;
     public final String DEMO_PERMISSION;
 
+    private String readFromInputStream(InputStream inputStream) throws IOException {
+        StringBuilder resultStringBuilder = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                resultStringBuilder.append(line).append("\n");
+            }
+        }
+        return resultStringBuilder.toString();
+    }
 
     public PermissionService (){
         try {
-            StringWriter writer = new StringWriter();
-            IOUtils.copy(Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("candidate_permissions.json")), writer, StandardCharsets.UTF_8);
-            CANDIDATE_PERMISSION = writer.toString();
-            writer.getBuffer().setLength(0);
-            IOUtils.copy(Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("demo_permissions.json")), writer, StandardCharsets.UTF_8);
-            DEMO_PERMISSION = writer.toString();
-            writer.close();
+            CANDIDATE_PERMISSION = readFromInputStream(this.getClass().getClassLoader().getResourceAsStream("candidate_permissions.json"));
+            DEMO_PERMISSION = readFromInputStream(this.getClass().getClassLoader().getResourceAsStream("demo_permissions.json"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -201,7 +206,7 @@ With this permissions if we log into the application with the candidate user we 
 
 ![candidate home]({{ base_path }}/images/permissions/candidate_home.png){: .align-center}
 
-And if we log with de demo user we gonna see a different menu and we can enter to the candidate table:
+And if we log with de demo user we are going to see a different menu and we can enter to the candidate table:
 
 ![demo home]({{ base_path }}/images/permissions/demo_home.png){: .align-center}
 
