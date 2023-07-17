@@ -95,13 +95,19 @@ public class PermissionRestController extends ORestController<IPermissionService
 
 public class PermissionService implements IPermissionService {
 
-    public static final String CANDIDATE_PERMISSION;
-    public static final String DEMO_PERMISSION;
+    public final String CANDIDATE_PERMISSION;
+    public final String DEMO_PERMISSION;
 
-    static {
+
+    public PermissionService (){
         try {
-            CANDIDATE_PERMISSION = FileUtils.readFileToString(new File("projectwiki-model/src/main/resources/candidate_permissions.json"), StandardCharsets.UTF_8);
-            DEMO_PERMISSION = FileUtils.readFileToString(new File("projectwiki-model/src/main/resources/demo_permissions.json"), StandardCharsets.UTF_8);
+            StringWriter writer = new StringWriter();
+            IOUtils.copy(Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("candidate_permissions.json")), writer, StandardCharsets.UTF_8);
+            CANDIDATE_PERMISSION = writer.toString();
+            writer.getBuffer().setLength(0);
+            IOUtils.copy(Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream("demo_permissions.json")), writer, StandardCharsets.UTF_8);
+            DEMO_PERMISSION = writer.toString();
+            writer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -115,10 +121,10 @@ public class PermissionService implements IPermissionService {
         Map<String, String> map = new HashMap<>();
         String role = authentication.getAuthorities().toArray()[0].toString();
         if (role.equals("candidate role")) {
-            map.put("permission", PermissionService.CANDIDATE_PERMISSION);
+            map.put("permission", CANDIDATE_PERMISSION);
         }
         else if (role.equals("admin")) {
-            map.put("permission", PermissionService.DEMO_PERMISSION);
+            map.put("permission", DEMO_PERMISSION);
         }
         e.addRecord(map);
         return e;
@@ -165,6 +171,28 @@ In this turorial, we are going to create a set of simple preconfigured JSON perm
       "permissionId": "candidates-table-route",
       "enabled": true
     }
+  ],
+  "components": [
+    {
+      "attr": "candidate",
+      "selector": "o-table",
+      "columns" : [
+        { "attr": "PHONE", "visible": false, "enabled": false }
+      ],
+      "actions": [
+        { "attr": "delete", "visible": true, "enabled": false }
+      ]
+    },
+    {
+      "attr":"candidates_form_edit",
+      "selector": "o-form",
+      "components": [
+        {"attr":"EMAIL","visible": true,"enabled": false}
+      ],
+      "actions": [
+        { "attr": "delete", "visible": true, "enabled": false }
+      ]
+    }
   ]
 }
 ```
@@ -173,9 +201,17 @@ With this permissions if we log into the application with the candidate user we 
 
 ![candidate home]({{ base_path }}/images/permissions/candidate_home.png){: .align-center}
 
-And if we log with de demo user we gonna see a different menu:
+And if we log with de demo user we gonna see a different menu and we can enter to the candidate table:
 
 ![demo home]({{ base_path }}/images/permissions/demo_home.png){: .align-center}
+
+As we can see the *delete* button of the table is disabled as we configured before:
+
+![demo home]({{ base_path }}/images/permissions/demo_table.png){: .align-center}
+
+And if we click on a row to edit the registry we can see that we can't edit the email field:
+
+![demo home]({{ base_path }}/images/permissions/demo_edit.png){: .align-center}
 
 # Configuring the frontend
 
@@ -210,3 +246,44 @@ export const SERVICE_CONFIG: Object = {
 };
 ```
 
+Other important configuration it's to define on the `main-routing.module.ts` the `canActivateChild` parameter to manage the routes permissions.
+
+`main-routing.module.ts`:
+```javascript
+...
+export const routes: Routes = [
+  {
+    path: '',
+    component: MainComponent,
+    canActivate: [AuthGuardService],
+    canActivateChild: [PermissionsGuardService],
+    children: [
+...
+```
+
+## How to extend the permission service
+
+In case we wanna change the permission service we need to do two steps:
+* Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. Example:
+
+```javascript
+...
+@Injectable()
+export class CustomPermissionsService extends OntimizeEEPermissionsService {
+...
+```
+
+* Add the service to your `app.module.ts` file. Example:
+
+```javascript
+...
+,
+  providers: [
+    { provide: APP_CONFIG, useValue: CONFIG },
+    ONTIMIZE_PROVIDERS,
+    { provide: O_PERMISSION_SERVICE, useValue: CustomPermissionsService },
+    ...customProviders
+  ],
+})
+export class AppModule { }
+```
