@@ -271,7 +271,7 @@ export const routes: Routes = [
 
 ## How to extend the permission service
 
-In case we wanna change the permission service we need to do two steps:
+In case we want to change the permission service we need to do two steps:
 * Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. Example:
 
 ```javascript
