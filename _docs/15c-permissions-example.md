@@ -314,8 +314,13 @@ The page we will see if we try to access a page that we dont have permissions it
 
 ## How to extend the permission service
 
+<<<<<<< HEAD
 In case we wanna change the permission service we need to do two steps:
 * Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. In this example we are redefining the `loadPermissions` method to load an especific permissions if the user isn't logged. Example:
+=======
+In case we want to change the permission service we need to do two steps:
+* Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. Example:
+>>>>>>> 43bef0898d60e40792177a165b4a186996488cf0
 
 `custom-permissions.service.ts`:
 ```javascript
