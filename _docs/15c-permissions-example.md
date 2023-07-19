@@ -98,16 +98,16 @@ public class PermissionService implements IPermissionService {
     public final String DEMO_PERMISSION;
 
     private String readFromInputStream(String fileName) throws IOException {
-        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
-        if(inputStream == null){
-            return "";
-        }
         StringBuilder resultStringBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(fileName))))) {
             String line;
             while ((line = br.readLine()) != null) {
                 resultStringBuilder.append(line).append("\n");
             }
+        }
+        catch (IOException e){
+            return "";
         }
         return resultStringBuilder.toString();
     }
@@ -269,16 +269,128 @@ export const routes: Routes = [
 ...
 ```
 
+The last configuration that we can do it's to define a redirection page to visit when the user dont have permissions to access the page requested. To configure this page you need to add the route (or use the ontimize component `403`) to the `restrictedPermissionsRedirect` parameter on the routing module of the component. Example:
+
+`candidates-routing.module.ts`:
+```javascript
+...
+export const routes: Routes = [
+  {
+    path: '', component: CandidatesHomeComponent,
+    data: {
+      oPermission: {
+        permissionId: 'candidates-table-route',
+        restrictedPermissionsRedirect: '403'
+      }
+    }
+  },
+  {
+    path: 'new', component: CandidatesNewComponent,
+    data: {
+      oPermission: {
+        permissionId: 'candidates-table-route',
+        restrictedPermissionsRedirect: '403'
+      }
+    }
+  },
+  {
+    path: ':ID',
+    component: CandidatesDetailComponent,
+    data: {
+      oPermission: {
+        permissionId: 'candidates-table-route',
+        restrictedPermissionsRedirect: '403'
+      }
+    }
+  }
+];
+...
+```
+
+The page we will see if we try to access a page that we dont have permissions it's going to look like this:
+
+![demo home]({{ base_path }}/images/permissions/access_denied.png){: .align-center}
+
+
 ## How to extend the permission service
 
 In case we wanna change the permission service we need to do two steps:
-* Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. Example:
+* Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. In this example we are redefining the `loadPermissions` method to load an especific permissions if the user isn't logged. Example:
 
+`custom-permissions.service.ts`:
 ```javascript
 ...
 @Injectable()
 export class CustomPermissionsService extends OntimizeEEPermissionsService {
-...
+
+  constructor(protected injector: Injector) {
+    super(injector);
+  }
+
+  loadPermissions(): Observable<any> {
+    const isLoggedIn = this.authService.isLoggedIn();
+    if (isLoggedIn) {
+      return super.loadPermissions();
+    } else {
+      return this.loadPublicPermissions();
+    }
+  }
+
+  loadPublicPermissions(): Observable<any> {
+    const url = '../../assets/dummy/public-permission.json';
+    const self = this;
+    const dataObservable: Observable<any> = new Observable(_innerObserver => {
+      self.httpClient.get(url).subscribe((res: any) => {
+        let permissions = {};
+        if ((res.code === Codes.ONTIMIZE_SUCCESSFUL_CODE) && Util.isDefined(res.data)) {
+          const response = res.data;
+          if ((response.length === 1) && Util.isObject(response[0])) {
+            try {
+              permissions = response[0];
+            } catch (e) {
+              console.warn('[OntimizeEEPermissionsService: permissions parsing failed]');
+            }
+          }
+        }
+        _innerObserver.next(permissions);
+
+      }, error => {
+        _innerObserver.error(error);
+      }, () => _innerObserver.complete());
+    });
+    return dataObservable.pipe(share());
+  }
+}
+```
+
+And here are the permissions loaded  if the user is not logged in:
+
+`public-permission.json`:
+```json
+{
+  "menu": [
+    {
+      "attr": "candidates",
+      "visible": false,
+      "enabled": false
+    },
+    {
+      "attr": "home",
+      "visible": false,
+      "enabled": false
+    }
+  ],
+  "routes": [
+    {
+      "permissionId": "candidates-table-route",
+      "enabled": false
+    },
+    {
+      "permissionId": "home-route",
+      "enabled": false
+    }
+  ]
+}
 ```
 
 * Add the service to your `app.module.ts` file. Example:
