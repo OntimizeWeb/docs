@@ -223,7 +223,7 @@ And if we click on a row to edit the registry we can see that we can't edit the 
 
 # Configuring the frontend
 
-First file we need to configure on our frontend it's the `app.config.ts`, inside we need to define the type of permission we wanna use (see [here](https://ontimizeweb.github.io/docs/v8/guide/appconfig/#permissions-configuration){:target="_blank"} for the different types) and the service used to get the server permissions.
+First file we need to configure on our frontend it's the `app.config.ts`, inside we need to define the type of permission we want to use (see [here](https://ontimizeweb.github.io/docs/v8/guide/appconfig/#permissions-configuration){:target="_blank"} for the different types) and the service used to get the server permissions.
 
 `app.config.ts`:
 ```javascript
