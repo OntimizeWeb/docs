@@ -269,7 +269,7 @@ export const routes: Routes = [
 ...
 ```
 
-The last configuration that we can do it's to define a redirection page to visit when the user dont have permissions to access the page requested. To configure this page you need to add the route (or use the ontimize component `403`) to the `restrictedPermissionsRedirect` parameter on the routing module of the component. Example:
+The last configuration that we can do it's to define a redirection page to visit when the user does not have permissions to access the page requested. To configure this page you need to add the route (or use the ontimize component `403`) to the `restrictedPermissionsRedirect` parameter on the routing module of the component. Example:
 
 `candidates-routing.module.ts`:
 ```javascript
