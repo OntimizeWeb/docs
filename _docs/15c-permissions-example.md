@@ -223,6 +223,8 @@ And if we click on a row to edit the registry we can see that we can't edit the 
 
 # Configuring the frontend
 
+## Application configuration
+
 First file we need to configure on our frontend it's the `app.config.ts`, inside we need to define the type of permission we want to use (see [here](https://ontimizeweb.github.io/docs/v8/guide/appconfig/#permissions-configuration){:target="_blank"} for the different types) and the service used to get the server permissions.
 
 `app.config.ts`:
@@ -254,7 +256,9 @@ export const SERVICE_CONFIG: Object = {
 };
 ```
 
-Other important configuration it's to define on the `main-routing.module.ts` the `canActivateChild` parameter to manage the routes permissions.
+## Route permissions
+
+If we want to manage the routes permissions we need to define on the `main-routing.module.ts` the `canActivateChild` parameter.
 
 `main-routing.module.ts`:
 ```javascript
@@ -312,15 +316,10 @@ The page we will see if we try to access a page that we dont have permissions it
 ![demo home]({{ base_path }}/images/permissions/access_denied.png){: .align-center}
 
 
-## How to extend the permission service
+# How to extend the permission service
 
-<<<<<<< HEAD
-In case we wanna change the permission service we need to do two steps:
-* Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. In this example we are redefining the `loadPermissions` method to load an especific permissions if the user isn't logged. Example:
-=======
 In case we want to change the permission service we need to do two steps:
 * Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. Example:
->>>>>>> 43bef0898d60e40792177a165b4a186996488cf0
 
 `custom-permissions.service.ts`:
 ```javascript
