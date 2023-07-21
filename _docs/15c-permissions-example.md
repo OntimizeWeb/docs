@@ -273,9 +273,9 @@ export const routes: Routes = [
 ...
 ```
 
-The last configuration that we can do it's to define a redirection page to visit when the user does not have permissions to access the page requested. To configure this page you need to add the route (or use the ontimize component `403`) to the `restrictedPermissionsRedirect` parameter on the routing module of the component. Example:
+The last configuration that we can do it's to define a redirection page to visit when the user does not have permissions to access the page requested. To configure this page you need to add the route (or use the ontimize component `403`) to the `restrictedPermissionsRedirect` parameter on the routing module of the component or the module. Example:
 
-`candidates-routing.module.ts`:
+`candidates-routing.module.ts` (component):
 ```javascript
 ...
 export const routes: Routes = [
@@ -306,6 +306,32 @@ export const routes: Routes = [
         restrictedPermissionsRedirect: '403'
       }
     }
+  }
+];
+...
+```
+
+`main-routing.module.ts` (module):
+```javascript
+...
+export const routes: Routes = [
+  {
+    path: '',
+    component: MainComponent,
+    canActivate: [AuthGuardService],
+    canActivateChild: [PermissionsGuardService],
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      {
+        path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+        data: {
+          oPermission: {
+            restrictedPermissionsRedirect: '403'
+          }
+        }
+      },
+      { path: 'candidates', loadChildren: () => import('./candidates/candidates.module').then(m => m.CandidatesModule) }
+    ]
   }
 ];
 ...
