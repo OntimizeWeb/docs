@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2023-07-05T04:39:13-04:00">
+  <meta property="article:published_time" content="2023-07-21T08:55:06-04:00">
 
 
 
@@ -868,7 +868,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="July 05, 2023">
+    <meta itemprop="datePublished" content="July 21, 2023">
     
 
     <div class="page__inner-wrap">
@@ -2178,17 +2178,33 @@ In this component you can define the columns and required columns with <code cla
 </ul>
 
 <h3 id="column-titles-alignment">Column titles alignment</h3>
-<p>The <code class="language-plaintext highlighter-rouge">o-table</code> columns title texts are centered by default. Using the <code class="language-plaintext highlighter-rouge">o-column</code> component <code class="language-plaintext highlighter-rouge">title-align</code> input user can modify that default value.</p>
 
-<p>There also exists the possibility of automatically align the table columns titles depending on the column type, using the <code class="language-plaintext highlighter-rouge">auto-align-titles</code> input:</p>
-
+<p>By default, the <code class="language-plaintext highlighter-rouge">o-table</code> columns title texts are aligned depending on the column type.</p>
 <ul>
   <li><strong>start</strong>: service types and default value when auto-align-titles is active.</li>
   <li><strong>center</strong>: image, date, action and boolean types.</li>
   <li><strong>end</strong>: currency, integer, real and percentage types.</li>
 </ul>
 
-<p>When the <code class="language-plaintext highlighter-rouge">auto-align-titles</code> input is set to true, user can also define a <code class="language-plaintext highlighter-rouge">title-align</code> in the columns (its value has precedence over the default type alignment).</p>
+<p>Using the <code class="language-plaintext highlighter-rouge">o-table-column</code> component <code class="language-plaintext highlighter-rouge">title-align</code> input user can modify that default value.</p>
+
+<p>When the <code class="language-plaintext highlighter-rouge">auto-align-titles</code> input is set to false in <code class="language-plaintext highlighter-rouge">o-table</code>, the title of the table column is aligned centered. The user can also define a <code class="language-plaintext highlighter-rouge">title-align</code> in the columns (its value has precedence over the default type alignment).</p>
+
+<p>Global title alignment settings can be specified by providing a value for <code class="language-plaintext highlighter-rouge">O_TABLE_GLOBAL_CONFIG</code> in your application root or in a specific module.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">O_TABLE_GLOBAL_CONFIG</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="p">{</span> <span class="na">autoAlignTitles</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+<span class="p">})</span>
+</code></pre></div></div>
 
 <h3 id="column-resizing">Column resizing</h3>
 <p>The <code class="language-plaintext highlighter-rouge">o-table</code> component allows column resizing by default. Using the <code class="language-plaintext highlighter-rouge">resizable</code> input you can modify that default value on the table. To disabled resizing for each column, set <code class="language-plaintext highlighter-rouge">resizable='no'</code> on the column definition.</p>
@@ -2565,149 +2581,178 @@ For example with the primary palette by following the steps below.</p>
             
 
   
-    
+  
   
   <li><a href="#o-table">o-table</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-column">o-table-column</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-columns-filter">o-table-columns-filter</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-columns-filter-column">o-table-columns-filter-column</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-paginator">o-table-paginator</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-option">o-table-option</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-column-aggregate">o-table-column-aggregate</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-column-calculated">o-table-column-calculated</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-context-menu">o-table-context-menu</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-insertable-row">o-table-insertable-row</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-button">o-table-button</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-export-button">o-table-export-button</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-row-expandable">o-table-row-expandable</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-expandable-container">o-expandable-container</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-quickfilter">o-table-quickfilter</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-columns-grouping">o-table-columns-grouping</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-columns-grouping-column">o-table-columns-grouping-column</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-column-select-all">o-table-column-select-all</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#"></a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#"></a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#"></a></li>
+  
+  
+  
+
+  
+  
+  
+  <li><a href="#"></a></li>
+  
   
   
 
@@ -2717,79 +2762,90 @@ For example with the primary palette by following the steps below.</p>
           
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-action">o-table-cell-renderer-action</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-boolean">o-table-cell-renderer-boolean</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-currency">o-table-cell-renderer-currency</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-date">o-table-cell-renderer-date</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-integer">o-table-cell-renderer-integer</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-image">o-table-cell-renderer-image</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-percentage">o-table-cell-renderer-percentage</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-real">o-table-cell-renderer-real</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-service">o-table-cell-renderer-service</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-translate">o-table-cell-renderer-translate</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-renderer-time">o-table-cell-renderer-time</a></li>
+  
   
   
 
@@ -2800,78 +2856,108 @@ For example with the primary palette by following the steps below.</p>
           
 
   
-    
+  
   
   <li><a href="#o-table-cell-editor-text">o-table-cell-editor-text</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-editor-boolean">o-table-cell-editor-boolean</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-editor-date">o-table-cell-editor-date</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-editor-integer">o-table-cell-editor-integer</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-editor-real">o-table-cell-editor-real</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-editor-time">o-table-cell-editor-time</a></li>
   
   
+  
 
   
-    
+  
   
   <li><a href="#o-table-cell-editor-email">o-table-cell-editor-email</a></li>
   
   
+  
 
           </ul>
-      </li>
-      <li><a>Types</a>
+        </li>
+        <li><a>Types</a>
+            <ul>
+            
+
+  
+  
+  
+  
+  <li><a href="#OTableGlobalConfig">OTableGlobalConfig</a></li>
+  
+  
+
+  
+  
+  
+  
+  <li><a href="#OTableGroupedRow">OTableGroupedRow</a></li>
+  
+  
+
+  
+  
+  
+  
+  <li><a href="#OTableInitializationOptions">OTableInitializationOptions</a></li>
+  
+  
+
+            </ul>
+        </li>
+        <li>
+          <a>Constants</a>
           <ul>
           
 
   
-    
   
   
-
-  <li><a href="#OTableGroupedRow">OTableGroupedRow</a></li>
-  
-
-  
-    
   
   
-
-  <li><a href="#OTableInitializationOptions">OTableInitializationOptions</a></li>
+  <li><a href="#O_TABLE_GLOBAL_CONFIG">O_TABLE_GLOBAL_CONFIG</a></li>
   
 
           </ul>
-      </li>
+        </li>
       </ul>
     </nav>
   </aside>
@@ -3200,7 +3286,7 @@ For example with the primary palette by following the steps below.</p>
             
             
   <td class="" o-component-default >
-    <p class="first"><p>no</p>
+    <p class="first"><p>yes</p>
 </p>
     
   </td>
@@ -15544,6 +15630,10 @@ For example with the primary palette by following the steps below.</p>
   
   
 
+  
+  
+  
+
 
     
 
@@ -23952,21 +24042,52 @@ For example with the primary palette by following the steps below.</p>
 
 
   
-    
+  
 
   
-  <h2 id="OTableGroupedRow"> 
+  <h2 id="OTableGlobalConfig">
+    <span>OTableGlobalConfig </span>
+    
+  </h2>
+  
+    <p><strong class="grey-color">Type:</strong> OTableGlobalConfig</p>
+  
+  
+    <p>Represents the default options for the table that can be configured using the  <a href='#O_TABLE_GLOBAL_CONFIG'>O_TABLE_GLOBAL_CONFIG</a> injection token. <div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code> type OTableGlobalConfig = { autoAdjust: boolean; autoAlignTitles: boolean; }; </code></pre></div></div> </p>
+  
+
+
+  OTableGlobalConfig {
+    
+    <ul class="attributes-list">
+      
+      
+        <li> autoAdjust: no | false | yes | true </li>
+      
+        <li> autoAlignTitles: no | false | yes | true </li>
+      
+    </ul>
+    
+  }
+  
+
+  
+  
+
+  
+  <h2 id="OTableGroupedRow">
     <span>OTableGroupedRow </span>
     
   </h2>
   
     <p><strong class="grey-color">Type:</strong> OTableGroupedRow</p>
   
+  
 
 
   OTableGroupedRow {
     
-    <ul class="attributes-list">  
+    <ul class="attributes-list">
       
       
         <li> column: any </li>
@@ -23987,21 +24108,22 @@ For example with the primary palette by following the steps below.</p>
   
 
   
-    
+  
 
   
-  <h2 id="OTableInitializationOptions"> 
+  <h2 id="OTableInitializationOptions">
     <span>OTableInitializationOptions </span>
     
   </h2>
   
     <p><strong class="grey-color">Type:</strong> OTableInitializationOptions</p>
   
+  
 
 
   OTableInitializationOptions {
     
-    <ul class="attributes-list">  
+    <ul class="attributes-list">
       
       
         <li> columns?: string </li>
@@ -24025,7 +24147,26 @@ For example with the primary palette by following the steps below.</p>
   }
   
 
+
+    
+
+
   
+  
+
+  
+    <h2 id="O_TABLE_GLOBAL_CONFIG">
+      <span>O_TABLE_GLOBAL_CONFIG </span>
+      
+    </h2>
+
+    
+      <p>Injection token that can be used to set global options for the table or within an application or module. <div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code> const O_TABLE_GLOBAL_CONFIG:InjectionToken<OTableGlobalConfig>; </code></pre></div></div></p>
+    
+  
+
+
+
   </div>
 </div>
 
@@ -24044,7 +24185,7 @@ For example with the primary palette by following the steps below.</p>
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-05T04:39:13-04:00">July 05, 2023</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-07-21T08:55:06-04:00">July 21, 2023</time></p>
         
       </footer>
 
