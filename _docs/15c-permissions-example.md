@@ -225,7 +225,7 @@ And if we click on a row to edit the registry we can see that we can't edit the 
 
 ## Application configuration
 
-First file we need to configure on our frontend it's the `app.config.ts`, inside we need to define the type of permission we want to use (see [here](https://ontimizeweb.github.io/docs/v8/guide/appconfig/#permissions-configuration){:target="_blank"} for the different types) and the service used to get the server permissions.
+First file we need to configure on our frontend it’s the `app.config.ts` and add `permissionsServiceType` and `permissionsConfiguration` object. In `permissionsServiceType`, you define the type of permission to use (*OntimizeEEPermissions* or *OntimizePermissions*, for more information see [here]({{ base_path }}/guide/appconfig/#permissions-configuration){:target="_blank"}) and `permissionsConfiguration` which should contain the permissions service whose path should be defined in `app.services.config.ts` (defined in the following code section of this page).
 
 `app.config.ts`:
 ```javascript
