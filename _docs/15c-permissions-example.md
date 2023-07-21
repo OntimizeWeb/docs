@@ -258,10 +258,12 @@ export const SERVICE_CONFIG: Object = {
 
 ## Route permissions
 
-If we want to manage the routes permissions we need to define on the `main-routing.module.ts` the `canActivateChild` parameter.
+If we want to manage the routes permissions we need to define on the routing module the `canActivateChild` parameter and assing to it the Ontimize Web guard `PermissionsGuardService`.
 
 `main-routing.module.ts`:
 ```javascript
+...
+import { AuthGuardService, PermissionsGuardService } from 'ontimize-web-ngx';
 ...
 export const routes: Routes = [
   {
