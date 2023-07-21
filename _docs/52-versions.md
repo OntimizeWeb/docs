@@ -42,7 +42,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </tr>
     <tr>
         <td>8.12.0</td>
-        <td rowspan="7">>8.5.6</td>
+        <td rowspan="7">8.5.6</td>
     </tr>
      <tr>
         <td>8.11.3</td>
