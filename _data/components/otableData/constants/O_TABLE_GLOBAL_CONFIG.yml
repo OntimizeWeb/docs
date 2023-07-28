@@ -4,4 +4,3 @@ description: "Injection token that can be used to set global options for the tab
 <div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
 const O_TABLE_GLOBAL_CONFIG:InjectionToken<OTableGlobalConfig>;
 </code></pre></div></div>"
-
