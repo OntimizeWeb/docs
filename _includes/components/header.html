@@ -1,0 +1,17 @@
+{% include base_path %}
+<div id="main-header" class="main-header">
+  {% if site.search_enabled != false %}
+    {% include components/search_header.html %}
+  {% else %}
+    <div></div>
+  {% endif %}
+  {% include header_custom.html %}
+  {% if site.aux_links %}
+    {% include components/aux_nav.html %}
+  {% endif %}
+  <select class="select" name="version" onchange="window.open(this.value,'_self')">
+    <option value="https://ontimizeweb.github.io/docs/v4/">4.x.x</option>
+    <option value="https://ontimizeweb.github.io/docs/v8/">8.x.x</option>
+    <option value="{{ base_path }}" selected>15.x.x</option>
+  </select>
+</div>
