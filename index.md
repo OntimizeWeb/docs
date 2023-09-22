@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: home
+layout: home_ontimize
 nav_order: 1
 ---
 
