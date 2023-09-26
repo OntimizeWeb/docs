@@ -4,37 +4,42 @@ layout: table_wrappers
 
 <!DOCTYPE html>
 
-<html lang="{{ site.lang | default: 'en-US' }}">
+<html {{ site.lang | default: 'en-US' }}">
 {% include head.html %}
 
-<body>
-  <div id="top">
+<body class="home">
+  {% include icons/icons.html %}
+  <header id="top">
     {% include components/header.html %}
-    <a class="skip-to-main" href="#main-content">Skip to main content</a>
-    {% include icons/icons.html %}
-    <div class="main-content-wrap" id="top">
-      {% include components/breadcrumbs.html %}
-      <div id="main-content" class="main-content" role="main">
-        {% if site.heading_anchors != false %}
-        {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\">
-          <use xlink:href=\"#svg-link\"></use>
-        </svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
-        {% else %}
-        {{ content }}
-        {% endif %}
-
-        {% if page.has_children == true and page.has_toc != false %}
-          {% include components/children_nav.html %}
-        {% endif %}
-
-        {% include components/footer.html %}
-
+  </header>
+  <div id="main-content" class="main-content" role="main">
+    <div class="background-image">
+      <h1>ONTIMIZE WEB</h1>
+      <h2>{{ page.introduction }}</h2>
+      <div class="links">
+        <div class="link-container">
+          <p>Develop web data management applications quickly and agile based on Angular technology.</p>
+          <a class="btn" href="/getting-started/">Quick to learn</a>
+        </div>
+        <div class="link-container">
+          <p>Built on Angular Material. Customizing standard themes or create new ones is very easy.</p>
+          <a class="btn" href="#">Advanced themes</a>
+        </div>
+        <div class="link-container">
+          <p>Advanced components to cover your specific needs such as maps, graphics, file management ….</p>
+          <a class="btn" href="#">ADD-ONS</a>
+        </div>
+        <div class="link-container">
+          <p>Free to use however you want under the Apache 2.0 License. Clone it, fork it, customize it, whatever!</p>
+          <a class="btn" href="#">100% free</a>
+        </div>
       </div>
     </div>
+    <main>
+      {{ content }}
+    </main>
   </div>
-  {% if site.mermaid %}
-    {% include components/mermaid.html %}
-  {% endif %}
+  {% include components/footer.html %}
 </body>
 
 </html>
