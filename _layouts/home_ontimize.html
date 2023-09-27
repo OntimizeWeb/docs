@@ -14,25 +14,12 @@ layout: table_wrappers
   </header>
   <div id="main-content" class="main-content" role="main">
     <div class="background-image">
-      <h1>ONTIMIZE WEB</h1>
+      <h1>{{ page.title }}</h1>
       <h2>{{ page.introduction }}</h2>
       <div class="links">
-        <div class="link-container">
-          <p>Develop web data management applications quickly and agile based on Angular technology.</p>
-          <a class="btn" href="/getting-started/">Quick to learn</a>
-        </div>
-        <div class="link-container">
-          <p>Built on Angular Material. Customizing standard themes or create new ones is very easy.</p>
-          <a class="btn" href="#">Advanced themes</a>
-        </div>
-        <div class="link-container">
-          <p>Advanced components to cover your specific needs such as maps, graphics, file management ….</p>
-          <a class="btn" href="#">ADD-ONS</a>
-        </div>
-        <div class="link-container">
-          <p>Free to use however you want under the Apache 2.0 License. Clone it, fork it, customize it, whatever!</p>
-          <a class="btn" href="#">100% free</a>
-        </div>
+        {% for card in page.card %}
+          {% include_relative includes/card.html %}
+        {% endfor %}
       </div>
     </div>
     <main>
