@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Example overview"
+title: "Run an example"
 permalink: /install-and-run/
 parent: Getting started
 nav_order: 3
