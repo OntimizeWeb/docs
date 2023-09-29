@@ -9,11 +9,14 @@ aux_links:
   Components: /components/
 
 versions:
-  -url: https://ontimizeweb.github.io/docs/v4/
-  title: 4.x.x
-  -url: https://ontimizeweb.github.io/docs/v8/
-  title: 8.x.x
-  -url: /
-  title: 15.x.x
+  - url: https://ontimizeweb.github.io/docs/v4/
+    title: 4.x.x
+    selected: false
+  - url: https://ontimizeweb.github.io/docs/v8/
+    title: 8.x.x
+    selected: false
+  - url: /
+    title: 15.x.x
+    selected: true
 
 page_excerpts: true
