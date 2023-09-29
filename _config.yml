@@ -6,5 +6,14 @@ url: https://just-the-docs.github.io
 
 aux_links:
   Ontimize Web Repository: https://github.com/OntimizeWeb
+  Components: /components/
+
+versions:
+  -url: https://ontimizeweb.github.io/docs/v4/
+  title: 4.x.x
+  -url: https://ontimizeweb.github.io/docs/v8/
+  title: 8.x.x
+  -url: /
+  title: 15.x.x
 
 page_excerpts: true
