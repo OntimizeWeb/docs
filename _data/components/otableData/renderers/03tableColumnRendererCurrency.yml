@@ -1,0 +1,53 @@
+class: "OTableCellRendererCurrencyComponent"
+
+extends: "OBaseTableCellRenderer"
+
+directive: "o-table-cell-renderer-currency"
+
+attributes: [{
+  name: "currency-symbol",
+  type: "string",
+  default: "dolar ($)",
+  required: "",
+  description: "Currency symbol (According to ISO 4217)"
+},{
+  name: "currency-symbol-position",
+  type: "left | right",
+  default: "left",
+  required: "",
+  description: "Position of currency symbol"
+},{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+},{
+  name: "decimal-separator"
+},{
+  name: "min-decimal-digits"
+},{
+  name: "max-decimal-digits"
+}]
+
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
+}]

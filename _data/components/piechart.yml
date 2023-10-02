@@ -1,0 +1,78 @@
+directive : "o-chart"
+chart: true
+
+inheritedAttributes: [{
+  component: "OChartComponent",
+  path: "charts/configuration/overview/api",
+  attributes: ["chart-height", "chart-width", "type", "x-axis", "y-axis", "x-label", "y-label", "x-data-type", "y-data-type", "data", "chart-parameters"]
+}]
+
+attributes: [{
+  name: "showLegend",
+  description: "Whether to display the legend or not",
+  type: "boolean",
+  default: "true"
+},{
+  name: "legendPosition",
+  description: "Position of the legend (top, right, bottom)",
+  type: "string",
+  default: "top"
+},{
+  name: "duration",
+  description: "Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value.",
+  type: "number",
+  default: 500
+},{
+  name: "cornerRadius",
+  description: "Corner radius of the slices",
+  type: "number",
+  default: 0
+},{
+  name: "showLabels",
+  description: "Specifies if labels are displayed",
+  type: "boolean",
+  default: "true"
+},{
+  name: "labelType",
+  description: "Type of data shown in the label (key, value, percent)",
+  type: "string",
+  default: 0
+},{
+  name: "labelThreshold",
+  description: "Configure the minimum slice size for labels to show up",
+  type: "number",
+  default: 0.01
+},{
+  name: "labelSunbeamLayout",
+  description: "",
+  type: "boolean",
+  default: "true"
+},{
+  name: "labelsOutside",
+  description: "Whether pie chart labels should be outside the slices instead of inside them",
+  type: "boolean",
+  default: "false"
+},{
+  name: "color",
+  description: "Colors to use for the different data.",
+  type: "string[]"
+},{
+  name: "valueType",
+  description: "Formats value(s)",
+  type: "string"
+},{
+  name: "showTooltip",
+  description: "Enables or disabled the tooltip",
+  type: "boolean",
+  default: true
+},{
+  name: "colorData",
+  description: "List of colors for each value in the Y axis of the chart",
+  type: "OColorData[] = { value: string, color: string }"
+}]
+
+inheritedOutputs: [{
+  component: "ChartComponent",
+  path: "charts/overview/api",
+  outputs: ["onDoubleTap", "onPinch", "onPress", "onRotate", "onSwipe", "onTap"]
+}]

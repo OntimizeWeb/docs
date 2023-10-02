@@ -1,0 +1,52 @@
+directive: "o-table-cell-editor-boolean"
+title: "OTableCellEditorBoolean"
+class: "OTableCellEditorBooleanComponent"
+extends: "OBaseTableCellEditor"
+
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "components/table/obasetablecelleditor/api",
+    attributes: ["required", "show-placeholder", "label", "update-record-on-edit", "show-notification-on-edit", "enabled"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "components/table/obasetablecelleditor/api",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted", "onPostUpdateRecord"]
+  }
+]
+
+attributes: [{
+  name: "indeterminate-on-null",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: ""
+},{
+  name: "true-value",
+  type: "number | boolean | string ",
+  default: "true",
+  required: "",
+  description: "Value considered as true"
+},{
+  name: "false-value",
+  type: "number | boolean | string ",
+  default: "false",
+  required: "",
+  description: "Value considered as false"
+},{
+  name: "boolean-type",
+  type: "number | boolean | string ",
+  default: "boolean",
+  required: "",
+  description: "Type of the cell value"
+},{
+  name: "auto-commit",
+  type: "yes | no | true | false",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to automatically change the cell value without rendering the editor (a checkbox)"
+}]

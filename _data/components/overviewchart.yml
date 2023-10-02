@@ -1,0 +1,72 @@
+directive : "o-chart"
+
+inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base/api",
+  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "query-rows", "store-state", "query-with-null-parent-keys"]
+}]
+
+attributes: [{
+  name: "chart-height",
+  description: "Set the height of the chart in pixels.",
+  type: "number"
+},{
+  name: "chart-width",
+  description: "Set the width of the chart in pixels.",
+  type: "number"
+},{
+  name: "type",
+  description: "Defines the type of graph to be painted (bubbleChart, bulletChart, candlestickBarChart, discreteBar, donutChart, forceDirectedGraph, gaugeDashboardChart, gaugeSimpleChart, gaugeSlimChart, gaugeSpaceChart, line, linePlusBarWithFocusChart, multiBar, multiBarHorizontalChart, ohlcBarChart, parallelCoordinatesChart, pie, radarChart, radialPercentChart, scatterChart, stackedAreaChart)",
+  type: "string"
+},{
+  name: "x-axis",
+  description: "Defines the data to be displayed on X axis",
+  type: "string"
+},{
+  name: "y-axis",
+  description: "Defines the data to be displayed on Y axis",
+  type: "string"
+},{
+  name: "x-label",
+  description: "Label to be displayed on X axis",
+  type: "string"
+},{
+  name: "y-label",
+  description: "Label to be displayed on Y axis",
+  type: "string"
+},{
+  name: "x-data-type",
+  description: "Type of data displayed on X axis",
+  type: "string"
+},{
+  name: "y-data-type",
+  description: "Type of data displayed on Y axis",
+  type: "string"
+},{
+  name: "data",
+  description: "Defines the array of data to be displayed on the chart",
+  type: "array"
+},{
+  name: "chart-parameters",
+  description: "Control properties of styling, fonts, the legend, etc."
+}]
+
+outputs: [{
+  name : "onTap",
+  description: "Event triggered when the chart is tapped"
+},{
+  name : "onDoubleTap",
+  description: "Event triggered when the chart is double-tapped"
+},{
+  name : "onPress",
+  description: "Event triggered when the chart is pressed"
+},{
+  name : "onSwipe",
+  description: "Event triggered on swipe"
+},{
+  name : "onRotate",
+  description: "Event triggered when the screen rotates"
+},{
+  name : "onPinch",
+  description: "Event triggered on pinch"
+}]

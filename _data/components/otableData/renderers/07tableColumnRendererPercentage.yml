@@ -1,0 +1,47 @@
+class: "OTableCellRendererPercentageComponent"
+
+extends: "OTableCellRendererRealComponent"
+
+directive: "o-table-cell-renderer-percentage"
+
+attributes: [{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+},{
+  name: "decimal-separator"
+},{
+  name: "min-decimal-digits"
+},{
+  name: "max-decimal-digits",
+  default: "0"
+},{
+  name: "value-base",
+  type: "1 | 100",
+  default: "1",
+  required: "",
+  description: "Indicates whether de numeral system of the value received by the cell renderer is 1 or 100"
+}]
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
+}]

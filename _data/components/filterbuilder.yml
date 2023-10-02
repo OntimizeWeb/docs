@@ -1,0 +1,72 @@
+directive : "o-filter-builder"
+
+extraComponents: "filterBuilderMenu"
+
+attributes: [
+  {
+  name: "attr"
+  },{
+  name: "filters",
+  type: "string",
+  default: "",
+  required: "",
+  description: "List of pairs of target component colums and form component attributes. Separated by ';'. Example: \"targetColumn1:componentAttr1;targetColumn2:componentAttr2\"."
+},{
+  name: "target",
+  type: "OServiceComponent",
+  default: "",
+  required: "",
+  description: "Component whose that will be filtered."
+},{
+  name: "expression-builder",
+  type: "(values: Array<{ attr, value }>) => Expression",
+  default: "",
+  required: "",
+  description: "Funtion called for creating the expression. The function receives an array of objects that contains the target column attribute and the value of the respective form component and must return an instance of `Expression`. Read about how to build complex filter structures [here](https://ontimizeweb.github.io/docs/v8/guide/filterexpression/){:target='_blank'}."
+},{
+  name: "query-on-change",
+  type: "yes | no | true | false",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to trigger the target component refresh when a filter component change event is fired. You can define the change event in attribute `query-on-change-event-type`."
+},{
+  name: "query-on-change-delay",
+  type: "number",
+  default: "0",
+  required: "",
+  description: "Delay time in milliseconds `query-on-change` method is triggered."
+},{
+  name: "query-on-change-event-type",
+  type: "onValueChange' | onChange",
+  default: "onValueChange",
+  required: "",
+  description: "If query-on-change-event-type is `onValueChange`, the target component refresh when a filter component fired *onValueChanged* event else fired with the *onChange* event of angular"
+}]
+
+outputs: [{
+  name : "onFilter",
+  description: "Event triggered when the filter action is executed"
+},{
+  name : "onClear",
+  description: "Event triggered when the clear action is excuted"
+}]
+
+methods: [{
+  name: "getExpression",
+  description: "Returns an `Expression` object with the filter.",
+  returns: "The `Expression` object with the filter."
+},{
+  name: "getBasicExpression",
+  description: "Returns an `IBasicExpression` object with the filter.",
+  returns: "The `IBasicExpression` object with the filter."
+},{
+  name: "getTargetComponent",
+  description: "Returns the filter builder target component.",
+  returns: "The target component."
+},{
+  name: "triggerReload",
+  description: "Trigger the `reloadData` method from the target component."
+},{
+  name: "clearFilter",
+  description: "Clears the form fields used by the filter builder to create the filter."
+}]

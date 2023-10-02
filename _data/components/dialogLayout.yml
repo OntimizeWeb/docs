@@ -1,0 +1,25 @@
+
+class : "DialogService"
+methods: [{
+  name: "alert",
+  parameters : "title: string, message: string, config?: ODialogConfig",
+  description : "Opens a alert modal dialog."
+},{
+  name: "info",
+  parameters : "title: string, message: string, config?: ODialogConfig",
+  description : "Opens a info modal dialog.",
+},{
+  name: "warn",
+  description : "Opens a warm modal dialog.",
+  parameters : "title: string, message: string, config?: ODialogConfig",
+},{
+  name: "error",
+  parameters : "title: string, message: string, config?: ODialogConfig",
+  description : "Opens a error modal dialog.",
+},{
+  name: "confirm",
+  parameters : "title: string, message: string, config?: ODialogConfig",
+  description : "Opens a confirm modal dialog.",
+}]
+
+extraComponents: "dialog"

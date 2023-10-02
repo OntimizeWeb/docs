@@ -1,0 +1,15 @@
+directive: "oLocker"
+
+attributes: [{
+  name: "oLockerMode",
+  type: "'load' | 'disable'",
+  default: "disable",
+  required: "",
+  description: "Indicates the component performance mode"
+},{
+  name: "oLockerDelay",
+  type: "number",
+  default: "250",
+  required: "",
+  description: "Time the oLocker will be shown"
+}]

@@ -1,0 +1,174 @@
+class : "OServiceBaseComponent"
+
+propertiesColumns: ["Name", "Type", "Required", "Description"]
+
+attributes: [{
+  name: "attr"
+},{
+  name: "service"
+},{
+  name: "service-type"
+},{
+  name: "query-on-init",
+  default: "yes",
+},{
+  name: "query-on-bind",
+  default: "yes",
+},{
+  name: "columns",
+  required: "yes"
+},{
+  name: "keys"
+},{
+  name: "parent-keys",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Form field attributes used for filtering the table data. Separated by ';'. It is possible to use alias on the following way: tableCol1:fk1;tableCol2:fk2 where tableCol1 and tableCol2 are table columns and fk1 and fk2 are attributes from form fields."
+},{
+  name: "query-method"
+},{
+  name: "entity"
+},{
+  name: "static-data"
+},{
+  name: "paginated-query-method"
+},{
+  name: "insert-method"
+},{
+  name: "update-method"
+},{
+  name: "delete-method"
+},{
+  name: "pageable",
+  default: "no"
+},{
+  name: "query-rows"
+},{
+  name: "store-state"
+}, {
+  name : "query-with-null-parent-keys"
+}, {
+  name: "query-on-event"
+},{
+  name: "query-fallback-function",
+  description: "Function to execute on query error",
+  type: "Function",
+  default: "No value"
+}
+]
+
+methods: [{
+  name: "initialize",
+  type: "method",
+  description : "Method for inputs and listeners initialization that must be called inside ngOnInit"
+},{
+  name: "afterViewInit",
+  type: "method",
+  description : "Method for inputs and listeners parsing that must be called inside ngAfterViewInit"
+},{
+  name: "destroy",
+  type: "method",
+  description : "Method for unsuscribing listeners that must be called inside ngOnDestroy"
+},{
+  name: "getAttribute",
+  type: "method",
+  returns: "string",
+  description : "Returns component attr, used as identifier"
+},{
+  name: "getComponentKey",
+  type: "method",
+  returns: "string",
+  description : "Returns component identifier for state storage, attr value by default"
+},{
+  name: "getDataToStore",
+  type: "method",
+  returns: "any",
+  description : "Method returning component data that will be stored as its state"
+},{
+  name: "onLanguageChangeCallback",
+  type: "method",
+  description : "Callback for app locale change, receiving the selected locale as parameter",
+  parameters: "lang: string"
+},{
+  name: "getKeys",
+  type: "method",
+  returns: "string[]",
+  description : "Returns parsed keys input ass array"
+},{
+  name: "configureService",
+  type: "method",
+  description : "Method needed for Ontimize service initialization, already called in initialize method"
+},{
+  name: "getDataArray",
+  type: "method",
+  returns: "any[]",
+  description : "Returns component data array"
+},{
+  name: "setDataArray",
+  type: "method",
+  description : "",
+  parameters: ""
+},{
+  name: "setFormComponent",
+  type: "method",
+  description : "Setting parent form reference, already called in initialize method",
+  parameters: "form: OFormComponent"
+},{
+  name: "queryData",
+  type: "method",
+  description : "",
+  parameters: ""
+},{
+  name: "extractKeysFromRecord",
+  type: "method",
+  returns: "Object",
+  description : "Extracting the given record keys properties",
+  parameters: "record: any"
+},{
+  name: "getSqlTypes",
+  type: "method",
+  description : "Getting stored sql types",
+  parameters: ""
+}
+# ,{
+#   name: "reloadData",
+#   type: "method",
+#   description : "",
+#   parameters: ""
+# }
+,{
+  name: "getAttributesValuesToQuery",
+  type: "method",
+  returns : "string[]",
+  description: "Returns a list of attributes to be queried. This list includes the columns array and the keys array"
+},{
+  name: "getQueryArguments",
+  type: "method",
+  returns : "any[]",
+  description : "Returns the array of arguments needed for making a query",
+  parameters: ""
+},{
+  name: "updatePaginationInfo",
+  type: "method",
+  parameters: "queryResponse: any",
+  description : "Updating pagination internal information, only if the component is pageable"
+},{
+  name: "getTotalRecordsNumber",
+  type: "method",
+  returns: "number",
+  description : "Returns total number of records if the component is paginated"
+}
+# ,{
+#   name: "getComponentFilter",
+#   type: "method",
+#   description : "",
+#   parameters: ""
+# }
+# ,{
+#   name: "setData",
+#   type: "method",
+#   description : "",
+#   parameters: ""
+# }
+]

@@ -1,0 +1,28 @@
+directive : "o-table-cell-editor-text"
+
+class: "OTableCellEditorTextComponent"
+
+extends : "OBaseTableCellEditor"
+
+
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "components/table/obasetablecelleditor/api",
+    attributes: ["required", "show-placeholder", "label", "update-record-on-edit", "show-notification-on-edit", "enabled"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "components/table/obasetablecelleditor/api",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted", "onPostUpdateRecord"]
+  }
+]
+
+#attributes: [{
+#  name: "required"
+#}]
+
+title : "OTableCellEditorText"

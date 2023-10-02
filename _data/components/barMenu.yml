@@ -1,0 +1,18 @@
+directive: "o-bar-menu"
+
+attributes: [{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Menu title"
+},{
+  name: "tooltip",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Bar menu  tooltip. Default: 'title' value."
+}
+]
+
+extraComponents: "barMenuData"

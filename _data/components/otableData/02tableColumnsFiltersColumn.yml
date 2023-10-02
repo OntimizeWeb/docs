@@ -1,0 +1,19 @@
+class : "OTableColumnsFilterColumnComponent"
+
+directive : "o-table-columns-filter-column"
+
+attributes: [{
+  name: "attr"
+},{
+  name: "sort",
+  type: "asc|desc|''",
+  default : "''",
+  required : "",
+  description : "Indicates sorting default of the results."
+},{
+  name: "start-view",
+  type: "month|year|multi-year",
+  default : "month",
+  required : "",
+  description : "Indicates initial view for datepicker."
+}]

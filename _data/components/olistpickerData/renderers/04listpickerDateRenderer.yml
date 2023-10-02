@@ -1,0 +1,13 @@
+class: "OListPickerRendererDateComponent"
+
+extends: "OListPickerCustomRenderer"
+
+directive: "o-list-picker-renderer-date"
+
+attributes: [{
+  name: "format",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+}]

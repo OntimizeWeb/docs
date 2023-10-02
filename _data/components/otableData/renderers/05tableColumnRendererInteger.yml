@@ -1,0 +1,34 @@
+class: "OTableCellRendererIntegerComponent"
+
+extends: "OBaseTableCellRenderer"
+
+directive: "o-table-cell-renderer-integer"
+
+attributes: [{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+}]
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
+}]

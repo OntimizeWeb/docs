@@ -1,0 +1,47 @@
+directive : "o-table-cell-editor-real"
+
+class: "OTableCellEditorRealComponent"
+
+extends : "OBaseTableCellEditor"
+
+inheritedAttributes: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "components/table/obasetablecelleditor/api",
+    attributes: ["required", "show-placeholder", "label", "update-record-on-edit", "show-notification-on-edit", "enabled"]
+  }
+]
+
+inheritedOutputs: [
+  {
+    component: "OBaseTableCellEditor",
+    path: "components/table/obasetablecelleditor/api",
+    outputs: ["editionStarted", "editionCancelled", "editionCommitted", "onPostUpdateRecord"]
+  }
+]
+
+attributes: [
+  {
+  name: "min",
+  type: "number ",
+  default : "",
+  required : "",
+  description : "Minimum value"
+  },
+   {
+  name: "max",
+  type: "number ",
+  default : "",
+  required : "",
+  description : "Maximum value"
+  },
+   {
+  name: "step",
+  type: "number ",
+  default : "0.01",
+  required : "",
+  description : "Number interval"
+  }
+]
+
+title : "OTableCellEditorReal"

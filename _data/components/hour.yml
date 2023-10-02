@@ -1,0 +1,45 @@
+directive : "o-hour-input"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker","select-all-on-click"]
+}]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  outputs: ["onChange", "onValueChange", "onFocus", "onBlur"]
+}]
+
+attributes: [{
+  name: "format",
+  type: "12 | 24",
+  default : "24",
+  required : "",
+  description : "Hour format. 12 hours format with AM PM"
+},{
+  name: "text-input-enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to allow the user to edit the input manually"
+},{
+  name: "min",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Minimum selectable date"
+},{
+  name: "max",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Maximum selectable date"
+},{
+  name: "value-type",
+  type: "string | timestamp",
+  default: "timestamp",
+  required: "",
+  description: "Type of the component data"
+}]

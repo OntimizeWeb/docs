@@ -1,0 +1,35 @@
+directive : "o-currency-input"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker", "select-all-on-click"]
+},{
+  component: "o-integer-input",
+  path: "components/input/integer/api",
+  attributes: ["min", "max", "step", "grouping", "thousand-separator", "locale"]
+},{
+  component: "o-real-input",
+  path: "components/input/real/api",
+  attributes: ["min-decimal-digits", "max-decimal-digits", "decimal-separator"]
+}]
+
+attributes: [{
+  name: "currency-symbol",
+  type: "string",
+  default : "euro (EUR)",
+  required : "",
+  description : "Currency code according to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes){:target='_blank'}"
+},{
+  name: "currency-symbol-position",
+  type: "left | right",
+  default : "right",
+  required : "",
+  description : "Position of the currency symbol"
+}]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview",
+  outputs: ["onChange", "onValueChange", "onFocus", "onBlur"]
+}]
