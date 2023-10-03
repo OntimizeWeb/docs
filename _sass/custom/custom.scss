@@ -52,3 +52,16 @@
     }
   }
 }
+
+// Api table
+.mdl-data-table {
+  td {
+    &[required] {
+      p.first {
+        &:after {
+          content: ' *';
+        }
+      }
+    }
+  }
+}
