@@ -145,8 +145,10 @@
               {% endif %}
               {% assign cellValue = attributeObject[columnKey] %}
             {% endif %}
+            {% if attributeObject['required'] == 'yes' %}
+              {% assign cellValue = '*' %}
+            {% endif %}
             {% assign cellContent = cellValue | default: '' %}
-
             {% assign secondLine = '' %}
             {% if columnKey == 'name' %}
               {% if requiredInputs contains attributeObject['name'] %}
