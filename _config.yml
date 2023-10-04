@@ -15,3 +15,11 @@ versions:
     selected: true
 
 page_excerpts: true
+
+github:
+  - name: Onitmize Web
+    url: https://github.com/OntimizeWeb
+    icon: images/github-240-light.png
+  - name: Onitmize Boot
+    url: https://github.com/Ontimize
+    icon: images/github-240-light.png

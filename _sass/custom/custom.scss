@@ -1,6 +1,18 @@
 // Style of the header version changer
-.select {
-  border-style: none;
+.header-custom-main {
+  display: flex;
+  place-content: end;
+  column-gap: 10px;
+
+  .select {
+    border-style: none;
+  }
+
+  .github-div {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+  }
 }
 
 // Style of the component-api tabs
