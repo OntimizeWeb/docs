@@ -1,10 +1,11 @@
 ---
 layout: default
-title: Components
+title: Input
 permalink: /components/
 author_profile: false
 has_children: true
-nav_order: 4
+parent: Components
+nav_order: 1
 ---
 
 {% include base_path %}

@@ -1,9 +1,10 @@
 ---
 layout: o-component
 permalink: /components/input/overview/overview
-title: "Form data components"
+title: Overview
 comp: "overview"
-parent: Components
+parent: Input
+grand_parent: Components
 nav_order: 1
 ---
 {% include base_path %}

@@ -1,0 +1,9 @@
+<select class="select" name="version" onchange="window.open(this.value,'_self')">
+  {% for version in site.versions %}
+  {% if version.selected %}
+  <option value="{{ version.url }}" selected>{{ version.title }}</option>
+  {% else %}
+  <option value="{{ version.url }}">{{ version.title }}</option>
+  {% endif %}
+  {% endfor %}
+</select>

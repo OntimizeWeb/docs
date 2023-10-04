@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/overview/api
-title: "Form data components"
+title: Overview
 comp: "overview"
 nav_exclude: true
 ---
