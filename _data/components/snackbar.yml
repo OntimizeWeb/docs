@@ -1,0 +1,30 @@
+class: "OSnackBarConfig"
+
+attributes: [{
+  name: "action",
+  type: "string",
+  default: "",
+  required: "yes",
+  description: "Text for the action button"
+},{
+  name: "milliseconds",
+  type: "number",
+  default: "2000",
+  required: "no",
+  description: "Time the snack-bar will be shown"
+},{
+  name: "icon",
+  required: "no"
+},{
+  name: "iconPosition",
+  type: "left | right",
+  default: "left",
+  required: "no",
+  description: "Position of the icon"
+},{
+  name: "cssClass",
+  type: "string",
+  default: "",
+  required: "no",
+  description: "CSS class to be added to the snack bar container"
+}]

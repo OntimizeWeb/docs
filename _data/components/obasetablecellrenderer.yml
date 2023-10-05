@@ -1,0 +1,54 @@
+class : "OBaseTableCellRenderer"
+
+#description : ""
+
+propertiesColumns: ["Name", "Type",  "Description"]
+
+properties: [
+  {
+  name: "column",
+  type: "string",
+  description : "Name of the column"
+  },{
+  name: "table",
+  type: "OTableComponent",
+  description: "Reference to the component OTableComponent"
+  },{
+  name: "tableColumn",
+  type: "property",
+  description: "Reference to the component OTableColumnComponent"
+  },{
+    name: "templateref",
+    type: "TemplateRef<any>",
+    description: "Reference to template"
+  }]
+
+attributesColumns: ["Name","Type", "Description", "Default"]
+attributes: [{
+  name: 'filter-source',
+  type: ' render | data | both',
+  description: 'Indicates whether filter source is by render value, by source data or both',
+  default: "render"
+},{
+    name: "filterFunction",
+    type: "(cellValue: any, rowValue: any, quickFilter?: string) => boolean",
+    description: "Callback used to filter cell value in filter by column and quick filter"
+}]
+
+methods: [{
+  name: "getCellData",
+  type: "method",
+  description: "This default method returns the value of the column as *a string*. This method is used to obtain the value of the column in the exports or filtering, so that if you want to customize the value of the column you must overwrite it.",
+  returns: "string"
+}, {
+  name: "registerRenderer",
+  type: "method",
+  description: "Register the renderer on the table"
+}, {
+  name: "getFilter",
+  type: "method",
+  params: "cellValue: any, rowValue?: any",
+  description: "Return the values to filter",
+  returns: "any[]"
+}]
+

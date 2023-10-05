@@ -1,0 +1,37 @@
+directive : "o-phone-input"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker", "select-all-on-click"]
+}]
+
+attributes: [{
+  name: "countries",
+  type: "string[]",
+  default : "",
+  required : "",
+  description : "Specifies the countries code that will appear in the country selection combo, if this input is not present the combo will be filled with a predefined list of countries."
+},{
+   name: "gap",
+  type: "string",
+  default : "14px",
+  required : "",
+  description : " Specify gap between fields in px",
+  since: "8.8.3"
+}
+]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  outputs: ["onChange", "onValueChange", "onFocus", "onBlur"]
+}]
+
+outputs: [{
+  name : "countryChange",
+  description: "Event triggered when the country combo changes"
+},{
+  name : "onPhoneDataChange",
+  description: "Event triggered when the phone input changes"
+}]

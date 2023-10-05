@@ -1,0 +1,40 @@
+directive : "o-real-input"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "automatic-binding", "automatic-registering", "data", "enabled", "required", "clear-button", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker","select-all-on-click"]
+},{
+  component: "o-integer-input",
+  path: "components/input/integer/api",
+  attributes: ["min", "max", "step", "grouping", "thousand-separator", "locale"]
+}]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  outputs: ["onChange", "onValueChange", "onFocus", "onBlur"]
+}]
+
+attributes: [{
+  name: "min-decimal-digits",
+  type: "number",
+  default : "2",
+  required : "",
+  description : "Minimum number of decimals required"
+},{
+  name: "max-decimal-digits",
+  type: "number",
+  default : "2",
+  required : "",
+  description : "Maximum number of decimals required"
+},{
+  name: "decimal-separator"
+},
+{
+  name: "strict",
+  type: "boolean",
+  default : "false",
+  required : "",
+  description : "With the attribute set to true, the component only accepts the number of decimal digits configured in the rendered view and data model. With false value, data model accepts as many decimal digits as you want but the renderer view shows the number of decimal digits configured"
+  }]

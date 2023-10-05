@@ -1,0 +1,14 @@
+{% assign files = include.folder  | sort %}
+{% for file in files %}
+  {% assign filename =  file[0] %}
+  {% assign directive = include.folder[filename];%}
+  {% if  include.type=='directive' %}
+  <li><a href="#{{directive.directive}}">{{directive.directive}}</a></li>
+  {% endif %}
+  {% if  include.type=='type' %}
+  <li><a href="#{{directive.type}}">{{directive.type}}</a></li>
+  {% endif %}
+  {% if include.type=='constant' %}
+  <li><a href="#{{directive.constant}}">{{directive.constant}}</a></li>
+  {% endif %}
+{% endfor %}

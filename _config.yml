@@ -1,10 +1,25 @@
-title: Ontimize Web documentation
-description: A starter template for a Jeykll site using the Just the Docs theme!
+logo: images/logo-ontimize.png
+
+description: Welcome to the Ontimize v15 documentation!
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
-
-aux_links:
-  Ontimize Web Repository: https://github.com/OntimizeWeb
+versions:
+  - url: https://ontimizeweb.github.io/docs/v4/
+    title: 4.x.x
+    selected: false
+  - url: https://ontimizeweb.github.io/docs/v8/
+    title: 8.x.x
+    selected: false
+  - url: /
+    title: 15.x.x
+    selected: true
 
 page_excerpts: true
+
+github:
+  - name: Onitmize Web
+    url: https://github.com/OntimizeWeb
+    icon: images/github-240-light.png
+  - name: Onitmize Boot
+    url: https://github.com/Ontimize
+    icon: images/github-240-light.png

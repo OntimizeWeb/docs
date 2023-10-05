@@ -1,0 +1,354 @@
+directive: "o-form"
+extraComponents: "formData"
+
+attributes: [
+  {
+  name: "attr"
+  },{
+  name: "service"
+},{
+  name: "service-type"
+},{
+  name: "entity"
+},{
+  name: "keys"
+},{
+  name: "columns"
+},{
+  name: "query-on-init"
+},{
+  name: "parent-keys"
+},{
+  name: "query-method"
+},{
+  name: "insert-method"
+},{
+  name: "update-method"
+},{
+  name: "delete-method"
+},{
+  name: "show-header",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the form toolbar"
+},{
+  name: "header-mode",
+  type: "none | floating",
+  default: "floating",
+  required: "",
+  description: "Form toolbar display mode"
+},{
+  name: "label-header",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Displayable text in the form toolbar"
+},{
+  name: "label-header-align",
+  type: "start | center | end",
+  default: "center",
+  required: "",
+  description: "Alignment of the form toolbar text"
+},{
+  name: "header-actions",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Available action buttons in form toolbar of standard CRUD operations, separated by ';'. Available options are R;I;U;D (Refresh, Insert, Update, Delete). Also 'all' is available (showing all buttons)."
+},{
+  name: "show-header-actions-text",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the text of the form toolbar buttons"
+},{
+  name: "stay-in-record-after-insert",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the detail form after inserting a new record. Will be deprecated on version 8.x.x"
+},{
+  name: "stay-in-record-after-edit",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to stay in the edited detail form after a successful edition"
+},{
+  name: "after-insert-mode",
+  type: "new | detail | close",
+  default: "close",
+  required: "no",
+  description: "Shows reseted form after insert a new record (new) or shows the inserted record after (detail). This property works in substitution of stay-in-record-after-insert (detail)"
+},{
+  name: "layout-fill",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form content will be expanded and occupying all its parent layout"
+},{
+  name: "layout-direction",
+  type: "column | row",
+  default: "column",
+  required: "",
+  description: "Direction of the form main content"
+},{
+  name: "layout-align",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Component alignment inside the form"
+},{
+  name: "editable-detail",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the [form lifecycle](https://ontimizeweb.github.io/docs/v8/components/form/lifecycle/){:target='_blank'}) section"
+},{
+  name: "show-header-navigation",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/v8/components/formlayoutmanager/overview){:target='_blank'})"
+},{
+  name: "undo-button",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Include undo button in form toolbar (only showed if form is editable)"
+},{
+  name: "keys-sql-types",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Entity keys SQL types, separated by ';'"
+},{
+  name: "detect-changes-on-blur",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form will detect inner components changes (for updating toolbar buttons) on its blur"
+},{
+  name: "include-breadcrumb",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form toolbar will render its parent 'form-container' breadrcrumb (only working if the form is inside a 'form-container' with a breadcrumb)"
+},{
+  name: "detect-changes-on-blur",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form detects that there was a change in the blur event of the form components."
+},{
+  name: "query-fallback-function",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Function to execute on query error"
+},{
+  name: "confirm-exit",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the form  confirm when it exit"
+},{
+  name: "ignore-on-exit",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Fields attr's that will be ignored when the form is closed, separated by ';'."
+},{
+  name: "ignore-default-navigation",
+  type: "yes | no | true | false",
+  default: "no",
+  required: "",
+  description: "ignore default navigation when user click the toolbar buttons."
+},{
+  name: "message-service-type",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Custom service to display CRUD and other actions form messages"
+}]
+
+outputs: [{
+  name: "onDataLoaded",
+  description: "Event triggered when the data is loaded"
+},{
+  name: "beforeCloseDetail",
+  description: "Event triggered before leaving form detail mode"
+},{
+  name: "beforeGoEditMode (deprecated)",
+  description: "Event triggered befoe going to form edition mode<br>This event is <b>deprecated</b>, use `beforeUpdateMode` instead"
+},{
+  name: "onFormModeChange",
+  description: "Event triggered when form mode changes"
+},{
+  name: "onInsert",
+  description: "Event triggered when the data is inserted"
+},{
+  name: "onUpdate",
+  description: "Event triggered when the data is updated"
+},{
+  name: "onDelete",
+  description: "Event triggered when the data is removed"
+},{
+  name: "beforeInsertMode",
+  description: "Event triggered before changing the form into insert mode"
+},{
+  name: "beforeUpdateMode",
+  description: "Event triggered before changing the form into update mode"
+},{
+  name: "beforeInitialMode",
+  description: "Event triggered before changing the form into initial mode"
+},{
+  name: "onInsertMode",
+  description: "Event triggered once the form has changed to insert mode"
+},{
+  name: "onUpdateMode",
+  description: "Event triggered once the form has changed to update mode"
+},{
+  name: "onInitialMode",
+  description: "Event triggered once the form has changed to initial mode"
+},{
+  name: "onCancel",
+  description: "Event triggered when the form has been cancel"
+}]
+
+
+methods: [{
+  name: "getFieldValue",
+  type: "method",
+  description: "Return the current value of the control in the form",
+  parameters: "attr: string",
+  returns: "any"
+},{
+  name: "getFieldValues",
+  type: "method",
+  description : "Return an object with the values of each attribute",
+  parameters: "attrs: string[]",
+  returns : "any"
+},{
+  name: "setFieldValue",
+  type: "method",
+  parameters : "attr: string, value:any, options: IFormValueOptions",
+  description : "Sets the value of the control in the form."
+},{
+  name: "setFieldValues",
+  type: "method",
+  parameters : "values:any, options: IFormValueOptions",
+  description : "Sets the value of each control in the form."
+},{
+  name: "clearFieldValue",
+  type: "method",
+  parameters : "attr: string, options: IFormValueOptions",
+  description : "Reset the value of the control in the form."
+},
+{
+  name: "clearFieldValues",
+  type: "method",
+  parameters : "attrs: string[], options: IFormValueOptions",
+  description : "Reset the value of each control in the form."
+},
+{
+  name: "getFieldReference",
+  type: "method",
+  parameters : "attr: string",
+  description : "Retrieves the reference of the control in the form."
+},
+{
+  name: "getFieldReferences",
+  type: "method",
+  parameters : "attrs: string[]",
+  description : "Retrieves the reference of each control in the form."
+},{
+  name: "reinitialize",
+  type: "method",
+  parameters: "OFormInitializationOptions",
+  description: "Allow reinitialize form adding options"
+},{
+  name: "setData",
+  parameters: "data:any",
+  description: "Sets new data for the form "
+},{
+  name: "back",
+  description: "Navigate back"
+},{
+  name: "closeDetail",
+  description: "Close current detail form"
+},{
+  name: "reload",
+  parameters: "useFilter:boolean=false",
+  description: "Reload the form data"
+},{
+  name: "insert",
+  description: " Performs insert action."
+},{
+  name: "update",
+  description: "Performs 'update' action"
+},{
+  name: "delete",
+  description: "Performs 'delete' action"
+},{
+  name: "queryData",
+  parameters: "filter:any",
+  description: "Allow to manage the call to the service data"
+},{
+  name: "insertData",
+  parameters: "values, sqlTypes?: object",
+  return: "Observable<any>",
+  description: "Allow to manage the call to the insert service"
+},{
+  name: "updateData",
+  parameters: "filter, values, sqlTypes?: object",
+  return: "Observable<any>",
+  description: "Allow to manage the call to the update service"
+},{
+  name: "deleteData",
+  parameters: "filter",
+  return: "Observable<any>",
+  description: "Allow to manage the call to the delete service"
+},{
+  name: "getKeysValues",
+  description: "Get keys values",
+  return: "Array<any>"
+},{
+  name: "undo",
+  description: "Undo last change"
+},{
+  name: "setFormMode",
+  parameters: "mode: number",
+  description: "Sets form operation mode"
+},{
+  name: "setQueryMode",
+  description: "Set read mode"
+},{
+  name: "setInsertMode",
+  description: "Set insert mode"
+},{
+  name: "setUpdateMode",
+  description: "Set update mode"
+},{
+  name: "setInitialMode",
+  description: "Set initial mode"
+},{
+  name: "isInQueryMode",
+  description: "Determines whether in read mode",
+  return: "boolean"
+},{
+  name: "isInInsertMode",
+  description: "Determines whether in insert mode",
+  return: "boolean"
+},{
+  name: "isInUpdateMode",
+  description: "Determines whether in update mode",
+  return: "boolean"
+},{
+  name: "isInInitialMode",
+  description: "Determines whether in initial mode",
+  return: "boolean"
+}]
+
+
+

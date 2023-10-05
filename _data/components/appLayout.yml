@@ -1,0 +1,112 @@
+directive: "o-app-layout"
+
+attributes:
+  [
+    {
+      name: "sidenav-opened",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Indicates whether or not to the sidenav is initially opened",
+    },
+    {
+      name: "show-header",
+      type: "no | false | yes | true",
+      default: "no",
+      required: "",
+      description: "Indicates whether or not to show an application header. The default value is **no** when the app layout mode is desktop and **yes** when the app layout mode is mobile",
+    },
+    {
+      name: "show-user-info",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Indicates whether or not to show a component with logged user information",
+    },
+    {
+      name: "opened-sidenav-image",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Sidenav header image when it is opened",
+    },
+    {
+      name: "closed-sidenav-image",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Sidenav header image when it is closed",
+    },
+    {
+      name: "use-flag-icons",
+      type: "no | false | yes | true",
+      default: "",
+      required: "",
+      description: "Indicates whether or not the language selector shows flags",
+    },
+    {
+      name: "mode",
+      type: "desktop | mobile",
+      default: "desktop",
+      required: "",
+      description: "Indicates the component performance mode",
+    },
+    {
+      name: "sidenav-mode",
+      type: "over | push | side",
+      default: "side",
+      required: "",
+      description: "Indicates the [angular material sidenav mode](https://material.angular.io/components/sidenav/overview#changing-the-sidenav-39-s-behavior). The default value is **side** when app layout mode is desktop and **over** when app layout mode is mobile",
+    },
+    {
+      name: "show-language-selector",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Indicates whether or not to show the language selector",
+    },
+    {
+      name: "header-color",
+      type: "ThemePalette",
+      default: "",
+      required: "",
+      description: "Theme color palette for the application header.",
+    },
+    {
+      name: "show-title",
+      type: "no | false | yes | true",
+      default: "no",
+      required: "",
+      description: "Indicates whether or not to show the header title",
+    },
+    {
+      name: "show-static-title",
+      type: "no | false | yes | true",
+      default: "no",
+      required: "",
+      description: "Indicates whether or not to show the static header title",
+    },
+    {
+      name: "static-title",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Static header title",
+    }
+  ]
+
+outputs: [{
+  name: "beforeOpenSidenav",
+  description: "Event triggered before the sidenav is opened"
+},{
+  name: "afterOpenSidenav",
+  description: "Event triggered after the sidenav is opened"
+},{
+  name: "beforeCloseSidenav",
+  description: "Event triggered before the sidenav is closed"
+},{
+  name: "afterCloseSidenav",
+ description: "Event triggered after the sidenav is closed"
+}]
+
+extraComponents: "appLayoutData"

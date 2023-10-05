@@ -1,0 +1,49 @@
+class: "OTableCellRendererImageComponent"
+
+extends: "OBaseTableCellRenderer"
+
+directive: "o-table-cell-renderer-image"
+
+attributes: [{
+  name: "image-type",
+  type: "base64 | url",
+  default: "Model value",
+  required: "",
+  description: "Image type (external URL or base64)"
+},{
+  name: "avatar",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to visualize image as an avatar (as a circle)"
+},{
+  name: "empty-image",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Image URL when field has no value"
+}]
+
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
+}]

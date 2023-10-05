@@ -1,4 +1,79 @@
-// custom SCSS (or CSS) goes here
-.select {
-  border-style: none;
+// Style of the header version changer
+.header-custom-main {
+  display: flex;
+  place-content: end;
+  column-gap: 10px;
+
+  .select {
+    border-style: none;
+  }
+
+  .github-div {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+  }
+}
+
+// Style of the component-api tabs
+.o-tab {
+  overflow: hidden;
+  padding-bottom: 6px;
+
+  /* Style the buttons that are used to open the tab content */
+  button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 16px;
+    transition: .3s;
+    font-size: 0.8em;
+    color: #333333;
+  }
+
+  /* Change background color of buttons on hover */
+  button:hover {
+    background-color: lighten($yellow-300, 40%);
+    border-bottom: 2px solid $yellow-300;
+  }
+
+  /* Create an active/current tablink class */
+  button.active {
+    border-bottom: 2px solid $yellow-300;
+  }
+
+}
+
+/* Style the tab content */
+.o-tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+.o-component-container {
+  .list__item {
+    padding-right: 0;
+
+    .archive__item-excerpt {
+      margin-top: 0;
+      font-size: .75em;
+    }
+  }
+}
+
+// Api table
+.mdl-data-table {
+  td {
+    &[required] {
+      p.first {
+        &:after {
+          content: ' *';
+        }
+      }
+    }
+  }
 }
