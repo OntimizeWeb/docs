@@ -1,0 +1,120 @@
+post:
+  - title: "How to solve javaScript heap out of memory error?"
+    body: "
+    There is a strict standard limit for the memory usage in V8 of around 1.7 GB, if you do not increase it manually.<br/>
+    To increase this limit you have to use this flag on building or serving the application:<br/>
+    <code>--max_old_space_size=8048</code><br/>
+    Example: <code>npm run production-aot --max_old_space_size=8048</code>
+  "
+  - title: "How to use dependant combos or dependant list-pickers?"
+    body: "
+    You can check <a href='../components/input/overviewservice/api'>here</a> how to use parent-keys parameter to construct dependant <a href='../components/input/combo/overview'>combos</a> or dependant <a href='../components/input/listpicker/overview'>list-pickers</a> as seen in the example.
+    "
+  - title: "How to use query-method?"
+    body: "
+    All the OntimizeWeb components that use services for retrieving data have the attributes <i>query-method</i>, <i>paginated-query-method</i>, <i>insert-method</i>, <i>update-method</i> and <i>deleted-method</i>. The purpose of these attributes is allowing the component to use your own CRUD methods defined in your service. With this you can define, for example, as many query methods as you want.
+    You can see the complete documentation <a href='../guide/service/'>here</a>.
+    "
+  - title: "How to use query-on-event?"
+    body: "
+    <code>query-on-event</code> is an input of the <i>OServiceBaseComponent</i>. This input will reference to an event of the component that must listen to in order to perform its query. The component will wait until the event you choose is fired to perform the request of the data.
+    For example: query-on-event=\"componentAttr.onValueChange\". This will perform the query when the value of the component changes.
+    You can check how to use it <a href='../components/input/overviewservice/overview'>here</a> and a example of dependant combos <a href='https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo'>here</a>.
+    "
+  - title: "How can I customize my app and set typography?"
+    body: "
+    Ontimize Web application follows material design guidelines proposed by Google. You can check <a href='../customize/theming/' title='Custom Theme'>here</a> how to configure these palettes by both using predefined ones and creating new ones.<br/>
+    You can also change the typography of the app by following the steps described <a href='../customize/typography/'>here</a>.
+    "
+  - title: "How to get backend info after login?"
+    body: "
+    You can get that backend information in your login function by creating a function that returns the values that you need from the backend or from an API.<br/>
+    You can check the normal login function <a href='https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/src/app/login/login.component.ts' target='blank'>here</a><br/>
+    It will be something like this:<br/><br/>
+    <code>if (userName && userName.length > 0 && password && password.length > 0) {<br/>
+    &nbsp;&nbsp;const self = this;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;this.loginService.login(userName, password).subscribe(() => {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.getInfoFromBackend() //In this function is where you can get info from backend, connect to an API ...<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.then(res => {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.sessionExpired = false;<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.router.navigate(['../'], { relativeTo: this.actRoute });<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.catch(e => console.log(e));<br/>
+    &nbsp;&nbsp;}, this.handleError);<br/>
+    }</code>
+    "
+  - title: "How to get information from url?"
+    body: "
+    While working with angular, many times we need to get data from URL. Data in url can be passed in two ways, first as a parameter and second as a query string.<br/>
+    We can get the value of query parameters using ActivatedRoute object, queryParamMap.<br/><br/>
+    <b>Accessing Query String Values From URL</b><br/>
+    Test URL: <b>http://test-url.com/user-list?type=normal&list=active</b><br/><br/>
+    <code>
+    ngOnInit() {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;this.route.queryParamMap.subscribe(queryParams => {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.type = queryParams.get('type');<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;this.list = queryParams.get('list');<br/>
+    &nbsp;&nbsp;})<br/>
+    }
+    </code><br/>
+    <b>Accessing the URL Parameters</b><br/>
+    Test URL: <b>http://test-url.com/user-list/{type}/active</b><br/><br/>
+    <code>
+    ngOnInit() {<br/>
+    &nbsp;&nbsp;this.route.paramMap.subscribe(params => {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;this.userType = params.get('type')<br/>
+    &nbsp;&nbsp;})
+    }
+    </code>
+    "
+  - title: "How can I configure environments for my application?"
+    body: "
+    An Angular Application Environment is JSON configuration information that tells the build system which files to change when you use ng build and ng serve.<br/>
+    You can also create variables with different values in each of the environment files.<br/>
+    Check the <a href='https://angular.io/guide/build' target='blank'>official documentation</a> to understand more about the environment configuration.
+    "
+  - title: "How to change row header color by the primary palette?"
+    body: "
+    You can check <a href='../components/table/overview#the-table-headers'>here</a> how change row header color by the primary palette as seen in the example.
+    "
+  - title: "How to solve 404 error when reloading in production?"
+    body: "
+    The application deep links will not work without the redirect rule on the server. All the deep links have to redirect to the application index.html by the server.
+    To setup the tomcat to redirect any deep links:<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;1.-Configure the RewriteValve in server.xml<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;2.-Write the rewrite rule in rewrite.config
+    "
+  - title: "How to set values in fields of the form on first load?"
+    body: "
+    You must use <a href='../components/input/overview/api#methods'>setValue</a> function for each field that you want to set the value to achieve this.<br/>
+    When you are using this function and the values are not beeing setted you must listen to onFormModeChange event and set the value when form mode is the one that you want.<br/>
+    You can check how to use this event <a href='../components/form/overview#modes'>here</a>.
+    "
+  - title: "How to change form mode?"
+    body: "
+    You can use the specific methods <a href='../components/form/api#methods'>setQueryMode, setInsertMode, setUpdateMode</a> or <a href='../components/form/api#methods'>setFormMode </a> general method to change the form mode that you want. You can check how the form modes <a href='../components/form/overview#modes'>here</a>.<br/><br/>
+
+    It will be something like this:<br/>
+    <code>
+      <o-form ... (onFormModeChange)=\"setFormMode($event)\" ..><br/>
+        ...<br/>
+      </o-form><br/>
+    </code>
+    <br/>
+    <code>
+    public setFormMode(mode: number): void {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;if (mode !== OFormComponent.Mode().INSERT) {<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.form.setInsertMode(); // this.form.setFormMode(OFormComponent.Mode().INSERT);<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+      }
+    </code>
+    <br/>
+    However, if you want to change the mode at the time the form loads.<br/><br>
+    It will be something like this:<br/>
+    <code>
+    &nbsp;&nbsp;&nbsp;&nbsp;@ViewChild('form', { static: true }) form: OFormComponent;
+    &nbsp;&nbsp;&nbsp;&nbsp;this.form.onFormInitStream.subscribe(() => {
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.form.setInsertMode();
+    &nbsp;&nbsp;&nbsp;&nbsp});
+    </code>
+    "
