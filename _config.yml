@@ -20,3 +20,5 @@ github:
   - name: Onitmize Web
     url: https://github.com/OntimizeWeb
     icon: images/github-240-light.png
+
+color_scheme: ontimize-light

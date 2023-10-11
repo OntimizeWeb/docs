@@ -1,3 +1,8 @@
+// Variables
+$primary-500: #1464A5;
+$primary-500-24: #1464A53D;
+$sidebar-color: #F6F6F6;
+
 // Style of the header version changer
 .header-custom-main {
   display: flex;
@@ -35,13 +40,13 @@
 
   /* Change background color of buttons on hover */
   button:hover {
-    background-color: lighten($yellow-300, 40%);
-    border-bottom: 2px solid $yellow-300;
+    background-color: lighten($primary-500, 40%);
+    border-bottom: 2px solid $primary-500-24;
   }
 
   /* Create an active/current tablink class */
   button.active {
-    border-bottom: 2px solid $yellow-300;
+    border-bottom: 2px solid $primary-500;
   }
 
 }
@@ -93,16 +98,21 @@
 // Onitmize TOC
 
 .sidebar__right {
-  position: fixed;
-  top: 64px;
-  right: 48px;
-  max-height: calc(100% - 112px);
-  min-height: fit-content;
-  width: 360px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
-  border: #7a8288;
-  border-radius: 4px;
-  overflow: auto;
+  @include mq(md) {}
+
+  @include mq(lg) {
+    position: fixed;
+    top: 64px;
+    right: 48px;
+    max-height: calc(100% - 112px);
+    min-height: fit-content;
+    width: 360px;
+    padding-bottom: 20px;
+    //box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    overflow: auto;
+  }
 }
 
 .toc {
@@ -110,48 +120,31 @@
   letter-spacing: 1px;
 
   .nav__title {
+    margin: 0;
 
-    @include fs-4;
+    @include fs-5;
 
     @include mq(md) {
-      @include fs-3;
+      @include fs-4;
     }
 
-    margin-left: 8px;
+    background-color: $sidebar-color;
+    padding: 20px 14px 8px 14px;
   }
 }
 
 .toc__menu {
 
-  @include fs-4;
+  @include fs-5;
 
   @include mq(md) {
-    @include fs-3;
+    @include fs-4;
   }
 
   margin: 0;
   padding: 0;
   width: 100%;
   list-style: none;
-
-  a {
-    display: block;
-    padding: 0.5rem 1rem;
-    line-height: 1.5;
-    border-bottom: 1px solid mix(#fff, #7a8288, 90%);
-    font-size: 14px;
-
-    &:hover {
-      color: #000;
-      background: mix(#fff, #7a8288, 90%);
-    }
-  }
-
-  >li:last-child {
-    a {
-      border-bottom: none;
-    }
-  }
 
   li::before {
     content: "" !important;
@@ -166,9 +159,6 @@
 
   }
 
-  li ul>li:last-child a {
-    border-bottom: 1px solid mix(#fff, #7a8288, 90%);
-  }
 }
 
 // FAQ page

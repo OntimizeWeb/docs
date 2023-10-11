@@ -1,0 +1,48 @@
+// Variables
+$primary-500: #1464A5;
+$primary-500-24: #1464A53D;
+$dark-74: #000000BD;
+$dark-60: #00000099;
+$roboto: 'Roboto',
+sans-serif;
+// Colors
+$link-color: $primary-500;
+$nav-child-link-color: $dark-60;
+$sidebar-color: #F6F6F6;
+$feedback-color: #EAEAEA;
+
+// Font
+$body-font-family: $roboto;
+$mono-font-family: $roboto;
+
+.nav-list {
+  .nav-list-item {
+
+    .nav-list-expander {
+      color: $dark-74 !important;
+    }
+
+    .nav-list-link {
+      color: $dark-74 !important;
+      font-weight: 400 !important;
+      // 16px
+      font-size: $font-size-5 !important;
+
+      &.active {
+        color: $dark-60 !important;
+        font-weight: 500 !important;
+        font-size: $font-size-5 !important;
+      }
+    }
+  }
+}
+
+a:not([class]) {
+  //primary-500 op24%
+  text-decoration-color: $primary-500-24 !important;
+
+  &:hover {
+    text-decoration-color: $primary-500 !important;
+  }
+
+}
