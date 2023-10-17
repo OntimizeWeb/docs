@@ -1,0 +1,85 @@
+---
+layout: table_wrappers
+---
+
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'en-US' }}">
+{% include head.html %}
+<script>
+  $(document).ready(function () {
+
+    /* Hide all elements outside the visible window */
+    $('body *').each(function () {
+
+      var top_of_object = $(this).position().top;
+      var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+      if (bottom_of_window < top_of_object) {
+
+        $(this).addClass('hideme').css({ 'opacity': '0' });
+
+      }
+
+    });
+
+    /* Every time the window is scrolled ... */
+    $(window).scroll(function () {
+
+      /* Check the location of the desired elements */
+      $('.hideme').each(function (i) {
+
+        var bottom_of_object = $(this).position().top + $(this).outerHeight();
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+
+        if (bottom_of_window > (bottom_of_object + 20)) {
+
+          $(this).removeClass('hideme').animate({ 'opacity': '1' }, 500);
+
+        }
+
+      });
+
+    });
+
+  });
+</script>
+
+<body class="home">
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <!--Necesary to display search results-->
+  <div style="display: none;">
+    {% include components/sidebar.html %}
+  </div>
+  <!-- -------------------------------- -->
+  {% include icons/icons.html %}
+  <div class="header">
+    <div class="site-header" role="banner">
+      <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
+      <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+          <use xlink:href="#svg-menu"></use>
+        </svg>
+      </button>
+    </div>
+    {% include components/header.html %}
+  </div>
+
+  <div id="main-content" class="main-content" role="main">
+
+    {{ content }}
+
+
+
+
+    {% include components/footer.html %}
+  </div>
+
+  {% include components/search_footer.html %}
+  {% if site.mermaid %}
+  {% include components/mermaid.html %}
+  {% endif %}
+</body>
+
+</html>

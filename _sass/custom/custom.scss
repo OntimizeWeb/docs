@@ -1,3 +1,26 @@
+.home {
+
+  .select {
+    border-style: none;
+    background-color: transparent;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    background-color: $primary-500;
+
+    .main-header {
+      flex-grow: 1;
+      background-color: transparent;
+
+      .header-custom-main{
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
 // Button outline style
 .btn:focus {
   display: none;

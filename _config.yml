@@ -1,5 +1,7 @@
 logo: images/logo-ontimize-blanco.png
 
+search_enabled: true
+
 description: Welcome to the Ontimize v15 documentation!
 theme: just-the-docs
 
@@ -37,3 +39,6 @@ callouts:
   warning:
     title: Warning
     color: red
+
+exclude:
+  - docs

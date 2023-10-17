@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: home
+layout: o-home
 nav_order: 1
 ---
 
