@@ -46,4 +46,5 @@ For using the breadcrum component it is necessary to initialize the `NavigationS
 
     </o-form>
 ```
->**Note** If the `form` attibute is not present, the text shown in the breadcrumb label will be the corresponding route item for the component where the breadcrumb is placed.
+{: .note }
+> If the `form` attibute is not present, the text shown in the breadcrumb label will be the corresponding route item for the component where the breadcrumb is placed.

@@ -587,7 +587,8 @@ All you have to do to enable data editing capabilities for the component is to:
 - Configure `edition-mode="click"` and `detail-mode='none'`
 - Configure data binding
 
->**NOTE**: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
+{: .note }
+>: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
 
 Cell editing results in the following events.
 
@@ -1483,6 +1484,7 @@ First, create a Sass `mixin` that accepts an Angular Material color theme and ou
 }
 ```
 
+{: .note }
 >**Note: using the mat-color function to extract colors from a palette.**
 
 2. Include the theme mixin in your application

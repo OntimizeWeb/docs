@@ -148,7 +148,8 @@ are stored in their corresponding files in the path *node_modules/ontimize-web-n
 * **ontimize-black-yellow.scss**
 * **ontimize.scss**
 
-> **Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.
+{: .note }
+>**Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.
 
 ## Custom theme definition
 

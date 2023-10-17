@@ -29,7 +29,8 @@ This command triggers the `production` script defined in the *package.json* file
 
 4. Configure the web server to redirect request for missing files to `index.html`. You can reed more about this topic in the [Angular docs](https://angular.io/guide/deployment#routed-apps-must-fallback-to-indexhtml){:target="_blank"}.
 
->**NOTE**: This is *not* a production deployment. It's not optimized and it won't be fast for users. It might be good enough for sharing your progress and ideas internally with managers, teammates, and other stakeholders.
+{: .note }
+>: This is *not* a production deployment. It's not optimized and it won't be fast for users. It might be good enough for sharing your progress and ideas internally with managers, teammates, and other stakeholders.
 
 ## Optimize for production
 

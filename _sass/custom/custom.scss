@@ -1,7 +1,46 @@
-// Variables
-$primary-500: #1464A5;
-$primary-500-24: #1464A53D;
-$sidebar-color: #F6F6F6;
+// Button outline style
+.btn:focus {
+  display: none;
+}
+
+// Links
+a:not([class]) {
+  text-decoration: underline;
+  text-decoration-color: $border-color;
+  text-underline-offset: 2px;
+
+  &:hover {
+    text-decoration-color: $primary-500-24;
+  }
+}
+
+// Header version changer
+.select {
+  border-style: none;
+}
+
+// Default side bar
+.nav-list {
+  .nav-list-item {
+
+    .nav-list-expander {
+      color: $dark-74;
+    }
+
+    .nav-list-link {
+      color: $dark-74;
+      font-weight: 400;
+      // 16px
+      font-size: $font-size-5;
+
+      &.active {
+        color: $dark-60;
+        font-weight: 500;
+        font-size: $font-size-5;
+      }
+    }
+  }
+}
 
 // Style of the header version changer
 .header-custom-main {
@@ -108,7 +147,6 @@ $sidebar-color: #F6F6F6;
     min-height: fit-content;
     width: 360px;
     padding-bottom: 20px;
-    //box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
     border: 1px solid $border-color;
     border-radius: 4px;
     overflow: auto;
@@ -150,8 +188,17 @@ $sidebar-color: #F6F6F6;
     content: "" !important;
   }
 
+  a {
+    text-decoration: none;
+    color: $dark-74;
+
+    &.active {
+      color: $dark-60;
+      font-weight: 500;
+    }
+  }
+
   li ul>li a {
-    padding-left: 2rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     border: none;

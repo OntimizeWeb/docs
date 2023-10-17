@@ -1,4 +1,4 @@
-logo: images/logo-ontimize.png
+logo: images/logo-ontimize-blanco.png
 
 description: Welcome to the Ontimize v15 documentation!
 theme: just-the-docs
@@ -22,3 +22,18 @@ github:
     icon: images/github-240-light.png
 
 color_scheme: ontimize-light
+
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: grey-dk
+  important:
+    title: Important
+    color: grey-dk
+  note:
+    title: Note
+    color: blue
+    opacity: 1
+  warning:
+    title: Warning
+    color: red

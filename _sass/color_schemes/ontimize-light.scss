@@ -1,33 +1,14 @@
 // Colors
 $link-color: $primary-500;
 $nav-child-link-color: $dark-60;
-$sidebar-color: #F6F6F6;
+$sidebar-color: $grey;
 $feedback-color: #EAEAEA;
+$btn-primary-color: $primary-500;
+$base-button-color: $grey;
+$code-background-color: $grey;
+$blue-300: $primary-500;
+$blue-000: $primary-50;
 
 // Font
 $body-font-family: $roboto;
 $mono-font-family: $roboto;
-
-.ontimize {
-  .nav-list {
-    .nav-list-item {
-
-      .nav-list-expander {
-        color: $dark-74;
-      }
-
-      .nav-list-link {
-        color: $dark-74;
-        font-weight: 400;
-        // 16px
-        font-size: $font-size-5;
-
-        &.active {
-          color: $dark-60;
-          font-weight: 500;
-          font-size: $font-size-5;
-        }
-      }
-    }
-  }
-}
