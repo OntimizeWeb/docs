@@ -14,7 +14,8 @@ To start your application in a live server, open a terminal, go to the project d
 ```bash
 npm start
 ```
-> **NOTE:** Run this command with administrator privileges.
+{: .note }
+> Run this command with administrator privileges.
 
 This command runs the following two parallel node processes:
 

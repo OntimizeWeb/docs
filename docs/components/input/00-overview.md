@@ -158,7 +158,8 @@ Also user can add its own validators to a input component using the `validators`
 ## Label visible
 Form data components allow you to show or hide label with `label-visible` attribute. By default, this value is *true*.
 
->**NOTE**: This attribute *not* apply in `o-checkbox`,`o-radio`, `o-slider` and `o-html-input`.
+{: .note }
+>: This attribute *not* apply in `o-checkbox`,`o-radio`, `o-slider` and `o-html-input`.
 
 ## Required
 A input can be market with a `required` attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the `hide-required-marker` property on *form data component*.

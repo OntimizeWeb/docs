@@ -204,7 +204,8 @@ Setting the `parent-keys` input of the [table]({{ base_path }}/components/table/
 
 In the following example we have a form component with the field to filter the first name, surname and employee type of an employees table. Note that the table has the `parent-keys` input configured with the columns involved in the filtering and their corresponding attr's of the form component. Remember that when the table column and the attr of the form component are the same, you only have to include it once.
 
->**NOTE** Keep in mind that the table will not send any request when the parent keys values are all null. You have to configure the `query-with-null-parent-keys` as in the example below to avoid this, but it is not always recommended. Check the [table]({{ base_path }}/components/table/api){:target="_blank"} documentation page.
+{: .note }
+> Keep in mind that the table will not send any request when the parent keys values are all null. You have to configure the `query-with-null-parent-keys` as in the example below to avoid this, but it is not always recommended. Check the [table]({{ base_path }}/components/table/api){:target="_blank"} documentation page.
 
 ```html
 <o-form editable-detail="no" show-header="no">

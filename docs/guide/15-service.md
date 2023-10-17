@@ -266,7 +266,8 @@ return this.doRequest({
 });
 ```
 
-> **NOTE:** In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [adapt the response](#adapt-your-service-response).
+{: .note }
+>In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [adapt the response](#adapt-your-service-response).
 
 ### Define your own CRUD methods
 
@@ -298,7 +299,8 @@ export class StarWarsService extends OntimizeBaseService {
 
 Now you can configure a component from  **OntimizeWeb** to use your method. Read more about this in the section [*Use your service in a specific component*](#use-your-service-in-a-specific-component).
 
-> **NOTE:** In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [addapt the response](#adapt-your-service-response).
+{: .note }
+> In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [addapt the response](#adapt-your-service-response).
 
 ### Adapt your service response
 
@@ -399,7 +401,8 @@ export class AppModule { }
 
 At this point every **OntimizeWeb** component will use your recently created `StarWarsService` service for communicating with the backend.
 
-> **NOTE:** `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. There is one attribute for each type of service.
+{: .note }
+> `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. There is one attribute for each type of service.
 
 ### Use your service in a specific component
 

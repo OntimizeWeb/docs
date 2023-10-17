@@ -396,7 +396,8 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </tbody>
 </table>
 
->**NOTE** The addon *DataTable* is not available for Angular 5.
+{: .note }
+> The addon *DataTable* is not available for Angular 5.
 
 ### Angular 4
 <table>
@@ -509,7 +510,8 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </tbody>
 </table>
 
->**NOTE** The addons *Tree and Library Tools* are not available for Angular 4.
+{: .note }
+> The addons *Tree and Library Tools* are not available for Angular 4.
 
 ### Angular 2
 <table>
@@ -582,6 +584,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </tbody>
 </table>
 
->**NOTE** The addons *Filemanager, Theming, Tree, DataTable* and *Tools* and *Library Tools* are not available for Angular 2.
+{: .note }
+> The addons *Filemanager, Theming, Tree, DataTable* and *Tools* and *Library Tools* are not available for Angular 2.
 
 * The prefix *ontimize-web-ngx* was omitted from the names of the addons.

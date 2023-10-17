@@ -18,7 +18,7 @@ The QuickStart application is a good test bench where you can explore the struct
 Run the live example.
 
 
-[<i class="fa fa-play"></i> live demo](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){: .btn .btn--success}{:target="_blank"}
+[<i class="fa fa-play"></i> live demo](https://ontimizeweb.github.io/ontimize-web-ngx-quickstart){: .btn .btn-primary}{:target="_blank"}
 
 <!--
 <div><a href="https://ontimizeweb.github.io/ontimize-web-ngx-quickstart" target="_blank" class="btn btn--success">

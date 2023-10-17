@@ -13,7 +13,8 @@ nav_order: 1
 
 The `o-filter-builder` component is used for easily building complex structures for filtering the data of the component that extends from  [OServiceComponent]({{ base_path }}/components/service/service/overview)) such as [list]({{ base_path }}/components/list/overview), [table]({{ base_path }}/components/table/overview) and [grid]({{ base_path }}/components/grid/overview) . It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/components/form/overview). All the attributes are explained on the **API** section of this page.
 
-> **NOTE:** Do not add elements to your screen but is a component that allows to build [complex filtering expressions]({{base_path}}/guide/filterexpression/).
+{: .note }
+> Do not add elements to your screen but is a component that allows to build [complex filtering expressions]({{base_path}}/guide/filterexpression/).
 
 ## Query directive
 The `oFilterBuilderQuery` directive is used to trigger the `reloadData` method of the component indicated on the `target` attribute of the filter builder component. This directive must be attached to a clickable component and you must provide the `o-filter-builder` reference as parameter in order to indicate the directive which filter builder trigger the filter action.

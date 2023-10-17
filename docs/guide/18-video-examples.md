@@ -10,7 +10,8 @@ nav_order: 11
 
 Here you can see explanatory videos about the development of applications with Ontimize Web.
 
-> **Note:** All videos have Spanish audio.
+{: .note }
+> All videos have Spanish audio.
 
 * General application overview:
 
