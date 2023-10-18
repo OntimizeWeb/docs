@@ -6,69 +6,8 @@ layout: table_wrappers
 
 <html lang="{{ site.lang | default: 'en-US' }}">
 {% include head.html %}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function () {
-
-    /* Hide all elements outside the visible window */
-    $('body *').each(function () {
-
-      var top_of_object = $(this).position().top;
-      var bottom_of_window = $(window).scrollTop() + $(window).height();
-      var bottom_of_object = $(this).position().top + $(this).outerHeight();
-      var top_of_window = $(window).scrollTop();
-
-      if (bottom_of_window < top_of_object) {
-        $(this).addClass('hideme').css({ 'opacity': '0' });
-      }
-
-      if (top_of_window > bottom_of_object) {
-        $(this).addClass('hideme').css({ 'opacity': '0' });
-      }
-
-    });
-
-    /* Every time the window is scrolled ... */
-    $(window).scroll(function () {
-
-      /* Check the location of the desired elements */
-      $('.hideme').each(function (i) {
-
-        var bottom_of_object = $(this).position().top + $(this).outerHeight();
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
-        var top_of_object = $(this).position().top;
-        var top_of_window = $(window).scrollTop();
-
-        if (bottom_of_window > (bottom_of_object + 20)) {
-          $(this).removeClass('hideme').animate({ 'opacity': '1' }, 1000);
-        }
-
-        if (bottom_of_window < top_of_object) {
-          $(this).addClass('hideme').css({ 'opacity': '0' });
-        }
-
-        if (top_of_window < (top_of_object - 20)) {
-          $(this).removeClass('hideme').animate({ 'opacity': '1' }, 1000);
-        }
-
-        if (top_of_window > bottom_of_object) {
-          $(this).addClass('hideme').css({ 'opacity': '0' });
-        }
-
-      });
-
-    });
-
-  });
-</script>
 
 <body class="home">
-  <a class="skip-to-main" href="#main-content">Skip to main content</a>
-  <!--Necesary to display search results-->
-  <div style="display: none;">
-    {% include components/sidebar.html %}
-  </div>
-  <!-- -------------------------------- -->
   {% include icons/icons.html %}
   <div class="introduction">
     <div class="header">
@@ -94,10 +33,54 @@ layout: table_wrappers
   {{ content }}
 
   {% include components/footer.html %}
-  {% include components/search_footer.html %}
-  {% if site.mermaid %}
-  {% include components/mermaid.html %}
-  {% endif %}
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var $homeElements = $('.home *');
+    var $hidemeElements = $homeElements.filter('.hideme');
+    var $nonIntroductionElements = $homeElements.not('.introduction');
+
+    var windowHeight = $(window).height();
+
+    // Function to check visibility and apply the hideme class
+    function checkVisibility(element) {
+      var elementPosition = element.position().top;
+      var elementHeight = element.outerHeight();
+      var topOfWindow = $(window).scrollTop();
+      var bottomOfWindow = topOfWindow + windowHeight;
+
+      if (bottomOfWindow < elementPosition || topOfWindow > elementPosition + elementHeight) {
+        element.addClass('hideme');
+      } else {
+        element.removeClass('hideme');
+      }
+
+      // Additional class checks
+      if (bottomOfWindow < elementPosition + 100 && !element.hasClass('hideme')) {
+        element.addClass('hideme');
+      }
+
+      if (topOfWindow > elementPosition + elementHeight - 100 && !element.hasClass('hideme introduction')) {
+        element.addClass('hideme');
+      }
+    }
+
+    $hidemeElements.each(function () {
+      checkVisibility($(this));
+    });
+
+    $(window).scroll(function () {
+      $hidemeElements.each(function () {
+        checkVisibility($(this));
+      });
+
+      $nonIntroductionElements.each(function () {
+        checkVisibility($(this));
+      });
+    });
+  });
+
+</script>
 
 </html>

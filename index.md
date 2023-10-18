@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: o-home
-nav_order: 1
+nav_exclude: true
 title: Ontimize Web
 subtitle: Web application framework based on Angular for building business software.
 banner: 'images/Cohete-banner.png'
