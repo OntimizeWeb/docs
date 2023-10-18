@@ -1,24 +1,79 @@
 .home {
 
+  background: linear-gradient(120.26deg, #E3ECF4 4.02%, rgba(227, 236, 244, 0) 68.42%);
+
+  .introduction {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      background-color: $primary-500;
+
+      .site-title {
+        &:hover {
+          background-image: none;
+        }
+      }
+
+      .search {
+        max-height: 60%;
+        margin: auto;
+        border-radius: 4px;
+      }
+
+      .main-header {
+        flex-grow: 1;
+        background-color: $primary-500;
+
+        .header-custom-main {
+          margin-right: 30px;
+
+          .github-div {
+            >a {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+
+      .content {
+        color: $dark-74;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    .landing {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: row;
+
+      .text {
+        max-width: 50%;
+        margin: auto;
+      }
+
+      .banner {
+        max-height: 570px;
+        max-width: 570px;
+        margin: auto;
+      }
+    }
+
+  }
+
   .select {
     border-style: none;
     background-color: transparent;
   }
 
-  .header {
-    display: flex;
-    flex-direction: row;
-    background-color: $primary-500;
-
-    .main-header {
-      flex-grow: 1;
-      background-color: transparent;
-
-      .header-custom-main{
-        margin-right: 30px;
-      }
-    }
-  }
 }
 
 // Button outline style

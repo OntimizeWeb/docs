@@ -6,19 +6,24 @@ layout: table_wrappers
 
 <html lang="{{ site.lang | default: 'en-US' }}">
 {% include head.html %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function () {
 
     /* Hide all elements outside the visible window */
-    $('body *').each(function () {
+    $('.home *').each(function () {
 
       var top_of_object = $(this).position().top;
       var bottom_of_window = $(window).scrollTop() + $(window).height();
+      var bottom_of_object = $(this).position().top + $(this).outerHeight();
+      var top_of_window = $(window).scrollTop();
 
       if (bottom_of_window < top_of_object) {
-
         $(this).addClass('hideme').css({ 'opacity': '0' });
+      }
 
+      if (top_of_window > bottom_of_object) {
+        $(this).addClass('hideme').css({ 'opacity': '0' });
       }
 
     });
@@ -31,12 +36,23 @@ layout: table_wrappers
 
         var bottom_of_object = $(this).position().top + $(this).outerHeight();
         var bottom_of_window = $(window).scrollTop() + $(window).height();
+        var top_of_object = $(this).position().top;
+        var top_of_window = $(window).scrollTop();
 
-
-        if (bottom_of_window > (bottom_of_object + 20)) {
-
+        if (bottom_of_window > (bottom_of_object)) {
           $(this).removeClass('hideme').animate({ 'opacity': '1' }, 500);
+        }
 
+        if (bottom_of_window < top_of_object) {
+          $(this).addClass('hideme').animate({ 'opacity': '0' }, 500);
+        }
+
+        if (top_of_window < (top_of_object + 20)) {
+          $(this).removeClass('hideme').animate({ 'opacity': '1' }, 500);
+        }
+
+        if (top_of_window > bottom_of_object) {
+          $(this).addClass('hideme').animate({ 'opacity': '0' }, 500);
         }
 
       });
@@ -54,28 +70,30 @@ layout: table_wrappers
   </div>
   <!-- -------------------------------- -->
   {% include icons/icons.html %}
-  <div class="header">
-    <div class="site-header" role="banner">
-      <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
-      <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
-        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
-          <use xlink:href="#svg-menu"></use>
-        </svg>
-      </button>
+  <div class="introduction">
+    <div class="header">
+      <div class="site-header" role="banner">
+        <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
+        <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <use xlink:href="#svg-menu"></use>
+          </svg>
+        </button>
+      </div>
+      {% include components/header.html %}
     </div>
-    {% include components/header.html %}
+    <div class="landing">
+      <div class="text">
+        <h1>{{ page.title }}</h1>
+        <h4>{{ page.subtitle }}</h4>
+      </div>
+      <img src="{{ page.banner }}" alt="banner" class="banner">
+    </div>
   </div>
 
-  <div id="main-content" class="main-content" role="main">
+  {{ content }}
 
-    {{ content }}
-
-
-
-
-    {% include components/footer.html %}
-  </div>
-
+  {% include components/footer.html %}
   {% include components/search_footer.html %}
   {% if site.mermaid %}
   {% include components/mermaid.html %}

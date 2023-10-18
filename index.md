@@ -2,6 +2,9 @@
 title: Home
 layout: o-home
 nav_order: 1
+title: Ontimize Web
+subtitle: Web application framework based on Angular for building business software.
+banner: 'images/Cohete-banner.png'
 ---
 
 This  a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
