@@ -11,7 +11,7 @@ layout: table_wrappers
   $(document).ready(function () {
 
     /* Hide all elements outside the visible window */
-    $('.home *').each(function () {
+    $('body *').each(function () {
 
       var top_of_object = $(this).position().top;
       var bottom_of_window = $(window).scrollTop() + $(window).height();
@@ -39,20 +39,20 @@ layout: table_wrappers
         var top_of_object = $(this).position().top;
         var top_of_window = $(window).scrollTop();
 
-        if (bottom_of_window > (bottom_of_object)) {
-          $(this).removeClass('hideme').animate({ 'opacity': '1' }, 500);
+        if (bottom_of_window > (bottom_of_object + 20)) {
+          $(this).removeClass('hideme').animate({ 'opacity': '1' }, 1000);
         }
 
         if (bottom_of_window < top_of_object) {
-          $(this).addClass('hideme').animate({ 'opacity': '0' }, 500);
+          $(this).addClass('hideme').css({ 'opacity': '0' });
         }
 
-        if (top_of_window < (top_of_object + 20)) {
-          $(this).removeClass('hideme').animate({ 'opacity': '1' }, 500);
+        if (top_of_window < (top_of_object - 20)) {
+          $(this).removeClass('hideme').animate({ 'opacity': '1' }, 1000);
         }
 
         if (top_of_window > bottom_of_object) {
-          $(this).addClass('hideme').animate({ 'opacity': '0' }, 500);
+          $(this).addClass('hideme').css({ 'opacity': '0' });
         }
 
       });
