@@ -6,10 +6,10 @@ layout: table_wrappers
 
 <html lang="{{ site.lang | default: 'en-US' }}">
 {% include head.html %}
-
+{% include base_path %}
 <body class="home">
-  {% include icons/icons.html %}
   <div class="introduction">
+    {% include icons/icons.html %}
     <div class="header">
       <div class="site-header" role="banner">
         <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
@@ -23,8 +23,8 @@ layout: table_wrappers
     </div>
     <div class="landing">
       <div class="text">
-        <h1>{{ page.title }}</h1>
-        <h4>{{ page.subtitle }}</h4>
+        <h1>{{ page.title_landing }}</h1>
+        <h4>{{ page.subtitle_landing }}</h4>
       </div>
       <img src="{{ page.banner }}" alt="banner" class="banner">
     </div>
@@ -35,52 +35,6 @@ layout: table_wrappers
   {% include components/footer.html %}
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function () {
-    var $homeElements = $('.home *');
-    var $hidemeElements = $homeElements.filter('.hideme');
-    var $nonIntroductionElements = $homeElements.not('.introduction');
-
-    var windowHeight = $(window).height();
-
-    // Function to check visibility and apply the hideme class
-    function checkVisibility(element) {
-      var elementPosition = element.position().top;
-      var elementHeight = element.outerHeight();
-      var topOfWindow = $(window).scrollTop();
-      var bottomOfWindow = topOfWindow + windowHeight;
-
-      if (bottomOfWindow < elementPosition || topOfWindow > elementPosition + elementHeight) {
-        element.addClass('hideme');
-      } else {
-        element.removeClass('hideme');
-      }
-
-      // Additional class checks
-      if (bottomOfWindow < elementPosition + 100 && !element.hasClass('hideme')) {
-        element.addClass('hideme');
-      }
-
-      if (topOfWindow > elementPosition + elementHeight - 100 && !element.hasClass('hideme introduction')) {
-        element.addClass('hideme');
-      }
-    }
-
-    $hidemeElements.each(function () {
-      checkVisibility($(this));
-    });
-
-    $(window).scroll(function () {
-      $hidemeElements.each(function () {
-        checkVisibility($(this));
-      });
-
-      $nonIntroductionElements.each(function () {
-        checkVisibility($(this));
-      });
-    });
-  });
-
-</script>
+<script src="{{ base_path }}/assets/scripts/home_scroll_effects.js"></script>
 
 </html>

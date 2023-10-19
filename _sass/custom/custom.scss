@@ -2,6 +2,12 @@
 
   background: linear-gradient(120.26deg, #E3ECF4 4.02%, rgba(227, 236, 244, 0) 68.42%);
 
+  .hideme {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+
   .introduction {
     height: 100vh;
     display: flex;
