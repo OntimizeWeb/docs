@@ -23,12 +23,14 @@ layout: table_wrappers
     </div>
     <div class="landing">
       <div class="text">
-        <h1>{{ page.title_landing }}</h1>
-        <h4>{{ page.subtitle_landing }}</h4>
+        <h4 class="fs-10 fw-700">{{ page.title_landing }}</h4>
+        <p class="fs-8">{{ page.subtitle_landing }}</p>
       </div>
       <img src="{{ page.banner }}" alt="banner" class="banner">
     </div>
+    <p class="fs-8 fw-700 text-center">{{ page.bottom_subtitle_landing }}</p>
   </div>
+  <p class="fs-7 fw-500 text-center">{{ page.text_header_content }}</p>
 
   {{ content }}
 

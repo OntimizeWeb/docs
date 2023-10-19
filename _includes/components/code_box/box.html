@@ -1,0 +1,11 @@
+<div class="tab">
+  {% for label in site.data.index.labels %}
+    <button class="tablinks" onclick="openCode(event, '{{ label.title }}')">{{ label.title }}</button>
+  {% endfor %}
+</div>
+{% for label in side.data.index.labels %}
+  <div id="{{ label.title }}" class="tabcontent">
+    <h3>{{ label.title }}</h3>
+    <p>{{ label.subtitle }}</p>
+  </div>
+{% endfor %}
