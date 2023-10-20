@@ -1,5 +1,25 @@
 labels:
   - title: HTML
-    subtitle: CODEEEE
+    subtitle: This is a simple example of how to show an icon on the landing page.
+    language: html
+    code: |
+
+      <div class="site-header" role="banner">
+        <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
+        <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <use xlink:href="#svg-menu"></use>
+          </svg>
+        </button>
+      </div>
   - title: CSS
-    subtitle: CODEEEE CSSS
+    subtitle: This is a simple example of how to show an icon on the landing page.
+    language: css
+    code: |
+
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }

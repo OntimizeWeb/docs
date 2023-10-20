@@ -2,6 +2,19 @@
 
   background: linear-gradient(120.26deg, #E3ECF4 4.02%, rgba(227, 236, 244, 0) 68.42%);
 
+  .content {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10%;
+    .vertical-line {
+      width: 1px;
+      border-radius: 1px;
+      background-color: $primary-500-24;
+      height: 100px;
+      margin-right: 10px;
+    }
+  }
+
   .hideme {
     visibility: hidden;
     opacity: 0;

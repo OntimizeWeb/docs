@@ -1,0 +1,75 @@
+.code-box {
+  border: 1px dotted;
+  width: 564px;
+  height: 628px;
+
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: $grey;
+
+    button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      &.active {
+        background-color: #ccc;
+      }
+    }
+  }
+
+  .tabs-content {
+    border: 1px solid;
+    height: 100%;
+
+    .tabcontent {
+      height: 100%;
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+
+      .code {
+        height: 100%;
+
+        >figure {
+          height: 100%;
+
+          >code {
+            height: 100%;
+            vertical-align: top;
+
+            >div {
+              height: 100%;
+
+              >table {
+                height: 100%;
+
+                >tbody {
+                  >tr {
+                    >.gutter.gl {
+                      display: none;
+                    }
+                    >.code {
+                      padding: 0 15px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

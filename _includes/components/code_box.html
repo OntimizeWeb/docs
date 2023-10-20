@@ -1,0 +1,21 @@
+<div class="code-box nohide">
+  <div class="tab">
+    {% for label in site.data.index.labels %}
+    <button class="tablinks" onclick="openCode(event, '{{ label.title }}')">{{ label.title }}</button>
+    {% endfor %}
+  </div>
+  <div class="tabs-content">
+    {% for label in site.data.index.labels %}
+    <div id="{{ label.title }}" class="tabcontent">
+      <div class="code">
+        {% capture some_var %}
+        {% highlight html linenos %}
+          {{ label.code }}
+        {% endhighlight %}
+        {% endcapture %}
+        {% include fix_linenos.html code=some_var %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

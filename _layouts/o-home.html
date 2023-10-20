@@ -8,7 +8,7 @@ layout: table_wrappers
 {% include head.html %}
 {% include base_path %}
 <body class="home">
-  <div class="introduction">
+  <div class="introduction nohide">
     {% include icons/icons.html %}
     <div class="header">
       <div class="site-header" role="banner">
@@ -31,12 +31,18 @@ layout: table_wrappers
     <p class="fs-8 fw-700 text-center">{{ page.bottom_subtitle_landing }}</p>
   </div>
   <p class="fs-7 fw-500 text-center">{{ page.text_header_content }}</p>
+  <div class="content">
+    <div class="vertical-line"></div>
 
-  {{ content }}
+    {{ content }}
+
+  </div>
 
   {% include components/footer.html %}
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ base_path }}/assets/scripts/home_scroll_effects.js"></script>
-
+<script src="{{ base_path }}/assets/js/home_scroll_effects.js"></script>
+{% if page.js %}
+  <script src="{{ base_path }}/assets/js/{{ page.js }}"></script>
+{% endif %}
 </html>
