@@ -7,8 +7,9 @@ layout: table_wrappers
 <html lang="{{ site.lang | default: 'en-US' }}">
 {% include head.html %}
 {% include base_path %}
+
 <body class="home">
-  <div class="introduction">
+  <div class="introduction nohide">
     {% include icons/icons.html %}
     <div class="header">
       <div class="site-header" role="banner">
@@ -23,18 +24,135 @@ layout: table_wrappers
     </div>
     <div class="landing">
       <div class="text">
-        <h1>{{ page.title_landing }}</h1>
-        <h4>{{ page.subtitle_landing }}</h4>
+        <h4 class="fs-10 fw-700 text-primary-900">{{ page.title_landing }}</h4>
+        <p class="fs-8 text-primary-900">{{ page.subtitle_landing }}</p>
       </div>
       <img src="{{ page.banner }}" alt="banner" class="banner">
     </div>
+    <p class="fs-9 fw-700 text-center">{{ page.bottom_subtitle_landing }}</p>
   </div>
 
-  {{ content }}
+  <p class="fs-7 fw-500 text-center">{{ page.text_header_content }}</p>
+  <div class="custom-content">
+    <div class="vertical-line"></div>
+    <div class="main-content">
+      <h1 class="fs-8 fw-700 text-blue-300">Performance</h1>
+      <p class="fs-8 text-blue-200">An amazing performance based on a solid code programing.</p>
+      <p class="fs-6 fw-400">In the example bellow we are demostrating how powerful and easy to use could be Ontimize on the development of smallest
+        bussiness applications
+        to biggest projects.</p>
+      <div class="code-box nohide">
+        <div class="tab">
+          <button class="tablinks" onclick="openCode(event, 'html')">HTML</button>
+          <button class="tablinks" onclick="openCode(event, 'ts')">TS</button>
+        </div>
+        <div class="tabs-content">
+
+          <div id="html" class="tabcontent">
+            <div class="code">
+              {% highlight html %}
+              <sign-in-form #registryForm service="pharmacy" entity="registerPharmacy" keys="username"
+                columns="username;password;license;name_comercial;locality;province" show-header="no" label-header="REGISTRY" header-actions="I">
+                <o-text-input attr="license" required="yes" flex [data]="registryForm.getDataValue('license')"> </o-text-input>
+                <o-text-input attr="name_comercial" required="yes" flex [data]="registryForm.getDataValue('name_comercial')"> </o-text-input>
+                <o-text-input attr="locality" required="yes" flex [data]="registryForm.getDataValue('locality')"> </o-text-input>
+                <o-text-input attr="province" required="yes" flex [data]="registryForm.getDataValue('province')"> </o-text-input>
+                <o-email-input attr="username" required="yes" flex [data]="registryForm.getDataValue('username')"> </o-email-input>
+                <o-password-input attr="password" required="yes" min-length="6" max-length="30" flex
+                  [data]="registryForm.getDataValue('password')"></o-password-input>
+                <o-password-input attr="password2" required="yes" min-length="6" max-length="30" flex
+                  [data]="registryForm.getDataValue('password2')"></o-password-input>
+                <re-captcha siteKey="{{ GOOGLE_RECAPTCHA_KEY }}" (captchaResponse)="registryForm.getCaptcha($event)"></re-captcha>
+                <o-row layout-align="end center">
+                  <o-button label="SEND" (click)="registryForm.send()"></o-button>
+                </o-row>
+              </sign-in-form>
+              {% endhighlight %}
+            </div>
+          </div>
+
+          <div id="ts" class="tabcontent">
+            <div class="code">
+              {% highlight js %}
+              import { forwardRef, Injector } from '@angular/core';
+              import { Location } from '@angular/common';
+              import { ActivatedRoute, Router } from '@angular/router';
+
+              import { OComponent, dataServiceFactory, LoginService, OFormComponent, OntimizeService } from 'ontimize-web-ngx';
+
+              @OComponent({ // <- Include the `@OComponent` decorator selector: 'sign-in-form' , providers: [ { provide: OntimizeService, useFactory:
+                dataServiceFactory }, { // Include the `OFormComponent` class as a provider of your component provide: OFormComponent, useExisting:
+                forwardRef(()=>
+                SignInFormComponent)
+                }
+                ]
+                })
+                // Make your component extend the `OFormComponent` class
+                export class SignInFormComponent extends OFormComponent {
+
+                protected recaptchaResponseToken: string;
+
+                constructor(
+                _router: Router, _location: Location,
+                _actRoute: ActivatedRoute, _loginService: LoginService,
+                injector: Injector
+                ) {
+                super(_router, _location, _actRoute, _loginService, injector);
+                this.recaptchaResponseToken = undefined;
+                }
+
+                /* Override methods depending on your requirements */
+
+                protected postCorrectInsert(result: any) {
+                if (result && result.confirmation_key) {
+                this.dialogService.alert('CONFIRM_PENDING', 'CONFIRM_PENDING_MESSAGE')
+                .then(res => this._router.navigate(['home']));
+                } else {
+                this.dialogService.alert('ERROR', 'ERROR_SIGN_IN');
+                }
+                }
+
+                protected postIncorrectInsert(result: any) {
+                let msg = 'ERROR_SIGN_IN';
+                if (result && 'json' in result) {
+                let res = result.json();
+                if (res.message) {
+                msg = res.message;
+                }
+                }
+                this.dialogService.alert('ERROR', msg);
+                }
+
+                /* Add new methods depending on your requirements */
+
+                protected getCaptcha(response: any) {
+                this.recaptchaResponseToken = response;
+                }
+
+                public send() {
+                if (this.formGroup.controls['password'].value !== this.formGroup.controls['password2'].value) {
+                this.dialogService.alert('ERROR', 'ERROR_PASSWORDS_NOT_MATCH');
+                } else if (typeof(this.recaptchaResponseToken) === 'undefined') {
+                this.dialogService.alert('ERROR', 'ERROR_CAPTCHA');
+                } else {
+                this._insertAction();
+                }
+                }
+
+                }
+                {% endhighlight %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   {% include components/footer.html %}
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ base_path }}/assets/scripts/home_scroll_effects.js"></script>
+<script src="{{ base_path }}/assets/js/home_scroll_effects.js"></script>
+<script src="{{ base_path }}/assets/js/code_box.js"></script>
 
 </html>

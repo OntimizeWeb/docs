@@ -1,3 +1,9 @@
+// Custom text colors
+.text-primary-900 {
+  color: $primary-900
+}
+
+// Home page
 .home {
 
   background: linear-gradient(120.26deg, #E3ECF4 4.02%, rgba(227, 236, 244, 0) 68.42%);
@@ -9,9 +15,10 @@
   }
 
   .introduction {
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    min-height: 0;
 
     .header {
       display: flex;
@@ -45,15 +52,6 @@
           }
         }
       }
-
-      .content {
-        color: $dark-74;
-      }
-
-      .footer {
-        position: absolute;
-        bottom: 0;
-      }
     }
 
     .landing {
@@ -75,9 +73,97 @@
 
   }
 
+  .custom-content {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 300px;
+
+    .vertical-line {
+      display: flex;
+      flex-grow: 1;
+      background-color: $primary-500;
+    }
+
+    .main-content {
+      display: flex;
+      flex-grow: 5;
+      flex-direction: column;
+    }
+
+    .code-box {
+      width: 564px;
+      height: 628px;
+
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: $grey;
+
+        button {
+          background-color: $grey;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+
+          &:hover {
+            background-color: #ddd;
+          }
+
+          &.active {
+            background-color: $white;
+          }
+        }
+      }
+
+      .tabs-content {
+        border: 1px solid;
+        height: 100%;
+
+        .tabcontent {
+          height: 100%;
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+
+          .code {
+            height: 100%;
+
+            >.highlight {
+              height: 100%;
+
+              >pre {
+                height: 100%;
+
+                >code {
+                  height: 100%;
+                  vertical-align: top;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
+
   .select {
     border-style: none;
     background-color: transparent;
+    color: $white;
+
+    >option {
+      background-color: $primary-500;
+    }
   }
 
 }

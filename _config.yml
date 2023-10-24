@@ -21,7 +21,7 @@ page_excerpts: true
 github:
   - name: Onitmize Web
     url: https://github.com/OntimizeWeb
-    icon: images/github-240-light.png
+    icon: images/github-front.svg
 
 color_scheme: ontimize-light
 
