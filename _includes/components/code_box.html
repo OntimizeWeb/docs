@@ -1,19 +1,29 @@
 <div class="code-box nohide">
   <div class="tab">
-    {% for label in site.data.index.labels %}
-    <button class="tablinks" onclick="openCode(event, '{{ label.title }}')">{{ label.title }}</button>
+    {% for box in site.data.index.labels[0] %}
+      {% for language in box.title %}
+        <button class="tablinks" onclick="openCode(event, '{{ language.title }}')">{{ language.title }}</button>
+      {% endfor %}
     {% endfor %}
   </div>
   <div class="tabs-content">
-    {% for label in site.data.index.labels %}
+    {% for label in site.data.index.labels.index == 0 %}
     <div id="{{ label.title }}" class="tabcontent">
       <div class="code">
-        {% capture some_var %}
-        {% highlight html linenos %}
-          {{ label.code }}
-        {% endhighlight %}
-        {% endcapture %}
-        {% include fix_linenos.html code=some_var %}
+        {% case label.language %}
+          {% when "html" %}
+            {% highlight html %}
+              {{ label.code }}
+            {% endhighlight %}
+          {% when "scss" %}
+            {% highlight scss %}
+              {{ label.code }}
+            {% endhighlight %}
+          {% else %}
+            {% highlight js %}
+              {{ label.code }}
+            {% endhighlight %}
+        {% endcase %}
       </div>
     </div>
     {% endfor %}

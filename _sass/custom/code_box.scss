@@ -41,30 +41,15 @@
       .code {
         height: 100%;
 
-        >figure {
+        >.highlight {
           height: 100%;
 
-          >code {
+          >pre {
             height: 100%;
-            vertical-align: top;
 
-            >div {
+            >code {
               height: 100%;
-
-              >table {
-                height: 100%;
-
-                >tbody {
-                  >tr {
-                    >.gutter.gl {
-                      display: none;
-                    }
-                    >.code {
-                      padding: 0 15px;
-                    }
-                  }
-                }
-              }
+              vertical-align: top;
             }
           }
         }
