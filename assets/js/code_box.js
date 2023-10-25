@@ -1,5 +1,6 @@
 /*Show the first tab*/
 document.getElementsByClassName("tabcontent")[0].style.display = "block";
+document.getElementsByClassName("tabcontent")[0].style.className += " active";
 
 function openCode(evt, labelName) {
 

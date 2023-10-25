@@ -4,168 +4,239 @@
 }
 
 // Home page
-.home {
+html {
+  width: 100%;
 
-  background: linear-gradient(120.26deg, #E3ECF4 4.02%, rgba(227, 236, 244, 0) 68.42%);
+  .home {
+    width: 100%;
+    background: linear-gradient(120deg, $primary-500-24, white);
 
-  .hideme {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-  }
+    .hideme {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.5s linear;
+    }
 
-  .introduction {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    min-height: 0;
-
-    .header {
+    .introduction {
       display: flex;
-      flex-direction: row;
-      background-color: $primary-500;
+      flex-direction: column;
+      height: 100vh;
+      min-height: 0;
 
-      .site-title {
-        &:hover {
-          background-image: none;
-        }
-      }
-
-      .search {
-        max-height: 60%;
-        margin: auto;
-        border-radius: 4px;
-      }
-
-      .main-header {
-        flex-grow: 1;
+      .header {
+        display: flex;
+        flex-direction: row;
         background-color: $primary-500;
 
-        .header-custom-main {
-          margin-right: 30px;
-
-          .github-div {
-            >a {
-              display: flex;
-              align-items: center;
-            }
-          }
-        }
-      }
-    }
-
-    .landing {
-      display: flex;
-      flex-grow: 1;
-      flex-direction: row;
-
-      .text {
-        max-width: 50%;
-        margin: auto;
-      }
-
-      .banner {
-        max-height: 570px;
-        max-width: 570px;
-        margin: auto;
-      }
-    }
-
-  }
-
-  .custom-content {
-    display: flex;
-    flex-direction: row;
-    padding: 50px 300px;
-
-    .vertical-line {
-      display: flex;
-      flex-grow: 1;
-      background-color: $primary-500;
-    }
-
-    .main-content {
-      display: flex;
-      flex-grow: 5;
-      flex-direction: column;
-    }
-
-    .code-box {
-      width: 564px;
-      height: 628px;
-
-      .tab {
-        overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: $grey;
-
-        button {
-          background-color: $grey;
-          float: left;
-          border: none;
-          outline: none;
-          cursor: pointer;
-          padding: 14px 16px;
-          transition: 0.3s;
-
+        .site-title {
           &:hover {
-            background-color: #ddd;
-          }
-
-          &.active {
-            background-color: $white;
+            background-image: none;
           }
         }
-      }
 
-      .tabs-content {
-        border: 1px solid;
-        height: 100%;
+        .search {
+          max-height: 60%;
+          margin: auto;
+          border-radius: 4px;
+        }
 
-        .tabcontent {
-          height: 100%;
-          display: none;
-          padding: 6px 12px;
-          border: 1px solid #ccc;
-          border-top: none;
+        .main-header {
+          flex-grow: 1;
+          background-color: $primary-500;
 
-          .code {
-            height: 100%;
+          .header-custom-main {
+            margin-right: 30px;
 
-            >.highlight {
-              height: 100%;
-
-              >pre {
-                height: 100%;
-
-                >code {
-                  height: 100%;
-                  vertical-align: top;
-                }
+            .github-div {
+              >a {
+                display: flex;
+                align-items: center;
               }
             }
           }
         }
       }
 
+      .landing {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+
+        .text {
+          max-width: 50%;
+          margin: auto;
+        }
+
+        .banner {
+          display: flex;
+          max-height: 570px;
+          max-width: 570px;
+          margin: auto;
+        }
+      }
+
+    }
+
+    .custom-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      column-gap: 10px;
+      width: 80%;
+      margin: 200px auto;
+
+      .vertical-line {
+
+        display: flex;
+        flex-grow: 1;
+
+      }
+
+      .main-content {
+        display: flex;
+        flex-grow: 6;
+        flex-direction: column;
+        flex-shrink: 1;
+
+        .main-code-box {
+          display: flex;
+          flex-basis: 1280px;
+          max-width: 1280px;
+          max-height: 736px;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          align-self: center;
+          background-color: #FAFAFA;
+          border-radius: 4px;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          column-gap: 34px;
+
+          .menu-code-box {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #DCDCDC;
+            min-width: 56px;
+            height: 100%;
+
+            >img {
+              display: flex;
+              flex-grow: 0;
+              flex-shrink: 1;
+              margin: 30px 0;
+            }
+          }
+
+          .code-box {
+            max-width: 564px;
+            flex-basis: 564px;
+            max-height: 628px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 1;
+            flex-grow: 1;
+
+            .tab {
+              display: flex;
+              overflow: hidden;
+              border: 1px solid #ccc;
+              background-color: #E0E0E0;
+              flex-shrink: 0;
+
+              .tablinks {
+                background-color: #D9D9D9;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+
+                &.active {
+                  background-color: $white;
+                }
+              }
+            }
+
+            .tabs-content {
+              display: flex;
+              border: 1px solid #E0E0E0;
+              flex-grow: 0;
+              flex-shrink: 1;
+              overflow: auto;
+
+              .tabcontent,
+              .tabcontentactive {
+                width: 100%;
+                height: 100%;
+                display: none;
+                border: 1px solid #ccc;
+                border-top: none;
+
+                .code {
+                  height: 100%;
+
+                  >.highlight {
+                    height: 100%;
+                    margin-bottom: 0;
+
+                    >pre {
+                      height: 100%;
+                      background-color: $white;
+                      padding-left: 0;
+                      overflow: hidden;
+                      min-width: min-content;
+
+                      >code {
+                        height: 100%;
+                        vertical-align: top;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .example-box {
+            max-width: 564px;
+            flex-basis: 564px;
+            min-height: 628px;
+            background-color: #F1F1F1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 12px;
+            margin-right: 32px;
+            justify-content: center;
+            flex-shrink: 1;
+            flex-grow: 1;
+          }
+
+        }
+      }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .select {
+      border-style: none;
+      background-color: transparent;
+      color: $white;
+
+      >option {
+        background-color: $primary-500;
+      }
     }
   }
-
-  .footer {
-    position: absolute;
-    bottom: 0;
-  }
-
-  .select {
-    border-style: none;
-    background-color: transparent;
-    color: $white;
-
-    >option {
-      background-color: $primary-500;
-    }
-  }
-
 }
 
 // Button outline style

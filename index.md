@@ -1,7 +1,7 @@
 ---
 layout: o-home
 nav_exclude: true
-banner: 'images/rocket.gif'
+banner: 'images/home/rocket.gif'
 title_landing: Ontimize Web
 subtitle_landing: Web application framework based on Angular for building business software.
 bottom_subtitle_landing: The web development framework for building the future
