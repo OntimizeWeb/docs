@@ -1,24 +1,36 @@
 /*Show the first tab*/
-document.getElementsByClassName("tabcontent")[0].style.display = "block";
-document.getElementsByClassName("tabcontent")[0].style.className += " active";
+var tabsContent, tabsLinks, tabsCount = 1;
+tabsContent = document.getElementsByClassName("tabcontent");
+tabsLinks = document.getElementsByClassName("tablinks");
+
+for (i = 0; i < tabsContent.length; i++) {
+  if (tabsContent[i].id.startsWith(tabsCount)) {
+    tabsContent[i].style.display = "block";
+    tabsContent[i].style.className += " active";
+    tabsLinks[i].className += " active"
+    tabsCount++;
+  }
+}
 
 function openCode(evt, labelName) {
 
   var i, tabcontent, tablinks;
 
-  /*Get all elements with class="tabcontent" and hide them*/
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+  if (labelName.includes(evt.currentTarget.innerText.toLowerCase())) {
 
-  /*Get all elements with class="tablinks" and remove the class "active"*/
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
+    tabcontent = document.getElementsByClassName("tabcontent");
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tabcontent.length; i++) {
+      /*If the id of the tabContent starts with the same number that the label pressed*/
+      if (tabcontent[i].id.startsWith(labelName.substring(0, 1))) {
+        tabcontent[i].style.display = "none";
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    }
 
-  /*Show the current tab, and add an "active" class to the button that opened the tab*/
-  document.getElementById(labelName).style.display = "block";
-  evt.currentTarget.className += " active";
+  }
+    /*Show the current tab, and add an "active" class to the button that opened the tab*/
+    document.getElementById(labelName).style.display = "block";
+    evt.currentTarget.className += " active";
+
 }
