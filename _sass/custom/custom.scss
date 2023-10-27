@@ -9,7 +9,7 @@ html {
 
   .home {
     width: 100%;
-    background: linear-gradient(120deg, $primary-500-24, white);
+    background: linear-gradient(120deg, #E3ECF4 4.02%, rgba(227, 236, 244, 0.00) 68.42%);
 
     .hideme {
       visibility: hidden;
@@ -20,8 +20,8 @@ html {
     .introduction {
       display: flex;
       flex-direction: column;
-      height: 100vh;
-      min-height: 0;
+      max-height: 100%;
+      height: 100%;
 
       .header {
         display: flex;
@@ -34,18 +34,32 @@ html {
           }
         }
 
-        .search {
-          max-height: 60%;
-          margin: auto;
-          border-radius: 4px;
-        }
-
         .main-header {
           flex-grow: 1;
           background-color: $primary-500;
 
+          .search {
+            display: flex;
+            flex-grow: 4;
+            max-height: 60%;
+            margin: auto 0;
+
+          }
+
           .header-custom-main {
+            display: flex;
+            flex-grow: 1;
             margin-right: 30px;
+
+            .select {
+              border-style: none;
+              background-color: transparent;
+              color: $white;
+
+              >option {
+                background-color: $primary-500;
+              }
+            }
 
             .github-div {
               >a {
@@ -101,7 +115,12 @@ html {
 
         .home-left-2 {
           position: relative;
-          top: 1828px;
+          top: 1858px;
+        }
+
+        .home-left-3 {
+          position: relative;
+          top: 2970px;
         }
       }
 
@@ -115,6 +134,7 @@ html {
           margin-top: 200px;
         }
 
+        // first code box
         .main-code-box {
           display: flex;
           flex-basis: 1280px;
@@ -128,132 +148,216 @@ html {
           border-radius: 4px;
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
           column-gap: 34px;
-        }
+          margin-top: 30px;
+          margin-bottom: 200px;
 
-        .components-code-box {
-          display: flex;
-          flex-basis: 1280px;
-          max-width: 1280px;
-          max-height: 736px;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          align-self: center;
-          column-gap: 34px;
-        }
-
-        .menu-code-box {
-          position: relative;
-          top: 0;
-          left: 0;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-          background-color: #DCDCDC;
-          min-width: 56px;
-          height: 100%;
-
-          >img {
+          .menu-code-box {
+            position: relative;
+            top: 0;
+            left: 0;
             display: flex;
-            flex-grow: 0;
-            flex-shrink: 1;
-            margin: 30px 0;
-          }
-        }
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #DCDCDC;
+            min-width: 56px;
+            height: 100%;
 
-        .code-box {
-          max-width: 564px;
-          flex-basis: 564px;
-          max-height: 628px;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 1;
-          flex-grow: 1;
-
-          .tab {
-            display: flex;
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #E0E0E0;
-            flex-shrink: 0;
-
-            .tablinks {
-              background-color: #D9D9D9;
-              float: left;
-              border: none;
-              outline: none;
-              cursor: pointer;
-              padding: 14px 16px;
-              transition: 0.3s;
-
-              &.active {
-                background-color: $white;
-              }
+            >img {
+              display: flex;
+              flex-grow: 0;
+              flex-shrink: 1;
+              margin: 30px 0;
             }
           }
 
-          .tabs-content {
+          .code-box {
             display: flex;
-            border: 1px solid #E0E0E0;
-            flex-grow: 0;
+            flex-direction: column;
             flex-shrink: 1;
-            overflow: auto;
+            flex-grow: 1;
+            max-width: 564px;
+            flex-basis: 564px;
+            height: 628px;
 
-            .tabcontent,
-            .tabcontentactive {
-              width: 100%;
-              height: 100%;
-              display: none;
-              border: 1px solid #ccc;
-              border-top: none;
+            .tab {
+              overflow: hidden;
+              background-color: #E0E0E0;
+              border-radius: 4px 4px 0 0;
+              border: 1px solid #E0E0E0;
+              border-bottom: 0;
 
-              .code {
+              .tablinks {
+                background-color: #D9D9D9;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+
+                &.active {
+                  background-color: $white;
+                }
+              }
+            }
+
+            .tabs-content {
+              display: flex;
+              border: 1px solid #E0E0E0;
+              overflow: auto;
+
+              .tabcontent,
+              .tabcontentactive {
+                width: 100%;
                 height: 100%;
+                display: none;
+                border-top: none;
 
-                >.highlight {
+                .code {
                   height: 100%;
-                  margin-bottom: 0;
 
-                  >pre {
+                  >.highlight {
                     height: 100%;
-                    background-color: $white;
-                    padding-left: 0;
-                    overflow: hidden;
-                    min-width: min-content;
+                    margin-bottom: 0;
 
-                    >code {
+                    >pre {
                       height: 100%;
-                      vertical-align: top;
+                      background-color: $white;
+                      padding-left: 0;
+                      overflow: hidden;
+                      min-width: min-content;
+
+                      >code {
+                        height: 100%;
+                        vertical-align: top;
+                      }
                     }
                   }
                 }
               }
             }
           }
+
+          .example-box {
+            max-width: 564px;
+            flex-basis: 564px;
+            min-height: 628px;
+            background-color: #F1F1F1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 12px;
+            margin-right: 32px;
+            justify-content: center;
+            flex-shrink: 1;
+            flex-grow: 1;
+          }
+
+          // end first code box
         }
 
-        .example-box {
-          max-width: 564px;
-          flex-basis: 564px;
-          min-height: 628px;
-          background-color: #F1F1F1;
+        .components-code-box {
           display: flex;
-          flex-direction: column;
+          flex-basis: 1280px;
+          max-width: 1280px;
+          max-height: 495px;
+          flex-direction: row;
+          justify-content: space-between;
           align-items: center;
-          padding: 0 12px;
-          margin-right: 32px;
-          justify-content: center;
-          flex-shrink: 1;
-          flex-grow: 1;
+          align-self: center;
+          column-gap: 34px;
+          margin-top: 30px;
+          margin-bottom: 200px;
+
+          .code-box {
+            max-width: 564px;
+            flex-basis: 564px;
+            max-height: 495px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 1;
+            flex-grow: 1;
+
+            .tab {
+              display: flex;
+              overflow: hidden;
+              background-color: #E0E0E0;
+              flex-shrink: 0;
+              border-radius: 4px 4px 0 0;
+              border: 1px solid #E0E0E0;
+              border-bottom: 0;
+
+              .tablinks {
+                display: flex;
+                flex-grow: 1;
+                background-color: #FAFAFA;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+
+                &.active {
+                  background-color: $white;
+                }
+              }
+            }
+
+            .tabs-content {
+              display: flex;
+              border: 1px solid #E0E0E0;
+              flex-grow: 0;
+              flex-shrink: 1;
+              overflow: auto;
+
+              .tabcontent,
+              .tabcontentactive {
+                width: 100%;
+                height: 100%;
+                display: none;
+                border-top: none;
+
+                .code {
+                  height: 100%;
+
+                  >.highlight {
+                    height: 100%;
+                    margin-bottom: 0;
+
+                    >pre {
+                      height: 100%;
+                      background-color: $white;
+                      padding-left: 0;
+                      overflow: hidden;
+                      min-width: min-content;
+
+                      >code {
+                        height: 100%;
+                        vertical-align: top;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .example-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 32px;
+            justify-content: center;
+            flex-shrink: 1;
+            flex-grow: 1;
+          }
         }
-
-
 
         .performance-footer {
           display: flex;
           flex-direction: row;
-          margin-top: 200px;
           column-gap: 24px;
 
           .performance-text {
@@ -270,21 +374,6 @@ html {
             align-items: center;
           }
         }
-      }
-    }
-
-    .footer {
-      position: absolute;
-      bottom: 0;
-    }
-
-    .select {
-      border-style: none;
-      background-color: transparent;
-      color: $white;
-
-      >option {
-        background-color: $primary-500;
       }
     }
   }

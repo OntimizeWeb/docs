@@ -28,14 +28,19 @@ layout: table_wrappers
   </div>
 
   <p class="fs-7 fw-500 text-center">{{ page.text_header_content }}</p>
+
+
   <div class="custom-content">
 
     <div class="vertical-line">
       <img class="home-left-1" src="{{ base_path }}/images/home/code_icon.svg">
       <img class="home-left-2" src="{{ base_path }}/images/home/code_icon.svg">
+      <img class="home-left-3" src="{{ base_path }}/images/home/code_icon.svg">
     </div>
 
     <div class="main-content">
+
+<!-- First secction PERFORMANCE -->
 
       <div class="code-icon-container">
         <div>
@@ -43,9 +48,8 @@ layout: table_wrappers
           <p class="fs-8 text-blue-200">An amazing performance based on a solid code programing.</p>
         </div>
       </div>
-      <p class="fs-6 fw-400">In the example bellow we show how <span class="text-blue-200">powerful</span> and <span class="text-blue-200">easy to
-          use</span>
-        could be Ontimize on the development of small or biggest bussiness applications.
+      <p class="fs-6 fw-400">We got a <span class="text-blue-200">powerful</span> framework and <span class="text-blue-200">easy to use</span>
+        on the development of small or biggest bussiness applications.
       </p>
 
       <div class="main-code-box nohide">
@@ -63,83 +67,32 @@ layout: table_wrappers
             <div id="1html" class="tabcontent">
               <div class="code">
                 {% highlight html %}
-                <o-form-container breadcrumb="yes" breadcrumb-label-columns="NAME;SURNAME" breadcrumb-separator=", " [form]="form">
-                  <mat-tab-group fxFill>
-
-                    <mat-tab label="{{ 'DATA' | oTranslate }}">
-                      <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
-                        header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
-                        show-header-navigation="yes" (onDataLoaded)="onDataLoaded($event)">
-
-                        <div o-form-toolbar-buttons>
-                          <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)" attr="fillreport">
-                            <mat-icon>description</mat-icon>
-                            <span>{{ 'FILL_REPORT' | oTranslate }}</span>
-                          </button>
+                ...
+                  <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+                    header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
+                    show-header-navigation="yes" (onDataLoaded)="onDataLoaded($event)">
+                    <div o-form-toolbar-buttons>
+                      <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)" attr="fillreport">
+                        <mat-icon>description</mat-icon> <span>{{ 'FILL_REPORT' | oTranslate }}</span>
+                      </button>
+                    </div>
+                    <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
+                      <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
+                        <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" full-screen-button="true"></o-image>
+                        <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+                          <o-nif-input #id attr="ID" width="160px" class="form-field"></o-nif-input>
+                          <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
+                          <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
+                          <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="timestamp"></o-date-input>
+                          <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes" value-column="CUSTOMERTYPEID"
+                            service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+                            visible-columns="DESCRIPTION" separator=" - " width="160px" class="form-field"></o-combo>
                         </div>
-
-                        <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
-                          <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
-                            <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" full-screen-button="true"></o-image>
-                            <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
-                              <o-nif-input #id attr="ID" width="160px" class="form-field"></o-nif-input>
-                              <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
-                              <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
-                              <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="timestamp">
-                              </o-date-input>
-                              <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes" value-column="CUSTOMERTYPEID"
-                                service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
-                                visible-columns="DESCRIPTION" separator=" - " width="160px" class="form-field"></o-combo>
-                            </div>
-                          </div>
-                        </o-row>
-
-                        <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10">
-                          <div fxLayout="row wrap" fxLayoutGap="14px">
-                            <o-text-input attr="ADDRESS" width="374px" class="form-field"></o-text-input>
-                            <o-text-input attr="COUNTRY" class="form-field"></o-text-input>
-                            <o-text-input attr="STATE" class="form-field"></o-text-input>
-                            <o-text-input attr="ZIPCODE" class="form-field"></o-text-input>
-                          </div>
-                          <div fxLayout="row wrap" fxLayoutGap="14px">
-                            <o-email-input attr="EMAIL" width="374px" class="form-field"></o-email-input>
-                            <o-phone-input attr="PHONE" class="form-field"></o-phone-input>
-                          </div>
-                        </o-column>
-
-                        <o-column title="COMMENTS" icon="message" attr="row3" layout-align="start stretch">
-                          <o-textarea-input attr="COMMENTS" rows="4"></o-textarea-input>
-                        </o-column>
-                      </o-form>
-                    </mat-tab>
-
-                    <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-                      <o-form attr="customers_accounts_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no"
-                        keys="CUSTOMERID" keys-sql-types="INTEGER">
-                        <o-table #accountsTable attr="customer_accounts" service="customers" entity="customerAccount" parent-keys="CUSTOMERID"
-                          keys="ACCOUNTID" detail-form-route="accounts" edit-form-route="accounts"
-                          columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE;ENDDATE"
-                          visible-columns="ACCOUNT;BALANCE;STARTDATE;ENDDATE" title="ACCOUNTS" sort-columns="STARTDATE" query-on-init="false"
-                          query-rows="6" quick-filter="yes" pageable="no" insert-button="no" row-height="medium" class="vertical-padding-8">
-                          <o-table-column attr="ACCOUNT" title="ACCOUNT" class="o-table-column-centered"></o-table-column>
-                          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-                          <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" currency-symbol-position="right"
-                            thousand-separator="." decimal-separator=",">
-                          </o-table-column>
-                          <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
-                        </o-table>
-                      </o-form>
-                    </mat-tab>
-
-                    <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
-                      <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no"
-                        keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC">
-                        <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
-                      </o-form>
-                    </mat-tab>
-
-                  </mat-tab-group>
-                </o-form-container>
+                      </div>
+                    </o-row>
+                ...
+                  </o-form>
+                ...
                 {% endhighlight %}
               </div>
             </div>
@@ -147,128 +100,31 @@ layout: table_wrappers
             <div id="1ts" class="tabcontent">
               <div class="code">
                 {% highlight js %}
-                import { Injector, ViewChild, Component, OnInit, ViewEncapsulation } from '@angular/core';
-                import { OFormComponent, OntimizeService, OListPickerComponent, OTableComponent, ORealPipe, ONIFInputComponent } from
-                'ontimize-web-ngx';
-                import { OReportStoreService } from 'ontimize-web-ngx-report';
-
-                @Component({
-                selector: 'customers-detail',
-                templateUrl: './customers-detail.component.html',
-                styleUrls: ['./customers-detail.component.scss'],
-                encapsulation: ViewEncapsulation.None,
-                host: {
-                '[class.customers-detail]': 'true'
-                }
-                })
+                import { ViewChild, OnInit, ... } from '@angular/core';
+                ...
                 export class CustomersDetailComponent implements OnInit {
-
-                protected realPipe: ORealPipe;
-                protected customerAccountsData: Array<Object>;
-                  protected totalBalanceData: Array<Object>;
-                    protected service: OntimizeService;
-
-                    protected customerId: any;
-                    protected yAxis = 'MOVEMENT';
-                    protected xAxis = 'MOVEMENTTYPES';
-
-                    public params: object;
-
-                    @ViewChild('accountsTable', { static: false }) accountsTable: OTableComponent;
-                    @ViewChild('oDetailForm', { static: false }) form: OFormComponent;
-                    @ViewChild('accountListPicker', { static: false }) accountListPicker: OListPickerComponent;
-                    @ViewChild('id', { static: false }) id: ONIFInputComponent;
-
-                    availableAccountsToAdd: Array<any> = [];
-
-                      constructor(protected injector: Injector,
-                      private reportStoreService: OReportStoreService) {
-                      this.service = this.injector.get(OntimizeService);
-                      this.realPipe = new ORealPipe(this.injector);
-                      }
-
-                      ngOnInit() {
-                      this.configureService();
-                      }
-
-                      protected configureService() {
-                      const conf = this.service.getDefaultServiceConfiguration();
-                      conf['path'] = '/customers';
-                      this.service.configureService(conf);
-                      }
-
-
-                      onAddAccount() {
-                      (this.accountListPicker as any)._isReadOnly = false;
-                      const relatedAccountsIds = [];
-                      (this.accountsTable as any).dataArray.forEach(element => {
-                      relatedAccountsIds.push(element['ACCOUNTID']);
-                      });
-                      const accountFilter = {};
-                      accountFilter['@basic_expression'] = {
-                      lop: 'ACCOUNTID',
-                      op: 'NOT IN',
-                      rop: relatedAccountsIds
-                      };
-
-                      this.service.query(accountFilter,
-                      ['ACCOUNTID', 'ENTITYID', 'OFFICEID', 'CDID', 'ANID', 'BALANCE', 'ACCOUNTTYP'],
-                      'EAccounts').subscribe((resp) => {
-                      if (resp.code === 0) {
-                      resp.data.forEach(element => {
-                      element['ACCOUNT'] = element['ENTITYID'] + ' ' + element['OFFICEID'] + ' ' + element['CDID'] + ' ' + element['ANID'];
-                      element['BALANCE'] = this.realPipe.transform(element['BALANCE'], {
-                      grouping: true,
-                      minDecimalDigits: 2,
-                      maxDecimalDigits: 2
-                      }) + '€';
-                      });
-                      this.availableAccountsToAdd = resp.data.filter(
-                      accountItem => (relatedAccountsIds.indexOf(accountItem['ACCOUNTID']) === -1));
-                      const self = this;
-                      setTimeout(function () {
-                      self.accountListPicker.onClickListpicker(null);
-                      }, 0);
-
-                      }
-                      });
-                      }
-
-                      onNewAccountSelected(accountId) {
-                      if (accountId && this.customerId) {
-                      this.service.insert({
-                      ACCOUNTID: accountId,
-                      CUSTOMERID: this.customerId
-                      }, 'ECustomerAccounts').subscribe((resp) => {
-                      this.accountsTable.reloadData();
-                      });
-                      }
-                      }
-
-                      onDataLoaded(e: object) {
-                      this.params = this.getParameters();
-                      }
-
-                      getParameters() {
-                      let params = {
+                  public params: object;
+                ...
+                  @ViewChild('id', { static: false }) id: ONIFInputComponent;
+                ...
+                  onDataLoaded(e: object) {
+                    this.params = this.getParameters();
+                  }
+                  getParameters() {
+                    let params = {
                       'id': this.id.getValue()
-                      }
-
-                      return params;
-                      }
-
-                      fillReport(e: Event) {
-                      this.reportStoreService.openFillReport("6e1439f4-9b76-4d2d-ae73-6797682078c9", this.params, {});
-                      }
-
-                      }
-                      {% endhighlight %}
+                    }
+                    return params;
+                  }
+                ...
+                }
+                {% endhighlight %}
               </div>
             </div>
           </div>
         </div>
         <div class="example-box">
-          <img src="{{ base_path }}/images/main_customers_detail.png" alt="Main custormers detail form">
+          <img src="{{ base_path }}/images/main_customers_detail.png" alt="Quickstart custormers detail form">
         </div>
       </div>
       <div class="performance-footer">
@@ -284,7 +140,7 @@ layout: table_wrappers
         </div>
       </div>
 
-<!-- Second secction -->
+<!-- Second secction COMPONENTS -->
 
       <div class="code-icon-container">
         <div>
@@ -292,9 +148,8 @@ layout: table_wrappers
           <p class="fs-8 text-blue-200">We provide a lot of self developed components to make easier the way to code.</p>
         </div>
       </div>
-      <p class="fs-6 fw-400">In the example bellow we show how easy it is to customize an Ontimize table, adding buttons, including sort filters and
-        creating
-        a cell renderers to our table.
+      <p class="fs-6 fw-400">It is so easy to customize an Ontimize table, adding <span class="text-blue-200">custom buttons</span>,
+        including <span class="text-blue-200">sort filters</span> and creating a <span class="text-blue-200">cell renderers</span> to our table.
       </p>
 
       <div class="components-code-box nohide">
@@ -311,14 +166,11 @@ layout: table_wrappers
                   columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
                   visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
                   row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
-
                   <o-table-button #button attr="button" label="FILL_REPORT" icon="description"></o-table-button>
-
                   <o-table-columns-filter columns="STARTDATE;SURNAME">
                     <o-table-columns-filter-column attr="SURNAME" sort="desc"> </o-table-columns-filter-column>
                     <o-table-columns-filter-column attr="STARTDATE" start-view="month"> </o-table-columns-filter-column>
                   </o-table-columns-filter>
-
                   <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64"
                     empty-image="assets/images/no-image.png" avatar="yes">
                   </o-table-column>
@@ -339,21 +191,121 @@ layout: table_wrappers
           </div>
         </div>
         <div class="example-box">
-          <img src="{{ base_path }}/images/main_customers_detail.png" alt="Main custormers detail form">
+          <img src="{{ base_path }}/images/home/customers-home.png" alt="Quickstart custormers home table">
         </div>
       </div>
-      <div class="performance-footer">
-        <div class="performance-text">
-          <p class="fs-8 fw-700">Develop web data management applications quickly and agile based on Angular technology.</p>
-          <p class="fs-6 fw-400">Ontimize Web it is based on <span class="text-blue-200">Angular</span> and developed by <span
-              class="text-blue-200">Imatia</span>
-            professionals it is the perfect choose to create your web application.
-          </p>
-        </div>
-        <div class="performance-image">
-          <img src="{{ base_path }}/images/home/programmer.gif">
+
+      <!-- Third secction ADDONS -->
+
+      <div class="code-icon-container">
+        <div>
+          <h1 class="fs-8 fw-700 text-blue-300">Addons</h1>
+          <p class="fs-8 text-blue-200">We also provide advanced components to cover your specific needs.</p>
         </div>
       </div>
+      <p class="fs-6 fw-400"> We got a lot of useful addons to manage maps, charts, files, gallerys, reports
+        <a class="fw-700" href="{{ base_path }}/docs/addons.html">...</a>
+      </p>
+
+      <div class="components-code-box nohide">
+        <div class="code-box">
+          <div class="tab">
+            <button class="tablinks" onclick="openCode(event, '3html')">HTML</button>
+            <button class="tablinks" onclick="openCode(event, '3ts')">TS</button>
+          </div>
+          <div class="tabs-content">
+
+            <div id="3html" class="tabcontent">
+              <div class="code">
+                {% highlight html %}
+                  <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" query-on-init="no"
+                    [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
+                {% endhighlight %}
+              </div>
+            </div>
+            <div id="3ts" class="tabcontent">
+              <div class="code">
+                {% highlight js %}
+                ...
+                  import { Component, ViewEncapsulation } from '@angular/core';
+                  import { PieChartConfiguration, ... } from 'ontimize-web-ngx-charts';
+                  import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
+                  import { ThemeService } from '../../../shared/theme.service';
+
+                  declare var d3: any;
+                ...
+                  export class AccountsDetailComponent {
+                    private static colorSalary: string = '#eeeeee';
+                    private static colorDebit: string;
+                    private static colorTransfer: string = '#c5c5c5';
+                    private static colorCash: string;
+                    private static colorBalance: string;
+                    public movementTypesChartParams: PieChartConfiguration;
+                    public id: string;
+                    private theme;
+                  ...
+                    constructor(
+                  ...
+                      private d3LocaleService: D3LocaleService,
+                  ...
+                    ) {
+                      const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
+                      this.theme = themeService.getStoredTheme();
+                      AccountsDetailComponent.colorCash = this.theme.primary + "4D";
+                      AccountsDetailComponent.colorBalance = this.theme.accent;
+                      AccountsDetailComponent.colorDebit = this.theme.primary + "99";
+                  ...
+                      this._configurePieChart(d3Locale);
+                      d3.select('.nv-legendWrap').attr('transform', 'translate(-300, 0)');
+                    }
+                  ...
+                    private _configurePieChart(locale: any): void {
+                      this.movementTypesChartParams = new PieChartConfiguration();
+                      this.movementTypesChartParams.margin.top = 0;
+                      this.movementTypesChartParams.margin.right = 0;
+                      this.movementTypesChartParams.margin.bottom = 0;
+                      this.movementTypesChartParams.margin.left = 0;
+                      this.movementTypesChartParams.height = 320;
+                      this.movementTypesChartParams.legendPosition = 'right';
+                      this.movementTypesChartParams.legend.vers = 'furious';
+                      this.movementTypesChartParams.legend.margin.top = 2;
+                      this.movementTypesChartParams.legend.margin.right = 10;
+                      this.movementTypesChartParams.labelType = 'value';
+                      this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
+                      this.movementTypesChartParams.colorData = [{
+                        value: 'Salary',
+                        color: AccountsDetailComponent.colorSalary
+                      },
+                      {
+                        value: 'Direct debit',
+                        color: AccountsDetailComponent.colorDebit
+                      },
+                      {
+                        value: 'Transfer',
+                        color: AccountsDetailComponent.colorTransfer
+                      },
+                      {
+                        value: 'Automatic Cash',
+                        color: AccountsDetailComponent.colorCash
+                      },
+                      {
+                        value: 'Banking fees',
+                        color: AccountsDetailComponent.colorBalance
+                      }];
+                    }
+                  ...
+                  }
+                {% endhighlight %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="example-box">
+          <img src="{{ base_path }}/images/home/accounts-charts.png" alt="Quickstart accounts charts">
+        </div>
+      </div>
+
     </div>
 
   </div>
