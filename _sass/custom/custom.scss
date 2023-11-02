@@ -27,14 +27,22 @@ html {
         display: flex;
         flex-direction: row;
         background-color: $primary-500;
+        min-height: 60px;
+        max-height: 60px;
 
-        .site-title {
-          &:hover {
-            background-image: none;
+        .site-header {
+          height: 100%;
+          width: fit-content;
+
+          img {
+            width: fit-content;
+            height: fit-content;
           }
         }
 
         .main-header {
+          height: 100%;
+          display: flex;
           flex-grow: 1;
           background-color: $primary-500;
 
@@ -43,7 +51,28 @@ html {
             flex-grow: 4;
             max-height: 60%;
             margin: auto 0;
+            min-width: fit-content;
+            padding: 0;
 
+            .search-input-wrap {
+              position: relative;
+              top: 0;
+              width: 100%;
+              max-width: 33.5rem;
+              border-radius: 4px;
+              box-shadow: none;
+              min-height: 36px;
+              max-height: 36px;
+
+              .search-input {
+                font-size: 0.875rem;
+                padding-left: 2.5rem;
+              }
+
+              .search-label {
+                padding-left: 1rem;
+              }
+            }
           }
 
           .header-custom-main {

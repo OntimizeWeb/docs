@@ -9,11 +9,13 @@ layout: table_wrappers
 {% include base_path %}
 
 <body class="home">
+  <!--Necesary include to make work the template-->
+  <div style="display: none;">{% include components/sidebar.html %}</div>
   <div class="introduction nohide">
     {% include icons/icons.html %}
     <div class="header">
       <div class="site-header" role="banner">
-        <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
+        <img src="{{ page.logo }}" alt="Ontimize logo">
       </div>
       {% include components/header.html %}
     </div>
