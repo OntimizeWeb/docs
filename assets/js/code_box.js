@@ -1,4 +1,4 @@
-/*Show the first tab*/
+/*Show the first tab of all code boxes*/
 var tabsContent, tabsLinks, tabsCount = 1;
 tabsContent = document.getElementsByClassName("tabcontent");
 tabsLinks = document.getElementsByClassName("tablinks");
