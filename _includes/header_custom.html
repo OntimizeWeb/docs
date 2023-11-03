@@ -1,5 +1,10 @@
 {% include base_path %}
 <div class="header-custom-main">
+  {% if page.title == 'Home' %}
+  <a href="{{ base_path }}/docs/guide.html">
+    <div class="docs-div">Docs</div>
+  </a>
+  {% endif %}
   {% if site.github %}
     <div class="github-div">
       {% for githubsite in site.github %}

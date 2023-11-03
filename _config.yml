@@ -1,3 +1,5 @@
+title: Ontimize Web
+
 logo: images/logo-ontimize-blanco.png
 
 search_enabled: true
@@ -40,5 +42,5 @@ callouts:
     title: Warning
     color: red
 
-exclude:
-  - docs
+#exclude:
+  #- docs
