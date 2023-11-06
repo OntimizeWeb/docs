@@ -14,13 +14,27 @@ html {
     background-color: $home-background;
     color: #FFFFFFBD;
 
+    a {
+      color: #A8C7FF;
+      text-decoration-color: #A8C7FF;
+      font-size: 24px;
+
+      &:hover {
+        text-decoration-color: #A8C7FF;
+      }
+    }
+
+    .text-primary-400 {
+      color: #4286FF;
+    }
+
     .white-87 {
       color: #FFFFFFDE;
     }
 
     .introduction {
       background-image: url('/images/home/bg-landing.png');
-      background-repeat: no-repeat;
+      background-repeat: repeat;
       display: flex;
       flex-direction: column;
       height: 100vh;
@@ -125,6 +139,7 @@ html {
               border-radius: 4px;
               width: 80px;
               height: 40px;
+              font-size: 16px;
             }
 
             >a {
@@ -148,6 +163,18 @@ html {
           >p {
             color: #4286FF;
           }
+
+          .home-btn {
+            font-size: 14px;
+            color: #FFF;
+            background-color: #2876FF;
+            height: 42px;
+            width: 148px;
+
+            &:hover {
+              background-color: #1A51C8;
+            }
+          }
         }
 
         .banner {
@@ -160,10 +187,15 @@ html {
 
     }
 
+    .top-content {
+      width: 80%;
+      margin: 0 auto;
+    }
+
     .custom-content {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: center;
       column-gap: 50px;
       width: 80%;
       margin: 0 auto;
@@ -171,19 +203,17 @@ html {
       .vertical-line {
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
-        align-items: start;
-        flex-basis: 72px;
+        max-width: 72px;
         min-width: 72px;
 
         .home-left-1 {
           position: relative;
-          top: 230px;
+          top: 236px;
         }
 
         .home-left-2 {
           position: relative;
-          top: 1858px;
+          top: 1742px;
         }
 
         .home-left-3 {
@@ -194,268 +224,167 @@ html {
 
       .main-content {
         display: flex;
-        flex-grow: 6;
         flex-direction: column;
-        flex-shrink: 1;
+        margin-top: 204px;
 
-        .productivity-section {
+        .section-text {
+          display: flex;
+          flex-direction: column;
 
-          .productivity-text {
+          >h1 {
+            font-weight: 600;
+          }
+
+        }
+
+        .link-div {
+          display: flex;
+          flex-direction: row;
+          margin-top: 82px;
+          margin-bottom: 164px;
+
+          .link-texts {
             display: flex;
             flex-direction: column;
+
+            >h2 {
+              font-weight: 600;
+              color: #75A7FF;
+              padding-top: 24px;
+              margin-bottom: 0;
+              height: 89px;
+            }
           }
 
           >img {
+            width: 184px;
+            height: 168px;
+            align-self: start;
+          }
+
+        }
+
+        .productivity-section {
+
+          .productivity-img-container {
             position: absolute;
             left: 0;
-            width: 100vw;
+            height: 746px;
+            width: 100%;
+            background-image: url('/images/home/productivity_section_img.png');
+            background-repeat: no-repeat;
+            background-position-x: center;
+          }
+
+          .productivity-bottom {
+            margin-top: 746px;
+            display: flex;
+            flex-direction: column;
+            justify-items: start;
           }
         }
 
-        .code-icon-container {
-          margin-top: 200px;
-        }
+        .performance-section {
 
-        // first code box
-        .main-code-box {
-          display: flex;
-          flex-basis: 1280px;
-          max-width: 1280px;
-          max-height: 736px;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          align-self: center;
-          background-color: #FAFAFA;
-          border-radius: 4px;
-          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-          column-gap: 34px;
-          margin-top: 30px;
-          margin-bottom: 200px;
-
-          .menu-code-box {
-            position: relative;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #DCDCDC;
-            min-width: 56px;
-            height: 100%;
-
+          .performance-example {
             >img {
-              display: flex;
-              flex-grow: 0;
-              flex-shrink: 1;
-              margin: 30px 0;
+              width: 1920px;
+              position: relative;
+              top: 0;
+            }
+
+            width: 100%;
+            height: 746px;
+            position: absolute;
+            left: 0;
+          }
+
+          .performance-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-items: start;
+            margin-top: 738px;
+          }
+        }
+
+        // example code box classes
+
+        .code-box-img {
+          position: relative;
+          width: 32rem;
+          height: 22rem;
+          background-image: url('/images/home/code_container.png');
+
+        }
+
+        .code-box {
+          display: flex;
+          flex-direction: column;
+          place-self: center center;
+          width: 27rem;
+          height: 14.6rem;
+          margin: 5.5rem 0 0 2.4rem;
+
+          .tab {
+            overflow: hidden;
+            background-color: #E0E0E0;
+            border-radius: 4px 4px 0 0;
+            border: 1px solid #E0E0E0;
+            border-bottom: 0;
+
+            .tablinks {
+              background-color: #D9D9D9;
+              float: left;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              padding: 14px 16px;
+              transition: 0.3s;
+
+              &.active {
+                background-color: $white;
+              }
             }
           }
 
-          .code-box {
+          .tabs-content {
             display: flex;
-            flex-direction: column;
-            flex-shrink: 1;
-            flex-grow: 1;
-            max-width: 564px;
-            flex-basis: 564px;
-            height: 628px;
+            border: 1px solid #E0E0E0;
+            overflow: auto;
 
-            .tab {
-              overflow: hidden;
-              background-color: #E0E0E0;
-              border-radius: 4px 4px 0 0;
-              border: 1px solid #E0E0E0;
-              border-bottom: 0;
+            .tabcontent,
+            .tabcontentactive {
+              width: 100%;
+              height: 100%;
+              display: none;
+              border-top: none;
 
-              .tablinks {
-                background-color: #D9D9D9;
-                float: left;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                padding: 14px 16px;
-                transition: 0.3s;
-
-                &.active {
-                  background-color: $white;
-                }
-              }
-            }
-
-            .tabs-content {
-              display: flex;
-              border: 1px solid #E0E0E0;
-              overflow: auto;
-
-              .tabcontent,
-              .tabcontentactive {
-                width: 100%;
+              .code {
                 height: 100%;
-                display: none;
-                border-top: none;
 
-                .code {
+                >.highlight {
                   height: 100%;
+                  margin-bottom: 0;
 
-                  >.highlight {
+                  >pre {
                     height: 100%;
-                    margin-bottom: 0;
+                    background-color: $white;
+                    padding-left: 0;
+                    overflow: hidden;
+                    min-width: min-content;
 
-                    >pre {
+                    >code {
                       height: 100%;
-                      background-color: $white;
-                      padding-left: 0;
-                      overflow: hidden;
-                      min-width: min-content;
-
-                      >code {
-                        height: 100%;
-                        vertical-align: top;
-                      }
+                      vertical-align: top;
                     }
                   }
                 }
               }
             }
           }
-
-          .example-box {
-            max-width: 564px;
-            flex-basis: 564px;
-            min-height: 628px;
-            background-color: #F1F1F1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 12px;
-            margin-right: 32px;
-            justify-content: center;
-            flex-shrink: 1;
-            flex-grow: 1;
-          }
-
-          // end first code box
         }
 
-        .components-code-box {
-          display: flex;
-          flex-basis: 1280px;
-          max-width: 1280px;
-          max-height: 495px;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          align-self: center;
-          column-gap: 34px;
-          margin-top: 30px;
-          margin-bottom: 200px;
-
-          .code-box {
-            max-width: 564px;
-            flex-basis: 564px;
-            max-height: 495px;
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 1;
-            flex-grow: 1;
-
-            .tab {
-              display: flex;
-              overflow: hidden;
-              background-color: #E0E0E0;
-              flex-shrink: 0;
-              border-radius: 4px 4px 0 0;
-              border: 1px solid #E0E0E0;
-              border-bottom: 0;
-
-              .tablinks {
-                display: flex;
-                flex-grow: 1;
-                background-color: #FAFAFA;
-                float: left;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                padding: 14px 16px;
-                transition: 0.3s;
-
-                &.active {
-                  background-color: $white;
-                }
-              }
-            }
-
-            .tabs-content {
-              display: flex;
-              border: 1px solid #E0E0E0;
-              flex-grow: 0;
-              flex-shrink: 1;
-              overflow: auto;
-
-              .tabcontent,
-              .tabcontentactive {
-                width: 100%;
-                height: 100%;
-                display: none;
-                border-top: none;
-
-                .code {
-                  height: 100%;
-
-                  >.highlight {
-                    height: 100%;
-                    margin-bottom: 0;
-
-                    >pre {
-                      height: 100%;
-                      background-color: $white;
-                      padding-left: 0;
-                      overflow: hidden;
-                      min-width: min-content;
-
-                      >code {
-                        height: 100%;
-                        vertical-align: top;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-
-          .example-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-right: 32px;
-            justify-content: center;
-            flex-shrink: 1;
-            flex-grow: 1;
-          }
-        }
-
-        .performance-footer {
-          display: flex;
-          flex-direction: row;
-          column-gap: 24px;
-
-          .performance-text {
-            display: flex;
-            flex-grow: 1;
-            flex-shrink: 2;
-            flex-direction: column;
-          }
-
-          .performance-image {
-            display: flex;
-            flex-grow: 2;
-            flex-shrink: 1;
-            align-items: center;
-          }
-        }
+        //end code boxes classes
       }
     }
   }

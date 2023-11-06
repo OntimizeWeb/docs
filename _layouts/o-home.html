@@ -23,49 +23,149 @@ layout: table_wrappers
       <div class="text">
         <h4 class="fs-10 fw-700 white-87">{{ page.title_landing }}</h4>
         <p class="fs-8">{{ page.subtitle_landing }}</p>
+        <button class="btn home-btn" onClick="window.open('/docs/getting-started.html','_self')">GET STARTED</button>
       </div>
       <img src="{{ page.banner }}" alt="banner" class="banner">
     </div>
   </div>
+  <div class="top-content">
+    <p class="fs-9 fw-700">The web development framework for building the future</p>
 
-  <p class="fs-9 fw-700 text-center">{{ page.bottom_subtitle_landing }}</p>
-
-  <p class="fs-7 fw-500 text-center">{{ page.text_header_content }}</p>
-
-
+    <p class="fs-7 fw-500"><b>100% FREE</b> to use however you want under the Apache 2.0 License.<br />Clone it, fork it, customize it, whatever!</p>
+  </div>
   <div class="custom-content">
 
     <div class="vertical-line">
-      <img class="home-left-1" src="{{ base_path }}/images/home/code_icon.svg">
-      <img class="home-left-2" src="{{ base_path }}/images/home/code_icon.svg">
-      <img class="home-left-3" src="{{ base_path }}/images/home/code_icon.svg">
+      <img class="home-left-1" src="{{ base_path }}/images/home/code_icon.png">
+      <img class="home-left-2" src="{{ base_path }}/images/home/code_icon.png">
+      <img class="home-left-3" src="{{ base_path }}/images/home/code_icon.png">
     </div>
 
     <div class="main-content">
-<!-- First secction Productivity -->
+      <!-- First secction Productivity -->
 
-    <div class="productivity-section">
-      <div class="productivity-text">
-        <h1 class="fs-8 fw-700 white-87">Productivity</h1>
-        <p class="fs-8 white-87">Accelerate your software development.</p>
-        <p class="fs-6 fw-400">Our framework make a lot <span class="text-blue-200">faster</span> the way to develop the web applications.</p>
-      </div>
-      <img src="{{ base_path }}/images/home/productivity_section_img.png" alt="Productivity section example">
-    </div>
-
-<!-- First secction PERFORMANCE -->
-
-      <div class="code-icon-container">
-        <div>
-          <h1 class="fs-8 fw-700 white-87">Performance</h1>
-          <p class="fs-8 white-87">An amazing performance based on a solid code programing.</p>
+      <div class="productivity-section">
+        <div class="section-text">
+          <h1 class="fs-8 white-87">Productivity</h1>
+          <p class="fs-7 white-87">Accelerate your software development</p>
+          <p class="fs-6 fw-400">Our framework make a lot <span class="text-primary-400">faster</span> the way to develop the web applications.</p>
+        </div>
+        <div class="productivity-img-container">
+        </div>
+        <div class="productivity-bottom">
+          <p class="fs-6 fw-400">The previus image make rerence to the home page<br />of our quick start application in dark mode.</p>
+          <a href="https://try.imatia.com/ontimizeweb/v8/quickstart" target="_blank">Demo Bank application</a>
+        </div>
+        <div class="link-div">
+          <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
+          <div class="link-texts">
+            <h2 class="fs-7">Our application demos page</h2>
+            <p class="fs-6 fw-400"><a href="" target="_blank">Click here</a> and enter in our portal to see all the demos that we got avaliable and
+              test
+              online some features of our framework.</p>
+          </div>
         </div>
       </div>
-      <p class="fs-6 fw-400">We got a <span class="text-blue-200">powerful</span> framework and <span class="text-blue-200">easy to use</span>
-        on the development of small or biggest bussiness applications.
-      </p>
 
-      <div class="main-code-box nohide">
+      <!-- First secction PERFORMANCE -->
+      <div class="performance-section">
+        <div class="section-text">
+          <h1 class="fs-8 white-87">Performance</h1>
+          <p class="fs-7 white-87">An amazing performance based on a solid code programing</p>
+          <p class="fs-6 fw-400">We got a <span class="text-primary-400">powerful</span> framework and <span class="text-primary-400">easy to
+              use</span>
+            on the development of small or biggest bussiness applications.</p>
+        </div>
+        <div class="performance-example">
+          <img src="{{ base_path }}/images/home/performance_section_img.png" alt="Performance section example">
+          <div class="code-box-img">
+            <div class="code-box">
+              <div class="tab">
+                <button class="tablinks" onclick="openCode(event, '1html')">HTML</button>
+                <button class="tablinks" onclick="openCode(event, '1ts')">TS</button>
+              </div>
+              <div class="tabs-content">
+
+                <div id="1html" class="tabcontent">
+                  <div class="code">
+                    {% highlight html %}
+                    ...
+                    <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+                      header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
+                      show-header-navigation="yes" (onDataLoaded)="onDataLoaded($event)">
+                      <div o-form-toolbar-buttons>
+                        <button type="button" class="o-form-toolbar-button" mat-stroked-button (click)="fillReport($event)" attr="fillreport">
+                          <mat-icon>description</mat-icon> <span>{{ 'FILL_REPORT' | oTranslate }}</span>
+                        </button>
+                      </div>
+                      <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
+                        <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
+                          <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" full-screen-button="true"></o-image>
+                          <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+                            <o-nif-input #id attr="ID" width="160px" class="form-field"></o-nif-input>
+                            <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
+                            <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
+                            <o-date-input attr="STARTDATE" width="160px" class="form-field" format="DD/MM/YYYY" value-type="timestamp"></o-date-input>
+                            <o-combo attr="CUSTOMERTYPEID" query-on-init="no" query-on-bind="yes" filter="yes" value-column="CUSTOMERTYPEID"
+                              service="customers" entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
+                              visible-columns="DESCRIPTION" separator=" - " width="160px" class="form-field"></o-combo>
+                          </div>
+                        </div>
+                      </o-row>
+                      ...
+                    </o-form>
+                    ...
+                    {% endhighlight %}
+                  </div>
+                </div>
+
+                <div id="1ts" class="tabcontent">
+                  <div class="code">
+                    {% highlight js %}
+                    import { ViewChild, OnInit, ... } from '@angular/core';
+                    ...
+                    export class CustomersDetailComponent implements OnInit {
+                    public params: object;
+                    ...
+                    @ViewChild('id', { static: false }) id: ONIFInputComponent;
+                    ...
+                    onDataLoaded(e: object) {
+                    this.params = this.getParameters();
+                    }
+                    getParameters() {
+                    let params = {
+                    'id': this.id.getValue()
+                    }
+                    return params;
+                    }
+                    ...
+                    }
+                    {% endhighlight %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="performance-bottom">
+          <p class="fs-6 fw-400">Develop web data management applications quickly<br />and agile based on Angular technology.</p>
+          <a href="https://try.imatia.com/ontimizeweb/v8/quickstart/main/customers" target="_blank">Customers page of Demo Bank</a>
+        </div>
+        <div class="link-div">
+          <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
+          <div class="link-texts">
+            <h2 class="fs-7">Ontimize Web it is based on Angular</h2>
+            <p class="fs-6 fw-400">Developed by Imatia professionals it is the perfect choose to create your web application.</p>
+          </div>
+        </div>
+      </div>
+      <!--<div class="main-code-box nohide">
         <div class="menu-code-box">
           <img src="{{ base_path }}/images/home/menu.svg" width="24px" height="24px" alt="Menu icon">
           <img src="{{ base_path }}/images/home/ontimize-logo-white.png" width="32px" height="32px" alt="Ontimize logo">
@@ -139,21 +239,10 @@ layout: table_wrappers
         <div class="example-box">
           <img src="{{ base_path }}/images/main_customers_detail.png" alt="Quickstart custormers detail form">
         </div>
-      </div>
-      <div class="performance-footer">
-        <div class="performance-text">
-          <p class="fs-8 fw-700">Develop web data management applications quickly and agile based on Angular technology.</p>
-          <p class="fs-6 fw-400">Ontimize Web it is based on <span class="text-blue-200">Angular</span> and developed by <span
-              class="text-blue-200">Imatia</span>
-            professionals it is the perfect choose to create your web application.
-          </p>
-        </div>
-        <div class="performance-image">
-          <img src="{{ base_path }}/images/home/programmer.gif">
-        </div>
-      </div>
+      </div>-->
 
-<!-- Second secction COMPONENTS -->
+
+      <!-- Second secction COMPONENTS -->
 
       <div class="code-icon-container">
         <div>
@@ -161,8 +250,8 @@ layout: table_wrappers
           <p class="fs-8 white-87">We provide a lot of self developed components to make easier the way to code.</p>
         </div>
       </div>
-      <p class="fs-6 fw-400">It is so easy to customize an Ontimize table, adding <span class="text-blue-200">custom buttons</span>,
-        including <span class="text-blue-200">sort filters</span> and creating a <span class="text-blue-200">cell renderers</span> to our table.
+      <p class="fs-6 fw-400">It is so easy to customize an Ontimize table, adding <span class="text-primary-400">custom buttons</span>,
+        including <span class="text-primary-400">sort filters</span> and creating a <span class="text-primary-400">cell renderers</span> to our table.
       </p>
 
       <div class="components-code-box nohide">
@@ -177,8 +266,8 @@ layout: table_wrappers
                 {% highlight html %}
                 <o-table fxFlex attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
                   columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
-                  visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
-                  row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
+                  visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24"
+                  quick-filter="yes" row-height="medium" select-all-checkbox="true" pageable="yes" virtual-scroll="no">
                   <o-table-button #button attr="button" label="FILL_REPORT" icon="description"></o-table-button>
                   <o-table-columns-filter columns="STARTDATE;SURNAME">
                     <o-table-columns-filter-column attr="SURNAME" sort="desc"> </o-table-columns-filter-column>
@@ -231,8 +320,8 @@ layout: table_wrappers
             <div id="3html" class="tabcontent">
               <div class="code">
                 {% highlight html %}
-                  <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" query-on-init="no"
-                    [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
+                <o-chart type="pie" service="movements" entity="movement" parent-keys="ACCOUNTID" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"
+                  query-on-init="no" [chart-parameters]="movementTypesChartParams" class="movements-chart" fxFlex="65"></o-chart>
                 {% endhighlight %}
               </div>
             </div>
@@ -240,74 +329,74 @@ layout: table_wrappers
               <div class="code">
                 {% highlight js %}
                 ...
-                  import { Component, ViewEncapsulation } from '@angular/core';
-                  import { PieChartConfiguration, ... } from 'ontimize-web-ngx-charts';
-                  import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
-                  import { ThemeService } from '../../../shared/theme.service';
+                import { Component, ViewEncapsulation } from '@angular/core';
+                import { PieChartConfiguration, ... } from 'ontimize-web-ngx-charts';
+                import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
+                import { ThemeService } from '../../../shared/theme.service';
 
-                  declare var d3: any;
+                declare var d3: any;
                 ...
-                  export class AccountsDetailComponent {
-                    private static colorSalary: string = '#eeeeee';
-                    private static colorDebit: string;
-                    private static colorTransfer: string = '#c5c5c5';
-                    private static colorCash: string;
-                    private static colorBalance: string;
-                    public movementTypesChartParams: PieChartConfiguration;
-                    public id: string;
-                    private theme;
-                  ...
-                    constructor(
-                  ...
-                      private d3LocaleService: D3LocaleService,
-                  ...
-                    ) {
-                      const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
-                      this.theme = themeService.getStoredTheme();
-                      AccountsDetailComponent.colorCash = this.theme.primary + "4D";
-                      AccountsDetailComponent.colorBalance = this.theme.accent;
-                      AccountsDetailComponent.colorDebit = this.theme.primary + "99";
-                  ...
-                      this._configurePieChart(d3Locale);
-                      d3.select('.nv-legendWrap').attr('transform', 'translate(-300, 0)');
-                    }
-                  ...
-                    private _configurePieChart(locale: any): void {
-                      this.movementTypesChartParams = new PieChartConfiguration();
-                      this.movementTypesChartParams.margin.top = 0;
-                      this.movementTypesChartParams.margin.right = 0;
-                      this.movementTypesChartParams.margin.bottom = 0;
-                      this.movementTypesChartParams.margin.left = 0;
-                      this.movementTypesChartParams.height = 320;
-                      this.movementTypesChartParams.legendPosition = 'right';
-                      this.movementTypesChartParams.legend.vers = 'furious';
-                      this.movementTypesChartParams.legend.margin.top = 2;
-                      this.movementTypesChartParams.legend.margin.right = 10;
-                      this.movementTypesChartParams.labelType = 'value';
-                      this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
-                      this.movementTypesChartParams.colorData = [{
-                        value: 'Salary',
-                        color: AccountsDetailComponent.colorSalary
-                      },
-                      {
-                        value: 'Direct debit',
-                        color: AccountsDetailComponent.colorDebit
-                      },
-                      {
-                        value: 'Transfer',
-                        color: AccountsDetailComponent.colorTransfer
-                      },
-                      {
-                        value: 'Automatic Cash',
-                        color: AccountsDetailComponent.colorCash
-                      },
-                      {
-                        value: 'Banking fees',
-                        color: AccountsDetailComponent.colorBalance
-                      }];
-                    }
-                  ...
-                  }
+                export class AccountsDetailComponent {
+                private static colorSalary: string = '#eeeeee';
+                private static colorDebit: string;
+                private static colorTransfer: string = '#c5c5c5';
+                private static colorCash: string;
+                private static colorBalance: string;
+                public movementTypesChartParams: PieChartConfiguration;
+                public id: string;
+                private theme;
+                ...
+                constructor(
+                ...
+                private d3LocaleService: D3LocaleService,
+                ...
+                ) {
+                const d3Locale = this.d3LocaleService.getD3LocaleConfiguration();
+                this.theme = themeService.getStoredTheme();
+                AccountsDetailComponent.colorCash = this.theme.primary + "4D";
+                AccountsDetailComponent.colorBalance = this.theme.accent;
+                AccountsDetailComponent.colorDebit = this.theme.primary + "99";
+                ...
+                this._configurePieChart(d3Locale);
+                d3.select('.nv-legendWrap').attr('transform', 'translate(-300, 0)');
+                }
+                ...
+                private _configurePieChart(locale: any): void {
+                this.movementTypesChartParams = new PieChartConfiguration();
+                this.movementTypesChartParams.margin.top = 0;
+                this.movementTypesChartParams.margin.right = 0;
+                this.movementTypesChartParams.margin.bottom = 0;
+                this.movementTypesChartParams.margin.left = 0;
+                this.movementTypesChartParams.height = 320;
+                this.movementTypesChartParams.legendPosition = 'right';
+                this.movementTypesChartParams.legend.vers = 'furious';
+                this.movementTypesChartParams.legend.margin.top = 2;
+                this.movementTypesChartParams.legend.margin.right = 10;
+                this.movementTypesChartParams.labelType = 'value';
+                this.movementTypesChartParams.valueType = locale.numberFormat('$,.2f');
+                this.movementTypesChartParams.colorData = [{
+                value: 'Salary',
+                color: AccountsDetailComponent.colorSalary
+                },
+                {
+                value: 'Direct debit',
+                color: AccountsDetailComponent.colorDebit
+                },
+                {
+                value: 'Transfer',
+                color: AccountsDetailComponent.colorTransfer
+                },
+                {
+                value: 'Automatic Cash',
+                color: AccountsDetailComponent.colorCash
+                },
+                {
+                value: 'Banking fees',
+                color: AccountsDetailComponent.colorBalance
+                }];
+                }
+                ...
+                }
                 {% endhighlight %}
               </div>
             </div>
