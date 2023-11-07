@@ -188,17 +188,8 @@ html {
     }
 
     .top-content {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: calc(80% + 122px);
+      width: 80%;
       margin: 0 auto 204px;
-
-      >div {
-        display: flex;
-        flex-direction: column;
-        text-align: start;
-      }
     }
 
     .custom-content {
