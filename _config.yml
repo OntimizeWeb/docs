@@ -41,6 +41,3 @@ callouts:
   warning:
     title: Warning
     color: red
-
-exclude:
-  - docs
