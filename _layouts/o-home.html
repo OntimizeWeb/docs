@@ -29,9 +29,10 @@ layout: table_wrappers
     </div>
   </div>
   <div class="top-content">
-    <p class="fs-9 fw-700">The web development framework for building the future</p>
-
-    <p class="fs-7 fw-500"><b>100% FREE</b> to use however you want under the Apache 2.0 License.<br />Clone it, fork it, customize it, whatever!</p>
+    <div>
+      <p class="fs-9 fw-700">The web development framework for building the future</p>
+      <p class="fs-7 fw-500"><b>100% FREE</b> to use however you want under the Apache 2.0 License.<br />Clone it, fork it, customize it, whatever!</p>
+    </div>
   </div>
   <div class="custom-content">
 
@@ -88,7 +89,7 @@ layout: table_wrappers
 
                 <div id="1html" class="tabcontent">
                   <div class="code">
-                    {% highlight html %}
+                    {% highlight html lineos %}
                     <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
                       header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
                       show-header-navigation="yes" (onDataLoaded)="onDataLoaded($event)">
@@ -118,7 +119,7 @@ layout: table_wrappers
 
                 <div id="1ts" class="tabcontent">
                   <div class="code">
-                    {% highlight js %}
+                    {% highlight js lineos %}
                     import { ViewChild, OnInit, ... } from '@angular/core';
                     export class CustomersDetailComponent implements OnInit {
                     public params: object;
@@ -205,8 +206,8 @@ layout: table_wrappers
           </div>
         </div>
         <div class="components-bottom">
-          <p class="fs-6 fw-400">We provide many more custom componentes<br/>equally customizable as the table component.</p>
-          <a href="{{ base_path }}/docs/components.html" target="_blank">Click here to see all our components!</a>
+          <p class="fs-6 fw-400">We provide many more custom componentes<br/>equally customizable as the o-table.</p>
+          <a href="{{ base_path }}/docs/components.html">Click here to see all our components!</a>
         </div>
         <div class="link-div">
           <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
@@ -323,18 +324,33 @@ layout: table_wrappers
           </div>
         </div>
         <div class="addons-bottom">
-          <p class="fs-6 fw-400">This is the detail of a single bank account,<br/>we are using two different type of charts:<br/>
-          a Line + Bar Chart and a Pie chart.</p>
-          <a href="{{ base_path }}/docs/addons.html" target="_blank">Click here to see all our addons!</a>
+          <p class="fs-6 fw-400">We got a lot of different chart types<br/>just choose whatever you will need.</p>
+          <a href="{{ base_path }}/docs/charts/">Click here to see all our charts!</a>
         </div>
       </div>
-
+      <div class="link-div">
+        <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
+        <div class="link-texts">
+          <h2 class="fs-7">If you wanna see more Ontimize addons</h2>
+          <p class="fs-6 fw-400"><a href="{{ base_path }}/docs/addons.html">Click here</a> to navigate into all our addons!</p>
+        </div>
+      </div>
 
     </div>
 
   </div>
-  <div class="footer-img-container"></div>
-  {% include components/footer.html %}
+  <div class="footer-img-container">
+    <img src="{{ base_path }}/images/home/footer_section_img.png" alt="Footer image">
+  </div>
+  <div class="home-footer">
+    <img src="{{ page.logo }}" alt="Ontimize logo">
+    <p>© 2023 Imatia Innovation, S.L. Powered by Jekyll & Minimal Mistakes.</p>
+    <div>
+      <a href="{{ base_path }}/docs/about.html">About</a>
+      <a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><img src="/images/home/linkedin.svg" alt="LinkedIn logo"></a>
+      <a href="https://x.com/imatiainnova" target="_blank"><img src="/images/home/x.svg" alt="X logo"></a>
+    </div>
+  </div>
 </body>
 
 <script src="{{ base_path }}/assets/js/code_box.js"></script>

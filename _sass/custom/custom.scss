@@ -54,8 +54,8 @@ html {
           border: none;
 
           img {
-            width: fit-content;
-            height: fit-content;
+            width: 140px;
+            height: 41px;
           }
         }
 
@@ -188,8 +188,17 @@ html {
     }
 
     .top-content {
-      width: 80%;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: calc(80% + 122px);
+      margin: 0 auto 204px;
+
+      >div {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+      }
     }
 
     .custom-content {
@@ -208,29 +217,28 @@ html {
 
         .home-left-1 {
           position: relative;
-          top: 236px;
+          top: 32px;
         }
 
         .home-left-2 {
           position: relative;
-          top: 1772px;
+          top: 1568px;
         }
 
         .home-left-3 {
           position: relative;
-          top: 3310px;
+          top: 3244px;
         }
 
         .home-left-4 {
           position: relative;
-          top: 4984px;
+          top: 4918px;
         }
       }
 
       .main-content {
         display: flex;
         flex-direction: column;
-        margin-top: 204px;
 
         .section-text {
           display: flex;
@@ -276,11 +284,12 @@ html {
           .productivity-img-container {
             position: absolute;
             left: 0;
-            height: 746px;
+            height: 884px;
             width: 100%;
             background-image: url('/images/home/productivity_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
+            background-size: 1920px;
           }
 
           .productivity-bottom {
@@ -296,11 +305,12 @@ html {
           .performance-img-container {
             position: absolute;
             left: 0;
-            height: 746px;
+            height: 884px;
             width: 100%;
             background-image: url('/images/home/performance_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
+            background-size: 1920px;
           }
 
           .performance-example {
@@ -308,7 +318,7 @@ html {
             flex-direction: row;
             justify-content: end;
             align-items: end;
-            height: 746px;
+            height: 884px;
 
           }
 
@@ -334,6 +344,7 @@ html {
             background-image: url('/images/home/components_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
+            background-size: 1920px;
           }
 
           .components-example {
@@ -362,11 +373,12 @@ html {
           .addons-img-container {
             position: absolute;
             left: 0;
-            height: 746px;
+            height: 884px;
             width: 100%;
             background-image: url('/images/home/addons_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
+            background-size: 1920px;
           }
 
           .addons-example {
@@ -374,7 +386,7 @@ html {
             flex-direction: row;
             justify-content: end;
             align-items: end;
-            height: 746px;
+            height: 884px;
 
           }
 
@@ -412,6 +424,7 @@ html {
 
             .tablinks {
               background-color: #2B2F33;
+              color: #FFFFFFBD;
               float: left;
               border: none;
               outline: none;
@@ -420,12 +433,14 @@ html {
 
               &.active {
                 background-color: $white;
+                color: #5c5962;
               }
             }
           }
 
           .tabs-content {
             overflow: auto;
+            height: 100%;
 
             .tabcontent,
             .tabcontentactive {
@@ -446,6 +461,7 @@ html {
                     padding-left: 0;
                     overflow: hidden;
                     min-width: min-content;
+                    height: 100%;
 
                     >code {
                       height: 100%;
@@ -463,13 +479,48 @@ html {
     }
 
     .footer-img-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
       height: 256px;
+
+      >img {
+        width: 1920px;
+        height: 256px;
+      }
+    }
+
+    .home-footer {
       position: absolute;
       left: 0;
+      height: 74px;
       width: 100%;
-      background-image: url('/images/home/footer_section_img.png');
-      background-repeat: no-repeat;
-      background-position-x: center;
+      border-top: solid 1px #FFFFFFBD;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 94px;
+
+      >img {
+        width: 140px;
+        height: 41px;
+      }
+
+      >div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+
+        >a {
+          color: #FFFFFFDB;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
