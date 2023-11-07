@@ -87,7 +87,7 @@ layout: table_wrappers
 
                 <div id="1html" class="tabcontent">
                   <div class="code">
-                    {% highlight html lineos %}
+                    {% highlight html %}
                     <o-form #form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
                       header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
                       show-header-navigation="yes" (onDataLoaded)="onDataLoaded($event)">
@@ -117,7 +117,7 @@ layout: table_wrappers
 
                 <div id="1ts" class="tabcontent">
                   <div class="code">
-                    {% highlight js lineos %}
+                    {% highlight js %}
                     import { ViewChild, OnInit, ... } from '@angular/core';
                     export class CustomersDetailComponent implements OnInit {
                     public params: object;

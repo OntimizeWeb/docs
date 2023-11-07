@@ -442,9 +442,10 @@ html {
 
               .code {
                 height: 100%;
+                background-color: white;
 
                 >.highlight {
-                  height: 100%;
+                  height: fit-content;
                   margin-bottom: 0;
 
                   >pre {
