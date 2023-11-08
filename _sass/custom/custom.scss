@@ -218,12 +218,12 @@ html {
 
         .home-left-3 {
           position: relative;
-          top: 3244px;
+          top: 3208px;
         }
 
         .home-left-4 {
           position: relative;
-          top: 4918px;
+          top: 4734px;
         }
       }
 
@@ -359,14 +359,15 @@ html {
             }
           }
 
-          .components-bottom {
-            display: flex;
-            flex-direction: column;
-            text-align: end;
+          .link-div {
+            .link-texts {
+              >p {
+                margin-bottom: 0;
+              }
+            }
 
             >a {
-              width: fit-content;
-              align-self: end;
+              padding-top: 5px;
             }
           }
         }
@@ -396,17 +397,6 @@ html {
               height: 360px;
               background-image: url('/images/home/addons_code.png');
               z-index: 1;
-            }
-          }
-
-          .addons-bottom {
-            display: flex;
-            flex-direction: column;
-            justify-items: start;
-
-            >a {
-              width: fit-content;
-              align-self: start;
             }
           }
         }
