@@ -311,6 +311,12 @@ html {
             align-items: end;
             height: 884px;
 
+            .performance-code {
+              width: 512px;
+              height: 360px;
+              background-image: url('/images/home/performance_code.png');
+              z-index: 1;
+            }
           }
 
           .performance-bottom {
@@ -345,6 +351,12 @@ html {
             align-items: end;
             height: 879px;
 
+            .components-code {
+              width: 512px;
+              height: 360px;
+              background-image: url('/images/home/components_code.png');
+              z-index: 1;
+            }
           }
 
           .components-bottom {
@@ -379,6 +391,12 @@ html {
             align-items: end;
             height: 884px;
 
+            .addons-code {
+              width: 512px;
+              height: 360px;
+              background-image: url('/images/home/addons_code.png');
+              z-index: 1;
+            }
           }
 
           .addons-bottom {
@@ -392,81 +410,6 @@ html {
             }
           }
         }
-
-        // example code box classes
-
-        .code-box-img {
-          width: 512px;
-          height: 350px;
-          background-image: url('/images/home/code_container.png');
-          z-index: 1;
-        }
-
-        .code-box {
-          display: flex;
-          flex-direction: column;
-          width: 432px;
-          height: 242px;
-          margin: 89px 0 0 38px;
-
-          .tab {
-            border-radius: 4px 4px 0 0;
-            border-bottom: 0;
-
-            .tablinks {
-              background-color: #2B2F33;
-              color: #FFFFFFBD;
-              float: left;
-              border: none;
-              outline: none;
-              cursor: pointer;
-              transition: 0.3s;
-
-              &.active {
-                background-color: $white;
-                color: #5c5962;
-              }
-            }
-          }
-
-          .tabs-content {
-            overflow: auto;
-            height: 100%;
-
-            .tabcontent,
-            .tabcontentactive {
-              width: 100%;
-              height: 100%;
-              display: none;
-              border-top: none;
-
-              .code {
-                height: 100%;
-                background-color: white;
-
-                >.highlight {
-                  height: fit-content;
-                  margin-bottom: 0;
-
-                  >pre {
-                    background-color: $white;
-                    padding-left: 0;
-                    overflow: hidden;
-                    min-width: min-content;
-                    height: 100%;
-
-                    >code {
-                      height: 100%;
-                      vertical-align: top;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        //end code boxes classes
       }
     }
 
