@@ -1,0 +1,158 @@
+---
+layout: table_wrappers
+---
+
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'en-US' }}">
+{% include head.html %}
+{% include base_path %}
+
+<body class="home">
+  <!--Necesary include to make work the template-->
+  <div style="display: none;">{% include components/sidebar.html %}</div>
+  <div class="introduction nohide">
+    {% include icons/icons.html %}
+    <div class="header">
+      <div class="site-header" role="banner">
+        <img src="{{ page.logo }}" alt="Ontimize logo">
+      </div>
+      {% include components/header.html %}
+    </div>
+    <div class="landing">
+      <div class="text">
+        <h4 class="fs-10 fw-700 white-87">{{ page.title_landing }}</h4>
+        <p class="fs-8">{{ page.subtitle_landing }}</p>
+        <button class="btn home-btn" onClick="window.open('/docs/getting-started.html','_self')">GET STARTED</button>
+      </div>
+      <img src="{{ page.banner }}" alt="banner" class="banner">
+    </div>
+  </div>
+  <div class="top-content">
+    <p class="fs-9 fw-700">The web development framework for building the future</p>
+    <p class="fs-6 fw-500"><b>100% FREE</b> to use however you want under the Apache 2.0 License.<br />Clone it, fork it, customize it, whatever!</p>
+  </div>
+  <div class="custom-content">
+
+    <div class="vertical-line">
+      <img class="home-left-1" src="{{ base_path }}/images/home/code_icon.png">
+      <img class="home-left-2" src="{{ base_path }}/images/home/code_icon.png">
+      <img class="home-left-3" src="{{ base_path }}/images/home/code_icon.png">
+      <img class="home-left-4" src="{{ base_path }}/images/home/code_icon.png">
+    </div>
+
+    <div class="main-content">
+      <!-- First section Productivity -->
+
+      <div class="productivity-section">
+        <div class="section-text">
+          <h1 class="fs-8 white-87">Productivity</h1>
+          <p class="fs-7 white-87">Accelerate your software development</p>
+          <p class="fs-6 fw-400">Our framework make a lot <span class="text-primary-400">faster</span> the way to develop the web data management applications.</p>
+        </div>
+        <div class="productivity-img-container"></div>
+        <div class="productivity-bottom">
+          <p class="fs-6 fw-400">Desing and build beautiful applications<br />based on the Goggle's Material design system.</p>
+          <a href="https://try.imatia.com/ontimizeweb/v15/quickstart" target="_blank">Click here to enter our Demo Bank application!</a>
+        </div>
+        <div class="link-div">
+          <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
+          <div class="link-texts">
+            <h2 class="fs-7">Our application demos page</h2>
+            <p class="fs-6 fw-400"><a href="https://try.imatia.com/ontimizeweb/" target="_blank">Try it out</a> in our portal to see all the demos that we got avaliable and
+              test
+              online some features of our framework.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second section Performance -->
+      <div class="performance-section">
+        <div class="section-text">
+          <h1 class="fs-8 white-87">Performance</h1>
+          <p class="fs-7 white-87">An amazing performance based on a solid code programming</p>
+          <p class="fs-6 fw-400">We got a <span class="text-primary-400">powerful</span> framework and <span class="text-primary-400">easy to
+              use</span>
+            on the development of small or biggest bussiness applications.</p>
+        </div>
+        <div class="performance-img-container"></div>
+        <div class="performance-example">
+          <div class="performance-code"></div>
+        </div>
+
+        <div class="performance-bottom">
+          <p class="fs-6 fw-400">Develop web data management applications quickly<br />and agile based on Angular technology.</p>
+        </div>
+        <div class="link-div">
+          <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
+          <div class="link-texts">
+            <h2 class="fs-7">Ontimize Web it is based on Angular</h2>
+            <p class="fs-6 fw-400">Developed by Imatia professionals it is the perfect choose to create your web applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third section Components -->
+      <div class="components-section">
+        <div class="section-text">
+          <h1 class="fs-8 white-87">Components</h1>
+          <p class="fs-7 white-87">We provide a lot of self developed components to make easier the way to code</p>
+          <p class="fs-6 fw-400"><span class="text-primary-400">Delegate</span> the repetitive and complex tasks to Ontimize Web and
+            <span class="text-primary-400">keep the focus</span> centered on your business logic.</p>
+        </div>
+        <div class="components-img-container"></div>
+        <div class="components-example">
+          <div class="components-code"></div>
+        </div>
+        <div class="link-div">
+          <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
+          <div class="link-texts">
+            <h2 class="fs-7">Our components flexibility</h2>
+            <p class="fs-6 fw-400">It is so easy to customize an <span class="text-primary-400">Ontimize table</span> adding <span class="text-primary-400">custom buttons</span>,
+            including <span class="text-primary-400">sort filters</span> and creating <span class="text-primary-400">cell renderers</span>.
+            All of our components could be customized without any restriction in a easy way following our documentation.
+            </p>
+            <a href="{{ base_path }}/docs/components.html">Click here to see all our components!</a>
+          </div>
+        </div>
+      </div>
+      <!-- Fourth section Addons -->
+      <div class="addons-section">
+        <div class="section-text">
+          <h1 class="fs-8 white-87">Addons</h1>
+          <p class="fs-7 white-87">We also provide advanced components to cover your specific needings</p>
+          <p class="fs-6 fw-400">We got a lot of useful addons to manage <span class="text-primary-400">maps</span>, <span class="text-primary-400">charts</span>,
+            <span class="text-primary-400">files</span>, <span class="text-primary-400">gallerys</span>, <span class="text-primary-400">reports</span>, etc.
+          </p>
+        </div>
+        <div class="addons-img-container"></div>
+        <div class="addons-example">
+          <div class="addons-code"></div>
+        </div>
+      </div>
+      <div class="link-div">
+        <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
+        <div class="link-texts">
+          <h2 class="fs-7">If you are interested on see more Ontimize addons</h2>
+          <p class="fs-6 fw-400"><a href="{{ base_path }}/docs/addons.html">Click here</a> to navigate into all our addons!</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="footer-img-container">
+    <img src="{{ base_path }}/images/home/footer_section_img.png" alt="Footer image">
+  </div>
+  <div class="home-footer">
+    <img src="{{ page.logo }}" alt="Ontimize logo">
+    <p>© 2023 Imatia Innovation, S.L. Powered by Jekyll & Minimal Mistakes.</p>
+    <div>
+      <a href="{{ base_path }}/docs/about.html">About</a>
+      <a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><img src="/images/home/linkedin.svg" alt="LinkedIn logo"></a>
+      <a href="https://x.com/imatiainnova" target="_blank"><img src="/images/home/x.svg" alt="X logo"></a>
+    </div>
+  </div>
+</body>
+
+</html>
