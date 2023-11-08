@@ -4,7 +4,7 @@ permalink: /ontimize-web-ngx-seed/
 title: "App Seed"
 excerpt: ""
 parent: Addons
-nav_order: 12
+nav_order: 11
 ---
 
 # Ontimize Web app seed

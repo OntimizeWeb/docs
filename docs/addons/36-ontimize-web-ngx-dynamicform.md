@@ -4,7 +4,7 @@ permalink: /ontimize-web-ngx-dynamicform/
 title: "Dynamicform"
 excerpt: ""
 parent: Addons
-nav_order: 6
+nav_order: 5
 ---
 
 # Ontimize Web Dynamicform

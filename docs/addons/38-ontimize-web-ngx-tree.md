@@ -4,7 +4,7 @@ permalink: /tree/
 title: "Tree"
 excerpt: ""
 parent: Addons
-nav_order: 9
+nav_order: 8
 ---
 {% include base_path %}
 {% include toc %}

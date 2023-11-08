@@ -3,7 +3,7 @@ layout: default
 permalink: /keycloak/
 title: "Keycloak"
 parent: Addons
-nav_order: 13
+nav_order: 12
 ---
 
 {% include base_path %}
