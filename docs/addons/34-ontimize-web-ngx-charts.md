@@ -3,7 +3,7 @@ layout: default
 permalink: /charts/
 title: "Charts"
 parent: Addons
-nav_order: 4
+nav_order: 3
 ---
 
 {% include base_path %}

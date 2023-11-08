@@ -3,7 +3,7 @@ layout: default
 permalink: /map/
 title: "Map"
 parent: Addons
-nav_order: 5
+nav_order: 4
 ---
 
 {% include base_path %}
