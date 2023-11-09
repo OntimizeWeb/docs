@@ -6,4 +6,5 @@ banner: 'images/home/rocket.gif'
 title_landing: Ontimize Web
 title: Home
 subtitle_landing: Web application framework based on Angular for building business software.
+permalink: /
 ---
