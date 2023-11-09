@@ -23,7 +23,7 @@ layout: table_wrappers
       <div class="text">
         <h4 class="fs-10 fw-700 white-87">{{ page.title_landing }}</h4>
         <p class="fs-8">{{ page.subtitle_landing }}</p>
-        <button class="btn home-btn" onClick="window.open('/docs/getting-started.html','_self')">GET STARTED</button>
+        <button class="btn home-btn" onClick="window.open('{{ base_path }}/getting-started/','_self')">GET STARTED</button>
       </div>
       <img src="{{ page.banner }}" alt="banner" class="banner">
     </div>
@@ -112,7 +112,7 @@ layout: table_wrappers
             including <span class="text-primary-400">sort filters</span> and creating <span class="text-primary-400">cell renderers</span>.
             All of our components could be customized without any restriction in a easy way following our documentation.
             </p>
-            <a href="{{ base_path }}/docs/components.html">Click here to see all our components!</a>
+            <a href="{{ base_path }}/components/">Click here to see all our components!</a>
           </div>
         </div>
       </div>
@@ -134,7 +134,7 @@ layout: table_wrappers
         <img src="{{ base_path }}/images/home/link_section_star.png" alt="Link section star">
         <div class="link-texts">
           <h2 class="fs-7">If you are interested on see more Ontimize addons</h2>
-          <p class="fs-6 fw-400"><a href="{{ base_path }}/docs/addons.html">Click here</a> to navigate into all our addons!</p>
+          <p class="fs-6 fw-400"><a href="{{ base_path }}/addons/">Click here</a> to navigate into all our addons!</p>
         </div>
       </div>
 
@@ -148,9 +148,9 @@ layout: table_wrappers
     <img src="{{ page.logo }}" alt="Ontimize logo">
     <p>© 2023 Imatia Innovation, S.L. Powered by Jekyll & Minimal Mistakes.</p>
     <div>
-      <a href="{{ base_path }}/docs/about.html">About</a>
-      <a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><img src="/images/home/linkedin.svg" alt="LinkedIn logo"></a>
-      <a href="https://x.com/imatiainnova" target="_blank"><img src="/images/home/x.svg" alt="X logo"></a>
+      <a href="{{ base_path }}/about/">About</a>
+      <a href="https://www.linkedin.com/company/224080?trk=prof-0-ovw-curr_pos" target="_blank"><img src="{{ base_path }}/images/home/linkedin.svg" alt="LinkedIn logo"></a>
+      <a href="https://x.com/imatiainnova" target="_blank"><img src="{{ base_path }}/images/home/x.svg" alt="X logo"></a>
     </div>
   </div>
 </body>
