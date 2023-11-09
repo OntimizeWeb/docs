@@ -5,16 +5,17 @@ logo: images/logo-ontimize-blanco.png
 search_enabled: true
 
 description: Welcome to the Ontimize v15 documentation!
+
 theme: just-the-docs
 
 versions:
-  - url: https://ontimizeweb.github.io/docs/v4/
+  - url: /docs/v4
     title: 4.x.x
     selected: false
-  - url: https://ontimizeweb.github.io/docs/v8/
+  - url: /docs/v8
     title: 8.x.x
     selected: false
-  - url: /
+  - url: /docs/v15
     title: 15.x.x
     selected: true
 

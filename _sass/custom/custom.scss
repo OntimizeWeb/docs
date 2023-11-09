@@ -5,6 +5,7 @@
 
 // Home page
 html {
+
   width: 100%;
 
   $home-background: #293239;
@@ -33,7 +34,7 @@ html {
     }
 
     .introduction {
-      background-image: url('/images/home/bg-landing.png');
+      background-image: url('../../images/home/bg-landing.png');
       background-repeat: repeat;
       display: flex;
       flex-direction: column;
@@ -277,7 +278,7 @@ html {
             left: 0;
             height: 746px;
             width: 100%;
-            background-image: url('/images/home/productivity_section_img.png');
+            background-image: url('../../images/home/productivity_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
             background-size: 1920px;
@@ -298,7 +299,7 @@ html {
             left: 0;
             height: 884px;
             width: 100%;
-            background-image: url('/images/home/performance_section_img.png');
+            background-image: url('../../images/home/performance_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
             background-size: 1920px;
@@ -314,7 +315,7 @@ html {
             .performance-code {
               width: 512px;
               height: 360px;
-              background-image: url('/images/home/performance_code.png');
+              background-image: url('../../images/home/performance_code.png');
               z-index: 1;
             }
           }
@@ -338,7 +339,7 @@ html {
             left: 0;
             height: 879px;
             width: 100%;
-            background-image: url('/images/home/components_section_img.png');
+            background-image: url('../../images/home/components_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
             background-size: 1920px;
@@ -354,7 +355,7 @@ html {
             .components-code {
               width: 512px;
               height: 360px;
-              background-image: url('/images/home/components_code.png');
+              background-image: url('../../images/home/components_code.png');
               z-index: 1;
             }
           }
@@ -379,7 +380,7 @@ html {
             left: 0;
             height: 884px;
             width: 100%;
-            background-image: url('/images/home/addons_section_img.png');
+            background-image: url('../../images/home/addons_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
             background-size: 1920px;
@@ -395,7 +396,7 @@ html {
             .addons-code {
               width: 512px;
               height: 360px;
-              background-image: url('/images/home/addons_code.png');
+              background-image: url('../../images/home/addons_code.png');
               z-index: 1;
             }
           }
