@@ -4090,9 +4090,9 @@
     "doc": "Addons",
     "title": "Addons",
     "content": " ",
-    "url": "/docs/v15/docs/addons.html",
+    "url": "/docs/v15/addons/",
     
-    "relUrl": "/docs/addons.html"
+    "relUrl": "/addons/"
   },"585": {
     "doc": "Remote configuration",
     "title": "Configuration",
@@ -4125,16 +4125,16 @@
     "doc": "Components",
     "title": "Components",
     "content": " ",
-    "url": "/docs/v15/docs/components.html",
+    "url": "/docs/v15/components/",
     
-    "relUrl": "/docs/components.html"
+    "relUrl": "/components/"
   },"590": {
     "doc": "Customization",
     "title": "Customization",
     "content": " ",
-    "url": "/docs/v15/docs/customization.html",
+    "url": "/docs/v15/customization/",
     
-    "relUrl": "/docs/customization.html"
+    "relUrl": "/customization/"
   },"591": {
     "doc": "Data",
     "title": "Data",
@@ -4146,16 +4146,16 @@
     "doc": "Getting started",
     "title": "Getting started",
     "content": " ",
-    "url": "/docs/v15/docs/getting-started.html",
+    "url": "/docs/v15/getting-started/",
     
-    "relUrl": "/docs/getting-started.html"
+    "relUrl": "/getting-started/"
   },"593": {
     "doc": "Guide",
     "title": "Guide",
     "content": " ",
-    "url": "/docs/v15/docs/guide.html",
+    "url": "/docs/v15/guide/",
     
-    "relUrl": "/docs/guide.html"
+    "relUrl": "/guide/"
   },"594": {
     "doc": "Home",
     "title": "Home",
