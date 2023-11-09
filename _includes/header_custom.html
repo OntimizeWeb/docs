@@ -1,7 +1,7 @@
 {% include base_path %}
 <div class="header-custom-main">
   {% if page.title == 'Home' %}
-  <a href="{{ base_path }}/docs/guide.html">
+  <a href="{{ base_path }}/guide/">
     <div class="docs-div">Docs</div>
   </a>
   {% endif %}
@@ -14,9 +14,14 @@
   {% endif %}
   <select class="select" name="version" onchange="window.open(this.value,'_self')">
     {% for version in site.versions %}
+      <!--If version.selected(_config.yml) means that we are on the 15.x.x doc-->
       {% if version.selected %}
+        <!--If site.deployurl(_config.dev.yml) exists we are on develop mode so we concatenate the site.url(_config.dev.yml) and the site.baseurl(_config.dev.yml)
+          and if not, we use the site.url(_config.deploy.yml) concatenated to versions.url(_config.yml)-->
         <option value="{% if site.deployurl %}{{ site.url }}{{ site.baseurl }}{% else %}{{ site.url }}{{ version.url }}{% endif %}" selected>{{ version.title }}</option>
       {% else %}
+        <!--If we are on develop mode we use the site.deployurl(_config.dev.yml) concatenated to the version.url(_config.yml) to access the old docs running in the cloud
+          and if not, we concat site.url(_config.deploy.yml) and version.url(_config.yml)-->
         <option value="{% if site.deployurl %}{{ site.deployurl }}{% else %}{{ site.url }}{% endif %}{{ version.url }}">{{ version.title }}</option>
       {% endif %}
     {% endfor %}

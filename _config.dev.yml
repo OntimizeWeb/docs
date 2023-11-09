@@ -1,3 +1,4 @@
 url: http://localhost:4000
 baseurl: /docs
+# Variable used on header_custom.html to make the version changer work on local
 deployurl: https://ontimizeweb.github.io
