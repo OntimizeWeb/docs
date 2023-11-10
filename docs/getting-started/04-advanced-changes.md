@@ -3,7 +3,7 @@ layout: default
 title: "Advanced topics"
 permalink: /advanced-changes/
 parent: Getting started
-nav_order: 5
+nav_order: 4
 ---
 
 {% include base_path %}

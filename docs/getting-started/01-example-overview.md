@@ -3,7 +3,7 @@ layout: default
 title: Example overview
 permalink: /example-overview/
 parent: Getting started
-nav_order: 2
+nav_order: 1
 ---
 
 {% include base_path %}

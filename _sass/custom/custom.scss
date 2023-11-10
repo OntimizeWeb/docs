@@ -508,7 +508,11 @@ a:not([class]) {
   .github-div {
     display: flex;
     align-items: center;
-    column-gap: 14px;
+
+    >a {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 

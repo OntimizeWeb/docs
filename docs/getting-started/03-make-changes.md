@@ -3,7 +3,7 @@ layout: default
 title: "Make some changes"
 permalink: /make-changes/
 parent: Getting started
-nav_order: 4
+nav_order: 3
 ---
 
 {% include base_path %}

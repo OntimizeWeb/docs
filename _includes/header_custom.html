@@ -1,16 +1,25 @@
 {% include base_path %}
 <div class="header-custom-main">
   {% if page.title == 'Home' %}
-  <a href="{{ base_path }}/guide/">
-    <div class="docs-div">Docs</div>
-  </a>
-  {% endif %}
-  {% if site.github %}
-    <div class="github-div">
-      {% for githubsite in site.github %}
-        <a href="{{ githubsite.url }}" target="_blank"><img src="{{ base_path }}/{{ githubsite.icon }}" width="42px" height="42px" alt="{{ githubsite.name }}" /></a>
-      {% endfor %}
-    </div>
+    <a href="{{ base_path }}/introduction/">
+      <div class="docs-div">Docs</div>
+    </a>
+    {% if site.github %}
+      <div class="github-div">
+        {% for githubsite in site.github %}
+        <a href="{{ githubsite.url }}" target="_blank"><img src="{{ base_path }}/images/home/github-front-home.svg" width="42px" height="42px"
+            alt="{{ githubsite.name }}"></a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% else %}
+    {% if site.github %}
+      <div class="github-div">
+        {% for githubsite in site.github %}
+          <a href="{{ githubsite.url }}" target="_blank"><img src="{{ base_path }}/{{ githubsite.icon }}" width="42px" height="42px" alt="{{ githubsite.name }}"></a>
+        {% endfor %}
+      </div>
+    {% endif %}
   {% endif %}
   <select class="select" name="version" onchange="window.open(this.value,'_self')">
     {% for version in site.versions %}
