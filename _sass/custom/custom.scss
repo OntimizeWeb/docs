@@ -11,7 +11,8 @@ html {
   $home-background: #293239;
 
   .home {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: $home-background;
     color: #FFFFFFBD;
 
@@ -42,16 +43,22 @@ html {
 
       .header {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
+        justify-content: space-around;
+        gap: 28px;
+        padding: 0 5rem;
         background-color: $home-background;
-        height: 96px;
         box-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
+
+        @include mq(sm) {
+          height: 96px;
+          flex-direction: row;
+        }
 
         .site-header {
           height: 100%;
           width: fit-content;
-          margin-left: 94px;
           border: none;
 
           img {
@@ -62,19 +69,26 @@ html {
 
         .main-header {
           display: flex;
-          flex-grow: 1;
           align-items: center;
+          justify-content: space-between;
           background-color: $home-background;
           border: none;
-          height: 96px;
+          gap: 28px;
+          flex-grow: 1;
+          flex-direction: column;
+          height: inherit;
+
+          @include mq(sm) {
+            flex-direction: row;
+          }
 
           .search {
             display: flex;
             max-height: 48px;
-            margin: auto 0 auto 94px;
-            min-width: fit-content;
+            width: auto;
+            min-width: 194px;
             padding: 0;
-
+            justify-content: center;
 
             .search-input-wrap {
               position: relative;
@@ -108,11 +122,8 @@ html {
 
           .header-custom-main {
             display: flex;
-            margin-right: 94px;
             column-gap: 28px;
             color: #FFFFFFBD;
-
-
 
             .select {
               border-style: none;
@@ -153,13 +164,24 @@ html {
 
       .landing {
         display: flex;
-        flex-grow: 1;
-        flex-direction: row;
+        justify-content: space-around;
+        height: calc(100% - 96px);
+
+        @include mq (lg) {
+          flex-direction: row;
+          align-items: start;
+        }
+
+        align-items: center;
+        flex-direction: column;
         padding: 20px;
 
         .text {
-          max-width: 50%;
-          margin: auto;
+          align-items: inherit;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex-grow: 1;
 
           >p {
             color: #4286FF;
@@ -180,9 +202,14 @@ html {
 
         .banner {
           display: flex;
-          max-height: 570px;
-          max-width: 570px;
-          margin: auto;
+          flex-grow: 1;
+          align-items: center;
+          max-height: 100%;
+
+          >img {
+            aspect-ratio: 1 / 1;
+            max-height: 100%;
+          }
         }
       }
 
@@ -417,8 +444,7 @@ html {
     }
 
     .home-footer {
-      position: absolute;
-      left: 0;
+      display: flex;
       height: 74px;
       width: 100%;
       border-top: solid 1px #FFFFFFBD;
