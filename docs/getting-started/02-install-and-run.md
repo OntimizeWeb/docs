@@ -3,7 +3,7 @@ layout: default
 title: "Run an example"
 permalink: /install-and-run/
 parent: Getting started
-nav_order: 3
+nav_order: 2
 ---
 
 {% include base_path %}
