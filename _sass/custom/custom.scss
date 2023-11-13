@@ -13,6 +13,8 @@ html {
   .home {
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
     background-color: $home-background;
     color: #FFFFFFBD;
 
@@ -39,7 +41,9 @@ html {
       background-repeat: repeat;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      justify-content: start;
+      min-height: 100vh;
+      width: 100%;
 
       .header {
         display: flex;
@@ -125,10 +129,8 @@ html {
                 >svg {
                   color: #FFFFFFBD;
                 }
-
               }
             }
-
           }
 
           .header-custom-main {
@@ -177,24 +179,30 @@ html {
 
       .landing {
         display: flex;
-        justify-content: space-around;
-        height: calc(100% - 96px);
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        min-height: calc(100vh - 226.5px);
+
+        @include mq(home-header) {
+          min-height: calc(100vh - 96px);
+        }
 
         @include mq (lg) {
           flex-direction: row;
-          align-items: start;
         }
 
-        align-items: center;
-        flex-direction: column;
-        padding: 20px;
-
         .text {
-          align-items: inherit;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          flex-grow: 1;
+          align-items: inherit;
+          padding-left: 28px;
+
+          >h4 {
+            align-self: start;
+            margin: 0;
+          }
 
           >p {
             color: #4286FF;
@@ -206,6 +214,7 @@ html {
             background-color: #2876FF;
             height: 42px;
             width: 148px;
+            align-self: start;
 
             &:hover {
               background-color: #1A51C8;
@@ -215,13 +224,18 @@ html {
 
         .banner {
           display: flex;
-          flex-grow: 1;
           align-items: center;
-          max-height: 100%;
+          justify-content: center;
+          min-width: 50%;
+
+          @include mq (lg) {
+            flex-direction: row;
+            align-items: stretch;
+            height: 50%;
+          }
 
           >img {
-            aspect-ratio: 1 / 1;
-            max-height: 100%;
+            aspect-ratio: 465 / 600;
           }
         }
       }
@@ -230,16 +244,13 @@ html {
 
     .top-content {
       width: 80%;
-      margin: 0 auto 204px;
     }
 
     .custom-content {
       display: flex;
       flex-direction: row;
-      justify-content: center;
       column-gap: 50px;
       width: 80%;
-      margin: 0 auto;
 
       .vertical-line {
         display: flex;
@@ -321,7 +332,12 @@ html {
             background-image: url('../../images/home/productivity_section_img.png');
             background-repeat: no-repeat;
             background-position-x: center;
-            background-size: 1920px;
+            background-size: contain;
+
+            @include mq(home-bg-img) {
+              background-size: 1920px;
+            }
+
           }
 
           .productivity-bottom {
