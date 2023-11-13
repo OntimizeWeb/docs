@@ -3,7 +3,7 @@ layout: default
 permalink: /gallery/
 title: "Gallery"
 parent: Addons
-nav_order: 9
+nav_order: 4
 ---
 
 {% include base_path %}

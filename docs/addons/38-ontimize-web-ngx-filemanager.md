@@ -3,7 +3,7 @@ layout: default
 permalink: /filemanager/
 title: "File Manager"
 parent: Addons
-nav_order: 7
+nav_order: 3
 ---
 
 {% include base_path %}
