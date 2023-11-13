@@ -47,19 +47,26 @@ html {
         align-items: center;
         justify-content: space-around;
         gap: 28px;
-        padding: 0 5rem;
+        padding: 0 5rem 28px;
         background-color: $home-background;
         box-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
 
-        @include mq(sm) {
+        @include mq(home-header) {
           height: 96px;
+          padding-bottom: 0;
           flex-direction: row;
         }
 
         .site-header {
-          height: 100%;
+          flex-shrink: 0;
+          height: fit-content;
           width: fit-content;
           border: none;
+          align-items: end;
+
+          @include mq(home-header) {
+            align-items: center;
+          }
 
           img {
             width: 140px;
@@ -78,7 +85,7 @@ html {
           flex-direction: column;
           height: inherit;
 
-          @include mq(sm) {
+          @include mq(home-header) {
             flex-direction: row;
           }
 
@@ -86,9 +93,13 @@ html {
             display: flex;
             max-height: 48px;
             width: auto;
-            min-width: 194px;
+            min-width: 243px;
             padding: 0;
             justify-content: center;
+
+            @include mq(home-header) {
+              min-width: 194px;
+            }
 
             .search-input-wrap {
               position: relative;
@@ -137,6 +148,8 @@ html {
             }
 
             .github-div {
+              flex-shrink: 0;
+
               >a {
                 display: flex;
                 align-items: center;
