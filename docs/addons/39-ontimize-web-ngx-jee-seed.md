@@ -4,7 +4,7 @@ permalink: /ontimize-web-ngx-jee-seed/
 title: "JEE App Seed"
 excerpt: ""
 parent: Addons
-nav_order: 10
+nav_order: 5
 ---
 
 # Ontimize Web Java EE app seed

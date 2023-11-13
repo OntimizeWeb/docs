@@ -3,7 +3,7 @@ layout: default
 permalink: /report/
 title: "Report"
 parent: Addons
-nav_order: 13
+nav_order: 8
 ---
 
 {% include base_path %}

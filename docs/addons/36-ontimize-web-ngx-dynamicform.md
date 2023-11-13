@@ -3,8 +3,7 @@ layout: default
 permalink: /ontimize-web-ngx-dynamicform/
 title: "Dynamicform"
 excerpt: ""
-parent: Addons
-nav_order: 5
+nav_exclude: true
 ---
 
 # Ontimize Web Dynamicform
