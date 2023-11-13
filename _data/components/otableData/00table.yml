@@ -240,6 +240,13 @@ attributes: [{
   default: "yes"
 },
 {
+  name: "show-charts-on-demand-option",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the chart on demand menu option in the header menu",
+  required: "",
+  default: "yes"
+},
+{
   name: "show-reset-width-option",
   type: "yes|no|true|false",
   description: "Indicates whether or not to show the reset width menu option in the header menu",
