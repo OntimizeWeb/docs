@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /ontimize-web-ngx-jee-seed/
-title: "JEE App Seed"
+title: "App Seed"
 excerpt: ""
 parent: Addons
 nav_order: 5
