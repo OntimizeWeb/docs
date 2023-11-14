@@ -180,12 +180,15 @@ html {
       .landing {
         display: flex;
         flex-direction: column;
+        row-gap: 28px;
         align-items: center;
         align-self: center;
         min-height: calc(100vh - 226.5px);
+        max-height: calc(100vh - 226.5px);
 
         @include mq(home-header) {
           min-height: calc(100vh - 96px);
+          max-height: calc(100vh - 96px);
         }
 
         @include mq (lg) {
@@ -197,7 +200,7 @@ html {
           flex-direction: column;
           justify-content: center;
           align-items: inherit;
-          padding-left: 28px;
+          padding: 28px 0 0 28px;
 
           >h4 {
             align-self: start;
@@ -226,15 +229,17 @@ html {
           display: flex;
           align-items: center;
           justify-content: center;
-          min-width: 50%;
+          max-width: 40%;
 
           @include mq (lg) {
             flex-direction: row;
             align-items: stretch;
-            height: 50%;
+            max-width: fit-content;
+            min-width: 50%;
           }
 
           >img {
+            max-height: 100%;
             aspect-ratio: 465 / 600;
           }
         }
@@ -286,7 +291,8 @@ html {
         .section-text {
           display: flex;
           flex-direction: column;
-          height: 264px;
+          flex-grow: 1;
+          flex-shrink: 0;
 
           >h1 {
             font-weight: 600;
@@ -297,7 +303,8 @@ html {
         .link-div {
           display: flex;
           flex-direction: row;
-          height: 248px;
+          flex-grow: 1;
+          flex-shrink: 0;
           margin-top: 82px;
           margin-bottom: 124px;
 
@@ -323,61 +330,76 @@ html {
         }
 
         .productivity-section {
+          display: flex;
+          flex-direction: column;
 
           .productivity-img-container {
-            position: absolute;
-            left: 0;
-            height: 746px;
-            width: 100%;
-            background-image: url('../../images/home/productivity_section_img.png');
-            background-repeat: no-repeat;
-            background-position-x: center;
-            background-size: contain;
+            display: flex;
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 746px;
 
-            @include mq(home-bg-img) {
-              background-size: 1920px;
+            .productivity-img {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              left: 0;
+              background-image: url('../../images/home/productivity_section_img.png');
+              background-repeat: no-repeat;
+              background-position-x: center;
+              background-position-y: center;
+              background-size: contain;
+
+              @include mq(home-bg-img) {
+                background-size: 1920px;
+                background-position-y: top;
+              }
             }
-
           }
 
           .productivity-bottom {
-            margin-top: 746px;
             display: flex;
             flex-direction: column;
             justify-items: start;
+            flex-shrink: 0;
+            flex-grow: 1;
           }
         }
 
         .performance-section {
+          display: flex;
+          flex-direction: column;
 
           .performance-img-container {
-            position: absolute;
-            left: 0;
-            height: 884px;
-            width: 100%;
-            background-image: url('../../images/home/performance_section_img.png');
-            background-repeat: no-repeat;
-            background-position-x: center;
-            background-size: 1920px;
-          }
-
-          .performance-example {
             display: flex;
-            flex-direction: row;
-            justify-content: end;
-            align-items: end;
-            height: 884px;
+            align-items: center;
+            height: calc(100vw / 2.27);
+            max-height: 1268px;
 
-            .performance-code {
-              width: 512px;
-              height: 360px;
-              background-image: url('../../images/home/performance_code.png');
-              z-index: 1;
+            @include mq(home-bg-img-max) {
+              width: calc(80vw - 122px);
+              justify-content: center;
+            }
+
+            >img {
+              max-width: 2888px;
+              width: 100vw;
+              position: absolute;
+              left: 0;
+              aspect-ratio: 1440 / 634;
+            }
+
+            @include mq(home-bg-img-max) {
+              >img {
+                position: static;
+              }
             }
           }
 
           .performance-bottom {
             display: flex;
+            flex-grow: 1;
+            flex-shrink: 0;
             flex-direction: column;
             justify-items: start;
 
