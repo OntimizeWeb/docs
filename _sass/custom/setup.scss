@@ -9,3 +9,11 @@ $dark-60: #00000099;
 $grey: #F6F6F6;
 $poppins: 'Poppins',
 sans-serif;
+
+// media queries
+$custom-media-queries: (
+  home-header: 800px,
+  home-imgs-max: 2880px,
+  mobile-m: 375px
+  );
+$media-queries: map-merge($media-queries, $custom-media-queries);
