@@ -216,7 +216,7 @@ html {
           }
 
           @include mq (lg) {
-            justify-content: center;
+            justify-content: space-around;
             flex-direction: row;
           }
 
@@ -225,7 +225,11 @@ html {
             flex-direction: column;
             justify-content: center;
             align-items: inherit;
-            padding: 28px 0 0 28px;
+            padding: 28px 28px 0;
+
+            @include mq(lg) {
+              max-width: 50%;
+            }
 
             >h4 {
               align-self: start;
@@ -252,15 +256,12 @@ html {
 
           .banner {
             display: flex;
-            align-items: center;
             justify-content: center;
             flex-shrink: 1;
-            padding-right: 28px;
+            padding: 0 28px;
 
             @include mq (lg) {
-              align-items: stretch;
               max-width: fit-content;
-              max-height: 80%;
             }
           }
         }
@@ -320,7 +321,11 @@ html {
             flex-shrink: 0;
             margin-top: 82px;
             margin-bottom: 124px;
-            transform: translateX(-100px);
+            transform: translateX(-150px);
+
+            @include mq(mobile-m) {
+              transform: translateX(-100px);
+            }
 
             @include mq(home-header) {
               transform: translateX(0);
@@ -522,13 +527,14 @@ html {
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 0 5rem;
+        padding: 28px 5rem;
         text-align: justify;
         border-top: solid 1px #FFFFFFBD;
 
         @include mq(lg) {
           flex-direction: row;
           height: 74px;
+          padding: 0 5rem;
         }
 
         >img {

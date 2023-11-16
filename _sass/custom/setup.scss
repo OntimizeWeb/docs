@@ -13,6 +13,7 @@ sans-serif;
 // media queries
 $custom-media-queries: (
   home-header: 800px,
-  home-imgs-max: 2880px
+  home-imgs-max: 2880px,
+  mobile-m: 375px
   );
 $media-queries: map-merge($media-queries, $custom-media-queries);
