@@ -16,7 +16,7 @@ layout: table_wrappers
       {% include icons/icons.html %}
       <div class="header">
         <div class="site-header" role="banner">
-          <img src="{{ page.logo }}" alt="Ontimize logo">
+          <img src="{{ base_path }}/{{ page.logo }}" alt="Ontimize logo">
         </div>
         {% include components/header.html %}
       </div>
@@ -27,7 +27,7 @@ layout: table_wrappers
           <button class="btn home-btn" onClick="window.open('{{ base_path }}/getting-started/','_self')">GET STARTED</button>
         </div>
         <div class="banner">
-          <img src="{{ page.banner }}" alt="banner">
+          <img src="{{ base_path }}/{{ page.banner }}" alt="banner">
         </div>
       </div>
     </div>
