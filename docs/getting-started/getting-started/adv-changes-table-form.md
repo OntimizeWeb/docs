@@ -61,7 +61,7 @@ export class EmployeesHomeComponent {
 
 }
 ```
-The table is defined within the html template, and is connected through an Ontimize service that provides the information of all employees. You can find further information about the o-table configuration parameters in the [Components]({{ base_path }}/components/o-table.component/overview/){:target="_blank"} section.
+The table is defined within the html template, and is connected through an Ontimize service that provides the information of all employees. You can find further information about the o-table configuration parameters in the [Components]({{ base_path }}/components/table/overview/){:target="_blank"} section.
 
 In the logic file nothing special is done, we simply define the paths of the css and html files.
 
