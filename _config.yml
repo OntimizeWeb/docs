@@ -1,0 +1,44 @@
+title: Ontimize Web
+
+logo: images/logo-ontimize-blanco.png
+
+search_enabled: true
+
+description: Welcome to the Ontimize v15 documentation!
+
+theme: just-the-docs
+
+versions:
+  - url: /docs/v4
+    title: 4.x.x
+    selected: false
+  - url: /docs/v8
+    title: 8.x.x
+    selected: false
+  - url: /docs/v15
+    title: 15.x.x
+    selected: true
+
+page_excerpts: true
+
+github:
+  - name: Onitmize Web
+    url: https://github.com/OntimizeWeb
+    icon: images/github-front.svg
+
+color_scheme: ontimize-light
+
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: grey-dk
+  important:
+    title: Important
+    color: grey-dk
+  note:
+    title: Note
+    color: blue
+    opacity: 1
+  warning:
+    title: Warning
+    color: red

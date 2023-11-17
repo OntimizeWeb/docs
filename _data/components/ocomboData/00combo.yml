@@ -1,0 +1,69 @@
+directive: "o-combo"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "clear-button", "validators", "label-visible", "hide-required-marker"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservice/api",
+  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "description-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys", "set-value-on-value-change", "translate", "sort"]
+}]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  outputs: ["onChange", "onValueChange","onFocus","onBlur"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservice/api",
+  outputs: ["onSetValueOnValueChange", "onDataLoaded"]
+}]
+
+attributes: [{
+  name: "multiple",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to allow the user to select multiple options"
+},{
+  name: "null-selection",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to have a selectable <em>null</em> value"
+},{
+  name: "multiple-trigger-label",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not the component label shows a summary of the selected items"
+},{
+  name: "searchable",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Displays an input field for searching between the dropdown options"
+},{
+  name: "null-selection-label",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Text to none selection in a combo"
+}]
+
+methods: [{
+  name: "getSelectedItems",
+  type: "method",
+  description: "Return the selected items of the component.",
+  returns: "any[]"
+},{
+  name: "setSelectedItems",
+  type: "method",
+  parameters: "any[]",
+  description: "Set the selected items of the component."
+}
+
+]
+
+extraComponents: "locker"

@@ -1,0 +1,9 @@
+directive : "o-card-menu-layout"
+
+attributes: [{
+  name: "parent-menu-id",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The menu item identifier whose children are rendered. When this attribute is not configured, the component builds a card for the root elements of the menu"
+}]

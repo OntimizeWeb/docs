@@ -1,0 +1,68 @@
+class: "OTableCellRendererBooleanComponent"
+
+extends: "OBaseTableCellRenderer"
+
+directive: "o-table-cell-renderer-boolean"
+
+attributes: [{
+  name: "boolean-type",
+  type: "number | boolean | string ",
+  default: "boolean",
+  required: "",
+  description: "Type of the cell value"
+},{
+  name: "true-value",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Value considered as true"
+},{
+  name: "false-value",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Value considered as false"
+},{
+  name: "render-type",
+  type: "string | number | icon | image",
+  default: "string",
+  required: "",
+  description: "Type of the cell displayed value"
+},{
+  name: "render-true-value",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Value displayed as true"
+},{
+  name: "render-false-value",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Value displayed as false"
+}]
+
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
+}]
+

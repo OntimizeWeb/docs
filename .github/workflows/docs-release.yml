@@ -1,0 +1,40 @@
+name: Release Docs
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [closed]
+    branches:
+      - 15.x.x
+
+env:
+  TARGET_PATH: v15
+
+jobs:
+  build-docs:
+    name: Publish doc
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true && contains(join(github.event.pull_request.labels.*.name, ', '), 'release-docs'))
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: 15.x.x
+          fetch-depth: 0
+
+      - name: Bundler Cache
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Jekyll
+        uses: helaili/jekyll-action@master
+        with:
+          jekyll_env: deploy
+          jekyll_build_options: --baseurl /docs/${{ env.TARGET_PATH }}
+          target_branch: gh-pages
+          target_path: ${{ env.TARGET_PATH }}
+          keep_history: true
+          token: ${{ secrets.GITHUB_TOKEN }}

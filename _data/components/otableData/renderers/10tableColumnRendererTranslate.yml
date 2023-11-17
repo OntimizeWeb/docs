@@ -1,0 +1,36 @@
+class: "OTableCellRendererTranslateComponent"
+
+extends: "OBaseTableCellRenderer"
+
+directive: "o-table-cell-renderer-translate"
+
+attributes: [{
+  name: "translate-params",
+  type: "(rowData: any) => any[]",
+  default: "",
+  required: "",
+  description: "Function that receives the row data and return the parameters for the translate pipe"
+}]
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
+}]

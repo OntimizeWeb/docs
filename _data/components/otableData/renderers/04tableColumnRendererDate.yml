@@ -1,0 +1,36 @@
+class: "OTableCellRendererDateComponent"
+
+extends: "OBaseTableCellRenderer"
+
+directive: "o-table-cell-renderer-date"
+
+attributes: [{
+  name: "format",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+}]
+inherit_properties: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  properties: [{
+    name: "column",
+    type: "property",
+    description: "Name of the column"
+  },{
+    name: "table",
+    type: "property"
+  },{
+    name: "tableColumn",
+    type: "property"
+  },{
+    name: "templateref"
+  }]
+}]
+
+inheritedAttributes: [{
+  component: "OBaseTableCellRenderer",
+  path: "components/table/obasetablecellrenderer/api",
+  attributes: ['filter-source', "filterFunction"]
+}]

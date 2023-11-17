@@ -1,0 +1,39 @@
+class: "OTableColumnSelectAllDirective"
+
+directive: "o-table-column-select-all"
+attributes: [{
+  name: "title",
+  type: "string",
+  since: "8.12.0",
+  default: "",
+  required: "",
+  description: "Title for the header aggregate column"
+},{
+  name: "width",
+  type: "string",
+  since: "8.12.0",
+  default: "",
+  required: "",
+  description: "Indicates the width of the column in px or %"
+},{
+  name: "min-width",
+  type: "string",
+  since: "8.12.0",
+  default: "",
+  required: "",
+  description: "Indicates the min width of the column in px"
+},{
+  name: "max-width",
+  type: "string",
+  since: "8.12.0",
+  default: "",
+  required: "",
+  description: "Indicates the min width of the column in px"
+},{
+  name: "resizable",
+  type: "no | yes | true | false",
+  default: "yes",
+  since: "8.12.0",
+  required: "",
+  description: "Indicates whether or not to resizable the column"
+}]

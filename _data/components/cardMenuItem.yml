@@ -1,0 +1,75 @@
+directive: "o-card-menu-item"
+
+attributes: [{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Card title"
+},{
+  name: "image",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Card image"
+},{
+  name: "icon",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Card icon. Card image have preference over it"
+},{
+  name: "tooltip",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Card tooltip"
+},{
+  name: "button-text",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Card button text. If it has no value, the card will have no button"
+},{
+  name: "disabled-button",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to the card button is enabled"
+},{
+  name: "main-container-layout",
+  type: "string",
+  default: "column",
+  required: "",
+  description: "Card upper container layout direction"
+},{
+  name: "secondary-container-layout",
+  type: "string",
+  default: "column",
+  required: "",
+  description: "Card lower container layout direction"
+},{
+  name: "route",
+  type: "string",
+  default: "",
+  required: "",
+  description: "App navigation route when the menu card is selected (clicking on button, if exists, or in the card)"
+},{
+  name: "detail-component",
+  type: "Component reference",
+  default: "",
+  required: "",
+  description: "Component displayed on the lower side of the card menu item"
+},{
+  name: "detail-component-inputs",
+  type: "Object",
+  default: "{}",
+  required: "",
+  description: "Object containing the attributes for the component provided to the `detail-component` attribute"
+},{
+  name: "action",
+  type: "function",
+  default: "",
+  required: "",
+  description: "A function defined in your component called when the card button is clicked and the route attribute is not configured"
+}]

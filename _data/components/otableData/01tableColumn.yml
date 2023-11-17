@@ -1,0 +1,132 @@
+
+class: "OTableColumnComponent"
+
+directive: "o-table-column"
+
+attributes: [{
+  name: "attr",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Column name"
+},{
+  name: "title",
+  type: "string",
+  default: "By default it is the attr translation except in the column of type action and image which by default the title doesn't show it",
+  required: "",
+  description: "Column title"
+},{
+  name: "title-align",
+  type: "start | center | end | auto",
+  default: "center",
+  required: "",
+  description: "Column title cell text alignment"
+},{
+  name: "content-align",
+  type: "start | center | end",
+  default: "",
+  required: "",
+  description: "Column cell context alignment"
+},{
+  name: "orderable",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the column can be sorted"
+},{
+  name: "searchable",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the column content can be searched"
+},{
+  name: "editable",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not the column content can be edited. "
+},{
+  name: "type",
+  type: "string | boolean | integer | real | currency | percentage | date | image | action | service  |translate",
+  default: "string",
+  required: "",
+  description: "Column data type"
+},{
+  name: "format",
+  type: "string",
+  default: "LL",
+  required: "",
+  description: "Indicates the format in which you want to represent the date"
+},{
+  name: "width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Indicates the width of the column in px or %"
+},{
+  name: "min-width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Indicates the min width of the column in px"
+},{
+  name: "max-width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Indicates the max width of the column in px"
+},{
+  name: "async-load",
+  type: "no | yes | true | false",
+  default: "no",
+  required: "",
+  description: "Asynchronous query for this column"
+},{
+  name: "sql-type"
+},{
+  name: "tooltip",
+  type: "no | yes | true | false",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not the tooltip over column"
+},{
+  name: "tooltip-value",
+  type: "string",
+  default: "",
+  required: "Indicates value of tooltip",
+  description: ""
+},{
+  name: "tooltip-function",
+  type: "function",
+  default: "",
+  required: "",
+  description: "Callback function that will be executed when the mouse pointer over the column"
+},{
+  name: "multiline",
+  type: "no | yes | true | false",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to display the cell content in multiple lines if it is needed"
+},{
+  name: "resizable",
+  type: "no | yes | true | false",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to resizable the column"
+},{
+  name: "groupable",
+  type: "no | yes | true | false",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the column is groupable"
+},{
+  name: "show-notification-on-edit",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether or not to show a toast indicating the succesfull update on editable columns"
+},{
+  name: "validators",
+  type: "ValidatorFn[]",
+  default: "[]",
+  description: "Array of custom validators to apply to the component value. Each elemnent must be a Angular [ValidatorFn](https://v8.angular.io/api/forms/ValidatorFn)"
+}]

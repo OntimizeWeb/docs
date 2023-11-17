@@ -1,0 +1,42 @@
+directive: "o-button"
+
+attributes: [{
+  name: "attr"
+},{
+  name: "label"
+},{
+  name: "type",
+  type: "BASIC | RAISED | STROKED | FLAT | ICON | FAB | FAB-MIN",
+  default: "STROKED",
+  required: "",
+  description: "Type of button"
+},{
+  name: "icon"
+},{
+  name: "svg-icon"
+},{
+  name: "icon-position",
+  type: "left | right | top | bottom",
+  default: "left",
+  required: "",
+  description: "Icon position"
+},{
+  name: "image",
+  type: "",
+  default: "",
+  required: "",
+  description: "Icon image"
+},{
+  name: "enabled",
+  description : "Indicates whether or not the button is enabled"
+},{
+  name: "color",
+  type: "primary | accent | warn",
+  default: "",
+  required: "",
+  description: "Theme color palette for the component"
+}]
+outputs: [{
+  name: "onClick",
+  description: "Event triggered when the button is clicked"
+}]

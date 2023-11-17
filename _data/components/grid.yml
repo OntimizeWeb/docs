@@ -1,0 +1,113 @@
+directive: "o-grid"
+version: "3.1.0"
+
+inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base/api",
+  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-fallback-function", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "store-state", "query-with-null-parent-keys"]
+},{
+  component: "OServiceComponent",
+  path: "components/service/service/api",
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "quick-filter", "quick-filter-placeholder", "quick-filter-appearance", "pagination-controls", "page-size-options"]
+}]
+
+attributes: [{
+  name: "cols",
+  type: "number",
+  default: "By default, the number of columns will be automatically determined based mediaQuery of Flex Layout. See more [here](https://github.com/angular/flex-layout/wiki/Responsive-API#mediaqueries-and-aliases).",
+  required: "",
+  description: "Number of items to display on a page. By default set to 32."
+},{
+  name: "page-size-options",
+  default: "8;16;24;32;64"
+},{
+  name: "show-page-size",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Whether or not to hide the page size selector."
+},{
+  name: "orderable",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Whether or not the sort select is shown in the toolbar."
+},{
+  name: "sortable-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Sorting columns separated by ';'."
+},{
+  name: "sort-column",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Sorting default column."
+},{
+  name: "grid-item-height",
+  type: "string | number",
+  default: "1:1",
+  required: "",
+  description: "Set internal representation of row height from the user-provided value (see attribute `rowHeight` of [MatGridList](https://material.angular.io/components/grid-list/api#MatGridList))."
+},{
+  name: "pagination-controls",
+  default: "no"
+},{
+  name: "fixed-header",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to have a fixed header and footer when the content is greather than its own height"
+},{
+  name: "gutter-size",
+  type: "string",
+  default: "1px",
+  required: "",
+  description: "The amount of space between o-grid-items. This will be something like '10px' or '1em'."
+},{
+  name: "show-footer",
+  type: "no | false | yes | true",
+  default: "true",
+  required: "",
+  description: "Indicates whether or not to show the footer"
+},{
+  name: "refresh-button"
+},{
+  name: "quick-filter-columns"
+},{
+  name: "insert-button",
+  default: "false"
+},{
+  name: "insert-button-position",
+  type: "'bottom' | 'top'",
+  default: "bottom",
+  required: "",
+  description: "Indicates the insert button is attached at the top or at the bottom of the grid when the button is floatable."
+},
+{
+  name: "insert-button-floatable",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the insert button is floatable."
+},{
+  name: "show-buttons-text",
+  default: "no"
+}]
+
+outputs: [{
+  name: "onClick",
+  description: "Event triggered when a row is clicked"
+},{
+  name: "onDoubleClick",
+  description: "Event triggered when a row is double clicked"
+},{
+  name: "onDataLoaded",
+  description: "Event triggered when the data is updated"
+},{
+  name: "onPaginatedDataLoaded",
+  description: "Event triggered when the paginated data is updated"
+}]
+
+extraComponents: "gridData"

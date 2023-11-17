@@ -1,0 +1,69 @@
+directive: "o-image"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "clear-button", "validators", "label-visible", "hide-required-marker"]
+}]
+
+attributes: [{
+  name: "empty-image",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Image displayed when the component has no value. It has preference over the `empty-icon` attribute"
+},{
+  name: "empty-icon",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'}) displayed when the component has no value"
+},{
+  name: "not-found-image",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Image displayed when the component value returns a 404 error."
+},{
+  name: "show-controls",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the selection controls"
+},{
+  name: "auto-fit",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the image size is automatically adjusted"
+},{
+  name: "height",
+  type: "number",
+  default: "",
+  required: "",
+  description: "Indicates the height of image component in pixels (px) or percentage (%)"
+},{
+  name: "full-screen-button",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the maximize button"
+},{
+  name: "accept-file-type",
+  type: "string",
+  default: "image/*",
+  required: "",
+  description: "File types allowed on the image input, serparated by ';'. Accepted values: <image_extension>, 'image/*'"
+},{
+  name: "max-file-size",
+  type: "number",
+  default: "",
+  required: "",
+  description: "Maximum file size (bytes) allowed"
+}]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  outputs: ["onChange", "onValueChange", "onFocus", "onBlur"]
+}]

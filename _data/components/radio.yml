@@ -1,0 +1,46 @@
+directive: "o-radio"
+
+inheritedAttributes: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  attributes: ["attr", "label", "tooltip", "tooltip-position", "tooltip-show-delay", "data", "automatic-binding", "automatic-registering", "enabled", "required", "sql-type", "width", "read-only", "validators", "label-visible", "hide-required-marker"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservice/api",
+  attributes: ["static-data", "entity", "service", "columns", "value-column", "value-column-type", "parent-keys", "visible-columns", "separator", "query-on-init", "query-on-bind", "query-on-event", "query-method", "service-type", "query-with-null-parent-keys", "set-value-on-value-change", "translate", "sort"]
+}]
+
+inheritedOutputs: [{
+  component: "FormDataComponent",
+  path: "components/input/overview/api",
+  outputs: ["onChange", "onValueChange"]
+},{
+  component: "OFormServiceComponent",
+  path: "components/input/overviewservice/api",
+  outputs: ["onSetValueOnValueChange"]
+}]
+
+attributes: [{
+  name: "layout",
+  type: "row | column",
+  default: "column",
+  required: "",
+  description: "Indicates the disposition of the radio buttons"
+},{
+  name: "label-position",
+  type: "before | after",
+  default: "after",
+  required: "",
+  description: "Indicates whether the labels should appear after or before the radio buttons"
+}]
+
+methods: [{
+  name: "getOptionDescriptionValue",
+  description: "Returns the displayed text for the provided radio group element",
+  parameters: "element",
+  returns: "string"
+},{
+  name: "getDescriptionValue",
+  description: "Returns the displayed text for the selected radio group element",
+  returns: "string"
+}]
