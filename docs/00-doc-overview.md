@@ -7,6 +7,10 @@ nav_order: 1
 
 {% include base_path %}
 
+# Welcome to the documentation of the web development framework for building the future
+
+---
+
 How to read and use this documentation.
 
 ---
