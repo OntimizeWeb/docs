@@ -33,7 +33,7 @@ jobs:
         uses: helaili/jekyll-action@master
         with:
           jekyll_env: deploy
-          jekyll_build_options: --baseurl /docs/${{ env.TARGET_PATH }}
+          jekyll_build_options: --baseurl /docs/${{ env.TARGET_PATH }} --config _config.yml,_config.deploy.yml
           target_branch: gh-pages
           target_path: ${{ env.TARGET_PATH }}
           keep_history: true
