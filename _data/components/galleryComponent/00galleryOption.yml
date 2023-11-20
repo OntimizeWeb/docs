@@ -23,7 +23,7 @@ attributes: [{
   description : "Sets the same width as browser"
 },{
   name: "layout",
-  type: "GalleryLayout.ThumbnailsTop | GalleryLayout.ThumbnailsBottom",
+  type: "GalleryLayout.ThumbnailsTop | GalleryLayout.ThumbnailsBottom | GalleryLayout.ThumbnailsLeft |  GalleryLayout.ThumbnailsRight",
   default : "GalleryLayout.ThumbnailsBottom",
   description : "Sets thumbnails position"
 },{
