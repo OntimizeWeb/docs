@@ -21,8 +21,7 @@ There are several ways to start:
 
 **b)** And for those who don’t want to mess around with Git, you can download the QuickStart as a ZIP file.
 
-[<i class="fas fa-download"></i> Download QuickStart](https://github.com/ontimizeweb/ontimize-web-ngx-quickstart/archive/main.zip){: .btn .btn--success}
-
+[Download QuickStart](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/archive/refs/heads/15.x.x.zip){: .btn .btn--success}
 
 
 ## 2. Install npm packages and run
