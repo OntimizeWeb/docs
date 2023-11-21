@@ -21,30 +21,30 @@ The simplest way of deploying your application is to build the development versi
 ```bash
     npm run production
 ```
-This command triggers the `production` script defined in the *package.json* file of your application (`ng build --aot=false --target -prod`).
+This command triggers the `production` script defined in the *package.json* file of your application (`ng build --configuration production  --base-href=/`) The production profile it is defined in the *angular.json* file.
 
 2. Copy everything within the output folder (*dist* by default) to a folder on the server.
 
-3. If you copy the files into a server sub-folder, modify the `production` script in the *package.json* and append the build flag, `--base-href` and set the `<base href>` appropriately.
+3. If you copy the files into a server sub-folder, modify the `production` script in the *package.json* and change the build flag, `--base-href` and set the `<base href>` appropriately.
 
 4. Configure the web server to redirect request for missing files to `index.html`. You can reed more about this topic in the [Angular docs](https://angular.io/guide/deployment#routed-apps-must-fallback-to-indexhtml){:target="_blank"}.
 
 {: .note }
->: This is *not* a production deployment. It's not optimized and it won't be fast for users. It might be good enough for sharing your progress and ideas internally with managers, teammates, and other stakeholders.
+> This is *not* a production deployment. It's not optimized and it won't be fast for users. It might be good enough for sharing your progress and ideas internally with managers, teammates, and other stakeholders.
 
 ## Optimize for production
 
 Although deploying directly from the development environment works, you can generate an optimized build by running the following command
 
 ```bash
-  npm run production-aot
+  npm run production-aot-server
 ```
-This command triggers the `production-aot` script defined in the *package.json* file of your application (`ng build --aot`).
+This command triggers the `production-aot-server` script defined in the *package.json* file of your application (`ng build --configuration production --base-href=/your_application_path_in_the_server`).
 
 
 ## Simple deployment vs. Optimized deployment
 
-Comparision of the load time for the [OntimizeWeb Playground](https://ontimizeweb.github.io/ontimize-web-ngx-playground){:target="_blank"}.
+Comparision of the load time for the [OntimizeWeb Playground](https://try.imatia.com/ontimizeweb/v15/playground/){:target="_blank"}.
 
 * Simple deployment:
 ![image-JIT]({{ base_path }}/images/comparatives/playground-JIT.PNG){: .align-center}
@@ -56,7 +56,7 @@ Comparision of the load time for the [OntimizeWeb Playground](https://ontimizewe
 
 Once you have the production version of your application you can deploy it on a web server or to create cross platform applications using [Apache Cordova](https://cordova.apache.org/docs/en/latest/){:target="_blank"}.
 
-After wrapping your application with Apache Cordova, check you has accoplished the installation and configuration requirements [here]({{base_path}}/deploy/cordova-requirements/){:target="_blank"}.
+After wrapping your application with Apache Cordova, check you has accoplished the installation and configuration requirements [here]({{base_path}}/deployment/cordova-requirements/){:target="_blank"}.
 
 Follow the next steps:
 
