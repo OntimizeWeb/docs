@@ -37,7 +37,6 @@ ontimize-web-ngx-quickstart
 |  |  ├──  main/                              # Contains application main module
 |  |  |  ├──  customers/                      # Customes module folder
 |  |  |  |  ├──  detail/
-|  |  |  |  ├──  edit/
 |  |  |  |  ├──  home/
 |  |  |  |  ├──  new/
 |  |  |  |  |──  customers-routing.module.ts  # Customers routing module
@@ -46,20 +45,26 @@ ontimize-web-ngx-quickstart
 |  |  |  |──  ...
 |  |  |  |
 |  |  |  |──  main.routing.module.ts  # Main routing module
+|  |  |  |──  main-theme.scss
 |  |  |  |──  main.component.html
 |  |  |  |──  main.component.scss
 |  |  |  |──  main.component.ts
 |  |  |  └──  main.modules.ts         # Main module definition
 |  |  |
 |  |  |──  shared/                            # Shared module folder.
+|  |  |  ├──  accounts-card/                  # Custom component used on de accounts home page card
+|  |  |  ├──  ...
+|  |  |  ├──  movement-types-renderer/        # Custom component (cell renderer) definition
+|  |  |  |──  style-manager/                  # Class for managing stylesheets
 |  |  |  |──  app.menu.config.ts              # Application menu definition
 |  |  |  |──  app.services.config.ts          # Ontimize JEE services path configuration file
-|  |  |  |──  movement-types-cell-renderer.ts # Custom component (cell renderer) definition
+|  |  |  |──  constant.ts                     # File used to store constant variables on the app like the primary color code
 |  |  |  └──  shared.modules.ts               # Shared module definition
 |  |  |
 |  |  |──  app-routing.module.ts  # Application routing module
 |  |  |──  app.component.html
 |  |  |──  app.component.scss
+|  |  |──  app.component.spec.ts
 |  |  |──  app.component.ts       # Application bootstrap component
 |  |  |──  app.config.ts          # Application configuration file
 |  |  └──  app.module.ts          # Application module definition
@@ -67,7 +72,8 @@ ontimize-web-ngx-quickstart
 |  |──  assets/     # Application assets folder
 |  |  ├──  css/     # Application css/scss files
 |  |  |──  i18n/    # JSON bundle files
-|  |  |──  images/  # Images used in the application.
+|  |  |──  icons/   # Icons used in the application
+|  |  |──  images/  # Images used in the application
 |  |  └──  js/      # Application javascript code files
 |  |
 |  |──  environments/
@@ -80,15 +86,15 @@ ontimize-web-ngx-quickstart
 |  |──  test.ts              # Entry point for your unit tests. It has some custom configuration that might be unfamiliar, but it's not something you'll need to edit.
 |  └──  manifest.webmanifest # The web app manifest is a file that tells the browser about your Progressive Web App (app name, icons, URL)
 |
-|──  angular.json       # Angular CLI configuration
-|──  package.json           # npm package dependencies for the project
-|──  tsconfig.app.json      # TypeScript Application configuration
-|──  tsconfig.json          # TypeScript General configuration
-└──  tslint.json            # Linting configuration for TSLint together with Codelyzer, used when running ng lint. Linting helps keep your code style consistent.
-└──  ngsw-config.json       # Specifies which files and data URLs the Angular service worker should cache and how it should update the cached files and data for PWA.
-└──  browserlist            # Config file to share target browsers between different front-end tools.
-└──  tsconfig.app.json    # TypeScript compiler configuration for the Angular app
-└──  tsconfig.spec.json   # TypeScript compiler configuration for the unit tests
+|──  angular.json               # Angular CLI configuration
+|──  browserlist                # Config file to share target browsers between different front-end tools.
+|──  karma.conf.js              # Karma configuration file. More information here: https://karma-runner.github.io/1.0/config/configuration-file.html
+|──  ngsw-config.json           # Specifies which files and data URLs the Angular service worker should cache and how it should update the cached files and data for PWA.
+|──  package.json               # npm package dependencies for the project
+|──  sonar-project.properties   # SonarCloud UI properties file
+|──  tsconfig.app.json          # TypeScript Application configuration
+|──  tsconfig.json              # TypeScript General configuration
+└──  tsconfig.spec.json         # TypeScript compiler configuration for the unit tests
 ```
 
 ## Project configuration
