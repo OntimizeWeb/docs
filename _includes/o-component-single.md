@@ -37,6 +37,7 @@
   {% assign style_overview='display:none'%}
   {% assign style_api='display:block'%}
   {% assign api_class='active'%}
+  {% include breadcrumbs.html %}
 {% else %}
   {% assign style_overview='display:block'%}
   {% assign style_api='display:none'%}
