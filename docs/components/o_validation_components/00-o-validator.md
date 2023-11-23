@@ -1,6 +1,6 @@
 ---
 permalink: /components/input/validator/overview
-title: "OValidatorComponent"
+title: Validator component
 comp: validator
 layout: o-component
 nav_exclude: true

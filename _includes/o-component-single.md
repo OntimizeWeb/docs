@@ -39,6 +39,9 @@
   {% assign api_class='active'%}
   {% include breadcrumbs.html %}
 {% else %}
+  {% if nav_exclude %}
+    {% include breadcrumbs.html %}
+  {% endif %}
   {% assign style_overview='display:block'%}
   {% assign style_api='display:none'%}
   {% assign overview_class='active'%}
