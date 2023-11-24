@@ -72,7 +72,7 @@
 
 {%- assign activation_title = page.grand_parent | default: page.parent | default: page.title -%}
 {%- assign activation_first_level = activation_pages
-      | where_exp: "item", "item.parent == nil or 'item.url.slice: -3, 3' == 'api'-%}
+      | where_exp: "item", "item.parent == nil or 'item.url.slice: -3, 3' == 'api'" -%}
 {%- include sorted_pages.html pages = activation_first_level -%}
 {%- for activation_page in sorted_pages -%}
   {%- if activation_page.title == activation_title -%}
