@@ -14,7 +14,7 @@ nav_order: 10
 Install `ontimize-web-ngx` from `npm`:
 
 ```bash
-npm install ontimize-web-ngx --save
+npm install ontimize-web-ngx
 ```
 
 After installing `ontimize-web-ngx` you must install all its required dependencies.
@@ -60,15 +60,17 @@ import { CONFIG } from './app.config';
     imports: [ ONTIMIZE_MODULES, OntimizeWebModule ],
     providers: [
         { provide: APP_CONFIG, useValue: CONFIG },
-        ONTIMIZE_PROVIDERS
+        ...ONTIMIZE_PROVIDERS
     ]
     ...
 })
 ```
 
+The include `...ONTIMIZE_PROVIDERS` on the `providers` array it is needed to import all elements from the `ONTIMIZE_PROVIDERS` array. Check more information of the **spread operator** [here](https://basarat.gitbook.io/typescript/future-javascript/spread-operator){:target="_blank"}.
+
 ## Add the OntimizeWeb styles to your application
 
-Import the OntimizeWeb styles in your application. If you are using the `angular-cli` you must add the following styles in your `.angular-cli.json` file:
+Import the OntimizeWeb styles in your application. If you are using the `angular-cli` you must add the following styles in your `angular.json` file:
 
 ```
 ...
@@ -79,25 +81,23 @@ Import the OntimizeWeb styles in your application. If you are using the `angular
 ...
 ```
 
+More information about the `angular.json` style configuration [here](https://angular.io/guide/workspace-config#styles-and-scripts-configuration){:target="_blank"}.
+
 ## Add the OntimizeWeb theme to your application
 
 Import the OntimizeWeb theme in your application.
 
 ```css
-@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
 
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
-@include ontimize-theme-styles($theme);
-
-// @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
-// @include ontimize-theme-styles-lite($theme);
-
-/*
-* After define theme, it is necessary to transfer color to Ontimize Web framework
-*/
-@import 'node_modules/ontimize-web-ngx/theme.scss';
-@include o-material-theme($theme);
+/* Include ontimize styles */
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
 ```
+
+This file needs to be included in the array of the [previous section](#add-the-ontimizeweb-theme-to-your-application).
+
+More information about the **Ontimize customization** [here]({{ base_path }}/customization/){:target="_blank"}.
 
 ## System.js
 If you are using SystemJS, then you need:

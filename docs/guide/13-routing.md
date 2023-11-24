@@ -20,7 +20,7 @@ As you can see in the '*AppModule*' definition [here]({{ base_path }}/guide/apps
 
 ```bash
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from 'ontimize-web-ngx';
 
 export const routes: Routes = [
@@ -36,9 +36,9 @@ export const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
-const opt = {
-  enableTracing: false
-  // true if you want to print navigation routes
+const opt: ExtraOptions = {
+    enableTracing: false
+    // true if you want to print navigation routes
 };
 
 @NgModule({
@@ -124,6 +124,7 @@ export const routes: Routes = [
       { path: 'branches', loadChildren: () => import('./branches/branches.module').then(m => m.BranchesModule) },
       { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
       { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) },
+      { path: 'reports', loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule) },
       { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
       { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) }
     ]
@@ -145,22 +146,23 @@ This is the routing for the customers module:
 
 ```bash
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { CustomersDetailComponent } from './detail/customers-detail.component';
-import { CustomersEditComponent } from './edit/customers-edit.component';
-import { CustomersHomeComponent } from './customers-home.component';
+import { CustomersHomeComponent } from './home/customers-home.component';
 import { CustomersNewComponent } from './new/customers-new.component';
-import { AccountsModule } from '../accounts/accounts.module';
 
-export function loadAccountsModule() { return AccountsModule; }
+export const CUSTOMERS_MODULE_DECLARATIONS = [
+  CustomersDetailComponent,
+  CustomersHomeComponent,
+  CustomersNewComponent
+];
 
 export const routes: Routes = [
   { path: '', component: CustomersHomeComponent },
   { path: 'new', component: CustomersNewComponent },
   { path: ':CUSTOMERID', component: CustomersDetailComponent },
-  { path: ':CUSTOMERID/edit', component: CustomersEditComponent },
-  { path: ':CUSTOMERID/accounts', loadChildren: loadAccountsModule }
+  { path: ':CUSTOMERID/accounts', loadChildren: () => import('../accounts/accounts.module').then(m => m.AccountsModule) }
 ];
 
 @NgModule({
