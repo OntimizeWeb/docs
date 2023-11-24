@@ -17,13 +17,14 @@
 <nav class="breadcrumbs">
   <ol>
     {% assign crumbs = page.url | split: '/' %}
+    {% assign crumbs = crumbs - crumbs | last %}
     {% for crumb in crumbs offset: 1 %}
       {% if forloop.first %}
         <li>
-          <a href="{{ base_path }}/"><span>{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "Home" }}</span></a>
+          <a href="{{ base_path }}/introduction/"><span>Introduction</span></a>
         </li>
       {% endif %}
-      {% if forloop.last %}
+      {% if forloop.last  %}
         <li>{{ page.title }}</li>
       {% else %}
         <li>
