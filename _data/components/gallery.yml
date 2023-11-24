@@ -74,12 +74,12 @@ methods: [{
   returns: "boolean"
 },{
   name: "canMoveThumbnailsBottom()",
-  description: "Returns true if you can move thumbnails to bpttom",
+  description: "Returns true if you can move thumbnails to bottom",
   returns: "boolean"
 },{
   name: "changeThumbnailsColumns()",
   description: "Change the number of thumbnail columns"
 },{
   name: "changeThumbnailsRows()",
-  description: "Change  the number of thumbnail rows"
+  description: "Change the number of thumbnail rows"
 }]
