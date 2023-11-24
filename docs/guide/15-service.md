@@ -13,7 +13,7 @@ This section describes the **OntimizeWeb** services an how to extend them to add
 
 ## Ontimize services
 
-OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://www.ontimize.com/){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`. You must indicate which type of service the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}.
+OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://github.com/ontimize){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`. You must indicate which type of service the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration-file){:target="_blank"}.
 
 You can also use your own service and adapt its response to OntimizeWeb's standard response. This will be explained later in this section.
 
@@ -70,28 +70,28 @@ The *CRUD* (Create, Read, Update and Delete) methods are used to perform standar
   * **kv**: indicates the filtering values. An empty object means that no filter will be applied into the request.
   * **av**: indicates the columns that you want to request.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
 * **advancedQuery**: performs a request to get **paginated** data from the server.
   * **kv**: indicates the filtering values. An empty object means that no filter will be applied into the request.
   * **av**: indicates the columns that you want to request.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/15.x.x/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
   * **offset**: the index of the first item requested in the collection.
   * **pagesize**: the number of items requested.
   * **orderby**: object with the sorting that will be applied to the request result.
 * **insert**: performs a insert operation request to the server.
   * **av**: indicates the values to insert.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/15.x.x/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
 * **update**: performs an update operation request to the server.
   * **kv**: indicates the filtering values for performing the update.
   * **av**: indicates the values to update.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/15.x.x/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
 * **delete**: performs an delete operation request to the server.
   * **kv**: indicates the filtering values for performing the deletion.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/15.x.x/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
 
 ### Server response interface
 The standard response of the requests made to Ontimize based servers always follows the following structure:
@@ -173,6 +173,7 @@ You can override or extend the functionality of the services defined in **Ontimi
 | `AuthService` | `O_AUTH_SERVICE` | Service used for authentication (since *ontimize-web-ngx@8.3.0*) |
 | `OReportService` | `O_REPORT_SERVICE` | Service used to generate reports (since *ontimize-web-ngx@8.7.0*) |
 | `OntimizeExportDataProviderService` and `OntimizeExportDataProviderService3X` | `O_EXPORT_DATA_SERVICE` | Service used to provide data and styles to table exports (since *ontimize-web-ngx@8.8.0*) |
+| `OTableGlobalConfig` | `O_TABLE_GLOBAL_CONFIG` | Service used to set some [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} global options (since *ontimize-web-ngx@8.7.3*) |
 
 
 For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.
@@ -402,7 +403,7 @@ export class AppModule { }
 At this point every **OntimizeWeb** component will use your recently created `StarWarsService` service for communicating with the backend.
 
 {: .note }
-> `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration){:target="_blank"}. There is one attribute for each type of service.
+> `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration-file){:target="_blank"}. There is one attribute for each type of service.
 
 ### Use your service in a specific component
 
