@@ -10341,6 +10341,39 @@ html > body .home .home-footer > div > a {
   text-decoration: none;
 }
 
+@media (min-width: 50rem) {
+  .breadcrumbs {
+    margin-top: -1rem;
+  }
+}
+.breadcrumbs ol {
+  padding-left: 0;
+  margin-bottom: 0.75rem;
+  list-style: none;
+}
+.breadcrumbs li {
+  display: table-cell;
+  font-size: 0.6875rem !important;
+}
+@media (min-width: 31.25rem) {
+  .breadcrumbs li {
+    font-size: 0.75rem !important;
+  }
+}
+.breadcrumbs li::before {
+  display: none;
+}
+.breadcrumbs li::after {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  color: #959396;
+  content: "/";
+}
+.breadcrumbs li:last-child::after {
+  content: "";
+}
+
 .btn:focus {
   display: none;
 }
