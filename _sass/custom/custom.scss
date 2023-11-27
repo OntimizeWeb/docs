@@ -609,11 +609,6 @@ a:not([class]) {
   }
 }
 
-// Header version changer
-.select {
-  border-style: none;
-}
-
 // Default side bar
 .nav-list {
   .nav-list-item {
@@ -646,6 +641,7 @@ a:not([class]) {
   .select {
     border-style: none;
     background: transparent;
+    color: $dark-74;
   }
 
   .github-div {
