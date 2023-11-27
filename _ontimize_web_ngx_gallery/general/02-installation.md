@@ -26,7 +26,7 @@ You must add the module styles definition in your '*.angular-cli.json*' file sty
 ],
 ...
 ```
-
+-->
 ### Add the library theming
 In your application '*app.scss*' file you should add the library theme.
 
@@ -36,7 +36,7 @@ In your application '*app.scss*' file you should add the library theme.
 @include o-gallery-theme($theme);
 ...
 ```
--->
+
 ### Import in an application module
 
 Import the Ontimize Web gallery module in the app module where you want to use it.

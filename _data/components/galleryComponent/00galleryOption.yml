@@ -23,7 +23,7 @@ attributes: [{
   description : "Sets the same width as browser"
 },{
   name: "layout",
-  type: "GalleryLayout.ThumbnailsTop | GalleryLayout.ThumbnailsBottom",
+  type: "GalleryLayout.ThumbnailsTop | GalleryLayout.ThumbnailsBottom | GalleryLayout.ThumbnailsLeft |  GalleryLayout.ThumbnailsRight",
   default : "GalleryLayout.ThumbnailsBottom",
   description : "Sets thumbnails position"
 },{
@@ -120,12 +120,12 @@ attributes: [{
   name: "thumbnailsColumns",
   type: "number",
   default : "4",
-  description : "Columns count"
+  description : "Columns count. Value is 4 when layout is GalleryLayout.ThumbnailsTop or GalleryLayout.ThumbnailsBottom or is 1 when GalleryLayout.ThumbnailsRight or GalleryLayout.ThumbnailsLeft "
 },{
   name: "thumbnailsRows",
   type: "number",
   default : "1",
-  description : "Rows count"
+  description : "Rows count. Value is 1 when layout is GalleryLayout.ThumbnailsTop or GalleryLayout.ThumbnailsBottom or is 4 when GalleryLayout.ThumbnailsRight or GalleryLayout.ThumbnailsLeft"
 },{
   name: "thumbnailsPercent",
   type: "number",
