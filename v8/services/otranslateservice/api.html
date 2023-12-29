@@ -19,7 +19,7 @@
 
 
 
-<title>Currency input - Ontimize Web</title>
+<title>OTranslateService - Ontimize Web</title>
 
 
 
@@ -29,11 +29,11 @@
 
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Ontimize Web">
-<meta property="og:title" content="Currency input">
+<meta property="og:title" content="OTranslateService">
 
 
-  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/components/input/currency/overview">
-  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/components/input/currency/overview">
+  <link rel="canonical" href="https://ontimizeweb.github.io/docs/v8/services/otranslateservice/api">
+  <meta property="og:url" content="https://ontimizeweb.github.io/docs/v8/services/otranslateservice/api">
 
 
 
@@ -42,9 +42,9 @@
 
 
   <meta name="twitter:site" content="@imatiainnova">
-  <meta name="twitter:title" content="Currency input">
+  <meta name="twitter:title" content="OTranslateService">
   <meta name="twitter:description" content="     On This Page  ">
-  <meta name="twitter:url" content="https://ontimizeweb.github.io/components/input/currency/overview">
+  <meta name="twitter:url" content="https://ontimizeweb.github.io/services/otranslateservice/api">
 
   
     <meta name="twitter:card" content="summary">
@@ -207,7 +207,7 @@
 
 
             
-              <li class="masthead__menu-item masthead__menu-item-active"><a href="https://ontimizeweb.github.io/docs/v8/components/">Components</a>
+              <li class="masthead__menu-item"><a href="https://ontimizeweb.github.io/docs/v8/components/">Components</a>
             
             </li>
 
@@ -320,18 +320,131 @@
                   
               
                   
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
                       
+                            
                       
+                  
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
+          
+              
+                  
+              
+                  
+              
                  
       
+          
+              
+                  
+                      
+                            
+                      
+                            
+                      
+                  
+              
+                  
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
+          
+              
+                  
+              
                  
       
+          
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
+                  
+              
                  
       
+          
+              
+                  
+              
+                  
+                      
+                            
+                      
+                  
+              
+                  
+              
+                  
+              
                  
       
     
@@ -345,10 +458,10 @@
 
       
        
-      <li class="nav-component-category active-component-category active-parent">
+      <li class="nav-component-category ">
         
           
-            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder-open nav__sub-title-icon"></i>Input</span>
+            <span class="nav__sub-title"  onclick="onNavigationItemClick(this)"><i class="far fa-folder orange-icon nav__sub-title-icon"></i>Input</span>
           
 
         
@@ -396,7 +509,7 @@
             
             
 
-            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/currency/overview" class="active ">Currency</a></li>
+            <li><a href="https://ontimizeweb.github.io/docs/v8/components/input/currency/overview" class=" ">Currency</a></li>
           
             
             
@@ -812,7 +925,7 @@
 
   <article class="page  o-component " itemscope itemtype="http://schema.org/CreativeWork">
     
-    <meta itemprop="headline" content="Currency input">
+    <meta itemprop="headline" content="OTranslateService">
     
     <meta itemprop="description" content="     On This Page  ">
     
@@ -822,7 +935,7 @@
     <div class="page__inner-wrap">
       
       <header>
-        <h1 class="page__title" itemprop="headline">Currency input
+        <h1 class="page__title" itemprop="headline">OTranslateService
 </h1>
         
       </header>
@@ -851,7 +964,7 @@
 <script type="text/javascript">
 
   function openTab(evt, tabName) {
-    var url="https://ontimizeweb.github.io/docs/v8/components/input/currency/overview";
+    var url="https://ontimizeweb.github.io/docs/v8/services/otranslateservice/api";
     url+='/../'+tabName;
     var loc_array = document.location.href.split('/');
     if (loc_array[loc_array.length - 1] !== tabName) {
@@ -867,12 +980,12 @@
 
 <!-- Tab links -->
 <div class="o-tab">
-  <button class="o-tablinks active"  onclick="openTab(event, 'overview')">Overview</button>
-  <button class="o-tablinks " class="o-tablinks" onclick="openTab(event, 'api')">API</button>
+  <button class="o-tablinks "  onclick="openTab(event, 'overview')">Overview</button>
+  <button class="o-tablinks active" class="o-tablinks" onclick="openTab(event, 'api')">API</button>
 </div>
 
 <!-- OVERVIEW -->
-<div id="overview" class="o-tabcontent" style="display:block">
+<div id="overview" class="o-tabcontent" style="display:none">
  <!-- <aside class="sidebar__right">
 <nav class="toc" markdown="1">
 <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
@@ -886,375 +999,280 @@
 
   
 
-  
-<aside class="sidebar__right">
+  <aside class="sidebar__right">
 <nav class="toc">
     <header><h4 class="nav__title"><i class="far fa-file-alt"></i> On This Page</h4></header>
 <ul class="toc__menu" id="markdown-toc">
-  <li><a href="#basic-example" id="markdown-toc-basic-example">Basic example</a></li>
-  <li><a href="#validation" id="markdown-toc-validation">Validation</a></li>
+  <li><a href="#define-the-translations" id="markdown-toc-define-the-translations">Define the translations</a></li>
+  <li><a href="#init-the-otranslateservice-for-your-application" id="markdown-toc-init-the-otranslateservice-for-your-application">Init the <em>OTranslateService</em> for your application.</a></li>
 </ul>
 
   </nav>
 </aside>
 
-<p>The <code class="language-plaintext highlighter-rouge">o-currency-input</code> component is used in <a href="https://ontimizeweb.github.io/docs/v8/components/form/overview">forms</a> for getting or displaying amounts of money input submitted by the user.</p>
+<p>For translations, <em>Ontimize Web</em> use <code class="language-plaintext highlighter-rouge">OTranslateService</code> which is a <em>service</em> and a <em>pipe</em> to handle any dynamic and static content you can help you make your app available in multiples languages.</p>
 
-<p>The currency input is automatically registered on its parent <code class="language-plaintext highlighter-rouge">o-form</code>, which provides the value for the input programatically. Its value can be also set manually via the <code class="language-plaintext highlighter-rouge">data</code> parameter. This and other attributes are explained on the <strong>API</strong> section of this page.</p>
+<h2 id="define-the-translations">Define the translations</h2>
 
-<h2 id="basic-example">Basic example</h2>
-<p><img src="https://ontimizeweb.github.io/docs/v8/images/components/inputs/o-currency-input.png" alt="Currency input component" class="comp-example-img" /></p>
+<p>Once you&#8217;ve installed <code class="language-plaintext highlighter-rouge">ontimize-web-ngx</code>, you can put your translations in a json file (locale_id.json) in <code class="language-plaintext highlighter-rouge">src/assets/i18n</code> folder. There must be at least one language translation file for the resulting translation. <code class="language-plaintext highlighter-rouge">OTranslateService</code> understands nested JSON objects.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;o-form</span> <span class="na">editable-detail=</span><span class="s">"no"</span> <span class="na">show-header=</span><span class="s">"no"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;o-currency-input</span> <span class="na">attr=</span><span class="s">"price"</span> <span class="na">label=</span><span class="s">"Price"</span> <span class="na">data=</span><span class="s">"Jhon Doe"</span><span class="nt">&gt;&lt;/o-currency-input&gt;</span>
-    <span class="nt">&lt;o-currency-input</span> <span class="na">attr=</span><span class="s">"amount"</span> <span class="na">label=</span><span class="s">"Amount"</span> <span class="na">data=</span><span class="s">"Toronto"</span> <span class="na">read-only=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-currency-input&gt;</span>
-    <span class="nt">&lt;o-currency-input</span> <span class="na">attr=</span><span class="s">"balance"</span> <span class="na">label=</span><span class="s">"Balance"</span> <span class="na">data=</span><span class="s">"Canada"</span> <span class="na">enabled=</span><span class="s">"no"</span><span class="nt">&gt;&lt;/o-currency-input&gt;</span>
-<span class="nt">&lt;/o-form&gt;</span>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"HOME"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"HELLO"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>You can then access the value by using the dot notation, in this case HOME.HELLO.</p>
+
+<h2 id="init-the-otranslateservice-for-your-application">Init the <em>OTranslateService</em> for your application.</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Subscription</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OTranslateService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">ontimize-web-ngx</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
+    <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">template</span><span class="p">:</span> <span class="s2">`
+        ...
+    `</span>
+<span class="p">})</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
+
+  <span class="kr">private</span> <span class="nx">translateServiceSubscription</span> <span class="p">:</span><span class="nx">Subscription</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">translate</span><span class="p">:</span> <span class="nx">OTranslateService</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">translateServiceSubscription</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">translateService</span><span class="p">.</span><span class="nx">onLanguageChanged</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// your code</span>
+    <span class="p">});</span>
+
+  <span class="p">});</span>
+
+
+  <span class="kr">public</span> <span class="nx">ngOnDestroy</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">translateServiceSubscription</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">translateServiceSubscription</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
-<p>You can see this and more examples of this component in the <a href="https://try.imatia.com/ontimizeweb/playground/main/inputs/currency" target="_blank">OntimizeWeb playground</a>.</p>
 
-<h2 id="validation">Validation</h2>
-<p>The <code class="language-plaintext highlighter-rouge">o-currency-input</code> shows automatically an error message when the <code class="language-plaintext highlighter-rouge">required</code> attribute is set to &#8220;yes&#8221; and there is no value on the input.</p>
+<p>Having the following entry in the bundle file:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"EXAMPLE"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example bundle text: {0}, {1}"</span><span class="p">,</span><span class="w"> 
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>User can add in the html file:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    {{ 'EXAMPLE' | oTranslate : { values: ['foo', 'bar'] }}}"
+
+</code></pre></div></div>
+
+<p>And get the following result:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      'Example bundle text: foo, bar' 
+</code></pre></div></div>
 
 </div>
 
 <!-- API -->
-<div id="api" class="o-tabcontent" style="display:none">
+<div id="api" class="o-tabcontent" style="display:block">
   
 
 
 
  
-  <h2 id="Currency input" >Currency input</h2>
+  <h2 id="OTranslateService" >OTranslateService</h2>
  
 
   
-    <p><strong class="grey-color" id="o-currency-input">Directive:</strong> o-currency-input</p>
   
-  
-
-
+    <p><strong class="grey-color" id="OTranslateService">Class:</strong> OTranslateService</p>
   
 
 
   
-    <h3 id="inherited-inputs" class="grey-color">Inherited inputs</h3>
-    <ul>
-    
-      
-      <li>
-        from  <a href="https://ontimizeweb.github.io/docs/v8/components/input/overview/api" rel="permalink">FormDataComponent:</a>
-        <ul class="attributes-list">
-          
-          
-            <li> attr </li>
-          
-            <li> automatic-binding </li>
-          
-            <li> automatic-registering </li>
-          
-            <li> clear-button </li>
-          
-            <li> data </li>
-          
-            <li> enabled </li>
-          
-            <li> hide-required-marker </li>
-          
-            <li> label </li>
-          
-            <li> label-visible </li>
-          
-            <li> read-only </li>
-          
-            <li> required </li>
-          
-            <li> select-all-on-click </li>
-          
-            <li> sql-type </li>
-          
-            <li> tooltip </li>
-          
-            <li> tooltip-position </li>
-          
-            <li> tooltip-show-delay </li>
-          
-            <li> validators </li>
-          
-            <li> width </li>
-          
-        </ul>
-        
-      <li>
-        from  <a href="https://ontimizeweb.github.io/docs/v8/components/input/integer/api" rel="permalink">o-integer-input:</a>
-        <ul class="attributes-list">
-          
-          
-            <li> grouping </li>
-          
-            <li> locale </li>
-          
-            <li> max </li>
-          
-            <li> min </li>
-          
-            <li> step </li>
-          
-            <li> thousand-separator </li>
-          
-        </ul>
-        
-      <li>
-        from  <a href="https://ontimizeweb.github.io/docs/v8/components/input/real/api" rel="permalink">o-real-input:</a>
-        <ul class="attributes-list">
-          
-          
-            <li> decimal-separator </li>
-          
-            <li> max-decimal-digits </li>
-          
-            <li> min-decimal-digits </li>
-          
-        </ul>
-        
-      </li>
-    </ul>
+
+
   
 
 
   
-    
-      <h3 id="inputs" class="grey-color">Inputs</h3>
-    
-    
-    
 
-    
-    
 
-  <table class="attributes-table mdl-data-table">
-    <thead>
-      <tr>
-      
-        
-          
-            <th class=""> Name</th>
-          
-      
-        
-          
-            <th class=""> Since</th>
-          
-      
-        
-          
-            <th class=""> Description</th>
-          
-      
-        
-          
-            <th class=""> Default</th>
-          
-      
-      </tr>
-    </thead>
-    <tbody>
-      
-      
 
-        
-        
+  
 
-  <tr >
+  
+    <h3 id="outputs" class="grey-color">Outputs</h3>
+    <table class="attributes-table mdl-data-table">
+      <thead>
+        <tr>
+        
+          <th class=""> Name</th>
+        
+          <th class=""> Since</th>
+        
+          <th class=""> Description</th>
+        
+        </tr>
+      </thead>
+        <tbody>
         
         
+          <tr>
           
-          
-            
             
             
             
             
 
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>currency-symbol</p>
-</p>
-    
-      <p><i>string</i></p>
-    
-  </td>
+            <td class="" o-component-name>
+              <p>onLanguageChanged</p>
+
+              
+            </td>
           
-        
-          
-          
-            
             
             
             
             
 
-            
-            
-  <td class="" o-component-since >
-    <p class="first">
-</p>
-    
-  </td>
+            <td class="" o-component-since>
+              
+
+              
+            </td>
           
-        
-          
-          
-            
             
             
             
             
 
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Currency code according to <a href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes" target="_blank">ISO 4217</a></p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-            
-            
-            
+            <td class="" o-component-description>
+              <p>Event triggered when the lang change events</p>
 
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>euro (EUR)</p>
-</p>
-    
-  </td>
+              
+            </td>
           
+          </tr>
         
-</tr>
-      
-
-        
-        
-
-  <tr >
-        
-        
-          
-          
-            
-            
-            
-            
-            
-
-            
-            
-  <td class="" o-component-name >
-    <p class="first"><p>currency-symbol-position</p>
-</p>
-    
-      <p><i>left | right</i></p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-            
-            
-            
-
-            
-            
-  <td class="" o-component-since >
-    <p class="first">
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-            
-            
-            
-
-            
-            
-  <td class="" o-component-description >
-    <p class="first"><p>Position of the currency symbol</p>
-</p>
-    
-  </td>
-          
-        
-          
-          
-            
-            
-            
-            
-            
-
-            
-            
-  <td class="" o-component-default >
-    <p class="first"><p>right</p>
-</p>
-    
-  </td>
-          
-        
-</tr>
-      
       </tbody>
-  </table>
-
-  
-
+    </table>
   
 
 
-
   
-    <h3 class="grey-color">Inherited outputs</h3>
-    <ul>
+    <h3 id="methods" class="grey-color">Methods</h3>
       
       
-      <li>
-        from  <a href="https://ontimizeweb.github.io/docs/v8/components/input/overview" rel="permalink">FormDataComponent:</a>
-        <ul class="attributes-list">
-          
-          
-            <li> onBlur </li>
-          
-            <li> onChange </li>
-          
-            <li> onFocus </li>
-          
-            <li> onValueChange </li>
-          
-        </ul>
+    <table>
+      <thead>
+       <tr><th>get</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Gets the translated value of a key or the key if the value was not found</td></tr>
         
-      </li>
-    </ul>
-  
-
-  
-
-
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>text: string, values: any[]</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getBrowserLang</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns the current browser lang if available.</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getCurrentLang</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Returns the lang  currently used.</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>getStoredLanguage</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Get stored language in localstorage</td></tr>
+        
+        
+        <tr><td><strong>Returns</strong></td></tr>
+        <tr><td>string</td></tr>
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>setAppLang</th></tr>
+       </thead>
+      <tbody>
+        <tr><td></td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>lang: string</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>setDefaultLang</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Sets the default language to use as a fallback</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>lang: string</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>storeLanguage</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Store language in localstorage</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>lang: string</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
+       <tr><th>use</th></tr>
+       </thead>
+      <tbody>
+        <tr><td></td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>lang: string, observer?: Subscriber<any></td></tr>
+        
+        
+      </tbody>
+    </table>
+      
   
 
 
@@ -1293,14 +1311,13 @@
 
   <nav class="pagination">
     
-      <a href="https://ontimizeweb.github.io/docs/v8/components/input/currency/api" class="pagination--pager" title="Currency input
-">
+      <a href="#" class="pagination--pager disabled">
           <i class="fas fa-arrow-left margin-right"></i>
         Previous
       </a>
     
     
-      <a href="https://ontimizeweb.github.io/docs/v8/components/input/date/api" class="pagination--pager" title="Date input
+      <a href="https://ontimizeweb.github.io/docs/v8/services/otranslateservice/overview" class="pagination--pager" title="OTranslateService
 ">
         Next
         <i class="fas fa-arrow-right margin-left"></i>
