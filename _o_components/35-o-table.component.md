@@ -992,7 +992,7 @@ Below an example.
 ![Table contextual by default ]({{ "/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
 
 The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `delete`,`copy`, `select-all`,`refresh`,`filter`  to `no`.
-You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/overview/){:target='_blank'}component like in the example below.
+You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/overview){:target='_blank'}component like in the example below.
 
 <h3 class="grey-color">Example</h3>
 
@@ -1020,7 +1020,7 @@ You can also include your own `context-menu` with the reference to a [`o-context
 
 ![Table contextual]({{ "/images/components/tabla/table_contextual.png" | absolute_url }}){: .comp-example-img}
 
-For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/overview/){:target='_blank'}.
+For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/overview){:target='_blank'}.
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/contextmenu){:target="_blank"}.
 
