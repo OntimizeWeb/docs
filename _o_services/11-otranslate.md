@@ -1,14 +1,12 @@
 ---
 title: OTranslateService
-permalink: /guide/otranslateservice/
+permalink: /services/otranslateservice/overview
 comp: otranslateservice
-layout: o-component
-under_construction: false
 ---
 
 {% include base_path %} {% include toc %}
 
-For translations, *Ontimize Web* use `OTranslateService` which is a *service* and a *pipe* to handle any dynamic and static content you can help you make your app available in multiples languages. 
+For translations, *Ontimize Web* use `OTranslateService` which is a *service* and a *pipe* to handle any dynamic and static content you can help you make your app available in multiples languages.
 
 
 
@@ -42,16 +40,16 @@ import { OTranslateService } from "ontimize-web-ngx";
     `
 })
 export class AppComponent {
-    
+
   private translateServiceSubscription :Subscription;
 
   constructor(translate: OTranslateService) {
-    this.translateServiceSubscription = this.translateService.onLanguageChanged.subscribe(() => { 
-      // your code 
+    this.translateServiceSubscription = this.translateService.onLanguageChanged.subscribe(() => {
+      // your code
     });
-    
+
   });
-  
+
 
   public ngOnDestroy(): void {
     if (this.translateServiceSubscription) {

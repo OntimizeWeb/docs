@@ -2,54 +2,7 @@ class: "OTranslateService"
 
 propertiesColumns: ["Name", "Type", "Description"]
 
-attributes: [{
-  name: "static-data"
-},{
-  name: "entity"
-},{
-  name: "service"
-},{
-  name: "columns"
-},{
-  name: "value-column"
-},{
-  name: "value-column-type"
-},{
-  name: "parent-keys",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Filtering keys. Separated by ';'. It is possible to use alias on the following way: compCol1:fk1;compCol2:fk2 where compCol1 and compCol2 are component columns and fk1 and fk2 are attributes from form fields.
-  It is also possible to define a column next to the alias for getting that column value instead of the component value: compCol1:fk1[fkCol]"
-},{
-  name: "visible-columns",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Visible columns. Separated by ';'"
-},{
-  name: "description-columns"
-},{
-  name: "separator"
-},{
-  name: "query-on-init"
-},{
-  name: "query-on-bind"
-},{
-  name: "query-on-event"
-},{
-  name: "query-method"
-},{
-  name: "service-type"
-},{
-  name: "query-with-null-parent-keys"
-},{
-  name: "set-value-on-value-change",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Form component attributes whose value will be set when the value of the current component changes due to user interaction. Separated by ';'. Accepted format: `attr | attr:columnName`"
-}]
+
 
 outputs: [{
   name: "onLanguageChanged",
@@ -84,5 +37,15 @@ methods: [{
   name: "getBrowserLang",
   type: "method",
   description:  "Returns the current browser lang if available."
+},{
+  name: "storeLanguage",
+  type: "method",
+  parameters: "lang: string",
+  description:  "Store language in localstorage"
+},{
+  name: "getStoredLanguage",
+  type: "method",
+  returns: "string",
+  description:  "Get stored language in localstorage"
 }
 ]
