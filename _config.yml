@@ -221,6 +221,9 @@ collections:
   ontimize_web_ngx_report:
     output: true
     permalink: /:collection/:path/
+  o_services:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
@@ -291,6 +294,18 @@ defaults:
   - scope:
       path: ""
       type: o_service_components
+    values:
+      layout: o-component
+      layoutClass: o-component
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "components"
+  # _o_services
+  - scope:
+      path: ""
+      type: o_services
     values:
       layout: o-component
       layoutClass: o-component
