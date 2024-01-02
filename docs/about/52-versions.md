@@ -58,6 +58,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
 > The addons theming and tree are now inside the core.
 
 ### Angular 8
+
 <table>
     <thead>
         <tr>
@@ -69,40 +70,43 @@ In this section you can check the different releases of **OntimizeWeb** and its 
             <th>theming*</th>
             <th>report*</th>
             <th>tree*</th>
+            <th>keycloak*</th>
         </tr>
     </thead>
     <tbody>
     <tr>
-      <td>8.14.6</td>
-      <td rowspan="9">8.6.1<br>8.6.0</td>
-      <td rowspan="47">8.0.1</td>
-      <td rowspan="18">8.2.0<br>8.1.1<br>8.1.0</td>
-      <td rowspan="50">8.2.2<br>8.2.1<br>8.2.0<br>8.1.4<br>8.1.3<br>8.1.2<br>8.1.1<br>8.1.0<br>8.0.3<br>8.0.2<br>8.0.1<br>8.0.0</td>
-      <td rowspan="15">8.5.2<br>8.5.1<br>8.5.0</td>
-      <td>8.3.0</td>
-      <td rowspan="19">8.0.2</td>
-    </tr>
+        <td>8.14.6</td>
+        <td rowspan="9">8.6.0</td>
+        <td rowspan="47">8.0.1</td>
+        <td rowspan="18">8.2.0<br>8.1.1<br>8.1.0</td>
+        <td rowspan="50">8.2.2<br>8.2.1<br>8.2.0<br>8.1.4<br>8.1.3<br>8.1.2<br>8.1.1<br>8.1.0<br>8.0.3<br>8.0.2<br>8.0.1<br>8.0.0</td>
+        <td rowspan="15">8.5.2<br>8.5.1<br>8.5.0</td>
+        <td>8.3.0</td>
+        <td rowspan="21">8.0.2</td>
+        <td rowspan="43">8.2.0<br>8.1.0<br>8.0.0</td>
+      </tr>
+     <tr>
+        <td>8.14.5</td>
+        <td rowspan="6">8.2.2<br>8.2.1<br>8.2.0</td>
+      </tr>
+      <tr>
+        <td>8.14.4</td>
+      </tr>
     <tr>
-      <td>8.14.5</td>
-      <td rowspan="17">8.2.2<br>8.2.1<br>8.2.0<br>8.1.1<br>8.1.0</td>
-    </tr>
-    <tr>
-      <td>8.14.4</td>
-    </tr>
-    <tr>
-      <td>8.14.3</td>
-    </tr>
-    <tr>
-      <td>8.14.2</td>
-    </tr>
-    <tr>
-      <td>8.14.1</td>
-    </tr>
+        <td>8.14.3</td>
+      </tr>
+      <tr>
+        <td>8.14.2</td>
+      </tr>
+     <tr>
+        <td>8.14.1</td>
+      </tr>
     <tr>
       <td>8.14.0</td>
     </tr>
-    <tr>
+     <tr>
         <td>8.13.0</td>
+        <td rowspan="11">8.1.1<br>8.1.0</td>
     </tr>
     <tr>
         <td>8.12.2</td>
@@ -234,6 +238,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
         <tr>
             <td>8.2.5</td>
             <td rowspan="2">8.2.1</td>
+            <td rowspan="10">-</td>
         </tr>
         <tr>
             <td>8.2.4</td>
@@ -277,6 +282,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
 </table>
 
 ### Angular 6
+
 <table>
   <thead>
     <tr>
@@ -380,6 +386,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
 </table>
 
 ### Angular 5
+
 <table>
     <thead>
         <tr>
@@ -463,10 +470,10 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </tbody>
 </table>
 
-{: .note }
-> The addon *DataTable* is not available for Angular 5.
+> **NOTE** The addon _DataTable_ is not available for Angular 5.
 
 ### Angular 4
+
 <table>
     <thead>
         <tr>
@@ -577,10 +584,10 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </tbody>
 </table>
 
-{: .note }
-> The addons *Tree and Library Tools* are not available for Angular 4.
+> **NOTE** The addons _Tree and Library Tools_ are not available for Angular 4.
 
 ### Angular 2
+
 <table>
     <thead>
         <tr>
@@ -651,7 +658,6 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </tbody>
 </table>
 
-{: .note }
-> The addons *Filemanager, Theming, Tree, DataTable* and *Tools* and *Library Tools* are not available for Angular 2.
+> **NOTE** The addons _Filemanager, Theming, Tree, DataTable_ and _Tools_ and _Library Tools_ are not available for Angular 2.
 
-* The prefix *ontimize-web-ngx* was omitted from the names of the addons.
+- The prefix _ontimize-web-ngx_ was omitted from the names of the addons.
