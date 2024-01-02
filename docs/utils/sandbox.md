@@ -36,52 +36,56 @@ nav_order: X
 Los highlight y endhighlight llevan un % en vez de un -
 
 <div class="multicolumn">
-    <div class="multicolumnleft">
-        <button class="unstyle toggle-tree-btn">
-            <div class="btn">Toggle Tree</div>
-        </button>
+    <button class="unstyle toggle-tree-btn">
+        <div class="btn">Toggle Tree</div>
+    </button>
+    <div class="multicolumncontent">
+        <div class="multicolumnleft">
         {- highlight java%}
             // Aquí el código o lo que sea
         {- endhighlight %}
-  </div>
-  <div class="multicolumnright jstreeloader collapsed">
-    // <ul> </ul> de jstree
-  </div>
+        </div>
+        <div class="multicolumnright jstreeloader collapsed">
+        // <ul> </ul> de jstree
+        </div>
+    </div>
 </div>
 ```
 
 
 <div class="multicolumn">
-    <div class="multicolumnleft">
-        <button class="unstyle toggle-tree-btn">
-            <div class="btn">Toggle Tree</div>
-        </button>
-        {{ "**EjemploDeClase.java**"  | markdownify }}
-        {% highlight java%}
-            // Aquí el código o lo que sea
-        {% endhighlight %}
-    </div>
-    <div class="multicolumnright jstreeloader collapsed">
-        <ul>
-            <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
-            Mi proyecto
+    <button class="unstyle toggle-tree-btn">
+        <div class="btn">Toggle Tree</div>
+    </button>
+    <div class="multicolumncontent">
+        <div class="multicolumnleft">
+            {{ "**EjemploDeClase.java**"  | markdownify }}
+            {% highlight java%}
+                // Aquí el código o lo que sea
+            {% endhighlight %}
+        </div>
+        <div class="multicolumnright jstreeloader collapsed">
             <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
-                Carpeta 1
+                <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+                Mi proyecto
                 <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>EjemploDeClaseCustom.java</li>
+                    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+                    Carpeta 1
+                    <ul>
+                    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>EjemploDeClaseCustom.java</li>
+                    </ul>
+                    </li>
+                    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+                    Carpeta 2
+                    <ul>
+                    <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>EjemploDeClase.java</li>
+                    </ul>
+                    </li>
+                    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ejemplodepom.xml</li>
                 </ul>
                 </li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
-                Carpeta 2
-                <ul>
-                <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>EjemploDeClase.java</li>
-                </ul>
-                </li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ejemplodepom.xml</li>
             </ul>
-            </li>
-        </ul>
+        </div>
     </div>
 </div>
 
@@ -90,7 +94,7 @@ Los highlight y endhighlight llevan un % en vez de un -
 ```
 Los highlight y endhighlight llevan un % en vez de un -
 
-<div class="multicolumn">
+<div class="multicolumncontent">
     <div class="multicolumnnopadding" >
         {- highlight java%}
             // Aquí el código o lo que sea
@@ -104,7 +108,7 @@ Los highlight y endhighlight llevan un % en vez de un -
     </div>
 </div>
 ```
-<div class="multicolumn">
+<div class="multicolumncontent">
     <div class="multicolumnnopadding" >
         {{ "**First column**"  | markdownify }}
         {% highlight java%}

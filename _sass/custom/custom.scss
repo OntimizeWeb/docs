@@ -904,7 +904,19 @@ a:not([class]) {
 }
 
 //Multicolumn
+//Multicolumn
 .multicolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-tree-btn {
+  all: unset;
+  margin-bottom: 10px;
+  align-self: flex-end;
+}
+
+.multicolumncontent {
   display: flex;
 }
 
@@ -925,8 +937,6 @@ a:not([class]) {
 }
 
 .multicolumnright {
-  max-width: calc(100% - 136px);
-  padding-top: 36px;
   box-sizing: border-box;
   border-left: 1px solid #ccc;
   transition: width 0.3s ease;
@@ -944,11 +954,6 @@ a:not([class]) {
   border-left: 1px solid #F2F3F3;
   padding-right: 10px;
   margin-left: 10px;
-}
-
-.unstyle {
-  all: unset;
-  margin-bottom: 10px;
 }
 
 // //jstree
