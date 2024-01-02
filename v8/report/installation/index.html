@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2023-12-29T07:45:34-05:00">
+  <meta property="article:published_time" content="2024-01-02T11:09:43-05:00">
 
 
 
@@ -433,7 +433,7 @@
     
     <meta itemprop="description" content="">
     
-    <meta itemprop="datePublished" content="December 29, 2023">
+    <meta itemprop="datePublished" content="January 02, 2024">
     
 
     <div class="page__inner-wrap">
@@ -473,7 +473,7 @@
 
 <h3 id="configure-angularjson-dependencies">Configure angular.json dependencies</h3>
 
-<p>You must add the module styles definition in your &#8216;<em>.angular.json</em>&#8217; file styles array:</p>
+<p>You must add the module styles definition in your ‘<em>.angular.json</em>’ file styles array:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
  <span class="s2">"architect"</span>: <span class="o">{</span>
@@ -497,6 +497,72 @@
 ...
 </code></pre></div></div>
 
+<h3 id="o_report_data_service"><code class="language-plaintext highlighter-rouge">O_REPORT_DATA_SERVICE</code></h3>
+<p>Use the injection token <code class="language-plaintext highlighter-rouge">O_REPORT_DATA_SERVICE</code> that can be used to configure the server to generate a report other than the default.</p>
+
+<p>In our example we want the boolean columns to return the values ​​APPROVED/REJECTED instead of YES/NO</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">...</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CustomOntimizeReportDataProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./shared/custom-report-data-provider.service</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">O_REPORT_DATA_SERVICE</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx-report</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Defining custom providers (if needed)...</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">customProviders</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">...</span>
+  <span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="nx">O_REPORT_DATA_SERVICE</span><span class="p">,</span> <span class="nx">useValue</span><span class="p">:</span> <span class="nx">CustomOntimizeReportDataProvider</span> <span class="p">}</span>
+<span class="p">];</span>
+
+
+<span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">],</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">ONTIMIZE_MODULES</span><span class="p">,</span>
+    <span class="nx">OntimizeWebModule</span><span class="p">,</span>
+    <span class="nx">AppRoutingModule</span><span class="p">,</span>
+    <span class="nx">HttpClientModule</span><span class="p">,</span>
+    <span class="nx">ServiceWorkerModule</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="dl">'</span><span class="s1">ngsw-worker.js</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">enabled</span><span class="p">:</span> <span class="nx">environment</span><span class="p">.</span><span class="nx">production</span> <span class="p">})</span>
+  <span class="p">],</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">APP_CONFIG</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="nx">CONFIG</span> <span class="p">},</span>
+    <span class="p">...</span><span class="nx">ONTIMIZE_PROVIDERS</span><span class="p">,</span>
+    <span class="p">...</span><span class="nx">customProviders</span>
+  <span class="p">],</span>
+  <span class="na">bootstrap</span><span class="p">:</span> <span class="p">[</span><span class="nx">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+
+</code></pre></div></div>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OTableComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OntimizeReportDataBaseProvider</span><span class="p">,</span> <span class="nx">OReportParam</span><span class="p">,</span> <span class="nx">OReportPreferences</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx-report</span><span class="dl">'</span><span class="p">;</span>
+
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomOntimizeReportDataProvider</span> <span class="kd">extends</span> <span class="nx">OntimizeReportDataBaseProvider</span><span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="k">public</span> <span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="nx">getReportConfiguration</span><span class="p">(</span><span class="nx">currentPreference</span><span class="p">:</span> <span class="nx">OReportPreferences</span><span class="p">,</span> <span class="nx">table</span><span class="p">:</span> <span class="nx">OTableComponent</span><span class="p">):</span> <span class="nx">OReportParam</span> <span class="p">{</span>
+
+    <span class="kd">let</span> <span class="nx">reportParam</span> <span class="o">=</span> <span class="k">super</span><span class="p">.</span><span class="nx">getReportConfiguration</span><span class="p">(</span><span class="nx">currentPreference</span><span class="p">,</span> <span class="nx">table</span><span class="p">);</span>
+    <span class="nx">reportParam</span><span class="p">.</span><span class="nx">columns</span> <span class="o">=</span> <span class="nx">reportParam</span><span class="p">.</span><span class="nx">columns</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">col</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">col</span><span class="p">.</span><span class="nx">columnStyle</span> <span class="o">&amp;&amp;</span> <span class="nx">col</span><span class="p">.</span><span class="nx">columnStyle</span><span class="p">.</span><span class="nx">renderer</span><span class="p">.</span><span class="kd">type</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">boolean</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">col</span><span class="p">.</span><span class="nx">columnStyle</span><span class="p">.</span><span class="nx">renderer</span> <span class="o">=</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">boolean</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">renderType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">trueValue</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">APPROVED</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">falseValue</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">REJECTED</span><span class="dl">"</span> <span class="p">};</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nx">col</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">reportParam</span><span class="p">;</span>
+  <span class="p">}</span>
+
+
+</code></pre></div></div>
+
         
       </section>
 
@@ -508,7 +574,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-12-29T07:45:34-05:00">December 29, 2023</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-02T11:09:43-05:00">January 02, 2024</time></p>
         
       </footer>
 
@@ -571,7 +637,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2023 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2024 Imatia Innovation, S.L.. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 
