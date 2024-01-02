@@ -62,7 +62,7 @@ You must add the module styles definition in your '*.angular.json*' file styles 
 ### `O_REPORT_DATA_SERVICE`
 Use the injection token `O_REPORT_DATA_SERVICE` that can be used to configure the server to generate a report other than the default.
 
-In our example we want the boolean columns to return the values ​​TRUE/FALSE instead of YES/NO
+In our example we want the boolean columns to return the values ​​APPROVED/REJECTED instead of YES/NO
 
 ```ts
 ...
@@ -117,7 +117,7 @@ export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProv
     let reportParam = super.getReportConfiguration(currentPreference, table);
     reportParam.columns = reportParam.columns.map(col => {
       if (col.columnStyle && col.columnStyle.renderer.type === 'boolean') {
-        col.columnStyle.renderer = { "type": "boolean", "renderType": "string", "trueValue": "VERDADERO", "falseValue": "FALSO" };
+        col.columnStyle.renderer = { "type": "boolean", "renderType": "string", "trueValue": "APPROVED", "falseValue": "REJECTED" };
       }
       return col;
     });
