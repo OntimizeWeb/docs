@@ -22,9 +22,10 @@ The file that contains the application configuration parameters is called _app.c
 import { Config } from 'ontimize-web-ngx';
 import { SERVICE_CONFIG } from './shared/app.services.config';
 import { MENU_CONFIG } from './shared/app.menu.config';
+import { environment } from '../environments/environment';
 
 export const CONFIG: Config = {
-  apiEndpoint: 'https://try.ontimize.com/QSAllComponents-jee/services/rest',
+  apiEndpoint: environment.apiEndpoint,
   uuid: 'com.ontimize.web.quickstart',
   title: 'Ontimize Web QuickStart',
   locale: 'es', /* Optional */
@@ -52,7 +53,7 @@ export const CONFIG: Config = {
   permissionsConfiguration: { /* Optional */
     service: 'permissions'
   },
-  exportConfiguration: { /* Required only for Ontimize Boot version 3.9.0 or above */
+  exportConfiguration: {
     path:'/export'
   }
 };
@@ -66,10 +67,10 @@ The noteworthy parameters here are:
 - **title:** The title of the application.
 - **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, etc.).
 - **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
-  - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures  Ontimize REST JEE services.
-  - **'Ontimize':** string that configures Ontimize REST services.
+  - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures  Ontimize REST standard services.
+  - **'Ontimize'(default):** string that configures Ontimize REST services.
   - **'OntimizeEE':** string that configures Ontimize REST JEE services and is the default value.
-  - **Custom class:** a service class reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface.
+  - **Custom class:** a service class reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface. More information [here]({{ base_path }}/guide/service/#extending-ontimize-web-services){:target="_blank"}.
 - **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 - **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
 - **applicationLocales:** Set of available locales for the application.
@@ -102,17 +103,15 @@ This file configures npm package dependencies and contains all of the scripts fo
   <pre>
     <code>
     {
-      <del>"name": "ontimize-web-ngx-jee-seed",</del>
       "name": "your_app_name",
       "version": "1.0.0",
       "scripts": {
         "ng": "ng",
         "start": "ng serve --port 4299",
         "build": "ng build",
+        "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e",
-        <del>"production": "ng build --prod=true --baseHref=/ontimize-web-ngx-jee-seed/"</del>
         "production": "ng build --prod=true --baseHref=/your_app_name/"
       },
     ..
@@ -136,58 +135,175 @@ You have to replace the references of "ontimize-web-ngx-jee-seed" by the name of
 <figure class="highlight">
   <pre>
     <code>
-    "projects": {
-      <del>"ontimize-web-ngx-jee-seed": {</del>
-      "your_app_name": {
-        ...
-        "architect": {
-         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-           <del>"outputPath": "dist/ontimize-web-ngx-jee-seed",</del>
-           "outputPath": "dist/your_app_name",
-           ...
-           "serve": {
-             "builder": "@angular-devkit/build-angular:dev-server",
+    {
+      "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+      "version": 1,
+      "newProjectRoot": "projects",
+      "projects": {
+        "your_app_name": {
+          "projectType": "application",
+          "schematics": {},
+          "root": "",
+          "sourceRoot": "src",
+          "prefix": "app",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
               "options": {
-                <del>"browserTarget": "ontimize-web-ngx-jee-seed:build"</del>
+                "outputPath": "dist/your_app_name",
+                "index": "src/index.html",
+                "main": "src/main.ts",
+                "polyfills": "src/polyfills.ts",
+                "tsConfig": "tsconfig.app.json",
+                "assets": [
+                  "src/favicon.ico",
+                  "src/assets",
+                  {
+                    "glob": "**/*",
+                    "input": "node_modules/ontimize-web-ngx/assets",
+                    "output": "/assets"
+                  },
+                  {
+                    "glob": "**/*",
+                    "input": "node_modules/ngx-extended-pdf-viewer/assets",
+                    "output": "/assets"
+                  },
+                  "src/manifest.webmanifest"
+                ],
+                "styles": [
+                  "node_modules/ontimize-web-ngx/ontimize.scss",
+                  "src/assets/css/app.scss",
+                  "src/styles.scss"
+                ],
+                "stylePreprocessorOptions": {
+                  "includePaths": [
+                    "./node_modules"
+                  ]
+                },
+                "scripts": [
+                  "src/assets/js/domchange.js",
+                  "src/assets/js/keyboard.js"
+                ],
+                "allowedCommonJsDependencies": [
+                  "google-libphonenumber",
+                  "moment"
+                ]
+              },
+              "configurations": {
+                "production": {
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "2mb",
+                      "maximumError": "5mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "6kb",
+                      "maximumError": "10kb"
+                    }
+                  ],
+                  "fileReplacements": [
+                    {
+                      "replace": "src/environments/environment.ts",
+                      "with": "src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "serviceWorker": true,
+                  "ngswConfigPath": "ngsw-config.json",
+                  "outputHashing": "all"
+                },
+                "development": {
+                  "buildOptimizer": false,
+                  "optimization": false,
+                  "vendorChunk": true,
+                  "extractLicenses": false,
+                  "sourceMap": true,
+                  "namedChunks": true
+                }
+              },
+              "defaultConfiguration": "production"
+            },
+            "serve": {
+              "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
                 "browserTarget": "your_app_name:build"
               },
               "configurations": {
                 "production": {
-                  <del>"browserTarget": "ontimize-web-ngx-jee-seed:build:production"</del>
                   "browserTarget": "your_app_name:build:production"
+                },
+                "development": {
+                  "browserTarget": "your_app_name:build:development"
+                }
+              },
+              "defaultConfiguration": "development"
+            },
+            "extract-i18n": {
+              "builder": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "your_app_name:build"
+              }
+            },
+            "test": {
+              "builder": "@angular-devkit/build-angular:karma",
+              "options": {
+                "main": "src/test.ts",
+                "polyfills": "src/polyfills.ts",
+                "tsConfig": "tsconfig.spec.json",
+                "karmaConfig": "karma.conf.js",
+                "assets": [
+                  "src/favicon.ico",
+                  "src/assets",
+                  "src/manifest.webmanifest"
+                ],
+                "styles": [
+                  "src/styles.css"
+                ],
+                "scripts": []
+              }
+            },
+            "e2e": {
+              "builder": "@angular-devkit/build-angular:protractor",
+              "options": {
+                "protractorConfig": "e2e/protractor.conf.js",
+                "devServerTarget": "your_app_name:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "your_app_name:serve:production"
                 }
               }
-           },
-           "extract-i18n": {
-            "builder": "@angular-devkit/build-angular:extract-i18n",
-            "options": {
-              <del>"browserTarget": "ontimize-web-ngx-jee-seed:build"</del>
-              "browserTarget": "your_app_name:build"
-            }
-           }
-           ....
-
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            <del>"devServerTarget": "ontimize-web-ngx-jee-seed:serve"</del>
-            "devServerTarget": "your_app_name:serve"
-          },
-          "configurations": {
-            "production": {
-              <del>"devServerTarget": "ontimize-web-ngx-jee-seed:serve:production"</del>
-              "devServerTarget": "your_app_name:serve:production"
+            },
+            "lint": {
+              "builder": "@angular-eslint/builder:lint",
+              "options": {
+                "lintFilePatterns": [
+                  "src/**/*.ts",
+                  "src/**/*.html"
+                ]
+              }
             }
           }
         }
+      },
+      "cli": {
+        "schematicCollections": [
+          "@angular-eslint/schematics"
+        ],
+        "cache": {
+          "enabled": false
+        }
+      },
+      "schematics": {
+        "@angular-eslint/schematics:application": {
+          "setParserOptionsProject": true
+        },
+        "@angular-eslint/schematics:library": {
+          "setParserOptionsProject": true
+        }
       }
-    }},
-  <del>"defaultProject": "ontimize-web-ngx-jee-seed"</del>
-  "defaultProject": "your_app_name
-      }
+    }
     </code>
   </pre>
 </figure>
@@ -195,7 +311,7 @@ You have to replace the references of "ontimize-web-ngx-jee-seed" by the name of
 
 # Services configuration
 
-If you indicate in the application configuration that the application should use **OntimizeEE** services (check `serviceType` attribute in the previous section of this page), you have to configure the service paths. For doing this **OntimizeWeb** uses the `servicesConfiguration` property from the app configuration file that must point to an object defined as in the example below.
+If you indicate in the application configuration that the application should use **OntimizeEE** services (check `serviceType` attribute in the [previous section](#application-configuration-file) of this page), you have to configure the service paths. For doing this **OntimizeWeb** uses the `servicesConfiguration` property from the app configuration file that must point to an object defined as in the example below.
 
 In this object, the keys represents the different services names used in the application. Every service needs a `path` property where you must set the path of the service, excluding the URL configured in the `apiEndpoint` attribute of the application configuration.
 
@@ -222,7 +338,7 @@ export const SERVICE_CONFIG: Object = {
 };
 ```
 
-For clarification, if your `apiEndpoint` is the one in the [application configuration](#application-configuration) example, **OntimizeWeb** will concat the `apiEndpoint` and the `path` of the service to build the URL for sending requests. For example : _<https://try.ontimize.com/QSAllComponents-jee/services/rest/customers>_.
+For clarification, if your `apiEndpoint` is the one in the [application configuration](#application-configuration-file) example, **OntimizeWeb** will concat the `apiEndpoint` and the `path` of the service to build the URL for sending requests. For example : _<https://try.ontimize.com/QSAllComponents-jee/services/rest/customers>_.
 
 # Internationalization (i18) configuration
 
@@ -279,7 +395,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | ------- | ------- | ----------- |
   | id      | string  | The menu item identifier |
   | name    | string  | The menu item name |
-  | icon    | string  | The menu item icon (see <a href="https://design.google.com/icons/">Google material design icons</a>{:target='_blank'}) |
+  | icon    | string  | The menu item icon (see <a href="https://fonts.google.com/icons">Google material design icons</a>{:target='_blank'}) |
   | items   | array   | The menu item children. Providing this attribute means that the menu item is a container for a group of menu items |
   | opened  | boolean | In case the <code>items</code> property is defined, indicates if the group menu item is open or not by default |
   | tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
@@ -307,7 +423,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | ------------------- | ------------------- | ----------- |
   | id                  | string              | The menu item identifier |
   | name                | string              | The menu item name |
-  | icon                | string              | The menu item icon (see <a href="https://design.google.com/icons/">Google material design icons</a>{:target='_blank'}) |
+  | icon                | string              | The menu item icon (see <a href="https://fonts.google.com/icons">Google material design icons</a>{:target='_blank'}) |
   | tooltip             | string              | The tooltip text showed on the menu item when the menu is callapsed |
   | class               | string  | The CSS class applied to the menu item |
   | show-in-card-menu   | boolean             | Indicates whether or not to show the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
@@ -442,7 +558,7 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
   </div>
 </details>
 
-You can see an example of a menu configuration below. This is a piece of the configuration used in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart){:target="_blank"}. You can check the full code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/shared/app.menu.config.ts){:target="_blank"}.
+You can see an example of a menu configuration below. This is a piece of the configuration used in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"}. You can check the full code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/15.x.x/src/app/shared/app.menu.config.ts){:target="_blank"}.
 
 ```javascript
 import { MenuRootItem } from 'ontimize-web-ngx';
@@ -473,4 +589,4 @@ In addition to the side menu, **OntimizeWeb** provides [`o-card-menu-layout`]({{
 
 ![Card menu layout example]({{ base_path }}/images/layouts/app-layout/card-menu-layout.png){: .align-center}
 
-You can see this live example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart){:target="_blank"}.
+You can see this live example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"}.
