@@ -50,7 +50,7 @@
 <!-- Tab links -->
 <div class="o-tab">
   <button class="o-tablinks {{overview_class}}"  onclick="openTab(event, 'overview')">Overview</button>
-  <button class="o-tablinks {{api_class}}" class="o-tablinks" onclick="openTab(event, 'api')">API</button>
+  <button class="o-tablinks {{api_class}}" onclick="openTab(event, 'api')">API</button>
 </div>
 
 <!-- OVERVIEW -->
