@@ -95,7 +95,7 @@ Display a custom value by configuring `render-false-value` and `render-true-valu
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Currency combo renderer**
@@ -109,7 +109,7 @@ Configure the currency symbol with the `currency-symbol` attribute. Check this a
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Date combo renderer**
@@ -123,7 +123,7 @@ You may want to set the displaying date format by configuring the `format` attri
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Integer combo renderer**
@@ -135,7 +135,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Real combo renderer**
@@ -147,7 +147,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Percentage combo renderer**
@@ -159,7 +159,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Icon combo renderer**
@@ -172,7 +172,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 ```
 This renderer uses Material Icons to display each icon, you can see the complete set of icons [here](https://fonts.google.com/icons).
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 ### Custom renderers <span class='menuitem-badge'>new<span>
 
@@ -224,7 +224,7 @@ The *let* keyword declares a template input variable that you reference within t
 
 Finally, add the created component to your module for including it in your combo.
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 ## Locker
 

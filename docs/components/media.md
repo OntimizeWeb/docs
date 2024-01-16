@@ -15,5 +15,5 @@ In this section you will find all Ontimize Web available components as well as i
 There is also a live demo where you can interact with different components.
 
 
-[<i class="fa fa-play"></i> live demo](https://ontimizeweb.github.io/ontimize-web-ngx-playground){: .btn .btn--success}{:target="_blank"}
+[Live demo](https://try.imatia.com/ontimizeweb/v15/playground/main/media/home){: .btn .btn--success}{:target="_blank"}
 

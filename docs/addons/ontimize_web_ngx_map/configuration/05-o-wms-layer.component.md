@@ -15,7 +15,7 @@ You can add multiple WMS layers to your map.
 ## Basic Example
 
 This is a basic example of a *Map* using the component *o-map-layer* inside to add new WMS layers to the map.
-You can check a working example of WMS layers [here](https://try.imatia.com/ontimizeweb/v8/map/main/wms)
+You can check a working example of WMS layers [here](https://try.imatia.com/ontimizeweb/v15/map/main/wms)
 
 *HTML*
 
