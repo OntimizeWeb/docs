@@ -83,7 +83,7 @@ Ontimize Web providers the following *build-in validators* in the framework:
 * **nifValidator**: NIF validator
 * **patternValidator**:  Pattern validator
 
-Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/overview/){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/overview/){:target='_blank'} components.
+Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/overview){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/overview){:target='_blank'} components.
 
 Below is an example of using the **pattern validator**.
 ```html

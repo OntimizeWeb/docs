@@ -37,4 +37,4 @@ Using the `o-validator` component allows to define a validator function that wil
   ...
 ```
 
-If the new validator has more than one possible error result, user must use the [`o-error`]({{ base_path }}/components/input/error/overview/){:target='_blank'} component to define the multiple errors messages.
+If the new validator has more than one possible error result, user must use the [`o-error`]({{ base_path }}/components/input/error/overview){:target='_blank'} component to define the multiple errors messages.
