@@ -1,5 +1,5 @@
 {% include base_path %}
-{%- assign pages_list = site[page.collection] | default: site.html_pages -%}
+{% assign pages_list = site[page.collection] | default: site.html_pages %}
 
 {%- assign parent_page = nil -%}
 {%- assign grandparent_page = nil -%}
@@ -7,11 +7,11 @@
 
 {%- for node in pages_list -%}
 
-  {% if permalink_array[2] == "node.title | downcase" %}
+  {% if permalink_array[2] == node.title | downcase %}
     {%- assign parent_page = node -%}
   {% endif %}
 
-  {% if permalink_array[1] == "node.title | downcase" %}
+  {% if permalink_array[1] == node.title | downcase %}
     {%- assign grandparent_page = node -%}
   {% endif %}
 
