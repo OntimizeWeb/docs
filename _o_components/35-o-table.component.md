@@ -775,7 +775,7 @@ Finally, add the *OTableCellEditorName* component to your module.
 
 You can setup validation on the editors configured in the table with `o-validator` component.
 
-Using the `o-validator` component has the advantage that the user can define any validation error message for their editors. For doing that user has to include the  [`o-validator`]({{ base_path }}/components/input/validator/overview/){:target='_blank'} component inside the HTML definition of the `o-table-cell-editor`.
+Using the `o-validator` component has the advantage that the user can define any validation error message for their editors. For doing that user has to include the  [`o-validator`]({{ base_path }}/components/input/validator/overview){:target='_blank'} component inside the HTML definition of the `o-table-cell-editor`.
 
 Below is an example of using the **pattern validator**.
 ```html
