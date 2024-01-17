@@ -150,4 +150,4 @@ Here is an example
 ![Filter builder menu]({{ "/images/components/filter-builder/filter-builder-menu.png" | absolute_url }}){: .comp-example-img}
 
 ## Demo
-You can see this working example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home){:target="_blank"}.
+You can see this working example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/main.15.x/src/app/main/employees/employees-home){:target="_blank"}.
