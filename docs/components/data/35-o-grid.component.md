@@ -277,4 +277,4 @@ If the selector `o-grid-toolbar` is used together with `position='start'` the co
 ![Add custom content in toolbar in position start]({{ "/images/components/grid/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
 
 ## Demo
-You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/grid/).
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/grid/basic).
