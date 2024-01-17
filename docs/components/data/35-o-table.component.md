@@ -1465,7 +1465,7 @@ For example with the primary palette by following the steps below.
 First, create a Sass `mixin` that accepts an Angular Material color theme and outputs the color-specific styles for the component.
 
 *custom-row-header-theme.scss*
-```css
+```scss
 // Import library functions for theme creation.
 @import '~@angular/material/theming';
 
@@ -1492,7 +1492,7 @@ First, create a Sass `mixin` that accepts an Angular Material color theme and ou
 Use the Sass `@include `keyword to include a component's theme mixin wherever you're already including Angular Material's built-in theme mixins.
 
 **app.scss**
-```css
+```scss
 /***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/

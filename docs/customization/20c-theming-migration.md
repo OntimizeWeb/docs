@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Theming migration"
+title: "8.x.x theming migration"
 permalink: /customize/theming/migration
 excerpt: "Steps to change theming versions."
 parent: Customization
@@ -19,7 +19,7 @@ The structure of `app.scss` file depend on the version of theming that is instal
 As we see on the example below in previous versions to 8.5.0 the first line of the file should be the theme import, then we import the `ontimize-theme.scss` file to call the mixin `ontimize-theme-styles` and finally we propagate the theme to the Onitmize Web framework.
 
 **app.scss**
-```css
+```scss
 /***** Importing ontimize-web-ngx-theming prebuilt theme (choose one)*****/
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
 /* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
@@ -52,7 +52,7 @@ As we see on the example below in previous versions to 8.5.0 the first line of t
 In this case the first import we should do is to import the `ontimize-theme.scss` file which have inside the theme creation functions and the `ontimize-theme-styles` mixin. Then we should import the theme file, include the `ontimize-theme-styles` mixin and finally propagate the theme to the Ontimize Web framework.
 
 **app.scss**
-```css
+```scss
 /*Import the file who have the theme functions and the ontimize-theme-styles mixin.*/
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 
@@ -86,12 +86,12 @@ In this case the first import we should do is to import the `ontimize-theme.scss
 
 If we want to have custom colors in our app we can create themes to customize it. Depeding on the theming version that we have installed there are two ways to create the file.
 
-### Older than 8.5.0 (not included)
+### `ontimize-web-ngx-theming` older than 8.5.0 (not included)
 
 As we see in the example below in this versions we need to import `theming` and the `core` of material in the first lines. Then to create the theme we use the material functions `mat-light-theme` and `mat-dark-theme`. Code example:
 
 **my-custom-app-theme.scss**
-```css
+```scss
 @import 'node_modules/@angular/material/theming';
 
 // Include non-theme styles for core.
@@ -149,12 +149,12 @@ $theme: mat-light-theme($primary, $accent, $warn);
 /*$theme: mat-dark-theme($primary, $accent, $warn);*/
 ```
 
-### 8.5.0 or newer versions
+### `ontimize-web-ngx-theming` from 8.5.0 to 8.5.2
 
 In newer versions we only need one import on the custom theme file, the import of `ontimize-theme.scss` file. Other diference with the older versions is that the functions which create the theme are custom now, the names of the functions are `o-mat-light-theme` and `o-mat-dark-theme`. Code example:
 
 **my-custom-app-theme.scss**
-```css
+```scss
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
 
 /* Color definitions */
