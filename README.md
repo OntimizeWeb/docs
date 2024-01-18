@@ -10,7 +10,7 @@ See what's new in the [CHANGELOG](https://github.com/OntimizeWeb/ontimize-web-ng
 
 ## Local deployment
 
-To deploy the documentation on your local machine first you need to do it is to install [Jekyll](https://jekyllrb.com/){:target='_blank'} running the `gem install jekyll bundler` command.
+To deploy the documentation on your local machine first you need to do it is to install [Jekyll](https://jekyllrb.com/) running the `gem install jekyll bundler` command.
 
 Once you have Jekyll installed correctly you need to install de gems with the following command `bundle install`.
 
