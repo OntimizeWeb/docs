@@ -28,6 +28,8 @@ github:
     url: https://github.com/OntimizeWeb
     icon: images/github-front.svg
 
+playgroundurl: https://try.imatia.com/ontimizeweb/v15/playground
+
 color_scheme: ontimize-light
 
 callouts_level: quiet # or loud

@@ -144,7 +144,7 @@ public class PermissionService implements IPermissionService {
 
 ### Defining our client permissions
 
-Client permissions are defined by a JSON file (you can find more detailed information  [here](https://ontimizeweb.github.io/docs/v8/guide/permissions/#permissions-definition-example){:target="_blank"}).
+Client permissions are defined by a JSON file (you can find more detailed information  [here](https://ontimizeweb.github.io/docs/v15/guide/permissions/#permissions-definition-example){:target="_blank"}).
 In this turorial, we are going to create a set of simple preconfigured JSON permission files. Into a real application, this permission object could be retrived from database or created dynamically by code depending on the user, the role, etc. We can see more examples of this files
 
 `candidate_permissions.json`:

@@ -84,4 +84,4 @@ Example
   }
 ```
 
-You can see examples of this section in the [OntimizeWeb playground]({{site.playgroundurl}}/main/dialogs){:target="_blank"}.
+You can see examples of this section in the [OntimizeWeb playground]({{site.playgroundurl}}/main/modals/dialogs){:target="_blank"}.

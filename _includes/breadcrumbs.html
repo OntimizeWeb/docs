@@ -1,39 +1,34 @@
 {% include base_path %}
+{% assign pages_list = site[page.collection] | default: site.html_pages %}
 
-{% case site.categories.type %}
-  {% when "liquid" %}
-    {% assign path_type = "#" %}
-  {% when "jekyll-archives" %}
-    {% assign path_type = nil %}
-{% endcase %}
+{%- assign parent_page = nil -%}
+{%- assign grandparent_page = nil -%}
+{%- assign permalink_array = page.permalink | split: '/' -%}
 
-{% if page.collection != 'posts' %}
-  {% assign path_type = nil %}
-  {% assign crumb_path = '/' %}
-{% else %}
-  {% assign crumb_path = site.categories.path %}
-{% endif %}
+{%- for node in pages_list -%}
 
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="http://schema.org/BreadcrumbList">
-    {% assign crumbs = page.url | split: '/' %}
-    {% assign i = 1 %}
-    {% for crumb in crumbs offset: 1 %}
-      {% if forloop.first %}
-        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="{{ base_path }}/" itemprop="item"><span itemprop="name">{{ site.data.ui-text[site.locale].breadcrumb_home_label | default: "Home" }}</span></a>
-          <meta itemprop="position" content="{{ i }}" />
-        </li>
-      {% endif %}
-      {% if forloop.last %}
-        <li class="current">{{ page.title }}</li>
-      {% else %}
-        {% assign i = i | plus: 1 %}
-        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-          <a href="{{ base_path }}{{ crumb | downcase | replace: '%20', '-' | prepend: path_type | prepend: crumb_path }}" itemprop="item"><span itemprop="name">{{ crumb | replace: '-', ' ' | replace: '%20', ' ' | capitalize }}</span></a>
-          <meta itemprop="position" content="{{ i }}" />
-        </li>
-      {% endif %}
-    {% endfor %}
+  {% if permalink_array[2] == node.title | downcase %}
+    {%- assign parent_page = node -%}
+  {% endif %}
+
+  {% if permalink_array[1] == node.title | downcase %}
+    {%- assign grandparent_page = node -%}
+  {% endif %}
+
+  {%- if parent_page != nil and grandparent_page != nil -%}
+    {%- break -%}
+  {%- endif -%}
+
+{%- endfor -%}
+
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+  <ol>
+    {% if parent_page != nil -%}
+      {%- if grandparent_page != nil %}
+        <li><a href="{{ base_path }}{{ grandparent_page.permalink }}">{{ grandparent_page.title }}</a></li>
+      {%- endif %}
+      <li><a href="{{ base_path }}{{ parent_page.permalink }}">{{ parent_page.title }}</a></li>
+    {% endif -%}
+    <li><span>{{ page.title }}</span></li>
   </ol>
 </nav>
