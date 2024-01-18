@@ -1,3 +1,12 @@
+// Sticky header
+@media (min-width: 50rem){
+  #main-header{
+    position: sticky;
+    top:0;
+    z-index:999
+  }
+}
+
 // Custom text colors
 .text-primary-900 {
   color: $primary-900
@@ -903,28 +912,27 @@ a:not([class]) {
   }
 }
 
-//Multicolumn
 .multicolumn {
   display: flex;
-  flex-direction: column;
 }
 
 .toggle-tree-btn {
   all: unset;
   margin-bottom: 10px;
   align-self: flex-end;
-}
-
-.multicolumncontent {
-  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
 }
 
 .multicolumnleft {
   flex: 1;
   max-width: 100%;
   overflow-x: auto;
-  padding: 0 20px 0 0;
+  padding: 0 40px 0 0;
   box-sizing: border-box;
+  position: relative;
 }
 
 .multicolumnnopadding {
@@ -946,6 +954,7 @@ a:not([class]) {
     overflow: hidden;
     padding: 0;
     border-left: none;
+    display: none;
   }
 }
 
