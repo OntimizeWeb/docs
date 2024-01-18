@@ -110,6 +110,8 @@ To make the theming job easier we integrate the old theming module into the [cor
 
 /* Applies the Ontimize styles */
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
+
+/* Imports the application themes */
 @import '../../app/login/login.theme.scss';
 @import '../../app/main/main-theme.scss';
 
@@ -125,7 +127,7 @@ To make the theming job easier we integrate the old theming module into the [cor
   @include app-themes(theme.$dark-theme);
 }
 
-/* Propagate theme to screen styles definition. */
+/* Propagate theme to screen styles definition */
 @include app-themes(theme.$theme);
 ```
 
@@ -145,9 +147,8 @@ If none of predefined themes satisfies your needs, you can define your own style
 
 **custom_theme.scss**
 ```scss
-@use "sass:map";
 @use '@angular/material'as mat;
-@use '../ontimize-style.scss';
+@use 'node_modules/ontimize-web-ngx/theming/ontimize-style.scss'as ontimize-style;
 
 /* Color definitions */
 $mat-custom-primary: (50 : #e3ecf4, 100 : #b9d1e4, 200 : #8ab2d2, 300 : #5b93c0, 400 : #377bb3, 500 : #1464a5, 600 : #125c9d, 700 : #0e5293, 800 : #0b488a, 900 : #063679, A100 : #a8c7ff, A200 : #75a7ff, A400 : #4286ff, A700 : #2876ff, contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff));
@@ -166,6 +167,38 @@ $theme: ontimize-style.o-mat-light-theme($primary, $accent);
 
 /* Dark theme */
 $dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
+```
+
+Then you need to change the theme import on the  `app.scss` file.
+
+**app.css**
+```scss
+/* Imports of the Ontimize theme and the Ontimize styles of our application */
+/* @use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme; OLD IMPORT */
+@use './custom_theme.scss'as theme; /*                           NEW IMPORT */
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
+
+/* Applies the Ontimize styles */
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
+
+/* Imports the application themes */
+@import '../../app/login/login.theme.scss';
+@import '../../app/main/main-theme.scss';
+
+/* Creates the mixin with the themes imported before */
+@mixin app-themes($theme) {
+  @include main-theme($theme);
+  @include login-theme($theme);
+}
+
+/* Dark mode class used if you want dark mode in your applicatin */
+.o-dark {
+  @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
+  @include app-themes(theme.$dark-theme);
+}
+
+/* Propagate theme to screen styles definition */
+@include app-themes(theme.$theme);
 ```
 
 ### Tools for picking colors

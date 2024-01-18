@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "8.x.x theming migration"
+title: "Old theming migration"
 permalink: /customize/theming/migration
 excerpt: "Steps to change theming versions."
 parent: Customization

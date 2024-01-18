@@ -36,36 +36,44 @@ To change the typography it is neccesary to apply an extension of Angular Materi
 
 ## Customization
 
-First you must create a custom *typography configuration* of Angular Material's Sass-based theming and another *typography configuration* of Ontimize Web Sass-based theming as the below example demonstrates
+First you must create a custom *typography configuration* of Angular Material's Sass-based theming and another *typography configuration* of Ontimize Web Sass-based theming as the below example demonstrates.
 
+**app.scss**
 ```scss
 @use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx/theming/ontimize-style.scss';
-@use "sass:map";
-@use '@angular/material'as mat;
+@use '../../app/login/login.theme.scss'as login;
 
-$custom-typography: mat.define-typography-config(
-  $headline-1: mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
-  $headline-2: mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
-  $headline-3: mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
-  $headline-4: mat.define-typography-level(34px, 40px, 400),
-  $headline-5: mat.define-typography-level(24px, 32px, 400),
+// Necesary imports
+@use '@angular/material'as mat;
+@use 'sass:map';
+// Imports the Ontimize table typography instead of also modificate it
+@use 'ontimize-web-ngx/theming/typography/o-table-typography.scss'as ontimize-table-typography;
+
+// Defines the custom typography
+$custom-typography: mat.define-typography-config($font-family: '"Comic Neue", cursive',
+  $headline-1: mat.define-typography-level(84px, 92px, 300),
+  $headline-2: mat.define-typography-level(42px, 42px, 400),
+  $headline-3: mat.define-typography-level(34px, 36px, 400),
+  $headline-4: mat.define-typography-level(26px, 30px, 400),
+  $headline-5: mat.define-typography-level(24px, 24px, 400),
+  $headline-6: mat.define-typography-level(18px, 24px, 500),
+  $subtitle-1: mat.define-typography-level(14px, 21px, 600),
+  $subtitle-2: mat.define-typography-level(12px, 18px, 500),
+  $body-1: mat.define-typography-level(13px, 1.125em, 400),
+  $body-2: mat.define-typography-level(12px, 15px, 400),
+  $caption: mat.define-typography-level(11px, 15px, 400),
+  $button: mat.define-typography-level(13px, 14px, 500)
 );
 
-$theme: map.set(theme.$theme, $typography, $custom-typography);
+// Merges our custom typography with the Ontimize table typography
+$merged-typography: map.merge($custom-typography, ontimize-table-typography.$table-typography);
+
+// Replaze the theme typography by our self created typography
+$theme: map.set(theme.$theme, "typography", $merged-typography);
 
 @include ontimize-style.ontimize-theme-styles($theme);
-@import '../../app/login/login.theme.scss';
-@import '../../app/main/main-theme.scss';
 
-@mixin app-themes($theme) {
-  @include main-theme($theme);
-  @include login-theme($theme);
-}
-
-/*
-* Propagate theme to screen styles definition.
-*/
-@include app-themes($theme);
+@include login.login-theme($theme);
 
 ```
