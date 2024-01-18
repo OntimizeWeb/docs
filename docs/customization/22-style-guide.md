@@ -74,11 +74,11 @@ When the content is at different elevations it is for different reasons:
 </style>
 
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/surfaces/surfaces-light.png" title="Surfaces light">
-<img src="{{ base_path }}/images/customization/surfaces/surfaces-light.png" alt="Surfaces light" title="Surfaces light" />
+<li><a href="{{ base_path }}/assets/images/customization/surfaces/surfaces-light.png" title="Surfaces light">
+<img src="{{ base_path }}/assets/images/customization/surfaces/surfaces-light.png" alt="Surfaces light" title="Surfaces light" />
 <span>Light aplication surfaces example</span></a></li>
-<li><a href="{{ base_path }}/images/customization/surfaces/surfaces-dark.png" title="Surfaces dark">
-<img src="{{ base_path }}/images/customization/surfaces/surfaces-dark.png" alt="Surfaces dark" title="Surfaces dark" />
+<li><a href="{{ base_path }}/assets/images/customization/surfaces/surfaces-dark.png" title="Surfaces dark">
+<img src="{{ base_path }}/assets/images/customization/surfaces/surfaces-dark.png" alt="Surfaces dark" title="Surfaces dark" />
 <span>Dark aplication surfaces example</span></a></li>
 </ul>
 
@@ -87,11 +87,11 @@ When the content is at different elevations it is for different reasons:
 Depending if our aplication is on dark or light mode we got two difference types of surfaces. Inside each color mode we have five different colors of surfaces, we define this surfaces with the SASS classes name: `bg-level-0`, `bg-level-04`, `bg-level-06`, `bg-level-08` and `bg-level-1`.
 
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/surfaces/surfaces-levels-light.png" title="Surfaces levels light">
-<img src="{{ base_path }}/images/customization/surfaces/surfaces-levels-light.png" alt="Surfaces levels light" title="Surfaces levels light" />
+<li><a href="{{ base_path }}/assets/images/customization/surfaces/surfaces-levels-light.png" title="Surfaces levels light">
+<img src="{{ base_path }}/assets/images/customization/surfaces/surfaces-levels-light.png" alt="Surfaces levels light" title="Surfaces levels light" />
 <span>Light aplication surfaces</span></a></li>
-<li><a href="{{ base_path }}/images/customization/surfaces/surfaces-levels-dark.png" title="Surfaces levels dark">
-<img src="{{ base_path }}/images/customization/surfaces/surfaces-levels-dark.png" alt="Surfaces levels dark" title="Surfaces levels dark" />
+<li><a href="{{ base_path }}/assets/images/customization/surfaces/surfaces-levels-dark.png" title="Surfaces levels dark">
+<img src="{{ base_path }}/assets/images/customization/surfaces/surfaces-levels-dark.png" alt="Surfaces levels dark" title="Surfaces levels dark" />
 <span>Dark aplication surfaces</span></a></li>
 </ul>
 

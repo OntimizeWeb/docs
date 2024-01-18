@@ -36,19 +36,19 @@ a theme consists of:
 Below you can see an application with several different themes and variants
 
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" title="Ontimize Theme">
-<img src="{{ base_path }}/images/customization/themes/quickstart-customers-ontimize.png" alt="Ontimize Theme" title="Ontimize Theme" />
+<li><a href="{{ base_path }}/assets/images/customization/themes/quickstart-customers-ontimize.png" title="Ontimize Theme">
+<img src="{{ base_path }}/assets/images/customization/themes/quickstart-customers-ontimize.png" alt="Ontimize Theme" title="Ontimize Theme" />
 <span>Ontimize Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" title="Ontimize Dark Theme">
-<img src="{{ base_path }}/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" alt="Ontimize Dark Theme" title="Ontimize Dark Theme" />
+<li><a href="{{ base_path }}/assets/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" title="Ontimize Dark Theme">
+<img src="{{ base_path }}/assets/images/customization/themes/quickstart-customers-detail-ontimize-dark.png" alt="Ontimize Dark Theme" title="Ontimize Dark Theme" />
 <span>Ontimize Dark Theme</span></a></li>
 </ul>
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" title="Implatform Fashion Theme">
-<img src="{{ base_path }}/images/customization/themes/quickstart-customers-fashion.png" alt="Implatform Fashion Theme" title="Implatform Fashion Theme" />
+<li><a href="{{ base_path }}/assets/images/customization/themes/quickstart-customers-fashion.png" title="Implatform Fashion Theme">
+<img src="{{ base_path }}/assets/images/customization/themes/quickstart-customers-fashion.png" alt="Implatform Fashion Theme" title="Implatform Fashion Theme" />
 <span>Implatform Fashion Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" title="Implatform Fashion Dark Theme">
-<img src="{{ base_path }}/images/customization/themes/quickstart-customers-detail-fashion-dark.png" alt="Implatform Fashion Dark Theme" title="Implatform Fashion Dark Theme" />
+<li><a href="{{ base_path }}/assets/images/customization/themes/quickstart-customers-detail-fashion-dark.png" title="Implatform Fashion Dark Theme">
+<img src="{{ base_path }}/assets/images/customization/themes/quickstart-customers-detail-fashion-dark.png" alt="Implatform Fashion Dark Theme" title="Implatform Fashion Dark Theme" />
 <span>Implatform Fashion Dark Theme</span></a></li>
 </ul>
 
@@ -67,7 +67,7 @@ A dark variant is a low-light UI that displays mostly dark surfaces.
 Below an exemplary Angular application can be found that has implemented the Pure Sass approach. If you enable the Dark Mode in the settings of your operating system, the app will appear in dark colors, otherwise in bright colors.
 
 
-![Dark Mode]({{ base_path }}/images/customization/playground_dark_light.gif){: .align-center}
+![Dark Mode]({{ base_path }}/assets/images/customization/playground_dark_light.gif){: .align-center}
 
 
 ## Configuration

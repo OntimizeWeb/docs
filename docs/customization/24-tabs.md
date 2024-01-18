@@ -21,7 +21,7 @@ The [form layout manager]({{ base_path }}/components/formlayoutmanager/overview/
 
 ## Ontimize mode
 
-![Tabs ontimize mode]({{ base_path }}/images/customization/tabs-ontimize.png){: .align-center}
+![Tabs ontimize mode]({{ base_path }}/assets/images/customization/tabs-ontimize.png){: .align-center}
 
 ```html
 <mat-tab-group oTabGroup="ontimize">
@@ -39,7 +39,7 @@ The [form layout manager]({{ base_path }}/components/formlayoutmanager/overview/
 
 ## Material mode
 
-![Tabs material mode]({{ base_path }}/images/customization/tabls-material.png){: .align-center}
+![Tabs material mode]({{ base_path }}/assets/images/customization/tabls-material.png){: .align-center}
 
 ```html
 <mat-tab-group oTabGroup="material">

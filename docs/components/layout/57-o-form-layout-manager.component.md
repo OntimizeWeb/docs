@@ -36,7 +36,7 @@ Select the *tab* mode and the data collection component and its detail form will
 You can select this mode setting the value **tab** to the `mode` input. You can see a working example of this mode in the
 [OntimizeWeb Playground](https://try.imatia.com/ontimizeweb/v15/playground/main/layout-manager/tab){:target="_blank"} or the *customers* module of the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/customers){:target="_blank"}.
 
-![Form layout manager in *tab* mode]({{ base_path }}/images/layouts/form-layout-manager/formLayoutManagerTAB.png)
+![Form layout manager in *tab* mode]({{ base_path }}/assets/images/layouts/form-layout-manager/formLayoutManagerTAB.png)
 
 #### Options
 It is possible to configure tab mode options with the `o-form-layout-tabgroup-options` component. This attributes are explained in the **API** section of this page.
@@ -62,7 +62,7 @@ The *dialog* mode consists in displaying the form detail in a dialog over the da
 
 Select this mode setting the value **dialog** to the `mode` input. You can see a working example of this mode in the [OntimizeWeb Playground](https://try.imatia.com/ontimizeweb/v15/playground/main/layout-manager/dialog){:target="_blank"}  or in the *branches* module of the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/branches){:target="_blank"}.
 
-![Form layout manager in *dialog* mode]({{ base_path }}/images/layouts/form-layout-manager/formLayoutManagerDIALOG.png)
+![Form layout manager in *dialog* mode]({{ base_path }}/assets/images/layouts/form-layout-manager/formLayoutManagerDIALOG.png)
 
 #### Options
 
@@ -88,7 +88,7 @@ Select the *split-pane* mode and the collection component and the detail form wi
 You can select this mode setting the value **split-pane** to the `mode` input. You can see a working example of this mode in the *form-layout-manager* module of the [OntimizeWeb Playground](https://try.imatia.com/ontimizeweb/v15/playground/main/layout-manager/split-pane){:target="_blank"}.
 
 
-![Form layout manager in *split-pane* mode]({{ base_path }}/images/layouts/form-layout-manager/formLayoutManagerSPLITPANE.png){: .align-center}
+![Form layout manager in *split-pane* mode]({{ base_path }}/assets/images/layouts/form-layout-manager/formLayoutManagerSPLITPANE.png){: .align-center}
 
 #### Options
 

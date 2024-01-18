@@ -832,7 +832,7 @@ The table supports checkbox selection with `select-all-checkbox-visible` propert
 
 You can configure show in the menu on the upper right the option of select row with `select-all-checkbox` property. It is disabled by default.
 
-<p><img src="{{ base_path }}/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
+<p><img src="{{ base_path }}/assets/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
 Additionally, you can specify a function setting the input `disable-selection-function` to disable the checkboxes depending on a condition. This function receives full data record for allowing you to enable/disable selection checkbox depending on value/s of the record.
 

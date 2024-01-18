@@ -66,4 +66,4 @@ You can see this and more examples of this component in the [OntimizeWeb tree qu
 
 <!-- recursive -->
 
-<!-- <img src="{{ base_path }}/images/components/tree/detail.png" alt="detail"> -->
+<!-- <img src="{{ base_path }}/assets/images/components/tree/detail.png" alt="detail"> -->
