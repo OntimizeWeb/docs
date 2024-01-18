@@ -342,7 +342,7 @@ For clarification, if your `apiEndpoint` is the one in the [application configur
 
 # Internationalization (i18) configuration
 
-*Ontimize Web* providers the `locale` attribute to configure the language of the application, this attribute will be an identifier that refers to of user preferences as displaying dates, numbers, ..., translation of words and in `applicationLocales` which configure the `locale id ` availables in the language selector in `<o-app-sidenav>`. For more information see in [OTranslateService]({{ base_path }}/guide/otranslateservice/){:target="_blank"}.
+*Ontimize Web* providers the `locale` attribute to configure the language of the application, this attribute will be an identifier that refers to of user preferences as displaying dates, numbers, ..., translation of words and in `applicationLocales` which configure the `locale id ` availables in the language selector in `<o-app-sidenav>`. For more information see in [OTranslateService]({{ base_path }}/services/otranslateservice/overview/){:target="_blank"}.
 
 
 # Permissions configuration

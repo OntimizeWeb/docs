@@ -30,7 +30,7 @@ The result of this example is shown below.
 
 ![App layout component]({{ "/images/layouts/app-layout/app_layout_default.png" | absolute_url }})
 
-You can see a working example of this in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/main/main.component.html){:target="_blank"}.
+You can see a working example of this in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/main/main.component.html){:target="_blank"}.
 
 ### Custom content
 

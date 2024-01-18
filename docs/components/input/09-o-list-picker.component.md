@@ -59,7 +59,7 @@ Configure the currency symbol with the `currency-symbol` attribute. Check this a
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
 
 
 **Date list-picker renderer**
@@ -73,7 +73,7 @@ You may want to set the displaying date format by configuring the `format` attri
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
 
 
 **Integer list-picker renderer**
@@ -85,7 +85,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
 
 
 **Real list-picker renderer**
@@ -97,7 +97,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
 
 
 **Percentage list-picker renderer**
@@ -109,7 +109,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
 
 ### Custom renderers <span class='menuitem-badge'>new<span>
 
@@ -161,7 +161,7 @@ The *let* keyword declares a template input variable that you reference within t
 
 Finally, add the created component to your module for including it in your list-picker.
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
 
 ## Locker
 

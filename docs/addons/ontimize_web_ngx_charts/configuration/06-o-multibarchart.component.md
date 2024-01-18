@@ -10,7 +10,7 @@ nav_exclude: true
 
 ## Introduction
 
-You can check a running example of this *Multi Bar Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/multi-bar){:target="_blank"}.
+You can check a running example of this *Multi Bar Chart* [here](https://try.imatia.com/ontimizeweb/v15/charts/main/bar-chart/multi-bar){:target="_blank"}.
 
 All chart parameters for the *Multi Bar Chart* can be checked in the API tab.
 

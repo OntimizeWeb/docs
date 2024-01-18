@@ -13,13 +13,13 @@ nav_order: 4
 
 The **OntimizeWeb** context menu is compound of the `o-context-menu` component and the `oContextMenuData` directive which is attached to a DOM element in which the context menu component appears.
 
-The `o-context-menu` component supports the ability for nested menu. To do so, you have to define [`o-context-menu-group`](#context-menu-group){:target='_blank'} component
+The `o-context-menu` component supports the ability for nested menu. To do so, you have to define [`o-context-menu-group`](#context-menu-group) component
 
 ![Context Menu]({{ "/images/layouts/context-menu/context-menu.png" | absolute_url }}){: .comp-example-img}
 
 For including the context menu in your application follow the next steps:
 
-* Include the `o-context-menu` component in the template where the context menu will appear. Add as many [`o-context-menu-item`](#context-menu-item){:target='_blank'}, [`o-context-menu-group`](#context-menu-item){:target='_blank'} and [`o-context-menu-separator`](#context-menu-item){:target='_blank'} components to the context menu as you desire.
+* Include the `o-context-menu` component in the template where the context menu will appear. Add as many [`o-context-menu-item`](#context-menu-item), [`o-context-menu-group`](#context-menu-item) and [`o-context-menu-separator`](#context-menu-item) components to the context menu as you desire.
 * Add the `oContextMenu` directive to the DOM element where the context menu will appear upon user right click and pass a referente to the previously defined `o-context-menu` component.
 
 ## Context menu group
@@ -71,4 +71,4 @@ The `oContextMenuData` is an attribute of the `oContextMenu` directive is used f
 ```
 ![Context Menu]({{ "/images/layouts/context-menu/context-menu.png" | absolute_url }}){: .comp-example-img}
 
-You can see a live example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/contextmenu){:target="_blank"}.
+You can see a live example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/modals/contextmenu){:target="_blank"}.

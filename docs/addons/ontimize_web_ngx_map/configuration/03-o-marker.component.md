@@ -15,7 +15,7 @@ This type of layer is used to add a new marker to the map, you can add as many m
 ## Basic Example
 
 This is a basic example of a *Map* using the component *o-map-layer* inside to create a new marker.
-You can check a working example of a marker layer [here](https://try.imatia.com/ontimizeweb/v8/map/main/marker)
+You can check a working example of a marker layer [here](https://try.imatia.com/ontimizeweb/v15/map/main/marker)
 
 *HTML*
 
