@@ -29,7 +29,7 @@ post:
   - title: "How to get backend info after login?"
     body: "
     You can get that backend information in your login function by creating a function that returns the values that you need from the backend or from an API.<br/>
-    You can check the normal login function <a href='https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/src/app/login/login.component.ts' target='blank'>here</a><br/>
+    You can check the normal login function <a href='https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/main.15.x/src/app/login/login.component.ts' target='blank'>here</a><br/>
     It will be something like this:<br/><br/>
     <code>if (userName && userName.length > 0 && password && password.length > 0) {<br/>
     &nbsp;&nbsp;const self = this;<br/>
