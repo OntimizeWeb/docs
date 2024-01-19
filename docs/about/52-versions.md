@@ -26,12 +26,15 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </thead>
     <tbody>
       <tr>
+        <td>15.0.0-beta.5</td>
+        <td rowspan="6">15.0.0-beta.0</td>
+        <td rowspan="3">15.0.0-beta.1</td>
+        <td rowspan="3">15.0.0-beta.1</td>
+        <td rowspan="6">15.0.0<br>15.0.0-beta.0</td>
+        <td rowspan="3">15.0.0-beta.1</td>
+      </tr>
+      <tr>
         <td>15.0.0-beta.4</td>
-        <td rowspan="5">15.0.0-beta.0</td>
-        <td rowspan="2">15.0.0-beta.1</td>
-        <td rowspan="2">15.0.0-beta.1</td>
-        <td rowspan="5">15.0.0-beta.0</td>
-        <td rowspan="2">15.0.0-beta.1</td>
       </tr>
       <tr>
         <td>15.0.0-beta.3</td>
@@ -70,14 +73,21 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </thead>
     <tbody>
     <tr>
+      <td>8.14.6</td>
+      <td rowspan="9">8.6.1<br>8.6.0</td>
+      <td rowspan="47">8.0.1</td>
+      <td rowspan="18">8.2.0<br>8.1.1<br>8.1.0</td>
+      <td rowspan="50">8.2.2<br>8.2.1<br>8.2.0<br>8.1.4<br>8.1.3<br>8.1.2<br>8.1.1<br>8.1.0<br>8.0.3<br>8.0.2<br>8.0.1<br>8.0.0</td>
+      <td rowspan="15">8.5.2<br>8.5.1<br>8.5.0</td>
+      <td>8.3.0</td>
+      <td rowspan="19">8.0.2</td>
+    </tr>
+    <tr>
+      <td>8.14.5</td>
+      <td rowspan="17">8.2.2<br>8.2.1<br>8.2.0<br>8.1.1<br>8.1.0</td>
+    </tr>
+    <tr>
       <td>8.14.4</td>
-      <td rowspan="7">8.6.1<br>8.6.0</td>
-      <td rowspan="45">8.0.1</td>
-      <td rowspan="16">8.2.0<br>8.1.1<br>8.1.0</td>
-      <td rowspan="48">8.2.1<br>8.2.0<br>8.1.4<br>8.1.3<br>8.1.2<br>8.1.1<br>8.1.0<br>8.0.3<br>8.0.2<br>8.0.1<br>8.0.0</td>
-      <td rowspan="13">8.5.2<br>8.5.1<br>8.5.0</td>
-      <td rowspan="16">8.2.1<br>8.2.0<br>8.1.1<br>8.1.0</td>
-      <td rowspan="17">8.0.2</td>
     </tr>
     <tr>
       <td>8.14.3</td>
