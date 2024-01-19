@@ -40,8 +40,8 @@ a theme consists of:
 Below you can see an application with several different themes and variants
 
 <ul class="image-gallery">
-<li><a href="{{ base_path }}/images/customization/themes/customers-table-light.png" title="Ontimize Theme">
-<img src="{{ base_path }}/images/customization/themes/customers-table-light.png" alt="Ontimize Theme" title="Ontimize Theme" />
+<li><a href="{{ base_path }}/assets/images/customization/themes/customers-table-light.png" title="Ontimize Theme">
+<img src="{{ base_path }}/assets/images/customization/themes/customers-table-light.png" alt="Ontimize Theme" title="Ontimize Theme" />
 <span>Ontimize Theme</span></a></li>
 <li><a href="{{ base_path }}/images/customization/themes/customers-detail-dark.png" title="Ontimize Dark Theme">
 <img src="{{ base_path }}/images/customization/themes/customers-detail-dark.png" alt="Ontimize Dark Theme" title="Ontimize Dark Theme" />
