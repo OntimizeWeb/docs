@@ -22,7 +22,7 @@ The data array can be provided in two ways:
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
 
 ## Basic example
-![Combo component]({{ "/images/components/inputs/o-combo.png" | absolute_url }}){: .comp-example-img}
+![Combo component]({{ "/assets/images/components/inputs/o-combo.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -35,7 +35,7 @@ The data array can be provided in two ways:
 
 The `o-combo` doesn't allow multiple selection by default, you can configure the multiple selection by setting the value **yes** to the `multiple` attribute. This will allow the user to select multiple values at once.
 
-![Multiple selection]({{ "/images/components/inputs/o-combo-multiple.png" | absolute_url }}){: .comp-example-img}
+![Multiple selection]({{ "/assets/images/components/inputs/o-combo-multiple.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -49,7 +49,7 @@ The `o-combo` doesn't allow multiple selection by default, you can configure the
 
 You can customize the combo label configuring the `multiple-trigger-label` attribute as in the example below.
 
-![Multiple selection]({{ "/images/components/inputs/o-combo-multiple-trigger-label.png" | absolute_url }}){: .comp-example-img}
+![Multiple selection]({{ "/assets/images/components/inputs/o-combo-multiple-trigger-label.png" | absolute_url }}){: .comp-example-img}
 
 ```html
   <o-form editable-detail="no" show-header="no">
@@ -239,7 +239,7 @@ OntimizeWeb offers the `oLocker` directive to the `o-combo` that should to lock 
   value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" width="33%">
 </o-combo>
 ```
-![OLocker in  Combo component]({{ "/images/components/inputs/combo-oLocker.gif" | absolute_url }}){: .comp-example-img}
+![OLocker in  Combo component]({{ "/assets/images/components/inputs/combo-oLocker.gif" | absolute_url }}){: .comp-example-img}
 
 Note you can configure the mode of the locker, there are two modes to block, *disable* and *load* mode. The mode by default is *load*. You can configure  delay service start with `oLockerDelay` attribute, by default this value is the *250ms*.
 

@@ -1,11 +1,11 @@
 ---
-permalink: /keycloak/installation/
 title: "Installation"
-nav_exclude: true
+permalink: /keycloak/installation/
 layout: default
+parent: Keycloak
+grand_parent: Addons
+nav_order: 2
 ---
-
-{% include base_path %}
 
 ## Installation
 

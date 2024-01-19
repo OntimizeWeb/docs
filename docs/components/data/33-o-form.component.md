@@ -261,7 +261,7 @@ The filter builder is a component whose purpose is to solve the problem describe
   ....
 ```
 
-![Custom form toolbar buttons]({{ "/images/components/form/customtoolbarform.png" | absolute_url }}){: .comp-example-img}
+![Custom form toolbar buttons]({{ "/assets/images/components/form/customtoolbarform.png" | absolute_url }}){: .comp-example-img}
 
 ## Custom form messages
 The `o-form` component displays different messages after ending some actions. `OntimizeWeb` provides a custom set of messages for this actions that might be overrided using the `message-service-type` input. For doing that,
@@ -314,7 +314,7 @@ For example
   ...
 </o-form>
 ```
-![Form with fill-form class]({{ "/images/components/form/o-form_fill-form.png" | absolute_url }}){: .comp-example-img}
+![Form with fill-form class]({{ "/assets/images/components/form/o-form_fill-form.png" | absolute_url }}){: .comp-example-img}
 
 And whithout the `fill-form` class:
 ```html
@@ -322,7 +322,7 @@ And whithout the `fill-form` class:
   ...
 </o-form>
 ```
-![Form with fill-form class]({{ "/images/components/form/o-form_no_fill-form.png" | absolute_url }}){: .comp-example-img}
+![Form with fill-form class]({{ "/assets/images/components/form/o-form_no_fill-form.png" | absolute_url }}){: .comp-example-img}
 
 ## Support JDBC UUID <span class='menuitem-badge'>new<span>
 

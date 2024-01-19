@@ -98,4 +98,4 @@ export const MENU_CONFIG: MenuRootItem[] = [
 ];
 ```
 
-![Bar menu component]({{ "/images/components/menu/o-bar-menu.png" | absolute_url }})
+![Bar menu component]({{ "/assets/images/components/menu/o-bar-menu.png" | absolute_url }})

@@ -16,7 +16,7 @@ The `o-slider` component is used in [forms]({{ base_path }}/components/form/over
 The slider component is automatically registered on its parent `o-form`, which provides the value for the slide programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-![Slider component]({{ "/images/components/inputs/slider/o-slider.png" | absolute_url }}){: .comp-example-img}
+![Slider component]({{ "/assets/images/components/inputs/slider/o-slider.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="false" show-header="no">
@@ -50,7 +50,7 @@ By default the minimum value of the slider is *0*, the maximum value is *100*, a
 
 By default sliders are *horizontal* with the minimum value on the left and the maximum value on the right. The `vertical` attribute can be added to a slider to make it *vertical* with the minimum value on bottom and the maximum value on top.
 
-![Vertical slider component]({{ "/images/components/inputs/slider/o-slider-vertical.png" | absolute_url }}){: .comp-example-img}
+![Vertical slider component]({{ "/assets/images/components/inputs/slider/o-slider-vertical.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="false" show-header="no" layout-direction="row">
@@ -92,7 +92,7 @@ The tick-interval can also be set to auto which will automatically choose the nu
 <o-slider attr="slider-editable" read-only="no" thumb-label="true" tick-interval="auto"></o-slider>
 ```
 
-![Vertical slider component with tick-interval]({{ "/images/components/inputs/slider/o-slider-vertical-tickinterval.png" | absolute_url }}){: .comp-example-img}
+![Vertical slider component with tick-interval]({{ "/assets/images/components/inputs/slider/o-slider-vertical-tickinterval.png" | absolute_url }}){: .comp-example-img}
 
 ## Formatting the thumb label
 By default, the value in the slider's thumb label will be the same as the model value, however this may end up being too large to fit into the label. If you want to control the value that is being displayed, you can do so using the displayWith input.
@@ -117,7 +117,7 @@ By default, the value in the slider's thumb label will be the same as the model 
 ```
 
 
-![Formatting the thumb label in slider component]({{ "/images/components/inputs/slider/o-slider-vertical-displayWith.png" | absolute_url }}){: .comp-example-img}
+![Formatting the thumb label in slider component]({{ "/assets/images/components/inputs/slider/o-slider-vertical-displayWith.png" | absolute_url }}){: .comp-example-img}
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/slider){:target="_blank"}.
 

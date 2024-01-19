@@ -16,7 +16,7 @@ The `o-text-input` component is used in [forms]({{ base_path }}/components/form/
 The text input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-![Text input component]({{ "/images/components/inputs/o-text-input.png" | absolute_url }}){: .comp-example-img}
+![Text input component]({{ "/assets/images/components/inputs/o-text-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -36,7 +36,7 @@ Custom content can be included before and after the input tag, as a prefix or su
     </o-text-input>
 ```
 
-![Prefix in o-text-input component]({{ "/images/components/inputs/o-text-input-prefix.png" | absolute_url }}){: .comp-example-img}
+![Prefix in o-text-input component]({{ "/assets/images/components/inputs/o-text-input-prefix.png" | absolute_url }}){: .comp-example-img}
 
 ## Validation
 The `o-text-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

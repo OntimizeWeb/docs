@@ -1,9 +1,11 @@
 ---
 permalink: /gallery/components/gallery/overview
-title: "Gallery"
+title: "Component"
 comp: gallery
 layout: o-component
-nav_exclude: true
+parent: Gallery
+grand_parent: Addons
+nav_order: 3
 ---
 
 {% include base_path %}
@@ -14,7 +16,7 @@ nav_exclude: true
 
 The `o-gallery` component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel.
 
-![Gallery component]({{ "/images/components/gallery/gallery.png" | absolute_url }}){: .comp-example-img}
+![Gallery component]({{ "/assets/images/components/gallery/gallery.png" | absolute_url }}){: .comp-example-img}
 
 ## Gallery
 
@@ -101,7 +103,7 @@ The `o-gallery` component allow multiple options for configurating with `gallery
 #### Swipe <span class='menuitem-badge'>new<span>
 The `o-gallery` component allows to navigate images and videos with *mouse*, *touch*, and *keyboard* events in the thumbnail, image slider or/and preview section with `thumbnailsSwipe`, `imageSwipe`, `previewSwipe` in `gallery-options` input. The default values are `true`.
 
-![Gallery swipe]({{ "/images/components/gallery/swipe-gallery.gif" | absolute_url }}){: .comp-example-img}
+![Gallery swipe]({{ "/assets/images/components/gallery/swipe-gallery.gif" | absolute_url }}){: .comp-example-img}
 
 #### Actions
 
@@ -137,4 +139,4 @@ ngOnInit(): void {
 }
 ```
 
-![Action Gallery]({{ "/images/components/gallery/gallery-actions.png" | absolute_url }}){: .comp-example-img}
+![Action Gallery]({{ "/assets/images/components/gallery/gallery-actions.png" | absolute_url }}){: .comp-example-img}

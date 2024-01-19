@@ -15,7 +15,7 @@ The **OntimizeWeb** context menu is compound of the `o-context-menu` component a
 
 The `o-context-menu` component supports the ability for nested menu. To do so, you have to define [`o-context-menu-group`](#context-menu-group) component
 
-![Context Menu]({{ "/images/layouts/context-menu/context-menu.png" | absolute_url }}){: .comp-example-img}
+![Context Menu]({{ "/assets/images/layouts/context-menu/context-menu.png" | absolute_url }}){: .comp-example-img}
 
 For including the context menu in your application follow the next steps:
 
@@ -69,6 +69,6 @@ The `oContextMenuData` is an attribute of the `oContextMenu` directive is used f
   }
 
 ```
-![Context Menu]({{ "/images/layouts/context-menu/context-menu.png" | absolute_url }}){: .comp-example-img}
+![Context Menu]({{ "/assets/images/layouts/context-menu/context-menu.png" | absolute_url }}){: .comp-example-img}
 
 You can see a live example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/modals/contextmenu){:target="_blank"}.

@@ -2,10 +2,13 @@
 title: "Report store"
 permalink: /report/components/report-store/overview
 layout: default
-nav_exclude: true
+parent: Report
+grand_parent: Addons
+nav_order: 3
 ---
 
->**NOTE:** Remember to complete the steps you need to perform on your backend server to complete the report store configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/reports/report-store){:target="_blank"}
+{: .note}
+>Remember to complete the steps you need to perform on your backend server to complete the report store configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/reports/report-store){:target="_blank"}
 
 To add that in your application run a reports with jasper template you have to follow the following steps
 
@@ -82,15 +85,15 @@ export class ReportModule{}
 
 Now you should a new option similar to where you can management the reports
 
-![Report management module ]({{ "/images/report/report_management.PNG" | absolute_url }}){: .comp-example-img}
+![Report management module ]({{ "/assets/images/report/report_management.PNG" | absolute_url }}){: .comp-example-img}
 
 When you add a report, you must add a .zip file that contains a .jrxml file.
 
-![New report ]({{ "/images/report/newReportStore.png" | absolute_url }}){: .comp-example-img}
+![New report ]({{ "/assets/images/report/newReportStore.png" | absolute_url }}){: .comp-example-img}
 
 In the report detail view, the report can be generated and if you decide to use the parameters, they will appear in the detail report as an option.
 
-![Detail report ]({{ "/images/report/reportDetailStore.png" | absolute_url }}){: .comp-example-img}
+![Detail report ]({{ "/assets/images/report/reportDetailStore.png" | absolute_url }}){: .comp-example-img}
 
 {:start="5"}
 5. Add a button and on its click event generate the PDF document. The method `openFillReport` takes as parameter the `UUID`, the parameters values and the filter of the report.

@@ -2,7 +2,9 @@
 permalink: /map/configuration/o-wms-layer/overview
 title: "WMS Layer"
 layout: default
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 8
 ---
 
 
@@ -58,4 +60,4 @@ export class WMSLayerComponent  {
 ```
 
 
-![Integrating WMS]({{ "/images/map/wms.png" | absolute_url }}){: .comp-example-img }
+![Integrating WMS]({{ "/assets/images/map/wms.png" | absolute_url }}){: .comp-example-img }

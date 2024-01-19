@@ -17,7 +17,7 @@ The `o-daterange-input` component is used in [forms]({{ base_path }}/components/
 The date range input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-![Daterange input component]({{ "/images/components/inputs/o-daterange-input.png" | absolute_url }}){: .comp-example-img width='65%'}
+![Daterange input component]({{ "/assets/images/components/inputs/o-daterange-input.png" | absolute_url }}){: .comp-example-img width='65%'}
 
 ```html
 <o-form editable-detail="no" show-header="no" layout-direction="row">
@@ -63,7 +63,7 @@ The `o-daterange-input` can render in two differents ways based on the `mode` pr
 
 
 <h3>Mode mobile example</h3>
-![Date range mode ]({{ "/images/components/inputs/o-daterange-mode-mobile.png" | absolute_url }}){: .comp-example-img}
+![Date range mode ]({{ "/assets/images/components/inputs/o-daterange-mode-mobile.png" | absolute_url }}){: .comp-example-img}
 ```html
 <div fxLayout="row" fxLayoutAlign="end center" class="selector-mode">
   <mat-icon>desktop_mac</mat-icon>{{'MODE.DESKTOP' | oTranslate}}
@@ -86,7 +86,7 @@ The `o-daterange-input` normally opens as a popup under the input, however the c
 
 The `o-daterange-input` supports date Moments formats setting, all you have to do is to set the format via `format` input. The format MomentJS by default is <em>L</em> (see <em>Localized formats</em> in [MomentJS format](http://momentjs.com/docs/#/displaying/format){:target='_blank'})
 
-![Format int daterang input component]({{ "/images/components/inputs/o-daterange-format.png" | absolute_url }}){: .comp-example-img}
+![Format int daterang input component]({{ "/assets/images/components/inputs/o-daterange-format.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <div fxLayout="column" layout-padding>
@@ -137,7 +137,7 @@ The `o-daterange-input` have available 7 predefined date ranges that you can sel
 - Last 30 days
 - This month
 
-![Touch UI in date range]({{ "/images/components/inputs/o-daterange-touchui.png" | absolute_url }}){: .comp-example-img}
+![Touch UI in date range]({{ "/assets/images/components/inputs/o-daterange-touchui.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-daterange-input attr="daterange" label="Date range" read-only="no"  required="yes"
@@ -176,7 +176,7 @@ export class InputDateRangeComponent {
 }
 ```
 
-![Validation min and max in date range]({{ "/images/components/inputs/o-daterange-input-validation-minmax.png" | absolute_url }}){: .comp-example-img}
+![Validation min and max in date range]({{ "/assets/images/components/inputs/o-daterange-input-validation-minmax.png" | absolute_url }}){: .comp-example-img}
 
 
 

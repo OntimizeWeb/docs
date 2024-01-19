@@ -2,7 +2,9 @@
 permalink: /report/installation/
 title: "Installation"
 layout: default
-nav_exclude: true
+parent: Report
+grand_parent: Addons
+nav_order: 2
 ---
 
 {% include base_path %}

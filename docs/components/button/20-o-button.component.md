@@ -65,6 +65,6 @@ nav_order: 1
     </div>
   ```
 
-  ![Button]({{ "/images/components/button/o-button.png" | absolute_url }}){: .comp-example-img}
+  ![Button]({{ "/assets/images/components/button/o-button.png" | absolute_url }}){: .comp-example-img}
 
   You can see this live example in the [OntimizeWeb playground]({{site.playgroundurl}}/main/buttons){:target="_blank"}.

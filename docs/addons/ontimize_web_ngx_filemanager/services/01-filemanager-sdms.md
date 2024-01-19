@@ -2,7 +2,9 @@
 permalink: /filemanager/filemanagerservice/sdms
 title: "File Manager SDMS Service"
 layout: default
-nav_exclude: true
+parent: File Manager
+grand_parent: Addons
+nav_order: 4
 ---
 
 {% include base_path %}

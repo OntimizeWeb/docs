@@ -16,7 +16,7 @@ The `o-file-input` component is used in [forms]({{ base_path }}/components/form/
 The file input is automatically registered on its parent `o-form`. The configuration attributes for this component are explained on the **API** section of this page.
 
 ## Basic example
-![File input component]({{ "/images/components/inputs/o-file-input.png" | absolute_url }}){: .comp-example-img}
+![File input component]({{ "/assets/images/components/inputs/o-file-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">

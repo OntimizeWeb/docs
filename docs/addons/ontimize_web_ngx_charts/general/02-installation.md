@@ -2,7 +2,9 @@
 permalink: /charts/installation/
 title: "Installation"
 layout: default
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 2
 ---
 
 {% include base_path %}

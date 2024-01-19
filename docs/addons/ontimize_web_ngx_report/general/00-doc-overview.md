@@ -2,14 +2,16 @@
 title: "Overview"
 permalink: /report/overview/
 layout: default
-nav_exclude: true
+parent: Report
+grand_parent: Addons
+nav_order: 1
 ---
 
 {% include base_path %}
 
 ## Introduction
 
-The module **Ontimize Web Report**  is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}.
+The module **Ontimize Web Report**  is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx/tree/main.15.x){:target="_blank"}.
 
 **Ontimize Web Report** implements reporting with:
 
@@ -20,7 +22,7 @@ This visual tool will allow users to define parameters of the report such as **t
 
 You need to configure your backend server and you can consult the documentation in this [link](https://ontimize.github.io/ontimize-boot/basics/reports/){:target="_blank"}
 
-> **NOTE:**
-What is JasperReports Library?
+{: .note}
+>What is JasperReports Library?
 JasperReports Library is an *open source reporting engine, written entirely in Java*. JasperReports Library is able to use data coming from any kind of data source and produce documents that can viewed, printed, or exported in a variety of document formats, including HTML, PDF, Excel, OpenOffice and Word.
 

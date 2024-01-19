@@ -36,7 +36,9 @@ You can see the states and transitions between a table and the detail form for t
 >![Detail form editable example]({{ base_path }}/assets/images/components/form/editableDetailYES-gif.gif){: .align-center.padding-top}
 
 
->**NOTE** This behaviour affects the performance of the attributes `detail-button-in-row` and `edit-button-in-row` from the `o-table` component. When the form is configured as a *editable detail form* you should not use the edit button on the table row because the form will not parse the *edit* path.
+{: .note}
+>This behaviour affects the performance of the attributes `detail-button-in-row` and `edit-button-in-row` from the `o-table` component. When the form is configured as a *editable detail form* you should not use the edit button on the table row because the form will not parse the *edit* path.
+
 >![Detail form editable transitions]({{ base_path }}/assets/images/components/form/modesEditableTRUE.png){: .align-center.padding-top}
 
 ## Not editable detail form

@@ -41,7 +41,7 @@ When using a remote data binded tree component, a `o-tree-node` must specify in 
 </o-tree>
 ```
 
-![Tree component]({{ "/images/components/tree/inner.png" | absolute_url }}){: .comp-example-img}
+![Tree component]({{ "/assets/images/components/tree/inner.png" | absolute_url }}){: .comp-example-img}
 
 ## Quick filter
 

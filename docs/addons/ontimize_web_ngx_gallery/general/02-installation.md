@@ -1,9 +1,11 @@
 ---
 permalink: /gallery/installation/
-title: "Gallery"
+title: "Installation"
 excerpt: ""
-nav_exclude: true
 layout: default
+parent: Gallery
+grand_parent: Addons
+nav_order: 2
 ---
 {% include base_path %}
 
