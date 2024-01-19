@@ -11,7 +11,7 @@ nav_order: 5
 {% include toc %}
 
 ## How to use Material Design icons
-Every Ontimize Web component having a icon input might use one of the available icons in  [Google material design icons](https://design.google.com/icons/){:target='_blank'}.
+Every Ontimize Web component having a icon input might use one of the available icons in  [Google material design icons](https://fonts.google.com/icons){:target='_blank'}.
 
 
 ## Ontimize Web icons
@@ -21,7 +21,7 @@ The Ontimize Web components uses a set of icons stored internally in svg format.
 <mat-icon svgIcon="ontimize:ICON_NAME"></mat-icon>
 ```
 
-Where you can replace 'ICON_NAME' for one of the following icons (stored [here](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/projects/ontimize-web-ngx/assets/svg/ontimize-icon-set.svg){:target='_blank'}):
+Where you can replace 'ICON_NAME' for one of the following icons (stored [here](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/main.15.x/projects/ontimize-web-ngx/assets/svg/ontimize-icon-set.svg){:target='_blank'}):
 
 | BTC | USD | EUR | LIR | PERCENT | GBP | INR | ILS |
 | KRW | JPY | add | LIR | keyboard_arrow_left | keyboard_arrow_right | keyboard_arrow_down | keyboard_arrow_up |

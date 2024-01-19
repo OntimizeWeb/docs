@@ -68,6 +68,7 @@ When the content is at different elevations it is for different reasons:
 <style>
     .image-gallery {overflow: auto; margin-left: 0!important;}
     .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 280px;}
+    .image-gallery li::before {content: ""!important;}
     .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
     .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
     .image-gallery li a img {width: 100%; display: block;}
@@ -99,10 +100,11 @@ Depending if our aplication is on dark or light mode we got two difference types
 
 There are two difference ways to get the surface colors in our aplications, one way is to get the values directly from the background function as you can see on the example below (the name of the color it's the defined [here](#how-many-levels-of-surfaces-do-we-have) but to search it on the map you need to delete `bg-`):
 
-```css
-$theme: o-mat-light-theme($primary, $accent);
-$background: map-get($theme, background);
-$my-custom-bg-color: mat-color($background, level-04);
+```scss
+@use '@angular/material'as mat;
+$colors: map.get(theme.$theme, color);
+$bg-colors: map.get($colors, background);
+$color: map.get($bg-colors, level-04);
 ```
 
 The other way is to use the clases defined in our style file. The name of each color it's defined [here](#how-many-levels-of-surfaces-do-we-have). See the example below:

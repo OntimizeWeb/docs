@@ -87,7 +87,7 @@ More information about the `angular.json` style configuration [here](https://ang
 
 Import the OntimizeWeb theme in your application.
 
-```css
+```scss
 @use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
 @use 'ontimize-web-ngx/theming/ontimize-style.scss';
 
