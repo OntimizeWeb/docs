@@ -22,7 +22,7 @@ You can see the complete documentation [here]({{ base_path }}/charts/overview/).
 
 Check out examples demo:
 <p>
-  <a href="https://try.imatia.com/ontimizeweb/v8/charts/main/home" target="_blank" class="btn btn--success">
+  <a href="https://try.imatia.com/ontimizeweb/v15/charts/main/home" target="_blank" class="btn btn--success">
     <i class="fa fa-play"></i>
     live demo
   </a>

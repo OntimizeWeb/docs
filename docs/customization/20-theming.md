@@ -45,8 +45,6 @@ Below you can see an application with several different themes and variants
 <span>Ontimize Dark Theme</span></a></li>
 </ul>
 
-
-
 ## Dark and light primary variants
 
 Your primary color can be used to make a color theme for your app, including *dark* and *light* primary color variants.
@@ -60,7 +58,7 @@ A dark variant is a low-light UI that displays mostly dark surfaces.
 Below an exemplary Angular application can be found that has implemented the Pure Sass approach. If you enable the Dark Mode in the settings of your operating system, the app will appear in dark colors, otherwise in bright colors.
 
 
-![Dark Mode]({{ base_path }}/images/customization/playground_dark_light.gif){: .align-center}
+![Dark Mode]({{ base_path }}/assets/images/customization/playground_dark_light.gif){: .align-center}
 
 ## Configuration
 

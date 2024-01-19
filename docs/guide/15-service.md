@@ -118,7 +118,7 @@ Where the attributes indicates the following:
 
 You can see an example of a Ontimize service request response in the image below. You can see the complete response [here]({{ base_path }}/assets/examples/ontimize_service_request_example_response.json){:target='_blank'}.
 
-![Ontimize service response example]({{ base_path }}/images/request.png){: .align-center}
+![Ontimize service response example]({{ base_path }}/assets/images/request.png){: .align-center}
 
 ### Use OntimizeService in your application
 

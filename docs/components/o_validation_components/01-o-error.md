@@ -1,6 +1,6 @@
 ---
 permalink: /components/input/error/overview
-title: "OErrorComponent"
+title: Error component
 comp: error
 layout: o-component
 nav_exclude: true

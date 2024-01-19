@@ -2,7 +2,7 @@ url: https://ontimizeweb.github.io
 
 title: Ontimize Web
 
-logo: images/logo-ontimize-blanco.png
+logo: assets/images/logo-ontimize-blanco.png
 
 search_enabled: true
 
@@ -26,7 +26,9 @@ page_excerpts: true
 github:
   - name: Onitmize Web
     url: https://github.com/OntimizeWeb
-    icon: images/github-front.svg
+    icon: assets/images/github-front.svg
+
+playgroundurl: https://try.imatia.com/ontimizeweb/v15/playground
 
 color_scheme: ontimize-light
 

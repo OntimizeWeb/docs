@@ -231,8 +231,9 @@ If you want to override this component to configure its options you can define y
 ```
 
 ---
-**NOTE**
-The option to change the filter case sensitive filtering may not appear if `pageable` attribute is setted to false in table component.
+
+{: .note }
+>The option to change the filter case sensitive filtering may not appear if `pageable` attribute is setted to false in table component.
 
 ---
 
@@ -352,7 +353,7 @@ You can see different predefined table cell renderers in the example below.
 </o-table>
 ```
 
-You can see this live example in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/renderer){:target="_blank"}.
+You can see this live example in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/table/renderer){:target="_blank"}.
 
 **Action cell renderer**
 
@@ -514,7 +515,7 @@ You can include this component in your table in two different ways:
 </o-table-column>
 ```
 
-You can see this example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/main/employees){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/master/src/app/main/employees/employees-home){:target="_blank"}.
+You can see this example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/tree/main.15.x/src/app/main/employees/employees-home){:target="_blank"}.
 
 **Translate cell renderer**
 
@@ -588,7 +589,7 @@ All you have to do to enable data editing capabilities for the component is to:
 - Configure data binding
 
 {: .note }
->: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
+>It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
 
 Cell editing results in the following events.
 
@@ -614,7 +615,7 @@ If a column haven't type will be *string*. You can find all information [here]({
 
 **3.** Custom editor. Below is an example but you can find all information [here]({{ base_path }}/components/table/overview/#custom-editors).
 
-You can see examples of this section in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/editor){:target="_blank"}.
+You can see examples of this section in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/table/editor){:target="_blank"}.
 
 For example:
 
@@ -780,7 +781,7 @@ Finally, add the *OTableCellEditorName* component to your module.
 
 You can setup validation on the editors configured in the table with `o-validator` component.
 
-Using the `o-validator` component has the advantage that the user can define any validation error message for their editors. For doing that user has to include the  [`o-validator`]({{ base_path }}/components/input/validator/overview/){:target='_blank'} component inside the HTML definition of the `o-table-cell-editor`.
+Using the `o-validator` component has the advantage that the user can define any validation error message for their editors. For doing that user has to include the  [`o-validator`]({{ base_path }}/components/input/validator/overview){:target='_blank'} component inside the HTML definition of the `o-table-cell-editor`.
 
 Below is an example of using the **pattern validator**.
 ```html
@@ -831,7 +832,7 @@ The table supports checkbox selection with `select-all-checkbox-visible` propert
 
 You can configure show in the menu on the upper right the option of select row with `select-all-checkbox` property. It is disabled by default.
 
-<p><img src="{{ base_path }}/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
+<p><img src="{{ base_path }}/assets/images/components/tabla/selection_table.png" alt="Selection multiple table" class="comp-example-img"></p>
 
 Additionally, you can specify a function setting the input `disable-selection-function` to disable the checkboxes depending on a condition. This function receives full data record for allowing you to enable/disable selection checkbox depending on value/s of the record.
 
@@ -887,7 +888,7 @@ Oftentimes, when displaying numbers in the table, users would like to be able to
   }
 ```
 
-You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/total){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/table/total){:target="_blank"}.
 
 ### Calculated columns
 
@@ -936,7 +937,7 @@ In the following example, two calculated columns are defined that perform the sa
 
 ```
 
-You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/calculatedcolumn).
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/table/calculatedcolumn).
 
 ### Table options
 
@@ -1027,7 +1028,7 @@ You can also include your own `context-menu` with the reference to a [`o-context
 
 For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/overview/){:target='_blank'}.
 
-You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/contextmenu){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/table/contextmenu){:target="_blank"}.
 
 ### Insertable row
 
@@ -1056,7 +1057,7 @@ To create a custom insertable column, you must define a custom editor for the co
 
 If you add validators to your `o-table-cell-editor` this validation will work also in the insertable row editors.
 
-You can see more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table/insertablerow){:target="_blank"}.
+You can see more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/table/insertablerow){:target="_blank"}.
 
 ### Table buttons
 
@@ -1121,8 +1122,8 @@ The same data that is in the table gets exported but `none` the values ​​pro
 
 The operation of the exports depends on whether **Ontimize, OntimizeJEE** or **Ontimize Boot** servers are used. You can read more about this topic in the [export table data](export){:target='_blank'}.
 
-
->NOTE: Ontimize Web data export is compatible with _Ontimize, OntimizeEE and Ontimize Boot_ servers from `ontimize-web-ngx: 8.8.0`, with previous versions it is compatible with Ontimize and OntimizeEE servers.
+{: .note }
+>Ontimize Web data export is compatible with _Ontimize, OntimizeEE and Ontimize Boot_ servers from `ontimize-web-ngx: 8.8.0`, with previous versions it is compatible with Ontimize and OntimizeEE servers.
 
 
 ### Table export button
@@ -1188,7 +1189,8 @@ You can configure the value that is displayed with the attribute `tooltip-value`
 
 You can customize the tooltip styles by redefining the class `o-table-cell-tooltip`.
 
-Note: If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
+{: .note }
+>If you have a custom render in the column and it is not overwritten the *getCelldata* method will show the internal value of the table.
 
 ### Reinitialize method
 
@@ -1246,7 +1248,8 @@ The example below makes use of *simple template*, the content of the child row i
 
 It is possible to define a *template with context*, so that if the defined template contains a component (such as o-table, o-list, o-chart and o-grid), this context provide functionalities like parent-keys and query the component data automatically when the row is expanded, for example.
 
->NOTE: It is necessary define `targets` input and `[data]="row"` to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with `[data]="row"`
+{: .note }
+>It is necessary define `targets` input and `[data]="row"` to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with `[data]="row"`
 
 ```html
 <o-table fxFill #table service-type="DummyService" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;SURNAME;NAME"
@@ -1274,7 +1277,7 @@ It is possible to define a *template with context*, so that if the defined templ
 
 ![Row expanded with a template with context]({{ "/images/components/tabla/row-expanded-context.PNG" | absolute_url }}){: .comp-example-img}
 
-The `o-table` component has an input to control expandable row and show or not the expansion icon. This input `show-expandable-icon-function` must set a function that will receive data of expandable row and has to return a boolean observable. You can check a complete example [here](https://try.imatia.com/ontimizeweb/v8/playground/main/table/rowexpandable){:target='_blank'}.
+The `o-table` component has an input to control expandable row and show or not the expansion icon. This input `show-expandable-icon-function` must set a function that will receive data of expandable row and has to return a boolean observable. You can check a complete example [here](https://try.imatia.com/ontimizeweb/v15/playground/main/data/table/rowexpandable){:target='_blank'}.
 
 
 
@@ -1409,11 +1412,12 @@ You can configure if you want the groups to appear by default expanded or collap
 
 For more information see the API.
 
-> NOTE: There is no limit on the number of columns that the table can group by.
+{: .note }
+>There is no limit on the number of columns that the table can group by.
 
 ### Report on demand <span class='menuitem-badge'>new<span>
 
-The `o-table` component has a new option in table menu that allows the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This menu option is enabled by default.  Using `show-report-on-demand-option` property you can modify the default value. For more information see the **API**. You can also find more information about reports in their documentation following this [link](https://ontimizeweb.github.io/docs/v8/report/components/report-on-demand/overview){:target="_blank"}.
+The `o-table` component has a new option in table menu that allows the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This menu option is enabled by default.  Using `show-report-on-demand-option` property you can modify the default value. For more information see the **API**. You can also find more information about reports in their documentation following this [link](https://ontimizeweb.github.io/docs/v15/report/components/report-on-demand/overview){:target="_blank"}.
 
 ![Report on-demand example ]({{ "/images/report/basicReportOnDemand.PNG" | absolute_url }}){: .comp-example-img}
 
@@ -1519,4 +1523,4 @@ Use the Sass `@include `keyword to include a component's theme mixin wherever yo
 ## Demo
 
 
-You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/table){:target="_blank"}.
+You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/table){:target="_blank"}.
