@@ -10,6 +10,9 @@ nav_order: 1
 {% include base_path %}
 {% include toc %}
 
+{: .note }
+>This theming page make reference to Ontimize Web 15.x.x versions, to access old documentation about theming go to the [8.x.x documentation page](https://ontimizeweb.github.io/docs/v8/customize/theming/).
+
 ## What is a theme?
 A **theme** is the set of colors that are applied to the Angular Material components. The library’s approach to theming is based on guidance from the [Material Design spec](https://material.google.com/style/color.html#color-color-palette){:target="_blank"}.
 
@@ -62,7 +65,7 @@ Below an exemplary Angular application can be found that has implemented the Pur
 
 ## Configuration
 
-To make the theming job easier we integrate the old theming module into the [core library](https://github.com/OntimizeWeb/ontimize-web-ngx/tree/main.15.x){:target="_blank"}. In the following lines you are going to see how to properly use our theming engine.
+To make the theming job easier we integrate the theming module into the [core library](https://github.com/OntimizeWeb/ontimize-web-ngx/tree/main.15.x){:target="_blank"}. In the following lines you are going to see how to properly use our theming engine.
 
 ### Files to configure in the proyect
 
