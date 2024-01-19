@@ -16,7 +16,7 @@ The `o-grid` component is used to display a two-dimensional list view that arran
 
 For adding a grid component to your application you must insert the `o-grid` in your page and include a `o-grid-item` component wrapping the desired grid item type you want to display.
 
-![Grid component]({{ "/images/components/grid/basic-grid.png" | absolute_url }}){: .comp-example-img width='65%'}
+![Grid component]({{ "/assets/images/components/grid/basic-grid.png" | absolute_url }}){: .comp-example-img width='65%'}
 
 ## Define title
 The `o-grid` component allows you to specify a title by configuring the `title` attribute, this value will appear in the toolbar.
@@ -44,7 +44,7 @@ The `o-grid` component allows you to configure the number of items displayed on 
 
 You can also configure the page size options by configuring the `show-page-size` and the `page-size-options` attributes.
 
-![Grid page size]({{ "/images/components/grid/grid-page-size.png" | absolute_url }}){: .comp-example-img }
+![Grid page size]({{ "/assets/images/components/grid/grid-page-size.png" | absolute_url }}){: .comp-example-img }
 
 ```html
 <o-grid #grid columns="id;name;username;email;companyname" keys="id" [static-data]="getStaticData()"
@@ -83,7 +83,7 @@ The `o-grid` component allows you to sort the grid items by configuring the `ord
 
 You also can specify the default sorting column by configuring the `sort-column` attribute.
 
-![Grid component]({{ "/images/components/grid/grid-sortable_2.png" | absolute_url }}){: .comp-example-img }
+![Grid component]({{ "/assets/images/components/grid/grid-sortable_2.png" | absolute_url }}){: .comp-example-img }
 
 ```html
 <o-grid #grid  columns="id;name;username;email;companyname" keys="id" [static-data]="getStaticData()"
@@ -128,7 +128,7 @@ grid-item-height="100px" controls="no" gutter-size="0">
 </o-grid>
 ```
 
-![Grid with multiple rows or columns]({{ "/images/components/grid/grid-multiple.png" | absolute_url }}){: .comp-example-img}
+![Grid with multiple rows or columns]({{ "/assets/images/components/grid/grid-multiple.png" | absolute_url }}){: .comp-example-img}
 
 ## QuickFilter
 By default this option is enabled, the filter is visible in the top right. It can be disabled by configuring the `quick-filter` attribute.
@@ -256,7 +256,7 @@ When building an `o-grid` component you can define your own grid item. For inclu
 </o-grid>
 ```
 
-![Grid item custom]({{ "/images/components/grid/grid-sortable.png" | absolute_url }}){: .comp-example-img}
+![Grid item custom]({{ "/assets/images/components/grid/grid-sortable.png" | absolute_url }}){: .comp-example-img}
 
 ## Custom content in toolbar <span class='menuitem-badge'>new<span>
 
@@ -274,7 +274,7 @@ If the selector `o-grid-toolbar` is used together with `position='start'` the co
   </o-grid>
 ```
 
-![Add custom content in toolbar in position start]({{ "/images/components/grid/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
+![Add custom content in toolbar in position start]({{ "/assets/images/components/grid/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
 
 ## Demo
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/grid/basic).

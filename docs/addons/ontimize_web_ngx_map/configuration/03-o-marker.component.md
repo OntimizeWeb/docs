@@ -2,7 +2,9 @@
 permalink: /map/configuration/o-marker/overview
 title: "Marker"
 layout: default
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 6
 ---
 
 
@@ -30,4 +32,4 @@ You can check a working example of a marker layer [here](https://try.imatia.com/
 In the API tab you can check all inputs and outputs allowed.
 
 
-![Adding Marker]({{ "/images/map/map-marker.png" | absolute_url }}){: .comp-example-img }
+![Adding Marker]({{ "/assets/images/map/map-marker.png" | absolute_url }}){: .comp-example-img }

@@ -72,7 +72,7 @@ The input shows automatically an error message when the `required` attribute is 
 ```html
 <o-password-input #newpassword attr="NEW_PASSWORD" required="yes" min-length="8" ></o-password-input>
 ```
-![Input required validator]({{ "/images/components/inputs/validators/required.png" | absolute_url }}){: .comp-example-img}
+![Input required validator]({{ "/assets/images/components/inputs/validators/required.png" | absolute_url }}){: .comp-example-img}
 
 ### Ontimize validators
 
@@ -110,7 +110,7 @@ Below is an example of using the **pattern validator**.
   }
 ...
 ```
-![Input pattern validator]({{ "/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
+![Input pattern validator]({{ "/assets/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
 
 ### Custom validator
 
@@ -170,7 +170,7 @@ A input can be market with a `required` attribute, an asterisk will be appendend
 hide-required-marker="yes" [data]="getValue()"></o-text-input>
 ```
 
-![Input required]({{ "/images/components/inputs/required.png" | absolute_url }}){: .comp-example-img}
+![Input required]({{ "/assets/images/components/inputs/required.png" | absolute_url }}){: .comp-example-img}
 
 ## Enabled
 The *enabled* mode is active by default. You can disable the input by setting `enabled='no'`.

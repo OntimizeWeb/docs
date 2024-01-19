@@ -16,7 +16,7 @@ The `o-textarea-input` component is used in [forms]({{ base_path }}/components/f
 The textarea input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-![Textarea input component]({{ "/images/components/inputs/o-textarea-input.png" | absolute_url }}){: .comp-example-img}
+![Textarea input component]({{ "/assets/images/components/inputs/o-textarea-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-textarea-input attr="longtext" label="Long text" [data]="getData()" required="yes"></o-textarea-input>

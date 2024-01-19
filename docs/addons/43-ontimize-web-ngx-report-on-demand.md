@@ -4,6 +4,7 @@ permalink: /report/
 title: "Report"
 parent: Addons
 nav_order: 7
+has_children: true
 ---
 
 {% include base_path %}
@@ -11,12 +12,12 @@ nav_order: 7
 
 ## Introduction
 
-The module **Ontimize Web Report** is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx){:target="_blank"}, allowing **stored** and **on-demand** reporting to be generated.
+The module **Ontimize Web Report** is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx/tree/main.15.x){:target="_blank"}, allowing **stored** and **on-demand** reporting to be generated.
 
 
 ## Support
 
-The Ontimize Web Report module is available in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-report){:target="_blank"} where you can start discussions, add bug reports or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-report/issues){:target="_blank"} section.
+The Ontimize Web Report module is available in [github](https://github.com/OntimizeWeb/ontimize-web-ngx-report/tree/main.15.x){:target="_blank"} where you can start discussions, add bug reports or feature requests in the [issues](https://github.com/OntimizeWeb/ontimize-web-ngx-report/issues){:target="_blank"} section.
 
 ## Documentation
 

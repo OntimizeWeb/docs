@@ -30,7 +30,7 @@ The `o-list-item-text` component is used to display list items with a maximum of
 </o-list>
 ```
 
-![List item text]({{ "/images/components/list/list-item-text.png" | absolute_url }}){: .comp-example-img}
+![List item text]({{ "/assets/images/components/list/list-item-text.png" | absolute_url }}){: .comp-example-img}
 
 You can see an example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/lists/list-item-text){:target="_blank"}.
 
@@ -49,7 +49,7 @@ The `o-list-item-avatar` component is used to display list items with an avatar 
 </o-list>
 ```
 
-![List item avatar]({{ "/images/components/list/list-item-avatar.png" | absolute_url }}){: .comp-example-img}
+![List item avatar]({{ "/assets/images/components/list/list-item-avatar.png" | absolute_url }}){: .comp-example-img}
 
 You can see an example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/lists/list-item-avatar){:target="_blank"}.
 
@@ -68,7 +68,7 @@ The `o-list-item-card` component is used to display a card list item with text, 
 </o-list>
 ```
 
-![List item card]({{ "/images/components/list/list-item-card.png" | absolute_url }}){: .comp-example-img}
+![List item card]({{ "/assets/images/components/list/list-item-card.png" | absolute_url }}){: .comp-example-img}
 
 You can see an example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/lists/list-item-card){:target="_blank"}.
 
@@ -87,7 +87,7 @@ The `o-list-item-card-image` component is used to display card list items with a
 </o-list>
 ```
 
-![List item card image]({{ "/images/components/list/list-item-card-image.png" | absolute_url }}){: .comp-example-img}
+![List item card image]({{ "/assets/images/components/list/list-item-card-image.png" | absolute_url }}){: .comp-example-img}
 
 You can see an example of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/lists/list-item-card-image){:target="_blank"}.
 
@@ -114,7 +114,7 @@ When building an `o-list` component you can include one of the predefined list i
 </o-list>
 ```
 
-![List item custom]({{ "/images/components/list/list-item-custom.png" | absolute_url }}){: .comp-example-img}
+![List item custom]({{ "/assets/images/components/list/list-item-custom.png" | absolute_url }}){: .comp-example-img}
 
 ## Custom content in toolbar <span class='menuitem-badge'>new<span>
 
@@ -131,7 +131,7 @@ If the selector `o-list-toolbar` is used together with `position='start'` the co
 </o-list>
 ```
 
-![Add custom content in toolbar in position start]({{ "/images/components/list/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
+![Add custom content in toolbar in position start]({{ "/assets/images/components/list/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
 
 
 

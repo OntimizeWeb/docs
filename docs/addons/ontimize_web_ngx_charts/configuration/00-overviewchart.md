@@ -1,9 +1,11 @@
 ---
 permalink: /charts/configuration/overview/overview
-title: "Overview"
+title: "Configuration overview"
 comp: overviewchart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 3
 ---
 
 {% include base_path %}

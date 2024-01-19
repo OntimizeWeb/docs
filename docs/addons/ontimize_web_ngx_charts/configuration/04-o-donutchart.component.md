@@ -3,7 +3,9 @@ permalink: /charts/configuration/donutchart/overview
 title: "Donut Chart"
 comp: donutchart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 7
 ---
 
 {% include base_path %}

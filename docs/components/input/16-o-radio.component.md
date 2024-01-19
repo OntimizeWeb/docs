@@ -22,7 +22,7 @@ The data array can be provided in two ways:
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
 
 ## Basic example
-![Radio component]({{ "/images/components/inputs/o-radio.png" | absolute_url }}){: .comp-example-img}
+![Radio component]({{ "/assets/images/components/inputs/o-radio.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="false" show-header="no">

@@ -3,7 +3,9 @@ permalink: /charts/configuration/discretebarchart/overview
 title: "Discrete Bar Chart"
 comp: discretebarchart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 8
 ---
 
 {% include base_path %}

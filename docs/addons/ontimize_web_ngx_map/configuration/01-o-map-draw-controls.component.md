@@ -1,9 +1,11 @@
 ---
 permalink: /map/configuration/o-map-draw-controls/overview
-title: "o-map-draw-controls"
+title: "Draw controls"
 comp: omapdrawcontrols
 layout: o-component
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 4
 ---
 
 ## Introduction
@@ -70,4 +72,4 @@ export class MapEventsComponent {
 In the API tab you can check all inputs and outputs allowed.
 
 
-![Map Draw Controls]({{ "/images/map/draw-controls.png" | absolute_url }}){: .comp-example-img }
+![Map Draw Controls]({{ "/assets/images/map/draw-controls.png" | absolute_url }}){: .comp-example-img }

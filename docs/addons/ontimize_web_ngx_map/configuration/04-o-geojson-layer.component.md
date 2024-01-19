@@ -2,7 +2,9 @@
 permalink: /map/configuration/o-geojson-layer/overview
 title: "GeoJson Layer"
 layout: default
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 7
 ---
 
 
@@ -176,4 +178,4 @@ export class GeoServerService implements IGeoJSONLayerService {
 ```
 
 
-![Map Draw Controls]({{ "/images/map/geojson.png" | absolute_url }}){: .comp-example-img }
+![Map Draw Controls]({{ "/assets/images/map/geojson.png" | absolute_url }}){: .comp-example-img }

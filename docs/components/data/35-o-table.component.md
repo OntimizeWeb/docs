@@ -24,7 +24,7 @@ If the table also is *inside a form*, the `attr` property is required for regist
 
 </div>
 
-![Table component]({{ "/images/components/tabla/basic-example-table.png" | absolute_url }}){: .comp-example-img}
+![Table component]({{ "/assets/images/components/tabla/basic-example-table.png" | absolute_url }}){: .comp-example-img}
 
 <!--{% for post in site.o_table_components %}
   {% include archive-table.html %}
@@ -98,7 +98,7 @@ The `o-table` allows to perform the basic operations like **create**, **read**, 
 
 These operations are available from the table toolbar or from the context menu. This operations are configured by default if detail-mode is other than `none` but you can disable them with `delete-button='no'`, `insert-button='no'`, `refresh-button='no'`
 
-![Crud operations]({{ "/images/components/tabla/table-cruds.png" | absolute_url }}){: .comp-example-img}
+![Crud operations]({{ "/assets/images/components/tabla/table-cruds.png" | absolute_url }}){: .comp-example-img}
 
 ## Sorting
 Since this functionality is built-in, all you have to do is to set the sorting configuration via `sort-columns` input in the `o-table` component using [ ASC or DESC ] format.
@@ -215,7 +215,7 @@ This option creates the `o-table-quickfilter` component within the `o-table`. Th
 
 All columns will be searchable by quickfilter component. The only way to remove columns of beeing searched is by setting searchable input to false in `o-column` definition, this will make this column to not appear in the checkbox list.
 
-![Table quickfilter]({{ "/images/components/tabla/o-table-quickfilter.PNG" | absolute_url }}){: .comp-example-img}
+![Table quickfilter]({{ "/assets/images/components/tabla/o-table-quickfilter.PNG" | absolute_url }}){: .comp-example-img}
 
 If you want to override this component to configure its options you can define your own quickfilter within your `o-table` and it will replace the default implementation. You can see its properties configuration in the API section.
 
@@ -248,7 +248,7 @@ This option is active by default but it is also possible to configure filtering 
 
 This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.
 
-![Filter by Column]({{ "/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
+![Filter by Column]({{ "/assets/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
 
 <h3 class="grey-color">Example</h3>
 
@@ -291,7 +291,7 @@ This option will be available in table menu and in table header by default. Howe
 | custom| Allows filtering by a form control
 
 
-![Filtering columns mode]({{ "/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
+![Filtering columns mode]({{ "/assets/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
 
 
 
@@ -336,7 +336,7 @@ For adding a cell renderer to the cells of a table column, you have to configure
 
 You can see different predefined table cell renderers in the example below.
 
-![Predefined table cell renderers]({{ "/images/components/tabla/renderers_table.png" | absolute_url }}){: .comp-example-img}
+![Predefined table cell renderers]({{ "/assets/images/components/tabla/renderers_table.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-table  attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
@@ -600,7 +600,7 @@ Cell editing results in the following events.
 | editionStarted  | Event triggered when component input element started |
 | onPostUpdateRecord | Event triggered after component record is succesfully updated|
 
-![Cell editing]({{ "/images/components/tabla/editing-cell.gif" | absolute_url }}){: .comp-example-img}
+![Cell editing]({{ "/assets/images/components/tabla/editing-cell.gif" | absolute_url }}){: .comp-example-img}
 ### Default editors
 
 Next we are specifing how to add a editor for a table column cell.
@@ -810,7 +810,7 @@ Below is an example of using the **pattern validator**.
   }
 ...
 ```
-![Input pattern validator]({{ "/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
+![Input pattern validator]({{ "/assets/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
 
 
 ## Features
@@ -828,7 +828,7 @@ The table supports checkbox selection with `select-all-checkbox-visible` propert
 </o-table>
 ```
 
-![Custom select all]({{ "/images/components/tabla/custom-selectall.png" | absolute_url }}){: .comp-example-img}
+![Custom select all]({{ "/assets/images/components/tabla/custom-selectall.png" | absolute_url }}){: .comp-example-img}
 
 You can configure show in the menu on the upper right the option of select row with `select-all-checkbox` property. It is disabled by default.
 
@@ -995,7 +995,7 @@ By default, `o-table-context-menu` include the next options:
 
 Below an example.
 
-![Table contextual by default ]({{ "/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
+![Table contextual by default ]({{ "/assets/images/components/tabla/table_contextual_default.png" | absolute_url }}){: .comp-example-img}
 
 The `o-table-context-menu` allows to hide these options by setting  the attributes `insert`, `edit`, `view-detail`, `delete`,`copy`, `select-all`,`refresh`,`filter`  to `no`.
 You can also include your own `context-menu` with the reference to a [`o-context-menu`]({{ base_path }}/components/contextmenu/overview/){:target='_blank'}component like in the example below.
@@ -1024,7 +1024,7 @@ You can also include your own `context-menu` with the reference to a [`o-context
 </o-context-menu>
 ```
 
-![Table contextual]({{ "/images/components/tabla/table_contextual.png" | absolute_url }}){: .comp-example-img}
+![Table contextual]({{ "/assets/images/components/tabla/table_contextual.png" | absolute_url }}){: .comp-example-img}
 
 For more information about the `o-context-menu` component definition, please read the [docs]({{ base_path }}/components/contextmenu/overview/){:target='_blank'}.
 
@@ -1110,7 +1110,7 @@ You can configure:
 ### Export table data
 The table data can be exported to *EXCEL*, *CSV*,.. using the option Export in the table menu.
 
-![Export table data]({{ "/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
+![Export table data]({{ "/assets/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
 
 The same data that is in the table gets exported but `none` the values ​​processed in GUI, ie:
 - the values ​​obtained by the formatters of the cell renderers
@@ -1167,7 +1167,7 @@ Global title alignment settings can be specified by providing a value for `O_TAB
 ### Column resizing
 The `o-table` component allows column resizing by default. Using the `resizable` input you can modify that default value on the table. To disabled resizing for each column, set `resizable='no'` on the column definition.
 
-![Column resizing]({{ "/images/components/tabla/resizing-column.gif" | absolute_url }}){: .comp-example-img}
+![Column resizing]({{ "/assets/images/components/tabla/resizing-column.gif" | absolute_url }}){: .comp-example-img}
 
 ### Columns multiple sorting
 Table allows multiple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
@@ -1183,7 +1183,7 @@ The `o-table` component provides a text that is displayed when the user hovers o
 ...
 ```
 
-![Tooltip in table component]({{ "/images/components/tabla/table-tooltip.png" | absolute_url }}){: .comp-example-img}
+![Tooltip in table component]({{ "/assets/images/components/tabla/table-tooltip.png" | absolute_url }}){: .comp-example-img}
 
 You can configure the value that is displayed with the attribute `tooltip-value`. Additionally, you can specify default function to be applied when the user over column with `tooltip-function` attribute.
 
@@ -1242,7 +1242,7 @@ The example below makes use of *simple template*, the content of the child row i
     </o-table>
 ```
 
-![Row expanded]({{ "/images/components/tabla/row-expanded.png" | absolute_url }}){: .comp-example-img}
+![Row expanded]({{ "/assets/images/components/tabla/row-expanded.png" | absolute_url }}){: .comp-example-img}
 
 **A template with context**
 
@@ -1275,7 +1275,7 @@ It is possible to define a *template with context*, so that if the defined templ
 ```
 
 
-![Row expanded with a template with context]({{ "/images/components/tabla/row-expanded-context.PNG" | absolute_url }}){: .comp-example-img}
+![Row expanded with a template with context]({{ "/assets/images/components/tabla/row-expanded-context.PNG" | absolute_url }}){: .comp-example-img}
 
 The `o-table` component has an input to control expandable row and show or not the expansion icon. This input `show-expandable-icon-function` must set a function that will receive data of expandable row and has to return a boolean observable. You can check a complete example [here](https://try.imatia.com/ontimizeweb/v15/playground/main/data/table/rowexpandable){:target='_blank'}.
 
@@ -1322,11 +1322,11 @@ Global default autoadjust can be specified by providing a value for O_TABLE_GLOB
   </o-table>
 ```
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust.PNG" | absolute_url }}){: .comp-example-img}
 
 There is a possibility that the content is **large** and the result is not what is expected like the example shown below.
 
-![Table width autoadjust]({{ "/images/components/tabla/table-autoadjust-overflow-hidden.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/assets/images/components/tabla/table-autoadjust-overflow-hidden.PNG" | absolute_url }}){: .comp-example-img}
 
 However, if you want to control similar case, you can do so by configuring `auto-adjust="yes"` with several options such as:
 * `horizontal-scroll=yes`
@@ -1335,14 +1335,14 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 1. In the next case we have applied `horizontal-scroll=yes` and  `auto-adjust="yes"`, the result would be the following.
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
 <!-- </div> -->
 
 {:start="2"}
 2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following.
 
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
 
 {:start="3"}
 3. In the next case we have applied `max-width="300px"` in `o-table-column` and  `auto-adjust="yes"`, the result would be the following..
@@ -1351,7 +1351,7 @@ However, if you want to control similar case, you can do so by configuring `auto
 <o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
 ```
 
-![Table width autoadjust]({{ "/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
+![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
 
 ### Row grouping
 
@@ -1362,21 +1362,21 @@ By default, the table is *groupable* and for grouping/ungrouping by one o more c
 1. Configure **grouped columns by default** with the `grouped-columns` property.
 As you can see in the example below, as soon as there is at least one active row.
 
-![Table row group]({{ "/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
+![Table row group]({{ "/assets/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
 
 {:start="2"}
 2. Use the **table menu**: click the *Group / Ungroup by* option to configure the columns you need to group / ungroup by.
 
-![Dialog group by column]({{ "/images/components/tabla/table-menu-group-by-column.gif" | absolute_url }}){: .comp-example-img}
+![Dialog group by column]({{ "/assets/images/components/tabla/table-menu-group-by-column.gif" | absolute_url }}){: .comp-example-img}
 
 {:start="3"}
 3. Use the **table context menu**: Right-click the column data to invoke context menu and  click on *Group by -> Group by column* . The context menu also allows you to ungroup by a column or by all.
 
-![Context menu group by column]({{ "/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
+![Context menu group by column]({{ "/assets/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
 
 You can collapse/expand all grouped rows if you right-click on the *grouped row*.
 
-![Context menu in grouped row]({{ "/images/components/tabla/table-grouping-change-function-aggregate.gif" | absolute_url }}){: .comp-example-img}
+![Context menu in grouped row]({{ "/assets/images/components/tabla/table-grouping-change-function-aggregate.gif" | absolute_url }}){: .comp-example-img}
 
 {:start="4"}
 4. Use the **o-table-columns-grouping** and **o-table-columns-grouping-column** components: this components are used to configure the initial state of the row grouping and override the table grouping configuration.
@@ -1402,7 +1402,7 @@ If you want to exclude this function from being performed, you must add this col
     </o-table>
 ```
 
-![Table row group]({{ "/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
+![Table row group]({{ "/assets/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
 
 If the table is *groupable* but you want the column isn't groupable you must add `groupable=false` in this column definition.
 
@@ -1419,13 +1419,13 @@ For more information see the API.
 
 The `o-table` component has a new option in table menu that allows the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This menu option is enabled by default.  Using `show-report-on-demand-option` property you can modify the default value. For more information see the **API**. You can also find more information about reports in their documentation following this [link](https://ontimizeweb.github.io/docs/v15/report/components/report-on-demand/overview){:target="_blank"}.
 
-![Report on-demand example ]({{ "/images/report/basicReportOnDemand.PNG" | absolute_url }}){: .comp-example-img}
+![Report on-demand example ]({{ "/assets/images/report/basicReportOnDemand.PNG" | absolute_url }}){: .comp-example-img}
 
 ### Reset columns width <span class='menuitem-badge'>new<span>
 
 The `o-table` component has a new option in table menu that allows the width of the table columns to be reset to their initial width. This menu option is enabled by default.  Using `show-reset-width-option` property you can modify the default value. For more information see the **API**.
 
-![Reset columns width]({{ "/images/components/tabla/reset-columns-width.gif" | absolute_url }}){: .comp-example-img}
+![Reset columns width]({{ "/assets/images/components/tabla/reset-columns-width.gif" | absolute_url }}){: .comp-example-img}
 
 ### Custom content in toolbar <span class='menuitem-badge'>new<span>
 
@@ -1445,7 +1445,7 @@ If the selector `o-table-toolbar` is used together with `position='start'` the c
   </o-grid>
 ```
 
-![Add custom content in toolbar in position start]({{ "/images/components/tabla/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
+![Add custom content in toolbar in position start]({{ "/assets/images/components/tabla/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
 
 ### Support JDBC UUID <span class='menuitem-badge'>new<span>
 
@@ -1518,7 +1518,7 @@ Use the Sass `@include `keyword to include a component's theme mixin wherever yo
 
 ```
 
-![Theming your table]({{ "/images/components/tabla/customization.png" | absolute_url }}){: .comp-example-img}
+![Theming your table]({{ "/assets/images/components/tabla/customization.png" | absolute_url }}){: .comp-example-img}
 
 ## Demo
 

@@ -28,7 +28,7 @@ The `o-app-layout` components builds a side navigator for application using the 
 
 The result of this example is shown below.
 
-![App layout component]({{ "/images/layouts/app-layout/app_layout_default.png" | absolute_url }})
+![App layout component]({{ "/assets/images/layouts/app-layout/app_layout_default.png" | absolute_url }})
 
 You can see a working example of this in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"} or check the code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/master/src/app/main/main.component.html){:target="_blank"}.
 
@@ -54,12 +54,12 @@ The `o-app-layout` components has two performance modes designed for making this
 * **Desktop**
 This is the default mode of the `o-app-layout` component. This mode displays the side menu and allows the user to partially hide it.
 
-![App layout component in desktop mode]({{ "/images/layouts/app-layout/o-app-layout-desktop.gif" | absolute_url }})
+![App layout component in desktop mode]({{ "/assets/images/layouts/app-layout/o-app-layout-desktop.gif" | absolute_url }})
 
 * **Mobile**
 Configure this mode by setting the **mobile** value in the `mode` attribute in the `o-app-layout` component. This mode shows the side menu and a toolbar on the top with a button for show/hide the side menu.
 
-![App layout component in mobile mode]({{ "/images/layouts/app-layout/o-app-layout-mobile.gif" | absolute_url }})
+![App layout component in mobile mode]({{ "/assets/images/layouts/app-layout/o-app-layout-mobile.gif" | absolute_url }})
 
 ## Toolbar
 
@@ -67,7 +67,7 @@ The application layout component show a toolbar at the top of the screen by defa
 
 In the toolbar, it can show a title.
 
-![App layout title]({{ "/images/layouts/app-layout/app_layout_title.png" | absolute_url }})
+![App layout title]({{ "/assets/images/layouts/app-layout/app_layout_title.png" | absolute_url }})
 
 There are two ways to show the title in the toolbar:
 * Display a **static title**: The same title is displaing in whole application. To configure this option you must set `static-title` and `show-static-title` to `yes`.
@@ -111,7 +111,7 @@ And import the flag icon styles in your application's **angular.json** file:
   "node_modules/flag-icon-css/css/flag-icons.css"
 ```
 
-![App layout component toolbar]({{ "/images/layouts/app-layout/app_layout_header.png" | absolute_url }})
+![App layout component toolbar]({{ "/assets/images/layouts/app-layout/app_layout_header.png" | absolute_url }})
 
 ### Adding custom content to the toolbar
 
@@ -164,10 +164,10 @@ export class MainComponent  {
 
 ```
 
-![Custom user info]({{ "/images/layouts/app-layout/custom_user_info.png" | absolute_url }})
+![Custom user info]({{ "/assets/images/layouts/app-layout/custom_user_info.png" | absolute_url }})
 
 ## Images
 
 You can set provide images to be shown in the side navigator using the attributes `opened-sidenav-image` and `closed-sidenav-image`. Check this and other attributes in the **API** section of this page.
 
-![App layout component images]({{ "/images/layouts/app-layout/app_layout_images.png" | absolute_url }})
+![App layout component images]({{ "/assets/images/layouts/app-layout/app_layout_images.png" | absolute_url }})
