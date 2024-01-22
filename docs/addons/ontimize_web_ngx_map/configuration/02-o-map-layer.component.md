@@ -1,9 +1,11 @@
 ---
 permalink: /map/configuration/o-map-layer/overview
-title: "o-map-layer"
+title: "Layer"
 comp: omaplayer
 layout: o-component
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 5
 ---
 
 
@@ -16,7 +18,7 @@ The component *o-map-layer* is used to add a new layer to the map.
 ## Basic Example
 
 This is a basic example of a *Map* using the component *o-map-layer* inside to create a new marker.
-You can check a working example of *o-map-layer* component [here](https://try.imatia.com/ontimizeweb/v8/map/main/marker)
+You can check a working example of *o-map-layer* component [here](https://try.imatia.com/ontimizeweb/v15/map/main/marker)
 
 *HTML*
 

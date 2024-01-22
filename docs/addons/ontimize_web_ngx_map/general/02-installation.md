@@ -2,7 +2,9 @@
 permalink: /map/installation/
 title: "Installation"
 layout: default
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 2
 ---
 
 {% include base_path %}
@@ -73,4 +75,4 @@ Insert the `o-map` component in your application component template.
       zoom-control="yes" search-control="yes" fxFlex></o-map>
 ```
 
-![Basic map]({{ "/images/map/basic-map.png" | absolute_url }}){: .comp-example-img }
+![Basic map]({{ "/assets/images/map/basic-map.png" | absolute_url }}){: .comp-example-img }

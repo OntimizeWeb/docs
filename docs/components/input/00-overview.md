@@ -32,7 +32,7 @@ You can modify value by setting the `data` attribute or calling the `setData` me
 You can configure multiple appearance variants changing the `appearance` and `float-label` input values.
 
 ### Appearance
-The `appearance` input indicates which of the different `mat-form-field` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v8.material.angular.io/components/form-field/overview#form-field-appearance-variants).
+The `appearance` input indicates which of the different `mat-form-field` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://material.angular.io/components/form-field/overview#form-field-appearance-variants){:target="_blank"}.
 
 
 Global default appearance options can be specified by providing a value for *MAT_FORM_FIELD_DEFAULT_OPTIONS* in your application's root module. Like the property, the global setting can be either legacy, standard, fill or outside.
@@ -45,7 +45,7 @@ Global default appearance options can be specified by providing a value for *MAT
 })
 ```
 ### Float label
-The `float-label` input indicates which of the different `mat-form-field` label behaviours is chosen. It has the same features that Angular Material appearance input, watch it [here](https://v8.material.angular.io/components/form-field/overview#floating-label)
+The `float-label` input indicates which of the different `mat-form-field` label behaviours is chosen. It has the same features that Angular Material appearance input, watch it [here](https://material.angular.io/components/form-field/overview#floating-label){:target="_blank"}
 
 Global default label options can be specified by providing a value for *MAT_LABEL_GLOBAL_OPTIONS* in your application's root module. Like the property, the global setting can be either always, never, or auto.
 
@@ -72,7 +72,7 @@ The input shows automatically an error message when the `required` attribute is 
 ```html
 <o-password-input #newpassword attr="NEW_PASSWORD" required="yes" min-length="8" ></o-password-input>
 ```
-![Input required validator]({{ "/images/components/inputs/validators/required.png" | absolute_url }}){: .comp-example-img}
+![Input required validator]({{ "/assets/images/components/inputs/validators/required.png" | absolute_url }}){: .comp-example-img}
 
 ### Ontimize validators
 
@@ -83,7 +83,7 @@ Ontimize Web providers the following *build-in validators* in the framework:
 * **nifValidator**: NIF validator
 * **patternValidator**:  Pattern validator
 
-Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/overview/){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/overview/){:target='_blank'} components.
+Using the `validators` input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the [`o-validator`]({{ base_path }}/components/input/validator/overview){:target='_blank'} and [`o-error`]({{ base_path }}/components/input/error/overview){:target='_blank'} components.
 
 Below is an example of using the **pattern validator**.
 ```html
@@ -110,7 +110,7 @@ Below is an example of using the **pattern validator**.
   }
 ...
 ```
-![Input pattern validator]({{ "/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
+![Input pattern validator]({{ "/assets/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
 
 ### Custom validator
 
@@ -159,7 +159,7 @@ Also user can add its own validators to a input component using the `validators`
 Form data components allow you to show or hide label with `label-visible` attribute. By default, this value is *true*.
 
 {: .note }
->: This attribute *not* apply in `o-checkbox`,`o-radio`, `o-slider` and `o-html-input`.
+>This attribute *not* apply in `o-checkbox`,`o-radio`, `o-slider` and `o-html-input`.
 
 ## Required
 A input can be market with a `required` attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the `hide-required-marker` property on *form data component*.
@@ -170,7 +170,7 @@ A input can be market with a `required` attribute, an asterisk will be appendend
 hide-required-marker="yes" [data]="getValue()"></o-text-input>
 ```
 
-![Input required]({{ "/images/components/inputs/required.png" | absolute_url }}){: .comp-example-img}
+![Input required]({{ "/assets/images/components/inputs/required.png" | absolute_url }}){: .comp-example-img}
 
 ## Enabled
 The *enabled* mode is active by default. You can disable the input by setting `enabled='no'`.

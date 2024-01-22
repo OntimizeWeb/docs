@@ -43,7 +43,7 @@ This component wraps the [CKEditor 4](https://ckeditor.com/ckeditor-4/){:target=
 The HTML input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-![HTML input component]({{ "/images/components/inputs/o-html-input.png" | absolute_url }}){: .comp-example-img}
+![HTML input component]({{ "/assets/images/components/inputs/o-html-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">

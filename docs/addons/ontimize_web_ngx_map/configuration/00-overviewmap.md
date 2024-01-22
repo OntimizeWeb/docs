@@ -1,9 +1,11 @@
 ---
 permalink: /map/configuration/overview/overview
-title: "Overview"
+title: "Configuration overview"
 comp: overviewmap
 layout: o-component
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 3
 ---
 
 {% include base_path %}

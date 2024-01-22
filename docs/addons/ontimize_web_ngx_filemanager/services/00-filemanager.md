@@ -2,7 +2,9 @@
 permalink: /filemanager/filemanagerservice/dms
 title: "File Manager DMS Service"
 layout: default
-nav_exclude: true
+parent: File Manager
+grand_parent: Addons
+nav_order: 3
 ---
 
 {% include base_path %}

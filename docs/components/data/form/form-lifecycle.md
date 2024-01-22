@@ -29,15 +29,17 @@ The form modes for the *editable detail form* are the following:
 
 You can see the states and transitions between a table and the detail form for the *editable detail form* in the following diagram:
 
-![Detail form editable]({{ base_path }}/images/components/form/editableDetailTRUE.png){: .align-center}
+![Detail form editable]({{ base_path }}/assets/images/components/form/editableDetailTRUE.png){: .align-center}
 
 ### Example
 
->![Detail form editable example]({{ base_path }}/images/components/form/editableDetailYES-gif.gif){: .align-center.padding-top}
+>![Detail form editable example]({{ base_path }}/assets/images/components/form/editableDetailYES-gif.gif){: .align-center.padding-top}
 
 
->**NOTE** This behaviour affects the performance of the attributes `detail-button-in-row` and `edit-button-in-row` from the `o-table` component. When the form is configured as a *editable detail form* you should not use the edit button on the table row because the form will not parse the *edit* path.
->![Detail form editable transitions]({{ base_path }}/images/components/form/modesEditableTRUE.png){: .align-center.padding-top}
+{: .note}
+>This behaviour affects the performance of the attributes `detail-button-in-row` and `edit-button-in-row` from the `o-table` component. When the form is configured as a *editable detail form* you should not use the edit button on the table row because the form will not parse the *edit* path.
+
+>![Detail form editable transitions]({{ base_path }}/assets/images/components/form/modesEditableTRUE.png){: .align-center.padding-top}
 
 ## Not editable detail form
 
@@ -54,8 +56,8 @@ The form modes for the *not editable detail form* are the following:
 
 You can see the states and trasitions between the table and the detail form for the *not editable detail form* in the following diagram:
 
-![Detail form not editable]({{ base_path }}/images/components/form/editableDetailFALSE.png){: .align-center}
+![Detail form not editable]({{ base_path }}/assets/images/components/form/editableDetailFALSE.png){: .align-center}
 
 ### Example
 
->![Detail form NOT editable example]({{ base_path }}/images/components/form/editableDetailNO-gif.gif){: .align-center.padding-top}
+>![Detail form NOT editable example]({{ base_path }}/assets/images/components/form/editableDetailNO-gif.gif){: .align-center.padding-top}

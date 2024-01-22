@@ -17,7 +17,8 @@ Make sure you have Node.js installed. Download the installer [here](http://nodej
 
 Following installation, make sure you have correctly installed Node.js by invoking the following commands in the command-line:
 
-**NOTE**: On the Mac, the command-line is available via the *Terminal* application. On the PC, it's available as *Command Prompt* under *Accessories*.
+{: .note}
+>On the Mac, the command-line is available via the *Terminal* application. On the PC, it's available as *Command Prompt* under *Accessories*.
 
 ```bash
 # Checking node version

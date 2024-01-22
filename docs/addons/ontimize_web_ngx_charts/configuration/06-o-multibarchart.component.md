@@ -3,14 +3,16 @@ permalink: /charts/configuration/multibarchart/overview
 title: "Multi Bar Chart"
 comp: multibarchart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 9
 ---
 
 {% include base_path %}
 
 ## Introduction
 
-You can check a running example of this *Multi Bar Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/multi-bar){:target="_blank"}.
+You can check a running example of this *Multi Bar Chart* [here](https://try.imatia.com/ontimizeweb/v15/charts/main/bar-chart/multi-bar){:target="_blank"}.
 
 All chart parameters for the *Multi Bar Chart* can be checked in the API tab.
 

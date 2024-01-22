@@ -2,7 +2,9 @@
 permalink: /map/configuration/o-geojson-layer/overview
 title: "GeoJson Layer"
 layout: default
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 7
 ---
 
 
@@ -15,7 +17,7 @@ You can add multiple WMS layers to your map.
 ## Basic Example
 
 This is a basic example of a *Map* using the component *o-map-layer* inside to add new GeoJson layers to the map.
-You can check a working example of GeoJson layers [here](https://try.imatia.com/ontimizeweb/v8/map/main/geojson)
+You can check a working example of GeoJson layers [here](https://try.imatia.com/ontimizeweb/v15/map/main/geojson)
 
 *HTML*
 
@@ -176,4 +178,4 @@ export class GeoServerService implements IGeoJSONLayerService {
 ```
 
 
-![Map Draw Controls]({{ "/images/map/geojson.png" | absolute_url }}){: .comp-example-img }
+![Map Draw Controls]({{ "/assets/images/map/geojson.png" | absolute_url }}){: .comp-example-img }

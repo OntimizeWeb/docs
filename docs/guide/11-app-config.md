@@ -342,7 +342,7 @@ For clarification, if your `apiEndpoint` is the one in the [application configur
 
 # Internationalization (i18) configuration
 
-*Ontimize Web* providers the `locale` attribute to configure the language of the application, this attribute will be an identifier that refers to of user preferences as displaying dates, numbers, ..., translation of words and in `applicationLocales` which configure the `locale id ` availables in the language selector in `<o-app-sidenav>`. For more information see in [OTranslateService]({{ base_path }}/guide/otranslateservice/){:target="_blank"}.
+*Ontimize Web* providers the `locale` attribute to configure the language of the application, this attribute will be an identifier that refers to of user preferences as displaying dates, numbers, ..., translation of words and in `applicationLocales` which configure the `locale id ` availables in the language selector in `<o-app-sidenav>`. For more information see in [OTranslateService]({{ base_path }}/services/otranslateservice/overview/){:target="_blank"}.
 
 
 # Permissions configuration
@@ -587,6 +587,6 @@ export const MENU_CONFIG: MenuRootItem[] = [
 
 In addition to the side menu, **OntimizeWeb** provides [`o-card-menu-layout`]({{ base_path }}/components/cardmenulayout/overview){:target="_blank"} component that builds automatically a dashboard page using the menu configuration.
 
-![Card menu layout example]({{ base_path }}/images/layouts/app-layout/card-menu-layout.png){: .align-center}
+![Card menu layout example]({{ base_path }}/assets/images/layouts/app-layout/card-menu-layout.png){: .align-center}
 
 You can see this live example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"}.

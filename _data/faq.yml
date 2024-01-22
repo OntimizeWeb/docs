@@ -19,7 +19,7 @@ post:
     body: "
     <code>query-on-event</code> is an input of the <i>OServiceBaseComponent</i>. This input will reference to an event of the component that must listen to in order to perform its query. The component will wait until the event you choose is fired to perform the request of the data.
     For example: query-on-event=\"componentAttr.onValueChange\". This will perform the query when the value of the component changes.
-    You can check how to use it <a href='../components/input/overviewservice/overview'>here</a> and a example of dependant combos <a href='https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo'>here</a>.
+    You can check how to use it <a href='../components/input/overviewservice/overview'>here</a> and a example of dependant combos <a href='https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo'>here</a>.
     "
   - title: "How can I customize my app and set typography?"
     body: "
@@ -29,7 +29,7 @@ post:
   - title: "How to get backend info after login?"
     body: "
     You can get that backend information in your login function by creating a function that returns the values that you need from the backend or from an API.<br/>
-    You can check the normal login function <a href='https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/src/app/login/login.component.ts' target='blank'>here</a><br/>
+    You can check the normal login function <a href='https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/main.15.x/src/app/login/login.component.ts' target='blank'>here</a><br/>
     It will be something like this:<br/><br/>
     <code>if (userName && userName.length > 0 && password && password.length > 0) {<br/>
     &nbsp;&nbsp;const self = this;<br/>

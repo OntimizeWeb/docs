@@ -20,9 +20,9 @@ The `o-card-menu-layout` component builds automatically a dashboard page based o
 </o-card-menu-layout>
 ```
 
-![Card menu layout example]({{ base_path }}/images/layouts/app-layout/card-menu-layout-custom.png){: .align-center}
+![Card menu layout example]({{ base_path }}/assets/images/layouts/app-layout/card-menu-layout-custom.png){: .align-center}
 
-You can see an example of this component working in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/quickstart/){:target="_blank"}.
+You can see an example of this component working in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/main/home){:target="_blank"}.
 
 ## Card menu item
 

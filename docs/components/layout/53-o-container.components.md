@@ -54,8 +54,8 @@ only has a possible *outline* value.
 
 
 
-![Outline Appearance]({{ "/images/layouts/containers/outline-appearance.png" | absolute_url }}){: .comp-example-img}
+![Outline Appearance]({{ "/assets/images/layouts/containers/outline-appearance.png" | absolute_url }}){: .comp-example-img}
 
 If you have used the injector token to set a global default appearance option this will not work in o-columns and o-rows. You will need to set the appearance using the input.
 
-You can interact with different options of this components in the [OntimizeWeb playground]({{site.playgroundurl}}/main/containers){:target="_blank"}.
+You can interact with different options of this components in the [OntimizeWeb playground]({{site.playgroundurl}}/main/layout/containers/basic){:target="_blank"}.

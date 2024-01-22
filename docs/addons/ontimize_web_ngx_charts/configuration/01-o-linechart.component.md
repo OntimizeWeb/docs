@@ -3,14 +3,16 @@ permalink: /charts/configuration/linechart/overview
 title: "Line Chart"
 comp: linechart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 4
 ---
 
 {% include base_path %}
 
 ## Introduction
 
-You can check a running example of this *Line Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/line){:target="_blank"}.
+You can check a running example of this *Line Chart* [here](https://try.imatia.com/ontimizeweb/v15/charts/main/line-chart/line){:target="_blank"}.
 
 All chart parameters for the *Line Chart* can be checked in the API tab.
 

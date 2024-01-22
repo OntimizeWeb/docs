@@ -3,14 +3,16 @@ permalink: /charts/configuration/discretebarchart/overview
 title: "Discrete Bar Chart"
 comp: discretebarchart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 8
 ---
 
 {% include base_path %}
 
 ## Introduction
 
-You can check a running example of this *Discrete Bar Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/bar-chart/discrete-bar){:target="_blank"}.
+You can check a running example of this *Discrete Bar Chart* [here](https://try.imatia.com/ontimizeweb/v15/charts/main/bar-chart/discrete-bar){:target="_blank"}.
 
 All chart parameters for the *Discrete Bar Chart* can be checked in the API tab.
 

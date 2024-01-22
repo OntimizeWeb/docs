@@ -15,7 +15,7 @@ The `o-checkbox` component is used in [forms]({{ base_path }}/components/form/ov
 The checkbox is automatically registered on its parent `o-form`, which provides the value for the checkbox programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-![Checkbox component]({{ "/images/components/inputs/o-checkbox.png" | absolute_url }}){: .comp-example-img}
+![Checkbox component]({{ "/assets/images/components/inputs/o-checkbox.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">

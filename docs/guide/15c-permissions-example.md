@@ -50,19 +50,19 @@ public EntityResult candidateQuery(Map<String, Object> keyMap, List<String> attr
 Here are the rows that we added to our database on each table.
 
 `TUSER table:`
-![TUSER table]({{ base_path }}/images/permissions/database_tuser.png){: .align-center}
+![TUSER table]({{ base_path }}/assets/images/permissions/database_tuser.png){: .align-center}
 
 `TUSER_ROLE table`:
-![TUSER table]({{ base_path }}/images/permissions/database_tuser_role.png){: .align-center}
+![TUSER table]({{ base_path }}/assets/images/permissions/database_tuser_role.png){: .align-center}
 
 `TROLE table:`
-![TROLE table]({{ base_path }}/images/permissions/database_trole.png){: .align-center}
+![TROLE table]({{ base_path }}/assets/images/permissions/database_trole.png){: .align-center}
 
 `TSERVER_PERMISSION table:`
-![TSERVER_PERMISSION table]({{ base_path }}/images/permissions/database_tserver_permission.png){: .align-center}
+![TSERVER_PERMISSION table]({{ base_path }}/assets/images/permissions/database_tserver_permission.png){: .align-center}
 
 `TROLE_SERVER_PERMISSION table:`
-![TROLE_SERVER_PERMISSION table]({{ base_path }}/images/permissions/database_trole_server_permission.png){: .align-center}
+![TROLE_SERVER_PERMISSION table]({{ base_path }}/assets/images/permissions/database_trole_server_permission.png){: .align-center}
 
 As we can see on the last screenshot the only user that have access to the CRUD operations on the table is the `demo` user.
 
@@ -144,7 +144,7 @@ public class PermissionService implements IPermissionService {
 
 ### Defining our client permissions
 
-Client permissions are defined by a JSON file (you can find more detailed information  [here](https://ontimizeweb.github.io/docs/v8/guide/permissions/#permissions-definition-example){:target="_blank"}).
+Client permissions are defined by a JSON file (you can find more detailed information  [here](https://ontimizeweb.github.io/docs/v15/guide/permissions/#permissions-definition-example){:target="_blank"}).
 In this turorial, we are going to create a set of simple preconfigured JSON permission files. Into a real application, this permission object could be retrived from database or created dynamically by code depending on the user, the role, etc. We can see more examples of this files
 
 `candidate_permissions.json`:
@@ -209,19 +209,19 @@ In this turorial, we are going to create a set of simple preconfigured JSON perm
 
 With this permissions if we log into the application with the candidate user we will see the application like this:
 
-![candidate home]({{ base_path }}/images/permissions/candidate_home.png){: .align-center}
+![candidate home]({{ base_path }}/assets/images/permissions/candidate_home.png){: .align-center}
 
 And if we log with de demo user we are going to see a different menu and we can enter to the candidate table:
 
-![demo home]({{ base_path }}/images/permissions/demo_home.png){: .align-center}
+![demo home]({{ base_path }}/assets/images/permissions/demo_home.png){: .align-center}
 
 As we can see the *delete* button of the table is disabled as we configured before:
 
-![demo home]({{ base_path }}/images/permissions/demo_table.png){: .align-center}
+![demo home]({{ base_path }}/assets/images/permissions/demo_table.png){: .align-center}
 
 And if we click on a row to edit the registry we can see that we can't edit the email field:
 
-![demo home]({{ base_path }}/images/permissions/demo_edit.png){: .align-center}
+![demo home]({{ base_path }}/assets/images/permissions/demo_edit.png){: .align-center}
 
 # Configuring the frontend
 
@@ -343,7 +343,7 @@ export const routes: Routes = [
 
 The page we will see if we try to access a page that we dont have permissions it's going to look like this:
 
-![demo home]({{ base_path }}/images/permissions/access_denied.png){: .align-center}
+![demo home]({{ base_path }}/assets/images/permissions/access_denied.png){: .align-center}
 
 
 # How to extend the permission service

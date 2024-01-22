@@ -15,7 +15,7 @@ The `o-slide-toggle` component is used in [forms]({{ base_path }}/components/for
 The slide toggle component is automatically registered on its parent `o-form`, which provides the value for the slide toggle programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 ## Basic example
-![Slide toggle component]({{ "/images/components/inputs/o-slidetoggle.png" | absolute_url }}){: .comp-example-img}
+![Slide toggle component]({{ "/assets/images/components/inputs/o-slidetoggle.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="false" show-header="no">

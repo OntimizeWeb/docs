@@ -3,7 +3,9 @@ permalink: /charts/configuration/donutchart/overview
 title: "Donut Chart"
 comp: donutchart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 7
 ---
 
 {% include base_path %}
@@ -11,7 +13,7 @@ nav_exclude: true
 
 ## Introduction
 
-You can check a running example of this *Donut Chart* [here](https://try.imatia.com/ontimizeweb/v8/charts/main/other-charts/donut){:target="_blank"}.
+You can check a running example of this *Donut Chart* [here](https://try.imatia.com/ontimizeweb/v15/charts/main/other-charts/donut){:target="_blank"}.
 
 All chart parameters for the *Donut Chart* can be checked in the API tab.
 

@@ -2,7 +2,9 @@
 permalink: /map/configuration/o-marker/overview
 title: "Marker"
 layout: default
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 6
 ---
 
 
@@ -15,7 +17,7 @@ This type of layer is used to add a new marker to the map, you can add as many m
 ## Basic Example
 
 This is a basic example of a *Map* using the component *o-map-layer* inside to create a new marker.
-You can check a working example of a marker layer [here](https://try.imatia.com/ontimizeweb/v8/map/main/marker)
+You can check a working example of a marker layer [here](https://try.imatia.com/ontimizeweb/v15/map/main/marker)
 
 *HTML*
 
@@ -30,4 +32,4 @@ You can check a working example of a marker layer [here](https://try.imatia.com/
 In the API tab you can check all inputs and outputs allowed.
 
 
-![Adding Marker]({{ "/images/map/map-marker.png" | absolute_url }}){: .comp-example-img }
+![Adding Marker]({{ "/assets/images/map/map-marker.png" | absolute_url }}){: .comp-example-img }

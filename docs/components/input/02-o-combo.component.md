@@ -22,7 +22,7 @@ The data array can be provided in two ways:
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
 
 ## Basic example
-![Combo component]({{ "/images/components/inputs/o-combo.png" | absolute_url }}){: .comp-example-img}
+![Combo component]({{ "/assets/images/components/inputs/o-combo.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -35,7 +35,7 @@ The data array can be provided in two ways:
 
 The `o-combo` doesn't allow multiple selection by default, you can configure the multiple selection by setting the value **yes** to the `multiple` attribute. This will allow the user to select multiple values at once.
 
-![Multiple selection]({{ "/images/components/inputs/o-combo-multiple.png" | absolute_url }}){: .comp-example-img}
+![Multiple selection]({{ "/assets/images/components/inputs/o-combo-multiple.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -49,7 +49,7 @@ The `o-combo` doesn't allow multiple selection by default, you can configure the
 
 You can customize the combo label configuring the `multiple-trigger-label` attribute as in the example below.
 
-![Multiple selection]({{ "/images/components/inputs/o-combo-multiple-trigger-label.png" | absolute_url }}){: .comp-example-img}
+![Multiple selection]({{ "/assets/images/components/inputs/o-combo-multiple-trigger-label.png" | absolute_url }}){: .comp-example-img}
 
 ```html
   <o-form editable-detail="no" show-header="no">
@@ -95,7 +95,7 @@ Display a custom value by configuring `render-false-value` and `render-true-valu
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Currency combo renderer**
@@ -109,7 +109,7 @@ Configure the currency symbol with the `currency-symbol` attribute. Check this a
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Date combo renderer**
@@ -123,7 +123,7 @@ You may want to set the displaying date format by configuring the `format` attri
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Integer combo renderer**
@@ -135,7 +135,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Real combo renderer**
@@ -147,7 +147,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Percentage combo renderer**
@@ -159,7 +159,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 
 **Icon combo renderer**
@@ -172,7 +172,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 ```
 This renderer uses Material Icons to display each icon, you can see the complete set of icons [here](https://fonts.google.com/icons).
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 ### Custom renderers <span class='menuitem-badge'>new<span>
 
@@ -224,7 +224,7 @@ The *let* keyword declares a template input variable that you reference within t
 
 Finally, add the created component to your module for including it in your combo.
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v8/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
 
 ## Locker
 
@@ -239,7 +239,7 @@ OntimizeWeb offers the `oLocker` directive to the `o-combo` that should to lock 
   value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" width="33%">
 </o-combo>
 ```
-![OLocker in  Combo component]({{ "/images/components/inputs/combo-oLocker.gif" | absolute_url }}){: .comp-example-img}
+![OLocker in  Combo component]({{ "/assets/images/components/inputs/combo-oLocker.gif" | absolute_url }}){: .comp-example-img}
 
 Note you can configure the mode of the locker, there are two modes to block, *disable* and *load* mode. The mode by default is *load*. You can configure  delay service start with `oLockerDelay` attribute, by default this value is the *250ms*.
 

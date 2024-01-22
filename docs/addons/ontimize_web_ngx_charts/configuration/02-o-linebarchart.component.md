@@ -3,14 +3,16 @@ permalink: /charts/configuration/linebarchart/overview
 title: "Line + Bar Chart"
 comp: linebarchart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 5
 ---
 
 {% include base_path %}
 
 ## Introduction
 
-You can check a running example of this *Line + Bar Chart*  [here](https://try.imatia.com/ontimizeweb/v8/charts/main/line-chart/lineplusbar){:target="_blank"}.
+You can check a running example of this *Line + Bar Chart*  [here](https://try.imatia.com/ontimizeweb/v15/charts/main/line-chart/lineplusbar){:target="_blank"}.
 
 All chart parameters for the *Line + Bar Chart* can be checked in the API tab.
 
