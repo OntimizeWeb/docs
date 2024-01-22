@@ -779,7 +779,6 @@ a:not([class]) {
 }
 
 .sidebar__right {
-  @include mq(md) {}
 
   @include mq(lg) {
     position: fixed;
