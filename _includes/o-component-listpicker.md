@@ -22,6 +22,7 @@
   {% assign style_overview='display:none'%}
   {% assign style_api='display:block'%}
   {% assign api_class='active'%}
+  {% include breadcrumbs.html %}
 {% else %}
   {% assign style_overview='display:block'%}
   {% assign style_api='display:none'%}
@@ -36,7 +37,6 @@
 
 <!-- OVERVIEW -->
 <div id="overview" class="o-tabcontent" style="{{style_overview}}">
- <!-- {% include toc %} -->
  {% if componentData.description %}
     <h3>Description</h3>
     {{ componentData.description | markdownify }}
@@ -54,10 +54,10 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
-  <aside class="sidebar__right">
-    <nav class="toc">
-      <header><h4 class="nav__title"><i class="fa fa-file-alt"></i> On This Page</h4></header>
-      <ul class="toc__menu" id="markdown-toc">
+  <aside class="sidebar__right collapsed">
+    <nav id="toc" class="toc collapsed">
+      <header><h4 id="tocTitle" class="nav__title collapsed">Table of Contents</h4></header>
+      <ul class="toc__menu collapsed" id="markdown-toc">
         <li><a>Directives</a>
           <ul>
             {% include functions/o-table/sidenav-item-api.html folder=site.data.components.olistpickerData type="directive" %}
