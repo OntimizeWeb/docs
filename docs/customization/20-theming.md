@@ -43,8 +43,8 @@ Below you can see an application with several different themes and variants
 <li><a href="{{ base_path }}/assets/images/customization/themes/customers-table-light.png" title="Ontimize Theme">
 <img src="{{ base_path }}/assets/images/customization/themes/customers-table-light.png" alt="Ontimize Theme" title="Ontimize Theme" />
 <span>Ontimize Theme</span></a></li>
-<li><a href="{{ base_path }}/images/customization/themes/customers-detail-dark.png" title="Ontimize Dark Theme">
-<img src="{{ base_path }}/images/customization/themes/customers-detail-dark.png" alt="Ontimize Dark Theme" title="Ontimize Dark Theme" />
+<li><a href="{{ base_path }}/assets/images/customization/themes/customers-detail-dark.png" title="Ontimize Dark Theme">
+<img src="{{ base_path }}/assets/images/customization/themes/customers-detail-dark.png" alt="Ontimize Dark Theme" title="Ontimize Dark Theme" />
 <span>Ontimize Dark Theme</span></a></li>
 </ul>
 
