@@ -85,7 +85,7 @@ export class ReportModule{}
 
 Now you should a new option similar to where you can management the reports
 
-![Report management module ]({{ "/assets/images/report/report_management.PNG" | absolute_url }}){: .comp-example-img}
+![Report management module ]({{ "/assets/images/report/report_management.png" | absolute_url }}){: .comp-example-img}
 
 When you add a report, you must add a .zip file that contains a .jrxml file.
 
