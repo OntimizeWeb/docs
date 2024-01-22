@@ -29,7 +29,7 @@ The `o-tree` will show a base node if the `show-root` input is set to a true val
 </o-tree>
 ```
 
-![Tree component]({{ "/images/components/tree/basic.png" | absolute_url }}){: .comp-example-img}
+![Tree component]({{ "/assets/images/components/tree/basic.png" | absolute_url }}){: .comp-example-img}
 
 
 ## Quick filter
@@ -66,4 +66,4 @@ You can see this and more examples of this component in the [OntimizeWeb tree qu
 
 <!-- recursive -->
 
-<!-- <img src="{{ base_path }}/images/components/tree/detail.png" alt="detail"> -->
+<!-- <img src="{{ base_path }}/assets/images/components/tree/detail.png" alt="detail"> -->

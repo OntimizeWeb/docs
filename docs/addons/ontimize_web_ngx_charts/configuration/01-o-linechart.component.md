@@ -3,7 +3,9 @@ permalink: /charts/configuration/linechart/overview
 title: "Line Chart"
 comp: linechart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 4
 ---
 
 {% include base_path %}

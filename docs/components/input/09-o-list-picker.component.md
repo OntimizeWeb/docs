@@ -25,7 +25,7 @@ The data array can be provided in two ways:
 Once some data has been provided to the component, the user can see the option list by clicking in the search button of the component. Choosing an option, the list will close up and the selected value will be set to the input.
 
 ## Basic example
-![List picker component]({{ "/images/components/inputs/o-list-picker.png" | absolute_url }}){: .comp-example-img}
+![List picker component]({{ "/assets/images/components/inputs/o-list-picker.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -178,7 +178,7 @@ OntimizeWeb offers the `oLocker` directive to the `o-list-picker` that should to
     keys="CUSTOMERID" visible-columns="NAME" width="30%">
 </o-list-picker>
 ```
-![OLocker in list picker component]({{ "/images/components/inputs/listPicker-oLocker.gif" | absolute_url }}){: .comp-example-img}
+![OLocker in list picker component]({{ "/assets/images/components/inputs/listPicker-oLocker.gif" | absolute_url }}){: .comp-example-img}
 
 Note you can configure the mode of the locker, there are two modes to block, *disable* and *load* mode. The mode by default is *load*. You can configure  delay service start with `oLockerDelay` attribute, by default this value is the *250ms*.
 

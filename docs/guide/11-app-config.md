@@ -587,6 +587,6 @@ export const MENU_CONFIG: MenuRootItem[] = [
 
 In addition to the side menu, **OntimizeWeb** provides [`o-card-menu-layout`]({{ base_path }}/components/cardmenulayout/overview){:target="_blank"} component that builds automatically a dashboard page using the menu configuration.
 
-![Card menu layout example]({{ base_path }}/images/layouts/app-layout/card-menu-layout.png){: .align-center}
+![Card menu layout example]({{ base_path }}/assets/images/layouts/app-layout/card-menu-layout.png){: .align-center}
 
 You can see this live example in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"}.

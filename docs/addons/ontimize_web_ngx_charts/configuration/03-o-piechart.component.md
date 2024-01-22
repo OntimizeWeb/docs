@@ -3,7 +3,9 @@ permalink: /charts/configuration/piechart/overview
 title: "Pie Chart"
 comp: piechart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 6
 ---
 
 {% include base_path %}

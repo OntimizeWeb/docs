@@ -28,7 +28,7 @@ Depending on the server **Ontimize Web** supports customization differents optio
 ## Ontimize JEE and Ontimize Boot 2.X.X or lower
 With these server versions, the `o-table` component is able to export its data in *Excel, HTML and PDF* format by default
 
-![Export table data]({{ "/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
+![Export table data]({{ "/assets/images/components/tabla/export-data-table.png" | absolute_url }}){: .comp-example-img}
 
 By default, the `o-table` component export **all data** with **the columns names defined in the table, the sqltypes** and **the filter** if used, the component execute the REST(POST) export request in which an object of type `OTableExportData` is sent in the body.
 
@@ -247,7 +247,7 @@ export const customProviders: any = [
 
 The `o-table` component is able to export its data in *Excel*, *PDF* and *CSV* format by default.
 
-![Export table data]({{ "/images/components/tabla/export-data-table-3x.png" | absolute_url }}){: .comp-example-img}
+![Export table data]({{ "/assets/images/components/tabla/export-data-table-3x.png" | absolute_url }}){: .comp-example-img}
 
 The `o-table` component exports *all the data* if the table has `pageable=no` configured or the page data otherwise
 with **the columns names defined in the table, the sqltypes** and **the filter** if used, the component execute the REST(POST) export request in which an object of type `OTableExportData3X` is sent in the body in case export CSV or `OTableFormattedExportData3X` in case export PDF or EXCEL.

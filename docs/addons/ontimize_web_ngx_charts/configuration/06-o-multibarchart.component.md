@@ -3,7 +3,9 @@ permalink: /charts/configuration/multibarchart/overview
 title: "Multi Bar Chart"
 comp: multibarchart
 layout: o-component
-nav_exclude: true
+parent: Charts
+grand_parent: Addons
+nav_order: 9
 ---
 
 {% include base_path %}

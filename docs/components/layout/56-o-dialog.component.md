@@ -43,7 +43,7 @@ Check the methods of the DialogService in the **API** section of this page.
 
 
 
-![Dialog component]({{ "/images/layouts/dialog/dialog_info.png" | absolute_url }}){: .comp-example-img}
+![Dialog component]({{ "/assets/images/layouts/dialog/dialog_info.png" | absolute_url }}){: .comp-example-img}
 
 
 ## ODialogConfig
@@ -61,7 +61,7 @@ const config: ODialogConfig = {
           'This is an amazing "Information" dialog', config);
 ```
 
-![Customize dialog component]({{ "/images/layouts/dialog/dialog_info_customize.png" | absolute_url }}){: .comp-example-img}
+![Customize dialog component]({{ "/assets/images/layouts/dialog/dialog_info_customize.png" | absolute_url }}){: .comp-example-img}
 
 
 ## Get Response of Dialog

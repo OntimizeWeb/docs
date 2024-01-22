@@ -15,9 +15,9 @@ Typography is a way of arranging type to make text legible, readable, and appeal
 
 ## Custom Typography of Ontimize Web framework.
 
-To change the typography it is neccesary to apply an extension of Angular Material's (you can see spec in [Angular Material's typography](https://v8.material.angular.io/guide/typography){:target='_blank'}) and an extension of Ontimize Web Sass-based theming.
+To change the typography it is neccesary to apply an extension of Angular Material's (you can see spec in [Angular Material's typography](https://v15.material.angular.io/guide/typography){:target='_blank'}) and an extension of Ontimize Web Sass-based theming.
 
-*The extension of Ontimize Web Sass-based theming.* is arranged into typography levels, as Angular Material's typography. Each level has a font-size, line-height and font-weight. This custom typography is used to apply css about [o-table]({{ base_path }}/components/table/overview/){:target="_blank"} depending of the `row-height` attribute. For more details about table typography and defaut config, see [the source](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/blob/master/src/styles/lite/typography/o-table-typography.scss){:target='_blank'}. The available levels are:
+*The extension of Ontimize Web Sass-based theming.* is arranged into typography levels, as Angular Material's typography. Each level has a font-size, line-height and font-weight. This custom typography is used to apply css about [o-table]({{ base_path }}/components/table/overview/){:target="_blank"} depending of the `row-height` attribute. For more details about table typography and defaut config, see [the source](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/main.15.x/projects/ontimize-web-ngx/src/lib/theming/typography/o-table-typography.scss){:target='_blank'}. The available levels are:
 <ul>
   <li><strong>small-header-height</strong>: table header height for 'small' predefined row height options.</li>
   <li><strong>small-row-height</strong>: table row height for 'small' predefined row height options. </li>
@@ -36,27 +36,44 @@ To change the typography it is neccesary to apply an extension of Angular Materi
 
 ## Customization
 
-First you must create a custom *typography configuration* of Angular Material's Sass-based theming and another *typography configuration* of Ontimize Web Sass-based theming as the below example demonstrates
+First you must create a custom *typography configuration* of Angular Material's Sass-based theming and another *typography configuration* of Ontimize Web Sass-based theming as the below example demonstrates.
 
-```sass
-// Include ontimize-lite theme
-@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
+**app.scss**
+```scss
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
+@use '../../app/login/login.theme.scss'as login;
 
-// Define a custom typography config that overrides the font-family as well as the
-// `headlines` and `title` levels.
-$custom-typography: mat-typography-config( $font-family: 'Nunito Sans', $headline: mat-typography-level(16px, 22px, 400), $title: mat-typography-level(14px, 22px, 500));
+// Necesary imports
+@use '@angular/material'as mat;
+@use 'sass:map';
+// Imports the Ontimize table typography instead of also modificate it
+@use 'ontimize-web-ngx/theming/typography/o-table-typography.scss'as ontimize-table-typography;
 
-@include ontimize-theme-styles-lite($theme, $custom-typography);
+// Defines the custom typography
+$custom-typography: mat.define-typography-config($font-family: '"Comic Neue", cursive',
+  $headline-1: mat.define-typography-level(84px, 92px, 300),
+  $headline-2: mat.define-typography-level(42px, 42px, 400),
+  $headline-3: mat.define-typography-level(34px, 36px, 400),
+  $headline-4: mat.define-typography-level(26px, 30px, 400),
+  $headline-5: mat.define-typography-level(24px, 24px, 400),
+  $headline-6: mat.define-typography-level(18px, 24px, 500),
+  $subtitle-1: mat.define-typography-level(14px, 21px, 600),
+  $subtitle-2: mat.define-typography-level(12px, 18px, 500),
+  $body-1: mat.define-typography-level(13px, 1.125em, 400),
+  $body-2: mat.define-typography-level(12px, 15px, 400),
+  $caption: mat.define-typography-level(11px, 15px, 400),
+  $button: mat.define-typography-level(13px, 14px, 500)
+);
 
-// Define a custom typography config that overrides the header height, row height, header font size header and row
-// of the tables
-$custom-table-typography: ( small-header-height: mat-typography-level(30px, 32px, 400), small-row-height: mat-typography-level(24px, 26px, 400), small-header-font-size: mat-typography-level(12px, 12px, 400), small-row-font-size: mat-typography-level(11px, 11px, 400), medium-header-height: mat-typography-level(30px, 32px, 400), medium-row-height: mat-typography-level(26px, 28px, 400), medium-header-font-size: mat-typography-level(11px, 12px, 300), medium-row-font-size: mat-typography-level(11px, 11px, 400), large-header-height: mat-typography-level(30px, 32px, 400), large-row-height: mat-typography-level(26px, 28px, 400), large-header-font-size: mat-typography-level(11px, 12px, 300), large-row-font-size: mat-typography-level(11px, 11px, 400) );
+// Merges our custom typography with the Ontimize table typography
+$merged-typography: map.merge($custom-typography, ontimize-table-typography.$table-typography);
 
-// Merge both typographys
-$lite-typography: map-merge($custom-typography, $custom-table-typography);
+// Replaze the theme typography by our self created typography
+$theme: map.set(theme.$theme, "typography", $merged-typography);
 
-// After define theme, it is necessary to transfer typography to Ontimize Web framework and material components
-@import 'node_modules/ontimize-web-ngx/theme.scss';
-@include o-material-theme($theme, $lite-typography);
+@include ontimize-style.ontimize-theme-styles($theme);
+
+@include login.login-theme($theme);
 
 ```

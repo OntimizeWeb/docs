@@ -1,8 +1,10 @@
 ---
 title: "Overview"
 permalink: /gallery/overview/
-nav_exclude: true
 layout: default
+parent: Gallery
+grand_parent: Addons
+nav_order: 1
 ---
 
 {% include base_path %}
@@ -12,7 +14,7 @@ layout: default
 
 The `o-gallery` component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel.
 
-![Gallery component]({{ "/images/components/gallery/gallery.png" | absolute_url }}){: .comp-example-img}
+![Gallery component]({{ "/assets/images/components/gallery/gallery.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-gallery [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>

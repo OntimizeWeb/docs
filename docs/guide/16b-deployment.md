@@ -47,10 +47,10 @@ This command triggers the `production-aot-server` script defined in the *package
 Comparision of the load time for the [OntimizeWeb Playground](https://try.imatia.com/ontimizeweb/v15/playground/){:target="_blank"}.
 
 * Simple deployment:
-![image-JIT]({{ base_path }}/images/comparatives/playground-JIT.PNG){: .align-center}
+![image-JIT]({{ base_path }}/assets/images/comparatives/playground-JIT.PNG){: .align-center}
 
 * Optimized deployment:
-![image-AoT]({{ base_path }}/images/comparatives/playground-AoT.PNG){: .align-center}
+![image-AoT]({{ base_path }}/assets/images/comparatives/playground-AoT.PNG){: .align-center}
 
 
 ## PWA

@@ -45,7 +45,7 @@
     }
 
     .introduction {
-      background-image: url('../../images/home/bg-landing.png');
+      background-image: url('../../assets/images/home/bg-landing.png');
       background-repeat: repeat;
       display: flex;
       flex-direction: column;
@@ -779,7 +779,6 @@ a:not([class]) {
 }
 
 .sidebar__right {
-  @include mq(md) {}
 
   @include mq(lg) {
     position: fixed;

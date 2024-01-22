@@ -2,7 +2,9 @@
 title: "Overview"
 permalink: /map/overview/
 layout: default
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 1
 ---
 {% include base_path %}
 {% include toc %}
@@ -12,7 +14,7 @@ nav_exclude: true
 The **OntimizeWeb** map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc.
 
 
-![Basic map]({{ "/images/map/basic-map.png" | absolute_url }}){: .comp-example-img width='60%'}
+![Basic map]({{ "/assets/images/map/basic-map.png" | absolute_url }}){: .comp-example-img width='60%'}
 
 
 ## Draw controls
@@ -27,7 +29,7 @@ The `o-map` allow to add the draw toolbar into the map with the `o-map-draw-cont
 </o-map>
 ```
 
-![Map Draw Controls]({{ "/images/map/draw-controls.png" | absolute_url }}){: .comp-example-img }
+![Map Draw Controls]({{ "/assets/images/map/draw-controls.png" | absolute_url }}){: .comp-example-img }
 
 ## Markers
 
@@ -42,7 +44,7 @@ The `o-map` allow to put a custom marker beside tile layers, you can easy create
 ```
 
 
-![Adding Marker]({{ "/images/map/map-marker.png" | absolute_url }}){: .comp-example-img }
+![Adding Marker]({{ "/assets/images/map/map-marker.png" | absolute_url }}){: .comp-example-img }
 
 ## Using GeoJSON
 
@@ -67,7 +69,7 @@ GeoJSON is becoming a very popular data format among many GIS technologies and s
     { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] }
 ```
 
-![Map Draw Controls]({{ "/images/map/geojson.png" | absolute_url }}){: .comp-example-img }
+![Map Draw Controls]({{ "/assets/images/map/geojson.png" | absolute_url }}){: .comp-example-img }
 
 ## Integrating WMS
 
@@ -92,4 +94,4 @@ To use a WMS service in `o-map`, we can use `o-map-layer` component that provide
 ```
 
 
-![Integrating WMS]({{ "/images/map/wms.png" | absolute_url }}){: .comp-example-img }
+![Integrating WMS]({{ "/assets/images/map/wms.png" | absolute_url }}){: .comp-example-img }

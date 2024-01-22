@@ -1,9 +1,11 @@
 ---
 permalink: /map/configuration/o-map-layer/overview
-title: "o-map-layer"
+title: "Layer"
 comp: omaplayer
 layout: o-component
-nav_exclude: true
+parent: Map
+grand_parent: Addons
+nav_order: 5
 ---
 
 

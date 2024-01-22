@@ -55,8 +55,6 @@
 
 <!-- OVERVIEW -->
 <div id="overview" class="o-tabcontent" style="{{style_overview}}">
- <!-- {% include toc %} -->
-
   {% if componentData.description %}
     <h3>Description</h3>
     {{ componentData.description | markdownify }}

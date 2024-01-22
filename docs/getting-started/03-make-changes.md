@@ -17,7 +17,7 @@ In this section we are going to make some simple changes in the code of the Quic
 
 We are going to add two [real fields]({{ base_path }}/components/input/real/overview/){:target="_blank"} into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://try.imatia.com/ontimizeweb/quickstart/main/customers){:target="_blank"}):
 
-<img src="{{ base_path }}/images/main_customers_detail.png" alt="customer detail">
+<img src="{{ base_path }}/assets/images/main_customers_detail.png" alt="customer detail">
 
 For adding the field we have to open the HTML definition file of the form
 under the location *src/app/main/customers/detail/customers-detail.component.html*. The content of this file is something like this:
