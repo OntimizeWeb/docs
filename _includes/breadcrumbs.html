@@ -7,15 +7,14 @@
 
 {%- for node in pages_list -%}
 
-  {% if permalink_array[2] == node.title | downcase %}
+  {%- if permalink_array[2] == node.title | downcase -%}
     {%- assign parent_page = node -%}
-  {% endif %}
 
-  {% if permalink_array[1] == node.title | downcase %}
+  {%- elsif permalink_array[1] == node.title | downcase -%}
+    <h1>AA</h1>
     {%- assign grandparent_page = node -%}
-  {% endif %}
 
-  {%- if parent_page != nil and grandparent_page != nil -%}
+  {%- elsif parent_page != nil and grandparent_page != nil -%}
     {%- break -%}
   {%- endif -%}
 
