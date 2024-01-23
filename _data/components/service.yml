@@ -61,7 +61,7 @@ attributes: [{
   type: "legacy | standard | fill | outline",
   default : "outline",
   required : "",
-  description : "Indicates which of the mat-form-field different except in o-table component[appearance variants](https://v8.material.angular.io/components/form-field/overview#form-field-appearance-variants) will be used. except in the o-table component."
+  description : "Indicates which of the mat-form-field different except in o-table component[appearance variants](https://v8.material.angular.io/components/data/form-field/overview#form-field-appearance-variants) will be used. except in the o-table component."
 }]
 
 methods: [{

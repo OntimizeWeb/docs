@@ -1,5 +1,5 @@
 ---
-permalink: /gallery/installation/
+permalink: /addons/gallery/installation/
 title: "Installation"
 excerpt: ""
 layout: default

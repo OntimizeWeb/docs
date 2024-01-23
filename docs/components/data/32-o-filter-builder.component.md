@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/filterbuilder/overview
+permalink: /components/data/filterbuilder/overview
 title: "Filter builder"
 comp: filterbuilder
 parent: Data
@@ -11,7 +11,7 @@ nav_order: 1
 {% include base_path %}
 {% include toc %}
 
-The `o-filter-builder` component is used for easily building complex structures for filtering the data of the component that extends from  [OServiceComponent]({{ base_path }}/components/service/service/overview)) such as [list]({{ base_path }}/components/list/overview), [table]({{ base_path }}/components/table/overview) and [grid]({{ base_path }}/components/grid/overview) . It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/components/form/overview). All the attributes are explained on the **API** section of this page.
+The `o-filter-builder` component is used for easily building complex structures for filtering the data of the component that extends from  [OServiceComponent]({{ base_path }}/components/service/service/overview)) such as [list]({{ base_path }}/components/data/list/overview), [table]({{ base_path }}/components/data/table/overview) and [grid]({{ base_path }}/components/data/grid/overview) . It uses the values of the form components provided on its `filters` attribute and placed on its parent [form]({{ base_path }}/components/data/form/overview). All the attributes are explained on the **API** section of this page.
 
 {: .note }
 > Do not add elements to your screen but is a component that allows to build [complex filtering expressions]({{base_path}}/guide/filterexpression/).

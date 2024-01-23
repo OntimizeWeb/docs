@@ -1,5 +1,5 @@
 ---
-permalink: /charts/configuration/overview/overview
+permalink: /addons/charts/overview/overview
 title: "Configuration overview"
 comp: overviewchart
 layout: o-component

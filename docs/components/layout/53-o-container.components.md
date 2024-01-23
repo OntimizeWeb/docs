@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/containers/overview
+permalink: /components/layout/containers/overview
 title: "Containers"
 comp: container
 parent: Layout

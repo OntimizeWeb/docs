@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/text/api
-title: "Text input"
+title: "Text"
 comp: textInput
 nav_exclude: true
 ---

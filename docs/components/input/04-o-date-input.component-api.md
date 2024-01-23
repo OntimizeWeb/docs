@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/date/api
-title: "Date input"
+title: "Date"
 comp: dateInput
 nav_exclude: true
 ---

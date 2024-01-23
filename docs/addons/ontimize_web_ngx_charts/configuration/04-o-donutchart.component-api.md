@@ -1,5 +1,5 @@
 ---
-permalink: /charts/configuration/donutchart/api
+permalink: /addons/charts/donutchart/api
 title: "Donut Chart"
 comp: donutchart
 layout: o-component

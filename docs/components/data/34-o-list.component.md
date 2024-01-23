@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/list/overview
+permalink: /components/data/list/overview
 title: "List"
 comp: list
 parent: Data

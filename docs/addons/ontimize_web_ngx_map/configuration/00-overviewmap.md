@@ -1,5 +1,5 @@
 ---
-permalink: /map/configuration/overview/overview
+permalink: /addons/map/configurationoverview/overview
 title: "Configuration overview"
 comp: overviewmap
 layout: o-component

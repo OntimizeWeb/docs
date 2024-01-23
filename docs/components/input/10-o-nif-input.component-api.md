@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/nif/api
-title: "Nif input"
+title: "Nif"
 comp: nifInput
 nav_exclude: true
 ---

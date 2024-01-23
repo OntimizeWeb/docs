@@ -11,7 +11,7 @@ nav_order: 3
 
 ## Overview
 
-In this section we are going to make some simple changes in the code of the QuickStart app. We are going to see how to add a [form field]({{ base_path }}/components/input/overview/overview){:target="_blank"} into a [form]({{ base_path }}/components/form/overview){:target="_blank"}. Once added, we are going to learn how to listen the component events. Finally, we are going to navigate to another screen of the application.
+In this section we are going to make some simple changes in the code of the QuickStart app. We are going to see how to add a [form field]({{ base_path }}/components/input/overview/overview){:target="_blank"} into a [form]({{ base_path }}/components/data/form/overview){:target="_blank"}. Once added, we are going to learn how to listen the component events. Finally, we are going to navigate to another screen of the application.
 
 ## Add a field
 

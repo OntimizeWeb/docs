@@ -1,5 +1,5 @@
 ---
-permalink: /filemanager/filemanagerservice/sdms
+permalink: /addons/filemanager/filemanagerservice/sdms
 title: "File Manager SDMS Service"
 layout: default
 parent: File Manager

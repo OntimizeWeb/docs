@@ -28,9 +28,6 @@
 
   }
 </script>
- {% if componentData.version %}
- <p> This component is available since version <i>{{componentData.version}}</i>.</p>
- {% endif %}
 
 {% assign tabName = page.url | split:'/' | last %}
 {% if tabName=='api' %}
@@ -46,6 +43,10 @@
   {% assign style_api='display:none'%}
   {% assign overview_class='active'%}
 {% endif%}
+
+ {% if componentData.version %}
+ <p> This component is available since version <i>{{componentData.version}}</i>.</p>
+ {% endif %}
 
 <!-- Tab links -->
 <div class="o-tab">

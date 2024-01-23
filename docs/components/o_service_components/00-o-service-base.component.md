@@ -1,6 +1,6 @@
 ---
 permalink : /components/service/service-base/overview
-title : "Service base component"
+title : "Service base"
 comp: "serviceBase"
 nav_exclude: true
 layout: o-component

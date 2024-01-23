@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/formlayoutmanager/api
+permalink: /components/layout/formlayoutmanager/api
 title: "Form layout manager"
 comp: formLayoutManager
 nav_exclude: true

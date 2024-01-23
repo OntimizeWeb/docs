@@ -4,38 +4,53 @@
 {%- assign parent_page = '' -%}
 {%- assign grandparent_page = '' -%}
 {%- assign permalink_array = page.permalink | split: '/' -%}
-{%- assign page_title = page.title | downcase -%}
+{%- assign page_title = page.title | downcase | remove: ' ' -%}
 {%- assign b = '' -%}
 
-{% for a in permalink_array %}
-
-  {% if a != page_title %}
-
+{% for a in permalink_array | offset: 1 %}
+  {% unless page_title contains a %}
     {%- assign parent_page = parent_page | append: a -%}
     {%- assign parent_page = parent_page | append: '/' -%}
     {%- assign grandparent_page = grandparent_page | append: a -%}
     {%- assign grandparent_page = grandparent_page | append: '/' -%}
     {%- assign b = a -%}
-
   {% else %}
-    {%- assign grandparent_page = grandparent_page | remove_last: b -%}
-    {%- assign grandparent_page = grandparent_page | remove_last: '/' -%}
-    {% break %}
-
-  {% endif %}
+    {% if page_title == a %}
+      {% assign grandparent_page = grandparent_page | remove: b %}
+      {% assign grand_size = grandparent_page | size %}
+      {% assign grand_size_less = grand_size | minus: 1 %}
+      {% assign grandparent_page = grandparent_page | slice: 0, grand_size_less %}
+      {% break %}
+    {% else %}
+      {%- assign parent_page = parent_page | append: a -%}
+      {%- assign parent_page = parent_page | append: '/' -%}
+      {%- assign grandparent_page = grandparent_page | append: a -%}
+      {%- assign grandparent_page = grandparent_page | append: '/' -%}
+      {%- assign b = a -%}
+    {% endif %}
+  {% endunless %}
 
 {% endfor %}
 
-{%- assign parent_page_name = parent_page | split: '/' -%}
-{%- assign grandparent_page_name = grandparent_page | split: '/' -%}
+{% if grandparent_page == parent_page %}
+  {%- assign parent_page_name = parent_page | split: '/' -%}
+  {%- assign parent_page_name_cap = parent_page_name[-1] | capitalize -%}
+  {%- assign grandparent_page = '' -%}
+{% else %}
+  {%- assign parent_page_name = parent_page | split: '/' -%}
+  {%- assign parent_page_name_cap = parent_page_name[-1] | capitalize -%}
+  {%- assign grandparent_page_name = grandparent_page | split: '/' -%}
+  {%- assign grandparent_page_name_cap = grandparent_page_name[-1] | capitalize -%}
+{% endif %}
+
 
 <nav aria-label="Breadcrumb" class="breadcrumbs">
   <ol>
     {% if parent_page != '' -%}
       {%- if grandparent_page != '' %}
-        <li><a href="{{ base_path }}{{ grandparent_page }}">{{ grandparent_page_name[-1] }}</a></li>
+        <li><a href="{{ base_path }}/{{ grandparent_page }}">{{ grandparent_page_name_cap }}</a></li>
       {%- endif %}
-      <li><a href="{{ base_path }}{{ parent_page }}">{{ parent_page_name[-1] }}</a></li>
+      <li><a href="{{ base_path }}/{{ parent_page }}">{{ parent_page_name_cap }}</a></li>
     {% endif -%}
     <li><span>{{ page.title }}</span></li>
   </ol>

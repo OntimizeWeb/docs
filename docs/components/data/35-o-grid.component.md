@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/grid/overview
+permalink: /components/data/grid/overview
 title: "Grid"
 comp: grid
 parent: Data
