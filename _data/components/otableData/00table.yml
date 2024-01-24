@@ -45,12 +45,6 @@ attributes: [{
 },{
   name: "refresh-button"
 },{
-  name: "show-table-buttons-text",
-  type: "no | false | yes | true",
-  default: "yes",
-  required: "",
-  description: "Indicates whether or not to show table actions text alongside icons"
-},{
   name: "select-all-checkbox",
   type: "no | false | yes | true",
   default: "no",
@@ -138,7 +132,7 @@ attributes: [{
 },{
   name: "orderable"
 },{
-  name: "enabled",
+  name: "oenabled",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
@@ -149,34 +143,19 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the table columns are resizables"
-}, {
+},{
   name: "keep-selected-items"
 },{
-  name: "select-column-visible",
-  type: "no | false | yes | true",
-  default: "yes",
-  required: "",
-  description: "Indicates whether or not the table columns are resizables"
-},
-# {
-#   name: "export-mode",
-#   type: "visible | local | all",
-#   default: "visible",
-#   required: "",
-#   description: "Mode export data"
-# },
-{
   name: "export-service-type",
   type: "string",
   description: "The service used by the table for exporting it's data, it must implement 'IExportService' interface. Default: 'OntimizeExportService'"
-},
-{
+},{
   name: "visible-export-dialog-buttons",
   type: "string",
   default: "",
   required: "",
   description: "Visible buttons in export dialog, separated by ';'"
-  },{
+},{
   name: "show-filter-option",
   type: "no | false | yes | true",
   default: "yes",
@@ -276,6 +255,9 @@ outputs: [{
 },{
   name: "onPaginatedDataLoaded",
   description: "Event triggered when the paginated data is updated"
+},{
+  name: "onSearch",
+  description: "Event triggered when the quickfilter starts searching"
 }]
 
 methods: [{
