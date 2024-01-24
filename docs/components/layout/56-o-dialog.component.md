@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/dialog/overview
+permalink: /components/layout/dialog/overview
 title: "Dialog"
 comp: dialogLayout
 parent: Layout

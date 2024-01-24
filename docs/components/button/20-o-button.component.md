@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/button/overview
+permalink: /components/buttons/button/overview
 title: "Button"
 comp: button
 parent: Buttons

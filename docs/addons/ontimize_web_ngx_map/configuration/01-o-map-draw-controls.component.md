@@ -1,5 +1,5 @@
 ---
-permalink: /map/configuration/o-map-draw-controls/overview
+permalink: /addons/map/drawcontrols/overview
 title: "Draw controls"
 comp: omapdrawcontrols
 layout: o-component

@@ -1,5 +1,5 @@
 ---
-permalink: /charts/configuration/discretebarchart/overview
+permalink: /addons/charts/discretebarchart/overview
 title: "Discrete Bar Chart"
 comp: discretebarchart
 layout: o-component

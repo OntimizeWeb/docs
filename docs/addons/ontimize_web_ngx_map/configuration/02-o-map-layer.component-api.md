@@ -1,6 +1,6 @@
 ---
-permalink: /map/configuration/o-map-layer/api
-title: "o-map-layer"
+permalink: /addons/map/layer/api
+title: "Layer"
 comp: omaplayer
 layout: o-component
 nav_exclude: true

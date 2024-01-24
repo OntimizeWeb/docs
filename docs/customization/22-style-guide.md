@@ -14,7 +14,7 @@ This section describes a set of tools and recommendations that will help you on 
 
 ## Containers
 
-**OntimizeWeb** defines a set of [containers components]({{ base_path }}/components/containers/overview/){:target="_blank"} that allow you to distribute the elements on the screen as you need. Use the attribute `layout-align` to distribute the elements inside the container and `layout-gap` to define the spacing between them.
+**OntimizeWeb** defines a set of [containers components]({{ base_path }}/components/layout/containers/overview/){:target="_blank"} that allow you to distribute the elements on the screen as you need. Use the attribute `layout-align` to distribute the elements inside the container and `layout-gap` to define the spacing between them.
 
 ```html
 <o-column title="Column" layout-gap="14px">

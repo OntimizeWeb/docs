@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/form/api
+permalink: /components/data/form/api
 title: "Form"
 comp: form
 nav_exclude: true

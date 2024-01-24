@@ -168,12 +168,12 @@ You can override or extend the functionality of the services defined in **Ontimi
 | `OntimizeService` and `OntimizeEEService` | `O_DATA_SERVICE` | Service used for making CRUD operation and authentication |
 | `OTranslateService` | `O_TRANSLATE_SERVICE` | Service for translating the information shown in the application |
 | `OntimizeFileService` | `O_FILE_SERVICE` | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/overview){:target="_blank"}  component |
-| `OntimizeExportService` and `OntimizeExportService3X` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
+| `OntimizeExportService` and `OntimizeExportService3X` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"} component for exporting its data |
 | `OntimizePermissionsService` and `OntimizeEEPermissionsService` | `O_PERMISSION_SERVICE` | Service used for loading the application permissions |
 | `AuthService` | `O_AUTH_SERVICE` | Service used for authentication (since *ontimize-web-ngx@8.3.0*) |
 | `OReportService` | `O_REPORT_SERVICE` | Service used to generate reports (since *ontimize-web-ngx@8.7.0*) |
 | `OntimizeExportDataProviderService` and `OntimizeExportDataProviderService3X` | `O_EXPORT_DATA_SERVICE` | Service used to provide data and styles to table exports (since *ontimize-web-ngx@8.8.0*) |
-| `OTableGlobalConfig` | `O_TABLE_GLOBAL_CONFIG` | Service used to set some [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} global options (since *ontimize-web-ngx@8.7.3*) |
+| `OTableGlobalConfig` | `O_TABLE_GLOBAL_CONFIG` | Service used to set some [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"} global options (since *ontimize-web-ngx@8.7.3*) |
 
 
 For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.

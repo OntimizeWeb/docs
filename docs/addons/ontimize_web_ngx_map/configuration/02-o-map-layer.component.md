@@ -1,5 +1,5 @@
 ---
-permalink: /map/configuration/o-map-layer/overview
+permalink: /addons/map/layer/overview
 title: "Layer"
 comp: omaplayer
 layout: o-component

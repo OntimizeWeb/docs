@@ -1,6 +1,6 @@
 ---
-permalink: /map/configuration/o-map-draw-controls/api
-title: "o-map-draw-controls"
+permalink: /addons/map/drawcontrols/api
+title: "Draw Controls"
 comp: omapdrawcontrols
 layout: o-component
 nav_exclude: true

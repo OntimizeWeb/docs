@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/formlayoutmanager/overview
+permalink: /components/layout/formlayoutmanager/overview
 title: "Form layout manager"
 comp: formLayoutManager
 parent: Layout

@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/phone/api
-title: "Phone input"
+title: "Phone"
 comp: phoneInput
 nav_exclude: true
 ---

@@ -1,5 +1,5 @@
 ---
-permalink: /filemanager/installation/
+permalink: /addons/filemanager/installation/
 title: "Installation"
 layout: default
 parent: File Manager

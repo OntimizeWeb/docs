@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/barmenu/overview
+permalink: /components/menu/barmenu/overview
 title: "Bar menu"
 comp: barMenu
 parent: Menu

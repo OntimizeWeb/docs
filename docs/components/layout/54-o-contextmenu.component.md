@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/contextmenu/overview
+permalink: /components/layout/contextmenu/overview
 title: "Context menu"
 comp: contextmenu
 parent: Layout

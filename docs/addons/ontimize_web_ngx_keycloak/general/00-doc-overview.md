@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-permalink: /keycloak/overview/
+permalink: /addons/keycloak/overview/
 layout: default
 parent: Keycloak
 grand_parent: Addons

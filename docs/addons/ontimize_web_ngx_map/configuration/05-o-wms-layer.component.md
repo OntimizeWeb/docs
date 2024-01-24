@@ -1,5 +1,5 @@
 ---
-permalink: /map/configuration/o-wms-layer/overview
+permalink: /addons/map/wmslayer/overview
 title: "WMS Layer"
 layout: default
 parent: Map

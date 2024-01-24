@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /filemanager/
+permalink: /addons/filemanager/
 title: "File Manager"
 parent: Addons
 nav_order: 3

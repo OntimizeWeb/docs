@@ -1,5 +1,5 @@
 ---
-permalink: /charts/configuration/linebarchart/overview
+permalink: /addons/charts/linebarchart/overview
 title: "Line + Bar Chart"
 comp: linebarchart
 layout: o-component

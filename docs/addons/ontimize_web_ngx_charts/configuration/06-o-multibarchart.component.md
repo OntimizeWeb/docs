@@ -1,5 +1,5 @@
 ---
-permalink: /charts/configuration/multibarchart/overview
+permalink: /addons/charts/multibarchart/overview
 title: "Multi Bar Chart"
 comp: multibarchart
 layout: o-component

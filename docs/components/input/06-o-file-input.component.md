@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/file/overview
-title: "File input"
+title: "File"
 comp: fileInput
 parent: Input
 grand_parent: Components
@@ -11,7 +11,7 @@ nav_order: 7
 {% include base_path %}
 {% include toc %}
 
-The `o-file-input` component is used in [forms]({{ base_path }}/components/form/overview) for uploading files to a server.
+The `o-file-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for uploading files to a server.
 
 The file input is automatically registered on its parent `o-form`. The configuration attributes for this component are explained on the **API** section of this page.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /report/
+permalink: /addons/report/
 title: "Report"
 parent: Addons
 nav_order: 7
@@ -21,6 +21,6 @@ The Ontimize Web Report module is available in [github](https://github.com/Ontim
 
 ## Documentation
 
-You can see the complete documentation [here]({{ base_path }}/report/overview/){:target="_blank"}.
+You can see the complete documentation [here]({{ base_path }}/addons/report/overview/){:target="_blank"}.
 
 

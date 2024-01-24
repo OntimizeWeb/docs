@@ -1,6 +1,6 @@
 ---
 title: "Report on-demand"
-permalink: /report/components/report-on-demand/overview
+permalink: /addons/report/components/report-on-demand/overview
 layout: default
 parent: Report
 grand_parent: Addons

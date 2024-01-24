@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/date/overview
-title: "Date input"
+title: "Date"
 comp: dateInput
 parent: Input
 grand_parent: Components
@@ -11,7 +11,7 @@ nav_order: 4
 {% include base_path %}
 {% include toc %}
 
-The `o-date-input` component is used in [forms]({{ base_path }}/components/form/overview) for getting or displaying date input submitted by the user.
+The `o-date-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying date input submitted by the user.
 
 The date input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 

@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/snackbar/overview
+permalink: /components/layout/snackbar/overview
 title: "SnackBar"
 comp: snackbar
 parent: Layout

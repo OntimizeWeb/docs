@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /map/
+permalink: /addons/map/
 title: "Map"
 parent: Addons
 nav_order: 2

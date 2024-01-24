@@ -1,11 +1,12 @@
 ---
-permalink: /components/table/options/
-title: "Filtering"
-nav_exclude: true
+permalink: /components/data/table/filters/
+title: "Table filters"
 layout: default
+parent: Data
+grand_parent: Components
+nav_order: 6
 ---
 {% include base_path %}
-{{ site.baseurl }}
 
 By default the filtering is *local*, you can enable *remote* filtering setting `pageable="yes"`.
 
@@ -43,6 +44,6 @@ It is posible to configure filtering by columns with `o-table-columns-filter` se
 
 ## Custom filter
 
-**OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/filterbuilder/overview/){:target='_blank'} component to you application.
+**OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/data/filterbuilder/overview/){:target='_blank'} component to you application.
 
 The `o-filter-builder` component uses the `Expression` interface that represents a filtering expression. You can read more about how to build complex filtering expressions [here]({{ base_path }}/guide/filterexpression/){:target='_blank'}.

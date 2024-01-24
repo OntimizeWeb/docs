@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /keycloak/
+permalink: /addons/keycloak/
 title: "Keycloak"
 parent: Addons
 nav_order: 6
@@ -20,7 +20,7 @@ The Ontimize Web Keycloak module is available in [github](https://github.com/Ont
 
 ## Documentation
 
-You can see the complete documentation [here]({{ base_path }}/keycloak/overview/){:target="_blank"}.
+You can see the complete documentation [here]({{ base_path }}/addons/keycloak/overview/){:target="_blank"}.
 
 ## Example
 

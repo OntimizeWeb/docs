@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/buttontoggle/overview
+permalink: /components/buttons/buttontoggle/overview
 title: "Button toggle"
 comp: buttontoggle
 parent: Buttons
