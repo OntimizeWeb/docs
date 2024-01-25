@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="90" viewBox="0 0 128 90">
+  <g id="Ilustracion_Form_layout_manager1" data-name="Ilustracion Form layout manager1" transform="translate(-82 -17)">
+    <rect id="Rectángulo_6496" data-name="Rectángulo 6496" width="128" height="81" transform="translate(82 26)" fill="#fff"/>
+    <path id="Rectángulo_6496_-_Contorno" data-name="Rectángulo 6496 - Contorno" d="M1,1V80H127V1H1M0,0H128V81H0Z" transform="translate(82 26)" fill="rgba(0,0,0,0.12)"/>
+    <rect id="Rectángulo_6497" data-name="Rectángulo 6497" width="38" height="10" transform="translate(82 17)" fill="#fff"/>
+    <path id="Rectángulo_6497_-_Contorno" data-name="Rectángulo 6497 - Contorno" d="M1,1V9H37V1H1M0,0H38V10H0Z" transform="translate(82 17)" fill="rgba(0,0,0,0.12)"/>
+    <path id="Trazado_7272" data-name="Trazado 7272" d="M0,0H38V10H0Z" transform="translate(119 17)" fill="rgba(255,255,255,0.74)"/>
+    <path id="Trazado_7272_-_Contorno" data-name="Trazado 7272 - Contorno" d="M1,1V9H37V1H1M0,0H38V10H0Z" transform="translate(119 17)" fill="rgba(0,0,0,0.12)"/>
+    <path id="Trazado_7267" data-name="Trazado 7267" d="M18851.145,195.755h-16a.755.755,0,1,1,0-1.51h16a.755.755,0,1,1,0,1.51Z" transform="translate(-18741.645 -172.5)" fill="rgba(0,0,0,0.74)"/>
+    <path id="Trazado_7268" data-name="Trazado 7268" d="M18851.145,195.755h-16a.755.755,0,1,1,0-1.51h16a.755.755,0,1,1,0,1.51Z" transform="translate(-18704.645 -172.5)" fill="rgba(0,0,0,0.38)"/>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="53" viewBox="0 0 160 53">
+  <g id="ilustracion_Tooltip" data-name="ilustracion Tooltip" transform="translate(-1234 -480)">
+    <g id="Ilustracion_Text" data-name="Ilustracion Text" transform="translate(547 7)">
+      <g id="tooltip" transform="translate(4 21)">
+        <rect id="Rectángulo_6445" data-name="Rectángulo 6445" width="160" height="34" rx="2" transform="translate(683 452)" fill="#fff"/>
+        <path id="Rectángulo_6445_-_Contorno" data-name="Rectángulo 6445 - Contorno" d="M2,1A1,1,0,0,0,1,2V32a1,1,0,0,0,1,1H158a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H158a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(683 452)" fill="rgba(0,0,0,0.12)"/>
+        <path id="Trazado_7106" data-name="Trazado 7106" d="M18851.145,195.755h-16a.755.755,0,1,1,0-1.51h16a.755.755,0,1,1,0,1.51Z" transform="translate(-18144.145 265)" fill="rgba(0,0,0,0.6)"/>
+      </g>
+      <path id="Línea_481" data-name="Línea 481" d="M0,12.5A.5.5,0,0,1-.5,12V0A.5.5,0,0,1,0-.5.5.5,0,0,1,.5,0V12A.5.5,0,0,1,0,12.5Z" transform="translate(695 489)" fill="rgba(0,0,0,0.74)"/>
+    </g>
+    <g id="item_3" data-name="item 3" transform="translate(1290.283 517)">
+      <rect id="Rectángulo_6424" data-name="Rectángulo 6424" width="48" height="16" rx="1" transform="translate(-0.283)" fill="rgba(0,0,0,0.12)"/>
+      <path id="Trazado_7084" data-name="Trazado 7084" d="M18867.145,195.755h-32a.755.755,0,1,1,0-1.51h32a.755.755,0,1,1,0,1.51Z" transform="translate(-18826.928 -186.5)" fill="rgba(0,0,0,0.74)"/>
+    </g>
+  </g>
+</svg>
