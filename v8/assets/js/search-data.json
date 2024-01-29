@@ -3224,60 +3224,66 @@
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/donutchart/overview#custom-configuration-example",
             "relUrl": "/charts/configuration/donutchart/overview#custom-configuration-example"
           }
-      
       ,"506": {
+            "doc": "Discrete Bar Chart",
+            "title": "Discrete Bar Chart",
+            "content": "Directive: o-chart . Inherited inputs . from OChartComponent: . chart-height chart-parameters chart-width data type x-axis x-data-type x-label y-axis y-data-type y-label . Chart Parameters . Name Since Description Default . agroup . boolean . . duration . number . Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value. 500 . margin . object . Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts. . rightAlignYAxis . boolean . When only one Y axis is used, this puts the Y axis on the right side instead of the left. false . rotateLabels . number . Rotates the X axis labels by the specified degree. 0 . showLegend . boolean . Show or not legend . false . showValues . boolean . Type of chart . true . showXAxis . boolean . Display or hide the X axis . true . showYAxis . boolean . Display or hide the Y axis . true . staggerLabels . boolean . Makes the X labels stagger at different distances from the axis so they’re less likely to overlap. . wrapLabels . boolean . Splits long X labels by new lines in order to prevent overlapping. true . Inherited outputs . from ChartComponent: . onDoubleTap onPinch onPress onRotate onSwipe onTap . ",
+            "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/discretebarchart/api#Discrete%20Bar%20Chart",
+            "relUrl": "/charts/configuration/discretebarchart/api#Discrete Bar Chart"
+          }
+      ,"507": {
             "doc": "Discrete Bar Chart",
             "title": "Introduction",
             "content": "You can check a running example of this Discrete Bar Chart here. All chart parameters for the Discrete Bar Chart can be checked in the API tab. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/discretebarchart/overview#introduction",
             "relUrl": "/charts/configuration/discretebarchart/overview#introduction"
-          },"507": {
+          },"508": {
             "doc": "Discrete Bar Chart",
             "title": "Basic Example",
             "content": "HTML . &lt;o-chart type=\"discreteBar\" x-label=\"Axis x\" y-label=\"Axis Y\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/discretebarchart/overview#basic-example",
             "relUrl": "/charts/configuration/discretebarchart/overview#basic-example"
-          },"508": {
+          },"509": {
             "doc": "Discrete Bar Chart",
             "title": "Custom Configuration Example",
             "content": "HTML . &lt;o-chart type=\"discreteBar\" x-label=\"Axis x\" y-label=\"Axis Y\" [data]=\"data\" layout-fill&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild, Injector } from '@angular/core'; import { OntimizeService, ChartService } from 'ontimize-web-ngx'; declare var d3: any; @Component({ selector: 'discrete-bar', templateUrl: './discrete-bar.component.html', styleUrls: ['./discrete-bar.component.scss'] }) export class DiscreteBarComponent { protected data: Array&lt;Object&gt;; protected yAxis: string = 'MOVEMENT'; protected xAxis: string = 'MOVEMENTTYPES'; @ViewChild('discreteBar', {static: false}) protected discreteBar: OChartComponent; constructor() {} ngAfterViewInit() { // Configuring Ontimize service instance... let service: OntimizeService = this.injector.get(OntimizeService); /* * 'getDefaultServiceConfiguration' method provides session, endpoint,.. data from * application configuration object. */ let conf = service.getDefaultServiceConfiguration(); conf['entity'] = 'EMovementTypes'; service.configureService(conf); // Performing ontimize query... let filter = { 'ACCOUNTID': 7310 }; let columns = ['MOVEMENT', 'MOVEMENTTYPES']; service.query(filter, columns).subscribe((resp) =&gt; { // response ok if (resp.code === 0) { this.adaptResult(resp.data); } else { alert('Impossible to query data!'); } }); let chartService: ChartService = this.discreteBar.getChartService(); let chartOps = chartService.getChartOptions(); // Configuring x axis... chartOps['yAxis']['tickFormat'] = function (d) { return d3.format(',f')(d) + '€'; }; } /** * Creates chart data grouping movements by category 'Movement type' * */ adaptResult(data: Array&lt;any&gt;) { if (data &amp;&amp; data.length) { let values = this.processValues(data); // chart data this.data = [ { 'key': 'Discrete serie', 'values': values } ] } } processValues(data: Array&lt;Object&gt; ) : Array&lt;Object&gt; { let values = []; var self = this; data.forEach((item: any, index: number) =&gt; { let filtered = self.filterCategory(item[self.xAxis], values); if (filtered &amp;&amp; filtered.length === 0) { let val = { 'x': item[self.xAxis], 'y': item[self.yAxis] }; values.push(val); } else { filtered[0]['y'] += item[self.yAxis]; } }); return values; } filterCategory(category: string, values: Array&lt;Object&gt;) { let filtered = []; if (values &amp;&amp; values.length) { filtered = values.filter((val: Object) =&gt; { if (val['x'] === category) { return true; } }); } return filtered; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/discretebarchart/overview#custom-configuration-example",
             "relUrl": "/charts/configuration/discretebarchart/overview#custom-configuration-example"
           }
-      ,"509": {
+      ,"510": {
             "doc": "Multi Bar Chart",
             "title": "Multi Bar Chart",
             "content": "Directive: o-chart . Inherited inputs . from OChartComponent: . chart-height chart-parameters chart-width data type x-axis x-data-type x-label y-axis y-data-type y-label . Chart Parameters . Name Since Description Default . color . array . Colors to use for the different data. If an array is given, it is converted to a function automatically. . duration . number . Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value. 500 . groupSpacing . number . The padding between bar groups, this is passed as the padding attribute of rangeBands . 0.1 . hideable . boolean . false . margin . object . Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts. . reduceXTicks . boolean . true . rightAlignYAxis . boolean . When only one Y axis is used, this puts the Y axis on the right side instead of the left. . rotateLabels . number . Rotates the X axis labels by the specified degree. 0 . showControls . boolean . Whether to show extra controls or not. Extra controls include things like making mulitBar charts stacked or side by side. true . showLegend . boolean . Whether to display the legend or not . true . showXAxis . boolean . Display or hide the X axis . true . showYAxis . boolean . Display or hide the Y axis . true . stacked . boolean . true . wrapLabels . boolean . Splits long X labels by new lines in order to prevent overlapping. . Inherited outputs . from ChartComponent: . onDoubleTap onPinch onPress onRotate onSwipe onTap . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/multibarchart/api#Multi%20Bar%20Chart",
             "relUrl": "/charts/configuration/multibarchart/api#Multi Bar Chart"
           }
-      ,"510": {
+      ,"511": {
             "doc": "Multi Bar Chart",
             "title": "Introduction",
             "content": "You can check a running example of this Multi Bar Chart here. All chart parameters for the Multi Bar Chart can be checked in the API tab. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/multibarchart/overview#introduction",
             "relUrl": "/charts/configuration/multibarchart/overview#introduction"
-          },"511": {
+          },"512": {
             "doc": "Multi Bar Chart",
             "title": "Basic Example",
             "content": "HTML . &lt;o-chart type=\"multiBar\" x-label=\"Time\" y-label=\"Amount (€)\" layout-fill entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;AVERAGE;BALANCE\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/multibarchart/overview#basic-example",
             "relUrl": "/charts/configuration/multibarchart/overview#basic-example"
-          },"512": {
+          },"513": {
             "doc": "Multi Bar Chart",
             "title": "Custom Configuration Example",
             "content": "HTML . &lt;o-chart #multiBar type=\"multiBar\" x-label=\"Time\" y-label=\"Amount (€)\" [data]=\"data\" x-data-type=\"time\" layout-fill&gt;&lt;/o-chart&gt; . TS . import { Component, Injector, ViewChild } from '@angular/core'; import { OntimizeService } from 'ontimize-web-ngx'; import { OChartComponent, ChartService } from 'ontimize-web-ngx-charts'; declare var d3: any; @Component({ selector: 'multi-bar', templateUrl: './multi-bar.component.html' }) export class MultiBarComponent { @ViewChild('multiBar', {static: false}) protected multiBar: OChartComponent; protected yAxis: string = 'MOVEMENT'; protected xAxis: string = 'DATE_'; protected data: Array&lt;Object&gt;; constructor(protected injector: Injector) { } ngAfterViewInit() { if (this.multiBar) { let chartService: ChartService = this.multiBar.getChartService(); if (chartService) { let chartOps = chartService.getChartOptions(); // Configuring x axis... chartOps['xAxis']['tickFormat'] = function (d) { return d3.time.format('%d/%m/%y')(new Date(d)); }; chartOps['yAxis']['tickFormat'] = function (d) { return d3.format(',f')(d) + '€'; }; // Configuring y axis... var yScale = d3.scale.linear(); chartOps['yScale'] = yScale; chartOps['yDomain'] = [-1000, 6000]; } } // Ontimize service query... let service: OntimizeService = this.injector.get(OntimizeService); let conf = service.getDefaultServiceConfiguration(); conf['entity'] = 'EMovements'; service.configureService(conf); let filter = { 'ACCOUNTID': 7310 } service.query(filter, []).subscribe((resp) =&gt; { if (resp.code === 0) { this.adaptResult(resp.data); } }); } adaptResult(data: Array&lt;any&gt;) { if (data &amp;&amp; data.length) { let values = this.processValues(data); this.data = [ { 'key': 'Movement', 'values': values['movement'], 'color': '#3498db' }, { 'key': 'Average Balance', 'values': values['average'], 'color': '#e74c3c' }, { 'key': 'Total Balance', 'values': values['total'], 'color': '#f9c922' } ]; } } processValues(data: Array&lt;Object&gt;): Object { let values = { 'movement': [], 'average': [], 'total': [] }; var self = this; let balance = 0.0; let average = 0.0; data.forEach((item: any, index: number) =&gt; { let val = { 'x': item[self.xAxis], 'y': item[self.yAxis] }; balance += val.y; let val2 = { 'x': val.x, 'y': balance }; average += balance; let val3 = { 'x': val.x, 'y': (average / (index + 1)) }; values['movement'].push(val); values['average'].push(val3); values['total'].push(val2); }); return values; } } . JSON (Custom Data) . [ { \"key\": \"Movement\", \"values\": [ { \"x\": 1235490657851, \"y\": 951 }, { \"x\": 1236110357961, \"y\": -80 }, { \"x\": 1236402213822, \"y\": 653 }, { \"x\": 1236611284898, \"y\": -548 }, { \"x\": 1242673437363, \"y\": -949 }, { \"x\": 1245260962425, \"y\": 552 }, { \"x\": 1246875825338, \"y\": 432 }, { \"x\": 1254322811810, \"y\": 1756 }, { \"x\": 1254388791367, \"y\": -169 }, { \"x\": 1255948329905, \"y\": -23 } ] }, { \"key\": \"Average Balance\", \"values\": [ { \"x\": 1235490657851, \"y\": 951 }, { \"x\": 1236110357961, \"y\": 911 }, { \"x\": 1236402213822, \"y\": 1115.3333333333333 }, { \"x\": 1236611284898, \"y\": 1080.5 }, { \"x\": 1242673437363, \"y\": 869.8 }, { \"x\": 1245260962425, \"y\": 821.3333333333334 }, { \"x\": 1246875825338, \"y\": 848.4285714285714 }, { \"x\": 1254322811810, \"y\": 1088.25 }, { \"x\": 1254388791367, \"y\": 1256 }, { \"x\": 1255948329905, \"y\": 1387.9 } ] }, { \"key\": \"Total Balance\", \"values\": [ { \"x\": 1235490657851, \"y\": 951 }, { \"x\": 1236110357961, \"y\": 871 }, { \"x\": 1236402213822, \"y\": 1524 }, { \"x\": 1236611284898, \"y\": 976 }, { \"x\": 1242673437363, \"y\": 27 }, { \"x\": 1245260962425, \"y\": 579 }, { \"x\": 1246875825338, \"y\": 1011 }, { \"x\": 1254322811810, \"y\": 2767 }, { \"x\": 1254388791367, \"y\": 2598 }, { \"x\": 1255948329905, \"y\": 2575 } ] } ] . ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/configuration/multibarchart/overview#custom-configuration-example",
             "relUrl": "/charts/configuration/multibarchart/overview#custom-configuration-example"
           }
-      ,"513": {
+      ,"514": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The Ontimize Web Charts is an implementation of nvD3 and D3 charts library using OntimizeWeb. Below you can see a list with all available chart types: . Line Charts . Line Chart Line + Bar Chart Parallel coordinates Chart Ohlc Chart . Bar Charts . Dicrete Bar Chart Multi Bar Chart Multi Bar Horizontal Chart Bullet Chart . Area Charts . Stacked Area Chart Radar Chart . Bubble Charts . Bubble Chart Scartter Chart . Gauge Charts . Gauge Dashboard Chart Gauge Simple Chart Gauge Slim Chart Gauge Space Chart Radial Percent Chart . Other Charts . Donut Chart Pie Chart Candlestick bar Chart Force Direct Graph . You can check running examples of each type here. ",
             "url": "https://ontimizeweb.github.io/docs/v8/charts/overview/#introduction",
             "relUrl": "/charts/overview/#introduction"
           }
-      ,"514": {
+      ,"515": {
             "doc": "Installation",
             "title": "Installation",
             "content": "Step 1 - Install the module . npm install ontimize-web-ngx-charts --save . Step 2 - Import in an application module . Include the library chart module into your app in the module where you want to use it... import { OChartModule } from 'ontimize-web-ngx-charts'; ... @NgModule({ imports: [ OChartModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Step 3 - Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"styles\": [ ... \"node_modules/ontimize-web-ngx-charts/styles.scss\", .... ], \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-charts/assets\", \"output\": \"/assets\" }, ... ] ... ",
@@ -3285,394 +3291,394 @@
             "relUrl": "/charts/installation/#installation"
           }
       
-      ,"515": {
+      ,"516": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The OntimizeWeb file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc. We provide two different types of file manager engines on Ontimize: the DMS file manager that uses a database to store de files and de SDMS file manager (since ontimize-web-ngx-filemanager 8.6.0 and ontimize-boot 3.12.0) wich is based con Amazon S3 cloud. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#introduction",
             "relUrl": "/filemanager/overview/#introduction"
-          },"516": {
+          },"517": {
             "doc": "Overview",
             "title": "Upload",
             "content": "You can upload files since the button Upload. While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value auto-hide-timeout in ms and also auto hide the message by setting the value auto-hide-upload=\"no\". ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#upload",
             "relUrl": "/filemanager/overview/#upload"
-          },"517": {
+          },"518": {
             "doc": "Overview",
             "title": "Create folders",
             "content": "The o-filemanager-table allows to create a folder using the New folder button or the table menu. The button it&#8217;s disabled by default, you can enable it by setting the value new-folder-button=\"yes\". ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#create-folders",
             "relUrl": "/filemanager/overview/#create-folders"
-          },"518": {
+          },"519": {
             "doc": "Overview",
             "title": "Delete folder or files",
             "content": "The o-filemanager-table allow delete simple or multiple by a context menu or button &#8216;Delete&#8217; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#delete-folder-or-files",
             "relUrl": "/filemanager/overview/#delete-folder-or-files"
-          },"519": {
+          },"520": {
             "doc": "Overview",
             "title": "Multiple download support",
             "content": "The o-filemanager-table allow download simple or multiple files by a context menu. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#multiple-download-support",
             "relUrl": "/filemanager/overview/#multiple-download-support"
-          },"520": {
+          },"521": {
             "doc": "Overview",
             "title": "Rename files or folders",
             "content": "The o-filemanager-table allow rename files or folders by a context menu. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#rename-files-or-folders",
             "relUrl": "/filemanager/overview/#rename-files-or-folders"
-          },"521": {
+          },"522": {
             "doc": "Overview",
             "title": "Browsing between folders",
             "content": "You can browse between folder with double click or by content menu over the folder and selecting the Open option. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#browsing-between-folders",
             "relUrl": "/filemanager/overview/#browsing-between-folders"
-          },"522": {
+          },"523": {
             "doc": "Overview",
             "title": "Selection multiple",
             "content": "The o-filemanager-table support selection multiple with row selection or checkbox selection with select-all-checkbox=\"yes\" property. If this property is activated in the menu on the upper right, the option will be active. By default is no. Example . &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\" new-folder-button=\"yes\" select-all-checkbox=\"yes\"&gt;&lt;/o-filemanager-table&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#selection-multiple",
             "relUrl": "/filemanager/overview/#selection-multiple"
-          },"523": {
+          },"524": {
             "doc": "Overview",
             "title": "Textbox Search filter",
             "content": "The o-filemanager-table allow filter by name of files or folders. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#textbox-search-filter",
             "relUrl": "/filemanager/overview/#textbox-search-filter"
-          },"524": {
+          },"525": {
             "doc": "Overview",
             "title": "Copy files or folders (only for SDMS)",
             "content": "The o-filemanager-table configured as SMDS allows you to copy files and folders. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#copy-files-or-folders-only-for-sdms",
             "relUrl": "/filemanager/overview/#copy-files-or-folders-only-for-sdms"
-          },"525": {
+          },"526": {
             "doc": "Overview",
             "title": "Move files or folders (only for SDMS)",
             "content": "The o-filemanager-table configured as SMDS allows you to move files and folders. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/overview/#move-files-or-folders-only-for-sdms",
             "relUrl": "/filemanager/overview/#move-files-or-folders-only-for-sdms"
           }
-      ,"526": {
+      ,"527": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-filemanager --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/installation/#installation",
             "relUrl": "/filemanager/installation/#installation"
-          },"527": {
+          },"528": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Add the library theming . Include the library theme in your application by adding the following code to the &#8216;app.scss&#8217; file: ... @import '~ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'; @include o-filemanager-table-theme($theme); ... Import the File Manager into your application . Import the Ontimize Web file manager module in the module you want to use it. import { OFileManagerModule } from 'ontimize-web-ngx-filemanager'; @NgModule({ imports: [ OFileManagerModule ], declarations: ... providers: ... }) export class ExampleModule { } . Add the File Manager to your component . Insert the o-filemanager-table component in your application component template. You must configure the service attribute within the name of the service that manages the files in the server. You must indicate also the column name that stores the work space identifier in the workspace-key attribute. &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\"&gt;&lt;/o-filemanager-table&gt; . If you want to use the SDMS file manager engine you need to add the type='S3' attribute to yours o-filemanager-table component. Also you must indicate also the form column name that stores the work space identifier in the workspace-key attribute or define the workspace-S3 function as the example bellow . customers-detail.component.html: ... &lt;o-filemanager-table type=\"S3\" service=\"customers\" [workspace-s3]=\"setWorkspaceS3\"&gt;&lt;/o-filemanager-table&gt; ... customers-detail.component.ts: ... setWorkspaceS3(data: any) { return { name: 'default', data: { id: data['CUSTOMERID'] } }; } ... ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/installation/#usage",
             "relUrl": "/filemanager/installation/#usage"
           }
-      ,"528": {
+      ,"529": {
             "doc": "File Manager DMS Service",
             "title": "File data model",
             "content": "The File Manager Service uses the class FileClass as the file data model. This class provides the following attributes: . { id: number; name: string; size: number; creationDate: number; directory: boolean; } . Where the attributes indicates the following: . id: The file identifier. name: The file name. size: The file size. creationDate: Timestamp that represents the date of creation of the file. directory: Indicates wether a file is a folder or not. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/dms#file-data-model",
             "relUrl": "/filemanager/filemanagerservice/dms#file-data-model"
-          },"529": {
+          },"530": {
             "doc": "File Manager DMS Service",
             "title": "Methods",
             "content": "configureService . Configure de Ontimize Web File Manager service. Parameters . Name Type Required Description . config Map yes The configuration object parameter . queryFiles . Get the files in the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . kv Object no A key/value object for filtering the results requested . attrs string[] no An array of string wi the searching fields requested . Return Observable&lt;FileClass[]&gt; . download . Download de requested files. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . downloadMultiple . Download de requested files in a zip file. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . upload . Upload the provided files and place them in the provided flder. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . folderId &#160; yes The folder identifier . files FileClass[] yes The downloading files data . Return Observable . deleteFiles . Delete the provided files from the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . insertFolder . Create a folder in the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . name string yes The folder name . kv Map no A key/value object for filtering where the folder will be created . Return Observable . changeFileName . Update a folder or file name. Parameters . Name Type Required Description . name string yes The file/folder name . file FileClass yes The file for changin the name . Return Observable . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/dms#methods",
             "relUrl": "/filemanager/filemanagerservice/dms#methods"
-          },"530": {
+          },"531": {
             "doc": "File Manager DMS Service",
             "title": "Extending the File Manager Service",
             "content": "You can define your own file manager service by extending the FileManagerOntimizeService class as follows. import { Injectable, Injector } from '@angular/core'; import { FileManagerOntimizeService } from 'ontimize-web-ngx-filemanager'; @Injectable() export class FileManagerExtendedService extends FileManagerOntimizeService { constructor( protected injector: Injector ) { super(injector); } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/dms#extending-the-file-manager-service",
             "relUrl": "/filemanager/filemanagerservice/dms#extending-the-file-manager-service"
-          },"531": {
+          },"532": {
             "doc": "File Manager DMS Service",
             "title": "File Manager REST API",
             "content": "In this section we describe the REST API used by the FileManagerService. Get files information . Path: /queryFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . queryParams Map A map with the search parameters definde as follows Name Type Description . filter Map A key/value object for filtering the results requested . attributes String[] Array containing the requested fields . Response: FileClass[] . Download a single file . Path: /getFile/:fileId Method: GET URL params: . Name Type Description . fileId &#160; Array of files information for downloading . Download multiple files and/or folders . Path: /getFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . files FileClass[] A list of files data for downloading . Response: Map containing the zip file name generated. Download zip file . Path: /getZipFile/:file Method: GET URL params: . Name Type Description . file string The file for downloading . Response: . Upload file . Path: /insertFile/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . file &#160; The uploading file . folderId &#160; The forlder identifier that will contains the file uploading file . Response: The inserted file identifier. Delete files and/or folders . Path: /deleteFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . deleteParams Map A map with the delete parameters defined as follows Name Type Description . fileList FileClass[] A list of files data for deleting . Create folder . Path: /insertFolder/:workspaceId/:folderName Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . name string The folder name . Data params: . Name Type Description . insertParams Map A map with the following parameters described as follows Name Type Description . data Map A map with the insert extra information . Change file/folder name . Path: /fileUpdate Method: POST Data params: . Name Type Description . fileParams Map A map with the following parameters described as follows Name Type Description . file FileClass The file data for changing name . params Map A map with a 'name' key containing the new name for the file . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/dms#file-manager-rest-api",
             "relUrl": "/filemanager/filemanagerservice/dms#file-manager-rest-api"
           }
-      ,"532": {
+      ,"533": {
             "doc": "File Manager SDMS Service",
             "title": "File data model",
             "content": "The File Manager Service uses the class FileClass as the file data model. This class provides the following attributes: . { id: number; name: string; size: number; creationDate: number; directory: boolean; } . Where the attributes indicates the following: . id: The file identifier. name: The file name. size: The file size. creationDate: Timestamp that represents the date of creation of the file. directory: Indicates wether a file is a folder or not. ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/sdms#file-data-model",
             "relUrl": "/filemanager/filemanagerservice/sdms#file-data-model"
-          },"533": {
+          },"534": {
             "doc": "File Manager SDMS Service",
             "title": "Methods",
             "content": "configureService . Configure de Ontimize Web File Manager SDMS Service. Parameters . Name Type Required Description . config Map yes The configuration object parameter . queryFiles . Get the files in the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . kv Object no A key/value object for filtering the results requested . attrs string[] no An array of string wi the searching fields requested . Return Observable&lt;FileClass[]&gt; . download . Download de requested files. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . downloadMultiple . Download de requested files in a zip file. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . upload . Upload the provided files and place them in the provided flder. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . folderId &#160; yes The folder identifier . files FileClass[] yes The downloading files data . Return Observable . deleteFiles . Delete the provided files from the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . files FileClass[] yes The downloading files data . Return Observable . insertFolder . Create a folder in the work space. Parameters . Name Type Required Description . workspaceId &#160; yes The work space identifier . name string yes The folder name . kv Map no A key/value object for filtering where the folder will be created . Return Observable . changeFileName . Change the name of a file. Parameters . Name Type Required Description . name string yes The new name of the file . file FileClass yes The file to be name changed . workspace WordspaceS3 yes The work space . Return Observable . copyFiles . Copy files to a folder. Parameters . Name Type Required Description . workspace WordspaceS3 yes The work space . files FileClass[] yes The files to be copied . folder string yes The final folder of the files copied . kv Object no A key/value object for filtering the results requested . Return Observable . moveFiles . Move files to a folder. Parameters . Name Type Required Description . workspace WordspaceS3 yes The work space . files FileClass[] yes The files to be copied . folder string yes The final folder of the files copied . kv Object no A key/value object for filtering the results requested . Return Observable . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/sdms#methods",
             "relUrl": "/filemanager/filemanagerservice/sdms#methods"
-          },"534": {
+          },"535": {
             "doc": "File Manager SDMS Service",
             "title": "Extending the File Manager Service",
             "content": "You can define your own file manager service by extending the FileManagerService class as follows. import { Injectable, Injector } from '@angular/core'; import { FileManagerS3Service } from 'ontimize-web-ngx-filemanager'; @Injectable() export class FileManagerExtendedService extends FileManagerS3Service { constructor( protected injector: Injector ) { super(injector); } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/sdms#extending-the-file-manager-service",
             "relUrl": "/filemanager/filemanagerservice/sdms#extending-the-file-manager-service"
-          },"535": {
+          },"536": {
             "doc": "File Manager SDMS Service",
             "title": "File Manager REST API",
             "content": "In this section we describe the REST API used by the FileManagerS3Service . Get files information . Path: /queryFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . queryParams Map A map with the search parameters definde as follows Name Type Description . filter Map A key/value object for filtering the results requested . attributes String[] Array containing the requested fields . Response: FileClass[] . Download a single file . Path: /getFile/:fileId Method: GET URL params: . Name Type Description . fileId &#160; Array of files information for downloading . Download multiple files and/or folders . Path: /getFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . files FileClass[] A list of files data for downloading . Response: Map containing the zip file name generated. Download zip file . Path: /getZipFile/:file Method: GET URL params: . Name Type Description . file string The file for downloading . Response: . Upload file . Path: /insertFile/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . file &#160; The uploading file . folderId &#160; The forlder identifier that will contains the file uploading file . Response: The inserted file identifier. Delete files and/or folders . Path: /deleteFiles/:workspaceId Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . Data params: . Name Type Description . deleteParams Map A map with the delete parameters defined as follows Name Type Description . fileList FileClass[] A list of files data for deleting . Create folder . Path: /insertFolder/:workspaceId/:folderName Method: POST URL params: . Name Type Description . workspaceId any The work space identifier . name string The folder name . Data params: . Name Type Description . insertParams Map A map with the following parameters described as follows Name Type Description . data Map A map with the insert extra information . Change file/folder name . Path: /fileUpdate Method: POST Data params: . Name Type Description . fileParams Map A map with the following parameters described as follows Name Type Description . file FileClass The file data for changing name . params Map A map with a 'name' key containing the new name for the file . ",
             "url": "https://ontimizeweb.github.io/docs/v8/filemanager/filemanagerservice/sdms#file-manager-rest-api",
             "relUrl": "/filemanager/filemanagerservice/sdms#file-manager-rest-api"
           }
-      ,"536": {
+      ,"537": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "Directive: o-gallery . Inputs . Name Since Description . images . GalleryImage[] . Array of images . options . GalleryOptions[] . Array of custom options . Outputs . Name Since Description . onChange . Event triggered when on image change . onImagesReady . Event triggered when images length &gt; 0 . onPreviewChange . Event triggered when on preview image change . onPreviewClose . Event triggered when on preview close . onPreviewOpen . Event triggered when on preview open . Methods . canMoveThumbnailsBottom() . Returns true if you can move thumbnails to bottom . Returns . boolean . canMoveThumbnailsLeft() . Returns true if you can move thumbnails to left . Returns . boolean . canMoveThumbnailsRight() . Returns true if you can move thumbnails to right . Returns . boolean . canMoveThumbnailsTop() . Returns true if you can move thumbnails to top . Returns . boolean . canShowNext() . Returns true if there is next image . canShowPrev() . Returns true if there is prev image . changeThumbnailsColumns() . Change the number of thumbnail columns . changeThumbnailsRows() . Change the number of thumbnail rows . moveThumbnailsBottom() . Moves thumbnails to bottom . moveThumbnailsLeft() . Moves thumbnails to left . moveThumbnailsRight() . Moves thumbnails to right . moveThumbnailsTop() . Moves thumbnails to top . openPreview(index: number) . Opens preview at index . show(index: number) . Shows image at index . showNext() . Shows next image . showPrev() . Shows prev image . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/api#Gallery",
             "relUrl": "/gallery/components/gallery/api#Gallery"
-          },"537": {
+          },"538": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "Class: GalleryOptions . Inputs . Name Since Description Default . actions . GalleryAction[] . Array of new custom actions that will be added to the left of the current close/zoom/fullscreen icons . [] . arrowNextIcon . string . Icon for next arrow (see Google material design icons) . navigate_next . arrowPrevIcon . string . Icon for prev arrow (see Google material design icons) . navigate_before . breakpoint . number . Responsive breakpoint, works like media query max-width . undefined . closeIcon . string . Icon for close button (see Google material design icons) . close . downloadIcon . string . Icon for download (see Google material design icons) . cloud_download . fullWidth . boolean . Sets the same width as browser . false . fullscreenIcon . string . Icon for fullscreen button (see Google material design icons) . fullscreen . height . string . Gallery height . 400px . image . boolean . Enables or disables image . true . imageActions . GalleryAction[] . Array of custom actions . [] . imageAnimation . GalleryAnimation.Fade GalleryAnimation.Slide GalleryAnimation.Rotate GalleryAnimation.Zoom . Animation type . GalleryAnimation.Fade . imageArrows . boolean . Enables or disables arrows . true . imageArrowsAutoHide . boolean . Enables or disables arrows auto hide . false . imageAutoPlay . boolean . Enables or disables auto play . false . imageAutoPlayInterval . number . Interval for auto play (ms) . 2000 . imageAutoPlayPauseOnHover . boolean . Enables or disables pause auto play on hover . false . imageBullets . boolean . Enables or disables navigation bullets . false . imageDescription . boolean . Enables or disables description for images . true . imageInfinityMove . boolean . Enables or disables infinity move by arrows . false . imagePercent . number . Percentage height . 75 . imageSize . GalleryImageSize.Cover GalleryImageSize.Contain . Image size . GalleryImageSize.Cover . imageSwipe . boolean . enables or disables swipe . false . layout . GalleryLayout.ThumbnailsTop GalleryLayout.ThumbnailsBottom GalleryLayout.ThumbnailsLeft GalleryLayout.ThumbnailsRight . Sets thumbnails position . GalleryLayout.ThumbnailsBottom . lazyLoading . boolean . Enables or disables lazy loading for images . true . linkTarget . string . Sets target attribute of link . _blank . preview . boolean . Enables or disables description for images . true . previewAnimation . boolean . Enables or disables image loading animation . true . previewArrows . boolean . Enables or disables arrows . true . previewArrowsAutoHide . boolean . Enables or disables arrows auto hide . false . previewAutoPlay . boolean . Enables or disables auto play . false . previewAutoPlayInterval . number . Interval for auto play (ms) . 2000 . previewAutoPlayPauseOnHover . boolean . Enables or disables pause auto play on hover . false . previewBullets . boolean . Enables or disables navigation bullets . false . previewCloseOnClick . boolean . Enables or disables closing preview by click . false . previewCloseOnEsc . boolean . Enables or disables closing preview by esc keyboard . false . previewDescription . boolean . Enables or disables description for images . true . previewDownload . boolean . Enables or disables download button . false . previewForceFullscreen . boolean . Enables or disables opening preview in fullscreen mode . false . previewFullscreen . boolean . Enables or disables fullscreen icon . false . previewInfinityMove . boolean . Enables or disables infinity move by arrows . false . previewKeyboardNavigation . boolean . Enables or disables navigation by keyboard . false . previewRotate . boolean . Enables or disables rotate buttons . false . previewSwipe . boolean . Enables or disables swipe . false . previewZoom . boolean . Enables or disables zoom in and zoom out . false . previewZoomMax . number . Max value for zoom . 2 . previewZoomMin . number . Min value for zoom . 0.5 . previewZoomStep . number . Enables or disables step for zoom change . 0.1 . rotateLeftIcon . string . Icon for rotate left (see Google material design icons) . rotate_left . rotateRightIcon . string . Icon for rotate right (see Google material design icons) . rotate_right . spinnerIcon . string . Icon for spinner (see Google material design icons) . loop . startIndex . number . Sets index of selected image on start . 0 . thumbnailActions . GalleryAction[] . Array of custom actions . [] . thumbnailMargin . number . Margin between images in thumbnails . 10 . thumbnailSize . GalleryImageSize.Cover GalleryImageSize.Contain . Thumbnail size . GalleryImageSize.Cover . thumbnails . boolean . Enables or disables thumbnails . true . thumbnailsArrows . boolean . Enables or disables arrows in layout thumbnail” . true . thumbnailsArrowsAutoHide . boolean . Enables or disables arrows auto hide in layout thumbnail . false . thumbnailsAsLinks . boolean . Enables or disables links on thumbnails . false . thumbnailsAutoHide . boolean . Hides thumbnails if there is only one image . false . thumbnailsColumns . number . Columns count. Value is 4 when layout is GalleryLayout.ThumbnailsTop or GalleryLayout.ThumbnailsBottom or is 1 when GalleryLayout.ThumbnailsRight or GalleryLayout.ThumbnailsLeft . 4 . thumbnailsMargin . number . margin between thumbnails and image . 10 . thumbnailsMoveSize . number . Number of items to move on arrow click. 1 . thumbnailsOrder . GalleryOrder.Column GalleryOrder.Row GalleryOrder.Page . Images order . GalleryOrder.Column . thumbnailsPercent . number . Percentage height . 25 . thumbnailsRemainingCount . boolean . Whether true arrows are disabled and last item has label with remaining count . false . thumbnailsRows . number . Rows count. Value is 1 when layout is GalleryLayout.ThumbnailsTop or GalleryLayout.ThumbnailsBottom or is 4 when GalleryLayout.ThumbnailsRight or GalleryLayout.ThumbnailsLeft . 1 . thumbnailsSwipe . boolean . Enables or disables swipe . false . width . string . Gallery width . 500px . zoomInIcon . string . Icon for zoom in (see Google material design icons) . zoom_in . zoomOutIcon . string . Icon for zoom out (see Google material design icons) . zoom_out . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/api#Gallery",
             "relUrl": "/gallery/components/gallery/api#Gallery"
-          },"538": {
+          },"539": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "Class: GalleryImage . Inputs . Name Since Description Default . big . string SafeResourceUrl . Url used in preview. By default it is set to the value of the medium attribute . description . string . Description used in preview . label . string . Label used for aria-label when thumbnail is a link . medium . string SafeResourceUrl . Url used in image . small . string SafeResourceUrl . Url used in thumbnails. By default it is set to the value of the medium attribute . url . string . Description used in preview . Url used in link . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/api#Gallery",
             "relUrl": "/gallery/components/gallery/api#Gallery"
-          },"539": {
+          },"540": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "Class: GalleryAction . Inputs . Name Since Description Default . disabled . boolean . Tf the icon should be disabled . false . icon . string . Icon for custom action . onClick . (event: Event, index: number) => void . Output function to call when custom action icon is clicked . titleText . string . Text to set the title attribute to . ’’ . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/api#Gallery",
             "relUrl": "/gallery/components/gallery/api#Gallery"
           }
-      ,"540": {
+      ,"541": {
             "doc": "Gallery",
             "title": "Introduction",
             "content": "The o-gallery component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel. ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/overview#introduction",
             "relUrl": "/gallery/components/gallery/overview#introduction"
-          },"541": {
+          },"542": {
             "doc": "Gallery",
             "title": "Gallery",
             "content": "By itself, the &lt;o-gallery&gt; element does not render anything, it&#8217;s necessary to configure the array de images in gallery-images input. For more information see the API. &lt;o-gallery [gallery-images]=\"galleryImages\"&gt;&lt;/o-gallery&gt; . this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' } ]; or this.galleryImages = [ { medium: 'assets/images/photo1.jpg' }, { medium: 'assets/images/photo2.jpg', }, { medium: 'assets/images/photo3.jpg' } ]; ... Options . The o-gallery component allow multiple options for configurating with gallery-options input such as width, height, thumbnails configuration, preview configuration, &#8230; . &lt;o-gallery [gallery-images]=\"galleryImages\" [gallery-options]=\"galleryOptions\"&gt;&lt;/o-gallery&gt; ... this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' }, { small: 'assets/images/i_video.jpg', medium: 'assets/videos/video1.mp4', big: 'assets/videos/video1.mp4' } ]; this.galleryOptions = [ { breakpoint: 1920, height: \"200px\", width: \"300px\", image: true, thumbnails: false, preview: false } ]; ... Swipe new . The o-gallery component allows to navigate images and videos with mouse, touch, and keyboard events in the thumbnail, image slider or/and preview section with thumbnailsSwipe, imageSwipe, previewSwipe in gallery-options input. The default values are true. Actions . You can add &#8220;actions&#8221; to the gallery, it shows icons on the top right corner and trigger your custom method. Form example . constructor( protected dialogService: DialogService) { } showInfo(event: Event, i: number): void { this.dialogService.info('INFO', 'Image ' + i); } ngOnInit(): void { // bind \"this\" to the method callback before assign if not lost context this.showInfo = this.showInfo.bind(this); this.galleryOptions = [ { ... actions: [ { icon: 'info', onClick: this.showInfo, titleText: 'info' } ] ... } ] } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/components/gallery/overview#gallery",
             "relUrl": "/gallery/components/gallery/overview#gallery"
           }
-      ,"542": {
+      ,"543": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The o-gallery component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel. &lt;o-gallery [gallery-images]=\"galleryImages\" [gallery-options]=\"galleryOptions\"&gt;&lt;/o-gallery&gt; ... this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' }, { small: 'assets/images/i_video.jpg', medium: 'assets/videos/video1.mp4', big: 'assets/videos/video1.mp4' } ]; this.galleryOptions = [ { breakpoint: 1920, height: \"200px\", width: \"300px\", image: true, thumbnails: false, preview: false } ]; ... ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/overview/#introduction",
             "relUrl": "/gallery/overview/#introduction"
           }
-      ,"543": {
+      ,"544": {
             "doc": "Gallery",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-gallery --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/installation/#installation",
             "relUrl": "/gallery/installation/#installation"
-          },"544": {
+          },"545": {
             "doc": "Gallery",
             "title": "Usage",
             "content": "Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss'; @include o-gallery-theme($theme); ... Import in an application module . Import the Ontimize Web gallery module in the app module where you want to use it. import { OGalleryModule } from 'ontimize-web-ngx-gallery'; @NgModule({ imports: [ OGalleryModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/gallery/installation/#usage",
             "relUrl": "/gallery/installation/#usage"
           }
-      ,"545": {
+      ,"546": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The module Ontimize Web Keycloak provides authentication for your OntimizeWeb applications using Keycloak. It triggers keycloak login and logout and attachs the authentication bearer token to every request to the backend. ",
             "url": "https://ontimizeweb.github.io/docs/v8/keycloak/overview/#introduction",
             "relUrl": "/keycloak/overview/#introduction"
           }
-      ,"546": {
+      ,"547": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-keycloak --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/keycloak/installation/#installation",
             "relUrl": "/keycloak/installation/#installation"
-          },"547": {
+          },"548": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Import the Ontimize Keycloak module into your application . Import the OntimizeKeycloakModule into the main module of your application. import { OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OntimizeKeycloakModule, ... ], declarations: ... providers: ... }) export class AppModule { } . Replace Ontimize Web default authentication . Ontimize Web Keycloak provides an implementation of the service AuthService from OntimizeWeb for working with keycloak. Provide the Keycloak implementaion of the authentication service using the injection token O_AUTH_SERVICE for replacing the default authentication service by OKeycloakAuthService. import { O_AUTH_SERVICE } from 'ontimize-web-ngx'; import { OKeycloakAuthService, OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OntimizeKeycloakModule, ... ], declarations: ... providers: [ { provide: O_AUTH_SERVICE, useValue: OKeycloakAuthService } ] }) export class AppModule { } . If you want to extend the functionality of the module, you can extend the OKeycloakAuthService and provide your own service using the same injection token. Provide the Keycloak configuration . Use the injection token O_KEYCLOAK_OPTIONS for providing the configuration of the keycloak server you want to connect to. import { O_AUTH_SERVICE } from 'ontimize-web-ngx'; import { KeycloakOptions, O_KEYCLOAK_OPTIONS, OKeycloakAuthService, OntimizeKeycloakModule } from 'ontimize-web-ngx-keycloak'; const keycloakOptions: KeycloakOptions = { config: { url: '&lt;KEYCLOAK_SERVER_URL&gt;', realm: '&lt;KEYCLOAK_REALM&gt;', clientId: '&lt;CLIENT_ID&gt;' }, initOptions: { onLoad: 'login-required' } }; @NgModule({ imports: [ OntimizeKeycloakModule, ... ], declarations: ... providers: [ { provide: O_AUTH_SERVICE, useValue: OKeycloakAuthService }, { provide: O_KEYCLOAK_OPTIONS, useValue: keycloakOptions } ] }) export class AppModule { } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/keycloak/installation/#usage",
             "relUrl": "/keycloak/installation/#usage"
           }
-      ,"548": {
+      ,"549": {
             "doc": "OMap",
             "title": "OMap",
             "content": "Directive: o-map . Inputs . Name Since Description Default . base-layer-ids . array . Defines the array of base layer ids. e.g. base-layer-ids=’basemap.nationalmap.gov’ . center . LatLng . Initialize the map with a given center in latitude and longitude. e.g center=’42.240599;-8.720727’ . draw-control . string . Enable or disable draw controls . group-markers . boolean . Enable to display a large number of markers on a map. . layer-contextmenu . Show or not context menu . layer-panel-visible . string . Type of data displayed on Y axis . max-zoom . string . Maximum zoom level of the map. . min-zoom . string . Minimum zoom level of the map. . search-control . boolean . Show or not search control. true . search-control-button-visible . boolean . Show or not button in search control . show-base-layers-menu . boolean . Enable or disable base layers menu . true . show-layers-menu . boolean . Enable or disable layers menu . true . show-workspace-menu . boolean . Enable or disable workspace menu . true . sidenav-mode . ['over' 'push' 'side'] . Mode of the sidenav . over . zoom . number . Initial map zoom level. . zoom-control . boolean . Show or not zoom controls. true . Outputs . Name Since Description . onClick . Fired when the user clicks (or taps) the map. onDrag . Fired repeatedly while the user drags. onDrawCreated . Triggered when a new vector or marker has been created. onDrawDeleteStart . Triggered when the user starts remove mode by clicking the remove tool button. onDrawDeleteStop . Triggered when the user has finished removing shapes (remove mode) and saves. onDrawDeleted . Triggered when layers have been removed (and saved). onDrawDrawStart . Triggered when the user has chosen to draw a particular vector or marker. onDrawDrawstop . Triggered when the user has finished a particular vector or marker. onDrawEditMove . Layer that was just moved. Triggered as the user moves a rectangle; circle or marker. onDrawEditResize . Triggered as the user resizes a rectangle or circle. onDrawEditStart . Triggered when the user starts edit mode by clicking the edit tool button. onDrawEditStop . Triggered when the user has finshed editing (edit mode) and saves edits. onDrawEdited . Triggered when layers have been edited and saved. onDrawEditvertex . Triggered when a vertex is edited on a polyline or polygon. onDrawEvent . Triggered when a vector or marker has been manipulated. onDrawvertex . Triggered when a vertex is edited on a polyline or polygon. onMove . Fired repeatedly during any movement of the map, including pan and fly animations. onMoveEnd . Fired when the center of the map stops changing (e.g. user stopped dragging the map). onZoom . Fired repeatedly during any change in zoom level, including zoom and fly animations. onZoomEnd . Fired when the map has changed, after any animations. onZoomLevelsChange . Fired repeatedly during any change in zoom level. onZoomStart . Fired when the map zoom is about to change (e.g. before zoom animation). ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/overview/api#OMap",
             "relUrl": "/map/configuration/overview/api#OMap"
           }
-      ,"549": {
+      ,"550": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The configuration is used to change how the map behaves. There are properties to control the type of map displayed, styling, fonts, the legend, etc. You can use inputs and outputs to configure your map and to catch events when are triggered. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/overview/overview#introduction",
             "relUrl": "/map/configuration/overview/overview#introduction"
-          },"550": {
+          },"551": {
             "doc": "Overview",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using inputs to display data. HTML . &lt;o-map #oMapBasic attr=\"basic-usage-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" fxFlex&gt; &lt;/o-map&gt; . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/overview/overview#basic-example",
             "relUrl": "/map/configuration/overview/overview#basic-example"
-          },"551": {
+          },"552": {
             "doc": "Overview",
             "title": "Basic Example with base layers",
             "content": "This is an example of a Map with the base layers of the map indicated in the attribute. By default, if none is provided it is used &#8216;OpenStreetMap&#8217; base layer. HTML . &lt;o-map #oMapBaseLayers attr=\"base-layers-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" base-layer-ids=\"CartoDB.Positron;Esri;OpenStreetMap.HOT;OpenStreetMap.BlackAndWhite\" zoom-control=\"yes\" search-control=\"no\" fxFlex&gt; &lt;/o-map&gt; . You can check every map parameter available for the o-map in the API tab section. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/overview/overview#basic-example-with-base-layers",
             "relUrl": "/map/configuration/overview/overview#basic-example-with-base-layers"
           }
-      ,"552": {
+      ,"553": {
             "doc": "o-map-draw-controls",
             "title": "o-map-draw-controls",
             "content": "Directive: o-map-draw-controls . Inputs . Name Since Description Default . circle-options . boolean . Show or not circle options. true . circlemarker-options . boolean . Show or not circle marker options. true . delete-handler-options . any . Delete handler options . edit-handler-options . any . Edit handler options . edit-poly-options . any . Edit polygon options . marker-options . boolean . Show or not marker options . true . polygon-options . boolean . Show or not polygon options . true . polyline-options . boolean . Show or not polyline options . true . position . ['topleft' 'topright' 'bottomleft' 'bottomright'] . Toolbar position . topright . rectangle-options . boolean . Show or not rectangle options. true . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-draw-controls/api#o-map-draw-controls",
             "relUrl": "/map/configuration/o-map-draw-controls/api#o-map-draw-controls"
           }
-      ,"553": {
+      ,"554": {
             "doc": "o-map-draw-controls",
             "title": "Introduction",
             "content": "The component o-map-draw-controls is used to show a draw toolbar into the map. You can catch the events triggered with the outputs described in API section. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-draw-controls/overview#introduction",
             "relUrl": "/map/configuration/o-map-draw-controls/overview#introduction"
-          },"554": {
+          },"555": {
             "doc": "o-map-draw-controls",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-draw-controls inside. HTML . &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" (onDrawEvent)=\"addDrawEvent($event)\" fxFlex&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . TYPESCRIPT . @Component({ selector: 'map-events', templateUrl: './map-events.component.html' }) export class MapEventsComponent { _eventsArray: Array&lt;any&gt; = []; @ViewChild('oMap') protected oMap: OMapComponent; constructor() { } ngAfterViewInit() { this.getDrawLayer(); } getDrawLayer() { console.log(this.oMap.getMapService().getDrawLayer()); } addDrawEvent(arg) { this._eventsArray.push(arg); } get eventsArray(): Array&lt;any&gt; { return this._eventsArray; } set eventsArray(arg: Array&lt;any&gt;) { this._eventsArray = arg; } } . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-draw-controls/overview#basic-example",
             "relUrl": "/map/configuration/o-map-draw-controls/overview#basic-example"
           }
-      ,"555": {
+      ,"556": {
             "doc": "o-map-layer",
             "title": "o-map-layer",
             "content": "Directive: o-map-layer . Inputs . Name Since Description Default . crs . string . CRS . crs-configuration . ICRSConfiguration . CRS configuration . layer-base-url . string . Base URL of the layer. . layer-bounds . string . Number of bounds in layer. . layer-center . string . Center the position of the layer. The structure is latitude, longitude. e.g layer-center=’42.240599;-8.720727’ . layer-contextmenu . any . Layer in context menu . layer-group-id . string . Set layer group id . layer-icon . string . Icon of layer . layer-id . string . Set layer id . layer-in-menu . string . Show or not layer in menu . layer-in-ws . boolean . Layer in WS . true . layer-menu-label . string . Label of the layer in menu . layer-menu-label-secondary . string . Secondary label of layer in menu . layer-points . string . Number of points in layer. . layer-popup . string . Set layer popup . layer-popup-url . string . URL of the popup . layer-radius . string . Radius of the circle, in meters. . layer-selected . boolean . Layer selected or not . layer-service . string . Service of the layer . layer-type . string . Type of layer . layer-visible . boolean . Show or not layer . true . query-features-in-bounds . boolean . Query features in bounds . true . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-layer/api#o-map-layer",
             "relUrl": "/map/configuration/o-map-layer/api#o-map-layer"
           }
-      ,"556": {
+      ,"557": {
             "doc": "o-map-layer",
             "title": "Introduction",
             "content": "The component o-map-layer is used to add a new layer to the map. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-layer/overview#introduction",
             "relUrl": "/map/configuration/o-map-layer/overview#introduction"
-          },"557": {
+          },"558": {
             "doc": "o-map-layer",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-layer inside to create a new marker. You can check a working example of o-map-layer component here . HTML . &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters\" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-map-layer/overview#basic-example",
             "relUrl": "/map/configuration/o-map-layer/overview#basic-example"
           }
-      ,"558": {
+      ,"559": {
             "doc": "Marker",
             "title": "Introduction",
             "content": "This type of layer is used to add a new marker to the map, you can add as many markers as you want. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-marker/overview#introduction",
             "relUrl": "/map/configuration/o-marker/overview#introduction"
-          },"559": {
+          },"560": {
             "doc": "Marker",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-layer inside to create a new marker. You can check a working example of a marker layer here . HTML . &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . In the API tab you can check all inputs and outputs allowed. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-marker/overview#basic-example",
             "relUrl": "/map/configuration/o-marker/overview#basic-example"
           }
-      ,"560": {
+      ,"561": {
             "doc": "GeoJson Layer",
             "title": "Introduction",
             "content": "You can add multiple WMS layers to your map. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-geojson-layer/overview#introduction",
             "relUrl": "/map/configuration/o-geojson-layer/overview#introduction"
-          },"561": {
+          },"562": {
             "doc": "GeoJson Layer",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-layer inside to add new GeoJson layers to the map. You can check a working example of GeoJson layers here . HTML . &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . TYPESCRIPT . import { Component, OnInit } from '@angular/core'; import { OMapLayerOptions } from 'ontimize-web-ngx-map'; @Component({ selector: 'geojson-layer', templateUrl: './geojson-layer.component.html' }) export class GeoJSONLayerComponent implements OnInit { public trainLinesStyle: OMapLayerOptions; constructor() { } ngOnInit(): void { this.trainLinesStyle = { layerStyles: { 'color': '#388E3C', 'weight': 2, 'opacity': 0.65 } }; } getTrainLinesLayerStyle() { return this.trainLinesStyle; } } . Providers . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] . GeoServerService . import { Injector } from '@angular/core'; import { Headers, Http } from '@angular/http'; import { APP_CONFIG, Config } from 'ontimize-web-ngx'; import { IFeature, IGeoJSONLayerService, LayerConfiguration } from 'ontimize-web-ngx-map'; import { Observable, Observer } from 'rxjs'; import { map, share } from 'rxjs/operators'; export class GeoServerService implements IGeoJSONLayerService { private dataObservable: Observable&lt;IFeature[]&gt;; private innerObserver: Observer&lt;IFeature[]&gt;; public dataStore: { features: IFeature[]; }; public test: string; private appConfig: Config; private http: Http; constructor( protected injector: Injector ) { this.http = this.injector.get(Http); this.appConfig = this.injector.get(APP_CONFIG); this.dataStore = { features: [] }; this.test = new Date().toISOString(); } public load(ctxt: [LayerConfiguration]): Observable&lt;IFeature[]&gt; { let [layerConf] = ctxt; this.dataObservable = new Observable&lt;IFeature[]&gt;(observer =&gt; this.innerObserver = observer ).pipe(share()); this.loadFeaturesFrom( this.initHeaders(), this.getBaseUrl(layerConf) ); return this.dataObservable; } public getBaseUrl(layerConf: LayerConfiguration): string { let baseUrl = './assets/dummy-data/'; return baseUrl + layerConf.type + '/' + layerConf.layerId + '.json'; } private loadFeaturesFrom(headers: Headers, url: string) { this.http.get(url, { headers: headers }) .pipe(map(response =&gt; response.json())) .subscribe(data =&gt; { let features = data.features; if (features) { // Filtering features to show only Galician features... features.forEach((feature: any, index: number) =&gt; { if (feature &amp;&amp; feature.geometry) { let type = feature.geometry.type; if (type === 'MultiPoint') { let coordX = feature.geometry.coordinates[0][0]; let coordY = feature.geometry.coordinates[0][1]; if (coordX &lt;= -6.0 &amp;&amp; coordX &gt;= -10.0 &amp;&amp; coordY &gt;= 41.75) { this.dataStore.features.push(feature); } } else if (type === 'MultiLineString') { let coordX = feature.geometry.coordinates[0][0][0]; let coordY = feature.geometry.coordinates[0][0][1]; if (coordX &lt;= -6.0 &amp;&amp; coordX &gt;= -10.0 &amp;&amp; coordY &gt;= 41.75) { this.dataStore.features.push(feature); } } else { this.dataStore.features.push(feature); } } }); } // this.dataStore.features = data.features; this.innerObserver.next(this.dataStore.features); }, error =&gt; console.log('Could not load features.')); } private initHeaders(): Headers { var headers: Headers = new Headers(); headers.append('Access-Control-Allow-Origin', '*'); headers.append('Content-Type', 'application/json;charset=UTF-8'); return headers; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-geojson-layer/overview#basic-example",
             "relUrl": "/map/configuration/o-geojson-layer/overview#basic-example"
           }
-      ,"562": {
+      ,"563": {
             "doc": "WMS Layer",
             "title": "Introduction",
             "content": "You can add multiple WMS layers to your map. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-wms-layer/overview#introduction",
             "relUrl": "/map/configuration/o-wms-layer/overview#introduction"
-          },"563": {
+          },"564": {
             "doc": "WMS Layer",
             "title": "Basic Example",
             "content": "This is a basic example of a Map using the component o-map-layer inside to add new WMS layers to the map. You can check a working example of WMS layers here . HTML . &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"basemap.nationalmap.gov\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . TYPESCRIPT . import { Component } from '@angular/core'; @Component({ selector: 'wms-layer', templateUrl: './wms-layer.component.html' }) export class WMSLayerComponent { constructor(){ } getWMSLayerOptions() { return { \"maxZoom\": \"18\", \"attribution\": \"&lt;a href='https:usgs.gov'&gt;USGS&lt;/a&gt; National Map Data\" }; } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/configuration/o-wms-layer/overview#basic-example",
             "relUrl": "/map/configuration/o-wms-layer/overview#basic-example"
           }
-      ,"564": {
+      ,"565": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The OntimizeWeb map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc. ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#introduction",
             "relUrl": "/map/overview/#introduction"
-          },"565": {
+          },"566": {
             "doc": "Overview",
             "title": "Draw controls",
             "content": "The o-map allow to add the draw toolbar into the map with the o-map-draw-controls component into o-map. You can catch events with the onDrawEvent output. &lt;o-map #oMap center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex draw-control=\"no\" (onDrawEvent)=\"addDrawEvent($event)\"&gt; &lt;!-- [crs-configuration]=\"objeto\" --&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#draw-controls",
             "relUrl": "/map/overview/#draw-controls"
-          },"566": {
+          },"567": {
             "doc": "Overview",
             "title": "Markers",
             "content": "The o-map allow to put a custom marker beside tile layers, you can easy create a marker adding layer-type=\"marker\" attribute into o-map-layer. &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#markers",
             "relUrl": "/map/overview/#markers"
-          },"567": {
+          },"568": {
             "doc": "Overview",
             "title": "Using GeoJSON",
             "content": "GeoJSON is becoming a very popular data format among many GIS technologies and services and the o-map allow to create and interact with map vectors created from GeoJSON objects adding layer-type=\"geoJSON\" and configuring the service in layer-service attribute. &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#using-geojson",
             "relUrl": "/map/overview/#using-geojson"
-          },"568": {
+          },"569": {
             "doc": "Overview",
             "title": "Integrating WMS",
             "content": "To use a WMS service in o-map, we can use o-map-layer component that provide the base WMS URL with layer-base-url and layer-base-url attribute specify whatever WMS options you need. &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"BasemapAT.basemap\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [`layer-base-url`]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/overview/#integrating-wms",
             "relUrl": "/map/overview/#integrating-wms"
           }
-      ,"569": {
+      ,"570": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-map --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/installation/#installation",
             "relUrl": "/map/installation/#installation"
-          },"570": {
+          },"571": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Finally, you can use ontimize-web-ngx-map in your Ontimize Web project. Import into your application . Include the library map module into your app in the module where you want to use it... import { OMapModule } from 'ontimize-web-ngx-map'; ... @NgModule({ imports: [ OMapModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Configure angular.json dependencies . You must add the module styles definition and the leaflet images in your &#8216;.angular.json&#8217;: ... \"assets\": [ .... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-map/images\", \"output\": \"/assets\" } .... ], \"styles\": [ ... \"node_modules/ontimize-web-ngx-map/styles.scss\", .... ], ... Add a map to your component . Insert the o-map component in your application component template. &lt;o-map #oMapBasic attr=\"basic-usage-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" fxFlex&gt;&lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/map/installation/#usage",
             "relUrl": "/map/installation/#usage"
           }
-      ,"571": {
+      ,"572": {
             "doc": "Report on-demand",
             "title": "Introduction",
             "content": "The module Ontimize Web Report on-demand allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This visual tool will allow users to define parameters of the report such as: . 1.- Title and subtitle . 2.- Orientation (vertical or horizontal) . 3.- Style (draw grid, row numbers, column names, background on odd rows, hide group details, group in page and first group in page) . 4.- Columns to print (allowing to order them and select for each column a title, a width and an alignment) . 5.- Order by (allows sorting of report rows) . 6.- Groups (allow grouping by columns) . 7.- Functions (allows to perform functions on numerical values ​​(maximum, minimum, sum and average) and the total function) . 8.- Preferences (allows to save a configuration, apply an existing one or update it) . NOTE: Remember to complete the steps you need to perform on your backend server to complete the report on-demand configuration following this link . ",
             "url": "https://ontimizeweb.github.io/docs/v8/report/components/report-on-demand/overview#introduction",
             "relUrl": "/report/components/report-on-demand/overview#introduction"
-          },"572": {
+          },"573": {
             "doc": "Report on-demand",
             "title": "Menu option",
             "content": ". ",
             "url": "https://ontimizeweb.github.io/docs/v8/report/components/report-on-demand/overview#menu-option",
             "relUrl": "/report/components/report-on-demand/overview#menu-option"
-          },"573": {
+          },"574": {
             "doc": "Report on-demand",
             "title": "Basic example",
             "content": "This basic example shows a report with four columns, title and subtitle . ",
             "url": "https://ontimizeweb.github.io/docs/v8/report/components/report-on-demand/overview#basic-example",
             "relUrl": "/report/components/report-on-demand/overview#basic-example"
-          },"574": {
+          },"575": {
             "doc": "Report on-demand",
             "title": "Grouping example",
             "content": "This example shows a report with four columns, grouped by one of them (customer type) and ordered by its name. In addition, a style with a background was added in the odd rows. ",
             "url": "https://ontimizeweb.github.io/docs/v8/report/components/report-on-demand/overview#grouping-example",
             "relUrl": "/report/components/report-on-demand/overview#grouping-example"
-          },"575": {
+          },"576": {
             "doc": "Report on-demand",
             "title": "Aggregate functions example",
             "content": "This example shows a report with four columns, performing sum and average operations on two of them and showing the total number of rows. A style with row numbers and with a grid in the cells was also added . ",
             "url": "https://ontimizeweb.github.io/docs/v8/report/components/report-on-demand/overview#aggregate-functions-example",
             "relUrl": "/report/components/report-on-demand/overview#aggregate-functions-example"
-          },"576": {
+          },"577": {
             "doc": "Report on-demand",
             "title": "Save and load configuration",
             "content": "The example shows the dialog to save a configuration of a report . The example shows the dialog to select a previously stored configuration and perform a faster report . ",
@@ -3680,97 +3686,97 @@
             "relUrl": "/report/components/report-on-demand/overview#save-and-load-configuration"
           }
       
-      ,"577": {
+      ,"578": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The module Ontimize Web Report is a set of reporting tools for web applications based in OntimizeWeb. Ontimize Web Report implements reporting with: . Report store: A jasper template can store and be generated from anywhere in the application, for this you have to follow a series of steps listed in this link. Ontimize is version v6.17.0 compatible . Report on-demand: Allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This visual tool will allow users to define parameters of the report such as title, subtitle, columns to display, styling options, sorting, grouping and data aggregate functions of the report. With these parameters and the data of the table, this component will dynamically generate the report and present it to the user. In addition, all these settings are stored automatically in database by Ontimize services. You need to configure your backend server and you can consult the documentation in this link . NOTE: What is JasperReports Library? JasperReports Library is an open source reporting engine, written entirely in Java. JasperReports Library is able to use data coming from any kind of data source and produce documents that can viewed, printed, or exported in a variety of document formats, including HTML, PDF, Excel, OpenOffice and Word. ",
             "url": "https://ontimizeweb.github.io/docs/v8/report/overview/#introduction",
             "relUrl": "/report/overview/#introduction"
           }
-      ,"578": {
+      ,"579": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-report --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/report/installation/#installation",
             "relUrl": "/report/installation/#installation"
-          },"579": {
+          },"580": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Import the Ontimize Web Report module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-report'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your ‘.angular.json’ file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-report/assets\", \"output\": \"/assets\" } ... ] } ... } } ... O_REPORT_DATA_SERVICE . Use the injection token O_REPORT_DATA_SERVICE that can be used to configure the server to generate a report other than the default. In our example we want the boolean columns to return the values ​​APPROVED/REJECTED instead of YES/NO ... import { CustomOntimizeReportDataProvider } from './shared/custom-report-data-provider.service'; import { O_REPORT_DATA_SERVICE } from 'ontimize-web-ngx-report'; // Defining custom providers (if needed)... export const customProviders: any = [ ... { provide: O_REPORT_DATA_SERVICE, useValue: CustomOntimizeReportDataProvider } ]; @NgModule({ declarations: [AppComponent], imports: [ ONTIMIZE_MODULES, OntimizeWebModule, AppRoutingModule, HttpClientModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) ], providers: [ { provide: APP_CONFIG, useValue: CONFIG }, ...ONTIMIZE_PROVIDERS, ...customProviders ], bootstrap: [AppComponent] }) export class AppModule { } . import { Injectable, Injector } from '@angular/core'; import { OTableComponent } from 'ontimize-web-ngx'; import { OntimizeReportDataBaseProvider, OReportParam, OReportPreferences } from 'ontimize-web-ngx-report'; @Injectable() export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProvider{ constructor( public injector: Injector ) { super(injector) } getReportConfiguration(currentPreference: OReportPreferences, table: OTableComponent): OReportParam { let reportParam = super.getReportConfiguration(currentPreference, table); reportParam.columns = reportParam.columns.map(col =&gt; { if (col.columnStyle &amp;&amp; col.columnStyle.renderer.type === 'boolean') { col.columnStyle.renderer = { \"type\": \"boolean\", \"renderType\": \"string\", \"trueValue\": \"APPROVED\", \"falseValue\": \"REJECTED\" }; } return col; }); return reportParam; } . ",
             "url": "https://ontimizeweb.github.io/docs/v8/report/installation/#usage",
             "relUrl": "/report/installation/#usage"
           }
-      ,"580": {
+      ,"581": {
             "doc": "Tree",
             "title": "Tree",
             "content": "Directive: o-tree . Inherited inputs . from OServiceBaseComponent: . attr columns delete-method entity insert-method keys pageable paginated-query-method parent-keys query-fallback-function query-method query-on-bind query-on-init query-rows service service-type static-data store-state update-method . Inputs . Name Since Description Default . controls . no false yes true . Indicates whether or not to show a controls bar. Including component actions or the quickfilter . yes . description-columns . string . Tree node visible text columns . columns attribute value . expand-all . no false yes true . Indicates whether or not to expand all nodes. false . filter-case-sensitive . no false yes true . Indicates whether or not to do a case sensitive quickfilter search . no . pageable . no false yes true . Indicates whether or not to do paginated queries for getting the data . no . parent-column . string . . query-on-bind . no false yes true . Query table data on bind . yes . query-on-init . no false yes true . Query table data on init . yes . quick-filter . no false yes true . Indicates whether or not to show a input for filtering data . yes . quick-filter . no false yes true . Indicates whether or not to show a input for filtering data . yes . quick-filter-columns . string . Columns used by the quick filter. Separated by ‘;’ . columns attribute value . recursive . no false yes true . Indicates whether or not to do recursive queries over the selected node . no . recursive-levels . number . Number of recursive levels . 1 . refresh-button . no false yes true . Indicates whether or not to show a button for refreshing data . yes . root-title . string . Title of the root node . route . string . Navigation route activated when the node is clicked . separator . string . Separation character between description-columns values . show-root . no false yes true . Indicates whether or not to show the root node . sort-columns . string . Initial ordering, using [ ASC or DESC ] format. Separated by ‘;’ . title . string . Title in the tree toolbar . translate . no false yes true . Indicates whether or not to automatically translate the tree nodes values . no . Outputs . Name Since Description . onNodeCollapsed . Event triggered when a tree node is collapsed . onNodeExpanded . Event triggered when a tree node is expanded . onNodeSelected . Event triggered when a tree node is selected . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/api#Tree",
             "relUrl": "/tree/components/o-tree.component/api#Tree"
           }
-      ,"581": {
+      ,"582": {
             "doc": "Tree",
             "title": "Introduction",
             "content": "The o-tree component allows to show data with a tree structure. If the component is inside a form, the attr property is required for registry the tree in the form components. This component extends the OServiceBaseComponent class, so you can bind the data origin to a remote server or to local data, as seen here. You also must define which columns to retrieve. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#introduction",
             "relUrl": "/tree/components/o-tree.component/overview#introduction"
-          },"582": {
+          },"583": {
             "doc": "Tree",
             "title": "Nodes text",
             "content": "You have to specify which text will be displayed in each tree node using the description-columns input. This columns are a subset of the columns and its content will be separed using the string specified in the separator input. The o-tree will show a base node if the show-root input is set to a true value, that node text is setted using the root-title input. Example . &lt;o-tree service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" description-columns=\"SURNAME;NAME\" separator=\", \" root-title=\"CUSTOMERS\" show-root=\"yes\"&gt; &lt;/o-tree&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#nodes-text",
             "relUrl": "/tree/components/o-tree.component/overview#nodes-text"
-          },"583": {
+          },"584": {
             "doc": "Tree",
             "title": "Quick filter",
             "content": "This option is enabled by default, the filter is visible in the top right. You can disable it setting quick-filter=\"no\". You can configure which columns will be affected by the filtering setting the quick-filter-columns attribute, which contains the columns separated by &#8216;;&#8217;. By default it contains all the columns of the columns attribute. You can also configure filtering to be case sensitive with filter-case-sensitive=\"yes\". By default, it&#8217;s disabled. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#quick-filter",
             "relUrl": "/tree/components/o-tree.component/overview#quick-filter"
-          },"584": {
+          },"585": {
             "doc": "Tree",
             "title": "Tree nodes navigation",
             "content": "Setting the route attribute in the o-tree and o-tree-node components allows to trigger the navigation to the route indicated in its value. You can define static routes or/and wildcards (that must be included in the columns attribute). For example: . &lt;o-tree #treeview fxFlex root-title=\"CUSTOMERS\" service-type=\"DummyService\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" description-columns=\"SURNAME;NAME\" separator=\", \" query-on-init=\"true\" route=\"customers/:CUSTOMERID\"&gt; &lt;/o-tree&gt; . Clicking on a node of this tree will triger the navigation to the current route appending the static path customers/ followed by the record &#8216;CUSTOMERID&#8217; value. You can see this working here. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#tree-nodes-navigation",
             "relUrl": "/tree/components/o-tree.component/overview#tree-nodes-navigation"
-          },"585": {
+          },"586": {
             "doc": "Tree",
             "title": "Demo",
             "content": "You can see this and more examples of this component in the OntimizeWeb tree quickstart. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree.component/overview#demo",
             "relUrl": "/tree/components/o-tree.component/overview#demo"
           }
-      ,"586": {
+      ,"587": {
             "doc": "Tree",
             "title": "Tree",
             "content": "Directive: o-tree-node . Inherited inputs . from o-tree: . attr columns delete-method description-columns entity filter-case-sensitive insert-method keys pageable paginated-query-method parent-column parent-keys query-method query-on-bind query-on-init query-rows query-with-null-parent-keys quick-filter quick-filter-columns recursive recursive-levels root-title route separator service service-type show-root sort-columns static-data store-state translate update-method . Inherited outputs . from o-tree: . onNodeCollapsed onNodeExpanded onNodeSelected . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/api#Tree",
             "relUrl": "/tree/components/o-tree-node.component/api#Tree"
           }
-      ,"587": {
+      ,"588": {
             "doc": "Tree",
             "title": "Introduction",
             "content": "The o-tree-node component allows to define inner nodes of another o-tree-node or the root o-tree component. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview#introduction",
             "relUrl": "/tree/components/o-tree-node.component/overview#introduction"
-          },"588": {
+          },"589": {
             "doc": "Tree",
             "title": "Parent keys",
             "content": "When using a remote data binded tree component, a o-tree-node must specify in its parent-keys attribute which parent node registry property is going to use for doing its data query. Example . &lt;o-tree #treeview fxFlex root-title=\"CUSTOMERS\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" description-columns=\"SURNAME;NAME\" separator=\", \"&gt; &lt;o-tree-node root-title=\"ACCOUNTS\" show-root=\"no\" service=\"customers\" entity=\"customerAccount\" columns=\"ACCOUNTID;CUSTOMERID;ACCOUNT\" description-columns=\"ACCOUNT\" keys=\"ACCOUNTID\" parent-keys=\"CUSTOMERID\"&gt; &lt;o-tree-node root-title=\"ACCOUNT_CONCEPTS\" show-root=\"no\" service=\"branches\" entity=\"accountConcepts\" columns=\"CONCEPT;ACCOUNTID\" description-columns=\"CONCEPT\" keys=\"CONCEPT;ACCOUNTID\" parent-keys=\"ACCOUNTID\"&gt; &lt;/o-tree-node&gt; &lt;o-tree-node root-title=\"ACCOUNT_MOVEMENTTYPES\" show-root=\"no\" service=\"branches\" entity=\"accountMovementTypes\" columns=\"DESCRIPTION;ACCOUNTID\" description-columns=\"DESCRIPTION\" keys=\"DESCRIPTION;ACCOUNTID\" parent-keys=\"ACCOUNTID\"&gt; &lt;/o-tree-node&gt; &lt;/o-tree-node&gt; &lt;/o-tree&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview#parent-keys",
             "relUrl": "/tree/components/o-tree-node.component/overview#parent-keys"
-          },"589": {
+          },"590": {
             "doc": "Tree",
             "title": "Quick filter",
             "content": "You can configure the same o-tree component filtering properties, that will only affect to this tree node. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview#quick-filter",
             "relUrl": "/tree/components/o-tree-node.component/overview#quick-filter"
-          },"590": {
+          },"591": {
             "doc": "Tree",
             "title": "Demo",
             "content": "You can see an example of this component behaviour in this OntimizeWeb tree quickstart section. ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/components/o-tree-node.component/overview#demo",
             "relUrl": "/tree/components/o-tree-node.component/overview#demo"
           }
-      ,"591": {
+      ,"592": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The o-tree component allows to manage a tree that can be used to display hierarchy data. ",
@@ -3778,13 +3784,13 @@
             "relUrl": "/tree/overview/#introduction"
           }
       
-      ,"592": {
+      ,"593": {
             "doc": "Tree",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-tree --save . ",
             "url": "https://ontimizeweb.github.io/docs/v8/tree/installation/#installation",
             "relUrl": "/tree/installation/#installation"
-          },"593": {
+          },"594": {
             "doc": "Tree",
             "title": "Usage",
             "content": "Configure angular-cli.json dependencies . You must add the module styles definition in your &#8216;.angular-cli.json&#8217; file styles array: ... \"styles\": [ ... \"../node_modules/ontimize-web-ngx-tree/styles.scss\", .... ], ... Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-tree/o-tree-theme.scss'; @include o-tree-theme($theme); ... Import in an application module . Import the Ontimize Web tree module in the app module where you want to use it. import { OTreeModule } from 'ontimize-web-ngx-tree'; @NgModule({ imports: [ OTreeModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2024-01-23T04:40:29-05:00">
+  <meta property="article:published_time" content="2024-01-29T03:32:01-05:00">
 
 
 
@@ -239,6 +239,8 @@
               <option value="https://ontimizeweb.github.io/docs/v4" >4.x.x</option>
             
               <option value="https://ontimizeweb.github.io/docs/v8"  selected="selected" >8.x.x</option>
+            
+              <option value="https://ontimizeweb.github.io/docs/v15" >15.x.x</option>
             
             </select>
           </li>
@@ -860,7 +862,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="January 23, 2024">
+    <meta itemprop="datePublished" content="January 29, 2024">
     
 
     <div class="page__inner-wrap">
@@ -957,7 +959,7 @@
   </nav>
 </aside>
 
-<p>Forms are the backbone of management applications. They are used in applications to request information from the user or display data. <strong>OntimizeWeb</strong> allows you to add a form and insert <a href="https://ontimizeweb.github.io/docs/v8/components/input/overview/overview/" target="_blank">form fields</a> into it very easily.</p>
+<p>Forms are the backbone of management applications. They are used in applications to request information from the user or display data. <strong>OntimizeWeb</strong> allows you to add a form and insert <a href="https://ontimizeweb.github.io/docs/v8/components/input/overview/overview" target="_blank">form fields</a> into it very easily.</p>
 
 <p>The <code class="language-plaintext highlighter-rouge">o-form</code> component allows to display data from the server and also to insert, update and delete records in the database. This can be easily achieved by setting some attributes such as <code class="language-plaintext highlighter-rouge">service</code> and <code class="language-plaintext highlighter-rouge">entity</code>. Check these and other attributes in the <strong>API</strong> section of this page.</p>
 
@@ -1015,7 +1017,7 @@ This is the mode used by the form to perform creation operations. In this mode, 
 </code></pre></div></div>
 
 <h2 id="form-lifecycle">Form lifecycle</h2>
-<p>A form is called <em>detail form</em> when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table, list or grid record. This use case can be achieved with <strong>OntimizeWeb</strong> by combining the <code class="language-plaintext highlighter-rouge">o-form</code> and the <a href="https://ontimizeweb.github.io/docs/v8/components/table/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a>, <a href="https://ontimizeweb.github.io/docs/v8/components/list/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-list</code></a> or <a href="https://ontimizeweb.github.io/docs/v8/components/grid/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-grid</code></a> component.</p>
+<p>A form is called <em>detail form</em> when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table, list or grid record. This use case can be achieved with <strong>OntimizeWeb</strong> by combining the <code class="language-plaintext highlighter-rouge">o-form</code> and the <a href="https://ontimizeweb.github.io/docs/v8/components/table/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a>, <a href="https://ontimizeweb.github.io/docs/v8/components/list/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-list</code></a> or <a href="https://ontimizeweb.github.io/docs/v8/components/grid/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-grid</code></a> component.</p>
 
 <p>You can read more about this topic in the <a href="https://ontimizeweb.github.io/docs/v8/components/form/lifecycle/" target="_blank">form lifecycle</a> section.</p>
 
@@ -1144,7 +1146,7 @@ This is the mode used by the form to perform creation operations. In this mode, 
 
 <h2 id="filtering-of-a-collection-component">Filtering of a collection component</h2>
 
-<p>A common use of a form is to use the form data entered by the user to request filtered information from a service and display it in a collection component (<a href="https://ontimizeweb.github.io/docs/v8/components/table/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a>, <a href="https://ontimizeweb.github.io/docs/v8/components/list/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-list</code></a> or <a href="https://ontimizeweb.github.io/docs/v8/components/grid/overview/" target="_blank"><code class="language-plaintext highlighter-rouge">o-grid</code></a>). <strong>OntimizeWeb</strong> offers two different solutions for doing this. The simplest way to do this filtering is to set the <code class="language-plaintext highlighter-rouge">parent-keys</code> input of the collection component we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we have to use the <a href="#filter-builder">filter builder</a> component.</p>
+<p>A common use of a form is to use the form data entered by the user to request filtered information from a service and display it in a collection component (<a href="https://ontimizeweb.github.io/docs/v8/components/table/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-table</code></a>, <a href="https://ontimizeweb.github.io/docs/v8/components/list/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-list</code></a> or <a href="https://ontimizeweb.github.io/docs/v8/components/grid/overview" target="_blank"><code class="language-plaintext highlighter-rouge">o-grid</code></a>). <strong>OntimizeWeb</strong> offers two different solutions for doing this. The simplest way to do this filtering is to set the <code class="language-plaintext highlighter-rouge">parent-keys</code> input of the collection component we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we have to use the <a href="#filter-builder">filter builder</a> component.</p>
 
 <h3 id="parent-keys-filter">Parent keys filter</h3>
 
@@ -1183,7 +1185,7 @@ This is the mode used by the form to perform creation operations. In this mode, 
 </code></pre></div></div>
 
 <h3 id="filter-builder">Filter builder</h3>
-<p>The filter builder is a component whose purpose is to solve the problem described above. It allows to build complex filtering expressions using the data entered in a form component. Read more about the filter builder component <a href="https://ontimizeweb.github.io/docs/v8/components/filterbuilder/overview/" target="_blank">here</a>.</p>
+<p>The filter builder is a component whose purpose is to solve the problem described above. It allows to build complex filtering expressions using the data entered in a form component. Read more about the filter builder component <a href="https://ontimizeweb.github.io/docs/v8/components/filterbuilder/overview" target="_blank">here</a>.</p>
 
 <h2 id="custom-form-toolbar-buttons">Custom form toolbar buttons</h2>
 
@@ -5805,7 +5807,7 @@ the methods that returns those messages that want to be changed. User can see th
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-23T04:40:29-05:00">January 23, 2024</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-29T03:32:01-05:00">January 29, 2024</time></p>
         
       </footer>
 
