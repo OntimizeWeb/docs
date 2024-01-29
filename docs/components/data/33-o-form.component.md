@@ -66,7 +66,7 @@ For example:
 ```
 
 ## Form lifecycle
-A form is called *detail form* when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table, list or grid record. This use case can be achieved with **OntimizeWeb** by combining the `o-form` and the [`o-table`]({{ base_path }}/components/data/table/overview/){:target="_blank"}, [`o-list`]({{ base_path }}/components/data/list/overview/){:target="_blank"} or [`o-grid`]({{ base_path }}/components/data/grid/overview/){:target="_blank"} component.
+A form is called *detail form* when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table, list or grid record. This use case can be achieved with **OntimizeWeb** by combining the `o-form` and the [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"}, [`o-list`]({{ base_path }}/components/data/list/overview){:target="_blank"} or [`o-grid`]({{ base_path }}/components/data/grid/overview){:target="_blank"} component.
 
 You can read more about this topic in the [form lifecycle]({{ base_path }}/components/data/form/lifecycle/){:target="_blank"} section.
 
@@ -196,7 +196,7 @@ You can change the default options of the form by using `MAT_FORM_FIELD_DEFAULT_
 
 ## Filtering of a collection component
 
-A common use of a form is to use the form data entered by the user to request filtered information from a service and display it in a collection component ([`o-table`]({{ base_path }}/components/data/table/overview/){:target="_blank"}, [`o-list`]({{ base_path }}/components/data/list/overview/){:target="_blank"} or [`o-grid`]({{ base_path }}/components/data/grid/overview/){:target="_blank"}). **OntimizeWeb** offers two different solutions for doing this. The simplest way to do this filtering is to set the `parent-keys` input of the collection component we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we have to use the [filter builder](#filter-builder) component.
+A common use of a form is to use the form data entered by the user to request filtered information from a service and display it in a collection component ([`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"}, [`o-list`]({{ base_path }}/components/data/list/overview){:target="_blank"} or [`o-grid`]({{ base_path }}/components/data/grid/overview){:target="_blank"}). **OntimizeWeb** offers two different solutions for doing this. The simplest way to do this filtering is to set the `parent-keys` input of the collection component we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we have to use the [filter builder](#filter-builder) component.
 
 ### Parent keys filter
 
@@ -235,7 +235,7 @@ In the following example we have a form component with the field to filter the f
 ```
 
 ### Filter builder
-The filter builder is a component whose purpose is to solve the problem described above. It allows to build complex filtering expressions using the data entered in a form component. Read more about the filter builder component [here]({{ base_path }}/components/data/filterbuilder/overview/){:target="_blank"}.
+The filter builder is a component whose purpose is to solve the problem described above. It allows to build complex filtering expressions using the data entered in a form component. Read more about the filter builder component [here]({{ base_path }}/components/data/filterbuilder/overview){:target="_blank"}.
 
 ## Custom form toolbar buttons
 

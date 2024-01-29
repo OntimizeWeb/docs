@@ -75,5 +75,5 @@ As you can see, the selector of our overrided form component is '*employees-edit
 ```
 
 Now you only need to override the desired method to apply your custom logic. You can find further
-information about o-form configuration parameters in the [Components]({{ base_path }}/components/data/form/overview/){:target="_blank"} section.
+information about o-form configuration parameters in the [Components]({{ base_path }}/components/data/form/overview){:target="_blank"} section.
 
