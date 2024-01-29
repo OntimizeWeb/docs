@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Make some changes"
-permalink: /make-changes/
+permalink: /make-some-changes/
 parent: Getting started
 nav_order: 3
 ---

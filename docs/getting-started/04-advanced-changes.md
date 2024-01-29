@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Advanced topics"
-permalink: /advanced-changes/
+permalink: /advanced-topics/
 parent: Getting started
 nav_order: 4
 ---

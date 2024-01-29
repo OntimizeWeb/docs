@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 has_children: true
 nav_order: 7
+has_toc: false
 ---
 
 Ontimize Web is an application framework based on Angular technology and standards that provides to you an environment for solving the problematic situation of building applications that require a browser-based user interface.
@@ -24,3 +25,5 @@ Ontmize Web has been designed as a base for you to create and customize your web
 ## License
 
 [License](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/master/LICENSE).
+
+{% include nav_cards.html folder="about" yml="true" %}

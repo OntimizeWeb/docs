@@ -1056,9 +1056,21 @@ table {
         align-items: center;
         height: 116px;
         background-color: #F6F6F6;
+
+        p {
+          text-align: start;
+          padding-left: 18px;
+          padding-right: 18px;
+          padding: 10px 18px 0 18px;
+          height: 100%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
       }
 
       p {
+        text-align: end;
+        padding-right: 18px;
         padding-left: 18px;
         margin-top: auto;
         margin-bottom: auto;

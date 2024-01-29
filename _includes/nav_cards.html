@@ -1,0 +1,38 @@
+{% assign folder_path = 'images/menus/' | append: include.folder | append: '_light' %}
+
+{% if include.yml %}
+  {% assign description_yml = include.folder %}
+  {% assign folder_path = nil %}
+{% endif %}
+
+<div class="menu-card-container">
+  {% if folder_path %}
+    {% for image in site.static_files %}
+      {% if image.path contains folder_path %}
+        <a href="{{ base_path }}{{ page.permalink }}{{ image.name | remove: '.svg' }}/overview">
+          <div class="menu-card">
+            <div class="image-container">
+              <img src="{{ base_path }}{{ image.path }}" alt="{{ image.name }}">
+            </div>
+            <p>{{ image.name | capitalize | remove: '.svg' }}</p>
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% elsif description_yml %}
+    {% for sections in site.data.menu_descriptions.sections %}
+      {% if sections[0] == description_yml %}
+        {% for section in sections[1] %}
+          <a href="{{ base_path }}{{ site.baseurl }}{{ section.url }}">
+            <div class="menu-card">
+              <div class="image-container">
+                <p>{{ section.description }}</p>
+              </div>
+              <p>{{ section.title }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
