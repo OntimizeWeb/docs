@@ -21,6 +21,8 @@ versions:
     active: true
   - title: "8.x.x"
     url: /docs/v8
+  - title: "15.x.x"
+    url: /docs/v15
 
 
 # documentation links
