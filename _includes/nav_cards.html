@@ -1,3 +1,5 @@
+{% include base_path %}
+
 {% assign folder_path = 'images/menus/' | append: include.folder | append: '_light' %}
 
 {% if include.yml %}
@@ -14,7 +16,7 @@
             <div class="image-container">
               <img src="{{ base_path }}{{ image.path }}" alt="{{ image.name }}">
             </div>
-            <p>{{ image.name | capitalize | remove: '.svg' }}</p>
+            <p>{{ image.name | capitalize | remove: '.svg' | replace: '-', ' ' }}</p>
           </div>
         </a>
       {% endif %}
@@ -23,12 +25,13 @@
     {% for sections in site.data.menu_descriptions.sections %}
       {% if sections[0] == description_yml %}
         {% for section in sections[1] %}
-          <a href="{{ base_path }}{{ site.baseurl }}{{ section.url }}">
+          <a href="{{ base_path }}{{ section.url }}">
             <div class="menu-card">
-              <div class="image-container">
+              <div class="text-container">
+                <p>{{ section.title }}</p>
                 <p>{{ section.description }}</p>
               </div>
-              <p>{{ section.title }}</p>
+              <p class="bottom-title">{{ section.title }}</p>
             </div>
           </a>
         {% endfor %}

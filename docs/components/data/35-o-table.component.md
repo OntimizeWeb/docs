@@ -94,7 +94,7 @@ You can represent the columns in extended mode with `o-table-column` component. 
 ## CRUD operations
 The `o-table` allows to perform the basic operations like **create**, **read**, **update** and **delete**. There are various ways you can use for editing like cell editing by click on them or use an `o-form` component to edit the currently selected item.
 
-*Ontimize Web* provides several modes for editing its data by o-form like *editable detail*, *dialog*, *split pane*, *tabs*. For more information about `o-form` lifecycle you can see this [url](/components/data/form/overview#form-lifecycle){:target="_blank"} and the *dialog*, *split pane*, *tabs* modes are explained in [o-form-layout-manager]({{ base_path }}/components/layout/formlayoutmanager/overview){:target="_blank"} component.
+*Ontimize Web* provides several modes for editing its data by o-form like *editable detail*, *dialog*, *split pane*, *tabs*. For more information about `o-form` lifecycle you can see this [url](/components/data/form/overview#form-lifecycle){:target="_blank"} and the *dialog*, *split pane*, *tabs* modes are explained in [o-form-layout-manager]({{ base_path }}/components/layout/form-layout-manager/overview){:target="_blank"} component.
 
 These operations are available from the table toolbar or from the context menu. This operations are configured by default if detail-mode is other than `none` but you can disable them with `delete-button='no'`, `insert-button='no'`, `refresh-button='no'`
 
