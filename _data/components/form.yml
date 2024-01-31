@@ -11,7 +11,8 @@ attributes: [
 },{
   name: "entity"
 },{
-  name: "keys"
+  name: "keys",
+  required: "yes"
 },{
   name: "columns"
 },{
