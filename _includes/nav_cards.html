@@ -16,7 +16,7 @@
             <div class="image-container">
               <img src="{{ base_path }}{{ image.path }}" alt="{{ image.name }}">
             </div>
-            <p>{{ image.name | capitalize | remove: '.svg' | replace: '-', ' ' }}</p>
+            <p class="bottom-image">{{ image.name | capitalize | remove: '.svg' | replace: '-', ' ' }}</p>
           </div>
         </a>
       {% endif %}
