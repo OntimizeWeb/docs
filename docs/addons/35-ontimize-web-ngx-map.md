@@ -5,7 +5,10 @@ title: "Map"
 parent: Addons
 nav_order: 2
 has_children: true
+has_toc: false
 ---
+
+{% include nav_cards.html folder="map" yml="true" %}
 
 {% include base_path %}
 {% include toc %}
