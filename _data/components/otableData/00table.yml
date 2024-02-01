@@ -345,6 +345,30 @@ methods: [{
   type: "method",
   parameters: "",
   description: "Get sqlTypes from data source "
+},{
+  name: "getMenuPermissions",
+  type: "method",
+  returns: "OTableMenuPermissions",
+  description: "Returns the configured menu permissions."
+},{
+  name: "initializeCheckboxColumn",
+  type: "method",
+  description: "Initializates the checkbox columns."
+},{
+  name: "reinitializeSortColumns",
+  type: "method",
+  parameters: "sortColumns?: SQLOrder[]",
+  description: "Sort columns method which acept an especific order on its optional parameter."
+},{
+  name: "setGroupColumns",
+  type: "method",
+  parameters: "value: any[]",
+  description: "Group an especific columns declarated on the array parameter."
+},{
+  name: "clearColumnFilters",
+  type: "method",
+  parameters: "triggerDatasourceUpdate?: boolean, columnsAttr?: string[]",
+  description: "Method that clears the column filters letting update the result and choose the columns by their Attr."
 }
 
 
