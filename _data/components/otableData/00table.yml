@@ -369,6 +369,148 @@ methods: [{
   type: "method",
   parameters: "triggerDatasourceUpdate?: boolean, columnsAttr?: string[]",
   description: "Method that clears the column filters letting update the result and choose the columns by their Attr."
+},{
+  name: "refreshColumnsWidthFromLocalStorage",
+  type: "method",
+  description: "Refresh the column with to the defined on the local storage."
+},{
+  name: "setGroupedColumnsTypes",
+  type: "method",
+  parameters: "value: OGroupedColumnTypes[]",
+  description: "Sets the column types of a grouped columns with an Attr and Type array."
+},{
+  name: "storeFilterInState",
+  type: "method",
+  parameters: "arg: OFilterDefinition",
+  description: "Stores the filter definition on the State Service component."
+},{
+  name: "setFiltersConfiguration",
+  type: "method",
+  description: "Check the original filterCaseSensitive with the filterCaseSensitive in initial configuration in local storage if filterCaseSensitive in initial configuration is equals to original filterCaseSensitive input filterCaseSensitive will be the value in local storage."
+},{
+  name: "reloadPaginatedDataFromStart",
+  type: "method",
+  parameters: "clearSelectedItems?: boolean",
+  description: "Reloads the pageable tables from the first record and unselect the selected items by default."
+},{
+  name: "resetColumnsWidth",
+  type: "method",
+  description: "Resets the column width to the defined or the default (auto)."
+},{
+  name: "applyDefaultConfiguration",
+  type: "method",
+  description: "Applies the default configuration to de table."
+},{
+  name: "applyConfiguration",
+  type: "method",
+  parameters: "configurationName: string",
+  description: "Applies a stored configuration depending on a table part depeding on the instroduced parameter."
+},{
+  name: "getColumnsNotIncluded",
+  type: "method",
+  returns: "string[]",
+  description: "Returns an array of the Attr of the columns not included on the table."
+},{
+  name: "getComponentFilter",
+  type: "method",
+  parameters: "existingFilter?: any",
+  returns: "any",
+  description: "Returns the defined table filter."
+},{
+  name: "getColumnNames",
+  type: "method",
+  parameters: "columns: string[]",
+  returns: "{ [columnId: string]: string; }",
+  description: "Returns the name or the Attr if dont have name of the introduced columns in the parameters."
+},{
+  name: "registerQuickFilter",
+  type: "method",
+  parameters: "arg: any",
+  description: "Define a custom quickfilter."
+},{
+  name: "getClientWidthColumn",
+  type: "method",
+  parameters: "col: OColumn",
+  returns: "number",
+  description: "Returns the width of a specified column."
+},{
+  name: "getActionsPermissions",
+  type: "method",
+  returns: "OPermissions[]",
+  description: "Returns the permissions defined on the table."
+},{
+  name: "registerOTableButtons",
+  type: "method",
+  parameters: "arg: OTableButtons",
+  description: "Register to the table the OTableButtons defined on parameters."
+},{
+  name: "isColumnFilterable",
+  type: "method",
+  parameters: "column: OColumn",
+  returns: "boolean",
+  description: "Returns true if the column is filterable."
+},{
+  name: "openColumnFilterDialog",
+  type: "method",
+  parameters: "column: OColumn, event: Event",
+  description: "Opens the column filter dialog of the specified column."
+},{
+  name: "getOColumn",
+  type: "method",
+  parameters: "attr: string",
+  returns: "OColumn",
+  description: "Returns column by its attr."
+},{
+  name: "groupByColumn",
+  type: "method",
+  parameters: "column: OColumn, type?: string",
+  returns: "OColumn",
+  description: "Groups the records by the column and opcionally the type too."
+},{
+  name: "unGroupByColumn",
+  type: "method",
+  parameters: "column: OColumn",
+  returns: "OColumn",
+  description: "Ungroup the records by the column introduced in parameter."
+},{
+  name: "unGroupByAllColumn",
+  type: "method",
+  description: "Ungroups all the records grouped by columns."
+},{
+  name: "filterByColumn",
+  type: "method",
+  parameters: "columnValueFilter: OColumnValueFilter",
+  description: "Filters the table by the OColumnValueFilter."
+},{
+  name: "refresh",
+  type: "method",
+  description: "Refresh the table component."
+},{
+  name: "copySelection",
+  type: "method",
+  description: "Copies to the clipboard the selected records."
+},{
+  name: "copyAll",
+  type: "method",
+  description: "Copies all the table records."
+},{
+  name: "showAndSelectAllCheckbox",
+  type: "method",
+  description: "Shows the checkboxs on the table and selects all."
+},{
+  name: "doHandleClick",
+  type: "method",
+  parameters: "row: any, column: string, rowIndex: number, $event: MouseEvent",
+  description: "Emits a click event on the especified row."
+},{
+  name: "viewDetail",
+  type: "method",
+  parameters: "item: any",
+  description: "Open the detail of an item if it have permissions."
+},{
+  name: "clearSelection",
+  type: "method",
+  description: "Unselect the table items selected."
 }
 
 
