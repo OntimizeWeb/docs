@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="133" height="91" viewBox="0 0 133 91">
+  <defs>
+    <filter id="Trazado_7258" x="0" y="0" width="133" height="91" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Ilustraion_image" data-name="Ilustraion image" transform="translate(-5556.5 -108.5)">
+    <g transform="matrix(1, 0, 0, 1, 5556.5, 108.5)" filter="url(#Trazado_7258)">
+      <path id="Trazado_7258-2" data-name="Trazado 7258" d="M2,0H128a2,2,0,0,1,2,2V86a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1.5 0.5)" fill="#fff"/>
+    </g>
+    <path id="Rectángulo_6441" data-name="Rectángulo 6441" d="M2,1A1,1,0,0,0,1,2V86a1,1,0,0,0,1,1H128a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H128a2,2,0,0,1,2,2V86a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(5558 109)" fill="rgba(0,0,0,0.12)"/>
+    <g id="ilustracion" transform="translate(0.875)">
+      <path id="Trazado_7226" data-name="Trazado 7226" d="M5636.4,196.391a1,1,0,0,1-.754-.343l-33.083-37.967-43.308,38.061a1,1,0,0,1-1.32-1.5l.431-.378,44.386-39.008.66.757,33.742,38.724a1,1,0,0,1-.753,1.657Z" transform="translate(1.029 -0.484)" fill="rgba(0,0,0,0.74)"/>
+      <path id="Trazado_7227" data-name="Trazado 7227" d="M5686.235,196.484a1,1,0,0,1-.767-.358l-35.243-42.033-25.731,22.641a1,1,0,1,1-1.321-1.5l27.269-23.994.658.785,35.9,42.818a1,1,0,0,1-.766,1.643Z" transform="translate(-0.875 -0.484)" fill="rgba(0,0,0,0.74)"/>
+      <circle id="Elipse_1180" data-name="Elipse 1180" cx="8.5" cy="8.5" r="8.5" transform="translate(5614.125 134)" fill="#fff"/>
+      <path id="Elipse_1180_-_Contorno" data-name="Elipse 1180 - Contorno" d="M8.5,2A6.5,6.5,0,1,0,15,8.5,6.507,6.507,0,0,0,8.5,2m0-2A8.5,8.5,0,1,1,0,8.5,8.5,8.5,0,0,1,8.5,0Z" transform="translate(5614.125 134)" fill="rgba(0,0,0,0.74)"/>
+    </g>
+  </g>
+</svg>

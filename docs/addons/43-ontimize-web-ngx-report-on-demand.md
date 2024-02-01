@@ -5,7 +5,10 @@ title: "Report"
 parent: Addons
 nav_order: 7
 has_children: true
+has_toc: false
 ---
+
+{% include nav_cards.html folder="report" yml="true" %}
 
 {% include base_path %}
 {% include toc %}

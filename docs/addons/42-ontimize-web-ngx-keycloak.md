@@ -5,7 +5,10 @@ title: "Keycloak"
 parent: Addons
 nav_order: 6
 has_children: true
+has_toc: false
 ---
+
+{% include nav_cards.html folder="keycloak" yml="true" %}
 
 {% include base_path %}
 {% include toc %}

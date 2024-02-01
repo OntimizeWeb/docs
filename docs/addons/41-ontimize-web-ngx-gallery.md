@@ -5,7 +5,10 @@ title: "Gallery"
 parent: Addons
 nav_order: 4
 has_children: true
+has_toc: false
 ---
+
+{% include nav_cards.html folder="gallery" yml="true" %}
 
 {% include base_path %}
 {% include toc %}

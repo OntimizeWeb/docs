@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Run an example"
-permalink: /install-and-run/
+permalink: /run-an-example/
 parent: Getting started
 nav_order: 2
 ---
