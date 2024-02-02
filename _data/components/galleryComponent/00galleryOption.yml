@@ -360,7 +360,7 @@ attributes: [{
   name: "aspectRatio",
   type: "string",
   default : "",
-  description : "Aspect ratio is property allows you to define the desired width-to-height ratio of an image"
+  description : "Property allows you to define the desired width-to-height ratio of an image. Format sintax: number:number (e.g. 4:3)"
 }]
 
 
