@@ -210,15 +210,13 @@ attributes: [{
   description: "Indicates a function that will be executed on table creation to show or not icon to expand or collapse expandable rows. The function must return a boolean observable.",
   required: "",
   default: ""
-},
-{
+},{
   name: "show-report-on-demand-option",
   type: "yes|no|true|false",
   description: "Indicates whether or not to show the report on demand menu option in the header menu",
   required: "",
   default: "yes"
-},
-{
+},{
   name: "show-reset-width-option",
   type: "yes|no|true|false",
   description: "Indicates whether or not to show the reset width menu option in the header menu",
@@ -231,6 +229,12 @@ attributes: [{
   default: "",
   required: "",
   description: "Function that will be used to allow row selection by changing the enable/disable state of the checkboxes of the rows."
+},{
+  name: "visible-export-dialog-buttons",
+  type: "string",
+  description: "Visible buttons in export dialog, separated by ';'. Default/no configured: show all. Empty value: hide all",
+  required: "",
+  default: "no"
 }]
 
 
@@ -511,7 +515,44 @@ methods: [{
   name: "clearSelection",
   type: "method",
   description: "Unselect the table items selected."
-}
-
-
-]
+},{
+  name: "isSelectionModeMultiple",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the selection mode is multiple."
+},{
+  name: "registerContextMenu",
+  type: "method",
+  parameters: "value: OContextMenuComponent",
+  description: "Adds the provided context menu to de table."
+},{
+  name: "isSelectionModeNone",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the selection mode is disabled."
+},{
+  name: "isAllSelected",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if all the rows are selected."
+},{
+  name: "registerTableHeaders",
+  type: "method",
+  parameters: "tableHeader: OTableHeaderComponent",
+  description: "Adds the provided table header to de table."
+},{
+  name: "isIndeterminate",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the number of selected rows is not equal to the number of rows."
+},{
+  name: "masterToggle",
+  type: "method",
+  parameters: "event: MatCheckboxChange",
+  description: "If the event detects that the user clicks the checkbox it select all the rows with the selectAll() method. In the other side if the user unselect the checkbox it use the clearSelection() method to unselect all the rows."
+},{
+  name: "getColumnFiltersExpression",
+  type: "method",
+  returns: "Expression",
+  description: "Returns the complex expression from the column filters."
+}]
