@@ -79,7 +79,7 @@ The `o-grid` component allows you to sort the grid items by configuring the `ord
 
 You also can specify the default sorting column by configuring the `sort-column` attribute.
 
-![Grid component]({{ "/assets/images/components/grid/grid-sortable_2.png" | absolute_url }}){: .comp-example-img }
+![Grid component]({{ "/images/components/grid/grid-sortable_2.png" | absolute_url }}){: .comp-example-img }
 
 ```html
 <o-grid #grid  columns="id;name;username;email;companyname" keys="id" [static-data]="getStaticData()"
