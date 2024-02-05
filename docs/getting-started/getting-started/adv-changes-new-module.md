@@ -120,13 +120,13 @@ export const routes: Routes = [
     path: '', component: MainComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: loadHomeModule },
-      { path: 'about', loadChildren: loadAboutModule },
-      { path: 'settings', loadChildren: loadSettingsModule },
-      { path: 'customers', loadChildren: loadCustomersModule },
-      { path: 'accounts', loadChildren: loadAccountsModule },
-      { path: 'branches', loadChildren: loadBranchesModule },
-      { path: 'employees', loadChildren: loadEmployeesModule }
+      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+      { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
+      { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
+      { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+      { path: 'accounts', loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsModule) },
+      { path: 'branches', loadChildren: () => import('./branches/branches.module').then(m => m.BranchesModule) },
+      { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) }
     ]
   }
 ];
