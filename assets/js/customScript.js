@@ -69,3 +69,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Changes the theme mode into dark and light
+document.addEventListener('DOMContentLoaded', function () {
+  var toggleButtons = document.getElementsByClassName('toggle-theme');
+  var base_path;
+  document.getElementsByTagName('script').forEach(function (e) {
+    base_path = e.getAttribute('base_path');
+  });
+
+  for (let btn of toggleButtons) {
+    btn.addEventListener('click', function () {
+      if (jtd.getTheme() === 'ontimize-dark') {
+        jtd.setTheme('ontimize');
+        btn.src = base_path + '/assets/icons/light_mode.svg';
+      } else {
+        jtd.setTheme('ontimize-dark');
+        btn.src = base_path + '/assets/icons/dark_mode.svg';
+      }
+    });
+  }
+});
