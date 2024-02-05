@@ -1,4 +1,4 @@
-class: 'OTableCellEditorRealComponent'
+class: 'OTableCellRendererRealComponent'
 
 extends: "OTableCellRendererIntegerComponent"
 
