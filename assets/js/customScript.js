@@ -70,22 +70,60 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Changes the theme mode into dark and light
-document.addEventListener('DOMContentLoaded', function () {
-  var toggleButtons = document.getElementsByClassName('toggle-theme');
-  var base_path;
-  document.getElementsByTagName('script').forEach(function (e) {
-    base_path = e.getAttribute('base_path');
-  });
+var dark;
 
-  for (let btn of toggleButtons) {
-    btn.addEventListener('click', function () {
-      if (jtd.getTheme() === 'ontimize-dark') {
-        jtd.setTheme('ontimize');
-        btn.src = base_path + '/assets/icons/light_mode.svg';
-      } else {
-        jtd.setTheme('ontimize-dark');
-        btn.src = base_path + '/assets/icons/dark_mode.svg';
+function toogleThemeTxt(toggle) {
+  var fs = require("fs");
+  fs.readFile("theme.txt", function (err, data) {
+    if (err) {
+      return console.error(err);
+    }
+    dark = data.toString;
+  });
+  fs.writeFile(
+    "theme.txt",
+    dark == "false" && toggle ? "true" : toggle == false ? "false" : "true",
+    function (err) {
+      if (err) {
+        return console.error(err);
       }
-    });
+    }
+  );
+}
+
+window.addEventListener("beforeprint", (event) => {
+  toogleThemeTxt(false);
+  if (dark == "true") {
+    jtd.setTheme('ontimize-dark');
+  } else {
+    jtd.setTheme('ontimize');
   }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var toggleButton = document.getElementsByClassName('toggle-theme');
+  var scriptElements = document.getElementsByTagName('script');
+  var base_path;
+  for (let element of scriptElements) {
+    if (element.getAttribute('base_path')) {
+      base_path = element.getAttribute('base_path');
+      if (dark == "true") {
+        toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
+      } else {
+        toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
+      }
+      break;
+    }
+  }
+
+  toggleButton[0].addEventListener('click', function () {
+    if (jtd.getTheme() == 'dark') {
+      jtd.setTheme('ontimize');
+      toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
+    } else {
+      jtd.setTheme('ontimize-dark');
+      toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
+    }
+    toogleThemeTxt(true);
+  });
 });
