@@ -70,35 +70,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Changes the theme mode into dark and light
-var dark;
-
-function toogleThemeTxt(toggle) {
-  var fs = require("fs");
-  fs.readFile("theme.txt", function (err, data) {
-    if (err) {
-      return console.error(err);
+document.onreadystatechange = function (e) {
+  if (document.readyState === 'interactive') {
+    if (localStorage.getItem("theme") == "dark") {
+      jtd.setTheme('ontimize-dark');
+    } else {
+      jtd.setTheme('ontimize');
+      localStorage.setItem("theme", "light");
     }
-    dark = data.toString;
-  });
-  fs.writeFile(
-    "theme.txt",
-    dark == "false" && toggle ? "true" : toggle == false ? "false" : "true",
-    function (err) {
-      if (err) {
-        return console.error(err);
-      }
-    }
-  );
-}
-
-window.addEventListener("beforeprint", (event) => {
-  toogleThemeTxt(false);
-  if (dark == "true") {
-    jtd.setTheme('ontimize-dark');
-  } else {
-    jtd.setTheme('ontimize');
   }
-});
+};
 
 document.addEventListener('DOMContentLoaded', function () {
   var toggleButton = document.getElementsByClassName('toggle-theme');
@@ -107,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
   for (let element of scriptElements) {
     if (element.getAttribute('base_path')) {
       base_path = element.getAttribute('base_path');
-      if (dark == "true") {
+      if (localStorage.getItem("theme") == "dark") {
         toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
       } else {
         toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
@@ -120,10 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (jtd.getTheme() == 'dark') {
       jtd.setTheme('ontimize');
       toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
+      localStorage.setItem("theme", "light");
     } else {
       jtd.setTheme('ontimize-dark');
       toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
+      localStorage.setItem("theme", "dark");
     }
-    toogleThemeTxt(true);
   });
 });
