@@ -26,7 +26,6 @@ page_excerpts: true
 github:
   - name: Onitmize Web
     url: https://github.com/OntimizeWeb
-    icon: assets/images/github-front.svg
 
 playgroundurl: https://try.imatia.com/ontimizeweb/v15/playground
 

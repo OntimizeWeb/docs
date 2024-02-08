@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Changes the theme mode into dark and light
 document.onreadystatechange = function (e) {
-  if (document.readyState === 'interactive') {
+  if (document.readyState != 'loading') {
     if (localStorage.getItem("theme") == "dark") {
       jtd.setTheme('ontimize-dark');
     } else {
@@ -83,15 +83,27 @@ document.onreadystatechange = function (e) {
 
 document.addEventListener('DOMContentLoaded', function () {
   var toggleButton = document.getElementsByClassName('toggle-theme');
+  var githubIcon = document.getElementsByClassName('github-img');
   var scriptElements = document.getElementsByTagName('script');
   var base_path;
+
   for (let element of scriptElements) {
     if (element.getAttribute('base_path')) {
       base_path = element.getAttribute('base_path');
       if (localStorage.getItem("theme") == "dark") {
         toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
+        githubIcon[0].src = base_path + '/assets/icons/github-front-dark.svg';
+        let light_cards = document.getElementsByClassName("card-light");
+        for (let i = 0; i < light_cards.length; i++) {
+          light_cards[i].classList.add("hidden");
+        }
       } else {
         toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
+        githubIcon[0].src = base_path + '/assets/icons/github-front.svg';
+        let dark_cards = document.getElementsByClassName("card-dark");
+        for (let i = 0; i < dark_cards.length; i++) {
+          dark_cards[i].classList.add("hidden");
+        }
       }
       break;
     }
@@ -101,11 +113,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (jtd.getTheme() == 'dark') {
       jtd.setTheme('ontimize');
       toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
+      githubIcon[0].src = base_path + '/assets/icons/github-front.svg';
       localStorage.setItem("theme", "light");
     } else {
       jtd.setTheme('ontimize-dark');
       toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
+      githubIcon[0].src = base_path + '/assets/icons/github-front-dark.svg';
       localStorage.setItem("theme", "dark");
     }
+    location.reload();
   });
 });

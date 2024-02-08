@@ -9,7 +9,7 @@
 
 // Custom text colors
 .text-primary-900 {
-  @if $is-dark=='false' {
+  @if $color_scheme=='light' {
     color: $primary-900
   }
 
@@ -658,7 +658,7 @@ a:not([class]) {
   text-underline-offset: 2px;
 
   &:hover {
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       text-decoration-color: $primary-500-24;
     }
 
@@ -673,7 +673,7 @@ a:not([class]) {
   .nav-list-item {
 
     .nav-list-expander {
-      @if $is-dark=='false' {
+      @if $color_scheme=='light' {
         color: $dark-74;
       }
 
@@ -683,7 +683,7 @@ a:not([class]) {
     }
 
     .nav-list-link {
-      @if $is-dark=='false' {
+      @if $color_scheme=='light' {
         color: $dark-74;
       }
 
@@ -696,12 +696,13 @@ a:not([class]) {
       font-size: $font-size-5;
 
       &.active {
-        @if $is-dark=='false' {
+        @if $color_scheme=='light' {
           color: $dark-60;
         }
 
         @else {
           color: $white-60;
+          background-image: linear-gradient(-90deg, #1d1d1d 0%, rgba(29, 29, 29, 0.8) 80%, rgba(29, 29, 29, 0) 100%) !important;
         }
 
         font-weight: 500;
@@ -722,12 +723,16 @@ a:not([class]) {
     border-style: none;
     background: transparent;
 
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       color: $dark-74;
     }
 
     @else {
       color: $white-74;
+
+      option {
+        background-color: #27262b;
+      }
     }
   }
 
@@ -758,7 +763,7 @@ a:not([class]) {
     transition: .3s;
     font-size: 0.8em;
 
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       color: $dark-74;
     }
 
@@ -769,7 +774,7 @@ a:not([class]) {
 
   /* Change background color of buttons on hover */
   button:hover {
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       background-color: lighten($primary-500, 40%);
       border-bottom: 2px solid $primary-500-24;
     }
@@ -782,7 +787,7 @@ a:not([class]) {
 
   /* Create an active/current tablink class */
   button.active {
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       border-bottom: 2px solid $primary-500;
     }
 
@@ -866,7 +871,7 @@ a:not([class]) {
       @include fs-4;
     }
 
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       color: $primary-500;
       background-color: $primary-50;
     }
@@ -900,7 +905,7 @@ a:not([class]) {
   a {
     text-decoration: none;
 
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       color: $dark-74;
     }
 
@@ -910,7 +915,7 @@ a:not([class]) {
 
     &.active {
 
-      @if $is-dark=='false' {
+      @if $color_scheme=='light' {
         color: $dark-60;
       }
 
@@ -956,7 +961,7 @@ a:not([class]) {
     height: 30px;
     overflow: hidden;
 
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       color: $primary-50;
     }
 
@@ -972,7 +977,7 @@ a:not([class]) {
   .panel-default {
 
     .panel-heading {
-      @if $is-dark=='false' {
+      @if $color_scheme=='light' {
         color: #333;
         background-color: #f5f5f5;
         border-color: #ddd;
@@ -1011,7 +1016,7 @@ a:not([class]) {
     margin-bottom: 0;
     border-radius: 4px;
 
-    @if $is-dark=='false' {
+    @if $color_scheme=='light' {
       background-color: #fff;
     }
 
@@ -1080,7 +1085,7 @@ a:not([class]) {
 .multicolumnright {
   box-sizing: border-box;
 
-  @if $is-dark=='false' {
+  @if $color_scheme=='light' {
     border-left: 1px solid #ccc;
   }
 
@@ -1102,7 +1107,7 @@ a:not([class]) {
 
 .verticalDivider {
 
-  @if $is-dark=='false' {
+  @if $color_scheme=='light' {
     border-left: 1px solid #F2F3F3;
   }
 
@@ -1162,7 +1167,14 @@ table {
 
   a {
     text-decoration: none;
-    color: $dark-74;
+
+    @if $color_scheme=='light' {
+      color: $dark-74;
+    }
+
+    @else {
+      color: $white-74;
+    }
 
     .menu-card {
       display: flex;
@@ -1170,7 +1182,7 @@ table {
       justify-content: space-between;
       height: 100%;
 
-      @if $is-dark=='false' {
+      @if $color_scheme=='light' {
         border: 1px solid #eeebee;
       }
 
@@ -1186,7 +1198,7 @@ table {
         align-items: center;
         height: 140px;
 
-        @if $is-dark=='false' {
+        @if $color_scheme=='light' {
           border-bottom: 1px solid #eeebee;
           background-color: #F6F6F6;
         }
@@ -1204,7 +1216,7 @@ table {
         overflow: hidden;
         text-overflow: ellipsis;
 
-        @if $is-dark=='false' {
+        @if $color_scheme=='light' {
           background-color: $primary-500-24;
         }
 
@@ -1229,7 +1241,7 @@ table {
           overflow: hidden;
           text-overflow: ellipsis;
 
-          @if $is-dark=='false' {
+          @if $color_scheme=='light' {
             color: $primary-500;
           }
 
@@ -1250,7 +1262,7 @@ table {
       .bottom-title {
         text-align: end;
 
-        @if $is-dark=='false' {
+        @if $color_scheme=='light' {
           border-top: 1px solid #eeebee;
           background-color: $primary-500-24;
         }
@@ -1268,7 +1280,7 @@ table {
 
     &:hover {
       .menu-card {
-        @if $is-dark=='false' {
+        @if $color_scheme=='light' {
           background-color: rgba(20, 100, 165, 0.2);
           border-color: rgba(20, 100, 165, 0.6);
         }
@@ -1294,4 +1306,8 @@ table {
       }
     }
   }
+}
+
+.hidden {
+  display: none;
 }

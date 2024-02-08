@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="34" viewBox="0 0 160 34">
+  <g id="Ilustracion_Currency" data-name="Ilustracion Currency" transform="translate(-687 -473)">
+    <g id="Integer" transform="translate(4 21)">
+      <g id="Bg">
+        <rect id="Rectángulo_121212" data-name="Rectángulo #121212" width="160" height="34" rx="2" transform="translate(683 452)" fill="#121212"/>
+        <path id="Rectángulo_121212_-_Contorno" data-name="Rectángulo #121212 - Contorno" d="M2,1A1,1,0,0,0,1,2V32a1,1,0,0,0,1,1H158a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H158a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(683 452)" fill="rgba(255,255,255,0.12)"/>
+        <rect id="Rectángulo_W16_" data-name="Rectángulo W16%" width="160" height="34" rx="2" transform="translate(683 452)" fill="rgba(255,255,255,0.16)"/>
+        <path id="Rectángulo_W16_-_Contorno" data-name="Rectángulo W16% - Contorno" d="M2,1A1,1,0,0,0,1,2V32a1,1,0,0,0,1,1H158a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H158a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(683 452)" fill="rgba(255,255,255,0.12)"/>
+        <rect id="Rectángulo_Bc6_" data-name="Rectángulo Bc6%" width="160" height="34" rx="2" transform="translate(683 452)" fill="rgba(20,100,165,0.06)"/>
+        <path id="Rectángulo_Bc6_-_Contorno" data-name="Rectángulo Bc6% - Contorno" d="M2,1A1,1,0,0,0,1,2V32a1,1,0,0,0,1,1H158a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H158a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(683 452)" fill="rgba(255,255,255,0.12)"/>
+      </g>
+      <path id="Trazado_7106" data-name="Trazado 7106" d="M18851.145,195.755h-16a.755.755,0,1,1,0-1.51h16a.755.755,0,1,1,0,1.51Z" transform="translate(-18143.645 265)" fill="rgba(255,255,255,0.6)"/>
+      <text id="_2_757.06" data-name="2,757.06" transform="translate(691 479)" fill="rgba(255,255,255,0.74)" font-size="14" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="0">2,757.06</tspan></text>
+      <text id="_" data-name="€" transform="translate(827 478)" fill="rgba(255,255,255,0.74)" font-size="13" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">€</tspan></text>
+      <text id="_2" data-name="*" transform="translate(711 466)" fill="rgba(255,255,255,0.74)" font-size="12" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">*</tspan></text>
+    </g>
+    <g id="chevron_left_black_24dp_1_" data-name="chevron_left_black_24dp (1)" transform="translate(827 486) rotate(90)">
+      <path id="Trazado_7080" data-name="Trazado 7080" d="M0,0H12V12H0Z" fill="none"/>
+      <path id="Trazado_7157" data-name="Trazado 7157" d="M1116.574,202.871h6.939L1121.639,201l-1.542-1.542Z" transform="translate(-195.456 1125.574) rotate(-90)" fill="rgba(255,255,255,0.6)"/>
+    </g>
+    <g id="chevron_left_black_24dp_1_2" data-name="chevron_left_black_24dp (1)" transform="translate(815 504) rotate(-90)">
+      <path id="Trazado_7080-2" data-name="Trazado 7080" d="M0,0H12V12H0Z" fill="none"/>
+      <path id="Trazado_7156" data-name="Trazado 7156" d="M1116.574,202.871h6.939L1121.639,201l-1.542-1.542Z" transform="translate(-194.871 1126.515) rotate(-90)" fill="rgba(255,255,255,0.6)"/>
+    </g>
+  </g>
+</svg>
