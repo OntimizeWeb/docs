@@ -11,8 +11,7 @@ attributes: [
 },{
   name: "entity"
 },{
-  name: "keys",
-  required: "yes"
+  name: "keys"
 },{
   name: "columns"
 },{
@@ -104,13 +103,13 @@ attributes: [
   type: "no | false | yes | true",
   default: "yes",
   required: "",
-  description: "Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the [form lifecycle](https://ontimizeweb.github.io/docs/v15/components/data/form/lifecycle/){:target='_blank'}) section"
+  description: "Indicates whether or not the form default <em>detail</em> mode is editable. This is extensively explained in the [form lifecycle](https://ontimizeweb.github.io/docs/v8/components/form/lifecycle/){:target='_blank'}) section"
 },{
   name: "show-header-navigation",
   type: "no | false | yes | true",
   default: "no",
   required: "",
-  description: "Indicates whether or not to include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/v15/components/layout/form-layout-manager/overview){:target='_blank'})"
+  description: "Indicates whether or not to include navigations buttons in form-toolbar. It's not included when the form is content in <em>tab</em> mode in the  o-form-layout-manager component. Learn more about `o-form-layout-manager` [here](https://ontimizeweb.github.io/docs/v8/components/formlayoutmanager/overview){:target='_blank'})"
 },{
   name: "undo-button",
   type: "no | false | yes | true",
@@ -185,6 +184,15 @@ outputs: [{
 },{
   name: "onFormModeChange",
   description: "Event triggered when form mode changes"
+},{
+  name: "onBeforeInsert",
+  description: "Event triggered before data is inserted."
+},{
+  name: "onBeforeUpdate",
+  description: "Event triggered before data is updated."
+},{
+  name: "onBeforeDelete",
+  description: "Event triggered before data is removed"
 },{
   name: "onInsert",
   description: "Event triggered when the data is inserted"
