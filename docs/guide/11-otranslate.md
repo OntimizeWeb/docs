@@ -1,6 +1,6 @@
 ---
 title: OTranslateService
-permalink: /services/otranslateservice/overview
+permalink: /guide/otranslateservice/overview
 comp: otranslateservice
 layout: o-component
 nav_exclude: true
