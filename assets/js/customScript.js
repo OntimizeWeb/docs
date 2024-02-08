@@ -72,10 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Changes the theme mode into dark and light
 document.onreadystatechange = function (e) {
   if (document.readyState != 'loading') {
-    if (localStorage.getItem("theme") == "dark") {
-      jtd.setTheme('ontimize-dark');
-    } else {
-      jtd.setTheme('ontimize');
+    if (localStorage.getItem("theme") == null) {
       localStorage.setItem("theme", "light");
     }
   }
@@ -97,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < light_cards.length; i++) {
           light_cards[i].classList.add("hidden");
         }
+        jtd.setTheme('ontimize-dark');
       } else {
         toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
         githubIcon[0].src = base_path + '/assets/icons/github-front.svg';
@@ -104,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < dark_cards.length; i++) {
           dark_cards[i].classList.add("hidden");
         }
+        jtd.setTheme('ontimize');
       }
       break;
     }
@@ -111,14 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   toggleButton[0].addEventListener('click', function () {
     if (jtd.getTheme() == 'dark') {
-      jtd.setTheme('ontimize');
-      toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
-      githubIcon[0].src = base_path + '/assets/icons/github-front.svg';
       localStorage.setItem("theme", "light");
     } else {
-      jtd.setTheme('ontimize-dark');
-      toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
-      githubIcon[0].src = base_path + '/assets/icons/github-front-dark.svg';
       localStorage.setItem("theme", "dark");
     }
     location.reload();
