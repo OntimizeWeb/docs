@@ -1077,13 +1077,16 @@ table {
         height: 140px;
 
         >p {
+          width: 100%;
           display: flex;
           align-items: center;
+          justify-content: center;
           text-align: start;
           padding: 10px 18px 0 18px;
           height: 100%;
           overflow: hidden;
           text-overflow: ellipsis;
+          white-space: nowrap;
           color: $primary-500;
           font-weight: 500;
         }
@@ -1092,10 +1095,15 @@ table {
           color: inherit;
           font-weight: inherit;
           padding: 10px 18px 10px 18px;
+          white-space: normal;
         }
       }
 
       .bottom-title {
+        height: 68px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
         text-align: end;
         border-top: 1px solid #eeebee;
         background-color: $primary-500-24;
