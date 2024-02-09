@@ -356,6 +356,11 @@ attributes: [{
   type: "GalleryAction[]",
   default : "[]",
   description : "Array of new custom actions that will be added to the left of the current close/zoom/fullscreen icons"
+},{
+  name: "aspectRatio",
+  type: "string",
+  default : "",
+  description : "Property allows you to define the desired width-to-height ratio of an image. Format sintax: number:number (e.g. 4:3)"
 }]
 
 
