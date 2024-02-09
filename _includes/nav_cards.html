@@ -1,6 +1,6 @@
 {% include base_path %}
 
-{% assign folder_path = 'images/menus/' | append: include.folder | append: '_light' %}
+{% assign folder_path = 'images/menus/' | append: include.folder %}
 
 {% if include.yml %}
   {% assign description_yml = include.folder %}
@@ -11,14 +11,25 @@
   {% if folder_path %}
     {% for image in site.static_files %}
       {% if image.path contains folder_path %}
-        <a href="{{ base_path }}{{ page.permalink }}{{ image.name | remove: '.svg' }}/overview">
-          <div class="menu-card">
-            <div class="image-container">
-              <img src="{{ base_path }}{{ image.path }}" alt="{{ image.name }}">
+        {% if image.name contains '_dark' %}
+          <a class="card-dark" href="{{ base_path }}{{ page.permalink }}{{ image.name | remove: '_dark.svg' }}/overview">
+            <div class="menu-card">
+              <div class="image-container">
+                <img src="{{ base_path }}{{ image.path }}" alt="{{ image.name }}">
+              </div>
+              <p class="bottom-image">{{ image.name | capitalize | remove: '_dark.svg' | replace: '-', ' ' }}</p>
             </div>
-            <p class="bottom-image">{{ image.name | capitalize | remove: '.svg' | replace: '-', ' ' }}</p>
-          </div>
-        </a>
+          </a>
+        {% else %}
+          <a class="card-light" href="{{ base_path }}{{ page.permalink }}{{ image.name | remove: '.svg' }}/overview">
+            <div class="menu-card">
+              <div class="image-container">
+                <img src="{{ base_path }}{{ image.path }}" alt="{{ image.name }}">
+              </div>
+              <p class="bottom-image">{{ image.name | capitalize | remove: '.svg' | replace: '-', ' ' }}</p>
+            </div>
+          </a>
+        {% endif %}
       {% endif %}
     {% endfor %}
   {% elsif description_yml %}

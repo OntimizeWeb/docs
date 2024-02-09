@@ -69,3 +69,65 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Changes the theme mode into dark and light
+document.onreadystatechange = function (e) {
+  if (document.readyState != 'loading') {
+    if (localStorage.getItem("theme") == null) {
+      localStorage.setItem("theme", "light");
+    }
+  }
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  var toggleButton = document.getElementsByClassName('toggle-theme');
+  var githubIcon = document.getElementsByClassName('github-img');
+  var scriptElements = document.getElementsByTagName('script');
+  var base_path;
+  let light_cards = document.getElementsByClassName("card-light");
+  let dark_cards = document.getElementsByClassName("card-dark");
+
+  for (let element of scriptElements) {
+    if (element.getAttribute('base_path')) {
+      base_path = element.getAttribute('base_path');
+      break;
+    }
+  }
+
+  if (localStorage.getItem("theme") == "light") {
+    toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
+    githubIcon[0].src = base_path + '/assets/icons/github-front.svg';
+    for (let i = 0; i < dark_cards.length; i++) {
+      dark_cards[i].classList.add("hidden");
+      light_cards[i].classList.remove("hidden");
+    }
+  } else {
+    toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
+    githubIcon[0].src = base_path + '/assets/icons/github-front-dark.svg';
+    for (let i = 0; i < light_cards.length; i++) {
+      dark_cards[i].classList.remove("hidden");
+      light_cards[i].classList.add("hidden");
+    }
+  }
+
+  toggleButton[0].addEventListener('click', function () {
+    if (jtd.getTheme() == 'dark') {
+      localStorage.setItem("theme", "light");
+      jtd.setTheme('ontimize');
+      toggleButton[0].src = base_path + '/assets/icons/light_mode.svg';
+      githubIcon[0].src = base_path + '/assets/icons/github-front.svg';
+      for (let i = 0; i < dark_cards.length; i++) {
+        dark_cards[i].classList.add("hidden");
+        light_cards[i].classList.remove("hidden");
+      }
+    } else {
+      localStorage.setItem("theme", "dark");
+      jtd.setTheme('ontimize-dark');
+      toggleButton[0].src = base_path + '/assets/icons/dark_mode.svg';
+      githubIcon[0].src = base_path + '/assets/icons/github-front-dark.svg';
+      for (let i = 0; i < light_cards.length; i++) {
+        dark_cards[i].classList.remove("hidden");
+        light_cards[i].classList.add("hidden");
+      }
+    }
+  });
+});

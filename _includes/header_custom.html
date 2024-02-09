@@ -13,10 +13,11 @@
       </div>
     {% endif %}
   {% else %}
+    <img class="toggle-theme" width="34px" height="34px" alt="Theme mode icon">
     {% if site.github %}
       <div class="github-div">
         {% for githubsite in site.github %}
-          <a href="{{ githubsite.url }}" target="_blank"><img src="{{ base_path }}/{{ githubsite.icon }}" width="42px" height="42px" alt="{{ githubsite.name }}"></a>
+          <a href="{{ githubsite.url }}" target="_blank"><img class="github-img" width="42px" height="42px" alt="{{ githubsite.name }}"></a>
         {% endfor %}
       </div>
     {% endif %}
