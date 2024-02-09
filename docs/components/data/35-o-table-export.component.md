@@ -273,7 +273,18 @@ export interface OTableFormattedExportData3X extends OTableExportData3X {
 }
 ```
 
+For the Excel export, the styles object has an element with id "booleanCellRender" that allows to indicate the desired string for the true and false boolean values ​​as shown in the following example.
+
+```ts
+"booleanCellRender": {
+    "trueValue": "Add here the value you want as true",
+    "falseValue": "Add here the value you want as false"
+  }
+```
+
 Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the EXCEL export.
+
+
 
 - **URL:** http://localhost:8080/qsallcomponents-jee/services/rest/export/xlsx
 - **HTTP Method:** POST
@@ -459,6 +470,10 @@ export class CustomOntimizeExportDataProviderService extends OntimizeExportDataP
     exportData.styles = {
       "greenBG": {
         "fillBackgroundColor": "GREEN"
+      },
+      "booleanCellRender": {
+        "trueValue": "Add here the value you want as true",
+        "falseValue": "Add here the value you want as false"
       }
     };
     exportData.rowStyles = {
