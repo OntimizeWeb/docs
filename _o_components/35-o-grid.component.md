@@ -75,7 +75,7 @@ The paginator displays a dropdown of page sizes for you to choose from. The opti
 You can also configure the number of records initially displayed with query-rows attribute.
 
 ## Sorting
-The `o-grid` component allows you to sort the grid items by configuring the `orderable` attribute. You must also configure the `sortable-columns` attribute in order to indicate which columns would be sortable.
+The `o-grid` component allows you to sort the grid items by configuring the `orderable` attribute. You must also configure the `sortable-columns` attribute in order to indicate which columns would be sortable using [ ASC (defined by default) or DESC ] format.
 
 You also can specify the default sorting column by configuring the `sort-column` attribute.
 
@@ -83,7 +83,7 @@ You also can specify the default sorting column by configuring the `sort-column`
 
 ```html
 <o-grid #grid  columns="id;name;username;email;companyname" keys="id" [static-data]="getStaticData()"
-  orderable="yes" quick-filter="yes" sortable-columns="name;email" sort-column="name" grid-item-height="1:2">
+  orderable="yes" quick-filter="yes" sortable-columns="name:desc;email" sort-column="name" grid-item-height="1:2">
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding  class="container-item">
       <img [src]="list.thumbnailUrl" style="margin-top:8px">

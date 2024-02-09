@@ -185,6 +185,15 @@ outputs: [{
   name: "onFormModeChange",
   description: "Event triggered when form mode changes"
 },{
+  name: "onBeforeInsert",
+  description: "Event triggered before data is inserted."
+},{
+  name: "onBeforeUpdate",
+  description: "Event triggered before data is updated."
+},{
+  name: "onBeforeDelete",
+  description: "Event triggered before data is removed"
+},{
   name: "onInsert",
   description: "Event triggered when the data is inserted"
 },{

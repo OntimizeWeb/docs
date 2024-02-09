@@ -80,6 +80,11 @@ methods: [{
   name: "changeThumbnailsColumns()",
   description: "Change the number of thumbnail columns"
 },{
+  name: "changeAspectRatio()",
+  parameters: "newRatio:string",
+  description: "Change the desired width-to-height ratio of the images. Format sintax: number:number (e.g. 4:3)"
+},
+{
   name: "changeThumbnailsRows()",
   description: "Change the number of thumbnail rows"
 }]
