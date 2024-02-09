@@ -29,7 +29,7 @@ github:
 
 playgroundurl: https://try.imatia.com/ontimizeweb/v15/playground
 
-callouts_level: quiet # or loud
+callouts_level: quiet
 callouts:
   highlight:
     color: grey-dk
@@ -39,7 +39,6 @@ callouts:
   note:
     title: Note
     color: blue
-    opacity: 1
   warning:
     title: Warning
     color: red

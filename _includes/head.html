@@ -14,21 +14,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
+  <link rel="stylesheet" href="" id="ontimizestyles">
+
   <script>
-    if (localStorage.getItem("theme") == 'light' || localStorage.getItem(theme) == null) {
-      if (jtd.getTheme() == 'dark'){
+    (function () {
+      if (localStorage.getItem("theme") == 'light' || localStorage.getItem("theme") == null) {
         document.getElementById("ontimizestyles").setAttribute("href", "{{ '/assets/css/just-the-docs-ontimize.css' | relative_url }}");
       }
-    }
 
-    else {
-      if (jtd.getTheme() == 'light') {
+      else {
         document.getElementById("ontimizestyles").setAttribute("href", "{{ '/assets/css/just-the-docs-ontimize-dark.css' | relative_url }}");
       }
-    }
+    })();
   </script>
-
-  <link rel="stylesheet" href="" id="ontimizestyles">
 
   <link rel="stylesheet" href="{{ '/assets/css/just-the-docs-head-nav.css' | relative_url }}" id="jtd-head-nav-stylesheet">
 
