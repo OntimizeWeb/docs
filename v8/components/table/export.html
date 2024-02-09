@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2024-01-29T03:32:01-05:00">
+  <meta property="article:published_time" content="2024-02-09T06:36:49-05:00">
 
 
 
@@ -931,7 +931,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="January 29, 2024">
+    <meta itemprop="datePublished" content="February 09, 2024">
     
 
     <div class="page__inner-wrap">
@@ -1102,7 +1102,7 @@
 
 <ul>
   <li>
-    <p>Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider collects all the required information to perform the exportation, the table data, column names, column types, filter&#8230; If you want to customize this data provider, please check the <a href="#customizing-data-provider">Custom data provider</a> section.</p>
+    <p>Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider collects all the required information to perform the exportation, the table data, column names, column types, filter… If you want to customize this data provider, please check the <a href="#customizing-data-provider">Custom data provider</a> section.</p>
   </li>
   <li>
     <p>Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export.service.ts" target="_blank">OntimizeExportService</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section.</p>
@@ -1113,7 +1113,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://{ your-api-endpoint }/{ table-service-path }/{ table-entity }/{ format-selected }
 </code></pre></div></div>
 
-<p>Where <b>format-selected</b> can be: <b>&#8216;xlsx&#8217;</b>, <b>&#8216;html&#8217;</b> or <b>&#8216;pdf&#8217;</b> depending on the format selected. You can also export the table data in other format using a <a href="https://ontimizeweb.github.io/docs/v8/components/table#table-export-button">o-table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute <code class="language-plaintext highlighter-rouge">export-type</code> of the <a href="https://ontimizeweb.github.io/docs/v8/components/table#table-export-button">o-table-export-button</a> component.</p>
+<p>Where <b>format-selected</b> can be: <b>‘xlsx’</b>, <b>‘html’</b> or <b>‘pdf’</b> depending on the format selected. You can also export the table data in other format using a <a href="https://ontimizeweb.github.io/docs/v8/components/table#table-export-button">o-table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute <code class="language-plaintext highlighter-rouge">export-type</code> of the <a href="https://ontimizeweb.github.io/docs/v8/components/table#table-export-button">o-table-export-button</a> component.</p>
 
 <p>If you want to customize this end point, please check the <a href="https://ontimizeweb.github.io/docs/v8/components/table/export#custom-exportation-end-point">Custom exportation end point</a> section.</p>
 
@@ -1273,6 +1273,14 @@ with <strong>the columns names defined in the table, the sqltypes</strong> and <
 <span class="p">}</span>
 </code></pre></div></div>
 
+<p>For the Excel export, the styles object has an element with id “booleanCellRender” that allows to indicate the desired string for the true and false boolean values ​​as shown in the following example.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">booleanCellRender</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">trueValue</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Add here the value you want as true</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">falseValue</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Add here the value you want as false</span><span class="dl">"</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
 <p>Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the EXCEL export.</p>
 
 <ul>
@@ -1322,7 +1330,7 @@ with <strong>the columns names defined in the table, the sqltypes</strong> and <
 <p><b>The exportation process is performed as follows:</b></p>
 
 <ul>
-  <li>Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider-3x.service.ts" target="_blank">OntimizeExportDataProviderService3X</a> service provider collects all the required information to perform the exportation, the column names, column types, query params, service&#8230; except cell, column and row styles  .</li>
+  <li>Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider-3x.service.ts" target="_blank">OntimizeExportDataProviderService3X</a> service provider collects all the required information to perform the exportation, the column names, column types, query params, service… except cell, column and row styles  .</li>
 </ul>
 
 <p>The server allows you to customize the styles of the cells, columns or rows and if you want these additional options you can customize extending this data provider, please check the <a href="#customizing-data-provider-1">Custom data provider</a> section.</p>
@@ -1336,7 +1344,7 @@ with <strong>the columns names defined in the table, the sqltypes</strong> and <
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> https://{ your-api-endpoint }/{ export-path }/{ format-selected }
 </code></pre></div></div>
 
-<p>Where <b>format-selected</b> can be: <b>&#8216;xlsx&#8217;</b>, <b>&#8216;pdf&#8217;</b> or <b>&#8216;csv&#8217;</b> depending on the format selected. You can also export the table data in other format using a <a href="">table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute <code class="language-plaintext highlighter-rouge">export-type</code> of the <code class="language-plaintext highlighter-rouge">o-table-export-button</code> component.</p>
+<p>Where <b>format-selected</b> can be: <b>‘xlsx’</b>, <b>‘pdf’</b> or <b>‘csv’</b> depending on the format selected. You can also export the table data in other format using a <a href="">table-export-button</a>, in this case, the <b>format-selected</b> will be the value configured in the attribute <code class="language-plaintext highlighter-rouge">export-type</code> of the <code class="language-plaintext highlighter-rouge">o-table-export-button</code> component.</p>
 
 <p>And <b> export-path</b> is <b>export</b> by default, if you want to customize this end point, please check the <a href="#custom-exportation-end-point-1">Custom exportation end point</a> section.</p>
 
@@ -1456,6 +1464,10 @@ with <strong>the columns names defined in the table, the sqltypes</strong> and <
     <span class="nx">exportData</span><span class="p">.</span><span class="nx">styles</span> <span class="o">=</span> <span class="p">{</span>
       <span class="dl">"</span><span class="s2">greenBG</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
         <span class="dl">"</span><span class="s2">fillBackgroundColor</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GREEN</span><span class="dl">"</span>
+      <span class="p">},</span>
+      <span class="dl">"</span><span class="s2">booleanCellRender</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">trueValue</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Add here the value you want as true</span><span class="dl">"</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">falseValue</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Add here the value you want as false</span><span class="dl">"</span>
       <span class="p">}</span>
     <span class="p">};</span>
     <span class="nx">exportData</span><span class="p">.</span><span class="nx">rowStyles</span> <span class="o">=</span> <span class="p">{</span>
@@ -1689,7 +1701,7 @@ export class ExportServiceExtService3X extends OntimizeExportService3X {
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-29T03:32:01-05:00">January 29, 2024</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-02-09T06:36:49-05:00">February 09, 2024</time></p>
         
       </footer>
 

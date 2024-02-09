@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2024-01-29T03:32:01-05:00">
+  <meta property="article:published_time" content="2024-02-09T06:36:49-05:00">
 
 
 
@@ -447,7 +447,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="January 29, 2024">
+    <meta itemprop="datePublished" content="February 09, 2024">
     
 
     <div class="page__inner-wrap">
@@ -526,6 +526,7 @@
   <li><a href="#gallery" id="markdown-toc-gallery">Gallery</a>    <ul>
       <li><a href="#options" id="markdown-toc-options">Options</a>        <ul>
           <li><a href="#swipe-new" id="markdown-toc-swipe-new">Swipe <span class="menuitem-badge">new<span></span></span></a></li>
+          <li><a href="#aspect-ratio-new" id="markdown-toc-aspect-ratio-new">Aspect ratio <span class="menuitem-badge">new<span></span></span></a></li>
           <li><a href="#actions" id="markdown-toc-actions">Actions</a></li>
         </ul>
       </li>
@@ -624,6 +625,27 @@
 <p>The <code class="language-plaintext highlighter-rouge">o-gallery</code> component allows to navigate images and videos with <em>mouse</em>, <em>touch</em>, and <em>keyboard</em> events in the thumbnail, image slider or/and preview section with <code class="language-plaintext highlighter-rouge">thumbnailsSwipe</code>, <code class="language-plaintext highlighter-rouge">imageSwipe</code>, <code class="language-plaintext highlighter-rouge">previewSwipe</code> in <code class="language-plaintext highlighter-rouge">gallery-options</code> input. The default values are <code class="language-plaintext highlighter-rouge">true</code>.</p>
 
 <p><img src="https://ontimizeweb.github.io/docs/v8/images/components/gallery/swipe-gallery.gif" alt="Gallery swipe" class="comp-example-img" /></p>
+
+<h4 id="aspect-ratio-new">Aspect ratio <span class="menuitem-badge">new<span></span></span></h4>
+
+<p>By default, the <em>image width and height</em> is calculated depends on <code class="language-plaintext highlighter-rouge">height</code>, <code class="language-plaintext highlighter-rouge">width</code> and <code class="language-plaintext highlighter-rouge">imagePercent</code> in <code class="language-plaintext highlighter-rouge">gallery-options</code> input and the <em>thumbnail width and height</em> is calculated depends on <code class="language-plaintext highlighter-rouge">height</code>, <code class="language-plaintext highlighter-rouge">width</code>, <code class="language-plaintext highlighter-rouge">thumbnailPercent</code>, <code class="language-plaintext highlighter-rouge">thumbnailsColumns</code> or <code class="language-plaintext highlighter-rouge">thumbnailsRows</code> in <code class="language-plaintext highlighter-rouge">gallery-options</code></p>
+
+<p>However, the <code class="language-plaintext highlighter-rouge">o-gallery</code> component allows you to define the desired width-to-height ratio with <em>aspectRatio</em> in <code class="language-plaintext highlighter-rouge">gallery-options</code> input</p>
+
+<blockquote>
+  <p><strong>NOTE:</strong>:
+If the aspect ratio is configured in the <code class="language-plaintext highlighter-rouge">o-gallery</code> component, the height property is disabled, so that the height of the gallery will depend on the width and the configured ratio</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> this.galleryOptions = [
+    {
+      width: "600px",
+      thumbnailsColumns: 3,
+      aspectRatio:"4:2"
+    }
+  ];
+</code></pre></div></div>
+<p><img src="https://ontimizeweb.github.io/docs/v8/images/components/gallery/gallery-ratio-4-2.png" alt="Gallery aspect ratio" class="comp-example-img" /></p>
 
 <h4 id="actions">Actions</h4>
 
@@ -1153,6 +1175,20 @@ ngOnInit(): void {
       
     <table>
       <thead>
+       <tr><th>changeAspectRatio()</th></tr>
+       </thead>
+      <tbody>
+        <tr><td>Change the desired width-to-height ratio of the images. Format sintax: number:number (e.g. 4:3)</td></tr>
+        
+        <tr><td><strong>Parameters</strong></td></tr>
+        <tr><td>newRatio:string</td></tr>
+        
+        
+      </tbody>
+    </table>
+      
+    <table>
+      <thead>
        <tr><th>changeThumbnailsColumns()</th></tr>
        </thead>
       <tbody>
@@ -1565,6 +1601,85 @@ ngOnInit(): void {
 
   <td class="" o-component-default >
 <p class="first"><p>navigate_before</p>
+</p>
+
+  </td>
+  
+
+</tr>
+  
+
+
+
+
+  <tr >
+
+
+  
+  
+
+
+
+
+
+
+
+
+  <td class="" o-component-name >
+<p class="first"><p>aspectRatio</p>
+</p>
+
+  <p><i>string</i></p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+  <td class="" o-component-since >
+<p class="first">
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+  <td class="" o-component-description >
+<p class="first"><p>Property allows you to define the desired width-to-height ratio of an image. Format sintax: number:number (e.g. 4:3)</p>
+</p>
+
+  </td>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+  <td class="" o-component-default >
+<p class="first">
 </p>
 
   </td>
@@ -7942,7 +8057,7 @@ ngOnInit(): void {
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-01-29T03:32:01-05:00">January 29, 2024</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-02-09T06:36:49-05:00">February 09, 2024</time></p>
         
       </footer>
 
