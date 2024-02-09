@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="144" height="100" viewBox="0 0 144 100">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_6412" data-name="Rectángulo 6412" width="28" height="28" fill="rgba(255,255,255,0.6)"/>
+    </clipPath>
+  </defs>
+  <g id="Ilustracion_Time" data-name="Ilustracion Time" transform="translate(-1447 -753)">
+    <g id="Ilustracion_Date" data-name="Ilustracion Date" transform="translate(-1148 763)">
+      <g id="Ilustracion_Combo" data-name="Ilustracion Combo" transform="translate(1571 -193)">
+        <g id="bg">
+          <rect id="Rectángulo_121212" data-name="Rectángulo #121212" width="112" height="96" rx="2" transform="translate(1024 183)" fill="#121212"/>
+          <path id="Rectángulo_121212_-_Contorno" data-name="Rectángulo #121212 - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 183)" fill="rgba(255,255,255,0.12)"/>
+          <rect id="Rectángulo_W_14_" data-name="Rectángulo W 14%" width="112" height="96" rx="2" transform="translate(1024 183)" fill="rgba(255,255,255,0.16)"/>
+          <path id="Rectángulo_W_14_-_Contorno" data-name="Rectángulo W 14% - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 183)" fill="rgba(255,255,255,0.12)"/>
+          <rect id="RectánguloBC_6_" data-name="RectánguloBC 6%" width="112" height="96" rx="2" transform="translate(1024 183)" fill="rgba(20,100,165,0.06)"/>
+          <path id="RectánguloBC_6_-_Contorno" data-name="RectánguloBC 6% - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 183)" fill="rgba(255,255,255,0.12)"/>
+        </g>
+      </g>
+      <path id="Trazado_7190" data-name="Trazado 7190" d="M18899.145,195.755h-64a.755.755,0,1,1,0-1.51h64a.755.755,0,1,1,0,1.51Z" transform="translate(-16232.145 -192.5)" fill="rgba(255,255,255,0.74)"/>
+      <g id="Días_semana" data-name="Días semana" transform="translate(1587 -702.891)">
+        <path id="Trazado_7138" data-name="Trazado 7138" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17818.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+        <path id="Trazado_7139" data-name="Trazado 7139" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17803.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+        <path id="Trazado_7140" data-name="Trazado 7140" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17789.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+        <path id="Trazado_7141" data-name="Trazado 7141" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17774.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+        <path id="Trazado_7142" data-name="Trazado 7142" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17760.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+        <path id="Trazado_7143" data-name="Trazado 7143" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17745.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+        <path id="Trazado_7144" data-name="Trazado 7144" d="M18843.145,195.755h-8a.755.755,0,1,1,0-1.51h8a.755.755,0,1,1,0,1.51Z" transform="translate(-17731.645 524.891)" fill="rgba(255,255,255,0.6)"/>
+      </g>
+      <g id="chevron_left_black_24dp_1_" data-name="chevron_left_black_24dp (1)" transform="translate(2701.168 10.804) rotate(180)">
+        <path id="Trazado_7080" data-name="Trazado 7080" d="M0,0H16V16H0Z" fill="none"/>
+        <path id="Trazado_7081" data-name="Trazado 7081" d="M13.121,6.955,12.146,6,8,10.062l4.146,4.062.974-.955L9.956,10.062Z" transform="translate(-2.754 -2.062)" fill="rgba(255,255,255,0.6)"/>
+      </g>
+      <g id="chevron_left_black_24dp_1_2" data-name="chevron_left_black_24dp (1)" transform="translate(2675.232 -5.196)">
+        <path id="Trazado_7080-2" data-name="Trazado 7080" d="M0,16H16V0H0Z" fill="none"/>
+        <path id="Trazado_7081-2" data-name="Trazado 7081" d="M5.121,7.17l-.974.955L0,4.062,4.146,0l.974.955L1.956,4.062Z" transform="translate(5.246 3.938)" fill="rgba(255,255,255,0.6)"/>
+      </g>
+      <g id="n_" data-name="nº" transform="translate(1587 -710.891)">
+        <text id="_1" data-name="1" transform="translate(1048 746.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">1</tspan></text>
+        <text id="_8" data-name="8" transform="translate(1045 761.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">8</tspan></text>
+        <text id="_15" data-name="15" transform="translate(1048 776.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">15</tspan></text>
+        <text id="_7" data-name="7" transform="translate(1032 761.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">7</tspan></text>
+        <text id="_14" data-name="14" transform="translate(1033 776.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">14</tspan></text>
+        <text id="_6" data-name="6" transform="translate(1018 761.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">6</tspan></text>
+        <text id="_13" data-name="13" transform="translate(1018 776.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">13</tspan></text>
+        <text id="_2" data-name="2" transform="translate(1061 746.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">2</tspan></text>
+        <text id="_9" data-name="9" transform="translate(1060 761.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">9</tspan></text>
+        <text id="_16" data-name="16" transform="translate(1063 776.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">16</tspan></text>
+        <text id="_." data-name="." transform="translate(1020 786.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">.</tspan></text>
+        <text id="_10" data-name="10" transform="translate(1074 761.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">10</tspan></text>
+        <text id="_17" data-name="17" transform="translate(1077 776.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">17</tspan></text>
+        <text id="_.-2" data-name="." transform="translate(1036 786.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">.</tspan></text>
+        <text id="_4" data-name="4" transform="translate(1091 746.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">4</tspan></text>
+        <text id="_11" data-name="11" transform="translate(1091 761.891)" fill="rgba(0,0,0,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">11</tspan></text>
+        <text id="_18" data-name="18" transform="translate(1091 776.891)" fill="rgba(0,0,0,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">18</tspan></text>
+        <text id="_.-3" data-name="." transform="translate(1051 786.891)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">.</tspan></text>
+        <text id="_5" data-name="5" transform="translate(1106 746.891)" fill="rgba(0,0,0,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">5</tspan></text>
+        <text id="_12" data-name="12" transform="translate(1106 761.891)" fill="rgba(0,0,0,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">12</tspan></text>
+        <text id="_19" data-name="19" transform="translate(1106 776.891)" fill="rgba(0,0,0,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">19</tspan></text>
+      </g>
+      <path id="Trazado_7260" data-name="Trazado 7260" d="M7,0A7,7,0,1,1,0,7,7,7,0,0,1,7,0Z" transform="translate(2658 26)" fill="rgba(255,255,255,0.74)"/>
+      <text id="_3" data-name="3" transform="translate(2663 36)" fill="#121212" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">3</tspan></text>
+    </g>
+    <g id="Ilustración_Time" data-name="Ilustración Time" transform="translate(438 52)">
+      <g id="hour" transform="translate(-186 12)">
+        <g id="BG-2" data-name="BG">
+          <rect id="_121212" data-name="#121212" width="64" height="64" rx="32" transform="translate(1339 725) rotate(90)" fill="#121212"/>
+          <path id="_121212_-_Contorno" data-name="#121212 - Contorno" d="M32,1A31.008,31.008,0,0,0,19.934,60.564,31.008,31.008,0,0,0,44.066,3.436,30.805,30.805,0,0,0,32,1m0-1A32,32,0,1,1,0,32,32,32,0,0,1,32,0Z" transform="translate(1339 725) rotate(90)" fill="rgba(255,255,255,0.12)"/>
+          <rect id="W14_" data-name="W14%" width="64" height="64" rx="32" transform="translate(1339 725) rotate(90)" fill="rgba(255,255,255,0.14)"/>
+          <path id="W14_-_Contorno" data-name="W14% - Contorno" d="M32,1A31.008,31.008,0,0,0,19.934,60.564,31.008,31.008,0,0,0,44.066,3.436,30.805,30.805,0,0,0,32,1m0-1A32,32,0,1,1,0,32,32,32,0,0,1,32,0Z" transform="translate(1339 725) rotate(90)" fill="rgba(255,255,255,0.12)"/>
+          <rect id="BC6_" data-name="BC6%" width="64" height="64" rx="32" transform="translate(1339 725) rotate(90)" fill="rgba(20,100,165,0.06)"/>
+          <path id="BC6_-_Contorno" data-name="BC6% - Contorno" d="M32,1A31.008,31.008,0,0,0,19.934,60.564,31.008,31.008,0,0,0,44.066,3.436,30.805,30.805,0,0,0,32,1m0-1A32,32,0,1,1,0,32,32,32,0,0,1,32,0Z" transform="translate(1339 725) rotate(90)" fill="rgba(255,255,255,0.12)"/>
+        </g>
+        <path id="Trazado_7126" data-name="Trazado 7126" d="M18894.754,195.755h-59.613v-1.51h59.613Z" transform="translate(-17558.504 551.551)" fill="rgba(255,255,255,0.12)"/>
+        <text id="_16:00" data-name="16:00" transform="translate(1297 740)" fill="rgba(255,255,255,0.74)" font-size="8" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">16:00</tspan></text>
+        <g id="Grupo_3922" data-name="Grupo 3922" transform="translate(1292.85 750.72)">
+          <g id="Grupo_3888" data-name="Grupo 3888" transform="translate(0.15 0.28)" clip-path="url(#clip-path)">
+            <path id="Trazado_7057" data-name="Trazado 7057" d="M15.284,3.732a11.564,11.564,0,1,0,.022,0h-.022M15.3,24.547a9.251,9.251,0,1,1,9.25-9.252h0a9.248,9.248,0,0,1-9.246,9.25Z" transform="translate(-1.577 -1.769)" fill="rgba(255,255,255,0.6)"/>
+            <path id="Trazado_7058" data-name="Trazado 7058" d="M21.819,12.692H20.047V19.78l6.2,3.722.886-1.451L21.819,18.9Z" transform="translate(-7.565 -5.057)" fill="rgba(255,255,255,0.6)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
