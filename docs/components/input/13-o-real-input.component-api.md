@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/real/api
-title: "Real input"
+title: "Real"
 comp: realInput
 nav_exclude: true
 ---

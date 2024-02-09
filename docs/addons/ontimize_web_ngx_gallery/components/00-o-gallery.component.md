@@ -1,5 +1,5 @@
 ---
-permalink: /gallery/components/gallery/overview
+permalink: /addons/gallery/component/overview
 title: "Component"
 comp: gallery
 layout: o-component

@@ -1,5 +1,5 @@
 ---
-permalink: /map/configuration/o-marker/overview
+permalink: /addons/map/marker/overview
 title: "Marker"
 layout: default
 parent: Map

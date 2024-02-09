@@ -1,11 +1,14 @@
 ---
 layout: default
-permalink: /charts/
+permalink: /addons/charts/
 title: "Charts"
 parent: Addons
 nav_order: 1
 has_children: true
+has_toc: false
 ---
+
+{% include nav_cards.html folder="charts" yml="true" %}
 
 {% include base_path %}
 {% include toc %}

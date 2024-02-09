@@ -1,5 +1,5 @@
 ---
-permalink: /components/table/export
+permalink: /components/data/table/export
 title: "Export table data"
 layout: default
 nav_exclude: true
@@ -107,9 +107,9 @@ The rest interface used for this must be like the following by default:
 https://{ your-api-endpoint }/{ table-service-path }/{ table-entity }/{ format-selected }
 ```
 
-Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b> depending on the format selected. You can also export the table data in other format using a [o-table-export-button]({{ base_path }}/components/table#table-export-button), in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the [o-table-export-button]({{ base_path }}/components/table#table-export-button) component.
+Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b> depending on the format selected. You can also export the table data in other format using a [o-table-export-button]({{ base_path }}/components/data/table#table-export-button), in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the [o-table-export-button]({{ base_path }}/components/data/table#table-export-button) component.
 
-If you want to customize this end point, please check the [Custom exportation end point]({{ base_path }}/components/table/export#custom-exportation-end-point) section.
+If you want to customize this end point, please check the [Custom exportation end point]({{ base_path }}/components/data/table/export#custom-exportation-end-point) section.
 
 
 The service must send a response with an object containing an unique identifier for the file and a key that depends on the format selected for the exportations. You can se en example of each exportation object response in the following table.
@@ -139,7 +139,7 @@ https://{ your-api-endpoint }/{ table-service-path }/{ format-selected }/{ file-
 
 Where <b>format-selected</b> is the same as in the first request and <b>file-id</b> is the file identifier obtained as response of the first request.
 
-If you want to customize the download end point, please check the [Custom exportation end point]({{ base_path }}/components/table/export#custom-exportation-end-point) section.
+If you want to customize the download end point, please check the [Custom exportation end point]({{ base_path }}/components/data/table/export#custom-exportation-end-point) section.
 
 In the following example you can see the download api end point method.
 
@@ -273,7 +273,18 @@ export interface OTableFormattedExportData3X extends OTableExportData3X {
 }
 ```
 
+For the Excel export, the styles object has an element with id "booleanCellRender" that allows to indicate the desired string for the true and false boolean values ​​as shown in the following example.
+
+```ts
+"booleanCellRender": {
+    "trueValue": "Add here the value you want as true",
+    "falseValue": "Add here the value you want as false"
+  }
+```
+
 Next a POST request will be made to the previously configured url and the body of the request containing all the necessary information for the EXCEL export.
+
+
 
 - **URL:** http://localhost:8080/qsallcomponents-jee/services/rest/export/xlsx
 - **HTTP Method:** POST
@@ -459,6 +470,10 @@ export class CustomOntimizeExportDataProviderService extends OntimizeExportDataP
     exportData.styles = {
       "greenBG": {
         "fillBackgroundColor": "GREEN"
+      },
+      "booleanCellRender": {
+        "trueValue": "Add here the value you want as true",
+        "falseValue": "Add here the value you want as false"
       }
     };
     exportData.rowStyles = {
@@ -482,8 +497,8 @@ By default, **Ontimize Web** use the service `OntimizeExportService` or `Ontimiz
 
 | Ontimize server | Service | Injection token | Description |
 | ------- | ------- | ------- |
-| Ontimize EE, Ontimize Boot 2.X.X or lower version | `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
-| Ontimize Boot 3.9.0 or higher |  `OntimizeExportService3X` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/table/overview){:target="_blank"} component for exporting its data |
+| Ontimize EE, Ontimize Boot 2.X.X or lower version | `OntimizeExportService` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"} component for exporting its data |
+| Ontimize Boot 3.9.0 or higher |  `OntimizeExportService3X` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"} component for exporting its data |
 
 <h4>Setting the property `exportServiceType` in `app.config.ts` </h4>
 ```

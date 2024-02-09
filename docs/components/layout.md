@@ -1,12 +1,15 @@
 ---
 layout: default
 title: Layout
-permalink: /components/applayout/
+permalink: /components/layout/
 author_profile: false
 has_children: true
 parent: Components
 nav_order: 5
+has_toc: false
 ---
+
+{% include nav_cards.html folder="layout" %}
 
 {% include base_path %}
 

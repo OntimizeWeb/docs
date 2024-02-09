@@ -1,33 +1,56 @@
 {% include base_path %}
 {% assign pages_list = site[page.collection] | default: site.html_pages %}
 
-{%- assign parent_page = nil -%}
-{%- assign grandparent_page = nil -%}
+{%- assign parent_page = '' -%}
+{%- assign grandparent_page = '' -%}
 {%- assign permalink_array = page.permalink | split: '/' -%}
+{%- assign page_title = page.title | downcase | remove: ' ' -%}
+{%- assign b = '' -%}
 
-{%- for node in pages_list -%}
+{% for a in permalink_array | offset: 1 %}
+  {% unless page_title contains a %}
+    {%- assign parent_page = parent_page | append: a -%}
+    {%- assign parent_page = parent_page | append: '/' -%}
+    {%- assign grandparent_page = grandparent_page | append: a -%}
+    {%- assign grandparent_page = grandparent_page | append: '/' -%}
+    {%- assign b = a -%}
+  {% else %}
+    {% if page_title == a %}
+      {% assign grandparent_page = grandparent_page | remove: b %}
+      {% assign grand_size = grandparent_page | size %}
+      {% assign grand_size_less = grand_size | minus: 1 %}
+      {% assign grandparent_page = grandparent_page | slice: 0, grand_size_less %}
+      {% break %}
+    {% else %}
+      {%- assign parent_page = parent_page | append: a -%}
+      {%- assign parent_page = parent_page | append: '/' -%}
+      {%- assign grandparent_page = grandparent_page | append: a -%}
+      {%- assign grandparent_page = grandparent_page | append: '/' -%}
+      {%- assign b = a -%}
+    {% endif %}
+  {% endunless %}
 
-  {% if permalink_array[2] == node.title | downcase %}
-    {%- assign parent_page = node -%}
-  {% endif %}
+{% endfor %}
 
-  {% if permalink_array[1] == node.title | downcase %}
-    {%- assign grandparent_page = node -%}
-  {% endif %}
+{% if grandparent_page == parent_page %}
+  {%- assign parent_page_name = parent_page | split: '/' -%}
+  {%- assign parent_page_name_cap = parent_page_name[-1] | capitalize -%}
+  {%- assign grandparent_page = '' -%}
+{% else %}
+  {%- assign parent_page_name = parent_page | split: '/' -%}
+  {%- assign parent_page_name_cap = parent_page_name[-1] | capitalize -%}
+  {%- assign grandparent_page_name = grandparent_page | split: '/' -%}
+  {%- assign grandparent_page_name_cap = grandparent_page_name[-1] | capitalize -%}
+{% endif %}
 
-  {%- if parent_page != nil and grandparent_page != nil -%}
-    {%- break -%}
-  {%- endif -%}
-
-{%- endfor -%}
 
 <nav aria-label="Breadcrumb" class="breadcrumbs">
   <ol>
-    {% if parent_page != nil -%}
-      {%- if grandparent_page != nil %}
-        <li><a href="{{ base_path }}{{ grandparent_page.permalink }}">{{ grandparent_page.title }}</a></li>
+    {% if parent_page != '' -%}
+      {%- if grandparent_page != '' %}
+        <li><a href="{{ base_path }}/{{ grandparent_page }}">{{ grandparent_page_name_cap }}</a></li>
       {%- endif %}
-      <li><a href="{{ base_path }}{{ parent_page.permalink }}">{{ parent_page.title }}</a></li>
+      <li><a href="{{ base_path }}/{{ parent_page }}">{{ parent_page_name_cap }}</a></li>
     {% endif -%}
     <li><span>{{ page.title }}</span></li>
   </ol>

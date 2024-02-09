@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/listpicker/overview
-title: "List-picker"
+title: "List picker"
 comp: listpicker
 tab: overview
 parent: Input
@@ -12,7 +12,7 @@ nav_order: 11
 {% include base_path %}
 {% include toc %}
 
-The `o-list-picker` component is used in [forms]({{ base_path }}/components/form/overview) for getting or displaying an option between multiple input submitted by the user.
+The `o-list-picker` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying an option between multiple input submitted by the user.
 
 The list picker component is automatically registered on its parent `o-form`, which provides the value for the list picker programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 

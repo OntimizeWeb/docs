@@ -5,7 +5,7 @@ directive: "o-table"
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",
-  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
+  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys *", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
@@ -44,12 +44,6 @@ attributes: [{
   description: "Indicates whether or not to show a button for deleting data"
 },{
   name: "refresh-button"
-},{
-  name: "show-table-buttons-text",
-  type: "no | false | yes | true",
-  default: "yes",
-  required: "",
-  description: "Indicates whether or not to show table actions text alongside icons"
 },{
   name: "select-all-checkbox",
   type: "no | false | yes | true",
@@ -138,7 +132,7 @@ attributes: [{
 },{
   name: "orderable"
 },{
-  name: "enabled",
+  name: "oenabled",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
@@ -149,34 +143,19 @@ attributes: [{
   default: "yes",
   required: "",
   description: "Indicates whether or not the table columns are resizables"
-}, {
+},{
   name: "keep-selected-items"
 },{
-  name: "select-column-visible",
-  type: "no | false | yes | true",
-  default: "yes",
-  required: "",
-  description: "Indicates whether or not the table columns are resizables"
-},
-# {
-#   name: "export-mode",
-#   type: "visible | local | all",
-#   default: "visible",
-#   required: "",
-#   description: "Mode export data"
-# },
-{
   name: "export-service-type",
   type: "string",
   description: "The service used by the table for exporting it's data, it must implement 'IExportService' interface. Default: 'OntimizeExportService'"
-},
-{
+},{
   name: "visible-export-dialog-buttons",
   type: "string",
   default: "",
   required: "",
   description: "Visible buttons in export dialog, separated by ';'"
-  },{
+},{
   name: "show-filter-option",
   type: "no | false | yes | true",
   default: "yes",
@@ -231,15 +210,13 @@ attributes: [{
   description: "Indicates a function that will be executed on table creation to show or not icon to expand or collapse expandable rows. The function must return a boolean observable.",
   required: "",
   default: ""
-},
-{
+},{
   name: "show-report-on-demand-option",
   type: "yes|no|true|false",
   description: "Indicates whether or not to show the report on demand menu option in the header menu",
   required: "",
   default: "yes"
-},
-{
+},{
   name: "show-reset-width-option",
   type: "yes|no|true|false",
   description: "Indicates whether or not to show the reset width menu option in the header menu",
@@ -252,6 +229,12 @@ attributes: [{
   default: "",
   required: "",
   description: "Function that will be used to allow row selection by changing the enable/disable state of the checkboxes of the rows."
+},{
+  name: "visible-export-dialog-buttons",
+  type: "string",
+  description: "Visible buttons in export dialog, separated by ';'. Default/no configured: show all. Empty value: hide all",
+  required: "",
+  default: "no"
 }]
 
 
@@ -276,6 +259,9 @@ outputs: [{
 },{
   name: "onPaginatedDataLoaded",
   description: "Event triggered when the paginated data is updated"
+},{
+  name: "onSearch",
+  description: "Event triggered when the quickfilter starts searching"
 }]
 
 methods: [{
@@ -363,7 +349,210 @@ methods: [{
   type: "method",
   parameters: "",
   description: "Get sqlTypes from data source "
-}
-
-
-]
+},{
+  name: "getMenuPermissions",
+  type: "method",
+  returns: "OTableMenuPermissions",
+  description: "Returns the configured menu permissions."
+},{
+  name: "initializeCheckboxColumn",
+  type: "method",
+  description: "Initializates the checkbox columns."
+},{
+  name: "reinitializeSortColumns",
+  type: "method",
+  parameters: "sortColumns?: SQLOrder[]",
+  description: "Sort columns method which acept an especific order on its optional parameter."
+},{
+  name: "setGroupColumns",
+  type: "method",
+  parameters: "value: any[]",
+  description: "Group an especific columns declarated on the array parameter."
+},{
+  name: "clearColumnFilters",
+  type: "method",
+  parameters: "triggerDatasourceUpdate?: boolean, columnsAttr?: string[]",
+  description: "Method that clears the column filters letting update the result and choose the columns by their Attr."
+},{
+  name: "refreshColumnsWidthFromLocalStorage",
+  type: "method",
+  description: "Refresh the column with to the defined on the local storage."
+},{
+  name: "setGroupedColumnsTypes",
+  type: "method",
+  parameters: "value: OGroupedColumnTypes[]",
+  description: "Sets the column types of a grouped columns with an Attr and Type array."
+},{
+  name: "storeFilterInState",
+  type: "method",
+  parameters: "arg: OFilterDefinition",
+  description: "Stores the filter definition on the State Service component."
+},{
+  name: "setFiltersConfiguration",
+  type: "method",
+  description: "Check the original filterCaseSensitive with the filterCaseSensitive in initial configuration in local storage if filterCaseSensitive in initial configuration is equals to original filterCaseSensitive input filterCaseSensitive will be the value in local storage."
+},{
+  name: "reloadPaginatedDataFromStart",
+  type: "method",
+  parameters: "clearSelectedItems?: boolean",
+  description: "Reloads the pageable tables from the first record and unselect the selected items by default."
+},{
+  name: "resetColumnsWidth",
+  type: "method",
+  description: "Resets the column width to the defined or the default (auto)."
+},{
+  name: "applyDefaultConfiguration",
+  type: "method",
+  description: "Applies the default configuration to de table."
+},{
+  name: "applyConfiguration",
+  type: "method",
+  parameters: "configurationName: string",
+  description: "Applies a stored configuration depending on a table part depeding on the instroduced parameter."
+},{
+  name: "getColumnsNotIncluded",
+  type: "method",
+  returns: "string[]",
+  description: "Returns an array of the Attr of the columns not included on the table."
+},{
+  name: "getComponentFilter",
+  type: "method",
+  parameters: "existingFilter?: any",
+  returns: "any",
+  description: "Returns the defined table filter."
+},{
+  name: "getColumnNames",
+  type: "method",
+  parameters: "columns: string[]",
+  returns: "{ [columnId: string]: string; }",
+  description: "Returns the name or the Attr if dont have name of the introduced columns in the parameters."
+},{
+  name: "registerQuickFilter",
+  type: "method",
+  parameters: "arg: any",
+  description: "Define a custom quickfilter."
+},{
+  name: "getClientWidthColumn",
+  type: "method",
+  parameters: "col: OColumn",
+  returns: "number",
+  description: "Returns the width of a specified column."
+},{
+  name: "getActionsPermissions",
+  type: "method",
+  returns: "OPermissions[]",
+  description: "Returns the permissions defined on the table."
+},{
+  name: "registerOTableButtons",
+  type: "method",
+  parameters: "arg: OTableButtons",
+  description: "Register to the table the OTableButtons defined on parameters."
+},{
+  name: "isColumnFilterable",
+  type: "method",
+  parameters: "column: OColumn",
+  returns: "boolean",
+  description: "Returns true if the column is filterable."
+},{
+  name: "openColumnFilterDialog",
+  type: "method",
+  parameters: "column: OColumn, event: Event",
+  description: "Opens the column filter dialog of the specified column."
+},{
+  name: "getOColumn",
+  type: "method",
+  parameters: "attr: string",
+  returns: "OColumn",
+  description: "Returns column by its attr."
+},{
+  name: "groupByColumn",
+  type: "method",
+  parameters: "column: OColumn, type?: string",
+  returns: "OColumn",
+  description: "Groups the records by the column and opcionally the type too."
+},{
+  name: "unGroupByColumn",
+  type: "method",
+  parameters: "column: OColumn",
+  returns: "OColumn",
+  description: "Ungroup the records by the column introduced in parameter."
+},{
+  name: "unGroupByAllColumn",
+  type: "method",
+  description: "Ungroups all the records grouped by columns."
+},{
+  name: "filterByColumn",
+  type: "method",
+  parameters: "columnValueFilter: OColumnValueFilter",
+  description: "Filters the table by the OColumnValueFilter."
+},{
+  name: "refresh",
+  type: "method",
+  description: "Refresh the table component."
+},{
+  name: "copySelection",
+  type: "method",
+  description: "Copies to the clipboard the selected records."
+},{
+  name: "copyAll",
+  type: "method",
+  description: "Copies all the table records."
+},{
+  name: "showAndSelectAllCheckbox",
+  type: "method",
+  description: "Shows the checkboxs on the table and selects all."
+},{
+  name: "doHandleClick",
+  type: "method",
+  parameters: "row: any, column: string, rowIndex: number, $event: MouseEvent",
+  description: "Emits a click event on the especified row."
+},{
+  name: "viewDetail",
+  type: "method",
+  parameters: "item: any",
+  description: "Open the detail of an item if it have permissions."
+},{
+  name: "clearSelection",
+  type: "method",
+  description: "Unselect the table items selected."
+},{
+  name: "isSelectionModeMultiple",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the selection mode is multiple."
+},{
+  name: "registerContextMenu",
+  type: "method",
+  parameters: "value: OContextMenuComponent",
+  description: "Adds the provided context menu to de table."
+},{
+  name: "isSelectionModeNone",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the selection mode is disabled."
+},{
+  name: "isAllSelected",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if all the rows are selected."
+},{
+  name: "registerTableHeaders",
+  type: "method",
+  parameters: "tableHeader: OTableHeaderComponent",
+  description: "Adds the provided table header to de table."
+},{
+  name: "isIndeterminate",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the number of selected rows is not equal to the number of rows."
+},{
+  name: "masterToggle",
+  type: "method",
+  parameters: "event: MatCheckboxChange",
+  description: "If the event detects that the user clicks the checkbox it select all the rows with the selectAll() method. In the other side if the user unselect the checkbox it use the clearSelection() method to unselect all the rows."
+},{
+  name: "getColumnFiltersExpression",
+  type: "method",
+  returns: "Expression",
+  description: "Returns the complex expression from the column filters."
+}]

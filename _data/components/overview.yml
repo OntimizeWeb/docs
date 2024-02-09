@@ -61,13 +61,13 @@ attributes: [{
   type: "legacy | standard | fill | outline",
   default : "legacy",
   required : "",
-  description : "Indicates which of the mat-form-field different [appearance variants](https://v8.material.angular.io/components/form-field/overview#form-field-appearance-variants) will be used."
+  description : "Indicates which of the mat-form-field different [appearance variants](https://v8.material.angular.io/components/data/form-field/overview#form-field-appearance-variants) will be used."
 },{
   name: "float-label",
   type: "always | never | auto",
   default : "auto",
   required : "",
-  description : "Indicates which of the mat-form-field different [float label variants](https://v8.material.angular.io/components/form-field/overview#floating-label) will be used."
+  description : "Indicates which of the mat-form-field different [float label variants](https://v8.material.angular.io/components/data/form-field/overview#floating-label) will be used."
 },{
   name: "hide-required-marker",
   type: "no | false | yes | true",

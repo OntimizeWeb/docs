@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/breadcrumb/overview
+permalink: /components/layout/breadcrumb/overview
 title: "Breadcrumb"
 comp: breadcrumb
 parent: Layout
@@ -11,7 +11,7 @@ nav_order: 2
 {% include base_path %}
 {% include toc %}
 
-The `o-breadcrumb` component is used as a navigational aid when using **OntimizeWeb** [forms]({{ base_path }}/components/form/overview/){:target="_blank"}. This component listens to route changes on the application and builds links to keep track of the locations the user is navigating through.
+The `o-breadcrumb` component is used as a navigational aid when using **OntimizeWeb** [forms]({{ base_path }}/components/data/form/overview){:target="_blank"}. This component listens to route changes on the application and builds links to keep track of the locations the user is navigating through.
 
 ## Initialize
 

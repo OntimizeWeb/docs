@@ -1,5 +1,5 @@
 ---
-permalink: /report/installation/
+permalink: /addons/report/installation/
 title: "Installation"
 layout: default
 parent: Report

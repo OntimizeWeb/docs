@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-permalink: /keycloak/installation/
+permalink: /addons/keycloak/installation/
 layout: default
 parent: Keycloak
 grand_parent: Addons

@@ -1,5 +1,5 @@
 ---
-permalink: /map/configuration/o-geojson-layer/overview
+permalink: /addons/map/geojsonlayer/overview
 title: "GeoJson Layer"
 layout: default
 parent: Map

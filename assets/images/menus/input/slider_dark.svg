@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="130" height="88" viewBox="0 0 130 88">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_6470" data-name="Rectángulo 6470" width="12.735" height="15.595" fill="rgba(252,252,252,0.87)"/>
+    </clipPath>
+  </defs>
+  <g id="Ilustracion_Slider" data-name="Ilustracion Slider" transform="translate(-393 -709)">
+    <g id="Grupo_3969" data-name="Grupo 3969">
+      <rect id="Rectángulo_121212" data-name="Rectángulo #121212" width="130" height="88" rx="2" transform="translate(393 709)" fill="#121212"/>
+      <path id="Rectángulo_121212_-_Contorno" data-name="Rectángulo #121212 - Contorno" d="M2,1A1,1,0,0,0,1,2V86a1,1,0,0,0,1,1H128a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H128a2,2,0,0,1,2,2V86a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(393 709)" fill="rgba(255,255,255,0.12)"/>
+      <rect id="RectánguloW16_" data-name="RectánguloW16%" width="130" height="88" rx="2" transform="translate(393 709)" fill="rgba(255,255,255,0.16)"/>
+      <path id="RectánguloW16_-_Contorno" data-name="RectánguloW16% - Contorno" d="M2,1A1,1,0,0,0,1,2V86a1,1,0,0,0,1,1H128a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H128a2,2,0,0,1,2,2V86a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(393 709)" fill="rgba(255,255,255,0.12)"/>
+      <rect id="Rectángulo_BC6_" data-name="Rectángulo BC6%" width="130" height="88" rx="2" transform="translate(393 709)" fill="rgba(20,100,165,0.06)"/>
+      <path id="Rectángulo_BC6_-_Contorno" data-name="Rectángulo BC6% - Contorno" d="M2,1A1,1,0,0,0,1,2V86a1,1,0,0,0,1,1H128a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H128a2,2,0,0,1,2,2V86a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(393 709)" fill="rgba(255,255,255,0.12)"/>
+    </g>
+    <g id="Elipse" transform="translate(-929.385 245.475)">
+      <g id="Grupo_3942" data-name="Grupo 3942" transform="translate(1350 512.465)">
+        <g id="Grupo_3941" data-name="Grupo 3941" transform="translate(0 0)" clip-path="url(#clip-path)">
+          <path id="Trazado_7179" data-name="Trazado 7179" d="M6.314,15.595c1.832-1.951,3.426-3.511,4.859-5.206A6.03,6.03,0,0,0,10.551,1.7a6.065,6.065,0,0,0-8.4-.021,6.176,6.176,0,0,0-.782,8.556c1.433,1.787,3.105,3.383,4.946,5.359" transform="translate(0 0)" fill="rgba(252,252,252,0.87)"/>
+          <path id="Trazado_7180" data-name="Trazado 7180" d="M6.314,15.595c-1.84-1.976-3.512-3.573-4.946-5.359A6.176,6.176,0,0,1,2.15,1.679a6.065,6.065,0,0,1,8.4.021,6.03,6.03,0,0,1,.622,8.688c-1.432,1.7-3.026,3.255-4.859,5.206" transform="translate(0 0)" fill="rgba(252,252,252,0.87)"/>
+        </g>
+      </g>
+      <text id="_26" data-name="26" transform="translate(1351.868 521.747)" fill="rgba(0,0,0,0.87)" font-size="7" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">26</tspan></text>
+    </g>
+    <g id="item2" transform="translate(405 776)">
+      <path id="Trazado_7084" data-name="Trazado 7084" d="M18859.164,195.755h-24.018a.755.755,0,1,1,0-1.51h24.018a.755.755,0,1,1,0,1.51Z" transform="translate(-18835.146 -195)" fill="rgba(255,255,255,0.87)"/>
+      <path id="Trazado_7178" data-name="Trazado 7178" d="M18921.377,195.755h-86.234a.755.755,0,1,1,0-1.51h86.234a.755.755,0,1,1,0,1.51Z" transform="translate(-18815.377 -195)" fill="rgba(204,200,200,0.6)"/>
+    </g>
+    <g id="item_1" data-name="item 1" transform="translate(405 745)">
+      <path id="Trazado_7084-2" data-name="Trazado 7084" d="M18903.23,195.755h-68.086a.755.755,0,1,1,0-1.51h68.086a.755.755,0,1,1,0,1.51Z" transform="translate(-18835.145 -195)" fill="rgba(255,255,255,0.87)"/>
+      <path id="Trazado_7178-2" data-name="Trazado 7178" d="M18894.676,195.755h-59.531a.755.755,0,1,1,0-1.51h59.531a.755.755,0,1,1,0,1.51Z" transform="translate(-18788.676 -195)" fill="rgba(204,200,200,0.6)"/>
+      <circle id="Elipse_1168" data-name="Elipse 1168" cx="4" cy="4" r="4" transform="translate(62.25 -4)" fill="#fcfcfc"/>
+    </g>
+    <g id="Grupo_3928" data-name="Grupo 3928" transform="translate(405 725)">
+      <path id="Trazado_7084-3" data-name="Trazado 7084" d="M18875.145,195.755h-40a.755.755,0,1,1,0-1.51h40a.755.755,0,1,1,0,1.51Z" transform="translate(-18835.145 -195)" fill="rgba(255,255,255,0.6)"/>
+    </g>
+  </g>
+</svg>

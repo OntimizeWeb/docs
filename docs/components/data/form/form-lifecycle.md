@@ -1,5 +1,5 @@
 ---
-permalink: /components/form/lifecycle/
+permalink: /components/data/form/lifecycle/
 title: "Form lifecycle"
 author_profile: false
 sidebar:
@@ -11,7 +11,7 @@ layout: default
 {% include base_path %}
 {% include toc %}
 
-A form is called *detail form* when it is used for managing a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a data collection record. This can be achieved by combining the [`o-form`]({{ base_path }}/components/form/overview/){:target="_blank"} and a collection component ([`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"}, [`o-list`]({{ base_path }}/components/list/overview/){:target="_blank"} or [`o-grid`]({{ base_path }}/components/grid/overview/){:target="_blank"}) in your application. In this section we describe how **OntimizeWeb** manage the transitions between the data collection and the detail form.
+A form is called *detail form* when it is used for managing a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a data collection record. This can be achieved by combining the [`o-form`]({{ base_path }}/components/data/form/overview){:target="_blank"} and a collection component ([`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"}, [`o-list`]({{ base_path }}/components/data/list/overview){:target="_blank"} or [`o-grid`]({{ base_path }}/components/data/grid/overview){:target="_blank"}) in your application. In this section we describe how **OntimizeWeb** manage the transitions between the data collection and the detail form.
 
 As a developer, you can decide the behaviour of a detail form in you application. When the user opens a form, you can decide if the form will be in update or read only mode. You can select one of this behaviours by configuring the `editable-detail` input in your `o-form` component.
 

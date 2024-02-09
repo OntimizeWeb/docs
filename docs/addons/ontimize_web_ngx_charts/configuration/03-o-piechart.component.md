@@ -1,5 +1,5 @@
 ---
-permalink: /charts/configuration/piechart/overview
+permalink: /addons/charts/piechart/overview
 title: "Pie Chart"
 comp: piechart
 layout: o-component

@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/form/overview
+permalink: /components/data/form/overview
 title: "Form"
 comp: form
 parent: Data
@@ -66,20 +66,20 @@ For example:
 ```
 
 ## Form lifecycle
-A form is called *detail form* when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table, list or grid record. This use case can be achieved with **OntimizeWeb** by combining the `o-form` and the [`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"}, [`o-list`]({{ base_path }}/components/list/overview/){:target="_blank"} or [`o-grid`]({{ base_path }}/components/grid/overview/){:target="_blank"} component.
+A form is called *detail form* when it is used to manage a piece of data from a collection. The most common use case of a detail form is for displaying the data related to a table, list or grid record. This use case can be achieved with **OntimizeWeb** by combining the `o-form` and the [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"}, [`o-list`]({{ base_path }}/components/data/list/overview){:target="_blank"} or [`o-grid`]({{ base_path }}/components/data/grid/overview){:target="_blank"} component.
 
-You can read more about this topic in the [form lifecycle]({{ base_path }}/components/form/lifecycle/){:target="_blank"} section.
+You can read more about this topic in the [form lifecycle]({{ base_path }}/components/data/form/lifecycle/){:target="_blank"} section.
 
 ## Related components
 There are some components that improve the `o-form` usage adding some features without having to implement them.
 
 ### Form container
-In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/form/container/overview){:target="_blank"}.
+In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/data/form/container/overview){:target="_blank"}.
 
 ### Form layout manager
 A very common feature in management applications is to display a form with the details related to a record from a data collection. As a solution to this, **OntimizeWeb** offers the `o-form-layout-manager` component, which allows to manage the transitions between the data collection and the form with the detail view with the data record details.
 
-You can read more about this component [here]({{ base_path }}/components/formlayoutmanager/overview){:target="_blank"}.
+You can read more about this component [here]({{ base_path }}/components/layout/form-layout-manager/overview){:target="_blank"}.
 
 ## Extending a form
 
@@ -196,16 +196,16 @@ You can change the default options of the form by using `MAT_FORM_FIELD_DEFAULT_
 
 ## Filtering of a collection component
 
-A common use of a form is to use the form data entered by the user to request filtered information from a service and display it in a collection component ([`o-table`]({{ base_path }}/components/table/overview/){:target="_blank"}, [`o-list`]({{ base_path }}/components/list/overview/){:target="_blank"} or [`o-grid`]({{ base_path }}/components/grid/overview/){:target="_blank"}). **OntimizeWeb** offers two different solutions for doing this. The simplest way to do this filtering is to set the `parent-keys` input of the collection component we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we have to use the [filter builder](#filter-builder) component.
+A common use of a form is to use the form data entered by the user to request filtered information from a service and display it in a collection component ([`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"}, [`o-list`]({{ base_path }}/components/data/list/overview){:target="_blank"} or [`o-grid`]({{ base_path }}/components/data/grid/overview){:target="_blank"}). **OntimizeWeb** offers two different solutions for doing this. The simplest way to do this filtering is to set the `parent-keys` input of the collection component we want to filter, but this will not be enough if we want to apply complex logical filters. In this case, we have to use the [filter builder](#filter-builder) component.
 
 ### Parent keys filter
 
-Setting the `parent-keys` input of the [table]({{ base_path }}/components/table/api){:target="_blank"} with the `attr` of the [form fields]({{ base_path }}/components/input/overview/api){:target="_blank"} we want to include in the filtering is the simplest and fastest way to filter the collection component data. This approach is not sufficient when you want to apply complex filters using logical operations.
+Setting the `parent-keys` input of the [table]({{ base_path }}/components/data/table/api){:target="_blank"} with the `attr` of the [form fields]({{ base_path }}/components/input/overview/api){:target="_blank"} we want to include in the filtering is the simplest and fastest way to filter the collection component data. This approach is not sufficient when you want to apply complex filters using logical operations.
 
 In the following example we have a form component with the field to filter the first name, surname and employee type of an employees table. Note that the table has the `parent-keys` input configured with the columns involved in the filtering and their corresponding attr's of the form component. Remember that when the table column and the attr of the form component are the same, you only have to include it once.
 
 {: .note }
-> Keep in mind that the table will not send any request when the parent keys values are all null. You have to configure the `query-with-null-parent-keys` as in the example below to avoid this, but it is not always recommended. Check the [table]({{ base_path }}/components/table/api){:target="_blank"} documentation page.
+> Keep in mind that the table will not send any request when the parent keys values are all null. You have to configure the `query-with-null-parent-keys` as in the example below to avoid this, but it is not always recommended. Check the [table]({{ base_path }}/components/data/table/api){:target="_blank"} documentation page.
 
 ```html
 <o-form editable-detail="no" show-header="no">
@@ -235,7 +235,7 @@ In the following example we have a form component with the field to filter the f
 ```
 
 ### Filter builder
-The filter builder is a component whose purpose is to solve the problem described above. It allows to build complex filtering expressions using the data entered in a form component. Read more about the filter builder component [here]({{ base_path }}/components/filterbuilder/overview/){:target="_blank"}.
+The filter builder is a component whose purpose is to solve the problem described above. It allows to build complex filtering expressions using the data entered in a form component. Read more about the filter builder component [here]({{ base_path }}/components/data/filterbuilder/overview){:target="_blank"}.
 
 ## Custom form toolbar buttons
 

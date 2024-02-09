@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/image/overview
+permalink: /components/media/image/overview
 title: "Image"
 comp: image
 parent: Media

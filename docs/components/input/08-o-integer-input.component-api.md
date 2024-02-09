@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/integer/api
-title: "Integer input"
+title: "Integer"
 comp: integerInput
 nav_exclude: true
 ---

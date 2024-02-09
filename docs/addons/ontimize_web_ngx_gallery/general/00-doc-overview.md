@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-permalink: /gallery/overview/
+permalink: /addons/gallery/overview/
 layout: default
 parent: Gallery
 grand_parent: Addons

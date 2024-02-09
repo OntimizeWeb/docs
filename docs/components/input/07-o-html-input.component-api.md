@@ -1,7 +1,7 @@
 ---
 layout: o-component
 permalink: /components/input/html/api
-title: "HTML input"
+title: "HTML"
 comp: HTMLInput
 nav_exclude: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/applayout/overview
+permalink: /components/layout/applayout/overview
 title: "App layout"
 comp: appLayout
 parent: Layout

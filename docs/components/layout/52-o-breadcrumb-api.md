@@ -1,6 +1,6 @@
 ---
 layout: o-component
-permalink: /components/breadcrumb/api
+permalink: /components/layout/breadcrumb/api
 title: "Breadcrumb"
 comp: breadcrumb
 nav_exclude: true

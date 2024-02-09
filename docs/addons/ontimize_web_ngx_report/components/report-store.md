@@ -1,6 +1,6 @@
 ---
 title: "Report store"
-permalink: /report/components/report-store/overview
+permalink: /addons/report/components/report-store/overview
 layout: default
 parent: Report
 grand_parent: Addons

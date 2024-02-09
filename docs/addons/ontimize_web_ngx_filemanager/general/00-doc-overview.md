@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-permalink: /filemanager/overview/
+permalink: /addons/filemanager/overview/
 layout: default
 parent: File Manager
 grand_parent: Addons

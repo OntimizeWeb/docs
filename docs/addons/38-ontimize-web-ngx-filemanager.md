@@ -1,11 +1,14 @@
 ---
 layout: default
-permalink: /filemanager/
+permalink: /addons/filemanager/
 title: "File Manager"
 parent: Addons
 nav_order: 3
 has_children: true
+has_toc: false
 ---
+
+{% include nav_cards.html folder="filemanager" yml="true" %}
 
 {% include base_path %}
 {% include toc %}

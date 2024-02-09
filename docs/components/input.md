@@ -6,7 +6,10 @@ author_profile: false
 has_children: true
 parent: Components
 nav_order: 1
+has_toc: false
 ---
+
+{% include nav_cards.html folder="input" %}
 
 {% include base_path %}
 
@@ -16,4 +19,3 @@ There is also a live demo where you can interact with different components.
 
 
 [Live demo](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/home){: .btn .btn--success}{:target="_blank"}
-

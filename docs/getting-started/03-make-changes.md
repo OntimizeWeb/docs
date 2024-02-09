@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Make some changes"
-permalink: /make-changes/
+permalink: /make-some-changes/
 parent: Getting started
 nav_order: 3
 ---
@@ -11,11 +11,11 @@ nav_order: 3
 
 ## Overview
 
-In this section we are going to make some simple changes in the code of the QuickStart app. We are going to see how to add a [form field]({{ base_path }}/components/input/overview/overview){:target="_blank"} into a [form]({{ base_path }}/components/form/overview){:target="_blank"}. Once added, we are going to learn how to listen the component events. Finally, we are going to navigate to another screen of the application.
+In this section we are going to make some simple changes in the code of the QuickStart app. We are going to see how to add a [form field]({{ base_path }}/components/input/overview/overview){:target="_blank"} into a [form]({{ base_path }}/components/data/form/overview){:target="_blank"}. Once added, we are going to learn how to listen the component events. Finally, we are going to navigate to another screen of the application.
 
 ## Add a field
 
-We are going to add two [real fields]({{ base_path }}/components/input/real/overview/){:target="_blank"} into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://try.imatia.com/ontimizeweb/quickstart/main/customers){:target="_blank"}):
+We are going to add two [real fields]({{ base_path }}/components/input/real/overview){:target="_blank"} into the detail form of a client. First of all, we are going take a look at the layout of this form. After logging in, click on the menu item *Views -> Customers*. A table with several clients information will be shown. At this point, we will prefilter the results and select an client and going to the detail form (clicking on the magnifying glass row button). The aspect of the detail form is like this picture (check it on [live example](https://try.imatia.com/ontimizeweb/quickstart/main/customers){:target="_blank"}):
 
 <img src="{{ base_path }}/assets/images/main_customers_detail.png" alt="customer detail">
 

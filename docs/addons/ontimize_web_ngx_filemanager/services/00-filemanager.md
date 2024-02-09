@@ -1,5 +1,5 @@
 ---
-permalink: /filemanager/filemanagerservice/dms
+permalink: /addons/filemanager/filemanagerservice/dms
 title: "File Manager DMS Service"
 layout: default
 parent: File Manager
