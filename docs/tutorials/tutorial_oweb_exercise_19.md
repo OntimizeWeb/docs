@@ -1,8 +1,8 @@
 ---
-title: "View data in grid mode"
+title: "Custom theme"
 layout: default
-permalink: /tutorial-web/exercise12/
-nav_order: 12
+permalink: /tutorial-web/exercise19/
+nav_order: 19
 # has_children: false
 # has_toc: false
 # nav_exclude: true
@@ -13,196 +13,102 @@ parent: Tutorial OWeb
 {% include base_path %}
 {% include toc %}
 
-# Visualizar datos en una cuadrícula
+# Tema personalizado
 ## Introducción
-En este tutorial se mostrarán los pasos necesarios para cambiar la visualización de los empleados, para pasar de formato
-de tabla a formato de cuadrícula, y modificar su formulario detalle para que se muestre en un diálogo flotante.
+En este tutorial modificaremos la apariencia por defecto de nuestra aplicación, sustituyendo la paleta de colores por 
+defecto por una personalizada.
 
-![tutorial_o_web_39.png]({{ base_path }}/assets/images/tutorial_o_web_39.png)
-
-## Modificar el listado de empleados
+## Usar una plantilla para crear un tema
+En [esta página]({{ base_path }}/customize/theming/){:target="_blank"} podemos encontrar un fichero por defecto que nos
+ayudará a establecer nuestro tema predeterminado.
 
 <div class="multicolumn">
     <div class="multicolumnleft">
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
+        <p>Creamos el fichero y modificamos los colores como nos guste. Hay páginas que pueden ser de utilidad, como
+ <a href="https://www.materialpalette.com" target="_blank">materialpalette.com</a>, 
+<a href="https://www.materialui.co" target="_blank">materialui.co</a> o 
+<a href="http://mcg.mbitson.com" target="_blank">mcg.mbitson.com</a></p>
 
-{{"**employees-home.component.html**" | markdownify }}
-{% highlight xml %}
-<o-grid #employeesGrid attr="employeesGrid" title="EMPLOYEES" service="employees" entity="employee" keys="EMPLOYEEID"
-    columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEPHOTO;EMPLOYEEADDRESS;EMPLOYEEPHONE;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;NAME;EMPLOYEETYPEID;EMPLOYEETYPENAME"
-    query-rows="8" page-size-options="8;10;12" orderable="true"
-    sortable-columns="EMPLOYEENAME;EMPLOYEESURNAME:asc;EMPLOYEESURNAME:desc;EMPLOYEEEMAIL" insert-button="true"
-    pagination-controls="true" gutter-size="8px" fixed-header="yes" grid-item-height="300px" detail-mode="none"
-    insert-button-floatable="no">
-    <o-grid-item *ngFor="let data of employeesGrid.dataArray">
-        <div (click)="openDetail(data)" fxLayout="column" fxLayoutAlign="space-evenly center"
-            class="mat-elevation-z1 employeeCard">
-            <img [src]="getImageSrc(data.EMPLOYEEPHOTO)" width="144px" height="200px">
-            <span><strong>{% raw %}{{ data.EMPLOYEENAME }}{% endraw %} {% raw %}{{data.EMPLOYEESURNAME}}{% endraw %}</strong></span>
-            <span><em>{% raw %}{{ data.EMPLOYEETYPENAME }}{% endraw %}</em></span>
-            <span class="office">{% raw %}{{ data.NAME }}{% endraw %}</span>
-        </div>
-    </o-grid-item>
-</o-grid>
+{{"**custom-theme.css**" | markdownify }}
+{% highlight scss %}
+@use '@angular/material' as mat;
+@use 'node_modules/ontimize-web-ngx/theming/ontimize-style.scss' as ontimize-style;
+
+/* Color definitions */
+$mat-custom-primary: (
+    50 : #fcf2e7,
+    100 : #f8dec3,
+    200 : #f3c89c,
+    300 : #eeb274,
+    400 : #eaa256,
+    500 : #e69138,
+    600 : #e38932,
+    700 : #df7e2b,
+    800 : #db7424,
+    900 : #d56217,
+    A100 : #ffffff,
+    A200 : #ffe3d4,
+    A400 : #ffc3a1,
+    A700 : #ffb287,
+    contrast: (50 : #4b4845, 100 : #4a423a, 200 : #483c2e, 300 : #473523, 400 : #46301a, 500 : #452b11, 600 : #44290f, 700 : #42260d, 800 : #41230b, 900 : #f2d0ba, A100 : #4c4c4c, A200 : #4c443f, A400 : #4c3a30, A700 : #4c3528)
+);
+
+/* Color definitions */
+$mat-custom-primary-dark: (
+        50 : #fcf2e7,
+        100 : #f8dec3,
+        200 : #f3c89c,
+        300 : #eeb274,
+        400 : #eaa256,
+        500 : #e69138,
+        600 : #e38932,
+        700 : #df7e2b,
+        800 : #db7424,
+        900 : #d56217,
+        A100 : #ffffff,
+        A200 : #ffe3d4,
+        A400 : #ffc3a1,
+        A700 : #ffb287,
+    contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000, 500 : #000000, 600 : #000000, 700 : #000000, 800 : #000000, 900 : #000000, A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000, )
+);
+
+// Define a theme.
+$primary: mat.define-palette($mat-custom-primary);
+$accent: $primary;
+$primary-dark: mat.define-palette($mat-custom-primary-dark);
+$accent-dark: $primary-dark;
+
+/* Light theme */
+$theme: ontimize-style.o-mat-light-theme($primary, $accent);
+
+/* Dark theme */
+$dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
 {% endhighlight %}
 
-<table>
-    <thead>
-        <tr>
-            <th colspan="3">o-grid (atributos de <a href="{{ base_path }}/components/grid/api">o-grid</a>)</th>
-        </tr>
-        <tr>
-            <th>Atributo</th>
-            <th>Valor</th>
-            <th>Significado</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>query-rows</td>
-            <td>8</td>
-            <td>Número de registros por página en la consulta inicial</td>
-        </tr>
-        <tr>
-            <td>page-size-options</td>
-            <td>8;10;12</td>
-            <td>Opciones del número de elementos por página a mostrar</td>
-        </tr>
-        <tr>
-            <td>orderable</td>
-            <td>true</td>
-            <td>Muestra u oculta el botón de ordenación de la cabecera</td>
-        </tr>
-        <tr>
-            <td>sortable-columns</td>
-            <td>EMPLOYEENAME;EMPLOYEESURNAME:asc;EMPLOYEESURNAME:desc;EMPLOYEEEMAIL</td>
-            <td>Lista de columnas por la que puenden ordenarse los elementos. Si se escribe <em>:asc</em> o <em>:desc</em> después del nombre de la columna, se puede especificar el tipo de ordenación (ascendente por defecto)</td>
-        </tr>
-        <tr>
-            <td>insert-button</td>
-            <td>true</td>
-            <td>Indica si se muestra el botón de inserción</td>
-        </tr>
-        <tr>
-            <td>pagination-controls</td>
-            <td>true</td>
-            <td>Muestra los controles de paginación del componente</td>
-        </tr>
-        <tr>
-            <td>gutter-size</td>
-            <td>8px</td>
-            <td>El espacio minimo que hay entre los diferentes elementos del componente</td>
-        </tr>
-        <tr>
-            <td>fixed-header</td>
-            <td>yes</td>
-            <td>Indica si la cabecera y el pie de página deben ser fijos cuando el contenido es mayor que su propia altura.</td>
-        </tr>
-        <tr>
-            <td>grid-item-height</td>
-            <td>300px</td>
-            <td>Establece la representación interna de la altura de la fila a partir del valor proporcionado por el usuario</td>
-        </tr>
-        <tr>
-            <td>detail-mode</td>
-            <td>none</td>
-            <td>Accción que desencadena el abrir el formulario de detalle</td>
-        </tr>
-        <tr>
-            <td>insert-button-floatable</td>
-            <td>no</td>
-            <td>Indica si el botón de inserción es o no flotante</td>
-        </tr>
-    </tbody>
-</table>
+<p>Luego para aplicar nuestro tema, modificaremos en tema en el fichero <strong>app.scss</strong>, para que use el 
+fichero <strong>custom-theme.scss</strong> en vez de <em>ontimize-web-ngx/theming/themes/ontimize.scss</em></p>
 
-<p>Dentro de la etiqueta de la cuadrícula tenemos que definir la plantilla que se seguirá para cada elemento de la 
-cuadrícula. Esto se consigue mediante el uso de la etiqueta <code>&lt;o-grid-item&gt;</code> y la directiva de Angular 
-<code>*ngFor="let list of employeesGrid.dataArray"</code> aplicará este elemento para todos los registros que se 
-recuperen en la consulta. Dentro de la etiqueta <code>&lt;o-grid-item&gt;</code>, se diseña el aspecto de cada uno de 
-los elementos de la cuadrícula.</p>
+{{"**app.scss**" | markdownify }}
+{% highlight scss %}
+// Define your custom theme or choose predefined theme
+// @use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
+@use './custom-theme.scss' as theme;
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
+@use '../../app/login/login.theme.scss'as login;
 
-<p>Lo envolveremos todo con un elemento <code>&lt;div&gt;</code> que permitirá ejecutar la acción de abrir el formulario
-detalle (acción que hemos invalidado con el atributo <code>detail-mode</code> del elemento <code>&lt;o-grid&gt;</code>)
-por lo que será necesario indicar otra acción para mostrar el desplegable de detalle. Para cargar imágenes, tendremos 
-que indicarle que dicha foto está contenida en la petición, por lo que invocaremos un método que permita mostrar la 
-imagen correctamente.</p>
+// Include ontimize styles
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
 
-<p>El componente detalle que será el diálogo flotante tiene que recibir los datos y una altura y anchura 
-determinadas.</p>
+// Propagate theme to screen styles definition.
+@include login.login-theme(theme.$theme);
 
-{{"**employees-home.component.ts**" | markdownify }}
-{% highlight typescript %}
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DomSanitizer } from '@angular/platform-browser';
-import { EmployeesDetailComponent } from '../employees-detail/employees-detail.component';
 
-@Component({
-  selector: 'app-employees-home',
-  templateUrl: './employees-home.component.html',
-  styleUrls: ['./employees-home.component.css']
-})
-export class EmployeesHomeComponent implements OnInit {
-
-  constructor(
-    protected dialog: MatDialog,
-    protected sanitizer: DomSanitizer
-  ) { }
-
-  ngOnInit() {
-  }
-
-  public getImageSrc(base64: any): any {
-    return base64 ? this.sanitizer.bypassSecurityTrustResourceUrl('data:image/*;base64,' + base64.bytes) : './assets/images/no-image-transparent.png';
-  }
-
-  public openDetail(data: any): void {
-    this.dialog.open(EmployeesDetailComponent, {
-      height: '330px',
-      width: '520px',
-      data: data
-    });
-  }
-} 
-{% endhighlight %}
-
-<p>También modificamos el fichero css para pesonalizar algo más el elemento de una cuadrícula</p>
-
-{{"**employees-home.component.css**" | markdownify }}
-{% highlight css %}
-.employeeCard {
-  width: 300px;
-  background-color: white;
-}
-
-.employeeCard img {
-  margin-top: 8px;
-}
-
-.employeeCard .office {
-  font-size: 0.8em;
-}
-{% endhighlight %}
-
-<p>Añadidmos también traducciones para una columna que no tendría traducción en los filtros del 
-<code>quick-filter</code></p>
-
-{{"**en.json**" | markdownify }}
-{% highlight json %}
-{
-  ...
-  "EMPLOYEETYPENAME": "Job title"
-}
-{% endhighlight %}
-
-{{"**es.json**" | markdownify }}
-{% highlight json %}
-{
-  ...
-  "EMPLOYEETYPENAME": "Cargo",
+//Include dark styles option
+.o-dark {
+  @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
 }
 {% endhighlight %}
     </div>
@@ -345,6 +251,14 @@ export class EmployeesHomeComponent implements OnInit {
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              add-account
+              <ul>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-account.component.css</li>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-account.component.html</li>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-account.component.ts</li>
+              </ul>
+              </li>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
@@ -392,9 +306,9 @@ export class EmployeesHomeComponent implements OnInit {
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
@@ -411,6 +325,29 @@ export class EmployeesHomeComponent implements OnInit {
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          service-ex
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            service-ex-details
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            service-ex-home
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+          </ul>
+          </li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
@@ -421,9 +358,51 @@ export class EmployeesHomeComponent implements OnInit {
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          account-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          branch-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          customer-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          employee-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          service-ex-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+          </ul>
+          </li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
@@ -441,15 +420,16 @@ export class EmployeesHomeComponent implements OnInit {
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>custom-theme.scss</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -525,125 +505,72 @@ export class EmployeesHomeComponent implements OnInit {
     </div>
 </div>
 
-## Modificar el formulario detalle
+## Modo oscuro
+
+Este modo lo podemos activar, modificando en el fichero **custom-theme.scss** la variable ```$theme``` que carga el modo claro 
+para forzar su carga por defecto.
 
 <div class="multicolumn">
     <div class="multicolumnleft">
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Con los datos que recibimos desde el listado de empleados, modificaremos la presentación de elementos del detalle.</p>
+        
+{{"**custom-theme.scss**" | markdownify }}
+{% highlight scss %}
+@use '@angular/material' as mat;
+@use 'node_modules/ontimize-web-ngx/theming/ontimize-style.scss' as ontimize-style;
 
-{{"**employees-detail.component.html**" | markdownify }}
-{% highlight xml %}
-<div fxFill fxLayout="column" fxLayoutAlign="space-evenly center">
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4px" class="employeeFirst">
-            <img [src]="getImageSrc(data.EMPLOYEEPHOTO)" width="144px" height="200px">
-            <span><strong>{% raw %}{{ data.EMPLOYEENAME }}{% endraw %} {% raw %}{{ data.EMPLOYEESURNAME }}{% endraw %}</strong></span>
-            <mat-divider></mat-divider>
-            <span><em>{% raw %}{{ data.EMPLOYEETYPENAME }}{% endraw %}</em></span>
-            <mat-divider></mat-divider>
-        </div>
-        <div fxLayout="column" class="employeeSecond">
-            <span *ngIf="data.EMPLOYEEEMAIL;else no_mail">
-                <mat-icon>email</mat-icon><span>{% raw %}{{ data.EMPLOYEEEMAIL }}{% endraw %}</span>
-            </span>
-            <ng-template #no_mail><span><mat-icon>email</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}{% endraw %}</span></span></ng-template>
-            <span *ngIf="data.EMPLOYEEPHONE;else no_phone">
-                <mat-icon>smartphone</mat-icon><span>{% raw %}{{ data.EMPLOYEEPHONE }}{% endraw %}</span>
-            </span>
-            <ng-template #no_phone><span><mat-icon>smartphone</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}{% endraw %}</span></span></ng-template>
-            <span *ngIf="data.EMPLOYEEADDRESS;else no_address">
-                <mat-icon>home</mat-icon><span>{% raw %}{{ data.EMPLOYEEADDRESS }}{% endraw %}</span>
-            </span>
-            <ng-template #no_address><span><mat-icon>home</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}{% endraw %}</span></span></ng-template>
-        </div>
-    </div>
-    <span layout-margin-right fxFlexAlign="end"><mat-icon>domain</mat-icon>{% raw %}{{ data.NAME }}{% endraw %}</span>
-</div>
-{% endhighlight %}
+/* Color definitions */
+$mat-custom-primary: (
+    50 : #fcf2e7,
+    100 : #f8dec3,
+    200 : #f3c89c,
+    300 : #eeb274,
+    400 : #eaa256,
+    500 : #e69138,
+    600 : #e38932,
+    700 : #df7e2b,
+    800 : #db7424,
+    900 : #d56217,
+    A100 : #ffffff,
+    A200 : #ffe3d4,
+    A400 : #ffc3a1,
+    A700 : #ffb287,
+    contrast: (50 : #4b4845, 100 : #4a423a, 200 : #483c2e, 300 : #473523, 400 : #46301a, 500 : #452b11, 600 : #44290f, 700 : #42260d, 800 : #41230b, 900 : #f2d0ba, A100 : #4c4c4c, A200 : #4c443f, A400 : #4c3a30, A700 : #4c3528)
+);
 
-<p>Utilizamos las plantillas de <code>*ngIf</code> con el else para que muestre un contenido en caso de que contenga la
-información que se pide. En caso contrario, cargará el contenido del <code>&lt;ng-template&gt;</code> cuyo 
-<code>id</code> que coincida con el nombre que se ha escrito en el <code>*ngIf</code></p>
+/* Color definitions */
+$mat-custom-primary-dark: (
+        50 : #fcf2e7,
+        100 : #f8dec3,
+        200 : #f3c89c,
+        300 : #eeb274,
+        400 : #eaa256,
+        500 : #e69138,
+        600 : #e38932,
+        700 : #df7e2b,
+        800 : #db7424,
+        900 : #d56217,
+        A100 : #ffffff,
+        A200 : #ffe3d4,
+        A400 : #ffc3a1,
+        A700 : #ffb287,
+    contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000, 500 : #000000, 600 : #000000, 700 : #000000, 800 : #000000, 900 : #000000, A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000, )
+);
 
-<p>Para rellenar los datos es necesario que este componente cargue los datos a través del <code>Injector</code></p>
+// Define a theme.
+$primary: mat.define-palette($mat-custom-primary);
+$accent: $primary;
+$primary-dark: mat.define-palette($mat-custom-primary-dark);
+$accent-dark: $primary-dark;
 
-{{"**employees-detail.component.ts**" | markdownify }}
-{% highlight typescript %}
-import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DomSanitizer } from '@angular/platform-browser';
+/* Light theme */
+// $theme: ontimize-style.o-mat-light-theme($primary, $accent);
+$theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
 
-@Component({
-  selector: 'app-employees-detail',
-  templateUrl: './employees-detail.component.html',
-  styleUrls: ['./employees-detail.component.css']
-})
-export class EmployeesDetailComponent implements OnInit {
-
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    protected sanitizer: DomSanitizer
-  ) { }
-
-  public getImageSrc(base64: any): any {
-    return base64 ? this.sanitizer.bypassSecurityTrustResourceUrl('data:image/*;base64,' + base64.bytes) : './assets/images/no-image-transparent.png';
-  }
-
-  ngOnInit() {
-  }
-}
-{% endhighlight %}
-
-<p>Añadimos los estilos que tendrá el componente</p>
-
-{{"**employees-detail.component.css**" | markdownify }}
-{% highlight css %}
-.mat-divider {
-  border-top-width: 2px;
-  width: 100px;
-}
-
-.employeeFirst {
-  min-width: 200px;
-  max-width: 200px;
-}
-
-.employeeFirst span {
-  text-align: center;
-}
-
-span {
-  display: flex;
-  align-items: center;
-}
-
-span mat-icon {
-  padding-right: 8px;
-}
-{% endhighlight %}
-
-<p>Y por último las traducciones que necesitamos</p>
-
-{{"**en.json**" | markdownify }}
-{% highlight json %}
-{
-  ...
-  "NO_DATA_AVAILABLE": "No data available"
-}
-{% endhighlight %}
-
-{{"**es.json**" | markdownify }}
-{% highlight json %}
-{
-  ...
-  "NO_DATA_AVAILABLE": "No hay información disponible"
-}
+/* Dark theme */
+$dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -785,6 +712,14 @@ span mat-icon {
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              add-account
+              <ul>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-account.component.css</li>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-account.component.html</li>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-account.component.ts</li>
+              </ul>
+              </li>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
@@ -824,9 +759,9 @@ span mat-icon {
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -851,6 +786,29 @@ span mat-icon {
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          service-ex
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            service-ex-details
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            service-ex-home
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+          </ul>
+          </li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
@@ -861,9 +819,51 @@ span mat-icon {
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          account-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          branch-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          customer-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          employee-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          service-ex-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+          </ul>
+          </li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
@@ -882,14 +882,15 @@ span mat-icon {
         css
         <ul>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>custom-theme.scss</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -965,9 +966,11 @@ span mat-icon {
     </div>
 </div>
 
-Este es el resultado final:
+{: .note-title}
+> Nota
+>
+> Los estilos personalizados de este tutorial no se adecuan totalmente al modo oscuro, por lo que no tendremos esta
+> opción activa.
 
-![tutorial_o_web_40.png]({{ base_path }}/assets/images/tutorial_o_web_40.png)
-
-[<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial-web/exercise11){: .btn }
-[<span style="display: flex; align-items: center;">Próximo tutorial <span class="material-symbols-outlined">arrow_forward</span></span>]({{ base_path }}/tutorial-web/exercise13){: .btn }
+[<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial-web/exercise18){: .btn }
+[<span style="display: flex; align-items: center;">Próximo tutorial <span class="material-symbols-outlined">arrow_forward</span></span>]({{ base_path }}/tutorial-web/exercise20){: .btn }
