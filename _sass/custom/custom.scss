@@ -719,7 +719,12 @@ a:not([class]) {
   column-gap: 10px;
   margin-right: 33px;
 
+  .toggle-theme {
+    cursor: pointer;
+  }
+
   .select {
+    width: 65px;
     border-style: none;
     background: transparent;
 
@@ -947,8 +952,8 @@ a:not([class]) {
   }
 
   .nav__title.collapsed {
+    height: 100%;
     font-size: 15px !important;
-    height: 30px;
     cursor: pointer;
   }
 

@@ -40,7 +40,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "Indicates the appearance of the container, similar to the [form fiel appearance](https://v8.material.angular.io/components/data/form-field/overview#form-field-appearance-variants){:target='_blank'}"
+  description: "Indicates the appearance of the container, similar to the [form fiel appearance](https://v15.material.angular.io/components/form-field/overview#form-field-appearance-variants){:target='_blank'}"
 }]
 
 outputs: [{
