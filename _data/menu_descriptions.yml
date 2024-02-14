@@ -165,7 +165,7 @@ sections:
       title: "Installation"
       description: "How to install the ontimize-web-ngx-gallery addon"
     - url: "/addons/gallery/component/overview"
-      title: "Installation"
+      title: "Component"
       description: "Introduction and API of the o-gallery component"
   "keycloak":
     - url: "/addons/keycloak/overview/"
