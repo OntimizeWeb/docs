@@ -1324,3 +1324,24 @@ table {
 .hidden {
   display: none;
 }
+
+
+.menuitem-badge {
+  @if $color_scheme=='light' {
+    background: linear-gradient(-180deg, $primary-500 0, $primary-500-24 100%);
+    color: #fff;
+  }
+
+  @else {
+    background: linear-gradient(-180deg, $primary-500-dark 0, $primary-500-24-dark 100%);
+    color: #000;
+  }
+
+  padding: 2px 4px;
+  vertical-align: middle;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 11px;
+  position: relative;
+  top: -1px;
+}
