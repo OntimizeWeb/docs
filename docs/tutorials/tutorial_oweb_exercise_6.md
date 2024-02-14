@@ -43,6 +43,7 @@ mockup.
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
         <p>Lo primero que debemos hacer es importar el nuevo componente y añadirlo al array de declaraciones.</p>
+
 {{"**accounts.module.ts**" | markdownify }}
 {% highlight typescript %}
 import { NgModule } from '@angular/core';
@@ -66,6 +67,7 @@ import { AccountNumberRenderComponent } from './accounts-home/account-number-ren
 })
 export class AccountsModule { }
 {% endhighlight %}
+
 <p>Nuestro componente debe extender de la clase <code>OBaseTableCellRenderer</code> e insertamos la siguiente línea 
 <code>@ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef&lt;any>;</code> para
 adquirir el contenido según una plantilla y acceder a la vista. En el constructor tenemos que añadir el siguiente 
@@ -108,8 +110,8 @@ export class AccountNumberRenderComponent extends OBaseTableCellRenderer {
 }
 {% endhighlight %}
 <p>El componente del render, en su fichero <strong>account-number-render.component.html</strong> tiene que comenzar por
-<code><ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue"></code> y acabar por 
-<code></ng-template></code>. La palabra <em>let</em> declara la variable de la plantilla que será referenciada desde 
+<code>&lt;ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue"&gt;</code> y acabar por 
+<code>&lt;/ng-template&gt;</code>. La palabra <em>let</em> declara la variable de la plantilla que será referenciada desde 
 esta. Las variables de entrada en este caso son <em>cellvalue</em> y <em>rowvalue</em>. El parseador traduce las 
 variables y se las pasa al método <em>getCellValue()</em>.</p>
 
@@ -126,7 +128,7 @@ variables y se las pasa al método <em>getCellValue()</em>.</p>
 
 {{"**accounts-home.component.html**" | markdownify }}
 {% highlight xml %}
-<o-form-layout-manager title="{{'ACCOUNTS' | oTranslate }}" separator=" " mode="dialog" label-columns="ANID">
+<o-form-layout-manager title="{% raw %}{{'ACCOUNTS' | oTranslate }}{% endraw %}" separator=" " mode="dialog" label-columns="ANID">
     <o-table attr="accountsTable" service="branches" entity="account" keys="ACCOUNTID"
         columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
         visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP" query-rows="20">
@@ -760,7 +762,7 @@ invocaremos. Luego se establece el centrado de los elementos en el espacio de la
 
 {{"**accounts-home.component.html**" | markdownify }}
 {% highlight xml %}
-<o-form-layout-manager title="{{'ACCOUNTS' | oTranslate }}" separator=" " mode="dialog" label-columns="ANID">
+<o-form-layout-manager title="{% raw %}{{'ACCOUNTS' | oTranslate }}{% endraw %}" separator=" " mode="dialog" label-columns="ANID">
     <o-table attr="accountsTable" service="branches" entity="account" keys="ACCOUNTID"
         columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
         visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP"

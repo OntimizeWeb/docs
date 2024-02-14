@@ -715,7 +715,7 @@ crearlo y añadirlo al menú lateral.
         
 {{"**employees-home.component.html**" | markdownify }}
 {% highlight xml %}
-<o-form-layout-manager attr="employeesHome" title="{{'EMPLOYEES' | oTranslate }}" separator=" " mode="dialog"
+<o-form-layout-manager attr="employeesHome" title="{% raw %}{{'EMPLOYEES' | oTranslate }}{% endraw %}" separator=" " mode="dialog"
     label-columns="EMPLOYEENAME;EMPLOYEESURNAME">
     <o-table attr="employeesTable" service="employees" entity="employee" keys="EMPLOYEEID"
         columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEPHOTO;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEETYPEID"

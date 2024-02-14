@@ -1247,6 +1247,7 @@ table {
           height: 100%;
           overflow: hidden;
           text-overflow: ellipsis;
+          white-space: nowrap;
 
           @if $color_scheme=='light' {
             color: $primary-500;

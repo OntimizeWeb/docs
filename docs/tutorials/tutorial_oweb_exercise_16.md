@@ -1,8 +1,8 @@
 ---
-title: "Filter elements in a table using a form key"
+title: "Long tasks"
 layout: default
-permalink: /tutorial-web/exercise7/
-nav_order: 7
+permalink: /tutorial-web/exercise16/
+nav_order: 16
 # has_children: false
 # has_toc: false
 # nav_exclude: true
@@ -13,126 +13,101 @@ parent: Tutorial OWeb
 {% include base_path %}
 {% include toc %}
 
-# Filtrar elementos de una tabla a través de una clave del formulario
+# Tareas largas
 ## Introducción
-En este ejercicio, modificaremos el formulario de detalle de un cliente, añadiendo pestañas dentro del formulario, y 
-dentro de esas pestañas mostraremos una lista de todas las cuentas relacionadas con el cliente.
-## Modificar el detalle de los clientes
-![tutorial_o_web_28.png]({{ base_path }}/assets/images/tutorial_o_web_28.png)
+
+En ese ejericio simularemos una pantalla de espera en caso de que la tarea que se esté realizando en el backend sea 
+susceptible de ser pesada y que tarde en responder. En este caso, será un botón que simule una tarea larga en el listado
+de clientes.
+
+## Añadir el botón al listado de clientes
 
 <div class="multicolumn">
     <div class="multicolumnleft">
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
+        <p>Controlaremos que se muestre el panel que hemos añadido se muestre mediante la utilización de la directiva 
+<code>*ngIf</code> evaluando una variable del componente. Cuando esté a true, se mostrará el panel, en caso contrario, 
+quedará oculto.</p>
 
-{{"**customers.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { CustomersRoutingModule } from './customers-routing.module';
-import { CustomersHomeComponent } from './customers-home/customers-home.component';
-import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
-import { CustomersNewComponent } from './customers-new/customers-new.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-
-
-@NgModule({
-  declarations: [
-    CustomersHomeComponent,
-    CustomersDetailComponent,
-    CustomersNewComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    CustomersRoutingModule
-  ]
-})
-export class CustomersModule { }
-{% endhighlight %}
-
-{{"**customers-detail.component.html**" | markdownify }}
+{{"**customers-home.component.html**" | markdownify }}
 {% highlight xml %}
-<o-form attr="customerDetail" service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
-    show-header-navigation="no" class="fill-form">
-    <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no" class="input-padding"></o-text-input>
-    <div fxFlex fxLayout="row" fxLayoutGap="8px">
-        <div>
-            <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png"
-                sql-type="OTHER"></o-image>
-        </div>
-        <mat-tab-group fxFlex>
-            <mat-tab label="{% raw %}{{ 'CUSTOMER_PERSONAL_INFORMATION' | oTranslate }}{% endraw %}">
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-text-input fxFlex="40" attr="NAME" required="yes"></o-text-input>
-                    <o-text-input fxFlex="40" attr="SURNAME" required="yes"></o-text-input>
-                    <o-date-input fxFlex="20" attr="STARTDATE"></o-date-input>
-                </div>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-nif-input fxFlex="40" attr="ID" required="yes"></o-nif-input>
-                    <o-integer-input fxFlex="40" attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
-                    <o-combo fxFlex="20" attr="CUSTOMERTYPEID" service="customers" entity="customerType"
-                        keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
-                        value-column="CUSTOMERTYPEID"></o-combo>
-                </div>
-                <o-email-input attr="EMAIL"></o-email-input>
-                <o-text-input attr="ADDRESS"></o-text-input>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-real-input fxFlex="50" attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
-                        min-decimal-digits="0"></o-real-input>
-                    <o-real-input fxFlex="50" attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
-                        min-decimal-digits="0"></o-real-input>
-                </div>
-                <o-textarea-input attr="COMMENTS"></o-textarea-input>
-            </mat-tab>
-            <mat-tab label="{% raw %}{{ 'ACCOUNTS' | oTranslate }}{% endraw %}">
-                <o-table attr="accountsTable" service="customers" entity="vCustomerAccount" keys="ACCOUNTID"
-                    parent-keys="CUSTOMERID" insert-button="no" refresh-button="no" detail-mode="none"
-                    delete-button="no" query-rows="20"
-                    columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-                    visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP">
-                    <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-                    <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
-                    <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px"
-                        decimal-separator="," content-align="center"></o-table-column>
-                    <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" content-align="center">
-                        <app-account-number-render></app-account-number-render>
-                    </o-table-column>
-                    <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
-                        [operation-function]="intRateMonthly" type="percentage" decimal-separator=","
-                        content-align="center">
-                    </o-table-column-calculated>
-                </o-table>
-            </mat-tab>
-        </mat-tab-group>
+<o-form-layout-manager attr="customersHome" title="{% raw %}{{'CUSTOMERS' | oTranslate }}{% endraw %}" separator=" " mode="tab"
+    label-columns="NAME;SURNAME">
+    <o-table attr="customersTable" service="customers" entity="customer" keys="CUSTOMERID"
+        columns="CUSTOMERID;ID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;CUSTOMERTYPEID"
+        visible-columns="ID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;CUSTOMERTYPEID" query-rows="20">
+        <o-table-button attr="longTaskBtn" (onClick)="longTaskToBackend()" label="{% raw %}{{'longTask' | oTranslate }}{% endraw %}"
+            icon="update"></o-table-button>
+        <o-table-column attr="PHOTO" title="PHOTO" orderable="no" searchable="no" type="image" avatar="yes"
+            empty-image="assets/images/no-image.png" image-type="base64"></o-table-column>
+        <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+        <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
+        <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID">
+            <app-customertype-column-renderer></app-customertype-column-renderer>
+        </o-table-column>
+    </o-table>
+    <div class="waitPanel" *ngIf="showWaitForLongTask">
+        <mat-spinner></mat-spinner>
     </div>
-</o-form>
+</o-form-layout-manager>
 {% endhighlight %}
 
-<p>Para añadir pestañas, debemos declarar un contenedor <code>&lt;mat-tab-group&gt;</code> (más información en la 
-siguiente <a href="https://material.angular.io/components/tabs/overview" target="_blank">documetación</a>) y añadir
-etiquetas <code>&lt;mat-tab&gt</code> para cada pestaña. El filtrado de las tablas se hace añadiendo el parámetro 
-<code>parent-keys="CUSTOMERID"</code> siendo esta columna una colummna presente en el formulario padre.</p>
-
-<p>Añadimos la siguiente configuración al archivo <strong>customer-detail.component.ts</strong></p>
-
-{{"**customer-detail.component.ts**" | markdownify }}
+{{"**customers-home.component.ts**" | markdownify }}
 {% highlight typescript %}
-import { Component } from '@angular/core';
-import { intRateMonthlyFunction } from 'src/app/shared/shared.module';
+import { Component, ViewChild } from '@angular/core';
+import { OTableButtonComponent, OntimizeService } from 'ontimize-web-ngx';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-customers-detail',
-  templateUrl: './customers-detail.component.html',
-  styleUrls: ['./customers-detail.component.css']
+  selector: 'app-customers-home',
+  templateUrl: './customers-home.component.html',
+  styleUrls: ['./customers-home.component.css']
 })
-export class CustomersDetailComponent {
+export class CustomersHomeComponent {
 
-  public intRateMonthly = intRateMonthlyFunction;
+  public showWaitForLongTask = false;
+  private subscription: Subscription;
 
+  constructor(
+    private ontimizeService: OntimizeService
+  ) {
+    this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration("customers"));
+  }
+
+  longTaskToBackend() {
+    this.showWaitForLongTask = true;
+    this.subscription = this.ontimizeService.query(undefined, [], 'longTask').subscribe({
+      next: (res: any) => {
+        console.log("Long task finished");
+      },
+      error: (err: any) => this.showWaitForLongTask = false,
+      complete: () => this.showWaitForLongTask = false
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+}
+{% endhighlight %}
+
+{{"**customers-home.component.css**" | markdownify }}
+{% highlight css %}
+.waitPanel {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #00000066;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
 }
 {% endhighlight %}
     </div>
@@ -179,6 +154,22 @@ export class CustomersDetailComponent {
           accounts
           <ul>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            accounts-detail
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              movement-column-renderer
+              <ul>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+              </ul>
+              </li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -194,6 +185,30 @@ export class CustomersDetailComponent {
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            accounts-new
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            add-customer
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            add-movement
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+            </ul>
+            </li>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
@@ -202,11 +217,27 @@ export class CustomersDetailComponent {
           branches
           <ul>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            branches-detail
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            branches-new
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
@@ -220,16 +251,24 @@ export class CustomersDetailComponent {
             customers-detail
             <ul>
               <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              customertype-column-renderer
+              <ul>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+              </ul>
+              </li>
+              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -241,7 +280,7 @@ export class CustomersDetailComponent {
             </ul>
             </li>
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -277,6 +316,29 @@ export class CustomersDetailComponent {
             <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          service-ex
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            service-ex-details
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            service-ex-home
+            <ul>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+          </ul>
+          </li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
@@ -287,9 +349,51 @@ export class CustomersDetailComponent {
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          account-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          branch-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          customer-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          employee-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+          </ul>
+          </li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          service-ex-card
+          <ul>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+          </ul>
+          </li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
@@ -336,11 +440,14 @@ export class CustomersDetailComponent {
         <ul>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
           <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
         <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -388,7 +495,34 @@ export class CustomersDetailComponent {
     </div>
 </div>
 
-![tutorial_o_web_29.png]({{ base_path }}/assets/images/tutorial_o_web_29.png)
+## Traducciones
+<div class="multicolumn">
+    <div class="multicolumnleft">
+        <button class="unstyle toggle-tree-btn">
+            <span class="material-symbols-outlined">right_panel_open</span>
+        </button>
+        
+{{"**en.json**" | markdownify }}
+{% highlight json %}
+{
+   ...
+  "longTask": "Long task"
+}
+{% endhighlight %}
 
-[<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial-web/exercise6){: .btn}
-[<span style="display: flex; align-items: center;">Próximo tutorial <span class="material-symbols-outlined">arrow_forward</span></span>]({{ base_path }}/tutorial-web/exercise8){: .btn}
+{{"**es.json**" | markdownify }}
+{% highlight json %}
+{
+   ...
+  "longTask": "Tarea larga"
+}
+{% endhighlight %}
+    </div>
+    <div class="multicolumnright jstreeloader collapsed">
+        // <ul> </ul> de jstree
+    </div>
+</div>
+
+
+[<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial-web/exercise15){: .btn }
+[<span style="display: flex; align-items: center;">Próximo tutorial <span class="material-symbols-outlined">arrow_forward</span></span>]({{ base_path }}/tutorial-web/exercise17){: .btn }

@@ -494,7 +494,7 @@ entidad será <em>films</em> y la clave primaria de la tabla será <em>uuid</em>
 
 {{"**service-ex-home.component.html**" | markdownify }}
 {% highlight xml %}
-<o-form-layout-manager title="{{'FILMS' | oTranslate }}" separator=" " mode="tab" label-columns="title">
+<o-form-layout-manager title="{% raw %}{{'FILMS' | oTranslate }}{% endraw %}" separator=" " mode="tab" label-columns="title">
     <o-table attr="films" service-type="starWars" entity="films" keys="uuid" columns="title;episode_id;director;uuid"
         visible-columns="title;director;episode_id" query-rows="20">
     </o-table>

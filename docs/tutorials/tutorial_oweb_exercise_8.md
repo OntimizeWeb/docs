@@ -87,7 +87,7 @@ export class BranchesRoutingModule { }
 {{"**branches-detail.component.html**" | markdownify }}
 {% highlight xml %}
 <o-form service="branches" entity="branch" keys="OFFICEID" header-actions="R;U;D" show-header-navigation="no">
-    <o-column title="{{ 'BRANCH_INFORMATION' | oTranslate }}">
+    <o-column title="{% raw %}{{ 'BRANCH_INFORMATION' | oTranslate }}{% endraw %}">
         <div fxLayout="row" fxLayoutGap="8px">
             <o-text-input fxFlex="15" attr="OFFICEID" sql-type="STRING" enabled="no" required="yes"></o-text-input>
             <o-text-input fxFlex="85" attr="NAME" required="yes"></o-text-input>
@@ -98,7 +98,7 @@ export class BranchesRoutingModule { }
             <o-text-input fxFlex="70" attr="ADDRESS"></o-text-input>
         </div>
     </o-column>
-    <o-row title="{{ 'CUSTOMERS_INFORMATION' | oTranslate }}">
+    <o-row title="{% raw %}{{ 'CUSTOMERS_INFORMATION' | oTranslate }}{% endraw %}">
         <o-table fxFlex attr="customerAccountTable" service="customers" entity="vCustomerAccount" parent-keys="OFFICEID"
             columns="ID;NAME;SURNAME;CUSTOMERID" visible-columns="ID;NAME;SURNAME" insert-button="no" keys="CUSTOMERID"
             query-rows="5">
@@ -493,7 +493,7 @@ export class BranchesRoutingModule { }
 {{"**branches-new.component.html**" | markdownify }}
 {% highlight xml %}
 <o-form attr="branchesNew" service="branches" entity="branch" keys="OFFICEID">
-    <o-column title="{{ 'BRANCH_INFORMATION' | oTranslate }}">
+    <o-column title="{% raw %}{{ 'BRANCH_INFORMATION' | oTranslate }}{% endraw %}">
         <div fxLayout="row" fxLayoutGap="8px">
             <o-text-input fxFlex="15" class="input-padding" attr="OFFICEID" sql-type="STRING" enabled="yes"
                 required="yes"></o-text-input>
