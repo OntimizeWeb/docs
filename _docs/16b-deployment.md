@@ -52,7 +52,7 @@ Comparision of the load time for the [OntimizeWeb Playground](https://ontimizewe
 
 Once you have the production version of your application you can deploy it on a web server or to create cross platform applications using [Apache Cordova](https://cordova.apache.org/docs/en/latest/){:target="_blank"}.
 
-After wrapping your application with Apache Cordova, check you has accoplished the installation and configuration requirements [here]({{base_path}}/deploy/cordova-requirements/){:target="_blank"}.
+After wrapping your application with Apache Cordova, check you has accoplished the installation and configuration requirements [here]({{base_path}}/deployment/cordova-requirements/){:target="_blank"}.
 
 Follow the next steps:
 
@@ -75,7 +75,7 @@ Copy all files withing the output folder of your application to the `www` folder
 
 Alternatively, you can modify the `production` script in the `package.json` file and add the `--output-path` option in order to indicate the directory where the output files must be placed. The `base-href` option should be set to `.`, this is due to Apache Cordova does not manage absolute paths inside Cordova projects. See the example below.
 
-``` 
+```
   "production": "ng build --aot=false --target -prod --base-href . --output-path ./quickstart/www/",
 ```
 
@@ -155,7 +155,7 @@ To set up the Angular service worker in your project you need to follow next act
 
 ```bash
   ng add @angular/pwa --project <name of project as in angular.json>
-``` 
+```
 Note: the project part is necessary if you have a multi project setup
 
 This command will do the following tasks:
