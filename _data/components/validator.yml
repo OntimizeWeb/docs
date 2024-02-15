@@ -8,8 +8,13 @@ directive : "o-validator"
 attributes: [{
   name: "validator-function",
   type: "ValidatorFn",
-  default: "[]",
+  default: "",
   description: "Custom validators to apply to the component value. It must be a Angular [ValidatorFn](https://v15.angular.io/api/forms/ValidatorFn)"
+},{
+  name: "async-validator-function",
+  type: "AsyncValidatorFn",
+  default: "",
+  description: "Custom async validator to apply to the component value. It must be a Angular [AsyncValidatorFn](https://v15.angular.io/api/forms/AsyncValidatorFn)"
 },{
   name: "error-name",
   type: "string",
