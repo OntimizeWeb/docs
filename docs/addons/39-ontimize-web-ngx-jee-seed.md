@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /addons/ontimize-web-ngx-jee-seed/
+permalink: /addons/ontimize-web-ngx-jee-seed/overview/
 title: "App Seed"
 excerpt: ""
 parent: Addons

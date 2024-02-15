@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Layout
-permalink: /components/layout/
+permalink: /components/layout/overview
 author_profile: false
 has_children: true
 parent: Components

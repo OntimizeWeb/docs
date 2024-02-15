@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data
-permalink: /components/data/
+permalink: /components/data/overview/
 author_profile: false
 has_children: true
 parent: Components

@@ -1,12 +1,15 @@
 ---
 layout: default
 title: Buttons
-permalink: /components/buttons/
+permalink: /components/buttons/overview/
 author_profile: false
 has_children: true
 parent: Components
 nav_order: 2
+has_toc: false
 ---
+
+{% include nav_cards.html folder="buttons" %}
 
 {% include base_path %}
 
