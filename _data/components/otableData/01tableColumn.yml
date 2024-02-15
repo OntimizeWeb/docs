@@ -129,4 +129,14 @@ attributes: [{
   type: "ValidatorFn[]",
   default: "[]",
   description: "Array of custom validators to apply to the component value. Each elemnent must be a Angular [ValidatorFn](https://v15.angular.io/api/forms/ValidatorFn)"
+},{
+  name: "async-validators",
+  type: "AsyncValidatorFn[]",
+  default: "[]",
+  description: "Array of custom async validators to apply to the component value. Each element must be a Angular [AsyncValidatorFn](https://v15.angular.io/api/forms/AsyncValidatorFn)"
+},{
+  name: "validators-errors",
+  type: "ErrorData[]",
+  default: "[]",
+  description: "Array of custom validators error information (synchronous or asynchronous). Each element must have a 'name' property corresponding to the validator error name and a 'text' property that will be displayed when the component value does not satisfy the validator condition"
 }]
