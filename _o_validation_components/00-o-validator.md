@@ -11,11 +11,11 @@ Using the `o-validator` component allows to define a validator function that wil
 <h3 class="grey-color">Example</h3>
 
 ```html
-   <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}">
-        <o-validator error-name="requiredB" error-text="Must contain a 'b'"
-          [validator-function]="bValidator">
-        </o-validator>
-  </o-text-input>
+<o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}">
+  <o-validator error-name="requiredB" error-text="Must contain a 'b'"
+    [validator-function]="bValidator">
+  </o-validator>
+</o-text-input>
 ```
 
 ```javascript
