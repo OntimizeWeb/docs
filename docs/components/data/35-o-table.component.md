@@ -1471,19 +1471,19 @@ First, create a Sass `mixin` that accepts an Angular Material color theme and ou
 *custom-row-header-theme.scss*
 ```scss
 // Import library functions for theme creation.
-@import '~@angular/material/theming';
+@use '@angular/material'as mat;
+@use 'sass:map';
 
-@mixin custom-row-header-theme($theme) {
+@mixin table-theme($theme) {
   // Extract the palettes you need from the theme definition.
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
+  $primary: map.get($theme, color, primary);
 
-  // Define the styles that affect the table header by the theme
-  .o-table .o-table-body .mat-table .mat-header-roww{
-      .mat-header-cell {
-        background-color: mat-color($primary);
-        color: mat-color($primary, default-contrast);
-      }
+// Define the styles that affect the table header by the theme
+  .o-table {
+    .mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell {
+      background-color: mat.get-color-from-palette($primary, 500);
+      color: mat.get-color-from-palette($primary, default-contrast);
+    }
   }
 }
 ```
@@ -1497,25 +1497,23 @@ Use the Sass `@include `keyword to include a component's theme mixin wherever yo
 
 **app.scss**
 ```scss
-/***** Importing ontimize-web-ngx-theming prebuilt theme (choose one) *****/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-indigo-pink.scss'; */
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-deeppurple-amber.scss;'*/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';*/
-/* @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';*/
+@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
+@use 'ontimize-web-ngx/theming/ontimize-style.scss';
 
-@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
-/*
-* After define theme, it is necessary to transfer color to Ontimize Web framework
-*/
-@import 'node_modules/ontimize-web-ngx/ontimize/components/theming/all-theme.scss';
-@include o-material-theme($theme);
+// Include ontimize styles
+@include ontimize-style.ontimize-theme-styles(theme.$theme);
+
+@import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss';
+@include o-gallery-theme(theme.$theme);
 
 /*
-* Propagate theme to custom component definition.
+* Import application themes.
 */
-@import '../../app/shared/custom-row-header-theme.scss';
-@include custom-row-header-theme($theme);
 
+...
+
+@import '../../app/main/data/table/table-theme.scss';
+@include table-theme(theme.$theme);
 ```
 
 ![Theming your table]({{ "/assets/images/components/tabla/customization.png" | absolute_url }}){: .comp-example-img}
