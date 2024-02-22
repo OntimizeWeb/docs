@@ -10448,7 +10448,11 @@ a:not([class]):hover {
   column-gap: 10px;
   margin-right: 33px;
 }
+.header-custom-main .toggle-theme {
+  cursor: pointer;
+}
 .header-custom-main .select {
+  width: 65px;
   border-style: none;
   background: transparent;
   color: rgba(0, 0, 0, 0.7411764706);
@@ -10610,8 +10614,8 @@ a:not([class]):hover {
     bottom: 14px;
   }
   .nav__title.collapsed {
+    height: 100%;
     font-size: 15px !important;
-    height: 30px;
     cursor: pointer;
   }
   .sidebar__right.collapsed {
@@ -10803,6 +10807,7 @@ table {
   height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   color: #1464A5;
   font-weight: 500;
 }
@@ -10842,6 +10847,18 @@ table {
 
 .hidden {
   display: none;
+}
+
+.menuitem-badge {
+  background: linear-gradient(-180deg, #1464A5 0, rgba(20, 100, 165, 0.2392156863) 100%);
+  color: #fff;
+  padding: 2px 4px;
+  vertical-align: middle;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 11px;
+  position: relative;
+  top: -1px;
 }
 
 /*# sourceMappingURL=just-the-docs-default.css.map */
