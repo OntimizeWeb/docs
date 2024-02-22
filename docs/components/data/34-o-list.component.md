@@ -20,11 +20,16 @@ For adding a list component to your application you must insert the `o-list` in 
 The `o-list-item-text` component is used to display list items with a maximum of two lines of text and a title.
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
-  keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
+<o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
+  title="List" quick-filter="true" quick-filter-columns="name;username;email"
+  refresh-button="true" insert-button="false" delete-button="false"
+  selectable="false" detail-button-in-row="false"
+  detail-button-in-row-icon="chevron_right" edit-button-in-row="false"
+  edit-button-in-row-icon="edit" detail-mode="none" pagination-controls="false"
+  page-size-options="5;10" insert-button-position="bottom" show-buttons-text="false">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-text #item title="{% raw %}{{ row.NAME }}{% endraw %}" primary-text="{% raw %}{{ row.EMAIL }}{% endraw %}"
-      secondary-text="{% raw %}{{ row.ADDRESS }}{% endraw %}">
+    <o-list-item-text #item  title="{{ row.username }}"
+      primary-text="{{ row.name }}" secondary-text="{{ row.email }}" (icon-action)="addToFavorites(row, item)">
     </o-list-item-text>
   </o-list-item>
 </o-list>
@@ -39,11 +44,15 @@ You can see an example of this component in the [OntimizeWeb playground]({{site.
 The `o-list-item-avatar` component is used to display list items with an avatar and a maximum of two lines of text and a title.
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
-  keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
+<o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
+  title="List" quick-filter="true" quick-filter-columns="name;username;email"
+  refresh-button="true" insert-button="false" delete-button="false"
+  selectable="false" detail-button-in-row="false"
+  detail-button-in-row-icon="chevron_right" edit-button-in-row="false"
+  edit-button-in-row-icon="edit" detail-mode="none">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-avatar #item avatar="./assets/images/ontimize.png" title="{% raw %}{{ row.NAME }}{% endraw %}"
-      primary-text="{% raw %}{{ row.EMAIL }}{% endraw %}" secondary-text="{% raw %}{{ row.ADDRESS }}{% endraw %}">
+    <o-list-item-avatar #tem  avatar="{{ row.thumbnailUrl }}" title="{{ row.username }}" primary-text="{{ row.name }}"
+      secondary-text="{{ row.email }}" (icon-action)="addToFavorites(row, item)">
     </o-list-item-avatar>
   </o-list-item>
 </o-list>
@@ -58,11 +67,13 @@ You can see an example of this component in the [OntimizeWeb playground]({{site.
 The `o-list-item-card` component is used to display a card list item with text, image and action buttons.
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
-  keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
+	<o-list #list attr="list" title="List" columns="id;name;username;email;street;phone" keys="id"
+  [static-data]="getStaticData()" refresh-button="true" quick-filter="true" insert-button="false"
+  row-height="medium" detail-mode="none">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card #item title="{% raw %}{{ row.NAME }}{% endraw %}" subtitle="{% raw %}{{ row.EMAIL }}{% endraw %}"
-      image="./assets/images/ontimize.png" action-1-text="Contact" action-2-text="Share">
+    <o-list-item-card #item title="{{ row.username }}" subtitle="{{ row.name }}" show-image="true" image="{{ row.image }}"
+      action-1-text="ACTION 1" action-2-text="ACTION 2"
+      (action-1)="onAction1()" (action-2)="onAction2()">
     </o-list-item-card>
   </o-list-item>
 </o-list>
@@ -77,11 +88,13 @@ You can see an example of this component in the [OntimizeWeb playground]({{site.
 The `o-list-item-card-image` component is used to display card list items with a big image.
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
-  keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
-  <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card-image #item title="{% raw %}{{ row.NAME }}{% endraw %}" subtitle="{% raw %}{{ row.EMAIL }}{% endraw %}"
-      content="{% raw %}{{ row.ADDRESS }}{% endraw %}" avatar="./assets/images/ontimize.png" image="./assets/images/ontimize.png" action-1-text="Contact" action-2-text="Share" collapsible="yes" collapsed="no">
+<o-list #list attr="list" title="List" columns="id;name;username;email;street;phone" keys="id"
+  [static-data]="getStaticData()" refresh-button="true" insert-button="false"
+  quick-filter="no" row-height="medium" detail-mode="none">
+  <o-list-item *ngFor="let row of #list.dataArray">
+    <o-list-item-card-image title="{{ row.username }}" subtitle="{{ row.name }}" content="{{ row.body }}"
+      image="{{ row.image }}" action-1-text="ACTION 1" action-2-text="ACTION 2" (action-1)="onAction1()" (action-2)="onAction2()"
+       (icon-action)="onIconAction()" collapsible="false" collapsed="true">
     </o-list-item-card-image>
   </o-list-item>
 </o-list>
@@ -96,20 +109,15 @@ You can see an example of this component in the [OntimizeWeb playground]({{site.
 When building an `o-list` component you can include one of the predefined list items the **OntimizeWeb** offers or you can include your own list item. For including a custom list item, **OntimizeWeb** offers the `o-list-item` directive that can be attached to an angular material list item (`mat-list-item`) or an angular material card (`mat-card`).
 
 ```html
-<o-list #list attr="customerlist" title="CUSTOMERS" service="customers" entity="customer"
-  keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL">
-  <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+	<o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
+  <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
     <mat-card-header>
       <div mat-card-avatar>
-        <img matListAvatar fxFill src="./assets/images/ontimize.png">
+        <img src="{{ row.image }}" fxFill />
       </div>
-      <mat-card-title>{{ rowData.NAME }}</mat-card-title>
-      <mat-card-subtitle>{{ rowData.EMAIL }}</mat-card-subtitle>
+      <mat-card-title>{{ row.name }}</mat-card-title>
+      <mat-card-subtitle>{{ row.body }}</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </mat-card-content>
   </mat-card>
 </o-list>
 ```
@@ -125,9 +133,9 @@ If the selector `o-list-toolbar` is used together with `position='start'` the co
 ```ts
 <o-list #list attr="list" ... refresh-button="yes" quick-filter="yes"...>
   <!-- Custom content toolbar in position start -->
-  <o-combo o-grid-toolbar position="start" label="Sort" width="100px"...></o-combo>
+  <o-combo o-list-toolbar position="start" label="Sort" width="100px"...></o-combo>
   <!-- Custom content toolbar in position end -->
-  <o-slide-toggle o-grid-toolbar position="end"....></o-slide-toggle>
+  <o-slide-toggle o-list-toolbar position="end"....></o-slide-toggle>
 </o-list>
 ```
 
