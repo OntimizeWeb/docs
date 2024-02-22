@@ -55,6 +55,12 @@ methods: [{
   name: "moveThumbnailsRight()",
   description: "Moves thumbnails to right"
 },{
+  name: "moveThumbnailsTop()",
+  description: "Moves thumbnails to top"
+},{
+  name: "moveThumbnailsBottom()",
+  description: "Moves thumbnails to bottom"
+},{
   name: "canMoveThumbnailsLeft()",
   description: "Returns true if you can move thumbnails to left",
   returns: "boolean"
@@ -62,4 +68,23 @@ methods: [{
   name: "canMoveThumbnailsRight()",
   description: "Returns true if you can move thumbnails to right",
   returns: "boolean"
+},{
+  name: "canMoveThumbnailsTop()",
+  description: "Returns true if you can move thumbnails to top",
+  returns: "boolean"
+},{
+  name: "canMoveThumbnailsBottom()",
+  description: "Returns true if you can move thumbnails to bottom",
+  returns: "boolean"
+},{
+  name: "changeThumbnailsColumns()",
+  description: "Change the number of thumbnail columns"
+},{
+  name: "changeAspectRatio()",
+  parameters: "newRatio:string",
+  description: "Change the desired width-to-height ratio of the images. Format sintax: number:number (e.g. 4:3)"
+},
+{
+  name: "changeThumbnailsRows()",
+  description: "Change the number of thumbnail rows"
 }]

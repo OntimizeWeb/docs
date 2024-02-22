@@ -520,9 +520,6 @@ este caso, lo que haremos será exportar una constante desde el fichero de menu 
 ser declarada dentro del módulo de **shared**. También en dicho fichero, añadiremos a cada opción del menú que queramos 
 añadir la tarjeta su correspondiente componente.
 
-A mayores en el fichero **shared.module.ts**, añadiremos en el array de **providers** el servicio externo que usaremos 
-en el componente de la tarjeta correspondiente al menú del servicio externo.
-
 <div class="multicolumn">
     <div class="multicolumnleft">
         <button class="unstyle toggle-tree-btn">
@@ -593,11 +590,7 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
     CustomertypeColumnRendererComponent,
     MovementColumnRendererComponent,
     ...MENU_COMPONENTS
-  ],
-  providers: [{
-    provide: 'starWars',
-    useValue: StarWarsService
-  }]
+  ]
 
 })
 export class SharedModule { }
@@ -2842,7 +2835,8 @@ export class AccountCardComponent implements OnInit {
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
         <p>Como estamos usando un servicio externo, no hace falta configurar el servicio de Ontimize, únicamente 
-inyectarlo en el constructor y realizar la consulta</p>
+inyectarlo en el constructor y realizar la consulta. Añadimos en el componente el servicio 
+<strong>StarWarsService</strong> como <em>providers</em> para que pueda realizar la petición</p>
 
 {{"**service-ex-card.component.ts**" | markdownify }}
 {% highlight typescript %}

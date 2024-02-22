@@ -65,7 +65,7 @@ export class CustomersModule { }
                 sql-type="OTHER"></o-image>
         </div>
         <mat-tab-group fxFlex>
-            <mat-tab label="{{ 'CUSTOMER_PERSONAL_INFORMATION' | oTranslate }}">
+            <mat-tab label="{% raw %}{{ 'CUSTOMER_PERSONAL_INFORMATION' | oTranslate }}{% endraw %}">
                 <div fxLayout="row" fxLayoutGap="8px">
                     <o-text-input fxFlex="40" attr="NAME" required="yes"></o-text-input>
                     <o-text-input fxFlex="40" attr="SURNAME" required="yes"></o-text-input>
@@ -88,7 +88,7 @@ export class CustomersModule { }
                 </div>
                 <o-textarea-input attr="COMMENTS"></o-textarea-input>
             </mat-tab>
-            <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
+            <mat-tab label="{% raw %}{{ 'ACCOUNTS' | oTranslate }}{% endraw %}">
                 <o-table attr="accountsTable" service="customers" entity="vCustomerAccount" keys="ACCOUNTID"
                     parent-keys="CUSTOMERID" insert-button="no" refresh-button="no" detail-mode="none"
                     delete-button="no" query-rows="20"

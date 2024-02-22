@@ -7,6 +7,7 @@ parent: Input
 grand_parent: Components
 nav_order: 1
 ---
+
 {% include base_path %}
 {% include toc %}
 
@@ -32,7 +33,7 @@ You can modify value by setting the `data` attribute or calling the `setData` me
 You can configure multiple appearance variants changing the `appearance` and `float-label` input values.
 
 ### Appearance
-The `appearance` input indicates which of the different `mat-form-field` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://material.angular.io/components/form-field/overview#form-field-appearance-variants){:target="_blank"}.
+The `appearance` input indicates which of the different `mat-form-field` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v15.material.angular.io/components/form-field/overview#form-field-appearance-variants).
 
 
 Global default appearance options can be specified by providing a value for *MAT_FORM_FIELD_DEFAULT_OPTIONS* in your application's root module. Like the property, the global setting can be either legacy, standard, fill or outside.
@@ -45,7 +46,7 @@ Global default appearance options can be specified by providing a value for *MAT
 })
 ```
 ### Float label
-The `float-label` input indicates which of the different `mat-form-field` label behaviours is chosen. It has the same features that Angular Material appearance input, watch it [here](https://material.angular.io/components/form-field/overview#floating-label){:target="_blank"}
+The `float-label` input indicates which of the different `mat-form-field` label behaviours is chosen. It has the same features that Angular Material appearance input, watch it [here](https://v15.material.angular.io/components/form-field/overview#floating-label)
 
 Global default label options can be specified by providing a value for *MAT_LABEL_GLOBAL_OPTIONS* in your application's root module. Like the property, the global setting can be either always, never, or auto.
 
@@ -87,27 +88,28 @@ Using the `validators` input has the disadvantage that the user cannot define an
 
 Below is an example of using the **pattern validator**.
 ```html
- <o-password-input #newpassword attr="NEW_PASSWORD" required="yes" min-length="8" [validators]="validatorsNewPasswordArray">
-    <o-validator error-name="hasCapitalCase" error-text="VALIDATOR.HASCAPITALCASE"></o-validator>
-    <o-validator error-name="hasNumber" error-text="VALIDATOR.HASNUMBER"></o-validator>
-    <o-validator error-name="hasSmallCase" error-text="VALIDATOR.HASSMALLCASE"></o-validator>
-    <o-validator error-name="hasSpecialCharacters" error-text="VALIDATOR.HASSPECIALCHARACTERS"></o-validator>
-  </o-password-input>
+<o-password-input attr="NEW_PASSWORD" required="yes" min-length="8" [validators]="validatorsNewPasswordArray">
+  <o-validator error-name="hasCapitalCase" error-text="VALIDATOR.HASCAPITALCASE"></o-validator>
+  <o-validator error-name="hasNumber" error-text="VALIDATOR.HASNUMBER"></o-validator>
+  <o-validator error-name="hasSmallCase" error-text="VALIDATOR.HASSMALLCASE"></o-validator>
+  <o-validator error-name="hasSpecialCharacters" error-text="VALIDATOR.HASSPECIALCHARACTERS"></o-validator>
+</o-password-input>
 ```
 
 ```ts
 ...
-  validatorsNewPasswordArray: ValidatorFn[] = [];
-  constructor() {
-    // check whether the entered password has a number
-    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\d/, 'hasNumber'));
-    // check whether the entered password has upper case letter
-    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase'));
-    // check whether the entered password has small case letter
-    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase'));
-    // check whether the entered password has a special character
-    this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/, 'hasSpecialCharacters'));
-  }
+validatorsNewPasswordArray: ValidatorFn[] = [];
+
+constructor() {
+  // check whether the entered password has a number
+  this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\d/, 'hasNumber'));
+  // check whether the entered password has upper case letter
+  this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase'));
+  // check whether the entered password has small case letter
+  this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase'));
+  // check whether the entered password has a special character
+  this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/, 'hasSpecialCharacters'));
+}
 ...
 ```
 ![Input pattern validator]({{ "/assets/images/components/inputs/validators/pattern.png" | absolute_url }}){: .comp-example-img}
@@ -117,49 +119,133 @@ Below is an example of using the **pattern validator**.
 Also user can add its own validators to a input component using the `validators` input.
 
 ```html
-   <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}"
-   [validators]="validatorsArray"></o-text-input>
+<o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}"
+  [validators]="validatorsArray">
+</o-text-input>
 ```
 
 ```javascript
    ...
 
-  import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms';
+import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms';
 
-  validatorsArray: ValidatorFn[] = [];
+validatorsArray: ValidatorFn[] = [];
 
-  constructor() {
-    this.validatorsArray.push(this.aValidator);
-    this.validatorsArray.push(this.bValidator);
+constructor() {
+  this.validatorsArray.push(this.aValidator);
+  this.validatorsArray.push(this.bValidator);
+}
+
+aValidator(control: FormControl): ValidationErrors {
+  let result = {};
+  if (control.value && control.value.toString().indexOf('a') === -1) {
+    result['requiredLowercaseA'] = true;
   }
-
-
-  aValidator(control: FormControl): ValidationErrors {
-    let result = {};
-    if (control.value && control.value.toString().indexOf('a') === -1) {
-      result['requiredLowercaseA'] = true;
-    }
-    if (control.value && control.value.toString().indexOf('A') === -1) {
-      result['requiredUppercaseA'] = true;
-    }
-    return result;
+  if (control.value && control.value.toString().indexOf('A') === -1) {
+    result['requiredUppercaseA'] = true;
   }
+  return result;
+}
 
-  bValidator(control: FormControl): ValidationErrors {
-    if (control.value && control.value.toString().indexOf('b') === -1) {
-      return {
-        'requiredB': true
-      };
-    }
-    return {};
+bValidator(control: FormControl): ValidationErrors {
+  if (control.value && control.value.toString().indexOf('b') === -1) {
+    return {
+      'requiredB': true
+    };
   }
+  return {};
+}
    ...
 ```
+
+Same for asynchronous validators using the `async-validators` input.
+
+
+```html
+<o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}"
+  [async-validators]="asyncValidatorsArray">
+</o-text-input>
+```
+
+```javascript
+   ...
+
+import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms';
+
+asyncValidatorsArray: AsyncValidatorFn[] = [];
+
+constructor(private charValidatorService: CharValidatorService) {
+  this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsLowercaseA()));
+  this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsUppercaseA()));
+  this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsB()));
+}
+
+   ...
+```
+
+```javascript
+export class AsyncValidatorsHelper {
+  static createValidator(validator: CharValidator): AsyncValidatorFn {
+    return (control: AbstractControl): Observable<ValidationErrors> => {
+      return control.value ?
+        validator.fn(control.value)
+          .pipe(
+            map((isValid: boolean) => isValid ? null : validator.error)
+          )
+        : of(null)
+    };
+  }
+}
+
+interface CharValidator {
+  fn: (value: string) => Observable<boolean>
+  error: { [key: string]: boolean; }
+}
+
+@Injectable({
+  providedIn: 'root',
+})
+export class CharValidatorService {
+
+  containsLowercaseA(): CharValidator {
+    return {
+      fn: (value: string): Observable<boolean> => {
+        return of(value.indexOf('a') !== -1).pipe(delay(1000))
+      },
+      error: {
+        'requiredLowercaseA': true
+      }
+    }
+  }
+
+  containsUppercaseA(): CharValidator {
+    return {
+      fn: (value: string): Observable<boolean> => {
+        return of(value.indexOf('A') !== -1).pipe(delay(1000))
+      },
+      error: {
+        'requiredUppercaseA': true
+      }
+    }
+  }
+
+  containsB(): CharValidator {
+    return {
+      fn: (value: string): Observable<boolean> => {
+        return of(value.indexOf('b') !== -1).pipe(delay(1000))
+      },
+      error: {
+        'requiredB': true
+      }
+    }
+  }
+}
+```
+
 ## Label visible
 Form data components allow you to show or hide label with `label-visible` attribute. By default, this value is *true*.
 
-{: .note }
->This attribute *not* apply in `o-checkbox`,`o-radio`, `o-slider` and `o-html-input`.
+>**NOTE**: This attribute *not* apply in `o-checkbox`,`o-radio`, `o-slider` and `o-html-input`.
 
 ## Required
 A input can be market with a `required` attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the `hide-required-marker` property on *form data component*.

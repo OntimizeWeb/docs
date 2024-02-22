@@ -40,9 +40,9 @@ de tabla a formato de cuadrícula, y modificar su formulario detalle para que se
         <div (click)="openDetail(data)" fxLayout="column" fxLayoutAlign="space-evenly center"
             class="mat-elevation-z1 employeeCard">
             <img [src]="getImageSrc(data.EMPLOYEEPHOTO)" width="144px" height="200px">
-            <span><strong>{{ data.EMPLOYEENAME }} {{data.EMPLOYEESURNAME}}</strong></span>
-            <span><em>{{ data.EMPLOYEETYPENAME }}</em></span>
-            <span class="office">{{ data.NAME }}</span>
+            <span><strong>{% raw %}{{ data.EMPLOYEENAME }}{% endraw %} {% raw %}{{data.EMPLOYEESURNAME}}{% endraw %}</strong></span>
+            <span><em>{% raw %}{{ data.EMPLOYEETYPENAME }}{% endraw %}</em></span>
+            <span class="office">{% raw %}{{ data.NAME }}{% endraw %}</span>
         </div>
     </o-grid-item>
 </o-grid>
@@ -540,30 +540,30 @@ export class EmployeesHomeComponent implements OnInit {
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="4px" class="employeeFirst">
             <img [src]="getImageSrc(data.EMPLOYEEPHOTO)" width="144px" height="200px">
-            <span><strong>{{ data.EMPLOYEENAME }} {{ data.EMPLOYEESURNAME }}</strong></span>
+            <span><strong>{% raw %}{{ data.EMPLOYEENAME }}{% endraw %} {% raw %}{{ data.EMPLOYEESURNAME }}{% endraw %}</strong></span>
             <mat-divider></mat-divider>
-            <span><em>{{ data.EMPLOYEETYPENAME }}</em></span>
+            <span><em>{% raw %}{{ data.EMPLOYEETYPENAME }}{% endraw %}</em></span>
             <mat-divider></mat-divider>
         </div>
         <div fxLayout="column" class="employeeSecond">
             <span *ngIf="data.EMPLOYEEEMAIL;else no_mail">
-                <mat-icon>email</mat-icon><span>{{ data.EMPLOYEEEMAIL }}</span>
+                <mat-icon>email</mat-icon><span>{% raw %}{{ data.EMPLOYEEEMAIL }}{% endraw %}</span>
             </span>
-            <ng-template #no_mail><span><mat-icon>email</mat-icon><span>{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}</span></span></ng-template>
+            <ng-template #no_mail><span><mat-icon>email</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
+                        oTranslate}}{% endraw %}</span></span></ng-template>
             <span *ngIf="data.EMPLOYEEPHONE;else no_phone">
-                <mat-icon>smartphone</mat-icon><span>{{ data.EMPLOYEEPHONE }}</span>
+                <mat-icon>smartphone</mat-icon><span>{% raw %}{{ data.EMPLOYEEPHONE }}{% endraw %}</span>
             </span>
-            <ng-template #no_phone><span><mat-icon>smartphone</mat-icon><span>{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}</span></span></ng-template>
+            <ng-template #no_phone><span><mat-icon>smartphone</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
+                        oTranslate}}{% endraw %}</span></span></ng-template>
             <span *ngIf="data.EMPLOYEEADDRESS;else no_address">
-                <mat-icon>home</mat-icon><span>{{ data.EMPLOYEEADDRESS }}</span>
+                <mat-icon>home</mat-icon><span>{% raw %}{{ data.EMPLOYEEADDRESS }}{% endraw %}</span>
             </span>
-            <ng-template #no_address><span><mat-icon>home</mat-icon><span>{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}</span></span></ng-template>
+            <ng-template #no_address><span><mat-icon>home</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
+                        oTranslate}}{% endraw %}</span></span></ng-template>
         </div>
     </div>
-    <span layout-margin-right fxFlexAlign="end"><mat-icon>domain</mat-icon>{{ data.NAME }}</span>
+    <span layout-margin-right fxFlexAlign="end"><mat-icon>domain</mat-icon>{% raw %}{{ data.NAME }}{% endraw %}</span>
 </div>
 {% endhighlight %}
 

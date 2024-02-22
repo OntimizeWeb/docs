@@ -116,7 +116,7 @@ detalles de la cuenta.</p>
 
 {{"**accounts-home.component.html**" | markdownify }}
 {% highlight xml %}
-<!-- <o-form-layout-manager attr="accountsHome" title="{{'ACCOUNTS' | oTranslate }}" separator=" " mode="dialog" label-columns="ANID"> -->
+<!-- <o-form-layout-manager attr="accountsHome" title="{% raw %}{{'ACCOUNTS' | oTranslate }}{% endraw %}" separator=" " mode="dialog" label-columns="ANID"> -->
 <o-table attr="accountsTable" service="branches" entity="account" keys="ACCOUNTID"
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP" query-rows="20">

@@ -105,6 +105,27 @@ The `o-gallery` component allows to navigate images and videos with *mouse*, *to
 
 ![Gallery swipe]({{ "/assets/images/components/gallery/swipe-gallery.gif" | absolute_url }}){: .comp-example-img}
 
+#### Aspect ratio <span class='menuitem-badge'>new<span>
+
+By default, the *image width and height* is calculated depends on `height`, `width` and `imagePercent` in `gallery-options` input and the *thumbnail width and height* is calculated depends on `height`, `width`, `thumbnailPercent`, `thumbnailsColumns` or `thumbnailsRows` in `gallery-options`
+
+However, the `o-gallery` component allows you to define the desired width-to-height ratio with *aspectRatio* in `gallery-options` input
+
+>**NOTE:**:
+If the aspect ratio is configured in the `o-gallery` component, the height property is disabled, so that the height of the gallery will depend on the width and the configured ratio
+
+
+```
+ this.galleryOptions = [
+    {
+      width: "600px",
+      thumbnailsColumns: 3,
+      aspectRatio:"4:2"
+    }
+  ];
+```
+![Gallery aspect ratio]({{ "/images/components/gallery/gallery-ratio-4-2.png" | absolute_url }}){: .comp-example-img}
+
 #### Actions
 
 You can add "actions" to the gallery, it shows icons on the top right corner and trigger your custom method.
