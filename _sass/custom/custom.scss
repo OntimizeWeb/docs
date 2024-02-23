@@ -1167,7 +1167,7 @@ table {
   display: grid;
   grid-gap: 32px;
   grid-template-columns: repeat(auto-fit, minmax(auto, 368px));
-  grid-auto-rows: minmax(200px, auto);
+  grid-auto-rows: minmax(auto, 208px);
   justify-content: center;
 
   a {
@@ -1186,48 +1186,42 @@ table {
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+      border-radius: 2px;
 
       @if $color_scheme=='light' {
-        border: 1px solid #eeebee;
+        border: 1px solid #0000001F;
       }
 
       @else {
-        border: 1px solid #1a191a;
+        border: 1px solid #FFFFFF1F;
       }
-
-      border-radius: 4px;
 
       .image-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 140px;
+        height: 128px;
 
         @if $color_scheme=='light' {
-          border-bottom: 1px solid #eeebee;
+          border-bottom: 1px solid #0000001F;
           background-color: #F6F6F6;
         }
 
         @else {
-          border-bottom: 1px solid #1a191a;
-          background-color: #030303;
+          border-bottom: 1px solid #FFFFFF1F;
+          background-color: #31363A;
         }
       }
 
       .bottom-image {
-        text-align: end;
-        padding: 20px 18px;
+        height: 80px;
+        vertical-align: middle;
+        text-align: start;
+        padding: 28px 18px;
         margin: 0;
         overflow: hidden;
         text-overflow: ellipsis;
-
-        @if $color_scheme=='light' {
-          background-color: $primary-500-24;
-        }
-
-        @else {
-          background-color: $primary-500-24-dark;
-        }
+        font-weight: 500;
       }
 
       .text-container {
@@ -1235,7 +1229,16 @@ table {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 140px;
+        height: 88px;
+        font-weight: 500;
+
+        @if $color_scheme=='light' {
+          border-bottom: 1px solid #0000001F;
+        }
+
+        @else {
+          border-bottom: 1px solid #FFFFFF1F;
+        }
 
         >p {
           width: 100%;
@@ -1250,75 +1253,55 @@ table {
           white-space: nowrap;
 
           @if $color_scheme=='light' {
-            color: $primary-500;
+            color: #000000DE;
           }
 
           @else {
-            color: $primary-500-dark;
+            color: #FFFFFFDE;
           }
-
-          font-weight: 500;
-        }
-
-        >p~p {
-          color: inherit;
-          font-weight: inherit;
-          padding: 10px 18px 10px 18px;
-          white-space: normal;
         }
       }
 
       .bottom-title {
-        height: 68px;
+        height: 118px;
         text-overflow: ellipsis;
         overflow: hidden;
-        white-space: nowrap;
-        text-align: end;
-
-        @if $color_scheme=='light' {
-          border-top: 1px solid #eeebee;
-          background-color: $primary-500-24;
-        }
-
-        @else {
-          border-top: 1px solid #1a191a;
-          background-color: $primary-500-24-dark;
-        }
-
+        text-align: start;
         margin: 0;
         padding: 20px 18px;
-        border-radius: 0 0 4px 4px;
       }
     }
 
     &:hover {
       .menu-card {
-        @if $color_scheme=='light' {
-          background-color: rgba(20, 100, 165, 0.2);
-          border-color: rgba(20, 100, 165, 0.6);
-        }
-
-        @else {
-          background-color: rgba(20, 100, 165, 0.2);
-          border-color: rgba(20, 100, 165, 0.6);
-        }
-
-        .image-container {
-          background-color: transparent;
-          border-bottom: none;
-        }
-
         .bottom-title {
-          background-color: rgba(20, 100, 165, 0.2);
-          border-top: none;
+
+          @if $color_scheme=='light' {
+            background-color: #C7DAE9;
+          }
+
+          @else {
+            background-color: #00345f;
+          }
         }
 
         .bottom-image {
-          background-color: rgba(20, 100, 165, 0.2);
+          @if $color_scheme=='light' {
+            background-color: #C7DAE9;
+          }
+
+          @else {
+            background-color: #012644;
+          }
         }
       }
     }
   }
+}
+
+.menu-card-container:has(.image-container) {
+  grid-template-columns: repeat(auto-fit, minmax(auto, 272px));
+  grid-auto-rows: minmax(208px, auto);
 }
 
 .hidden {
