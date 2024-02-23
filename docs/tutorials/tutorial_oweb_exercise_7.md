@@ -1,13 +1,13 @@
 ---
-title: "Filter elements in a table using a form key"
+title: "Filter table with form key"
 layout: default
-permalink: /tutorial-web/exercise7/
+permalink: /tutorials/exercise7/
 nav_order: 7
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -15,7 +15,7 @@ parent: Tutorial OWeb
 
 # Filtrar elementos de una tabla a través de una clave del formulario
 ## Introducción
-En este ejercicio, modificaremos el formulario de detalle de un cliente, añadiendo pestañas dentro del formulario, y 
+En este ejercicio, modificaremos el formulario de detalle de un cliente, añadiendo pestañas dentro del formulario, y
 dentro de esas pestañas mostraremos una lista de todas las cuentas relacionadas con el cliente.
 ## Modificar el detalle de los clientes
 ![tutorial_o_web_28.png]({{ base_path }}/assets/images/tutorial_o_web_28.png)
@@ -112,9 +112,9 @@ export class CustomersModule { }
 </o-form>
 {% endhighlight %}
 
-<p>Para añadir pestañas, debemos declarar un contenedor <code>&lt;mat-tab-group&gt;</code> (más información en la 
+<p>Para añadir pestañas, debemos declarar un contenedor <code>&lt;mat-tab-group&gt;</code> (más información en la
 siguiente <a href="https://material.angular.io/components/tabs/overview" target="_blank">documetación</a>) y añadir
-etiquetas <code>&lt;mat-tab&gt</code> para cada pestaña. El filtrado de las tablas se hace añadiendo el parámetro 
+etiquetas <code>&lt;mat-tab&gt</code> para cada pestaña. El filtrado de las tablas se hace añadiendo el parámetro
 <code>parent-keys="CUSTOMERID"</code> siendo esta columna una colummna presente en el formulario padre.</p>
 
 <p>Añadimos la siguiente configuración al archivo <strong>customer-detail.component.ts</strong></p>

@@ -1,7 +1,7 @@
 ---
-title: "Tutorial OWeb"
+title: "Tutorials"
 layout: default
-permalink: /tutorial-web/
+permalink: /tutorials/
 nav_order: 3
 has_children: true
 has_toc: false

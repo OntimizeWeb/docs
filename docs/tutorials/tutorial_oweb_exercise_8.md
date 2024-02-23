@@ -1,13 +1,13 @@
 ---
 title: "Add details to branches"
 layout: default
-permalink: /tutorial-web/exercise8/
+permalink: /tutorials/exercise8/
 nav_order: 8
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -20,7 +20,7 @@ cuentas que pertenecen a dicha sucursal, el titular de la cuenta, el balance de 
 sucursal.
 
 ## Crear formulario de detalle
-Procedemos a crear el formulario de detalle para visualizar los detalles. Esta vez, se creará un formulario detalle que 
+Procedemos a crear el formulario de detalle para visualizar los detalles. Esta vez, se creará un formulario detalle que
 contiene campos y una tabla, similar al siguiente mockup.
 
 ![tutorial_o_web_30.png]({{ base_path }}/assets/images/tutorial_o_web_30.png)
@@ -36,7 +36,7 @@ npx ng g component --skip-tests branches-detail
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**branches.module.ts**" | markdownify }}
 {% highlight typescript %}
 import { NgModule } from '@angular/core';
@@ -110,10 +110,10 @@ export class BranchesRoutingModule { }
 </o-form>
 {% endhighlight %}
 
-<p>La <code>&lt;o-table&gt;</code> muestra por defecto un contenido mínimo de <strong>400px</strong>. Como queremos que 
-esta sea una altura menor debemos modificar el fichero <strong>branches-detail.component.css</strong> del componente. 
-Sin embargo, para afectar al componente <code>&lt;o-table&gt;</code>, tiene que evitar la encapsulación de componentes 
-que usa Angular, por lo que se le añade al fichero <strong>branches-detail.component.ts</strong> la opción de 
+<p>La <code>&lt;o-table&gt;</code> muestra por defecto un contenido mínimo de <strong>400px</strong>. Como queremos que
+esta sea una altura menor debemos modificar el fichero <strong>branches-detail.component.css</strong> del componente.
+Sin embargo, para afectar al componente <code>&lt;o-table&gt;</code>, tiene que evitar la encapsulación de componentes
+que usa Angular, por lo que se le añade al fichero <strong>branches-detail.component.ts</strong> la opción de
 <code>ViewEncapsulation.None</code></p>
 
 {{"**branches-detail.component.ts**" | markdownify }}
@@ -131,7 +131,7 @@ export class BranchesDetailComponent {
 }
 {% endhighlight %}
 
-<p>Al eliminar la encapsulación de Angular, todo lo que se ponga en el CSS afectaría a todos los elementos que sean 
+<p>Al eliminar la encapsulación de Angular, todo lo que se ponga en el CSS afectaría a todos los elementos que sean
 cargados a posteriori, por lo que tenemos que particularizar el CSS con el selector del componente</p>
 
 {{"**branches-detail.component.css**" | markdownify }}
@@ -423,7 +423,7 @@ app-branches-detail .o-table .o-table-container {
 
 ## Crear un formulario de insercción
 
-En este formulario, eliminaremos la tabla de las cuentas y clientes asociados. Creamos el formulario con el siguiente 
+En este formulario, eliminaremos la tabla de las cuentas y clientes asociados. Creamos el formulario con el siguiente
 comando:
 
 ```

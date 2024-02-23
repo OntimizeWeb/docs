@@ -1,13 +1,13 @@
 ---
 title: "Long tasks"
 layout: default
-permalink: /tutorial-web/exercise16/
+permalink: /tutorials/exercise16/
 nav_order: 16
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -16,7 +16,7 @@ parent: Tutorial OWeb
 # Tareas largas
 ## Introducción
 
-En ese ejericio simularemos una pantalla de espera en caso de que la tarea que se esté realizando en el backend sea 
+En ese ejericio simularemos una pantalla de espera en caso de que la tarea que se esté realizando en el backend sea
 susceptible de ser pesada y que tarde en responder. En este caso, será un botón que simule una tarea larga en el listado
 de clientes.
 
@@ -27,8 +27,8 @@ de clientes.
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Controlaremos que se muestre el panel que hemos añadido se muestre mediante la utilización de la directiva 
-<code>*ngIf</code> evaluando una variable del componente. Cuando esté a true, se mostrará el panel, en caso contrario, 
+        <p>Controlaremos que se muestre el panel que hemos añadido se muestre mediante la utilización de la directiva
+<code>*ngIf</code> evaluando una variable del componente. Cuando esté a true, se mostrará el panel, en caso contrario,
 quedará oculto.</p>
 
 {{"**customers-home.component.html**" | markdownify }}
@@ -501,7 +501,7 @@ export class CustomersHomeComponent {
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**en.json**" | markdownify }}
 {% highlight json %}
 {

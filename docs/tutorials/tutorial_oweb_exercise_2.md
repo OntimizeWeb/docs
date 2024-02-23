@@ -1,13 +1,13 @@
 ---
-title: "Creating the customers module"
+title: "Creating customers module"
 layout: default
-permalink: /tutorial-web/exercise2/
+permalink: /tutorials/exercise2/
 nav_order: 2
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -16,25 +16,25 @@ parent: Tutorial OWeb
 # Crear el módulo de clientes
 ## Introducción
 En este tutorial se creará el módulo de clientes, que permitirá tener un listado en una tabla con todos los clientes que
-contiene la aplicación. Desde esta tabla, podremos acceder al detalle del cliente específico para consultarlo y/o 
+contiene la aplicación. Desde esta tabla, podremos acceder al detalle del cliente específico para consultarlo y/o
 editarlo.
 
 ## Diferencias entre componentes y módulos
-Un **componente** es el componente básico de construcción de una aplicación en Angular. De manera simplificada, y 
-haciendo una similitud con el cliente rico de escritorio, un componente constaría de un formulario (en este caso, la 
+Un **componente** es el componente básico de construcción de una aplicación en Angular. De manera simplificada, y
+haciendo una similitud con el cliente rico de escritorio, un componente constaría de un formulario (en este caso, la
 plantilla HTML y la hoja de estilos CSS) y un gestor de interacción (en este caso, el fichero TypeScript). Un **módulo**
-actúa como un **contenedor** de uno o más **componentes** / **módulos**, que contiene un fichero de declaración del 
-**módulo** (*_.module.ts_) y un fichero de declaración de los otros **componentes** / **módulos** que se cargan 
+actúa como un **contenedor** de uno o más **componentes** / **módulos**, que contiene un fichero de declaración del
+**módulo** (*_.module.ts_) y un fichero de declaración de los otros **componentes** / **módulos** que se cargan
 (siguiendo la estrategia del _lazy-loading_, se cargarán **módulos**) desde dicho módulo.
 
 ## Crear el módulo de clientes
-Procedemos a crear el módulo de clientes dentro del módulo **main**, a la misma altura del módulo **home**. Nos 
-desplazamos desde la consola a la ruta ```src/app/main/``` y ubicados dentro del módulo **main**, ejecutamos el comando 
+Procedemos a crear el módulo de clientes dentro del módulo **main**, a la misma altura del módulo **home**. Nos
+desplazamos desde la consola a la ruta ```src/app/main/``` y ubicados dentro del módulo **main**, ejecutamos el comando
 ```
     npx ng g module --routing customers
 ```
 El uso del comando ```npx``` es para usar la versión de _angular/cli_ que está instalada en la carpeta _node_modules_ de
-la aplicación (Más información acerca del comando 
+la aplicación (Más información acerca del comando
 [aquí](https://angular.io/cli/generate#module-command){:target="_blank"})
 
 <div class="multicolumn">
@@ -212,7 +212,7 @@ la aplicación (Más información acerca del comando
 </div>
 
 Este comando nos creará el módulo de clientes y su fichero de enrutamiento asociado. Como dentro del módulo de clientes,
-usaremos componentes de Ontimize Web, es necesario añadirle al fichero la importación del módulo de Ontimize Web y 
+usaremos componentes de Ontimize Web, es necesario añadirle al fichero la importación del módulo de Ontimize Web y
 declararlo como módulo importado.
 
 <div class="multicolumn">
@@ -437,18 +437,18 @@ export class MainRoutingModule { }
     </div>
 </div>
 
-En este momento, el módulo **customers** ya se encuentra relacionado con el módulo **main**, indicando que cuando 
-estemos dentro del módulo **main** y naveguemos a la ruta **_/customers_**, cargaremos el módulo **customers**. Falta 
-por incorporar un componente al módulo **customers** para mostrar una pantalla que definiremos en el enrutamiento de 
+En este momento, el módulo **customers** ya se encuentra relacionado con el módulo **main**, indicando que cuando
+estemos dentro del módulo **main** y naveguemos a la ruta **_/customers_**, cargaremos el módulo **customers**. Falta
+por incorporar un componente al módulo **customers** para mostrar una pantalla que definiremos en el enrutamiento de
 dicho módulo.
 
 ## Crear el componente base de clientes
-Para crear el componente base de clientes, nos ubicamos dentro de la carpeta **customers**, y ejecutamos el siguiente 
+Para crear el componente base de clientes, nos ubicamos dentro de la carpeta **customers**, y ejecutamos el siguiente
 comando:
 ```bash
 npx ng g component --skip-tests customers-home
-``` 
-(Más información acerca del comando [aquí](https://angular.io/cli/generate#component-command){:target="_blank"}). Se 
+```
+(Más información acerca del comando [aquí](https://angular.io/cli/generate#component-command){:target="_blank"}). Se
 creará una carpeta, llamada **customers-home**, que contendrá los ficheros relacionados con el componente.
 
 <div class="multicolumn">
@@ -456,7 +456,7 @@ creará una carpeta, llamada **customers-home**, que contendrá los ficheros rel
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <img src="{{ base_path }}/assets/images/tutorial_o_web_6.png">        
+        <img src="{{ base_path }}/assets/images/tutorial_o_web_6.png">
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
@@ -681,13 +681,13 @@ const routes: Routes = [{
 export class CustomersRoutingModule { }
 {% endhighlight %}
 {{"En este momento, la única manera de comprobar si es posible acceder al componente **customers-home** (visualizando
-su contenido, definido en el fichero **customers-home.component.html**) es acceder directamente a la dirección 
+su contenido, definido en el fichero **customers-home.component.html**) es acceder directamente a la dirección
 URL:" | markdownify }}
 
 <a href="http://localhost:4200/main/customers" target="_blank">http://localhost:4200/main/customers</a>
 
-{{"Si queremos usar el menú lateral, debemos modificar el fichero 
-**app.menu.config.ts**, ubicado dentro de la carpeta shared, para añadir la nueva entrada del menú 
+{{"Si queremos usar el menú lateral, debemos modificar el fichero
+**app.menu.config.ts**, ubicado dentro de la carpeta shared, para añadir la nueva entrada del menú
 lateral." | markdownify }}
 
 {% highlight typescript %}
@@ -1116,11 +1116,11 @@ aplicación, debemos añadir la entrada a los ficheros de traducción, que se en
     </div>
 </div>
 
-Una vez modificado, estará disponible el menú en los idiomas para los que se hayan añadido las entradas a los 
+Una vez modificado, estará disponible el menú en los idiomas para los que se hayan añadido las entradas a los
 ficheros \***.json**.
 
-Para poder realizar el cambio de idioma, necesitamos activar la opción que nos va a permitir cambiar de idioma, para 
-ello actualizaremos la opción ```show-language-selector``` del fichero ```src/app/main/main.component.html``` para 
+Para poder realizar el cambio de idioma, necesitamos activar la opción que nos va a permitir cambiar de idioma, para
+ello actualizaremos la opción ```show-language-selector``` del fichero ```src/app/main/main.component.html``` para
 establecer el valor ```yes``` y así habilitar la opción del idioma.
 
 <div class="multicolumn">
@@ -1310,13 +1310,13 @@ establecer el valor ```yes``` y así habilitar la opción del idioma.
     </div>
 </div>
 
-Para cambiar el idioma lo haremos pinchando en el idioma que nos aparece en la parte superior derecha de la pantalla, 
+Para cambiar el idioma lo haremos pinchando en el idioma que nos aparece en la parte superior derecha de la pantalla,
 se nos abrirá un desplegable y seleccionaremos el idioma que queramos establecer.
 
 ![tutorial_o_web_8.png]({{ base_path }}/assets/images/tutorial_o_web_8.png)
 
 ## Adaptar el componente
-Modificaremos el componente **customers-home.component.html** para poder adaptarlo a una pantalla similar a la 
+Modificaremos el componente **customers-home.component.html** para poder adaptarlo a una pantalla similar a la
 siguiente:
 
 ![tutorial_o_web_9.png]({{ base_path }}/assets/images/tutorial_o_web_9.png)
@@ -1389,7 +1389,7 @@ Para conseguir esta pantalla, pegaremos el siguiente código en el fichero **cus
         </tr>
     </tbody>
 </table>
-{{"En los ```<o-table-column>```, se pueden establecer diferentes atributos para visualizar las columnas. En la tabla 
+{{"En los ```<o-table-column>```, se pueden establecer diferentes atributos para visualizar las columnas. En la tabla
 inferior solo se establecerán aquellos que se usan en este ejemplo." | markdownify }}
 
 Más información en el <a href="{{ base_path }}/components/table/overview#define-columns">siguiente enlace</a>
@@ -1637,7 +1637,7 @@ Más información en el <a href="{{ base_path }}/components/table/overview#defin
     </div>
 </div>
 
-En este punto habría que configurar el servicio de clientes en el fichero **app.services.config.ts** como se hace más 
+En este punto habría que configurar el servicio de clientes en el fichero **app.services.config.ts** como se hace más
 adelante con el servicio de empleados al [crear el componente base de empleados]({{ base_path }}/tutorial-web/exercise4)
 , pero en esta seed que se está utilizando ya viene preconfigurado.
 

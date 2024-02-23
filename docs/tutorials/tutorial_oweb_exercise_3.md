@@ -1,13 +1,13 @@
 ---
-title: "Creating a detail form"
+title: "Creating detail form"
 layout: default
-permalink: /tutorial-web/exercise3/
+permalink: /tutorials/exercise3/
 nav_order: 3
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -15,13 +15,13 @@ parent: Tutorial OWeb
 
 # Crear un formulario de detalle
 ## Introducción
-En este tutorial se creará un nuevo componente (el formulario de detalle de un cliente) para poder visualizar los 
+En este tutorial se creará un nuevo componente (el formulario de detalle de un cliente) para poder visualizar los
 detalles de dicho cliente al hacer clic sobre el registro de la tabla correspondiente.
 
 ## Crear el formulario de detalle
 ### Mostrar, editar y borrar
 
-Para crear el formulario de detalle, lo crearemos dentro del módulo de **customers**. Para ello, nos situamos en la 
+Para crear el formulario de detalle, lo crearemos dentro del módulo de **customers**. Para ello, nos situamos en la
 terminal dentro del módulo de **customers** (a la altura del componente **customers-home**) y ejecutamos el comando de
 creación de componentes de Angular CLI:
 
@@ -29,7 +29,7 @@ creación de componentes de Angular CLI:
 npx ng g component --skip-tests customers-detail
 ```
 
-(Más información acerca del comando [aquí](https://angular.io/cli/generate#component-command){:target="_blank"}). Al 
+(Más información acerca del comando [aquí](https://angular.io/cli/generate#component-command){:target="_blank"}). Al
 terminar, tendremos una carpeta llamada customers-detail, que contendrá los archivos relacionados con el componente.
 
 <div class="multicolumn">
@@ -224,11 +224,11 @@ terminar, tendremos una carpeta llamada customers-detail, que contendrá los arc
 
 Modificamos el fichero **customers.module.ts**, añadiéndole el import del nuevo componente, y situándolo en el array de
 declaraciones. A su vez, establecemos la nueva ruta en el fichero **customers-routing.module.ts**. Para conocer la ruta
-que el componente tabla indicará para el detalle de cada uno de sus registros, tenemos que comprobar cual es el 
-parámetro ```key``` de la tabla para la cual queremos obtener el detalle (en este caso, tenemos que ver el parámetro 
+que el componente tabla indicará para el detalle de cada uno de sus registros, tenemos que comprobar cual es el
+parámetro ```key``` de la tabla para la cual queremos obtener el detalle (en este caso, tenemos que ver el parámetro
 ```key``` de la tabla del fichero **customers-home.component.html**). Esto es así debido a que cuando naveguemos en la
 tabla, al abrir un registro, concatenará el valor de la columna definida en el atributo ```key``` a la URL. Para definir
-ese comportamiento en el módulo de enrutamiento, precedemos el nombre de la columna por el símbolo de los dos puntos 
+ese comportamiento en el módulo de enrutamiento, precedemos el nombre de la columna por el símbolo de los dos puntos
 ```:```.
 
 <div class="multicolumn">
@@ -477,8 +477,8 @@ continuación modificaremos el contenido del fichero para conseguir un formulari
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-<p>Lo primero es establecer el layout de pestañas, para que cada nuevo registro que se consulte se añada a una pestaña 
-nueva. Para ello, en el componente <strong>customers-home.component.html</strong> añadimos un 
+<p>Lo primero es establecer el layout de pestañas, para que cada nuevo registro que se consulte se añada a una pestaña
+nueva. Para ello, en el componente <strong>customers-home.component.html</strong> añadimos un
 <a href="{{ base_path }}/components/formlayoutmanager/overview" target="_blank">o-form-layout-manager</a></p>
 {{"**customers-home.component.html**" | markdownify }}
 {% highlight xml %}
@@ -514,8 +514,8 @@ nueva. Para ello, en el componente <strong>customers-home.component.html</strong
         <tr>
             <td>title</td>
             <td>{% raw %}{{'CUSTOMERS' | oTranslate }}{% endraw %}</td>
-            <td>Establece el título que tendrá la pestaña principal. En este caso se usa la interpolación de Angular, 
-que intenta evaluar la cadena "<strong>CUSTOMERS</strong>" a traves del pipe "<strong>| oTranslate</strong>", que 
+            <td>Establece el título que tendrá la pestaña principal. En este caso se usa la interpolación de Angular,
+que intenta evaluar la cadena "<strong>CUSTOMERS</strong>" a traves del pipe "<strong>| oTranslate</strong>", que
 devuelve la cadena que se le pasa como entrada traducida al idioma en el que esté definida la aplicación.</td>
         </tr>
         <tr>
@@ -531,7 +531,7 @@ devuelve la cadena que se le pasa como entrada traducida al idioma en el que est
         <tr>
             <td>label-columns</td>
             <td>NAME;SURNAME</td>
-            <td>Columnas que usará para el título de cada una de las pestañas. Estas estarán separadas por la cadena 
+            <td>Columnas que usará para el título de cada una de las pestañas. Estas estarán separadas por la cadena
 definida en el atributo <strong>separator</strong></td>
         </tr>
     </tbody>
@@ -603,14 +603,14 @@ definida en el atributo <strong>separator</strong></td>
         <tr>
             <td>header-actions</td>
             <td>R;I;U;D</td>
-            <td>Botones de acción disponibles en la botonera para las operaciones CRUD estándar, separadas por 
-<code>;</code>. Las operaciones disponibles son <strong>R</strong>(Refrescar), <strong>I</strong> (Insertar), 
+            <td>Botones de acción disponibles en la botonera para las operaciones CRUD estándar, separadas por
+<code>;</code>. Las operaciones disponibles son <strong>R</strong>(Refrescar), <strong>I</strong> (Insertar),
 <strong>U</strong> (Actualizar), <strong>D</strong> (Borrar)</td>
         </tr>
         <tr>
             <td>show-header-navigation</td>
             <td>no</td>
-            <td>Incluye botones de navegación en la botonera. No se incluyen cuando se encuentra en modo pestaña 
+            <td>Incluye botones de navegación en la botonera. No se incluyen cuando se encuentra en modo pestaña
 (definido por el componente <em>o-form-layout-manager</em>)</td>
         </tr>
     </tbody>
@@ -618,7 +618,7 @@ definida en el atributo <strong>separator</strong></td>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-text-input (atributos de 
+            <th colspan="3">o-text-input (atributos de
 <a href="{{ base_path }}/components/input/text/api">o-text-input</a>)</th>
         </tr>
         <tr>
@@ -636,7 +636,7 @@ definida en el atributo <strong>separator</strong></td>
         <tr>
             <td>sql-type</td>
             <td>INTEGER</td>
-            <td>Indica el tipo de dato que contiene este campo. Se debe especificar la cadena del tipo de dato de esta 
+            <td>Indica el tipo de dato que contiene este campo. Se debe especificar la cadena del tipo de dato de esta
 lista</td>
         </tr>
         <tr>
@@ -654,8 +654,8 @@ lista</td>
 <table>
     <thead>
         <tr>
-            <th colspan="3">Directivas de maquetación <a href="https://material.angularjs.org/latest/layout" 
-target="_blank">Angular Layout</a> - <a href="https://tburleson-layouts-demos.firebaseapp.com" 
+            <th colspan="3">Directivas de maquetación <a href="https://material.angularjs.org/latest/layout"
+target="_blank">Angular Layout</a> - <a href="https://tburleson-layouts-demos.firebaseapp.com"
 target="_blank">Demo interactiva</a></th>
         </tr>
         <tr>
@@ -686,7 +686,7 @@ el esté disponible</td>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-row y o-column (atributos de 
+            <th colspan="3">o-row y o-column (atributos de
 <a href="{{ base_path }}/components/containers/api">containers</a>)</th>
         </tr>
         <tr>
@@ -730,7 +730,7 @@ el esté disponible</td>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-date-input (atributos de 
+            <th colspan="3">o-date-input (atributos de
 <a href="{{ base_path }}/components/input/date/api">o-date-input</a>)</th>
         </tr>
         <tr>
@@ -750,7 +750,7 @@ el esté disponible</td>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-nif-input (atributos de 
+            <th colspan="3">o-nif-input (atributos de
 <a href="{{ base_path }}/components/input/nif/api">o-nif-input</a>)</th>
         </tr>
         <tr>
@@ -849,7 +849,7 @@ el esté disponible</td>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-email-input (atributos de 
+            <th colspan="3">o-email-input (atributos de
 <a href="{{ base_path }}/components/input/email/api">o-email-input</a>)</th>
         </tr>
         <tr>
@@ -1138,9 +1138,9 @@ Este será el aspecto final del formulario:
 ![tutorial_o_web_13.png]({{ base_path }}/assets/images/tutorial_o_web_13.png)
 
 ## Insertar
-Para insertar un nuevo registro, hay que indicar en el módulo de rutas cual es el componente que se usará para mostrar 
-el formulario. Se puede usar un componente existente, o se puede crear uno nuevo específico. En este ejemplo crearemos 
-un nuevo componente, donde usaremos un formulario prácticamente idéntico al del detalle. Volveremos a crear un nuevo 
+Para insertar un nuevo registro, hay que indicar en el módulo de rutas cual es el componente que se usará para mostrar
+el formulario. Se puede usar un componente existente, o se puede crear uno nuevo específico. En este ejemplo crearemos
+un nuevo componente, donde usaremos un formulario prácticamente idéntico al del detalle. Volveremos a crear un nuevo
 componente mediante la línea de comando:
 
 {% highlight console %}

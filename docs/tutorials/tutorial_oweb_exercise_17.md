@@ -1,13 +1,13 @@
 ---
-title: "Open detail form from a button"
+title: "Detail form from button"
 layout: default
-permalink: /tutorial-web/exercise17/
+permalink: /tutorials/exercise17/
 nav_order: 17
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -86,8 +86,8 @@ En primer lugar, añadiremos un nuevo botón a la pestaña de las cuentas de un 
 </o-form>
 {% endhighlight %}
 
-<p>En el fichero <strong>*.ts</strong>, creamos una nueva función que se invocará desde el botón del 
-<strong>html</strong> y al hacer <em>click</em>, obtendrá el valor del identificador de la cuenta, y navegará hasta el 
+<p>En el fichero <strong>*.ts</strong>, creamos una nueva función que se invocará desde el botón del
+<strong>html</strong> y al hacer <em>click</em>, obtendrá el valor del identificador de la cuenta, y navegará hasta el
 elemento correspondiente en el módulo de <strong>accounts</strong></p>
 
 {{"**customers-detail.component.ts**" | markdownify }}
@@ -532,7 +532,7 @@ export class CustomersDetailComponent {
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
         <p>En primer lugar, dado que vamos a reutilizar el componente detalle de cuentas cuentas para abrirlo dentro del
-módulo de clientes, es necesario que lo quitemos de la declaración del modulo de <strong>accounts</strong>, y los 
+módulo de clientes, es necesario que lo quitemos de la declaración del modulo de <strong>accounts</strong>, y los
 pasemos al módulo <strong>shared</strong></p>
 
 {{"**accounts.module.ts**" | markdownify }}
@@ -641,7 +641,7 @@ const routes: Routes = [{
 export class CustomersRoutingModule { }
 {% endhighlight %}
 
-<p>Modificamos la funciona para que añada los elementos que faltan y que se modifique la ruta para navegar al nuevo 
+<p>Modificamos la funciona para que añada los elementos que faltan y que se modifique la ruta para navegar al nuevo
 componente</p>
 
 {{"**customers-detail.component.ts**" | markdownify }}
@@ -1063,7 +1063,7 @@ export class CustomersDetailComponent {
 
 ## Abrir el formulario sin necesidad de botón
 
-Únicamente es necesario cambiar el evento de de detalle  de la tabla de cuentas, y pasar de **none** a **dblclick** para 
+Únicamente es necesario cambiar el evento de de detalle  de la tabla de cuentas, y pasar de **none** a **dblclick** para
 que también funcione la navegación en la tabla. Aprovecharemos para añadir al formulario el atributo **#form**
 
 <div class="multicolumn">

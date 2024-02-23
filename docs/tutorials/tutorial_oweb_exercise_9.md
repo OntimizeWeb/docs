@@ -1,13 +1,13 @@
 ---
 title: "Add details to accounts"
 layout: default
-permalink: /tutorial-web/exercise9/
+permalink: /tutorials/exercise9/
 nav_order: 9
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -86,7 +86,7 @@ const routes: Routes = [{
 export class AccountsRoutingModule { }
 {% endhighlight %}
 
-<p>Para el formulario, necesitaremos añadir un nuevo servicio, el servicio de movimientos (<code>/movements</code>) de 
+<p>Para el formulario, necesitaremos añadir un nuevo servicio, el servicio de movimientos (<code>/movements</code>) de
 las cuentas y el servicio de <code>/accounts</code>.</p>
 
 {{"**app.services.config.ts**" | markdownify }}
@@ -110,8 +110,8 @@ export const SERVICE_CONFIG: Object = {
 };
 {% endhighlight %}
 
-<p>Al formulario general, donde se muestra el listado de las cuentas, le retiraremos el 
-<code>&lt;o-form-layout-manager&gt;</code>, ya que no es compatible con los siguientes elementos que crearemos en los 
+<p>Al formulario general, donde se muestra el listado de las cuentas, le retiraremos el
+<code>&lt;o-form-layout-manager&gt;</code>, ya que no es compatible con los siguientes elementos que crearemos en los
 detalles de la cuenta.</p>
 
 {{"**accounts-home.component.html**" | markdownify }}
@@ -135,9 +135,9 @@ detalles de la cuenta.</p>
 {% endhighlight %}
 
 <p>Este es el detalle del formulario. Se puede observar un nuevo atributo en el componente <code>&lt;o-table&gt;</code>.
-Este nuevo atributo es <code>insert-form-route</code>. Este atributo permite modificar la ruta para el formulario de 
-inserción, y nosotros definiremos un nuevo componente para insertar dichos datos en ambas tablas. Además, con el 
-atributo <code>editable-detail</code> de <code>&lt;o-form&gt;</code> y estableciendo su valor a <strong>false</strong>, 
+Este nuevo atributo es <code>insert-form-route</code>. Este atributo permite modificar la ruta para el formulario de
+inserción, y nosotros definiremos un nuevo componente para insertar dichos datos en ambas tablas. Además, con el
+atributo <code>editable-detail</code> de <code>&lt;o-form&gt;</code> y estableciendo su valor a <strong>false</strong>,
 bloquearemos la edición de los datos de una cuenta.</p>
 
 {{"**accounts-detail.component.html**" | markdownify }}
@@ -534,8 +534,8 @@ bloquearemos la edición de los datos de una cuenta.</p>
 </div>
 
 Tendremos que añadir un nuevo formulario, que permita añadir una nueva cuenta. Para añadir una nueva cuenta, tal y como
-está configurado el servicio, solo es necesario indicar una la oficina a la que pertenece la cuenta y una fecha de 
-inicio. Por este motivo, haremos un diálogo sencillo que nos permita insertar estos datos. Como hasta ahora, crearemos 
+está configurado el servicio, solo es necesario indicar una la oficina a la que pertenece la cuenta y una fecha de
+inicio. Por este motivo, haremos un diálogo sencillo que nos permita insertar estos datos. Como hasta ahora, crearemos
 un nuevo componente, llamado **accounts-new**
 
 ```
@@ -905,8 +905,8 @@ export class AccountsRoutingModule { }
     </div>
 </div>
 
-Ahora, declararemos dos nuevos componentes, que nos permitirán añadir y eliminar clientes y movimientos de las cuentas. 
-Estos nuevos componentes se crearán, situándonos dentro de la ruta ```src/app/main/accounts``` con los dos siguientes 
+Ahora, declararemos dos nuevos componentes, que nos permitirán añadir y eliminar clientes y movimientos de las cuentas.
+Estos nuevos componentes se crearán, situándonos dentro de la ruta ```src/app/main/accounts``` con los dos siguientes
 comandos:
 
 ```
@@ -953,8 +953,8 @@ import { AddMovementComponent } from './add-movement/add-movement.component';
 export class AccountsModule { }
 {% endhighlight %}
 
-<p>En el módulo de rutas se añaden aquellas que se han indicado en las tablas del formulario detalle en el atributo 
-<code>insert-form-route</code>. Podemos observar que los componentes que usamos para la inserción terminan en 
+<p>En el módulo de rutas se añaden aquellas que se han indicado en las tablas del formulario detalle en el atributo
+<code>insert-form-route</code>. Podemos observar que los componentes que usamos para la inserción terminan en
 /<code>new</code>.</p>
 
 {{"**accounts-routing.module.ts**" | markdownify }}

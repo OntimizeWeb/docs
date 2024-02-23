@@ -1,13 +1,13 @@
 ---
-title: "Use of card item in component"
+title: "Card item use"
 layout: default
-permalink: /tutorial-web/exercise14/
+permalink: /tutorials/exercise14/
 nav_order: 14
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -15,7 +15,7 @@ parent: Tutorial OWeb
 
 # Uso de elementos tarjeta en un componente
 ## Introducción
-En este tutorial añadiremos tarjetas de acceso rápido al componente **home** de la aplicación, el lugar que tiene la 
+En este tutorial añadiremos tarjetas de acceso rápido al componente **home** de la aplicación, el lugar que tiene la
 aplicación para actuar como punto de entrada de la aplicación.
 
 ## Agrupar elementos del menú
@@ -47,11 +47,11 @@ export const MENU_CONFIG: MenuRootItem[] = [
 ];
 {% endhighlight %}
 
-<p>Una vez indicado que el menú lateral tiene algunos elementos englobados bajo un elemento padre llamado 
-<strong>modules</strong>, podemos indicar que se muestren las tarjetas de todos los menús dentro del componente 
+<p>Una vez indicado que el menú lateral tiene algunos elementos englobados bajo un elemento padre llamado
+<strong>modules</strong>, podemos indicar que se muestren las tarjetas de todos los menús dentro del componente
 <code>home</code> con el componente <code>&lt;o-card-menu-layout&gt;</code></p>
 
-<p>Dentro del componente <code>&lt;o-card-menu-layout&gt;</code> podemos definir nuestras propias tarjetas con el 
+<p>Dentro del componente <code>&lt;o-card-menu-layout&gt;</code> podemos definir nuestras propias tarjetas con el
 componente <code>&lt;o-card-menu-item&gt;</code></p>
 
 {{"**home.component.html**" | markdownify }}
@@ -78,7 +78,7 @@ componente <code>&lt;o-card-menu-item&gt;</code></p>
         <tr>
             <td>parent-menu-id</td>
             <td>modules</td>
-            <td>El identificador del elemento de menú cuyos hijos se renderizan. Cuando este atributo no está 
+            <td>El identificador del elemento de menú cuyos hijos se renderizan. Cuando este atributo no está
 configurado, el componente construye una tarjeta para los elementos raíz del menú</td>
         </tr>
     </tbody>
@@ -121,14 +121,14 @@ configurado, el componente construye una tarjeta para los elementos raíz del me
         <tr>
             <td>action</td>
             <td>goToDocumentation</td>
-            <td>Una función definida en el componente llamada cuando se hace clic en el botón de la tarjeta y el 
+            <td>Una función definida en el componente llamada cuando se hace clic en el botón de la tarjeta y el
 atributo de ruta no
             está configurado</td>
         </tr>
     </tbody>
 </table>
 
-<p>Dentro de <strong>home.component.ts</strong> es necesario declarar la funcion que se indica en la card anterior para 
+<p>Dentro de <strong>home.component.ts</strong> es necesario declarar la funcion que se indica en la card anterior para
 poder navegar a la url que nosotros establezcamos. En este caso, la documentación de Ontimize Web</p>
 
 {{"**home.component.ts**" | markdownify }}
@@ -515,9 +515,9 @@ npx ng g c --skip-tests --skip-import employee-card
 npx ng g c --skip-tests --skip-import service-ex-card
 ```
 
-Al utilizar la opción ```--skip-import``` evitaremos que el componente se importe y declare en el módulo **shared**. En 
-este caso, lo que haremos será exportar una constante desde el fichero de menu (**app.menu.config.ts**) para que pueda 
-ser declarada dentro del módulo de **shared**. También en dicho fichero, añadiremos a cada opción del menú que queramos 
+Al utilizar la opción ```--skip-import``` evitaremos que el componente se importe y declare en el módulo **shared**. En
+este caso, lo que haremos será exportar una constante desde el fichero de menu (**app.menu.config.ts**) para que pueda
+ser declarada dentro del módulo de **shared**. También en dicho fichero, añadiremos a cada opción del menú que queramos
 añadir la tarjeta su correspondiente componente.
 
 <div class="multicolumn">
@@ -525,7 +525,7 @@ añadir la tarjeta su correspondiente componente.
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**app.menu.config.ts**" | markdownify }}
 {% highlight typescript %}
 import { MenuRootItem } from 'ontimize-web-ngx';
@@ -986,10 +986,10 @@ export class SharedModule { }
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-<p>En esta tarjeta se mostrará el número de clientes totales, y cuantos clientes hay de cada tipo. En el fichero 
-<strong>typescript</strong> se consultará el servicio de Ontimize correspondiente a los clientes y se almacerará en 
-variables que puedan ser mostradas desde la vista. El atributo <strong>host</strong> del componente hará que todo el 
-componente tenga a mayores la clase que se le indica en el css, y el atributo <strong>encapsulation</strong> indica el 
+<p>En esta tarjeta se mostrará el número de clientes totales, y cuantos clientes hay de cada tipo. En el fichero
+<strong>typescript</strong> se consultará el servicio de Ontimize correspondiente a los clientes y se almacerará en
+variables que puedan ser mostradas desde la vista. El atributo <strong>host</strong> del componente hará que todo el
+componente tenga a mayores la clase que se le indica en el css, y el atributo <strong>encapsulation</strong> indica el
 nivel de encapsulación que tendrán las clases css.</p>
 
 {{"**customer-card.component.ts**" | markdownify }}
@@ -1075,7 +1075,7 @@ export class CustomerCardComponent implements OnInit {
 </div>
 {% endhighlight %}
 
-<p>Aplicaremos este mismo estilo a todas las tarjetas, por lo que aplicaremos los estilos en el fichero 
+<p>Aplicaremos este mismo estilo a todas las tarjetas, por lo que aplicaremos los estilos en el fichero
 <strong>styles.scss</strong>, evitando así definirlos en los <em>*.css</em> individuales de todas las tarjetas.</p>
 
 {{"**styles.scss**" | markdownify }}
@@ -1488,7 +1488,7 @@ export class CustomerCardComponent implements OnInit {
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**employee-card.component.ts**" | markdownify }}
 {% highlight typescript %}
 import { Component, OnInit, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
@@ -2386,7 +2386,7 @@ export class BranchCardComponent implements OnInit {
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**account-card.component.ts**" | markdownify }}
 {% highlight typescript %}
 import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
@@ -2834,8 +2834,8 @@ export class AccountCardComponent implements OnInit {
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Como estamos usando un servicio externo, no hace falta configurar el servicio de Ontimize, únicamente 
-inyectarlo en el constructor y realizar la consulta. Añadimos en el componente el servicio 
+        <p>Como estamos usando un servicio externo, no hace falta configurar el servicio de Ontimize, únicamente
+inyectarlo en el constructor y realizar la consulta. Añadimos en el componente el servicio
 <strong>StarWarsService</strong> como <em>providers</em> para que pueda realizar la petición</p>
 
 {{"**service-ex-card.component.ts**" | markdownify }}

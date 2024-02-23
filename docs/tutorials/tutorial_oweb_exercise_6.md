@@ -1,13 +1,13 @@
 ---
-title: "Creating a column renderer and a calculated column"
+title: "Creating columns"
 layout: default
-permalink: /tutorial-web/exercise6/
+permalink: /tutorials/exercise6/
 nav_order: 6
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -16,23 +16,23 @@ parent: Tutorial OWeb
 # Crear un renderer de columna y una columna calculada
 ## Introducción
 
-En este tutorial se mostrará como crear un renderer para una columna y una columna calculada para las tablas. Usaremos 
-el formulario de las cuentas 
+En este tutorial se mostrará como crear un renderer para una columna y una columna calculada para las tablas. Usaremos
+el formulario de las cuentas
 
 ## Crear un renderer de una columna
 
 Un renderer de una columna nos permite modificar la visualización de los datos de esa columna. Hasta ahora, se han visto
-2 tipos de renderers, el de las imágenes y el de las fechas, que cambian su visualización. En esta parte del tutorial, 
-crearemos nuestro propio renderer para una columna. Para crear un renderer, crearemos un componente nuevo, en ese caso, 
-le llamaremos **account-render**. Para crear este nuevo componente, podemos situarnos dentro de la carpeta de 
-**account-home**, y ejecutar el comando: 
+2 tipos de renderers, el de las imágenes y el de las fechas, que cambian su visualización. En esta parte del tutorial,
+crearemos nuestro propio renderer para una columna. Para crear un renderer, crearemos un componente nuevo, en ese caso,
+le llamaremos **account-render**. Para crear este nuevo componente, podemos situarnos dentro de la carpeta de
+**account-home**, y ejecutar el comando:
 
 ```
 npx ng g component --skip-tests account-number-render
-``` 
+```
 
-Se habrá creado una carpeta con el componente que usaremos para usar el renderer. Dado que este no es un renderer 
-predefinido, y lo estamos creando desde cero, es necesario seguir algunos pasos, para obtener algo similar al siguiente 
+Se habrá creado una carpeta con el componente que usaremos para usar el renderer. Dado que este no es un renderer
+predefinido, y lo estamos creando desde cero, es necesario seguir algunos pasos, para obtener algo similar al siguiente
 mockup.
 
 ![tutorial_o_web_24.png]({{ base_path }}/assets/images/tutorial_o_web_24.png)
@@ -68,9 +68,9 @@ import { AccountNumberRenderComponent } from './accounts-home/account-number-ren
 export class AccountsModule { }
 {% endhighlight %}
 
-<p>Nuestro componente debe extender de la clase <code>OBaseTableCellRenderer</code> e insertamos la siguiente línea 
+<p>Nuestro componente debe extender de la clase <code>OBaseTableCellRenderer</code> e insertamos la siguiente línea
 <code>@ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef&lt;any>;</code> para
-adquirir el contenido según una plantilla y acceder a la vista. En el constructor tenemos que añadir el siguiente 
+adquirir el contenido según una plantilla y acceder a la vista. En el constructor tenemos que añadir el siguiente
 código.</p>
 
 {% highlight console %}
@@ -79,10 +79,10 @@ constructor(protected injector: Injector) {
 }
 {% endhighlight %}
 
-<p>y sobrecargar el método <code>getCellData(cellvalue: any, rowvalue?: any): string</code> para que podamos modificar 
+<p>y sobrecargar el método <code>getCellData(cellvalue: any, rowvalue?: any): string</code> para que podamos modificar
 el valor que muestra la columna de la tabla.</p>
-<p>La idea de este renderer es visualizar una única columna que contenga los valores de la entidad, la oficina, el 
-dígito de control y el identificador de la cuenta para obtener el número de cuenta total, separado por espacios. 
+<p>La idea de este renderer es visualizar una única columna que contenga los valores de la entidad, la oficina, el
+dígito de control y el identificador de la cuenta para obtener el número de cuenta total, separado por espacios.
 Como el método recibe por parámetros el valor de la celda y los valores de toda la fila, podemos concatenar todos los
 datos que queremos y devolverlo todo junto.</p>
 
@@ -110,9 +110,9 @@ export class AccountNumberRenderComponent extends OBaseTableCellRenderer {
 }
 {% endhighlight %}
 <p>El componente del render, en su fichero <strong>account-number-render.component.html</strong> tiene que comenzar por
-<code>&lt;ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue"&gt;</code> y acabar por 
-<code>&lt;/ng-template&gt;</code>. La palabra <em>let</em> declara la variable de la plantilla que será referenciada desde 
-esta. Las variables de entrada en este caso son <em>cellvalue</em> y <em>rowvalue</em>. El parseador traduce las 
+<code>&lt;ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue"&gt;</code> y acabar por
+<code>&lt;/ng-template&gt;</code>. La palabra <em>let</em> declara la variable de la plantilla que será referenciada desde
+esta. Las variables de entrada en este caso son <em>cellvalue</em> y <em>rowvalue</em>. El parseador traduce las
 variables y se las pasa al método <em>getCellValue()</em>.</p>
 
 {{"**account-number-render.component.html**" | markdownify }}
@@ -122,7 +122,7 @@ variables y se las pasa al método <em>getCellValue()</em>.</p>
 </ng-template>
 {% endhighlight %}
 
-<p>Ahora, en el formulario, definimos una nueva columna en las <code>visible-columns</code>, por ejemplo, 
+<p>Ahora, en el formulario, definimos una nueva columna en las <code>visible-columns</code>, por ejemplo,
 <code>ACCOUNTNUMBER</code>. A continuación, definimos una nueva columna llamada de la misma manera y eleminamos las
 <code>o-table-column</code> que ya no son necesarias.</p>
 
@@ -146,7 +146,7 @@ variables y se las pasa al método <em>getCellValue()</em>.</p>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-table-column (atributos de <a href="{{ base_path }}/components/table/api#o-table-column" 
+            <th colspan="3">o-table-column (atributos de <a href="{{ base_path }}/components/table/api#o-table-column"
 target="_blank">o-table-column</a>)</th>
         </tr>
         <tr>
@@ -180,10 +180,10 @@ target="_blank">o-table-column</a>)</th>
 }
 {% endhighlight %}
 
-<p>Si hemos abierto antes este formulario (en el tutorial anterior, por ejemplo), es posible que no nos aparezca el render 
-que acabamos de crear, ya que la tabla guarda las preferencias de las columnas mostradas al usuario actual. Podemos 
-reestablecer las preferencias por defecto haciendo clic en el menú 
-<span class="material-symbols-outlined">more_vert</span> de la tabla y haciedo clic en <em>Configuración > Aplicar 
+<p>Si hemos abierto antes este formulario (en el tutorial anterior, por ejemplo), es posible que no nos aparezca el render
+que acabamos de crear, ya que la tabla guarda las preferencias de las columnas mostradas al usuario actual. Podemos
+reestablecer las preferencias por defecto haciendo clic en el menú
+<span class="material-symbols-outlined">more_vert</span> de la tabla y haciedo clic en <em>Configuración > Aplicar
 configuración > Configuración por defecto</em></p>
 
 <div class="multicolumn">
@@ -196,8 +196,8 @@ configuración > Configuración por defecto</em></p>
     </div>
 </div>
 
-<p>También podemos eliminar todas las preferencias que ha guardado la web abriendo las 
-<em>Herramientas de desarrollo</em> y eliminar los datos almacenados de la página desde la pestaña de 
+<p>También podemos eliminar todas las preferencias que ha guardado la web abriendo las
+<em>Herramientas de desarrollo</em> y eliminar los datos almacenados de la página desde la pestaña de
 <em>Aplicación</em></p>
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -458,10 +458,10 @@ configuración > Configuración por defecto</em></p>
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-<p>Aunque lo ideal sería que hubiésemos definido el render anterior dentro del módulo <strong>shared</strong>, 
-realizamos este paso para demostrar que se puede usar desde múltiples sitio, sin importar la ubicación del componente. 
+<p>Aunque lo ideal sería que hubiésemos definido el render anterior dentro del módulo <strong>shared</strong>,
+realizamos este paso para demostrar que se puede usar desde múltiples sitio, sin importar la ubicación del componente.
 Importamos el componente <strong>AccountNumberRenderComponent</strong> desde el módulo shared y lo añadimos al array de
-declaraciones y de exportación</p>        
+declaraciones y de exportación</p>
 
 {{"**shared.module.ts**" | markdownify }}
 {% highlight typescript %}
@@ -485,8 +485,8 @@ import { AccountNumberRenderComponent } from '../main/accounts/accounts-home/acc
 export class SharedModule { }
 {% endhighlight %}
 
-<p>Ahora, cambiaremos la importación del componente en el módulo de cuentas, sustituyéndolo por la importación del 
-módulo <strong>shared</strong>, pero retirándolo del array de declaraciones y añadiéndolo al array de importaciones. 
+<p>Ahora, cambiaremos la importación del componente en el módulo de cuentas, sustituyéndolo por la importación del
+módulo <strong>shared</strong>, pero retirándolo del array de declaraciones y añadiéndolo al array de importaciones.
 Haremos lo mismo para cada módulo en el que queramos usar el render</p>
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -745,7 +745,7 @@ Haremos lo mismo para cada módulo en el que queramos usar el render</p>
 
 Las columnas calculadas son columnas cuyo valor se calculan en base a operaciones sobre otras columnas. En este ejemplo,
 crearemos una nueva columna calculada, que mostrará el porcentaje de _interés mensual_, esto es, dividiendo entre 12 el
-valor del porcentaje de interés. Esta función para obtener la columna del interés mensual la usaremos en múltiples 
+valor del porcentaje de interés. Esta función para obtener la columna del interés mensual la usaremos en múltiples
 sitios, por lo que la definiremos en el módulo de **shared**. Obtendremos un resultado similar al siguiente mockup.
 
 ![tutorial_o_web_27.png]({{ base_path }}/assets/images/tutorial_o_web_27.png)
@@ -755,9 +755,9 @@ sitios, por lo que la definiremos en el módulo de **shared**. Obtendremos un re
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Debemos declarar una nueva columna en las columnas visibles, por lo que la denominaremos 
-<em>INTERESRATE_MONTHLY</em>. Ahora, definimos una columna calculada <code>&lt;o-table-column-calculated&gt;</code>. Este tag 
-tiene un atributo <code>[operation-function]</code> al que añadimos un nombre, que será el nombre del método que 
+        <p>Debemos declarar una nueva columna en las columnas visibles, por lo que la denominaremos
+<em>INTERESRATE_MONTHLY</em>. Ahora, definimos una columna calculada <code>&lt;o-table-column-calculated&gt;</code>. Este tag
+tiene un atributo <code>[operation-function]</code> al que añadimos un nombre, que será el nombre del método que
 invocaremos. Luego se establece el centrado de los elementos en el espacio de las columnas y un renderer por defecto</p>
 
 {{"**accounts-home.component.html**" | markdownify }}
@@ -781,9 +781,9 @@ invocaremos. Luego se establece el centrado de los elementos en el espacio de la
 </o-form-layout-manager>
 {% endhighlight %}
 
-<p>Creamos una función en el fichero <strong>shared.module.ts</strong> que llamaremos igual que el nombre de la función 
+<p>Creamos una función en el fichero <strong>shared.module.ts</strong> que llamaremos igual que el nombre de la función
 que hemos estabablecido en el *<strong>.html</strong>, acabado en Function (por comodidad). Exportamos esta función, que
-<strong>DEBE</strong> devolver un <strong>número</strong> y y ser <strong>pública</strong> y tener como parámetros de 
+<strong>DEBE</strong> devolver un <strong>número</strong> y y ser <strong>pública</strong> y tener como parámetros de
 entrada un array con los datos de la fila (<em>rowData: Array&lt;any&gt;</em>)</p>
 
 {{"**shared.module.ts**" | markdownify }}
@@ -815,7 +815,7 @@ export class SharedModule { }
 <p>Ahora, desde el fichero <strong>typescript</strong> del componente donde queramos utilizarla, la importaremos (ya que
 la hemos marcado con el modificador <strong>export</strong>) y se establecerá como el valor de una variable con el mismo
 nombre que la función que hemos definido en el fichero *<strong>.html</strong></p>
-<p>Esto es, si la definimos en el fichero <strong>accounts-home.component.html</strong>, la importaremos en el fichero 
+<p>Esto es, si la definimos en el fichero <strong>accounts-home.component.html</strong>, la importaremos en el fichero
 <strong>accounts-home.component.ts</strong></p>
 
 {{"**accounts-home.component.ts**" | markdownify }}

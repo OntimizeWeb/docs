@@ -1,13 +1,13 @@
 ---
-title: "Creating the employees module"
+title: "Creating employees module"
 layout: default
-permalink: /tutorial-web/exercise4/
+permalink: /tutorials/exercise4/
 nav_order: 4
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -484,7 +484,7 @@ export class MainRoutingModule { }
 </div>
 
 ## Crear componente base de empleados
-Crearemos el componente base de empleados de dentro de la carpeta del módulo **employees** y ejecutamos el siguiente 
+Crearemos el componente base de empleados de dentro de la carpeta del módulo **employees** y ejecutamos el siguiente
 comando para crear la carpeta employees-home que contendrá el nuevo componente:
 
 ```
@@ -704,7 +704,7 @@ npx ng g component --skip-tests employees-home
     </div>
 </div>
 
-A continuación, se muestra el mockup del listado de los empleados, y los archivos que es necesario modificar para 
+A continuación, se muestra el mockup del listado de los empleados, y los archivos que es necesario modificar para
 crearlo y añadirlo al menú lateral.
 
 <div class="multicolumn">
@@ -712,7 +712,7 @@ crearlo y añadirlo al menú lateral.
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**employees-home.component.html**" | markdownify }}
 {% highlight xml %}
 <o-form-layout-manager attr="employeesHome" title="{% raw %}{{'EMPLOYEES' | oTranslate }}{% endraw %}" separator=" " mode="dialog"
@@ -1041,7 +1041,7 @@ export const SERVICE_CONFIG: Object = {
 </div>
 
 ## Crear el componente detalle de empleados
-Para crear el componente de detalle, nos situamos detro de la carpeta **employees**, a la altura de la carpeta 
+Para crear el componente de detalle, nos situamos detro de la carpeta **employees**, a la altura de la carpeta
 **employees-home** y ejecutamos el comando para generar un nuevo componente:
 
 ```
@@ -1269,10 +1269,10 @@ npx ng g component --skip-tests employees-detail
     </div>
 </div>
 
-Modificaremos el fichero **employees.module.ts**, para añadir el import del nuevo componente, situándolo en el array de 
-declaraciones. De la misma manera que hemos hecho en tutoriales anteriores, estableceremos la nueva ruta en el fichero 
-**employees-routing.module.ts**. Dado que esta vez queremos usar el mismo formulario tanto para editar como para 
-insertar, añadiremos las rutas necesarias al fichero **employees-routing.module.ts**, declarando el componente de 
+Modificaremos el fichero **employees.module.ts**, para añadir el import del nuevo componente, situándolo en el array de
+declaraciones. De la misma manera que hemos hecho en tutoriales anteriores, estableceremos la nueva ruta en el fichero
+**employees-routing.module.ts**. Dado que esta vez queremos usar el mismo formulario tanto para editar como para
+insertar, añadiremos las rutas necesarias al fichero **employees-routing.module.ts**, declarando el componente de
 detalle de los empleados.
 
 <div class="multicolumn">
@@ -1546,7 +1546,7 @@ export class EmployeesRoutingModule { }
     </div>
 </div>
 
-Modificamos el fichero **employees-detail.component.html** para crear el formulario detalle de los empleados, imitando 
+Modificamos el fichero **employees-detail.component.html** para crear el formulario detalle de los empleados, imitando
 el siguiente mockup.
 
 ![tutorial_o_web_19.png]({{ base_path }}/assets/images/tutorial_o_web_19.png)
@@ -1595,9 +1595,9 @@ el siguiente mockup.
 </o-form>
 {% endhighlight %}
 
-<p>El campo  <code><o-combo attr="OFFICEID" ... ></code> llama a un servicio y a una entidad que no ha sido definida 
-hasta el momento. Este nuevo servicio hace referencia al servicio de las sucursales, por lo que es necesario definir 
-cuál es el '<strong>path</strong>' de la petición. En este caso, el '<strong>path</strong>' será 
+<p>El campo  <code><o-combo attr="OFFICEID" ... ></code> llama a un servicio y a una entidad que no ha sido definida
+hasta el momento. Este nuevo servicio hace referencia al servicio de las sucursales, por lo que es necesario definir
+cuál es el '<strong>path</strong>' de la petición. En este caso, el '<strong>path</strong>' será
 /<strong>branches</strong>.</p>
 
 {{"**app.services.config.ts**" | markdownify }}

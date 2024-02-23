@@ -1,13 +1,13 @@
 ---
 title: "Use of external services"
 layout: default
-permalink: /tutorial-web/exercise13/
+permalink: /tutorials/exercise13/
 nav_order: 13
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorials
 ---
 
 {% include base_path %}
@@ -17,12 +17,12 @@ parent: Tutorial OWeb
 ## Introducción
 
 Este ejercicio mostrará como se llama y se integra un servicio externo dentro de Ontimize Web. Utilizaremos el servicio
-externo de [SWAPI](https://swapi.dev/){:target="_blank"} por su simpleza, no porque esté relacionado de alguna manera 
+externo de [SWAPI](https://swapi.dev/){:target="_blank"} por su simpleza, no porque esté relacionado de alguna manera
 con una aplicación bancaria.
 
 ## Creando un nuevo servicio
 Los servicios los crearemos dentro de la carpeta de **shared**, ya que un servicio es susceptible de que sea invocado en
-muchas partes de una misma aplicación, por lo que, por defecto, crearemos los servicios en esta ruta con el siguiente 
+muchas partes de una misma aplicación, por lo que, por defecto, crearemos los servicios en esta ruta con el siguiente
 comando
 
 ```
@@ -34,8 +34,8 @@ npx ng generate service --skip-tests star-wars
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Para crear un nuevo servicio, es necesario crear una clase nueva que extienda de 
-<code>OntimizeEEService</code>. Para toda la información relativa a los servicios de Ontimize, se puede consultar 
+        <p>Para crear un nuevo servicio, es necesario crear una clase nueva que extienda de
+<code>OntimizeEEService</code>. Para toda la información relativa a los servicios de Ontimize, se puede consultar
 <a href="{{ base_path }}/guide/service/">este enlace</a></p>
 
 <p>En este caso, como es un servicio externo al que no podremos introducir datos, únicamente extenderemos el servicio de
@@ -455,7 +455,7 @@ npx ng g component --skip-tests service-ex-home
 npx ng g component --skip-tests service-ex-details
 {% endhighlight %}
 
-<p>Debemos importar el servicio que hemos creado dentro del módulo <strong>service-ex</strong>, que es dónde se 
+<p>Debemos importar el servicio que hemos creado dentro del módulo <strong>service-ex</strong>, que es dónde se
 utilizará, y anotarlo dentro del array de <code>providers</code></p>
 
 {{"**service-ex.module.ts**" | markdownify }}
@@ -489,7 +489,7 @@ export class ServiceExModule { }
 
 {% endhighlight %}
 
-<p>Ahora usaremos este servicio cómo si fuera un servicio más de Ontimize. El servicio será <em>starsWars</em>, la 
+<p>Ahora usaremos este servicio cómo si fuera un servicio más de Ontimize. El servicio será <em>starsWars</em>, la
 entidad será <em>films</em> y la clave primaria de la tabla será <em>uuid</em></p>
 
 {{"**service-ex-home.component.html**" | markdownify }}
