@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Input
-permalink: /components/input/overview/
+permalink: /components/input/
 author_profile: false
 has_children: true
 parent: Components
