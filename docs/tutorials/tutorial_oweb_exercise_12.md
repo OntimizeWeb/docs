@@ -1,13 +1,13 @@
 ---
-title: "View data in grid mode"
+title: "Data in grid mode"
 layout: default
-permalink: /tutorial-web/exercise12/
+permalink: /tutorial/exercise12/
 nav_order: 12
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
@@ -118,19 +118,19 @@ de tabla a formato de cuadrícula, y modificar su formulario detalle para que se
     </tbody>
 </table>
 
-<p>Dentro de la etiqueta de la cuadrícula tenemos que definir la plantilla que se seguirá para cada elemento de la 
-cuadrícula. Esto se consigue mediante el uso de la etiqueta <code>&lt;o-grid-item&gt;</code> y la directiva de Angular 
-<code>*ngFor="let list of employeesGrid.dataArray"</code> aplicará este elemento para todos los registros que se 
-recuperen en la consulta. Dentro de la etiqueta <code>&lt;o-grid-item&gt;</code>, se diseña el aspecto de cada uno de 
+<p>Dentro de la etiqueta de la cuadrícula tenemos que definir la plantilla que se seguirá para cada elemento de la
+cuadrícula. Esto se consigue mediante el uso de la etiqueta <code>&lt;o-grid-item&gt;</code> y la directiva de Angular
+<code>*ngFor="let list of employeesGrid.dataArray"</code> aplicará este elemento para todos los registros que se
+recuperen en la consulta. Dentro de la etiqueta <code>&lt;o-grid-item&gt;</code>, se diseña el aspecto de cada uno de
 los elementos de la cuadrícula.</p>
 
 <p>Lo envolveremos todo con un elemento <code>&lt;div&gt;</code> que permitirá ejecutar la acción de abrir el formulario
 detalle (acción que hemos invalidado con el atributo <code>detail-mode</code> del elemento <code>&lt;o-grid&gt;</code>)
-por lo que será necesario indicar otra acción para mostrar el desplegable de detalle. Para cargar imágenes, tendremos 
-que indicarle que dicha foto está contenida en la petición, por lo que invocaremos un método que permita mostrar la 
+por lo que será necesario indicar otra acción para mostrar el desplegable de detalle. Para cargar imágenes, tendremos
+que indicarle que dicha foto está contenida en la petición, por lo que invocaremos un método que permita mostrar la
 imagen correctamente.</p>
 
-<p>El componente detalle que será el diálogo flotante tiene que recibir los datos y una altura y anchura 
+<p>El componente detalle que será el diálogo flotante tiene que recibir los datos y una altura y anchura
 determinadas.</p>
 
 {{"**employees-home.component.ts**" | markdownify }}
@@ -166,7 +166,7 @@ export class EmployeesHomeComponent implements OnInit {
       data: data
     });
   }
-} 
+}
 {% endhighlight %}
 
 <p>También modificamos el fichero css para pesonalizar algo más el elemento de una cuadrícula</p>
@@ -187,7 +187,7 @@ export class EmployeesHomeComponent implements OnInit {
 }
 {% endhighlight %}
 
-<p>Añadidmos también traducciones para una columna que no tendría traducción en los filtros del 
+<p>Añadidmos también traducciones para una columna que no tendría traducción en los filtros del
 <code>quick-filter</code></p>
 
 {{"**en.json**" | markdownify }}
@@ -568,7 +568,7 @@ export class EmployeesHomeComponent implements OnInit {
 {% endhighlight %}
 
 <p>Utilizamos las plantillas de <code>*ngIf</code> con el else para que muestre un contenido en caso de que contenga la
-información que se pide. En caso contrario, cargará el contenido del <code>&lt;ng-template&gt;</code> cuyo 
+información que se pide. En caso contrario, cargará el contenido del <code>&lt;ng-template&gt;</code> cuyo
 <code>id</code> que coincida con el nombre que se ha escrito en el <code>*ngIf</code></p>
 
 <p>Para rellenar los datos es necesario que este componente cargue los datos a través del <code>Injector</code></p>

@@ -1,13 +1,13 @@
 ---
 title: "Charts"
 layout: default
-permalink: /tutorial-web/exercise15/
+permalink: /tutorial/exercise15/
 nav_order: 15
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
@@ -25,7 +25,7 @@ npm install ontimize-web-ngx-charts --save
 ```
 ## Añadir el estilo de las gráficas
 
-Seleccionamos el fichero **angular.json** y añadimos dentro del array de estilos el estilo relacionado con el módulo de 
+Seleccionamos el fichero **angular.json** y añadimos dentro del array de estilos el estilo relacionado con el módulo de
 gráficas
 
 <div class="multicolumn">
@@ -33,7 +33,7 @@ gráficas
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Este array contiene también la entrada para los estilos generales de Ontimize Web, 
+        <p>Este array contiene también la entrada para los estilos generales de Ontimize Web,
 <em>node_modules/ontimize-web-ngx/ontimize.scss</em></p>
 
 {{"**angular.json**" | markdownify }}
@@ -449,7 +449,7 @@ gráficas
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**accounts.module.ts**" | markdownify }}
 {% highlight typescript %}
 import { NgModule } from '@angular/core';
@@ -875,7 +875,7 @@ export class AccountsModule { }
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>En el componente detalle, se definen tanto parametros de configuracion de una gráfica tipo tarta como la 
+        <p>En el componente detalle, se definen tanto parametros de configuracion de una gráfica tipo tarta como la
 consulta al servicio de localización</p>
 
 {{"**accounts-detail.component.ts**" | markdownify }}
@@ -909,8 +909,8 @@ export class AccountsDetailComponent {
 }
 {% endhighlight %}
 
-<p>Para usar la configuración del gráfico de tarta que se crea en el fichero 
-<strong>accounts-detail.component.ts</strong> lo pasaremos como parámetro en la gráfica 
+<p>Para usar la configuración del gráfico de tarta que se crea en el fichero
+<strong>accounts-detail.component.ts</strong> lo pasaremos como parámetro en la gráfica
 <code>[chart-parameters]="movementTypesChartParams"</code></p>
 
 {{"**accounts-detail.component.html**" | markdownify }}
@@ -1366,7 +1366,7 @@ export class AccountsDetailComponent {
   "UNDER": "Under",
   "CRITERIA_VALUE": "Criteria"
 }
-{% endhighlight %}      
+{% endhighlight %}
 
 {{"**es.json**" | markdownify }}
 {% highlight json %}
@@ -1763,7 +1763,7 @@ export class AccountsDetailComponent {
 </div>
 
 ## Usar el componente de las gráficas en tarjetas
-Para usar el componente de las gráficas en tarjetas, es importante que el módulo que lo importe sea **shared**, para que 
+Para usar el componente de las gráficas en tarjetas, es importante que el módulo que lo importe sea **shared**, para que
 pueda ser usado tanto por el componente de la tarjeta como por el componente de **accounts-detail**
 
 <div class="multicolumn">
@@ -2237,7 +2237,7 @@ Para la tarjeta de cuentas, queremos mostrar el número de cuentas que tengan m�
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Añadiremos la consulta del balance total de la cuenta y procesaremos los valores para adaptarlos a la 
+        <p>Añadiremos la consulta del balance total de la cuenta y procesaremos los valores para adaptarlos a la
 gráfica</p>
 
 {{"**account-card.component.ts**" | markdownify }}

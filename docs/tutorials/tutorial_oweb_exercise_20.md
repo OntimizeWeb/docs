@@ -1,13 +1,14 @@
 ---
 title: "Maps"
 layout: default
-permalink: /tutorial-web/exercise20/
+permalink: /tutorial
+/exercise20/
 nav_order: 20
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
@@ -31,7 +32,7 @@ el mapa siguiendo las coordenadas de latitud y longitud.
 npm install ontimize-web-ngx-map --save
 {% endhighlight %}
 
-<p>Añadimos al fichero <strong>angular.json</strong> los estilos del mapas y la carpeta de recursos de los mapas 
+<p>Añadimos al fichero <strong>angular.json</strong> los estilos del mapas y la carpeta de recursos de los mapas
 <strong>leaflet</strong></p>
 
 {{"**angular.json**" | markdownify }}
@@ -520,9 +521,9 @@ export class SharedModule { }
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Envolveremos el mapa con un contenedor que sólo se mostrará si hemos cargado la latitud y longitud en el 
-formulario. Para ello, utilizaremos el evento del formulario <strong>onDataLoaded</strong>. Tanto el mapa como la capa 
-de marcadores obtendrán las coordenadas de una función llamada <strong>getPositionGPS()</strong>, que devolverá la 
+        <p>Envolveremos el mapa con un contenedor que sólo se mostrará si hemos cargado la latitud y longitud en el
+formulario. Para ello, utilizaremos el evento del formulario <strong>onDataLoaded</strong>. Tanto el mapa como la capa
+de marcadores obtendrán las coordenadas de una función llamada <strong>getPositionGPS()</strong>, que devolverá la
 latitud y longitud, separadas por comas, que se hayan guardado en la carga del formulario</p>
 
 {{"**customers-detail.component.html**" | markdownify }}
@@ -1057,7 +1058,7 @@ export class CustomersDetailComponent {
     </div>
 </div>
 
-Podéis encontrar todo este tutorial realizado en el 
+Podéis encontrar todo este tutorial realizado en el
 [siguiente repositorio de Github](https://github.com/ontimize/ontimize-web-tutorial){:target="_blank"}
 
 [<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial-web/exercise19){: .btn }

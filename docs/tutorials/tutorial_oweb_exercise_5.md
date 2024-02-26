@@ -1,13 +1,13 @@
 ---
 title: "Creating the branches and account forms"
 layout: default
-permalink: /tutorial-web/exercise5/
+permalink: /tutorial/exercise5/
 nav_order: 5
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
@@ -16,7 +16,7 @@ parent: Tutorial OWeb
 # Crear formularios de sucursales y cuentas
 ## Sucursales
 ### Crear el módulo de sucursales
-Nos situamos dentro de la carpeta main, ejecutamos el comando para crear el módulo de sucursales y modificamos los 
+Nos situamos dentro de la carpeta main, ejecutamos el comando para crear el módulo de sucursales y modificamos los
 ficheros para declarar este módulo dentro de la aplicación:
 
 ```
@@ -28,7 +28,7 @@ npx ng g module --routing branches
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**branches.module.ts**" | markdownify }}
 {% highlight typescript %}
 import { NgModule } from '@angular/core';
@@ -314,7 +314,7 @@ npx ng g component --skip-tests branches-home
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**branches-home.component.html**" | markdownify }}
 {% highlight xml %}
 <o-form-layout-manager attr="branchesHome" title="{% raw %}{{'BRANCHES' | oTranslate }}{% endraw %}" separator=" " mode="dialog" label-columns="NAME">
@@ -626,7 +626,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
 ![tutorial_o_web_21.png]({{ base_path }}/assets/images/tutorial_o_web_21.png)
 
 ## Cuentas
-De la misma manera que se ha creado el módulo y el formulario para las sucursales, crearemos otro módulo, esta vez para 
+De la misma manera que se ha creado el módulo y el formulario para las sucursales, crearemos otro módulo, esta vez para
 las cuentas.
 ### Crear el módulo de cuentas
 Nos situamos en el directorio ```src/app/main``` y ejecutamos el comando:
@@ -640,7 +640,7 @@ npx ng g module --routing accounts
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**accounts.module.ts**" | markdownify }}
 {% highlight typescript %}
 import { NgModule } from '@angular/core';
@@ -928,7 +928,7 @@ export class MainRoutingModule { }
 </div>
 
 ### Crear el formulario de cuentas
-Para crear el formulario, nos situamos dentro de la carpeta **accounts** que hemos creado en el punto anterior y 
+Para crear el formulario, nos situamos dentro de la carpeta **accounts** que hemos creado en el punto anterior y
 ejecutamos el siguiente comando:
 
 ```
@@ -944,7 +944,7 @@ Adaptaremos el componente para realizar un formulario similar a este mockup
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**accounts-home.component.html**" | markdownify }}
 {% highlight xml %}
 <o-form-layout-manager attr="accountsHome" title="{% raw %}{{'ACCOUNTS' | oTranslate }}{% endraw %}" separator=" " mode="dialog" label-columns="ANID">
@@ -1037,7 +1037,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
 {
   ...
   "ACCOUNTS": "Cuentas",
-  "ACCOUNTID": "Id.", 
+  "ACCOUNTID": "Id.",
   "ENTITYID": "Entidad",
   "CDID": "DC",
   "ANID": "Cuenta",

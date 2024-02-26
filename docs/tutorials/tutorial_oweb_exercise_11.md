@@ -1,13 +1,13 @@
 ---
-title: "Add a custom column renderer"
+title: "Custom column renderer"
 layout: default
-permalink: /tutorial-web/exercise11/
+permalink: /tutorial/exercise11/
 nav_order: 11
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
@@ -16,11 +16,11 @@ parent: Tutorial OWeb
 # Añadir un render personalizado a una columna
 ## Introducción
 
-En este ejemplo añadiremos un render con una imagen a una columna y otro render con un símbolo y color de fuente 
+En este ejemplo añadiremos un render con una imagen a una columna y otro render con un símbolo y color de fuente
 diferentes según el valor que tenga la celda de cada una de las tablas.
 
 ## Render con una imagen personalizada
-Para este ejemplo, mostraremos imágenes diferentes en el listado de clientes según su tipo (Normal, VIP u Otro). 
+Para este ejemplo, mostraremos imágenes diferentes en el listado de clientes según su tipo (Normal, VIP u Otro).
 Modificaremos el listado que ya tenemos y añadiremos los nuevos elementos y clases necesarias
 
 ![tutorial_o_web_34.png]({{ base_path }}/assets/images/tutorial_o_web_34.png)
@@ -30,14 +30,14 @@ Modificaremos el listado que ya tenemos y añadiremos los nuevos elementos y cla
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>El primer paso es ubicarnos dentro de la ruta <code>src/app/main/customers/customers-home</code> y ejecutar 
+        <p>El primer paso es ubicarnos dentro de la ruta <code>src/app/main/customers/customers-home</code> y ejecutar
 el siguiente comando</p>
 {% highlight console %}
 npx ng g component --skip-import --skip-tests customertype-column-renderer
 {% endhighlight %}
 
-<p>Esto creará el nuevo componente que usaremos para realizar el nuevo render. Como nuestra idea es poder usar este 
-render en múltiples lugares de la aplicación, aunque su ubicación física esté en esta ruta, el <strong>módulo</strong> 
+<p>Esto creará el nuevo componente que usaremos para realizar el nuevo render. Como nuestra idea es poder usar este
+render en múltiples lugares de la aplicación, aunque su ubicación física esté en esta ruta, el <strong>módulo</strong>
 que tendrá la declaración y exportación del componente es el módulo <strong>shared</strong></p>
 
 {{"**shared.module.ts**" | markdownify }}
@@ -69,7 +69,7 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
 export class SharedModule { }
 {% endhighlight %}
 
-<p>Ahora, el propio modulo de <strong>customers</strong> debe importar el módulo de <strong>shared</strong> (que ya lo 
+<p>Ahora, el propio modulo de <strong>customers</strong> debe importar el módulo de <strong>shared</strong> (que ya lo
 importa de ejercicios anteriores)</p>
 
 {{"**customers.module.ts**" | markdownify }}
@@ -100,8 +100,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 export class CustomersModule { }
 {% endhighlight %}
 
-<p>En nuestro fichero <strong>customertype-column-renderer.html</strong>, crearemos la platilla que se mostrará. En 
-dicha plantilla, utilizaremos las directrices <code>*ngIfg</code> de Angular para seleccionar que imagen que queremos 
+<p>En nuestro fichero <strong>customertype-column-renderer.html</strong>, crearemos la platilla que se mostrará. En
+dicha plantilla, utilizaremos las directrices <code>*ngIfg</code> de Angular para seleccionar que imagen que queremos
 mostrar a través de la variable <em>cellvalue</em></p>
 
 {{"**customertype-column-renderer.html**" | markdownify }}
@@ -164,19 +164,19 @@ export class CustomertypeColumnRendererComponent extends OBaseTableCellRenderer 
 <table>
     <tr>
         <td>
-            <img src="{{ base_path }}/assets/images/normal_24.png" style="vertical-align: middle;"/> 
+            <img src="{{ base_path }}/assets/images/normal_24.png" style="vertical-align: middle;"/>
             <strong style="vertical-align: middle;">normal_24.png</strong>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="{{ base_path }}/assets/images/vip_24.png" style="vertical-align: middle;"/> 
+            <img src="{{ base_path }}/assets/images/vip_24.png" style="vertical-align: middle;"/>
             <strong style="vertical-align: middle;">vip_24.png</strong>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="{{ base_path }}/assets/images/other_24.png" style="vertical-align: middle;"/> 
+            <img src="{{ base_path }}/assets/images/other_24.png" style="vertical-align: middle;"/>
             <strong style="vertical-align: middle;">other_24.png</strong>
         </td>
     </tr>
@@ -555,7 +555,7 @@ export class BranchesModule { }
 </div>
 
 ## Render con símbolos y colores personalizados
-En este ejemplo añadiremos un render a la columna de movimientos dentro del detalle de las cuentas, que según su valor 
+En este ejemplo añadiremos un render a la columna de movimientos dentro del detalle de las cuentas, que según su valor
 se modifique el color y se añadan símbolos y además añadiremos el render que hemos creado para el tipo de cliente.
 
 ![tutorial_o_web_35.png]({{ base_path }}/assets/images/tutorial_o_web_35.png)
@@ -565,7 +565,7 @@ se modifique el color y se añadan símbolos y además añadiremos el render que
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Nos ubicamos dentro de la carpeta que contiene el detalle de las cuentas, 
+        <p>Nos ubicamos dentro de la carpeta que contiene el detalle de las cuentas,
 <strong>src/app/main/accounts/accounts-detail</strong> y ejecutamos el siguiente comando:</p>
 
 {% highlight console %}
@@ -607,7 +607,7 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
 export class SharedModule { }
 {% endhighlight %}
 
-<p>Es necesario que el módulo <strong>accounts.module.ts</strong> importe el módulo <strong>shared</strong> (importado 
+<p>Es necesario que el módulo <strong>accounts.module.ts</strong> importe el módulo <strong>shared</strong> (importado
 en ejercicios anteriores)</p>
 
 {{"**accounts.module.ts**" | markdownify }}
@@ -643,11 +643,11 @@ export class AccountsModule { }
 {% endhighlight %}
 
 <p>El fichero <strong>movement-column-renderer.component.html</strong> contendrá la plantilla que mostrará la columna de
-la tabla que contendrá el render. Mediante directivas <em>*ngIf</em>, y calculando el valor numérico de la variable 
-<em>cellvalue</em>, se mostrará el componente <code>&lt;span&gt;</code> correspondiente. Estos componentes 
-<code>&lt;span&gt;</code> contienen un icono (<code>&lt;mat-icon&gt;arrow_drop_down&lt;/mat-icon&gt;</code> o 
-<code>&lt;mat-icon&gt;arrow_drop_up&lt;/mat-icon&gt;</code>), tomarán un color u otro dependiendo del valor del 
-<em>cellvalue</em> y añadirán un texto depués de pasar el valor <em>cellvalue</em> al método 
+la tabla que contendrá el render. Mediante directivas <em>*ngIf</em>, y calculando el valor numérico de la variable
+<em>cellvalue</em>, se mostrará el componente <code>&lt;span&gt;</code> correspondiente. Estos componentes
+<code>&lt;span&gt;</code> contienen un icono (<code>&lt;mat-icon&gt;arrow_drop_down&lt;/mat-icon&gt;</code> o
+<code>&lt;mat-icon&gt;arrow_drop_up&lt;/mat-icon&gt;</code>), tomarán un color u otro dependiendo del valor del
+<em>cellvalue</em> y añadirán un texto depués de pasar el valor <em>cellvalue</em> al método
 <code>getCellData(value: any)</code> del fichero <strong>movement-column-renderer.component.ts</strong></p>
 
 {{"**movement-column-renderer.component.html**" | markdownify }}
@@ -662,11 +662,11 @@ la tabla que contendrá el render. Mediante directivas <em>*ngIf</em>, y calcula
 </ng-template>
 {% endhighlight %}
 
-<p>El el fichero <strong>movement-column-renderer.component.ts</strong> la clase extenderá de 
-<em>OBaseTableCellRenderer</em>. Esta vez, utilizaremos <em>pipes</em> para transformar el valor. En en constructor, 
-llamaremos al método <code>setComponentPipe()</code> que estará definido en la propia clase, para que indique que el 
+<p>El el fichero <strong>movement-column-renderer.component.ts</strong> la clase extenderá de
+<em>OBaseTableCellRenderer</em>. Esta vez, utilizaremos <em>pipes</em> para transformar el valor. En en constructor,
+llamaremos al método <code>setComponentPipe()</code> que estará definido en la propia clase, para que indique que el
 <em>pipe</em> del render es de tipo <strong><em>OCurrencPipe</em></strong>. En el método <em>ngOnInit</em>, se declaran
-los argumentos que aceptará el <em>pipe</em>, como puede ser el símbolo de la moneda, los separadores de decimales y 
+los argumentos que aceptará el <em>pipe</em>, como puede ser el símbolo de la moneda, los separadores de decimales y
 millares, etc. Dentro del método <code>getCellData(value: any)</code> transformará el valor con los argumentos de los
 <em>pipe</em>.</p>
 
@@ -714,7 +714,7 @@ export class MovementColumnRendererComponent extends OBaseTableCellRenderer impl
 }
 {% endhighlight %}
 
-<p>Solo resta añadir el render del tipo de cliente (dado que también hay un listado de clientes) y el render del 
+<p>Solo resta añadir el render del tipo de cliente (dado que también hay un listado de clientes) y el render del
 movimiento al detalle de las cuentas</p>
 
 {{"**accounts-detail.component.html**" | markdownify }}
