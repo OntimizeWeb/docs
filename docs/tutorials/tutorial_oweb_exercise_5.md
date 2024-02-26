@@ -1,13 +1,13 @@
 ---
 title: "Creating the branches and account forms"
 layout: default
-permalink: /tutorial-web/exercise5/
+permalink: /tutorial/exercise5/
 nav_order: 5
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

@@ -1,13 +1,13 @@
 ---
 title: "Creating customers module"
 layout: default
-permalink: /tutorials/exercise2/
+permalink: /tutorial/exercise2/
 nav_order: 2
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

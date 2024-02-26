@@ -1,13 +1,13 @@
 ---
 title: "Charts"
 layout: default
-permalink: /tutorials/exercise15/
+permalink: /tutorial/exercise15/
 nav_order: 15
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

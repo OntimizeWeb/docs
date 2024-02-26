@@ -1,13 +1,13 @@
 ---
 title: "Filtering a table"
 layout: default
-permalink: /tutorials/exercise10/
+permalink: /tutorial/exercise10/
 nav_order: 10
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

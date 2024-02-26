@@ -1,13 +1,13 @@
 ---
 title: "Creating employees module"
 layout: default
-permalink: /tutorials/exercise4/
+permalink: /tutorial/exercise4/
 nav_order: 4
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

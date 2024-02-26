@@ -1,13 +1,13 @@
 ---
 title: "Use of external services"
 layout: default
-permalink: /tutorials/exercise13/
+permalink: /tutorial/exercise13/
 nav_order: 13
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

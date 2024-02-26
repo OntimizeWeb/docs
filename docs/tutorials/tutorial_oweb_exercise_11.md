@@ -1,13 +1,13 @@
 ---
 title: "Custom column renderer"
 layout: default
-permalink: /tutorials/exercise11/
+permalink: /tutorial/exercise11/
 nav_order: 11
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

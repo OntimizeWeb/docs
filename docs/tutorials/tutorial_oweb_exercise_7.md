@@ -1,13 +1,13 @@
 ---
 title: "Filter table with form key"
 layout: default
-permalink: /tutorials/exercise7/
+permalink: /tutorial/exercise7/
 nav_order: 7
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

@@ -1,13 +1,13 @@
 ---
 title: "Add details to accounts"
 layout: default
-permalink: /tutorials/exercise9/
+permalink: /tutorial/exercise9/
 nav_order: 9
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

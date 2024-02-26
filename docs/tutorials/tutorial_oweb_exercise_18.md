@@ -1,13 +1,13 @@
 ---
 title: "Creation and insertion"
 layout: default
-permalink: /tutorials/exercise18/
+permalink: /tutorial/exercise18/
 nav_order: 18
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

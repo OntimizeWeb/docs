@@ -1,13 +1,13 @@
 ---
 title: "Add details to branches"
 layout: default
-permalink: /tutorials/exercise8/
+permalink: /tutorial/exercise8/
 nav_order: 8
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}

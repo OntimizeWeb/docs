@@ -1,13 +1,13 @@
 ---
 title: "Custom theme"
 layout: default
-permalink: /tutorials/exercise19/
+permalink: /tutorial/exercise19/
 nav_order: 19
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorials
+parent: Tutorial
 ---
 
 {% include base_path %}
