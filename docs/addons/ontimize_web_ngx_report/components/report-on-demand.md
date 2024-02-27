@@ -69,6 +69,22 @@ This visual tool will allow users to define parameters of the report such as:
 | `yyyy-MM-dd'T'HH:mm:ss.SSSZ`          | 2001-07-04T12:08:56.235-0700           |
 
 
+Moment formats, accepted in the table, are supported in reports
+
+| Moment.js Format Pattern | Example Result                |
+|--------------------------|-------------------------------|
+| `LT`                     | 9:43 AM                       |
+| `LTS`                    | 9:43:18 AM                    |
+| `L`                      | 02/27/2024                    |
+| `l`                      | 2/27/2024                     |
+| `LL`                     | February 27, 2024             |
+| `ll`                     | Feb 27, 2024                  |
+| `LLL`                    | February 27, 2024 9:43 AM     |
+| `lll`                    | Feb 27, 2024 9:43 AM          |
+| `LLLL`                   | Tuesday, February 27, 2024 9:43 AM |
+| `llll`                   | Tue, Feb 27, 2024 9:43 AM     |
+
+
 ## Menu option
 
 ![Report on demand menu option]({{ "/assets/images/report/menuOption.PNG" | absolute_url }}){: .comp-example-img}
