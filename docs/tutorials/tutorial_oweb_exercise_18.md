@@ -1,13 +1,13 @@
 ---
-title: "Create new account and insert a customer"
+title: "Creation and insertion"
 layout: default
-permalink: /tutorial-web/exercise18/
+permalink: /tutorial/exercise18/
 nav_order: 18
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
@@ -19,7 +19,7 @@ En este tutorial, permitiremos que se pueda crear una nueva cuenta asociada al c
 
 ## Modificar el formulario para la nueva opción
 En este caso, modificaremos el formulario existente para incluir un botón que permita añadir una nueva cuenta e insertar
-ese cliente. Será necesario tanto modificar el html para el botón, como el ts para pasarle los datos a un nuevo 
+ese cliente. Será necesario tanto modificar el html para el botón, como el ts para pasarle los datos a un nuevo
 componente
 
 <div class="multicolumn">
@@ -27,7 +27,7 @@ componente
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**customers-detail.component.html**" | markdownify }}
 {% highlight xml %}
 <o-form #form attr="customerDetail" service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
@@ -535,7 +535,7 @@ npx ng g c --skip-tests add-account
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**add-account.component.html**" | markdownify }}
 {% highlight xml %}
 <div mat-dialog-content>

@@ -1,13 +1,13 @@
 ---
 title: "Custom theme"
 layout: default
-permalink: /tutorial-web/exercise19/
+permalink: /tutorial/exercise19/
 nav_order: 19
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
@@ -15,7 +15,7 @@ parent: Tutorial OWeb
 
 # Tema personalizado
 ## Introducción
-En este tutorial modificaremos la apariencia por defecto de nuestra aplicación, sustituyendo la paleta de colores por 
+En este tutorial modificaremos la apariencia por defecto de nuestra aplicación, sustituyendo la paleta de colores por
 defecto por una personalizada.
 
 ## Usar una plantilla para crear un tema
@@ -28,8 +28,8 @@ ayudará a establecer nuestro tema predeterminado.
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
         <p>Creamos el fichero y modificamos los colores como nos guste. Hay páginas que pueden ser de utilidad, como
- <a href="https://www.materialpalette.com" target="_blank">materialpalette.com</a>, 
-<a href="https://www.materialui.co" target="_blank">materialui.co</a> o 
+ <a href="https://www.materialpalette.com" target="_blank">materialpalette.com</a>,
+<a href="https://www.materialui.co" target="_blank">materialui.co</a> o
 <a href="http://mcg.mbitson.com" target="_blank">mcg.mbitson.com</a></p>
 
 {{"**custom-theme.css**" | markdownify }}
@@ -88,7 +88,7 @@ $theme: ontimize-style.o-mat-light-theme($primary, $accent);
 $dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
 {% endhighlight %}
 
-<p>Luego para aplicar nuestro tema, modificaremos en tema en el fichero <strong>app.scss</strong>, para que use el 
+<p>Luego para aplicar nuestro tema, modificaremos en tema en el fichero <strong>app.scss</strong>, para que use el
 fichero <strong>custom-theme.scss</strong> en vez de <em>ontimize-web-ngx/theming/themes/ontimize.scss</em></p>
 
 {{"**app.scss**" | markdownify }}
@@ -507,7 +507,7 @@ fichero <strong>custom-theme.scss</strong> en vez de <em>ontimize-web-ngx/themin
 
 ## Modo oscuro
 
-Este modo lo podemos activar, modificando en el fichero **custom-theme.scss** la variable ```$theme``` que carga el modo claro 
+Este modo lo podemos activar, modificando en el fichero **custom-theme.scss** la variable ```$theme``` que carga el modo claro
 para forzar su carga por defecto.
 
 <div class="multicolumn">
@@ -515,7 +515,7 @@ para forzar su carga por defecto.
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        
+
 {{"**custom-theme.scss**" | markdownify }}
 {% highlight scss %}
 @use '@angular/material' as mat;

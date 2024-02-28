@@ -1,13 +1,13 @@
 ---
-title: "Preparing Ontimize Web base project"
+title: "Preparing base project"
 layout: default
-permalink: /tutorial-web/exercise1/
-nav_order: 1 
+permalink: /tutorial/exercise1/
+nav_order: 1
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
@@ -26,18 +26,18 @@ página de [prerrequisitos]({{ base_path }}/guide/prerequisites/)
 El backend que nosotros emplearemos está realizado con Ontimize Boot y se puede obtener al clonar el
 [repositorio de Github](https://github.com/ontimize/ontimize-web-boot-backend-tutorial){:target="_blank"}.
 
-Tenemos que seguir las instrucciones del fichero 
-[README.md](https://github.com/ontimize/ontimize-web-boot-backend-tutorial/blob/main/README.md){:target="_blank"} para 
+Tenemos que seguir las instrucciones del fichero
+[README.md](https://github.com/ontimize/ontimize-web-boot-backend-tutorial/blob/main/README.md){:target="_blank"} para
 lanzar el backed y que permita consultar datos a la aplicación web
 
 ## Descargar la seed de Ontimize Web
 Una vez descargados e instalados todos los programas que necesitamos en la sección anterior, tendremos que descargar la
-seed del proyecto de Ontimize Web que está preparado para funcionar junto con un servidor de Ontimize Boot. Podremos 
+seed del proyecto de Ontimize Web que está preparado para funcionar junto con un servidor de Ontimize Boot. Podremos
 clonar el repositorio de la seed en nuestro directorio de trabajo mediante el siguiente comando:
 
 {: .note-title}
 > Nota
-> 
+>
 > El valor ```bankmanager-web``` se utiliza para utilizar un nombre personalizado para la carpeta para la carpeta
 > del proyecto.
 
@@ -45,8 +45,8 @@ clonar el repositorio de la seed en nuestro directorio de trabajo mediante el si
 git clone --single-branch --branch 15.x.x https://github.com/OntimizeWeb/ontimize-web-ngx-jee-seed.git bankmanager-web
 {% endhighlight %}
 
-Desde el Visual Studio Code, abriremos la carpeta dónde hemos clonado/descargado el contenido del repositorio, 
-_Archivo > Abrir carpeta ..._ y añadiremos un terminal integrado para ejecutar todos los comandos 
+Desde el Visual Studio Code, abriremos la carpeta dónde hemos clonado/descargado el contenido del repositorio,
+_Archivo > Abrir carpeta ..._ y añadiremos un terminal integrado para ejecutar todos los comandos
 necesarios _Ver > Terminal integrado_. Ahora navegamos en el terminal hasta la ruta donde hemos ubi
 cado el contenido de la _seed_. Si se ha clonado el repositorio, eliminaremos la carpeta oculta **.git**
 que se encuentra en el directorio raíz de la aplicación.
@@ -61,16 +61,16 @@ que se encuentra en el directorio raíz de la aplicación.
 {{"
 * **e2e**: Esta carpeta contiene los datos necesarios para realizar test end-to-end (e2e) mediante el uso de protactor,
 una herramienta destinada para este fin.
-* **node_modules**: Esta carpeta (que aún no aparece) contiene todas las dependencias que necesita la aplicación para 
-ejecutarse y compilar, distribuidas en carpetas y algunos archivos fuera de ellas, según el fichero _package.json_. 
-Esta carpeta se ignora completamente. Aparecerá en el siguiente paso de este tutorial 
+* **node_modules**: Esta carpeta (que aún no aparece) contiene todas las dependencias que necesita la aplicación para
+ejecutarse y compilar, distribuidas en carpetas y algunos archivos fuera de ellas, según el fichero _package.json_.
+Esta carpeta se ignora completamente. Aparecerá en el siguiente paso de este tutorial
 (aunque, debido a su tamaño, no aparecerá en estos árboles desplegables).
 * **src**: Contiene todo el código y los recursos de la aplicación.
-  * **app**: Contiene todos los módulos, componentes y rutas de la aplicación. Los ficheros contenidos dentro de 
+  * **app**: Contiene todos los módulos, componentes y rutas de la aplicación. Los ficheros contenidos dentro de
 **app**, con extensión app**.component.**(**_ts_**,_**html**_,**_css_**), define el componente App y el resto de los
-componentes en sus respectivos ficheros, junto con un platilla **HTML**, una hoja de estilos **CSS**. Aquellos, con 
-extensión \***.module.ts**, declaran el módulo que indica cómo montar los componentes y los módulos de routing. Los 
-ficheros con extensión \***-routing.module.ts** son los encargados de definir el enrutamiento dentro del módulo al que 
+componentes en sus respectivos ficheros, junto con un platilla **HTML**, una hoja de estilos **CSS**. Aquellos, con
+extensión \***.module.ts**, declaran el módulo que indica cómo montar los componentes y los módulos de routing. Los
+ficheros con extensión \***-routing.module.ts** son los encargados de definir el enrutamiento dentro del módulo al que
 pertenece el fichero.
     * **login**: Contiene el módulo, componentes y rutas acerca de la pantalla de inicio de sesión.
     * **main**: Contiene el módulo, componentes y rutas acerca de la pantalla de inicio de la aplicación.
@@ -86,12 +86,12 @@ pertenece el fichero.
 con la aplicación.
 * **.editorconfig**: Fichero que ayuda a mantener estilos de codificación consistentes para todos los desarrolladores
 que trabajen en el mismo proyectos y varios editores o IDE's
-* **.eslintrc.json**: Fichero de configuración para _ESLint_, una herramienta de JavaScript y TypeScript que permite 
+* **.eslintrc.json**: Fichero de configuración para _ESLint_, una herramienta de JavaScript y TypeScript que permite
 analizar el código y señalar posibles problemas, errores o prácticas que podrían subsanarse.
-* **.gitignore**: Este fichero contiene las rutas que Git no incluirá en el seguimiento de las versiones, para 
+* **.gitignore**: Este fichero contiene las rutas que Git no incluirá en el seguimiento de las versiones, para
 asegurarse de que los archivos autogenerados no están comprometidos con el control del código fuente.
-* **angular.json**: Este fichero contiene la configuración de Angular. En este archivo puede establecer varios valores 
-predeterminados y también configurar qué archivos se incluyen cuando se construye el proyecto. Poco hay que configurar 
+* **angular.json**: Este fichero contiene la configuración de Angular. En este archivo puede establecer varios valores
+predeterminados y también configurar qué archivos se incluyen cuando se construye el proyecto. Poco hay que configurar
 en este fichero, salvo tal vez modificar las apariciones de ```ontimize-web-ngx-jee-seed``` por el nombre del proyecto
 (aunque no lo haremos).
 * **karma.conf.js**: Este fichero se utiliza para configurar Karma, una herramienta de ejecución de pruebas unitarias en
@@ -100,7 +100,7 @@ Javascript que está integrada con Angular
 cuando la aplicación no tiene conexión.
 * **package-lock.json**: Fichero generado automáticamente por NPM par bloquear las versiones exactas de las dependencias
 del proyecto, garantizando las mismas versiones para todos los desarrolladores
-* **package.json**: Contiene información sobre el proyecto, como el nombre, versión, scripts, 
+* **package.json**: Contiene información sobre el proyecto, como el nombre, versión, scripts,
 dependencias de proyecto, etc. En los scripts, para cuando lancemos la aplicación, podemos modificar el puerto,
 cambiando el valor de **4299** a **4200**, y añadiendo las propiedades ```-host localhost``` para indicar el host que
 se utilizará o ```-o``` para que abra el navegador automáticamente
@@ -278,8 +278,8 @@ en el [siguiente enlace](https://angular.io/guide/quickstart)
 
 ![tutorial_o_web_1.png]({{ base_path }}/assets/images/tutorial_o_web_1.png)
 
-Abrimos el fichero **app.config.ts** (pulsando la combinación de teclas ```Ctrl+P```) y configuramos las propiedades de 
-**apiEndpoint**, y opcionalmente la propiedad **uuid**, **title** y **locale**. De esa manera, indicaremos a la 
+Abrimos el fichero **app.config.ts** (pulsando la combinación de teclas ```Ctrl+P```) y configuramos las propiedades de
+**apiEndpoint**, y opcionalmente la propiedad **uuid**, **title** y **locale**. De esa manera, indicaremos a la
 aplicación a que punto de entrada debe hacer las peticiones REST.
 
 <div class="multicolumn">
@@ -488,8 +488,8 @@ export const CONFIG: Config = {
     </div>
 </div>
 
-A continuación, podemos modificar el fichero **package.json**, para modificar la propiedad **name** y el script 
-**start**, cambiando el puerto al que accede (con la opción ```--port 4200```), permitiendo que se abra el explorador 
+A continuación, podemos modificar el fichero **package.json**, para modificar la propiedad **name** y el script
+**start**, cambiando el puerto al que accede (con la opción ```--port 4200```), permitiendo que se abra el explorador
 automáticamente, (la opción ```-o```), y estableciendo la dirección del host (con la opción ```--host localhost```)
 
 <div class="multicolumn">
@@ -719,20 +719,20 @@ automáticamente, (la opción ```-o```), y estableciendo la dirección del host 
     </div>
 </div>
 
-Con estos ficheros modificados, podemos ejecutar el comando ```npm install``` para instalar las dependencias, y la 
-generación de la carpeta de dependencias **node_modules**. Una vez termine de instalar las dependencias, podemos 
+Con estos ficheros modificados, podemos ejecutar el comando ```npm install``` para instalar las dependencias, y la
+generación de la carpeta de dependencias **node_modules**. Una vez termine de instalar las dependencias, podemos
 ejecutar el servidor de Node.js con el comando ```npm start```. Lanzamos la base de datos y el servidor Tomcat (ambas
-del proyecto descargado del repositorio de Github) desde nuestro IDE, y una vez inicializado el servidor Node.js, se 
+del proyecto descargado del repositorio de Github) desde nuestro IDE, y una vez inicializado el servidor Node.js, se
 abrirá el navegador en la dirección que nosotros hemos establecido en el script ```start```, en este caso,
 [localhost:4200](http://localhost:4200/){:target="_blank"}.
 
 ![tutorial_o_web_2.png]({{ base_path }}/assets/images/tutorial_o_web_2.png)
 ![tutorial_o_web_3.png]({{ base_path }}/assets/images/tutorial_o_web_3.png)
 
-El título de la página web se puede modificar, editando el fichero **index.html** y cambiando el contenido de la 
+El título de la página web se puede modificar, editando el fichero **index.html** y cambiando el contenido de la
 etiqueta ```<title>```. Todos los cambios que hagamos dentro de la carpeta **src** serán detectados automáticamente, y
 se recargará el servidor, por lo que no hará falta que nosotros paremos y arranquemos de nuevo el servidor, se hará
-automáticamente. 
+automáticamente.
 
 <div class="multicolumn">
     <div class="multicolumnleft">

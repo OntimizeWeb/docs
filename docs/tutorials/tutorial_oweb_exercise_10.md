@@ -1,23 +1,23 @@
 ---
-title: "Filtering a table using the filter component"
+title: "Filtering a table"
 layout: default
-permalink: /tutorial-web/exercise10/
+permalink: /tutorial/exercise10/
 nav_order: 10
 # has_children: false
 # has_toc: false
 # nav_exclude: true
 # grand_parent: Title grand_parent
-parent: Tutorial OWeb
+parent: Tutorial
 ---
 
 {% include base_path %}
 {% include toc %}
 
 # Filtrar una  tabla mediante el componente filtro
-## Introducción 
+## Introducción
 
-En este tutorial se mostrará como filtrar una tabla utilizando un componente de filtro externo, para realizar filtros 
-complejos de manera simultánea. Para este ejemplo, permitiremos filtrar por las fechas de inicio y de fin de las 
+En este tutorial se mostrará como filtrar una tabla utilizando un componente de filtro externo, para realizar filtros
+complejos de manera simultánea. Para este ejemplo, permitiremos filtrar por las fechas de inicio y de fin de las
 cuentas, usando el componente [Filter Builder]({{ base_path }}/components/filterbuilder/overview)
 
 ## Modificar el listado de cuentas
@@ -32,10 +32,10 @@ Modificaremos el formulario de tal manera que sea similar al siguiente mockup
         </button>
         <p>El primer paso es crear diferentes campos según el tipo de dato que queramos filtrar y dos botones, uno para
 realizar la búsqueda y otro para limpiar los campos asociados al filtro. Para nuestro ejemplo, se necesitarán dos campos
-para establecer un rango de fechas para filtrar el campo <code>STARTDATE</code> de las cuentas y otros dos campos para 
+para establecer un rango de fechas para filtrar el campo <code>STARTDATE</code> de las cuentas y otros dos campos para
 establecer el rango de fechas para filtrar el campo <code>ENDDATE</code> de las cuentas.</p>
-        <p>A continuación crearemos el <code>&lt;o-filter-builder&gt;</code>. En este componente, indicaremos que 
-columnas de la tabla hacen referencia a los campos del formulario que componen el filtro, la tabla a la que el filtro 
+        <p>A continuación crearemos el <code>&lt;o-filter-builder&gt;</code>. En este componente, indicaremos que
+columnas de la tabla hacen referencia a los campos del formulario que componen el filtro, la tabla a la que el filtro
 afectará y la expresión que se creará.</p>
 
 {{"**accounts-home.component.html**" | markdownify }}
@@ -180,11 +180,11 @@ export class AccountsHomeComponent implements OnInit {
 }
 {% endhighlight %}
 
-<p>El método <code>createFilter</code> recibe por parámetro un array de pares clave-valor al que según la clave, 
-construye una <a href="" target="_blank">BasicExpression</a> cuya clave es la columna de la tabla y el valor que tenga 
+<p>El método <code>createFilter</code> recibe por parámetro un array de pares clave-valor al que según la clave,
+construye una <a href="" target="_blank">BasicExpression</a> cuya clave es la columna de la tabla y el valor que tenga
 el campo del filtro. En nuestro caso, debido a que queríamos aplicar varios valores para la misma columna, utilizamos
-nombre ficticios como <em>STARTDATE_I</em> o <em>ENDDATE_E</em> como nombre de la columna, pero al crear el filtro, 
-utilizamos los nombres correctos de la tabla. Juntamos las <strong>BasicExpression</strong> entre sí para crear una 
+nombre ficticios como <em>STARTDATE_I</em> o <em>ENDDATE_E</em> como nombre de la columna, pero al crear el filtro,
+utilizamos los nombres correctos de la tabla. Juntamos las <strong>BasicExpression</strong> entre sí para crear una
 <code>BasicExpression</code> compleja y la retornamos.</p>
 <p>Únicamente resta añadir los valores de traducción</p>
 
