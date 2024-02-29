@@ -1,8 +1,7 @@
 ---
 title: "Maps"
 layout: default
-permalink: /tutorial
-/exercise20/
+permalink: /tutorial/exercise20/
 nav_order: 20
 # has_children: false
 # has_toc: false
