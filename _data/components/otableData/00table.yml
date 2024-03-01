@@ -24,7 +24,7 @@ attributes: [{
   default: "",
   required: "",
   description: "Initial visible columns. Separated by ';'"
-}
+},
 {
   name: "non-hidable-columns",
   type: "string",
