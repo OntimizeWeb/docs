@@ -85,6 +85,69 @@ Moment formats, accepted in the table, are supported in reports
 | `llll`                   | Tue, Feb 27, 2024 9:43 AM     |
 
 
+If you need to use ISO formats in the table, you can extend the service to modify the date format of the reports. See [Extending Ontimize Web Services](https://ontimizeweb.github.io/docs/v15/guide/service/#extending-ontimize-web-services) for more information.
+
+
+The data format for creating the reports is the following example
+
+```json
+{
+  "title": "Report on demand",
+  "groups": [],
+  "entity": "customer",
+  "service": "Customer",
+  "vertical": true,
+  "functions": [
+    {
+      "columnName": "",
+      "type": "TOTAL"
+    },
+    {
+      "columnName": "CUSTOMERTYPEID",
+      "type": "SUM"
+    }
+  ],
+  "style": {
+    "columnName": true,
+    "grid": false,
+    "rowNumber": false
+  },
+  "subtitle": "Example",
+  "columns": [
+    {
+      "id": "NAME",
+      "name": "Nombre",
+      "columnStyle": {
+        "width": 50,
+        "alignment": "left"
+      }
+    },
+    {
+      "id": "CUSTOMERTYPEID",
+      "name": "ID",
+      "columnStyle": {
+        "width": 80,
+        "alignment": "left"
+      }
+    },
+    {
+      "id": "STARTDATE",
+      "name": "Date",
+      "columnStyle": {
+        "width": 60,
+        "alignment": "left",
+        "renderer": {
+          "type": "date",
+          "format": "LL"
+        }
+      }
+    }
+  ],
+  "orderBy": []
+}
+
+```
+
 ## Menu option
 
 ![Report on demand menu option]({{ "/assets/images/report/menuOption.PNG" | absolute_url }}){: .comp-example-img}
