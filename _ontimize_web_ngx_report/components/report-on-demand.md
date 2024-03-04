@@ -63,7 +63,83 @@ This visual tool will allow users to define parameters of the report such as:
 | `yyMMddHHmmssZ`                       | 010704120856-0700                      |
 | `yyyy-MM-dd'T'HH:mm:ss.SSSZ`          | 2001-07-04T12:08:56.235-0700           |
 
+Moment formats, accepted in the table, are supported in reports
 
+| Moment.js Format Pattern | Example Result                |
+|--------------------------|-------------------------------|
+| `LT`                     | 9:43 AM                       |
+| `LTS`                    | 9:43:18 AM                    |
+| `L`                      | 02/27/2024                    |
+| `l`                      | 2/27/2024                     |
+| `LL`                     | February 27, 2024             |
+| `ll`                     | Feb 27, 2024                  |
+| `LLL`                    | February 27, 2024 9:43 AM     |
+| `lll`                    | Feb 27, 2024 9:43 AM          |
+| `LLLL`                   | Tuesday, February 27, 2024 9:43 AM |
+| `llll`                   | Tue, Feb 27, 2024 9:43 AM     |
+
+If you need to use ISO formats in the table, you can modify the data that is sent to modify the date format of the reports.
+
+You have an example of a custom renderer below.
+
+```ts
+import { Injectable, Injector } from '@angular/core';
+import { OTableComponent } from 'ontimize-web-ngx';
+import { OReportPreferences } from 'ontimize-web-ngx-report';
+import { IReportDataProvider } from 'ontimize-web-ngx-report/lib/interfaces/report-data-provider.interface';
+import { OntimizeReportDataBaseProvider } from 'ontimize-web-ngx-report/lib/services/ontimize-report-data-base-provider.service';
+
+@Injectable()
+export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProvider implements IReportDataProvider {
+
+  constructor(injector: Injector,) {
+    super(injector)
+  }
+  getReportConfiguration(currentPreference: OReportPreferences, table: OTableComponent) {
+
+    let reportData: any = super.getReportConfiguration(currentPreference, table);
+
+    reportData.columns = [
+      {
+        "id": "NAME",
+        "name": "Nombre",
+        "columnStyle": {
+          "width": 50,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "CUSTOMERTYPEID",
+        "name": "ID",
+        "columnStyle": {
+          "width": 80,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "STARTDATE",
+        "name": "Date",
+        "columnStyle": {
+          "width": 60,
+          "alignment": "left",
+          "renderer": {
+            "type": "date",
+            "format": "LL"
+          }
+        }
+      }
+    ]
+    return reportData;
+  }
+
+}
+
+```
+Don't forget to add the provider in the module
+
+``` ts
+{ provide: O_REPORT_DATA_SERVICE , useValue:CustomOntimizeReportDataProvider}
+```
 
 ## Menu option
 
