@@ -85,67 +85,67 @@ Moment formats, accepted in the table, are supported in reports
 | `llll`                   | Tue, Feb 27, 2024 9:43 AM     |
 
 
-If you need to use ISO formats in the table, you can extend the service to modify the date format of the reports. See [Extending Ontimize Web Services](https://ontimizeweb.github.io/docs/v15/guide/service/#extending-ontimize-web-services) for more information.
+If you need to use ISO formats in the table, you can modify the data that is sent to modify the date format of the reports.
 
+You have an example of a custom renderer below.
 
-The data format for creating the reports is the following example
+```ts
+import { Injectable, Injector } from '@angular/core';
+import { OTableComponent } from 'ontimize-web-ngx';
+import { OReportPreferences } from 'ontimize-web-ngx-report';
+import { IReportDataProvider } from 'ontimize-web-ngx-report/lib/interfaces/report-data-provider.interface';
+import { OntimizeReportDataBaseProvider } from 'ontimize-web-ngx-report/lib/services/ontimize-report-data-base-provider.service';
 
-```json
-{
-  "title": "Report on demand",
-  "groups": [],
-  "entity": "customer",
-  "service": "Customer",
-  "vertical": true,
-  "functions": [
-    {
-      "columnName": "",
-      "type": "TOTAL"
-    },
-    {
-      "columnName": "CUSTOMERTYPEID",
-      "type": "SUM"
-    }
-  ],
-  "style": {
-    "columnName": true,
-    "grid": false,
-    "rowNumber": false
-  },
-  "subtitle": "Example",
-  "columns": [
-    {
-      "id": "NAME",
-      "name": "Nombre",
-      "columnStyle": {
-        "width": 50,
-        "alignment": "left"
-      }
-    },
-    {
-      "id": "CUSTOMERTYPEID",
-      "name": "ID",
-      "columnStyle": {
-        "width": 80,
-        "alignment": "left"
-      }
-    },
-    {
-      "id": "STARTDATE",
-      "name": "Date",
-      "columnStyle": {
-        "width": 60,
-        "alignment": "left",
-        "renderer": {
-          "type": "date",
-          "format": "LL"
+@Injectable()
+export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProvider implements IReportDataProvider {
+
+  constructor(injector: Injector,) {
+    super(injector)
+  }
+  getReportConfiguration(currentPreference: OReportPreferences, table: OTableComponent) {
+
+    let reportData: any = super.getReportConfiguration(currentPreference, table);
+
+    reportData.columns = [
+      {
+        "id": "NAME",
+        "name": "Nombre",
+        "columnStyle": {
+          "width": 50,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "CUSTOMERTYPEID",
+        "name": "ID",
+        "columnStyle": {
+          "width": 80,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "STARTDATE",
+        "name": "Date",
+        "columnStyle": {
+          "width": 60,
+          "alignment": "left",
+          "renderer": {
+            "type": "date",
+            "format": "LL"
+          }
         }
       }
-    }
-  ],
-  "orderBy": []
+    ]
+    return reportData;
+  }
+
 }
 
+```
+Don't forget to add the provider in the module
+
+``` ts
+{ provide: O_REPORT_DATA_SERVICE , useValue:CustomOntimizeReportDataProvider}
 ```
 
 ## Menu option
