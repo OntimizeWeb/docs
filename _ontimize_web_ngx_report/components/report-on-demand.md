@@ -87,6 +87,89 @@ The `ReportParamsDto` class encapsulates parameters for generating a report, wit
 
 This comprehensive structure allows for detailed customization of report generation, from data sourcing and processing to specific styling and formatting.
 
+Below you can see an example of the body of a POST request for the creation of a report.
+
+```json
+{
+    "title": "Report example",
+    "groups": [],
+    "entity": "customer",
+    "path": "/customers",
+    "service": "customers",
+    "vertical": true,
+    "functions": [],
+    "style": {
+        "grid": false,
+        "rowNumber": false,
+        "columnName": true,
+        "backgroundOnOddRows": false,
+        "hideGroupDetails": false,
+        "groupNewPage": false,
+        "firstGroupNewPage": false
+    },
+    "subtitle": "This is a report",
+    "columns": [
+        {
+            "id": "FIRSTLOGIN",
+            "name": "FIRSTLOGIN",
+            "columnStyle": {
+                "renderer": {
+                    "type": "boolean",
+                    "renderType": "string",
+                    "trueValue": "Si",
+                    "falseValue": "No"
+                }
+            }
+        },
+        {
+            "id": "NAME",
+            "name": "Nombre"
+        },
+        {
+            "id": "SURNAME",
+            "name": "Apellidos"
+        },
+        {
+            "id": "STARTDATE",
+            "name": "Fecha inicio",
+            "columnStyle": {
+                "renderer": {
+                    "type": "date",
+                    "format": "LL"
+                }
+            }
+        }
+    ],
+    "orderBy": [{"columnId": "NAME", "ascendent": false}],
+    "language": "en",
+    "filters": {
+        "columns": [
+            "FIRSTLOGIN",
+            "NAME",
+            "SURNAME",
+            "STARTDATE",
+            "EMAIL",
+            "ADDRESS",
+            "CUSTOMERTYPEID"
+        ],
+        "sqltypes": {
+            "FIRSTLOGIN": 16,
+            "CUSTOMERTYPEID": 1111,
+            "SURNAME": 12,
+            "CUSTOMERID": 4,
+            "STARTDATE": 93,
+            "ADDRESS": 12,
+            "EMAIL": 12,
+            "NAME": 1111,
+            "PHOTO": 1111
+        },
+        "filter": {},
+        "offset": 0,
+        "pageSize": 4
+    },
+    "advQuery": true
+}
+```
 
 ## Customizing data provider
 
