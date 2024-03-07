@@ -5,5 +5,12 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "The menu item identifier whose children are rendered. When this attribute is not configured, the component builds a card for the root elements of the menu"
+  description: "The menu items identifiers whose children are rendered. Separated by ;. When this attribute is not configured, the component builds a card for the root elements of the menu"
+},
+{
+  name: "exclude-menus-id",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The identifier of the menus that should not appear on the cards. Separated by ;"
 }]
