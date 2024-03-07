@@ -179,9 +179,7 @@ Below you can see an example of the body of a POST request for the creation of a
 ```ts
 import { Injectable, Injector } from '@angular/core';
 import { OTableComponent } from 'ontimize-web-ngx';
-import { OReportPreferences } from 'ontimize-web-ngx-report';
-import { IReportDataProvider } from 'ontimize-web-ngx-report/lib/interfaces/report-data-provider.interface';
-import { OntimizeReportDataBaseProvider } from 'ontimize-web-ngx-report/lib/services/ontimize-report-data-base-provider.service';
+import { IReportDataProvider, OReportPreferences, OntimizeReportDataBaseProvider } from 'ontimize-web-ngx-report';
 
 @Injectable()
 export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProvider implements IReportDataProvider {
