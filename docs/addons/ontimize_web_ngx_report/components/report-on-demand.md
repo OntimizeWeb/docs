@@ -30,6 +30,201 @@ This visual tool will allow users to define parameters of the report such as:
 
 {: .note}
 >Remember to complete the steps you need to perform on your backend server to complete the report on-demand configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/reports/report-on-demand){:target="_blank"}
+## Report data
+
+The `ReportParamsDto` class encapsulates parameters for generating a report, with each field holding specific information about the report's generation and styling.
+
+### Main Attributes
+
+- **title**: A `String` representing the report title.
+- **entity**: A `String` specifying the entity for the report.
+- **groups**: A `List<String>` of groups involved in the report.
+- **orderBy**: A `List<OrderByDto>` defining data sorting order.
+- **service**: A `String` for the data fetching service.
+- **path**: A `String` indicating the service path.
+- **vertical**: A `Boolean` for the report layout orientation.
+- **functions**: A `List<FunctionTypeDto>` for applied data functions.
+- **style**: An `StyleParamsDto` instance for style parameters.
+- **subtitle**: A `String` for the report subtitle.
+- **columns**: A `List<ColumnDto>` for included columns.
+- **language**: A `String` for the report language.
+- **filters**: A `FilterParameter` instance for data filtering.
+- **advQuery**: A `Boolean` for enabling advanced querying.
+
+### Nested Classes and Types
+
+#### `OrderByDto`
+- **columnId**: Column identifier for sorting.
+- **ascendent**: Boolean for sorting order (ascending/descending).
+
+#### `FunctionTypeDto`
+- **columnName**: Target column for the function.
+- **type**: Function type (`SUM`, `AVERAGE`, etc.).
+
+#### `StyleParamsDto`
+- Boolean flags for style options like `grid`, `rowNumber`, `columnName`, and others.
+
+#### `ColumnDto`
+- **id**: Column identifier.
+- **name**: Column name.
+- **columnStyle**: `ColumnStyleParamsDto` instance for column styling.
+
+#### `ColumnStyleParamsDto`
+- **width**: Column width.
+- **alignment**: Text alignment in the column.
+- **renderer**: `RendererDto` (or subclasses) instance for custom data rendering.
+
+### Renderers
+
+#### `BooleanRendererDto` (extends `RendererDto`)
+- **renderType**: Type (`string` or `number`) for rendering boolean values.
+- **trueValue**: Display value for `true`.
+- **falseValue**: Display value for `false`.
+
+#### `DateRendererDto` (extends `RendererDto`)
+- **format**: Date format string.
+
+#### `IntegerRendererDto` (extends `RendererDto`)
+- **grouping**: Boolean for thousand separators usage.
+- **thousandSeparator**: Thousand separator string.
+
+#### `RealRendererDto` (extends `IntegerRendererDto`)
+- **decimalDigits**: Number of decimal digits to display.
+
+This comprehensive structure allows for detailed customization of report generation, from data sourcing and processing to specific styling and formatting.
+
+Below you can see an example of the body of a POST request for the creation of a report.
+
+```json
+{
+    "title": "Report example",
+    "groups": [],
+    "entity": "customer",
+    "path": "/customers",
+    "service": "customers",
+    "vertical": true,
+    "functions": [],
+    "style": {
+        "grid": false,
+        "rowNumber": false,
+        "columnName": true,
+        "backgroundOnOddRows": false,
+        "hideGroupDetails": false,
+        "groupNewPage": false,
+        "firstGroupNewPage": false
+    },
+    "subtitle": "This is a report",
+    "columns": [
+        {
+            "id": "FIRSTLOGIN",
+            "name": "FIRSTLOGIN",
+            "columnStyle": {
+                "renderer": {
+                    "type": "boolean",
+                    "renderType": "string",
+                    "trueValue": "Si",
+                    "falseValue": "No"
+                }
+            }
+        },
+        {
+            "id": "NAME",
+            "name": "Nombre"
+        },
+        {
+            "id": "SURNAME",
+            "name": "Apellidos"
+        },
+        {
+            "id": "STARTDATE",
+            "name": "Fecha inicio",
+            "columnStyle": {
+                "renderer": {
+                    "type": "date",
+                    "format": "LL"
+                }
+            }
+        }
+    ],
+    "orderBy": [{"columnId": "NAME", "ascendent": false}],
+    "language": "en",
+    "filters": {
+        "columns": [
+            "FIRSTLOGIN",
+            "NAME",
+            "SURNAME",
+            "STARTDATE",
+            "EMAIL",
+            "ADDRESS",
+            "CUSTOMERTYPEID"
+        ],
+        "sqltypes": {
+            "FIRSTLOGIN": 16,
+            "CUSTOMERTYPEID": 1111,
+            "SURNAME": 12,
+            "CUSTOMERID": 4,
+            "STARTDATE": 93,
+            "ADDRESS": 12,
+            "EMAIL": 12,
+            "NAME": 1111,
+            "PHOTO": 1111
+        },
+        "filter": {},
+        "offset": 0,
+        "pageSize": 4
+    },
+    "advQuery": true
+}
+```
+
+## Customizing data provider
+
+- Extend the report service provider and customize the report data configuration that sending REST request.
+
+
+```ts
+import { Injectable, Injector } from '@angular/core';
+import { OTableComponent } from 'ontimize-web-ngx';
+import { OReportPreferences } from 'ontimize-web-ngx-report';
+import { IReportDataProvider } from 'ontimize-web-ngx-report/lib/interfaces/report-data-provider.interface';
+import { OntimizeReportDataBaseProvider } from 'ontimize-web-ngx-report/lib/services/ontimize-report-data-base-provider.service';
+
+@Injectable()
+export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProvider implements IReportDataProvider {
+
+  constructor(injector: Injector) {
+    super(injector);
+  }
+
+  getReportConfiguration(currentPreference: OReportPreferences, table: OTableComponent) {
+    let reportData: any = super.getReportConfiguration(currentPreference, table);
+
+    // Find the index of the column with id "STARTDATE" in the columns array
+    const startDateColumnIndex = reportData.columns.findIndex((column: any) => column.id === "STARTDATE");
+
+    // If the column is found, add the renderer object
+    if (startDateColumnIndex !== -1) {
+      reportData.columns[startDateColumnIndex].columnStyle = {
+        ...reportData.columns[startDateColumnIndex].columnStyle,
+        "renderer": {
+          "type": "date",
+          "format": "LL"
+        }
+      };
+    }
+
+    return reportData;
+  }
+
+}
+
+```
+
+- Add the extended service in the previous point in the app.module.ts with the injection token `O_REPORT_DATA_SERVICE`.
+
+``` ts
+{ provide: O_REPORT_DATA_SERVICE , useValue:CustomOntimizeReportDataProvider}
+```
 
 >**IMPORTANT:** In the case of dates, the reports will take the format of the table but the jasperreport library only accepts the formats of the following table.
 
@@ -68,7 +263,6 @@ This visual tool will allow users to define parameters of the report such as:
 | `yyMMddHHmmssZ`                       | 010704120856-0700                      |
 | `yyyy-MM-dd'T'HH:mm:ss.SSSZ`          | 2001-07-04T12:08:56.235-0700           |
 
-
 Moment formats, accepted in the table, are supported in reports
 
 | Moment.js Format Pattern | Example Result                |
@@ -84,69 +278,7 @@ Moment formats, accepted in the table, are supported in reports
 | `LLLL`                   | Tuesday, February 27, 2024 9:43 AM |
 | `llll`                   | Tue, Feb 27, 2024 9:43 AM     |
 
-
 If you need to use ISO formats in the table, you can modify the data that is sent to modify the date format of the reports.
-
-You have an example of a custom renderer below.
-
-```ts
-import { Injectable, Injector } from '@angular/core';
-import { OTableComponent } from 'ontimize-web-ngx';
-import { OReportPreferences } from 'ontimize-web-ngx-report';
-import { IReportDataProvider } from 'ontimize-web-ngx-report/lib/interfaces/report-data-provider.interface';
-import { OntimizeReportDataBaseProvider } from 'ontimize-web-ngx-report/lib/services/ontimize-report-data-base-provider.service';
-
-@Injectable()
-export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProvider implements IReportDataProvider {
-
-  constructor(injector: Injector,) {
-    super(injector)
-  }
-  getReportConfiguration(currentPreference: OReportPreferences, table: OTableComponent) {
-
-    let reportData: any = super.getReportConfiguration(currentPreference, table);
-
-    reportData.columns = [
-      {
-        "id": "NAME",
-        "name": "Nombre",
-        "columnStyle": {
-          "width": 50,
-          "alignment": "left"
-        }
-      },
-      {
-        "id": "CUSTOMERTYPEID",
-        "name": "ID",
-        "columnStyle": {
-          "width": 80,
-          "alignment": "left"
-        }
-      },
-      {
-        "id": "STARTDATE",
-        "name": "Date",
-        "columnStyle": {
-          "width": 60,
-          "alignment": "left",
-          "renderer": {
-            "type": "date",
-            "format": "LL"
-          }
-        }
-      }
-    ]
-    return reportData;
-  }
-
-}
-
-```
-Don't forget to add the provider in the module
-
-``` ts
-{ provide: O_REPORT_DATA_SERVICE , useValue:CustomOntimizeReportDataProvider}
-```
 
 ## Menu option
 
