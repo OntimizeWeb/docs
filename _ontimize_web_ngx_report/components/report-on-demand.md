@@ -276,9 +276,6 @@ Moment formats, accepted in the table, are supported in reports
 
 If you need to use ISO formats in the table, you can modify the data that is sent to modify the date format of the reports.
 
-You have an example of a custom renderer below.
-
-
 ## Menu option
 
 ![Report on demand menu option]({{ "/images/report/menuOption.PNG" | absolute_url }}){: .comp-example-img}
