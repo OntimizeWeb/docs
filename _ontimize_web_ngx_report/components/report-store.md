@@ -97,7 +97,7 @@ In the report detail view, the report can be generated and if you decide to use 
   <o-button (click)="generateReport()" label="Generate report" type="STROKED" icon="description" [matTooltip]="Generate report"></o-button>
 ```
 
->**NOTE:** For Ontimize Boot `3.4.0` and Ontimize Web `8.3.0` or lower versions the fill report method it is the following.
+>**NOTE:** For Ontimize Boot `3.4.0` and ontimize-web-ngx-report `8.3.0` or lower versions the fill report method it is the following.
 
 ```ts
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
@@ -127,7 +127,7 @@ constructor( private reportService: OReportStoreService) {}
 | Parameters     |
 | reportId: string, parametersValues: object, filter: object       |
 
->**NOTE:** For Ontimize Boot `3.5.0` and Ontimize Web `8.3.1` or higher versions it exists a OReportStoreParam object.
+>**NOTE:** For Ontimize Boot `3.5.0` and ontimize-web-ngx-report `8.4.0` or higher versions it exists a OReportStoreParam object.
 
 There is a method called `fillReport` wich have the following parameters:
 * uuid: a string representing the unique identifier of the report.
