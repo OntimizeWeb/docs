@@ -97,6 +97,9 @@ outputs: [{
 },{
   name : "onNodeCollapsed",
   description: "Event triggered when a tree node is collapsed"
+},{
+  name : "onNodeClick",
+  description: "Event triggered when a tree node is clicked"
 }]
 
 # ,{
