@@ -8,6 +8,8 @@ nav_order: 12
 ---
 {% include base_path %}
 
+# Migration guides
+
 In this page you can download migration guides for specific versions where additional steps are need.
 
 * 8.x.x
