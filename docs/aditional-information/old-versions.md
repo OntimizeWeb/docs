@@ -1,61 +1,9 @@
 ---
 layout: default
-title: "Releases"
-permalink: /versions/
-parent: About
-nav_order: 4
+title: "Old releases"
+permalink: /old-versions/
+nav_exclude: true
 ---
-
-{% include toc %}
-
-In this section you can check the different releases of **OntimizeWeb** and its modules and dependencies, grouped by the angular version they are build over.
-
-## Releases and dependencies
-
-### Angular 15
-<table>
-    <thead>
-        <tr>
-            <th>ontimize-web-ngx</th>
-            <th>filemanager*</th>
-            <th>map*</th>
-            <th>charts*</th>
-            <th>gallery*</th>
-            <th>report*</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>15.0.0-beta.5</td>
-        <td rowspan="6">15.0.0-beta.0</td>
-        <td rowspan="3">15.0.0-beta.1</td>
-        <td rowspan="3">15.0.0-beta.1</td>
-        <td rowspan="6">15.0.0<br>15.0.0-beta.0</td>
-        <td rowspan="3">15.0.0-beta.1</td>
-      </tr>
-      <tr>
-        <td>15.0.0-beta.4</td>
-      </tr>
-      <tr>
-        <td>15.0.0-beta.3</td>
-      </tr>
-      <tr>
-        <td>15.0.0-beta.2</td>
-        <td rowspan="3">15.0.0-beta.0</td>
-        <td rowspan="3">15.0.0-beta.0</td>
-        <td rowspan="3">15.0.0-beta.0</td>
-      </tr>
-      <tr>
-        <td>15.0.0-beta.1</td>
-      </tr>
-      <tr>
-        <td>15.0.0-beta.0</td>
-      </tr>
-  </tbody>
-</table>
-
-{: .note }
-> The addons theming and tree are now inside the core.
 
 ### Angular 8
 
@@ -74,17 +22,20 @@ In this section you can check the different releases of **OntimizeWeb** and its 
         </tr>
     </thead>
     <tbody>
-     <tr>
-        <td>8.14.8</td>
-        <td rowspan="11">8.6.2<br>8.6.1<br>8.6.0</td>
-        <td rowspan="49">8.0.1</td>
-        <td rowspan="20">8.2.0<br>8.1.1<br>8.1.0</td>
-        <td rowspan="52">8.3.0<br>8.2.2<br>8.2.1<br>8.2.0<br>8.1.4<br>8.1.3<br>8.1.2<br>8.1.1<br>8.1.0<br>8.0.3<br>8.0.2<br>8.0.1<br>8.0.0</td>
-        <td rowspan="17">8.5.2<br>8.5.1<br>8.5.0</td>
-        <td rowspan="3">8.3.2<br>8.3.1<br>8.3.0</td>
-        <td rowspan="23">8.0.2</td>
-        <td rowspan="45">8.2.0<br>8.1.0<br>8.0.0</td>
-      </tr>
+    <tr>
+      <td>8.14.9</td>
+      <td rowspan="12">8.6.2<br>8.6.1<br>8.6.0</td>
+      <td rowspan="50">8.0.1</td>
+      <td rowspan="21">8.2.0<br>8.1.1<br>8.1.0</td>
+      <td rowspan="53">8.3.0<br>8.2.2<br>8.2.1<br>8.2.0<br>8.1.4<br>8.1.3<br>8.1.2<br>8.1.1<br>8.1.0<br>8.0.3<br>8.0.2<br>8.0.1<br>8.0.0</td>
+      <td rowspan="18">8.5.2<br>8.5.1<br>8.5.0</td>
+      <td rowspan="4">8.4.1<br>8.4.0<br>8.3.2<br>8.3.1<br>8.3.0</td>
+      <td rowspan="24">8.0.2</td>
+      <td rowspan="46">8.2.0<br>8.1.0<br>8.0.0</td>
+    </tr>
+    <tr>
+      <td>8.14.8</td>
+    </tr>
     <tr>
         <td>8.14.7</td>
       </tr>

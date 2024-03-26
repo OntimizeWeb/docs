@@ -3,8 +3,8 @@ layout: default
 title: "Migration guides"
 permalink: /migrations/
 excerpt: "Versions migration guides."
-parent: Guide
-nav_order: 12
+parent: Aditional information
+nav_order: 3
 ---
 {% include base_path %}
 
