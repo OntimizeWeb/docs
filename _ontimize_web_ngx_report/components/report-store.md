@@ -97,6 +97,8 @@ In the report detail view, the report can be generated and if you decide to use 
   <o-button (click)="generateReport()" label="Generate report" type="STROKED" icon="description" [matTooltip]="Generate report"></o-button>
 ```
 
+>**NOTE:** For Ontimize Boot `3.4.0` and ontimize-web-ngx-report `8.3.0` or lower versions the fill report method it is the following.
+
 ```ts
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { OReportService } from 'ontimize-web-ngx-report';
@@ -125,3 +127,44 @@ constructor( private reportService: OReportStoreService) {}
 | Parameters     |
 | reportId: string, parametersValues: object, filter: object       |
 
+>**NOTE:** For Ontimize Boot `3.5.0` and ontimize-web-ngx-report `8.4.0` or higher versions it exists a OReportStoreParam object.
+
+There is a method called `fillReport` wich have the following parameters:
+* uuid: a string representing the unique identifier of the report.
+* reportStoreParam: an object of type OReportStoreParam containing the parameters needed to fill the report. This object has two optional properties:
+  * filters: an object of type OFilterParameter representing the filters to be applied to the report.
+  * parameters: an array of objects of type OReportStoreParamValue containing the values of the report parameters. Each object in this array has the following properties:
+    * name: a string representing the name of the parameter.
+    * value: the value of the parameter.
+    * sqlType: (optional) a number representing the SQL type of the parameter.
+
+```ts
+public fillReport(uuid: string, reportStoreParam: OReportStoreParam, entity?: string, _sqltypes?: Object): Observable<any>
+```
+
+Code example:
+
+```ts
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { OReportService } from 'ontimize-web-ngx-report';
+
+constructor( private reportService: OReportStoreService) {}
+  public id;
+  public onFormDataLoaded(data: any): void {
+      this.id = data.ACCOUNTID;
+  }
+
+  getParameters(): Array<OReportStoreParamValue> {
+    const params: Array<OReportStoreParamValue> = [
+      {
+        'name': 'id',
+        'value': this.officeId.getValue()
+      }
+    ];
+    return params;
+  }
+
+  fillReport(e: Event) {
+    this.reportStoreService.openFillReport("1c272846-0693-42c3-b2a3-7f10c611ad6c", this.getParameters());
+  }
+```
