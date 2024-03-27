@@ -47,6 +47,8 @@ In this section you can check the different releases of **OntimizeWeb** and its 
   </tbody>
 </table>
 
+- The prefix _ontimize-web-ngx_ was omitted from the names of the addons.
+
 ### Angular 15 betas
 <table>
     <thead>

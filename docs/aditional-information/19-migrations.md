@@ -25,13 +25,13 @@ Asegúrese de crear una rama limpia del proyecto que desea migrar (sin commits p
 
 Los comandos genéricos que vamos a utilizar en todos los procesos de migración son:
 
-  ```cmd
+  ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@X update @angular/cli@X @angular/core@X"
   ```
   substituyendo la X siempre por el número de versión al que nos migramos
 
   Si el proyecto utiliza angular material también usaremos:
-  ```cmd
+  ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@X update @angular/material@X
   ```
 
@@ -45,19 +45,19 @@ Los comandos genéricos que vamos a utilizar en todos los procesos de migración
 
 Modifica el package.json eliminando las dependencias de Ontimize y de node-sass si se está utilizando y realiza una instalación con la version de node 12.13.0
 
-  ```cmd
+  ```bash
    npm install
   ```
 
 Ejecuta los comandos de migración de acuerdo con la guía. Asegúrate de que el repositorio esté limpio, con cambios commiteados, stageados o subidos.
 
-  ```cmd
+  ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@8 update @angular/cli@8 @angular/core@8"
   ```
 
 Quitar la dependencia @angular/flex-layout en el package.json ya que no se realiza la actualización automaticamente y habría que hacer manual, y para mejorar y agilizar el proceso lo dejaremos para el paso de migración de la versión 14 a la 15
 
-  ```cmd
+  ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@9 update @angular/cli@9 @angular/core@9"
   ```
 
@@ -71,7 +71,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 
 Si el proyecto utiliza angular material se deberá ejecutar el siguiente comando
 
-  ```cmd
+  ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@9 update @angular/material@9
   ```
 
@@ -95,7 +95,7 @@ Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stag
 
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=9.0-10.2).
 
- ```cmd
+  ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@10 update @angular/cli@10 @angular/core@10"
   ```
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
@@ -106,7 +106,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=9.0-10.2) si se usa en el proyecto.
 
 
-  ```cmd
+  ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@10 update @angular/material@10
   ```
 
@@ -125,7 +125,7 @@ Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stag
 
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=10.2-11.0).
 
- ```cmd
+ ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@11 update @angular/cli@11 @angular/core@11"
   ```
 
@@ -136,7 +136,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=10.2-11.0) si se usa en el proyecto.
 
 
-  ```cmd
+  ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@11 update @angular/material@11
   ```
 
@@ -155,7 +155,7 @@ Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stag
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=11.0-12.0).
 
 
- ```cmd
+ ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@12 update @angular/cli@12 @angular/core@12"
   ```
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
@@ -166,7 +166,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 5. Eliminación de "emitDecoratorMetadata" en el tsconfig.json ![Alt text](assets/migration15.x.x/image-20.png)
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=11.0-12.0) si se usa en el proyecto.
 
-  ```cmd
+  ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@12 update @angular/material@12
   ```
 
@@ -183,7 +183,7 @@ Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stag
 
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=12.0-13.0).
 
- ```cmd
+ ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@13 update @angular/cli@13 @angular/core@13"
   ```
 
@@ -195,7 +195,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=12.0-13.0) si se usa en el proyecto.
 
 
-  ```cmd
+  ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@13 update @angular/material@13
   ```
 
@@ -213,7 +213,7 @@ Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stag
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=13.0-14.0).
 
 
- ```cmd
+ ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@14 update @angular/cli@14 @angular/core@14"
   ```
 
@@ -226,7 +226,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=13.0-14.0) si se usa en el proyecto.
 
 
-  ```cmd
+  ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@14 update @angular/material@14
   ```
 
@@ -245,7 +245,7 @@ Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stag
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=14.0-15.0).
 
 
- ```cmd
+ ```bash
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@15 update @angular/cli@15 @angular/core@15"
   ```
 
@@ -258,7 +258,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 
 Ejecutar los siguientes comandos para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=14.0-15.0) si se usa en el proyecto.
 
-  ```cmd
+  ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@15 update @angular/material@15
 
     ng generate @angular/material:mdc-migration
