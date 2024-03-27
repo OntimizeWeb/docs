@@ -337,7 +337,7 @@ last 2 Safari major versions
 last 2 iOS major versions
 ```
 
-4. Modifica las importaciones de los temas, que ahora vienen directamente del core.
+6. Modifica las importaciones de los temas, que ahora vienen directamente del core.
 
 ![Alt text](assets/migration15.x.x/image-35.png)
 
@@ -359,15 +359,15 @@ last 2 iOS major versions
 }
 ```
 
-5. Puede que aparezca la advertencia de que se debe añadir "allowSyntheticDefaultImports": true en tsconfig.json.
+7. Puede que aparezca la advertencia de que se debe añadir "allowSyntheticDefaultImports": true en tsconfig.json.
 ![Alt text](assets/migration15.x.x/image-37.png)
 
-6. Puede que aparezcan advertencias de dependencias que deben añadirse a "allowedCommonJsDependencies" en angular.json. Un ejemplo sería:
+8. Puede que aparezcan advertencias de dependencias que deben añadirse a "allowedCommonJsDependencies" en angular.json. Un ejemplo sería:
 
 ![Alt text](assets/migration15.x.x/image-38.png)
 
 
-7. Añadir stylePreprocessorOptions en el angular.json
+9. Añadir stylePreprocessorOptions en el angular.json
 
 ![Alt text](assets/migration15.x.x/image-39.png)
 
