@@ -1,19 +1,11 @@
 ---
 layout: default
 title: "Migration guides"
-permalink: /migrations/
-excerpt: "Versions migration guides."
-parent: Aditional information
-nav_order: 3
+permalink: /migration-8-to-15/
+nav_exclude: true
 ---
 {% include base_path %}
 {% include toc %}
-
-# Migration guides
-
-In this page you can view migration guides for specific versions where additional steps are need.
-
-* 8.x.x to 15.x.x
 
 ## **Proceso de Migración**
 
