@@ -7,6 +7,7 @@ parent: Aditional information
 nav_order: 3
 ---
 {% include base_path %}
+{% include toc %}
 
 # Migration guides
 
@@ -14,12 +15,11 @@ In this page you can view migration guides for specific versions where additiona
 
 * 8.x.x to 15.x.x
 
-##
-## <a name="_toc1409014182"></a>**Proceso de Migración**
+## **Proceso de Migración**
 
 Para el proceso de migración, seguiremos la guía disponible en la siguiente URL: <https://update.angular.io/?l=3&v=8.2-15.0>. Asegúrate de marcar la opción de Angular Material si se está utilizando en el proyecto.
 
-## <a name="_toc328906091"></a>**Antes de migrar:**
+## **Antes de migrar:**
 
 Asegúrese de crear una rama limpia del proyecto que desea migrar (sin commits por subir o cambios por guardar).
 
@@ -37,7 +37,7 @@ Los comandos genéricos que vamos a utilizar en todos los procesos de migración
 
   substituyendo también la X siempre por el número de versión al que nos migramos
 
-## <a name="_toc708123609"></a>**Angular 8 a 9**
+## **Angular 8 a 9**
 
 **Prerequisitos tener instalada:**
 
@@ -85,7 +85,7 @@ Revisar los cambios recomendados por angular en el siguiente enlace https://upda
 
 
 
-## <a name="_toc2079865625"></a>**Angular 9 a 10**
+## **Angular 9 a 10**
 
 **Prerequisitos tener instalada:**
 
@@ -113,7 +113,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
 
 Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=9.0-10.2> y realiza los cambios recomendados si fuera necesario
 
-## <a name="_toc1183040589"></a>**Angular 10 a 11**
+## **Angular 10 a 11**
 
 **Prerequisitos tener instalada:**
 
@@ -144,7 +144,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
 Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=10.2-11.0> y realiza los cambios recomendados si fuera necesario
 ##
 
-## <a name="_toc2095267930"></a>**Angular 11 a 12**
+## **Angular 11 a 12**
 **Prerequisitos tener instalada:**
 
 - Node: 14.20.0
@@ -174,7 +174,7 @@ Revisar los cambios recomendados por angular en el siguiente enlace <https://upd
 
 
 
-## <a name="_toc1104497637"></a>**Angular 12 a 13**
+## **Angular 12 a 13**
 **Prerequisitos tener instalada:**
 
 - Node: 14.20.0
@@ -203,7 +203,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
 Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=12.0-13.0> y realiza los cambios recomendados si fuera necesario
 
 
-## <a name="_toc1966028926"></a>**Angular 13 a 14**
+## **Angular 13 a 14**
 **Prerequisitos tener instalada:**
 
 - Node: 14.20.0
@@ -233,7 +233,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
 Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=13.0-14.0> y realiza los cambios recomendados si fuera necesario
 
 
-## <a name="_toc1333946762"></a>**Angular 14 a 15**
+## **Angular 14 a 15**
 **Prerequisitos tener instalada:**
 
 - Node: 18.10.0
