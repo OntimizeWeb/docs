@@ -3,7 +3,7 @@ directive: "o-tree-node"
 inheritedOutputs: [{
   component: "o-tree",
   path: "tree/components/o-tree.component/api",
-  outputs: ["onNodeSelected", "onNodeExpanded", "onNodeCollapsed"]
+  outputs: ["onNodeSelected", "onNodeExpanded", "onNodeCollapsed", "onNodeClick"]
 }]
 
 inheritedAttributes: [{
