@@ -57,9 +57,15 @@ Quitar la dependencia @angular/flex-layout en el package.json ya que no se reali
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
    1. Eliminación de hammerjs, si existe, tanto como dependencia como referencias.
    2. Modificado el aot del angular.json de false a true.
-   3. Modificado el tsconfig.app.json ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-3.png)
-   4. Actualización de rxjs y zone.js ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-6.png)
-   5. Actualización de typescript ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-7.png)
+   3. Modificado el tsconfig.app.json
+
+   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-3.png)
+   4. Actualización de rxjs y zone.js
+
+   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-6.png)
+   5. Actualización de typescript
+
+   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-7.png)
 
 Si el proyecto utiliza angular material se deberá ejecutar el siguiente comando
 
@@ -69,8 +75,10 @@ Si el proyecto utiliza angular material se deberá ejecutar el siguiente comando
 
 Después de ejecutar el comando, además de la actualización de las versiones de material, comprueba los siguientes cambios realizados:
   1. Modificada la versión de tslib.
-      ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-4.png)
+
+  ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-4.png)
   2. Modificados los imports de material, antes se importaban de manera global, ahora deben importarse de manera específica, por ejemplo:
+
   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-5.png)
 
 Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&v=8.2-9.1 y realiza los cambios recomendados si fuera necesario
@@ -91,9 +99,15 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@10 update @angular/cli@10 @angular/core@10"
   ```
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
-1. Actualización de typescript ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-8.png)
-2. Eliminación de { static: false } en los ViewChild ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-9.png)
-3. Cambios en el tsconfig.json ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-10.png)
+1. Actualización de typescript
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-8.png)
+2. Eliminación de { static: false } en los ViewChild
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-9.png)
+3. Cambios en el tsconfig.json
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-10.png)
 
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=9.0-10.2) si se usa en el proyecto.
 
@@ -112,7 +126,9 @@ Revisar los cambios recomendados por angular en el siguiente enlace <https://upd
 - Node: 14.20.0
 - Angular cli: 10.x.x
 
-Actualiza la versión de node a la 14.20.0 y recuerda modificar si existen las referencias a la version de node, por ejemplo en el package.json. ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-11.png)
+Actualiza la versión de node a la 14.20.0 y recuerda modificar si existen las referencias a la version de node, por ejemplo en el package.json.
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-11.png)
 Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos.
 
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=10.2-11.0).
@@ -122,8 +138,12 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
-1. Modificado el objeto opt del app-routing.module ![]({{ base_path }}/assets/images/migration15.x.x/image-12.png)
-2. Eliminado extractCss del angular.json ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-13.png)
+1. Modificado el objeto opt del app-routing.module
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-12.png)
+2. Eliminado extractCss del angular.json
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-13.png)
 
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=10.2-11.0) si se usa en el proyecto.
 
@@ -151,11 +171,21 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@12 update @angular/cli@12 @angular/core@12"
   ```
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
-1. Actualización de zone ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-16.png)
-2. Actualización de typescript ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-17.png)
-3. Actualización del enviroment.ts ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-18.png)
-4. Actualización del polyfills.ts ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-19.png)
-5. Eliminación de "emitDecoratorMetadata" en el tsconfig.json ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-20.png)
+1. Actualización de zone
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-16.png)
+2. Actualización de typescript
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-17.png)
+3. Actualización del enviroment.ts
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-18.png)
+4. Actualización del polyfills.ts
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-19.png)
+5. Eliminación de "emitDecoratorMetadata" en el tsconfig.json
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-20.png)
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=11.0-12.0) si se usa en el proyecto.
 
   ```bash
@@ -180,9 +210,15 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
-1. Eliminación de los entryComponents en el .module ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-21.png)
-2. Actualizado test.ts ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-22.png)
-3. Actualizado typescript ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-23.png)
+1. Eliminación de los entryComponents en el .module
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-21.png)
+2. Actualizado test.ts
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-22.png)
+3. Actualizado typescript
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-23.png)
 
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=12.0-13.0) si se usa en el proyecto.
 
@@ -210,10 +246,18 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
-1. Modificado tsconfig.json ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-24.png)
-2. Modificado el tipo FormBuilder ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-25.png)
-3. Modificado tipo de FormControl ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-26.png)
-4. Modificado angular.json ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-27.png)
+1. Modificado tsconfig.json
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-24.png)
+2. Modificado el tipo FormBuilder
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-25.png)
+3. Modificado tipo de FormControl
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-26.png)
+4. Modificado angular.json
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-27.png)
 
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=13.0-14.0) si se usa en el proyecto.
 
@@ -242,10 +286,18 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
-1. Actualizado typescript ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-28.png)
-2. Actualizado app-routing-module ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-29.png)
-3. Actualizado test.ts ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-30.png)
-4. Actualizado tsconfig.json ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-31.png)
+1. Actualizado typescript
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-28.png)
+2. Actualizado app-routing-module
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-29.png)
+3. Actualizado test.ts
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-30.png)
+4. Actualizado tsconfig.json
+
+![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-31.png)
 
 
 Ejecutar los siguientes comandos para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=14.0-15.0) si se usa en el proyecto.
