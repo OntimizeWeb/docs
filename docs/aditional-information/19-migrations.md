@@ -82,6 +82,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
   1 . Modificada la versión de tslib.
 
   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-4.png)
+
   2 . Modificados los imports de material, antes se importaban de manera global, ahora deben importarse de manera específica, por ejemplo:
 
   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-5.png)
@@ -107,9 +108,11 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 1 . Actualización de typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-8.png)
+
 2 . Eliminación de { static: false } en los ViewChild
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-9.png)
+
 3 . Cambios en el tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-10.png)
@@ -134,6 +137,7 @@ Revisar los cambios recomendados por angular en el siguiente enlace <https://upd
 Actualiza la versión de node a la 14.20.0 y recuerda modificar si existen las referencias a la version de node, por ejemplo en el package.json.
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-11.png)
+
 Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos.
 
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=10.2-11.0).
@@ -146,6 +150,7 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 1 . Modificado el objeto opt del app-routing.module
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-12.png)
+
 2 . Eliminado extractCss del angular.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-13.png)
@@ -179,18 +184,23 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 1 . Actualización de zone
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-16.png)
+
 2 . Actualización de typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-17.png)
+
 3 . Actualización del enviroment.ts
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-18.png)
+
 4 . Actualización del polyfills.ts
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-19.png)
+
 5 . Eliminación de "emitDecoratorMetadata" en el tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-20.png)
+
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=11.0-12.0) si se usa en el proyecto.
 
   ```bash
@@ -218,9 +228,11 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 1 . Eliminación de los entryComponents en el .module
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-21.png)
+
 2 . Actualizado test.ts
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-22.png)
+
 3 . Actualizado typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-23.png)
@@ -254,12 +266,15 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 1 . Modificado tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-24.png)
+
 2 . Modificado el tipo FormBuilder
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-25.png)
+
 3 . Modificado tipo de FormControl
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-26.png)
+
 4 . Modificado angular.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-27.png)
@@ -294,12 +309,15 @@ Después de ejecutar el comando, además de la actualización de las versiones d
 1 . Actualizado typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-28.png)
+
 2 . Actualizado app-routing-module
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-29.png)
+
 3 . Actualizado test.ts
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-30.png)
+
 4 . Actualizado tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-31.png)
@@ -409,6 +427,7 @@ last 2 iOS major versions
 ```
 
 7 . Puede que aparezca la advertencia de que se debe añadir "allowSyntheticDefaultImports": true en tsconfig.json.
+
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-37.png)
 
 8 . Puede que aparezcan advertencias de dependencias que deben añadirse a "allowedCommonJsDependencies" en angular.json. Un ejemplo sería:
