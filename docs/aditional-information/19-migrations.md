@@ -79,6 +79,7 @@ Si el proyecto utiliza angular material se deberá ejecutar el siguiente comando
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de material, comprueba los siguientes cambios realizados:
+
   1 . Modificada la versión de tslib.
 
   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-4.png)
@@ -105,6 +106,7 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@10 update @angular/cli@10 @angular/core@10"
   ```
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Actualización de typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-8.png)
@@ -125,7 +127,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
   ```
 
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=9.0-10.2> y realiza los cambios recomendados si fuera necesario
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=9.0-10.2> y realiza los cambios recomendados si fuera necesario.
 
 ## **Angular 10 a 11**
 
@@ -147,6 +149,7 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Modificado el objeto opt del app-routing.module
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-12.png)
@@ -163,8 +166,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
   ```
 
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=10.2-11.0> y realiza los cambios recomendados si fuera necesario
-##
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=10.2-11.0> y realiza los cambios recomendados si fuera necesario.
 
 ## **Angular 11 a 12**
 **Prerequisitos tener instalada:**
@@ -181,6 +183,7 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@12 update @angular/cli@12 @angular/core@12"
   ```
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Actualización de zone
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-16.png)
@@ -207,7 +210,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@12 update @angular/material@12"
   ```
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=11.0-12.0> y realiza los cambios recomendados si fuera necesario
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=11.0-12.0> y realiza los cambios recomendados si fuera necesario.
 
 
 
@@ -225,6 +228,7 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Eliminación de los entryComponents en el .module
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-21.png)
@@ -245,7 +249,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
   ```
 
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=12.0-13.0> y realiza los cambios recomendados si fuera necesario
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=12.0-13.0> y realiza los cambios recomendados si fuera necesario.
 
 
 ## **Angular 13 a 14**
@@ -263,6 +267,7 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Modificado tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-24.png)
@@ -286,7 +291,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@14 update @angular/material@14"
   ```
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=13.0-14.0> y realiza los cambios recomendados si fuera necesario
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=13.0-14.0> y realiza los cambios recomendados si fuera necesario.
 
 
 ## **Angular 14 a 15**
@@ -306,6 +311,7 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Actualizado typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-28.png)
@@ -374,6 +380,7 @@ Despues de ejecutar este comando se crearan en el código una serie de TODO que 
 
 
 ## Cambios necesarios después de la migración
+
 1 . Añadir la última release de la versión 15.x.x. de las dependencias de ontimize-web-ngx eliminadas en el paso Angular 8 a 9, excepto la dependencia de theming., cuya funcionalidad fue integrada en  ontimize-web-ngx.
 
     Puedes consultar las versiones más recientes de las librerías de ontimize en el siguiente enlace https://ontimizeweb.github.io/docs/v15/versions/
