@@ -7,7 +7,7 @@ nav_exclude: true
 {% include base_path %}
 {% include toc %}
 
-## **Proceso de Migración**
+## **Proceso de Migración de Ontimize Web 8 a la versión 15**
 
 Para el proceso de migración, seguiremos la guía disponible en la siguiente URL: <https://update.angular.io/?l=3&v=8.2-15.0>. Asegúrate de marcar la opción de Angular Material si se está utilizando en el proyecto.
 
@@ -462,6 +462,8 @@ Recuerda que este proceso puede ser complejo y puede haber otros ajustes necesar
 
 ## **Errores comunes**
 
+### Cannot find module '@angular-devkit/schematics'
+
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-1.png)
 
 Para solucionar este error deberás añadir la siguiente dependencia a las devDependencies de tu proyecto:
@@ -469,11 +471,16 @@ Para solucionar este error deberás añadir la siguiente dependencia a las devDe
 ```ts
 "@angular-devkit/schematics": "^9.1.15",
 ```
+
+### Incompatible peer dependencies found
+
 Al comenzar la migración, podemos tener errores debido a la incompatibilidad de ciertas librerías instaladas en el proyecto. La traza del error será parecida a esta:
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-2.png)
 
 Lo que deberemos hacer es eliminar esas dependencias que dan conflictos de nuestro package y acordarnos de añadirlas cuando tengamos nuestro proyecto en la versión 15. Debemos revisar que versión de esas librerías es compatible con la versión 15 de angular.
+
+### Cannot find module 'ajv/dist/compile/codegen'
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-15.png)
 
