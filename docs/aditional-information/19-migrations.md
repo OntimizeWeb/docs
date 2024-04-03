@@ -383,9 +383,9 @@ Despues de ejecutar este comando se crearan en el código una serie de TODO que 
 
 1 . Añadir la última release de la versión 15.x.x. de las dependencias de ontimize-web-ngx eliminadas en el paso Angular 8 a 9, excepto la dependencia de theming., cuya funcionalidad fue integrada en  ontimize-web-ngx.
 
-    Puedes consultar las versiones más recientes de las librerías de ontimize en el siguiente enlace https://ontimizeweb.github.io/docs/v15/versions/
+Puedes consultar las versiones más recientes de las librerías de ontimize en el siguiente enlace https://ontimizeweb.github.io/docs/v15/versions/
 
-2 . Añadir la la dependencia de @angular/flex-layout a la versión: ^15.0.0-beta.42 eliminadas en el paso Angular 8 a 9.
+2 . Añadir la la dependencia de @angular/flex-layout a la versión: ^15.0.0-beta.42 eliminada en el paso Angular 8 a 9.
 ```ts
 "@angular/flex-layout": "^15.0.0-beta.42"
 ```
@@ -396,7 +396,7 @@ Despues de ejecutar este comando se crearan en el código una serie de TODO que 
 
 4 . Eliminar las siguientes importaciones en ficheros .scss si existieran
 ```scss
-  @import 'node\_modules/@angular/material/theming'
+  @import 'node_modules/@angular/material/theming'
 ```
 
 5 . Modifica .browserslistrc con:
