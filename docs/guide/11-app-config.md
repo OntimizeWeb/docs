@@ -394,6 +394,7 @@ If you want to include a menu item to group other menu items, you must include a
 | id      | string  | The menu item identifier |
 | name    | string  | The menu item name |
 | icon    | string  | The menu item icon (see <a href="https://fonts.google.com/icons">Google material design icons</a>{:target='_blank'}) |
+| svgIcon | string  | Name of svg icon |
 | items   | array   | The menu item children. Providing this attribute means that the menu item is a container for a group of menu items |
 | opened  | boolean | In case the <code>items</code> property is defined, indicates if the group menu item is open or not by default |
 | tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
@@ -419,6 +420,7 @@ If you want to include a menu item to group other menu items, you must include a
   | id                  | string              | The menu item identifier |
   | name                | string              | The menu item name |
   | icon                | string              | The menu item icon (see <a href="https://fonts.google.com/icons">Google material design icons</a>{:target='_blank'}) |
+  | svgIcon | string  | Name of svg icon |
   | tooltip             | string              | The tooltip text showed on the menu item when the menu is callapsed |
   | class               | string  | The CSS class applied to the menu item |
   | show-in-card-menu   | boolean             | Indicates whether or not to show the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
