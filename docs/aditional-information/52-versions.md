@@ -54,4 +54,4 @@ In this section you can check the different releases of **OntimizeWeb** and its 
 
 To see the beta versions click [here]({{base_path}}/beta-versions/).
 
-To see the oldest versions click [here]({{ base_path }}/old-versions/).
+To see the oldest versions click [here](https://ontimizeweb.github.io/docs/v8/versions/).
