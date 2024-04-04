@@ -11118,4 +11118,8 @@ table {
   top: -1px;
 }
 
+img[alt="Alt text"] {
+  width: 100%;
+}
+
 /*# sourceMappingURL=just-the-docs-ontimize-dark.css.map */

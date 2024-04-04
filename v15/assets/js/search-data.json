@@ -9,148 +9,148 @@
       ,"1": {
             "doc": "Overview",
             "title": "Introduction",
-            "content": "The Ontimize Web Charts is an implementation of swimlane charts library using OntimizeWeb. Below you can see a list with all available chart types: . Line Charts . Line Chart . Bar Charts . Dicrete Bar Chart Multi Bar Chart Multi Bar Horizontal Chart . Area Charts . Stacked Area Chart . Other Charts . Donut Chart Pie Chart . You can check running examples of each type here. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/overview/#introduction",
-            "relUrl": "/charts/overview/#introduction"
+            "content": "The module Ontimize Web Report on-demand provides view the same data in different ways in OntimizeWeb . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/overview/#introduction",
+            "relUrl": "/report-on-demand/overview/#introduction"
           }
       ,"2": {
             "doc": "Overview",
             "title": "Introduction",
-            "content": "The OntimizeWeb file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc. We provide two different types of file manager engines on Ontimize: the DMS file manager that uses a database to store de files and de SDMS file manager (since ontimize-web-ngx-filemanager 8.6.0 and ontimize-boot 3.12.0) wich is based con Amazon S3 cloud. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#introduction",
-            "relUrl": "/addons/filemanager/overview/#introduction"
+            "content": "The OntimizeWeb map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#introduction",
+            "relUrl": "/map/overview/#introduction"
           },"3": {
             "doc": "Overview",
-            "title": "Upload",
-            "content": "You can upload files since the button Upload. While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value auto-hide-timeout in ms and also auto hide the message by setting the value auto-hide-upload=\"no\". ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#upload",
-            "relUrl": "/addons/filemanager/overview/#upload"
+            "title": "Draw controls",
+            "content": "The o-map allow to add the draw toolbar into the map with the o-map-draw-controls component into o-map. You can catch events with the onDrawEvent output. &lt;o-map #oMap center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex draw-control=\"no\" (onDrawEvent)=\"addDrawEvent($event)\"&gt; &lt;!-- [crs-configuration]=\"objeto\" --&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;/o-map&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#draw-controls",
+            "relUrl": "/map/overview/#draw-controls"
           },"4": {
             "doc": "Overview",
-            "title": "Create folders",
-            "content": "The o-filemanager-table allows to create a folder using the New folder button or the table menu. The button it&#8217;s disabled by default, you can enable it by setting the value new-folder-button=\"yes\". ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#create-folders",
-            "relUrl": "/addons/filemanager/overview/#create-folders"
+            "title": "Markers",
+            "content": "The o-map allow to put a custom marker beside tile layers, you can easy create a marker adding layer-type=\"marker\" attribute into o-map-layer. &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#markers",
+            "relUrl": "/map/overview/#markers"
           },"5": {
             "doc": "Overview",
-            "title": "Delete folder or files",
-            "content": "The o-filemanager-table allow delete simple or multiple by a context menu or button &#8216;Delete&#8217; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#delete-folder-or-files",
-            "relUrl": "/addons/filemanager/overview/#delete-folder-or-files"
+            "title": "Using GeoJSON",
+            "content": "GeoJSON is becoming a very popular data format among many GIS technologies and services and the o-map allow to create and interact with map vectors created from GeoJSON objects adding layer-type=\"geoJSON\" and configuring the service in layer-service attribute. &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#using-geojson",
+            "relUrl": "/map/overview/#using-geojson"
           },"6": {
             "doc": "Overview",
-            "title": "Multiple download support",
-            "content": "The o-filemanager-table allow download simple or multiple files by a context menu. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#multiple-download-support",
-            "relUrl": "/addons/filemanager/overview/#multiple-download-support"
-          },"7": {
-            "doc": "Overview",
-            "title": "Rename files or folders",
-            "content": "The o-filemanager-table allow rename files or folders by a context menu. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#rename-files-or-folders",
-            "relUrl": "/addons/filemanager/overview/#rename-files-or-folders"
-          },"8": {
-            "doc": "Overview",
-            "title": "Browsing between folders",
-            "content": "You can browse between folder with double click or by content menu over the folder and selecting the Open option. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#browsing-between-folders",
-            "relUrl": "/addons/filemanager/overview/#browsing-between-folders"
-          },"9": {
-            "doc": "Overview",
-            "title": "Selection multiple",
-            "content": "The o-filemanager-table support selection multiple with row selection or checkbox selection with select-all-checkbox=\"yes\" property. If this property is activated in the menu on the upper right, the option will be active. By default is no. Example . &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\" new-folder-button=\"yes\" select-all-checkbox=\"yes\"&gt;&lt;/o-filemanager-table&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#selection-multiple",
-            "relUrl": "/addons/filemanager/overview/#selection-multiple"
-          },"10": {
-            "doc": "Overview",
-            "title": "Textbox Search filter",
-            "content": "The o-filemanager-table allow filter by name of files or folders. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#textbox-search-filter",
-            "relUrl": "/addons/filemanager/overview/#textbox-search-filter"
-          },"11": {
-            "doc": "Overview",
-            "title": "Copy files or folders (only for SDMS)",
-            "content": "The o-filemanager-table configured as SMDS allows you to copy files and folders. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms",
-            "relUrl": "/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms"
-          },"12": {
-            "doc": "Overview",
-            "title": "Move files or folders (only for SDMS)",
-            "content": "The o-filemanager-table configured as SMDS allows you to move files and folders. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#move-files-or-folders-only-for-sdms",
-            "relUrl": "/addons/filemanager/overview/#move-files-or-folders-only-for-sdms"
+            "title": "Integrating WMS",
+            "content": "To use a WMS service in o-map, we can use o-map-layer component that provide the base WMS URL with layer-base-url and layer-base-url attribute specify whatever WMS options you need. &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"BasemapAT.basemap\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [`layer-base-url`]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#integrating-wms",
+            "relUrl": "/map/overview/#integrating-wms"
           }
-      ,"13": {
+      ,"7": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The module Ontimize Web Report is a set of reporting tools for web applications based in OntimizeWeb. Ontimize Web Report implements reporting with: . Report store: A jasper template can store and be generated from anywhere in the application, for this you have to follow a series of steps listed in this link. Ontimize is version v6.17.0 compatible . Report on-demand: Allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This visual tool will allow users to define parameters of the report such as title, subtitle, columns to display, styling options, sorting, grouping and data aggregate functions of the report. With these parameters and the data of the table, this component will dynamically generate the report and present it to the user. In addition, all these settings are stored automatically in database by Ontimize services. You need to configure your backend server and you can consult the documentation in this link . What is JasperReports Library? JasperReports Library is an open source reporting engine, written entirely in Java. JasperReports Library is able to use data coming from any kind of data source and produce documents that can viewed, printed, or exported in a variety of document formats, including HTML, PDF, Excel, OpenOffice and Word. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/report/overview/#introduction",
             "relUrl": "/addons/report/overview/#introduction"
           }
-      ,"14": {
-            "doc": "Introduction",
-            "title": "Welcome to the documentation of the web development framework for building the future",
-            "content": ". How to read and use this documentation. This page describes Ontimize Web at a high level and assumes that the reader has knowledge of Angular. If you are new to Angular, we suggest you take a look at the Angular documentation first. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/introduction/#welcome-to-the-documentation-of-the-web-development-framework-for-building-the-future",
-            "relUrl": "/introduction/#welcome-to-the-documentation-of-the-web-development-framework-for-building-the-future"
-          },"15": {
-            "doc": "Introduction",
-            "title": "Sections",
-            "content": "This documentation is divided into three sections: . Prerequisites Check you meet minimum requirements to start. Getting started First contact with an Ontimize Web app. Run sample app code. Guide More extensive documentation covering Ontimize Web in depth. Components Access into the examples and documentation of all our components. Customization How to customize the application. Addons Advanced components to cover your specific needs. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/introduction/#sections",
-            "relUrl": "/introduction/#sections"
+      ,"8": {
+            "doc": "Overview",
+            "title": "Introduction",
+            "content": "The Ontimize Web Charts is an implementation of swimlane charts library using OntimizeWeb. Below you can see a list with all available chart types: . Line Charts . Line Chart . Bar Charts . Dicrete Bar Chart Multi Bar Chart Multi Bar Horizontal Chart . Area Charts . Stacked Area Chart . Other Charts . Donut Chart Pie Chart . You can check running examples of each type here. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/overview/#introduction",
+            "relUrl": "/charts/overview/#introduction"
           }
-      ,"16": {
+      ,"9": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The o-tree component allows to manage a tree that can be used to display hierarchy data. ",
             "url": "https://ontimizeweb.github.io/docs/v15/tree/overview/#introduction",
             "relUrl": "/tree/overview/#introduction"
           }
-      ,"17": {
+      ,"10": {
+            "doc": "Introduction",
+            "title": "Welcome to the documentation of the web development framework for building the future",
+            "content": ". How to read and use this documentation. This page describes Ontimize Web at a high level and assumes that the reader has knowledge of Angular. If you are new to Angular, we suggest you take a look at the Angular documentation first. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/introduction/#welcome-to-the-documentation-of-the-web-development-framework-for-building-the-future",
+            "relUrl": "/introduction/#welcome-to-the-documentation-of-the-web-development-framework-for-building-the-future"
+          },"11": {
+            "doc": "Introduction",
+            "title": "Sections",
+            "content": "This documentation is divided into three sections: . Prerequisites Check you meet minimum requirements to start. Getting started First contact with an Ontimize Web app. Run sample app code. Guide More extensive documentation covering Ontimize Web in depth. Components Access into the examples and documentation of all our components. Customization How to customize the application. Addons Advanced components to cover your specific needs. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/introduction/#sections",
+            "relUrl": "/introduction/#sections"
+          }
+      ,"12": {
             "doc": "Overview",
             "title": "Introduction",
-            "content": "The module Ontimize Web Report on-demand provides view the same data in different ways in OntimizeWeb . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/overview/#introduction",
-            "relUrl": "/report-on-demand/overview/#introduction"
+            "content": "The OntimizeWeb file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc. We provide two different types of file manager engines on Ontimize: the DMS file manager that uses a database to store de files and de SDMS file manager (since ontimize-web-ngx-filemanager 8.6.0 and ontimize-boot 3.12.0) wich is based con Amazon S3 cloud. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#introduction",
+            "relUrl": "/addons/filemanager/overview/#introduction"
+          },"13": {
+            "doc": "Overview",
+            "title": "Upload",
+            "content": "You can upload files since the button Upload. While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value auto-hide-timeout in ms and also auto hide the message by setting the value auto-hide-upload=\"no\". ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#upload",
+            "relUrl": "/addons/filemanager/overview/#upload"
+          },"14": {
+            "doc": "Overview",
+            "title": "Create folders",
+            "content": "The o-filemanager-table allows to create a folder using the New folder button or the table menu. The button it&#8217;s disabled by default, you can enable it by setting the value new-folder-button=\"yes\". ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#create-folders",
+            "relUrl": "/addons/filemanager/overview/#create-folders"
+          },"15": {
+            "doc": "Overview",
+            "title": "Delete folder or files",
+            "content": "The o-filemanager-table allow delete simple or multiple by a context menu or button &#8216;Delete&#8217; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#delete-folder-or-files",
+            "relUrl": "/addons/filemanager/overview/#delete-folder-or-files"
+          },"16": {
+            "doc": "Overview",
+            "title": "Multiple download support",
+            "content": "The o-filemanager-table allow download simple or multiple files by a context menu. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#multiple-download-support",
+            "relUrl": "/addons/filemanager/overview/#multiple-download-support"
+          },"17": {
+            "doc": "Overview",
+            "title": "Rename files or folders",
+            "content": "The o-filemanager-table allow rename files or folders by a context menu. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#rename-files-or-folders",
+            "relUrl": "/addons/filemanager/overview/#rename-files-or-folders"
+          },"18": {
+            "doc": "Overview",
+            "title": "Browsing between folders",
+            "content": "You can browse between folder with double click or by content menu over the folder and selecting the Open option. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#browsing-between-folders",
+            "relUrl": "/addons/filemanager/overview/#browsing-between-folders"
+          },"19": {
+            "doc": "Overview",
+            "title": "Selection multiple",
+            "content": "The o-filemanager-table support selection multiple with row selection or checkbox selection with select-all-checkbox=\"yes\" property. If this property is activated in the menu on the upper right, the option will be active. By default is no. Example . &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\" new-folder-button=\"yes\" select-all-checkbox=\"yes\"&gt;&lt;/o-filemanager-table&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#selection-multiple",
+            "relUrl": "/addons/filemanager/overview/#selection-multiple"
+          },"20": {
+            "doc": "Overview",
+            "title": "Textbox Search filter",
+            "content": "The o-filemanager-table allow filter by name of files or folders. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#textbox-search-filter",
+            "relUrl": "/addons/filemanager/overview/#textbox-search-filter"
+          },"21": {
+            "doc": "Overview",
+            "title": "Copy files or folders (only for SDMS)",
+            "content": "The o-filemanager-table configured as SMDS allows you to copy files and folders. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms",
+            "relUrl": "/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms"
+          },"22": {
+            "doc": "Overview",
+            "title": "Move files or folders (only for SDMS)",
+            "content": "The o-filemanager-table configured as SMDS allows you to move files and folders. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#move-files-or-folders-only-for-sdms",
+            "relUrl": "/addons/filemanager/overview/#move-files-or-folders-only-for-sdms"
           }
-      ,"18": {
+      ,"23": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The module Ontimize Web Keycloak provides authentication for your OntimizeWeb applications using Keycloak. It triggers keycloak login and logout and attachs the authentication bearer token to every request to the backend. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/keycloak/overview/#introduction",
             "relUrl": "/addons/keycloak/overview/#introduction"
-          }
-      ,"19": {
-            "doc": "Overview",
-            "title": "Introduction",
-            "content": "The OntimizeWeb map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#introduction",
-            "relUrl": "/map/overview/#introduction"
-          },"20": {
-            "doc": "Overview",
-            "title": "Draw controls",
-            "content": "The o-map allow to add the draw toolbar into the map with the o-map-draw-controls component into o-map. You can catch events with the onDrawEvent output. &lt;o-map #oMap center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex draw-control=\"no\" (onDrawEvent)=\"addDrawEvent($event)\"&gt; &lt;!-- [crs-configuration]=\"objeto\" --&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;/o-map&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#draw-controls",
-            "relUrl": "/map/overview/#draw-controls"
-          },"21": {
-            "doc": "Overview",
-            "title": "Markers",
-            "content": "The o-map allow to put a custom marker beside tile layers, you can easy create a marker adding layer-type=\"marker\" attribute into o-map-layer. &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#markers",
-            "relUrl": "/map/overview/#markers"
-          },"22": {
-            "doc": "Overview",
-            "title": "Using GeoJSON",
-            "content": "GeoJSON is becoming a very popular data format among many GIS technologies and services and the o-map allow to create and interact with map vectors created from GeoJSON objects adding layer-type=\"geoJSON\" and configuring the service in layer-service attribute. &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#using-geojson",
-            "relUrl": "/map/overview/#using-geojson"
-          },"23": {
-            "doc": "Overview",
-            "title": "Integrating WMS",
-            "content": "To use a WMS service in o-map, we can use o-map-layer component that provide the base WMS URL with layer-base-url and layer-base-url attribute specify whatever WMS options you need. &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"BasemapAT.basemap\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [`layer-base-url`]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#integrating-wms",
-            "relUrl": "/map/overview/#integrating-wms"
           }
       ,"24": {
             "doc": "File Manager DMS Service",
@@ -319,114 +319,114 @@
             "relUrl": "/components/input/overview/api#Overview"
           }
       ,"50": {
-            "doc": "Overview",
-            "title": "Data",
-            "content": "You can modify value by setting the data attribute or calling the setData method. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\"&gt;&lt;/o-text-input&gt; . getValue() { return 'John Doe'; } . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#data",
-            "relUrl": "/components/input/overview/overview#data"
-          },"51": {
-            "doc": "Overview",
-            "title": "Appearance",
-            "content": "You can configure multiple appearance variants changing the appearance and float-label input values. Appearance . The appearance input indicates which of the different mat-form-field appearance is used. It has the same features that Angular Material appearance input, watch it here. Global default appearance options can be specified by providing a value for MAT_FORM_FIELD_DEFAULT_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either legacy, standard, fill or outside. @NgModule({ providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } } ] }) . Float label . The float-label input indicates which of the different mat-form-field label behaviours is chosen. It has the same features that Angular Material appearance input, watch it here . Global default label options can be specified by providing a value for MAT_LABEL_GLOBAL_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either always, never, or auto. @NgModule({ providers: [ {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}} ] }) . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#appearance",
-            "relUrl": "/components/input/overview/overview#appearance"
-          },"52": {
-            "doc": "Overview",
-            "title": "Validation",
-            "content": "You can setup validation on input: . Using validation input in template-driven forms Using the Ontimize validators Creating your custom validator . Validation input in template-driven forms . To add validation to a template-driven form, you add the validation attributes specific for each input and Ontimize Web match these attributes with validator functions in the framework (such as required, min-length, max-length, max-decimal-digits,min-decimal-digits&#8230;) . The input shows automatically an error message when the required attribute is set to yes and there is no value on the input. &lt;o-password-input #newpassword attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" &gt;&lt;/o-password-input&gt; . Ontimize validators . Ontimize Web providers the following build-in validators in the framework: . twelveHourFormatValidator: Hour validator hh:mm am/pm format twentyFourHourFormatValidator: Hour validator HH:mm format emailValidator: Email validator nifValidator: NIF validator patternValidator: Pattern validator . Using the validators input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the o-validator and o-error components. Below is an example of using the pattern validator. &lt;o-password-input attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" [validators]=\"validatorsNewPasswordArray\"&gt; &lt;o-validator error-name=\"hasCapitalCase\" error-text=\"VALIDATOR.HASCAPITALCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasNumber\" error-text=\"VALIDATOR.HASNUMBER\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSmallCase\" error-text=\"VALIDATOR.HASSMALLCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSpecialCharacters\" error-text=\"VALIDATOR.HASSPECIALCHARACTERS\"&gt;&lt;/o-validator&gt; &lt;/o-password-input&gt; ... validatorsNewPasswordArray: ValidatorFn[] = []; constructor() { // check whether the entered password has a number this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\\d/, 'hasNumber')); // check whether the entered password has upper case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase')); // check whether the entered password has small case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase')); // check whether the entered password has a special character this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&amp;*()_+\\-=\\[\\]{};':\"\\\\,.&lt;&gt;\\/?~]/, 'hasSpecialCharacters')); } ... Custom validator . Also user can add its own validators to a input component using the validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [validators]=\"validatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; validatorsArray: ValidatorFn[] = []; constructor() { this.validatorsArray.push(this.aValidator); this.validatorsArray.push(this.bValidator); } aValidator(control: FormControl): ValidationErrors { let result = {}; if (control.value &amp;&amp; control.value.toString().indexOf('a') === -1) { result['requiredLowercaseA'] = true; } if (control.value &amp;&amp; control.value.toString().indexOf('A') === -1) { result['requiredUppercaseA'] = true; } return result; } bValidator(control: FormControl): ValidationErrors { if (control.value &amp;&amp; control.value.toString().indexOf('b') === -1) { return { 'requiredB': true }; } return {}; } ... Same for asynchronous validators using the async-validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [async-validators]=\"asyncValidatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; asyncValidatorsArray: AsyncValidatorFn[] = []; constructor(private charValidatorService: CharValidatorService) { this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsLowercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsUppercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsB())); } ... export class AsyncValidatorsHelper { static createValidator(validator: CharValidator): AsyncValidatorFn { return (control: AbstractControl): Observable&lt;ValidationErrors&gt; =&gt; { return control.value ? validator.fn(control.value) .pipe( map((isValid: boolean) =&gt; isValid ? null : validator.error) ) : of(null) }; } } interface CharValidator { fn: (value: string) =&gt; Observable&lt;boolean&gt; error: { [key: string]: boolean; } } @Injectable({ providedIn: 'root', }) export class CharValidatorService { containsLowercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('a') !== -1).pipe(delay(1000)) }, error: { 'requiredLowercaseA': true } } } containsUppercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('A') !== -1).pipe(delay(1000)) }, error: { 'requiredUppercaseA': true } } } containsB(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('b') !== -1).pipe(delay(1000)) }, error: { 'requiredB': true } } } } . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#validation",
-            "relUrl": "/components/input/overview/overview#validation"
-          },"53": {
-            "doc": "Overview",
-            "title": "Label visible",
-            "content": "Form data components allow you to show or hide label with label-visible attribute. By default, this value is true. NOTE: This attribute not apply in o-checkbox,o-radio, o-slider and o-html-input. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#label-visible",
-            "relUrl": "/components/input/overview/overview#label-visible"
-          },"54": {
-            "doc": "Overview",
-            "title": "Required",
-            "content": "A input can be market with a required attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the hide-required-marker property on form data component. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" required=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; &lt;o-text-input attr=\"input4\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" required=\"yes\" hide-required-marker=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#required",
-            "relUrl": "/components/input/overview/overview#required"
-          },"55": {
-            "doc": "Overview",
-            "title": "Enabled",
-            "content": "The enabled mode is active by default. You can disable the input by setting enabled='no'. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" enabled=\"no\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#enabled",
-            "relUrl": "/components/input/overview/overview#enabled"
-          },"56": {
-            "doc": "Overview",
-            "title": "Read-only",
-            "content": "The readonly mode represents an element that is no longer editable by the user. You can make a component only readable setting read-only=\"yes\". &lt;o-text-input fxFlex attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" read-only=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#read-only",
-            "relUrl": "/components/input/overview/overview#read-only"
-          },"57": {
-            "doc": "Overview",
-            "title": "Tooltip",
-            "content": "To create a tooltip, add the tooltip attribute to an element. By default, the tooltip will appear on bottom of the element. Use tooltip-position attribute to set the position of the tooltip on top, bottom, left or the right side of the element. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\" tooltip-position=\"left\"&gt;&lt;/o-text-input&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#tooltip",
-            "relUrl": "/components/input/overview/overview#tooltip"
-          },"58": {
-            "doc": "Overview",
-            "title": "Width",
-            "content": "All input components have the width atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#width",
-            "relUrl": "/components/input/overview/overview#width"
-          },"59": {
-            "doc": "Overview",
-            "title": "Global default options  new ",
-            "content": "Global default options in input components can be specified by providing a value for the O_INPUT_OPTIONS token in a module. The color of input icons can be configured using the iconColor attribute and the selection of the value of an input when clicked using the selectAllOnClick attribute. @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { iconColor:'accent' } } ] }) or @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { selectAllOnClick: true } } ] }) . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#global-default-options--new-",
-            "relUrl": "/components/input/overview/overview#global-default-options--new-"
-          },"60": {
-            "doc": "Overview",
-            "title": "Visibility  new ",
-            "content": "The oHidden directive is used to hide form data components. &lt;o-text-input oHidden attr=\"NAME\" width=\"160px\" class=\"form-field\"&gt;&lt;/o-text-input&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#visibility--new-",
-            "relUrl": "/components/input/overview/overview#visibility--new-"
-          }
-      ,"61": {
             "doc": "On demand overview",
             "title": "Introduction",
             "content": "The module Ontimize Web Chart on-demand allow the final users of the applications developed with Ontimize to define, view and store charts from any table available in the application. This visual tool will allow users to define parameters of the chart such as: . 1.- Title and subtitle . 2.- Type of graph (line, discretebar, multibar, area, pie, donut) . 3.- Color palette for multi bar, pie and donut charts . 4.- Column to display on the x-axis . 5.- Column to display on the y-axis . 6.- Data source (current page, filtered data, all data) . 7.- Preferences (allows to save a configuration, apply an existing one or update it) . Remember to complete the steps you need to perform on your backend server to complete the charts on-demand configuration following this link . ",
             "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#introduction",
             "relUrl": "/charts/chart_on_demand/overview#introduction"
-          },"62": {
+          },"51": {
             "doc": "On demand overview",
             "title": "Menu option",
             "content": ". ",
             "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#menu-option",
             "relUrl": "/charts/chart_on_demand/overview#menu-option"
-          },"63": {
+          },"52": {
             "doc": "On demand overview",
             "title": "Basic example of Line chart",
             "content": "This basic example shows a line chart of operation date and movements . ",
             "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-line-chart",
             "relUrl": "/charts/chart_on_demand/overview#basic-example-of-line-chart"
-          },"64": {
+          },"53": {
             "doc": "On demand overview",
             "title": "Basic example of Discrete Bar chart",
             "content": "This basic example shows a Discrete bar chart of movements types and movements . ",
             "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-discrete-bar-chart",
             "relUrl": "/charts/chart_on_demand/overview#basic-example-of-discrete-bar-chart"
-          },"65": {
+          },"54": {
             "doc": "On demand overview",
             "title": "Basic example of Multi Bar chart",
             "content": "This basic example shows a multi bar chart of movements types and movements . ",
             "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-multi-bar-chart",
             "relUrl": "/charts/chart_on_demand/overview#basic-example-of-multi-bar-chart"
-          },"66": {
+          },"55": {
             "doc": "On demand overview",
             "title": "Basic example of Pie chart",
             "content": "This basic example shows a pie chart of customers type . ",
             "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-pie-chart",
             "relUrl": "/charts/chart_on_demand/overview#basic-example-of-pie-chart"
-          },"67": {
+          },"56": {
             "doc": "On demand overview",
             "title": "Save and load configuration",
             "content": "The example shows the dialog to save a configuration of a chart . The example shows the dialog to select a previously stored configuration and perform a faster chart . ",
             "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#save-and-load-configuration",
             "relUrl": "/charts/chart_on_demand/overview#save-and-load-configuration"
+          }
+      ,"57": {
+            "doc": "Overview",
+            "title": "Data",
+            "content": "You can modify value by setting the data attribute or calling the setData method. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\"&gt;&lt;/o-text-input&gt; . getValue() { return 'John Doe'; } . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#data",
+            "relUrl": "/components/input/overview/overview#data"
+          },"58": {
+            "doc": "Overview",
+            "title": "Appearance",
+            "content": "You can configure multiple appearance variants changing the appearance and float-label input values. Appearance . The appearance input indicates which of the different mat-form-field appearance is used. It has the same features that Angular Material appearance input, watch it here. Global default appearance options can be specified by providing a value for MAT_FORM_FIELD_DEFAULT_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either legacy, standard, fill or outside. @NgModule({ providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } } ] }) . Float label . The float-label input indicates which of the different mat-form-field label behaviours is chosen. It has the same features that Angular Material appearance input, watch it here . Global default label options can be specified by providing a value for MAT_LABEL_GLOBAL_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either always, never, or auto. @NgModule({ providers: [ {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}} ] }) . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#appearance",
+            "relUrl": "/components/input/overview/overview#appearance"
+          },"59": {
+            "doc": "Overview",
+            "title": "Validation",
+            "content": "You can setup validation on input: . Using validation input in template-driven forms Using the Ontimize validators Creating your custom validator . Validation input in template-driven forms . To add validation to a template-driven form, you add the validation attributes specific for each input and Ontimize Web match these attributes with validator functions in the framework (such as required, min-length, max-length, max-decimal-digits,min-decimal-digits&#8230;) . The input shows automatically an error message when the required attribute is set to yes and there is no value on the input. &lt;o-password-input #newpassword attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" &gt;&lt;/o-password-input&gt; . Ontimize validators . Ontimize Web providers the following build-in validators in the framework: . twelveHourFormatValidator: Hour validator hh:mm am/pm format twentyFourHourFormatValidator: Hour validator HH:mm format emailValidator: Email validator nifValidator: NIF validator patternValidator: Pattern validator . Using the validators input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the o-validator and o-error components. Below is an example of using the pattern validator. &lt;o-password-input attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" [validators]=\"validatorsNewPasswordArray\"&gt; &lt;o-validator error-name=\"hasCapitalCase\" error-text=\"VALIDATOR.HASCAPITALCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasNumber\" error-text=\"VALIDATOR.HASNUMBER\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSmallCase\" error-text=\"VALIDATOR.HASSMALLCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSpecialCharacters\" error-text=\"VALIDATOR.HASSPECIALCHARACTERS\"&gt;&lt;/o-validator&gt; &lt;/o-password-input&gt; ... validatorsNewPasswordArray: ValidatorFn[] = []; constructor() { // check whether the entered password has a number this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\\d/, 'hasNumber')); // check whether the entered password has upper case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase')); // check whether the entered password has small case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase')); // check whether the entered password has a special character this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&amp;*()_+\\-=\\[\\]{};':\"\\\\,.&lt;&gt;\\/?~]/, 'hasSpecialCharacters')); } ... Custom validator . Also user can add its own validators to a input component using the validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [validators]=\"validatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; validatorsArray: ValidatorFn[] = []; constructor() { this.validatorsArray.push(this.aValidator); this.validatorsArray.push(this.bValidator); } aValidator(control: FormControl): ValidationErrors { let result = {}; if (control.value &amp;&amp; control.value.toString().indexOf('a') === -1) { result['requiredLowercaseA'] = true; } if (control.value &amp;&amp; control.value.toString().indexOf('A') === -1) { result['requiredUppercaseA'] = true; } return result; } bValidator(control: FormControl): ValidationErrors { if (control.value &amp;&amp; control.value.toString().indexOf('b') === -1) { return { 'requiredB': true }; } return {}; } ... Same for asynchronous validators using the async-validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [async-validators]=\"asyncValidatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; asyncValidatorsArray: AsyncValidatorFn[] = []; constructor(private charValidatorService: CharValidatorService) { this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsLowercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsUppercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsB())); } ... export class AsyncValidatorsHelper { static createValidator(validator: CharValidator): AsyncValidatorFn { return (control: AbstractControl): Observable&lt;ValidationErrors&gt; =&gt; { return control.value ? validator.fn(control.value) .pipe( map((isValid: boolean) =&gt; isValid ? null : validator.error) ) : of(null) }; } } interface CharValidator { fn: (value: string) =&gt; Observable&lt;boolean&gt; error: { [key: string]: boolean; } } @Injectable({ providedIn: 'root', }) export class CharValidatorService { containsLowercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('a') !== -1).pipe(delay(1000)) }, error: { 'requiredLowercaseA': true } } } containsUppercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('A') !== -1).pipe(delay(1000)) }, error: { 'requiredUppercaseA': true } } } containsB(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('b') !== -1).pipe(delay(1000)) }, error: { 'requiredB': true } } } } . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#validation",
+            "relUrl": "/components/input/overview/overview#validation"
+          },"60": {
+            "doc": "Overview",
+            "title": "Label visible",
+            "content": "Form data components allow you to show or hide label with label-visible attribute. By default, this value is true. NOTE: This attribute not apply in o-checkbox,o-radio, o-slider and o-html-input. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#label-visible",
+            "relUrl": "/components/input/overview/overview#label-visible"
+          },"61": {
+            "doc": "Overview",
+            "title": "Required",
+            "content": "A input can be market with a required attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the hide-required-marker property on form data component. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" required=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; &lt;o-text-input attr=\"input4\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" required=\"yes\" hide-required-marker=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#required",
+            "relUrl": "/components/input/overview/overview#required"
+          },"62": {
+            "doc": "Overview",
+            "title": "Enabled",
+            "content": "The enabled mode is active by default. You can disable the input by setting enabled='no'. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" enabled=\"no\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#enabled",
+            "relUrl": "/components/input/overview/overview#enabled"
+          },"63": {
+            "doc": "Overview",
+            "title": "Read-only",
+            "content": "The readonly mode represents an element that is no longer editable by the user. You can make a component only readable setting read-only=\"yes\". &lt;o-text-input fxFlex attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" read-only=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#read-only",
+            "relUrl": "/components/input/overview/overview#read-only"
+          },"64": {
+            "doc": "Overview",
+            "title": "Tooltip",
+            "content": "To create a tooltip, add the tooltip attribute to an element. By default, the tooltip will appear on bottom of the element. Use tooltip-position attribute to set the position of the tooltip on top, bottom, left or the right side of the element. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\" tooltip-position=\"left\"&gt;&lt;/o-text-input&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#tooltip",
+            "relUrl": "/components/input/overview/overview#tooltip"
+          },"65": {
+            "doc": "Overview",
+            "title": "Width",
+            "content": "All input components have the width atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#width",
+            "relUrl": "/components/input/overview/overview#width"
+          },"66": {
+            "doc": "Overview",
+            "title": "Global default options  new ",
+            "content": "Global default options in input components can be specified by providing a value for the O_INPUT_OPTIONS token in a module. The color of input icons can be configured using the iconColor attribute and the selection of the value of an input when clicked using the selectAllOnClick attribute. @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { iconColor:'accent' } } ] }) or @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { selectAllOnClick: true } } ] }) . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#global-default-options--new-",
+            "relUrl": "/components/input/overview/overview#global-default-options--new-"
+          },"67": {
+            "doc": "Overview",
+            "title": "Visibility  new ",
+            "content": "The oHidden directive is used to hide form data components. &lt;o-text-input oHidden attr=\"NAME\" width=\"160px\" class=\"form-field\"&gt;&lt;/o-text-input&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#visibility--new-",
+            "relUrl": "/components/input/overview/overview#visibility--new-"
           }
       ,"68": {
             "doc": "Form service components",
@@ -680,63 +680,63 @@
             "relUrl": "/run-an-example/#2-install-npm-packages-and-run"
           }
       ,"106": {
-            "doc": "Tree",
-            "title": "Installation",
-            "content": "npm install ontimize-web-ngx-tree --save . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/tree/installation/#installation",
-            "relUrl": "/tree/installation/#installation"
-          },"107": {
-            "doc": "Tree",
-            "title": "Usage",
-            "content": "Configure angular-cli.json dependencies . You must add the module styles definition in your &#8216;.angular-cli.json&#8217; file styles array: ... \"styles\": [ ... \"../node_modules/ontimize-web-ngx-tree/styles.scss\", .... ], ... Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-tree/o-tree-theme.scss'; @include o-tree-theme($theme); ... Import in an application module . Import the Ontimize Web tree module in the app module where you want to use it. import { OTreeModule } from 'ontimize-web-ngx-tree'; @NgModule({ imports: [ OTreeModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/tree/installation/#usage",
-            "relUrl": "/tree/installation/#usage"
-          }
-      ,"108": {
-            "doc": "Installation",
-            "title": "Installation",
-            "content": "npm install ontimize-web-ngx-report --save . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/installation/#installation",
-            "relUrl": "/addons/report/installation/#installation"
-          },"109": {
-            "doc": "Installation",
-            "title": "Usage",
-            "content": "Import the Ontimize Web Report module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-report'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-report/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/installation/#usage",
-            "relUrl": "/addons/report/installation/#usage"
-          }
-      ,"110": {
             "doc": "Installation",
             "title": "Installation",
             "content": "Step 1 - Install the module . npm install ontimize-web-ngx-charts --save . Step 2 - Import in an application module . Include the library chart module into your app in the module where you want to use it... import { OChartModule } from 'ontimize-web-ngx-charts'; ... @NgModule({ imports: [ OChartModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Step 3 - Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"styles\": [ ... \"node_modules/ontimize-web-ngx-charts/styles.scss\", .... ], \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-charts/assets\", \"output\": \"/assets\" }, ... ] ... ",
             "url": "https://ontimizeweb.github.io/docs/v15/charts/installation/#installation",
             "relUrl": "/charts/installation/#installation"
           }
-      ,"111": {
-            "doc": "Installation",
+      ,"107": {
+            "doc": "Tree",
             "title": "Installation",
-            "content": "npm install ontimize-web-ngx-gallery --save . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/gallery/installation/#installation",
-            "relUrl": "/addons/gallery/installation/#installation"
-          },"112": {
-            "doc": "Installation",
+            "content": "npm install ontimize-web-ngx-tree --save . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/tree/installation/#installation",
+            "relUrl": "/tree/installation/#installation"
+          },"108": {
+            "doc": "Tree",
             "title": "Usage",
-            "content": "Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss'; @include o-gallery-theme($theme); ... Import in an application module . Import the Ontimize Web gallery module in the app module where you want to use it. import { OGalleryModule } from 'ontimize-web-ngx-gallery'; @NgModule({ imports: [ OGalleryModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/gallery/installation/#usage",
-            "relUrl": "/addons/gallery/installation/#usage"
+            "content": "Configure angular-cli.json dependencies . You must add the module styles definition in your &#8216;.angular-cli.json&#8217; file styles array: ... \"styles\": [ ... \"../node_modules/ontimize-web-ngx-tree/styles.scss\", .... ], ... Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-tree/o-tree-theme.scss'; @include o-tree-theme($theme); ... Import in an application module . Import the Ontimize Web tree module in the app module where you want to use it. import { OTreeModule } from 'ontimize-web-ngx-tree'; @NgModule({ imports: [ OTreeModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/tree/installation/#usage",
+            "relUrl": "/tree/installation/#usage"
           }
-      ,"113": {
+      ,"109": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-report-on-demand --save . ",
             "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/installation/#installation",
             "relUrl": "/report-on-demand/installation/#installation"
-          },"114": {
+          },"110": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Import the Ontimize Web Report on-Demand module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ngx-extended-pdf-viewer/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
             "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/installation/#usage",
             "relUrl": "/report-on-demand/installation/#usage"
+          }
+      ,"111": {
+            "doc": "Installation",
+            "title": "Installation",
+            "content": "npm install ontimize-web-ngx-report --save . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/installation/#installation",
+            "relUrl": "/addons/report/installation/#installation"
+          },"112": {
+            "doc": "Installation",
+            "title": "Usage",
+            "content": "Import the Ontimize Web Report module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-report'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-report/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/installation/#usage",
+            "relUrl": "/addons/report/installation/#usage"
+          }
+      ,"113": {
+            "doc": "Installation",
+            "title": "Installation",
+            "content": "npm install ontimize-web-ngx-gallery --save . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/gallery/installation/#installation",
+            "relUrl": "/addons/gallery/installation/#installation"
+          },"114": {
+            "doc": "Installation",
+            "title": "Usage",
+            "content": "Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss'; @include o-gallery-theme($theme); ... Import in an application module . Import the Ontimize Web gallery module in the app module where you want to use it. import { OGalleryModule } from 'ontimize-web-ngx-gallery'; @NgModule({ imports: [ OGalleryModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/gallery/installation/#usage",
+            "relUrl": "/addons/gallery/installation/#usage"
           }
       ,"115": {
             "doc": "Installation",
@@ -1425,7 +1425,7 @@
           },"222": {
             "doc": "Application configuration",
             "title": "Menu configuration",
-            "content": "The side menu content is built automatically using the appMenuConfiguration property defined in the application configuration file (app\\app.config.ts). This property refers to an array of MenuRootItem objects defined in a separated file (app\\shared\\app.menu.config.ts) where each object defines a menu entry. There is different types of MenuRootItem depending on the task they are defined for. The two main menu item types are the MenuGroup and the MenuItem. MenuGroup If you want to include a menu item to group other menu items, you must include a MenuGroup whose attributes are the following: . Name Type Description . id string The menu item identifier . name string The menu item name . icon string The menu item icon (see Google material design icons) . items array The menu item children. Providing this attribute means that the menu item is a container for a group of menu items . opened boolean In case the items property is defined, indicates if the group menu item is open or not by default . tooltip string The tooltip text showed on the menu item when the menu is callapsed . class string The CSS class applied to the menu group . Example: . { id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true, items: [ // Include here the child menu items ] } . MenuItem If you want to include a common menu item, you must include a MenuItem whith the following attributes. Note that there is some attributes that refers to the o-card-menu-layout, this will be explained later. Name Type Description . id string The menu item identifier . name string The menu item name . icon string The menu item icon (see Google material design icons) . tooltip string The tooltip text showed on the menu item when the menu is callapsed . class string The CSS class applied to the menu item . show-in-card-menu boolean Indicates whether or not to show the corresponding card in the o-card-menu-layout . image string The image displayed on the corresponding card in the o-card-menu-layout . component component reference The component for the corresonding card in the o-card-menu-layout . component-inputs Object The attributes for the component for the corresponding card in the o-card-menu-layout . In addition to the attributes of the MenuItem, you can include other attributes depending on what kind of menu item you want. All the following menu item types extend from the MenuItem, all its attributes are inherited. MenuItemRoute or MenuGroupRoute For navigating the different modules of your application you must include a MenuItemRoute or MenuGroupRoute, its attributes are the following: . Name Type Description . route string The route the application will navigate when the menu item is clicked . pathMatch &#8216;full&#8217; &#8216;prefix&#8217; Match criteria to mark the menu item as active in case of multiple routes matching . Example: . { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' } . pathMatch: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is &#8216;prefix&#8217; (default value) a item will be marked as active if its route starts as the active application route. If the value is &#8216;full&#8217;, the route has to be exactly the same. Example: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the &#8216;/main/customers/new&#8217; because its prefix matches. User would need to set the value &#8216;full&#8217; to the pathMatch in the second route.&lt;/span&gt; . { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' }, { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers/new', icon: 'people' pathMatch: 'full' } . MenuItemAction For triggering an action include a MenuItemAction, its specific attributes are the following: . Name Type Description . action function A function called when the menu item is clicked . confirm yes/no Indicates whether or not the user must confirm the menu action . confirmText string The confirmation text . Example: . function myFunction() { // do whatever you want } ... { id: 'action', name: 'action', icon: 'autorenew', action: myFunction } . MenuItemLocale For switching between different languages available in the application, add as many MenuItemLocale items as languages. Name Type Description . locale string The language to be configured on the application . Example: . { id: 'lang_es', name: 'LOCALE_es', icon: 'language', locale: 'es' }, { id: 'lang_en', name: 'LOCALE_en', icon: 'language', locale: 'en' } . MenuItemLogout Include a MenuItemLogout for login out the user of the application, its specific attributes are the following: . Name Type Description . route string The route the application will navigate when the user logs out . confirm string Indicates whether or not the user must confirm the log out . Example: . { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' } . MenuItemUserInfo For displaying the application user information, include a MenuItemUserInfo with the following attributes: . Name Type Description . user string The displayed user name . avatar string The displayed image . Example: . { id: 'userinfo', name: 'USER', user: 'Profile', avatar: '../../assets/images/user_profile.png' } . You can see an example of a menu configuration below. This is a piece of the configuration used in the OntimizeWeb QuickStart. You can check the full code in GitHub. import { MenuRootItem } from 'ontimize-web-ngx'; export const MENU_CONFIG: MenuRootItem[] = [ { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' }, { id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true, items: [ { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' }, { id: 'accounts', name: 'ACCOUNTS', tooltip: 'ACCOUNTS_CONTENT', route: '/main/accounts', icon: 'credit_card' }, { id: 'branches', name: 'BRANCHES', tooltip: 'BRANCHES_CONTENT', route: '/main/branches', icon: 'account_balance' }, { id: 'employees', name: 'EMPLOYEES', tooltip: 'EMPLOYEES_CONTENT', route: '/main/employees', icon: 'person' } ] }, { id: 'general', name: 'GENERAL', icon: 'info_outline', opened: false, items: [ { id: 'about', name: 'ABOUT', route: '/main/about', icon: 'help_outline' } ] }, { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' } ]; . ",
+            "content": "The side menu content is built automatically using the appMenuConfiguration property defined in the application configuration file (app\\app.config.ts). This property refers to an array of MenuRootItem objects defined in a separated file (app\\shared\\app.menu.config.ts) where each object defines a menu entry. There is different types of MenuRootItem depending on the task they are defined for. The two main menu item types are the MenuGroup and the MenuItem. MenuGroup . If you want to include a menu item to group other menu items, you must include a MenuGroup whose attributes are the following: . Name Type Description . id string The menu item identifier . name string The menu item name . icon string The menu item icon (see Google material design icons) . svgIcon string Name of svg icon . items array The menu item children. Providing this attribute means that the menu item is a container for a group of menu items . opened boolean In case the items property is defined, indicates if the group menu item is open or not by default . tooltip string The tooltip text showed on the menu item when the menu is callapsed . class string The CSS class applied to the menu group . Example: . { id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true, items: [ // Include here the child menu items ] } . MenuItem . If you want to include a common menu item, you must include a MenuItem whith the following attributes. Note that there is some attributes that refers to the o-card-menu-layout, this will be explained later. Name Type Description . id string The menu item identifier . name string The menu item name . icon string The menu item icon (see Google material design icons) . svgIcon string Name of svg icon . tooltip string The tooltip text showed on the menu item when the menu is callapsed . class string The CSS class applied to the menu item . show-in-card-menu boolean Indicates whether or not to show the corresponding card in the o-card-menu-layout . image string The image displayed on the corresponding card in the o-card-menu-layout . component component reference The component for the corresonding card in the o-card-menu-layout . component-inputs Object The attributes for the component for the corresponding card in the o-card-menu-layout . In addition to the attributes of the MenuItem, you can include other attributes depending on what kind of menu item you want. All the following menu item types extend from the MenuItem, all its attributes are inherited. MenuItemRoute or MenuGroupRoute . For navigating the different modules of your application you must include a MenuItemRoute or MenuGroupRoute, its attributes are the following: . Name Type Description . route string The route the application will navigate when the menu item is clicked . pathMatch &#8216;full&#8217; &#8216;prefix&#8217; Match criteria to mark the menu item as active in case of multiple routes matching . Example: . { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' } . pathMatch: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is &#8216;prefix&#8217; (default value) a item will be marked as active if its route starts as the active application route. If the value is &#8216;full&#8217;, the route has to be exactly the same. Example: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the &#8216;/main/customers/new&#8217; because its prefix matches. User would need to set the value &#8216;full&#8217; to the pathMatch in the second route. { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' }, { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers/new', icon: 'people' pathMatch: 'full' } . MenuItemAction . For triggering an action include a MenuItemAction, its specific attributes are the following: . Name Type Description . action function A function called when the menu item is clicked . confirm yes/no Indicates whether or not the user must confirm the menu action . confirmText string The confirmation text . Example: . function myFunction() { // do whatever you want } ... { id: 'action', name: 'action', icon: 'autorenew', action: myFunction } . MenuItemLocale . For switching between different languages available in the application, add as many MenuItemLocale items as languages. Name Type Description . locale string The language to be configured on the application . Example: . { id: 'lang_es', name: 'LOCALE_es', icon: 'language', locale: 'es' }, { id: 'lang_en', name: 'LOCALE_en', icon: 'language', locale: 'en' } . MenuItemLogout . Include a MenuItemLogout for login out the user of the application, its specific attributes are the following: . Name Type Description . route string The route the application will navigate when the user logs out . confirm string Indicates whether or not the user must confirm the log out . Example: . { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' } . MenuItemUserInfo . For displaying the application user information, include a MenuItemUserInfo with the following attributes: . Name Type Description . user string The displayed user name . avatar string The displayed image . Example: . { id: 'userinfo', name: 'USER', user: 'Profile', avatar: '../../assets/images/user_profile.png' } . You can see an example of a menu configuration below. This is a piece of the configuration used in the OntimizeWeb QuickStart. You can check the full code in GitHub. import { MenuRootItem } from 'ontimize-web-ngx'; export const MENU_CONFIG: MenuRootItem[] = [ { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' }, { id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true, items: [ { id: 'customers', name: 'CUSTOMERS', tooltip: 'CUSTOMERS_CONTENT', route: '/main/customers', icon: 'people' }, { id: 'accounts', name: 'ACCOUNTS', tooltip: 'ACCOUNTS_CONTENT', route: '/main/accounts', icon: 'credit_card' }, { id: 'branches', name: 'BRANCHES', tooltip: 'BRANCHES_CONTENT', route: '/main/branches', icon: 'account_balance' }, { id: 'employees', name: 'EMPLOYEES', tooltip: 'EMPLOYEES_CONTENT', route: '/main/employees', icon: 'person' } ] }, { id: 'general', name: 'GENERAL', icon: 'info_outline', opened: false, items: [ { id: 'about', name: 'ABOUT', route: '/main/about', icon: 'help_outline' } ] }, { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' } ]; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/guide/appconfig/#menu-configuration",
             "relUrl": "/guide/appconfig/#menu-configuration"
           },"223": {
@@ -1925,10 +1925,10 @@
       
       ,"300": {
             "doc": "Migration guides",
-            "title": "Proceso de Migración",
+            "title": "Proceso de Migración de Ontimize Web 8 a la versión 15",
             "content": "Para el proceso de migración, seguiremos la guía disponible en la siguiente URL: https://update.angular.io/?l=3&amp;v=8.2-15.0. Asegúrate de marcar la opción de Angular Material si se está utilizando en el proyecto. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#proceso-de-migraci%C3%B3n",
-            "relUrl": "/migration-8-to-15/#proceso-de-migración"
+            "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#proceso-de-migraci%C3%B3n-de-ontimize-web-8-a-la-versi%C3%B3n-15",
+            "relUrl": "/migration-8-to-15/#proceso-de-migración-de-ontimize-web-8-a-la-versión-15"
           },"301": {
             "doc": "Migration guides",
             "title": "Antes de migrar:",
@@ -1938,55 +1938,55 @@
           },"302": {
             "doc": "Migration guides",
             "title": "Angular 8 a 9",
-            "content": "Prerequisitos tener instalada: . Node: 12.13.0 . Modifica el package.json eliminando las dependencias de Ontimize y de node-sass si se está utilizando y realiza una instalación con la version de node 12.13.0 . npm install . Ejecuta los comandos de migración de acuerdo con la guía. Asegúrate de que el repositorio esté limpio, con cambios commiteados, stageados o subidos. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@8 update @angular/cli@8 @angular/core@8\" . Quitar la dependencia @angular/flex-layout en el package.json ya que no se realiza la actualización automaticamente y habría que hacer manual, y para mejorar y agilizar el proceso lo dejaremos para el paso de migración de la versión 14 a la 15 . cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@9 update @angular/cli@9 @angular/core@9\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: . 1 . Eliminación de hammerjs, si existe, tanto como dependencia como referencias. 2 . Modificado el aot del angular.json de false a true. 3 . Modificado el tsconfig.app.json . 4 . Actualización de rxjs y zone.js . 5 . Actualización de typescript . Si el proyecto utiliza angular material se deberá ejecutar el siguiente comando . cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@9 update @angular/material@9\" . Después de ejecutar el comando, además de la actualización de las versiones de material, comprueba los siguientes cambios realizados: 1 . Modificada la versión de tslib. 2 . Modificados los imports de material, antes se importaban de manera global, ahora deben importarse de manera específica, por ejemplo: . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=8.2-9.1 y realiza los cambios recomendados si fuera necesario . ",
+            "content": "Prerequisitos tener instalada: . Node: 12.13.0 . Modifica el package.json eliminando las dependencias de Ontimize y de node-sass si se está utilizando y realiza una instalación con la version de node 12.13.0 . npm install . Ejecuta los comandos de migración de acuerdo con la guía. Asegúrate de que el repositorio esté limpio, con cambios commiteados, stageados o subidos. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@8 update @angular/cli@8 @angular/core@8\" . Quitar la dependencia @angular/flex-layout en el package.json ya que no se realiza la actualización automaticamente y habría que hacer manual, y para mejorar y agilizar el proceso lo dejaremos para el paso de migración de la versión 14 a la 15 . cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@9 update @angular/cli@9 @angular/core@9\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: . 1 . Eliminación de hammerjs, si existe, tanto como dependencia como referencias. 2 . Modificado el aot del angular.json de false a true. 3 . Modificado el tsconfig.app.json . 4 . Actualización de rxjs y zone.js . 5 . Actualización de typescript . Si el proyecto utiliza angular material se deberá ejecutar el siguiente comando . cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@9 update @angular/material@9\" . Después de ejecutar el comando, además de la actualización de las versiones de material, comprueba los siguientes cambios realizados: . 1 . Modificada la versión de tslib. 2 . Modificados los imports de material, antes se importaban de manera global, ahora deben importarse de manera específica, por ejemplo: . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=8.2-9.1 y realiza los cambios recomendados si fuera necesario . ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#angular-8-a-9",
             "relUrl": "/migration-8-to-15/#angular-8-a-9"
           },"303": {
             "doc": "Migration guides",
             "title": "Angular 9 a 10",
-            "content": "Prerequisitos tener instalada: . Node: 12.13.0 . Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@10 update @angular/cli@10 @angular/core@10\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: 1 . Actualización de typescript . 2 . Eliminación de { static: false } en los ViewChild . 3 . Cambios en el tsconfig.json . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@10 update @angular/material@10\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=9.0-10.2 y realiza los cambios recomendados si fuera necesario . ",
+            "content": "Prerequisitos tener instalada: . Node: 12.13.0 . Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@10 update @angular/cli@10 @angular/core@10\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: . 1 . Actualización de typescript . 2 . Eliminación de { static: false } en los ViewChild . 3 . Cambios en el tsconfig.json . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@10 update @angular/material@10\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=9.0-10.2 y realiza los cambios recomendados si fuera necesario. ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#angular-9-a-10",
             "relUrl": "/migration-8-to-15/#angular-9-a-10"
           },"304": {
             "doc": "Migration guides",
             "title": "Angular 10 a 11",
-            "content": "Prerequisitos tener instalada: . Node: 14.20.0 Angular cli: 10.x.x . Actualiza la versión de node a la 14.20.0 y recuerda modificar si existen las referencias a la version de node, por ejemplo en el package.json. Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@11 update @angular/cli@11 @angular/core@11\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: 1 . Modificado el objeto opt del app-routing.module . 2 . Eliminado extractCss del angular.json . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@11 update @angular/material@11\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=10.2-11.0 y realiza los cambios recomendados si fuera necesario ## . ",
+            "content": "Prerequisitos tener instalada: . Node: 14.20.0 Angular cli: 10.x.x . Actualiza la versión de node a la 14.20.0 y recuerda modificar si existen las referencias a la version de node, por ejemplo en el package.json. Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@11 update @angular/cli@11 @angular/core@11\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: . 1 . Modificado el objeto opt del app-routing.module . 2 . Eliminado extractCss del angular.json . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@11 update @angular/material@11\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=10.2-11.0 y realiza los cambios recomendados si fuera necesario. ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#angular-10-a-11",
             "relUrl": "/migration-8-to-15/#angular-10-a-11"
           },"305": {
             "doc": "Migration guides",
             "title": "Angular 11 a 12",
-            "content": "Prerequisitos tener instalada: . Node: 14.20.0 Angular cli: 11.x.x . Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@12 update @angular/cli@12 @angular/core@12\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: 1 . Actualización de zone . 2 . Actualización de typescript . 3 . Actualización del enviroment.ts . 4 . Actualización del polyfills.ts . 5 . Eliminación de “emitDecoratorMetadata” en el tsconfig.json . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@12 update @angular/material@12\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=11.0-12.0 y realiza los cambios recomendados si fuera necesario . ",
+            "content": "Prerequisitos tener instalada: . Node: 14.20.0 Angular cli: 11.x.x . Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@12 update @angular/cli@12 @angular/core@12\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: . 1 . Actualización de zone . 2 . Actualización de typescript . 3 . Actualización del enviroment.ts . 4 . Actualización del polyfills.ts . 5 . Eliminación de “emitDecoratorMetadata” en el tsconfig.json . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@12 update @angular/material@12\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=11.0-12.0 y realiza los cambios recomendados si fuera necesario. ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#angular-11-a-12",
             "relUrl": "/migration-8-to-15/#angular-11-a-12"
           },"306": {
             "doc": "Migration guides",
             "title": "Angular 12 a 13",
-            "content": "Prerequisitos tener instalada: . Node: 14.20.0 . Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@13 update @angular/cli@13 @angular/core@13\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: 1 . Eliminación de los entryComponents en el .module . 2 . Actualizado test.ts . 3 . Actualizado typescript . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@13 update @angular/material@13\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=12.0-13.0 y realiza los cambios recomendados si fuera necesario . ",
+            "content": "Prerequisitos tener instalada: . Node: 14.20.0 . Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@13 update @angular/cli@13 @angular/core@13\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: . 1 . Eliminación de los entryComponents en el .module . 2 . Actualizado test.ts . 3 . Actualizado typescript . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@13 update @angular/material@13\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=12.0-13.0 y realiza los cambios recomendados si fuera necesario. ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#angular-12-a-13",
             "relUrl": "/migration-8-to-15/#angular-12-a-13"
           },"307": {
             "doc": "Migration guides",
             "title": "Angular 13 a 14",
-            "content": "Prerequisitos tener instalada: . Node: 14.20.0 . Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@14 update @angular/cli@14 @angular/core@14\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: 1 . Modificado tsconfig.json . 2 . Modificado el tipo FormBuilder . 3 . Modificado tipo de FormControl . 4 . Modificado angular.json . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@14 update @angular/material@14\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=13.0-14.0 y realiza los cambios recomendados si fuera necesario . ",
+            "content": "Prerequisitos tener instalada: . Node: 14.20.0 . Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@14 update @angular/cli@14 @angular/core@14\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: . 1 . Modificado tsconfig.json . 2 . Modificado el tipo FormBuilder . 3 . Modificado tipo de FormControl . 4 . Modificado angular.json . Ejecutar comando para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@14 update @angular/material@14\" . Revisar los cambios recomendados por angular en el siguiente enlace https://update.angular.io/?l=3&amp;v=13.0-14.0 y realiza los cambios recomendados si fuera necesario. ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#angular-13-a-14",
             "relUrl": "/migration-8-to-15/#angular-13-a-14"
           },"308": {
             "doc": "Migration guides",
             "title": "Angular 14 a 15",
-            "content": "Prerequisitos tener instalada: . Node: 18.10.0 . Actualiza la versión de node a la 18.10.0 y recuerda modificar si existen las referencias a la version de node, por ejemplo en el package.json. Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@15 update @angular/cli@15 @angular/core@15\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: 1 . Actualizado typescript . 2 . Actualizado app-routing-module . 3 . Actualizado test.ts . 4 . Actualizado tsconfig.json . Ejecutar los siguientes comandos para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@15 update @angular/material@15\" ng generate @angular/material:mdc-migration . Despues de ejecutar este comando se crearan en el código una serie de TODO que afectan al estilo de los componentes. En la siguiente tabla puedes ver una equivalencia de alguna de las clases que cambian: . Componente Clase Vieja Nueva Clase . mat-tab mat-tab-label-active mdc-tab–active .   mat-tab-label-content mdc-tab__content .   mat-tab-label-container mat-mdc-tab-label-container .   mat-tab-list mat-mdc-tab-list .   mat-tab-body-wrapper mat-mdc-tab-body-wrapper .   mat-tab-label mat-mdc-tab .   mat-tab-header-pagination-controls-enabled mat-mdc-tab-header-pagination-controls-enabled .   mat-tab-header-pagination mat-mdc-tab-header-pagination .   mat-tab-labels mat-mdc-tab-labels . mat-chip mat-chip-list mat-mdc-chip-list .   mat-chip-list-wrapper   . mat-checkbox mat-checkbox-frame mdc-checkbox__checkmark .   mat-checkbox-label mdc-label .   mat-checkbox-checked mat-mdc-checkbox-checked .   mat-checkbox-layout   . mat-button mat-button-focus-overlay mat-mdc-focus-indicator . mat-radio mat-radio-outer-circle mdc-radio__outer-circle .   mat-radio-inner-circle mdc-radio__inner-circle .   mat-radio-checked mat-mdc-radio-checked .   mat-radio-label-content mdc-label .   mat-radio-label mdc -label . mat-progress-bar mat-progress-bar-buffer mdc-linear-progress__buffer . mat-form-field mat-form-field-flex mat-mdc-form-field-flex .   mat-form-field-wrapper mat-mdc-text-field-wrapper .   mat-form-field-underline mdc-line-ripple .   mat-form-field-subscript-wrapper mat-mdc-form-field-subscript-wrapper .   mat-form-field-prefix mat-mdc-form-field-text-prefix .   mat-form-field-suffix mat-mdc-form-field-text-suffix .   mat-form-field-infix mat-mdc-form-text-infix .   mat-form-field-label mat-mdc-floating-label . mat-dialog mat-dialog-container mdc-dialog__container .   mat-dialog-content mat-mdc-dialog-content . Sin cambios     . mat-button-toggle     .   mat-button-toggle-checked   .   mat-button-toggle-disabled   .   mat-button-toggle-focus-overlay   . ",
+            "content": "Prerequisitos tener instalada: . Node: 18.10.0 . Actualiza la versión de node a la 18.10.0 y recuerda modificar si existen las referencias a la version de node, por ejemplo en el package.json. Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos. Ejecuta el comando para migrar a Angular como indica la guía. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@15 update @angular/cli@15 @angular/core@15\" . Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados: . 1 . Actualizado typescript . 2 . Actualizado app-routing-module . 3 . Actualizado test.ts . 4 . Actualizado tsconfig.json . Ejecutar los siguientes comandos para migrar Material como indica la guía si se usa en el proyecto. cmd /C \"set \"NG_DISABLE_VERSION_CHECK=1\" &amp;&amp; npx @angular/cli@15 update @angular/material@15\" ng generate @angular/material:mdc-migration . Despues de ejecutar este comando se crearan en el código una serie de TODO que afectan al estilo de los componentes. En la siguiente tabla puedes ver una equivalencia de alguna de las clases que cambian: . Componente Clase Vieja Nueva Clase . mat-tab mat-tab-label-active mdc-tab–active .   mat-tab-label-content mdc-tab__content .   mat-tab-label-container mat-mdc-tab-label-container .   mat-tab-list mat-mdc-tab-list .   mat-tab-body-wrapper mat-mdc-tab-body-wrapper .   mat-tab-label mat-mdc-tab .   mat-tab-header-pagination-controls-enabled mat-mdc-tab-header-pagination-controls-enabled .   mat-tab-header-pagination mat-mdc-tab-header-pagination .   mat-tab-labels mat-mdc-tab-labels . mat-chip mat-chip-list mat-mdc-chip-list .   mat-chip-list-wrapper   . mat-checkbox mat-checkbox-frame mdc-checkbox__checkmark .   mat-checkbox-label mdc-label .   mat-checkbox-checked mat-mdc-checkbox-checked .   mat-checkbox-layout   . mat-button mat-button-focus-overlay mat-mdc-focus-indicator . mat-radio mat-radio-outer-circle mdc-radio__outer-circle .   mat-radio-inner-circle mdc-radio__inner-circle .   mat-radio-checked mat-mdc-radio-checked .   mat-radio-label-content mdc-label .   mat-radio-label mdc -label . mat-progress-bar mat-progress-bar-buffer mdc-linear-progress__buffer . mat-form-field mat-form-field-flex mat-mdc-form-field-flex .   mat-form-field-wrapper mat-mdc-text-field-wrapper .   mat-form-field-underline mdc-line-ripple .   mat-form-field-subscript-wrapper mat-mdc-form-field-subscript-wrapper .   mat-form-field-prefix mat-mdc-form-field-text-prefix .   mat-form-field-suffix mat-mdc-form-field-text-suffix .   mat-form-field-infix mat-mdc-form-text-infix .   mat-form-field-label mat-mdc-floating-label . mat-dialog mat-dialog-container mdc-dialog__container .   mat-dialog-content mat-mdc-dialog-content . Sin cambios     . mat-button-toggle     .   mat-button-toggle-checked   .   mat-button-toggle-disabled   .   mat-button-toggle-focus-overlay   . ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#angular-14-a-15",
             "relUrl": "/migration-8-to-15/#angular-14-a-15"
           },"309": {
             "doc": "Migration guides",
             "title": "Cambios necesarios después de la migración",
-            "content": "1 . Añadir la última release de la versión 15.x.x. de las dependencias de ontimize-web-ngx eliminadas en el paso Angular 8 a 9, excepto la dependencia de theming., cuya funcionalidad fue integrada en ontimize-web-ngx. Puedes consultar las versiones más recientes de las librerías de ontimize en el siguiente enlace https://ontimizeweb.github.io/docs/v15/versions/ . 2 . Añadir la la dependencia de @angular/flex-layout a la versión: ^15.0.0-beta.42 eliminadas en el paso Angular 8 a 9. \"@angular/flex-layout\": \"^15.0.0-beta.42\" . 3 . Actualizar versiones de rxjs, tslib,zone.js . 4 . Eliminar las siguientes importaciones en ficheros .scss si existieran . @import 'node\\_modules/@angular/material/theming' . 5 . Modifica .browserslistrc con: . last 2 Chrome versions last 1 Firefox version last 2 Edge major versions last 2 Safari major versions last 2 iOS major versions . 6 . Modifica las importaciones de los temas, que ahora vienen directamente del core. @use 'ontimize-web-ngx/theming/themes/ontimize.scss' as theme; @use 'ontimize-web-ngx/theming/ontimize-style.scss'; @use '../../app/login/login.theme.scss' as login; // Include ontimize styles @include ontimize-style.ontimize-theme-styles(theme.$theme); // Propagate theme to screen styles definition. @include login.login-theme(theme.$theme); //Include dark styles option .o-dark { @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme); } . 7 . Puede que aparezca la advertencia de que se debe añadir “allowSyntheticDefaultImports”: true en tsconfig.json. 8 . Puede que aparezcan advertencias de dependencias que deben añadirse a “allowedCommonJsDependencies” en angular.json. Un ejemplo sería: . 9 . Añadir stylePreprocessorOptions en el angular.json . Importante: En app.module, ya no se importa OntimizeModules, ahora debes importar los módulos uno a uno, por ejemplo: . BrowserModule, BrowserAnimationsModule, OntimizeWebModule.forRoot(CONFIG), . Recuerda que este proceso puede ser complejo y puede haber otros ajustes necesarios en función de las particularidades de tu proyecto. Siempre es recomendable realizar pruebas exhaustivas después de cada paso de migración. ",
+            "content": "1 . Añadir la última release de la versión 15.x.x. de las dependencias de ontimize-web-ngx eliminadas en el paso Angular 8 a 9, excepto la dependencia de theming., cuya funcionalidad fue integrada en ontimize-web-ngx. Puedes consultar las versiones más recientes de las librerías de ontimize en el siguiente enlace https://ontimizeweb.github.io/docs/v15/versions/ . 2 . Añadir la la dependencia de @angular/flex-layout a la versión: ^15.0.0-beta.42 eliminada en el paso Angular 8 a 9. \"@angular/flex-layout\": \"^15.0.0-beta.42\" . 3 . Actualizar versiones de rxjs, tslib,zone.js . 4 . Eliminar las siguientes importaciones en ficheros .scss si existieran . @import 'node_modules/@angular/material/theming' . 5 . Modifica .browserslistrc con: . last 2 Chrome versions last 1 Firefox version last 2 Edge major versions last 2 Safari major versions last 2 iOS major versions . 6 . Modifica las importaciones de los temas, que ahora vienen directamente del core. @use 'ontimize-web-ngx/theming/themes/ontimize.scss' as theme; @use 'ontimize-web-ngx/theming/ontimize-style.scss'; @use '../../app/login/login.theme.scss' as login; // Include ontimize styles @include ontimize-style.ontimize-theme-styles(theme.$theme); // Propagate theme to screen styles definition. @include login.login-theme(theme.$theme); //Include dark styles option .o-dark { @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme); } . 7 . Puede que aparezca la advertencia de que se debe añadir “allowSyntheticDefaultImports”: true en tsconfig.json. 8 . Puede que aparezcan advertencias de dependencias que deben añadirse a “allowedCommonJsDependencies” en angular.json. Un ejemplo sería: . 9 . Añadir stylePreprocessorOptions en el angular.json . Importante: En app.module, ya no se importa OntimizeModules, ahora debes importar los módulos uno a uno, por ejemplo: . BrowserModule, BrowserAnimationsModule, OntimizeWebModule.forRoot(CONFIG), . Recuerda que este proceso puede ser complejo y puede haber otros ajustes necesarios en función de las particularidades de tu proyecto. Siempre es recomendable realizar pruebas exhaustivas después de cada paso de migración. ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#cambios-necesarios-despu%C3%A9s-de-la-migraci%C3%B3n",
             "relUrl": "/migration-8-to-15/#cambios-necesarios-después-de-la-migración"
           },"310": {
             "doc": "Migration guides",
             "title": "Errores comunes",
-            "content": ". Para solucionar este error deberás añadir la siguiente dependencia a las devDependencies de tu proyecto: . \"@angular-devkit/schematics\": \"^9.1.15\", . Al comenzar la migración, podemos tener errores debido a la incompatibilidad de ciertas librerías instaladas en el proyecto. La traza del error será parecida a esta: . Lo que deberemos hacer es eliminar esas dependencias que dan conflictos de nuestro package y acordarnos de añadirlas cuando tengamos nuestro proyecto en la versión 15. Debemos revisar que versión de esas librerías es compatible con la versión 15 de angular. En la versión 15 suele aparecer este error. Se debe añadir la siguiente devDependencie al package.json: . \"ajv\": \"^7.2.4\" . ",
+            "content": "Cannot find module ‘@angular-devkit/schematics’ . Para solucionar este error deberás añadir la siguiente dependencia a las devDependencies de tu proyecto: . \"@angular-devkit/schematics\": \"^9.1.15\", . Incompatible peer dependencies found . Al comenzar la migración, podemos tener errores debido a la incompatibilidad de ciertas librerías instaladas en el proyecto. La traza del error será parecida a esta: . Lo que deberemos hacer es eliminar esas dependencias que dan conflictos de nuestro package y acordarnos de añadirlas cuando tengamos nuestro proyecto en la versión 15. Debemos revisar que versión de esas librerías es compatible con la versión 15 de angular. Cannot find module ‘ajv/dist/compile/codegen’ . En la versión 15 suele aparecer este error. Se debe añadir la siguiente devDependencie al package.json: . \"ajv\": \"^7.2.4\" . ",
             "url": "https://ontimizeweb.github.io/docs/v15/migration-8-to-15/#errores-comunes",
             "relUrl": "/migration-8-to-15/#errores-comunes"
           }
@@ -3476,7 +3476,6 @@
             "url": "https://ontimizeweb.github.io/docs/v15/migrations/#migration-guides",
             "relUrl": "/migrations/#migration-guides"
           }
-      
       ,"545": {
             "doc": "Prerequisites",
             "title": "Node.js &amp; npm",
