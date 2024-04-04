@@ -385,37 +385,33 @@ The side menu content is built automatically using the `appMenuConfiguration` pr
 
 There is different types of `MenuRootItem` depending on the task they are defined for. The two main menu item types are the `MenuGroup` and the `MenuItem`.
 
-<details class="collapsible">
-  <summary markdown="span">MenuGroup</summary>
-  <div class="collapsible-content" markdown="1">
+### MenuGroup
 
-  If you want to include a menu item to group other menu items, you must include a <code>MenuGroup</code> whose attributes are the following:
+If you want to include a menu item to group other menu items, you must include a <code>MenuGroup</code> whose attributes are the following:
 
-  | Name    | Type    | Description |
-  | ------- | ------- | ----------- |
-  | id      | string  | The menu item identifier |
-  | name    | string  | The menu item name |
-  | icon    | string  | The menu item icon (see <a href="https://fonts.google.com/icons">Google material design icons</a>{:target='_blank'}) |
-  | items   | array   | The menu item children. Providing this attribute means that the menu item is a container for a group of menu items |
-  | opened  | boolean | In case the <code>items</code> property is defined, indicates if the group menu item is open or not by default |
-  | tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
-  | class   | string  | The CSS class applied to the menu group |
+| Name    | Type    | Description |
+| ------- | ------- | ----------- |
+| id      | string  | The menu item identifier |
+| name    | string  | The menu item name |
+| icon    | string  | The menu item icon (see <a href="https://fonts.google.com/icons">Google material design icons</a>{:target='_blank'}) |
+| svgIcon | string  | Name of svg icon |
+| items   | array   | The menu item children. Providing this attribute means that the menu item is a container for a group of menu items |
+| opened  | boolean | In case the <code>items</code> property is defined, indicates if the group menu item is open or not by default |
+| tooltip | string  | The tooltip text showed on the menu item when the menu is callapsed |
+| class   | string  | The CSS class applied to the menu group |
 
-  <span>Example:</span>
-  ```javascript
-  {
-    id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
-    items: [
-      // Include here the child menu items
-    ]
-  }
-  ```
-</div>
-</details>
+**Example:**
 
-<details class="collapsible">
-  <summary markdown="span">MenuItem</summary>
-  <div class="collapsible-content" markdown="1">
+```javascript
+{
+  id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
+  items: [
+    // Include here the child menu items
+  ]
+}
+```
+
+### MenuItem
 
   If you want to include a common menu item, you must include a <code>MenuItem</code> whith the following attributes. Note that there is some attributes that refers to the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a>, this will be explained later.
 
@@ -424,6 +420,7 @@ There is different types of `MenuRootItem` depending on the task they are define
   | id                  | string              | The menu item identifier |
   | name                | string              | The menu item name |
   | icon                | string              | The menu item icon (see <a href="https://fonts.google.com/icons">Google material design icons</a>{:target='_blank'}) |
+  | svgIcon | string  | Name of svg icon |
   | tooltip             | string              | The tooltip text showed on the menu item when the menu is callapsed |
   | class               | string  | The CSS class applied to the menu item |
   | show-in-card-menu   | boolean             | Indicates whether or not to show the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
@@ -431,24 +428,20 @@ There is different types of `MenuRootItem` depending on the task they are define
   | component           | component reference | The component for the corresonding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
   | component-inputs    | Object              | The attributes for the component for the corresponding card in the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a> |
 
-  </div>
-</details>
-
 In addition to the attributes of the `MenuItem`, you can include other attributes depending on what kind of menu item you want. All the following menu item types extend from the `MenuItem`, all its attributes are inherited.
 
-<details class="collapsible">
-  <summary markdown="span">MenuItemRoute or MenuGroupRoute</summary>
-  <div class="collapsible-content" markdown="1">
+### MenuItemRoute or MenuGroupRoute
 
-  For navigating the different modules of your application you must include a <code>MenuItemRoute</code> or <code>MenuGroupRoute</code>, its attributes are the following:
+For navigating the different modules of your application you must include a <code>MenuItemRoute</code> or <code>MenuGroupRoute</code>, its attributes are the following:
 
-  | Name  | Type   | Description |
-  | ----- | ------ | ----------- |
-  | route | string | The route the application will navigate when the menu item is clicked |
-  | pathMatch | 'full' \| 'prefix'  | Match criteria to mark the menu item as active in case of multiple routes matching |
+| Name  | Type   | Description |
+| ----- | ------ | ----------- |
+| route | string | The route the application will navigate when the menu item is clicked |
+| pathMatch | 'full' \| 'prefix'  | Match criteria to mark the menu item as active in case of multiple routes matching |
 
-  <span>Example:</span>
-  ```javascript
+**Example:**
+
+```javascript
 {
   id: 'customers',
   name: 'CUSTOMERS',
@@ -456,12 +449,12 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
   route: '/main/customers',
   icon: 'people'
 }
-  ```
+```
 
-  <span>pathMatch: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is 'prefix' (default value) a item will be marked as active if its route starts as the active application route. If the value is 'full', the route has to be exactly the same.
+pathMatch: this attribute determines the way OntimizeWeb marks a menu item as active. If the value is 'prefix' (default value) a item will be marked as active if its route starts as the active application route. If the value is 'full', the route has to be exactly the same.
 
-  Example: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the '/main/customers/new' because its prefix matches. User would need to set the value 'full' to the pathMatch in the second route.</span>
-  ```javascript
+Example: in this case we have two routes that have a common path. If no pathMatch value is setted the first route will be marked as active if the user navigates to the '/main/customers/new' because its prefix matches. User would need to set the value 'full' to the pathMatch in the second route.
+```javascript
 {
   id: 'customers',
   name: 'CUSTOMERS',
@@ -477,86 +470,71 @@ In addition to the attributes of the `MenuItem`, you can include other attribute
   icon: 'people'
   pathMatch: 'full'
 }
-  ```
-  </div>
-</details>
+```
 
-<details class="collapsible">
-  <summary markdown="span">MenuItemAction</summary>
-  <div class="collapsible-content" markdown="1">
+### MenuItemAction
 
-  For triggering an action include a <code>MenuItemAction</code>, its specific attributes are the following:
+For triggering an action include a <code>MenuItemAction</code>, its specific attributes are the following:
 
-  | Name        | Type     | Description |
-  | ----------- | -------- | ----------- |
-  | action      | function | A function called when the menu item is clicked |
-  | confirm     | yes/no   | Indicates whether or not the user must confirm the menu action |
-  | confirmText | string   | The confirmation text |
+| Name        | Type     | Description |
+| ----------- | -------- | ----------- |
+| action      | function | A function called when the menu item is clicked |
+| confirm     | yes/no   | Indicates whether or not the user must confirm the menu action |
+| confirmText | string   | The confirmation text |
 
-  <span>Example:</span>
-  ```javascript
-  function myFunction() {
-    // do whatever you want
-  }
-  ...
-  { id: 'action', name: 'action', icon: 'autorenew', action: myFunction }
-  ```
-  </div>
-</details>
+**Example:**
 
-<details class="collapsible">
-  <summary markdown="span">MenuItemLocale</summary>
-  <div class="collapsible-content" markdown="1">
+```javascript
+function myFunction() {
+  // do whatever you want
+}
+...
+{ id: 'action', name: 'action', icon: 'autorenew', action: myFunction }
+```
 
-  For switching between different languages available in the application, add as many <code>MenuItemLocale</code> items as languages.
+### MenuItemLocale
 
-  | Name   | Type   | Description |
-  | ------ | ------ | ----------- |
-  | locale | string | The language to be configured on the application |
+For switching between different languages available in the application, add as many <code>MenuItemLocale</code> items as languages.
 
-  <span>Example:</span>
-  ```javascript
-  { id: 'lang_es', name: 'LOCALE_es', icon: 'language', locale: 'es' },
-  { id: 'lang_en', name: 'LOCALE_en', icon: 'language', locale: 'en' }
-  ```
-  </div>
-</details>
+| Name   | Type   | Description |
+| ------ | ------ | ----------- |
+| locale | string | The language to be configured on the application |
 
-<details class="collapsible">
-  <summary markdown="span">MenuItemLogout</summary>
-  <div class="collapsible-content" markdown="1">
+**Example:**
 
-  Include a <code>MenuItemLogout</code> for login out the user of the application, its specific attributes are the following:
+```javascript
+{ id: 'lang_es', name: 'LOCALE_es', icon: 'language', locale: 'es' },
+{ id: 'lang_en', name: 'LOCALE_en', icon: 'language', locale: 'en' }
+```
 
-  | Name    | Type   | Description |
-  | ------- | ------ | ----------- |
-  | route   | string | The route the application will navigate when the user logs out |
-  | confirm | string | Indicates whether or not the user must confirm the log out |
+### MenuItemLogout
 
-  <span>Example:</span>
-  ```javascript
-  { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }
-  ```
-  </div>
-</details>
+Include a <code>MenuItemLogout</code> for login out the user of the application, its specific attributes are the following:
 
-<details class="collapsible">
-  <summary markdown="span">MenuItemUserInfo</summary>
-  <div class="collapsible-content" markdown="1">
+| Name    | Type   | Description |
+| ------- | ------ | ----------- |
+| route   | string | The route the application will navigate when the user logs out |
+| confirm | string | Indicates whether or not the user must confirm the log out |
 
-  For displaying the application user information, include a <code>MenuItemUserInfo</code> with the following attributes:
+**Example:**
 
-  | Name   | Type   | Description |
-  | ------ | ------ | ----------- |
-  | user   | string | The displayed user name |
-  | avatar | string | The displayed image |
+```javascript
+{ id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }
+```
 
-  <span>Example:</span>
-  ```javascript
-  { id: 'userinfo', name: 'USER', user: 'Profile', avatar: '../../assets/images/user_profile.png' }
-  ```
-  </div>
-</details>
+### MenuItemUserInfo
+
+For displaying the application user information, include a <code>MenuItemUserInfo</code> with the following attributes:
+
+| Name   | Type   | Description |
+| ------ | ------ | ----------- |
+| user   | string | The displayed user name |
+| avatar | string | The displayed image |
+
+**Example:**
+```javascript
+{ id: 'userinfo', name: 'USER', user: 'Profile', avatar: '../../assets/images/user_profile.png' }
+```
 
 You can see an example of a menu configuration below. This is a piece of the configuration used in the [OntimizeWeb QuickStart](https://try.imatia.com/ontimizeweb/v15/quickstart/){:target="_blank"}. You can check the full code in [GitHub](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/15.x.x/src/app/shared/app.menu.config.ts){:target="_blank"}.
 

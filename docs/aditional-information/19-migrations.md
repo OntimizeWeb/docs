@@ -7,7 +7,7 @@ nav_exclude: true
 {% include base_path %}
 {% include toc %}
 
-## **Proceso de Migración**
+## **Proceso de Migración de Ontimize Web 8 a la versión 15**
 
 Para el proceso de migración, seguiremos la guía disponible en la siguiente URL: <https://update.angular.io/?l=3&v=8.2-15.0>. Asegúrate de marcar la opción de Angular Material si se está utilizando en el proyecto.
 
@@ -79,9 +79,11 @@ Si el proyecto utiliza angular material se deberá ejecutar el siguiente comando
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de material, comprueba los siguientes cambios realizados:
+
   1 . Modificada la versión de tslib.
 
   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-4.png)
+
   2 . Modificados los imports de material, antes se importaban de manera global, ahora deben importarse de manera específica, por ejemplo:
 
   ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-5.png)
@@ -104,12 +106,15 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@10 update @angular/cli@10 @angular/core@10"
   ```
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Actualización de typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-8.png)
+
 2 . Eliminación de { static: false } en los ViewChild
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-9.png)
+
 3 . Cambios en el tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-10.png)
@@ -122,7 +127,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
   ```
 
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=9.0-10.2> y realiza los cambios recomendados si fuera necesario
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=9.0-10.2> y realiza los cambios recomendados si fuera necesario.
 
 ## **Angular 10 a 11**
 
@@ -134,6 +139,7 @@ Revisar los cambios recomendados por angular en el siguiente enlace <https://upd
 Actualiza la versión de node a la 14.20.0 y recuerda modificar si existen las referencias a la version de node, por ejemplo en el package.json.
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-11.png)
+
 Asegúrate de que el repositorio esté limpio, con los cambios commiteados, stageados o subidos ante de ejecutar los comandos.
 
 Ejecuta el comando para migrar a Angular como indica la [guía](https://update.angular.io/?l=3&v=10.2-11.0).
@@ -143,9 +149,11 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Modificado el objeto opt del app-routing.module
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-12.png)
+
 2 . Eliminado extractCss del angular.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-13.png)
@@ -158,8 +166,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
   ```
 
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=10.2-11.0> y realiza los cambios recomendados si fuera necesario
-##
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=10.2-11.0> y realiza los cambios recomendados si fuera necesario.
 
 ## **Angular 11 a 12**
 **Prerequisitos tener instalada:**
@@ -176,28 +183,34 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
    cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@12 update @angular/cli@12 @angular/core@12"
   ```
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Actualización de zone
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-16.png)
+
 2 . Actualización de typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-17.png)
+
 3 . Actualización del enviroment.ts
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-18.png)
+
 4 . Actualización del polyfills.ts
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-19.png)
+
 5 . Eliminación de "emitDecoratorMetadata" en el tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-20.png)
+
 Ejecutar comando para migrar Material como indica la [guía](https://update.angular.io/?l=3&v=11.0-12.0) si se usa en el proyecto.
 
   ```bash
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@12 update @angular/material@12"
   ```
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=11.0-12.0> y realiza los cambios recomendados si fuera necesario
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=11.0-12.0> y realiza los cambios recomendados si fuera necesario.
 
 
 
@@ -215,12 +228,15 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Eliminación de los entryComponents en el .module
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-21.png)
+
 2 . Actualizado test.ts
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-22.png)
+
 3 . Actualizado typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-23.png)
@@ -233,7 +249,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
   ```
 
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=12.0-13.0> y realiza los cambios recomendados si fuera necesario
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=12.0-13.0> y realiza los cambios recomendados si fuera necesario.
 
 
 ## **Angular 13 a 14**
@@ -251,15 +267,19 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Modificado tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-24.png)
+
 2 . Modificado el tipo FormBuilder
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-25.png)
+
 3 . Modificado tipo de FormControl
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-26.png)
+
 4 . Modificado angular.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-27.png)
@@ -271,7 +291,7 @@ Ejecutar comando para migrar Material como indica la [guía](https://update.angu
     cmd /C "set "NG_DISABLE_VERSION_CHECK=1" && npx @angular/cli@14 update @angular/material@14"
   ```
 
-Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=13.0-14.0> y realiza los cambios recomendados si fuera necesario
+Revisar los cambios recomendados por angular en el siguiente enlace <https://update.angular.io/?l=3&v=13.0-14.0> y realiza los cambios recomendados si fuera necesario.
 
 
 ## **Angular 14 a 15**
@@ -291,15 +311,19 @@ Ejecuta el comando para migrar a Angular como indica la [guía](https://update.a
   ```
 
 Después de ejecutar el comando, además de la actualización de las versiones de angular, comprueba los siguientes cambios realizados:
+
 1 . Actualizado typescript
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-28.png)
+
 2 . Actualizado app-routing-module
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-29.png)
+
 3 . Actualizado test.ts
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-30.png)
+
 4 . Actualizado tsconfig.json
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-31.png)
@@ -356,11 +380,12 @@ Despues de ejecutar este comando se crearan en el código una serie de TODO que 
 
 
 ## Cambios necesarios después de la migración
+
 1 . Añadir la última release de la versión 15.x.x. de las dependencias de ontimize-web-ngx eliminadas en el paso Angular 8 a 9, excepto la dependencia de theming., cuya funcionalidad fue integrada en  ontimize-web-ngx.
 
-    Puedes consultar las versiones más recientes de las librerías de ontimize en el siguiente enlace https://ontimizeweb.github.io/docs/v15/versions/
+Puedes consultar las versiones más recientes de las librerías de ontimize en el siguiente enlace https://ontimizeweb.github.io/docs/v15/versions/
 
-2 . Añadir la la dependencia de @angular/flex-layout a la versión: ^15.0.0-beta.42 eliminadas en el paso Angular 8 a 9.
+2 . Añadir la la dependencia de @angular/flex-layout a la versión: ^15.0.0-beta.42 eliminada en el paso Angular 8 a 9.
 ```ts
 "@angular/flex-layout": "^15.0.0-beta.42"
 ```
@@ -371,7 +396,7 @@ Despues de ejecutar este comando se crearan en el código una serie de TODO que 
 
 4 . Eliminar las siguientes importaciones en ficheros .scss si existieran
 ```scss
-  @import 'node\_modules/@angular/material/theming'
+  @import 'node_modules/@angular/material/theming'
 ```
 
 5 . Modifica .browserslistrc con:
@@ -409,6 +434,7 @@ last 2 iOS major versions
 ```
 
 7 . Puede que aparezca la advertencia de que se debe añadir "allowSyntheticDefaultImports": true en tsconfig.json.
+
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-37.png)
 
 8 . Puede que aparezcan advertencias de dependencias que deben añadirse a "allowedCommonJsDependencies" en angular.json. Un ejemplo sería:
@@ -436,6 +462,8 @@ Recuerda que este proceso puede ser complejo y puede haber otros ajustes necesar
 
 ## **Errores comunes**
 
+### Cannot find module '@angular-devkit/schematics'
+
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-1.png)
 
 Para solucionar este error deberás añadir la siguiente dependencia a las devDependencies de tu proyecto:
@@ -443,11 +471,16 @@ Para solucionar este error deberás añadir la siguiente dependencia a las devDe
 ```ts
 "@angular-devkit/schematics": "^9.1.15",
 ```
+
+### Incompatible peer dependencies found
+
 Al comenzar la migración, podemos tener errores debido a la incompatibilidad de ciertas librerías instaladas en el proyecto. La traza del error será parecida a esta:
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-2.png)
 
 Lo que deberemos hacer es eliminar esas dependencias que dan conflictos de nuestro package y acordarnos de añadirlas cuando tengamos nuestro proyecto en la versión 15. Debemos revisar que versión de esas librerías es compatible con la versión 15 de angular.
+
+### Cannot find module 'ajv/dist/compile/codegen'
 
 ![Alt text]({{ base_path }}/assets/images/migration15.x.x/image-15.png)
 
