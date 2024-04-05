@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2024-02-16T04:30:35-05:00">
+  <meta property="article:published_time" content="2024-04-05T03:41:07-04:00">
 
 
 
@@ -455,7 +455,7 @@
     
     <meta itemprop="description" content="Introduction">
     
-    <meta itemprop="datePublished" content="February 16, 2024">
+    <meta itemprop="datePublished" content="April 05, 2024">
     
 
     <div class="page__inner-wrap">
@@ -490,9 +490,456 @@
 
 <p>8.- Preferences (allows to save a configuration, apply an existing one or update it)</p>
 
+<h2 id="report-data">Report data</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">ReportParamsDto</code> class encapsulates parameters for generating a report, with each field holding specific information about the report’s generation and styling.</p>
+
+<h3 id="main-attributes">Main Attributes</h3>
+
+<ul>
+  <li><strong>title</strong>: A <code class="language-plaintext highlighter-rouge">String</code> representing the report title.</li>
+  <li><strong>entity</strong>: A <code class="language-plaintext highlighter-rouge">String</code> specifying the entity for the report.</li>
+  <li><strong>groups</strong>: A <code class="language-plaintext highlighter-rouge">List&lt;String&gt;</code> of groups involved in the report.</li>
+  <li><strong>orderBy</strong>: A <code class="language-plaintext highlighter-rouge">List&lt;OrderByDto&gt;</code> defining data sorting order.</li>
+  <li><strong>service</strong>: A <code class="language-plaintext highlighter-rouge">String</code> for the data fetching service.</li>
+  <li><strong>path</strong>: A <code class="language-plaintext highlighter-rouge">String</code> indicating the service path.</li>
+  <li><strong>vertical</strong>: A <code class="language-plaintext highlighter-rouge">Boolean</code> for the report layout orientation.</li>
+  <li><strong>functions</strong>: A <code class="language-plaintext highlighter-rouge">List&lt;FunctionTypeDto&gt;</code> for applied data functions.</li>
+  <li><strong>style</strong>: An <code class="language-plaintext highlighter-rouge">StyleParamsDto</code> instance for style parameters.</li>
+  <li><strong>subtitle</strong>: A <code class="language-plaintext highlighter-rouge">String</code> for the report subtitle.</li>
+  <li><strong>columns</strong>: A <code class="language-plaintext highlighter-rouge">List&lt;ColumnDto&gt;</code> for included columns.</li>
+  <li><strong>language</strong>: A <code class="language-plaintext highlighter-rouge">String</code> for the report language.</li>
+  <li><strong>filters</strong>: A <code class="language-plaintext highlighter-rouge">FilterParameter</code> instance for data filtering.</li>
+  <li><strong>advQuery</strong>: A <code class="language-plaintext highlighter-rouge">Boolean</code> for enabling advanced querying.</li>
+</ul>
+
+<h3 id="nested-classes-and-types">Nested Classes and Types</h3>
+
+<h4 id="orderbydto"><code class="language-plaintext highlighter-rouge">OrderByDto</code></h4>
+<ul>
+  <li><strong>columnId</strong>: Column identifier for sorting.</li>
+  <li><strong>ascendent</strong>: Boolean for sorting order (ascending/descending).</li>
+</ul>
+
+<h4 id="functiontypedto"><code class="language-plaintext highlighter-rouge">FunctionTypeDto</code></h4>
+<ul>
+  <li><strong>columnName</strong>: Target column for the function.</li>
+  <li><strong>type</strong>: Function type (<code class="language-plaintext highlighter-rouge">SUM</code>, <code class="language-plaintext highlighter-rouge">AVERAGE</code>, etc.).</li>
+</ul>
+
+<h4 id="styleparamsdto"><code class="language-plaintext highlighter-rouge">StyleParamsDto</code></h4>
+<ul>
+  <li>Boolean flags for style options like <code class="language-plaintext highlighter-rouge">grid</code>, <code class="language-plaintext highlighter-rouge">rowNumber</code>, <code class="language-plaintext highlighter-rouge">columnName</code>, and others.</li>
+</ul>
+
+<h4 id="columndto"><code class="language-plaintext highlighter-rouge">ColumnDto</code></h4>
+<ul>
+  <li><strong>id</strong>: Column identifier.</li>
+  <li><strong>name</strong>: Column name.</li>
+  <li><strong>columnStyle</strong>: <code class="language-plaintext highlighter-rouge">ColumnStyleParamsDto</code> instance for column styling.</li>
+</ul>
+
+<h4 id="columnstyleparamsdto"><code class="language-plaintext highlighter-rouge">ColumnStyleParamsDto</code></h4>
+<ul>
+  <li><strong>width</strong>: Column width.</li>
+  <li><strong>alignment</strong>: Text alignment in the column.</li>
+  <li><strong>renderer</strong>: <code class="language-plaintext highlighter-rouge">RendererDto</code> (or subclasses) instance for custom data rendering.</li>
+</ul>
+
+<h3 id="renderers">Renderers</h3>
+
+<h4 id="booleanrendererdto-extends-rendererdto"><code class="language-plaintext highlighter-rouge">BooleanRendererDto</code> (extends <code class="language-plaintext highlighter-rouge">RendererDto</code>)</h4>
+<ul>
+  <li><strong>renderType</strong>: Type (<code class="language-plaintext highlighter-rouge">string</code> or <code class="language-plaintext highlighter-rouge">number</code>) for rendering boolean values.</li>
+  <li><strong>trueValue</strong>: Display value for <code class="language-plaintext highlighter-rouge">true</code>.</li>
+  <li><strong>falseValue</strong>: Display value for <code class="language-plaintext highlighter-rouge">false</code>.</li>
+</ul>
+
+<h4 id="daterendererdto-extends-rendererdto"><code class="language-plaintext highlighter-rouge">DateRendererDto</code> (extends <code class="language-plaintext highlighter-rouge">RendererDto</code>)</h4>
+<ul>
+  <li><strong>format</strong>: Date format string.</li>
+</ul>
+
+<h4 id="integerrendererdto-extends-rendererdto"><code class="language-plaintext highlighter-rouge">IntegerRendererDto</code> (extends <code class="language-plaintext highlighter-rouge">RendererDto</code>)</h4>
+<ul>
+  <li><strong>grouping</strong>: Boolean for thousand separators usage.</li>
+  <li><strong>thousandSeparator</strong>: Thousand separator string.</li>
+</ul>
+
+<h4 id="realrendererdto-extends-integerrendererdto"><code class="language-plaintext highlighter-rouge">RealRendererDto</code> (extends <code class="language-plaintext highlighter-rouge">IntegerRendererDto</code>)</h4>
+<ul>
+  <li><strong>decimalDigits</strong>: Number of decimal digits to display.</li>
+</ul>
+
+<p>This comprehensive structure allows for detailed customization of report generation, from data sourcing and processing to specific styling and formatting.</p>
+
+<p>Below you can see an example of the body of a POST request for the creation of a report.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Report example"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/customers"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customers"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"vertical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"functions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"grid"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rowNumber"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"columnName"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"backgroundOnOddRows"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hideGroupDetails"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupNewPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstGroupNewPage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is a report"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRSTLOGIN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRSTLOGIN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"columnStyle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"renderer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"renderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"trueValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Si"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"falseValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NAME"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nombre"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SURNAME"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apellidos"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STARTDATE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fecha inicio"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"columnStyle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"renderer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LL"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"orderBy"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nl">"columnId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NAME"</span><span class="p">,</span><span class="w"> </span><span class="nl">"ascendent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"FIRSTLOGIN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"NAME"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"SURNAME"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"STARTDATE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"EMAIL"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ADDRESS"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"CUSTOMERTYPEID"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"sqltypes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"FIRSTLOGIN"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"CUSTOMERTYPEID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"SURNAME"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"CUSTOMERID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"STARTDATE"</span><span class="p">:</span><span class="w"> </span><span class="mi">93</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ADDRESS"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"EMAIL"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"NAME"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PHOTO"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"advQuery"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="customizing-data-provider">Customizing data provider</h2>
+
+<ul>
+  <li>Extend the report service provider and customize the report data configuration that sending REST request.</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OTableComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">IReportDataProvider</span><span class="p">,</span> <span class="nx">OReportPreferences</span><span class="p">,</span> <span class="nx">OntimizeReportDataBaseProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx-report</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
+<span class="k">export</span> <span class="kd">class</span> <span class="nx">CustomOntimizeReportDataProvider</span> <span class="kd">extends</span> <span class="nx">OntimizeReportDataBaseProvider</span> <span class="k">implements</span> <span class="nx">IReportDataProvider</span> <span class="p">{</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">injector</span><span class="p">:</span> <span class="nx">Injector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">injector</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">getReportConfiguration</span><span class="p">(</span><span class="nx">currentPreference</span><span class="p">:</span> <span class="nx">OReportPreferences</span><span class="p">,</span> <span class="nx">table</span><span class="p">:</span> <span class="nx">OTableComponent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">reportData</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">super</span><span class="p">.</span><span class="nx">getReportConfiguration</span><span class="p">(</span><span class="nx">currentPreference</span><span class="p">,</span> <span class="nx">table</span><span class="p">);</span>
+
+    <span class="c1">// Find the index of the column with id "STARTDATE" in the columns array</span>
+    <span class="kd">const</span> <span class="nx">startDateColumnIndex</span> <span class="o">=</span> <span class="nx">reportData</span><span class="p">.</span><span class="nx">columns</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">((</span><span class="nx">column</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">column</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">STARTDATE</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="c1">// If the column is found, add the renderer object</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">startDateColumnIndex</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">reportData</span><span class="p">.</span><span class="nx">columns</span><span class="p">[</span><span class="nx">startDateColumnIndex</span><span class="p">].</span><span class="nx">columnStyle</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">...</span><span class="nx">reportData</span><span class="p">.</span><span class="nx">columns</span><span class="p">[</span><span class="nx">startDateColumnIndex</span><span class="p">].</span><span class="nx">columnStyle</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">renderer</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">date</span><span class="dl">"</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">format</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">LL</span><span class="dl">"</span>
+        <span class="p">}</span>
+      <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">reportData</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>Add the extended service in the previous point in the app.module.ts with the injection token <code class="language-plaintext highlighter-rouge">O_REPORT_DATA_SERVICE</code>.</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="nx">O_REPORT_DATA_SERVICE</span> <span class="p">,</span> <span class="nx">useValue</span><span class="p">:</span><span class="nx">CustomOntimizeReportDataProvider</span><span class="p">}</span>
+</code></pre></div></div>
+
 <blockquote>
   <p><strong>NOTE:</strong> Remember to complete the steps you need to perform on your backend server to complete the report on-demand configuration following this <a href="https://ontimize.github.io/ontimize-boot/basics/reports/report-on-demand" target="_blank">link</a></p>
 </blockquote>
+
+<blockquote>
+  <p><strong>IMPORTANT:</strong> In the case of dates, the reports will take the format of the table but the jasperreport library only accepts the formats of the following table.</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>Letter</th>
+      <th>Date or Time Component</th>
+      <th>Presentation</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>G</td>
+      <td>Era designator</td>
+      <td>Text</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>Year</td>
+      <td>Year</td>
+      <td>1996; 96</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>Month in year</td>
+      <td>Month</td>
+      <td>July; Jul; 07</td>
+    </tr>
+    <tr>
+      <td>w</td>
+      <td>Week in year</td>
+      <td>Number</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>W</td>
+      <td>Week in month</td>
+      <td>Number</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>Day in year</td>
+      <td>Number</td>
+      <td>189</td>
+    </tr>
+    <tr>
+      <td>d</td>
+      <td>Day in month</td>
+      <td>Number</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>Day of week in month</td>
+      <td>Number</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>E</td>
+      <td>Day in week</td>
+      <td>Text</td>
+      <td>Tuesday; Tue</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Am/pm marker</td>
+      <td>Text</td>
+      <td>PM</td>
+    </tr>
+    <tr>
+      <td>H</td>
+      <td>Hour in day (0-23)</td>
+      <td>Number</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>k</td>
+      <td>Hour in day (1-24)</td>
+      <td>Number</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>K</td>
+      <td>Hour in am/pm (0-11)</td>
+      <td>Number</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>h</td>
+      <td>Hour in am/pm (1-12)</td>
+      <td>Number</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>m</td>
+      <td>Minute in hour</td>
+      <td>Number</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>s</td>
+      <td>Second in minute</td>
+      <td>Number</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>S</td>
+      <td>Millisecond</td>
+      <td>Number</td>
+      <td>978</td>
+    </tr>
+    <tr>
+      <td>z</td>
+      <td>Time zone</td>
+      <td>General time zone</td>
+      <td>Pacific Standard Time; PST; GMT-08:00</td>
+    </tr>
+    <tr>
+      <td>Z</td>
+      <td>Time zone</td>
+      <td>RFC 822 time zone</td>
+      <td>-0800</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date and Time Pattern</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">yyyy.MM.dd G 'at' HH:mm:ss z</code></td>
+      <td>2001.07.04 AD at 12:08:56 PDT</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">EEE, MMM d, ''yy</code></td>
+      <td>Wed, Jul 4, ‘01</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">h:mm a</code></td>
+      <td>12:08 PM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hh 'o''clock' a, zzzz</code></td>
+      <td>12 o’clock PM, Pacific Daylight Time</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">K:mm a, z</code></td>
+      <td>0:08 PM, PDT</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">yyyyy.MMMMM.dd GGG hh:mm aaa</code></td>
+      <td>02001.July.04 AD 12:08 PM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">EEE, d MMM yyyy HH:mm:ss Z</code></td>
+      <td>Wed, 4 Jul 2001 12:08:56 -0700</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">yyMMddHHmmssZ</code></td>
+      <td>010704120856-0700</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">yyyy-MM-dd'T'HH:mm:ss.SSSZ</code></td>
+      <td>2001-07-04T12:08:56.235-0700</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Moment formats, accepted in the table, are supported in reports</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Moment.js Format Pattern</th>
+      <th>Example Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">LT</code></td>
+      <td>9:43 AM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">LTS</code></td>
+      <td>9:43:18 AM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">L</code></td>
+      <td>02/27/2024</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">l</code></td>
+      <td>2/27/2024</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">LL</code></td>
+      <td>February 27, 2024</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ll</code></td>
+      <td>Feb 27, 2024</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">LLL</code></td>
+      <td>February 27, 2024 9:43 AM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lll</code></td>
+      <td>Feb 27, 2024 9:43 AM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">LLLL</code></td>
+      <td>Tuesday, February 27, 2024 9:43 AM</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">llll</code></td>
+      <td>Tue, Feb 27, 2024 9:43 AM</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you need to use ISO formats in the table, you can modify the data that is sent to modify the date format of the reports.</p>
 
 <h2 id="menu-option">Menu option</h2>
 
@@ -537,7 +984,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-02-16T04:30:35-05:00">February 16, 2024</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-04-05T03:41:07-04:00">April 05, 2024</time></p>
         
       </footer>
 

@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2024-02-16T04:30:35-05:00">
+  <meta property="article:published_time" content="2024-04-05T03:41:07-04:00">
 
 
 
@@ -455,7 +455,7 @@
     
     <meta itemprop="description" content="  NOTE: Remember to complete the steps you need to perform on your backend server to complete the report store configuration following this link">
     
-    <meta itemprop="datePublished" content="February 16, 2024">
+    <meta itemprop="datePublished" content="April 05, 2024">
     
 
     <div class="page__inner-wrap">
@@ -565,6 +565,10 @@
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;o-button</span> <span class="na">(click)=</span><span class="s">"generateReport()"</span> <span class="na">label=</span><span class="s">"Generate report"</span> <span class="na">type=</span><span class="s">"STROKED"</span> <span class="na">icon=</span><span class="s">"description"</span> <span class="na">[matTooltip]=</span><span class="s">"Generate report"</span><span class="nt">&gt;&lt;/o-button&gt;</span>
 </code></pre></div></div>
 
+<blockquote>
+  <p><strong>NOTE:</strong> For Ontimize Boot <code class="language-plaintext highlighter-rouge">3.4.0</code> and ontimize-web-ngx-report <code class="language-plaintext highlighter-rouge">8.3.0</code> or lower versions the fill report method it is the following.</p>
+</blockquote>
+
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">ViewEncapsulation</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">OReportService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx-report</span><span class="dl">'</span><span class="p">;</span>
 
@@ -605,6 +609,55 @@
   </tbody>
 </table>
 
+<blockquote>
+  <p><strong>NOTE:</strong> For Ontimize Boot <code class="language-plaintext highlighter-rouge">3.5.0</code> and ontimize-web-ngx-report <code class="language-plaintext highlighter-rouge">8.4.0</code> or higher versions it exists a OReportStoreParam object.</p>
+</blockquote>
+
+<p>There is a method called <code class="language-plaintext highlighter-rouge">fillReport</code> wich have the following parameters:</p>
+<ul>
+  <li>uuid: a string representing the unique identifier of the report.</li>
+  <li>reportStoreParam: an object of type OReportStoreParam containing the parameters needed to fill the report. This object has two optional properties:
+    <ul>
+      <li>filters: an object of type OFilterParameter representing the filters to be applied to the report.</li>
+      <li>parameters: an array of objects of type OReportStoreParamValue containing the values of the report parameters. Each object in this array has the following properties:
+        <ul>
+          <li>name: a string representing the name of the parameter.</li>
+          <li>value: the value of the parameter.</li>
+          <li>sqlType: (optional) a number representing the SQL type of the parameter.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="nx">fillReport</span><span class="p">(</span><span class="nx">uuid</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">reportStoreParam</span><span class="p">:</span> <span class="nx">OReportStoreParam</span><span class="p">,</span> <span class="nx">entity</span><span class="p">?:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">_sqltypes</span><span class="p">?:</span> <span class="nb">Object</span><span class="p">):</span> <span class="nx">Observable</span><span class="o">&lt;</span><span class="kr">any</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Code example:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">ViewEncapsulation</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">OReportService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">ontimize-web-ngx-report</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">constructor</span><span class="p">(</span> <span class="k">private</span> <span class="nx">reportService</span><span class="p">:</span> <span class="nx">OReportStoreService</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">public</span> <span class="nx">id</span><span class="p">;</span>
+  <span class="k">public</span> <span class="nx">onFormDataLoaded</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="kr">any</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">ACCOUNTID</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">getParameters</span><span class="p">():</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">OReportStoreParamValue</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="na">params</span><span class="p">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">OReportStoreParamValue</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">value</span><span class="dl">'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">officeId</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()</span>
+      <span class="p">}</span>
+    <span class="p">];</span>
+    <span class="k">return</span> <span class="nx">params</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">fillReport</span><span class="p">(</span><span class="nx">e</span><span class="p">:</span> <span class="nx">Event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">reportStoreService</span><span class="p">.</span><span class="nx">openFillReport</span><span class="p">(</span><span class="dl">"</span><span class="s2">1c272846-0693-42c3-b2a3-7f10c611ad6c</span><span class="dl">"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">getParameters</span><span class="p">());</span>
+  <span class="p">}</span>
+</code></pre></div></div>
 
         
       </section>
@@ -617,7 +670,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-02-16T04:30:35-05:00">February 16, 2024</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-04-05T03:41:07-04:00">April 05, 2024</time></p>
         
       </footer>
 
