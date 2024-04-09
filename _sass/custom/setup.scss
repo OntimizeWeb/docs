@@ -15,9 +15,8 @@ $white-74: #FFFFFFBD;
 $white-60: #FFFFFF99;
 $grey: #F6F6F6;
 $home-background: #293239;
-$roboto: 'Roboto',
-sans-serif;
-
+// Font
+$body-font-family: 'Roboto', sans-serif;
 // media queries
 $custom-media-queries: (home-header: 800px,
   home-imgs-max: 2880px,
