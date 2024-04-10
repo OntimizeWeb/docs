@@ -2,155 +2,155 @@
       "0": {
             "doc": "Overview",
             "title": "Introduction",
-            "content": "The o-gallery component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel. &lt;o-gallery [gallery-images]=\"galleryImages\" [gallery-options]=\"galleryOptions\"&gt;&lt;/o-gallery&gt; ... this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' }, { small: 'assets/images/i_video.jpg', medium: 'assets/videos/video1.mp4', big: 'assets/videos/video1.mp4' } ]; this.galleryOptions = [ { breakpoint: 1920, height: \"200px\", width: \"300px\", image: true, thumbnails: false, preview: false } ]; ... ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/gallery/overview/#introduction",
-            "relUrl": "/addons/gallery/overview/#introduction"
-          }
-      ,"1": {
-            "doc": "Overview",
-            "title": "Introduction",
-            "content": "The module Ontimize Web Report on-demand provides view the same data in different ways in OntimizeWeb . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/overview/#introduction",
-            "relUrl": "/report-on-demand/overview/#introduction"
-          }
-      ,"2": {
-            "doc": "Overview",
-            "title": "Introduction",
-            "content": "The OntimizeWeb map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#introduction",
-            "relUrl": "/map/overview/#introduction"
-          },"3": {
-            "doc": "Overview",
-            "title": "Draw controls",
-            "content": "The o-map allow to add the draw toolbar into the map with the o-map-draw-controls component into o-map. You can catch events with the onDrawEvent output. &lt;o-map #oMap center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex draw-control=\"no\" (onDrawEvent)=\"addDrawEvent($event)\"&gt; &lt;!-- [crs-configuration]=\"objeto\" --&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;/o-map&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#draw-controls",
-            "relUrl": "/map/overview/#draw-controls"
-          },"4": {
-            "doc": "Overview",
-            "title": "Markers",
-            "content": "The o-map allow to put a custom marker beside tile layers, you can easy create a marker adding layer-type=\"marker\" attribute into o-map-layer. &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#markers",
-            "relUrl": "/map/overview/#markers"
-          },"5": {
-            "doc": "Overview",
-            "title": "Using GeoJSON",
-            "content": "GeoJSON is becoming a very popular data format among many GIS technologies and services and the o-map allow to create and interact with map vectors created from GeoJSON objects adding layer-type=\"geoJSON\" and configuring the service in layer-service attribute. &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#using-geojson",
-            "relUrl": "/map/overview/#using-geojson"
-          },"6": {
-            "doc": "Overview",
-            "title": "Integrating WMS",
-            "content": "To use a WMS service in o-map, we can use o-map-layer component that provide the base WMS URL with layer-base-url and layer-base-url attribute specify whatever WMS options you need. &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"BasemapAT.basemap\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [`layer-base-url`]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#integrating-wms",
-            "relUrl": "/map/overview/#integrating-wms"
-          }
-      ,"7": {
-            "doc": "Overview",
-            "title": "Introduction",
-            "content": "The module Ontimize Web Report is a set of reporting tools for web applications based in OntimizeWeb. Ontimize Web Report implements reporting with: . Report store: A jasper template can store and be generated from anywhere in the application, for this you have to follow a series of steps listed in this link. Ontimize is version v6.17.0 compatible . Report on-demand: Allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This visual tool will allow users to define parameters of the report such as title, subtitle, columns to display, styling options, sorting, grouping and data aggregate functions of the report. With these parameters and the data of the table, this component will dynamically generate the report and present it to the user. In addition, all these settings are stored automatically in database by Ontimize services. You need to configure your backend server and you can consult the documentation in this link . What is JasperReports Library? JasperReports Library is an open source reporting engine, written entirely in Java. JasperReports Library is able to use data coming from any kind of data source and produce documents that can viewed, printed, or exported in a variety of document formats, including HTML, PDF, Excel, OpenOffice and Word. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/overview/#introduction",
-            "relUrl": "/addons/report/overview/#introduction"
-          }
-      ,"8": {
-            "doc": "Overview",
-            "title": "Introduction",
-            "content": "The Ontimize Web Charts is an implementation of swimlane charts library using OntimizeWeb. Below you can see a list with all available chart types: . Line Charts . Line Chart . Bar Charts . Dicrete Bar Chart Multi Bar Chart Multi Bar Horizontal Chart . Area Charts . Stacked Area Chart . Other Charts . Donut Chart Pie Chart . You can check running examples of each type here. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/overview/#introduction",
-            "relUrl": "/charts/overview/#introduction"
-          }
-      ,"9": {
-            "doc": "Overview",
-            "title": "Introduction",
-            "content": "The o-tree component allows to manage a tree that can be used to display hierarchy data. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/tree/overview/#introduction",
-            "relUrl": "/tree/overview/#introduction"
-          }
-      ,"10": {
-            "doc": "Introduction",
-            "title": "Welcome to the documentation of the web development framework for building the future",
-            "content": ". How to read and use this documentation. This page describes Ontimize Web at a high level and assumes that the reader has knowledge of Angular. If you are new to Angular, we suggest you take a look at the Angular documentation first. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/introduction/#welcome-to-the-documentation-of-the-web-development-framework-for-building-the-future",
-            "relUrl": "/introduction/#welcome-to-the-documentation-of-the-web-development-framework-for-building-the-future"
-          },"11": {
-            "doc": "Introduction",
-            "title": "Sections",
-            "content": "This documentation is divided into three sections: . Prerequisites Check you meet minimum requirements to start. Getting started First contact with an Ontimize Web app. Run sample app code. Guide More extensive documentation covering Ontimize Web in depth. Components Access into the examples and documentation of all our components. Customization How to customize the application. Addons Advanced components to cover your specific needs. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/introduction/#sections",
-            "relUrl": "/introduction/#sections"
-          }
-      ,"12": {
-            "doc": "Overview",
-            "title": "Introduction",
             "content": "The OntimizeWeb file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc. We provide two different types of file manager engines on Ontimize: the DMS file manager that uses a database to store de files and de SDMS file manager (since ontimize-web-ngx-filemanager 8.6.0 and ontimize-boot 3.12.0) wich is based con Amazon S3 cloud. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#introduction",
             "relUrl": "/addons/filemanager/overview/#introduction"
-          },"13": {
+          },"1": {
             "doc": "Overview",
             "title": "Upload",
             "content": "You can upload files since the button Upload. While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value auto-hide-timeout in ms and also auto hide the message by setting the value auto-hide-upload=\"no\". ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#upload",
             "relUrl": "/addons/filemanager/overview/#upload"
-          },"14": {
+          },"2": {
             "doc": "Overview",
             "title": "Create folders",
             "content": "The o-filemanager-table allows to create a folder using the New folder button or the table menu. The button it&#8217;s disabled by default, you can enable it by setting the value new-folder-button=\"yes\". ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#create-folders",
             "relUrl": "/addons/filemanager/overview/#create-folders"
-          },"15": {
+          },"3": {
             "doc": "Overview",
             "title": "Delete folder or files",
             "content": "The o-filemanager-table allow delete simple or multiple by a context menu or button &#8216;Delete&#8217; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#delete-folder-or-files",
             "relUrl": "/addons/filemanager/overview/#delete-folder-or-files"
-          },"16": {
+          },"4": {
             "doc": "Overview",
             "title": "Multiple download support",
             "content": "The o-filemanager-table allow download simple or multiple files by a context menu. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#multiple-download-support",
             "relUrl": "/addons/filemanager/overview/#multiple-download-support"
-          },"17": {
+          },"5": {
             "doc": "Overview",
             "title": "Rename files or folders",
             "content": "The o-filemanager-table allow rename files or folders by a context menu. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#rename-files-or-folders",
             "relUrl": "/addons/filemanager/overview/#rename-files-or-folders"
-          },"18": {
+          },"6": {
             "doc": "Overview",
             "title": "Browsing between folders",
             "content": "You can browse between folder with double click or by content menu over the folder and selecting the Open option. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#browsing-between-folders",
             "relUrl": "/addons/filemanager/overview/#browsing-between-folders"
-          },"19": {
+          },"7": {
             "doc": "Overview",
             "title": "Selection multiple",
             "content": "The o-filemanager-table support selection multiple with row selection or checkbox selection with select-all-checkbox=\"yes\" property. If this property is activated in the menu on the upper right, the option will be active. By default is no. Example . &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\" new-folder-button=\"yes\" select-all-checkbox=\"yes\"&gt;&lt;/o-filemanager-table&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#selection-multiple",
             "relUrl": "/addons/filemanager/overview/#selection-multiple"
-          },"20": {
+          },"8": {
             "doc": "Overview",
             "title": "Textbox Search filter",
             "content": "The o-filemanager-table allow filter by name of files or folders. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#textbox-search-filter",
             "relUrl": "/addons/filemanager/overview/#textbox-search-filter"
-          },"21": {
+          },"9": {
             "doc": "Overview",
             "title": "Copy files or folders (only for SDMS)",
             "content": "The o-filemanager-table configured as SMDS allows you to copy files and folders. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms",
             "relUrl": "/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms"
-          },"22": {
+          },"10": {
             "doc": "Overview",
             "title": "Move files or folders (only for SDMS)",
             "content": "The o-filemanager-table configured as SMDS allows you to move files and folders. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/overview/#move-files-or-folders-only-for-sdms",
             "relUrl": "/addons/filemanager/overview/#move-files-or-folders-only-for-sdms"
           }
-      ,"23": {
+      ,"11": {
+            "doc": "Overview",
+            "title": "Introduction",
+            "content": "The o-gallery component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel. &lt;o-gallery [gallery-images]=\"galleryImages\" [gallery-options]=\"galleryOptions\"&gt;&lt;/o-gallery&gt; ... this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' }, { small: 'assets/images/i_video.jpg', medium: 'assets/videos/video1.mp4', big: 'assets/videos/video1.mp4' } ]; this.galleryOptions = [ { breakpoint: 1920, height: \"200px\", width: \"300px\", image: true, thumbnails: false, preview: false } ]; ... ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/gallery/overview/#introduction",
+            "relUrl": "/addons/gallery/overview/#introduction"
+          }
+      ,"12": {
+            "doc": "Introduction",
+            "title": "Welcome to the documentation of the web development framework for building the future",
+            "content": ". How to read and use this documentation. This page describes Ontimize Web at a high level and assumes that the reader has knowledge of Angular. If you are new to Angular, we suggest you take a look at the Angular documentation first. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/introduction/#welcome-to-the-documentation-of-the-web-development-framework-for-building-the-future",
+            "relUrl": "/introduction/#welcome-to-the-documentation-of-the-web-development-framework-for-building-the-future"
+          },"13": {
+            "doc": "Introduction",
+            "title": "Sections",
+            "content": "This documentation is divided into three sections: . Prerequisites Check you meet minimum requirements to start. Getting started First contact with an Ontimize Web app. Run sample app code. Guide More extensive documentation covering Ontimize Web in depth. Components Access into the examples and documentation of all our components. Customization How to customize the application. Addons Advanced components to cover your specific needs. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/introduction/#sections",
+            "relUrl": "/introduction/#sections"
+          }
+      ,"14": {
+            "doc": "Overview",
+            "title": "Introduction",
+            "content": "The module Ontimize Web Report is a set of reporting tools for web applications based in OntimizeWeb. Ontimize Web Report implements reporting with: . Report store: A jasper template can store and be generated from anywhere in the application, for this you have to follow a series of steps listed in this link. Ontimize is version v6.17.0 compatible . Report on-demand: Allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This visual tool will allow users to define parameters of the report such as title, subtitle, columns to display, styling options, sorting, grouping and data aggregate functions of the report. With these parameters and the data of the table, this component will dynamically generate the report and present it to the user. In addition, all these settings are stored automatically in database by Ontimize services. You need to configure your backend server and you can consult the documentation in this link . What is JasperReports Library? JasperReports Library is an open source reporting engine, written entirely in Java. JasperReports Library is able to use data coming from any kind of data source and produce documents that can viewed, printed, or exported in a variety of document formats, including HTML, PDF, Excel, OpenOffice and Word. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/overview/#introduction",
+            "relUrl": "/addons/report/overview/#introduction"
+          }
+      ,"15": {
+            "doc": "Overview",
+            "title": "Introduction",
+            "content": "The Ontimize Web Charts is an implementation of swimlane charts library using OntimizeWeb. Below you can see a list with all available chart types: . Line Charts . Line Chart . Bar Charts . Dicrete Bar Chart Multi Bar Chart Multi Bar Horizontal Chart . Area Charts . Stacked Area Chart . Other Charts . Donut Chart Pie Chart . You can check running examples of each type here. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/overview/#introduction",
+            "relUrl": "/charts/overview/#introduction"
+          }
+      ,"16": {
+            "doc": "Overview",
+            "title": "Introduction",
+            "content": "The OntimizeWeb map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#introduction",
+            "relUrl": "/map/overview/#introduction"
+          },"17": {
+            "doc": "Overview",
+            "title": "Draw controls",
+            "content": "The o-map allow to add the draw toolbar into the map with the o-map-draw-controls component into o-map. You can catch events with the onDrawEvent output. &lt;o-map #oMap center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex draw-control=\"no\" (onDrawEvent)=\"addDrawEvent($event)\"&gt; &lt;!-- [crs-configuration]=\"objeto\" --&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;/o-map&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#draw-controls",
+            "relUrl": "/map/overview/#draw-controls"
+          },"18": {
+            "doc": "Overview",
+            "title": "Markers",
+            "content": "The o-map allow to put a custom marker beside tile layers, you can easy create a marker adding layer-type=\"marker\" attribute into o-map-layer. &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#markers",
+            "relUrl": "/map/overview/#markers"
+          },"19": {
+            "doc": "Overview",
+            "title": "Using GeoJSON",
+            "content": "GeoJSON is becoming a very popular data format among many GIS technologies and services and the o-map allow to create and interact with map vectors created from GeoJSON objects adding layer-type=\"geoJSON\" and configuring the service in layer-service attribute. &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#using-geojson",
+            "relUrl": "/map/overview/#using-geojson"
+          },"20": {
+            "doc": "Overview",
+            "title": "Integrating WMS",
+            "content": "To use a WMS service in o-map, we can use o-map-layer component that provide the base WMS URL with layer-base-url and layer-base-url attribute specify whatever WMS options you need. &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"BasemapAT.basemap\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [`layer-base-url`]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/map/overview/#integrating-wms",
+            "relUrl": "/map/overview/#integrating-wms"
+          }
+      ,"21": {
+            "doc": "Overview",
+            "title": "Introduction",
+            "content": "The module Ontimize Web Report on-demand provides view the same data in different ways in OntimizeWeb . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/overview/#introduction",
+            "relUrl": "/report-on-demand/overview/#introduction"
+          }
+      ,"22": {
             "doc": "Overview",
             "title": "Introduction",
             "content": "The module Ontimize Web Keycloak provides authentication for your OntimizeWeb applications using Keycloak. It triggers keycloak login and logout and attachs the authentication bearer token to every request to the backend. ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/keycloak/overview/#introduction",
             "relUrl": "/addons/keycloak/overview/#introduction"
+          }
+      ,"23": {
+            "doc": "Overview",
+            "title": "Introduction",
+            "content": "The o-tree component allows to manage a tree that can be used to display hierarchy data. ",
+            "url": "https://ontimizeweb.github.io/docs/v15/tree/overview/#introduction",
+            "relUrl": "/tree/overview/#introduction"
           }
       ,"24": {
             "doc": "File Manager DMS Service",
@@ -319,114 +319,114 @@
             "relUrl": "/components/input/overview/api#Overview"
           }
       ,"50": {
-            "doc": "On demand overview",
-            "title": "Introduction",
-            "content": "The module Ontimize Web Chart on-demand allow the final users of the applications developed with Ontimize to define, view and store charts from any table available in the application. This visual tool will allow users to define parameters of the chart such as: . 1.- Title and subtitle . 2.- Type of graph (line, discretebar, multibar, area, pie, donut) . 3.- Color palette for multi bar, pie and donut charts . 4.- Column to display on the x-axis . 5.- Column to display on the y-axis . 6.- Data source (current page, filtered data, all data) . 7.- Preferences (allows to save a configuration, apply an existing one or update it) . Remember to complete the steps you need to perform on your backend server to complete the charts on-demand configuration following this link . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#introduction",
-            "relUrl": "/charts/chart_on_demand/overview#introduction"
-          },"51": {
-            "doc": "On demand overview",
-            "title": "Menu option",
-            "content": ". ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#menu-option",
-            "relUrl": "/charts/chart_on_demand/overview#menu-option"
-          },"52": {
-            "doc": "On demand overview",
-            "title": "Basic example of Line chart",
-            "content": "This basic example shows a line chart of operation date and movements . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-line-chart",
-            "relUrl": "/charts/chart_on_demand/overview#basic-example-of-line-chart"
-          },"53": {
-            "doc": "On demand overview",
-            "title": "Basic example of Discrete Bar chart",
-            "content": "This basic example shows a Discrete bar chart of movements types and movements . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-discrete-bar-chart",
-            "relUrl": "/charts/chart_on_demand/overview#basic-example-of-discrete-bar-chart"
-          },"54": {
-            "doc": "On demand overview",
-            "title": "Basic example of Multi Bar chart",
-            "content": "This basic example shows a multi bar chart of movements types and movements . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-multi-bar-chart",
-            "relUrl": "/charts/chart_on_demand/overview#basic-example-of-multi-bar-chart"
-          },"55": {
-            "doc": "On demand overview",
-            "title": "Basic example of Pie chart",
-            "content": "This basic example shows a pie chart of customers type . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-pie-chart",
-            "relUrl": "/charts/chart_on_demand/overview#basic-example-of-pie-chart"
-          },"56": {
-            "doc": "On demand overview",
-            "title": "Save and load configuration",
-            "content": "The example shows the dialog to save a configuration of a chart . The example shows the dialog to select a previously stored configuration and perform a faster chart . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#save-and-load-configuration",
-            "relUrl": "/charts/chart_on_demand/overview#save-and-load-configuration"
-          }
-      ,"57": {
             "doc": "Overview",
             "title": "Data",
             "content": "You can modify value by setting the data attribute or calling the setData method. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\"&gt;&lt;/o-text-input&gt; . getValue() { return 'John Doe'; } . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#data",
             "relUrl": "/components/input/overview/overview#data"
-          },"58": {
+          },"51": {
             "doc": "Overview",
             "title": "Appearance",
             "content": "You can configure multiple appearance variants changing the appearance and float-label input values. Appearance . The appearance input indicates which of the different mat-form-field appearance is used. It has the same features that Angular Material appearance input, watch it here. Global default appearance options can be specified by providing a value for MAT_FORM_FIELD_DEFAULT_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either legacy, standard, fill or outside. @NgModule({ providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } } ] }) . Float label . The float-label input indicates which of the different mat-form-field label behaviours is chosen. It has the same features that Angular Material appearance input, watch it here . Global default label options can be specified by providing a value for MAT_LABEL_GLOBAL_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either always, never, or auto. @NgModule({ providers: [ {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}} ] }) . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#appearance",
             "relUrl": "/components/input/overview/overview#appearance"
-          },"59": {
+          },"52": {
             "doc": "Overview",
             "title": "Validation",
             "content": "You can setup validation on input: . Using validation input in template-driven forms Using the Ontimize validators Creating your custom validator . Validation input in template-driven forms . To add validation to a template-driven form, you add the validation attributes specific for each input and Ontimize Web match these attributes with validator functions in the framework (such as required, min-length, max-length, max-decimal-digits,min-decimal-digits&#8230;) . The input shows automatically an error message when the required attribute is set to yes and there is no value on the input. &lt;o-password-input #newpassword attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" &gt;&lt;/o-password-input&gt; . Ontimize validators . Ontimize Web providers the following build-in validators in the framework: . twelveHourFormatValidator: Hour validator hh:mm am/pm format twentyFourHourFormatValidator: Hour validator HH:mm format emailValidator: Email validator nifValidator: NIF validator patternValidator: Pattern validator . Using the validators input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the o-validator and o-error components. Below is an example of using the pattern validator. &lt;o-password-input attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" [validators]=\"validatorsNewPasswordArray\"&gt; &lt;o-validator error-name=\"hasCapitalCase\" error-text=\"VALIDATOR.HASCAPITALCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasNumber\" error-text=\"VALIDATOR.HASNUMBER\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSmallCase\" error-text=\"VALIDATOR.HASSMALLCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSpecialCharacters\" error-text=\"VALIDATOR.HASSPECIALCHARACTERS\"&gt;&lt;/o-validator&gt; &lt;/o-password-input&gt; ... validatorsNewPasswordArray: ValidatorFn[] = []; constructor() { // check whether the entered password has a number this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\\d/, 'hasNumber')); // check whether the entered password has upper case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase')); // check whether the entered password has small case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase')); // check whether the entered password has a special character this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&amp;*()_+\\-=\\[\\]{};':\"\\\\,.&lt;&gt;\\/?~]/, 'hasSpecialCharacters')); } ... Custom validator . Also user can add its own validators to a input component using the validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [validators]=\"validatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; validatorsArray: ValidatorFn[] = []; constructor() { this.validatorsArray.push(this.aValidator); this.validatorsArray.push(this.bValidator); } aValidator(control: FormControl): ValidationErrors { let result = {}; if (control.value &amp;&amp; control.value.toString().indexOf('a') === -1) { result['requiredLowercaseA'] = true; } if (control.value &amp;&amp; control.value.toString().indexOf('A') === -1) { result['requiredUppercaseA'] = true; } return result; } bValidator(control: FormControl): ValidationErrors { if (control.value &amp;&amp; control.value.toString().indexOf('b') === -1) { return { 'requiredB': true }; } return {}; } ... Same for asynchronous validators using the async-validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [async-validators]=\"asyncValidatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; asyncValidatorsArray: AsyncValidatorFn[] = []; constructor(private charValidatorService: CharValidatorService) { this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsLowercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsUppercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsB())); } ... export class AsyncValidatorsHelper { static createValidator(validator: CharValidator): AsyncValidatorFn { return (control: AbstractControl): Observable&lt;ValidationErrors&gt; =&gt; { return control.value ? validator.fn(control.value) .pipe( map((isValid: boolean) =&gt; isValid ? null : validator.error) ) : of(null) }; } } interface CharValidator { fn: (value: string) =&gt; Observable&lt;boolean&gt; error: { [key: string]: boolean; } } @Injectable({ providedIn: 'root', }) export class CharValidatorService { containsLowercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('a') !== -1).pipe(delay(1000)) }, error: { 'requiredLowercaseA': true } } } containsUppercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('A') !== -1).pipe(delay(1000)) }, error: { 'requiredUppercaseA': true } } } containsB(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('b') !== -1).pipe(delay(1000)) }, error: { 'requiredB': true } } } } . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#validation",
             "relUrl": "/components/input/overview/overview#validation"
-          },"60": {
+          },"53": {
             "doc": "Overview",
             "title": "Label visible",
             "content": "Form data components allow you to show or hide label with label-visible attribute. By default, this value is true. NOTE: This attribute not apply in o-checkbox,o-radio, o-slider and o-html-input. ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#label-visible",
             "relUrl": "/components/input/overview/overview#label-visible"
-          },"61": {
+          },"54": {
             "doc": "Overview",
             "title": "Required",
             "content": "A input can be market with a required attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the hide-required-marker property on form data component. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" required=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; &lt;o-text-input attr=\"input4\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" required=\"yes\" hide-required-marker=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#required",
             "relUrl": "/components/input/overview/overview#required"
-          },"62": {
+          },"55": {
             "doc": "Overview",
             "title": "Enabled",
             "content": "The enabled mode is active by default. You can disable the input by setting enabled='no'. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" enabled=\"no\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#enabled",
             "relUrl": "/components/input/overview/overview#enabled"
-          },"63": {
+          },"56": {
             "doc": "Overview",
             "title": "Read-only",
             "content": "The readonly mode represents an element that is no longer editable by the user. You can make a component only readable setting read-only=\"yes\". &lt;o-text-input fxFlex attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" read-only=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#read-only",
             "relUrl": "/components/input/overview/overview#read-only"
-          },"64": {
+          },"57": {
             "doc": "Overview",
             "title": "Tooltip",
             "content": "To create a tooltip, add the tooltip attribute to an element. By default, the tooltip will appear on bottom of the element. Use tooltip-position attribute to set the position of the tooltip on top, bottom, left or the right side of the element. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\" tooltip-position=\"left\"&gt;&lt;/o-text-input&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#tooltip",
             "relUrl": "/components/input/overview/overview#tooltip"
-          },"65": {
+          },"58": {
             "doc": "Overview",
             "title": "Width",
             "content": "All input components have the width atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component. ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#width",
             "relUrl": "/components/input/overview/overview#width"
-          },"66": {
+          },"59": {
             "doc": "Overview",
             "title": "Global default options  new ",
             "content": "Global default options in input components can be specified by providing a value for the O_INPUT_OPTIONS token in a module. The color of input icons can be configured using the iconColor attribute and the selection of the value of an input when clicked using the selectAllOnClick attribute. @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { iconColor:'accent' } } ] }) or @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { selectAllOnClick: true } } ] }) . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#global-default-options--new-",
             "relUrl": "/components/input/overview/overview#global-default-options--new-"
-          },"67": {
+          },"60": {
             "doc": "Overview",
             "title": "Visibility  new ",
             "content": "The oHidden directive is used to hide form data components. &lt;o-text-input oHidden attr=\"NAME\" width=\"160px\" class=\"form-field\"&gt;&lt;/o-text-input&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/components/input/overview/overview#visibility--new-",
             "relUrl": "/components/input/overview/overview#visibility--new-"
+          }
+      ,"61": {
+            "doc": "On demand overview",
+            "title": "Introduction",
+            "content": "The module Ontimize Web Chart on-demand allow the final users of the applications developed with Ontimize to define, view and store charts from any table available in the application. This visual tool will allow users to define parameters of the chart such as: . 1.- Title and subtitle . 2.- Type of graph (line, discretebar, multibar, area, pie, donut) . 3.- Color palette for multi bar, pie and donut charts . 4.- Column to display on the x-axis . 5.- Column to display on the y-axis . 6.- Data source (current page, filtered data, all data) . 7.- Preferences (allows to save a configuration, apply an existing one or update it) . Remember to complete the steps you need to perform on your backend server to complete the charts on-demand configuration following this link . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#introduction",
+            "relUrl": "/charts/chart_on_demand/overview#introduction"
+          },"62": {
+            "doc": "On demand overview",
+            "title": "Menu option",
+            "content": ". ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#menu-option",
+            "relUrl": "/charts/chart_on_demand/overview#menu-option"
+          },"63": {
+            "doc": "On demand overview",
+            "title": "Basic example of Line chart",
+            "content": "This basic example shows a line chart of operation date and movements . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-line-chart",
+            "relUrl": "/charts/chart_on_demand/overview#basic-example-of-line-chart"
+          },"64": {
+            "doc": "On demand overview",
+            "title": "Basic example of Discrete Bar chart",
+            "content": "This basic example shows a Discrete bar chart of movements types and movements . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-discrete-bar-chart",
+            "relUrl": "/charts/chart_on_demand/overview#basic-example-of-discrete-bar-chart"
+          },"65": {
+            "doc": "On demand overview",
+            "title": "Basic example of Multi Bar chart",
+            "content": "This basic example shows a multi bar chart of movements types and movements . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-multi-bar-chart",
+            "relUrl": "/charts/chart_on_demand/overview#basic-example-of-multi-bar-chart"
+          },"66": {
+            "doc": "On demand overview",
+            "title": "Basic example of Pie chart",
+            "content": "This basic example shows a pie chart of customers type . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#basic-example-of-pie-chart",
+            "relUrl": "/charts/chart_on_demand/overview#basic-example-of-pie-chart"
+          },"67": {
+            "doc": "On demand overview",
+            "title": "Save and load configuration",
+            "content": "The example shows the dialog to save a configuration of a chart . The example shows the dialog to select a previously stored configuration and perform a faster chart . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/chart_on_demand/overview#save-and-load-configuration",
+            "relUrl": "/charts/chart_on_demand/overview#save-and-load-configuration"
           }
       ,"68": {
             "doc": "Form service components",
@@ -500,7 +500,6 @@
             "url": "https://ontimizeweb.github.io/docs/v15/addons/map/configurationoverview/overview#basic-example-with-base-layers",
             "relUrl": "/addons/map/configurationoverview/overview#basic-example-with-base-layers"
           }
-      
       ,"79": {
             "doc": "Example overview",
             "title": "Up next",
@@ -508,6 +507,7 @@
             "url": "https://ontimizeweb.github.io/docs/v15/example-overview/#up-next",
             "relUrl": "/example-overview/#up-next"
           }
+      
       ,"80": {
             "doc": "File Manager SDMS Service",
             "title": "File data model",
@@ -682,87 +682,87 @@
       ,"106": {
             "doc": "Installation",
             "title": "Installation",
-            "content": "Step 1 - Install the module . npm install ontimize-web-ngx-charts --save . Step 2 - Import in an application module . Include the library chart module into your app in the module where you want to use it... import { OChartModule } from 'ontimize-web-ngx-charts'; ... @NgModule({ imports: [ OChartModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Step 3 - Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"styles\": [ ... \"node_modules/ontimize-web-ngx-charts/styles.scss\", .... ], \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-charts/assets\", \"output\": \"/assets\" }, ... ] ... ",
-            "url": "https://ontimizeweb.github.io/docs/v15/charts/installation/#installation",
-            "relUrl": "/charts/installation/#installation"
-          }
-      ,"107": {
-            "doc": "Tree",
-            "title": "Installation",
-            "content": "npm install ontimize-web-ngx-tree --save . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/tree/installation/#installation",
-            "relUrl": "/tree/installation/#installation"
-          },"108": {
-            "doc": "Tree",
-            "title": "Usage",
-            "content": "Configure angular-cli.json dependencies . You must add the module styles definition in your &#8216;.angular-cli.json&#8217; file styles array: ... \"styles\": [ ... \"../node_modules/ontimize-web-ngx-tree/styles.scss\", .... ], ... Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-tree/o-tree-theme.scss'; @include o-tree-theme($theme); ... Import in an application module . Import the Ontimize Web tree module in the app module where you want to use it. import { OTreeModule } from 'ontimize-web-ngx-tree'; @NgModule({ imports: [ OTreeModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/tree/installation/#usage",
-            "relUrl": "/tree/installation/#usage"
-          }
-      ,"109": {
-            "doc": "Installation",
-            "title": "Installation",
-            "content": "npm install ontimize-web-ngx-report-on-demand --save . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/installation/#installation",
-            "relUrl": "/report-on-demand/installation/#installation"
-          },"110": {
-            "doc": "Installation",
-            "title": "Usage",
-            "content": "Import the Ontimize Web Report on-Demand module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ngx-extended-pdf-viewer/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
-            "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/installation/#usage",
-            "relUrl": "/report-on-demand/installation/#usage"
-          }
-      ,"111": {
-            "doc": "Installation",
-            "title": "Installation",
-            "content": "npm install ontimize-web-ngx-report --save . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/installation/#installation",
-            "relUrl": "/addons/report/installation/#installation"
-          },"112": {
-            "doc": "Installation",
-            "title": "Usage",
-            "content": "Import the Ontimize Web Report module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-report'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-report/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/installation/#usage",
-            "relUrl": "/addons/report/installation/#usage"
-          }
-      ,"113": {
-            "doc": "Installation",
-            "title": "Installation",
             "content": "npm install ontimize-web-ngx-gallery --save . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/gallery/installation/#installation",
             "relUrl": "/addons/gallery/installation/#installation"
-          },"114": {
+          },"107": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss'; @include o-gallery-theme($theme); ... Import in an application module . Import the Ontimize Web gallery module in the app module where you want to use it. import { OGalleryModule } from 'ontimize-web-ngx-gallery'; @NgModule({ imports: [ OGalleryModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/gallery/installation/#usage",
             "relUrl": "/addons/gallery/installation/#usage"
           }
-      ,"115": {
+      ,"108": {
+            "doc": "Installation",
+            "title": "Installation",
+            "content": "npm install ontimize-web-ngx-report --save . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/installation/#installation",
+            "relUrl": "/addons/report/installation/#installation"
+          },"109": {
+            "doc": "Installation",
+            "title": "Usage",
+            "content": "Import the Ontimize Web Report module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-report'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-report/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/report/installation/#usage",
+            "relUrl": "/addons/report/installation/#usage"
+          }
+      ,"110": {
+            "doc": "Installation",
+            "title": "Installation",
+            "content": "npm install ontimize-web-ngx-filemanager --save . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/installation/#installation",
+            "relUrl": "/addons/filemanager/installation/#installation"
+          },"111": {
+            "doc": "Installation",
+            "title": "Usage",
+            "content": "Add the library theming . Include the library theme in your application by adding the following code to the &#8216;app.scss&#8217; file: ... @import '~ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'; @include o-filemanager-table-theme($theme); ... Import the File Manager into your application . Import the Ontimize Web file manager module in the module you want to use it. import { OFileManagerModule } from 'ontimize-web-ngx-filemanager'; @NgModule({ imports: [ OFileManagerModule ], declarations: ... providers: ... }) export class ExampleModule { } . Add the File Manager to your component . Insert the o-filemanager-table component in your application component template. You must configure the service attribute within the name of the service that manages the files in the server. You must indicate also the column name that stores the work space identifier in the workspace-key attribute. &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\"&gt;&lt;/o-filemanager-table&gt; . If you want to use the SDMS file manager engine you need to add the type='S3' attribute to yours o-filemanager-table component. Also you must indicate also the form column name that stores the work space identifier in the workspace-key attribute or define the workspace-S3 function as the example bellow . customers-detail.component.html: ... &lt;o-filemanager-table type=\"S3\" service=\"customers\" [workspace-s3]=\"setWorkspaceS3\"&gt;&lt;/o-filemanager-table&gt; ... customers-detail.component.ts: ... setWorkspaceS3(data: any) { return { name: 'default', data: { id: data['CUSTOMERID'] } }; } ... ",
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/installation/#usage",
+            "relUrl": "/addons/filemanager/installation/#usage"
+          }
+      ,"112": {
+            "doc": "Installation",
+            "title": "Installation",
+            "content": "npm install ontimize-web-ngx-report-on-demand --save . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/installation/#installation",
+            "relUrl": "/report-on-demand/installation/#installation"
+          },"113": {
+            "doc": "Installation",
+            "title": "Usage",
+            "content": "Import the Ontimize Web Report on-Demand module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ngx-extended-pdf-viewer/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
+            "url": "https://ontimizeweb.github.io/docs/v15/report-on-demand/installation/#usage",
+            "relUrl": "/report-on-demand/installation/#usage"
+          }
+      ,"114": {
+            "doc": "Tree",
+            "title": "Installation",
+            "content": "npm install ontimize-web-ngx-tree --save . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/tree/installation/#installation",
+            "relUrl": "/tree/installation/#installation"
+          },"115": {
+            "doc": "Tree",
+            "title": "Usage",
+            "content": "Configure angular-cli.json dependencies . You must add the module styles definition in your &#8216;.angular-cli.json&#8217; file styles array: ... \"styles\": [ ... \"../node_modules/ontimize-web-ngx-tree/styles.scss\", .... ], ... Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-tree/o-tree-theme.scss'; @include o-tree-theme($theme); ... Import in an application module . Import the Ontimize Web tree module in the app module where you want to use it. import { OTreeModule } from 'ontimize-web-ngx-tree'; @NgModule({ imports: [ OTreeModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
+            "url": "https://ontimizeweb.github.io/docs/v15/tree/installation/#usage",
+            "relUrl": "/tree/installation/#usage"
+          }
+      ,"116": {
             "doc": "Installation",
             "title": "Installation",
             "content": "npm install ontimize-web-ngx-map --save . ",
             "url": "https://ontimizeweb.github.io/docs/v15/map/installation/#installation",
             "relUrl": "/map/installation/#installation"
-          },"116": {
+          },"117": {
             "doc": "Installation",
             "title": "Usage",
             "content": "Finally, you can use ontimize-web-ngx-map in your Ontimize Web project. Import into your application . Include the library map module into your app in the module where you want to use it... import { OMapModule } from 'ontimize-web-ngx-map'; ... @NgModule({ imports: [ OMapModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Configure angular.json dependencies . You must add the module styles definition and the leaflet images in your &#8216;.angular.json&#8217;: ... \"assets\": [ .... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-map/images\", \"output\": \"/assets\" } .... ], \"styles\": [ ... \"node_modules/ontimize-web-ngx-map/styles.scss\", .... ], ... Add a map to your component . Insert the o-map component in your application component template. &lt;o-map #oMapBasic attr=\"basic-usage-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" fxFlex&gt;&lt;/o-map&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/map/installation/#usage",
             "relUrl": "/map/installation/#usage"
           }
-      ,"117": {
+      ,"118": {
             "doc": "Installation",
             "title": "Installation",
-            "content": "npm install ontimize-web-ngx-filemanager --save . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/installation/#installation",
-            "relUrl": "/addons/filemanager/installation/#installation"
-          },"118": {
-            "doc": "Installation",
-            "title": "Usage",
-            "content": "Add the library theming . Include the library theme in your application by adding the following code to the &#8216;app.scss&#8217; file: ... @import '~ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'; @include o-filemanager-table-theme($theme); ... Import the File Manager into your application . Import the Ontimize Web file manager module in the module you want to use it. import { OFileManagerModule } from 'ontimize-web-ngx-filemanager'; @NgModule({ imports: [ OFileManagerModule ], declarations: ... providers: ... }) export class ExampleModule { } . Add the File Manager to your component . Insert the o-filemanager-table component in your application component template. You must configure the service attribute within the name of the service that manages the files in the server. You must indicate also the column name that stores the work space identifier in the workspace-key attribute. &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\"&gt;&lt;/o-filemanager-table&gt; . If you want to use the SDMS file manager engine you need to add the type='S3' attribute to yours o-filemanager-table component. Also you must indicate also the form column name that stores the work space identifier in the workspace-key attribute or define the workspace-S3 function as the example bellow . customers-detail.component.html: ... &lt;o-filemanager-table type=\"S3\" service=\"customers\" [workspace-s3]=\"setWorkspaceS3\"&gt;&lt;/o-filemanager-table&gt; ... customers-detail.component.ts: ... setWorkspaceS3(data: any) { return { name: 'default', data: { id: data['CUSTOMERID'] } }; } ... ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/filemanager/installation/#usage",
-            "relUrl": "/addons/filemanager/installation/#usage"
+            "content": "Step 1 - Install the module . npm install ontimize-web-ngx-charts --save . Step 2 - Import in an application module . Include the library chart module into your app in the module where you want to use it... import { OChartModule } from 'ontimize-web-ngx-charts'; ... @NgModule({ imports: [ OChartModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Step 3 - Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"styles\": [ ... \"node_modules/ontimize-web-ngx-charts/styles.scss\", .... ], \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-charts/assets\", \"output\": \"/assets\" }, ... ] ... ",
+            "url": "https://ontimizeweb.github.io/docs/v15/charts/installation/#installation",
+            "relUrl": "/charts/installation/#installation"
           }
       ,"119": {
             "doc": "Combo",
