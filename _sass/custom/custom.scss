@@ -882,8 +882,8 @@ a:not([class]) {
     }
 
     @else {
-      color: $primary-500-dark;
-      background-color: $primary-50-dark;
+      color: $primary-50-dark;
+      background-color: $primary-500-dark;
     }
 
     padding: 20px 14px 8px 14px;
