@@ -10749,6 +10749,9 @@ a:not([class]):hover {
   div.side-bar {
     width: 16.5rem;
   }
+  i.jstree-icon {
+    filter: invert(36%) sepia(8%) saturate(440%) hue-rotate(218deg) brightness(90%) contrast(85%);
+  }
 }
 table {
   table-layout: auto;
