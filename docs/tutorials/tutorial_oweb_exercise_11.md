@@ -1088,5 +1088,5 @@ Este es el aspecto final de los listados de clientes y el aspecto de la vista de
 ![tutorial_o_web_37.png]({{ base_path }}/assets/images/tutorial_o_web_37.png)
 ![tutorial_o_web_38.png]({{ base_path }}/assets/images/tutorial_o_web_38.png)
 
-[<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial-web/exercise10){: .btn }
-[<span style="display: flex; align-items: center;">Próximo tutorial <span class="material-symbols-outlined">arrow_forward</span></span>]({{ base_path }}/tutorial-web/exercise12){: .btn }
+[<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial/exercise10){: .btn }
+[<span style="display: flex; align-items: center;">Próximo tutorial <span class="material-symbols-outlined">arrow_forward</span></span>]({{ base_path }}/tutorial/exercise12){: .btn }

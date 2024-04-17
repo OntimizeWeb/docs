@@ -972,5 +972,5 @@ $dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
 > Los estilos personalizados de este tutorial no se adecuan totalmente al modo oscuro, por lo que no tendremos esta
 > opción activa.
 
-[<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial-web/exercise18){: .btn }
-[<span style="display: flex; align-items: center;">Próximo tutorial <span class="material-symbols-outlined">arrow_forward</span></span>]({{ base_path }}/tutorial-web/exercise20){: .btn }
+[<span style="display: flex; align-items: center;"><span class="material-symbols-outlined">arrow_back</span> Tutorial anterior</span>]({{ base_path }}/tutorial/exercise18){: .btn }
+[<span style="display: flex; align-items: center;">Próximo tutorial <span class="material-symbols-outlined">arrow_forward</span></span>]({{ base_path }}/tutorial/exercise20){: .btn }
