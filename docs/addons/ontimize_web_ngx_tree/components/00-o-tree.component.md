@@ -3,7 +3,9 @@ permalink: /tree/components/o-tree.component/overview
 title: "Tree"
 comp: tree
 layout: o-component
-nav_exclude: true
+parent: Data
+grand_parent: Components
+nav_order: 7
 ---
 {% include base_path %}
 {% include toc %}
@@ -57,12 +59,7 @@ You can define static routes or/and wildcards (that must be included in the `col
 
 Clicking on a node of this tree will triger the navigation to the current route appending the static path `customers/` followed by the record 'CUSTOMERID' value.
 
-You can see this working [here](https://try.imatia.com/ontimizeweb/tree/main/detail/){:target="_blank"}.
-
-## Demo
-
-You can see this and more examples of this component in the [OntimizeWeb tree quickstart](https://try.imatia.com/ontimizeweb/tree){:target="_blank"}.
-
+You can see this working [here](https://try.imatia.com/ontimizeweb/v15/playground/main/data/tree/basic){:target="_blank"}.
 
 <!-- recursive -->
 

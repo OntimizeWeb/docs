@@ -343,7 +343,7 @@ const routes: Routes = [{
 export class BranchesRoutingModule { }
 {% endhighlight %}
 
-{{"**branches-routing.module.ts**" | markdownify }}
+{{"**branches.module.ts**" | markdownify }}
 {% highlight typescript %}
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -982,7 +982,7 @@ const routes: Routes = [{
 export class AccountsRoutingModule { }
 {% endhighlight %}
 
-{{"**accounts-routing.module.ts**" | markdownify }}
+{{"**accounts.module.ts**" | markdownify }}
 {% highlight typescript %}
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
