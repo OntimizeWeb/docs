@@ -343,7 +343,7 @@ const routes: Routes = [{
 export class BranchesRoutingModule { }
 {% endhighlight %}
 
-{{"**branches-routing.module.ts**" | markdownify }}
+{{"**branches.module.ts**" | markdownify }}
 {% highlight typescript %}
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
