@@ -837,6 +837,7 @@ a:not([class]) {
 // Api attribute inhereds
 .attributes-list {
   overflow: hidden;
+  columns: 2;
 
   li {
     display: inline-block;
