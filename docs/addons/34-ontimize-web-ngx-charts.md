@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /addons/charts/overview/
+permalink: /addons/charts/
 title: "Charts"
 parent: Addons
 nav_order: 1

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Media
-permalink: /components/media/overview
+permalink: /components/media/
 author_profile: false
 has_children: true
 parent: Components

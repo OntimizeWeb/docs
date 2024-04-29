@@ -124,7 +124,7 @@ If the aspect ratio is configured in the `o-gallery` component, the height prope
     }
   ];
 ```
-![Gallery aspect ratio]({{ "/images/components/gallery/gallery-ratio-4-2.png" | absolute_url }}){: .comp-example-img}
+![Gallery aspect ratio]({{ "/assets/images/components/gallery/gallery-ratio-4-2.png" | absolute_url }}){: .comp-example-img}
 
 #### Actions
 
