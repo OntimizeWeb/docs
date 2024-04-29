@@ -17,7 +17,7 @@ The `oTabGroup` directive allows you to change the tabs component styles. You ca
 | ontimize | Applies the ontimize styling to the tabs component. This is the default value |
 | material | Applies the angular material styling to the tabs component |
 
-The [form layout manager]({{ base_path }}/components/layout/form-layout-manager/overview){:target="_blank"} component uses this directive when it is in *tab* mode. You can see an example in the customers module in the [OntimizeWeb quickstart](https://try.imatia.com/ontimizeweb/v15/quickstart/main/customers){:target="_blank"}, where the customers detail form is opened in tabs with the `oTabGroup` directive in **ontimize** mode.
+The [form layout manager]({{ base_path }}/components/layout/formlayoutmanager/overview){:target="_blank"} component uses this directive when it is in *tab* mode. You can see an example in the customers module in the [OntimizeWeb quickstart](https://try.imatia.com/ontimizeweb/v15/quickstart/main/customers){:target="_blank"}, where the customers detail form is opened in tabs with the `oTabGroup` directive in **ontimize** mode.
 
 ## Ontimize mode
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Buttons
-permalink: /components/buttons/overview/
+permalink: /components/buttons/
 author_profile: false
 has_children: true
 parent: Components
