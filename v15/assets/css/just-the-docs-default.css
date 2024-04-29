@@ -10514,6 +10514,7 @@ a:not([class]):hover {
 
 .attributes-list {
   overflow: hidden;
+  columns: 2;
 }
 .attributes-list li {
   display: inline-block;

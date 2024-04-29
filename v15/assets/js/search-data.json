@@ -2354,26 +2354,26 @@
             "doc": "Charts",
             "title": "Introduction",
             "content": "The Ontimize Web Charts is an implementation of swimlane library using OntimizeWeb. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/overview/#introduction",
-            "relUrl": "/addons/charts/overview/#introduction"
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/#introduction",
+            "relUrl": "/addons/charts/#introduction"
           },"369": {
             "doc": "Charts",
             "title": "Support",
             "content": "The Ontimize Web Charts module is available in github where you can start discussions, add bug reports or feature requests in the issues section. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/overview/#support",
-            "relUrl": "/addons/charts/overview/#support"
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/#support",
+            "relUrl": "/addons/charts/#support"
           },"370": {
             "doc": "Charts",
             "title": "Documentation",
             "content": "You can see the complete documentation here. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/overview/#documentation",
-            "relUrl": "/addons/charts/overview/#documentation"
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/#documentation",
+            "relUrl": "/addons/charts/#documentation"
           },"371": {
             "doc": "Charts",
             "title": "Examples",
             "content": "Check out examples demo: . Live demo . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/overview/#examples",
-            "relUrl": "/addons/charts/overview/#examples"
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/#examples",
+            "relUrl": "/addons/charts/#examples"
           }
       ,"372": {
             "doc": "Grid",
@@ -2822,26 +2822,26 @@
             "doc": "Map",
             "title": "Introduction",
             "content": "The Ontimize Web Map is an implementation of leaflet map library for library using OntimizeWeb. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/map/overview/#introduction",
-            "relUrl": "/addons/map/overview/#introduction"
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/map/#introduction",
+            "relUrl": "/addons/map/#introduction"
           },"446": {
             "doc": "Map",
             "title": "Support",
             "content": "The Ontimize Web Map module is available in github where you can start discussions, add bug reports or feature requests in the issues section. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/map/overview/#support",
-            "relUrl": "/addons/map/overview/#support"
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/map/#support",
+            "relUrl": "/addons/map/#support"
           },"447": {
             "doc": "Map",
             "title": "Documentation",
             "content": "You can see the complete documentation here. ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/map/overview/#documentation",
-            "relUrl": "/addons/map/overview/#documentation"
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/map/#documentation",
+            "relUrl": "/addons/map/#documentation"
           },"448": {
             "doc": "Map",
             "title": "Examples",
             "content": "Check out examples demo: . Live demo . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/addons/map/overview/#examples",
-            "relUrl": "/addons/map/overview/#examples"
+            "url": "https://ontimizeweb.github.io/docs/v15/addons/map/#examples",
+            "relUrl": "/addons/map/#examples"
           }
       ,"449": {
             "doc": "Dynamicform",
@@ -3241,26 +3241,26 @@
             "doc": "Form layout manager",
             "title": "Form layout manager",
             "content": "Directive: o-form-layout-manager . Inputs . Name Since Description Default . attr . string . Field identifier. Registry property if component is inside a form. . dialog-class . string . Deprecated. CSS class attached to the dialog when the dialog mode is active . dialog-height . string . Deprecated. The dialog height . dialog-max-height . string . Deprecated. The dialog maximum height . dialog-max-width . string . Deprecated. The dialog maximum width . dialog-min-height . string . Deprecated. The dialog minimum height . dialog-min-width . string . Deprecated. The dialog minimum width . dialog-width . string . Deprecated. The dialog width . label-columns . string . Deprecated. Form data columns used in the detail form title. Separated by ‘;’ . mode . tab dialog split-pane . Form layout manager mode . dialog . separator . string . Deprecated. Separator between multiple label columns values . ’ ‘ (blank space) . store-state . no false yes true . Indicates whether or not to store component state . yes . title . string . Deprecated. Detail form main title . title-data-origin . string . Deprecated. attr of the form component used for retrieving the data used on the tabs title . * required inputs. Outputs . Name Since Description . onCloseTab . Event triggered when a detail tab is closed . onMainTabSelected . Event triggered when the main tab is selected . onSelectedTabChange . Event triggered when a detail tab is changed . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/layout/form-layout-manager/api#Form%20layout%20manager",
-            "relUrl": "/components/layout/form-layout-manager/api#Form layout manager"
+            "url": "https://ontimizeweb.github.io/docs/v15/components/layout/formlayoutmanager/api#Form%20layout%20manager",
+            "relUrl": "/components/layout/formlayoutmanager/api#Form layout manager"
           },"512": {
             "doc": "Form layout manager",
             "title": "Dialog mode",
             "content": "Directive: o-form-layout-dialog-options . Inputs . Name Since Description Default . backdrop-class . string . Custom class for the backdrop. . class . string string[] . Custom class for the overlay pane. . close-on-navigation . no false yes true . Whether the dialog should close when the user goes backwards/forwards in history. Note that this usually doesn’t include clicking on links . yes . disable-close . no false yes true . Whether the user can use escape or clicking on the backdrop to close the modal . no . height . string . Height of the dialog. . label-columns . string . Form data columns used in the detail form title. Separated by ‘;’ . max-height . string number . Max height of the dialog . max-width . string number . Max width of the dialog. . min-height . string number . Min height of the dialog . min-width . string number . Min width of the dialog. . position . DialogPosition . Position overrides . separator . string . Separator between multiple label columns values . ’ ‘ (blank space) . title . string . Detail form main title . width . string . Width of the dialog. . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/layout/form-layout-manager/api#Dialog%20mode",
-            "relUrl": "/components/layout/form-layout-manager/api#Dialog mode"
+            "url": "https://ontimizeweb.github.io/docs/v15/components/layout/formlayoutmanager/api#Dialog%20mode",
+            "relUrl": "/components/layout/formlayoutmanager/api#Dialog mode"
           },"513": {
             "doc": "Form layout manager",
             "title": "Split pane mode",
             "content": "Directive: o-form-layout-split-pane-options . Inputs . Name Since Description Default . detail-max-width . string number . Max width of the detail container. . detail-min-width . string number . Min width of the detail container. . detail-width . string . Width of the detail container. . main-max-width . string number . Max width of the main container. . main-min-width . string number . Min width of the main container. . main-width . string . Width of the main container. . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/layout/form-layout-manager/api#Split%20pane%20mode",
-            "relUrl": "/components/layout/form-layout-manager/api#Split pane mode"
+            "url": "https://ontimizeweb.github.io/docs/v15/components/layout/formlayoutmanager/api#Split%20pane%20mode",
+            "relUrl": "/components/layout/formlayoutmanager/api#Split pane mode"
           },"514": {
             "doc": "Form layout manager",
             "title": "Tabgroup mode",
             "content": "Directive: o-form-layout-tabgroup-options . Inputs . Name Since Description Default . background-color . ThemePalette ('primary' 'accent' 'warn') . Background color of the tab nav. . color . ThemePalette ('primary' 'accent' 'warn') . Theme color palette for the component. . disable-animation . no false yes true . Disable the animations in the tabs . no . header-position . 'above' 'below' . Position of the tab header. above . icon . string . Icon name (see Google material design icons) . icon-position . 'left' right . Icon position . label-columns . string . Form data columns used in the detail form title. Separated by ‘;’ . separator . string . Separator between multiple label columns values . ’ ‘ (blank space) . title . string . Detail form main title . title-data-origin . string . attr of the form component used for retrieving the data used on the tabs title . ",
-            "url": "https://ontimizeweb.github.io/docs/v15/components/layout/form-layout-manager/api#Tabgroup%20mode",
-            "relUrl": "/components/layout/form-layout-manager/api#Tabgroup mode"
+            "url": "https://ontimizeweb.github.io/docs/v15/components/layout/formlayoutmanager/api#Tabgroup%20mode",
+            "relUrl": "/components/layout/formlayoutmanager/api#Tabgroup mode"
           }
       
       ,"515": {
