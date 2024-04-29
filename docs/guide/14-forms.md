@@ -30,4 +30,4 @@ In some applications you may want to place a breadcrumb component on top of your
 ### Form layout manager
 After having a data collection displayed in a component and its detail data viewed or edited in a detail component, the user may want to display that data using different layouts without having to change its definition and routing modules. In this case **OntimizeWeb** offers the `o-form-layout-manager` component. This component, used as a wrapper to the data collection component, allows to manage the transitions between the data collection and the detail view with the data record details.
 
-You can read more about this component [here]({{ base_path }}/components/layout/form-layout-manager/overview){:target="_blank"}.
+You can read more about this component [here]({{ base_path }}/components/layout/formlayoutmanager/overview){:target="_blank"}.
