@@ -40,6 +40,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
       </tr>
       <tr>
         <td>15.0.2</td>
+        <td rowspan="3"></td>
       </tr>
       <tr>
         <td>15.0.1</td>
