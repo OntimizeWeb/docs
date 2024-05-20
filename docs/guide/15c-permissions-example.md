@@ -13,16 +13,17 @@ In this section you are going to see the creation of an Ontimize application fro
 
 ## First steps
 
-This tutorial starts using an empty Ontimize application project and it is going to reach final configuration step by step. To see the complete example click the [following link](https://github.com/ontimize/ontimize-examples/tree/boot-web-permissions){:target="_blank"}.
+This tutorial starts using an empty Ontimize application project and it is going to reach final configuration step by step. To see the complete example click the [following link](https://github.com/ontimize/ontimize-examples/tree/boot-web-permissions){:target="\_blank"}.
 
 # Configuring the backend
 
 ## Candidate entity creation
 
-First, we are going to add all stuff related with a Candidate: an entity, a service and the rest controller as you can see [here](https://www.ontimize.com/xwiki/bin/view/Ontimize+Boot+Training/Creating+DAO%2C+Service%2C+Controller){:target="_blank"}. Then, we will add records to our table candidate on the database.
-Next step is to create the user *candidate* on the database and  define his permissions and the admin permissions as you can see [here](https://ontimize.github.io/ontimize-boot/basics/security/){:target="_blank"}. In this example also you can see the tags that we use to secure the application and the methods. We use `@EnableAspectJAutoProxy(proxyTargetClass = false)` once on the `ServerAplication` class and `@Secured({ PermissionsProviderSecured.SECURED })` on all methods that you want to protect.
+First, we are going to add all stuff related with a Candidate: an entity, a service and the rest controller as you can see [here](https://www.ontimize.com/xwiki/bin/view/Ontimize+Boot+Training/Creating+DAO%2C+Service%2C+Controller){:target="\_blank"}. Then, we will add records to our table candidate on the database.
+Next step is to create the user _candidate_ on the database and define his permissions and the admin permissions as you can see [here](https://ontimize.github.io/ontimize-boot/basics/security/){:target="\_blank"}. In this example also you can see the tags that we use to secure the application and the methods. We use `@EnableAspectJAutoProxy(proxyTargetClass = false)` once on the `ServerAplication` class and `@Secured({ PermissionsProviderSecured.SECURED })` on all methods that you want to protect.
 
 `com.ontimize.projectwiki.ServerApplication`:
+
 ```java
 @SpringBootApplication
 @EnableAspectJAutoProxy(proxyTargetClass = false)
@@ -36,6 +37,7 @@ public class ServerApplication {
 ```
 
 `com.ontimize.projectwiki.model.core.service.CandidateService`:
+
 ```java
 @Override
 @Secured({ PermissionsProviderSecured.SECURED })
@@ -75,6 +77,7 @@ Now it's time to define the server permissions. In our application we have two u
 Previous to define our permissions, we need to create a rest controller with its service to provide the permissions to the frontend.
 
 `com.ontimize.projectwiki.ws.core.rest.PermissionRestController`:
+
 ```java
 @RestController
 @RequestMapping("/permissions")
@@ -91,6 +94,7 @@ public class PermissionRestController extends ORestController<IPermissionService
 ```
 
 `com.ontimize.projectwiki.model.core.service.PermissionService`:
+
 ```java
 @Service("PermissionService")
 @Lazy
@@ -144,10 +148,11 @@ public class PermissionService implements IPermissionService {
 
 ### Defining our client permissions
 
-Client permissions are defined by a JSON file (you can find more detailed information  [here](https://ontimizeweb.github.io/docs/v15/guide/permissions/#permissions-definition-example){:target="_blank"}).
+Client permissions are defined by a JSON file (you can find more detailed information [here](https://ontimizeweb.github.io/docs/v15/guide/permissions/#permissions-definition-example){:target="\_blank"}).
 In this turorial, we are going to create a set of simple preconfigured JSON permission files. Into a real application, this permission object could be retrived from database or created dynamically by code depending on the user, the role, etc. We can see more examples of this files
 
 `candidate_permissions.json`:
+
 ```json
 {
   "menu": [
@@ -167,6 +172,7 @@ In this turorial, we are going to create a set of simple preconfigured JSON perm
 ```
 
 `demo_permissions.json`:
+
 ```json
 {
   "menu": [
@@ -186,22 +192,14 @@ In this turorial, we are going to create a set of simple preconfigured JSON perm
     {
       "attr": "candidate",
       "selector": "o-table",
-      "columns" : [
-        { "attr": "PHONE", "visible": false, "enabled": false }
-      ],
-      "actions": [
-        { "attr": "delete", "visible": true, "enabled": false }
-      ]
+      "columns": [{ "attr": "PHONE", "visible": false, "enabled": false }],
+      "actions": [{ "attr": "delete", "visible": true, "enabled": false }]
     },
     {
-      "attr":"candidates_form_edit",
+      "attr": "candidates_form_edit",
       "selector": "o-form",
-      "components": [
-        {"attr":"EMAIL","visible": true,"enabled": false}
-      ],
-      "actions": [
-        { "attr": "delete", "visible": true, "enabled": false }
-      ]
+      "components": [{ "attr": "EMAIL", "visible": true, "enabled": false }],
+      "actions": [{ "attr": "delete", "visible": true, "enabled": false }]
     }
   ]
 }
@@ -215,7 +213,7 @@ And if we log with de demo user we are going to see a different menu and we can 
 
 ![demo home]({{ base_path }}/assets/images/permissions/demo_home.png){: .align-center}
 
-As we can see the *delete* button of the table is disabled as we configured before:
+As we can see the _delete_ button of the table is disabled as we configured before:
 
 ![demo home]({{ base_path }}/assets/images/permissions/demo_table.png){: .align-center}
 
@@ -227,9 +225,10 @@ And if we click on a row to edit the registry we can see that we can't edit the 
 
 ## Application configuration
 
-First file we need to configure on our frontend it’s the `app.config.ts` and add `permissionsServiceType` and `permissionsConfiguration` object. In `permissionsServiceType`, you define the type of permission to use (*OntimizeEEPermissions* or *OntimizePermissions*, for more information see [here]({{ base_path }}/guide/appconfig/#permissions-configuration){:target="_blank"}) and `permissionsConfiguration` which should contain the permissions service whose path should be defined in `app.services.config.ts` (defined in the following code section of this page).
+First file we need to configure on our frontend it’s the `app.config.ts` and add `permissionsServiceType` and `permissionsConfiguration` object. In `permissionsServiceType`, you define the type of permission to use (_OntimizeEEPermissions_ or _OntimizePermissions_, for more information see [here]({{ base_path }}/guide/appconfig/#permissions-configuration){:target="\_blank"}) and `permissionsConfiguration` which should contain the permissions service whose path should be defined in `app.services.config.ts` (defined in the following code section of this page).
 
 `app.config.ts`:
+
 ```javascript
 export const CONFIG: Config = {
 
@@ -247,14 +246,15 @@ export const CONFIG: Config = {
 Then we need to define our service on the `app.services.config.ts`. In our application we only got two services as we can see below.
 
 `app.services.config.ts`:
+
 ```javascript
 export const SERVICE_CONFIG: Object = {
-  'candidates': {
-    'path': '/candidates'
+  candidates: {
+    path: "/candidates",
   },
-  'permissions': {
-    'path': '/permissions/permission'
-  }
+  permissions: {
+    path: "/permissions/permission",
+  },
 };
 ```
 
@@ -263,6 +263,7 @@ export const SERVICE_CONFIG: Object = {
 If we want to manage the routes permissions we need to define on the routing module the `canActivateChild` parameter and assign to it the Ontimize Web guard `PermissionsGuardService`.
 
 `main-routing.module.ts`:
+
 ```javascript
 ...
 import { AuthGuardService, PermissionsGuardService } from 'ontimize-web-ngx';
@@ -280,6 +281,7 @@ export const routes: Routes = [
 Optionally the last configuration that we can do it's to define a redirection page to visit when the user does not have permissions to access the page requested. To configure this page you need to add the route (or use the ontimize component `403`) to the `restrictedPermissionsRedirect` parameter on the routing module of the component or the module. Example:
 
 `candidates-routing.module.ts` (component):
+
 ```javascript
 ...
 export const routes: Routes = [
@@ -316,6 +318,7 @@ export const routes: Routes = [
 ```
 
 `main-routing.module.ts` (module):
+
 ```javascript
 ...
 export const routes: Routes = [
@@ -345,13 +348,14 @@ The page we will see if we try to access a page that we dont have permissions it
 
 ![demo home]({{ base_path }}/assets/images/permissions/access_denied.png){: .align-center}
 
-
 # How to extend the permission service
 
 In case we want to change the permission service we need to do two steps:
-* Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. Example:
+
+- Extend the `OntimizeEEPermissionsService` or the `OntimizePermissionsService` classes to your own service class. Example:
 
 `custom-permissions.service.ts`:
+
 ```javascript
 ...
 @Injectable()
@@ -371,19 +375,17 @@ export class CustomPermissionsService extends OntimizeEEPermissionsService {
   }
 
   loadPublicPermissions(): Observable<any> {
-    const url = '../../assets/dummy/public-permission.json';
+    const url = './assets/dummy/public-permission.json';
     const self = this;
     const dataObservable: Observable<any> = new Observable(_innerObserver => {
       self.httpClient.get(url).subscribe((res: any) => {
         let permissions = {};
         if ((res.code === Codes.ONTIMIZE_SUCCESSFUL_CODE) && Util.isDefined(res.data)) {
           const response = res.data;
-          if ((response.length === 1) && Util.isObject(response[0])) {
-            try {
-              permissions = response[0];
-            } catch (e) {
-              console.warn('[OntimizeEEPermissionsService: permissions parsing failed]');
-            }
+          try {
+            permissions = response;
+          } catch (e) {
+            console.warn('[CustomPermissionsService: permissions parsing failed]');
           }
         }
         _innerObserver.next(permissions);
@@ -397,37 +399,41 @@ export class CustomPermissionsService extends OntimizeEEPermissionsService {
 }
 ```
 
-And here are the permissions loaded  if the user is not logged in:
+And here are the permissions loaded if the user is not logged in:
 
 `public-permission.json`:
+
 ```json
 {
-  "menu": [
-    {
-      "attr": "candidates",
-      "visible": false,
-      "enabled": false
-    },
-    {
-      "attr": "home",
-      "visible": false,
-      "enabled": false
-    }
-  ],
-  "routes": [
-    {
-      "permissionId": "candidates-table-route",
-      "enabled": false
-    },
-    {
-      "permissionId": "home-route",
-      "enabled": false
-    }
-  ]
+  "code": 0,
+  "data": {
+    "menu": [
+      {
+        "attr": "candidates",
+        "visible": false,
+        "enabled": false
+      },
+      {
+        "attr": "home",
+        "visible": false,
+        "enabled": false
+      }
+    ],
+    "routes": [
+      {
+        "permissionId": "candidates-table-route",
+        "enabled": false
+      },
+      {
+        "permissionId": "home-route",
+        "enabled": false
+      }
+    ]
+  }
 }
 ```
 
-* Add the service to your `app.module.ts` file. Example:
+- Add the service to your `app.module.ts` file. Example:
 
 ```javascript
 ...
@@ -440,4 +446,46 @@ And here are the permissions loaded  if the user is not logged in:
   ],
 })
 export class AppModule { }
+```
+
+The last step would be to load the permissions in the component that is public `PublicComponentComponent` since the permissions are loaded in `AuthGuardService`.
+
+It is also necessary to add an ngif to the component `o-bar-menu` on which we want to apply the permissions so that it is built after loading the permissions.
+
+```ts
+import { Component } from '@angular/core';
+import { PermissionsService } from 'ontimize-web-ngx';
+
+
+@Component({
+  selector: 'app-public-component',
+  templateUrl: './public-component.component.html',
+  styleUrls: ['./public-component.component.scss']
+})
+export class PublicComponentComponent {
+  hasPermission = false;
+  constructor(
+    private permissionService: PermissionsService
+  ) {
+    this.permissionService.getUserPermissionsAsPromise().then(x => this.hasPermission = true);
+  }
+
+}
+```
+
+```html
+<o-bar-menu *ngIf="hasPermission">
+  <o-bar-menu-group title="OPTIONS">
+    <o-bar-menu-group title="LANGUAGE">
+      <o-locale-bar-menu-item
+        locale="en"
+        title="English"
+      ></o-locale-bar-menu-item>
+      <o-locale-bar-menu-item
+        locale="es"
+        title="Español"
+      ></o-locale-bar-menu-item>
+    </o-bar-menu-group>
+  </o-bar-menu-group>
+</o-bar-menu>
 ```
