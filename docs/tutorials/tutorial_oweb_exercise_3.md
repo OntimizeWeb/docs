@@ -479,7 +479,7 @@ continuación modificaremos el contenido del fichero para conseguir un formulari
         </button>
 <p>Lo primero es establecer el layout de pestañas, para que cada nuevo registro que se consulte se añada a una pestaña
 nueva. Para ello, en el componente <strong>customers-home.component.html</strong> añadimos un
-<a href="{{ base_path }}/components/formlayoutmanager/overview" target="_blank">o-form-layout-manager</a></p>
+<a href="{{ base_path }}/components/layout/formlayoutmanager/overview" target="_blank">o-form-layout-manager</a></p>
 {{"**customers-home.component.html**" | markdownify }}
 {% highlight xml %}
 <o-form-layout-manager attr="customersHome" title="{% raw %}{{'CUSTOMERS' | oTranslate }}{% endraw %}" separator=" " mode="tab" label-columns="NAME;SURNAME">
@@ -497,7 +497,7 @@ nueva. Para ello, en el componente <strong>customers-home.component.html</strong
     <thead>
         <tr>
             <th colspan="3">o-form-layout-manager (atributos de <a
-                    href="{{ base_path }}/components/formlayoutmanager/api">o-form-layout-manager</a>)</th>
+                    href="{{ base_path }}/components/layout/formlayoutmanager/api">o-form-layout-manager</a>)</th>
         </tr>
         <tr>
             <th>Atributo</th>
@@ -576,7 +576,7 @@ definida en el atributo <strong>separator</strong></td>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-form (atributos de <a href="{{ base_path }}/components/form/api">o-form</a>)</th>
+            <th colspan="3">o-form (atributos de <a href="{{ base_path }}/components/data/form/api">o-form</a>)</th>
         </tr>
         <tr>
             <th>Atributo</th>
@@ -687,7 +687,7 @@ el esté disponible</td>
     <thead>
         <tr>
             <th colspan="3">o-row y o-column (atributos de
-<a href="{{ base_path }}/components/containers/api">containers</a>)</th>
+<a href="{{ base_path }}/components/layout/containers/api">containers</a>)</th>
         </tr>
         <tr>
             <th>Atributo</th>
@@ -706,7 +706,7 @@ el esté disponible</td>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-image (atributos de <a href="{{ base_path }}/components/image/api">o-image</a>)</th>
+            <th colspan="3">o-image (atributos de <a href="{{ base_path }}/components/media/image/api">o-image</a>)</th>
         </tr>
         <tr>
             <th>Atributo</th>

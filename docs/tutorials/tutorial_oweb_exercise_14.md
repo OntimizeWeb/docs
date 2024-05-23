@@ -66,7 +66,7 @@ componente <code>&lt;o-card-menu-item&gt;</code></p>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-card-menu-layout (atributos de <a href="{{ base_path }}/components/cardmenulayout/api" target="_blank">o-card-menu-layout</a>)</th>
+            <th colspan="3">o-card-menu-layout (atributos de <a href="{{ base_path }}/components/menu/cardmenulayout/api" target="_blank">o-card-menu-layout</a>)</th>
         </tr>
         <tr>
             <th>Atributos</th>
@@ -88,7 +88,7 @@ configurado, el componente construye una tarjeta para los elementos raíz del me
     <thead>
         <tr>
             <th colspan="3">o-card-menu-item (atributos de <a
-                    href="{{ base_path }}/components/cardmenulayout/cardmenuitem/api"
+                    href="{{ base_path }}/components/menu/cardmenulayout/cardmenuitem/api"
                     target="_blank">o-card-menu-item</a>)</th>
         </tr>
         <tr>

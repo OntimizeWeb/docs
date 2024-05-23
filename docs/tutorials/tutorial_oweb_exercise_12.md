@@ -51,7 +51,7 @@ de tabla a formato de cuadrícula, y modificar su formulario detalle para que se
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-grid (atributos de <a href="{{ base_path }}/components/grid/api">o-grid</a>)</th>
+            <th colspan="3">o-grid (atributos de <a href="{{ base_path }}/components/data/grid/api">o-grid</a>)</th>
         </tr>
         <tr>
             <th>Atributo</th>
@@ -971,9 +971,9 @@ Este es el resultado final:
 
 ## Crear el formulario de inserción
 
-Si ahora probamos a añadir un nuevo empleado, a través del botón con el signo + situado en la parte superior de la 
-cuadrícula, fallará. Esto es debido a que el formulario que estábamos usando, el formulario de detalle, ya no es 
-compatible para poder isertar datos, ya que es el que estamos usando para mostrar el detalle. Por ese mismo motivo, 
+Si ahora probamos a añadir un nuevo empleado, a través del botón con el signo + situado en la parte superior de la
+cuadrícula, fallará. Esto es debido a que el formulario que estábamos usando, el formulario de detalle, ya no es
+compatible para poder isertar datos, ya que es el que estamos usando para mostrar el detalle. Por ese mismo motivo,
 debemos crear un nuevo componente para usar la inserción del componente, por lo que crearemos el componente nuevo usando
 el siguiente comando:
 
