@@ -25,7 +25,7 @@ This is a basic example of a *Line Chart* using inputs to display data.
 *HTML*
 
 ```html
-<o-chart type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT" x-data-type="time"></o-chart>
+<o-chart type="line" x-label="Time" y-label="Amount (€)" service="movements" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT" x-data-type="time"></o-chart>
 ```
 
 In the API tab you can check all inputs and outputs allowed.
@@ -38,7 +38,7 @@ This is an example of a *Pie Chart* that shows to use the chart parameters to ch
 *HTML*
 
 ```html
-<o-chart type="pie" layout-fill entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
+<o-chart type="pie" layout-fill service="movements" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
 ```
 
 *TS*
