@@ -1342,7 +1342,7 @@ Para conseguir esta pantalla, pegaremos el siguiente código en el fichero **cus
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-table (atributos de <a href="{{ base_path }}/components/table/api"
+            <th colspan="3">o-table (atributos de <a href="{{ base_path }}/components/data/table/api"
                     target="_blank">o-table</a>)</th>
         </tr>
         <tr>
@@ -1392,7 +1392,7 @@ Para conseguir esta pantalla, pegaremos el siguiente código en el fichero **cus
 {{"En los ```<o-table-column>```, se pueden establecer diferentes atributos para visualizar las columnas. En la tabla
 inferior solo se establecerán aquellos que se usan en este ejemplo." | markdownify }}
 
-Más información en el <a href="{{ base_path }}/components/table/overview#define-columns">siguiente enlace</a>
+Más información en el <a href="{{ base_path }}/components/data/table/overview#define-columns">siguiente enlace</a>
 
 <table>
     <thead>
@@ -1638,7 +1638,7 @@ Más información en el <a href="{{ base_path }}/components/table/overview#defin
 </div>
 
 En este punto habría que configurar el servicio de clientes en el fichero **app.services.config.ts** como se hace más
-adelante con el servicio de empleados al [crear el componente base de empleados]({{ base_path }}/tutorial-web/exercise4)
+adelante con el servicio de empleados al [crear el componente base de empleados]({{ base_path }}/tutorial/exercise4)
 , pero en esta seed que se está utilizando ya viene preconfigurado.
 
 A mayores, añadiremos las traducciones que se han empleado en este formulario.

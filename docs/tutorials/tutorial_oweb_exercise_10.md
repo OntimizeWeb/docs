@@ -18,7 +18,7 @@ parent: Tutorial
 
 En este tutorial se mostrará como filtrar una tabla utilizando un componente de filtro externo, para realizar filtros
 complejos de manera simultánea. Para este ejemplo, permitiremos filtrar por las fechas de inicio y de fin de las
-cuentas, usando el componente [Filter Builder]({{ base_path }}/components/filterbuilder/overview)
+cuentas, usando el componente [Filter Builder]({{ base_path }}/components/data/filterbuilder/overview)
 
 ## Modificar el listado de cuentas
 Modificaremos el formulario de tal manera que sea similar al siguiente mockup
@@ -88,7 +88,7 @@ afectará y la expresión que se creará.</p>
     <thead>
         <tr>
             <th colspan="3">o-filter-builder (atributos de <a
-                    href="{{ base_path }}/components/filterbuilder/api" target="_blank">o-filter-builder</a>)</th>
+                    href="{{ base_path }}/components/data/filterbuilder/api" target="_blank">o-filter-builder</a>)</th>
         </tr>
         <tr>
             <th>Atributo</th>
