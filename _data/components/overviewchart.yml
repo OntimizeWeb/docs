@@ -49,24 +49,41 @@ attributes: [{
 },{
   name: "chart-parameters",
   description: "Control properties of styling, fonts, the legend, etc."
-}]
+},
+{
+  name: "show-legend",
+  description: "Controls whether the legend is displayed.",
+  type: "boolean",
+  default: false
+},{
+  name: "legend-position",
+  description: "Allows modifying the position of the legend. Values can be 'right' or 'below'.",
+  type: "string"
+},{
+  name: "legend-title",
+  description: "Title to be displayed on the legend.",
+  type: "string"
+},
+{
+  name: "show-grid-lines",
+  description: "Controls whether the grid lines are displayed on the chart.",
+  type: "boolean",
+  default: false
+},
+{
+  name: "color",
+  description: "Modifies the color palette of the chart. Accepts an object in the format { domain: ['#xxxx', '#xxxx', '#xxxx'] } or a theme name ('vivid', 'natural', 'cool', 'fire', 'solar', 'air', 'aqua', 'flame', 'ocean', 'forest', 'horizon', 'neons', 'picnic', 'night', 'nightLights')",
+  type: "object|string"
+}
+]
 
-outputs: [{
-  name : "onTap",
-  description: "Event triggered when the chart is tapped"
+[{
+  name: "select",
+  description: "Click event triggered when an element in the chart is clicked."
 },{
-  name : "onDoubleTap",
-  description: "Event triggered when the chart is double-tapped"
+  name: "activate",
+  description: "Element activation event triggered when the mouse enters an element in the chart."
 },{
-  name : "onPress",
-  description: "Event triggered when the chart is pressed"
-},{
-  name : "onSwipe",
-  description: "Event triggered on swipe"
-},{
-  name : "onRotate",
-  description: "Event triggered when the screen rotates"
-},{
-  name : "onPinch",
-  description: "Event triggered on pinch"
+  name: "deactivate",
+  description: "Element deactivation event triggered when the mouse leaves an element in the chart."
 }]
