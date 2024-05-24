@@ -22,7 +22,7 @@ All chart parameters for the *Line + Bar Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="linePlusBarWithFocusChart" entity="EMovementsGrouped" x-axis="DATE_" y-axis="MOVEMENT;BALANCE" x-data-type="time" [chart-parameters]="chartParameters" chart-height="500"></o-chart>
+<o-chart type="linePlusBarWithFocusChart" service="movements" entity="EMovementsGrouped" x-axis="DATE_" y-axis="MOVEMENT;BALANCE" x-data-type="time" [chart-parameters]="chartParameters" chart-height="500"></o-chart>
 ```
 
 *TS*
@@ -52,7 +52,7 @@ export class LineplusbarComponent {
 *HTML*
 
 ```html
-<o-chart type="linePlusBarWithFocusChart" entity="EMovementsGrouped" x-axis="DATE_" y-axis="MOVEMENT;BALANCE" x-data-type="time" [chart-parameters]="chartParameters" chart-height="500"></o-chart>
+<o-chart type="linePlusBarWithFocusChart" service="movements" entity="EMovementsGrouped" x-axis="DATE_" y-axis="MOVEMENT;BALANCE" x-data-type="time" [chart-parameters]="chartParameters" chart-height="500"></o-chart>
 ```
 
 *TS*

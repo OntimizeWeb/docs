@@ -23,7 +23,7 @@ All chart parameters for the *Pie Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="pie" layout-fill entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"></o-chart>
+<o-chart type="pie" layout-fill service="movements" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"></o-chart>
 ```
 
 
@@ -32,7 +32,7 @@ All chart parameters for the *Pie Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="pie" layout-fill entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
+<o-chart type="pie" layout-fill service="movements" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
 ```
 
 *TS*

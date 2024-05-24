@@ -21,7 +21,7 @@ All chart parameters for the *Line Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT" x-data-type="time"></o-chart>
+<o-chart type="line" x-label="Time" y-label="Amount (€)" service="movements" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT" x-data-type="time"></o-chart>
 ```
 
 ## Custom Configuration Example
@@ -29,7 +29,7 @@ All chart parameters for the *Line Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart #lineChartBasic type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT" [chart-parameters]="chartParameters" x-data-type="time"></o-chart>
+<o-chart #lineChartBasic type="line" x-label="Time" y-label="Amount (€)" service="movements" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT" [chart-parameters]="chartParameters" x-data-type="time"></o-chart>
 ```
 
 *TS*

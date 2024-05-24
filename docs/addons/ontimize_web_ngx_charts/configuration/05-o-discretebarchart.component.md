@@ -22,7 +22,7 @@ All chart parameters for the *Discrete Bar Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"></o-chart>
+<o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" service="movements" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT"></o-chart>
 ```
 
 
