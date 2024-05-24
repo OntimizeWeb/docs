@@ -21,7 +21,7 @@ All chart parameters for the *Multi Bar Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="multiBar" x-label="Time" y-label="Amount (€)" layout-fill entity="EMovementsGrouped" x-axis="DATE_" y-axis="MOVEMENT;AVERAGE;BALANCE" x-data-type="time"></o-chart>
+<o-chart type="multiBar" x-label="Time" y-label="Amount (€)" layout-fill service="movements" entity="EMovementsGrouped" x-axis="DATE_" y-axis="MOVEMENT;AVERAGE;BALANCE" x-data-type="time"></o-chart>
 ```
 
 

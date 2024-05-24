@@ -23,7 +23,7 @@ All chart parameters for the *Donut Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="donutChart" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" chart-height="400"></o-chart>
+<o-chart type="donutChart" service="movements" entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" chart-height="400"></o-chart>
 ```
 
 
@@ -32,7 +32,7 @@ All chart parameters for the *Donut Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="donutChart" chart-height="400"  entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
+<o-chart type="donutChart" chart-height="400" service="movements"  entity="EMovementTypesTotal" x-axis="MOVEMENTTYPES" y-axis="MOVEMENT" [chart-parameters]="chartParameters"></o-chart>
 ```
 
 *TS*
