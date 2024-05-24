@@ -44,7 +44,7 @@ attributes: [{
   name: "read-only",
   type: "no | false | yes | true",
   default: "no",
-  description: "Indicates whether the input value is modifiable or not. This attribute may be ignored depending on the value of the `editable-detail` attribute of its parent [`o-form` component](https://ontimizeweb.github.io/docs/v15/components/o-form.component/){:target='_blank'}"
+  description: "Indicates whether the input value is modifiable or not. This attribute may be ignored depending on the value of the `editable-detail` attribute of its parent [`o-form` component](https://ontimizeweb.github.io/docs/v15/components/data/form/overview){:target='_blank'}"
 },{
   name: "validators",
   type: "ValidatorFn[]",

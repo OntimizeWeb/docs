@@ -82,6 +82,6 @@ attributes: [{
 
 inheritedOutputs: [{
   component: "ChartComponent",
-  path: "charts/overview/api",
+  path: "addons/charts/overview/api",
   outputs: ["onDoubleTap", "onPinch", "onPress", "onRotate", "onSwipe", "onTap"]
 }]

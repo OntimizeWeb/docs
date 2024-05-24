@@ -46,7 +46,7 @@
 
 <nav aria-label="Breadcrumb" class="breadcrumbs">
   <ol>
-    {% if parent_page != '' -%}
+    {% if parent_page != '' and parent_page_name_cap != 'Api' -%}
       {%- if grandparent_page != '' %}
         <li><a href="{{ base_path }}/{{ grandparent_page }}">{{ grandparent_page_name_cap }}</a></li>
       {%- endif %}

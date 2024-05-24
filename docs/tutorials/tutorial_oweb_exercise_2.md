@@ -1397,9 +1397,9 @@ Más información en el <a href="{{ base_path }}/components/data/table/overview#
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-table-column (atributos de <a href="{{ base_path }}/components/table/api"
+            <th colspan="3">o-table-column (atributos de <a href="{{ base_path }}/components/data/table/api"
                     target="_blank">o-table-column</a>, <a
-                    href="{{ base_path }}/components/table/overview#cell-renderers" target="_blank">visualizaciones de
+                    href="{{ base_path }}/components/data/table/overview#cell-renderers" target="_blank">visualizaciones de
                     las columnas</a>)</th>
         </tr>
         <tr>
