@@ -100,14 +100,14 @@ Next a POST request example will be made to the previously configured url and th
 
 - Firstly, <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-data-provider.service.ts" target="_blank">OntimizeExportDataProviderService</a> service provider collects all the required information to perform the exportation, the table data, column names, column types, filter... If you want to customize this data provider, please check the <a href="#customizing-data-provider">Custom data provider</a> section.
 
-- Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export.service.ts" target="_blank">OntimizeExportService</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section.
+- Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize/ontimize-export.service.ts" target="_blank">OntimizeExportService</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section.
 
 The rest interface used for this must be like the following by default:
 ```
 https://{ your-api-endpoint }/{ table-service-path }/{ table-entity }/{ format-selected }
 ```
 
-Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b> depending on the format selected. You can also export the table data in other format using a [o-table-export-button]({{ base_path }}/components/data/table#table-export-button), in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the [o-table-export-button]({{ base_path }}/components/data/table#table-export-button) component.
+Where <b>format-selected</b> can be: <b>'xlsx'</b>, <b>'html'</b> or <b>'pdf'</b> depending on the format selected. You can also export the table data in other format using a [o-table-export-button]({{ base_path }}/components/data/table/overview#table-export-button), in this case, the <b>format-selected</b> will be the value configured in the attribute `export-type` of the [o-table-export-button]({{ base_path }}/components/data/table/overview#table-export-button) component.
 
 If you want to customize this end point, please check the [Custom exportation end point]({{ base_path }}/components/data/table/export#custom-exportation-end-point) section.
 
@@ -337,7 +337,7 @@ Next a POST request will be made to the previously configured url and the body o
 The server allows you to customize the styles of the cells, columns or rows and if you want these additional options you can customize extending this data provider, please check the <a href="#customizing-data-provider-1">Custom data provider</a> section.
 
 
-- Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize-export-3X.service.ts" target="_blank">OntimizeExportServic3X</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section that will contain the exported data.
+- Then <a href="https://github.com/OntimizeWeb/ontimize-web-ngx/blob/8.x.x/projects/ontimize-web-ngx/src/lib/services/ontimize/ontimize-export-3xx.service.ts" target="_blank">OntimizeExportServic3X</a> sends this information to the server in order to generate the file that will contain the exported data. If you want to customize this service, please check the <a href="#customizing-export-service"> Customizing export service</a> section that will contain the exported data.
 
 The rest interface used for this must be like the following by default:
 
@@ -352,7 +352,7 @@ And <b> export-path</b> is <b>export</b> by default, if you want to customize th
 
 The service must send a response with the generated file.
 
-You need to configure your backend server and you can consult the documentation in this [link](https://ontimize.github.io/ontimize-boot/basics/excelexport/){:target="_blank"}
+You need to configure your backend server and you can consult the documentation in this [link](https://ontimize.github.io/docs/v3/basics/exportdata/export-data-to-xlsx){:target="_blank"}
 
 ### Custom exportation end point
 

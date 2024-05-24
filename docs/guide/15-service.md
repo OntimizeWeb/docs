@@ -75,23 +75,23 @@ The *CRUD* (Create, Read, Update and Delete) methods are used to perform standar
   * **kv**: indicates the filtering values. An empty object means that no filter will be applied into the request.
   * **av**: indicates the columns that you want to request.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/15.x.x/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
   * **offset**: the index of the first item requested in the collection.
   * **pagesize**: the number of items requested.
   * **orderby**: object with the sorting that will be applied to the request result.
 * **insert**: performs a insert operation request to the server.
   * **av**: indicates the values to insert.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/15.x.x/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
 * **update**: performs an update operation request to the server.
   * **kv**: indicates the filtering values for performing the update.
   * **av**: indicates the values to update.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/15.x.x/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
 * **delete**: performs an delete operation request to the server.
   * **kv**: indicates the filtering values for performing the deletion.
   * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/15.x.x/master/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
+  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
 
 ### Server response interface
 The standard response of the requests made to Ontimize based servers always follows the following structure:

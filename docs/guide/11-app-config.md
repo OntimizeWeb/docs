@@ -338,7 +338,7 @@ export const SERVICE_CONFIG: Object = {
 };
 ```
 
-For clarification, if your `apiEndpoint` is the one in the [application configuration](#application-configuration-file) example, **OntimizeWeb** will concat the `apiEndpoint` and the `path` of the service to build the URL for sending requests. For example : _<https://try.ontimize.com/QSAllComponents-jee/services/rest/customers>_.
+For clarification, if your `apiEndpoint` is the one in the [application configuration](#application-configuration-file) example, **OntimizeWeb** will concat the `apiEndpoint` and the `path` of the service to build the URL for sending requests. For example : https://try.ontimize.com/QSAllComponents-jee/services/rest/customers.
 
 # Internationalization (i18) configuration
 
