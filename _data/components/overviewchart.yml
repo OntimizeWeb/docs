@@ -77,7 +77,6 @@ attributes: [{
 }
 ]
 
-
 outputs: [{
   name: "onSelect",
   description: "Click event triggered when an element in the chart is clicked."
