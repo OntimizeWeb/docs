@@ -578,13 +578,13 @@
           },"90": {
             "doc": "Line Chart",
             "title": "Basic Example",
-            "content": "HTML . &lt;o-chart type=\"line\" x-label=\"Time\" y-label=\"Amount (€)\" entity=\"EMovements\" x-axis=\"DATE_\" y-axis=\"MOVEMENT\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . ",
+            "content": "HTML . &lt;o-chart type=\"line\" x-label=\"Time\" y-label=\"Amount (€)\" service=\"movements\" entity=\"EMovements\" x-axis=\"DATE_\" y-axis=\"MOVEMENT\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/linechart/overview#basic-example",
             "relUrl": "/addons/charts/linechart/overview#basic-example"
           },"91": {
             "doc": "Line Chart",
             "title": "Custom Configuration Example",
-            "content": "HTML . &lt;o-chart #lineChartBasic type=\"line\" x-label=\"Time\" y-label=\"Amount (€)\" entity=\"EMovements\" x-axis=\"DATE_\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild } from '@angular/core'; import { OChartComponent, LineChartConfiguration, ChartService } from 'ontimize-web-ngx-charts'; @Component({ selector: 'line', templateUrl: './line.component.html' }) export class LineComponent { chartParameters: LineChartConfiguration; constructor() { this.chartParameters = new LineChartConfiguration(); this.chartParameters.isArea = [true]; this.chartParameters.interactive = false; this.chartParameters.useInteractiveGuideline = false; } } . ",
+            "content": "HTML . &lt;o-chart #lineChartBasic type=\"line\" x-label=\"Time\" y-label=\"Amount (€)\" service=\"movements\" entity=\"EMovements\" x-axis=\"DATE_\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild } from '@angular/core'; import { OChartComponent, LineChartConfiguration, ChartService } from 'ontimize-web-ngx-charts'; @Component({ selector: 'line', templateUrl: './line.component.html' }) export class LineComponent { chartParameters: LineChartConfiguration; constructor() { this.chartParameters = new LineChartConfiguration(); this.chartParameters.isArea = [true]; this.chartParameters.interactive = false; this.chartParameters.useInteractiveGuideline = false; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/linechart/overview#custom-configuration-example",
             "relUrl": "/addons/charts/linechart/overview#custom-configuration-example"
           }
@@ -818,13 +818,13 @@
           },"127": {
             "doc": "Line + Bar Chart",
             "title": "Basic Example",
-            "content": "HTML . &lt;o-chart type=\"linePlusBarWithFocusChart\" entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;BALANCE\" x-data-type=\"time\" [chart-parameters]=\"chartParameters\" chart-height=\"500\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { LinePlusBarFocusChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'app-lineplusbar', templateUrl: './lineplusbar.component.html' }) export class LineplusbarComponent { chartParameters: LinePlusBarFocusChartConfiguration; constructor() { this.chartParameters = new LinePlusBarFocusChartConfiguration(); this.chartParameters.bars = [true, false]; } } . ",
+            "content": "HTML . &lt;o-chart type=\"linePlusBarWithFocusChart\" service=\"movements\" entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;BALANCE\" x-data-type=\"time\" [chart-parameters]=\"chartParameters\" chart-height=\"500\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { LinePlusBarFocusChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'app-lineplusbar', templateUrl: './lineplusbar.component.html' }) export class LineplusbarComponent { chartParameters: LinePlusBarFocusChartConfiguration; constructor() { this.chartParameters = new LinePlusBarFocusChartConfiguration(); this.chartParameters.bars = [true, false]; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/linebarchart/overview#basic-example",
             "relUrl": "/addons/charts/linebarchart/overview#basic-example"
           },"128": {
             "doc": "Line + Bar Chart",
             "title": "Custom Configuration Example",
-            "content": "HTML . &lt;o-chart type=\"linePlusBarWithFocusChart\" entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;BALANCE\" x-data-type=\"time\" [chart-parameters]=\"chartParameters\" chart-height=\"500\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { LinePlusBarFocusChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'app-lineplusbar', templateUrl: './lineplusbar.component.html' }) export class LineplusbarComponent { chartParameters: LinePlusBarFocusChartConfiguration; constructor() { this.chartParameters = new LinePlusBarFocusChartConfiguration(); this.chartParameters.bars = [ true, false]; this.chartParameters.to_zero = [true, false]; this.chartParameters.to_previusValue = [false, true]; this.chartParameters.colors = [\"blue\", \"red\"] } } . ",
+            "content": "HTML . &lt;o-chart type=\"linePlusBarWithFocusChart\" service=\"movements\" entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;BALANCE\" x-data-type=\"time\" [chart-parameters]=\"chartParameters\" chart-height=\"500\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { LinePlusBarFocusChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'app-lineplusbar', templateUrl: './lineplusbar.component.html' }) export class LineplusbarComponent { chartParameters: LinePlusBarFocusChartConfiguration; constructor() { this.chartParameters = new LinePlusBarFocusChartConfiguration(); this.chartParameters.bars = [ true, false]; this.chartParameters.to_zero = [true, false]; this.chartParameters.to_previusValue = [false, true]; this.chartParameters.colors = [\"blue\", \"red\"] } } . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/linebarchart/overview#custom-configuration-example",
             "relUrl": "/addons/charts/linebarchart/overview#custom-configuration-example"
           }
@@ -922,13 +922,13 @@
           },"143": {
             "doc": "Pie Chart",
             "title": "Basic Example",
-            "content": "HTML . &lt;o-chart type=\"pie\" layout-fill entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\"&gt;&lt;/o-chart&gt; . ",
+            "content": "HTML . &lt;o-chart type=\"pie\" layout-fill service=\"movements\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/piechart/overview#basic-example",
             "relUrl": "/addons/charts/piechart/overview#basic-example"
           },"144": {
             "doc": "Pie Chart",
             "title": "Custom Configuration Example",
-            "content": "HTML . &lt;o-chart type=\"pie\" layout-fill entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { PieChartConfiguration } from 'ontimize-web-ngx-charts' @Component({ selector: 'pie', templateUrl: './pie.component.html' }) export class PieComponent{ chartParameters: PieChartConfiguration; constructor() { this.chartParameters = new PieChartConfiguration(); this.chartParameters.cornerRadius = 20; this.chartParameters.legendPosition = \"bottom\"; this.chartParameters.labelType = \"value\"; } } . ",
+            "content": "HTML . &lt;o-chart type=\"pie\" layout-fill service=\"movements\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\"&gt;&lt;/o-chart&gt; . TS . import { Component } from '@angular/core'; import { PieChartConfiguration } from 'ontimize-web-ngx-charts' @Component({ selector: 'pie', templateUrl: './pie.component.html' }) export class PieComponent{ chartParameters: PieChartConfiguration; constructor() { this.chartParameters = new PieChartConfiguration(); this.chartParameters.cornerRadius = 20; this.chartParameters.legendPosition = \"bottom\"; this.chartParameters.labelType = \"value\"; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/piechart/overview#custom-configuration-example",
             "relUrl": "/addons/charts/piechart/overview#custom-configuration-example"
           },"145": {
@@ -1023,13 +1023,13 @@
           },"159": {
             "doc": "Donut Chart",
             "title": "Basic Example",
-            "content": "HTML . &lt;o-chart type=\"donutChart\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" chart-height=\"400\"&gt;&lt;/o-chart&gt; . ",
+            "content": "HTML . &lt;o-chart type=\"donutChart\" service=\"movements\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" chart-height=\"400\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/donutchart/overview#basic-example",
             "relUrl": "/addons/charts/donutchart/overview#basic-example"
           },"160": {
             "doc": "Donut Chart",
             "title": "Custom Configuration Example",
-            "content": "HTML . &lt;o-chart type=\"donutChart\" chart-height=\"400\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\"&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild} from '@angular/core'; import { OChartComponent, DonutChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'donut', templateUrl: './donut.component.html' }) export class DonutComponent { chartParameters: DonutChartConfiguration; constructor(protected injector: Injector, protected navigationService: NavigationBarService, protected translateService: OTranslateService) { this.chartParameters = new DonutChartConfiguration(); this.chartParameters.showLabels = false; this.chartParameters.cornerRadius = 15; this.chartParameters.donutRatio = 0.5; } } . ",
+            "content": "HTML . &lt;o-chart type=\"donutChart\" chart-height=\"400\" service=\"movements\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\" [chart-parameters]=\"chartParameters\"&gt;&lt;/o-chart&gt; . TS . import { Component, ViewChild} from '@angular/core'; import { OChartComponent, DonutChartConfiguration } from 'ontimize-web-ngx-charts'; @Component({ selector: 'donut', templateUrl: './donut.component.html' }) export class DonutComponent { chartParameters: DonutChartConfiguration; constructor(protected injector: Injector, protected navigationService: NavigationBarService, protected translateService: OTranslateService) { this.chartParameters = new DonutChartConfiguration(); this.chartParameters.showLabels = false; this.chartParameters.cornerRadius = 15; this.chartParameters.donutRatio = 0.5; } } . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/donutchart/overview#custom-configuration-example",
             "relUrl": "/addons/charts/donutchart/overview#custom-configuration-example"
           }
@@ -1118,7 +1118,7 @@
           },"174": {
             "doc": "Discrete Bar Chart",
             "title": "Basic Example",
-            "content": "HTML . &lt;o-chart type=\"discreteBar\" x-label=\"Axis x\" y-label=\"Axis Y\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\"&gt;&lt;/o-chart&gt; . ",
+            "content": "HTML . &lt;o-chart type=\"discreteBar\" x-label=\"Axis x\" y-label=\"Axis Y\" service=\"movements\" entity=\"EMovementTypesTotal\" x-axis=\"MOVEMENTTYPES\" y-axis=\"MOVEMENT\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/discretebarchart/overview#basic-example",
             "relUrl": "/addons/charts/discretebarchart/overview#basic-example"
           },"175": {
@@ -1223,7 +1223,7 @@
           },"190": {
             "doc": "Multi Bar Chart",
             "title": "Basic Example",
-            "content": "HTML . &lt;o-chart type=\"multiBar\" x-label=\"Time\" y-label=\"Amount (€)\" layout-fill entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;AVERAGE;BALANCE\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . ",
+            "content": "HTML . &lt;o-chart type=\"multiBar\" x-label=\"Time\" y-label=\"Amount (€)\" layout-fill service=\"movements\" entity=\"EMovementsGrouped\" x-axis=\"DATE_\" y-axis=\"MOVEMENT;AVERAGE;BALANCE\" x-data-type=\"time\"&gt;&lt;/o-chart&gt; . ",
             "url": "https://ontimizeweb.github.io/docs/v15/addons/charts/multibarchart/overview#basic-example",
             "relUrl": "/addons/charts/multibarchart/overview#basic-example"
           },"191": {
