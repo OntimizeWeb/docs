@@ -138,14 +138,13 @@ Here is an example of configuration:
 The [*OntimizeWeb Theming*]({{ base_path }}/theming/){:target="_blank"} module provides predefined themes. All of them
 are stored in their corresponding files in the path *node_modules/ontimize-web-ngx-theming/src/themes/*
 
+* **implatform-fashion-default-theme.scss**
 * **mat-deeppurple-amber.scss**
 * **mat-indigo-pink.scss**
 * **mat-pink-bluegrey.scss**
 * **mat-purple-green.scss**
 * **ontimize-black-yellow.scss**
 * **ontimize.scss**
-
-> **Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.
 
 ## Custom theme definition
 
@@ -272,7 +271,7 @@ Now you just have have to call the `@mixin` function to apply the theme definiti
 ```
 
 For more details about the theming functions, see the comments in the
-[source](https://github.com/angular/material2/blob/master/src/lib/core/theming/_theming.scss){:target="_blank"}.
+[source](https://github.com/angular/components/blob/8.0.x/src/material/core/theming/_theming.scss){:target="_blank"}.
 
 ## Multiples themes
 ### Adding multiples themes
