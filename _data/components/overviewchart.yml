@@ -77,13 +77,13 @@ attributes: [{
 }
 ]
 
-[{
-  name: "select",
+outputs: [{
+  name: "onSelect",
   description: "Click event triggered when an element in the chart is clicked."
 },{
-  name: "activate",
+  name: "onActivate",
   description: "Element activation event triggered when the mouse enters an element in the chart."
 },{
-  name: "deactivate",
+  name: "onDeactivate",
   description: "Element deactivation event triggered when the mouse leaves an element in the chart."
 }]
