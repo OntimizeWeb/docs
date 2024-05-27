@@ -77,14 +77,14 @@ You will also need to install:
     * A proper C/C++ compiler toolchain, like [GCC](https://gcc.gnu.org){:target="_blank"}
   * On Mac OS X:
     * `python` (`v2.7` recommended, `v3.x.x` is __*not*__ supported) (already installed on Mac OS X)
-    * [Xcode](https://developer.apple.com/xcode/download/){:target="_blank"}
+    * [Xcode](https://developer.apple.com/xcode/){:target="_blank"}
       * You also need to install the `Command Line Tools` via Xcode. You can find this under the menu `Xcode -> Preferences -> Downloads`
       * This step will install `gcc` and the related toolchain containing `make`
   * On Windows:
     * Option 1: Install all the required tools and configurations using Microsoft's [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools){:target="_blank"} using `npm install --global --production windows-build-tools` from an elevated PowerShell or CMD.exe (run as Administrator).
     * Option 2: Install tools and configuration manually:
       * Visual C++ Build Environment:
-        * Option 1: Install [Visual C++ Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools){:target="_blank"} using the **Default Install** option.
+        * Option 1: Install [Visual C++ Build Tools](https://visualstudio.microsoft.com/es/downloads/?q=build+tools){:target="_blank"} using the **Default Install** option.
 
         * Option 2: Install [Visual Studio 2015](https://www.visualstudio.com/products/visual-studio-community-vs){:target="_blank"} (or modify an existing installation) and select *Common Tools for Visual C++* during setup. This also works with the free Community and Express for Desktop editions.
 

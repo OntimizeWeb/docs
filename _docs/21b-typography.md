@@ -14,7 +14,7 @@ Typography is a way of arranging type to make text legible, readable, and appeal
 
 To change the typography it is neccesary to apply an extension of Angular Material's (you can see spec in [Angular Material's typography](https://v8.material.angular.io/guide/typography){:target='_blank'}) and an extension of Ontimize Web Sass-based theming.
 
-*The extension of Ontimize Web Sass-based theming.* is arranged into typography levels, as Angular Material's typography. Each level has a font-size, line-height and font-weight. This custom typography is used to apply css about [o-table]({{ base_path }}/components/table/overview){:target="_blank"} depending of the `row-height` attribute. For more details about table typography and defaut config, see [the source](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/blob/master/src/styles/lite/typography/o-table-typography.scss){:target='_blank'}. The available levels are:
+*The extension of Ontimize Web Sass-based theming.* is arranged into typography levels, as Angular Material's typography. Each level has a font-size, line-height and font-weight. This custom typography is used to apply css about [o-table]({{ base_path }}/components/table/overview){:target="_blank"} depending of the `row-height` attribute. For more details about table typography and defaut config, see [the source](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/blob/8.x.x/src/styles/default/typography/o-table-typography.scss){:target='_blank'}. The available levels are:
 <ul>
   <li><strong>small-header-height</strong>: table header height for 'small' predefined row height options.</li>
   <li><strong>small-row-height</strong>: table row height for 'small' predefined row height options. </li>
