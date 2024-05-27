@@ -146,7 +146,7 @@ variables y se las pasa al método <em>getCellValue()</em>.</p>
 <table>
     <thead>
         <tr>
-            <th colspan="3">o-table-column (atributos de <a href="{{ base_path }}/components/table/api#o-table-column"
+            <th colspan="3">o-table-column (atributos de <a href="{{ base_path }}/components/data/table/api#o-table-column"
 target="_blank">o-table-column</a>)</th>
         </tr>
         <tr>
