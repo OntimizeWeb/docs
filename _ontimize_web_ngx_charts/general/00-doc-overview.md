@@ -13,7 +13,7 @@ Below you can see a list with all available chart types:
 
 * **Line Charts**
     * [Line Chart]({{ base_path }}/charts/configuration/linechart/overview)
-    * [Line + Bar Chart]({{ base_path }}/charts/configuration/linebarchart/)
+    * [Line + Bar Chart]({{ base_path }}/charts/configuration/linebarchart/overview)
     * Parallel coordinates Chart
     * Ohlc Chart
 

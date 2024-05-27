@@ -45,5 +45,3 @@ In other case you can define your own theme, and, if you want, use the ontimize 
 @include ontimize-theme-styles($theme);
   * `@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';`
   * `@include ontimize-theme-styles($theme);`
-
-> **Lite Theme:** The *Lite Theme* defines compact styles for the OntimizeWeb components. You can read more about this theme [here]({{ base_path }}/customize/lite/){:target="_blank"}.

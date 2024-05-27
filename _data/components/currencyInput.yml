@@ -30,6 +30,6 @@ attributes: [{
 
 inheritedOutputs: [{
   component: "FormDataComponent",
-  path: "components/input/overview",
+  path: "components/input/overview/api",
   outputs: ["onChange", "onValueChange", "onFocus", "onBlur"]
 }]

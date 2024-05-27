@@ -7,9 +7,9 @@ comp: "overviewService"
 {% include base_path %}
 {% include toc %}
 
-Form service components are component that must be placed inside a [form]({{ base_path }}/docs/components/form/){:target="_blank"}. This components display a set of options provided by a service and allow the user to select one or more of them. The form service components offered by **OntimizeWeb** are combo, list picker and radio.
+Form service components are component that must be placed inside a [form]({{ base_path }}/components/form/overview){:target="_blank"}. This components display a set of options provided by a service and allow the user to select one or more of them. The form service components offered by **OntimizeWeb** are combo, list picker and radio.
 
-All form service components in **OntimizeWeb** extend the `OFormServiceComponent` class, that is a subclass of [`OFormDataComponent`]({{ base_path }}/components/input/overview){:target="_blank"}. This class provides a set of methods and attributes inherited by all the form service components. This methods and attributes are explained on the **API** section of this page.
+All form service components in **OntimizeWeb** extend the `OFormServiceComponent` class, that is a subclass of [`OFormDataComponent`]({{ base_path }}/components/input/overview/overview){:target="_blank"}. This class provides a set of methods and attributes inherited by all the form service components. This methods and attributes are explained on the **API** section of this page.
 
 ## Parent keys
 

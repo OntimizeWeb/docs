@@ -96,7 +96,7 @@ A typical project needs the following configuration files:
 
 * **[package.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/package.json){:target="_blank"}** identifies npm package dependencies for the project.
 * **[tsconfig.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/tsconfig.json){:target="_blank"}** define how the TypeScript compiler generates JavaScript from the project's files depending on type of compilation.
-* **[angular.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/.angular.json){:target="_blank"}** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
+* **[angular.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/angular.json){:target="_blank"}** provides information to the angular-cli tool about building the application. In this file you can set several defaults and also configure what files are included when your project when is built. Check out the official [documentation](https://github.com/angular/angular-cli/wiki/angular-cli) if you want to know more.
 * **[tslint.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/tslint.json){:target="_blank"}** helps keep your code style consistent.
 * **[ngsw-config.json](https://github.com/OntimizeWeb/ontimize-web-ngx-quickstart/blob/8.x.x/ngsw-config.json){:target="_blank"}** specifies which files and data URLs the Angular service worker should cache and how it should update the cached files and data for PWA
 
@@ -113,7 +113,7 @@ Define the web app that hosts your application in the file *index.html*.
   <title>Ontimize Web Quickstart</title>
 
   <base href="/">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -122,7 +122,7 @@ Define the web app that hosts your application in the file *index.html*.
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 
-  <!-- PWA -->  
+  <!-- PWA -->
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#242424">
 </head>
