@@ -31,7 +31,7 @@ All chart parameters for the *Discrete Bar Chart* can be checked in the API tab.
 *HTML*
 
 ```html
-<o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="data" layout-fill></o-chart>
+<o-chart #discreteBar type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="data" layout-fill></o-chart>
 ```
 
 *TS*
