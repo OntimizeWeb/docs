@@ -785,7 +785,8 @@ a:not([class]) {
     }
 
     @else {
-      background-color: lighten($primary-500-dark, 40%);
+      color: #000;
+      background-color: lighten($primary-500-dark, 20%);
       border-bottom: 2px solid $primary-500-24-dark;
     }
   }
