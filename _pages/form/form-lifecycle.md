@@ -23,6 +23,23 @@ The form modes for the *editable detail form* are the following:
 * **Edition mode with save and undo buttons enabled**: The form adopts this mode after any of the form fields contained within it is modified. Now the save and undo buttons are enabled, allowing the user to save or undo the modified data.
 * **Insertion mode**: This is the mode used to perform the *creation* operation. Here, all the contained fields are blank and they are modifiable. The form toolbar shows the buttons to accept or reject the operation.
 
+Ontimize Web allow you to configure `header-actions` in the entire application or a module using token injection `O_FORM_GLOBAL_CONFIG`. For example, to configure that all o-forms have the **update** action active, it would be configured as shown below.
+
+**app.module.ts**
+```ts
+@NgModule({
+  declarations: [
+  ...
+  ],
+  ...
+  providers: [
+    ...
+    { provide: O_FORM_GLOBAL_CONFIG, useValue: { headerActions:'U' } },
+    ...
+  ],
+  ...
+})
+```
 ### States diagram
 
 You can see the states and transitions between a table and the detail form for the *editable detail form* in the following diagram:

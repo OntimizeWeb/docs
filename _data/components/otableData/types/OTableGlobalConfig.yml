@@ -4,20 +4,49 @@ description: "Represents the default options for the table that can be configure
 type OTableGlobalConfig = {
   autoAdjust: boolean;
   autoAlignTitles: boolean;
+  filterColumnActiveByDefault: boolean;
+  editionMode: OTableEditionMode;
+  detailMode: OTableDetailMode;
+  rowHeight: ORowHeight
 };
 </code></pre></div></div>
 "
 
 attributes: [{
   name: "autoAlignTitles",
-  type: "no | false | yes | true",
+  type: "false | true",
   default: "yes",
   description: "Indicates whether or not to auto align the table header cells",
   required : "",
 },{
   name: "autoAdjust",
-  type: "no | false | yes | true",
+  type: "false | true",
   default : "yes",
   required : "",
   description : "Indicates whether or not to auto adjust column width to its content."
+},{
+  name: "filterColumnActiveByDefault",
+  type: "false | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to active filter by column."
+},{
+  name: "editionMode",
+  type: "'none' | 'click' | 'dblclick' | 'doubleclick'",
+  default : "'none'",
+  required : "",
+  description : "Indicates the edition mode."
+},{
+  name: "detailMode",
+  type: "'none' | 'click' | 'dblclick' | 'doubleclick'",
+  default : "'click'",
+  required : "",
+  description : "Indicates the detail mode."
+},{
+  name: "rowHeight",
+  type: "'small' | 'medium' | 'large'",
+  default : "'click'",
+  required : "",
+  description : "Indicates the row height"
 }]
+
