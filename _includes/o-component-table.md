@@ -55,6 +55,49 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
+  <h2>Directive hierarchy</h2>
+  <div class="multicolumnright jstreeloader">
+    <ul>
+      <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table
+        <ul>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-filter</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-filter-column</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-paginator</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-option</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column-aggregate</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column-calculated</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-context-menu</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-insertable-row</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-button</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-export-button</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-row-expandable</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-expandable-container</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-quickfilter</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-grouping</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-grouping-column</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column-select-all</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-action</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-boolean</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-currency</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-date</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-integer</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-image</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-percentage</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-real</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-service</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-translate</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-time</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-text</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-boolean</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-date</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-integer</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-real</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-email</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <aside class="sidebar__right collapsed">
     <nav id="toc" class="toc collapsed">
       <header><h4 id="tocTitle" class="nav__title collapsed">Table of Contents</h4></header>

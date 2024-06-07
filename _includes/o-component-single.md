@@ -71,6 +71,34 @@
 
 <!-- API -->
 <div id="api" class="o-tabcontent" style="{{style_api}}">
+
+  {% if componentData.extraComponents %}
+    {% if componentData.directive %}
+      <h2>Directive hierarchy</h2>
+      <div class="multicolumnright jstreeloader">
+        <ul>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
+            {{ componentData.directive }}
+            {% assign extraComp = componentData.extraComponents %}
+            {% assign filenameArray = "" | split:"|"  %}
+            {% for files_hash in site.data.components[extraComp] %}
+              {% assign filenameArray = filenameArray | push: files_hash[0] %}
+            {% endfor %}
+            {% assign filenameArray = filenameArray | sort %}
+            {% for filename in filenameArray %}
+              {% assign dataFile = site.data.components[extraComp][filename] %}
+              <ul>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ dataFile.directive }}</li>
+              </ul>
+              {{ dataFileCapture | replace: '    ', '' }}
+            {% endfor %}
+          </li>
+        </ul>
+      </div>
+    {% endif %}
+  {% endif %}
+
+
   {% include o-component-single-api.md component=componentData %}
 
   {% if componentData.extraComponents %}
