@@ -912,6 +912,22 @@
   <li><strong>Insertion mode</strong>: This is the mode used to perform the <em>creation</em> operation. Here, all the contained fields are blank and they are modifiable. The form toolbar shows the buttons to accept or reject the operation.</li>
 </ul>
 
+<p>Ontimize Web allow you to configure <code class="language-plaintext highlighter-rouge">header-actions</code> in the entire application or a module using token injection <code class="language-plaintext highlighter-rouge">O_FORM_GLOBAL_CONFIG</code>. For example, to configure that all o-forms have the <strong>update</strong> action active, it would be configured as shown below.</p>
+
+<p><strong>app.module.ts</strong></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">O_FORM_GLOBAL_CONFIG</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="p">{</span> <span class="na">headerActions</span><span class="p">:</span><span class="dl">'</span><span class="s1">U</span><span class="dl">'</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+<span class="p">})</span>
+</code></pre></div></div>
 <h3 id="states-diagram">States diagram</h3>
 
 <p>You can see the states and transitions between a table and the detail form for the <em>editable detail form</em> in the following diagram:</p>

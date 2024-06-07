@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2024-05-27T07:48:16-04:00">
+  <meta property="article:published_time" content="2024-06-07T05:46:37-04:00">
 
 
 
@@ -931,7 +931,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="May 27, 2024">
+    <meta itemprop="datePublished" content="June 07, 2024">
     
 
     <div class="page__inner-wrap">
@@ -1067,6 +1067,22 @@
 
 <h2 id="storing-component-state">Storing component state</h2>
 <p>Using the <code class="language-plaintext highlighter-rouge">store-state</code> boolean input allows user to choose whether or not to store the component configuration state in local storage. That state is returned by the <code class="language-plaintext highlighter-rouge">getDataToStore</code> method under the key returned in <code class="language-plaintext highlighter-rouge">getComponentKey</code> callback.</p>
+
+<p>By default <code class="language-plaintext highlighter-rouge">store-state</code> it is set to true but with injection token <code class="language-plaintext highlighter-rouge">O_GLOBAL_CONFIG</code> you can desactive this functionality in the application or in the module as shown below.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
+  <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+  <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">...</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="nx">O_GLOBAL_CONFIG</span><span class="p">,</span> <span class="na">useValue</span><span class="p">:</span> <span class="p">{</span> <span class="na">storeState</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="p">...</span>
+  <span class="p">],</span>
+  <span class="p">...</span>
+<span class="p">})</span>
+</code></pre></div></div>
 
 
 </div>
@@ -3098,7 +3114,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-05-27T07:48:16-04:00">May 27, 2024</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-06-07T05:46:37-04:00">June 07, 2024</time></p>
         
       </footer>
 
