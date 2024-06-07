@@ -246,7 +246,22 @@ This option is active by default but it is also possible to configure filtering 
 - Using the input `columns` of the component `o-table-columns-filter`, adding the columns separated by ‘;’.
 - Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
 
-This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.
+This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.  You can also disable/enable the entire application or a certain module with the `O_TABLE_GLOBAL_CONFIG` injection token as shown below.
+
+```ts
+@NgModule({
+  declarations: [
+  ...
+  ],
+  ...
+  providers: [
+    ...
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { filterColumnActiveByDefault: false } },
+    ...
+  ],
+  ...
+})
+```
 
 ![Filter by Column]({{ "/assets/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
 
@@ -1414,6 +1429,13 @@ For more information see the API.
 
 {: .note }
 >There is no limit on the number of columns that the table can group by.
+
+### Row height
+In the o-`table` you can configure various density levels using `row-height` property that it is easy to specify the font and the paddings on the table defined in this [link]({{ base_path }}/customize/typography/#custom-typography-of-ontimize-web-framework).
+
+The default value being `medium` with `small` being the most compact option and `large` being the least.
+
+![Input row-height]({{ "/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
 
 ### Report on demand <span class='menuitem-badge'>new<span>
 
