@@ -603,8 +603,23 @@ All you have to do to enable data editing capabilities for the component is to:
 - Configure `edition-mode="click"` and `detail-mode='none'`
 - Configure data binding
 
-{: .note }
->It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
+ You can also disable/enable cell editing the entire application or a certain module with the `O_TABLE_GLOBAL_CONFIG` injection token as shown below.
+
+ ```
+ @NgModule({
+  declarations: [
+  ...
+  ],
+  ...
+  providers: [
+    ...
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { editionMode: 'click', detailMode: 'none' } }
+    ...
+  ],
+  ...
+})
+```
+>**NOTE**: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
 
 Cell editing results in the following events.
 
@@ -1429,6 +1444,13 @@ For more information see the API.
 
 {: .note }
 >There is no limit on the number of columns that the table can group by.
+
+### Row height
+In the o-`table` you can configure various density levels using `row-height` property that it is easy to specify the font and the paddings on the table defined in this [link]({{ base_path }}/customize/typography/#custom-typography-of-ontimize-web-framework).
+
+The default value being `medium` with `small` being the most compact option and `large` being the least.
+
+![Input row-height]({{ "/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
 
 ### Row height
 In the o-`table` you can configure various density levels using `row-height` property that it is easy to specify the font and the paddings on the table defined in this [link]({{ base_path }}/customize/typography/#custom-typography-of-ontimize-web-framework).
