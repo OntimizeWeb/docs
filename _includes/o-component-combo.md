@@ -54,6 +54,22 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
+  <h2>Directive hierarchy</h2>
+  <div class="multicolumnright jstreeloader">
+    <ul>
+      <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo
+        <ul>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-boolean</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-integer</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-real</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-currency</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-date</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-percentage</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-icon</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <aside class="sidebar__right collapsed">
     <nav id="toc" class="toc collapsed">
       <header><h4 id="tocTitle" class="nav__title collapsed">Table of Contents</h4></header>

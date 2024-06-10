@@ -54,6 +54,20 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
+  <h2>Directive hierarchy</h2>
+  <div class="multicolumnright jstreeloader">
+    <ul>
+      <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker
+        <ul>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-integer</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-real</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-currency</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-date</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-percentage</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <aside class="sidebar__right collapsed">
     <nav id="toc" class="toc collapsed">
       <header><h4 id="tocTitle" class="nav__title collapsed">Table of Contents</h4></header>
