@@ -86,4 +86,7 @@ outputs: [{
 },{
   name: "onDeactivate",
   description: "Element deactivation event triggered when the mouse leaves an element in the chart."
+},{
+  name: "onDataLoaded",
+  description: "Event triggered when the data is loaded"
 }]
