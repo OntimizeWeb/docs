@@ -39,4 +39,7 @@ attributes: [{
 outputs: [{
   name: "onClick",
   description: "Event triggered when the button is clicked"
+},{
+  name: "isVisible",
+  description: "Checks if the button is currently visible to the user. Returns a boolean value indicating whether the button is visible on the screen."
 }]

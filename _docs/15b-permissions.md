@@ -131,6 +131,74 @@ The actions permissions have two effects:
 - Hiding or disabling the form buttons of each action.
 - Disabling (if permissions object says so) the standard form actions executions.
 
+## O-Grid
+
+The `o-grid` component has a configurable `actions` section.
+
+```javascript
+{
+  "attr": "customers_grid",
+  "selector": "o-grid",
+  "actions": [
+    { "attr": "insert", "visible": true, "enabled": false },
+    { "attr": "refresh", "visible": false, "enabled": false },
+    { "attr": "example", "visible": false, "enabled": false }
+  ]
+}
+```
+
+### Grid actions
+
+The `actions` property must be an array containing the grid available actions permissions, each one identified with its `attr`. There are two types of actions:
+
+- `insert` and `refresh`: standard grid actions.
+- Custom user actions.
+
+The actions permissions have two effects:
+
+- Hiding or disabling the grid buttons of each action.
+- Disabling (if permissions object says so) the standard grid actions executions.
+
+## O-list
+
+The `o-list` component has a configurable `actions` section.
+```javascript
+{
+  "attr": "customers_list",
+  "selector": "o-list",
+  "actions": [
+    { "attr": "insert", "visible": true, "enabled": false },
+    { "attr": "delete", "visible": true, "enabled": false },
+    { "attr": "refresh", "visible": false, "enabled": false },
+    { "attr": "example", "visible": false, "enabled": false }
+  ]
+}
+```
+### List actions
+
+The `actions` property must be an array containing the list available actions permissions, each one identified with its `attr`. There are two types of actions:
+
+- `insert`, `delete` and `refresh`: standard list actions.
+- Custom user actions.
+
+The actions permissions have two effects:
+
+- Hiding or disabling the list buttons of each action.
+- Disabling (if permissions object says so) the standard list actions executions.
+
+## O-Button
+
+The `o-button` component has configurable `visible` and `enabled` properties.
+
+```javascript
+{
+  "attr": "button-example",
+  "selector": "o-button",
+  "visible": true,
+  "enabled": false
+}
+```
+
 ## Table
 
 The `o-table` component has three configurable sections: columns, menu and actions.
