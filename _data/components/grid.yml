@@ -111,3 +111,9 @@ outputs: [{
 }]
 
 extraComponents: "gridData"
+
+directives: [
+  {
+    name: "o-grid-item"
+  }
+]

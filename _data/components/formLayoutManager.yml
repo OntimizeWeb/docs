@@ -90,3 +90,15 @@ outputs: [{
   name: "onCloseTab",
   description: "Event triggered when a detail tab is closed"
 }]
+
+directives: [
+  {
+    name: "o-form-layout-dialog-options"
+  },
+  {
+    name: "o-form-layout-split-pane-options"
+  },
+  {
+    name: "o-form-layout-tabgroup-options"
+  }
+]

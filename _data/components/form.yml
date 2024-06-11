@@ -359,5 +359,12 @@ methods: [{
   return: "boolean"
 }]
 
-
+directives: [
+  {
+    name: "o-form-toolbar"
+  },
+  {
+    name: "IFormValueOptions"
+  }
+]
 

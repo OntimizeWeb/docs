@@ -81,3 +81,23 @@ outputs: [{
 }]
 
 extraComponents: "listData"
+
+directives: [
+  {
+    name: "o-list-item",
+    directives: [
+      {
+        name: "o-list-item-text"
+      },
+      {
+        name: "o-list-item-avatar"
+      },
+      {
+        name: "o-list-item-card"
+      },
+      {
+        name: "o-list-item-card-image"
+      }
+    ]
+  }
+]
