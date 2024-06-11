@@ -60,9 +60,32 @@
     <ul>
       <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table
         <ul>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-filter</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-filter-column</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column
+            <ul>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-action</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-boolean</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-currency</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-date</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-integer</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-image</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-percentage</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-real</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-service</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-translate</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-time</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-text</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-boolean</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-date</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-integer</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-real</li>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-email</li>
+            </ul>
+          </li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-filter
+            <ul>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-filter-column</li>
+            </ul>
+          </li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-paginator</li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-option</li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column-aggregate</li>
@@ -77,23 +100,6 @@
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-grouping</li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-grouping-column</li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column-select-all</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-action</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-boolean</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-currency</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-date</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-integer</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-image</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-percentage</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-real</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-service</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-translate</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-renderer-time</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-text</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-boolean</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-date</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-integer</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-real</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-cell-editor-email</li>
         </ul>
       </li>
     </ul>

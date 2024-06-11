@@ -9,3 +9,23 @@ attributes: [{
 }]
 
 extraComponents: "contextmenuData"
+
+directives: [
+  {
+    name: "o-context-menu-group",
+    directives: [
+      {
+        name: "o-context-menu-item"
+      },
+      {
+        name: "o-context-menu-separator"
+      }
+    ]
+  },
+  {
+    name: "o-context-menu-item"
+  },
+  {
+    name: "o-context-menu-separator"
+  }
+]

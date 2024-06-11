@@ -72,30 +72,44 @@
 <!-- API -->
 <div id="api" class="o-tabcontent" style="{{style_api}}">
 
-  {% if componentData.extraComponents %}
-    {% if componentData.directive %}
-      <h2>Directive hierarchy</h2>
-      <div class="multicolumnright jstreeloader">
-        <ul>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
-            {{ componentData.directive }}
-            {% assign extraComp = componentData.extraComponents %}
-            {% assign filenameArray = "" | split:"|"  %}
-            {% for files_hash in site.data.components[extraComp] %}
-              {% assign filenameArray = filenameArray | push: files_hash[0] %}
-            {% endfor %}
-            {% assign filenameArray = filenameArray | sort %}
-            {% for filename in filenameArray %}
-              {% assign dataFile = site.data.components[extraComp][filename] %}
+  {% if componentData.directives %}
+    <h2>Directive hierarchy</h2>
+    <div class="multicolumnright jstreeloader">
+      <ul>
+        <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
+          {{ componentData.directive }}
+          {% for directive in componentData.directives %}
+            {% if directive.directives %}
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ dataFile.directive }}</li>
+                <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}
+                  {% for secondDirective in directive.directives %}
+                    {% if secondDirective.directives %}
+                      <ul>
+                        <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}
+                          {% for thirdDirective in secondDirective.directives %}
+                            <ul>
+                              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ thirdDirective.name }}</li>
+                            </ul>
+                          {% endfor %}
+                        </li>
+                      </ul>
+                    {% else %}
+                      <ul>
+                        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}</li>
+                      </ul>
+                    {% endif %}
+                  {% endfor %}
+                </li>
               </ul>
-              {{ dataFileCapture | replace: '    ', '' }}
-            {% endfor %}
-          </li>
-        </ul>
-      </div>
-    {% endif %}
+            {% else %}
+              <ul>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}</li>
+              </ul>
+            {% endif %}
+          {% endfor %}
+        </li>
+      </ul>
+    </div>
   {% endif %}
 
 
