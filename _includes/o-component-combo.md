@@ -54,6 +54,11 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
+  {% if componentData.title %}
+    <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+    {% else %}
+    <h2 id="{{page.title}}" >{{ page.title }}</h2>
+  {% endif %}
   <h2>Directive hierarchy</h2>
   <div class="multicolumnright jstreeloader">
     <ul>
