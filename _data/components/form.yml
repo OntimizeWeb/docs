@@ -362,9 +362,6 @@ methods: [{
 directives: [
   {
     name: "o-form-toolbar"
-  },
-  {
-    name: "IFormValueOptions"
   }
 ]
 
