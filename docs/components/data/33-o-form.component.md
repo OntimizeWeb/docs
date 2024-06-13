@@ -335,3 +335,9 @@ Ontimize web now supports the JDBC **UUID** sql type. To indicate that a key col
   ....
 </o-form>
 ```
+
+## Set-value-orde r<span class='menuitem-badge'>new<span>
+
+The o-form doesn't guarantee the order in which the fields will be filled. If a field value is required by another one (as a parent-key of a form field, an error could be produced).
+
+In principle, the default filler should be right in most cases, but with this parameter the filler order can be established. It isn't necessary to establish every field attribute. The attributes specified in this parameter are filled first.
