@@ -59,7 +59,7 @@
     {% else %}
     <h2 id="{{page.title}}" >{{ page.title }}</h2>
   {% endif %}
-  <h2>Directive hierarchy</h2>
+  <h3>Directive hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
       <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker

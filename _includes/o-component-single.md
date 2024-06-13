@@ -78,7 +78,7 @@
   {% endif %}
   
   {% if componentData.directives %}
-    <h2>Directive hierarchy</h2>
+    <h3>Directive hierarchy</h3>
     <div class="multicolumnright jstreeloader">
       <ul>
         <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
