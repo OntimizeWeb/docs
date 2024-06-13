@@ -70,3 +70,9 @@ methods: [{
   name: "clearFilter",
   description: "Clears the form fields used by the filter builder to create the filter."
 }]
+
+directives: [
+  {
+    name: "o-filter-builder-menu"
+  }
+]

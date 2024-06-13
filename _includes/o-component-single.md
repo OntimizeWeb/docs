@@ -71,6 +71,55 @@
 
 <!-- API -->
 <div id="api" class="o-tabcontent" style="{{style_api}}">
+  {% if componentData.title %}
+    <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+    {% else %}
+    <h2 id="{{page.title}}" >{{ page.title }}</h2>
+  {% endif %}
+  {% if componentData.directive %}
+    <p><strong class="grey-color" id="{{componentData.directive}}">Directive:</strong> {{ componentData.directive }}</p>
+  {% endif %}
+  {% if componentData.directives %}
+    <h3>Directive hierarchy</h3>
+    <div class="multicolumnright jstreeloader">
+      <ul>
+        <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
+          {{ componentData.directive }}
+          {% for directive in componentData.directives %}
+            {% if directive.directives %}
+              <ul>
+                <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}
+                  {% for secondDirective in directive.directives %}
+                    {% if secondDirective.directives %}
+                      <ul>
+                        <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}
+                          {% for thirdDirective in secondDirective.directives %}
+                            <ul>
+                              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ thirdDirective.name }}</li>
+                            </ul>
+                          {% endfor %}
+                        </li>
+                      </ul>
+                    {% else %}
+                      <ul>
+                        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}</li>
+                      </ul>
+                    {% endif %}
+                  {% endfor %}
+                </li>
+              </ul>
+            {% else %}
+              <ul>
+                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}</li>
+              </ul>
+            {% endif %}
+          {% endfor %}
+        </li>
+      </ul>
+    </div>
+  {% endif %}
+
+
   {% include o-component-single-api.md component=componentData %}
 
   {% if componentData.extraComponents %}
@@ -83,7 +132,7 @@
     {% for filename in filenameArray %}
       {% assign dataFile = site.data.components[extraComp][filename] %}
       {% capture dataFileCapture %}
-        {% include o-component-single-api.md component=dataFile %}
+        {% include o-component-single-api.md component=dataFile extra=true %}
       {% endcapture %}
 
       {{ dataFileCapture | replace: '    ', '' }}

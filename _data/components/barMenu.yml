@@ -16,3 +16,29 @@ attributes: [{
 ]
 
 extraComponents: "barMenuData"
+
+directives: [
+  {
+    name: "o-bar-menu-item"
+  },
+  {
+    name: "o-bar-menu-group",
+    directives: [
+      {
+        name: "o-bar-menu-item"
+      },
+      {
+        name: "o-bar-menu-separator"
+      },
+      {
+        name: "o-locale-bar-menu-item"
+      }
+    ]
+  },
+  {
+    name: "o-bar-menu-separator"
+  },
+  {
+    name: "o-locale-bar-menu-item"
+  }
+]

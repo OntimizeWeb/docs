@@ -40,3 +40,14 @@ outputs: [{
 }]
 
 extraComponents: "buttonToggle"
+
+directives: [
+  {
+    name: "o-button-toggle-group",
+    directives: [
+      {
+        name: "o-button-toggle"
+      }
+    ]
+  }
+]

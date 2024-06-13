@@ -54,6 +54,28 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
+  {% if componentData.title %}
+    <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+    {% else %}
+    <h2 id="{{page.title}}" >{{ page.title }}</h2>
+  {% endif %}
+  <p><strong class="grey-color">Directive:</strong> o-combo</p>
+  <h3>Directive hierarchy</h3>
+  <div class="multicolumnright jstreeloader">
+    <ul>
+      <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo
+        <ul>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-boolean</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-integer</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-real</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-currency</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-date</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-percentage</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-icon</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <aside class="sidebar__right collapsed">
     <nav id="toc" class="toc collapsed">
       <header><h4 id="tocTitle" class="nav__title collapsed">Table of Contents</h4></header>

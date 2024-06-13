@@ -54,6 +54,26 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
+  {% if componentData.title %}
+    <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+    {% else %}
+    <h2 id="{{page.title}}" >{{ page.title }}</h2>
+  {% endif %}
+  <p><strong class="grey-color">Directive:</strong> o-list-picker</p>
+  <h3>Directive hierarchy</h3>
+  <div class="multicolumnright jstreeloader">
+    <ul>
+      <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker
+        <ul>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-integer</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-real</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-currency</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-date</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-percentage</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <aside class="sidebar__right collapsed">
     <nav id="toc" class="toc collapsed">
       <header><h4 id="tocTitle" class="nav__title collapsed">Table of Contents</h4></header>
