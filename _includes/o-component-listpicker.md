@@ -56,7 +56,7 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
-  <h2 id="OListPicker">OListPicker</h2>
+  <h2 id="OListPicker">OListPickerComponent</h2>
   <p><strong class="grey-color">Directive:</strong> o-list-picker</p>
   <h3>Directive hierarchy</h3>
   <div class="multicolumnright jstreeloader">
