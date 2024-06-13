@@ -4,16 +4,17 @@
   {% assign filename =  file[0] %}
   {% assign componentAPI = include.folder[filename];%}
   {% if componentAPI.directive %}
-  <h2 id="{{ componentAPI.directive }}">
-    <span>{{ componentAPI.class }} </span>
-    {% if componentAPI.extends %}
-      extends {{ componentAPI.extends }}
+  {% if componentAPI.directive != 'o-table' and componentAPI.directive != 'o-combo' and componentAPI.directive != 'o-list-picker' %}
+    <h2 id="{{ componentAPI.directive }}">
+      <span>{{ componentAPI.class }} </span>
+      {% if componentAPI.extends %}
+        extends {{ componentAPI.extends }}
+      {% endif %}
+    </h2>
+    {% if componentAPI.directive %}
+      <p><strong class="grey-color">Directive:</strong> {{ componentAPI.directive }}</p>
     {% endif %}
-  </h2>
-  {% if componentAPI.directive %}
-    <p><strong class="grey-color">Directive:</strong> {{ componentAPI.directive }}</p>
   {% endif %}
-
   {% if componentAPI.inherit_properties %}
   <h3 class="grey-color" id="inherited-properties">Inherited properties</h3>
   <ul>

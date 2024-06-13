@@ -76,7 +76,9 @@
     {% else %}
     <h2 id="{{page.title}}" >{{ page.title }}</h2>
   {% endif %}
-  
+  {% if componentData.directive %}
+    <p><strong class="grey-color" id="{{componentData.directive}}">Directive:</strong> {{ componentData.directive }}</p>
+  {% endif %}
   {% if componentData.directives %}
     <h3>Directive hierarchy</h3>
     <div class="multicolumnright jstreeloader">
@@ -130,7 +132,7 @@
     {% for filename in filenameArray %}
       {% assign dataFile = site.data.components[extraComp][filename] %}
       {% capture dataFileCapture %}
-        {% include o-component-single-api.md component=dataFile %}
+        {% include o-component-single-api.md component=dataFile extra=true %}
       {% endcapture %}
 
       {{ dataFileCapture | replace: '    ', '' }}

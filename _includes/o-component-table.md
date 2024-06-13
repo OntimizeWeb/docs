@@ -57,9 +57,12 @@
 <div id="api" style="{{style_api}}">
   {% if componentData.title %}
     <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
-    {% else %}
+  {% else %}
     <h2 id="{{page.title}}" >{{ page.title }}</h2>
   {% endif %}
+
+  <p><strong class="grey-color">Directive:</strong> o-table</p>
+
   <h3>Directive hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
@@ -99,8 +102,11 @@
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-insertable-row</li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-button</li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-export-button</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-row-expandable</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-expandable-container</li>
+          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-row-expandable
+            <ul>
+              <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-expandable-container</li>
+            </ul>
+          </li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-quickfilter</li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-grouping</li>
           <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-columns-grouping-column</li>

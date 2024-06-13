@@ -59,6 +59,7 @@
     {% else %}
     <h2 id="{{page.title}}" >{{ page.title }}</h2>
   {% endif %}
+  <p><strong class="grey-color">Directive:</strong> o-list-picker</p>
   <h3>Directive hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
