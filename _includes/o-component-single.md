@@ -75,6 +75,7 @@
 
 <!-- API -->
 <div id="api" class="o-tabcontent" style="{{style_api}}">
+
   {% if componentData.apiTitle %}
     <h2 id="{{componentData.apiTitle}}" >{{ componentData.apiTitle }}</h2>
   {% elsif componentData.title %}

@@ -56,6 +56,7 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
+
   <h2 id="OComboComponent" >OComboComponent</h2>
   <p><strong class="grey-color">Directive:</strong> o-combo</p>
   <h3>Directive hierarchy</h3>
