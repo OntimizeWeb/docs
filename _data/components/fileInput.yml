@@ -1,5 +1,7 @@
 directive: "o-file-input"
 
+apiTitle: "OFileInputComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

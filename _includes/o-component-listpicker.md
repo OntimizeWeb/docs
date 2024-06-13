@@ -29,6 +29,8 @@
   {% assign overview_class='active'%}
 {% endif %}
 
+<h2 id="List picker" >List picker</h2>
+
 <!-- Tab links -->
 <div class="o-tab">
   <button class="o-tablinks {{overview_class}}"  onclick="openTab(event, 'overview')">Overview</button>
@@ -54,11 +56,7 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
-  {% if componentData.title %}
-    <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
-    {% else %}
-    <h2 id="{{page.title}}" >{{ page.title }}</h2>
-  {% endif %}
+  <h2 id="OListPicker">OListPicker</h2>
   <p><strong class="grey-color">Directive:</strong> o-list-picker</p>
   <h3>Directive hierarchy</h3>
   <div class="multicolumnright jstreeloader">

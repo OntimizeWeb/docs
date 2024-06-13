@@ -1,5 +1,7 @@
 directive: "o-bar-menu"
 
+apiTitle: "OBarMenuComponent"
+
 attributes: [{
   name: "title",
   type: "string",

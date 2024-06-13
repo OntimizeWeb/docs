@@ -40,7 +40,11 @@
   {% assign style_api='display:none'%}
   {% assign overview_class='active'%}
 {% endif%}
-
+{% if componentData.title %}
+  <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+  {% else %}
+  <h2 id="{{page.title}}" >{{ page.title }}</h2>
+{% endif %}
  {% if componentData.version %}
  <p> This component is available since version <i>{{componentData.version}}</i>.</p>
  {% endif %}
@@ -71,9 +75,11 @@
 
 <!-- API -->
 <div id="api" class="o-tabcontent" style="{{style_api}}">
-  {% if componentData.title %}
+  {% if componentData.apiTitle %}
+    <h2 id="{{componentData.apiTitle}}" >{{ componentData.apiTitle }}</h2>
+  {% elsif componentData.title %}
     <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
-    {% else %}
+  {% else %}
     <h2 id="{{page.title}}" >{{ page.title }}</h2>
   {% endif %}
   {% if componentData.directive %}

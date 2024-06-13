@@ -1,5 +1,7 @@
 directive : "o-nif-input"
 
+apiTitle: "ONifInputComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

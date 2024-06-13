@@ -1,5 +1,7 @@
 directive : "o-chart"
 
+apiTitle: "OChartComponent"
+
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",

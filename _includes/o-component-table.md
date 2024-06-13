@@ -29,6 +29,8 @@
   {% assign overview_class='active'%}
 {% endif %}
 
+<h2 id="Table" >Table</h2>
+
 <!-- Tab links -->
 <div class="o-tab">
   <button class="o-tablinks {{overview_class}}"  onclick="openTab(event, 'overview')">Overview</button>
@@ -55,12 +57,8 @@
 
 <!-- API -->
 <div id="api" style="{{style_api}}">
-  {% if componentData.title %}
-    <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
-  {% else %}
-    <h2 id="{{page.title}}" >{{ page.title }}</h2>
-  {% endif %}
 
+  <h2 id="OTableComponent" >OTableComponent</h2>
   <p><strong class="grey-color">Directive:</strong> o-table</p>
 
   <h3>Directive hierarchy</h3>

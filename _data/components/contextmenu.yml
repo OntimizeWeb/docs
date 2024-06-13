@@ -1,4 +1,6 @@
-directive: "oContextMenu"
+directive: "o-context-menu"
+
+apiTitle: "OContextMenuComponent"
 
 attributes: [{
   name: "oContextMenuData",

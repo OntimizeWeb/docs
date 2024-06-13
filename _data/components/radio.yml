@@ -1,5 +1,7 @@
 directive: "o-radio"
 
+apiTitle: "ORadioComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

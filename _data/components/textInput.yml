@@ -1,5 +1,7 @@
 directive : "o-text-input"
 
+apiTitle: "OtextInputComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

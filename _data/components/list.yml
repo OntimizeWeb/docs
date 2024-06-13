@@ -1,5 +1,7 @@
 directive: "o-list"
 
+apiTitle: "OListComponent"
+
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",
