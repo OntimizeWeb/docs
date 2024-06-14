@@ -2,9 +2,7 @@
 permalink: /components/data/table/filters/
 title: "Table filters"
 layout: default
-parent: Data
-grand_parent: Components
-nav_order: 6
+nav_exclude: true
 ---
 {% include base_path %}
 
