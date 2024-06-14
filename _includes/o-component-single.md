@@ -87,7 +87,7 @@
     <p><strong class="grey-color" id="{{componentData.directive}}">Directive:</strong> {{ componentData.directive }}</p>
   {% endif %}
   {% if componentData.directives %}
-    <h3>Directive hierarchy</h3>
+    <h3>Component hierarchy</h3>
     <div class="multicolumnright jstreeloader">
       <ul>
         <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>

@@ -59,7 +59,7 @@
 
   <h2 id="OComboComponent" >OComboComponent</h2>
   <p><strong class="grey-color">Directive:</strong> o-combo</p>
-  <h3>Directive hierarchy</h3>
+  <h3>Component hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
       <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo

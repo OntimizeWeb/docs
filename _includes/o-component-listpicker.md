@@ -58,7 +58,7 @@
 <div id="api" style="{{style_api}}">
   <h2 id="OListPicker">OListPickerComponent</h2>
   <p><strong class="grey-color">Directive:</strong> o-list-picker</p>
-  <h3>Directive hierarchy</h3>
+  <h3>Component hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
       <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker
