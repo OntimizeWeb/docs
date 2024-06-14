@@ -61,13 +61,13 @@
   <h3>Directive hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
-      <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker
+      <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker
         <ul>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-integer</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-real</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-currency</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-date</li>
-          <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-percentage</li>
+          <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-integer</li>
+          <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-real</li>
+          <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-currency</li>
+          <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-date</li>
+          <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-percentage</li>
         </ul>
       </li>
     </ul>

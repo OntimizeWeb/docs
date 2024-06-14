@@ -90,26 +90,26 @@
     <h3>Directive hierarchy</h3>
     <div class="multicolumnright jstreeloader">
       <ul>
-        <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
+        <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
           {{ componentData.directive }}
           {% for directive in componentData.directives %}
             {% if directive.directives %}
               <ul>
-                <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}
+                <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}
                   {% for secondDirective in directive.directives %}
                     {% if secondDirective.directives %}
                       <ul>
-                        <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}
+                        <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}
                           {% for thirdDirective in secondDirective.directives %}
                             <ul>
-                              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ thirdDirective.name }}</li>
+                              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ thirdDirective.name }}</li>
                             </ul>
                           {% endfor %}
                         </li>
                       </ul>
                     {% else %}
                       <ul>
-                        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}</li>
+                        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}</li>
                       </ul>
                     {% endif %}
                   {% endfor %}
@@ -117,7 +117,7 @@
               </ul>
             {% else %}
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}</li>
               </ul>
             {% endif %}
           {% endfor %}
