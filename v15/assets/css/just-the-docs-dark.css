@@ -10753,7 +10753,8 @@ a:not([class]):hover {
   color: rgba(255, 255, 255, 0.7411764706);
 }
 .o-tab button:hover {
-  background-color: white;
+  color: #000;
+  background-color: #d4e2ee;
   border-bottom: 2px solid rgba(138, 178, 210, 0.2392156863);
 }
 .o-tab button.active {
@@ -10996,6 +10997,10 @@ a:not([class]):hover {
 
 .jstreeloader ul > li::before {
   content: "";
+}
+
+a.jstree-anchor {
+  cursor: default;
 }
 
 @media (min-width: 50rem) and ((max-width: 66.5rem)) {

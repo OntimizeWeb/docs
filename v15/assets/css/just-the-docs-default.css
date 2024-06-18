@@ -10730,6 +10730,10 @@ a:not([class]):hover {
   content: "";
 }
 
+a.jstree-anchor {
+  cursor: default;
+}
+
 @media (min-width: 50rem) and ((max-width: 66.5rem)) {
   #top.main {
     max-width: none;
