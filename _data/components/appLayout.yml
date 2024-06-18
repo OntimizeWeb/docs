@@ -1,5 +1,7 @@
 directive: "o-app-layout"
 
+apiTitle: "OAppLayoutComponent"
+
 attributes:
   [
     {
@@ -110,3 +112,20 @@ outputs: [{
 }]
 
 extraComponents: "appLayoutData"
+
+directives: [
+  {
+    name: "o-app-layout-header"
+  },
+  {
+    name: "o-app-layout-sidenav"
+  },
+  {
+    name: "o-user-info-configuration",
+    directives: [
+      {
+        name: "o-user-info-configuration-item"
+      }
+    ]
+  }
+]

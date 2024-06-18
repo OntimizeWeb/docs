@@ -1,4 +1,7 @@
 directive: "o-form"
+
+apiTitle: "OFormComponent"
+
 extraComponents: "formData"
 
 attributes: [
@@ -170,6 +173,13 @@ attributes: [
   default: "",
   required: "",
   description: "Custom service to display CRUD and other actions form messages"
+},{
+  name: "set-value-order",
+  type: "string",
+  default: "",
+  required: "",
+  since: "15.1.0",
+  description: "Fields attr's order that ​​will be be set values in this order in the form, separated by ';'"
 }]
 
 outputs: [{
@@ -359,5 +369,9 @@ methods: [{
   return: "boolean"
 }]
 
-
+directives: [
+  {
+    name: "o-form-toolbar"
+  }
+]
 

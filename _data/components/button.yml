@@ -1,5 +1,7 @@
 directive: "o-button"
 
+apiTitle: "OButtonComponent"
+
 attributes: [{
   name: "attr"
 },{

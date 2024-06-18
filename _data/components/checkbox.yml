@@ -1,5 +1,7 @@
 directive: "o-checkbox"
 
+apiTitle: "OCheckboxComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

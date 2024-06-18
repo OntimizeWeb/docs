@@ -563,3 +563,5 @@ methods: [{
   returns: "Expression",
   description: "Returns the complex expression from the column filters."
 }]
+
+extraComponents: "otableData"

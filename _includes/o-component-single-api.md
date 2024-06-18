@@ -2,11 +2,12 @@
 {% assign inputsColumns = "Name|Since|Description|Default" | split: "|" %}
 {% assign componentData = include.component %}
 {% if componentData %}
- {% if componentData.title %}
-  <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+{% if include.extra == true %}
+  {% if componentData.title %}
+    <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
   {% else %}
-  <h2 id="{{page.title}}" >{{ page.title }}</h2>
- {% endif %}
+    <h2 id="{{page.title}}" >{{ page.title }}</h2>
+  {% endif %}
 
   {% if componentData.directive %}
     <p><strong class="grey-color" id="{{componentData.directive}}">Directive:</strong> {{ componentData.directive }}</p>
@@ -14,7 +15,7 @@
   {% if componentData.class %}
     <p><strong class="grey-color" id="{{componentData.class }}">Class:</strong> {{ componentData.class }}</p>
   {% endif %}
-
+{% endif %}
 
   {% if componentData.properties %}
     <h3 id="properties" class="grey-color">Properties</h3>

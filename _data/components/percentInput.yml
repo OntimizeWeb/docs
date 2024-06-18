@@ -1,5 +1,7 @@
 directive : "o-percent-input"
 
+apiTitle: "OPercentInputComponent"
+
 attributes: [{
   name: "value-base",
   type: "1 | 100",

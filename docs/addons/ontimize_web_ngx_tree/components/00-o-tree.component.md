@@ -5,7 +5,7 @@ comp: tree
 layout: o-component
 parent: Data
 grand_parent: Components
-nav_order: 7
+nav_order: 6
 ---
 {% include base_path %}
 {% include toc %}

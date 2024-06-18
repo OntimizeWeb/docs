@@ -1,6 +1,8 @@
 directive: "o-daterange-input"
 version: "4.0.6"
 
+apiTitle: "ODateRangeInputComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",
