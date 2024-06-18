@@ -1,5 +1,7 @@
 directive : "o-map"
 
+apiTitle: "OMapComponent"
+
 attributes: [{
   name: "center",
   description: "Initialize the map with a given center in latitude and longitude. e.g center='42.240599;-8.720727'",

@@ -1,6 +1,8 @@
 
 directive : "o-tree"
 
+apiTitle: "OTreeComponent"
+
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",

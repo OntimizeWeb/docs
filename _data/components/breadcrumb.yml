@@ -1,5 +1,7 @@
 directive: "o-breadcrumb"
 
+apiTitle: "OBreadcrumbComponent"
+
 attributes: [{
   name: "form",
   type: "OFormComponent",

@@ -1,6 +1,8 @@
 directive: "o-grid"
 version: "3.1.0"
 
+apiTitle: "OGridComponent"
+
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",

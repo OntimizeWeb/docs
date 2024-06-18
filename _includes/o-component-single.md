@@ -40,7 +40,11 @@
   {% assign style_api='display:none'%}
   {% assign overview_class='active'%}
 {% endif%}
-
+{% if componentData.title %}
+  <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
+  {% else %}
+  <h2 id="{{page.title}}" >{{ page.title }}</h2>
+{% endif %}
  {% if componentData.version %}
  <p> This component is available since version <i>{{componentData.version}}</i>.</p>
  {% endif %}
@@ -71,38 +75,41 @@
 
 <!-- API -->
 <div id="api" class="o-tabcontent" style="{{style_api}}">
-  {% if componentData.title %}
+
+  {% if componentData.apiTitle %}
+    <h2 id="{{componentData.apiTitle}}" >{{ componentData.apiTitle }}</h2>
+  {% elsif componentData.title %}
     <h2 id="{{componentData.title}}" >{{ componentData.title }}</h2>
-    {% else %}
+  {% else %}
     <h2 id="{{page.title}}" >{{ page.title }}</h2>
   {% endif %}
   {% if componentData.directive %}
     <p><strong class="grey-color" id="{{componentData.directive}}">Directive:</strong> {{ componentData.directive }}</p>
   {% endif %}
   {% if componentData.directives %}
-    <h3>Directive hierarchy</h3>
+    <h3>Component hierarchy</h3>
     <div class="multicolumnright jstreeloader">
       <ul>
-        <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
+        <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
           {{ componentData.directive }}
           {% for directive in componentData.directives %}
             {% if directive.directives %}
               <ul>
-                <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}
+                <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}
                   {% for secondDirective in directive.directives %}
                     {% if secondDirective.directives %}
                       <ul>
-                        <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}
+                        <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}
                           {% for thirdDirective in secondDirective.directives %}
                             <ul>
-                              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ thirdDirective.name }}</li>
+                              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ thirdDirective.name }}</li>
                             </ul>
                           {% endfor %}
                         </li>
                       </ul>
                     {% else %}
                       <ul>
-                        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}</li>
+                        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ secondDirective.name }}</li>
                       </ul>
                     {% endif %}
                   {% endfor %}
@@ -110,7 +117,7 @@
               </ul>
             {% else %}
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>{{ directive.name }}</li>
               </ul>
             {% endif %}
           {% endfor %}

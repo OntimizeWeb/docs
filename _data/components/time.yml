@@ -1,5 +1,7 @@
 directive : "o-time-input"
 
+apiTitle: "OTimeInputComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

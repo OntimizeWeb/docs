@@ -1,6 +1,8 @@
 directive: "o-chart"
 chart: true
 
+apiTitle: "OChartComponent"
+
 inheritedAttributes: [{
   component: "OChartComponent",
   path: "addons/charts/overview/api",
