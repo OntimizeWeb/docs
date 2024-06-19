@@ -131,7 +131,7 @@ The actions permissions have two effects:
 - Hiding or disabling the form buttons of each action.
 - Disabling (if permissions object says so) the standard form actions executions.
 
-## O-Grid
+## Grid
 
 The `o-grid` component has a configurable `actions` section.
 
@@ -159,7 +159,7 @@ The actions permissions have two effects:
 - Hiding or disabling the grid buttons of each action.
 - Disabling (if permissions object says so) the standard grid actions executions.
 
-## O-list
+## List
 
 The `o-list` component has a configurable `actions` section.
 ```javascript
@@ -186,7 +186,7 @@ The actions permissions have two effects:
 - Hiding or disabling the list buttons of each action.
 - Disabling (if permissions object says so) the standard list actions executions.
 
-## O-Button
+## Button
 
 The `o-button` component has configurable `visible` and `enabled` properties.
 
@@ -369,3 +369,60 @@ The `menu` property must be an array containing the permissions of the applicati
   ]
 }
 ```
+# Customizing the Permissions Service
+
+Ontimize Web allows for extensive customization of the permissions service. Below are the key methods available for those who wish to extend or modify the default behavior:
+
+## Key Methods for Customization
+
+#### `canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean`
+This method determines if a route can be activated based on the user's permissions.
+
+#### `canLoad(route: Route, segments: UrlSegment[]): boolean`
+This method determines if a module can be loaded based on the user's permissions.
+
+#### `hasPermission(component: string, action: string): boolean`
+This method checks if the user has the specified permission for a component and action.
+
+#### `getPermissions(): Observable<Permissions[]>`
+This method retrieves the current permissions for the user.
+
+#### `getTablePermissions(table: string): any`
+This method retrieves permissions for a specific table.
+
+#### `getColumnPermissions(table: string, column: string): any`
+This method retrieves permissions for a specific column in a table.
+
+#### `getFormPermissions(form: string): any`
+This method retrieves permissions for a specific form.
+
+#### `getFormFieldPermissions(form: string, field: string): any`
+This method retrieves permissions for a specific field in a form.
+
+#### `getUserPermissionsAsPromise(): Promise<boolean>`
+This method retrieves user permissions as a promise.
+
+#### `getTablePermissions(attr: string, actRoute: ActivatedRoute): OTablePermissions`
+This method retrieves table permissions for a specific attribute and activated route.
+
+#### `getFormPermissions(attr: string, actRoute: ActivatedRoute): OFormPermissions`
+This method retrieves form permissions for a specific attribute and activated route.
+
+#### `getListPermissions(attr: string, actRoute: ActivatedRoute): OListPermissions`
+This method retrieves list permissions for a specific attribute and activated route.
+
+#### `getGridPermissions(attr: string, actRoute: ActivatedRoute): OGridPermissions`
+This method retrieves grid permissions for a specific attribute and activated route.
+
+#### `getMenuPermissions(attr: string): OPermissions`
+This method retrieves menu permissions for a specific attribute.
+
+#### `getAllMenuPermissions(): OPermissions[]`
+This method retrieves all menu permissions.
+
+#### `getOButtonPermissions(attr: string, actRoute: ActivatedRoute): OPermissions`
+This method retrieves button permissions for a specific attribute and activated route.
+
+#### `isPermissionIdRouteRestricted(permissionId: string): boolean`
+This method checks if a permission ID is restricted for a route.
+
