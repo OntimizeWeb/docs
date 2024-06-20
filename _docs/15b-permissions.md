@@ -371,15 +371,9 @@ The `menu` property must be an array containing the permissions of the applicati
 ```
 # Customizing the Permissions Service
 
-Ontimize Web allows for extensive customization of the permissions service. Below are the key methods available for those who wish to extend or modify the default behavior:
+Ontimize Web allows for extensive customization of the `permissions service`. Below are the key methods available for those who wish to extend or modify the default behavior:
 
-## Key Methods for Customization
-
-#### `canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean`
-This method determines if a route can be activated based on the user's permissions.
-
-#### `canLoad(route: Route, segments: UrlSegment[]): boolean`
-This method determines if a module can be loaded based on the user's permissions.
+## Methods
 
 #### `hasPermission(component: string, action: string): boolean`
 This method checks if the user has the specified permission for a component and action.
