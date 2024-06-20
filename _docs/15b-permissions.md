@@ -369,32 +369,20 @@ The `menu` property must be an array containing the permissions of the applicati
   ]
 }
 ```
-# Customizing the Permissions Service
+# Permissions Service API
 
 Ontimize Web allows for extensive customization of the `permissions service`. Below are the key methods available for those who wish to extend or modify the default behavior:
 
 ## Methods
 
-#### `hasPermission(component: string, action: string): boolean`
-This method checks if the user has the specified permission for a component and action.
-
-#### `getPermissions(): Observable<Permissions[]>`
-This method retrieves the current permissions for the user.
-
-#### `getTablePermissions(table: string): any`
-This method retrieves permissions for a specific table.
-
-#### `getColumnPermissions(table: string, column: string): any`
-This method retrieves permissions for a specific column in a table.
-
-#### `getFormPermissions(form: string): any`
-This method retrieves permissions for a specific form.
-
-#### `getFormFieldPermissions(form: string, field: string): any`
-This method retrieves permissions for a specific field in a form.
+#### `hasPermission(): boolean`
+This method checks if the user has permissions.
 
 #### `getUserPermissionsAsPromise(): Promise<boolean>`
 This method retrieves user permissions as a promise.
+
+#### `getOComponentPermissions(attr: string, actRoute: ActivatedRoute, selector: string): OComponentPermissionsByRoute`
+This method retrieves component permissions for a specific attribute, activated route, and selector.
 
 #### `getTablePermissions(attr: string, actRoute: ActivatedRoute): OTablePermissions`
 This method retrieves table permissions for a specific attribute and activated route.
@@ -419,4 +407,7 @@ This method retrieves button permissions for a specific attribute and activated 
 
 #### `isPermissionIdRouteRestricted(permissionId: string): boolean`
 This method checks if a permission ID is restricted for a route.
+
+#### `queryPermissions(): Observable<any>`
+This method queries permissions and returns them as an observable. It uses an observable to load permissions and notify subscribers of any changes.
 
