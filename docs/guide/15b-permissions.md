@@ -399,6 +399,9 @@ This method retrieves list permissions for a specific attribute and activated ro
 #### `getGridPermissions(attr: string, actRoute: ActivatedRoute): OGridPermissions`
 This method retrieves grid permissions for a specific attribute and activated route.
 
+#### `getTreePermissions(attr: string, actRoute: ActivatedRoute): OTreePermissions`
+This method retrieves tree permissions for a specific attribute and activated route.
+
 #### `getMenuPermissions(attr: string): OPermissions`
 This method retrieves menu permissions for a specific attribute.
 
