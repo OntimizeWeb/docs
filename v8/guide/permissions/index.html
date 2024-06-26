@@ -68,7 +68,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2024-06-07T05:46:37-04:00">
+  <meta property="article:published_time" content="2024-06-26T02:53:28-04:00">
 
 
 
@@ -805,7 +805,7 @@
     
     <meta itemprop="description" content="     On This Page  ">
     
-    <meta itemprop="datePublished" content="June 07, 2024">
+    <meta itemprop="datePublished" content="June 26, 2024">
     
 
     <div class="page__inner-wrap">
@@ -834,6 +834,15 @@
           <li><a href="#form-actions" id="markdown-toc-form-actions">Form actions</a></li>
         </ul>
       </li>
+      <li><a href="#grid" id="markdown-toc-grid">Grid</a>        <ul>
+          <li><a href="#grid-actions" id="markdown-toc-grid-actions">Grid actions</a></li>
+        </ul>
+      </li>
+      <li><a href="#list" id="markdown-toc-list">List</a>        <ul>
+          <li><a href="#list-actions" id="markdown-toc-list-actions">List actions</a></li>
+        </ul>
+      </li>
+      <li><a href="#button" id="markdown-toc-button">Button</a></li>
       <li><a href="#table" id="markdown-toc-table">Table</a>        <ul>
           <li><a href="#table-columns" id="markdown-toc-table-columns">Table columns</a></li>
           <li><a href="#table-menu" id="markdown-toc-table-menu">Table menu</a></li>
@@ -844,6 +853,24 @@
   </li>
   <li><a href="#routes-permissions" id="markdown-toc-routes-permissions">Routes permissions</a></li>
   <li><a href="#menu-permissions" id="markdown-toc-menu-permissions">Menu Permissions</a></li>
+  <li><a href="#permissions-service-api" id="markdown-toc-permissions-service-api">Permissions Service API</a>    <ul>
+      <li><a href="#methods" id="markdown-toc-methods">Methods</a>        <ul>
+          <li><a href="#haspermission-boolean" id="markdown-toc-haspermission-boolean"><code class="language-plaintext highlighter-rouge">hasPermission(): boolean</code></a></li>
+          <li><a href="#getuserpermissionsaspromise-promiseboolean" id="markdown-toc-getuserpermissionsaspromise-promiseboolean"><code class="language-plaintext highlighter-rouge">getUserPermissionsAsPromise(): Promise&lt;boolean&gt;</code></a></li>
+          <li><a href="#getocomponentpermissionsattr-string-actroute-activatedroute-selector-string-ocomponentpermissionsbyroute" id="markdown-toc-getocomponentpermissionsattr-string-actroute-activatedroute-selector-string-ocomponentpermissionsbyroute"><code class="language-plaintext highlighter-rouge">getOComponentPermissions(attr: string, actRoute: ActivatedRoute, selector: string): OComponentPermissionsByRoute</code></a></li>
+          <li><a href="#gettablepermissionsattr-string-actroute-activatedroute-otablepermissions" id="markdown-toc-gettablepermissionsattr-string-actroute-activatedroute-otablepermissions"><code class="language-plaintext highlighter-rouge">getTablePermissions(attr: string, actRoute: ActivatedRoute): OTablePermissions</code></a></li>
+          <li><a href="#getformpermissionsattr-string-actroute-activatedroute-oformpermissions" id="markdown-toc-getformpermissionsattr-string-actroute-activatedroute-oformpermissions"><code class="language-plaintext highlighter-rouge">getFormPermissions(attr: string, actRoute: ActivatedRoute): OFormPermissions</code></a></li>
+          <li><a href="#getlistpermissionsattr-string-actroute-activatedroute-olistpermissions" id="markdown-toc-getlistpermissionsattr-string-actroute-activatedroute-olistpermissions"><code class="language-plaintext highlighter-rouge">getListPermissions(attr: string, actRoute: ActivatedRoute): OListPermissions</code></a></li>
+          <li><a href="#getgridpermissionsattr-string-actroute-activatedroute-ogridpermissions" id="markdown-toc-getgridpermissionsattr-string-actroute-activatedroute-ogridpermissions"><code class="language-plaintext highlighter-rouge">getGridPermissions(attr: string, actRoute: ActivatedRoute): OGridPermissions</code></a></li>
+          <li><a href="#getmenupermissionsattr-string-opermissions" id="markdown-toc-getmenupermissionsattr-string-opermissions"><code class="language-plaintext highlighter-rouge">getMenuPermissions(attr: string): OPermissions</code></a></li>
+          <li><a href="#getallmenupermissions-opermissions" id="markdown-toc-getallmenupermissions-opermissions"><code class="language-plaintext highlighter-rouge">getAllMenuPermissions(): OPermissions[]</code></a></li>
+          <li><a href="#getobuttonpermissionsattr-string-actroute-activatedroute-opermissions" id="markdown-toc-getobuttonpermissionsattr-string-actroute-activatedroute-opermissions"><code class="language-plaintext highlighter-rouge">getOButtonPermissions(attr: string, actRoute: ActivatedRoute): OPermissions</code></a></li>
+          <li><a href="#ispermissionidrouterestrictedpermissionid-string-boolean" id="markdown-toc-ispermissionidrouterestrictedpermissionid-string-boolean"><code class="language-plaintext highlighter-rouge">isPermissionIdRouteRestricted(permissionId: string): boolean</code></a></li>
+          <li><a href="#querypermissions-observableany" id="markdown-toc-querypermissions-observableany"><code class="language-plaintext highlighter-rouge">queryPermissions(): Observable&lt;any&gt;</code></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
   </nav>
@@ -978,6 +1005,79 @@
   <li>Hiding or disabling the form buttons of each action.</li>
   <li>Disabling (if permissions object says so) the standard form actions executions.</li>
 </ul>
+
+<h2 id="grid">Grid</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-grid</code> component has a configurable <code class="language-plaintext highlighter-rouge">actions</code> section.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">customers_grid</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">selector</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">o-grid</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">actions</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">insert</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">refresh</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">example</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="grid-actions">Grid actions</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">actions</code> property must be an array containing the grid available actions permissions, each one identified with its <code class="language-plaintext highlighter-rouge">attr</code>. There are two types of actions:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">insert</code> and <code class="language-plaintext highlighter-rouge">refresh</code>: standard grid actions.</li>
+  <li>Custom user actions.</li>
+</ul>
+
+<p>The actions permissions have two effects:</p>
+
+<ul>
+  <li>Hiding or disabling the grid buttons of each action.</li>
+  <li>Disabling (if permissions object says so) the standard grid actions executions.</li>
+</ul>
+
+<h2 id="list">List</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-list</code> component has a configurable <code class="language-plaintext highlighter-rouge">actions</code> section.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">customers_list</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">selector</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">o-list</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">actions</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">insert</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">delete</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">refresh</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">example</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="list-actions">List actions</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">actions</code> property must be an array containing the list available actions permissions, each one identified with its <code class="language-plaintext highlighter-rouge">attr</code>. There are two types of actions:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">insert</code>, <code class="language-plaintext highlighter-rouge">delete</code> and <code class="language-plaintext highlighter-rouge">refresh</code>: standard list actions.</li>
+  <li>Custom user actions.</li>
+</ul>
+
+<p>The actions permissions have two effects:</p>
+
+<ul>
+  <li>Hiding or disabling the list buttons of each action.</li>
+  <li>Disabling (if permissions object says so) the standard list actions executions.</li>
+</ul>
+
+<h2 id="button">Button</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">o-button</code> component has configurable <code class="language-plaintext highlighter-rouge">visible</code> and <code class="language-plaintext highlighter-rouge">enabled</code> properties.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">attr</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">button-example</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">selector</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">o-button</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">visible</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">enabled</span><span class="dl">"</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="table">Table</h2>
 
@@ -1160,6 +1260,48 @@
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div></div>
+<h1 id="permissions-service-api">Permissions Service API</h1>
+
+<p>Ontimize Web allows for extensive customization of the <code class="language-plaintext highlighter-rouge">permissions service</code>. Below are the key methods available for those who wish to extend or modify the default behavior:</p>
+
+<h2 id="methods">Methods</h2>
+
+<h4 id="haspermission-boolean"><code class="language-plaintext highlighter-rouge">hasPermission(): boolean</code></h4>
+<p>This method checks if the user has permissions.</p>
+
+<h4 id="getuserpermissionsaspromise-promiseboolean"><code class="language-plaintext highlighter-rouge">getUserPermissionsAsPromise(): Promise&lt;boolean&gt;</code></h4>
+<p>This method retrieves user permissions as a promise.</p>
+
+<h4 id="getocomponentpermissionsattr-string-actroute-activatedroute-selector-string-ocomponentpermissionsbyroute"><code class="language-plaintext highlighter-rouge">getOComponentPermissions(attr: string, actRoute: ActivatedRoute, selector: string): OComponentPermissionsByRoute</code></h4>
+<p>This method retrieves component permissions for a specific attribute, activated route, and selector.</p>
+
+<h4 id="gettablepermissionsattr-string-actroute-activatedroute-otablepermissions"><code class="language-plaintext highlighter-rouge">getTablePermissions(attr: string, actRoute: ActivatedRoute): OTablePermissions</code></h4>
+<p>This method retrieves table permissions for a specific attribute and activated route.</p>
+
+<h4 id="getformpermissionsattr-string-actroute-activatedroute-oformpermissions"><code class="language-plaintext highlighter-rouge">getFormPermissions(attr: string, actRoute: ActivatedRoute): OFormPermissions</code></h4>
+<p>This method retrieves form permissions for a specific attribute and activated route.</p>
+
+<h4 id="getlistpermissionsattr-string-actroute-activatedroute-olistpermissions"><code class="language-plaintext highlighter-rouge">getListPermissions(attr: string, actRoute: ActivatedRoute): OListPermissions</code></h4>
+<p>This method retrieves list permissions for a specific attribute and activated route.</p>
+
+<h4 id="getgridpermissionsattr-string-actroute-activatedroute-ogridpermissions"><code class="language-plaintext highlighter-rouge">getGridPermissions(attr: string, actRoute: ActivatedRoute): OGridPermissions</code></h4>
+<p>This method retrieves grid permissions for a specific attribute and activated route.</p>
+
+<h4 id="getmenupermissionsattr-string-opermissions"><code class="language-plaintext highlighter-rouge">getMenuPermissions(attr: string): OPermissions</code></h4>
+<p>This method retrieves menu permissions for a specific attribute.</p>
+
+<h4 id="getallmenupermissions-opermissions"><code class="language-plaintext highlighter-rouge">getAllMenuPermissions(): OPermissions[]</code></h4>
+<p>This method retrieves all menu permissions.</p>
+
+<h4 id="getobuttonpermissionsattr-string-actroute-activatedroute-opermissions"><code class="language-plaintext highlighter-rouge">getOButtonPermissions(attr: string, actRoute: ActivatedRoute): OPermissions</code></h4>
+<p>This method retrieves button permissions for a specific attribute and activated route.</p>
+
+<h4 id="ispermissionidrouterestrictedpermissionid-string-boolean"><code class="language-plaintext highlighter-rouge">isPermissionIdRouteRestricted(permissionId: string): boolean</code></h4>
+<p>This method checks if a permission ID is restricted for a route.</p>
+
+<h4 id="querypermissions-observableany"><code class="language-plaintext highlighter-rouge">queryPermissions(): Observable&lt;any&gt;</code></h4>
+<p>This method queries permissions and returns them as an observable. It uses an observable to load permissions and notify subscribers of any changes.</p>
+
 
         
       </section>
@@ -1172,7 +1314,7 @@
 
 
         
-        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-06-07T05:46:37-04:00">June 07, 2024</time></p>
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-06-26T02:53:28-04:00">June 26, 2024</time></p>
         
       </footer>
 
