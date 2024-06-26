@@ -131,6 +131,74 @@ The actions permissions have two effects:
 - Hiding or disabling the form buttons of each action.
 - Disabling (if permissions object says so) the standard form actions executions.
 
+## Grid
+
+The `o-grid` component has a configurable `actions` section.
+
+```javascript
+{
+  "attr": "customers_grid",
+  "selector": "o-grid",
+  "actions": [
+    { "attr": "insert", "visible": true, "enabled": false },
+    { "attr": "refresh", "visible": false, "enabled": false },
+    { "attr": "example", "visible": false, "enabled": false }
+  ]
+}
+```
+
+### Grid actions
+
+The `actions` property must be an array containing the grid available actions permissions, each one identified with its `attr`. There are two types of actions:
+
+- `insert` and `refresh`: standard grid actions.
+- Custom user actions.
+
+The actions permissions have two effects:
+
+- Hiding or disabling the grid buttons of each action.
+- Disabling (if permissions object says so) the standard grid actions executions.
+
+## List
+
+The `o-list` component has a configurable `actions` section.
+```javascript
+{
+  "attr": "customers_list",
+  "selector": "o-list",
+  "actions": [
+    { "attr": "insert", "visible": true, "enabled": false },
+    { "attr": "delete", "visible": true, "enabled": false },
+    { "attr": "refresh", "visible": false, "enabled": false },
+    { "attr": "example", "visible": false, "enabled": false }
+  ]
+}
+```
+### List actions
+
+The `actions` property must be an array containing the list available actions permissions, each one identified with its `attr`. There are two types of actions:
+
+- `insert`, `delete` and `refresh`: standard list actions.
+- Custom user actions.
+
+The actions permissions have two effects:
+
+- Hiding or disabling the list buttons of each action.
+- Disabling (if permissions object says so) the standard list actions executions.
+
+## Button
+
+The `o-button` component has configurable `visible` and `enabled` properties.
+
+```javascript
+{
+  "attr": "button-example",
+  "selector": "o-button",
+  "visible": true,
+  "enabled": false
+}
+```
+
 ## Table
 
 The `o-table` component has three configurable sections: columns, menu and actions.
@@ -301,3 +369,45 @@ The `menu` property must be an array containing the permissions of the applicati
   ]
 }
 ```
+# Permissions Service API
+
+Ontimize Web allows for extensive customization of the `permissions service`. Below are the key methods available for those who wish to extend or modify the default behavior:
+
+## Methods
+
+#### `hasPermission(): boolean`
+This method checks if the user has permissions.
+
+#### `getUserPermissionsAsPromise(): Promise<boolean>`
+This method retrieves user permissions as a promise.
+
+#### `getOComponentPermissions(attr: string, actRoute: ActivatedRoute, selector: string): OComponentPermissionsByRoute`
+This method retrieves component permissions for a specific attribute, activated route, and selector.
+
+#### `getTablePermissions(attr: string, actRoute: ActivatedRoute): OTablePermissions`
+This method retrieves table permissions for a specific attribute and activated route.
+
+#### `getFormPermissions(attr: string, actRoute: ActivatedRoute): OFormPermissions`
+This method retrieves form permissions for a specific attribute and activated route.
+
+#### `getListPermissions(attr: string, actRoute: ActivatedRoute): OListPermissions`
+This method retrieves list permissions for a specific attribute and activated route.
+
+#### `getGridPermissions(attr: string, actRoute: ActivatedRoute): OGridPermissions`
+This method retrieves grid permissions for a specific attribute and activated route.
+
+#### `getMenuPermissions(attr: string): OPermissions`
+This method retrieves menu permissions for a specific attribute.
+
+#### `getAllMenuPermissions(): OPermissions[]`
+This method retrieves all menu permissions.
+
+#### `getOButtonPermissions(attr: string, actRoute: ActivatedRoute): OPermissions`
+This method retrieves button permissions for a specific attribute and activated route.
+
+#### `isPermissionIdRouteRestricted(permissionId: string): boolean`
+This method checks if a permission ID is restricted for a route.
+
+#### `queryPermissions(): Observable<any>`
+This method queries permissions and returns them as an observable. It uses an observable to load permissions and notify subscribers of any changes.
+

@@ -40,3 +40,7 @@ outputs: [{
   name: "onClick",
   description: "Event triggered when the button is clicked"
 }]
+methods: [{
+  name: "isVisible",
+  description: "Checks if the button is currently visible to the user. Returns a boolean value indicating whether the button is visible on the screen."
+}]
