@@ -61,4 +61,21 @@ Keep in mind that a service component will not send any request when the parent 
 ## Storing component state
 Using the `store-state` boolean input allows user to choose whether or not to store the component configuration state in local storage. That state is returned by the `getDataToStore` method under the key returned in `getComponentKey` callback.
 
+By default `store-state` it is set to true but with injection token `O_GLOBAL_CONFIG` you can desactive this functionality in the application or in the module as shown below.
+
+```ts
+@NgModule({
+  declarations: [
+  ...
+  ],
+  ...
+  providers: [
+    ...
+    { provide: O_GLOBAL_CONFIG, useValue: { storeState: false } },
+    ...
+  ],
+  ...
+})
+```
+
 
