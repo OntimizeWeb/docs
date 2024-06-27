@@ -99,7 +99,7 @@ attributes: [{
   description: "Action for changing a cell to edition mode. The priority between edition-mode, selection-mode and detail-mode is 1->detail-mode, 2->edition-mode, 3->selection-mode."
 },{
   name: "selection-mode",
-  type: "none | simple | multiple",
+  type: "none | single | multiple",
   default: "multiple",
   required: "",
   description: "Row selection mode. The priority between edition-mode, selection-mode and detail-mode is 1->detail-mode, 2->edition-mode, 3->selection-mode."
