@@ -34,7 +34,14 @@ attributes: [{
   default: "after",
   required: "",
   description: "Indicates whether the labels should appear after or before the radio buttons"
-}]
+},{
+  name: "label-gap",
+  type: "string",
+  default: "8px",
+  required: "",
+  since: "15.1.1",
+  description: "Indicates the gap in pixels between radio buttons"
+  }]
 
 methods: [{
   name: "getOptionDescriptionValue",
