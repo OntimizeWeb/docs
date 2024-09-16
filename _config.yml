@@ -6,8 +6,7 @@ logo: assets/images/logo-ontimize-blanco.png
 
 search_enabled: true
 
-search:
-  tokenizer_separator: /[\s/]+/
+search_tokenizer_separator: /[\s/]+/
 
 description: Welcome to the Ontimize v15 documentation!
 
