@@ -38,5 +38,9 @@ Custom content can be included before and after the input tag, as a prefix or su
 
 ![Prefix in o-text-input component]({{ "/assets/images/components/inputs/o-text-input-prefix.png" | absolute_url }}){: .comp-example-img}
 
+## String case <span class='menuitem-badge'>new<span>
+
+If your use case requires to manage value in lowercase or uppercase, you can do so by setting `string-case` input in `o-text-input`. This behavior can be configured globally using the `O_INPUTS_OPTIONS` injection token.
+
 ## Validation
 The `o-text-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.
