@@ -31,5 +31,6 @@ attributes: [{
   type: "uppercase | lowercase | default",
   default : "",
   required : "",
+  since: "15.2.0",
   description : "Show the characters always in uppercase, lowercase or by default, that is, in upper or lower case respecting how the text is entered"
 }]
