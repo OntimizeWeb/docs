@@ -1365,23 +1365,20 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 1. In the next case we have applied `horizontal-scroll=yes` and  `auto-adjust="yes"`, the result would be the following.
 
-![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
-<!-- </div> -->
+    ![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
 
-{:start="2"}
 2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following.
 
 
-![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
+    ![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
 
-{:start="3"}
 3. In the next case we have applied `max-width="300px"` in `o-table-column` and  `auto-adjust="yes"`, the result would be the following..
 
-```html
-<o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
-```
+    ```html
+    <o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
+    ```
 
-![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
+    ![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
 
 ### Row grouping
 
@@ -1390,25 +1387,22 @@ Ontimize Web allows to merge fields belonging to one column so that the consecut
 By default, the table is *groupable* and for grouping/ungrouping by one o more columns, you can:
 
 1. Configure **grouped columns by default** with the `grouped-columns` property.
-As you can see in the example below, as soon as there is at least one active row.
+    As you can see in the example below, as soon as there is at least one active row.
 
-![Table row group]({{ "/assets/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
+    ![Table row group]({{ "/assets/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
 
-{:start="2"}
 2. Use the **table menu**: click the *Group / Ungroup by* option to configure the columns you need to group / ungroup by.
 
-![Dialog group by column]({{ "/assets/images/components/tabla/table-menu-group-by-column.gif" | absolute_url }}){: .comp-example-img}
+    ![Dialog group by column]({{ "/assets/images/components/tabla/table-menu-group-by-column.gif" | absolute_url }}){: .comp-example-img}
 
-{:start="3"}
 3. Use the **table context menu**: Right-click the column data to invoke context menu and  click on *Group by -> Group by column* . The context menu also allows you to ungroup by a column or by all.
 
-![Context menu group by column]({{ "/assets/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
+    ![Context menu group by column]({{ "/assets/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
 
-You can collapse/expand all grouped rows if you right-click on the *grouped row*.
+    You can collapse/expand all grouped rows if you right-click on the *grouped row*.
 
-![Context menu in grouped row]({{ "/assets/images/components/tabla/table-grouping-change-function-aggregate.gif" | absolute_url }}){: .comp-example-img}
+    ![Context menu in grouped row]({{ "/assets/images/components/tabla/table-grouping-change-function-aggregate.gif" | absolute_url }}){: .comp-example-img}
 
-{:start="4"}
 4. Use the **o-table-columns-grouping** and **o-table-columns-grouping-column** components: this components are used to configure the initial state of the row grouping and override the table grouping configuration.
 
 If there is at least one grouping, the table automatically applies the *sum function* on those of type `currency`, `integer` and `real` and whose value will be displayed in the grouped row.
@@ -1450,14 +1444,14 @@ In the o-`table` you can configure various density levels using `row-height` pro
 
 The default value being `medium` with `small` being the most compact option and `large` being the least.
 
-![Input row-height]({{ "/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
+![Input row-height]({{ "/assets/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
 
 ### Row height
 In the o-`table` you can configure various density levels using `row-height` property that it is easy to specify the font and the paddings on the table defined in this [link]({{ base_path }}/customize/typography/#custom-typography-of-ontimize-web-framework).
 
 The default value being `medium` with `small` being the most compact option and `large` being the least.
 
-![Input row-height]({{ "/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
+![Input row-height]({{ "/assets/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
 
 ### Report on demand <span class='menuitem-badge'>new<span>
 

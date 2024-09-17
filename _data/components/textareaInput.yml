@@ -9,7 +9,7 @@ inheritedAttributes: [  {
 },{
   component: "o-text-input",
   path: "components/input/text/api",
-  attributes: [ "min-length", "max-length"]
+  attributes: ["min-length", "max-length", "string-case"]
 }]
 
 inheritedOutputs: [{
