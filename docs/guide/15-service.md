@@ -174,6 +174,7 @@ You can override or extend the functionality of the services defined in **Ontimi
 | `OReportService` | `O_REPORT_SERVICE` | Service used to generate reports (since *ontimize-web-ngx@8.7.0*) |
 | `OntimizeExportDataProviderService` and `OntimizeExportDataProviderService3X` | `O_EXPORT_DATA_SERVICE` | Service used to provide data and styles to table exports (since *ontimize-web-ngx@8.8.0*) |
 | `OTableGlobalConfig` | `O_TABLE_GLOBAL_CONFIG` | Service used to set some [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"} global options (since *ontimize-web-ngx@8.7.3*) |
+| `LocalStorageService` | `O_LOCALSTORAGE_SERVICE` | Service used to save in application data in local storage (since *ontimize-web-ngx@15.2.0*) |
 
 
 For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.
