@@ -27,7 +27,7 @@ The text input is automatically registered on its parent `o-form`, which provide
 ```
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/text){:target="_blank"}.
 
-## Prefix and suffix <span class='menuitem-badge'>new<span>
+## Prefix and suffix
 Custom content can be included before and after the input tag, as a prefix or suffix adding the `oMatPrefix` directive to an element inside the <o-text-input> will designate it as the prefix. Similarly, adding `oMatSuffix` will designate it as the suffix.
 
 ```html
@@ -37,6 +37,25 @@ Custom content can be included before and after the input tag, as a prefix or su
 ```
 
 ![Prefix in o-text-input component]({{ "/assets/images/components/inputs/o-text-input-prefix.png" | absolute_url }}){: .comp-example-img}
+
+## String case <span class='menuitem-badge'>new<span>
+
+If your use case requires to manage value in lowercase or uppercase, you can do so by setting `string-case` input in `o-text-input`. This behavior can be configured globally using the `O_INPUTS_OPTIONS` injection token.
+
+```html
+    <o-text-input attr="ADDRESS" class="gap"  string-case="uppercase"></o-text-input>
+```
+
+or/and
+
+```ts
+...
+  { provide: O_INPUTS_OPTIONS, useValue: {stringCase: 'uppercase' } },
+...
+```
+
+![string-case in o-text-input component]({{ "/assets/images/components/inputs/string-case.png" | absolute_url }}){: .comp-example-img}
+
 
 ## Validation
 The `o-text-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.

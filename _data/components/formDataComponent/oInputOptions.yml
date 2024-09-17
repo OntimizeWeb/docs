@@ -1,0 +1,22 @@
+title: "OInputsOptions"
+description: "Represents the default options for the input that can be configured using the <a href='#O_INPUTS_OPTIONS'>O_INPUTS_OPTIONS</a> injection token.
+<div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
+ OInputsOptions = {
+  iconColor?: OInputsColor,
+  selectAllOnClick?: boolean,
+  stringCase?: 'uppercase' | 'lowercase' | 'default';
+};
+</code></pre></div></div>
+"
+
+attributes: [{
+  name: "iconColor",
+  description: "Theme color of the icons"
+},{
+  name: "selectAllOnClick",
+  description: "Select all the text when clicking on an input."
+},{
+  name: "stringCase",
+  description: "Show the characters always in uppercase, lowercase or by default, that is, in upper or lower case respecting how the text is entered"
+}]
+
