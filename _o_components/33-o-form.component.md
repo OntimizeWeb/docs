@@ -77,8 +77,6 @@ A very common feature in management applications is to display a form with the d
 
 You can read more about this component [here]({{ base_path }}/components/formlayoutmanager/overview){:target="_blank"}.
 
-## Extending a form
-
 In some cases you may want to add of modify the form funtionality, **OntimizeWeb** allows you to extend the form component, for this, you must follow the next steps:
 
 1. Define a new component and add the `@OComponent` decorator.
