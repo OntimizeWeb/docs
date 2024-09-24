@@ -73,6 +73,80 @@ You can read more about this topic in the [form lifecycle]({{ base_path }}/compo
 ## Related components
 There are some components that improve the `o-form` usage adding some features without having to implement them.
 
+## Extending a form
+
+In some cases you may want to add of modify the form funtionality, OntimizeWeb allows you to extend the form component, for this, you must follow the next steps:
+
+1. Define a new component and add the `@Component` decorator.
+2. Include the `OFormComponent` and `OFormMessageService` classes as providers of your new component.
+3. Make your component extend the `OFormComponent` class.
+
+Once this steps are done, you can override `OFormComponent` methods depending on your requirements.
+
+In the step bellow we are creating a custom form and defining its detail not editable modifying the html form definition.
+
+`custom-form.component.ts`
+
+```ts
+import { ChangeDetectorRef, Component, ElementRef, Injector, NgZone, forwardRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OFormComponent, OFormMessageService } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'custom-form',
+  templateUrl: './custom-form.component.html',
+  providers: [
+    {
+      // Include the `OFormComponent` class as a provider of your component
+      provide: OFormComponent,
+      useExisting: forwardRef(() => CustomFormComponent)
+    },
+    {
+      // Include the `OFormMessageService` class as a provider of your component
+      provide: OFormMessageService
+    }
+  ]
+})
+export class CustomFormComponent extends OFormComponent {
+
+  constructor(
+    _router: Router,
+    _actRoute: ActivatedRoute,
+    _zone: NgZone,
+    _cd: ChangeDetectorRef,
+    injector: Injector,
+    _elemntRef: ElementRef<OFormComponent>
+  ) {
+    super(_router, _actRoute, _zone, _cd, injector, _elemntRef);
+  }
+
+  /* Override methods depending on your requirements. You can also create new methods. */
+
+  isEditableDetail() {
+    return false;
+  }
+
+}
+```
+
+`custom-form.component.html`
+
+```html
+<ng-content></ng-content>
+```
+
+Once created the custom form component you can use the custom form template as follows:
+
+`your-template.component.html`
+
+```html
+<custom-form #oForm editable-detail="true" service="your-service" entity="your-entity" keys="your-keys" columns="your-columns">
+  <o-text-input attr="your-attr" [data]="oForm.getDataValue('your-attr')"></o-text-input>
+</custom-form>
+```
+
+You will see that the `o-text-input` field isn't editable in your form changin the declaration of your html.
+
 ### Form container
 In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/data/form/container/overview){:target="_blank"}.
 
