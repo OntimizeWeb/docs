@@ -145,6 +145,25 @@ Once created the custom form component you can use the custom form template as f
 </custom-form>
 ```
 
+`your-template.module.ts`
+
+```ts
+import { NgModule } from '@angular/core';
+import { CustomFormComponent } from './your-folder/custom-form/custom-form.component';
+
+@NgModule({
+  imports: [
+    ...
+  ],
+  declarations: [
+    ...
+    CustomFormComponent
+  ],
+  exports: ...
+})
+export class BranchesModule { }
+```
+
 You will see that the `o-text-input` field isn't editable in your form changin the declaration of your html.
 
 ### Form container
