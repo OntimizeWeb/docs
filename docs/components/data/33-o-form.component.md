@@ -73,6 +73,99 @@ You can read more about this topic in the [form lifecycle]({{ base_path }}/compo
 ## Related components
 There are some components that improve the `o-form` usage adding some features without having to implement them.
 
+## Extending a form
+
+In some cases you may want to add of modify the form funtionality, OntimizeWeb allows you to extend the form component, for this, you must follow the next steps:
+
+1. Define a new component and add the `@Component` decorator.
+2. Include the `OFormComponent` and `OFormMessageService` classes as providers of your new component.
+3. Make your component extend the `OFormComponent` class.
+
+Once this steps are done, you can override `OFormComponent` methods depending on your requirements.
+
+In the step bellow we are creating a custom form and defining its detail not editable modifying the html form definition.
+
+`custom-form.component.ts`
+
+```ts
+import { ChangeDetectorRef, Component, ElementRef, Injector, NgZone, forwardRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OFormComponent, OFormMessageService } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'custom-form',
+  templateUrl: './custom-form.component.html',
+  providers: [
+    {
+      // Include the `OFormComponent` class as a provider of your component
+      provide: OFormComponent,
+      useExisting: forwardRef(() => CustomFormComponent)
+    },
+    {
+      // Include the `OFormMessageService` class as a provider of your component
+      provide: OFormMessageService
+    }
+  ]
+})
+export class CustomFormComponent extends OFormComponent {
+
+  constructor(
+    _router: Router,
+    _actRoute: ActivatedRoute,
+    _zone: NgZone,
+    _cd: ChangeDetectorRef,
+    injector: Injector,
+    _elemntRef: ElementRef<OFormComponent>
+  ) {
+    super(_router, _actRoute, _zone, _cd, injector, _elemntRef);
+  }
+
+  /* Override methods depending on your requirements. You can also create new methods. */
+
+  isEditableDetail() {
+    return false;
+  }
+
+}
+```
+
+`custom-form.component.html`
+
+```html
+<ng-content></ng-content>
+```
+
+Once created the custom form component you can use the custom form template as follows:
+
+`your-template.component.html`
+
+```html
+<custom-form #oForm editable-detail="true" service="your-service" entity="your-entity" keys="your-keys" columns="your-columns">
+  <o-text-input attr="your-attr" [data]="oForm.getDataValue('your-attr')"></o-text-input>
+</custom-form>
+```
+
+`your-template.module.ts`
+
+```ts
+import { NgModule } from '@angular/core';
+import { CustomFormComponent } from './your-folder/custom-form/custom-form.component';
+
+@NgModule({
+  imports: [
+    ...
+  ],
+  declarations: [
+    ...
+    CustomFormComponent
+  ],
+  exports: ...
+})
+export class BranchesModule { }
+```
+
+You will see that the `o-text-input` field isn't editable in your form changin the declaration of your html.
+
 ### Form container
 In some applications you may want to place a breadcrumb component on top of your form. **OntimizeWeb** allows this using the `o-form-container` component. Learn more about this component [here]({{ base_path }}/components/data/form/container/overview){:target="_blank"}.
 
@@ -80,119 +173,6 @@ In some applications you may want to place a breadcrumb component on top of your
 A very common feature in management applications is to display a form with the details related to a record from a data collection. As a solution to this, **OntimizeWeb** offers the `o-form-layout-manager` component, which allows to manage the transitions between the data collection and the form with the detail view with the data record details.
 
 You can read more about this component [here]({{ base_path }}/components/layout/formlayoutmanager/overview){:target="_blank"}.
-
-## Extending a form
-
-In some cases you may want to add of modify the form funtionality, **OntimizeWeb** allows you to extend the form component, for this, you must follow the next steps:
-
-1. Define a new component and add the `@OComponent` decorator.
-2. Include the `OFormComponent` class as a provider of your component.
-3. Make your component extend `OFormComponent` class.
-
-Once this steps are done, you can override `OFormComponent` methods depending on your requirements.
-
-The following example shows how to extend an `o-form` for creating a classical registration form including a captcha and password verification before submitting the data. The component class would look like the following:
-
-```js
-import { forwardRef, Injector } from '@angular/core';
-import { Location } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
-
-import { OComponent, dataServiceFactory, LoginService, OFormComponent, OntimizeService  } from 'ontimize-web-ngx';
-
-@OComponent({ // <- Include the `@OComponent` decorator
-  selector: 'sign-in-form',
-  providers: [
-    {
-      provide: OntimizeService,
-      useFactory: dataServiceFactory
-    }, {
-      // Include the `OFormComponent` class as a provider of your component
-      provide: OFormComponent,
-      useExisting: forwardRef(() => SignInFormComponent)
-    }
-  ]
-})
-// Make your component extend the `OFormComponent` class
-export class SignInFormComponent extends OFormComponent {
-
-  protected recaptchaResponseToken: string;
-
-  constructor(
-    _router: Router, _location: Location,
-    _actRoute: ActivatedRoute, _loginService: LoginService,
-    injector: Injector
-  ) {
-    super(_router, _location, _actRoute, _loginService, injector);
-    this.recaptchaResponseToken = undefined;
-  }
-
-  /* Override methods depending on your requirements */
-
-  protected postCorrectInsert(result: any) {
-    if (result && result.confirmation_key) {
-      this.dialogService.alert('CONFIRM_PENDING', 'CONFIRM_PENDING_MESSAGE')
-        .then(res => this._router.navigate(['home']));
-    } else {
-      this.dialogService.alert('ERROR', 'ERROR_SIGN_IN');
-    }
-  }
-
-  protected postIncorrectInsert(result: any) {
-    let msg = 'ERROR_SIGN_IN';
-    if (result && 'json' in result) {
-      let res = result.json();
-      if (res.message) {
-        msg = res.message;
-      }
-    }
-    this.dialogService.alert('ERROR', msg);
-  }
-
-  /* Add new methods depending on your requirements */
-
-  protected getCaptcha(response: any) {
-    this.recaptchaResponseToken = response;
-  }
-
-  public send() {
-    if (this.formGroup.controls['password'].value !== this.formGroup.controls['password2'].value) {
-      this.dialogService.alert('ERROR', 'ERROR_PASSWORDS_NOT_MATCH');
-    } else if (typeof(this.recaptchaResponseToken) === 'undefined') {
-      this.dialogService.alert('ERROR', 'ERROR_CAPTCHA');
-    } else {
-      this._insertAction();
-    }
-  }
-
-}
-```
-
-Now, you can use the extended form in your template as follows:
-
-```html
-<sign-in-form #registryForm service="pharmacy" entity="registerPharmacy" keys="username" columns="username;password;license;name_comercial;locality;province" show-header="no" label-header="REGISTRY" header-actions="I">
-  <o-text-input attr="license" required="yes" flex [data]="registryForm.getDataValue('license')"> </o-text-input>
-  <o-text-input attr="name_comercial" required="yes" flex [data]="registryForm.getDataValue('name_comercial')"> </o-text-input>
-  <o-text-input attr="locality" required="yes" flex [data]="registryForm.getDataValue('locality')"> </o-text-input>
-  <o-text-input attr="province" required="yes" flex [data]="registryForm.getDataValue('province')"> </o-text-input>
-  <o-email-input attr="username" required="yes" flex [data]="registryForm.getDataValue('username')"> </o-email-input>
-  <o-password-input attr="password" required="yes" min-length="6" max-length="30" flex [data]="registryForm.getDataValue('password')"></o-password-input>
-  <o-password-input attr="password2" required="yes" min-length="6" max-length="30" flex [data]="registryForm.getDataValue('password2')"></o-password-input>
-  <re-captcha siteKey="{% raw %}{{ GOOGLE_RECAPTCHA_KEY }}{% endraw %}" (captchaResponse)="registryForm.getCaptcha($event)"></re-captcha>
-  <o-row layout-align="end center">
-    <o-button label="SEND" (click)="registryForm.send()"></o-button>
-  </o-row>
-</sign-in-form>
-```
-
-You can change the default options of the form by using `MAT_FORM_FIELD_DEFAULT_OPTIONS` injection token. You have to set this `MAT_FORM_FIELD_DEFAULT_OPTIONS` in your providers as you can check in the example above that sets the appearance outline for the form:
-
-```js
-  providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
-  ]
-```
 
 ## Filtering of a collection component
 
