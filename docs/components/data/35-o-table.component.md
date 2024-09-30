@@ -310,7 +310,7 @@ This option will be available in table menu and in table header by default. Howe
 
 You can also configure whether you want to filter by the values ​​of the current page or by all the values ​​in the table with `filter-values-in-data` input in `o-table-columns-filter` and `o-table-columns-filter-column`. By default the value is `current-data`.
 
-Additionally, in the `o-table-columns-filter-column` component you can configure the `query-method` to obtain all the different values, if this input is configured it is no longer necessary to add `filter-values-in-data="all-data"`.
+Additionally, in the `o-table-columns-filter-column` component you can configure the `query-method` to supply values asynchronously to the set filter, if this input is configured it is no longer necessary to add `filter-values-in-data="all-data"`.
 
 A button will also appear to the right of the sort button to change whether you want to filter by the values ​​of the current page or all pages.
 
@@ -334,7 +334,7 @@ A button will also appear to the right of the sort button to change whether you 
 </o-table>
 ```
 <div class="notice--warning" markdown="1">
-  **WARNING:** We recommend configuring the query-method so that the post requests are more optimal, since if it is not configured, all the values ​​will be obtained without taking into account whether they are different
+  **WARNING:** We recommend configuring the query-method so that the post requests are more optimal, since if it is not configured, all the values ​​will be obtained without taking into account whether they are different.
 </div>
 
 ![Filtering columns by all data]({{ "/assets/images/components/tabla/filter-by-column-all-data.png" | absolute_url }}){: .comp-example-img}

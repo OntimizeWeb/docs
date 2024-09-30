@@ -22,8 +22,12 @@ attributes:
     {
       name: "filter-values-in-data",
       type: "'current-page' | 'all-data'",
+      since: "15.2.1",
       default: "current-page",
-      description: Set mode to filter by. Default 'current-page'.,
+      description:  Set mode to supplying filter values. Default 'current-page'.,
     },
-    { name: "query-method" },
+    {
+      name: "query-method",
+      since: "15.2.1"
+     },
   ]
