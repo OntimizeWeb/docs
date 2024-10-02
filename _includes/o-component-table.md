@@ -64,7 +64,7 @@
   <h3>Component hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
-      <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table
+      <li data-jstree='{"disabled":true, "opened":false, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table
         <ul>
           <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-table-column
             <ul>

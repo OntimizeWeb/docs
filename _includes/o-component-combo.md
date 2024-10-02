@@ -62,7 +62,7 @@
   <h3>Component hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
-      <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo
+      <li data-jstree='{"disabled":true, "opened":false, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo
         <ul>
           <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-boolean</li>
           <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-combo-renderer-integer</li>
