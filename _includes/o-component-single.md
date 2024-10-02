@@ -90,7 +90,7 @@
     <h3>Component hierarchy</h3>
     <div class="multicolumnright jstreeloader">
       <ul>
-        <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
+        <li data-jstree='{"disabled":true, "opened":false, "icon":"{{ base_path }}/assets/jstree/html.png"}'>
           {{ componentData.directive }}
           {% for directive in componentData.directives %}
             {% if directive.directives %}

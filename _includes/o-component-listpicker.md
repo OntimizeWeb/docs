@@ -61,7 +61,7 @@
   <h3>Component hierarchy</h3>
   <div class="multicolumnright jstreeloader">
     <ul>
-      <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker
+      <li data-jstree='{"disabled":true, "opened":false, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker
         <ul>
           <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-integer</li>
           <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/html.png"}'>o-list-picker-renderer-real</li>
