@@ -10798,7 +10798,6 @@ a:not([class]):hover {
     top: 64px;
     right: 0px;
     max-height: calc(100% - 112px);
-    min-height: fit-content;
     width: 360px;
     padding-bottom: 20px;
     border: 1px solid #44434d;
