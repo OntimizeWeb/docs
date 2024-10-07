@@ -53,15 +53,6 @@ In this section you can check the different releases of **OntimizeWeb** and its 
         <td>15.1.0</td>
       </tr>
       <tr>
-        <td>15.1.0</td>
-        <td rowspan="6">15.0.0</td>
-        <td rowspan="6">15.0.0</td>
-        <td rowspan="6">15.1.1<br>15.1.0<br>15.0.1<br>15.0.0</td>
-        <td rowspan="6">15.1.1<br>15.1.0<br>15.0.0</td>
-        <td rowspan="6">15.0.1<br>15.0.0</td>
-        <td rowspan="6">15.0.0</td>
-      </tr>
-      <tr>
         <td>15.0.4</td>
       </tr>
       <tr>
