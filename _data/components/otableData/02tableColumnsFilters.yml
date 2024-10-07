@@ -20,4 +20,9 @@ attributes: [{
   default : "default",
   required : "",
   description : "Indicates the component performance mode."
+},{
+  name: "filter-values-in-data",
+  type: "'current-page' | 'all-data'",
+  default: "current-page",
+  description: Set mode to supplying filter values. Default 'current-page'.
 }]

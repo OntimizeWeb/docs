@@ -308,6 +308,36 @@ This option will be available in table menu and in table header by default. Howe
 
 ![Filtering columns mode]({{ "/assets/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
 
+You can also configure whether you want to filter by the values ​​of the current page or by all the values ​​in the table with `filter-values-in-data` input in `o-table-columns-filter` and `o-table-columns-filter-column`. By default the value is `current-data`.
+
+Additionally, in the `o-table-columns-filter-column` component you can configure the `query-method` to supply values asynchronously to the set filter, if this input is configured it is no longer necessary to add `filter-values-in-data="all-data"`.
+
+A button will also appear to the right of the sort button to change whether you want to filter by the values ​​of the current page or all pages.
+
+<h3 class="grey-color">Example not recommended </h3>
+
+```html
+ <o-table ...>
+      <o-table-columns-filter columns="STARTDATE;SURNAME" filter-values-in-data="all-data">
+      </o-table-columns-filter>
+</o-table>
+```
+
+<h3 class="grey-color">Recommended example</h3>
+
+```html
+ <o-table ...>
+      <o-table-columns-filter columns="STARTDATE;SURNAME" >
+        <o-table-columns-filter-column attr="SURNAME"  query-method="selectDistinctBySurname"> </o-table-columns-filter-column>
+        <o-table-columns-filter-column attr="STARTDATE"  query-method="selectDistinctByStartDate" > </o-table-columns-filter-column>
+      </o-table-columns-filter>
+</o-table>
+```
+<div class="notice--warning" markdown="1">
+  **WARNING:** We recommend configuring the query-method so that the post requests are more optimal, since if it is not configured, all the values ​​will be obtained without taking into account whether they are different.
+</div>
+
+![Filtering columns by all data]({{ "/assets/images/components/tabla/filter-by-column-all-data.png" | absolute_url }}){: .comp-example-img}
 
 
 ### Custom filter
