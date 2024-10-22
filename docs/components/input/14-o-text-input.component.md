@@ -57,5 +57,14 @@ or/and
 ![string-case in o-text-input component]({{ "/assets/images/components/inputs/string-case.png" | absolute_url }}){: .comp-example-img}
 
 
+## Regulate-pattern <span class='menuitem-badge'>new<span>
+You can use `regulate-pattern` attribute to restrict inputs based on a regex pattern.
+
+```html
+ <o-text-input #inputRepulate attr="input-repulate" label="Only Numbers"  read-only="no" required="yes" regulate-pattern="^[A-Z]*$"></o-text-input>
+```
+
+Here the `o-text-input` is regulated to have only numbers any other inputs will be restricted
+
 ## Validation
 The `o-text-input` shows automatically an error message when the `required` attribute is set to "yes" and there is no value on the input.
