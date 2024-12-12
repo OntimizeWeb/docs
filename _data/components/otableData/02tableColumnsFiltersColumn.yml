@@ -23,11 +23,11 @@ attributes:
       name: "filter-values-in-data",
       type: "'current-page' | 'all-data'",
       since: "15.2.1",
-      default: "current-page",
-      description:  Set mode to supplying filter values. Default 'current-page'.,
+      default: "'current-page' | 'all-data'",
+      description: "Set mode to supplying filter values. Whether the o-table set pageable=no, the default value is 'all-data', however if set pageable='yes' the default value would be 'current-page'. "
     },
     {
       name: "query-method",
       since: "15.2.1"
-     },
+     }
   ]

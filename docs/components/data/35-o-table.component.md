@@ -308,7 +308,7 @@ This option will be available in table menu and in table header by default. Howe
 
 ![Filtering columns mode]({{ "/assets/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
 
-You can also configure whether you want to filter by the values ​​of the current page or by all the values ​​in the table with `filter-values-in-data` input in `o-table-columns-filter` and `o-table-columns-filter-column`. By default the value is `current-data`.
+You can also configure whether you want to filter by the values ​​of the current page or by all the values ​​in the table with `filter-values-in-data` input in `o-table-columns-filter` and `o-table-columns-filter-column`. Whether the `o-table` set **pageable=no**, the default value is `'all-data'`, however if set **pageable='yes'** the default value would be `'current-page'` .
 
 Additionally, in the `o-table-columns-filter-column` component you can configure the `query-method` to supply values asynchronously to the set filter, if this input is configured it is no longer necessary to add `filter-values-in-data="all-data"`.
 
