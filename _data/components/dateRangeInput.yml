@@ -1,5 +1,5 @@
 directive: "o-daterange-input"
-version: "4.0.6"
+version: "15.4.0"
 
 apiTitle: "ODateRangeInputComponent"
 
@@ -59,12 +59,6 @@ attributes: [{
   default: "timestamp",
   required: "",
   description: "Type of the component data"
-},{
-  name: "mode",
-  type: "auto | desktop | mobile",
-  default: "auto",
-  required: "",
-  description: "Indicates the component performance mode"
 }]
 
 inheritedOutputs: [{
