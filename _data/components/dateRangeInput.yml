@@ -59,6 +59,18 @@ attributes: [{
   default: "timestamp",
   required: "",
   description: "Type of the component data"
+},{
+  name: "placeholder-startday",
+  type: "string",
+  default: "Start date",
+  required: "",
+  description: "Field placeholder, must be the key in the translation file for the start date input"
+},{
+  name: "placeholder-endday",
+  type: "string",
+  default: "Start date",
+  required: "",
+  description: "Field placeholder, must be the key in the translation file for the end date input"
 }]
 
 inheritedOutputs: [{
