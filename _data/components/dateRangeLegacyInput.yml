@@ -1,7 +1,7 @@
-directive: "o-daterange-input"
-version: "15.4.0"
+directive: "o-daterange-legacy-input"
+version: "4.0.6"
 
-apiTitle: "ODateRangeInputComponent"
+apiTitle: "ODateRangeLegacyInputComponent"
 
 inheritedAttributes: [{
   component: "FormDataComponent",
@@ -60,17 +60,11 @@ attributes: [{
   required: "",
   description: "Type of the component data"
 },{
-  name: "placeholder-startday",
-  type: "string",
-  default: "Start date",
+  name: "mode",
+  type: "auto | desktop | mobile",
+  default: "auto",
   required: "",
-  description: "Field placeholder, must be the key in the translation file for the start date input"
-},{
-  name: "placeholder-endday",
-  type: "string",
-  default: "Start date",
-  required: "",
-  description: "Field placeholder, must be the key in the translation file for the end date input"
+  description: "Indicates the component performance mode"
 }]
 
 inheritedOutputs: [{

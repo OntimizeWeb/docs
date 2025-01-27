@@ -29,13 +29,22 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </thead>
     <tbody>
      <tr>
-        <td>15.3.3</td>
-        <td rowspan="16">15.0.0</td>
-        <td rowspan="16">15.0.1<br>15.0.0</td>
-        <td rowspan="16">15.1.3<br>15.1.2<br>15.1.1<br>15.1.0<br>15.0.1<br>15.0.0</td>
-        <td rowspan="16">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
-        <td rowspan="16">15.0.3<br>15.0.2<br>15.0.1<br>15.0.0</td>
-        <td rowspan="16">15.1.0<br>15.0.0</td>
+        <td>15.4.0</td>
+        <td rowspan="19">15.0.0</td>
+        <td rowspan="19">15.0.1<br>15.0.0</td>
+        <td rowspan="19">15.1.3<br>15.1.2<br>15.1.1<br>15.1.0<br>15.0.1<br>15.0.0</td>
+        <td rowspan="19">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
+        <td rowspan="19">15.0.3<br>15.0.2<br>15.0.1<br>15.0.0</td>
+        <td rowspan="19">15.1.0<br>15.0.0</td>
+    </tr>
+     <tr>
+        <td>15.3.5</td>
+    </tr>
+     <tr>
+        <td>15.3.4</td>
+    </tr>
+    <tr>
+      <td>15.3.3</td>
     </tr>
      <tr>
         <td>15.3.2</td>
