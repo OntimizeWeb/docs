@@ -338,12 +338,13 @@ validateBeforeSave= (data: any): OFormValidation => {
 
   const errors: string[] = [];
 
-  if (this. === 'insert' && !data.name) {
+  if (this.form.isInInsertMode() && !data.name) {
     errors.push('Name is required.');
   }
-  if (action === 'update' && data.status === 'inactive') {
+
+  if (this.form.isInUpdateMode() && data.status === 'inactive') {
     errors.push('Cannot update a record with inactive status.');
   }
-  return { valid: errors.length === 0, title:' Inactive status ',messages: errors }
+  return { valid: errors.length === 0, title: ' Inactive status ', messages: errors }
 }
 ```
