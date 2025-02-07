@@ -316,8 +316,35 @@ Ontimize web now supports the JDBC **UUID** sql type. To indicate that a key col
 </o-form>
 ```
 
-## Set-value-orde r<span class='menuitem-badge'>new<span>
+## Set-value-order<span class='menuitem-badge'>new<span>
 
 The o-form doesn't guarantee the order in which the fields will be filled. If a field value is required by another one (as a parent-key of a form field, an error could be produced).
 
 In principle, the default filler should be right in most cases, but with this parameter the filler order can be established. It isn't necessary to establish every field attribute. The attributes specified in this parameter are filled first.
+
+## Input form-data-validation-function <span class='menuitem-badge'>new<span>
+
+**Ontimize Web** allows to execute the before-save validation callback for insert and update operations in `o-form`.
+
+If the validation fails, it displays an alert with the corresponding messages and prevents the operation from proceeding.
+
+```html
+  <o-form #form attr="customers_form_edit" ... [form-data-validation-function]="validateBeforeSave"></form>
+```
+```ts
+@ViewChild('form') form: OFormComponent;
+
+validateBeforeSave= (data: any): OFormValidation => {
+
+  const errors: string[] = [];
+
+  if (this.form.isInInsertMode() && !data.name) {
+    errors.push('Name is required.');
+  }
+
+  if (this.form.isInUpdateMode() && data.status === 'inactive') {
+    errors.push('Cannot update a record with inactive status.');
+  }
+  return { valid: errors.length === 0, title: ' Inactive status ', messages: errors }
+}
+```

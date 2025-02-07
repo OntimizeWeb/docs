@@ -180,6 +180,12 @@ attributes: [
   required: "",
   since: "15.1.0",
   description: "Fields attr's order that ​​will be be set values in this order in the form, separated by ';'"
+},{
+  name: "form-data-validation-function",
+  type: "(data: any) => OFormValidation",
+  since: "15.4.2",
+  description: "Executes the before-save validation callback for insert and update operations."
+
 }]
 
 outputs: [{
