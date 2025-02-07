@@ -25,9 +25,16 @@ attributes: [{
   default: "",
   required: "",
   description: "Indicates the exportation type",
+},{
+  name: "export-function",
+  type: "() => void",
+  default: "",
+  required: "",
+  since: "15.4.2",
+  description: "Custom function to be executed when the export button is clicked",
 }]
 
 outputs: [{
   name: "onClick",
-  description: "Event triggered when the export button is clicked"
+  description: "Event triggered when the export button is clicked. <br> This output is <b>deprecated</b>, use the export-function attribute instead.",
 }]
