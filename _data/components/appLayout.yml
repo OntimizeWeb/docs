@@ -94,6 +94,8 @@ attributes:
       default: "",
       required: "",
       description: "Static header title",
+    },{
+      name: "store-state"
     }
   ]
 
