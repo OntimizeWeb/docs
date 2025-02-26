@@ -95,7 +95,8 @@ attributes:
       required: "",
       description: "Static header title",
     },{
-      name: "store-state"
+      name: "store-state",
+      since: "15.5.0"
     }
   ]
 
