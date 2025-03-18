@@ -29,13 +29,16 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </thead>
     <tbody>
      <tr>
+        <td>15.5.1</td>
+        <td rowspan="25">15.0.0</td>
+        <td rowspan="25">15.0.1<br>15.0.0</td>
+        <td rowspan="25">15.1.4<br>15.1.3<br>15.1.2<br>15.1.1<br>15.1.0<br>15.0.1<br>15.0.0</td>
+        <td rowspan="25">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
+        <td rowspan="25">15.0.3<br>15.0.2<br>15.0.1<br>15.0.0</td>
+        <td rowspan="25">15.1.0<br>15.0.0</td>
+    </tr>
+    <tr>
         <td>15.5.0</td>
-        <td rowspan="24">15.0.0</td>
-        <td rowspan="24">15.0.1<br>15.0.0</td>
-        <td rowspan="24">15.1.3<br>15.1.2<br>15.1.1<br>15.1.0<br>15.0.1<br>15.0.0</td>
-        <td rowspan="24">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
-        <td rowspan="24">15.0.3<br>15.0.2<br>15.0.1<br>15.0.0</td>
-        <td rowspan="24">15.1.0<br>15.0.0</td>
     </tr>
     <tr>
         <td>15.4.4</td>
@@ -45,7 +48,6 @@ In this section you can check the different releases of **OntimizeWeb** and its 
     </tr>
     <tr>
         <td>15.4.2</td>
-
     </tr>
     <tr>
         <td>15.4.1</td>
@@ -109,6 +111,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
       </tr>
   </tbody>
 </table>
+
 
 - The prefix _ontimize-web-ngx_ was omitted from the names of the addons.
 

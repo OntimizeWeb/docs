@@ -155,6 +155,8 @@ You can define custom tooltip templates to format the displayed data.
 
 You can capture tooltip-related events and customize behavior.
 
+*TS*
+
 ```ts
 activate(event: any) {
   console.log("Tooltip activated:", event);
