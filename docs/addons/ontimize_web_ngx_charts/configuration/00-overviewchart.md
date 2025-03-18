@@ -128,11 +128,29 @@ export class CandlestickComponent {
   }
 }
 ```
-## Custom Tooltip Example
+
+## Tooltip
+
+Tooltips provide valuable contextual information for charts. You can either use the default tooltip or customize it according to your needs.
+
+### Default Tooltip
+
+In some cases, you may want to enable the default tooltip without customizing it with a template. To do this, you can simply use the `show-tooltip` property, and the chart will automatically display a default tooltip with the available data.
+
+In this example, the tooltip is enabled for a *Line Chart* without the need to define a custom template:
+
+*HTML*
+
+```html
+<o-chart #lineChartDefault type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT"
+         x-data-type="time" show-tooltip="true">
+</o-chart>
+```
+### Custom Tooltip
 
 Tooltips in charts provide valuable contextual information. This section explains how to customize tooltips for a *Line Chart* by modifying the date format, content, and style.
 
-### Customizing Tooltip Content
+#### Customizing Tooltip Content
 
 You can define custom tooltip templates to format the displayed data.
 
@@ -151,7 +169,7 @@ You can define custom tooltip templates to format the displayed data.
 </o-chart>
 ```
 
-### Adding Interactivity
+#### Adding Interactivity
 
 You can capture tooltip-related events and customize behavior.
 
