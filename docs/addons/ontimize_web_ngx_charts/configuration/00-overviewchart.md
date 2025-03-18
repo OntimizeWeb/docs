@@ -128,3 +128,35 @@ export class CandlestickComponent {
   }
 }
 ```
+## Custom Tooltip Example
+
+Tooltips in charts provide valuable contextual information. This section explains how to customize tooltips for a *Line Chart* by modifying the date format, content, and style.
+
+### Customizing Tooltip Content
+
+You can define custom tooltip templates to format the displayed data.
+
+*HTML*
+
+```html
+<o-chart #lineChartBasic type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" show-tooltip="true" y-axis="MOVEMENT"
+      x-data-type="time" [color]="colorScheme" (onActivate)="activate($event)" (onSelect)="activate($event)">
+      <ng-template #tooltip let-model="model">
+        <strong>Date:</strong> {{model?.name | date:'dd/MM/yyyy'}}<br>
+        <strong>Value:</strong> {{model?.value | currency:'EUR'}}
+      </ng-template>
+      <ng-template #seriesTooltip let-model="model">
+        <strong>Series Tooltip:</strong> {{model?.name}} - {{model?.value}}
+      </ng-template>
+</o-chart>
+```
+
+### Adding Interactivity
+
+You can capture tooltip-related events and customize behavior.
+
+```ts
+activate(event: any) {
+  console.log("Tooltip activated:", event);
+}
+```
