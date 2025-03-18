@@ -142,8 +142,8 @@ You can define custom tooltip templates to format the displayed data.
 <o-chart #lineChartBasic type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" show-tooltip="true" y-axis="MOVEMENT"
       x-data-type="time" [color]="colorScheme" (onActivate)="activate($event)" (onSelect)="activate($event)">
       <ng-template #tooltip let-model="model">
-        <strong>Date:</strong> {{model?.name | date:'dd/MM/yyyy'}}<br>
-        <strong>Value:</strong> {{model?.value | currency:'EUR'}}
+        <strong>Date:</strong> {{model?.name | oMoment : dateArgs}}<br>
+        <strong>Value:</strong> {{model?.value | oCurrency : currencyArgs}}
       </ng-template>
       <ng-template #seriesTooltip let-model="model">
         <strong>Series Tooltip:</strong> {{model?.name}} - {{model?.value}}
@@ -158,6 +158,15 @@ You can capture tooltip-related events and customize behavior.
 *TS*
 
 ```ts
+currencyArgs: ICurrencyPipeArgument = {
+    currencySimbol: '€',
+    currencySymbolPosition: 'right',
+    grouping: true,
+    thousandSeparator: '.',
+    decimalSeparator: ',',
+  };
+dateArgs: IMomentPipeArgument = { format: 'DD/MM/YYYY' };
+
 activate(event: any) {
   console.log("Tooltip activated:", event);
 }
