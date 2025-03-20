@@ -32,9 +32,13 @@ This pipe is designed to format numeric values into a currency format, allowing 
 
 **Example:**
 
+
 ```html
+{% raw %}
 <span>{{ 1234.56 | oCurrency: { currencySimbol: '$', currencySymbolPosition: 'before', thousandSeparator: ',', decimalSeparator: '.', minDecimalDigits: 2, maxDecimalDigits: 2 } }}</span>
+{% endraw %}
 ```
+
 
 ## **oIcon**
 
@@ -66,7 +70,9 @@ The `oInteger` pipe is used to format integer numbers. It can add thousand separ
 **Example:**
 
 ```html
+{% raw %}
 <span>{{ 1234567 | oInteger:{ grouping: true, thousandSeparator: ',' } }}</span>
+{% endraw %}
 ```
 
 ## **oMoment**
@@ -80,7 +86,9 @@ The `oMoment` pipe is used to format dates into a readable format. It allows cus
 
 **Example:**
 ```html
+{% raw %}
 <span>{{ '2025-03-19T12:00:00Z' | oMoment:{ format: 'MM/DD/YYYY' } }}</span>
+{% endraw %}
 ```
 
 ## **oPercent**
@@ -101,7 +109,9 @@ The `oPercent` pipe is used to format numbers as percentages. It provides option
 **Example:**
 
 ```html
+{% raw %}
 <span>{{ 0.85 | oPercent:{ grouping: true, thousandSeparator: ',', decimalSeparator: '.', minDecimalDigits: 2, maxDecimalDigits: 2, valueBase: 100 } }}</span>
+{% endraw %}
 ```
 
 ## **oReal**
@@ -122,7 +132,9 @@ The `oReal` pipe is used to format real (floating-point) numbers. It allows cust
 **Example:**
 
 ```html
+{% raw %}
 <span>{{ 1234.567 | oReal:{ grouping: true, thousandSeparator: ',', decimalSeparator: '.', minDecimalDigits: 2, maxDecimalDigits: 3, truncate: true } }}</span>
+{% endraw %}
 ```
 
 ## **oTranslate**
@@ -138,7 +150,9 @@ The `oTranslate` pipe is used to translate text based on the current language. I
 **Example:**
 
 ```html
+{% raw %}
 <span>{{ 'hello' | oTranslate:{ values: ['world'] } }}</span>
+{% endraw %}
 ```
 
 ## **orderBy**
@@ -156,6 +170,7 @@ The `orderBy` pipe is used to sort an array based on the values of a given prope
 **Example:**
 
 ```html
+{% raw %}
 <!-- Sort an array of numbers in ascending order -->
 <span>{{ [3, 1, 2] | orderBy }}</span>
 
@@ -167,6 +182,7 @@ The `orderBy` pipe is used to sort an array based on the values of a given prope
 
 <!-- Sort an array by multiple properties -->
 <span>{{ [{name: 'John', age: 30}, {name: 'Jane', age: 25}] | orderBy:['-age', 'name'] }}</span>
+{% endraw %}
 ```
 
 
