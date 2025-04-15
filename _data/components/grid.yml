@@ -98,18 +98,10 @@ attributes: [{
   default: "no"
 }]
 
-outputs: [{
-  name: "onClick",
-  description: "Event triggered when a row is clicked"
-},{
-  name: "onDoubleClick",
-  description: "Event triggered when a row is double clicked"
-},{
-  name: "onDataLoaded",
-  description: "Event triggered when the data is updated"
-},{
-  name: "onPaginatedDataLoaded",
-  description: "Event triggered when the paginated data is updated"
+inheritedOutputs: [{
+  component: "OServiceComponent",
+  path: "components/service/service/api",
+  outputs: [ 'onClick','onDoubleClick','onDataLoaded','onPaginatedDataLoaded','onSearch']
 }]
 
 extraComponents: "gridData"
