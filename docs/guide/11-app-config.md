@@ -29,7 +29,7 @@ export const CONFIG: Config = {
   uuid: 'com.ontimize.web.quickstart',
   title: 'Ontimize Web QuickStart',
   locale: 'es', /* Optional */
-  serviceType: 'Ontimize' | 'OntimizeEE',/* Optional */
+  serviceType: 'Ontimize' | 'OntimizeEE' | 'JSONAPI',/* Optional, by default is OntimizeEE */
   servicesConfiguration: SERVICE_CONFIG,
   appMenuConfiguration: MENU_CONFIG,
   applicationLocales: ['es', 'en'],
@@ -66,11 +66,12 @@ The noteworthy parameters here are:
 - **uuid:** The application identifier, this is the unique package identifier of the application. It is used when storing or managing temporal data related with the application. By default is set as `ontimize-web-uuid`.
 - **title:** The title of the application.
 - **locale:** The language of the application specified by the country code (e.g. 'es' for Spanish, 'en' for English, etc.).
-- **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE or a custom implementation.
-  - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures  Ontimize REST standard services.
-  - **'Ontimize'(default):** string that configures Ontimize REST services.
-  - **'OntimizeEE':** string that configures Ontimize REST JEE services and is the default value.
-  - **Custom class:** a service class reference that extends `OntimizeService` or `OntimizeEEService` or implements the `IDataService` interface. More information [here]({{ base_path }}/guide/service/#extending-ontimize-web-services){:target="_blank"}.
+- **serviceType:** The service type used in the app by framework components that request data from server. You can specify Ontimize REST standard, Ontimize REST JEE, JSON:API standard or a custom implementation.
+  - **Not configured (by default):** if you do not configure or specify this parameter, the framework configures OntimizeEE REST standard services.
+  - **'Ontimize'** string that configures Ontimize REST services.
+  - **'OntimizeEE'(default)::** string that configures Ontimize REST JEE services and is the default value.
+  - **'JSONAPI':**  string that configures JSON:API REST services
+  - **Custom class:** a service class reference that extends `OntimizeService`, `OntimizeEEService`, `JSONAPI` or implements the `IDataService` interface. More information [here]({{ base_path }}/guide/service/#extending-ontimize-web-services){:target="_blank"}.
 - **servicesConfiguration:** Object that contains the services configuration parameters. Learn more [here](#services-configuration).
 - **appMenuConfiguration:** Object defining application menu structure. Learn more [here](#menu-configuration).
 - **applicationLocales:** Set of available locales for the application.
@@ -311,9 +312,12 @@ You have to replace the references of "ontimize-web-ngx-jee-seed" by the name of
 
 # Services configuration
 
-If you indicate in the application configuration that the application should use **OntimizeEE** services (check `serviceType` attribute in the [previous section](#application-configuration-file) of this page), you have to configure the service paths. For doing this **OntimizeWeb** uses the `servicesConfiguration` property from the app configuration file that must point to an object defined as in the example below.
+Ontimize Web supports  **OntimizeEE** and **JSON:API**, to configure this standards you need to specify it in the `servicesConfiguration` (check `serviceType` attribute in the [previous section](#application-configuration-file).
+ of this page).
 
-In this object, the keys represents the different services names used in the application. Every service needs a `path` property where you must set the path of the service, excluding the URL configured in the `apiEndpoint` attribute of the application configuration.
+ If you indicate in the application configuration that the application should use **OntimizeEE** or **JSON:API** services, you have to configure the service paths. For doing this **OntimizeWeb** uses the `servicesConfiguration` property from the app configuration file which should reference an object structured as shown in the example below.
+
+In this object, each key represents a different service used in the application. Each service must include a `path` property, where you define the service's path—excluding the base URL specified in the apiEndpoint attribute of the application configuration.
 
 ```javascript
 export const SERVICE_CONFIG: Object = {
@@ -338,7 +342,7 @@ export const SERVICE_CONFIG: Object = {
 };
 ```
 
-For clarification, if your `apiEndpoint` is the one in the [application configuration](#application-configuration-file) example, **OntimizeWeb** will concat the `apiEndpoint` and the `path` of the service to build the URL for sending requests. For example : https://try.ontimize.com/QSAllComponents-jee/services/rest/customers.
+For clarification, if your `apiEndpoint` is the one in the [application configuration](#application-configuration-file) example, **OntimizeWeb** and **JSON:API** will concat the `apiEndpoint` and the `path` of the service to build the URL for sending requests. For example : https://try.ontimize.com/QSAllComponents-jee/services/rest/customers.
 
 # Internationalization (i18) configuration
 

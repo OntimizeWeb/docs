@@ -57,7 +57,7 @@ ontimize-web-ngx-quickstart
 |  |  |  ├──  movement-types-renderer/        # Custom component (cell renderer) definition
 |  |  |  |──  style-manager/                  # Class for managing stylesheets
 |  |  |  |──  app.menu.config.ts              # Application menu definition
-|  |  |  |──  app.services.config.ts          # Ontimize JEE services path configuration file
+|  |  |  |──  app.services.config.ts          # Ontimize JEE or JSON:API services path configuration file
 |  |  |  |──  constant.ts                     # File used to store constant variables on the app like the primary color code
 |  |  |  └──  shared.modules.ts               # Shared module definition
 |  |  |

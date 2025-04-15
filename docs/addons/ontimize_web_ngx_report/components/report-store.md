@@ -7,13 +7,35 @@ grand_parent: Addons
 nav_order: 3
 ---
 
+Report store supports **OntimizeEE** and  **JSON:API** standards.
+
 {: .note}
->Remember to complete the steps you need to perform on your backend server to complete the report store configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/reports/report-store){:target="_blank"}
+>Remember, if you are implementing **OntimizeEE**, to complete the steps you need to perform on your backend server to complete the report store configuration following this [link](https://ontimize.github.io/ontimize-boot/basics/reports/report-store){:target="_blank"}
+
+{: .note}
+>Additionally, if you are implementing **JSON:API**, ensure your backend is configured accordingly by following the guidelines provided [here]({{ base_path }}/jsonapi){:target="_blank"}
 
 To add that in your application run a reports with jasper template you have to follow the following steps
 
+1. To configure the report store service, you can configure the path in `servicesConfiguration`.
+The default path for requests to
+* **OntimizeEE** is `/reportstore` ,
+* **JSON:API** is `/Report` .
 
-1. To add new menu option `Reports` in `src/app/shared/app.menu.config.ts`
+```ts
+export const SERVICE_CONFIG =
+{
+  'reportoarameter': {
+    'path': '/ReportParameter'
+    },
+  'reportstore': {
+    'path': '/Report'
+    },
+  ...
+}
+```
+
+2. To add new menu option `Reports` in `src/app/shared/app.menu.config.ts`
 
     ```ts
     ..
@@ -32,7 +54,7 @@ To add that in your application run a reports with jasper template you have to f
       }
     ```
 
-2. In `src/app/main/main-routing.module.ts`, add a route for new report management module p.e with `path` of `reports`
+3. In `src/app/main/main-routing.module.ts`, add a route for new report management module p.e with `path` of `reports`
 
     ```ts
     import { NgModule } from '@angular/core';
@@ -58,7 +80,7 @@ To add that in your application run a reports with jasper template you have to f
     export class MainRoutingModule { }
     ```
 
-3. Create the new report management module `ReportModule` and import `OReportRoutingModule` module
+4. Create the new report management module `ReportModule` and import `OReportRoutingModule` module
 
     ```ts
     import { NgModule } from '@angular/core';
@@ -78,7 +100,7 @@ To add that in your application run a reports with jasper template you have to f
     export class ReportModule{}
     ```
 
-4. To add/remove/update report
+5. To add/remove/update report
 
     Now you should a new option similar to where you can management the reports
 
@@ -92,7 +114,7 @@ To add that in your application run a reports with jasper template you have to f
 
     ![Detail report ]({{ "/assets/images/report/reportDetailStore.png" | absolute_url }}){: .comp-example-img}
 
-5. Add a button and on its click event generate the PDF document. The method `openFillReport` takes as parameter the `UUID`, the parameters values and the filter of the report.
+6. Add a button and on its click event generate the PDF document. The method `openFillReport` takes as parameter the `UUID`, the parameters values and the filter of the report.
 
     ```html
       <o-button (click)="generateReport()" label="Generate report" type="STROKED" icon="description" [matTooltip]="Generate report"></o-button>
