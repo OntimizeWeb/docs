@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="34" viewBox="0 0 160 34">
+  <g id="Ilustracion_NIF" data-name="Ilustracion NIF" transform="translate(-687 -473)">
+    <g id="Integer" transform="translate(4 21)">
+      <g id="Grupo_3968" data-name="Grupo 3968">
+        <rect id="Rectángulo_121212" data-name="Rectángulo #121212" width="160" height="34" rx="2" transform="translate(683 452)" fill="#121212"/>
+        <path id="Rectángulo_121212_-_Contorno" data-name="Rectángulo #121212 - Contorno" d="M2,1A1,1,0,0,0,1,2V32a1,1,0,0,0,1,1H158a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H158a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(683 452)" fill="rgba(255,255,255,0.12)"/>
+        <rect id="Rectángulo_W16_" data-name="Rectángulo W16%" width="160" height="34" rx="2" transform="translate(683 452)" fill="rgba(255,255,255,0.16)"/>
+        <path id="Rectángulo_W16_-_Contorno" data-name="Rectángulo W16% - Contorno" d="M2,1A1,1,0,0,0,1,2V32a1,1,0,0,0,1,1H158a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H158a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(683 452)" fill="rgba(255,255,255,0.12)"/>
+        <rect id="Rectángulo_Bc_6_" data-name="Rectángulo Bc 6%" width="160" height="34" rx="2" transform="translate(683 452)" fill="rgba(20,100,165,0.06)"/>
+        <path id="Rectángulo_Bc_6_-_Contorno" data-name="Rectángulo Bc 6% - Contorno" d="M2,1A1,1,0,0,0,1,2V32a1,1,0,0,0,1,1H158a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H158a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(683 452)" fill="rgba(255,255,255,0.12)"/>
+      </g>
+      <path id="Trazado_7106" data-name="Trazado 7106" d="M18851.145,195.755h-16a.755.755,0,1,1,0-1.51h16a.755.755,0,1,1,0,1.51Z" transform="translate(-18144.145 265)" fill="rgba(255,255,255,0.6)"/>
+      <text id="_34568125_M" data-name="34568125 M" transform="translate(691 479)" fill="rgba(255,255,255,0.74)" font-size="13" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="0">34568125 M</tspan></text>
+      <text id="_" data-name="*" transform="translate(711 466)" fill="rgba(255,255,255,0.74)" font-size="12" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">*</tspan></text>
+      <g id="person_black_24dp_1_" data-name="person_black_24dp (1)" transform="translate(818.999 464)">
+        <path id="Trazado_7114" data-name="Trazado 7114" d="M0,0H18V18H0Z" transform="translate(0)" fill="none"/>
+        <path id="Trazado_7115" data-name="Trazado 7115" d="M9.331,9.331A2.665,2.665,0,1,0,6.665,6.665,2.665,2.665,0,0,0,9.331,9.331Zm0,1.333C7.552,10.664,4,11.556,4,13.329v1.333H14.662V13.329C14.662,11.556,11.11,10.664,9.331,10.664Z" transform="translate(-0.331 -0.331)" fill="rgba(255,255,255,0.6)"/>
+      </g>
+    </g>
+  </g>
+</svg>

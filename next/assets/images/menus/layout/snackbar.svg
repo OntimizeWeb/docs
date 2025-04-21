@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="96" viewBox="0 0 128 96">
+  <g id="Ilustración_snackbar" data-name="Ilustración snackbar" transform="translate(-72 -12)">
+    <g id="Ilustracion_SnackBar" data-name="Ilustracion  SnackBar" transform="translate(-952 -431)">
+      <path id="Trazado_7172" data-name="Trazado 7172" d="M2.286,0H125.714A2.157,2.157,0,0,1,128,2V94a2.157,2.157,0,0,1-2.286,2H2.286A2.157,2.157,0,0,1,0,94V2A2.157,2.157,0,0,1,2.286,0Z" transform="translate(1024 443)" fill="#fff"/>
+      <path id="Trazado_7172_-_Contorno" data-name="Trazado 7172 - Contorno" d="M2.286,1A1.186,1.186,0,0,0,1,2V94a1.186,1.186,0,0,0,1.286,1H125.714A1.186,1.186,0,0,0,127,94V2a1.186,1.186,0,0,0-1.286-1H2.286m0-1H125.714A2.157,2.157,0,0,1,128,2V94a2.157,2.157,0,0,1-2.286,2H2.286A2.157,2.157,0,0,1,0,94V2A2.157,2.157,0,0,1,2.286,0Z" transform="translate(1024 443)" fill="rgba(0,0,0,0.12)"/>
+      <path id="Trazado_7110" data-name="Trazado 7110" d="M18947.145,195.755h-112a.755.755,0,1,1,0-1.51h112a.755.755,0,1,1,0,1.51Z" transform="translate(-17803.143 271)" fill="rgba(0,0,0,0.12)"/>
+      <path id="Trazado_7111" data-name="Trazado 7111" d="M18875.145,195.755h-40a.755.755,0,1,1,0-1.51h40a.755.755,0,1,1,0,1.51Z" transform="translate(-17803.145 261)" fill="rgba(0,0,0,0.74)"/>
+      <g id="Grupo_3944" data-name="Grupo 3944" transform="translate(1131.166 448.292)">
+        <path id="Trazado_7181" data-name="Trazado 7181" d="M5.484,9.683,2.8,7,5.484,4.316,4.667,3.5,1.167,7l3.5,3.5Zm3.033,0L11.2,7,8.517,4.316,9.334,3.5l3.5,3.5-3.5,3.5Z" fill="rgba(0,0,0,0.6)"/>
+        <rect id="Rectángulo_6471" data-name="Rectángulo 6471" width="10.508" height="1.055" transform="translate(5.209 11.9) rotate(-75.924)" fill="rgba(0,0,0,0.6)"/>
+      </g>
+      <g id="item_3" data-name="item 3" transform="translate(1055.283 523)">
+        <rect id="Rectángulo_6424" data-name="Rectángulo 6424" width="66" height="12" rx="1" transform="translate(-0.283)" fill="rgba(0,0,0,0.12)"/>
+        <path id="Trazado_7084" data-name="Trazado 7084" d="M18867.145,195.755h-32a.755.755,0,1,1,0-1.51h32a.755.755,0,1,1,0,1.51Z" transform="translate(-18827.428 -189)" fill="rgba(0,0,0,0.74)"/>
+        <g id="Botones" transform="translate(-1018.283 -514.597)">
+          <rect id="Rectángulo_6435" data-name="Rectángulo 6435" width="14" height="6" rx="1" transform="translate(1065 517.597)" fill="#fff"/>
+          <path id="Rectángulo_6435_-_Contorno" data-name="Rectángulo 6435 - Contorno" d="M1,1V5H13V1H1M1,0H13a1,1,0,0,1,1,1V5a1,1,0,0,1-1,1H1A1,1,0,0,1,0,5V1A1,1,0,0,1,1,0Z" transform="translate(1065 517.597)" fill="rgba(0,0,0,0.74)"/>
+          <path id="Trazado_7112" data-name="Trazado 7112" d="M18841.17,195.755h-6.025a.755.755,0,1,1,0-1.51h6.025a.755.755,0,1,1,0,1.51Z" transform="translate(-17766.156 325.597)" fill="rgba(0,0,0,0.74)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
