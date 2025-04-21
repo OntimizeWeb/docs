@@ -326,7 +326,7 @@ Ontimize Web supports  **OntimizeEE** and **JSON:API**, to configure this standa
 In this object, each key represents a different service used in the application. Each service must include a `path` property, where you define the service's path—excluding the base URL specified in the apiEndpoint attribute of the application configuration.
 
 ```javascript
-export const SERVICE_CONFIG: Object = {
+export const SERVICE_CONFIG = {
   'users': {
     'path': '/users'
   },
