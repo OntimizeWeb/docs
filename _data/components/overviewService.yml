@@ -79,6 +79,8 @@ attributes: [{
   default: "",
   required: "",
   description: "Indicates the order ascending or descending of the option values"
+},{
+  name: "configure-service-args"
 }]
 
 outputs: [{
