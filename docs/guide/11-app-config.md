@@ -55,7 +55,8 @@ export const CONFIG: Config = {
   },
   exportConfiguration: {
     path:'/export'
-  }
+  },
+  nameConvention: 'upper' | 'lower' | 'database' /* Optional */
 };
 ```
 {: .no-scroll}
@@ -95,6 +96,11 @@ The noteworthy parameters here are:
 - **permissionsConfiguration:** permissions service configuration object.
 - **exportConfiguration**: export configuration object required only with `Ontimize Boot version 3.9.0 or above`
   -  **path**: the export path used in the remote package query compatible.
+- **nameConvention**: Indicates the naming format to which database column names will be transformed when exposed through REST API requests.
+  Column names will be converted to `upper`,`lower` or `database`
+  - `upper`: All letters in column names will be converted to uppercase (e.g., `USER_ID`).
+  - `lower`: All letters in column names will be converted to lowercase (e.g., `user_id`).
+  - `database`: Column names will be used as defined in the component configuration, without any transformation (e.g., `UserId` or `USER_ID`, depending on how they are stored).
 
 # Package.json configuration
 
