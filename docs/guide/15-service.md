@@ -1,181 +1,40 @@
 ---
 layout: default
-title: "Services"
+title: Services
+has_children: true
 permalink: /guide/service/
 parent: Guide
-nav_order: 6
+nav_order: 3
+has_toc: false
 ---
 
 {% include base_path %}
 {% include toc %}
 
-This section describes the **OntimizeWeb** services an how to extend them to add or modify its functionality.
+OntimizeWeb provides a powerful and flexible way to interact with backend services, supporting both **standard APIs using the JSON:API** and **Ontimize-based backends** . This allows developers to integrate data sources seamlessly using a standardized interface while maintaining the reactive and component-driven architecture of Angular.
 
-## Ontimize services
-
-OntimizeWeb services are used for fetching and saving data from servers based on [Ontimize](https://github.com/ontimize){:target="_blank"}. There is two types of Ontimize services depending on the server technology used: `OntimizeService` and `OntimizeEEService`. You must indicate which type of service the application will use by configuring the `serviceType` attribute in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration-file){:target="_blank"}.
-
-You can also use your own service and adapt its response to OntimizeWeb's standard response. This will be explained later in this section.
-
-### Ontimize services methods
-
-Both services `OntimizeService` and `OntimizeEEService` have the same methods for configuring and sending request to the server. This methods are the following:
-
-```javascript
-/* Configuration methods */
-getDefaultServiceConfiguration(serviceName?: string): Object;
-configureService(config: any): void;
-
-/* CRUD methods */
-query(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: Object): Observable<any>;
-advancedQuery(kv?: Object, av?: Array<string>, entity?: string, sqltypes?: object,
-    offset?: number, pagesize?: number, orderby?: Array<object>): Observable<ServiceResponse>
-insert(av: Object = {}, entity: string, sqltypes?: object): Observable<ServiceResponse>
-update(kv: Object = {}, av: object = {}, entity?: string, sqltypes?: object): Observable<ServiceResponse>
-delete(kv: Object = {}, entity?: string, sqltypes?: Object): Observable<ServiceResponse>
-
-/**
-* Successful response parsers, there is one parser for each CRUD method which calls to the common parser.
-* User can overwrite the chosen methods parsers or the common parser
-*/
-protected parseSuccessfulResponse(resp: any, _innerObserver: any);
-protected parseSuccessfulQueryResponse(resp: any, _innerObserver: any);
-protected parseSuccessfulAdvancedQueryResponse(resp: any, _innerObserver: any);
-protected parseSuccessfulInsertResponse(resp: any, _innerObserver: any);
-protected parseSuccessfulUpdateResponse(resp: any, _innerObserver: any);
-protected parseSuccessfulDeleteResponse(resp: any, _innerObserver: any);
-
-/**
-* Unsuccessful response parsers, there is one parser for each CRUD method which calls to the common parser.
-* User can overwrite the chosen methods parsers or the common parser
-*/
-protected parseUnsuccessfulResponse(error: any, _innerObserver: any);
-protected parseUnsuccessfulQueryResponse(resp: any, _innerObserver: any);
-protected parseUnsuccessfulAdvancedQueryResponse(resp: any, _innerObserver: any);
-protected parseUnsuccessfulInsertResponse(resp: any, _innerObserver: any);
-protected parseUnsuccessfulUpdateResponse(resp: any, _innerObserver: any);
-protected parseUnsuccessfulDeleteResponse(resp: any, _innerObserver: any);
-
-/* Authentication methods */
-startsession(user: string, password: string): Observable<any>;
-endsession(user: string, sessionId: number): Observable<any>;
-redirectLogin?(sessionExpired?: boolean);
-```
+This guide describes how services work in OntimizeWeb, how to extend them, and how to integrate third-party APIs using the JSON:API specification. Whether you're working with an Ontimize server or a modern RESTful API, this documentation will help you implement consistent data access across your application.
 
 
-### CRUD methods
-The *CRUD* (Create, Read, Update and Delete) methods are used to perform standard Ontimize operations:
+{% include nav_cards.html folder="services" %}
 
-* **query**: performs a request to get data from the server.
-  * **kv**: indicates the filtering values. An empty object means that no filter will be applied into the request.
-  * **av**: indicates the columns that you want to request.
-  * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
-* **advancedQuery**: performs a request to get **paginated** data from the server.
-  * **kv**: indicates the filtering values. An empty object means that no filter will be applied into the request.
-  * **av**: indicates the columns that you want to request.
-  * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
-  * **offset**: the index of the first item requested in the collection.
-  * **pagesize**: the number of items requested.
-  * **orderby**: object with the sorting that will be applied to the request result.
-* **insert**: performs a insert operation request to the server.
-  * **av**: indicates the values to insert.
-  * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
-* **update**: performs an update operation request to the server.
-  * **kv**: indicates the filtering values for performing the update.
-  * **av**: indicates the values to update.
-  * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
-* **delete**: performs an delete operation request to the server.
-  * **kv**: indicates the filtering values for performing the deletion.
-  * **entity**: indicates the entity to perform the request.
-  * **sqltypes**: object with the data types for each colum that participates in the request according to Java standard (see [SQLType](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/15.x.x/projects/ontimize-web-ngx/src/lib/util/sqltypes.ts){:target='_blank'}).
-
-### Server response interface
-The standard response of the requests made to Ontimize based servers always follows the following structure:
-
-```javascript
-{
-    code: number;
-    data: Array<Object>;
-    message: '';
-    sqlTypes?: Object;
-    startRecordIndex?: number;
-    totalQueryRecordsNumber?: number;
-}
-```
-
-Where the attributes indicates the following:
-
-* **code**: indicates the result of the operation: 0 for successful operations, 1 for unsuccessful operations, 3 for session expired.
-* **data**: the data requested.
-* **message**: a message in case the response was not successful.
-* **sqlTypes**: indicates the data type according to Java standard. See [SQL Types](https://docs.oracle.com/javase/8/docs/api/java/sql/Types.html){:target='_blank'}.
-* **startRecordIndex**: in paginated queries, indicates the position of the first retrieved record in the collection.
-* **totalQueryRecordsNumber**: in paginated queries, indicates the total number of record of the collection.
-
-You can see an example of a Ontimize service request response in the image below. You can see the complete response [here]({{ base_path }}/assets/examples/ontimize_service_request_example_response.json){:target='_blank'}.
-
-![Ontimize service response example]({{ base_path }}/assets/images/request.png){: .align-center}
-
-### Use OntimizeService in your application
-
-Check the example below about how to configure and use the `OntimizeService` for querying data in your application.
-
-```javascript
-protected service: OntimizeService;
-
-constructor(protected injector: Injector) {
-  this.service = this.injector.get(OntimizeService);
-}
-
-ngOnInit() {
-  this.configureService();
-}
-
-protected configureService() {
-  // Configure the service using the configuration defined in the `app.services.config.ts` file
-  const conf = this.service.getDefaultServiceConfiguration('movements');
-  this.service.configureService(conf);
-}
-
-getMovements(data) {
-  if (data.hasOwnProperty('ACCOUNTID') && this.service !== null) {
-    const filter = {
-      'ACCOUNTID': data['ACCOUNTID']
-    };
-    const columns = [this.yAxis, this.xAxis, 'DATE_'];
-    this.service.query(filter, columns, 'movement').subscribe(resp => {
-      if (resp.code === 0) {
-
-        // resp.data contains the data retrieved from the server
-
-      } else {
-        alert('Impossible to query data!');
-      }
-    });
-  }
-```
 
 ## Extending Ontimize Web services
 
 You can override or extend the functionality of the services defined in **OntimizeWeb**. You should know that some services are used internally and they cannot be extended. The prepared-to-extend services are the following:
 
-| Service | Injection token | Description |
-| ------- | ------- | ------- |
-| `OntimizeService` and `OntimizeEEService` | `O_DATA_SERVICE` | Service used for making CRUD operation and authentication |
-| `OTranslateService` | `O_TRANSLATE_SERVICE` | Service for translating the information shown in the application |
-| `OntimizeFileService` | `O_FILE_SERVICE` | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/overview){:target="_blank"}  component |
-| `OntimizeExportService` and `OntimizeExportService3X` | `O_EXPORT_SERVICE` | Service used by the [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"} component for exporting its data |
-| `OntimizePermissionsService` and `OntimizeEEPermissionsService` | `O_PERMISSION_SERVICE` | Service used for loading the application permissions |
-| `AuthService` | `O_AUTH_SERVICE` | Service used for authentication (since *ontimize-web-ngx@8.3.0*) |
-| `OReportService` | `O_REPORT_SERVICE` | Service used to generate reports (since *ontimize-web-ngx@8.7.0*) |
-| `OntimizeExportDataProviderService` and `OntimizeExportDataProviderService3X` | `O_EXPORT_DATA_SERVICE` | Service used to provide data and styles to table exports (since *ontimize-web-ngx@8.8.0*) |
-| `OTableGlobalConfig` | `O_TABLE_GLOBAL_CONFIG` | Service used to set some [`o-table`]({{ base_path }}/components/data/table/overview){:target="_blank"} global options (since *ontimize-web-ngx@8.7.3*) |
-| `LocalStorageService` | `O_LOCALSTORAGE_SERVICE` | Service used to save in application data in local storage (since *ontimize-web-ngx@15.2.0*) |
-
+| Service                                                                       | Injection token          | Description                                                                                                                                             |
+| ----------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `OntimizeService` and `OntimizeEEService`                                     | `O_DATA_SERVICE`         | Service used for making CRUD operation and authentication                                                                                               |
+| `OTranslateService`                                                           | `O_TRANSLATE_SERVICE`    | Service for translating the information shown in the application                                                                                        |
+| `OntimizeFileService`                                                         | `O_FILE_SERVICE`         | Service for uploading files, used by the [`o-file-input`]({{ base_path }}/components/input/file/overview){:target="\_blank"} component                  |
+| `OntimizeExportService` and `OntimizeExportService3X`                         | `O_EXPORT_SERVICE`       | Service used by the [`o-table`]({{ base_path }}/components/data/table/overview){:target="\_blank"} component for exporting its data                     |
+| `OntimizePermissionsService` and `OntimizeEEPermissionsService`               | `O_PERMISSION_SERVICE`   | Service used for loading the application permissions                                                                                                    |
+| `AuthService`                                                                 | `O_AUTH_SERVICE`         | Service used for authentication (since *ontimize-web-ngx@8.3.0*)                                                                                        |
+| `OReportService`                                                              | `O_REPORT_SERVICE`       | Service used to generate reports (since *ontimize-web-ngx@8.7.0*)                                                                                       |
+| `OntimizeExportDataProviderService` and `OntimizeExportDataProviderService3X` | `O_EXPORT_DATA_SERVICE`  | Service used to provide data and styles to table exports (since *ontimize-web-ngx@8.8.0*)                                                               |
+| `OTableGlobalConfig`                                                          | `O_TABLE_GLOBAL_CONFIG`  | Service used to set some [`o-table`]({{ base_path }}/components/data/table/overview){:target="\_blank"} global options (since *ontimize-web-ngx@8.7.3*) |
+| `LocalStorageService`                                                         | `O_LOCALSTORAGE_SERVICE` | Service used to save in application data in local storage (since *ontimize-web-ngx@15.2.0*)                                                             |
 
 For extending a service you should create your own service that extends a service from **OntimizeWeb** and provide it in your application using the corresponding injection token from the table above.
 
@@ -202,7 +61,7 @@ Once your service is created you can [override the Ontimize CRUD methods](#overr
 
 ### Override CRUD methods using a third party API
 
-You can use your service to retrieve or send data to a third party API. The following example shows the service from the previous step consuming the [Star Wars API](https://swapi.dev/){:target="_blank"} for querying different entities. We have overridden the `query` and `advancedQuery` methods for making simple and paginated request to the API. Note that you must [adapt the API response](#adapt-your-service-response) to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
+You can use your service to retrieve or send data to a third party API. The following example shows the service from the previous step consuming the [Star Wars API](https://swapi.dev/){:target="\_blank"} for querying different entities. We have overridden the `query` and `advancedQuery` methods for making simple and paginated request to the API. Note that you must [adapt the API response](#adapt-your-service-response) to the ontimize service response for using the retrieved data with the **OntimizeWeb** components.
 
 ```javascript
 import { Injectable, Injector } from '@angular/core';
@@ -245,6 +104,7 @@ export class StarWarsService extends OntimizeBaseService {
 
 }
 ```
+
 #### doRequest method
 
 This `doRequest` method is used to retrieve data from a URL. You can use this method with parameters to configurate the request.
@@ -252,28 +112,35 @@ You can check the options available in this example:
 
 ```javascript
 export type ServiceRequestParam = {
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE',
+  method: "GET" | "POST" | "PUT" | "DELETE",
   url: string,
   body?: any,
   options?: HttpRequestOptions,
-  successCallback?: (resp: ServiceResponse, observer: Subscriber<ServiceResponse>) => void,
-  errorCallBack?: (resp: ServiceResponse, observer: Subscriber<ServiceResponse>) => void
+  successCallback?: (
+    resp: ServiceResponse,
+    observer: Subscriber<ServiceResponse>
+  ) => void,
+  errorCallBack?: (
+    resp: ServiceResponse,
+    observer: Subscriber<ServiceResponse>
+  ) => void,
 };
 
 // this.doRequest(ServiceRequestParam)
 return this.doRequest({
-  method: 'GET',
+  method: "GET",
   url: url,
-  options: {} // This overrides the default http headers. Remove it if you are using an ontimize based API in the backend
+  options: {}, // This overrides the default http headers. Remove it if you are using an ontimize based API in the backend
 });
 ```
 
 {: .note }
->In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [adapt the response](#adapt-your-service-response).
+
+> In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [adapt the response](#adapt-your-service-response).
 
 ### Define your own CRUD methods
 
-All the **OntimizeWeb** components that use services for retrieving data have the attributes `query-method`, `paginated-query-method`, `insert-method`, `update-method` and `deleted-method`. The purpose of these attributes is allowing the component to use your own CRUD methods defined in your service. With this you can define, for example, as many *query* methods as you want.
+All the **OntimizeWeb** components that use services for retrieving data have the attributes `query-method`, `paginated-query-method`, `insert-method`, `update-method` and `deleted-method`. The purpose of these attributes is allowing the component to use your own CRUD methods defined in your service. With this you can define, for example, as many _query_ methods as you want.
 
 In the example below we have defined the `getSkywalker` method that retrieves information from the API.
 
@@ -299,9 +166,10 @@ export class StarWarsService extends OntimizeBaseService {
 }
 ```
 
-Now you can configure a component from  **OntimizeWeb** to use your method. Read more about this in the section [*Use your service in a specific component*](#use-your-service-in-a-specific-component).
+Now you can configure a component from **OntimizeWeb** to use your method. Read more about this in the section [_Use your service in a specific component_](#use-your-service-in-a-specific-component).
 
 {: .note }
+
 > In most cases the third party API won't offer the same response as OntimizeWeb components need so you have to [addapt the response](#adapt-your-service-response).
 
 ### Adapt your service response
@@ -382,6 +250,7 @@ export class StarWarsService extends OntimizeBaseService {
 After this, your adapter will be called every time your service receives a response.
 
 You can also extend the `BaseServiceResponse` according to your needs. Just remember to respect this three methods that are used internally in **OntimizeWeb**:
+
 - isSuccessful()
 - isFailed()
 - isUnauthorized()
@@ -404,11 +273,12 @@ export class AppModule { }
 At this point every **OntimizeWeb** component will use your recently created `StarWarsService` service for communicating with the backend.
 
 {: .note }
-> `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration-file){:target="_blank"}. There is one attribute for each type of service.
+
+> `OntimizeService`, `OntimizeEEService`, `OntimizeExportService`, `OntimizePermissionsService` and `OntimizeEEPermissionsService` can be extended and used in the whole application by indicating the class in the [application configuration]({{ base_path }}/guide/appconfig/#application-configuration-file){:target="\_blank"}. There is one attribute for each type of service.
 
 ### Use your service in a specific component
 
-If you want to use your service in a specific component instead of using it in the whole application, you have to create a provide  method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
+If you want to use your service in a specific component instead of using it in the whole application, you have to create a provide method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
 
 ```javascript
 import { StarWarsService } from '../../shared/star-wars.service';
@@ -428,14 +298,19 @@ export class MyModule { }
 
 Once the service is included in the providers of your module, it will be created an instance of the service for each component. For this, configure the `service-type` attribute in the component with the value of the `provide` attribute indicated in the previous step. Check the example below.
 
-
 ```html
-<o-table attr="starships" entity="starships" columns="name;model;manufacturer;starship_class;crew;passengers"
-  visible-columns="name;model;manufacturer;starship_class;passengers"  pageable="yes" quick-filter="no" insert-button="no" fxFlex
-  service-type="starWars">
-
+<o-table
+  attr="starships"
+  entity="starships"
+  columns="name;model;manufacturer;starship_class;crew;passengers"
+  visible-columns="name;model;manufacturer;starship_class;passengers"
+  pageable="yes"
+  quick-filter="no"
+  insert-button="no"
+  fxFlex
+  service-type="starWars"
+>
   ...
-
 </o-table>
 ```
 
@@ -443,4 +318,6 @@ Once the service is included in the providers of your module, it will be created
 
 **OntimizeWeb** defines a successful and unsuccessful request callbacks for each CRUD method, this methods are called when the service receives the response from the API. You can override this methods in order to modify its behaviour. This methods are: `parseSuccessfulMETHODResponse` and `parseUnsuccessfulMETHODResponse` where `METHOD` is `query`, `advancedQuery`, `update`, `insert` or `delete`.
 
-Both services `OntimizeService` and `OntimizeEEService` also have a generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained CRUD method callbacks so user can choose whether to override a particular or the generic method.
+The service `JSONAPIService` has a generic succesful and unsuccessful request callback which are `parseSuccessfulResponse` and `parseUnsuccessfulResponse`. This callbacks are called from the previous explained CRUD method callbacks so user can choose whether to override a particular or the generic method.
+
+
