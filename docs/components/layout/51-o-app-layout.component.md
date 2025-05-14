@@ -166,6 +166,38 @@ export class MainComponent  {
 
 ![Custom user info]({{ "/assets/images/layouts/app-layout/custom_user_info.png" | absolute_url }})
 
+## Side Menu Behavior Options
+The `<o-app-layout>` component is the main layout wrapper that provides a consistent structure for applications, including a top toolbar, side navigation menu, and main content area. It supports responsive behavior and is highly customizable.
+
+Example:
+
+```html
+<o-app-layout show-ellipsis-menu="true" tooltip-display-mode="always">
+  <router-outlet></router-outlet>
+</o-app-layout>
+```
+
+### Show ellipsis menu <span class='menuitem-badge'>new<span>
+
+The `show-ellipsis-menu` input controls whether long menu item labels should be visually truncated with an ellipsis (`...`) when they don’t fit in the available horizontal space. By default, this behavior is disabled and text may wrap or overflow depending on layout styles.
+
+![App layout component with show-ellipsis-menu]({{ "/assets/images/layouts/app-layout/app-layout-show-ellipsis-menu.png" | absolute_url }})
+
+
+### Tooltip display behavior <span class='menuitem-badge'>new<span>
+
+The `tooltip-display-mode` input lets you control when tooltips should appear on side navigation items. This is especially helpful when the menu is collapsed, and labels are hidden. By default, this value es `only-collapsed`
+
+Available modes:
+
+* **`'always'`** – Tooltips are always shown, regardless of the menu state.
+* **`'never'`** – Tooltips are never shown.
+* **`'only-collapsed'`** – Tooltips are shown only when the side menu is collapsed (default).
+* **`'only-expanded'`** – Tooltips are shown only when the side menu is expanded.
+
+This setting improves accessibility and user experience by offering contextual information only when it's needed.
+
+
 ## Images
 
 You can set provide images to be shown in the side navigator using the attributes `opened-sidenav-image` and `closed-sidenav-image`. Check this and other attributes in the **API** section of this page.

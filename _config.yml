@@ -22,6 +22,9 @@ versions:
   - url: /docs/v15
     title: 15.x.x
     selected: true
+  - url: /docs/next
+    title: next
+    selected: false
 
 page_excerpts: true
 

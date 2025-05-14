@@ -288,7 +288,7 @@ sections:
       title: "Creating the customers module"
       description: "Exercise 2: creation of a new module and its configurations"
     - url: "/tutorial/exercise3/"
-      title: "Creating a deatil form"
+      title: "Creating a detail form"
       description: "Exercise 3: creation of a detail form with inputs"
     - url: "/tutorial/exercise4/"
       title: "Creating de employees module"

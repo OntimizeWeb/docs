@@ -41,7 +41,7 @@ You can select this mode setting the value **tab** to the `mode` input. You can 
 #### Options
 It is possible to configure tab mode options with the `o-form-layout-tabgroup-options` component. This attributes are explained in the **API** section of this page.
 
-For complex labels, you can add `<ng-template let-tabData="tabData">...</ng-template>` and inside you can define your template. It's *important* than the tabData attributes are including in `labe-columns`.
+For complex labels, you can add `<ng-template let-tabData="tabData">...</ng-template>` and inside you can define your template. It's *important* than the tabData attributes are including in `label-columns`.
 
 <h3 class="grey-color">Example</h3>
 ```html
