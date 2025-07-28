@@ -347,7 +347,7 @@ sections:
       description: "Section that resolves common questions about Ontimize Web"
     - url: "/versions/"
       title: "Releases"
-      description: "Tables of all the Onitimze Web releases and its compatibilities"
+      description: "Tables of all the Ontimize Web releases and its compatibilities"
     - url: "/migrations/"
       title: "Migration guides"
       description: "Download page of our version migration guides"
