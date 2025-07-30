@@ -2,6 +2,8 @@
 layout: default
 title: "Migration Guide: Upgrading from 15.x.x to 15.6.0"
 permalink: /migration-15.x.x-to-15.6.0/
+parent: Migration guides
+grandParent: Aditional information
 nav_exclude: true
 ---
 {% include base_path %}
@@ -10,6 +12,11 @@ nav_exclude: true
 ## **Proceso de Migración de Ontimize Web 15.x.x a la versión 15.6.0**
 
 Este proceso cubre **exclusivamente los cambios incompatibles** (*breaking changes*) introducidos en la versión 15.6.0 de Ontimize Web. Úsalo para asegurar una migración completa y segura.
+
+**Importante:** Al migrar a `ontimize-web-ngx@15.6.0`, los siguientes addons oficiales **también deben actualizarse** para mantener la compatibilidad:
+  - `ontimize-web-ngx-chart@15.1.0`
+  - `ontimize-web-ngx-report@15.2.0`
+  - `ontimize-web-ngx-filemanager@15.1.0`
 
 
 ### 1. Cambio de tipo en `servicesConfiguration` en app.config.ts
