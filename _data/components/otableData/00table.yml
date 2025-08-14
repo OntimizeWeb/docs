@@ -244,14 +244,13 @@ attributes: [{
   default: "no"
 }]
 
+inheritedOutputs: [{
+  component: "OServiceComponent",
+  path: "components/service/service/api",
+  outputs: [ 'onClick','onDoubleClick','onDataLoaded','onPaginatedDataLoaded','onSearch']
+}]
 
 outputs: [{
-  name: "onClick",
-  description: "Event triggered when a row is clicked"
-},{
-  name: "onDoubleClick",
-  description: "Event triggered when a row is double clicked"
-},{
   name: "onRowSelected",
   description: "Event triggered when a row is selected"
 },{
@@ -260,15 +259,6 @@ outputs: [{
 },{
   name: "onRowDeleted",
   description: "Event triggered when there some row deletion"
-},{
-  name: "onDataLoaded",
-  description: "Event triggered when the data is updated"
-},{
-  name: "onPaginatedDataLoaded",
-  description: "Event triggered when the paginated data is updated"
-},{
-  name: "onSearch",
-  description: "Event triggered when the quickfilter starts searching"
 }]
 
 methods: [{

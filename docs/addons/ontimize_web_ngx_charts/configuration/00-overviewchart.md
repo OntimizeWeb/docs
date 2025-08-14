@@ -128,3 +128,64 @@ export class CandlestickComponent {
   }
 }
 ```
+
+## Tooltip
+
+Tooltips provide valuable contextual information for charts. You can either use the default tooltip or customize it according to your needs.
+
+### Default Tooltip
+
+In some cases, you may want to enable the default tooltip without customizing it with a template. To do this, you can simply use the `show-tooltip` property, and the chart will automatically display a default tooltip with the available data.
+
+In this example, the tooltip is enabled for a *Line Chart* without the need to define a custom template:
+
+*HTML*
+
+```html
+<o-chart #lineChartDefault type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" y-axis="MOVEMENT"
+         x-data-type="time" show-tooltip="true">
+</o-chart>
+```
+### Custom Tooltip
+
+Tooltips in charts provide valuable contextual information. This section explains how to customize tooltips for a *Line Chart* by modifying the date format, content, and style.
+
+#### Customizing Tooltip Content
+
+You can define custom tooltip templates to format the displayed data.
+
+*HTML*
+
+```html
+<o-chart #lineChartBasic type="line" x-label="Time" y-label="Amount (€)" entity="EMovements" x-axis="DATE_" show-tooltip="true" y-axis="MOVEMENT"
+      x-data-type="time" [color]="colorScheme" (onActivate)="activate($event)" (onSelect)="activate($event)">
+      <ng-template #tooltip let-model="model">
+        <strong>Date:</strong> {{model?.name | oMoment : dateArgs}}<br>
+        <strong>Value:</strong> {{model?.value | oCurrency : currencyArgs}}
+      </ng-template>
+      <ng-template #seriesTooltip let-model="model">
+        <strong>Series Tooltip:</strong> {{model?.name}} - {{model?.value}}
+      </ng-template>
+</o-chart>
+```
+
+#### Adding Interactivity
+
+You can capture tooltip-related events and customize behavior.
+
+*TS*
+
+```ts
+currencyArgs: ICurrencyPipeArgument = {
+    currencySimbol: '€',
+    currencySymbolPosition: 'right',
+    grouping: true,
+    thousandSeparator: '.',
+    decimalSeparator: ',',
+  };
+dateArgs: IMomentPipeArgument = { format: 'DD/MM/YYYY' };
+
+activate(event: any) {
+  console.log("Tooltip activated:", event);
+}
+```

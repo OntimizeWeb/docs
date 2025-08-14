@@ -12,6 +12,12 @@ inheritedAttributes: [{
   attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "quick-filter", "quick-filter-placeholder", "quick-filter-appearance", "pagination-controls", "page-size-options"]
 }]
 
+inheritedOutputs: [{
+  component: "OServiceComponent",
+  path: "components/service/service/api",
+  outputs: [ 'onClick','onDoubleClick','onDataLoaded','onPaginatedDataLoaded','onSearch']
+}]
+
 attributes: [{
   name: "quick-filter-columns"
 },{
@@ -69,18 +75,19 @@ attributes: [{
 }]
 
 outputs: [{
-  name: "onDataLoaded",
-  description: "Event triggered when the data is loaded"
+  name: "onItemSelected",
+  description: "Event triggered when an item is selected"
 },{
-  name: "onPaginatedDataLoaded",
-  description: "Event triggered when the paginated data is loaded"
+  name: "onItemDeselected",
+  description: "Event triggered when an item is deselected"
 },{
-  name: "beforeGoEditMode",
-  description: "Event triggered befoe going to form edition mode"
+  name: "onInserButtonClick",
+  description: "Event triggered when the insert button is clicked"
 },{
-  name: "onFormModeChange",
-  description: "Event triggered when form mode changes"
-}]
+  name: "onItemDeleted",
+  description: "Event triggered when an item is deleted"
+  }
+]
 
 extraComponents: "listData"
 
