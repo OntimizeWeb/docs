@@ -55,7 +55,7 @@ jobs:
       - name: Build site with Jekyll
         run: |
           bundle exec jekyll build \
-            --baseurl "/docs/${{ env.TARGET_PATH }}" \
+            --baseurl "/${{ env.TARGET_PATH }}" \
             --config _config.yml,_config.deploy.yml
 
       - name: Deploy to gh-pages branch
