@@ -1,7 +1,9 @@
 ---
 layout: default
-title: "Migration guides"
+title: "Migration guide to version 15"
 permalink: /migration-8-to-15/
+parent: Migration guides
+grandParent: Aditional information
 nav_exclude: true
 ---
 {% include base_path %}

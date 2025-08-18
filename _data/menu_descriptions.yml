@@ -347,7 +347,7 @@ sections:
       description: "Section that resolves common questions about Ontimize Web"
     - url: "/versions/"
       title: "Releases"
-      description: "Tables of all the Onitimze Web releases and its compatibilities"
+      description: "Tables of all the Ontimize Web releases and its compatibilities"
     - url: "/migrations/"
       title: "Migration guides"
       description: "Download page of our version migration guides"
@@ -418,3 +418,11 @@ sections:
     - url: "/addons/report/"
       title: "Report"
       imagepath: "/assets/images/menus/addons/report"
+  "services":
+    - url: "/guide/service/jsonapi"
+      title: "JSON:API <label class='label label-green'>New</label>"
+      imagepath: "/assets/images/menus/services/jsonapi"
+    - url: "/guide/service/ontimize"
+      title: "Ontimize"
+      imagepath: "/assets/images/menus/services/ontimize"
+

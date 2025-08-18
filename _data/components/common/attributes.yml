@@ -465,5 +465,14 @@
     default: "[10, 25, 50, 100]",
     required: "",
     description: "Page size options separated by ';'."
-  }
+  },
+   "configure-service-args": {
+    name: "configure-service-args",
+    type: "OConfigureServiceArgs",
+    since: "15.6.0",
+    default: "no",
+    required: "",
+    description: "Allows configure service"
+   }
+
 }

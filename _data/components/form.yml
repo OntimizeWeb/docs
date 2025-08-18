@@ -185,7 +185,8 @@ attributes: [
   type: "(data: any) => OFormValidation",
   since: "15.4.2",
   description: "Executes the before-save validation callback for insert and update operations."
-
+},{
+  name: "configure-service-args"
 }]
 
 outputs: [{
