@@ -55,7 +55,7 @@ jobs:
       - name: Build site with Jekyll
         run: |
           bundle exec jekyll build \
-            --baseurl "/${{ env.TARGET_PATH }}" \
+            --baseurl "/docs/${{ env.TARGET_PATH }}" \
             --config _config.yml,_config.deploy.yml
 
       - name: Deploy to gh-pages branch
@@ -64,5 +64,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
           publish_branch: gh-pages
-          destination_dir: docs/${{ env.TARGET_PATH }}
+          destination_dir: ${{ env.TARGET_PATH }}
           keep_files: true
