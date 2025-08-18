@@ -847,7 +847,7 @@ blockquote {
 .site-logo {
   width: 100%;
   height: 100%;
-  background-image: url("/docs/v15/assets/images/logo-ontimize-blanco.png");
+  background-image: url("/v15/assets/images/logo-ontimize-blanco.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: contain;
