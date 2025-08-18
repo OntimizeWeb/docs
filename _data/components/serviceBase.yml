@@ -55,6 +55,8 @@ attributes: [{
   description: "Function to execute on query error",
   type: "Function",
   default: "No value"
+},{
+  name: "configure-service-args"
 }
 ]
 

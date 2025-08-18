@@ -22,6 +22,8 @@ attributes: [{
   name: "query-method"
 },{
   name: "service-type"
+},{
+  name: "configure-service-args"
 }]
 
 inherit_properties: [{
