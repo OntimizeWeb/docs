@@ -37,26 +37,32 @@ jobs:
           echo "TARGET_PATH=$TARGET_PATH" >> "$GITHUB_ENV"
           BASELINE_BRANCH=${{ github.event.inputs.BASELINE || github.ref }}
           echo "BASELINE_BRANCH=${BASELINE_BRANCH#refs/heads/}" >> "$GITHUB_ENV"
-      
-      - uses: actions/checkout@v4
+      - name: Checkout baseline branch
+        uses: actions/checkout@v4
         with:
           ref: ${{ env.BASELINE_BRANCH }}
           fetch-depth: 0
 
-      - name: Bundler Cache
-        uses: actions/cache@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
+          ruby-version: '3.1'
+          bundler-cache: true
 
-      - name: Jekyll
-        uses: helaili/jekyll-action@master
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build site with Jekyll
+        run: |
+          bundle exec jekyll build \
+            --baseurl "/docs/${{ env.TARGET_PATH }}" \
+            --config _config.yml,_config.deploy.yml
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          jekyll_env: deploy
-          jekyll_build_options: --baseurl /docs/${{ env.TARGET_PATH }} --config _config.yml,_config.deploy.yml
-          target_branch: gh-pages
-          target_path: ${{ env.TARGET_PATH }}
-          keep_history: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          destination_dir: docs/${{ env.TARGET_PATH }}
+          keep_files: true
