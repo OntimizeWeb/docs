@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="96" viewBox="0 0 112 96">
+  <g id="Ilustracion_Checkbox_Mod._Dark" data-name="Ilustracion Checkbox Mod. Dark" transform="translate(-708 -181)">
+    <g id="BG">
+      <path id="bg_121212" data-name="bg #121212" d="M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(708 181)" fill="#121212"/>
+      <path id="bg_121212_-_Contorno" data-name="bg #121212 - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(708 181)" fill="rgba(255,255,255,0.12)"/>
+      <path id="w16_" data-name="w16%" d="M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(708 181)" fill="rgba(255,255,255,0.16)"/>
+      <path id="w16_-_Contorno" data-name="w16% - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(708 181)" fill="rgba(255,255,255,0.12)"/>
+      <path id="Bc_6_" data-name="Bc 6%" d="M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(708 181)" fill="rgba(20,100,165,0.06)"/>
+      <path id="Bc_6_-_Contorno" data-name="Bc 6% - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(708 181)" fill="rgba(255,255,255,0.12)"/>
+    </g>
+    <path id="Trazado_7070" data-name="Trazado 7070" d="M18899.145,195.755h-64a.755.755,0,1,1,0-1.51h64a.755.755,0,1,1,0,1.51Z" transform="translate(-18093.145 22.5)" fill="rgba(255,255,255,0.74)"/>
+    <path id="Trazado_7073" data-name="Trazado 7073" d="M18899.145,195.755h-64a.755.755,0,1,1,0-1.51h64a.755.755,0,1,1,0,1.51Z" transform="translate(-18093.145 42.5)" fill="rgba(255,255,255,0.74)"/>
+    <path id="Trazado_7074" data-name="Trazado 7074" d="M18899.145,195.755h-64a.755.755,0,1,1,0-1.51h64a.755.755,0,1,1,0,1.51Z" transform="translate(-18093.145 62.5)" fill="rgba(255,255,255,0.74)"/>
+    <g id="check_box-24px" transform="translate(716 209)">
+      <path id="Trazado_7071" data-name="Trazado 7071" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7072" data-name="Trazado 7072" d="M13.778,3H4.347A1.347,1.347,0,0,0,3,4.347v9.431a1.347,1.347,0,0,0,1.347,1.347h9.431a1.347,1.347,0,0,0,1.347-1.347V4.347A1.347,1.347,0,0,0,13.778,3ZM7.715,12.431,4.347,9.063l.95-.95,2.418,2.412,5.113-5.113.95.957Z" transform="translate(-1.063 -1.063)" fill="rgba(255,255,255,0.74)"/>
+    </g>
+    <g id="check_box-24px-2" data-name="check_box-24px" transform="translate(716 229)">
+      <path id="Trazado_7071-2" data-name="Trazado 7071" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7072-2" data-name="Trazado 7072" d="M13.778,3H4.347A1.347,1.347,0,0,0,3,4.347v9.431a1.347,1.347,0,0,0,1.347,1.347h9.431a1.347,1.347,0,0,0,1.347-1.347V4.347A1.347,1.347,0,0,0,13.778,3ZM7.715,12.431,4.347,9.063l.95-.95,2.418,2.412,5.113-5.113.95.957Z" transform="translate(-1.063 -1.063)" fill="rgba(255,255,255,0.74)"/>
+    </g>
+    <g id="check_box_outline_blank_black_24dp" transform="translate(716 249)">
+      <path id="Trazado_7082" data-name="Trazado 7082" d="M0,0H16V16H0Z" fill="none"/>
+      <path id="Trazado_7083" data-name="Trazado 7083" d="M13.577,4.322v9.255H4.322V4.322h9.255m0-1.322H4.322A1.326,1.326,0,0,0,3,4.322v9.255A1.326,1.326,0,0,0,4.322,14.9h9.255A1.326,1.326,0,0,0,14.9,13.577V4.322A1.326,1.326,0,0,0,13.577,3Z" transform="translate(-0.949 -0.949)" fill="rgba(255,255,255,0.74)"/>
+    </g>
+    <path id="Trazado_7128" data-name="Trazado 7128" d="M18931.143,195.755h-96a.755.755,0,1,1,0-1.51h96a.755.755,0,1,1,0,1.51Z" transform="translate(-18119.143 6)" fill="rgba(255,255,255,0.12)"/>
+    <path id="Trazado_7129" data-name="Trazado 7129" d="M18883.145,195.755h-48a.755.755,0,1,1,0-1.51h48a.755.755,0,1,1,0,1.51Z" transform="translate(-18119.145 -2)" fill="rgba(255,255,255,0.74)"/>
+  </g>
+</svg>
