@@ -1,213 +1,213 @@
 {"0": {
     "doc": "Overview",
     "title": "Introduction",
-    "content": "The module Ontimize Web Report is a set of reporting tools for web applications based in OntimizeWeb. Ontimize Web Report implements reporting with: . | Report store: A jasper template can store and be generated from anywhere in the application, for this you have to follow a series of steps listed in this link. Ontimize is version v6.17.0 compatible . | Report on-demand: Allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This visual tool will allow users to define parameters of the report such as title, subtitle, columns to display, styling options, sorting, grouping and data aggregate functions of the report. With these parameters and the data of the table, this component will dynamically generate the report and present it to the user. In addition, all these settings are stored automatically in database by Ontimize services. | . You need to configure your backend server and you can consult the documentation in this link . What is JasperReports Library? JasperReports Library is an open source reporting engine, written entirely in Java. JasperReports Library is able to use data coming from any kind of data source and produce documents that can viewed, printed, or exported in a variety of document formats, including HTML, PDF, Excel, OpenOffice and Word. ",
-    "url": "/docs/v15/addons/report/overview/#introduction",
-    
-    "relUrl": "/addons/report/overview/#introduction"
-  },"1": {
-    "doc": "Overview",
-    "title": "Overview",
-    "content": " ",
-    "url": "/docs/v15/addons/report/overview/",
-    
-    "relUrl": "/addons/report/overview/"
-  },"2": {
-    "doc": "Overview",
-    "title": "Introduction",
-    "content": "The module Ontimize Web Report on-demand provides view the same data in different ways in OntimizeWeb . ",
-    "url": "/docs/v15/report-on-demand/overview/#introduction",
-    
-    "relUrl": "/report-on-demand/overview/#introduction"
-  },"3": {
-    "doc": "Overview",
-    "title": "Overview",
-    "content": "Table of Contents . | Introduction | . ",
-    "url": "/docs/v15/report-on-demand/overview/",
-    
-    "relUrl": "/report-on-demand/overview/"
-  },"4": {
-    "doc": "Overview",
-    "title": "Introduction",
-    "content": "The OntimizeWeb file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc. We provide two different types of file manager engines on Ontimize: the DMS file manager that uses a database to store de files and de SDMS file manager (since ontimize-web-ngx-filemanager 8.6.0 and ontimize-boot 3.12.0) wich is based con Amazon S3 cloud. ",
-    "url": "/docs/v15/addons/filemanager/overview/#introduction",
-    
-    "relUrl": "/addons/filemanager/overview/#introduction"
-  },"5": {
-    "doc": "Overview",
-    "title": "Upload",
-    "content": "You can upload files since the button Upload. While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value auto-hide-timeout in ms and also auto hide the message by setting the value auto-hide-upload=\"no\". ",
-    "url": "/docs/v15/addons/filemanager/overview/#upload",
-    
-    "relUrl": "/addons/filemanager/overview/#upload"
-  },"6": {
-    "doc": "Overview",
-    "title": "Create folders",
-    "content": "The o-filemanager-table allows to create a folder using the New folder button or the table menu. The button it&#8217;s disabled by default, you can enable it by setting the value new-folder-button=\"yes\". ",
-    "url": "/docs/v15/addons/filemanager/overview/#create-folders",
-    
-    "relUrl": "/addons/filemanager/overview/#create-folders"
-  },"7": {
-    "doc": "Overview",
-    "title": "Delete folder or files",
-    "content": "The o-filemanager-table allow delete simple or multiple by a context menu or button &#8216;Delete&#8217; . ",
-    "url": "/docs/v15/addons/filemanager/overview/#delete-folder-or-files",
-    
-    "relUrl": "/addons/filemanager/overview/#delete-folder-or-files"
-  },"8": {
-    "doc": "Overview",
-    "title": "Multiple download support",
-    "content": "The o-filemanager-table allow download simple or multiple files by a context menu. ",
-    "url": "/docs/v15/addons/filemanager/overview/#multiple-download-support",
-    
-    "relUrl": "/addons/filemanager/overview/#multiple-download-support"
-  },"9": {
-    "doc": "Overview",
-    "title": "Rename files or folders",
-    "content": "The o-filemanager-table allow rename files or folders by a context menu. ",
-    "url": "/docs/v15/addons/filemanager/overview/#rename-files-or-folders",
-    
-    "relUrl": "/addons/filemanager/overview/#rename-files-or-folders"
-  },"10": {
-    "doc": "Overview",
-    "title": "Browsing between folders",
-    "content": "You can browse between folder with double click or by content menu over the folder and selecting the Open option. ",
-    "url": "/docs/v15/addons/filemanager/overview/#browsing-between-folders",
-    
-    "relUrl": "/addons/filemanager/overview/#browsing-between-folders"
-  },"11": {
-    "doc": "Overview",
-    "title": "Selection multiple",
-    "content": "The o-filemanager-table support selection multiple with row selection or checkbox selection with select-all-checkbox=\"yes\" property. If this property is activated in the menu on the upper right, the option will be active. By default is no. Example . &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\" new-folder-button=\"yes\" select-all-checkbox=\"yes\"&gt;&lt;/o-filemanager-table&gt; . ",
-    "url": "/docs/v15/addons/filemanager/overview/#selection-multiple",
-    
-    "relUrl": "/addons/filemanager/overview/#selection-multiple"
-  },"12": {
-    "doc": "Overview",
-    "title": "Textbox Search filter",
-    "content": "The o-filemanager-table allow filter by name of files or folders. ",
-    "url": "/docs/v15/addons/filemanager/overview/#textbox-search-filter",
-    
-    "relUrl": "/addons/filemanager/overview/#textbox-search-filter"
-  },"13": {
-    "doc": "Overview",
-    "title": "Copy files or folders (only for SDMS)",
-    "content": "The o-filemanager-table configured as SMDS allows you to copy files and folders. ",
-    "url": "/docs/v15/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms",
-    
-    "relUrl": "/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms"
-  },"14": {
-    "doc": "Overview",
-    "title": "Move files or folders (only for SDMS)",
-    "content": "The o-filemanager-table configured as SMDS allows you to move files and folders. ",
-    "url": "/docs/v15/addons/filemanager/overview/#move-files-or-folders-only-for-sdms",
-    
-    "relUrl": "/addons/filemanager/overview/#move-files-or-folders-only-for-sdms"
-  },"15": {
-    "doc": "Overview",
-    "title": "Overview",
-    "content": "Table of Contents . | Introduction | Upload | Create folders | Delete folder or files | Multiple download support | Rename files or folders | Browsing between folders | Selection multiple | Textbox Search filter | Copy files or folders (only for SDMS) | Move files or folders (only for SDMS) | . ",
-    "url": "/docs/v15/addons/filemanager/overview/",
-    
-    "relUrl": "/addons/filemanager/overview/"
-  },"16": {
-    "doc": "Overview",
-    "title": "Introduction",
-    "content": "The OntimizeWeb map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc. ",
-    "url": "/docs/v15/map/overview/#introduction",
-    
-    "relUrl": "/map/overview/#introduction"
-  },"17": {
-    "doc": "Overview",
-    "title": "Draw controls",
-    "content": "The o-map allow to add the draw toolbar into the map with the o-map-draw-controls component into o-map. You can catch events with the onDrawEvent output. &lt;o-map #oMap center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex draw-control=\"no\" (onDrawEvent)=\"addDrawEvent($event)\"&gt; &lt;!-- [crs-configuration]=\"objeto\" --&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;/o-map&gt; . ",
-    "url": "/docs/v15/map/overview/#draw-controls",
-    
-    "relUrl": "/map/overview/#draw-controls"
-  },"18": {
-    "doc": "Overview",
-    "title": "Markers",
-    "content": "The o-map allow to put a custom marker beside tile layers, you can easy create a marker adding layer-type=\"marker\" attribute into o-map-layer. &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
-    "url": "/docs/v15/map/overview/#markers",
-    
-    "relUrl": "/map/overview/#markers"
-  },"19": {
-    "doc": "Overview",
-    "title": "Using GeoJSON",
-    "content": "GeoJSON is becoming a very popular data format among many GIS technologies and services and the o-map allow to create and interact with map vectors created from GeoJSON objects adding layer-type=\"geoJSON\" and configuring the service in layer-service attribute. &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } . ",
-    "url": "/docs/v15/map/overview/#using-geojson",
-    
-    "relUrl": "/map/overview/#using-geojson"
-  },"20": {
-    "doc": "Overview",
-    "title": "Integrating WMS",
-    "content": "To use a WMS service in o-map, we can use o-map-layer component that provide the base WMS URL with layer-base-url and layer-base-url attribute specify whatever WMS options you need. &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"BasemapAT.basemap\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [`layer-base-url`]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
-    "url": "/docs/v15/map/overview/#integrating-wms",
-    
-    "relUrl": "/map/overview/#integrating-wms"
-  },"21": {
-    "doc": "Overview",
-    "title": "Overview",
-    "content": "Table of Contents . | Introduction | Draw controls | Markers | Using GeoJSON | Integrating WMS | . ",
-    "url": "/docs/v15/map/overview/",
-    
-    "relUrl": "/map/overview/"
-  },"22": {
-    "doc": "Overview",
-    "title": "Introduction",
-    "content": "The module Ontimize Web Keycloak provides authentication for your OntimizeWeb applications using Keycloak. It triggers keycloak login and logout and attachs the authentication bearer token to every request to the backend. ",
-    "url": "/docs/v15/addons/keycloak/overview/#introduction",
-    
-    "relUrl": "/addons/keycloak/overview/#introduction"
-  },"23": {
-    "doc": "Overview",
-    "title": "Overview",
-    "content": "Table of Contents . | Introduction | . ",
-    "url": "/docs/v15/addons/keycloak/overview/",
-    
-    "relUrl": "/addons/keycloak/overview/"
-  },"24": {
-    "doc": "Overview",
-    "title": "Introduction",
-    "content": "The o-gallery component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel. &lt;o-gallery [gallery-images]=\"galleryImages\" [gallery-options]=\"galleryOptions\"&gt;&lt;/o-gallery&gt; ... this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' }, { small: 'assets/images/i_video.jpg', medium: 'assets/videos/video1.mp4', big: 'assets/videos/video1.mp4' } ]; this.galleryOptions = [ { breakpoint: 1920, height: \"200px\", width: \"300px\", image: true, thumbnails: false, preview: false } ]; ... ",
-    "url": "/docs/v15/addons/gallery/overview/#introduction",
-    
-    "relUrl": "/addons/gallery/overview/#introduction"
-  },"25": {
-    "doc": "Overview",
-    "title": "Overview",
-    "content": "Table of Contents . | Introduction | . ",
-    "url": "/docs/v15/addons/gallery/overview/",
-    
-    "relUrl": "/addons/gallery/overview/"
-  },"26": {
-    "doc": "Overview",
-    "title": "Introduction",
     "content": "The o-tree component allows to manage a tree that can be used to display hierarchy data. ",
     "url": "/docs/v15/tree/overview/#introduction",
     
     "relUrl": "/tree/overview/#introduction"
-  },"27": {
+  },"1": {
     "doc": "Overview",
     "title": "Overview",
     "content": "Table of Contents . | Introduction | . ",
     "url": "/docs/v15/tree/overview/",
     
     "relUrl": "/tree/overview/"
-  },"28": {
+  },"2": {
+    "doc": "Overview",
+    "title": "Introduction",
+    "content": "The module Ontimize Web Report is a set of reporting tools for web applications based in OntimizeWeb. Ontimize Web Report implements reporting with: . | Report store: A jasper template can store and be generated from anywhere in the application, for this you have to follow a series of steps listed in this link. Ontimize is version v6.17.0 compatible . | Report on-demand: Allow the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This visual tool will allow users to define parameters of the report such as title, subtitle, columns to display, styling options, sorting, grouping and data aggregate functions of the report. With these parameters and the data of the table, this component will dynamically generate the report and present it to the user. In addition, all these settings are stored automatically in database by Ontimize services. | . You need to configure your backend server and you can consult the documentation in this link . What is JasperReports Library? JasperReports Library is an open source reporting engine, written entirely in Java. JasperReports Library is able to use data coming from any kind of data source and produce documents that can viewed, printed, or exported in a variety of document formats, including HTML, PDF, Excel, OpenOffice and Word. ",
+    "url": "/docs/v15/addons/report/overview/#introduction",
+    
+    "relUrl": "/addons/report/overview/#introduction"
+  },"3": {
+    "doc": "Overview",
+    "title": "Overview",
+    "content": " ",
+    "url": "/docs/v15/addons/report/overview/",
+    
+    "relUrl": "/addons/report/overview/"
+  },"4": {
+    "doc": "Overview",
+    "title": "Introduction",
+    "content": "The module Ontimize Web Keycloak provides authentication for your OntimizeWeb applications using Keycloak. It triggers keycloak login and logout and attachs the authentication bearer token to every request to the backend. ",
+    "url": "/docs/v15/addons/keycloak/overview/#introduction",
+    
+    "relUrl": "/addons/keycloak/overview/#introduction"
+  },"5": {
+    "doc": "Overview",
+    "title": "Overview",
+    "content": "Table of Contents . | Introduction | . ",
+    "url": "/docs/v15/addons/keycloak/overview/",
+    
+    "relUrl": "/addons/keycloak/overview/"
+  },"6": {
     "doc": "Overview",
     "title": "Introduction",
     "content": "The Ontimize Web Charts is an implementation of swimlane charts library using OntimizeWeb. Below you can see a list with all available chart types: . | Line Charts . | Line Chart | . | Bar Charts . | Dicrete Bar Chart | Multi Bar Chart | Multi Bar Horizontal Chart | . | Area Charts . | Stacked Area Chart | . | Other Charts . | Donut Chart | Pie Chart | . | . You can check running examples of each type here. ",
     "url": "/docs/v15/charts/overview/#introduction",
     
     "relUrl": "/charts/overview/#introduction"
-  },"29": {
+  },"7": {
     "doc": "Overview",
     "title": "Overview",
     "content": "Table of Contents . | Introduction | . ",
     "url": "/docs/v15/charts/overview/",
     
     "relUrl": "/charts/overview/"
+  },"8": {
+    "doc": "Overview",
+    "title": "Introduction",
+    "content": "The OntimizeWeb map allows you to manage maps your application like creating markers, managing events, using GeoJson and integrating WMS service, etc. ",
+    "url": "/docs/v15/map/overview/#introduction",
+    
+    "relUrl": "/map/overview/#introduction"
+  },"9": {
+    "doc": "Overview",
+    "title": "Draw controls",
+    "content": "The o-map allow to add the draw toolbar into the map with the o-map-draw-controls component into o-map. You can catch events with the onDrawEvent output. &lt;o-map #oMap center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex draw-control=\"no\" (onDrawEvent)=\"addDrawEvent($event)\"&gt; &lt;!-- [crs-configuration]=\"objeto\" --&gt; &lt;o-map-crs crs=\"EPSG4326\"&gt;&lt;/o-map-crs&gt; &lt;o-map-draw-controls&gt;&lt;/o-map-draw-controls&gt; &lt;/o-map&gt; . ",
+    "url": "/docs/v15/map/overview/#draw-controls",
+    
+    "relUrl": "/map/overview/#draw-controls"
+  },"10": {
+    "doc": "Overview",
+    "title": "Markers",
+    "content": "The o-map allow to put a custom marker beside tile layers, you can easy create a marker adding layer-type=\"marker\" attribute into o-map-layer. &lt;o-map #oMapMarker center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"no\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"marker\" layer-id=\"office_marker\" layer-center=\"42.240599;-8.720727\" layer-menu-label=\"Office headquarters \" layer-menu-label-secondary=\"Location of office headquarters\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
+    "url": "/docs/v15/map/overview/#markers",
+    
+    "relUrl": "/map/overview/#markers"
+  },"11": {
+    "doc": "Overview",
+    "title": "Using GeoJSON",
+    "content": "GeoJSON is becoming a very popular data format among many GIS technologies and services and the o-map allow to create and interact with map vectors created from GeoJSON objects adding layer-type=\"geoJSON\" and configuring the service in layer-service attribute. &lt;o-map #oMapGeoJSON center=\"42.940599, -7.120727\" zoom=\"8\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-lines\" layer-id=\"train-lines\" layer-menu-label=\"Train lines\" layer-menu-label-secondary=\"Spain's' train lines.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-train-stations\" layer-id=\"train-stations\" layer-menu-label=\"Train stations\" layer-menu-label-secondary=\"Spain's train stations.\"&gt;&lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"geoJSON\" layer-service=\"geojson-municipality\" layer-id=\"municipality\" layer-menu-label=\"Municipality\" layer-menu-label-secondary=\"Pontevedra's municipalities\" [layer-options]=\"getTrainLinesLayerStyle()\"&gt;&lt;/o-map-layer&gt; &lt;/o-map&gt; . /*configure provide*/ { provide: 'geojson-train-lines', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-train-stations', useClass: GeoServerService, deps: [Injector] }, { provide: 'geojson-municipality', useClass: GeoServerService, deps: [Injector] } . ",
+    "url": "/docs/v15/map/overview/#using-geojson",
+    
+    "relUrl": "/map/overview/#using-geojson"
+  },"12": {
+    "doc": "Overview",
+    "title": "Integrating WMS",
+    "content": "To use a WMS service in o-map, we can use o-map-layer component that provide the base WMS URL with layer-base-url and layer-base-url attribute specify whatever WMS options you need. &lt;o-map #oMapWMS center=\"40.712784,-74.005941\" zoom=\"10\" min-zoom=\"6\" max-zoom=\"20\" base-layer-ids=\"BasemapAT.basemap\" zoom-control=\"yes\" search-control=\"yes\" layer-panel-visible=\"no\" fxFlex&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-airports\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}\" [`layer-base-url`]=\"getWMSLayerOptions()\" layer-menu-label=\"National Hydrography Dataset\" layer-menu-label-secondary=\"USGS The National Map: National Hydrography Dataset.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-mediumcities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-visible=\"no\" layer-menu-label=\"National Boundaries Dataset\" layer-menu-label-secondary=\"USGS TNM Topo Base Map.\"&gt; &lt;/o-map-layer&gt; &lt;o-map-layer layer-type=\"WMS\" layer-id=\"wms-example-largecities\" layer-base-url=\"https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/{z}/{y}/{x}\" [layer-options]=\"getWMSLayerOptions()\" layer-menu-label=\"Orthoimagery and US Topo\" layer-menu-label-secondary=\"USGS ImageryTopo.\"&gt; &lt;/o-map-layer&gt; &lt;/o-map&gt; . ",
+    "url": "/docs/v15/map/overview/#integrating-wms",
+    
+    "relUrl": "/map/overview/#integrating-wms"
+  },"13": {
+    "doc": "Overview",
+    "title": "Overview",
+    "content": "Table of Contents . | Introduction | Draw controls | Markers | Using GeoJSON | Integrating WMS | . ",
+    "url": "/docs/v15/map/overview/",
+    
+    "relUrl": "/map/overview/"
+  },"14": {
+    "doc": "Overview",
+    "title": "Introduction",
+    "content": "The module Ontimize Web Report on-demand provides view the same data in different ways in OntimizeWeb . ",
+    "url": "/docs/v15/report-on-demand/overview/#introduction",
+    
+    "relUrl": "/report-on-demand/overview/#introduction"
+  },"15": {
+    "doc": "Overview",
+    "title": "Overview",
+    "content": "Table of Contents . | Introduction | . ",
+    "url": "/docs/v15/report-on-demand/overview/",
+    
+    "relUrl": "/report-on-demand/overview/"
+  },"16": {
+    "doc": "Overview",
+    "title": "Introduction",
+    "content": "The o-gallery component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel. &lt;o-gallery [gallery-images]=\"galleryImages\" [gallery-options]=\"galleryOptions\"&gt;&lt;/o-gallery&gt; ... this.galleryImages = [ { small: 'assets/images/photo1.jpg', medium: 'assets/images/photo1.jpg', big: 'assets/images/photo1.jpg' }, { small: 'assets/images/photo2.jpg', medium: 'assets/images/photo2.jpg', big: 'assets/images/photo2.jpg' }, { small: 'assets/images/photo3.jpg', medium: 'assets/images/photo3.jpg', big: 'assets/images/photo3.jpg' }, { small: 'assets/images/i_video.jpg', medium: 'assets/videos/video1.mp4', big: 'assets/videos/video1.mp4' } ]; this.galleryOptions = [ { breakpoint: 1920, height: \"200px\", width: \"300px\", image: true, thumbnails: false, preview: false } ]; ... ",
+    "url": "/docs/v15/addons/gallery/overview/#introduction",
+    
+    "relUrl": "/addons/gallery/overview/#introduction"
+  },"17": {
+    "doc": "Overview",
+    "title": "Overview",
+    "content": "Table of Contents . | Introduction | . ",
+    "url": "/docs/v15/addons/gallery/overview/",
+    
+    "relUrl": "/addons/gallery/overview/"
+  },"18": {
+    "doc": "Overview",
+    "title": "Introduction",
+    "content": "The OntimizeWeb file manager allows you to manage files stored in your application server. It displays a table that shows the files and folders in a specific workspace and allows the user to perform multiple operation over it, like creating and deleting folders, upload and download files, renaming files and folders, etc. We provide two different types of file manager engines on Ontimize: the DMS file manager that uses a database to store de files and de SDMS file manager (since ontimize-web-ngx-filemanager 8.6.0 and ontimize-boot 3.12.0) wich is based con Amazon S3 cloud. ",
+    "url": "/docs/v15/addons/filemanager/overview/#introduction",
+    
+    "relUrl": "/addons/filemanager/overview/#introduction"
+  },"19": {
+    "doc": "Overview",
+    "title": "Upload",
+    "content": "You can upload files since the button Upload. While uploading the file will show the progress of the upload process and whether there is an error or if everything went well a message will be displayed. This message will hide after 20.000 ms, you can configure this timeout by setting the value auto-hide-timeout in ms and also auto hide the message by setting the value auto-hide-upload=\"no\". ",
+    "url": "/docs/v15/addons/filemanager/overview/#upload",
+    
+    "relUrl": "/addons/filemanager/overview/#upload"
+  },"20": {
+    "doc": "Overview",
+    "title": "Create folders",
+    "content": "The o-filemanager-table allows to create a folder using the New folder button or the table menu. The button it&#8217;s disabled by default, you can enable it by setting the value new-folder-button=\"yes\". ",
+    "url": "/docs/v15/addons/filemanager/overview/#create-folders",
+    
+    "relUrl": "/addons/filemanager/overview/#create-folders"
+  },"21": {
+    "doc": "Overview",
+    "title": "Delete folder or files",
+    "content": "The o-filemanager-table allow delete simple or multiple by a context menu or button &#8216;Delete&#8217; . ",
+    "url": "/docs/v15/addons/filemanager/overview/#delete-folder-or-files",
+    
+    "relUrl": "/addons/filemanager/overview/#delete-folder-or-files"
+  },"22": {
+    "doc": "Overview",
+    "title": "Multiple download support",
+    "content": "The o-filemanager-table allow download simple or multiple files by a context menu. ",
+    "url": "/docs/v15/addons/filemanager/overview/#multiple-download-support",
+    
+    "relUrl": "/addons/filemanager/overview/#multiple-download-support"
+  },"23": {
+    "doc": "Overview",
+    "title": "Rename files or folders",
+    "content": "The o-filemanager-table allow rename files or folders by a context menu. ",
+    "url": "/docs/v15/addons/filemanager/overview/#rename-files-or-folders",
+    
+    "relUrl": "/addons/filemanager/overview/#rename-files-or-folders"
+  },"24": {
+    "doc": "Overview",
+    "title": "Browsing between folders",
+    "content": "You can browse between folder with double click or by content menu over the folder and selecting the Open option. ",
+    "url": "/docs/v15/addons/filemanager/overview/#browsing-between-folders",
+    
+    "relUrl": "/addons/filemanager/overview/#browsing-between-folders"
+  },"25": {
+    "doc": "Overview",
+    "title": "Selection multiple",
+    "content": "The o-filemanager-table support selection multiple with row selection or checkbox selection with select-all-checkbox=\"yes\" property. If this property is activated in the menu on the upper right, the option will be active. By default is no. Example . &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\" new-folder-button=\"yes\" select-all-checkbox=\"yes\"&gt;&lt;/o-filemanager-table&gt; . ",
+    "url": "/docs/v15/addons/filemanager/overview/#selection-multiple",
+    
+    "relUrl": "/addons/filemanager/overview/#selection-multiple"
+  },"26": {
+    "doc": "Overview",
+    "title": "Textbox Search filter",
+    "content": "The o-filemanager-table allow filter by name of files or folders. ",
+    "url": "/docs/v15/addons/filemanager/overview/#textbox-search-filter",
+    
+    "relUrl": "/addons/filemanager/overview/#textbox-search-filter"
+  },"27": {
+    "doc": "Overview",
+    "title": "Copy files or folders (only for SDMS)",
+    "content": "The o-filemanager-table configured as SMDS allows you to copy files and folders. ",
+    "url": "/docs/v15/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms",
+    
+    "relUrl": "/addons/filemanager/overview/#copy-files-or-folders-only-for-sdms"
+  },"28": {
+    "doc": "Overview",
+    "title": "Move files or folders (only for SDMS)",
+    "content": "The o-filemanager-table configured as SMDS allows you to move files and folders. ",
+    "url": "/docs/v15/addons/filemanager/overview/#move-files-or-folders-only-for-sdms",
+    
+    "relUrl": "/addons/filemanager/overview/#move-files-or-folders-only-for-sdms"
+  },"29": {
+    "doc": "Overview",
+    "title": "Overview",
+    "content": "Table of Contents . | Introduction | Upload | Create folders | Delete folder or files | Multiple download support | Rename files or folders | Browsing between folders | Selection multiple | Textbox Search filter | Copy files or folders (only for SDMS) | Move files or folders (only for SDMS) | . ",
+    "url": "/docs/v15/addons/filemanager/overview/",
+    
+    "relUrl": "/addons/filemanager/overview/"
   },"30": {
     "doc": "Introduction",
     "title": "Welcome to the documentation of the web development framework for building the future",
@@ -517,145 +517,145 @@
     
     "relUrl": "/components/input/overview/api"
   },"74": {
-    "doc": "Overview",
-    "title": "Data",
-    "content": "You can modify value by setting the data attribute or calling the setData method. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\"&gt;&lt;/o-text-input&gt; . getValue() { return 'John Doe'; } . ",
-    "url": "/docs/v15/components/input/overview/overview#data",
-    
-    "relUrl": "/components/input/overview/overview#data"
-  },"75": {
-    "doc": "Overview",
-    "title": "Appearance",
-    "content": "You can configure multiple appearance variants changing the appearance and float-label input values. Appearance . The appearance input indicates which of the different mat-form-field appearance is used. It has the same features that Angular Material appearance input, watch it here. Global default appearance options can be specified by providing a value for MAT_FORM_FIELD_DEFAULT_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either legacy, standard, fill or outside. @NgModule({ providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } } ] }) . Float label . The float-label input indicates which of the different mat-form-field label behaviours is chosen. It has the same features that Angular Material appearance input, watch it here . Global default label options can be specified by providing a value for MAT_LABEL_GLOBAL_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either always, never, or auto. @NgModule({ providers: [ {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}} ] }) . ",
-    "url": "/docs/v15/components/input/overview/overview#appearance",
-    
-    "relUrl": "/components/input/overview/overview#appearance"
-  },"76": {
-    "doc": "Overview",
-    "title": "Validation",
-    "content": "You can setup validation on input: . | Using validation input in template-driven forms | Using the Ontimize validators | Creating your custom validator | . Validation input in template-driven forms . To add validation to a template-driven form, you add the validation attributes specific for each input and Ontimize Web match these attributes with validator functions in the framework (such as required, min-length, max-length, max-decimal-digits,min-decimal-digits&#8230;) . The input shows automatically an error message when the required attribute is set to yes and there is no value on the input. &lt;o-password-input #newpassword attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" &gt;&lt;/o-password-input&gt; . Ontimize validators . Ontimize Web providers the following build-in validators in the framework: . | twelveHourFormatValidator: Hour validator hh:mm am/pm format | twentyFourHourFormatValidator: Hour validator HH:mm format | emailValidator: Email validator | nifValidator: NIF validator | patternValidator: Pattern validator | . Using the validators input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the o-validator and o-error components. Below is an example of using the pattern validator. &lt;o-password-input attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" [validators]=\"validatorsNewPasswordArray\"&gt; &lt;o-validator error-name=\"hasCapitalCase\" error-text=\"VALIDATOR.HASCAPITALCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasNumber\" error-text=\"VALIDATOR.HASNUMBER\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSmallCase\" error-text=\"VALIDATOR.HASSMALLCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSpecialCharacters\" error-text=\"VALIDATOR.HASSPECIALCHARACTERS\"&gt;&lt;/o-validator&gt; &lt;/o-password-input&gt; ... validatorsNewPasswordArray: ValidatorFn[] = []; constructor() { // check whether the entered password has a number this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\\d/, 'hasNumber')); // check whether the entered password has upper case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase')); // check whether the entered password has small case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase')); // check whether the entered password has a special character this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&amp;*()_+\\-=\\[\\]{};':\"\\\\|,.&lt;&gt;\\/?~]/, 'hasSpecialCharacters')); } ... Custom validator . Also user can add its own validators to a input component using the validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" [validators]=\"validatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; validatorsArray: ValidatorFn[] = []; constructor() { this.validatorsArray.push(this.aValidator); this.validatorsArray.push(this.bValidator); } aValidator(control: FormControl): ValidationErrors { let result = {}; if (control.value &amp;&amp; control.value.toString().indexOf('a') === -1) { result['requiredLowercaseA'] = true; } if (control.value &amp;&amp; control.value.toString().indexOf('A') === -1) { result['requiredUppercaseA'] = true; } return result; } bValidator(control: FormControl): ValidationErrors { if (control.value &amp;&amp; control.value.toString().indexOf('b') === -1) { return { 'requiredB': true }; } return {}; } ... Same for asynchronous validators using the async-validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" [async-validators]=\"asyncValidatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; asyncValidatorsArray: AsyncValidatorFn[] = []; constructor(private charValidatorService: CharValidatorService) { this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsLowercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsUppercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsB())); } ... export class AsyncValidatorsHelper { static createValidator(validator: CharValidator): AsyncValidatorFn { return (control: AbstractControl): Observable&lt;ValidationErrors&gt; =&gt; { return control.value ? validator.fn(control.value) .pipe( map((isValid: boolean) =&gt; isValid ? null : validator.error) ) : of(null) }; } } interface CharValidator { fn: (value: string) =&gt; Observable&lt;boolean&gt; error: { [key: string]: boolean; } } @Injectable({ providedIn: 'root', }) export class CharValidatorService { containsLowercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('a') !== -1).pipe(delay(1000)) }, error: { 'requiredLowercaseA': true } } } containsUppercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('A') !== -1).pipe(delay(1000)) }, error: { 'requiredUppercaseA': true } } } containsB(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('b') !== -1).pipe(delay(1000)) }, error: { 'requiredB': true } } } } . ",
-    "url": "/docs/v15/components/input/overview/overview#validation",
-    
-    "relUrl": "/components/input/overview/overview#validation"
-  },"77": {
-    "doc": "Overview",
-    "title": "Label visible",
-    "content": "Form data components allow you to show or hide label with label-visible attribute. By default, this value is true. NOTE: This attribute not apply in o-checkbox,o-radio, o-slider and o-html-input. ",
-    "url": "/docs/v15/components/input/overview/overview#label-visible",
-    
-    "relUrl": "/components/input/overview/overview#label-visible"
-  },"78": {
-    "doc": "Overview",
-    "title": "Required",
-    "content": "A input can be market with a required attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the hide-required-marker property on form data component. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" required=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; &lt;o-text-input attr=\"input4\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" required=\"yes\" hide-required-marker=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
-    "url": "/docs/v15/components/input/overview/overview#required",
-    
-    "relUrl": "/components/input/overview/overview#required"
-  },"79": {
-    "doc": "Overview",
-    "title": "Enabled",
-    "content": "The enabled mode is active by default. You can disable the input by setting enabled='no'. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" enabled=\"no\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
-    "url": "/docs/v15/components/input/overview/overview#enabled",
-    
-    "relUrl": "/components/input/overview/overview#enabled"
-  },"80": {
-    "doc": "Overview",
-    "title": "Read-only",
-    "content": "The readonly mode represents an element that is no longer editable by the user. You can make a component only readable setting read-only=\"yes\". &lt;o-text-input fxFlex attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" read-only=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
-    "url": "/docs/v15/components/input/overview/overview#read-only",
-    
-    "relUrl": "/components/input/overview/overview#read-only"
-  },"81": {
-    "doc": "Overview",
-    "title": "Tooltip",
-    "content": "To create a tooltip, add the tooltip attribute to an element. By default, the tooltip will appear on bottom of the element. Use tooltip-position attribute to set the position of the tooltip on top, bottom, left or the right side of the element. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\" tooltip-position=\"left\"&gt;&lt;/o-text-input&gt; . ",
-    "url": "/docs/v15/components/input/overview/overview#tooltip",
-    
-    "relUrl": "/components/input/overview/overview#tooltip"
-  },"82": {
-    "doc": "Overview",
-    "title": "Width",
-    "content": "All input components have the width atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component. ",
-    "url": "/docs/v15/components/input/overview/overview#width",
-    
-    "relUrl": "/components/input/overview/overview#width"
-  },"83": {
-    "doc": "Overview",
-    "title": "Global default options  new ",
-    "content": "Global default options in input components can be specified by providing a value for the O_INPUT_OPTIONS token in a module. The color of input icons can be configured using the iconColor attribute and the selection of the value of an input when clicked using the selectAllOnClick attribute. @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { iconColor:'accent' } } ] }) or @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { selectAllOnClick: true } } ] }) . ",
-    "url": "/docs/v15/components/input/overview/overview#global-default-options--new-",
-    
-    "relUrl": "/components/input/overview/overview#global-default-options--new-"
-  },"84": {
-    "doc": "Overview",
-    "title": "Visibility  new ",
-    "content": "The oHidden directive is used to hide form data components. &lt;o-text-input oHidden attr=\"NAME\" width=\"160px\" class=\"form-field\"&gt;&lt;/o-text-input&gt; . ",
-    "url": "/docs/v15/components/input/overview/overview#visibility--new-",
-    
-    "relUrl": "/components/input/overview/overview#visibility--new-"
-  },"85": {
-    "doc": "Overview",
-    "title": "Overview",
-    "content": "Table of Contents . | Data | Appearance . | Appearance | Float label | . | Validation . | Validation input in template-driven forms | Ontimize validators | Custom validator | . | Label visible | Required | Enabled | Read-only | Tooltip | Width | Global default options new | Visibility new | . Form data components are components that must be placed inside a form and allow for an input of data. The form data components offered by OntimizeWeb are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, phone, radio, real, slider, slide toggle, text, textarea and time. All input components in OntimizeWeb extend the OFormDataComponent class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the API section of this page. ",
-    "url": "/docs/v15/components/input/overview/overview",
-    
-    "relUrl": "/components/input/overview/overview"
-  },"86": {
     "doc": "On demand overview",
     "title": "Introduction",
     "content": "The module Ontimize Web Chart on-demand allow the final users of the applications developed with Ontimize to define, view and store charts from any table available in the application. This visual tool will allow users to define parameters of the chart such as: . 1.- Title and subtitle . 2.- Type of graph (line, discretebar, multibar, area, pie, donut) . 3.- Color palette for multi bar, pie and donut charts . 4.- Column to display on the x-axis . 5.- Column to display on the y-axis . 6.- Data source (current page, filtered data, all data) . 7.- Preferences (allows to save a configuration, apply an existing one or update it) . Remember to complete the steps you need to perform on your backend server to complete the charts on-demand configuration following this link . ",
     "url": "/docs/v15/charts/chart_on_demand/overview#introduction",
     
     "relUrl": "/charts/chart_on_demand/overview#introduction"
-  },"87": {
+  },"75": {
     "doc": "On demand overview",
     "title": "Menu option",
     "content": ". ",
     "url": "/docs/v15/charts/chart_on_demand/overview#menu-option",
     
     "relUrl": "/charts/chart_on_demand/overview#menu-option"
-  },"88": {
+  },"76": {
     "doc": "On demand overview",
     "title": "Basic example of Line chart",
     "content": "This basic example shows a line chart of operation date and movements . ",
     "url": "/docs/v15/charts/chart_on_demand/overview#basic-example-of-line-chart",
     
     "relUrl": "/charts/chart_on_demand/overview#basic-example-of-line-chart"
-  },"89": {
+  },"77": {
     "doc": "On demand overview",
     "title": "Basic example of Discrete Bar chart",
     "content": "This basic example shows a Discrete bar chart of movements types and movements . ",
     "url": "/docs/v15/charts/chart_on_demand/overview#basic-example-of-discrete-bar-chart",
     
     "relUrl": "/charts/chart_on_demand/overview#basic-example-of-discrete-bar-chart"
-  },"90": {
+  },"78": {
     "doc": "On demand overview",
     "title": "Basic example of Multi Bar chart",
     "content": "This basic example shows a multi bar chart of movements types and movements . ",
     "url": "/docs/v15/charts/chart_on_demand/overview#basic-example-of-multi-bar-chart",
     
     "relUrl": "/charts/chart_on_demand/overview#basic-example-of-multi-bar-chart"
-  },"91": {
+  },"79": {
     "doc": "On demand overview",
     "title": "Basic example of Pie chart",
     "content": "This basic example shows a pie chart of customers type . ",
     "url": "/docs/v15/charts/chart_on_demand/overview#basic-example-of-pie-chart",
     
     "relUrl": "/charts/chart_on_demand/overview#basic-example-of-pie-chart"
-  },"92": {
+  },"80": {
     "doc": "On demand overview",
     "title": "Save and load configuration",
     "content": "The example shows the dialog to save a configuration of a chart . The example shows the dialog to select a previously stored configuration and perform a faster chart . ",
     "url": "/docs/v15/charts/chart_on_demand/overview#save-and-load-configuration",
     
     "relUrl": "/charts/chart_on_demand/overview#save-and-load-configuration"
-  },"93": {
+  },"81": {
     "doc": "On demand overview",
     "title": "On demand overview",
     "content": " ",
     "url": "/docs/v15/charts/chart_on_demand/overview",
     
     "relUrl": "/charts/chart_on_demand/overview"
+  },"82": {
+    "doc": "Overview",
+    "title": "Data",
+    "content": "You can modify value by setting the data attribute or calling the setData method. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\"&gt;&lt;/o-text-input&gt; . getValue() { return 'John Doe'; } . ",
+    "url": "/docs/v15/components/input/overview/overview#data",
+    
+    "relUrl": "/components/input/overview/overview#data"
+  },"83": {
+    "doc": "Overview",
+    "title": "Appearance",
+    "content": "You can configure multiple appearance variants changing the appearance and float-label input values. Appearance . The appearance input indicates which of the different mat-form-field appearance is used. It has the same features that Angular Material appearance input, watch it here. Global default appearance options can be specified by providing a value for MAT_FORM_FIELD_DEFAULT_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either legacy, standard, fill or outside. @NgModule({ providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } } ] }) . Float label . The float-label input indicates which of the different mat-form-field label behaviours is chosen. It has the same features that Angular Material appearance input, watch it here . Global default label options can be specified by providing a value for MAT_LABEL_GLOBAL_OPTIONS in your application&#8217;s root module. Like the property, the global setting can be either always, never, or auto. @NgModule({ providers: [ {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}} ] }) . ",
+    "url": "/docs/v15/components/input/overview/overview#appearance",
+    
+    "relUrl": "/components/input/overview/overview#appearance"
+  },"84": {
+    "doc": "Overview",
+    "title": "Validation",
+    "content": "You can setup validation on input: . | Using validation input in template-driven forms | Using the Ontimize validators | Creating your custom validator | . Validation input in template-driven forms . To add validation to a template-driven form, you add the validation attributes specific for each input and Ontimize Web match these attributes with validator functions in the framework (such as required, min-length, max-length, max-decimal-digits,min-decimal-digits&#8230;) . The input shows automatically an error message when the required attribute is set to yes and there is no value on the input. &lt;o-password-input #newpassword attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" &gt;&lt;/o-password-input&gt; . Ontimize validators . Ontimize Web providers the following build-in validators in the framework: . | twelveHourFormatValidator: Hour validator hh:mm am/pm format | twentyFourHourFormatValidator: Hour validator HH:mm format | emailValidator: Email validator | nifValidator: NIF validator | patternValidator: Pattern validator | . Using the validators input has the disadvantage that the user cannot define any validation error message for their custom validators. For doing that user has the o-validator and o-error components. Below is an example of using the pattern validator. &lt;o-password-input attr=\"NEW_PASSWORD\" required=\"yes\" min-length=\"8\" [validators]=\"validatorsNewPasswordArray\"&gt; &lt;o-validator error-name=\"hasCapitalCase\" error-text=\"VALIDATOR.HASCAPITALCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasNumber\" error-text=\"VALIDATOR.HASNUMBER\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSmallCase\" error-text=\"VALIDATOR.HASSMALLCASE\"&gt;&lt;/o-validator&gt; &lt;o-validator error-name=\"hasSpecialCharacters\" error-text=\"VALIDATOR.HASSPECIALCHARACTERS\"&gt;&lt;/o-validator&gt; &lt;/o-password-input&gt; ... validatorsNewPasswordArray: ValidatorFn[] = []; constructor() { // check whether the entered password has a number this.validatorsNewPasswordArray.push(OValidators.patternValidator(/\\d/, 'hasNumber')); // check whether the entered password has upper case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[A-Z]/, 'hasCapitalCase')); // check whether the entered password has small case letter this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[a-z]/, 'hasSmallCase')); // check whether the entered password has a special character this.validatorsNewPasswordArray.push(OValidators.patternValidator(/[ `!@#$%^&amp;*()_+\\-=\\[\\]{};':\"\\\\|,.&lt;&gt;\\/?~]/, 'hasSpecialCharacters')); } ... Custom validator . Also user can add its own validators to a input component using the validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" [validators]=\"validatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; validatorsArray: ValidatorFn[] = []; constructor() { this.validatorsArray.push(this.aValidator); this.validatorsArray.push(this.bValidator); } aValidator(control: FormControl): ValidationErrors { let result = {}; if (control.value &amp;&amp; control.value.toString().indexOf('a') === -1) { result['requiredLowercaseA'] = true; } if (control.value &amp;&amp; control.value.toString().indexOf('A') === -1) { result['requiredUppercaseA'] = true; } return result; } bValidator(control: FormControl): ValidationErrors { if (control.value &amp;&amp; control.value.toString().indexOf('b') === -1) { return { 'requiredB': true }; } return {}; } ... Same for asynchronous validators using the async-validators input. &lt;o-text-input attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" [async-validators]=\"asyncValidatorsArray\"&gt; &lt;/o-text-input&gt; ... import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms'; asyncValidatorsArray: AsyncValidatorFn[] = []; constructor(private charValidatorService: CharValidatorService) { this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsLowercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsUppercaseA())); this.asyncValidatorsArray.push(AsyncValidatorsHelper.createValidator(this.charValidatorService.containsB())); } ... export class AsyncValidatorsHelper { static createValidator(validator: CharValidator): AsyncValidatorFn { return (control: AbstractControl): Observable&lt;ValidationErrors&gt; =&gt; { return control.value ? validator.fn(control.value) .pipe( map((isValid: boolean) =&gt; isValid ? null : validator.error) ) : of(null) }; } } interface CharValidator { fn: (value: string) =&gt; Observable&lt;boolean&gt; error: { [key: string]: boolean; } } @Injectable({ providedIn: 'root', }) export class CharValidatorService { containsLowercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('a') !== -1).pipe(delay(1000)) }, error: { 'requiredLowercaseA': true } } } containsUppercaseA(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('A') !== -1).pipe(delay(1000)) }, error: { 'requiredUppercaseA': true } } } containsB(): CharValidator { return { fn: (value: string): Observable&lt;boolean&gt; =&gt; { return of(value.indexOf('b') !== -1).pipe(delay(1000)) }, error: { 'requiredB': true } } } } . ",
+    "url": "/docs/v15/components/input/overview/overview#validation",
+    
+    "relUrl": "/components/input/overview/overview#validation"
+  },"85": {
+    "doc": "Overview",
+    "title": "Label visible",
+    "content": "Form data components allow you to show or hide label with label-visible attribute. By default, this value is true. NOTE: This attribute not apply in o-checkbox,o-radio, o-slider and o-html-input. ",
+    "url": "/docs/v15/components/input/overview/overview#label-visible",
+    
+    "relUrl": "/components/input/overview/overview#label-visible"
+  },"86": {
+    "doc": "Overview",
+    "title": "Required",
+    "content": "A input can be market with a required attribute, an asterisk will be appendend to the label to indicate it is required field. If unwanted, this can be disabled by setting the hide-required-marker property on form data component. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" required=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; &lt;o-text-input attr=\"input4\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" required=\"yes\" hide-required-marker=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
+    "url": "/docs/v15/components/input/overview/overview#required",
+    
+    "relUrl": "/components/input/overview/overview#required"
+  },"87": {
+    "doc": "Overview",
+    "title": "Enabled",
+    "content": "The enabled mode is active by default. You can disable the input by setting enabled='no'. &lt;o-text-input attr=\"input3\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" enabled=\"no\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
+    "url": "/docs/v15/components/input/overview/overview#enabled",
+    
+    "relUrl": "/components/input/overview/overview#enabled"
+  },"88": {
+    "doc": "Overview",
+    "title": "Read-only",
+    "content": "The readonly mode represents an element that is no longer editable by the user. You can make a component only readable setting read-only=\"yes\". &lt;o-text-input fxFlex attr=\"input\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" read-only=\"yes\" [data]=\"getValue()\"&gt;&lt;/o-text-input&gt; . ",
+    "url": "/docs/v15/components/input/overview/overview#read-only",
+    
+    "relUrl": "/components/input/overview/overview#read-only"
+  },"89": {
+    "doc": "Overview",
+    "title": "Tooltip",
+    "content": "To create a tooltip, add the tooltip attribute to an element. By default, the tooltip will appear on bottom of the element. Use tooltip-position attribute to set the position of the tooltip on top, bottom, left or the right side of the element. &lt;o-text-input attr=\"input2\" label=\"{{ 'INPUT.BUTTON.TEXT' | oTranslate }}\" [data]=\"getValue()\" read-only=\"no\" required=\"yes\" tooltip=\"This is an awesome tooltip!\" tooltip-position=\"left\"&gt;&lt;/o-text-input&gt; . ",
+    "url": "/docs/v15/components/input/overview/overview#tooltip",
+    
+    "relUrl": "/components/input/overview/overview#tooltip"
+  },"90": {
+    "doc": "Overview",
+    "title": "Width",
+    "content": "All input components have the width atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component. ",
+    "url": "/docs/v15/components/input/overview/overview#width",
+    
+    "relUrl": "/components/input/overview/overview#width"
+  },"91": {
+    "doc": "Overview",
+    "title": "Global default options  new ",
+    "content": "Global default options in input components can be specified by providing a value for the O_INPUT_OPTIONS token in a module. The color of input icons can be configured using the iconColor attribute and the selection of the value of an input when clicked using the selectAllOnClick attribute. @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { iconColor:'accent' } } ] }) or @NgModule({ providers: [ {provide: O_INPUTS_OPTIONS, useValue: { selectAllOnClick: true } } ] }) . ",
+    "url": "/docs/v15/components/input/overview/overview#global-default-options--new-",
+    
+    "relUrl": "/components/input/overview/overview#global-default-options--new-"
+  },"92": {
+    "doc": "Overview",
+    "title": "Visibility  new ",
+    "content": "The oHidden directive is used to hide form data components. &lt;o-text-input oHidden attr=\"NAME\" width=\"160px\" class=\"form-field\"&gt;&lt;/o-text-input&gt; . ",
+    "url": "/docs/v15/components/input/overview/overview#visibility--new-",
+    
+    "relUrl": "/components/input/overview/overview#visibility--new-"
+  },"93": {
+    "doc": "Overview",
+    "title": "Overview",
+    "content": "Table of Contents . | Data | Appearance . | Appearance | Float label | . | Validation . | Validation input in template-driven forms | Ontimize validators | Custom validator | . | Label visible | Required | Enabled | Read-only | Tooltip | Width | Global default options new | Visibility new | . Form data components are components that must be placed inside a form and allow for an input of data. The form data components offered by OntimizeWeb are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, phone, radio, real, slider, slide toggle, text, textarea and time. All input components in OntimizeWeb extend the OFormDataComponent class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the API section of this page. ",
+    "url": "/docs/v15/components/input/overview/overview",
+    
+    "relUrl": "/components/input/overview/overview"
   },"94": {
     "doc": "Form service components",
     "title": "Form service components",
@@ -1147,145 +1147,145 @@
     
     "relUrl": "/run-an-example/"
   },"164": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": "npm install ontimize-web-ngx-report --save . ",
-    "url": "/docs/v15/addons/report/installation/#installation",
-    
-    "relUrl": "/addons/report/installation/#installation"
-  },"165": {
-    "doc": "Installation",
-    "title": "Usage",
-    "content": "Import the Ontimize Web Report module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-report'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-report/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
-    "url": "/docs/v15/addons/report/installation/#usage",
-    
-    "relUrl": "/addons/report/installation/#usage"
-  },"166": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": " ",
-    "url": "/docs/v15/addons/report/installation/",
-    
-    "relUrl": "/addons/report/installation/"
-  },"167": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": "npm install ontimize-web-ngx-report-on-demand --save . ",
-    "url": "/docs/v15/report-on-demand/installation/#installation",
-    
-    "relUrl": "/report-on-demand/installation/#installation"
-  },"168": {
-    "doc": "Installation",
-    "title": "Usage",
-    "content": "Import the Ontimize Web Report on-Demand module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ngx-extended-pdf-viewer/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
-    "url": "/docs/v15/report-on-demand/installation/#usage",
-    
-    "relUrl": "/report-on-demand/installation/#usage"
-  },"169": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": " ",
-    "url": "/docs/v15/report-on-demand/installation/",
-    
-    "relUrl": "/report-on-demand/installation/"
-  },"170": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": "npm install ontimize-web-ngx-filemanager --save . ",
-    "url": "/docs/v15/addons/filemanager/installation/#installation",
-    
-    "relUrl": "/addons/filemanager/installation/#installation"
-  },"171": {
-    "doc": "Installation",
-    "title": "Usage",
-    "content": "Add the library theming . Include the library theme in your application by adding the following code to the &#8216;app.scss&#8217; file: ... @import '~ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'; @include o-filemanager-table-theme($theme); ... Import the File Manager into your application . Import the Ontimize Web file manager module in the module you want to use it. import { OFileManagerModule } from 'ontimize-web-ngx-filemanager'; @NgModule({ imports: [ OFileManagerModule ], declarations: ... providers: ... }) export class ExampleModule { } . Add the File Manager to your component . Insert the o-filemanager-table component in your application component template. You must configure the service attribute within the name of the service that manages the files in the server. You must indicate also the column name that stores the work space identifier in the workspace-key attribute. &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\"&gt;&lt;/o-filemanager-table&gt; . If you want to use the SDMS file manager engine you need to add the type='S3' attribute to yours o-filemanager-table component. Also you must indicate also the form column name that stores the work space identifier in the workspace-key attribute or define the workspace-S3 function as the example bellow . customers-detail.component.html: ... &lt;o-filemanager-table type=\"S3\" service=\"customers\" [workspace-s3]=\"setWorkspaceS3\"&gt;&lt;/o-filemanager-table&gt; ... customers-detail.component.ts: ... setWorkspaceS3(data: any) { return { name: 'default', data: { id: data['CUSTOMERID'] } }; } ... ",
-    "url": "/docs/v15/addons/filemanager/installation/#usage",
-    
-    "relUrl": "/addons/filemanager/installation/#usage"
-  },"172": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": " ",
-    "url": "/docs/v15/addons/filemanager/installation/",
-    
-    "relUrl": "/addons/filemanager/installation/"
-  },"173": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": "npm install ontimize-web-ngx-map --save . ",
-    "url": "/docs/v15/map/installation/#installation",
-    
-    "relUrl": "/map/installation/#installation"
-  },"174": {
-    "doc": "Installation",
-    "title": "Usage",
-    "content": "Finally, you can use ontimize-web-ngx-map in your Ontimize Web project. Import into your application . Include the library map module into your app in the module where you want to use it... import { OMapModule } from 'ontimize-web-ngx-map'; ... @NgModule({ imports: [ OMapModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Configure angular.json dependencies . You must add the module styles definition and the leaflet images in your &#8216;.angular.json&#8217;: ... \"assets\": [ .... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-map/images\", \"output\": \"/assets\" } .... ], \"styles\": [ ... \"node_modules/ontimize-web-ngx-map/styles.scss\", .... ], ... Add a map to your component . Insert the o-map component in your application component template. &lt;o-map #oMapBasic attr=\"basic-usage-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" fxFlex&gt;&lt;/o-map&gt; . ",
-    "url": "/docs/v15/map/installation/#usage",
-    
-    "relUrl": "/map/installation/#usage"
-  },"175": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": " ",
-    "url": "/docs/v15/map/installation/",
-    
-    "relUrl": "/map/installation/"
-  },"176": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": "npm install ontimize-web-ngx-gallery --save . ",
-    "url": "/docs/v15/addons/gallery/installation/#installation",
-    
-    "relUrl": "/addons/gallery/installation/#installation"
-  },"177": {
-    "doc": "Installation",
-    "title": "Usage",
-    "content": "Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss'; @include o-gallery-theme($theme); ... Import in an application module . Import the Ontimize Web gallery module in the app module where you want to use it. import { OGalleryModule } from 'ontimize-web-ngx-gallery'; @NgModule({ imports: [ OGalleryModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
-    "url": "/docs/v15/addons/gallery/installation/#usage",
-    
-    "relUrl": "/addons/gallery/installation/#usage"
-  },"178": {
-    "doc": "Installation",
-    "title": "Installation",
-    "content": " ",
-    "url": "/docs/v15/addons/gallery/installation/",
-    
-    "relUrl": "/addons/gallery/installation/"
-  },"179": {
     "doc": "Tree",
     "title": "Installation",
     "content": "npm install ontimize-web-ngx-tree --save . ",
     "url": "/docs/v15/tree/installation/#installation",
     
     "relUrl": "/tree/installation/#installation"
-  },"180": {
+  },"165": {
     "doc": "Tree",
     "title": "Usage",
     "content": "Configure angular-cli.json dependencies . You must add the module styles definition in your &#8216;.angular-cli.json&#8217; file styles array: ... \"styles\": [ ... \"../node_modules/ontimize-web-ngx-tree/styles.scss\", .... ], ... Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-tree/o-tree-theme.scss'; @include o-tree-theme($theme); ... Import in an application module . Import the Ontimize Web tree module in the app module where you want to use it. import { OTreeModule } from 'ontimize-web-ngx-tree'; @NgModule({ imports: [ OTreeModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
     "url": "/docs/v15/tree/installation/#usage",
     
     "relUrl": "/tree/installation/#usage"
-  },"181": {
+  },"166": {
     "doc": "Tree",
     "title": "Tree",
     "content": " ",
     "url": "/docs/v15/tree/installation/",
     
     "relUrl": "/tree/installation/"
-  },"182": {
+  },"167": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": "npm install ontimize-web-ngx-report --save . ",
+    "url": "/docs/v15/addons/report/installation/#installation",
+    
+    "relUrl": "/addons/report/installation/#installation"
+  },"168": {
+    "doc": "Installation",
+    "title": "Usage",
+    "content": "Import the Ontimize Web Report module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-report'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-report/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
+    "url": "/docs/v15/addons/report/installation/#usage",
+    
+    "relUrl": "/addons/report/installation/#usage"
+  },"169": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": " ",
+    "url": "/docs/v15/addons/report/installation/",
+    
+    "relUrl": "/addons/report/installation/"
+  },"170": {
     "doc": "Installation",
     "title": "Installation",
     "content": "Step 1 - Install the module . npm install ontimize-web-ngx-charts --save . Step 2 - Import in an application module . Include the library chart module into your app in the module where you want to use it... import { OChartModule } from 'ontimize-web-ngx-charts'; ... @NgModule({ imports: [ OChartModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Step 3 - Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"styles\": [ ... \"node_modules/ontimize-web-ngx-charts/styles.scss\", .... ], \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-charts/assets\", \"output\": \"/assets\" }, ... ] ... ",
     "url": "/docs/v15/charts/installation/#installation",
     
     "relUrl": "/charts/installation/#installation"
-  },"183": {
+  },"171": {
     "doc": "Installation",
     "title": "Installation",
     "content": " ",
     "url": "/docs/v15/charts/installation/",
     
     "relUrl": "/charts/installation/"
+  },"172": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": "npm install ontimize-web-ngx-map --save . ",
+    "url": "/docs/v15/map/installation/#installation",
+    
+    "relUrl": "/map/installation/#installation"
+  },"173": {
+    "doc": "Installation",
+    "title": "Usage",
+    "content": "Finally, you can use ontimize-web-ngx-map in your Ontimize Web project. Import into your application . Include the library map module into your app in the module where you want to use it... import { OMapModule } from 'ontimize-web-ngx-map'; ... @NgModule({ imports: [ OMapModule, /* other imports */ ], declarations: ... providers: ... }) export class ExampleModule { } . Configure angular.json dependencies . You must add the module styles definition and the leaflet images in your &#8216;.angular.json&#8217;: ... \"assets\": [ .... { \"glob\": \"**/*\", \"input\": \"node_modules/ontimize-web-ngx-map/images\", \"output\": \"/assets\" } .... ], \"styles\": [ ... \"node_modules/ontimize-web-ngx-map/styles.scss\", .... ], ... Add a map to your component . Insert the o-map component in your application component template. &lt;o-map #oMapBasic attr=\"basic-usage-map\" center=\"42.240599, -8.720727\" zoom=\"11\" min-zoom=\"3\" max-zoom=\"20\" zoom-control=\"yes\" search-control=\"yes\" fxFlex&gt;&lt;/o-map&gt; . ",
+    "url": "/docs/v15/map/installation/#usage",
+    
+    "relUrl": "/map/installation/#usage"
+  },"174": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": " ",
+    "url": "/docs/v15/map/installation/",
+    
+    "relUrl": "/map/installation/"
+  },"175": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": "npm install ontimize-web-ngx-report-on-demand --save . ",
+    "url": "/docs/v15/report-on-demand/installation/#installation",
+    
+    "relUrl": "/report-on-demand/installation/#installation"
+  },"176": {
+    "doc": "Installation",
+    "title": "Usage",
+    "content": "Import the Ontimize Web Report on-Demand module into your application . Import the OReportModule into the main module of your application. import { OReportModule } from 'ontimize-web-ngx-keycloak'; @NgModule({ imports: [ OReportModule , ... ], declarations: ... providers: ... }) export class AppModule { } . Configure angular.json dependencies . You must add the module styles definition in your &#8216;.angular.json&#8217; file styles array: ... \"architect\": { \"build\": { \"builder\": \"@angular-devkit/build-angular:browser\", \"options\": { ... \"assets\": [ ... { \"glob\": \"**/*\", \"input\": \"node_modules/ngx-extended-pdf-viewer/assets\", \"output\": \"/assets\" } ... ] } ... } } ... ",
+    "url": "/docs/v15/report-on-demand/installation/#usage",
+    
+    "relUrl": "/report-on-demand/installation/#usage"
+  },"177": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": " ",
+    "url": "/docs/v15/report-on-demand/installation/",
+    
+    "relUrl": "/report-on-demand/installation/"
+  },"178": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": "npm install ontimize-web-ngx-gallery --save . ",
+    "url": "/docs/v15/addons/gallery/installation/#installation",
+    
+    "relUrl": "/addons/gallery/installation/#installation"
+  },"179": {
+    "doc": "Installation",
+    "title": "Usage",
+    "content": "Add the library theming . In your application &#8216;app.scss&#8217; file you should add the library theme... @import 'node_modules/ontimize-web-ngx-gallery/o-gallery-theme.scss'; @include o-gallery-theme($theme); ... Import in an application module . Import the Ontimize Web gallery module in the app module where you want to use it. import { OGalleryModule } from 'ontimize-web-ngx-gallery'; @NgModule({ imports: [ OGalleryModule ], declarations: ... providers: ... }) export class ExampleModule { } . ",
+    "url": "/docs/v15/addons/gallery/installation/#usage",
+    
+    "relUrl": "/addons/gallery/installation/#usage"
+  },"180": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": " ",
+    "url": "/docs/v15/addons/gallery/installation/",
+    
+    "relUrl": "/addons/gallery/installation/"
+  },"181": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": "npm install ontimize-web-ngx-filemanager --save . ",
+    "url": "/docs/v15/addons/filemanager/installation/#installation",
+    
+    "relUrl": "/addons/filemanager/installation/#installation"
+  },"182": {
+    "doc": "Installation",
+    "title": "Usage",
+    "content": "Add the library theming . Include the library theme in your application by adding the following code to the &#8216;app.scss&#8217; file: ... @import '~ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss'; @include o-filemanager-table-theme($theme); ... Import the File Manager into your application . Import the Ontimize Web file manager module in the module you want to use it. import { OFileManagerModule } from 'ontimize-web-ngx-filemanager'; @NgModule({ imports: [ OFileManagerModule ], declarations: ... providers: ... }) export class ExampleModule { } . Add the File Manager to your component . Insert the o-filemanager-table component in your application component template. You must configure the service attribute within the name of the service that manages the files in the server. You must indicate also the column name that stores the work space identifier in the workspace-key attribute. &lt;o-filemanager-table service=\"customers\" workspace-key=\"ID_DMS_DOC\"&gt;&lt;/o-filemanager-table&gt; . If you want to use the SDMS file manager engine you need to add the type='S3' attribute to yours o-filemanager-table component. Also you must indicate also the form column name that stores the work space identifier in the workspace-key attribute or define the workspace-S3 function as the example bellow . customers-detail.component.html: ... &lt;o-filemanager-table type=\"S3\" service=\"customers\" [workspace-s3]=\"setWorkspaceS3\"&gt;&lt;/o-filemanager-table&gt; ... customers-detail.component.ts: ... setWorkspaceS3(data: any) { return { name: 'default', data: { id: data['CUSTOMERID'] } }; } ... ",
+    "url": "/docs/v15/addons/filemanager/installation/#usage",
+    
+    "relUrl": "/addons/filemanager/installation/#usage"
+  },"183": {
+    "doc": "Installation",
+    "title": "Installation",
+    "content": " ",
+    "url": "/docs/v15/addons/filemanager/installation/",
+    
+    "relUrl": "/addons/filemanager/installation/"
   },"184": {
     "doc": "Combo",
     "title": "Combo",
@@ -4488,7 +4488,7 @@
   },"641": {
     "doc": "Table",
     "title": "\n      OTableColumnAggregateComponent \n      \n    ",
-    "content": "Directive: o-table-column-aggregate . Inputs . | Name | Since | Description | Default | . | aggregate . sum | count | avg | min | max . | . | Default functions aggregate . | sum . | . | attr . string . | . | Column name . | . | . | functionAggregate . (value:any[]) => number . | . | Custom function aggregate . | . | . | title . string . | . | Title for the header total column. | . | . * required inputs. ",
+    "content": "Directive: o-table-column-aggregate . Inputs . | Name | Since | Description | Default | . | aggregate . sum | count | avg | min | max . | . | Default functions aggregate . | sum . | . | attr . string . | . | Column name . | . | . | function-aggregate . (value:any[]) => number . | . | Custom function aggregate . | . | . | title . string . | . | Title for the header total column. | . | . * required inputs. ",
     "url": "/docs/v15/components/data/table/api#o-table-column-aggregate",
     
     "relUrl": "/components/data/table/api#o-table-column-aggregate"
@@ -4796,7 +4796,7 @@
   },"685": {
     "doc": "Table",
     "title": "Features",
-    "content": "Checkbox selection . The table supports checkbox selection with select-all-checkbox-visible property. If this property is activated will display the row checkboxes, including a master toggle checkbox for the header. It is disabled by default. OntimizeWeb allows to customize the title, resizing, width, minwidth and maxwidth of the master toggle checkbox for the header by adding the o-table-column-select-all directive to you application. For more information see the API. &lt;o-table fxFlex attr=\"customer\" title=\"CUSTOMERS\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID\" visible-columns=\"PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID\" sort-columns=\"SURNAME\" query-rows=\"24\" quick-filter=\"yes\" row-height=\"medium\" select-all-checkbox-visible=\"true\" pageable=\"no\" virtual-scroll=\"no\"&gt; &lt;o-table-column-select-all title=\"Omit\"&gt;&lt;/o-table-column-select-all&gt; &lt;/o-table&gt; . You can configure show in the menu on the upper right the option of select row with select-all-checkbox property. It is disabled by default. Additionally, you can specify a function setting the input disable-selection-function to disable the checkboxes depending on a condition. This function receives full data record for allowing you to enable/disable selection checkbox depending on value/s of the record. Fixed header and footer . The o-table component supports fixed header and footer setting fixed-header=\"yes\" when its content is greater than its own height. For that, you must set the height of the table, using, for example [ngStyle]=\"height: 400px;\". By default, it’s disabled. Example . &lt;o-table #table attr=\"table\" title=\"ACCOUNTS\" fixed-header=\"yes\" [static-data]=\"getTableData()\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP\" visible-columns=\"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE\" layout-padding sort-columns=\"ANID\" query-on-init=\"false\" quick-filter=\"yes\" insert-button=\"no\" delete-button=\"no\" refresh-button=\"no\" pagination-controls=\"no\" export-button=\"no\" [ngStyle]=\"height:400px\"&gt; &lt;o-table-column attr=\"ENTITYID\" title=\"ENTITYID\" width=\"14%\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"OFFICEID\" title=\"OFFICEID\" width=\"14%\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"CDID\" title=\"CDID\" width=\"14%\"&gt;&lt;/o-table-column&gt; ... &lt;/o-table&gt; . Aggregates . Oftentimes, when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. The o-table component has support for the mostly used aggregate functions (count,sum,avg,min,max). Example . &lt;o-table service=\"branches\" entity=\"account\" keys=\"ACCOUNTID\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP\" visible-columns=\"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE\" fxFlex layout-padding attr=\"accounts\" title=\"ACCOUNTS\" sort-columns=\"ANID:DESC\" query-on-init=\"true\" quick-filter=\"yes\" filter-case-sensitive=\"true\" &gt; &lt;o-table-column attr=\"BALANCE\" title=\"BALANCE\" type=\"currency\" currency-symbol=\"€\" thousand-separator=\",\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"INTERESRATE\" title=\"INTERESRATE\" type=\"real\" &gt;&lt;/o-table-column&gt; &lt;o-table-column-aggregate attr=\"BALANCE\" title=\"sum\"&gt; &lt;o-table-column-aggregate attr=\"INTERESRATE\" [function-aggregate]=\"custom\"&gt;&lt;/o-table-column-aggregate&gt; &lt;/o-table&gt; . Typescript code ... custom(data:any[]):number{ let result = 0; for(var i=0;i&lt;data.length;i++){ if(i%2==0) result+=data[i]; } return result; } . You can see this and more examples of this component in the OntimizeWeb playground. Calculated columns . The o-table supports calculated columns, used when user wants to show an additional column which contains a result of an operation. Example . In the following example, two calculated columns are defined that perform the same operation but one uses the operation attribute (BALANCExINTERESRATE) and the other the function calculateBenefit. &lt;o-table service=\"branches\" entity=\"account\" keys=\"ACCOUNTID\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP\" visible-columns=\"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE;INTERESRATE;BENEFIT;BENEFIT2\" attr=\"accounts\" title=\"ACCOUNTS\" layout-padding sort-columns=\"ANID\" query-rows=\"15\" pageable=\"no\" &gt; &lt;o-table-column attr=\"ENTITYID\" title=\"ENTITYID\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"CDID\" title=\"CDID\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"ANID\" title=\"ANID\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"BALANCE\" title=\"BALANCE\" currency-symbol=\"€\" type=\"currency\" grouping=\"yes\" thousand-separator=\",\"&gt; &lt;/o-table-column&gt; &lt;o-table-column attr=\"INTERESRATE\" title=\"INTERESRATE\" type=\"percentage\" decimal-separator=\",\"&gt;&lt;/o-table-column&gt; &lt;!--calculated column--&gt; &lt;o-table-column-calculated attr=\"BENEFIT\" title=\"BENEFIT\" type=\"currency\" thousand-separator=\".\" decimal-separator=\",\" currency-symbol=\"€\" currency-symbol-position=\"right\" operation=\"(BALANCE*INTERESRATE)\" &gt; &lt;/o-table-column-calculated&gt; &lt;o-table-column-calculated attr=\"BENEFIT2\" title=\"BENEFIT2\" type=\"currency\" thousand-separator=\".\" decimal-separator=\",\" currency-symbol=\"€\" currency-symbol-position=\"right\" [operation-function]=\"calculateBenefit\" &gt; &lt;/o-table-column-calculated&gt; &lt;/o-table&gt; . Typescript code ... calculateBenefit(rowData: any[]): number { return (rowData['BALANCE'] * rowData['INTERESRATE']); } . You can see this and more examples of this component in the OntimizeWeb playground. Table options . The o-table-option component allows to add extra options to the table menu. You only have to add the component to your table and subscribe to the onClick event in your component to perform the desired actions. Check the example below. &lt;o-table attr=\"customers\" entity=\"ECustomers\" title=\"CUSTOMERS\" columns=\"CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" visible-columns=\"PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\"&gt; &lt;o-table-option #myOption label=\"My option\"&gt;&lt;/o-table-option&gt; &lt;/o-table&gt; . import { Component, ViewChild } from '@angular/core'; import { OTableOptionComponent } from 'ontimize-web-ngx'; @Component({ selector: 'my-page', templateUrl: 'my-page.component.html' }) export class MyPageComponent { @ViewChild('myOption', {static: false}) protected myOption: OTableOptionComponent; ngAfterViewInit() { this.myButton.onClick.subscribe(event =&gt; { alert('my option click'); }); } } . Table context menu . The o-table allows to add a context menu to table rows, the menu is displayed by right clicking in the table row. For including the context menu in your table you have to include the o-table-context-menu component in your table. By default, o-table-context-menu include the next options: . | Refresh | View detail. | Edit. | Insert. | Delete | Copy options. | Filter options. | Select/Deselect all. | Group by | . Below an example. The o-table-context-menu allows to hide these options by setting the attributes insert, edit, view-detail, delete,copy, select-all,refresh,filter to no. You can also include your own context-menu with the reference to a o-context-menucomponent like in the example below. Example . &lt;o-table attr=\"customers\" entity=\"ECustomers\" title=\"CUSTOMERS\" columns=\"CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" visible-columns=\"PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" sort-columns=\"SURNAME\" keys=\"CUSTOMERID\" parent-keys=\"n:NAME;CUSTOMERTYPEID\" query-on-init=\"true\" query-rows=\"6\" quick-filter=\"yes\" &gt; &lt;o-table-button attr=\"myButton\" label=\"My button\" icon=\"account_circle\"&gt;&lt;/o-table-button&gt; &lt;o-table-column attr=\"NAME\" title=\"NAME\"&gt;&lt;/o-table-column&gt; ... &lt;o-table-context-menu [context-menu]=\"myContextMenu\" insert=\"no\" edit=\"no\" view-details=\"no\"&gt;&lt;/o-table-context-menu&gt; &lt;/o-table&gt; &lt;o-context-menu #myContextMenu&gt; &lt;o-context-menu-item icon=\"face\" label=\"Item 1\" (execute)=\"onExecute($event)\"&gt;&lt;/o-context-menu-item&gt; &lt;o-context-menu-item icon=\"star_rate\" label=\"Item 2\" enabled=\"no\"&gt;&lt;/o-context-menu-item&gt; &lt;o-context-menu-item label=\"Item 3\" [visible]=\"getVisible\" (execute)=\"onExecute($event)\"&gt;&lt;/o-context-menu-item&gt; &lt;/o-context-menu&gt; . For more information about the o-context-menu component definition, please read the docs. You can see this and more examples of this component in the OntimizeWeb playground. Insertable row . The o-table component allow to insert rows adding the o-table-insertable-row component into the o-table definition. In this component you can define the columns and required columns with columns and required-columns attributes. Example . In the following example the table has a insertable row where the user may introduce the name, surname or email for inserting a new customer. Name column is required. &lt;o-table fxFlex attr=\"customers\" title=\"CUSTOMERS\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL\" visible-columns=\"NAME;SURNAME;STARTDATE;EMAIL;ADDRESS\" sort-columns=\"SURNAME\" query-rows=\"10\" quick-filter=\"yes\" pageable=\"no\" row-height=\"medium\" select-all-checkbox=\"true\" pagination-controls=\"yes\"&gt; &lt;o-table-insertable-row columns=\"NAME;SURNAME;EMAIL\" required-columns=\"NAME\"&gt;&lt;/o-table-insertable-row&gt; &lt;o-table-column attr=\"NAME\" title=\"NAME\" orderable=\"no\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"STARTDATE\" title=\"STARTDATE\" type=\"date\" format=\"LL\"&gt;&lt;/o-table-column&gt; &lt;/o-table&gt; . The o-table-insertable-row support 2 differnent positions which can be set via the position input, first and last. By default, it’s last. To create a custom insertable column, you must define a custom editor for the column following the same steps as in Custom editors and add the column attr column in columns attribute in o-table-insertable-row. If you add validators to your o-table-cell-editor this validation will work also in the insertable row editors. You can see more examples of this component in the OntimizeWeb playground. Table buttons . The o-table component allows to add extra buttons in the toolbar with the o-table-button component. You can configure: . | The icon in `icon` property, this name must to be of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})) | The label in `label` property | . Example . &lt;o-table attr=\"customers\" entity=\"ECustomers\" title=\"CUSTOMERS\" columns=\"CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" visible-columns=\"PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" sort-columns=\"SURNAME\" keys=\"CUSTOMERID\" parent-keys=\"n:NAME;CUSTOMERTYPEID\" query-on-init=\"true\" query-rows=\"6\" quick-filter=\"yes\" &gt; &lt;o-table-button attr=\"myButton\" label=\"My button\" icon=\"account_circle\"&gt;&lt;/o-table-button&gt; &lt;o-table-column attr=\"NAME\" title=\"NAME\"&gt;&lt;/o-table-column&gt; ... &lt;/o-table&gt; . Typescript code ... import { OTableButtonComponent } from 'ontimize-web-ngx'; ... @ViewChild('myButton', {static: false}) protected myButton: OTableButtonComponent; ... ngAfterViewInit() { this.myButton.onClick.subscribe(event =&gt; { alert('my button click'); }); } . Export table data . The table data can be exported to EXCEL, CSV,.. using the option Export in the table menu. The same data that is in the table gets exported but none the values ​​processed in GUI, ie: . | the values ​​obtained by the formatters of the cell renderers | header, cell and row styles | calculated columns | cell aligment | if row grouping, all data will be exported without grouping | if expandable rows exist, all data will be exported without expanding | . The operation of the exports depends on whether Ontimize, OntimizeJEE or Ontimize Boot servers are used. You can read more about this topic in the export table data. Ontimize Web data export is compatible with Ontimize, OntimizeEE and Ontimize Boot servers from ontimize-web-ngx: 8.8.0, with previous versions it is compatible with Ontimize and OntimizeEE servers. Table export button . The o-table component allows to add extra exportation buttons in the exportation dialog with the o-table-export-button component. You can configure: . | The icon using the `icon` property, this name must to be of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})) | The label with the `label` property | The exportation type by setting the `export-type` property. The value configured here will be used for making the requests to the backend and also al extension for the downloaded file. | . Column titles alignment . By default, the o-table columns title texts are aligned depending on the column type. | start: service types and default value when auto-align-titles is active. | center: image, date, action and boolean types. | end: currency, integer, real and percentage types. | . Using the o-table-column component title-align input user can modify that default value. When the auto-align-titles input is set to false in o-table, the title of the table column is aligned centered. The user can also define a title-align in the columns (its value has precedence over the default type alignment). Global title alignment settings can be specified by providing a value for O_TABLE_GLOBAL_CONFIG in your application root or in a specific module. @NgModule({ declarations: [ ... ], ... providers: [ ... { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAlignTitles: false } }, ... ], ... }) . Column resizing . The o-table component allows column resizing by default. Using the resizable input you can modify that default value on the table. To disabled resizing for each column, set resizable='no' on the column definition. Columns multiple sorting . Table allows multiple columns sorting by default. Using the multiple-sort input user can modify that default value. A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state. Tooltip in columns . The o-table component provides a text that is displayed when the user hovers over an column... &lt;o-table-column attr=\"NOTES\" title=\"NOTES\" multiline=\"no\" width=\"300px\" tooltip=\"yes\"&gt;&lt;/o-table-column&gt; ... You can configure the value that is displayed with the attribute tooltip-value. Additionally, you can specify default function to be applied when the user over column with tooltip-function attribute. You can customize the tooltip styles by redefining the class o-table-cell-tooltip. If you have a custom render in the column and it is not overwritten the getCelldata method will show the internal value of the table. Reinitialize method . When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want o-table to update the display to reflect these changes. This function is provided for that purpose.For more information see the API... const columnsOfTable= 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS'; const filterColumnsOfTable= 'NAME;EMAIL'; this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTable, filterColumns:filterColumnsOfTable}); ... Expandable row . The o-table-row-expandable component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It’s necessary to wrap the content of your template with the &lt;ng-template let-row&gt;&lt;/ng-template&gt; tag and add the template definition inside. Ontimize Web provides two posibilities for attaching child rows to a parent row in the o-table. | Simple template | A template with context | . Simple template . The example below makes use of simple template, the content of the child row in this example is defined by the ng-template with the let-row attribute so that exposes the variable row in the template to show the information. &lt;o-table fxFill #table service-type=\"DummyService\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" title=\"CUSTOMERS\" insert-button=\"no\" delete-button=\"no\" refresh-button=\"no\" pagination-controls=\"yes\" detail-mode=\"none\" export-button=\"no\" query-rows=\"10\" fixed-header=\"yes\"&gt; &lt;o-table-row-expandable&gt; &lt;ng-template let-row&gt; &lt;o-column title=\"CONTACT_DATA\" icon=\"info\" class=\"vertical-margin-10\" layout-gap=\"12px\"&gt; &lt;div fxLayout=\"row wrap\" fxLayoutGap=\"14px\"&gt; &lt;span fxFlex=\"30%\"&gt;&lt;strong&gt;{{'ADDRESS' | oTranslate}}&lt;/strong&gt;: {{row.ADDRESS}}&lt;/span&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'COUNTRY' | oTranslate}}&lt;/strong&gt;: {{row.COUNTRY}}&lt;/span&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'STATE' | oTranslate}}&lt;/strong&gt;: {{row.STATE}}&lt;/span&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'ZIPCODE' | oTranslate}}&lt;/strong&gt;: {{row.ZIPCODE}}&lt;/span&gt; &lt;/div&gt; &lt;div fxLayout=\"row wrap\" fxLayoutGap=\"14px\"&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'EMAIL' | oTranslate}}&lt;/strong&gt;: {{row.EMAIL}}&lt;/span&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'PHONE' | oTranslate}}&lt;/strong&gt;: {{row.PHONE}}&lt;/span&gt; &lt;/div&gt; &lt;/o-column&gt; &lt;/ng-template&gt; &lt;/o-table-row-expandable&gt; &lt;/o-table&gt; . A template with context . It is possible to define a template with context, so that if the defined template contains a component (such as o-table, o-list, o-chart and o-grid), this context provide functionalities like parent-keys and query the component data automatically when the row is expanded, for example. It is necessary define targets input and [data]=\"row\" to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with [data]=\"row\" . &lt;o-table fxFill #table service-type=\"DummyService\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" title=\"CUSTOMERS\" insert-button=\"no\" delete-button=\"no\" refresh-button=\"no\" pagination-controls=\"no\" detail-mode=\"none\" export-button=\"no\" store-state=\"false\" query-rows=\"10\" fixed-header=\"yes\"&gt; &lt;o-table-row-expandable&gt; &lt;ng-template let-row&gt; &lt;o-expandable-container [targets]=\"[accountsTable]\" [data]=\"row\"&gt; &lt;o-table #accountsTable service-type=\"DummyService\" service=\"customers\" entity=\"customerAccount\" parent-keys=\"CUSTOMERID\" keys=\"ACCOUNTID\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE\" visible-columns=\"ACCOUNT;BALANCE;STARTDATE\" title=\"ACCOUNTS\" sort-columns=\"STARTDATE\" query-on-init=\"false\" query-rows=\"6\" pageable=\"no\" insert-button=\"no\" delete-button=\"no\" detail-mode=\"none\"&gt; &lt;o-table-column attr=\"ACCOUNT\" title=\"ACCOUNT\" class=\"o-table-column-centered\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"STARTDATE\" title=\"STARTDATE\" type=\"date\" format=\"LL\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"BALANCE\" title=\"BALANCE\" type=\"currency\" currency-symbol=\"€\" currency-symbol-position=\"right\" thousand-separator=\".\" decimal-separator=\",\"&gt; &lt;/o-table-column&gt; &lt;/o-table&gt; &lt;/o-expandable-container&gt; &lt;/ng-template&gt; &lt;/o-table-row-expandable&gt; &lt;/o-table&gt; . The o-table component has an input to control expandable row and show or not the expansion icon. This input show-expandable-icon-function must set a function that will receive data of expandable row and has to return a boolean observable. You can check a complete example here. Autoadjust . The o-table component supports automatically adjust to the content of the column. This means that it will always take up the minimum width required to present its content. If you want avoid that behaviour setting auto-adjust = no in the o-table component. Global default autoadjust can be specified by providing a value for O_TABLE_GLOBAL_CONFIG in your application’s root module. @NgModule({ declarations: [ ... ], ... providers: [ ... { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAdjust: false } }, ... ], ... }) . Example . &lt;o-table fxFlex attr=\"customers\" title=\"CUSTOMERS\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID\" visible-columns=\"PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID\" sort-columns=\"SURNAME\" query-rows=\"10\" quick-filter=\"yes\" row-height=\"medium\" select-all-checkbox=\"true\" pageable=\"yes\" fixed-header=\"yes\" query-rows=\"25\" auto-adjust=\"yes\"&gt; &lt;o-table-columns-filter columns=\"STARTDATE;SURNAME\"&gt;&lt;/o-table-columns-filter&gt; &lt;o-table-column async-load=\"true\" width=\"48px\" attr=\"PHOTO\" orderable=\"no\" searchable=\"no\" type=\"image\" image-type=\"base64\" empty-image=\"assets/images/no-image.png\" avatar=\"yes\"&gt; &lt;/o-table-column&gt; &lt;o-table-column attr=\"NAME\" title=\"NAME\" orderable=\"no\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"STARTDATE\" title=\"STARTDATE\" type=\"date\" format=\"LL\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"CUSTOMERTYPEID\" title=\"CUSTOMERTYPEID\" editable=\"true\"&gt; &lt;o-table-cell-renderer-service service=\"customers\" entity=\"customerType\" value-column=\"DESCRIPTION\" translate=\"no\" columns=\"CUSTOMERTYPEID;DESCRIPTION\" visible-columns=\"DESCRIPTION\"&gt; &lt;/o-table-cell-renderer-service&gt; &lt;/o-table-column&gt; &lt;/o-table&gt; . There is a possibility that the content is large and the result is not what is expected like the example shown below. However, if you want to control similar case, you can do so by configuring auto-adjust=\"yes\" with several options such as: . | horizontal-scroll=yes | multiline=yes | max-width of the o-table-column. | . | In the next case we have applied horizontal-scroll=yes and auto-adjust=\"yes\", the result would be the following. | As you can see, in the next case we have applied multiline=yes and auto-adjust=\"yes\", the result would be the following. | In the next case we have applied max-width=\"300px\" in o-table-column and auto-adjust=\"yes\", the result would be the following.. &lt;o-table-column attr=\"NOTES\" title=\"NOTES\" multiline=\"no\" max-width=\"300px\"&gt;&lt;/o-table-column&gt; . | . Row grouping . Ontimize Web allows to merge fields belonging to one column so that the consecutive fields have the same value through the row grouping. Each group will be marked with one row with joined cells above containing the group value. By default, the table is groupable and for grouping/ungrouping by one o more columns, you can: . | Configure grouped columns by default with the grouped-columns property. As you can see in the example below, as soon as there is at least one active row. | Use the table menu: click the Group / Ungroup by option to configure the columns you need to group / ungroup by. | Use the table context menu: Right-click the column data to invoke context menu and click on Group by -&gt; Group by column . The context menu also allows you to ungroup by a column or by all. You can collapse/expand all grouped rows if you right-click on the grouped row. | Use the o-table-columns-grouping and o-table-columns-grouping-column components: this components are used to configure the initial state of the row grouping and override the table grouping configuration. | . If there is at least one grouping, the table automatically applies the sum function on those of type currency, integer and real and whose value will be displayed in the grouped row. If you want to exclude this function from being performed, you must add this column in the excluded-aggregate-columns attribute in o-table-columns-grouping component. You can configure the aggregate functions (count,sum,avg,min,max) in the o-table-columns-grouping component. Additionally, you can specify aggregate function to be applied with function-aggregate attribute. By default, when you change the aggregate function in a column, it will change in all grouped rows of the same level, if you want to avoid this behavior you must add change-aggregate-same-level=\"no\". &lt;o-table fxFill #table service-type=\"DummyService\" service=\"olympicWinners\" entity=\"olympicWinners\" columns=\"athlete;age;country;year;date;sport;gold;silver;bronze\" grouped-columns=\"country;year;date;sport\" layout-padding title=\"ACCOUNTS\" quick-filter=\"yes\" insert-button=\"no\" delete-button=\"no\" refresh-button=\"no\" pagination-controls=\"no\" export-button=\"no\" detail-mode=\"none\"&gt; &lt;o-table-columns-grouping columns=\"country;sport\" excluded-aggregate-columns=''&gt; &lt;o-table-columns-grouping-column attr=\"age\" title=\"edad\" aggregate=\"max\"&gt; &lt;/o-table-columns-grouping-column&gt; &lt;o-table-columns-grouping-column attr=\"gold\" aggregate=\"max\"&gt; &lt;/o-table-columns-grouping-column&gt; &lt;/o-table-columns-grouping&gt; &lt;o-table-context-menu insert=\"no\" edit=\"no\" view-detail=\"no\" refresh=\"no\" delete=\"no\"&gt;&lt;/o-table-context-menu&gt; &lt;/o-table&gt; . If the table is groupable but you want the column isn’t groupable you must add groupable=false in this column definition. Table allows expands/collapses all rows on same level by default. Using expand-groups-same-level property you can modify the default value. You can configure if you want the groups to appear by default expanded or collapsed with collapse-grouped-columns property. For more information see the API. There is no limit on the number of columns that the table can group by. Row height . In the o-table you can configure various density levels using row-height property that it is easy to specify the font and the paddings on the table defined in this link. The default value being medium with small being the most compact option and large being the least. Row height . In the o-table you can configure various density levels using row-height property that it is easy to specify the font and the paddings on the table defined in this link. The default value being medium with small being the most compact option and large being the least. Report on demand new . The o-table component has a new option in table menu that allows the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This menu option is enabled by default. Using show-report-on-demand-option property you can modify the default value. For more information see the API. You can also find more information about reports in their documentation following this link. Reset columns width new . The o-table component has a new option in table menu that allows the width of the table columns to be reset to their initial width. This menu option is enabled by default. Using show-reset-width-option property you can modify the default value. For more information see the API. Custom content in toolbar new . The o-table component allows to add content in the toolbar with the selector o-table-toolbar at start position by default but you can configure the position with position='start' at the start or at the end with the position='end'. If the selector o-table-toolbar is used together with position='start' the content will always be placed to the right of the New/Refresh/Delete and o-table-buttons buttons and if used together with position='end' the content will always be placed to the left of the quickfilter . &lt;o-table #table fxFlex attr=\"table\" title=\"Table\" quick-filter=\"true\" insert-button=\"false\" delete-button=\"false\" refresh-button=\"false\" ..&gt; &lt;!-- Custom definition button --&gt; &lt;o-table-button attr=\"action1\" (onClick)=\"onAction1()\" label=\"Action1\" icon=\"alarm\"&gt;&lt;/o-table-button&gt; &lt;!-- Custom content toolbar in position start --&gt; &lt;o-combo o-grid-toolbar position=\"start\" label=\"Sort\" width=\"100px\"...&gt;&lt;/o-combo&gt; &lt;!-- Custom content toolbar in position end --&gt; &lt;o-slide-toggle o-grid-toolbar position=\"end\"....&gt;&lt;/o-slide-toggle&gt; ... &lt;/o-grid&gt; . Support JDBC UUID new . Ontimize web now supports the JDBC UUID sql type. To indicate that a table column is of type UUID, all you have to do is to set sql-type=\"UUID\" in the o-table-column component as indicated in the following example. &lt;o-table #table ...&gt; &lt;o-table-column attr=\"ID\" sql-type=\"UUID\"&gt; &lt;/o-table-column&gt; ... &lt;/o-table&gt; . ",
+    "content": "Checkbox selection . The table supports checkbox selection with select-all-checkbox-visible property. If this property is activated will display the row checkboxes, including a master toggle checkbox for the header. It is disabled by default. OntimizeWeb allows to customize the title, resizing, width, minwidth and maxwidth of the master toggle checkbox for the header by adding the o-table-column-select-all directive to you application. For more information see the API. &lt;o-table fxFlex attr=\"customer\" title=\"CUSTOMERS\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID\" visible-columns=\"PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID\" sort-columns=\"SURNAME\" query-rows=\"24\" quick-filter=\"yes\" row-height=\"medium\" select-all-checkbox-visible=\"true\" pageable=\"no\" virtual-scroll=\"no\"&gt; &lt;o-table-column-select-all title=\"Omit\"&gt;&lt;/o-table-column-select-all&gt; &lt;/o-table&gt; . You can configure show in the menu on the upper right the option of select row with select-all-checkbox property. It is disabled by default. Additionally, you can specify a function setting the input disable-selection-function to disable the checkboxes depending on a condition. This function receives full data record for allowing you to enable/disable selection checkbox depending on value/s of the record. Fixed header and footer . The o-table component supports fixed header and footer setting fixed-header=\"yes\" when its content is greater than its own height. For that, you must set the height of the table, using, for example [ngStyle]=\"height: 400px;\". By default, it’s disabled. Example . &lt;o-table #table attr=\"table\" title=\"ACCOUNTS\" fixed-header=\"yes\" [static-data]=\"getTableData()\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP\" visible-columns=\"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE\" layout-padding sort-columns=\"ANID\" query-on-init=\"false\" quick-filter=\"yes\" insert-button=\"no\" delete-button=\"no\" refresh-button=\"no\" pagination-controls=\"no\" export-button=\"no\" [ngStyle]=\"height:400px\"&gt; &lt;o-table-column attr=\"ENTITYID\" title=\"ENTITYID\" width=\"14%\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"OFFICEID\" title=\"OFFICEID\" width=\"14%\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"CDID\" title=\"CDID\" width=\"14%\"&gt;&lt;/o-table-column&gt; ... &lt;/o-table&gt; . Aggregates . Oftentimes, when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. The o-table component has support for the mostly used aggregate functions (count,sum,avg,min,max). Example . &lt;o-table service=\"branches\" entity=\"account\" keys=\"ACCOUNTID\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP\" visible-columns=\"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE\" fxFlex layout-padding attr=\"accounts\" title=\"ACCOUNTS\" sort-columns=\"ANID:DESC\" query-on-init=\"true\" quick-filter=\"yes\" filter-case-sensitive=\"true\" &gt; &lt;o-table-column attr=\"BALANCE\" title=\"BALANCE\" type=\"currency\" currency-symbol=\"€\" thousand-separator=\",\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"INTERESRATE\" title=\"INTERESRATE\" type=\"real\" &gt;&lt;/o-table-column&gt; &lt;o-table-column-aggregate attr=\"BALANCE\" title=\"sum\"&gt; &lt;o-table-column-aggregate attr=\"INTERESRATE\" [function-aggregate]=\"custom\"&gt;&lt;/o-table-column-aggregate&gt; &lt;/o-table&gt; . Typescript code ... custom(data:any[]):number{ let result = 0; for(var i=0;i&lt;data.length;i++){ if(i%2==0) result+=data[i]; } return result; } . You can see this and more examples of this component in the OntimizeWeb playground. Calculated columns . The o-table supports calculated columns, used when user wants to show an additional column which contains a result of an operation. Example . In the following example, two calculated columns are defined that perform the same operation but one uses the operation attribute (BALANCExINTERESRATE) and the other the function calculateBenefit. &lt;o-table service=\"branches\" entity=\"account\" keys=\"ACCOUNTID\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP\" visible-columns=\"ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE;INTERESRATE;BENEFIT;BENEFIT2\" attr=\"accounts\" title=\"ACCOUNTS\" layout-padding sort-columns=\"ANID\" query-rows=\"15\" pageable=\"no\" &gt; &lt;o-table-column attr=\"ENTITYID\" title=\"ENTITYID\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"CDID\" title=\"CDID\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"ANID\" title=\"ANID\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"BALANCE\" title=\"BALANCE\" currency-symbol=\"€\" type=\"currency\" grouping=\"yes\" thousand-separator=\",\"&gt; &lt;/o-table-column&gt; &lt;o-table-column attr=\"INTERESRATE\" title=\"INTERESRATE\" type=\"percentage\" decimal-separator=\",\"&gt;&lt;/o-table-column&gt; &lt;!--calculated column--&gt; &lt;o-table-column-calculated attr=\"BENEFIT\" title=\"BENEFIT\" type=\"currency\" thousand-separator=\".\" decimal-separator=\",\" currency-symbol=\"€\" currency-symbol-position=\"right\" operation=\"(BALANCE*INTERESRATE)\" &gt; &lt;/o-table-column-calculated&gt; &lt;o-table-column-calculated attr=\"BENEFIT2\" title=\"BENEFIT2\" type=\"currency\" thousand-separator=\".\" decimal-separator=\",\" currency-symbol=\"€\" currency-symbol-position=\"right\" [operation-function]=\"calculateBenefit\" &gt; &lt;/o-table-column-calculated&gt; &lt;/o-table&gt; . Typescript code ... calculateBenefit(rowData: any[]): number { return (rowData['BALANCE'] * rowData['INTERESRATE']); } . You can see this and more examples of this component in the OntimizeWeb playground. Table options . The o-table-option component allows to add extra options to the table menu. You only have to add the component to your table and subscribe to the onClick event in your component to perform the desired actions. Check the example below. &lt;o-table attr=\"customers\" entity=\"ECustomers\" title=\"CUSTOMERS\" columns=\"CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" visible-columns=\"PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\"&gt; &lt;o-table-option #myOption label=\"My option\"&gt;&lt;/o-table-option&gt; &lt;/o-table&gt; . import { Component, ViewChild } from '@angular/core'; import { OTableOptionComponent } from 'ontimize-web-ngx'; @Component({ selector: 'my-page', templateUrl: 'my-page.component.html' }) export class MyPageComponent { @ViewChild('myOption', {static: false}) protected myOption: OTableOptionComponent; ngAfterViewInit() { this.myButton.onClick.subscribe(event =&gt; { alert('my option click'); }); } } . Table context menu . The o-table allows to add a context menu to table rows, the menu is displayed by right clicking in the table row. For including the context menu in your table you have to include the o-table-context-menu component in your table. By default, o-table-context-menu include the next options: . | Refresh | View detail. | Edit. | Insert. | Delete | Copy options. | Filter options. | Select/Deselect all. | Group by | . Below an example. The o-table-context-menu allows to hide these options by setting the attributes insert, edit, view-detail, delete,copy, select-all,refresh,filter to no. You can also include your own context-menu with the reference to a o-context-menucomponent like in the example below. Example . &lt;o-table attr=\"customers\" entity=\"ECustomers\" title=\"CUSTOMERS\" columns=\"CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" visible-columns=\"PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" sort-columns=\"SURNAME\" keys=\"CUSTOMERID\" parent-keys=\"n:NAME;CUSTOMERTYPEID\" query-on-init=\"true\" query-rows=\"6\" quick-filter=\"yes\" &gt; &lt;o-table-button attr=\"myButton\" label=\"My button\" icon=\"account_circle\"&gt;&lt;/o-table-button&gt; &lt;o-table-column attr=\"NAME\" title=\"NAME\"&gt;&lt;/o-table-column&gt; ... &lt;o-table-context-menu [context-menu]=\"myContextMenu\" insert=\"no\" edit=\"no\" view-details=\"no\"&gt;&lt;/o-table-context-menu&gt; &lt;/o-table&gt; &lt;o-context-menu #myContextMenu&gt; &lt;o-context-menu-item icon=\"face\" label=\"Item 1\" (execute)=\"onExecute($event)\"&gt;&lt;/o-context-menu-item&gt; &lt;o-context-menu-item icon=\"star_rate\" label=\"Item 2\" enabled=\"no\"&gt;&lt;/o-context-menu-item&gt; &lt;o-context-menu-item label=\"Item 3\" [visible]=\"getVisible\" (execute)=\"onExecute($event)\"&gt;&lt;/o-context-menu-item&gt; &lt;/o-context-menu&gt; . For more information about the o-context-menu component definition, please read the docs. You can see this and more examples of this component in the OntimizeWeb playground. Insertable row . The o-table component allow to insert rows adding the o-table-insertable-row component into the o-table definition. In this component you can define the columns and required columns with columns and required-columns attributes. Example . In the following example the table has a insertable row where the user may introduce the name, surname or email for inserting a new customer. Name column is required. &lt;o-table fxFlex attr=\"customers\" title=\"CUSTOMERS\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL\" visible-columns=\"NAME;SURNAME;STARTDATE;EMAIL;ADDRESS\" sort-columns=\"SURNAME\" query-rows=\"10\" quick-filter=\"yes\" pageable=\"no\" row-height=\"medium\" select-all-checkbox=\"true\" pagination-controls=\"yes\"&gt; &lt;o-table-insertable-row columns=\"NAME;SURNAME;EMAIL\" required-columns=\"NAME\"&gt;&lt;/o-table-insertable-row&gt; &lt;o-table-column attr=\"NAME\" title=\"NAME\" orderable=\"no\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"STARTDATE\" title=\"STARTDATE\" type=\"date\" format=\"LL\"&gt;&lt;/o-table-column&gt; &lt;/o-table&gt; . The o-table-insertable-row support 2 differnent positions which can be set via the position input, first and last. By default, it’s last. To create a custom insertable column, you must define a custom editor for the column following the same steps as in Custom editors and add the column attr column in columns attribute in o-table-insertable-row. If you add validators to your o-table-cell-editor this validation will work also in the insertable row editors. You can see more examples of this component in the OntimizeWeb playground. Table buttons . The o-table component allows to add extra buttons in the toolbar with the o-table-button component. You can configure: . | The icon in `icon` property, this name must to be of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})) | The label in `label` property | . Example . &lt;o-table attr=\"customers\" entity=\"ECustomers\" title=\"CUSTOMERS\" columns=\"CUSTOMERID;PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" visible-columns=\"PHOTO;NAME;STARTDATE;CUSTOMERTYPEID;BOOLEAN;INTEGER;REAL;CURRENCY\" sort-columns=\"SURNAME\" keys=\"CUSTOMERID\" parent-keys=\"n:NAME;CUSTOMERTYPEID\" query-on-init=\"true\" query-rows=\"6\" quick-filter=\"yes\" &gt; &lt;o-table-button attr=\"myButton\" label=\"My button\" icon=\"account_circle\"&gt;&lt;/o-table-button&gt; &lt;o-table-column attr=\"NAME\" title=\"NAME\"&gt;&lt;/o-table-column&gt; ... &lt;/o-table&gt; . Typescript code ... import { OTableButtonComponent } from 'ontimize-web-ngx'; ... @ViewChild('myButton', {static: false}) protected myButton: OTableButtonComponent; ... ngAfterViewInit() { this.myButton.onClick.subscribe(event =&gt; { alert('my button click'); }); } . Export table data . The table data can be exported to EXCEL, CSV,.. using the option Export in the table menu. The same data that is in the table gets exported but none the values ​​processed in GUI, ie: . | the values ​​obtained by the formatters of the cell renderers | header, cell and row styles | calculated columns | cell aligment | if row grouping, all data will be exported without grouping | if expandable rows exist, all data will be exported without expanding | . The operation of the exports depends on whether Ontimize, OntimizeJEE or Ontimize Boot servers are used. You can read more about this topic in the export table data. Ontimize Web data export is compatible with Ontimize, OntimizeEE and Ontimize Boot servers from ontimize-web-ngx: 8.8.0, with previous versions it is compatible with Ontimize and OntimizeEE servers. Table export button . The o-table component allows to add extra exportation buttons in the exportation dialog with the o-table-export-button component. You can configure: . | The icon using the `icon` property, this name must to be of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})) | The label with the `label` property | The exportation type by setting the `export-type` property. The value configured here will be used for making the requests to the backend and also al extension for the downloaded file. | . Column titles alignment . By default, the o-table columns title texts are aligned depending on the column type. | start: service types and default value when auto-align-titles is active. | center: image, date, action and boolean types. | end: currency, integer, real and percentage types. | . Using the o-table-column component title-align input user can modify that default value. When the auto-align-titles input is set to false in o-table, the title of the table column is aligned centered. The user can also define a title-align in the columns (its value has precedence over the default type alignment). Global title alignment settings can be specified by providing a value for O_TABLE_GLOBAL_CONFIG in your application root or in a specific module. @NgModule({ declarations: [ ... ], ... providers: [ ... { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAlignTitles: false } }, ... ], ... }) . Column resizing . The o-table component allows column resizing by default. Using the resizable input you can modify that default value on the table. To disabled resizing for each column, set resizable='no' on the column definition. Columns multiple sorting . Table allows multiple columns sorting by default. Using the multiple-sort input user can modify that default value. A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state. Tooltip in columns . The o-table component provides a text that is displayed when the user hovers over an column... &lt;o-table-column attr=\"NOTES\" title=\"NOTES\" multiline=\"no\" width=\"300px\" tooltip=\"yes\"&gt;&lt;/o-table-column&gt; ... You can configure the value that is displayed with the attribute tooltip-value. Additionally, you can specify default function to be applied when the user over column with tooltip-function attribute. You can customize the tooltip styles by redefining the class o-table-cell-tooltip. If you have a custom render in the column and it is not overwritten the getCelldata method will show the internal value of the table. Reinitialize method . When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want o-table to update the display to reflect these changes. This function is provided for that purpose.For more information see the API... const columnsOfTable= 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS'; const filterColumnsOfTable= 'NAME;EMAIL'; this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTable, filterColumns:filterColumnsOfTable}); ... Expandable row . The o-table-row-expandable component enable you to provide additional details about a particular row of table data through expanding or collapsing its content. It’s necessary to wrap the content of your template with the &lt;ng-template let-row&gt;&lt;/ng-template&gt; tag and add the template definition inside. Ontimize Web provides two posibilities for attaching child rows to a parent row in the o-table. | Simple template | A template with context | . Simple template . The example below makes use of simple template, the content of the child row in this example is defined by the ng-template with the let-row attribute so that exposes the variable row in the template to show the information. &lt;o-table fxFill #table service-type=\"DummyService\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" title=\"CUSTOMERS\" insert-button=\"no\" delete-button=\"no\" refresh-button=\"no\" pagination-controls=\"yes\" detail-mode=\"none\" export-button=\"no\" query-rows=\"10\" fixed-header=\"yes\"&gt; &lt;o-table-row-expandable&gt; &lt;ng-template let-row&gt; &lt;o-column title=\"CONTACT_DATA\" icon=\"info\" class=\"vertical-margin-10\" layout-gap=\"12px\"&gt; &lt;div fxLayout=\"row wrap\" fxLayoutGap=\"14px\"&gt; &lt;span fxFlex=\"30%\"&gt;&lt;strong&gt;{{'ADDRESS' | oTranslate}}&lt;/strong&gt;: {{row.ADDRESS}}&lt;/span&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'COUNTRY' | oTranslate}}&lt;/strong&gt;: {{row.COUNTRY}}&lt;/span&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'STATE' | oTranslate}}&lt;/strong&gt;: {{row.STATE}}&lt;/span&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'ZIPCODE' | oTranslate}}&lt;/strong&gt;: {{row.ZIPCODE}}&lt;/span&gt; &lt;/div&gt; &lt;div fxLayout=\"row wrap\" fxLayoutGap=\"14px\"&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'EMAIL' | oTranslate}}&lt;/strong&gt;: {{row.EMAIL}}&lt;/span&gt; &lt;span fxFlex=\"20%\"&gt;&lt;strong&gt;{{'PHONE' | oTranslate}}&lt;/strong&gt;: {{row.PHONE}}&lt;/span&gt; &lt;/div&gt; &lt;/o-column&gt; &lt;/ng-template&gt; &lt;/o-table-row-expandable&gt; &lt;/o-table&gt; . A template with context . It is possible to define a template with context, so that if the defined template contains a component (such as o-table, o-list, o-chart and o-grid), this context provide functionalities like parent-keys and query the component data automatically when the row is expanded, for example. It is necessary define targets input and [data]=\"row\" to query the data automatically, it will be the references of the components whose query will be launched when expanding the row. The context is established with [data]=\"row\" . &lt;o-table fxFill #table service-type=\"DummyService\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;SURNAME;NAME\" title=\"CUSTOMERS\" insert-button=\"no\" delete-button=\"no\" refresh-button=\"no\" pagination-controls=\"no\" detail-mode=\"none\" export-button=\"no\" store-state=\"false\" query-rows=\"10\" fixed-header=\"yes\"&gt; &lt;o-table-row-expandable&gt; &lt;ng-template let-row&gt; &lt;o-expandable-container [targets]=\"[accountsTable]\" [data]=\"row\"&gt; &lt;o-table #accountsTable service-type=\"DummyService\" service=\"customers\" entity=\"customerAccount\" parent-keys=\"CUSTOMERID\" keys=\"ACCOUNTID\" columns=\"ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;ACCOUNT;BALANCE;CUSTOMERID;STARTDATE\" visible-columns=\"ACCOUNT;BALANCE;STARTDATE\" title=\"ACCOUNTS\" sort-columns=\"STARTDATE\" query-on-init=\"false\" query-rows=\"6\" pageable=\"no\" insert-button=\"no\" delete-button=\"no\" detail-mode=\"none\"&gt; &lt;o-table-column attr=\"ACCOUNT\" title=\"ACCOUNT\" class=\"o-table-column-centered\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"STARTDATE\" title=\"STARTDATE\" type=\"date\" format=\"LL\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"BALANCE\" title=\"BALANCE\" type=\"currency\" currency-symbol=\"€\" currency-symbol-position=\"right\" thousand-separator=\".\" decimal-separator=\",\"&gt; &lt;/o-table-column&gt; &lt;/o-table&gt; &lt;/o-expandable-container&gt; &lt;/ng-template&gt; &lt;/o-table-row-expandable&gt; &lt;/o-table&gt; . The o-table component has an input to control expandable row and show or not the expansion icon. This input show-expandable-icon-function must set a function that will receive data of expandable row and has to return a boolean observable. You can check a complete example here. Autoadjust . The o-table component supports automatically adjust to the content of the column. This means that it will always take up the minimum width required to present its content. If you want avoid that behaviour setting auto-adjust = no in the o-table component. Global default autoadjust can be specified by providing a value for O_TABLE_GLOBAL_CONFIG in your application’s root module. @NgModule({ declarations: [ ... ], ... providers: [ ... { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAdjust: false } }, ... ], ... }) . Example . &lt;o-table fxFlex attr=\"customers\" title=\"CUSTOMERS\" service=\"customers\" entity=\"customer\" keys=\"CUSTOMERID\" columns=\"CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID\" visible-columns=\"PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID\" sort-columns=\"SURNAME\" query-rows=\"10\" quick-filter=\"yes\" row-height=\"medium\" select-all-checkbox=\"true\" pageable=\"yes\" fixed-header=\"yes\" query-rows=\"25\" auto-adjust=\"yes\"&gt; &lt;o-table-columns-filter columns=\"STARTDATE;SURNAME\"&gt;&lt;/o-table-columns-filter&gt; &lt;o-table-column async-load=\"true\" width=\"48px\" attr=\"PHOTO\" orderable=\"no\" searchable=\"no\" type=\"image\" image-type=\"base64\" empty-image=\"assets/images/no-image.png\" avatar=\"yes\"&gt; &lt;/o-table-column&gt; &lt;o-table-column attr=\"NAME\" title=\"NAME\" orderable=\"no\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"STARTDATE\" title=\"STARTDATE\" type=\"date\" format=\"LL\"&gt;&lt;/o-table-column&gt; &lt;o-table-column attr=\"CUSTOMERTYPEID\" title=\"CUSTOMERTYPEID\" editable=\"true\"&gt; &lt;o-table-cell-renderer-service service=\"customers\" entity=\"customerType\" value-column=\"DESCRIPTION\" translate=\"no\" columns=\"CUSTOMERTYPEID;DESCRIPTION\" visible-columns=\"DESCRIPTION\"&gt; &lt;/o-table-cell-renderer-service&gt; &lt;/o-table-column&gt; &lt;/o-table&gt; . There is a possibility that the content is large and the result is not what is expected like the example shown below. However, if you want to control similar case, you can do so by configuring auto-adjust=\"yes\" with several options such as: . | horizontal-scroll=yes | multiline=yes | max-width of the o-table-column. | . | In the next case we have applied horizontal-scroll=yes and auto-adjust=\"yes\", the result would be the following. | As you can see, in the next case we have applied multiline=yes and auto-adjust=\"yes\", the result would be the following. | In the next case we have applied max-width=\"300px\" in o-table-column and auto-adjust=\"yes\", the result would be the following.. &lt;o-table-column attr=\"NOTES\" title=\"NOTES\" multiline=\"no\" max-width=\"300px\"&gt;&lt;/o-table-column&gt; . | . Row grouping . Ontimize Web allows to merge fields belonging to one column so that the consecutive fields have the same value through the row grouping. Each group will be marked with one row with joined cells above containing the group value. By default, the table is groupable and for grouping/ungrouping by one o more columns, you can: . | Configure grouped columns by default with the grouped-columns property. As you can see in the example below, as soon as there is at least one active row. | Use the table menu: click the Group / Ungroup by option to configure the columns you need to group / ungroup by. | Use the table context menu: Right-click the column data to invoke context menu and click on Group by -&gt; Group by column . The context menu also allows you to ungroup by a column or by all. You can collapse/expand all grouped rows if you right-click on the grouped row. | Use the o-table-columns-grouping and o-table-columns-grouping-column components: this components are used to configure the initial state of the row grouping and override the table grouping configuration. | . If there is at least one grouping, the table automatically applies the sum function on those of type currency, integer and real and whose value will be displayed in the grouped row. If you want to exclude this function from being performed, you must add this column in the excluded-aggregate-columns attribute in o-table-columns-grouping component. You can configure the aggregate functions (count,sum,avg,min,max) in the o-table-columns-grouping component. Additionally, you can specify aggregate function to be applied with function-aggregate attribute. By default, when you change the aggregate function in a column, it will change in all grouped rows of the same level, if you want to avoid this behavior you must add change-aggregate-same-level=\"no\". &lt;o-table fxFill #table service-type=\"DummyService\" service=\"olympicWinners\" entity=\"olympicWinners\" columns=\"athlete;age;country;year;date;sport;gold;silver;bronze\" grouped-columns=\"country;year;date;sport\" layout-padding title=\"ACCOUNTS\" quick-filter=\"yes\" insert-button=\"no\" delete-button=\"no\" refresh-button=\"no\" pagination-controls=\"no\" export-button=\"no\" detail-mode=\"none\"&gt; &lt;o-table-columns-grouping columns=\"country;sport\" excluded-aggregate-columns=''&gt; &lt;o-table-columns-grouping-column attr=\"age\" title=\"edad\" aggregate=\"max\"&gt; &lt;/o-table-columns-grouping-column&gt; &lt;o-table-columns-grouping-column attr=\"gold\" aggregate=\"max\"&gt; &lt;/o-table-columns-grouping-column&gt; &lt;/o-table-columns-grouping&gt; &lt;o-table-context-menu insert=\"no\" edit=\"no\" view-detail=\"no\" refresh=\"no\" delete=\"no\"&gt;&lt;/o-table-context-menu&gt; &lt;/o-table&gt; . If the table is groupable but you want the column isn’t groupable you must add groupable=false in this column definition. Table allows expands/collapses all rows on same level by default. Using expand-groups-same-level property you can modify the default value. You can configure if you want the groups to appear by default expanded or collapsed with collapse-grouped-columns property. For more information see the API. There is no limit on the number of columns that the table can group by. Row height . In the o-table you can configure various density levels using row-height property that it is easy to specify the font and the paddings on the table defined in this link. The default value being medium with small being the most compact option and large being the least. Report on demand new . The o-table component has a new option in table menu that allows the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This menu option is enabled by default. Using show-report-on-demand-option property you can modify the default value. For more information see the API. You can also find more information about reports in their documentation following this link. Reset columns width new . The o-table component has a new option in table menu that allows the width of the table columns to be reset to their initial width. This menu option is enabled by default. Using show-reset-width-option property you can modify the default value. For more information see the API. Custom content in toolbar new . The o-table component allows to add content in the toolbar with the selector o-table-toolbar at start position by default but you can configure the position with position='start' at the start or at the end with the position='end'. If the selector o-table-toolbar is used together with position='start' the content will always be placed to the right of the New/Refresh/Delete and o-table-buttons buttons and if used together with position='end' the content will always be placed to the left of the quickfilter . &lt;o-table #table fxFlex attr=\"table\" title=\"Table\" quick-filter=\"true\" insert-button=\"false\" delete-button=\"false\" refresh-button=\"false\" ..&gt; &lt;!-- Custom definition button --&gt; &lt;o-table-button attr=\"action1\" (onClick)=\"onAction1()\" label=\"Action1\" icon=\"alarm\"&gt;&lt;/o-table-button&gt; &lt;!-- Custom content toolbar in position start --&gt; &lt;o-combo o-grid-toolbar position=\"start\" label=\"Sort\" width=\"100px\"...&gt;&lt;/o-combo&gt; &lt;!-- Custom content toolbar in position end --&gt; &lt;o-slide-toggle o-grid-toolbar position=\"end\"....&gt;&lt;/o-slide-toggle&gt; ... &lt;/o-grid&gt; . Support JDBC UUID new . Ontimize web now supports the JDBC UUID sql type. To indicate that a table column is of type UUID, all you have to do is to set sql-type=\"UUID\" in the o-table-column component as indicated in the following example. &lt;o-table #table ...&gt; &lt;o-table-column attr=\"ID\" sql-type=\"UUID\"&gt; &lt;/o-table-column&gt; ... &lt;/o-table&gt; . ",
     "url": "/docs/v15/components/data/table/overview#features",
     
     "relUrl": "/components/data/table/overview#features"
@@ -4817,7 +4817,7 @@
   },"688": {
     "doc": "Table",
     "title": "Table",
-    "content": "Table of Contents . | Introduction | Define columns | CRUD operations | Sorting | Pagination | Data binding . | Binding to local data | Binding to remote data | . | Quick filter . | Filtering by columns | Custom filter | . | Cell renderers . | Predefined renderers | Custom renderers | . | Cell editing . | Default editors | Custom editors | Validators on editors | . | Features . | Checkbox selection | Fixed header and footer | Aggregates | Calculated columns | Table options | Table context menu | Insertable row | Table buttons | Export table data | Table export button | Column titles alignment | Column resizing | Columns multiple sorting | Tooltip in columns | Reinitialize method | Expandable row | Autoadjust | Row grouping | Row height | Row height | Report on demand new | Reset columns width new | Custom content in toolbar new | Support JDBC UUID new | . | Theming . | The table headers | . | Demo | . ",
+    "content": "Table of Contents . | Introduction | Define columns | CRUD operations | Sorting | Pagination | Data binding . | Binding to local data | Binding to remote data | . | Quick filter . | Filtering by columns | Custom filter | . | Cell renderers . | Predefined renderers | Custom renderers | . | Cell editing . | Default editors | Custom editors | Validators on editors | . | Features . | Checkbox selection | Fixed header and footer | Aggregates | Calculated columns | Table options | Table context menu | Insertable row | Table buttons | Export table data | Table export button | Column titles alignment | Column resizing | Columns multiple sorting | Tooltip in columns | Reinitialize method | Expandable row | Autoadjust | Row grouping | Row height | Report on demand new | Reset columns width new | Custom content in toolbar new | Support JDBC UUID new | . | Theming . | The table headers | . | Demo | . ",
     "url": "/docs/v15/components/data/table/overview",
     
     "relUrl": "/components/data/table/overview"
