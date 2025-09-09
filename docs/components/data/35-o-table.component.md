@@ -1476,13 +1476,6 @@ The default value being `medium` with `small` being the most compact option and 
 
 ![Input row-height]({{ "/assets/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
 
-### Row height
-In the o-`table` you can configure various density levels using `row-height` property that it is easy to specify the font and the paddings on the table defined in this [link]({{ base_path }}/customize/typography/#custom-typography-of-ontimize-web-framework).
-
-The default value being `medium` with `small` being the most compact option and `large` being the least.
-
-![Input row-height]({{ "/assets/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
-
 ### Report on demand <span class='menuitem-badge'>new<span>
 
 The `o-table` component has a new option in table menu that allows the final users of the applications developed with Ontimize to define, view and store reports from any table available in the application. This menu option is enabled by default.  Using `show-report-on-demand-option` property you can modify the default value. For more information see the **API**. You can also find more information about reports in their documentation following this [link]({{ base_path }}/addons/report/components/report-on-demand/overview){:target="_blank"}.
