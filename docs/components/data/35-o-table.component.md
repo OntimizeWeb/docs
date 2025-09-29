@@ -1366,7 +1366,7 @@ Global default autoadjust can be specified by providing a value for O_TABLE_GLOB
  <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
     columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
-    row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes" query-rows="25" auto-adjust="yes">
+    row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes" auto-adjust="yes">
     <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
     <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image"
       image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">

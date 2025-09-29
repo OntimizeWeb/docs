@@ -67,7 +67,7 @@ You can see an example of this component in the [OntimizeWeb playground]({{site.
 The `o-list-item-card` component is used to display a card list item with text, image and action buttons.
 
 ```html
-	<o-list #list attr="list" title="List" columns="id;name;username;email;street;phone" keys="id"
+<o-list #list attr="list" title="List" columns="id;name;username;email;street;phone" keys="id"
   [static-data]="getStaticData()" refresh-button="true" quick-filter="true" insert-button="false"
   row-height="medium" detail-mode="none">
   <o-list-item *ngFor="let row of list.dataArray">
@@ -109,7 +109,7 @@ You can see an example of this component in the [OntimizeWeb playground]({{site.
 When building an `o-list` component you can include one of the predefined list items the **OntimizeWeb** offers or you can include your own list item. For including a custom list item, **OntimizeWeb** offers the `o-list-item` directive that can be attached to an angular material list item (`mat-list-item`) or an angular material card (`mat-card`).
 
 ```html
-	<o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
+<o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
   <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
     <mat-card-header>
       <div mat-card-avatar>
@@ -131,17 +131,15 @@ The `o-list` component allows to add content in the toolbar with the selector `o
 If the selector `o-list-toolbar` is used together with `position='start'` the content will always be placed to the right of the New/Refresh/Delete buttons and if used together with `position='end'` the content will always be placed to the left of the quickfilter
 
 ```ts
-<o-list #list attr="list" ... refresh-button="yes" quick-filter="yes"...>
+<o-list #list attr="list" ... refresh-button="yes" quick-filter="yes"... >
   <!-- Custom content toolbar in position start -->
-  <o-combo o-list-toolbar position="start" label="Sort" width="100px"...></o-combo>
+  <o-combo o-list-toolbar position="start" label="Sort" width="100px"... ></o-combo>
   <!-- Custom content toolbar in position end -->
-  <o-slide-toggle o-list-toolbar position="end"....></o-slide-toggle>
+  <o-slide-toggle o-list-toolbar position="end"... ></o-slide-toggle>
 </o-list>
 ```
 
 ![Add custom content in toolbar in position start]({{ "/assets/images/components/list/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
-
-
 
 ## Pagination <span class='menuitem-badge'>new<span>
 
@@ -156,9 +154,9 @@ You can also configure the number of records initially displayed with query-rows
 Ontimize web now supports the JDBC **UUID** sql type. To indicate that a key column is of type UUID, all you have to do is to set to set the **UUID** via input `keys-sql-types` in the `o-list` as indicated in the following example.
 
 ```html
-  <o-list  #list service="..." entity="..." keys="ID" keys-sql-types="UUID">
-      <o-list-item *ngFor="let list of list.dataArray">
-       ....
-      </o-list-item>
-    </o-list>
+<o-list  #list service="..." entity="..." keys="ID" keys-sql-types="UUID">
+  <o-list-item *ngFor="let list of list.dataArray">
+     ....
+  </o-list-item>
+</o-list>
 ```
