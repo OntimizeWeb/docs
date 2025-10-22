@@ -206,6 +206,8 @@
         </li>
         <li><a href="#OTableInitializationOptions">OTable Initialization Options</a>
         </li>
+         <li><a href="#PaginationData">Pagination Data</a>
+        </li>
         <li><a href="#O_TABLE_GLOBAL_CONFIG">O_TABLE_GLOBAL_CONFIG</a>
         </li>
       </ul>
