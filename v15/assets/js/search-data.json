@@ -505,7 +505,7 @@
   },"72": {
     "doc": "Overview",
     "title": "Overview",
-    "content": "Class: OValueChangeEvent . Inputs . | Name | Since | Description | Default | . | newValue . | . | The new value for the target. | . | . | oldValue . | . | The old value for the target. | . | . | target . | . | Reference to the input. | . | . | type . 0 | 1 . | . | The value is 0 if the change is emitted by the user or 1 if change is emitted by programmaticñ . | . | . ",
+    "content": "Class: OValueChangeEvent . Inputs . | Name | Since | Description | Default | . | newValue . | . | The new value for the target. | . | . | oldValue . | . | The old value for the target. | . | . | target . | . | Reference to the input. | . | . | type . 0 | 1 . | . | The value is 0 if the change is emitted by the user or 1 if change is emitted by programmatic . | . | . ",
     "url": "/docs/v15/components/input/overview/api#Overview",
     
     "relUrl": "/components/input/overview/api#Overview"
