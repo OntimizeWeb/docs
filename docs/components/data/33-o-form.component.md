@@ -44,7 +44,7 @@ There are use cases when it is necessary to perform any action right before or a
 For example, you can listen to the `onInsertMode` of the `o-form` component in your HTML:
 
 ```html
-<o-form (onInserMode)="performAction()">
+<o-form (onInsertMode)="performAction()">
 ```
 
 And perform an action each time the event is emited:
