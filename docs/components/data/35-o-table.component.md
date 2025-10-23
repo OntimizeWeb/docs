@@ -1254,14 +1254,34 @@ You can customize the tooltip styles by redefining the class `o-table-cell-toolt
 
 ### Reinitialize method
 
-When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want `o-table`  to update the display to reflect these changes. This function is provided for that purpose.For more information see the API.
+The `reinitialize` method is used to refresh the `o-table` whenever its configuration changes.
+You should call this method when any of the table’s main parameters are updated — such as **columns**, **visible columns**, **filters**, **service**, **entity**, **keys**, or **parent keys**.
+
+This ensures that the table’s display and data remain synchronized with the latest configuration.
+For more information, see the API documentation.
 
 ```javascript
 ...
-const columnsOfTable= 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS';
-const filterColumnsOfTable= 'NAME;EMAIL';
+const columnsOfTable = 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS';
+const filterColumnsOfTable = 'NAME;EMAIL';
+const defaultVisibleColumns = 'PHOTO;ID;NAME;EMAIL';
 
-this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTable, filterColumns:filterColumnsOfTable});
+// Example pagination data
+const paginationData = {
+  pageNumber: 1,
+  pageSize: 20,
+  startRecordIndex: 0,
+  totalQueryRecordsNumber: 100
+};
+
+// Reinitialize table with updated parameters
+this.table.reinitialize({
+  columns: columnsOfTable,
+  visibleColumns: columnsOfTable,
+  defaultVisibleColumns: defaultVisibleColumns,
+  filterColumns: filterColumnsOfTable,
+  paginationData: paginationData
+});
 ...
 
 ```
