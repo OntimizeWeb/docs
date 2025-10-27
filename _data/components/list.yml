@@ -81,7 +81,7 @@ outputs: [{
   name: "onItemDeselected",
   description: "Event triggered when an item is deselected"
 },{
-  name: "onInserButtonClick",
+  name: "onInsertButtonClick",
   description: "Event triggered when the insert button is clicked"
 },{
   name: "onItemDeleted",
