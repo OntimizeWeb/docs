@@ -1,0 +1,25 @@
+type: "PaginationData"
+
+propertiesColumns: ["Name", "Type", "Description"]
+
+attributes: [{
+  name: "pageNumber",
+  type: "number",
+  optional: true,
+  description: "Current page number."
+},{
+  name: "pageSize",
+  type: "number",
+  optional: true,
+  description: "Number of records per page."
+},{
+  name: "startRecordIndex",
+  type: "number",
+  optional: true,
+  description: "Starting index of the current page’s records."
+},{
+  name: "totalQueryRecordsNumber",
+  type: "number",
+  optional: true,
+  description: "Total number of records returned by the query."
+},]
