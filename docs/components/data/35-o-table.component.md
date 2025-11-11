@@ -914,7 +914,7 @@ The `o-table` component supports *fixed header* and *footer* setting `fixed-head
 
 ### Aggregates
 
-Oftentimes, when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. The  `o-table` component has support for the mostly used aggregate functions (count,sum,avg,min,max).
+Often when displaying numbers in a table, users want to show summary results of aggregate calculations at the bottom of the table columns. The `o‑table` component supports commonly used aggregation functions (**count**, **sum**, **avg**, **min**, **max**) using `operator` input and also allows specifying a **custom aggregation function** using the `aggregate-function` input, which may return either a **synchronous number** or a **Promise<number>** (for asynchronous operations).
 
 <h3 class="grey-color">Example</h3>
 
@@ -928,7 +928,7 @@ Oftentimes, when displaying numbers in the table, users would like to be able to
     <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" thousand-separator=","></o-table-column>
     <o-table-column attr="INTERESRATE" title="INTERESRATE" type="real" ></o-table-column>
     <o-table-column-aggregate attr="BALANCE" title="sum">
-    <o-table-column-aggregate attr="INTERESRATE" [function-aggregate]="custom"></o-table-column-aggregate>
+    <o-table-column-aggregate attr="INTERESRATE" [aggregate-function]="custom"></o-table-column-aggregate>
 </o-table>
 ```
 
@@ -1458,7 +1458,7 @@ By default, the table is *groupable* and for grouping/ungrouping by one o more c
 If there is at least one grouping, the table automatically applies the *sum function* on those of type `currency`, `integer` and `real` and whose value will be displayed in the grouped row.
 If you want to exclude this function from being performed, you must add this column in the `excluded-aggregate-columns` attribute in `o-table-columns-grouping` component.
 
- You can configure the *aggregate functions* (count,sum,avg,min,max) in the `o-table-columns-grouping` component. Additionally, you can specify aggregate function to be applied with `function-aggregate` attribute.
+ You can configure the *aggregate functions* (count,sum,avg,min,max) in the `o-table-columns-grouping` component. Additionally, you can specify aggregate function to be applied with `aggregate-function` attribute.
 
  By default, when you change the aggregate function in a column, it will change in all grouped rows of the same level, if you want to avoid this behavior you must add `change-aggregate-same-level="no"`.
 
