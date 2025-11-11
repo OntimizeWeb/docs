@@ -914,7 +914,7 @@ The `o-table` component supports *fixed header* and *footer* setting `fixed-head
 
 ### Aggregates
 
-Often when displaying numbers in a table, users want to show summary results of aggregate calculations at the bottom of the table columns. The `o‑table` component supports commonly used aggregation functions (**count**, **sum**, **avg**, **min**, **max**) using `operator` input and also allows specifying a **custom aggregation function** using the `aggregate-function` input, which may return either a **synchronous number** or a **Promise<number>** (for asynchronous operations).
+Often when displaying numbers in a table, users want to show summary results of aggregate calculations at the bottom of the table columns. The `o‑table` component supports commonly used aggregation functions (**count**, **sum**, **avg**, **min**, **max**) using `aggregate` input and also allows specifying a **custom aggregation function** using the `aggregate-function` input, which may return either a **synchronous number** or a **Promise<number>** (for asynchronous operations).
 
 <h3 class="grey-color">Example</h3>
 
