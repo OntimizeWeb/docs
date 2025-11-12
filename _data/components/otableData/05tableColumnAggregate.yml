@@ -22,8 +22,8 @@ attributes: [{
   required : "",
   description : "Default functions aggregate"
 },{
-  name: "function-aggregate",
-  type: "(value:any[]) => number ",
+  name: "aggregate-function",
+  type: "(value: any[], columnAttr?: string, table?: OTableComponent) => number | Promise<number>",
   default : "",
   required : "",
   description : "Custom function aggregate"
