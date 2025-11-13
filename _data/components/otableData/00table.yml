@@ -139,7 +139,7 @@ attributes: [{
 },{
   name: "orderable"
 },{
-  name: "oenabled",
+  name: "enabled",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
