@@ -32,7 +32,7 @@ In this section you can check the different releases of **OntimizeWeb** and its 
         <td>15.7.1</td>
         <td rowspan="2">15.1.1</td>
         <td rowspan="45">15.0.1<br>15.0.0</td>
-        <td rowspan="5">15.2.0</td>
+        <td rowspan="5">15.2.1<br>15.2.0</td>
         <td rowspan="45">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
         <td rowspan="5">15.1.0</td>
         <td rowspan="45">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
