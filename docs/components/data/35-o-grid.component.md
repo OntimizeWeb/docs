@@ -24,6 +24,17 @@ The `o-grid` component allows you to specify a title by configuring the `title` 
 ## Show controls
 The `o-grid` component shows controls by default, you can show/hide them by configuring the `show-controls` attribute.
 
+## Data binding
+
+The o-grid component supports data binding and you can command the component to display data either from *local* or *remote* data storage
+
+The data array can be provided in two ways:
+* Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
+* Configure the component to query the data from a service. Using `service` and `entity` attributes.
+{: .note }
+>Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
+Always pass a static reference instead (e.g. `[static-data]="data"`).
+
 ## Columns per row
 You can specify the number of columns shown on each row by configuring the `cols` attribute. By default, the number of columns will be automatically determined based on mediaQuery of Flex Layout. See more [here](https://github.com/angular/flex-layout/wiki/Responsive-API#mediaqueries-and-aliases).
 
@@ -47,7 +58,7 @@ You can also configure the page size options by configuring the `show-page-size`
 ![Grid page size]({{ "/assets/images/components/grid/grid-page-size.png" | absolute_url }}){: .comp-example-img }
 
 ```html
-<o-grid #grid columns="id;name;username;email;companyname" keys="id" [static-data]="getStaticData()"
+<o-grid #grid columns="id;name;username;email;companyname" keys="id" [static-data]="staticData"
   show-page-size="yes" page-size-options="24;32;64">
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding class="container-item">
@@ -86,7 +97,7 @@ You also can specify the default sorting column by configuring the `sort-column`
 ![Grid component]({{ "/assets/images/components/grid/grid-sortable_2.png" | absolute_url }}){: .comp-example-img }
 
 ```html
-<o-grid #grid  columns="id;name;username;email;companyname" keys="id" [static-data]="getStaticData()"
+<o-grid #grid columns="id;name;username;email;companyname" keys="id" [static-data]="staticData"
   orderable="yes" quick-filter="yes" sortable-columns="name:desc;email" sort-column="name" grid-item-height="1:2">
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding  class="container-item">
@@ -118,7 +129,7 @@ The gutter size can be set to any px, em, or rem value with the `gutter-size` pr
 
 It is possible to set the `rowspan` and `colspan` of each o-grid-item individually, using the rowspan and colspan properties. By default its values are 1. The `colspan` must not exceed the number of cols in the `o-grid`. There is no such restriction on the rowspan however, more rows will simply be added for it the tile to fill.
 ```html
- <o-grid #grid attr="grid" [static-data]="getStaticData())" columns="text;cols;rows;color" cols="4"
+ <o-grid #grid attr="grid" [static-data]="staticData" columns="text;cols;rows;color" cols="4"
 grid-item-height="100px" controls="no" gutter-size="0">
   <o-grid-item *ngFor="let list of grid.dataArray" [colspan]="list.cols" [rowspan]="list.rows">
     <div [style.background]="list.color" fxFill>
@@ -211,7 +222,7 @@ this.grid.filterData = function (value?: string, loadMore?: boolean) {
 The `o-grid` component supports *fixed header* and *footer* setting `fixed-header="yes"` when its content is greater than its own height. For that, you must set the height of the grid, using, for example `[ngStyle]="{height: 400px;}"`. By default, it's disabled.
 
 ```html
-<o-grid #grid attr="grid" [static-data]="getStaticData()" columns="id;name;username;email;companyname"
+<o-grid #grid attr="grid" [static-data]="staticData" columns="id;name;username;email;companyname"
   keys="id" fixed-header="yes" [ngStyle]="{height:400px}" pagination-controls="yes" query-rows="8">
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding class="container-item">
@@ -238,7 +249,7 @@ The `o-grid` component supports *fixed header* and *footer* setting `fixed-heade
 When building an `o-grid` component you can define your own grid item. For including a custom grid item, **OntimizeWeb** offers the `o-grid-item` directive that can be attached to an angular material grid tile (`mat-grid-tile`) .
 
 ```html
-<o-grid #grid columns="id;name;username;email;companyname" keys="id" [static-data]="getStaticData()"
+<o-grid #grid columns="id;name;username;email;companyname" keys="id" [static-data]="staticData"
   orderable="yes" quick-filter="yes" grid-item-height="1:2" sortable-columns="name;email">
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding  class="container-item">

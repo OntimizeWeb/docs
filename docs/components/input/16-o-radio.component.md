@@ -20,16 +20,19 @@ This component is different than most of other inputs, an array of data must be 
 The data array can be provided in two ways:
 * Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
+{: .note }
+>Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
+Always pass a static reference instead (e.g. `[static-data]="data"`).
 
 ## Basic example
 ![Radio component]({{ "/assets/images/components/inputs/o-radio.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="false" show-header="no">
-    <o-radio attr="radio-editable" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
+    <o-radio attr="radio-editable" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="data"
         [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" read-only="no" required="yes"
         tooltip="This is an awesome tooltip!" tooltip-position="below"></o-radio>
-    <o-radio attr="radio-disabled" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="getDataArray()"
+    <o-radio attr="radio-disabled" label="{{ 'INPUT.BUTTON.RADIO' | oTranslate }}" [static-data]="data"
         [data]="getValue()" value-column="key" columns="key;value" visible-columns="value" enabled="no"></o-radio>
 </o-form>
 ```

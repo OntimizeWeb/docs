@@ -13,14 +13,25 @@ nav_order: 4
 
 The `o-list` component is used to display a series of items. There is different types of predefined list items you can add to the list component.
 
-For adding a list component to your application you must insert the `o-list` in your page and include a `o-list-item` component wrapping the desired list item type you want to display. Check the different list items types below.
+## Data binding
+
+The o-list component supports data binding and you can command the component to display data either from *local* or *remote* data storage
+
+The data array can be provided in two ways:
+* Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
+* Configure the component to query the data from a service. Using `service` and `entity` attributes.
+{: .note }
+>Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
+Always pass a static reference instead (e.g. `[static-data]="data"`).
+
 ## List item
+For adding a list component to your application you must insert the `o-list` in your page and include a `o-list-item` component wrapping the desired list item type you want to display. Check the different list items types below.
 ### List item: text
 
 The `o-list-item-text` component is used to display list items with a maximum of two lines of text and a title.
 
 ```html
-<o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
+<o-list #list keys="id" columns="id;name;username;email" [static-data]="users"
   title="List" quick-filter="true" quick-filter-columns="name;username;email"
   refresh-button="true" insert-button="false" delete-button="false"
   selectable="false" detail-button-in-row="false"
@@ -44,7 +55,7 @@ You can see an example of this component in the [OntimizeWeb playground]({{site.
 The `o-list-item-avatar` component is used to display list items with an avatar and a maximum of two lines of text and a title.
 
 ```html
-<o-list #list keys="id" columns="id;name;username;email" [static-data]="getUsers()"
+<o-list #list keys="id" columns="id;name;username;email" [static-data]="users"
   title="List" quick-filter="true" quick-filter-columns="name;username;email"
   refresh-button="true" insert-button="false" delete-button="false"
   selectable="false" detail-button-in-row="false"
@@ -68,7 +79,7 @@ The `o-list-item-card` component is used to display a card list item with text, 
 
 ```html
 <o-list #list attr="list" title="List" columns="id;name;username;email;street;phone" keys="id"
-  [static-data]="getStaticData()" refresh-button="true" quick-filter="true" insert-button="false"
+  [static-data]="data" refresh-button="true" quick-filter="true" insert-button="false"
   row-height="medium" detail-mode="none">
   <o-list-item *ngFor="let row of list.dataArray">
     <o-list-item-card #item title="{{ row.username }}" subtitle="{{ row.name }}" show-image="true" image="{{ row.image }}"
@@ -89,7 +100,7 @@ The `o-list-item-card-image` component is used to display card list items with a
 
 ```html
 <o-list #list attr="list" title="List" columns="id;name;username;email;street;phone" keys="id"
-  [static-data]="getStaticData()" refresh-button="true" insert-button="false"
+  [static-data]="data" refresh-button="true" insert-button="false"
   quick-filter="no" row-height="medium" detail-mode="none">
   <o-list-item *ngFor="let row of #list.dataArray">
     <o-list-item-card-image title="{{ row.username }}" subtitle="{{ row.name }}" content="{{ row.body }}"
@@ -109,7 +120,7 @@ You can see an example of this component in the [OntimizeWeb playground]({{site.
 When building an `o-list` component you can include one of the predefined list items the **OntimizeWeb** offers or you can include your own list item. For including a custom list item, **OntimizeWeb** offers the `o-list-item` directive that can be attached to an angular material list item (`mat-list-item`) or an angular material card (`mat-card`).
 
 ```html
-<o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="getStaticData()">
+<o-list #list attr="list" columns="id;name;username;email;street;phone" quick-filter-columns="name;username" [static-data]="data">
   <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
     <mat-card-header>
       <div mat-card-avatar>
