@@ -29,7 +29,7 @@ The `o-grid` component shows controls by default, you can show/hide them by conf
 The o-grid component supports data binding and you can command the component to display data either from *local* or *remote* data storage
 
 The data array can be provided in two ways:
-* Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
+* Provide an array of objects to the `static-data` attribute.
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
 {: .note }
 >Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.

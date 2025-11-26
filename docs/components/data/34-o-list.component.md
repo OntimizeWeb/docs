@@ -18,7 +18,7 @@ The `o-list` component is used to display a series of items. There is different 
 The o-list component supports data binding and you can command the component to display data either from *local* or *remote* data storage
 
 The data array can be provided in two ways:
-* Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
+* Provide an array of objects to the `static-data` attribute.
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
 {: .note }
 >Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
