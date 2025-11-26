@@ -21,6 +21,9 @@ This component is different than most of other inputs, an array of data must be 
 The data array can be provided in two ways:
 * Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
+{: .note }
+>Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
+Always pass a static reference instead (e.g. `[static-data]="data"`).
 
 Once some data has been provided to the component, the user can see the option list by clicking in the search button of the component. Choosing an option, the list will close up and the selected value will be set to the input.
 
