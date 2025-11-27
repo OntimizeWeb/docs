@@ -27,7 +27,7 @@ attributes: [{
   description : "Default functions aggregate"
 },{
   name: "aggregate-function",
-  type: " (value: any[]) => number",
+  type: "(value: any[], columnAttr?: string, table?: OTableComponent) => number | Promise<number>",
   default: "",
   required: "",
   description: "Function that calculates a value on the values of the column 'attr'"

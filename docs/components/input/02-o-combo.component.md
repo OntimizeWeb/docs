@@ -20,6 +20,9 @@ This component is different than most of other inputs, an array of data must be 
 The data array can be provided in two ways:
 * Provide an array of objects to the `static-data` attribute (see the [example](#basic-example) below).
 * Configure the component to query the data from a service. Using `service` and `entity` attributes.
+{: .note }
+>Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
+Always pass a static reference instead (e.g. `[static-data]="data"`).
 
 ## Basic example
 ![Combo component]({{ "/assets/images/components/inputs/o-combo.png" | absolute_url }}){: .comp-example-img}

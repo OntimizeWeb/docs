@@ -368,7 +368,7 @@ utilityMethods: [
   },
   {
     name: "instanceofBasicExpression",
-    description: "Evaluates if the the expression provided is an instance of `IBasicExpression`.",
+    description: "Evaluates if the expression provided is an instance of `IBasicExpression`.",
     params: [
       {
         name: "exp",
