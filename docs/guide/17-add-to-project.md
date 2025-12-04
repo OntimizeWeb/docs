@@ -48,16 +48,16 @@ export const CONFIG: Config = {
 
 And include this configuration in the providers in the application module.
 
-Include the `OntimizeWebModule`, `ONTIMIZE_MODULES` and `ONTIMIZE_PROVIDERS` in your application module.
+Include the `OntimizeWebModule`, `OntimizeWebModule.forRoot(CONFIG)` and `ONTIMIZE_PROVIDERS` in your application module.
 
 ```typescript
-import { APP_CONFIG, ONTIMIZE_MODULES, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
+import { APP_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
 
 import { CONFIG } from './app.config';
 
 @NgModule({
     ...
-    imports: [ ONTIMIZE_MODULES, OntimizeWebModule ],
+    imports: [ OntimizeWebModule.forRoot(CONFIG), OntimizeWebModule ],
     providers: [
         { provide: APP_CONFIG, useValue: CONFIG },
         ...ONTIMIZE_PROVIDERS
