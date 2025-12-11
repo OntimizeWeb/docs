@@ -39,8 +39,8 @@ The `o-list-item-text` component is used to display list items with a maximum of
   edit-button-in-row-icon="edit" detail-mode="none" pagination-controls="false"
   page-size-options="5;10" insert-button-position="bottom" show-buttons-text="false">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-text #item  title="{{ row.username }}"
-      primary-text="{{ row.name }}" secondary-text="{{ row.email }}" (icon-action)="addToFavorites(row, item)">
+    <o-list-item-text #item  title="\{\{ row.username \}\}"
+      primary-text="\{\{ row.name \}\}" secondary-text="\{\{ row.email \}\}" (icon-action)="addToFavorites(row, item)">
     </o-list-item-text>
   </o-list-item>
 </o-list>
@@ -62,8 +62,8 @@ The `o-list-item-avatar` component is used to display list items with an avatar 
   detail-button-in-row-icon="chevron_right" edit-button-in-row="false"
   edit-button-in-row-icon="edit" detail-mode="none">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-avatar #tem  avatar="{{ row.thumbnailUrl }}" title="{{ row.username }}" primary-text="{{ row.name }}"
-      secondary-text="{{ row.email }}" (icon-action)="addToFavorites(row, item)">
+    <o-list-item-avatar #item  avatar="\{\{ row.thumbnailUrl \}\}" title="\{\{ row.username \}\}" primary-text="\{\{ row.name \}\}"
+      secondary-text="\{\{ row.email \}\}" (icon-action)="addToFavorites(row, item)">
     </o-list-item-avatar>
   </o-list-item>
 </o-list>
@@ -82,7 +82,7 @@ The `o-list-item-card` component is used to display a card list item with text, 
   [static-data]="data" refresh-button="true" quick-filter="true" insert-button="false"
   row-height="medium" detail-mode="none">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card #item title="{{ row.username }}" subtitle="{{ row.name }}" show-image="true" image="{{ row.image }}"
+    <o-list-item-card #item title="\{\{ row.username \}\}" subtitle="\{\{ row.name \}\}" show-image="true" image="\{\{ row.image \}\}"
       action-1-text="ACTION 1" action-2-text="ACTION 2"
       (action-1)="onAction1()" (action-2)="onAction2()">
     </o-list-item-card>
@@ -103,8 +103,8 @@ The `o-list-item-card-image` component is used to display card list items with a
   [static-data]="data" refresh-button="true" insert-button="false"
   quick-filter="no" row-height="medium" detail-mode="none">
   <o-list-item *ngFor="let row of #list.dataArray">
-    <o-list-item-card-image title="{{ row.username }}" subtitle="{{ row.name }}" content="{{ row.body }}"
-      image="{{ row.image }}" action-1-text="ACTION 1" action-2-text="ACTION 2" (action-1)="onAction1()" (action-2)="onAction2()"
+    <o-list-item-card-image title="\{\{ row.username \}\}" subtitle="\{\{ row.name \}\}" content="\{\{ row.body \}\}"
+      image="\{\{ row.image \}\}" action-1-text="ACTION 1" action-2-text="ACTION 2" (action-1)="onAction1()" (action-2)="onAction2()"
        (icon-action)="onIconAction()" collapsible="false" collapsed="true">
     </o-list-item-card-image>
   </o-list-item>
@@ -124,16 +124,16 @@ When building an `o-list` component you can include one of the predefined list i
   <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
     <mat-card-header>
       <div mat-card-avatar>
-        <img src="{{ row.image }}" fxFill />
+        <img src="\{\{ row.image \}\}" fxFill />
       </div>
-      <mat-card-title>{{ row.name }}</mat-card-title>
-      <mat-card-subtitle>{{ row.body }}</mat-card-subtitle>
+      <mat-card-title>\{\{ row.name \}\}</mat-card-title>
+      <mat-card-subtitle>\{\{ row.body \}\}</mat-card-subtitle>
     </mat-card-header>
   </mat-card>
 </o-list>
 ```
 
-![List item custom]({{ "/assets/images/components/list/list-item-custom.png" | absolute_url }}){: .comp-example-img}
+![List item custom](\{\{ "/assets/images/components/list/list-item-custom.png" | absolute_url }}){: .comp-example-img}
 
 ## Custom content in toolbar <span class='menuitem-badge'>new<span>
 
