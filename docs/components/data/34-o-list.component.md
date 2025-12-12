@@ -39,8 +39,8 @@ The `o-list-item-text` component is used to display list items with a maximum of
   edit-button-in-row-icon="edit" detail-mode="none" pagination-controls="false"
   page-size-options="5;10" insert-button-position="bottom" show-buttons-text="false">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-text #item  title="\{\{ row.username \}\}"
-      primary-text="\{\{ row.name \}\}" secondary-text="\{\{ row.email \}\}" (icon-action)="addToFavorites(row, item)">
+    <o-list-item-text #item  title="{% raw %}{{ row.username }}{% endraw %}"
+      primary-text="{% raw %}{{ row.name }}{% endraw %}" secondary-text="{% raw %}{{ row.email }}{% endraw %}" (icon-action)="addToFavorites(row, item)">
     </o-list-item-text>
   </o-list-item>
 </o-list>
@@ -62,8 +62,8 @@ The `o-list-item-avatar` component is used to display list items with an avatar 
   detail-button-in-row-icon="chevron_right" edit-button-in-row="false"
   edit-button-in-row-icon="edit" detail-mode="none">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-avatar #item  avatar="\{\{ row.thumbnailUrl \}\}" title="\{\{ row.username \}\}" primary-text="\{\{ row.name \}\}"
-      secondary-text="\{\{ row.email \}\}" (icon-action)="addToFavorites(row, item)">
+    <o-list-item-avatar #item  avatar="{% raw %}{{ row.thumbnailUrl }}{% endraw %}" title="{% raw %}{{ row.username }}{% endraw %}" primary-text="{% raw %}{{ row.name }}{% endraw %}"
+      secondary-text="{% raw %}{{ row.email }}{% endraw %}" (icon-action)="addToFavorites(row, item)">
     </o-list-item-avatar>
   </o-list-item>
 </o-list>
@@ -82,7 +82,7 @@ The `o-list-item-card` component is used to display a card list item with text, 
   [static-data]="data" refresh-button="true" quick-filter="true" insert-button="false"
   row-height="medium" detail-mode="none">
   <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card #item title="\{\{ row.username \}\}" subtitle="\{\{ row.name \}\}" show-image="true" image="\{\{ row.image \}\}"
+    <o-list-item-card #item title="{% raw %}{{ row.username }}{% endraw %}" subtitle="{% raw %}{{ row.name }}{% endraw %}" show-image="true" image="{% raw %}{{ row.image }}{% endraw %}"
       action-1-text="ACTION 1" action-2-text="ACTION 2"
       (action-1)="onAction1()" (action-2)="onAction2()">
     </o-list-item-card>
@@ -103,8 +103,8 @@ The `o-list-item-card-image` component is used to display card list items with a
   [static-data]="data" refresh-button="true" insert-button="false"
   quick-filter="no" row-height="medium" detail-mode="none">
   <o-list-item *ngFor="let row of #list.dataArray">
-    <o-list-item-card-image title="\{\{ row.username \}\}" subtitle="\{\{ row.name \}\}" content="\{\{ row.body \}\}"
-      image="\{\{ row.image \}\}" action-1-text="ACTION 1" action-2-text="ACTION 2" (action-1)="onAction1()" (action-2)="onAction2()"
+    <o-list-item-card-image title="{% raw %}{{ row.username }}{% endraw %}" subtitle="{% raw %}{{ row.name }}{% endraw %}" content="{% raw %}{{ row.body }}{% endraw %}"
+      image="{% raw %}{{ row.image }}{% endraw %}" action-1-text="ACTION 1" action-2-text="ACTION 2" (action-1)="onAction1()" (action-2)="onAction2()"
        (icon-action)="onIconAction()" collapsible="false" collapsed="true">
     </o-list-item-card-image>
   </o-list-item>
@@ -124,16 +124,16 @@ When building an `o-list` component you can include one of the predefined list i
   <mat-card *ngFor="let row of list.dataArray" [o-list-item]="row">
     <mat-card-header>
       <div mat-card-avatar>
-        <img src="\{\{ row.image \}\}" fxFill />
+        <img src="{% raw %}{{ row.image }}{% endraw %}" fxFill />
       </div>
-      <mat-card-title>\{\{ row.name \}\}</mat-card-title>
-      <mat-card-subtitle>\{\{ row.body \}\}</mat-card-subtitle>
+      <mat-card-title>{% raw %}{{ row.name }}{% endraw %}</mat-card-title>
+      <mat-card-subtitle>{% raw %}{{ row.body }}{% endraw %}</mat-card-subtitle>
     </mat-card-header>
   </mat-card>
 </o-list>
 ```
 
-![List item custom](\{\{ "/assets/images/components/list/list-item-custom.png" | absolute_url }}){: .comp-example-img}
+![List item custom]({{ "/assets/images/components/list/list-item-custom.png" | absolute_url }}){: .comp-example-img}
 
 ## Custom content in toolbar <span class='menuitem-badge'>new<span>
 
@@ -141,12 +141,12 @@ The `o-list` component allows to add content in the toolbar with the selector `o
 
 If the selector `o-list-toolbar` is used together with `position='start'` the content will always be placed to the right of the New/Refresh/Delete buttons and if used together with `position='end'` the content will always be placed to the left of the quickfilter
 
-```ts
-<o-list #list attr="list" ... refresh-button="yes" quick-filter="yes"... >
+```html
+<o-list #list attr="list" ... refresh-button="yes" quick-filter="yes" ... >
   <!-- Custom content toolbar in position start -->
-  <o-combo o-list-toolbar position="start" label="Sort" width="100px"... ></o-combo>
+  <o-combo o-list-toolbar position="start" label="Sort" width="100px" ... ></o-combo>
   <!-- Custom content toolbar in position end -->
-  <o-slide-toggle o-list-toolbar position="end"... ></o-slide-toggle>
+  <o-slide-toggle o-list-toolbar position="end" ... ></o-slide-toggle>
 </o-list>
 ```
 
