@@ -47,9 +47,8 @@ export class LineComponent {
 
   constructor() {
       this.chartParameters = new LineChartConfiguration();
-      this.chartParameters.isArea = [true];
-      this.chartParameters.interactive = false;
-      this.chartParameters.useInteractiveGuideline = false;
+      this.chartParameters.schemeType = 'linear';
+      this.chartParameters.gradient = true;
   }
 }
 ```

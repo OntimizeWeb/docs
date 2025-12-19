@@ -49,16 +49,59 @@ attributes:
       default: "ordinal",
     },
     {
-      name: "animations",
-      description: "Enables or disables chart animations.",
-      type: "boolean",
-      default: true,
+      name: "range-fill-opacity",
+      description: "Opacity of the shaded area used to represent minimum and maximum range values.",
+      type: "number",
+      default: 0.15,
     },
     {
       name: "round-domains",
       description: "Rounds axis domains to align grid lines evenly.",
       type: "boolean",
       default: false,
+    },
+    {
+      name: "timeline",
+      description: "Displays a timeline control below the chart. Only available for linear or time scales.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "reference-lines",
+      description: "Defines reference lines to be displayed behind the chart. Each line must have the format { name, value }.",
+      type: "array",
+    },
+    {
+      name: "show-ref-lines",
+      description: "Controls whether reference lines are displayed on the chart.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "show-ref-labels",
+      description: "Controls whether reference line labels are displayed.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "x-scale-min",
+      description: "Defines the minimum value of the X axis when using linear or time scales.",
+      type: "any",
+    },
+    {
+      name: "x-scale-max",
+      description: "Defines the maximum value of the X axis when using linear or time scales.",
+      type: "any",
+    },
+    {
+      name: "y-scale-min",
+      description: "Defines the minimum value of the Y axis.",
+      type: "number",
+    },
+    {
+      name: "y-scale-max",
+      description: "Defines the maximum value of the Y axis.",
+      type: "number",
     },
     {
       name: "trim-x-axis-ticks",
@@ -95,34 +138,6 @@ attributes:
       description: "Allows axis tick labels to wrap into multiple lines based on available space.",
       type: "boolean",
       default: false,
-    },
-    {
-      name: "no-bar-when-zero",
-      description: "Prevents rendering bars when their value is zero.",
-      type: "boolean",
-      default: true,
-    },
-    {
-      name: "round-edges",
-      description: "Renders bars with rounded edges.",
-      type: "boolean",
-      default: true,
-    },
-    {
-      name: "bar-padding",
-      description: "Defines the spacing in pixels between bars.",
-      type: "number",
-      default: 8,
-    },
-    {
-      name: "y-scale-min",
-      description: "Defines the minimum value of the Y axis.",
-      type: "number",
-    },
-    {
-      name: "y-scale-max",
-      description: "Defines the maximum value of the Y axis.",
-      type: "number",
     },
   ]
 
