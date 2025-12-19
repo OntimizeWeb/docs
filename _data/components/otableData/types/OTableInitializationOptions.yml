@@ -1,4 +1,4 @@
-type : "OTableInitializationOptions"
+type: "OTableInitializationOptions"
 
 propertiesColumns: ["Name", "Type", "Description"]
 
@@ -8,23 +8,24 @@ attributes: [{
   optional: true
 },{
   name: "service",
-  optional: true,
-  type: "string"
+  type: "string",
+  optional: true
 },{
   name: "columns",
-  optional: true,
   type: "string",
- 
+  optional: true
 },{
   name: "visibleColumns",
   type: "string",
   optional: true
-},
-{
+},{
+  name: "defaultVisibleColumns",
+  type: "string",
+  optional: true
+},{
   name: "keys",
   type: "string",
   optional: true
-
 },{
   name: "sortColumns",
   type: "string",
@@ -36,9 +37,16 @@ attributes: [{
 },{
   name: "filterColumns",
   type: "string",
-  description : "The old value for the target."
-
+  optional: true,
+  description: "Columns that can be used to filter data. The old value for the target."
+},{
+  name: "data",
+  type: "ServiceResponse",
+  optional: true,
+  description: "Initial table data returned from the associated service."
+},{
+  name: "paginationData",
+  type: "PaginationData",
+  optional: true,
+  description: "Pagination information such as current page, size, and total records."
 },]
-
-
-

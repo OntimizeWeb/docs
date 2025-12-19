@@ -1,5 +1,7 @@
 directive : "o-textarea-input"
 
+apiTitle: "OTextAreaInputComponent"
+
 inheritedAttributes: [  {
   component: "FormDataComponent",
   path: "components/input/overview/api",
@@ -7,7 +9,7 @@ inheritedAttributes: [  {
 },{
   component: "o-text-input",
   path: "components/input/text/api",
-  attributes: [ "min-length", "max-length"]
+  attributes: ["min-length", "max-length", "string-case"]
 }]
 
 inheritedOutputs: [{

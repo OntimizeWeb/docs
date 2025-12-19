@@ -1,5 +1,7 @@
 directive : "o-real-input"
 
+apiTitle: "ORealInputComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

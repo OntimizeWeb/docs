@@ -1,13 +1,24 @@
 name: Release Docs
 on:
-  workflow_dispatch:
   pull_request:
     types: [closed]
     branches:
       - 15.x.x
+  workflow_dispatch:
+    inputs:
+      BASELINE:
+        description: 'Baseline branch of documentation'
+        required: true
+        default: '15.x.x'
+      TARGET_FOLDER:
+        description: 'Target version folder'
+        required: true
+        default: 'next'
+        type: choice
+        options:
+          - 'v15'
+          - 'next'
 
-env:
-  TARGET_PATH: v15
 
 jobs:
   build-docs:
@@ -16,25 +27,42 @@ jobs:
     if: github.event_name == 'workflow_dispatch' ||
       (github.event.pull_request.merged == true && contains(join(github.event.pull_request.labels.*.name, ', '), 'release-docs'))
     steps:
-      - uses: actions/checkout@v3
+      - name: Process input parameters
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            TARGET_PATH="${{ github.event.inputs.TARGET_FOLDER }}"
+          else
+            TARGET_PATH="v15"
+          fi
+          echo "TARGET_PATH=$TARGET_PATH" >> "$GITHUB_ENV"
+          BASELINE_BRANCH=${{ github.event.inputs.BASELINE || github.ref }}
+          echo "BASELINE_BRANCH=${BASELINE_BRANCH#refs/heads/}" >> "$GITHUB_ENV"
+      - name: Checkout baseline branch
+        uses: actions/checkout@v4
         with:
-          ref: 15.x.x
+          ref: ${{ env.BASELINE_BRANCH }}
           fetch-depth: 0
 
-      - name: Bundler Cache
-        uses: actions/cache@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
+          ruby-version: '3.2'
+          bundler-cache: true
 
-      - name: Jekyll
-        uses: helaili/jekyll-action@master
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build site with Jekyll
+        run: |
+          bundle exec jekyll build \
+            --baseurl "/docs/${{ env.TARGET_PATH }}" \
+            --config _config.yml,_config.deploy.yml
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          jekyll_env: deploy
-          jekyll_build_options: --baseurl /docs/${{ env.TARGET_PATH }} --config _config.yml,_config.deploy.yml
-          target_branch: gh-pages
-          target_path: ${{ env.TARGET_PATH }}
-          keep_history: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          destination_dir: ${{ env.TARGET_PATH }}
+          keep_files: true

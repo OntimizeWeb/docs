@@ -1,5 +1,7 @@
 directive : "o-hour-input"
 
+apiTitle: "OHourInputComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

@@ -5,7 +5,7 @@ propertiesColumns: ["Name", "Type", "Required", "Description"]
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",
-  attributes: ["attr", "static-data", "service", "service-type","query-fallback-function", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state", "query-with-null-parent-keys"]
+  attributes: ["attr", "static-data", "service", "service-type","query-fallback-function", "query-method", "entity", "keys", "parent-keys", "columns", "query-on-init", "query-on-bind", "query-rows", "insert-method", "update-method", "paginated-query-method", "delete-method", "pageable", "store-state", "query-with-null-parent-keys", "configure-service-args"]
 }]
 
 attributes: [{
@@ -63,6 +63,24 @@ attributes: [{
   required : "",
   description : "Indicates which of the mat-form-field different except in o-table component[appearance variants](https://v15.material.angular.io/components/form-field/overview#form-field-appearance-variants) will be used. except in the o-table component."
 }]
+
+
+outputs: [{
+  name: "onClick",
+  description: "Event triggered when a row is clicked"
+},{
+  name: "onDoubleClick",
+  description: "Event triggered when a row is double clicked"
+},{
+  name: "onDataLoaded",
+  description: "Event triggered when the data is updated"
+},{
+  name: "onPaginatedDataLoaded",
+  description: "Event triggered when the paginated data is updated"
+},{
+  name: "onSearch",
+  description: "Event triggered when the quickfilter starts searching"
+  }]
 
 methods: [{
   name: "initialize",

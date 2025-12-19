@@ -155,7 +155,7 @@ For local data binding you simply need to supply an array of TypeScript objects/
 
 ```html
 
- <o-table attr="accounts" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" title="ACCOUNTS" [static-data]="getStaticData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+ <o-table attr="accounts" columns="CARDID;CARDTYPE;NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" visible-columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE" title="ACCOUNTS" [static-data]="account" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
   <o-table-columns-filter columns="NUMCARD;TOTALCREDIT;TOTALREADY;BALANCE"></o-table-columns-filter>
   <o-table-column attr="NUMCARD" title="NUMCARD">
     <o-table-column-renderer-cardtype></o-table-column-renderer-cardtype>
@@ -171,19 +171,22 @@ For local data binding you simply need to supply an array of TypeScript objects/
 ```
 
 ```javascript
-getTableData(){
-  const account =  [
+ const account =  [
     { PRODUCTID: 1, 'PRODUCTNAME': 'Alice Mutton', UNITPRICE: 39, UNITSINORDER: 0, UNITSINSTOCK: 1 },
     { PRODUCTID: 2, 'PRODUCTNAME': 'Gorgonzola Telino', UNITPRICE: 12.5, UNITSINORDER: 70, UNITSINSTOCK: 2 },
     { PRODUCTID: 3, 'PRODUCTNAME': 'Louisiana Hot Spiced Okra', UNITPRICE: 17, UNITSINORDER: 100, UNITSINSTOCK: 4 },
     { PRODUCTID: 4, 'PRODUCTNAME': 'Sir Rodney Scones', UNITPRICE: 10, UNITSINORDER: 40, UNITSINSTOCK: 3 },
     { PRODUCTID: 5, 'PRODUCTNAME': 'Alice Mutton', UNITPRICE: 39, UNITSINORDER: 0, UNITSINSTOCK: 0 }
-    ];
-    return account;
-}
+  ];
 ```
 
-If you need the data query to be performed after the `parent-keys` is updated, `query-on-init = false` and `query-on-bind = true` must be changed
+If you need the data query to be performed after the `parent-keys` is updated, `query-on-init = false` and `query-on-bind = true` must be changed.
+
+{: .note }
+
+>Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
+Always pass a static reference instead (e.g. `[static-data]="data"`).
+---
 
 ### Binding to remote data
 
@@ -246,7 +249,22 @@ This option is active by default but it is also possible to configure filtering 
 - Using the input `columns` of the component `o-table-columns-filter`, adding the columns separated by ‘;’.
 - Using the `o-table-columns-filter-column` component. If `o-table-columns-filter` component contains inner `o-table-columns-filter-column` elements, the `attr` of the columns attribute is required. For more information see the API.
 
-This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.
+This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.  You can also disable/enable the entire application or a certain module with the `O_TABLE_GLOBAL_CONFIG` injection token as shown below.
+
+```ts
+@NgModule({
+  declarations: [
+  ...
+  ],
+  ...
+  providers: [
+    ...
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { filterColumnActiveByDefault: false } },
+    ...
+  ],
+  ...
+})
+```
 
 ![Filter by Column]({{ "/assets/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
 
@@ -293,6 +311,36 @@ This option will be available in table menu and in table header by default. Howe
 
 ![Filtering columns mode]({{ "/assets/images/components/tabla/filter-columns-mode.png" | absolute_url }}){: .comp-example-img}
 
+You can also configure whether you want to filter by the values ​​of the current page or by all the values ​​in the table with `filter-values-in-data` input in `o-table-columns-filter` and `o-table-columns-filter-column`. Whether the `o-table` set **pageable=no**, the default value is `'all-data'`, however if set **pageable='yes'** the default value would be `'current-page'` .
+
+Additionally, in the `o-table-columns-filter-column` component you can configure the `query-method` to supply values asynchronously to the set filter, if this input is configured it is no longer necessary to add `filter-values-in-data="all-data"`.
+
+A button will also appear to the right of the sort button to change whether you want to filter by the values ​​of the current page or all pages.
+
+<h3 class="grey-color">Example not recommended </h3>
+
+```html
+ <o-table ...>
+      <o-table-columns-filter columns="STARTDATE;SURNAME" filter-values-in-data="all-data">
+      </o-table-columns-filter>
+</o-table>
+```
+
+<h3 class="grey-color">Recommended example</h3>
+
+```html
+ <o-table ...>
+      <o-table-columns-filter columns="STARTDATE;SURNAME" >
+        <o-table-columns-filter-column attr="SURNAME"  query-method="selectDistinctBySurname"> </o-table-columns-filter-column>
+        <o-table-columns-filter-column attr="STARTDATE"  query-method="selectDistinctByStartDate" > </o-table-columns-filter-column>
+      </o-table-columns-filter>
+</o-table>
+```
+<div class="notice--warning" markdown="1">
+  **WARNING:** We recommend configuring the query-method so that the post requests are more optimal, since if it is not configured, all the values ​​will be obtained without taking into account whether they are different.
+</div>
+
+![Filtering columns by all data]({{ "/assets/images/components/tabla/filter-by-column-all-data.png" | absolute_url }}){: .comp-example-img}
 
 
 ### Custom filter
@@ -339,7 +387,7 @@ You can see different predefined table cell renderers in the example below.
 ![Predefined table cell renderers]({{ "/assets/images/components/tabla/renderers_table.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-<o-table  attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" title="ACCOUNTS" [static-data]="getTableData()" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+<o-table  attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" title="ACCOUNTS" [static-data]="tableData" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
   <!--Date Renderer-->
   <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
   <!--Currency Renderer-->
@@ -588,8 +636,23 @@ All you have to do to enable data editing capabilities for the component is to:
 - Configure `edition-mode="click"` and `detail-mode='none'`
 - Configure data binding
 
-{: .note }
->It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
+ You can also disable/enable cell editing the entire application or a certain module with the `O_TABLE_GLOBAL_CONFIG` injection token as shown below.
+
+ ```
+ @NgModule({
+  declarations: [
+  ...
+  ],
+  ...
+  providers: [
+    ...
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { editionMode: 'click', detailMode: 'none' } }
+    ...
+  ],
+  ...
+})
+```
+>**NOTE**: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
 
 Cell editing results in the following events.
 
@@ -841,7 +904,7 @@ The `o-table` component supports *fixed header* and *footer* setting `fixed-head
 
 <h3 class="grey-color">Example</h3>
 ```html
-<o-table #table attr="table" title="ACCOUNTS" fixed-header="yes" [static-data]="getTableData()" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+<o-table #table attr="table" title="ACCOUNTS" fixed-header="yes" [static-data]="tableData" columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE" layout-padding sort-columns="ANID" query-on-init="false"
     quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no"
     [ngStyle]="height:400px">
@@ -854,7 +917,7 @@ The `o-table` component supports *fixed header* and *footer* setting `fixed-head
 
 ### Aggregates
 
-Oftentimes, when displaying numbers in the table, users would like to be able to see the results from aggregate calculations at the bottom of the table columns. The  `o-table` component has support for the mostly used aggregate functions (count,sum,avg,min,max).
+Often when displaying numbers in a table, users want to show summary results of aggregate calculations at the bottom of the table columns. The `o‑table` component supports commonly used aggregation functions (**count**, **sum**, **avg**, **min**, **max**) using `aggregate` input and also allows specifying a **custom aggregation function** using the `aggregate-function` input, which may return either a **synchronous number** or a **Promise<number>** (for asynchronous operations).
 
 <h3 class="grey-color">Example</h3>
 
@@ -868,7 +931,7 @@ Oftentimes, when displaying numbers in the table, users would like to be able to
     <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" thousand-separator=","></o-table-column>
     <o-table-column attr="INTERESRATE" title="INTERESRATE" type="real" ></o-table-column>
     <o-table-column-aggregate attr="BALANCE" title="sum">
-    <o-table-column-aggregate attr="INTERESRATE" [function-aggregate]="custom"></o-table-column-aggregate>
+    <o-table-column-aggregate attr="INTERESRATE" [aggregate-function]="custom"></o-table-column-aggregate>
 </o-table>
 ```
 
@@ -1194,14 +1257,34 @@ You can customize the tooltip styles by redefining the class `o-table-cell-toolt
 
 ### Reinitialize method
 
-When you perform an action like update columns, visible columns, filter by columns, service, entity, keys or primary keys of the table, you will want `o-table`  to update the display to reflect these changes. This function is provided for that purpose.For more information see the API.
+The `reinitialize` method is used to refresh the `o-table` whenever its configuration changes.
+You should call this method when any of the table’s main parameters are updated — such as **columns**, **visible columns**, **filters**, **service**, **entity**, **keys**, or **parent keys**.
+
+This ensures that the table’s display and data remain synchronized with the latest configuration.
+For more information, see the API documentation.
 
 ```javascript
 ...
-const columnsOfTable= 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS';
-const filterColumnsOfTable= 'NAME;EMAIL';
+const columnsOfTable = 'PHOTO;ID;NAME;SURNAME;EMAIL;ADDRESS';
+const filterColumnsOfTable = 'NAME;EMAIL';
+const defaultVisibleColumns = 'PHOTO;ID;NAME;EMAIL';
 
-this.table.reinitialize({ columns: columnsOfTable, visibleColumns: columnsOfTable, filterColumns:filterColumnsOfTable});
+// Example pagination data
+const paginationData = {
+  pageNumber: 1,
+  pageSize: 20,
+  startRecordIndex: 0,
+  totalQueryRecordsNumber: 100
+};
+
+// Reinitialize table with updated parameters
+this.table.reinitialize({
+  columns: columnsOfTable,
+  visibleColumns: columnsOfTable,
+  defaultVisibleColumns: defaultVisibleColumns,
+  filterColumns: filterColumnsOfTable,
+  paginationData: paginationData
+});
 ...
 
 ```
@@ -1306,7 +1389,7 @@ Global default autoadjust can be specified by providing a value for O_TABLE_GLOB
  <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
     columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
-    row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes" query-rows="25" auto-adjust="yes">
+    row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes" auto-adjust="yes">
     <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
     <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image"
       image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
@@ -1335,23 +1418,20 @@ However, if you want to control similar case, you can do so by configuring `auto
 
 1. In the next case we have applied `horizontal-scroll=yes` and  `auto-adjust="yes"`, the result would be the following.
 
-![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
-<!-- </div> -->
+    ![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-horizontal-scroll.PNG" | absolute_url }}){: .comp-example-img}
 
-{:start="2"}
 2. As you can see, in the next case we have applied `multiline=yes` and  `auto-adjust="yes"`, the result would be the following.
 
 
-![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
+    ![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust-with-multiline.PNG" | absolute_url }}){: .comp-example-img}
 
-{:start="3"}
 3. In the next case we have applied `max-width="300px"` in `o-table-column` and  `auto-adjust="yes"`, the result would be the following..
 
-```html
-<o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
-```
+    ```html
+    <o-table-column attr="NOTES" title="NOTES" multiline="no" max-width="300px"></o-table-column>
+    ```
 
-![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
+    ![Table width autoadjust]({{ "/assets/images/components/tabla/table_autoadjust_maxwidth.PNG" | absolute_url }}){: .comp-example-img}
 
 ### Row grouping
 
@@ -1360,31 +1440,28 @@ Ontimize Web allows to merge fields belonging to one column so that the consecut
 By default, the table is *groupable* and for grouping/ungrouping by one o more columns, you can:
 
 1. Configure **grouped columns by default** with the `grouped-columns` property.
-As you can see in the example below, as soon as there is at least one active row.
+    As you can see in the example below, as soon as there is at least one active row.
 
-![Table row group]({{ "/assets/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
+    ![Table row group]({{ "/assets/images/components/tabla/table-basic-row-group.png" | absolute_url }}){: .comp-example-img}
 
-{:start="2"}
 2. Use the **table menu**: click the *Group / Ungroup by* option to configure the columns you need to group / ungroup by.
 
-![Dialog group by column]({{ "/assets/images/components/tabla/table-menu-group-by-column.gif" | absolute_url }}){: .comp-example-img}
+    ![Dialog group by column]({{ "/assets/images/components/tabla/table-menu-group-by-column.gif" | absolute_url }}){: .comp-example-img}
 
-{:start="3"}
 3. Use the **table context menu**: Right-click the column data to invoke context menu and  click on *Group by -> Group by column* . The context menu also allows you to ungroup by a column or by all.
 
-![Context menu group by column]({{ "/assets/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
+    ![Context menu group by column]({{ "/assets/images/components/tabla/group-by-column-context-menu.gif" | absolute_url }}){: .comp-example-img}
 
-You can collapse/expand all grouped rows if you right-click on the *grouped row*.
+    You can collapse/expand all grouped rows if you right-click on the *grouped row*.
 
-![Context menu in grouped row]({{ "/assets/images/components/tabla/table-grouping-change-function-aggregate.gif" | absolute_url }}){: .comp-example-img}
+    ![Context menu in grouped row]({{ "/assets/images/components/tabla/table-grouping-change-function-aggregate.gif" | absolute_url }}){: .comp-example-img}
 
-{:start="4"}
 4. Use the **o-table-columns-grouping** and **o-table-columns-grouping-column** components: this components are used to configure the initial state of the row grouping and override the table grouping configuration.
 
 If there is at least one grouping, the table automatically applies the *sum function* on those of type `currency`, `integer` and `real` and whose value will be displayed in the grouped row.
 If you want to exclude this function from being performed, you must add this column in the `excluded-aggregate-columns` attribute in `o-table-columns-grouping` component.
 
- You can configure the *aggregate functions* (count,sum,avg,min,max) in the `o-table-columns-grouping` component. Additionally, you can specify aggregate function to be applied with `function-aggregate` attribute.
+ You can configure the *aggregate functions* (count,sum,avg,min,max) in the `o-table-columns-grouping` component. Additionally, you can specify aggregate function to be applied with `aggregate-function` attribute.
 
  By default, when you change the aggregate function in a column, it will change in all grouped rows of the same level, if you want to avoid this behavior you must add `change-aggregate-same-level="no"`.
 
@@ -1414,6 +1491,13 @@ For more information see the API.
 
 {: .note }
 >There is no limit on the number of columns that the table can group by.
+
+### Row height
+In the o-`table` you can configure various density levels using `row-height` property that it is easy to specify the font and the paddings on the table defined in this [link]({{ base_path }}/customize/typography/#custom-typography-of-ontimize-web-framework).
+
+The default value being `medium` with `small` being the most compact option and `large` being the least.
+
+![Input row-height]({{ "/assets/images/components/tabla/row-height.png" | absolute_url }}){: .comp-example-img}
 
 ### Report on demand <span class='menuitem-badge'>new<span>
 

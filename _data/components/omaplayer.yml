@@ -1,5 +1,7 @@
 directive : "o-map-layer"
 
+apiTitle: "OMapLayerComponent"
+
 attributes: [{
   name: "layer-center",
   description: "Center the position of the layer. The structure is latitude, longitude. e.g layer-center='42.240599;-8.720727'",

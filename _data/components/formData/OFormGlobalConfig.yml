@@ -1,0 +1,15 @@
+title: "OFormGlobalConfig"
+description: "Represents the default options for the `o-form` that can be configured using the <a href='#O_FORM_GLOBAL_CONFIG'>O_FORM_GLOBAL_CONFIG</a> injection token.
+<div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
+type OFormGlobalConfig = {
+   headerActions: string
+};
+</code></pre></div></div>
+"
+
+attributes: [{
+  name: "headerActions",
+  since: "8.14.15",
+  description: "Available action buttons in form toolbar of standard CRUD operations, separated by ';'. Available options are R;I;U;D (Refresh, Insert, Update, Delete). Also 'all' is available (showing all buttons)."
+}]
+

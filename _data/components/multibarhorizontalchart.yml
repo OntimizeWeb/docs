@@ -6,7 +6,6 @@ apiTitle: "OChartComponent"
 inheritedAttributes:
   [
     {
-      component: "OChartComponent",
       path: "addons/charts/overview/api",
       attributes:
         [

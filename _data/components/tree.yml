@@ -1,6 +1,8 @@
 
 directive : "o-tree"
 
+apiTitle: "OTreeComponent"
+
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",
@@ -100,6 +102,19 @@ outputs: [{
 },{
   name : "onNodeClick",
   description: "Event triggered when a tree node is clicked"
+}]
+
+methods: [{
+  name: "getSelectedFlatNodes",
+  type: "method",
+  description: "Return the selected flat nodes ",
+  parameters: "",
+  returns: "OTreeFlatNode[]"
+},{
+  name: "getSelectedItems",
+  type: "method",
+  description : "Returns the selected items of the component in a hierarchical structure. Each item may include a `children` property containing its selected child nodes",
+  returns: "any[]"
 }]
 
 # ,{

@@ -15,6 +15,7 @@ nav_exclude: true
             <th>charts*</th>
             <th>gallery*</th>
             <th>report*</th>
+             <th>keycloak*</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@ nav_exclude: true
         <td rowspan="4">15.0.0-beta.1</td>
         <td rowspan="7">15.0.0<br>15.0.0-beta.0</td>
         <td rowspan="4">15.0.0-beta.1</td>
+        <td rowspan="7">15.0.0-beta.1<br>15.0.0-beta.0</td>
       </tr>
       <tr>
         <td>15.0.0-beta.5</td>

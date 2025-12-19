@@ -162,342 +162,342 @@ export class HomeComponent {
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
-  <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+  <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
   ontimize-web-tutorial
   <ul>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     e2e
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       src
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     src
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       app
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         login
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         main
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               movement-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               account-number-render
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-customer
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-movement
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               customertype-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           home
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-details
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
           <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       assets
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         icons
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         images
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         js
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       environments
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
   </ul>
   </li>
 </ul>
@@ -598,382 +598,382 @@ export class SharedModule { }
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
-  <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+  <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
   ontimize-web-tutorial
   <ul>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     e2e
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       src
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     src
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       app
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         login
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         main
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               movement-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               account-number-render
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-customer
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-movement
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               customertype-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           home
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-details
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           account-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branch-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customer-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employee-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
           </ul>
           </li>
           <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
           <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       assets
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         icons
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         images
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         js
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       environments
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
   </ul>
   </li>
 </ul>
@@ -1099,382 +1099,382 @@ export class CustomerCardComponent implements OnInit {
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
-  <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+  <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
   ontimize-web-tutorial
   <ul>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     e2e
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       src
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     src
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       app
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         login
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         main
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               movement-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               account-number-render
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-customer
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-movement
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               customertype-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           home
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-details
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           account-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branch-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customer-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employee-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       assets
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         icons
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         images
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         js
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       environments
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
       <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
   </ul>
   </li>
 </ul>
@@ -1549,382 +1549,382 @@ export class EmployeeCardComponent implements OnInit {
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
-  <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+  <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
   ontimize-web-tutorial
   <ul>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     e2e
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       src
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     src
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       app
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         login
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         main
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               movement-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               account-number-render
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-customer
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-movement
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               customertype-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           home
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-details
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           account-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branch-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customer-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employee-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       assets
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         icons
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         images
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         js
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       environments
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
   </ul>
   </li>
 </ul>
@@ -1997,382 +1997,382 @@ export class BranchCardComponent implements OnInit {
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
-  <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+  <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
   ontimize-web-tutorial
   <ul>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     e2e
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       src
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     src
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       app
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         login
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         main
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               movement-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               account-number-render
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-customer
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-movement
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               customertype-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           home
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-details
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           account-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branch-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customer-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employee-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       assets
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         icons
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         images
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         js
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       environments
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
   </ul>
   </li>
 </ul>
@@ -2445,382 +2445,382 @@ export class AccountCardComponent implements OnInit {
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
-  <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+  <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
   ontimize-web-tutorial
   <ul>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     e2e
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       src
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     src
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       app
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         login
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         main
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               movement-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               account-number-render
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-customer
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-movement
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               customertype-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           home
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-details
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           account-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branch-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customer-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employee-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       assets
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         icons
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         images
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         js
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       environments
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
   </ul>
   </li>
 </ul>
@@ -2891,382 +2891,382 @@ export class ServiceExCardComponent implements OnInit {
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
-  <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+  <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
   ontimize-web-tutorial
   <ul>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     e2e
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       src
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     src
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       app
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         login
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         main
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               movement-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               account-number-render
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-customer
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-movement
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               customertype-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           home
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-details
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           account-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branch-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customer-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employee-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
             <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       assets
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         icons
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         images
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         js
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       environments
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
   </ul>
   </li>
 </ul>
@@ -3324,382 +3324,382 @@ export class ServiceExCardComponent implements OnInit {
     </div>
     <div class="multicolumnright jstreeloader collapsed">
 <ul>
-  <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+  <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
   ontimize-web-tutorial
   <ul>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     e2e
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       src
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.e2e-spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.po.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>protractor.conf.js</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
     src
     <ul>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       app
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         login
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login.theme.scss</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         main
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               movement-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>movement-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               account-number-render
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-number-render.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             accounts-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-customer
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-customer.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             add-movement
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             branches-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
               customertype-column-renderer
               <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.css</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.html</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customertype-column-renderer.component.ts</li>
               </ul>
               </li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             customers-new
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-detail
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-detail.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             employees-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           home
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.scss</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-details
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-details.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             service-ex-home
             <ul>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
-              <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.css</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.html</li>
+              <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.module.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         shared
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           account-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>account-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branch-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branch-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customer-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customer-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employee-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employee-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           service-ex-card
           <ul>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
-            <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.css</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.html</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-card.component.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.menu.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.services.config.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>shared.module.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars-response-adapter.ts</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>star-wars.service.ts</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app-routing.module.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.html</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.scss</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.spec.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.component.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.config.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.module.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       assets
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         css
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>app.scss</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>loader.css</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         i18n
         <ul>
           <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>en.json</li>
           <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>es.json</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         icons
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize128.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize16.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize256.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize32.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize48.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize64.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize72.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize96.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         images
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>login_bg.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>no-image.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>normal_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ontimize_web_log.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>other_24.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-closed.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>sidenav-opened.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>user_profile.png</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>vip_24.png</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
         js
         <ul>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
-          <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>domchange.js</li>
+          <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>keyboard.js</li>
         </ul>
         </li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitkeep</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
       environments
       <ul>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
-        <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.prod.ts</li>
+        <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>environment.ts</li>
       </ul>
       </li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
-      <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>favicon.ico</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>index.html</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>manifest.webmanifest</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>polyfills.ts</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>styles.scss</li>
+      <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>test.ts</li>
     </ul>
     </li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
-    <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.browserslistrc</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.editorconfig</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.eslintrc.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>.gitignore</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>angular.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>karma.conf.js</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ngsw-config.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package-lock.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>package.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>README.md</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.app.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.json</li>
+    <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>tsconfig.spec.json</li>
   </ul>
   </li>
 </ul>

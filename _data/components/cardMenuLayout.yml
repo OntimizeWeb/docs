@@ -1,5 +1,7 @@
 directive : "o-card-menu-layout"
 
+apiTitle: "OCardMenuLayoutComponent"
+
 attributes: [{
   name: "parent-menu-id",
   type: "string",

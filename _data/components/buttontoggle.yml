@@ -1,5 +1,7 @@
 directive: "o-button-toggle"
 
+apiTitle: "OButtonToggleComponent"
+
 attributes: [{
   name: "attr"
 },{
@@ -40,3 +42,14 @@ outputs: [{
 }]
 
 extraComponents: "buttonToggle"
+
+directives: [
+  {
+    name: "o-button-toggle-group",
+    directives: [
+      {
+        name: "o-button-toggle"
+      }
+    ]
+  }
+]

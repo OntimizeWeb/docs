@@ -1,10 +1,12 @@
 directive: "o-grid"
 version: "3.1.0"
 
+apiTitle: "OGridComponent"
+
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",
-  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-fallback-function", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "store-state", "query-with-null-parent-keys"]
+  attributes: ["attr", "service", "service-type", "entity", "query-on-init", "query-fallback-function", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "store-state", "query-with-null-parent-keys", "configure-service-args"]
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
@@ -96,18 +98,16 @@ attributes: [{
   default: "no"
 }]
 
-outputs: [{
-  name: "onClick",
-  description: "Event triggered when a row is clicked"
-},{
-  name: "onDoubleClick",
-  description: "Event triggered when a row is double clicked"
-},{
-  name: "onDataLoaded",
-  description: "Event triggered when the data is updated"
-},{
-  name: "onPaginatedDataLoaded",
-  description: "Event triggered when the paginated data is updated"
+inheritedOutputs: [{
+  component: "OServiceComponent",
+  path: "components/service/service/api",
+  outputs: [ 'onClick','onDoubleClick','onDataLoaded','onPaginatedDataLoaded','onSearch']
 }]
 
 extraComponents: "gridData"
+
+directives: [
+  {
+    name: "o-grid-item"
+  }
+]

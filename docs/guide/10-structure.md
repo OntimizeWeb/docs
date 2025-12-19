@@ -57,7 +57,7 @@ ontimize-web-ngx-quickstart
 |  |  |  ├──  movement-types-renderer/        # Custom component (cell renderer) definition
 |  |  |  |──  style-manager/                  # Class for managing stylesheets
 |  |  |  |──  app.menu.config.ts              # Application menu definition
-|  |  |  |──  app.services.config.ts          # Ontimize JEE services path configuration file
+|  |  |  |──  app.services.config.ts          # Ontimize JEE or JSON:API services path configuration file
 |  |  |  |──  constant.ts                     # File used to store constant variables on the app like the primary color code
 |  |  |  └──  shared.modules.ts               # Shared module definition
 |  |  |
@@ -215,7 +215,7 @@ export class AppModule { }
 
 The `NgModule` decorator uses the following metadata:
 
-* **imports:** An array of modules that you want to use in your application. `ONTIMIZE_MODULES` includes standard Angular Modules (`HttpLoader`, `Http` and `TranslateHttpLoader`).
+* **imports:** An array of modules that you want to use in your application.
 * **declarations:** Specifies a list of directives/pipes that belong to this module.
 * **boostrap:** Defines the components that should be bootstrapped when this module is bootstrapped.
 * **providers:** Define the set of injectable objects that are available in the injector of this module. You will include here all the services that you want to make available module-wide. Use the variable `customProviders` for including your application providers.

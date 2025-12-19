@@ -1,5 +1,7 @@
 directive: "o-image"
 
+apiTitle: "OImageComponent"
+
 inheritedAttributes: [{
   component: "FormDataComponent",
   path: "components/input/overview/api",

@@ -1,5 +1,7 @@
 directive: "o-column, o-row"
 
+apiTitle: "OColumnComponent, ORowComponent"
+
 attributes: [{
   name: "attr"
 },{

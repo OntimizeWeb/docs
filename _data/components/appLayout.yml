@@ -1,5 +1,7 @@
 directive: "o-app-layout"
 
+apiTitle: "OAppLayoutComponent"
+
 attributes:
   [
     {
@@ -92,6 +94,23 @@ attributes:
       default: "",
       required: "",
       description: "Static header title",
+    },{
+      name: "store-state",
+      since: "15.5.0"
+    }, {
+      name: "show-ellipsis-menu",
+      type: "boolean",
+      default: "no",
+      required: "",
+      since: "15.5.4",
+      description: "Indicates whether or not to show ellipsis in menu items.",
+    },{
+      name: "tooltip-display-mode",
+      type: "'always'| 'never' | 'only-collapsed'| 'only-expanded'",
+      default: "only-collapsed",
+      required: "",
+      since: "15.5.4",
+      description: "Defines when the tooltip should be displayed. The default value is **only-collapsed**",
     }
   ]
 
@@ -110,3 +129,20 @@ outputs: [{
 }]
 
 extraComponents: "appLayoutData"
+
+directives: [
+  {
+    name: "o-app-layout-header"
+  },
+  {
+    name: "o-app-layout-sidenav"
+  },
+  {
+    name: "o-user-info-configuration",
+    directives: [
+      {
+        name: "o-user-info-configuration-item"
+      }
+    ]
+  }
+]

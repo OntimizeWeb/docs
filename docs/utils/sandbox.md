@@ -62,22 +62,22 @@ Los highlight y endhighlight llevan un % en vez de un -
     </div>
     <div class="multicolumnright jstreeloader collapsed">
         <ul>
-            <li data-jstree='{"opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            <li data-jstree='{"disabled":true, "opened":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
             Mi proyecto
             <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
                 Carpeta 1
                 <ul>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>EjemploDeClaseCustom.java</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>EjemploDeClaseCustom.java</li>
                 </ul>
                 </li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
                 Carpeta 2
                 <ul>
                 <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>EjemploDeClase.java</li>
                 </ul>
                 </li>
-                <li data-jstree='{"icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ejemplodepom.xml</li>
+                <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>ejemplodepom.xml</li>
             </ul>
             </li>
         </ul>

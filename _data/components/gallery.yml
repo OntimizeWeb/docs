@@ -1,6 +1,10 @@
 directive : "o-gallery"
 extraComponents: "galleryComponent"
 
+apiTitle: "OGalleryComponent"
+
+title: "Gallery"
+
 attributes: [{
   name: "options",
   type: "GalleryOptions[]",

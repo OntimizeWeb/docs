@@ -11,7 +11,7 @@ nav_order: 9
 {% include base_path %}
 {% include toc %}
 
-The `o-daterange-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying start and end date values as a range from a calendar pop-up or by entering the value directly in an HTML input text box.
+The `o-daterange-input` component is based on **Angular Material** and  is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying start and end date values as a range from a calendar pop-up or by entering the value directly in an HTML input text box.
 .
 
 The date range input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
@@ -20,28 +20,44 @@ The date range input is automatically registered on its parent `o-form`, which p
 ![Daterange input component]({{ "/assets/images/components/inputs/o-daterange-input.png" | absolute_url }}){: .comp-example-img width='65%'}
 
 ```html
-<o-form editable-detail="no" show-header="no" layout-direction="row">
-   <o-daterange-input attr="daterange1" label="Date range" [data]="getValue()"> </o-daterange-input>
-   <o-daterange-input attr="daterange2" label="Date range" read-only="no"  required="yes" [data]="getValue()"></o-daterange-input>
-   <o-daterange-input attr="daterange3" label="Date range" enabled="no" [data]="getValue()"></o-daterange-input>
-</o-form>
+<o-form editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+      <label>Read only</label>
+      <o-daterange-input attr="daterange1" label="DateRange" required="yes" [data]="valueTimestamp">
+      </o-daterange-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label>Editable</label>
+      <o-daterange-input attr="daterange2" label="DateRange" read-only="no" required="yes" [data]="valueTimestamp"
+        format="LL" separator=" to " [touch-ui]="mode.checked">
+      </o-daterange-input>
+    </div>
+    <div fxLayout="column" layout-padding>
+      <label class="input-comp-title">Disabled</label>
+      <o-daterange-input attr="daterange3" label="DateRange" enabled="no" [data]="valueTimestamp">
+      </o-daterange-input>
+    </div>
+  </o-form>
 ```
 
-```
+
+```ts
 export class InputDateRangeComponent {
 
   public selected = {};
+  public valueTimestamp: { startDate: number; endDate: number; };
 
   constructor() {
 
-    this.selected = {
+     this.selected = {
       startDate: moment('2019-05-15T00:00Z'),
       endDate: moment('2019-05-20T00:00Z')
     };
-  }
 
-  getValue(){
-    return this.selected;
+    this.valueTimestamp = {
+      startDate: this.selected['startDate'].valueOf(),
+      endDate: this.selected['endDate'].valueOf()
+    }
   }
 }
 
@@ -51,36 +67,11 @@ export class InputDateRangeComponent {
 
 It is possible to disable the date range input by adding the `text-input-enabled` property  is set to “no”. By default, the value is true .
 
-## Changing the date range's behaviour <span class='menuitem-badge'>new<span>
-
-The `o-daterange-input` can render in two differents ways based on the `mode` property.
-
-| Mode | Description |
-|------|--------------|
-| *desktop* | Show **two** calendars to select date range |
-| *mobile* | Show **one** calendar to select date range |
-| *auto* | Show  **mode mobile** if the device is a mobile otherwise **mode desktop**.
-
-
-<h3>Mode mobile example</h3>
-![Date range mode ]({{ "/assets/images/components/inputs/o-daterange-mode-mobile.png" | absolute_url }}){: .comp-example-img}
-```html
-<div fxLayout="row" fxLayoutAlign="end center" class="selector-mode">
-  <mat-icon>desktop_mac</mat-icon>{{'MODE.DESKTOP' | oTranslate}}
-  <mat-slide-toggle #mode>
-    <mat-icon>smartphone</mat-icon> {{'MODE.MOBILE'| oTranslate}}
-  </mat-slide-toggle>
-</div>
-
-
-<o-daterange-input attr="daterange" label="DATERANGE" read-only="no" required="yes" [data]="getValue()"
-  clear-button="yes" format="LL" separator=" to " [mode]="mode.checked?'mobile':'desktop'">
-</o-daterange-input>
-```
 ## Touch UI mode
 
-The `o-daterange-input` normally opens as a popup under the input, however the component has a `touch-ui` property that can be set to `true` where the calendar opens in a large dialog.
+The `o-daterange-input` normally opens as a popup under the input, however the component has a `touch-ui` property that can be set to `true` in order to enable a more touch friendly UI where the calendar opens in a large dialog.
 
+![ Touch UI mode]({{ "/assets/images/components/inputs/o-daterange-touchui.png" | absolute_url }}){: .comp-example-img}
 
 ## Customizing the parse and display formats
 
@@ -91,7 +82,7 @@ The `o-daterange-input` supports date Moments formats setting, all you have to d
 ```html
 <div fxLayout="column" layout-padding>
   <o-daterange-input attr="daterange" label="Date range" read-only="no"
-    required="yes" [data]="getValue()" format="LL" separator=" to " text-input-enabled="no">
+    required="yes" [data]="valueTimestamp" format="LL" separator=" to " text-input-enabled="no">
   </o-daterange-input>
 </div>
 ```
@@ -99,17 +90,19 @@ The `o-daterange-input` supports date Moments formats setting, all you have to d
 export class InputDateRangeComponent {
 
   public selected = {};
+  public valueTimestamp: { startDate: number; endDate: number; };
 
   constructor() {
 
-    this.selected = {
+     this.selected = {
       startDate: moment('2019-05-15T00:00Z'),
       endDate: moment('2019-05-20T00:00Z')
     };
-  }
 
-  getValue(){
-    return this.selected;
+    this.valueTimestamp = {
+      startDate: this.selected['startDate'].valueOf(),
+      endDate: this.selected['endDate'].valueOf()
+    }
   }
 }
 ```
@@ -122,26 +115,8 @@ Specifying startKey and endKey would have different model.  For example, the mod
 
 ```html
 <o-daterange-input attr="daterange" label="Date range" read-only="no" startKey="start" endKey="end"
-  required="yes" [data]="getValue()" format="LL" separator=" to "  text-input-enabled="no">
+  required="yes" [data]="valueTimestamp" format="LL" separator=" to "  text-input-enabled="no">
 </o-daterange-input>
-
-```
-
-
-## Ranges predefined
-
-The `o-daterange-input` have available 7 predefined date ranges that you can select from. For displaying you must set `show-ranges="true"`.
-- Today
-- Yesterday
-- Last 7 days
-- Last 30 days
-- This month
-
-![Touch UI in date range]({{ "/assets/images/components/inputs/o-daterange-touchui.png" | absolute_url }}){: .comp-example-img}
-
-```html
-<o-daterange-input attr="daterange" label="Date range" read-only="no"  required="yes"
-[data]="getValue()" show-ranges="true" separator=" to " touch-ui="yes"></o-daterange-input>
 
 ```
 
@@ -151,16 +126,16 @@ The `o-daterange-input` shows automatically an error message when the `required`
 The `min` and `max` properties will disable all dates on the calendar popup before or after the respective values and prevent the user from advancing the calendar past the month or year (depending on current view) containing the min or max date.
 
 ```html
-<o-daterange-input attr="daterange" label="Date range" read-only="no"
-        required="yes" [data]="getValue()" min="15/05/2019" max="20/06/2019"
-        format="DD/MM/YYYY">
-</o-daterange-input>
+ <o-daterange-input attr="daterange4" label="Date range" read-only="no" required="yes"
+       format="YYYY/MM/DD" value-type="string" min="2019/05/05" max="2019/05/25" [data]="valueString">
+  </o-daterange-input>
 ```
 
-```
+```ts
 export class InputDateRangeComponent {
 
   public selected = {};
+  public valueTimestamp: { startDate: number; endDate: number; };
 
   constructor() {
 
@@ -168,17 +143,17 @@ export class InputDateRangeComponent {
       startDate: moment('2019-05-15T00:00Z'),
       endDate: moment('2019-05-20T00:00Z')
     };
-  }
 
-  getValue(){
-    return this.selected;
+    this.valueString = {
+      startDate: '2019/05/15',
+      endDate: '2019/05/20'
+    };
   }
 }
 ```
 
-![Validation min and max in date range]({{ "/assets/images/components/inputs/o-daterange-input-validation-minmax.png" | absolute_url }}){: .comp-example-img}
-
-
+![Validation min and max in date range]({{ "/assets/images/components/inputs/o-daterange-input-validation-minmax-1.png" | absolute_url }}){: .comp-example-img}
+![Validation min and max in date range]({{ "/assets/images/components/inputs/o-daterange-input-validation-minmax-2.png" | absolute_url }}){: .comp-example-img}
 
 
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/daterange){:target="_blank"}.

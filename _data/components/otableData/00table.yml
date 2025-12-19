@@ -5,7 +5,7 @@ directive: "o-table"
 inheritedAttributes: [{
   component: "OServiceBaseComponent",
   path: "components/service/service-base/api",
-  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys *", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys"]
+  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys *", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys", "configure-service-args"]
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
@@ -100,7 +100,7 @@ attributes: [{
   description: "Action for changing a cell to edition mode. The priority between edition-mode, selection-mode and detail-mode is 1->detail-mode, 2->edition-mode, 3->selection-mode."
 },{
   name: "selection-mode",
-  type: "none | simple | multiple",
+  type: "none | single | multiple",
   default: "multiple",
   required: "",
   description: "Row selection mode. The priority between edition-mode, selection-mode and detail-mode is 1->detail-mode, 2->edition-mode, 3->selection-mode."
@@ -139,7 +139,7 @@ attributes: [{
 },{
   name: "orderable"
 },{
-  name: "oenabled",
+  name: "enabled",
   type: "no | false | yes | true",
   default: "yes",
   required: "",
@@ -244,14 +244,13 @@ attributes: [{
   default: "no"
 }]
 
+inheritedOutputs: [{
+  component: "OServiceComponent",
+  path: "components/service/service/api",
+  outputs: [ 'onClick','onDoubleClick','onDataLoaded','onPaginatedDataLoaded','onSearch']
+}]
 
 outputs: [{
-  name: "onClick",
-  description: "Event triggered when a row is clicked"
-},{
-  name: "onDoubleClick",
-  description: "Event triggered when a row is double clicked"
-},{
   name: "onRowSelected",
   description: "Event triggered when a row is selected"
 },{
@@ -260,15 +259,6 @@ outputs: [{
 },{
   name: "onRowDeleted",
   description: "Event triggered when there some row deletion"
-},{
-  name: "onDataLoaded",
-  description: "Event triggered when the data is updated"
-},{
-  name: "onPaginatedDataLoaded",
-  description: "Event triggered when the paginated data is updated"
-},{
-  name: "onSearch",
-  description: "Event triggered when the quickfilter starts searching"
 }]
 
 methods: [{
@@ -563,3 +553,5 @@ methods: [{
   returns: "Expression",
   description: "Returns the complex expression from the column filters."
 }]
+
+extraComponents: "otableData"
