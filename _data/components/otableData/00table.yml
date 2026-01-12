@@ -137,7 +137,10 @@ attributes: [{
   required: "",
   description: "Indicates whether or not to show the column of checkboxes for selecting table rows in the table"
 },{
-  name: "orderable"
+  name: "orderable",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not all columns in the table can be sorted"
 },{
   name: "enabled",
   type: "no | false | yes | true",
@@ -151,17 +154,15 @@ attributes: [{
   required: "",
   description: "Indicates whether or not the table columns are resizables"
 },{
-  name: "keep-selected-items"
+  name: "keep-selected-items",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to keep a table row highlighted as selected"
 },{
   name: "export-service-type",
   type: "string",
-  description: "The service used by the table for exporting it's data, it must implement 'IExportService' interface. Default: 'OntimizeExportService'"
-},{
-  name: "visible-export-dialog-buttons",
-  type: "string",
-  default: "",
-  required: "",
-  description: "Visible buttons in export dialog, separated by ';'"
+  default: "OntimizeExportService",
+  description: "The service used by the table for exporting it's data, it must implement 'IExportService' interface"
 },{
   name: "show-filter-option",
   type: "no | false | yes | true",
