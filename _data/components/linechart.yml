@@ -3,45 +3,150 @@ chart: true
 
 apiTitle: "OChartComponent"
 
-inheritedAttributes: [{
-  component: "OChartComponent",
-  path: "addons/charts/overview/api",
-  attributes: ["chart-height", "chart-width", "type", "x-axis", "y-axis", "x-label", "y-label", "x-data-type", "y-data-type", "data", "chart-parameters"]
-}]
+inheritedAttributes:
+  [
+    {
+      component: "OChartComponent",
+      path: "addons/charts/overview/api",
+      attributes:
+        [
+          "chart-height",
+          "chart-width",
+          "type",
+          "x-axis",
+          "y-axis",
+          "x-label",
+          "y-label",
+          "x-data-type",
+          "y-data-type",
+          "data",
+          "chart-parameters",
+          "show-legend",
+          "legend-position",
+          "legend-title",
+          "show-grid-lines",
+          "color",
+          "show-tooltip",
+          "show-data-label",
+          "show-x-axis",
+          "show-y-axis",
+          "show-x-axis-label",
+          "show-y-axis-label",
+          "x-formatting",
+          "y-formatting",
+          "auto-scale",
+          "gradient",
+          "active-entries",
+          "custom-colors",
+        ],
+    },
+  ]
 
-attributes: [{
-  name: "showLegend",
-  description: "Whether to display the legend or not",
-  type: "boolean",
-  default: "true"
-},{
-  name: "legendPosition",
-  description: "Position of the legend (right, below)",
-  type: "string",
-  default: "top"
-},{
-  name: "color",
-  description: "Colors to use for the different data.",
-  type: "array"
-},{
-  name: "showXAxis",
-  description: "Show or not X Axis",
-  type: "boolean",
-  default: "true"
-},{
-  name: "showYAxis",
-  description: "Show or not Y Axis",
-  type: "boolean",
-  default: "true"
-},{
-  name: "autoScale",
-  description: "Set the minimum value of the y axis to the minimum value in the data",
-  type: "boolean",
-  default: "false"
-}]
-
-inheritedOutputs: [{
-  component: "ChartComponent",
-  path: "addons/charts/overview/api",
-  outputs: ["onSelect", "onActivate", "onDeactivate", "onDataLoaded"]
-}]
+attributes:
+  [
+    {
+      name: "scheme-type",
+      description: "Defines the color scale type used by the chart. Allowed values are 'ordinal' and 'linear'.",
+      type: "string",
+      default: "ordinal",
+    },
+    {
+      name: "range-fill-opacity",
+      description: "Opacity of the shaded area used to represent minimum and maximum range values.",
+      type: "number",
+      default: 0.15,
+    },
+    {
+      name: "round-domains",
+      description: "Rounds axis domains to align grid lines evenly.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "timeline",
+      description: "Displays a timeline control below the chart. Only available for linear or time scales.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "reference-lines",
+      description: "Defines reference lines to be displayed behind the chart. Each line must have the format { name, value }.",
+      type: "array",
+    },
+    {
+      name: "show-ref-lines",
+      description: "Controls whether reference lines are displayed on the chart.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "show-ref-labels",
+      description: "Controls whether reference line labels are displayed.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "x-scale-min",
+      description: "Defines the minimum value of the X axis when using linear or time scales.",
+      type: "any",
+    },
+    {
+      name: "x-scale-max",
+      description: "Defines the maximum value of the X axis when using linear or time scales.",
+      type: "any",
+    },
+    {
+      name: "y-scale-min",
+      description: "Defines the minimum value of the Y axis.",
+      type: "number",
+    },
+    {
+      name: "y-scale-max",
+      description: "Defines the maximum value of the Y axis.",
+      type: "number",
+    },
+    {
+      name: "trim-x-axis-ticks",
+      description: "Controls whether X axis tick labels are trimmed when exceeding the maximum length.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "trim-y-axis-ticks",
+      description: "Controls whether Y axis tick labels are trimmed when exceeding the maximum length.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "rotate-x-axis-ticks",
+      description: "Enables automatic rotation of X axis tick labels to prevent overlapping.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "max-x-axis-tick-length",
+      description: "Maximum length of X axis tick labels when trimming is enabled.",
+      type: "number",
+      default: 16,
+    },
+    {
+      name: "max-y-axis-tick-length",
+      description: "Maximum length of Y axis tick labels when trimming is enabled.",
+      type: "number",
+      default: 16,
+    },
+    {
+      name: "wrap-ticks",
+      description: "Allows axis tick labels to wrap into multiple lines based on available space.",
+      type: "boolean",
+      default: false,
+    },
+  ]
+inheritedOutputs:
+  [
+    {
+      component: "ChartComponent",
+      path: "addons/charts/overview/api",
+      outputs: ["onSelect", "onActivate", "onDeactivate", "onDataLoaded"],
+    },
+  ]

@@ -51,9 +51,8 @@ export class PieComponent{
 
   constructor() {
     this.chartParameters = new PieChartConfiguration();
-    this.chartParameters.cornerRadius = 20;
+    this.chartParameters.explodeSlices = true;
     this.chartParameters.legendPosition = "bottom";
-    this.chartParameters.labelType = "value";
   }
 }
 ```
