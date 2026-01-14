@@ -86,13 +86,25 @@ attributes: [{
   description: "Controls whether data labels are displayed directly on chart elements.",
   type: "boolean"
 },{
+  name: "show-x-axis",
+  description: "Controls whether the X axis is displayed.",
+  type: "boolean",
+  default: true
+},{
+  name: "show-y-axis",
+  description: "Controls whether the Y axis is displayed.",
+  type: "boolean",
+  default: true
+},{
   name: "show-x-axis-label",
   description: "Controls whether the X axis label is displayed.",
-  type: "boolean"
+  type: "boolean",
+  default: true
 },{
   name: "show-y-axis-label",
   description: "Controls whether the Y axis label is displayed.",
-  type: "boolean"
+  type: "boolean",
+  default: true
 },{
   name: "x-formatting",
   description: "Defines a formatting function or configuration for X axis values.",

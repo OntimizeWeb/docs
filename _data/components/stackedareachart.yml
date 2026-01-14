@@ -28,6 +28,8 @@ inheritedAttributes:
           "color",
           "show-tooltip",
           "show-data-label",
+          "show-x-axis",
+          "show-y-axis",
           "show-x-axis-label",
           "show-y-axis-label",
           "x-formatting",
