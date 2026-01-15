@@ -1,80 +1,97 @@
-directive : "o-chart"
+directive: "o-chart"
 chart: true
 
 apiTitle: "OChartComponent"
 
-inheritedAttributes: [{
-  component: "OChartComponent",
-  path: "addons/charts/overview/api",
-  attributes: ["chart-height", "chart-width", "type", "x-axis", "y-axis", "x-label", "y-label", "x-data-type", "y-data-type", "data", "chart-parameters"]
-}]
+inheritedAttributes:
+  [
+    {
+      component: "OChartComponent",
+      path: "addons/charts/overview/api",
+      attributes:
+        [
+          "chart-height",
+          "chart-width",
+          "type",
+          "x-axis",
+          "y-axis",
+          "x-label",
+          "y-label",
+          "x-data-type",
+          "y-data-type",
+          "data",
+          "chart-parameters",
+          "show-legend",
+          "legend-position",
+          "legend-title",
+          "show-grid-lines",
+          "color",
+          "show-tooltip",
+          "show-data-label",
+          "show-x-axis",
+          "show-y-axis",
+          "show-x-axis-label",
+          "show-y-axis-label",
+          "x-formatting",
+          "y-formatting",
+          "auto-scale",
+          "gradient",
+          "active-entries",
+          "custom-colors"
+        ],
+    },
+  ]
 
-attributes: [{
-  name: "showLegend",
-  description: "Whether to display the legend or not",
-  type: "boolean",
-  default: "true"
-},{
-  name: "legendPosition",
-  description: "Position of the legend (top, right, bottom)",
-  type: "string",
-  default: "top"
-},{
-  name: "duration",
-  description: "Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value.",
-  type: "number",
-  default: 500
-},{
-  name: "cornerRadius",
-  description: "Corner radius of the slices",
-  type: "number",
-  default: 0
-},{
-  name: "showLabels",
-  description: "Specifies if labels are displayed",
-  type: "boolean",
-  default: "true"
-},{
-  name: "labelType",
-  description: "Type of data shown in the label (key, value, percent)",
-  type: "string",
-  default: 0
-},{
-  name: "labelThreshold",
-  description: "Configure the minimum slice size for labels to show up",
-  type: "number",
-  default: 0.01
-},{
-  name: "labelSunbeamLayout",
-  description: "",
-  type: "boolean",
-  default: "true"
-},{
-  name: "labelsOutside",
-  description: "Whether pie chart labels should be outside the slices instead of inside them",
-  type: "boolean",
-  default: "false"
-},{
-  name: "color",
-  description: "Colors to use for the different data.",
-  type: "string[]"
-},{
-  name: "valueType",
-  description: "Formats value(s)",
-  type: "string"
-},{
-  name: "showTooltip",
-  description: "Enables or disabled the tooltip",
-  type: "boolean",
-  default: true
-},{
-  name: "colorData",
-  description: "List of colors for each value in the Y axis of the chart",
-  type: "OColorData[] = { value: string, color: string }"
-}]
+attributes:
+  [
+    {
+      name: "show-labels",
+      description: "Controls whether labels are displayed on chart slices.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "label-formatting",
+      description: "Defines a formatting function used to customize the text displayed in slice labels.",
+      type: "function",
+    },
+    {
+      name: "trim-labels",
+      description: "Controls whether slice labels are trimmed when they exceed the maximum label length.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "max-label-length",
+      description: "Maximum length of slice labels when label trimming is enabled.",
+      type: "number",
+      default: 10,
+    },
+    {
+      name: "explode-slices",
+      description: "Separates slices from the center to visually emphasize them.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "donut",
+      description: "Renders the pie chart as a donut chart.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "donut-ratio",
+      description: "Defines the inner radius ratio of the donut chart. Equivalent to arcWidth.",
+      type: "number",
+      default: 0,
+    },
+  ]
 
-inheritedOutputs: [{
-  component: "ChartComponent",
-  path: "addons/charts/overview/api",
-  outputs: ["onDoubleTap", "onPinch", "onPress", "onRotate", "onSwipe", "onTap"]
-}]
+inheritedOutputs:
+  [
+    {
+      component: "ChartComponent",
+      path: "addons/charts/overview/api",
+      outputs: ["onSelect", "onActivate", "onDeactivate", "onDataLoaded"],
+    },
+  ]

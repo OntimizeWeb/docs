@@ -49,8 +49,8 @@ export class StackedAreaComponent {
   constructor() {
       this.chartParameters = new StackedAreaChartConfiguration();
       this.chartParameters.showLegend = false;
-      this.chartParameters.interactive = false;
-      this.chartParameters.useInteractiveGuideline = false;
+      this.chartParameters.schemeType = 'linear';
+      this.chartParameters.gradient = true;
   }
 }
 ```

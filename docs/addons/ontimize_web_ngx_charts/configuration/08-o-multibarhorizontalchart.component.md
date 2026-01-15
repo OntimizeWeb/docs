@@ -44,12 +44,9 @@ import { StackedAreaChartConfiguration } from 'ontimize-web-ngx-charts';
 })
 export class MultiBarHorizontalComponent {
   chartParameters: MultiBarHorizontalChartConfiguration;
-
   constructor() {
       this.chartParameters = new MultiBarHorizontalChartConfiguration();
-      this.chartParameters.showLegend = false;
-      this.chartParameters.interactive = false;
-      this.chartParameters.useInteractiveGuideline = false;
+      this.chartParameters.barPadding=28;
   }
 }
 ```

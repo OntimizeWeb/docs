@@ -228,7 +228,7 @@ export const customProviders: any = [
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    ONTIMIZE_MODULES,
+    OntimizeWebModule.forRoot(CONFIG),
     OntimizeWebModule,
     AppRoutingModule,
     HttpClientModule,
@@ -422,7 +422,7 @@ export const customProviders: any = [
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    ONTIMIZE_MODULES,
+    OntimizeWebModule.forRoot(CONFIG),
     OntimizeWebModule,
     AppRoutingModule,
     HttpClientModule,
@@ -530,7 +530,7 @@ export const customProviders: any = [
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    ONTIMIZE_MODULES,
+    OntimizeWebModule.forRoot(CONFIG),
     OntimizeWebModule,
     AppRoutingModule,
     HttpClientModule,
@@ -660,7 +660,7 @@ export const customProviders: any = [
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    ONTIMIZE_MODULES,
+    OntimizeWebModule.forRoot(CONFIG),
     OntimizeWebModule,
     AppRoutingModule,
     HttpClientModule,
