@@ -378,7 +378,7 @@ The data is displayed in the table cells as simple text by default. **OntimizeWe
 
 ### Predefined renderers
 
-**OntimizeWeb** offers you a set of prebuilt table cell renderers to include in your table. This cell renderers are the following data types: *action*, *boolean*, *real*, *currency*, *date*, *integer*, *image*, *percentage* and *service*.
+**OntimizeWeb** offers you a set of prebuilt table cell renderers to include in your table. This cell renderers are the following data types: *action*, *boolean*, *real*, *currency*, *date*, *integer*, *image*, *percentage*, *service*, *chip* and *list*.
 
 For adding a cell renderer to the cells of a table column, you have to configure the attribute `type` in the desired table column with the value that indicates the cell render you want to use. You may need to configure additional parametres depending on the cell renderer configured. Check the examples in the following sections and the attributes for each cell renderer in the **API** section of this page.
 
@@ -387,7 +387,7 @@ You can see different predefined table cell renderers in the example below.
 ![Predefined table cell renderers]({{ "/assets/images/components/tabla/renderers_table.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-<o-table  attr="accounts" columns="PHOTO;NAME;ACCOUNT;BALANCE;STARTDATE;NUMCARDS;ENDDATE;INTERESRATE;CLOSED" visible-columns="PHOTO;NAME;STARTDATE;ACCOUNT;BALANCE;NUMCARDS;INTERESRATE;COMMISSION" title="ACCOUNTS" [static-data]="tableData" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+<o-table  attr="accounts" columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;ENDDATE;NUMCARDS;CARDS;BALANCE;INTERESRATE;CLOSED;COMMISSION" visible-columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;ENDDATE;NUMCARDS;CARDS;BALANCE;INTERESRATE;CLOSED;COMMISSION" title="ACCOUNTS" [static-data]="tableData" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
   <!--Date Renderer-->
   <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
   <!--Currency Renderer-->
@@ -398,6 +398,18 @@ You can see different predefined table cell renderers in the example below.
   <o-table-column attr="NUMCARDS" title="NUMCARDS" type="integer"></o-table-column>
   <!--Boolean Renderer-->
   <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string"></o-table-column>
+  <!--Translate Renderer-->
+  <o-table-column attr="NUMCARDS" title="CARDS">
+    <o-table-cell-renderer-translate [translate-params]="translateArgsFn"></o-table-cell-renderer-translate>
+  </o-table-column>
+   <!--Chip Renderer-->
+   <o-table-column attr="ACCOUNTTYP">
+      <o-table-cell-renderer-chip></o-table-cell-renderer-chip>
+    </o-table-column>
+    <!--List Renderer-->
+    <o-table-column attr="CARDS"  tooltip="yes">
+      <o-table-cell-renderer-list></o-table-cell-renderer-list>
+    </o-table-column>
 </o-table>
 ```
 
@@ -577,6 +589,46 @@ You can include the table cell renderer translate in your table column by config
 <o-table-column attr="CODE">
   <o-table-cell-renderer-translate></o-table-cell-renderer-translate>
 </o-table-column>
+```
+**Chip cell renderer**
+
+The **`chip` table cell renderer** allows displaying the content of a table cell as one or multiple visual chips, with support for icons, SVG icons, and automatic translation, set the column `type` to `chip`
+
+```html
+ <o-table-column attr="status" title="STATUS" type="chip"> </o-table-column>
+
+<!-- Equivalent code -->
+<o-table-column attr="status" title="STATUS">
+   <o-table-cell-renderer-chip></o-table-cell-renderer-chip>
+</o-table-column>
+```
+**List cell renderer**
+
+The **`list` table cell renderer** is used to display array values in a compact and user-friendly way inside a table cell.To use this renderer, set the column `type` to `list`
+
+* If the cell value is an array, only the **first element** is shown.
+* If the array contains more than one element, the number of remaining items is appended using the format `(+N)`.
+* A tooltip displays the **full list of values**, each one on a new line.
+
+This renderer is especially useful when table cells contain lists or multiple values and you want to avoid wide columns.
+
+** Display behavior **
+
+| Cell value        | Displayed text | Tooltip   |
+| ----------------- | -------------- | --------- |
+| `[]`              | *(empty)*      | *(empty)* |
+| `['A']`           | `A`            | `A`       |
+| `['A', 'B']`      | `A (+1)`       | `A\nB`    |
+| `['A', 'B', 'C']` | `A (+2)`       | `A\nB\nC` |
+| `'Single value'`  | `Single value` | *(empty)* |
+
+
+```html
+  <o-table-column  attr="items"   title="Items"  type="list"> </o-table-column>
+  <!-- Equivalent code -->
+  <o-table-column attr="status" title="STATUS">
+    <o-table-cell-renderer-list></o-table-cell-renderer-list>
+  </o-table-column>
 ```
 
 ### Custom renderers
