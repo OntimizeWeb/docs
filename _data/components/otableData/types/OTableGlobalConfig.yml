@@ -48,5 +48,39 @@ attributes: [{
   default : "'click'",
   required : "",
   description : "Indicates the row height"
-}]
+},{
+  name: "horizontalScroll" ,
+  type: "boolean",
+  default : "false",
+  required : "",
+  description : "Indicates whether horizontal scroll is enabled."
+},{
+  name: "selectionOnRowClick",
+  type: "boolean",
+  default : "false",
+  required : "",
+  description : "Indicates whether row selection is triggered when clicking on a row."
+},
+{
+  name: "showChartOnDemandOption",
+  type: "boolean",
+  default : "true",
+  required : "",
+  description : "Indicates whether to show or not the 'Cart on demand' option in the table menu."
+},
+{
+  name: "showReportOnDemandOption",
+  type: "boolean",
+  default : "true",
+  required : "",
+  description : "Indicates whether to show or not the 'Report on demand' option in the table menu."
+},
+{ name: "loading",
+  type: "{threshold: number, minVisibleRows: number}",
+  default : "{threshold:300 , minVisibleRows: 300}",
+  required : "",
+  description : "Configuration object for loading strategy."
+}
+
+]
 
