@@ -387,7 +387,10 @@ You can see different predefined table cell renderers in the example below.
 ![Predefined table cell renderers]({{ "/assets/images/components/tabla/renderers_table.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-<o-table  attr="accounts" columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;ENDDATE;NUMCARDS;CARDS;BALANCE;INTERESRATE;CLOSED;COMMISSION" visible-columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;ENDDATE;NUMCARDS;CARDS;BALANCE;INTERESRATE;CLOSED;COMMISSION" title="ACCOUNTS" [static-data]="tableData" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
+<o-table  attr="accounts"
+    columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;HAS_CARDS;CARDS;BALANCE;INTERESRATE;CLOSED;COMMISSION"
+    visible-columns="PHOTO;NAME;ACCOUNT;ACCOUNTTYP;STARTDATE;HAS_CARDS;CARDS;BALANCE;INTERESRATE;COMMISSION"
+    title="ACCOUNTS" [static-data]="tableData" sort-columns="ACCOUNT:DESC" query-on-init="false" quick-filter="yes" insert-button="no" delete-button="no" refresh-button="no" pagination-controls="no" export-button="no">
   <!--Date Renderer-->
   <o-table-column attr="STARTDATE" title="STARTDATE" type="date"> </o-table-column>
   <!--Currency Renderer-->
@@ -399,18 +402,27 @@ You can see different predefined table cell renderers in the example below.
   <!--Boolean Renderer-->
   <o-table-column attr="COMMISSION" title="COMMISSION" type="boolean" render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string"></o-table-column>
   <!--Translate Renderer-->
-  <o-table-column attr="NUMCARDS" title="CARDS">
+  <o-table-column attr="HAS_CARDS" title="CARDS">
     <o-table-cell-renderer-translate [translate-params]="translateArgsFn"></o-table-cell-renderer-translate>
   </o-table-column>
-   <!--Chip Renderer-->
-   <o-table-column attr="ACCOUNTTYP">
-      <o-table-cell-renderer-chip></o-table-cell-renderer-chip>
-    </o-table-column>
-    <!--List Renderer-->
-    <o-table-column attr="CARDS"  tooltip="yes">
-      <o-table-cell-renderer-list></o-table-cell-renderer-list>
-    </o-table-column>
+  <!--Chip Renderer-->
+  <o-table-column attr="ACCOUNTTYP">
+    <o-table-cell-renderer-chip></o-table-cell-renderer-chip>
+  </o-table-column>
+  <!--List Renderer-->
+  <o-table-column attr="CARDS"  tooltip="yes">
+    <o-table-cell-renderer-list></o-table-cell-renderer-list>
+  </o-table-column>
 </o-table>
+```
+
+```scss
+.o-table-cell-renderer-chip-savings_account{
+  background-color: #E3ECF4FF;
+}
+.o-table-cell-renderer-chip-personal_account {
+  background-color: #D4C2E9BF;
+}
 ```
 
 You can see this live example in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/table/renderer){:target="_blank"}.
@@ -612,7 +624,7 @@ The **`list` table cell renderer** is used to display array values in a compact 
 
 This renderer is especially useful when table cells contain lists or multiple values and you want to avoid wide columns.
 
-** Display behavior **
+**Display behavior**
 
 | Cell value        | Displayed text | Tooltip   |
 | ----------------- | -------------- | --------- |
