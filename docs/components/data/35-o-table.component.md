@@ -994,7 +994,7 @@ Often when displaying numbers in a table, users want to show summary results of 
     quick-filter="yes"   filter-case-sensitive="true" >
     <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" thousand-separator=","></o-table-column>
     <o-table-column attr="INTERESRATE" title="INTERESRATE" type="real" ></o-table-column>
-    <o-table-column-aggregate attr="BALANCE" title="sum">
+    <o-table-column-aggregate attr="BALANCE" title="sum"></o-table-column-aggregate>
     <o-table-column-aggregate attr="INTERESRATE" [aggregate-function]="custom"></o-table-column-aggregate>
 </o-table>
 ```
@@ -1586,11 +1586,11 @@ If the selector `o-table-toolbar` is used together with `position='start'` the c
     <!-- Custom definition button -->
     <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
     <!-- Custom content toolbar in position start -->
-    <o-combo o-grid-toolbar position="start" label="Sort" width="100px"...></o-combo>
+    <o-combo o-table-toolbar position="start" label="Sort" width="100px"...></o-combo>
     <!-- Custom content toolbar in position end -->
-    <o-slide-toggle o-grid-toolbar position="end"....></o-slide-toggle>
+    <o-slide-toggle o-table-toolbar position="end"....></o-slide-toggle>
     ...
-  </o-grid>
+  </o-table>
 ```
 
 ![Add custom content in toolbar in position start]({{ "/assets/images/components/tabla/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
