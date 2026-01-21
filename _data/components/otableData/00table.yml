@@ -243,6 +243,12 @@ attributes: [{
   description: "Visible buttons in export dialog, separated by ';'. Default/no configured: show all. Empty value: hide all",
   required: "",
   default: "no"
+},{
+  name: "selection-on-row-click",
+  type: "yes|no|true|false",
+  description: "Indicates whether row selection is triggered when clicking on a row",
+  required: "",
+  default: "no"
 }]
 
 inheritedOutputs: [{
