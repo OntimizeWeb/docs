@@ -248,7 +248,7 @@ attributes: [{
   type: "yes|no|true|false",
   description: "Indicates whether row selection is triggered when clicking on a row",
   required: "",
-  default: "no"
+  default: "yes"
 }]
 
 inheritedOutputs: [{

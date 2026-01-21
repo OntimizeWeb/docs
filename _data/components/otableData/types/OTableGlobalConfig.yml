@@ -57,7 +57,7 @@ attributes: [{
 },{
   name: "selectionOnRowClick",
   type: "boolean",
-  default : "false",
+  default : "",
   required : "",
   description : "Indicates whether row selection is triggered when clicking on a row."
 },
@@ -80,7 +80,5 @@ attributes: [{
   default : "{threshold:300 , minVisibleRows: 300}",
   required : "",
   description : "Configuration object for loading strategy."
-}
-
-]
+}]
 
