@@ -260,6 +260,15 @@ outputs: [{
 },{
   name: "onRowDeleted",
   description: "Event triggered when there some row deletion"
+},{
+  name: "onSearch",
+  description: "Event triggered when quick filter changes"
+},{
+  name: "onSortChange",
+  description: "Emitted when sorting changes"
+},{
+  name: "onFilterByColumnChange ",
+  description: "Emitted when column filters change"
 }]
 
 methods: [{
@@ -553,6 +562,11 @@ methods: [{
   type: "method",
   returns: "Expression",
   description: "Returns the complex expression from the column filters."
+},{
+  name: "updateStateStorage",
+  type: "method",
+  description: "Updates the state storage with the current table configuration  when enabled."
+
 }]
 
 extraComponents: "otableData"

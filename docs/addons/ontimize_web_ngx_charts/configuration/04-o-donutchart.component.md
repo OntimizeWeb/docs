@@ -55,7 +55,6 @@ export class DonutComponent {
 
     this.chartParameters = new DonutChartConfiguration();
     this.chartParameters.showLabels = false;
-    this.chartParameters.cornerRadius = 15;
     this.chartParameters.donutRatio = 0.5;
   }
 }
