@@ -1,0 +1,135 @@
+directive: "o-data-view"
+version: "15.8.1"
+
+apiTitle: "ODataViewComponent"
+
+attributes: [{
+  name: "default-view",
+  type: "'table' | 'grid'",
+  default: "table",
+  required: "",
+  description: "Default view rendered by the component."
+},{
+  name: "toggle-button",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the built-in view toggle. By default it is enabled (`yes`), which is the standard way `o-data-view` provides view switching."
+},{
+  name: "toggle-on-toolbar",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to render the view toggle inside the toolbar."
+},{
+  name: "toggle-floatable",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not the view toggle is rendered as a floating control."
+},{
+  name: "table-config",
+  type: "TableConfig",
+  default: "",
+  required: "",
+  description: "Table view configuration object. Values defined here have precedence over the global table configuration injection token and the component defaults."
+},{
+  name: "grid-config",
+  type: "GridConfig",
+  default: "",
+  required: "",
+  description: "Grid view configuration object."
+},{
+  name: "insert-method",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Insert method name used by the underlying service."
+},{
+  name: "update-method",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Update method name used by the underlying service."
+},{
+  name: "delete-method",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Delete method name used by the underlying service."
+},{
+  name: "refresh-button"
+},{
+  name: "insert-button"
+},{
+  name: "show-buttons-text"
+},{
+  name: "fixed-header"
+},{
+  name: "insert-form-route"
+},{
+  name: "recursive-edit"
+},{
+  name: "recursive-insert"
+},{
+  name: "filter-case-sensitive"
+}]
+
+objects: [{
+  name: "TableConfig",
+  properties: [
+    "visible",
+    "detailButtonInRow",
+    "detailButtonInRowIcon",
+    "editButtonInRow",
+    "editButtonInRowIcon",
+    "editFormRoute",
+    "rowHeight",
+    "autoAdjust",
+    "autoAlignTitles",
+    "collapseGroupedColumns",
+    "columnsVisibilityButton",
+    "defaultVisibleColumns",
+    "deleteButton",
+    "disableSelectionFunction",
+    "detailMode",
+    "editionMode",
+    "enabled",
+    "exportButton",
+    "exportServiceType",
+    "filterColumnActiveByDefault",
+    "groupable",
+    "groupedColumns",
+    "horizontalScroll",
+    "keepSelectedItems",
+    "multipleSort",
+    "nonHidableColumns",
+    "pageSizeOptions",
+    "orderable",
+    "quickFilterFunction",
+    "resizable",
+    "rowClass",
+    "selectAllCheckbox",
+    "selectAllCheckboxVisible",
+    "selectionMode",
+    "showConfigurationOption",
+    "showExpandableIconFunction",
+    "showFilterOption",
+    "showPaginatorFirstLastButtons",
+    "showReportOnDemandOption",
+    "showChartsOnDemandOption",
+    "showResetWidthOption",
+    "sortColumns",
+    "virtualScroll",
+    "visibleColumns",
+    "visibleExportDialogButtons",
+    "selectionOnRowClick"
+  ]
+}]
+
+extraComponents: "dataViewData"
+
+directives: [
+  { name: "oDataViewTableColumns" },
+  { name: "oDataViewGridItem" }
+]
