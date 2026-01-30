@@ -352,6 +352,9 @@ sections:
       title: "Migration guides"
       description: "Download page of our version migration guides"
   "data":
+    - url: "/components/data/data-view/overview"
+      title: "Data View"
+      imagepath: "/assets/images/menus/data/data-view"
     - url: "/components/data/filterbuilder/overview"
       title: "Filter builder"
       imagepath: "/assets/images/menus/data/filterbuilder"
