@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#1f1f1f"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
+<svg width="112" height="96" viewBox="0 0 112 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1107_1342)">
+<path d="M112 0H0V96H112V0Z" fill="white"/>
+<rect x="20" y="28.3636" width="72" height="39.2727" rx="1.63636" fill="#EDEDED"/>
+<rect x="20.5753" y="28.9389" width="70.8494" height="38.1222" rx="1.06108" stroke="black" stroke-opacity="0.12" stroke-width="1.15057"/>
+<path d="M80.8011 55.3466V51H76.4545V55.3466H80.8011ZM74.2557 48.8011H83V57.5454H74.2557V48.8011ZM80.8011 44.4545V40.1079H76.4545V44.4545H80.8011ZM74.2557 37.9091H83V46.6534H74.2557V37.9091ZM69.9091 55.3466V51H65.5625V55.3466H69.9091ZM63.3636 48.8011H72.108V57.5454H63.3636V48.8011ZM69.9091 44.4545V40.1079H65.5625V44.4545H69.9091ZM63.3636 37.9091H72.108V46.6534H63.3636V37.9091Z" fill="#666666"/>
+<rect x="22.4546" y="30.8182" width="32.7273" height="34.3636" rx="1.63636" fill="white"/>
+<path d="M33.3466 42.6307H48.6364V44.8295H33.3466V42.6307ZM33.3466 53.5739V51.375H48.6364V53.5739H33.3466ZM33.3466 49.1761V47.0284H48.6364V49.1761H33.3466ZM29 44.8295V42.6307H31.1989V44.8295H29ZM29 53.5739V51.375H31.1989V53.5739H29ZM29 49.1761V47.0284H31.1989V49.1761H29Z" fill="#666666"/>
+</g>
+<rect x="0.5" y="0.5" width="111" height="95" stroke="black" stroke-opacity="0.12"/>
+<defs>
+<clipPath id="clip0_1107_1342">
+<rect width="112" height="96" fill="white"/>
+</clipPath>
+</defs>
+</svg>
