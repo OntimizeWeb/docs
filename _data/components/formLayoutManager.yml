@@ -79,6 +79,18 @@ attributes: [{
   required: "",
   description: "<b><i>Deprecated</i></b>. The dialog maximum height"
 },{
+  name: "sidenav-position",
+  type: "start | end",
+  default: "end",
+  required: "",
+  description: "Position of the sidenav when the layout manager is in sidenav mode"
+},{
+  name: "sidenav-width",
+  type: "string",
+  default: "50%",
+  required: "",
+  description: "Width of the sidenav when the layout manager is in sidenav mode"
+},{
   name: "store-state"
 }]
 
@@ -102,5 +114,8 @@ directives: [
   },
   {
     name: "o-form-layout-tabgroup-options"
+  },
+  {
+    name: "o-form-layout-sidenav-options"
   }
 ]

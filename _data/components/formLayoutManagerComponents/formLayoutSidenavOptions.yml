@@ -1,0 +1,34 @@
+directive: "o-form-layout-sidenav-options"
+title: "Sidenav mode"
+
+attributes: [{
+  name: "width",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Width of the sidenav panel"
+},{
+  name: "position",
+  type: "start | end",
+  default: "end",
+  required: "",
+  description: "Position of the sidenav"
+},{
+  name: "disable-close",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Whether the user can close the sidenav manually"
+},{
+  name: "label-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Form data columns used in the detail form title. Separated by ';'"
+},{
+  name: "separator",
+  type: "string",
+  default: "' ' (blank space)",
+  required: "",
+  description: "Separator between multiple label columns values"
+}]
