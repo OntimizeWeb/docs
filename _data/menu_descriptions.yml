@@ -427,7 +427,7 @@ sections:
       imagepath: "/assets/images/menus/services/ontimize"
   "extra-components":
     - url: "/extra-components/installation"
-      title: "Instalation"
+      title: "Installation"
       description: "How to install the ontimize-web-ngx-extra-components addon"
     - url: "/extra-components/data-view/overview"
       title: "Data View"
