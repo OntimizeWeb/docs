@@ -374,6 +374,9 @@ sections:
     - url: "/components/media/image/overview"
       title: "Image"
       imagepath: "/assets/images/menus/media/image"
+    - url: "/components/media/image-editor/overview"
+      title: "Image Editor"
+      imagepath: "/assets/images/menus/media/image-editor"
   "layout":
     - url: "/components/layout/applayout/overview"
       title: "App layout"

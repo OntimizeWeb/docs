@@ -22,7 +22,7 @@ The `o-image-editor` component wraps `ngx-image-cropper` and provides a simplifi
 
 ## Installation
 
-Install the extra components package (this component is not in `ontimize-web-ngx` core):
+The `o-image-editor` component is distributed as part of the **Ontimize Web Extra Components** library (`ontimize-web-ngx-extra-components`).
 
 ```bash
 npm i ontimize-web-ngx-extra-components
