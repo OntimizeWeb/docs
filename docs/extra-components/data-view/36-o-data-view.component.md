@@ -1,10 +1,9 @@
 ---
 layout: o-component
-permalink: /components/data/data-view/overview
+permalink: /extra-components/data-view/overview
 title: "Data view"
 comp: data-view
-parent: Data
-grand_parent: Components
+parent: Extra-components
 nav_order: 1
 ---
 
@@ -18,14 +17,6 @@ The `o-data-view` component is used to display the same dataset using **two diff
 - **Grid view**, based on `o-grid`
 
 The component provides a single entry point for data binding and common UI configuration (title, toolbar controls, quick filter, pagination, etc.), while allowing you to define custom templates for both the table columns and the grid items.
-
-## Installation
-
-The `o-data-view` component is distributed as part of the **Ontimize Web Extra Components** library (`ontimize-web-ngx-extra-components`).
-
-```bash
-npm install ontimize-web-ngx-extra-components
-```
 
 ## Data binding
 

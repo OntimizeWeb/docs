@@ -352,9 +352,6 @@ sections:
       title: "Migration guides"
       description: "Download page of our version migration guides"
   "data":
-    - url: "/components/data/data-view/overview"
-      title: "Data View"
-      imagepath: "/assets/images/menus/data/data-view"
     - url: "/components/data/filterbuilder/overview"
       title: "Filter builder"
       imagepath: "/assets/images/menus/data/filterbuilder"
@@ -428,4 +425,10 @@ sections:
     - url: "/guide/service/ontimize"
       title: "Ontimize"
       imagepath: "/assets/images/menus/services/ontimize"
-
+  "extra-components":
+    - url: "/extra-components/installation"
+      title: "Instalation"
+      description: "How to install the ontimize-web-ngx-extra-components addon"
+    - url: "/extra-components/data-view/overview"
+      title: "Data View"
+      description: "Display the same dataset using two different visualizations"

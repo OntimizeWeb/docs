@@ -1,5 +1,5 @@
 directive: "o-data-view"
-version: "15.9.0"
+version: "15.0.0"
 
 apiTitle: "ODataViewComponent"
 inheritedAttributes:
