@@ -25,7 +25,7 @@ This documentation is divided into three sections:
 | [Getting started]({{ base_path }}/example-overview/)  | First contact with an Ontimize Web app. Run sample app code.    |
 | [Guide]({{ base_path }}/guide/appstructure/)  | More extensive documentation covering Ontimize Web in depth.    |
 | [Components]({{ base_path }}/components/) | Access into the examples and documentation of all our components.   |
-| [Customization]({{ base_path }}/customize/theming/) | How to customize the application.   |
+| [Extra-components]({{ base_path }}/extra-components/) | Access into the examples and documentation of all components available in the Ontimize Web Extra Components repository.   |
 | [Addons]({{ base_path }}/addons/) | Advanced components to cover your specific needs.   |
 
 ---

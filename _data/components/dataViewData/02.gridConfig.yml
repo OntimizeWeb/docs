@@ -1,0 +1,28 @@
+directive: "grid-config"
+title: "Grid configuration"
+
+inheritedAttributes:
+  [
+    {
+      component: "OGridComponent",
+      path: "components/data/grid/api",
+      attributes:
+        [
+          "enabled",
+          "visible",
+          "cols",
+          "gridItemHeight",
+          "gutterSize",
+          "insertButtonFloatable",
+          "insertButtonPosition",
+          "pageSizeOptions",
+          "orderable",
+          "quickFilterColumns",
+          "showFooter",
+          "showPageSize",
+          "sortColumn",
+          "sortableColumns",
+          "detailMode",
+        ],
+    },
+  ]
