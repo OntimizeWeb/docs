@@ -14,12 +14,6 @@ attributes: [{
   required: "",
   description: "Position of the sidenav"
 },{
-  name: "disable-close",
-  type: "no | false | yes | true",
-  default: "no",
-  required: "",
-  description: "Whether the user can close the sidenav manually"
-},{
   name: "label-columns",
   type: "string",
   default: "",

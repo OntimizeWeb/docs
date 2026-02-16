@@ -87,7 +87,7 @@ attributes: [{
 },{
   name: "sidenav-width",
   type: "string",
-  default: "50%",
+  default: "60%",
   required: "",
   description: "Width of the sidenav when the layout manager is in sidenav mode"
 },{
