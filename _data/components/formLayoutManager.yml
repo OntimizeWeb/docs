@@ -8,7 +8,7 @@ attributes: [{
   name: "attr"
 },{
   name: "mode",
-  type: "tab | dialog | split-pane",
+  type: "tab | dialog | split-pane | sidenav",
   default: "dialog",
   required: "",
   description: "Form layout manager mode"

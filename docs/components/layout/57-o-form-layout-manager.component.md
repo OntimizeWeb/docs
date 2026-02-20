@@ -132,3 +132,98 @@ The different available modes options can be setted in two ways: using the mode 
 
   </o-form-layout-manager>
 ```
+# Sidenav mode
+
+Select the *sidenav* mode to display the detail form inside a side navigation panel that slides over the collection component.
+
+This mode is especially useful when you want a modern master–detail interaction without leaving the current view. The detail component is rendered dynamically inside a `mat-sidenav`, allowing a smooth and contextual user experience.
+
+You can select this mode setting the value **sidenav** to the `mode` input. You can see a working example of this mode in the [OntimizeWeb Playground](https://try.imatia.com/ontimizeweb/v15/playground/main/layout-manager/sidenav){:target="_blank"}.
+
+![Form layout manager in *sidenav* mode]({{ base_path }}/assets/images/layouts/form-layout-manager/formLayoutManagerSIDENAV.png){: .align-center}
+
+---
+
+## Basic example
+
+```html
+<o-form-layout-manager mode="sidenav"
+  attr="o-form-layout-customers"
+  title="CUSTOMERS"
+  label-columns="SURNAME;NAME"
+  separator=",">
+
+  <o-table attr="customers"
+           service="customers"
+           entity="customer"
+           keys="CUSTOMERID"
+           columns="CUSTOMERID;NAME;SURNAME"
+           visible-columns="NAME;SURNAME">
+  </o-table>
+
+</o-form-layout-manager>
+```
+## Behavior
+
+In *sidenav* mode:
+
+- The detail component is rendered dynamically inside a `mat-sidenav`.
+- The panel is displayed in **over** mode (it slides over the content).
+- Only one detail can be opened at a time.
+- The main collection remains visible in the background.
+- The label of the sidenav is automatically generated using the `label-columns` and `separator` inputs.
+- Navigation state is managed internally by the `o-form-layout-manager`.
+
+---
+
+## Options
+
+It is possible to configure sidenav mode options with the `o-form-layout-sidenav-options` component.
+
+### Available attributes
+
+| Attribute        | Type               | Default | Description |
+|-----------------|--------------------|----------|-------------|
+| `width`         | `string`           | `60%`    | Width of the sidenav panel (CSS value, e.g. `400px`, `50%`). |
+| `position`      | `'start' \| 'end'`  | `end`    | Side where the sidenav appears. |
+| `label-columns` | `string`           | —        | Fields used to generate the detail label. |
+| `separator`     | `string`           | —        | Separator used between label columns. |
+
+---
+
+## Example with options component
+
+```html
+<o-form-layout-manager mode="sidenav"
+  attr="o-form-layout-customers-home">
+
+  <o-form-layout-sidenav-options
+    width="500px"
+    position="end"
+    label-columns="SURNAME;NAME"
+    separator=",">
+  </o-form-layout-sidenav-options>
+
+  <o-table attr="customers"
+           service="customers"
+           entity="customer"
+           keys="CUSTOMERID"
+           columns="CUSTOMERID;NAME;SURNAME"
+           visible-columns="NAME;SURNAME">
+  </o-table>
+
+</o-form-layout-manager>
+```
+## Defining options directly in o-form-layout-manager
+
+Sidenav options can also be defined directly in the manager component:
+```html
+<o-form-layout-manager mode="sidenav"
+  width="500px"
+  position="start"
+  label-columns="SURNAME;NAME"
+  separator=","
+  attr="o-form-layout-customers-home">
+
+</o-form-layout-manager>
+```
