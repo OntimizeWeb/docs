@@ -132,7 +132,7 @@ The different available modes options can be setted in two ways: using the mode 
 
   </o-form-layout-manager>
 ```
-# Sidenav mode
+### Sidenav mode
 
 Select the *sidenav* mode to display the detail form inside a side navigation panel that slides over the collection component.
 
@@ -144,7 +144,7 @@ You can select this mode setting the value **sidenav** to the `mode` input. You 
 
 ---
 
-## Basic example
+#### Basic example
 
 ```html
 <o-form-layout-manager mode="sidenav"
@@ -163,7 +163,7 @@ You can select this mode setting the value **sidenav** to the `mode` input. You 
 
 </o-form-layout-manager>
 ```
-## Behavior
+#### Behavior
 
 In *sidenav* mode:
 
@@ -176,11 +176,11 @@ In *sidenav* mode:
 
 ---
 
-## Options
+#### Options
 
 It is possible to configure sidenav mode options with the `o-form-layout-sidenav-options` component.
 
-### Available attributes
+#### Available attributes
 
 | Attribute        | Type               | Default | Description |
 |-----------------|--------------------|----------|-------------|
@@ -191,7 +191,7 @@ It is possible to configure sidenav mode options with the `o-form-layout-sidenav
 
 ---
 
-## Example with options component
+#### Example with options component
 
 ```html
 <o-form-layout-manager mode="sidenav"
@@ -214,7 +214,7 @@ It is possible to configure sidenav mode options with the `o-form-layout-sidenav
 
 </o-form-layout-manager>
 ```
-## Defining options directly in o-form-layout-manager
+#### Defining options directly in o-form-layout-manager
 
 Sidenav options can also be defined directly in the manager component:
 ```html
