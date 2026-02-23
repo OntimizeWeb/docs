@@ -116,7 +116,6 @@ You can select this mode setting the value **sidenav** to the `mode` input. You 
 
 ![Form layout manager in *sidenav* mode]({{ base_path }}/assets/images/layouts/form-layout-manager/formLayoutManagerSIDENAV.png){: .align-center; width="800px"}
 
----
 
 #### Options
 It is possible to configure sidenav mode options with the `o-form-layout-sidenav-options` component. This attributes are explained on the **API** section of this page.
