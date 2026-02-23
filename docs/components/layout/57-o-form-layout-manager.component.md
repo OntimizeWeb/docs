@@ -114,7 +114,7 @@ This mode is especially useful when you want a modern master–detail interactio
 
 You can select this mode setting the value **sidenav** to the `mode` input. You can see a working example of this mode in the [OntimizeWeb Playground](https://try.imatia.com/ontimizeweb/v15/playground/main/layout-manager/sidenav){:target="_blank"}.
 
-![Form layout manager in *sidenav* mode]({{ base_path }}/assets/images/layouts/form-layout-manager/formLayoutManagerSIDENAV.png){: .align-center}
+![Form layout manager in *sidenav* mode]({{ base_path }}/assets/images/layouts/form-layout-manager/formLayoutManagerSIDENAV.png){: .align-center; width="800px"}
 
 ---
 
@@ -158,4 +158,4 @@ The different available modes options can be setted in two ways: using the mode 
     ...
 
   </o-form-layout-manager>
-``
+```
