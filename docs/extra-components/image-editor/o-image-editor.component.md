@@ -1,5 +1,5 @@
 ---
-layout: o-component
+layout: default
 permalink: /extra-components/image-editor/overview
 title: "Image Editor"
 comp: image-editor
