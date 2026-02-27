@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: o-component
 permalink: /extra-components/image-editor/overview
 title: "Image Editor"
 comp: image-editor
@@ -16,13 +16,6 @@ The `o-image-editor` component wraps `ngx-image-cropper` and provides a simplifi
 - Dynamic **aspect ratio** changes and orientation.
 - **Zoom** slider up to a configurable max.
 - Emitting the final cropped image on apply.
-
-## Third-party dependency
-
-This component relies on:
-
-- **Library:** [ngx-image-cropper](https://github.com/Mawi137/ngx-image-cropper)
-- **Version used:** `7.2.1`
 
 ## Supported input formats (upload)
 

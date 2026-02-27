@@ -1,3 +1,39 @@
 directive: "o-image-editor"
+version: "15.0.0"
 
 apiTitle: "OImageEditorComponent"
+
+attributes:
+  [
+    {
+      name: "image",
+      type: "base64",
+      default: "",
+      required: "",
+      description: "Initial image to load into the editor (e.g., 'data:image/png;base64,...'). If empty, the component shows the upload/drop zone.",
+    },
+    {
+      name: "actions-position",
+      type: "'top' | 'bottom'",
+      default: "top",
+      required: "",
+      description: "Controls where the save and reset buttons are rendered inside the component. Use 'bottom' when the editor is used inside a modal/dialog to keep actions always reachable.",
+    },
+    {
+      name: "save-target",
+      type: "'download' | 'base64'",
+      default: "download",
+      required: "",
+      description: "Defines the behavior of the Save action. 'download' triggers a client-side download of the resulting image; 'base64' returns the resulting image as a base64 string through the component output event.",
+    },
+  ]
+
+outputs: [
+  {
+    name: "oSaveBase64",
+    description:
+      "Event triggered when the user clicks Save and the resulting edited image is generated. Emits the final image as a data URL string (e.g., 'data:image/png;base64,...')."
+  }
+]
+
+extraComponents: "imageEditorData"
