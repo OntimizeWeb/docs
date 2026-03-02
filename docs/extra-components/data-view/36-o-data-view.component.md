@@ -4,7 +4,7 @@ permalink: /extra-components/data-view/overview
 title: "Data view"
 comp: data-view
 parent: Extra-components
-nav_order: 1
+nav_order: 2
 ---
 
 {% include base_path %}
