@@ -137,12 +137,18 @@
     {% endfor %}
     {% assign filenameArray = filenameArray | sort %}
     {% for filename in filenameArray %}
-      {% assign dataFile = site.data.components[extraComp][filename] %}
-      {% capture dataFileCapture %}
-        {% include o-component-single-api.md component=dataFile extra=true %}
-      {% endcapture %}
+      {% if filename != 'types' %}
+        {% assign dataFile = site.data.components[extraComp][filename] %}
 
-      {{ dataFileCapture | replace: '    ', '' }}
+        {%- comment -%} render only "file-like" entries {%- endcomment -%}
+        {% if dataFile.directive or dataFile.class or dataFile.apiTitle or dataFile.title %}
+          {% capture dataFileCapture %}
+            {% include o-component-single-api.md component=dataFile extra=true %}
+          {% endcapture %}
+
+          {{ dataFileCapture | replace: '    ', '' }}
+        {% endif %}
+      {% endif %}
     {% endfor %}
   {% endif %}
 

@@ -35,8 +35,8 @@ Always pass a static reference instead (e.g. `[static-data]="data"`).
 
 The o-data-view component provides two configuration inputs to group view-specific options:
 
-* `table-config`: table-specific configuration (selection, grouping, export, scrolling, edit/detail behavior, etc.). See all of its properties [here]({{base_path}}/components/data/data-view/api#Table%20configuration)
-* `grid-config`: grid-specific configuration (layout, footer, orderable, quick filter columns, etc.). See all of its properties [here]({{base_path}}/components/data/data-view/api#Grid%20configuration)
+* `table-config`: table-specific configuration (selection, grouping, export, scrolling, edit/detail behavior, etc.). See all of its properties [here]({{base_path}}/extra-components/data-view/api#TableConfig)
+* `grid-config`: grid-specific configuration (layout, footer, orderable, quick filter columns, etc.). See all of its properties [here]({{base_path}}/extra-components/data-view/api#GridConfig)
 
 This allows you to keep the main component declaration clean and move advanced settings into configuration objects.
 
