@@ -18,6 +18,8 @@ The `o-data-view` component is used to display the same dataset using **two diff
 
 The component provides a single entry point for data binding and common UI configuration (title, toolbar controls, quick filter, pagination, etc.), while allowing you to define custom templates for both the table columns and the grid items.
 
+![Data view component]({{ "/assets/images/extra-components/data-view/data-view-example.gif" | absolute_url }}){: .comp-example-img}
+
 ## Data binding
 
 The `o-data-view` component supports data binding and you can command the component to display data either from *local* or *remote* data storage.
