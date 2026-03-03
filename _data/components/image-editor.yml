@@ -30,7 +30,7 @@ attributes:
 
 outputs: [
   {
-    name: "oSaveBase64",
+    name: "onSaveBase64",
     description:
       "Event triggered when the user clicks Save and the resulting edited image is generated. Emits the final image as a data URL string (e.g., 'data:image/png;base64,...')."
   }
