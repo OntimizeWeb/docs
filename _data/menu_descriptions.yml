@@ -432,3 +432,6 @@ sections:
     - url: "/extra-components/data-view/overview"
       title: "Data View"
       description: "Display the same dataset using two different visualizations"
+    - url: "/extra-components/image-editor/overview"
+      title: "Image Editor"
+      description: "Display and refine the same image through different editing interactions"
