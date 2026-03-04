@@ -1,0 +1,52 @@
+type: "GridConfig"
+
+description: "Represents the configuration object used by <code>o-data-view</code> to customize the embedded <a href='https://ontimizeweb.github.io/docs/v15/components/data/grid/api'>o-grid</a> view.
+All options are equivalent to the <code>o-grid</code> inputs, so you can consult its API to understand the meaning of each property.
+<div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
+type GridConfig = {
+  enabled?: CustomBoolean;
+  visible?: CustomBoolean;
+  cols?: number;
+  gridItemHeight?: string | number;
+  gutterSize?: string;
+  insertButtonFloatable?: CustomBoolean;
+  insertButtonPosition?: 'botton' | 'top';
+  pageSizeOptions?: any[];
+  orderable?: CustomBoolean;
+  quickFilterColumns?: string;
+  showFooter?: CustomBoolean;
+  showPageSize?: CustomBoolean;
+  sortColumn?: string;
+  sortableColumns?: string;
+  detailMode?: 'none' | 'click' | 'dblclick';
+};
+</code></pre></div></div>
+"
+
+propertiesColumns: ["Name", "Type", "Description"]
+
+attributes:
+  [
+    { name: "enabled", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "visible", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+
+    { name: "cols", type: "number", optional: true },
+    { name: "gridItemHeight", type: "string | number", optional: true },
+    { name: "gutterSize", type: "string", optional: true },
+
+    { name: "insertButtonFloatable", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "insertButtonPosition", type: "'botton' | 'top'", optional: true },
+
+    { name: "pageSizeOptions", type: "any[]", optional: true },
+    { name: "orderable", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+
+    { name: "quickFilterColumns", type: "string", optional: true },
+
+    { name: "showFooter", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "showPageSize", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+
+    { name: "sortColumn", type: "string", optional: true },
+    { name: "sortableColumns", type: "string", optional: true },
+
+    { name: "detailMode", type: "'none' | 'click' | 'dblclick'", optional: true }
+  ]
