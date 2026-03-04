@@ -178,7 +178,15 @@
 
   {% endif %}
 
-
+  {% if componentData.directives %}
+  <h3 id="directives" class="grey-color">Directives</h3>
+  <ul class="attributes-list">
+    {% assign sortedDirectives = (componentData.directives | sort: 'name') %}
+    {% for d in sortedDirectives %}
+      <li>{{ d.name }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 
   {% if componentData.inheritedOutputs %}
     <h3 class="grey-color">Inherited outputs</h3>
@@ -259,4 +267,17 @@
       {% endfor %}
   {% endif %}
 
+{% endif %}
+
+{% assign typesFolder = componentData.types %}
+
+{% if componentData.extraComponents %}
+  {% assign extraKey = componentData.extraComponents %}
+  {% assign typesFolder = site.data.components[extraKey].types | default: typesFolder %}
+{% endif %}
+
+{% if typesFolder and typesFolder.size > 0 %}
+  <div id="container">
+    {% include functions/o-table/type-api.html folder=typesFolder %}
+  </div>
 {% endif %}

@@ -488,10 +488,47 @@ Include the table cell renderer currency in your table column by configuring the
 
 <!-- Equivalent code -->
 
-<o-table-column a ttr="BALANCE" title="BALANCE">
+<o-table-column attr="BALANCE" title="BALANCE">
   <o-table-cell-renderer-currency currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-cell-renderer-currency>
 </o-table-column>
 ```
+
+Also you can configure different currency symbols for each row by using the `currency-symbol-column` attribute. This attribute specifies the column name in your data that contains the currency symbol for each row.
+
+```html
+<o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol-column="currencyCode" currency-symbol-position="right"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="BALANCE" title="BALANCE">
+  <o-table-cell-renderer-currency currency-symbol-column="currencyCode" currency-symbol-position="right"></o-table-cell-renderer-currency>
+</o-table-column>
+```
+
+The `currency-symbol-column` attribute supports nested properties using dot notation:
+
+```html
+<o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol-column="currency.symbol"></o-table-column>
+```
+
+**Example data structure:**
+```javascript
+{
+  BALANCE: 1500.50,
+  currencyCode: "€"
+}
+
+// Or with nested properties:
+{
+  BALANCE: 1500.50,
+  currency: {
+    symbol: "€",
+    code: "EUR"
+  }
+}
+```
+
+> **Note:** When `currency-symbol-column` is specified, it takes precedence over the `currency-symbol` attribute for each row where the column value is available.
 
 **Date cell renderer**
 

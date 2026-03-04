@@ -62,6 +62,11 @@ attributes: [{
   default : "outline",
   required : "",
   description : "Indicates which of the mat-form-field different except in o-table component[appearance variants](https://v15.material.angular.io/components/form-field/overview#form-field-appearance-variants) will be used. except in the o-table component."
+},{
+  name: "initial-filter-function",
+  type: "() => Expression | { [key: string]: any }",
+  since: "15.8.3",
+  description: "Callback function that returns an initial filter to be applied on every query."
 }]
 
 

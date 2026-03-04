@@ -18,6 +18,8 @@ The `o-data-view` component is used to display the same dataset using **two diff
 
 The component provides a single entry point for data binding and common UI configuration (title, toolbar controls, quick filter, pagination, etc.), while allowing you to define custom templates for both the table columns and the grid items.
 
+![Data view component]({{ "/assets/images/extra-components/data-view/data-view-example.gif" | absolute_url }}){: .comp-example-img}
+
 ## Data binding
 
 The `o-data-view` component supports data binding and you can command the component to display data either from *local* or *remote* data storage.
@@ -33,8 +35,8 @@ Always pass a static reference instead (e.g. `[static-data]="data"`).
 
 The o-data-view component provides two configuration inputs to group view-specific options:
 
-* `table-config`: table-specific configuration (selection, grouping, export, scrolling, edit/detail behavior, etc.). See all of its properties [here]({{base_path}}/components/data/data-view/api#Table%20configuration)
-* `grid-config`: grid-specific configuration (layout, footer, orderable, quick filter columns, etc.). See all of its properties [here]({{base_path}}/components/data/data-view/api#Grid%20configuration)
+* `table-config`: table-specific configuration (selection, grouping, export, scrolling, edit/detail behavior, etc.). See all of its properties [here]({{base_path}}/extra-components/data-view/api#TableConfig)
+* `grid-config`: grid-specific configuration (layout, footer, orderable, quick filter columns, etc.). See all of its properties [here]({{base_path}}/extra-components/data-view/api#GridConfig)
 
 This allows you to keep the main component declaration clean and move advanced settings into configuration objects.
 
