@@ -190,7 +190,7 @@ attributes: [{
 },{
   name: "groupable",
   type: "no | false | yes | true",
-  default: "no",
+  default: "yes",
   required: "",
   description: "Indicates whether or not to group by column"
 },{
@@ -225,6 +225,13 @@ attributes: [{
   required: "",
   default: "yes"
 },{
+  name: "show-charts-on-demand-option",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the charts on demand menu option in the header menu",
+  required: "",
+  default: "yes"
+},
+{
   name: "show-reset-width-option",
   type: "yes|no|true|false",
   description: "Indicates whether or not to show the reset width menu option in the header menu",
@@ -573,6 +580,15 @@ methods: [{
   type: "method",
   description: "Updates the state storage with the current table configuration  when enabled."
 
-}]
+},{
+  name: "addDefaultRowButtons",
+  type: "method",
+  description: "Adds the default per-row action button columns (edit/detail) to the table when enabled by configuration."
+},{
+  name: "addButtonInRow",
+  type: "method",
+  description: "Creates and registers a fixed non-searchable/non-orderable/non-resizable/non-groupable action column and ensures it is included in visibleColumns"
+}
+]
 
 extraComponents: "otableData"
