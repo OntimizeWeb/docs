@@ -7,7 +7,16 @@ type OTableGlobalConfig = {
   filterColumnActiveByDefault: boolean;
   editionMode: OTableEditionMode;
   detailMode: OTableDetailMode;
-  rowHeight: ORowHeight
+  rowHeight: ORowHeight;
+  selectionOnRowClick: boolean;
+  showChartOnDemandOption: boolean;
+  showReportOnDemandOption: boolean;
+  loading: {
+    threshold: number;
+    minVisibleRows: number;
+  };
+  horizontalScroll: boolean;
+  showHeaderTooltip: boolean;
 };
 </code></pre></div></div>
 "
@@ -80,5 +89,13 @@ attributes: [{
   default : "{threshold:300 , minVisibleRows: 300}",
   required : "",
   description : "Configuration object for loading strategy."
-}]
+},
+{
+  name: "showHeaderTooltip",
+  type: "boolean",
+  default : "false",
+  required : "",
+  description : "Indicates whether to show or not the tooltip on header cells."
+}
+]
 
