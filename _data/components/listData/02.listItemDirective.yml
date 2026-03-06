@@ -1,5 +1,5 @@
 directive: "o-list-item"
-title: "List item directive"
+title: "List item"
 
 attributes: [{
   name: "o-list-item",
