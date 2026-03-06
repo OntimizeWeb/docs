@@ -1,7 +1,6 @@
 type: "OTableGlobalConfig"
 description: "Represents the default options for the table that can be configured using the  <a href='#O_TABLE_GLOBAL_CONFIG'>O_TABLE_GLOBAL_CONFIG</a> injection token.
-
-  <div class='language-html highlighter-rouge'>
+<div class='language-html highlighter-rouge'>
     <div class='highlight'>
       <pre class='highlight'>
         <code>
@@ -11,13 +10,17 @@ description: "Represents the default options for the table that can be configure
             filterColumnActiveByDefault: boolean;
             editionMode: OTableEditionMode;
             detailMode: OTableDetailMode;
-            rowHeight: ORowHeight,
-            showChartsOnDemandOption: boolean;
+            rowHeight: ORowHeight;
+            selectionOnRowClick: boolean;
+            showChartOnDemandOption: boolean;
             showReportOnDemandOption: boolean;
-            loading: { threshold: number, minVisible: number };
-            selectionOnRowClick?: boolean;
+            loading: {
+              threshold: number;
+              minVisibleRows: number;
+            };
             horizontalScroll: boolean;
-          };
+            showHeaderTooltip: boolean;
+          };  
         </code>
       </pre>
     </div>
@@ -89,6 +92,13 @@ attributes: [{
   default : "{threshold:300 , minVisibleRows: 300}",
   required : "",
   description : "Configuration object for loading strategy."
-  }
+},
+{
+  name: "showHeaderTooltip",
+  type: "boolean",
+  default : "false",
+  required : "",
+  description : "Indicates whether to show or not the tooltip on header cells."
+}
 ]
 

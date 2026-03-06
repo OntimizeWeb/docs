@@ -256,6 +256,12 @@ attributes: [{
   description: "Indicates whether row selection is triggered when clicking on a row",
   required: "",
   default: "yes"
+},{
+  name: "show-header-tooltip",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show tooltip in the column headers",
+  required: "",
+  default: "no"
 }]
 
 inheritedOutputs: [{

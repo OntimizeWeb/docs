@@ -1338,6 +1338,98 @@ Table allows multiple columns sorting by default. Using the `multiple-sort` inpu
 
 A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state.
 
+Aquí la propuesta del apartado nuevo para la documentación:
+
+---
+
+### Header tooltip
+
+The `o-table` component provides several ways to configure tooltips on column headers, from global configuration to individual column customization.
+
+**Basic usage**
+
+Enable a tooltip for all column headers at once using the `show-header-tooltip` input on the table. This will display the column title as the tooltip text on hover.
+
+```html
+<o-table attr="customers" service="customers" entity="customer"
+  show-header-tooltip="yes">
+  <o-table-column attr="ID" title="ID"></o-table-column>
+  <o-table-column attr="NAME" title="Customer full name"></o-table-column>
+  <o-table-column attr="STATUS" title="Status"></o-table-column>
+</o-table>
+```
+
+**Custom tooltip per column**
+
+Use `header-tooltip` on each `o-table-column` to define a specific tooltip text, optionally combined with a Material icon using `header-tooltip-icon`.
+
+```html
+<o-table ..>
+
+  <!-- Tooltip displayed on an icon next to the title -->
+  <o-table-column attr="NOTES" title="Notes"
+    header-tooltip="Additional notes and comments related to the record"
+    header-tooltip-icon="info_outline">
+  </o-table-column>
+
+</o-table>
+```
+
+![Header tooltip icon in o-table-column]({{ "/assets/images/components/tabla/header-tooltip-icon.png" | absolute_url }}){: .comp-example-img}
+
+**Custom tooltip styling**
+
+Use `header-tooltip-class` to apply a custom CSS class to the tooltip, allowing full control over its appearance.
+
+```html
+<o-table-column attr="NOTES" title="Notes"
+  header-tooltip="Additional notes and comments related to the record"
+  header-tooltip-icon="info_outline"
+  header-tooltip-class="my-custom-tooltip">
+</o-table-column>
+```
+
+```scss
+// styles.scss
+.my-custom-tooltip {
+  background-color: #333;
+  color: #fff;
+  font-size: 13px;
+  max-width: 250px;
+}
+```
+
+**Global configuration**
+
+To apply `showHeaderTooltip` globally across all `o-table` instances in the application, use `O_TABLE_GLOBAL_CONFIG`:
+
+```typescript
+// app.module.ts
+import { O_TABLE_GLOBAL_CONFIG } from 'ontimize-web-ngx';
+
+@NgModule({
+  providers: [
+    {
+      provide: O_TABLE_GLOBAL_CONFIG,
+      useValue: {
+        showHeaderTooltip: true
+      }
+    }
+  ]
+})
+export class AppModule { }
+```
+
+**Priority order**
+
+When multiple tooltip configurations are present simultaneously, the following priority order applies — higher levels override lower ones:
+
+```
+1. header-tooltip (o-table-column level)        ← highest priority
+2. show-header-tooltip (o-table level)
+3. showHeaderTooltip (OTableGlobalConfig)        ← lowest priority
+```
+
 ### Tooltip in columns
 
 The `o-table` component provides a text that is displayed when the user hovers over an column.

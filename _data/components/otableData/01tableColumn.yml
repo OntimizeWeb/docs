@@ -139,4 +139,20 @@ attributes: [{
   type: "ErrorData[]",
   default: "[]",
   description: "Array of custom validators error information (synchronous or asynchronous). Each element must have a 'name' property corresponding to the validator error name and a 'text' property that will be displayed when the component value does not satisfy the validator condition"
+},{
+  name: "header-tooltip",
+  type: "string",
+  since: "v15.9.0",
+  description: "Tooltip text shown when hovering over the column header. If `header-tooltip-icon` is also set, the tooltip is displayed on the icon instead of the header text"
+},{
+  name: "header-tooltip-icon",
+  type: "string",
+  since: "v15.9.0",
+  description: "Material icon name rendered next to the header title. The tooltip defined in `header-tooltip` will be attached to this icon."
+},{
+  name: "header-tooltip-class",
+  type: "string",
+  since: "v15.9.0",
+  default: "o-table-header-icon-tooltip",
+  description: "CSS class applied to the matTooltip in the column header. Useful for custom tooltip styling."
 }]
