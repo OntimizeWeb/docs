@@ -186,6 +186,12 @@ attributes: [
   since: "15.4.2",
   description: "Executes the before-save validation callback for insert and update operations."
 },{
+  name: "header-position",
+  type: "top | bottom",
+  default: "top",
+  required: "",
+  description: "Indicates the position of the form toolbar"
+},{
   name: "configure-service-args"
 }]
 
