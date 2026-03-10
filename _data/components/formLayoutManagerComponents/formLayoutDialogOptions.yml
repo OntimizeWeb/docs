@@ -79,4 +79,10 @@ attributes: [{
   type: "no | false | yes | true",
   default: "no",
   description: "Whether the user can use escape or clicking on the backdrop to close the modal"
+},
+{
+  name: "show-fullscreen-button",
+  type: "boolean",
+  default: false,
+  description: "Whether to show a button to make the dialog fullscreen"
 }]
