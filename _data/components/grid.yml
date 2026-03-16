@@ -10,7 +10,7 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "quick-filter", "quick-filter-placeholder", "quick-filter-appearance", "pagination-controls", "page-size-options","initial-filter-function"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "quick-filter", "quick-filter-placeholder", "quick-filter-appearance", "pagination-controls", "page-size-options","initial-filter-function", "filter-builder-function"]
 }]
 
 attributes: [{
