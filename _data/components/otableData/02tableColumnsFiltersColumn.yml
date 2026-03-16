@@ -29,5 +29,22 @@ attributes:
     {
       name: "query-method",
       since: "15.2.1"
-     }
+     },
+    {
+      name: 'mode',
+      description: 'Indicates the filtering mode for the column. `default` combines both selection and custom modes. `selection` allows filtering by selecting values present in the column. `custom` allows filtering using a form control.',
+      since: '15.9.0',
+      type: 'default | custom | selection',
+      default: 'default'
+    },{
+      name: 'date-format',
+      default: "Column format",
+      required: "15.9.0",
+      description: "Date format. See [MomentJS format](http://momentjs.com/docs/#/displaying/format){:target='_blank'}"
+    },{
+      name: 'date-value-type',
+      since: '15.9.0',
+      description: 'Indicates how the date value is stored and sent in the filter query.',
+      type: 'string | date | iso-8601 | timestamp',
+      default: 'timestamp' }
   ]
