@@ -28,6 +28,13 @@ attributes: [{
   default : "right",
   required : "",
   description : "Position of the currency symbol"
+},{
+  name : "currency-symbol-column",
+  type: "string",
+  default: "",
+  since: "15.9.0",
+  description: "Column name containing the currency symbol for each row. Default:$. Supports nested properties using dot notation (e.g., 'currency.symbol')"
+
 }]
 
 inheritedOutputs: [{
