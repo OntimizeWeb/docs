@@ -67,6 +67,11 @@ attributes: [{
   type: "() => Expression | { [key: string]: any }",
   since: "15.8.3",
   description: "Callback function that returns an initial filter to be applied on every query."
+},{
+  name : "filter-builder-function",
+  type: "() => OFilterBuilderComponent",
+  description: "Callback function that resolves the OFilterBuilderComponent instance",
+  since: "15.9.0"
 }]
 
 

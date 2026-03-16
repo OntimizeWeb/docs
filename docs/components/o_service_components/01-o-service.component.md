@@ -74,6 +74,58 @@ initialFilterFunction(): { [key: string]: any } {
 * **Execution on every query**: The callback is invoked on every request made by the component, including pagination, sorting, and refresh actions. Ensure the function is lightweight and side-effect free.
 * **Compatibility**: This input is available on all components that extend OServiceComponent, including o-table, o-grid, o-list, and similar data-bound components.
 
+## Filter builder function
+
+The `filter-builder-function` input allows associating an [`o-filter-builder`](../../data/filterbuilder/overview)
+component with any component that extends `OServiceComponent` (such as `o-table`, `o-list`, `o-grid` or `o-data-view`)
+when a direct template reference is not possible or when the instance needs to be resolved dynamically at query time.
+
+This input accepts a callback function with no parameters that returns the `OFilterBuilderComponent` instance to use.
+Every time the component performs a data query, it will call this function to retrieve the filter builder and apply
+its expression.
+
+> This approach is an alternative to calling the `setFilterBuilder()` method directly on the component. Use
+> `filter-builder-function` when the `o-filter-builder` is defined in a different part of the template, such as
+> in a parent component or inside an `o-data-view`.
+
+**Examples**
+
+```html
+
+<o-form editable-detail="no" show-header="no">
+
+  <o-column title="FILTERS">
+    <o-text-input attr="NAME" read-only="no"></o-text-input>
+    <o-row layout-align="end">
+      <o-button attr="filter" [oFilterBuilderQuery]="filterBuilder" type="RAISED" label="Filter"></o-button>
+      <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="RAISED" label="Clear"></o-button>
+    </o-row>
+  </o-column>
+
+  <o-filter-builder #filterBuilder attr="thefilter" filters="EMPLOYEENAME:NAME" [target]="tableEmployees"
+    [expression-builder]="createFilter">
+  </o-filter-builder>
+
+  <o-table *ngIf="defaultView === 'table'" #tableEmployees attr="tableEmployees" service="employees" entity="employee"
+    columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME" keys="EMPLOYEEID"
+    [filter-builder-function]="getFilterBuilder">
+  </o-table>
+  <o-grid *ngIf="defaultView === 'grid'" #gridEmployees attr="gridEmployees" service="employees" entity="employee"
+    columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME" keys="EMPLOYEEID"
+    [filter-builder-function]="getFilterBuilder">
+
+</o-form>
+
+```
+
+```ts
+...
+  @ViewChild('filterBuilder') filterBuilder: OFilterBuilderComponent;
+  protected getFilterBuilder = () => this.filterBuilder;
+...
+```
+
+
 ## Navigation to record detail
 In the service components, the default action when user clicks a item is to trigger the navigation to its record detail. For changing this behaviour, the user can change the `detail-mode` input value using one of the following values `none`, `click` or `doubleclick`.
 
