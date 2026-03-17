@@ -343,6 +343,29 @@ A button will also appear to the right of the sort button to change whether you 
 ![Filtering columns by all data]({{ "/assets/images/components/tabla/filter-by-column-all-data.png" | absolute_url }}){: .comp-example-img}
 
 
+**Filtering date columns**
+
+When the column to be filtered is of type `date`, you can configure how the date value is interpreted and displayed
+using the `date-format` and `date-value-type` inputs.
+
+- `date-format` sets the format string used to parse and show the date (using [moment.js tokens](https://momentjs.com/docs/#/displaying/format/)). If not set, the format of the `o-table-column` with the same `attr` is used automatically.
+- `date-value-type` defines how the value is stored internally: as a `timestamp` (number), a `string`, as a `iso-8601` (date) or a `date` object.
+
+```html
+<o-table service="branches" entity="account" keys="ACCOUNTID"
+    columns="ACCOUNTID;STARTDATE;ENDDATE;BALANCE"
+    visible-columns="STARTDATE;ENDDATE;BALANCE"
+    attr="accounts" title="ACCOUNTS" quick-filter="yes">
+    <o-table-columns-filter>
+      <o-table-columns-filter-column attr="STARTDATE"
+        date-format="DD/MM/YYYY" date-value-type="iso-8601">
+      </o-table-columns-filter-column>
+    </o-table-columns-filter>
+    <o-table-column attr="STARTDATE" type="date"></o-table-column>
+</o-table>
+```
+
+
 ### Custom filter
 
 **OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/data/filterbuilder/overview){:target='_blank'} component to you application.
