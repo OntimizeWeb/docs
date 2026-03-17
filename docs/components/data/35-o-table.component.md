@@ -343,6 +343,29 @@ A button will also appear to the right of the sort button to change whether you 
 ![Filtering columns by all data]({{ "/assets/images/components/tabla/filter-by-column-all-data.png" | absolute_url }}){: .comp-example-img}
 
 
+**Filtering date columns**
+
+When the column to be filtered is of type `date`, you can configure how the date value is interpreted and displayed
+using the `date-format` and `date-value-type` inputs.
+
+- `date-format` sets the format string used to parse and show the date (using [moment.js tokens](https://momentjs.com/docs/#/displaying/format/)). If not set, the format of the `o-table-column` with the same `attr` is used automatically.
+- `date-value-type` defines how the value is stored internally: as a `timestamp` (number), a `string`, as a `iso-8601` (date) or a `date` object.
+
+```html
+<o-table service="branches" entity="account" keys="ACCOUNTID"
+    columns="ACCOUNTID;STARTDATE;ENDDATE;BALANCE"
+    visible-columns="STARTDATE;ENDDATE;BALANCE"
+    attr="accounts" title="ACCOUNTS" quick-filter="yes">
+    <o-table-columns-filter>
+      <o-table-columns-filter-column attr="STARTDATE"
+        date-format="DD/MM/YYYY" date-value-type="iso-8601">
+      </o-table-columns-filter-column>
+    </o-table-columns-filter>
+    <o-table-column attr="STARTDATE" type="date"></o-table-column>
+</o-table>
+```
+
+
 ### Custom filter
 
 **OntimizeWeb** allows to customize the table data filtering by building your own filters. You can build complex filtering structures by adding the [`o-filter-builder`]({{ base_path }}/components/data/filterbuilder/overview){:target='_blank'} component to you application.
@@ -488,10 +511,47 @@ Include the table cell renderer currency in your table column by configuring the
 
 <!-- Equivalent code -->
 
-<o-table-column a ttr="BALANCE" title="BALANCE">
+<o-table-column attr="BALANCE" title="BALANCE">
   <o-table-cell-renderer-currency currency-symbol="€" currency-symbol-position="right" thousand-separator="." decimal-separator=","></o-table-cell-renderer-currency>
 </o-table-column>
 ```
+
+Also you can configure different currency symbols for each row by using the `currency-symbol-column` attribute. This attribute specifies the column name in your data that contains the currency symbol for each row.
+
+```html
+<o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol-column="currencyCode" currency-symbol-position="right"></o-table-column>
+
+<!-- Equivalent code -->
+
+<o-table-column attr="BALANCE" title="BALANCE">
+  <o-table-cell-renderer-currency currency-symbol-column="currencyCode" currency-symbol-position="right"></o-table-cell-renderer-currency>
+</o-table-column>
+```
+
+The `currency-symbol-column` attribute supports nested properties using dot notation:
+
+```html
+<o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol-column="currency.symbol"></o-table-column>
+```
+
+**Example data structure:**
+```javascript
+{
+  BALANCE: 1500.50,
+  currencyCode: "€"
+}
+
+// Or with nested properties:
+{
+  BALANCE: 1500.50,
+  currency: {
+    symbol: "€",
+    code: "EUR"
+  }
+}
+```
+
+> **Note:** When `currency-symbol-column` is specified, it takes precedence over the `currency-symbol` attribute for each row where the column value is available.
 
 **Date cell renderer**
 
@@ -1300,6 +1360,98 @@ The `o-table` component allows column resizing by default. Using the `resizable`
 Table allows multiple columns sorting by default. Using the `multiple-sort` input user can modify that default value.
 
 A column is sorted when user clicks on its header. If the multiple sorting is active the previously sorted columns keeps its state, otherwise the previously sorted column returns to its original state.
+
+Aquí la propuesta del apartado nuevo para la documentación:
+
+---
+
+### Header tooltip
+
+The `o-table` component provides several ways to configure tooltips on column headers, from global configuration to individual column customization.
+
+**Basic usage**
+
+Enable a tooltip for all column headers at once using the `show-header-tooltip` input on the table. This will display the column title as the tooltip text on hover.
+
+```html
+<o-table attr="customers" service="customers" entity="customer"
+  show-header-tooltip="yes">
+  <o-table-column attr="ID" title="ID"></o-table-column>
+  <o-table-column attr="NAME" title="Customer full name"></o-table-column>
+  <o-table-column attr="STATUS" title="Status"></o-table-column>
+</o-table>
+```
+
+**Custom tooltip per column**
+
+Use `header-tooltip` on each `o-table-column` to define a specific tooltip text, optionally combined with a Material icon using `header-tooltip-icon`.
+
+```html
+<o-table ..>
+
+  <!-- Tooltip displayed on an icon next to the title -->
+  <o-table-column attr="NOTES" title="Notes"
+    header-tooltip="Additional notes and comments related to the record"
+    header-tooltip-icon="info_outline">
+  </o-table-column>
+
+</o-table>
+```
+
+![Header tooltip icon in o-table-column]({{ "/assets/images/components/tabla/header-tooltip-icon.png" | absolute_url }}){: .comp-example-img}
+
+**Custom tooltip styling**
+
+Use `header-tooltip-class` to apply a custom CSS class to the tooltip, allowing full control over its appearance.
+
+```html
+<o-table-column attr="NOTES" title="Notes"
+  header-tooltip="Additional notes and comments related to the record"
+  header-tooltip-icon="info_outline"
+  header-tooltip-class="my-custom-tooltip">
+</o-table-column>
+```
+
+```scss
+// styles.scss
+.my-custom-tooltip {
+  background-color: #333;
+  color: #fff;
+  font-size: 13px;
+  max-width: 250px;
+}
+```
+
+**Global configuration**
+
+To apply `showHeaderTooltip` globally across all `o-table` instances in the application, use `O_TABLE_GLOBAL_CONFIG`:
+
+```typescript
+// app.module.ts
+import { O_TABLE_GLOBAL_CONFIG } from 'ontimize-web-ngx';
+
+@NgModule({
+  providers: [
+    {
+      provide: O_TABLE_GLOBAL_CONFIG,
+      useValue: {
+        showHeaderTooltip: true
+      }
+    }
+  ]
+})
+export class AppModule { }
+```
+
+**Priority order**
+
+When multiple tooltip configurations are present simultaneously, the following priority order applies — higher levels override lower ones:
+
+```
+1. header-tooltip (o-table-column level)        ← highest priority
+2. show-header-tooltip (o-table level)
+3. showHeaderTooltip (OTableGlobalConfig)        ← lowest priority
+```
 
 ### Tooltip in columns
 

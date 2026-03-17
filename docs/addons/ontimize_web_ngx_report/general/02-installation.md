@@ -19,7 +19,7 @@ nav_order: 2
 
 ### Import the Ontimize Web Report module into your application
 
-Import the `OReportModule ` into the main module of your application.
+Import the `OReportModule` into the main module of your application.
 
 ```javascript
 import { OReportModule } from 'ontimize-web-ngx-report';

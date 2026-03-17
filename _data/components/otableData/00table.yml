@@ -9,7 +9,7 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "filter-case-sensitive", "quick-filter", "quick-filter-placeholder", "pagination-controls", "page-size-options"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "filter-case-sensitive", "quick-filter", "quick-filter-placeholder", "pagination-controls", "page-size-options","initial-filter-function", "filter-builder-function"]
 }]
 
 attributes: [{
@@ -190,7 +190,7 @@ attributes: [{
 },{
   name: "groupable",
   type: "no | false | yes | true",
-  default: "no",
+  default: "yes",
   required: "",
   description: "Indicates whether or not to group by column"
 },{
@@ -225,6 +225,13 @@ attributes: [{
   required: "",
   default: "yes"
 },{
+  name: "show-charts-on-demand-option",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the charts on demand menu option in the header menu",
+  required: "",
+  default: "yes"
+},
+{
   name: "show-reset-width-option",
   type: "yes|no|true|false",
   description: "Indicates whether or not to show the reset width menu option in the header menu",
@@ -249,6 +256,12 @@ attributes: [{
   description: "Indicates whether row selection is triggered when clicking on a row",
   required: "",
   default: "yes"
+},{
+  name: "show-header-tooltip",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show tooltip in the column headers",
+  required: "",
+  default: "no"
 }]
 
 inheritedOutputs: [{
@@ -573,6 +586,15 @@ methods: [{
   type: "method",
   description: "Updates the state storage with the current table configuration  when enabled."
 
-}]
+},{
+  name: "addDefaultRowButtons",
+  type: "method",
+  description: "Adds the default per-row action button columns (edit/detail) to the table when enabled by configuration."
+},{
+  name: "addButtonInRow",
+  type: "method",
+  description: "Creates and registers a fixed non-searchable/non-orderable/non-resizable/non-groupable action column and ensures it is included in visibleColumns"
+}
+]
 
 extraComponents: "otableData"

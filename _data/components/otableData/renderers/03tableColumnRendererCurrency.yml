@@ -26,6 +26,11 @@ attributes: [{
   name: "min-decimal-digits"
 },{
   name: "max-decimal-digits"
+},{
+  name: "currency-symbol-column",
+  type: "string",
+  default: "$",
+  description: "Column name containing the currency symbol for each row. Supports nested properties using dot notation (e.g., 'currency.symbol')"
 }]
 
 inherit_properties: [{
