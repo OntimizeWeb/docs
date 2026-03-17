@@ -25,17 +25,29 @@ In this section you can check the different releases of **OntimizeWeb** and its 
             <th>gallery*</th>
             <th>report*</th>
             <th>keycloak*</th>
+            <th>extra-components*</th>
         </tr>
     </thead>
     <tbody>
     <tr>
+        <td>15.9.0</td>
+        <td rowspan="6">15.1.1</td>
+        <td rowspan="50">15.0.1<br>15.0.0</td>
+        <td rowspan="5">15.3.0</td>
+        <td rowspan="50">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
+        <td rowspan="10">15.1.0</td>
+        <td rowspan="50">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
+        <td>15.0.0</td>
+    </tr>
+    <tr>
+        <td>15.8.3</td>
+        <td rowspan="49" >-</td>
+    </tr>
+    <tr>
+        <td>15.8.2</td>
+    </tr>
+    <tr>
         <td>15.8.1</td>
-        <td rowspan="3">15.1.1</td>
-        <td rowspan="47">15.0.1<br>15.0.0</td>
-        <td rowspan="2">15.3.0</td>
-        <td rowspan="47">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
-        <td rowspan="7">15.1.0</td>
-        <td rowspan="47">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
     </tr>
     <tr>
         <td>15.8.0</td>
