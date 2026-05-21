@@ -1,0 +1,42 @@
+directive: "o-list-item-card"
+title: "List item: card"
+
+attributes: [{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The title of the list item"
+},{
+  name: "subtitle",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The subtitle of the list item"
+},{
+  name: "image",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The image of the list item"
+},{
+  name: "action-1-text",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The text of the first button"
+},{
+  name: "action-2-text",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The text of the second button"
+}]
+
+outputs: [{
+  name : "action-1",
+  description: "Event triggered when first button is clicked"
+},{
+  name : "action-2",
+  description: "Event triggered when second button is clicked"
+}]

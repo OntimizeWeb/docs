@@ -1,0 +1,24 @@
+directive : "o-form-toolbar"
+
+
+attributes: [{
+  name: "form-data", 
+  type: "",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "label-header", 
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+},{
+  name: "header-actions", 
+  type: "string",
+  default : "",
+  required : "",
+  description : ""
+}]  
+
+title : "OFormToolbar"

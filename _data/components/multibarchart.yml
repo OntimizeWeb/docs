@@ -1,0 +1,138 @@
+directive: "o-chart"
+chart: true
+
+apiTitle: "OChartComponent"
+
+inheritedAttributes:
+  [
+    {
+      component: "OChartComponent",
+      path: "addons/charts/overview/api",
+      attributes:
+        [
+          "chart-height",
+          "chart-width",
+          "type",
+          "x-axis",
+          "y-axis",
+          "x-label",
+          "y-label",
+          "x-data-type",
+          "y-data-type",
+          "data",
+          "chart-parameters",
+          "show-legend",
+          "legend-position",
+          "legend-title",
+          "show-grid-lines",
+          "color",
+          "show-tooltip",
+          "show-data-label",
+          "show-x-axis",
+          "show-y-axis",
+          "show-x-axis-label",
+          "show-y-axis-label",
+          "x-formatting",
+          "y-formatting",
+          "auto-scale",
+          "gradient",
+          "active-entries",
+          "custom-colors",
+        ],
+    },
+  ]
+
+attributes:
+  [
+    {
+      name: "scheme-type",
+      description: "Defines the color scale type used by the chart. Allowed values are 'ordinal' and 'linear'.",
+      type: "string",
+      default: "ordinal",
+    },
+    {
+      name: "animations",
+      description: "Enables or disables chart animations.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "round-domains",
+      description: "Rounds axis domains to align grid lines evenly.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "trim-x-axis-ticks",
+      description: "Controls whether X axis tick labels are trimmed when exceeding the maximum length.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "trim-y-axis-ticks",
+      description: "Controls whether Y axis tick labels are trimmed when exceeding the maximum length.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "rotate-x-axis-ticks",
+      description: "Enables automatic rotation of X axis tick labels to prevent overlapping.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "max-x-axis-tick-length",
+      description: "Maximum length of X axis tick labels when trimming is enabled.",
+      type: "number",
+      default: 16,
+    },
+    {
+      name: "max-y-axis-tick-length",
+      description: "Maximum length of Y axis tick labels when trimming is enabled.",
+      type: "number",
+      default: 16,
+    },
+    {
+      name: "wrap-ticks",
+      description: "Allows axis tick labels to wrap into multiple lines based on available space.",
+      type: "boolean",
+      default: false,
+    },
+    {
+      name: "no-bar-when-zero",
+      description: "Prevents rendering bars when their value is zero.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "round-edges",
+      description: "Renders bars with rounded edges.",
+      type: "boolean",
+      default: true,
+    },
+    {
+      name: "bar-padding",
+      description: "Defines the spacing in pixels between bars.",
+      type: "number",
+      default: 8,
+    },
+    {
+      name: "y-scale-min",
+      description: "Defines the minimum value of the Y axis.",
+      type: "number",
+    },
+    {
+      name: "y-scale-max",
+      description: "Defines the maximum value of the Y axis.",
+      type: "number",
+    },
+  ]
+
+inheritedOutputs:
+  [
+    {
+      component: "ChartComponent",
+      path: "addons/charts/overview/api",
+      outputs: ["onSelect", "onActivate", "onDeactivate", "onDataLoaded"],
+    },
+  ]

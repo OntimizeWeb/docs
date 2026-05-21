@@ -1,0 +1,13 @@
+class: "OComboRendererDateComponent"
+
+extends: "OComboCustomRenderer"
+
+directive: "o-combo-renderer-date"
+
+attributes: [{
+  name: "format",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+}]

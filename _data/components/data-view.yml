@@ -1,0 +1,110 @@
+directive: "o-data-view"
+version: "15.0.0"
+
+apiTitle: "ODataViewComponent"
+inheritedAttributes:
+  [
+    {
+      component: "OServiceBaseComponent",
+      path: "components/service/service-base/api",
+      attributes:
+        [
+          "attr",
+          "columns",
+          "configure-service-args",
+          "delete-method",
+          "entity",
+          "insert-method",
+          "keys",
+          "pageable",
+          "paginated-query-method",
+          "parent-keys",
+          "query-fallback-function",
+          "query-method",
+          "query-on-bind",
+          "query-on-init",
+          "query-rows",
+          "query-with-null-parent-keys",
+          "service",
+          "service-type",
+          "static-data",
+          "store-state",
+          "update-method",
+          "show-buttons-text",
+          "quick-filter-placeholder",
+          "insert-button",
+          "refresh-button",
+          "fixed-header",
+          "controls",
+          "title",
+          "quick-filter",
+          "quick-filter-appearance",
+          "recursive-detail",
+          "recursive-edit",
+          "recursive-insert",
+          "detail-form-route",
+          "pagination-controls",
+          "insert-form-route",
+          "filter-case-sensitive",
+        ],
+    },
+  ]
+
+attributes:
+  [
+    {
+      name: "default-view",
+      type: "'table' | 'grid'",
+      default: "table",
+      required: "",
+      description: "Default view rendered by the component.",
+    },
+    {
+      name: "toggle-button",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Indicates whether or not to show the built-in view toggle. By default it is enabled, which is the standard way `o-data-view` provides view switching.",
+    },
+    {
+      name: "toggle-on-toolbar",
+      type: "no | false | yes | true",
+      default: "no",
+      required: "",
+      description: "Indicates whether or not to render the view toggle inside the toolbar.",
+    },
+    {
+      name: "toggle-floatable",
+      type: "no | false | yes | true",
+      default: "no",
+      required: "",
+      description: "Indicates whether or not the view toggle is rendered as a floating control.",
+    },
+    {
+      name: "table-config",
+      type: "TableConfig",
+      default: "",
+      required: "",
+      description: "Table view configuration object. Values defined here have precedence over the global table configuration injection token and the component defaults.",
+    },
+    {
+      name: "grid-config",
+      type: "GridConfig",
+      default: "",
+      required: "",
+      description: "Grid view configuration object.",
+    },
+    {
+      name: "delete-button",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Indicates whether or not to show a button for deleting data",
+    },
+    { name: "insert-button" },
+    { name: "refresh-button" },
+  ]
+
+extraComponents: "dataViewData"
+
+directives: [{ name: "oDataViewTableColumns" }, { name: "oDataViewGridItem" }]

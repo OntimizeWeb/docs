@@ -1,0 +1,29 @@
+directive: "o-locale-bar-menu-item"
+title: "Bar menu locale"
+
+attributes: [{
+  name: "title",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Item title"
+},{
+  name: "tooltip",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Menu locale tooltip. Default: 'title' value."
+},
+{
+  name: "icon",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})<br/><em>*Note: In this component you are required to use only Google Material Icons</em>"
+},{
+  name: "locale",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Language. For example: es"
+}]

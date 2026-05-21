@@ -1,0 +1,11 @@
+class: "OListPickerRendererIntegerComponent"
+
+extends: "OListPickerCustomRenderer"
+
+directive: "o-list-picker-renderer-integer"
+
+attributes: [{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+}]

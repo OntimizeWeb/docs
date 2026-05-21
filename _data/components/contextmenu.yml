@@ -1,0 +1,33 @@
+directive: "o-context-menu"
+
+apiTitle: "OContextMenuComponent"
+
+attributes: [{
+  name: "oContextMenuData",
+  type: "object",
+  default: "",
+  required: "",
+  description: "Data passed to the context menu. It will be available as an attribute of the functions passed to `enable` and `visible` attributes on the `o-context-menu-item` component and in the `execute` event"
+}]
+
+extraComponents: "contextmenuData"
+
+directives: [
+  {
+    name: "o-context-menu-group",
+    directives: [
+      {
+        name: "o-context-menu-item"
+      },
+      {
+        name: "o-context-menu-separator"
+      }
+    ]
+  },
+  {
+    name: "o-context-menu-item"
+  },
+  {
+    name: "o-context-menu-separator"
+  }
+]

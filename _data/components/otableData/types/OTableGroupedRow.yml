@@ -1,0 +1,33 @@
+type : "OTableGroupedRow"
+
+propertiesColumns: ["Name", "Type", "Description"]
+
+
+attributes: [{
+  name: "level",
+  type: "int",
+  optional: false
+},{
+  name: "column",
+  optional: false,
+  type: "any"
+},{
+  name: "parent",
+  optional: false,
+  type: "OTableGroupedRow"
+},{
+  name: "expanded",
+  optional: false,
+  type: "boolean"
+},{
+  name: "totalCounts",
+  optional: false,
+  type: "number"
+},{
+  name: "visible",
+  optional: false,
+  type: "boolean"
+}]
+
+
+

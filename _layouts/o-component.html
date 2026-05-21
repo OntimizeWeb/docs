@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="o-component-container">
+
+  {% if page.comp %}
+    {% assign componentKey = page.comp %}
+  {% endif %}
+
+  {% if page.comp =='table' %}
+    {% include o-component-table.md comp=componentKey %}
+  {% else %}
+    {% if page.comp =='combo' %}
+      {% include o-component-combo.md comp=componentKey %}
+    {% else %}
+      {% if page.comp =='listpicker' %}
+        {% include o-component-listpicker.md comp=componentKey %}
+      {% else %}
+        {% include o-component-single.md comp=componentKey %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+</div>

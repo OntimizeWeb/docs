@@ -1,0 +1,202 @@
+---
+layout: default
+title: "Releases"
+permalink: /versions/
+parent: Aditional information
+nav_order: 2
+---
+
+{% include base_path %}
+{% include toc %}
+
+In this section you can check the different releases of **OntimizeWeb** and its modules and dependencies, grouped by the angular version they are build over.
+
+## Releases and dependencies
+
+### Angular 15
+
+<table>
+    <thead>
+        <tr>
+            <th>ontimize-web-ngx</th>
+            <th>filemanager*</th>
+            <th>map*</th>
+            <th>charts*</th>
+            <th>gallery*</th>
+            <th>report*</th>
+            <th>keycloak*</th>
+            <th>extra-components*</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>15.9.0</td>
+        <td rowspan="6">15.1.1</td>
+        <td rowspan="50">15.0.1<br>15.0.0</td>
+        <td rowspan="5">15.3.0</td>
+        <td rowspan="50">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
+        <td rowspan="10">15.1.0</td>
+        <td rowspan="50">15.1.2<br>15.1.1<br>15.1.0<br>15.0.0</td>
+        <td>15.0.0</td>
+    </tr>
+    <tr>
+        <td>15.8.3</td>
+        <td rowspan="49" >-</td>
+    </tr>
+    <tr>
+        <td>15.8.2</td>
+    </tr>
+    <tr>
+        <td>15.8.1</td>
+    </tr>
+    <tr>
+        <td>15.8.0</td>
+    </tr>
+    <tr>
+        <td>15.7.1</td>
+        <td rowspan="5">15.2.1<br>15.2.0</td>
+    </tr>
+    <tr>
+        <td>15.7.0</td>
+        <td rowspan="4">15.1.0</td>
+    </tr>
+    <tr>
+        <td>15.6.2</td>
+    </tr>
+    <tr>
+        <td>15.6.1</td>
+    </tr>
+    <tr>
+        <td>15.6.0</td>
+    </tr>
+    <tr>
+        <td>15.5.9</td>
+        <td rowspan="40">15.0.0</td>
+        <td rowspan="40">15.1.6<br>15.1.5<br>15.1.4<br>15.1.3<br>15.1.2<br>15.1.1<br>15.1.0<br>15.0.1<br>15.0.0</td>
+        <td rowspan="40">15.0.4<br>15.0.3<br>15.0.2<br>15.0.1<br>15.0.0</td>
+    </tr>
+    <tr>
+        <td>15.5.8</td>
+    </tr>
+    <tr>
+        <td>15.5.7</td>
+    </tr>
+    <tr>
+        <td>15.5.6</td>
+    </tr>
+    <tr>
+        <td>15.5.5</td>
+    </tr>
+    <tr>
+        <td>15.5.4</td>
+    </tr>
+    <tr>
+        <td>15.5.3</td>
+    </tr>
+     <tr>
+        <td>15.5.2</td>
+    </tr>
+     <tr>
+        <td>15.5.1</td>
+    </tr>
+    <tr>
+        <td>15.5.0</td>
+    </tr>
+     <tr>
+        <td>15.4.4</td>
+    </tr>
+     <tr>
+        <td>15.4.3</td>
+    </tr>
+    <tr>
+        <td>15.4.2</td>
+    </tr>
+    <tr>
+        <td>15.4.1</td>
+    </tr>
+     <tr>
+        <td>15.5.1</td>
+    </tr>
+    <tr>
+        <td>15.5.0</td>
+    </tr>
+    <tr>
+        <td>15.4.4</td>
+    </tr>
+     <tr>
+        <td>15.4.3</td>
+    </tr>
+    <tr>
+        <td>15.4.2</td>
+    </tr>
+    <tr>
+        <td>15.4.1</td>
+    </tr>
+     <tr>
+        <td>15.4.0</td>
+    </tr>
+     <tr>
+        <td>15.3.5</td>
+    </tr>
+     <tr>
+        <td>15.3.4</td>
+    </tr>
+    <tr>
+      <td>15.3.3</td>
+    </tr>
+     <tr>
+        <td>15.3.2</td>
+    </tr>
+    <tr>
+        <td>15.3.1</td>
+    </tr>
+      <tr>
+        <td>15.3.0</td>
+    </tr>
+     <tr>
+        <td>15.2.2</td>
+    </tr>
+    <tr>
+        <td>15.2.1</td>
+    </tr>
+    <tr>
+        <td>15.2.0</td>
+    </tr>
+    <tr>
+        <td>15.1.3</td>
+     </tr>
+     <tr>
+        <td>15.1.2</td>
+     </tr>
+     <tr>
+        <td>15.1.1</td>
+      </tr>
+      <tr>
+        <td>15.1.0</td>
+      </tr>
+      <tr>
+        <td>15.0.4</td>
+      </tr>
+      <tr>
+        <td>15.0.3</td>
+      </tr>
+      <tr>
+        <td>15.0.2</td>
+      </tr>
+      <tr>
+        <td>15.0.1</td>
+      </tr>
+      <tr>
+        <td>15.0.0</td>
+      </tr>
+  </tbody>
+</table>
+
+- The prefix _ontimize-web-ngx_ was omitted from the names of the addons.
+
+{: .note }
+> The addons theming and tree are now inside the core.
+
+To see the beta versions click [here]({{base_path}}/beta-versions/).
+
+To see the oldest versions click [here](https://ontimizeweb.github.io/docs/v8/versions/).

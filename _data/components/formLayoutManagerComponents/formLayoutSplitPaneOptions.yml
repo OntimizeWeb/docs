@@ -1,0 +1,28 @@
+directive: "o-form-layout-split-pane-options"
+title: "Split pane mode"
+
+attributes: [{
+  name: "main-width",
+  type: "string",
+  description : "Width of the main container."
+},{
+  name: "main-max-width",
+  type: "string | number",
+  description: "Max width of the main container."
+},{
+  name: "main-min-width",
+  type: "string | number",
+  description: "Min width of the main container."
+},{
+  name: "detail-width",
+  type: "string",
+  description : "Width of the detail container."
+},{
+  name: "detail-max-width",
+  type: "string | number",
+  description: "Max width of the detail container."
+},{
+  name: "detail-min-width",
+  type: "string | number",
+  description: "Min width of the detail container."
+}]

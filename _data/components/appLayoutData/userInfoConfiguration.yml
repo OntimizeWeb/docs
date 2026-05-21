@@ -1,0 +1,23 @@
+
+directive: "o-user-info-configuration"
+title: "User info configuration"
+
+attributes: [{
+  name: "show-profile",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the my profile item"
+},{
+  name: "show-settings",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the settings item"
+},{
+  name: "show-logout",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the logout item"
+}]

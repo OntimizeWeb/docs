@@ -1,0 +1,10 @@
+directive : "o-context-menu-separator"
+title : "Context menu separator"
+
+attributes: [{
+  name: "visible",
+  type: "no | false | yes | true | function",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not the context menu item is visible"
+}]

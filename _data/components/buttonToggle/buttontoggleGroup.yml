@@ -1,0 +1,52 @@
+directive: "o-button-toggle-group"
+
+attributes: [{
+  name: "attr"
+},{
+  name: "name",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The name tha identifies the button toggle group and its toggle buttons"
+},{
+  name: "enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the button toggle group is enabled"
+},{
+  name: "layout",
+  type: "row | column",
+  default: "row",
+  required: "",
+  description: "Indicates the disposition of the toggle buttons inside the group"
+},{
+  name: "multiple",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Whether multiple button toggles can be selected"
+},{
+  name: "value",
+  type: "any",
+  default: "",
+  required: "",
+  description: "The default value of the button toggle group"
+}]
+
+outputs: [{
+  name: "onChange",
+  description: "Event triggered when the value of the toggle button group changes"
+}]
+
+methods: [{
+  name: "getValue",
+  type: "method",
+  description: "Return the value of the component",
+  returns: "any"
+},{
+  name: "setValue",
+  type: "method",
+  parameters: "val: any | any[]",
+  description: "Sets the value of the component"
+}]

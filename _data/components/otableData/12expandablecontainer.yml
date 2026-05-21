@@ -1,0 +1,17 @@
+class: "OTableRowExpandableComponent"
+
+class : "OExpandableContainerComponent"
+directive: "o-expandable-container"
+attributes: [{
+  name: "targets",
+  type: "Array<OServiceComponent>",
+  default : "",
+  required : "",
+  description : "Components whose query will be launched when expanding the row"
+},{
+  name: "data",
+  type: "object",
+  default : "",
+  required : "",
+  description : ""
+}]

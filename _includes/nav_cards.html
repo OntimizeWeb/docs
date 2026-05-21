@@ -1,0 +1,54 @@
+{% include base_path %}
+
+{% assign folder_path = 'images/menus/' | append: include.folder %}
+{% assign description_yml = include.folder %}
+
+<div class="menu-card-container">
+  {% unless include.yml %}
+
+        {% for sections in site.data.menu_descriptions.sections %}
+          {% if sections[0] == description_yml %}
+            {% for section in sections[1] %}
+
+
+                <a class="card-dark" href="{{ base_path }}{{ section.url }}">
+                  <div class="menu-card">
+                    <div class="image-container">
+                      <img src="{{ base_path }}{{ section.imagepath }}_dark.svg" alt="{{ section.title }}">
+                    </div>
+                    <p class="bottom-image">{{ section.title }}</p>
+                  </div>
+                </a>
+
+                <a class="card-light" href="{{ base_path }}{{ section.url }}">
+                  <div class="menu-card">
+                    <div class="image-container">
+                      <img src="{{ base_path }}{{ section.imagepath }}.svg" alt="{{ section.title }}">
+                    </div>
+                    <p class="bottom-image">{{ section.title }}</p>
+                  </div>
+                </a>
+
+
+
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+
+  {% else %}
+    {% for sections in site.data.menu_descriptions.sections %}
+      {% if sections[0] == description_yml %}
+        {% for section in sections[1] %}
+          <a href="{{ base_path }}{{ section.url }}">
+            <div class="menu-card">
+              <div class="text-container">
+                <p>{{ section.title }}</p>
+              </div>
+              <p class="bottom-title">{{ section.description }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endunless %}
+</div>

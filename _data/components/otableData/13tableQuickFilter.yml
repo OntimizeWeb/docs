@@ -1,0 +1,15 @@
+class: "OTableQuickfilterComponent"
+
+directive: "o-table-quickfilter"
+attributes: [{
+    name: "quick-filter-placeholder",
+    type: "string",
+    default: "",
+    required: "",
+    description: "Quick filter input placeholder text"
+}]
+
+outputs: [{
+  name: "onChange",
+  description: "Event triggered when the quick filter value changes"
+}]

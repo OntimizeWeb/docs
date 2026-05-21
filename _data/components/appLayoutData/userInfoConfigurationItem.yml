@@ -1,0 +1,53 @@
+
+directive: "o-user-info-configuration-item"
+title: "User info configuration item"
+attributes: [{
+  name: "name",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Item title "
+},{
+  name: "route",
+  type: "string",
+  default: "",
+  required: "",
+  description: "App navigation route when the menu item is selected"
+},{
+  name: "icon",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Icon name (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})<br/><em>*Note: In this component you are required to use only Google Material Icons</em>"
+},{
+  name: "action",
+  type: "()=>void",
+  default: "",
+  required: "",
+  description: "Method to execute when the menu item is selected"
+},{
+  name: "confirm",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not the user must confirm the menu action"
+},{
+  name: "confirm-text",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The confirmation text"
+},{
+  name: "tooltip",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether the tooltip text showed on the menu item"
+},{
+  name: "class",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The CSS class applied to the menu item"
+}]
+

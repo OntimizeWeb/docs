@@ -1,0 +1,22 @@
+class : "OTablePaginatorComponent"
+
+directive : "o-table-paginator"
+
+attributes: [
+  {
+  name: "page-size", 
+  type: "number",
+  default : "10",
+  required : "",
+  description : "Number of items to display on a page. By default set to 10"
+  },
+  {
+  name: "page-size-options", 
+  type: "array",
+  default : "10; 25; 50; 100",
+  required : "",
+  description : "The set of provided page size options to display to the user."
+  }
+]
+
+title : "OTablePaginator"

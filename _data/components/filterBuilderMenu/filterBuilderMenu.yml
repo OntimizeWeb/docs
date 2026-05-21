@@ -1,0 +1,27 @@
+directive: "o-filter-builder-menu"
+title: "Filter builder menu"
+
+attributes: [{
+  name: "oFilterBuilder",
+  type: "oFilterBuilderComponent",
+  default: "",
+  required: "",
+  description: "Indicates which filter creator triggers the action"
+},{
+  name: "show-filter-option",
+  type: "[yes|no|true|false]",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not show filter option in the filter builder menu"
+},{
+  name: "show-clear-option",
+  type: "[yes|no|true|false]",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not show clear option in the filter builder menu"
+},{
+  name: "icon"
+},{
+  name: "svg-icon",
+  default: "ontimize:more_vert"
+}]

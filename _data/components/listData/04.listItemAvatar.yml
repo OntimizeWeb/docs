@@ -1,0 +1,12 @@
+directive: "o-list-item-avatar"
+title: "List item: avatar"
+
+inheritedAttributes: [{
+  component: "List item text",
+  attributes: ["title", "primary-text", "secondary-text", "icon"]
+}]
+
+inheritedOutputs: [{
+  component: "List item text",
+  outputs: ["icon-action"]
+}]

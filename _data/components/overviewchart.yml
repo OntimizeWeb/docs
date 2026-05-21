@@ -1,0 +1,166 @@
+directive : "o-chart"
+
+apiTitle: "OChartComponent"
+
+inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base/api",
+  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys", "parent-keys", "static-data", "query-method", "query-rows", "store-state", "query-with-null-parent-keys", "configure-service-args"]
+}]
+
+attributes: [{
+  name: "chart-height",
+  description: "Set the height of the chart in pixels.",
+  type: "number"
+},{
+  name: "chart-width",
+  description: "Set the width of the chart in pixels.",
+  type: "number"
+},{
+  name: "type",
+  description: "Defines the type of graph to be painted (discreteBar, donutChart, line, multiBar, multiBarHorizontalChart, pie, stackedAreaChart)",
+  type: "string"
+},{
+  name: "x-axis",
+  description: "Defines the data to be displayed on X axis",
+  type: "string"
+},{
+  name: "y-axis",
+  description: "Defines the data to be displayed on Y axis",
+  type: "string"
+},{
+  name: "x-label",
+  description: "Label to be displayed on X axis",
+  type: "string"
+},{
+  name: "y-label",
+  description: "Label to be displayed on Y axis",
+  type: "string"
+},{
+  name: "x-data-type",
+  description: "Type of data displayed on X axis",
+  type: "string"
+},{
+  name: "y-data-type",
+  description: "Type of data displayed on Y axis",
+  type: "string"
+},{
+  name: "data",
+  description: "Defines the array of data to be displayed on the chart",
+  type: "array"
+},{
+  name: "chart-parameters",
+  description: "Control properties of styling, fonts, the legend, etc."
+},
+{
+  name: "show-legend",
+  description: "Controls whether the legend is displayed.",
+  type: "boolean",
+  default: false
+},{
+  name: "legend-position",
+  description: "Allows modifying the position of the legend. Values can be 'right' or 'below'.",
+  type: "string"
+},{
+  name: "legend-title",
+  description: "Title to be displayed on the legend.",
+  type: "string"
+},
+{
+  name: "show-grid-lines",
+  description: "Controls whether the grid lines are displayed on the chart.",
+  type: "boolean",
+  default: false
+},
+{
+  name: "color",
+  description: "Modifies the color palette of the chart. Accepts an object in the format { domain: ['#xxxx', '#xxxx', '#xxxx'] } or a theme name ('vivid', 'natural', 'cool', 'fire', 'solar', 'air', 'aqua', 'flame', 'ocean', 'forest', 'horizon', 'neons', 'picnic', 'night', 'nightLights')",
+  type: "object|string"
+},
+{
+  name: "show-tooltip",
+  description: "Controls whether the tooltip is displayed when hovering chart elements.",
+  type: "boolean"
+},{
+  name: "show-data-label",
+  description: "Controls whether data labels are displayed directly on chart elements.",
+  type: "boolean"
+},{
+  name: "show-x-axis",
+  description: "Controls whether the X axis is displayed.",
+  type: "boolean",
+  default: true
+},{
+  name: "show-y-axis",
+  description: "Controls whether the Y axis is displayed.",
+  type: "boolean",
+  default: true
+},{
+  name: "show-x-axis-label",
+  description: "Controls whether the X axis label is displayed.",
+  type: "boolean",
+  default: true
+},{
+  name: "show-y-axis-label",
+  description: "Controls whether the Y axis label is displayed.",
+  type: "boolean",
+  default: true
+},{
+  name: "x-formatting",
+  description: "Defines a formatting function or configuration for X axis values.",
+  type: "any"
+},{
+  name: "y-formatting",
+  description: "Defines a formatting function or configuration for Y axis values.",
+  type: "any"
+},{
+  name: "auto-scale",
+  description: "Automatically sets the minimum Y axis value to the minimum value in the data instead of zero.",
+  type: "boolean"
+},{
+  name: "gradient",
+  description: "Enables gradient fill instead of solid colors for chart elements.",
+  type: "boolean"
+},{
+  name: "active-entries",
+  description: "Defines the chart elements that should be displayed as active or highlighted.",
+  type: "array"
+},{
+  name: "custom-colors",
+  description: "Defines custom colors to override the default color scheme for specific values or series.",
+  type: "any"
+},{
+  name: "legend-position",
+  description: "Allows modifying the position of the legend. Values can be 'right' or 'below'.",
+  type: "string"
+},{
+  name: "legend-title",
+  description: "Title to be displayed on the legend.",
+  type: "string"
+},
+{
+  name: "show-grid-lines",
+  description: "Controls whether the grid lines are displayed on the chart.",
+  type: "boolean",
+  default: false
+},
+{
+  name: "color",
+  description: "Modifies the color palette of the chart. Accepts an object in the format { domain: ['#xxxx', '#xxxx', '#xxxx'] } or a theme name ('vivid', 'natural', 'cool', 'fire', 'solar', 'air', 'aqua', 'flame', 'ocean', 'forest', 'horizon', 'neons', 'picnic', 'night', 'nightLights')",
+  type: "object|string"
+}
+]
+
+outputs: [{
+  name: "onSelect",
+  description: "Click event triggered when an element in the chart is clicked."
+},{
+  name: "onActivate",
+  description: "Element activation event triggered when the mouse enters an element in the chart."
+},{
+  name: "onDeactivate",
+  description: "Element deactivation event triggered when the mouse leaves an element in the chart."
+},{
+  name: "onDataLoaded",
+  description: "Event triggered when the data is loaded"
+}]

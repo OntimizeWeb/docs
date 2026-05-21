@@ -1,0 +1,31 @@
+class: "OTableButton"
+
+directive : "o-table-button"
+
+attributes: [{
+  name: "icon",
+  type: "string",
+  default : "priority_high",
+  required : "",
+  description : "Name of google icon (see [Google material design icons](https://design.google.com/icons/){:target='_blank'})"
+},{
+  name: "label",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Field label"
+},{
+  name: "icon-position",
+  type: "left | right",
+  default: "left",
+  description: "Icon position with respect to the text (if exists)"
+},{
+  name: "svg-icon",
+  type: "string",
+  default: "",
+  description: "Name of svg icon"
+},{
+  name: "attr"
+},{
+  name: "enabled"
+}]

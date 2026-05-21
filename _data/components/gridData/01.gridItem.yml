@@ -1,0 +1,17 @@
+directive: "o-grid-item"
+title: "Grid item"
+
+
+attributes: [{
+  name: "colspan",
+  type: "number",
+  default: "",
+  required: "",
+  description: "Amount of columns that the grid tile takes up."
+},{
+  name: "rowspan",
+  type: "number",
+  default: "",
+  required: "",
+  description: "Amount of rows that the grid tile takes up."
+}]

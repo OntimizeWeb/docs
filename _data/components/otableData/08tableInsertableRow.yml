@@ -1,0 +1,38 @@
+
+class : "OTableInsertableRowComponent"
+
+directive : "o-table-insertable-row"
+
+attributes: [{
+  name: "columns",
+  default : "All visible columns",
+  description : "Insertable columns. Separated by ';'"
+},{
+  name: "requiredColumns",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Required columns for doing a insertion. Separated by ';'"
+},{
+  name: "position",
+  default: "last",
+  type : "first | last",
+  description : "Indicates wheter the insertable row is shown as first or last table record."
+},{
+  name: "show-placeholder",
+  default: "no",
+  type: "no | false | yes | true",
+  description: "Indicates whether or not to show placeholder in row controls."
+},{
+  name: "include-parent-keys",
+  default: "yes",
+  type: "no | false | yes | true",
+  description: "Indicates whether or not to include the table parent-keys values in the insertion values"
+}]
+
+
+outputs: [{
+  name : "onPostInsertRecord",
+  description: "Event triggered when a successful insertion is done"
+}]
+

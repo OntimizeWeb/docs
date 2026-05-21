@@ -1,0 +1,24 @@
+// custom setup code goes here
+$primary-500: #1464A5;
+$primary-400: #377BB3;
+$primary-900: #063679;
+$primary-500-24: #1464A53D;
+$primary-50: #E3ECF4;
+$dark-74: #000000BD;
+$dark-60: #00000099;
+$primary-500-dark: #8AB2D2;
+$primary-400-dark: #9CBED9;
+$primary-900-dark: #5A8AB6;
+$primary-500-24-dark: #8AB2D23D;
+$primary-50-dark: #F1F6FA;
+$white-74: #FFFFFFBD;
+$white-60: #FFFFFF99;
+$grey: #F6F6F6;
+$home-background: #293239;
+// Font
+$body-font-family: 'Roboto', sans-serif;
+// media queries
+$custom-media-queries: (home-header: 800px,
+  home-imgs-max: 2880px,
+  mobile-m: 375px);
+$media-queries: map-merge($media-queries, $custom-media-queries);

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="34" viewBox="0 0 160 34">
+  <g id="Ilustracion_email" data-name="Ilustracion email" transform="translate(-683 -452)">
+    <rect id="Rectángulo_6445" data-name="Rectángulo 6445" width="160" height="34" rx="2" transform="translate(683 452)" fill="#fff"/>
+    <path id="Rectángulo_6445_-_Contorno" data-name="Rectángulo 6445 - Contorno" d="M2,1A1,1,0,0,0,1,2V32a1,1,0,0,0,1,1H158a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H158a2,2,0,0,1,2,2V32a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(683 452)" fill="rgba(0,0,0,0.12)"/>
+    <path id="Trazado_7106" data-name="Trazado 7106" d="M18851.145,195.755h-16a.755.755,0,1,1,0-1.51h16a.755.755,0,1,1,0,1.51Z" transform="translate(-18144.145 265)" fill="rgba(0,0,0,0.6)"/>
+    <path id="Trazado_7162" data-name="Trazado 7162" d="M18877.145,195.755h-42a.755.755,0,1,1,0-1.51h42a.755.755,0,1,1,0,1.51Z" transform="translate(-18144.145 281)" fill="rgba(0,0,0,0.74)"/>
+    <path id="Trazado_7163" data-name="Trazado 7163" d="M18875.143,195.755h-40a.755.755,0,1,1,0-1.51h40a.755.755,0,1,1,0,1.51Z" transform="translate(-18085.145 281)" fill="rgba(0,0,0,0.74)"/>
+    <text id="_" data-name="@" transform="translate(735 478)" fill="rgba(0,0,0,0.74)" font-size="13" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">@</tspan></text>
+    <text id="_2" data-name="*" transform="translate(711 466)" fill="rgba(0,0,0,0.74)" font-size="12" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">*</tspan></text>
+    <g id="email-24px" transform="translate(822.976 468)">
+      <path id="Trazado_7164" data-name="Trazado 7164" d="M0,0H14V14H0Z" fill="none"/>
+      <path id="Trazado_7165" data-name="Trazado 7165" d="M11.785,4h-8.7a1.031,1.031,0,0,0-1.082.968L2,10.777a1.036,1.036,0,0,0,1.087.968h8.7a1.036,1.036,0,0,0,1.087-.968V4.968A1.036,1.036,0,0,0,11.785,4Zm0,1.936L7.436,8.357,3.087,5.936V4.968l4.349,2.42,4.349-2.42Z" transform="translate(-0.436 -0.873)" fill="rgba(0,0,0,0.6)"/>
+    </g>
+  </g>
+</svg>

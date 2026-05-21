@@ -1,0 +1,17 @@
+class: "OComboRendererRealComponent"
+
+extends: "OComboRendererIntegerComponent"
+
+directive: "o-combo-renderer-real"
+
+attributes: [{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+},{
+  name: "decimal-separator"
+},{
+  name: "min-decimal-digits"
+},{
+  name: "max-decimal-digits"
+}]

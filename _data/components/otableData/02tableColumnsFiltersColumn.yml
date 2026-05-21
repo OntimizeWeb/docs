@@ -1,0 +1,50 @@
+class: "OTableColumnsFilterColumnComponent"
+
+directive: "o-table-columns-filter-column"
+
+attributes:
+  [
+    { name: "attr" },
+    {
+      name: "sort",
+      type: "asc|desc|''",
+      default: "''",
+      required: "",
+      description: "Indicates sorting default of the results.",
+    },
+    {
+      name: "start-view",
+      type: "month|year|multi-year",
+      default: "month",
+      required: "",
+      description: "Indicates initial view for datepicker.",
+    },
+    {
+      name: "filter-values-in-data",
+      type: "'current-page' | 'all-data'",
+      since: "15.2.1",
+      default: "'current-page' | 'all-data'",
+      description: "Set mode to supplying filter values. Whether the o-table set pageable=no, the default value is 'all-data', however if set pageable='yes' the default value would be 'current-page'. "
+    },
+    {
+      name: "query-method",
+      since: "15.2.1"
+     },
+    {
+      name: 'mode',
+      description: 'Indicates the filtering mode for the column. `default` combines both selection and custom modes. `selection` allows filtering by selecting values present in the column. `custom` allows filtering using a form control.',
+      since: '15.9.0',
+      type: 'default | custom | selection',
+      default: 'default'
+    },{
+      name: 'date-format',
+      default: "Column format",
+      required: "15.9.0",
+      description: "Date format. See [MomentJS format](http://momentjs.com/docs/#/displaying/format){:target='_blank'}"
+    },{
+      name: 'date-value-type',
+      since: '15.9.0',
+      description: 'Indicates how the date value is stored and sent in the filter query.',
+      type: 'string | date | iso-8601 | timestamp',
+      default: 'timestamp' }
+  ]

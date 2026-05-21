@@ -1,0 +1,29 @@
+class: "OComboRendererCurrencyComponent"
+
+extends: "OComboCustomRenderer"
+
+directive: "o-combo-renderer-currency"
+
+attributes: [{
+  name: "currency-symbol",
+  type: "string",
+  default: "dolar ($)",
+  required: "",
+  description: "Currency symbol (According to ISO 4217)"
+},{
+  name: "currency-symbol-position",
+  type: "left | right",
+  default: "left",
+  required: "",
+  description: "Position of currency symbol"
+},{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+},{
+  name: "decimal-separator"
+},{
+  name: "min-decimal-digits"
+},{
+  name: "max-decimal-digits"
+}]

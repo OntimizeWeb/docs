@@ -1,0 +1,11 @@
+class: "OComboRendererIntegerComponent"
+
+extends: "OComboCustomRenderer"
+
+directive: "o-combo-renderer-integer"
+
+attributes: [{
+  name: "grouping"
+},{
+  name: "thousand-separator"
+}]

@@ -1,0 +1,29 @@
+class : "OTableColumnsFilterComponent"
+
+directive : "o-table-columns-filter"
+
+attributes: [{
+  name: "columns",
+  type: "string",
+  default : "",
+  required : "",
+  description : "Filterable columns separated by ';'. For each column attr it is indicated by which value is filtered, whether by the model (MODEL) or by the rendered (VIEW), using VIEW as default."
+},{
+  name: "preload-values",
+  type: "no | false | yes | true",
+  default : "yes",
+  required : "",
+  description : "Indicates whether or not to show the list values when the filter dialog is opened."
+},{
+  name: "mode",
+  type: "default | selection | custom",
+  default : "default",
+  required : "",
+  description : "Indicates the component performance mode."
+},{
+  name: "filter-values-in-data",
+  type: "'current-page' | 'all-data'",
+  default: "<p>'current-page' => pageable='yes'</p> <p>'all-data'=> pageable='no'</p>",
+  since: "15.2.1",
+  description: "Set mode to supplying filter values. Whether the o-table set pageable=no, the default value is 'all-data', however if set pageable='yes' the default value would be 'current-page'. "
+}]

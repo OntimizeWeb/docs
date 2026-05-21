@@ -1,0 +1,20 @@
+directive: "o-list-item-card-image"
+title: "List item: card image"
+
+inheritedAttributes: [{
+  component: "List item card",
+  attributes: ["title", "subtitle", "image", "action-1-text", "action-2-text"]
+}]
+
+attributes: [{
+  name: "avatar",
+  type: "string",
+  default: "",
+  required: "",
+  description: "The avatar of the list item"
+}]
+
+inheritedOutputs: [{
+  component: "List item card",
+  outputs: ["action-1", "action-2"]
+}]

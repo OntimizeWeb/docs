@@ -1,0 +1,600 @@
+class: "OTableComponent"
+
+directive: "o-table"
+
+inheritedAttributes: [{
+  component: "OServiceBaseComponent",
+  path: "components/service/service-base/api",
+  attributes: ["attr", "service", "service-type", "entity", "query-fallback-function", "query-on-init", "query-on-bind", "pageable", "columns", "keys *", "parent-keys", "static-data", "query-method", "paginated-query-method", "query-rows", "insert-method", "update-method", "delete-method", "store-state", "query-with-null-parent-keys", "configure-service-args"]
+},{
+  component: "OServiceComponent",
+  path: "components/service/service/api",
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "filter-case-sensitive", "quick-filter", "quick-filter-placeholder", "pagination-controls", "page-size-options","initial-filter-function", "filter-builder-function"]
+}]
+
+attributes: [{
+  name: "visible-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Visible columns. Separated by ';'"
+},{
+  name: "default-visible-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Initial visible columns. Separated by ';'"
+},
+{
+  name: "non-hidable-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Visible columns that cannot be hidden. Separated by ';'"
+},{
+  name: "sort-columns",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Initial ordering, using [ ASC or DESC ] format. Separated by ';'"
+},{
+  name: "quick-filter-function",
+  type: "(filter: string) => IFilterExpression | Object",
+  default: "",
+  required: "",
+  description: "Function for passing a custom filter value to paginated service queries"
+},{
+  name: "delete-button",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show a button for deleting data"
+},{
+  name: "refresh-button"
+},{
+  name: "select-all-checkbox",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show a option in the menu of the table that it have capacity show a column of checkboxes for selecting table rows"
+},{
+  name: "pagination-controls",
+  default: "yes"
+},{
+  name: "fixed-header",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to have a fixed header when the content is greather than its own height"
+},{
+  name: "export-button",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show a button on the header menu for exporting data"
+},{
+  name: "show-configuration-option",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "no",
+  description: "Indicates whether or not to show a option on the header menu for configuration"
+},{
+  name: "show-buttons-text"
+},{
+  name: "columns-visibility-button",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show a button on the header menu for changing columns visibility"
+},{
+  name: "show-title",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the table title in the toolbar"
+},{
+  name: "edition-mode",
+  type: "none | click | dblclick",
+  default: "none",
+  required: "",
+  description: "Action for changing a cell to edition mode. The priority between edition-mode, selection-mode and detail-mode is 1->detail-mode, 2->edition-mode, 3->selection-mode."
+},{
+  name: "selection-mode",
+  type: "none | single | multiple",
+  default: "multiple",
+  required: "",
+  description: "Row selection mode. The priority between edition-mode, selection-mode and detail-mode is 1->detail-mode, 2->edition-mode, 3->selection-mode."
+},{
+  name: "detail-mode",
+  type: "none | click | dblclick",
+  default: "click",
+  required: "no",
+  description: "Action for access the edition screen. The priority between edition-mode, selection-mode and detail-mode is 1->detail-mode, 2->edition-mode, 3->selection-mode."
+},{
+  name: "horizontal-scroll",
+  type: "no | false | yes | true",
+  default: "no",
+  description: "Indicates whether or not to allow horizontal scroll"
+},{
+  name: "show-paginator-first-last-buttons",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to show the go to the first and last page in the table pagination"
+},{
+  name: "auto-align-titles",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to auto align the table header cells"
+},{
+  name: "multiple-sort",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to allow multiple columns sorting"
+},{
+  name: "select-all-checkbox-visible",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  description: "Indicates whether or not to show the column of checkboxes for selecting table rows in the table"
+},{
+  name: "orderable",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not all columns in the table can be sorted"
+},{
+  name: "enabled",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the table is enabled"
+},{
+  name: "resizable",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not the table columns are resizables"
+},{
+  name: "keep-selected-items",
+  type: "no | false | yes | true",
+  default: "yes",
+  description: "Indicates whether or not to keep a table row highlighted as selected"
+},{
+  name: "export-service-type",
+  type: "string",
+  default: "OntimizeExportService",
+  description: "The service used by the table for exporting it's data, it must implement 'IExportService' interface"
+},{
+  name: "show-filter-option",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the filter menu option in the header menu"
+},{
+  name: "row-class",
+  type: "(rowData: any, rowIndex: number) => string | string[]",
+  default: "",
+  required: "",
+  description: "Adds the CSS class or classes returned by the provided function to the table rows whose data and index are provided "
+},{
+  name: "filter-column-active-by-default",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to show the filter by column icon in the table header by default"
+},{
+  name: "auto-adjust",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to auto adjust column width to its content."
+},{
+  name: "groupable",
+  type: "no | false | yes | true",
+  default: "yes",
+  required: "",
+  description: "Indicates whether or not to group by column"
+},{
+  name: "grouped-columns",
+  type: "string",
+  description: "Grouped columns separated by ';'. Default: no value",
+  required: "",
+  default: ""
+},{
+  name: "collapse-grouped-columns",
+  type: "yes|no|true|false",
+  description: "Whether collapse the grouped columns by default",
+  required: "",
+  default: "no"
+},{
+  name: "virtual-scroll",
+  type: "yes|no|true|false",
+  description: "Whether enabled or not virtual scrolling by default",
+  required: "",
+  default: "yes"
+},{
+  name: "show-expandable-icon-function",
+  since: "8.5.4",
+  type: "Function",
+  description: "Indicates a function that will be executed on table creation to show or not icon to expand or collapse expandable rows. The function must return a boolean observable.",
+  required: "",
+  default: ""
+},{
+  name: "show-report-on-demand-option",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the report on demand menu option in the header menu",
+  required: "",
+  default: "yes"
+},{
+  name: "show-charts-on-demand-option",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the charts on demand menu option in the header menu",
+  required: "",
+  default: "yes"
+},
+{
+  name: "show-reset-width-option",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show the reset width menu option in the header menu",
+  required: "",
+  default: "yes"
+},{
+  name: "disable-selection-function",
+  since: "8.8.3",
+  type: "(row: any) => boolean",
+  default: "",
+  required: "",
+  description: "Function that will be used to allow row selection by changing the enable/disable state of the checkboxes of the rows."
+},{
+  name: "visible-export-dialog-buttons",
+  type: "string",
+  description: "Visible buttons in export dialog, separated by ';'. Default/no configured: show all. Empty value: hide all",
+  required: "",
+  default: "no"
+},{
+  name: "selection-on-row-click",
+  type: "yes|no|true|false",
+  description: "Indicates whether row selection is triggered when clicking on a row",
+  required: "",
+  default: "yes"
+},{
+  name: "show-header-tooltip",
+  type: "yes|no|true|false",
+  description: "Indicates whether or not to show tooltip in the column headers",
+  required: "",
+  default: "no"
+}]
+
+inheritedOutputs: [{
+  component: "OServiceComponent",
+  path: "components/service/service/api",
+  outputs: [ 'onClick','onDoubleClick','onDataLoaded','onPaginatedDataLoaded','onSearch']
+}]
+
+outputs: [{
+  name: "onRowSelected",
+  description: "Event triggered when a row is selected"
+},{
+  name: "onRowDeselected",
+  description: "Event triggered when a row is deselected"
+},{
+  name: "onRowDeleted",
+  description: "Event triggered when there some row deletion"
+},{
+  name: "onSearch",
+  description: "Event triggered when quick filter changes"
+},{
+  name: "onSortChange",
+  description: "Emitted when sorting changes"
+},{
+  name: "onFilterByColumnChange ",
+  description: "Emitted when column filters change"
+}]
+
+methods: [{
+  name: "getValue",
+  type: "method",
+  description: "Returns the current page table data.",
+  returns: "any[]"
+},{
+  name: "getRenderedValue",
+  type: "method",
+  parameters: "any[]",
+   description: "Returns the current page table renderer data.",
+},{
+  name: "getAllValues",
+  type: "method",
+  parameters: "any[]",
+  description: "Returns the table data."
+},{
+  name: "getAllRenderedValues",
+  type: "method",
+  parameters: "any[]",
+  description: "Returns the table renderer data."
+},{
+  name: "reinitialize",
+  type: "method",
+  parameters: "OTableInitializationOptions",
+  description: "Allow reinitialize table options adding options "
+},{
+  name: "toogleRowExpandable",
+  type: "method",
+  parameters: "row:data, rowIndex:number, event:Event",
+  description: "Allow to expand or collapse the expandable row."
+},{
+  name: "queryData",
+  type: "method",
+  parameters: "filter:any, ovrrArgs?: OQueryDataArgs",
+  description: "Allow to manage the call to the service data."
+},{
+  name: "add",
+  type: "method",
+  parameters: "",
+  description: "Triggers navigation to new item insertion"
+},{
+  name: "remove",
+  type: "method",
+  parameters: "clearSelectedItems: boolean = false",
+  description: "Remove selected rows"
+},{
+  name: "showAndSelectAllCheckbox",
+  type: "method",
+  parameters: "",
+  description: "Select all rows."
+},{
+  name: "reloadData",
+  type: "method",
+  parameters: "",
+  description: "Reload table data."
+},{
+  name: "editDetail",
+  type: "method",
+  parameters: "item: any",
+  description: "Triggers navigation to item edition, receiving item data"
+},{
+  name: "viewDetail",
+  type: "method",
+  parameters: "item: any",
+  description: "Triggers navigation to item detail, receiving item data"
+},{
+  name: "clearFilters",
+  type: "method",
+  parameters: "riggerDatasourceUpdate: boolean = true",
+  description: "Clear all filters(column filter and quickfilter) and reload data"
+},{
+  name: "setDataArray",
+  type: "method",
+  parameters: "data: Array<any>",
+  description: "Set static data."
+},{
+  name: "getDataArray",
+  type: "method",
+  return: "data: Array<any>",
+  description: "Get data table"
+},{
+  name: "getSqlTypes",
+  type: "method",
+  parameters: "",
+  description: "Get sqlTypes from data source "
+},{
+  name: "getMenuPermissions",
+  type: "method",
+  returns: "OTableMenuPermissions",
+  description: "Returns the configured menu permissions."
+},{
+  name: "initializeCheckboxColumn",
+  type: "method",
+  description: "Initializates the checkbox columns."
+},{
+  name: "reinitializeSortColumns",
+  type: "method",
+  parameters: "sortColumns?: SQLOrder[]",
+  description: "Sort columns method which acept an especific order on its optional parameter."
+},{
+  name: "setGroupColumns",
+  type: "method",
+  parameters: "value: any[]",
+  description: "Group an especific columns declarated on the array parameter."
+},{
+  name: "clearColumnFilters",
+  type: "method",
+  parameters: "triggerDatasourceUpdate?: boolean, columnsAttr?: string[]",
+  description: "Method that clears the column filters letting update the result and choose the columns by their Attr."
+},{
+  name: "refreshColumnsWidthFromLocalStorage",
+  type: "method",
+  description: "Refresh the column with to the defined on the local storage."
+},{
+  name: "setGroupedColumnsTypes",
+  type: "method",
+  parameters: "value: OGroupedColumnTypes[]",
+  description: "Sets the column types of a grouped columns with an Attr and Type array."
+},{
+  name: "storeFilterInState",
+  type: "method",
+  parameters: "arg: OFilterDefinition",
+  description: "Stores the filter definition on the State Service component."
+},{
+  name: "setFiltersConfiguration",
+  type: "method",
+  description: "Check the original filterCaseSensitive with the filterCaseSensitive in initial configuration in local storage if filterCaseSensitive in initial configuration is equals to original filterCaseSensitive input filterCaseSensitive will be the value in local storage."
+},{
+  name: "reloadPaginatedDataFromStart",
+  type: "method",
+  parameters: "clearSelectedItems?: boolean",
+  description: "Reloads the pageable tables from the first record and unselect the selected items by default."
+},{
+  name: "resetColumnsWidth",
+  type: "method",
+  description: "Resets the column width to the defined or the default (auto)."
+},{
+  name: "applyDefaultConfiguration",
+  type: "method",
+  description: "Applies the default configuration to de table."
+},{
+  name: "applyConfiguration",
+  type: "method",
+  parameters: "configurationName: string",
+  description: "Applies a stored configuration depending on a table part depeding on the instroduced parameter."
+},{
+  name: "getColumnsNotIncluded",
+  type: "method",
+  returns: "string[]",
+  description: "Returns an array of the Attr of the columns not included on the table."
+},{
+  name: "getComponentFilter",
+  type: "method",
+  parameters: "existingFilter?: any",
+  returns: "any",
+  description: "Returns the defined table filter."
+},{
+  name: "getColumnNames",
+  type: "method",
+  parameters: "columns: string[]",
+  returns: "{ [columnId: string]: string; }",
+  description: "Returns the name or the Attr if dont have name of the introduced columns in the parameters."
+},{
+  name: "registerQuickFilter",
+  type: "method",
+  parameters: "arg: any",
+  description: "Define a custom quickfilter."
+},{
+  name: "getClientWidthColumn",
+  type: "method",
+  parameters: "col: OColumn",
+  returns: "number",
+  description: "Returns the width of a specified column."
+},{
+  name: "getActionsPermissions",
+  type: "method",
+  returns: "OPermissions[]",
+  description: "Returns the permissions defined on the table."
+},{
+  name: "registerOTableButtons",
+  type: "method",
+  parameters: "arg: OTableButtons",
+  description: "Register to the table the OTableButtons defined on parameters."
+},{
+  name: "isColumnFilterable",
+  type: "method",
+  parameters: "column: OColumn",
+  returns: "boolean",
+  description: "Returns true if the column is filterable."
+},{
+  name: "openColumnFilterDialog",
+  type: "method",
+  parameters: "column: OColumn, event: Event",
+  description: "Opens the column filter dialog of the specified column."
+},{
+  name: "getOColumn",
+  type: "method",
+  parameters: "attr: string",
+  returns: "OColumn",
+  description: "Returns column by its attr."
+},{
+  name: "groupByColumn",
+  type: "method",
+  parameters: "column: OColumn, type?: string",
+  returns: "OColumn",
+  description: "Groups the records by the column and opcionally the type too."
+},{
+  name: "unGroupByColumn",
+  type: "method",
+  parameters: "column: OColumn",
+  returns: "OColumn",
+  description: "Ungroup the records by the column introduced in parameter."
+},{
+  name: "unGroupByAllColumn",
+  type: "method",
+  description: "Ungroups all the records grouped by columns."
+},{
+  name: "filterByColumn",
+  type: "method",
+  parameters: "columnValueFilter: OColumnValueFilter",
+  description: "Filters the table by the OColumnValueFilter."
+},{
+  name: "refresh",
+  type: "method",
+  description: "Refresh the table component."
+},{
+  name: "copySelection",
+  type: "method",
+  description: "Copies to the clipboard the selected records."
+},{
+  name: "copyAll",
+  type: "method",
+  description: "Copies all the table records."
+},{
+  name: "showAndSelectAllCheckbox",
+  type: "method",
+  description: "Shows the checkboxs on the table and selects all."
+},{
+  name: "doHandleClick",
+  type: "method",
+  parameters: "row: any, column: string, rowIndex: number, $event: MouseEvent",
+  description: "Emits a click event on the especified row."
+},{
+  name: "viewDetail",
+  type: "method",
+  parameters: "item: any",
+  description: "Open the detail of an item if it have permissions."
+},{
+  name: "clearSelection",
+  type: "method",
+  description: "Unselect the table items selected."
+},{
+  name: "isSelectionModeMultiple",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the selection mode is multiple."
+},{
+  name: "registerContextMenu",
+  type: "method",
+  parameters: "value: OContextMenuComponent",
+  description: "Adds the provided context menu to de table."
+},{
+  name: "isSelectionModeNone",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the selection mode is disabled."
+},{
+  name: "isAllSelected",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if all the rows are selected."
+},{
+  name: "registerTableHeaders",
+  type: "method",
+  parameters: "tableHeader: OTableHeaderComponent",
+  description: "Adds the provided table header to de table."
+},{
+  name: "isIndeterminate",
+  type: "method",
+  returns: "boolean",
+  description: "Returns true if the number of selected rows is not equal to the number of rows."
+},{
+  name: "masterToggle",
+  type: "method",
+  parameters: "event: MatCheckboxChange",
+  description: "If the event detects that the user clicks the checkbox it select all the rows with the selectAll() method. In the other side if the user unselect the checkbox it use the clearSelection() method to unselect all the rows."
+},{
+  name: "getColumnFiltersExpression",
+  type: "method",
+  returns: "Expression",
+  description: "Returns the complex expression from the column filters."
+},{
+  name: "updateStateStorage",
+  type: "method",
+  description: "Updates the state storage with the current table configuration  when enabled."
+
+},{
+  name: "addDefaultRowButtons",
+  type: "method",
+  description: "Adds the default per-row action button columns (edit/detail) to the table when enabled by configuration."
+},{
+  name: "addButtonInRow",
+  type: "method",
+  description: "Creates and registers a fixed non-searchable/non-orderable/non-resizable/non-groupable action column and ensures it is included in visibleColumns"
+}
+]
+
+extraComponents: "otableData"

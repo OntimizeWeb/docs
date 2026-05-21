@@ -1,0 +1,137 @@
+type: "TableConfig"
+
+description: "Represents the configuration object used by <code>o-data-view</code> to customize the embedded <a href='https://ontimizeweb.github.io/docs/v15/components/data/table/api'>o-table</a> view.
+All options are equivalent to the <code>o-table</code> inputs, so you can consult its API to understand the meaning of each property.
+<div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
+type TableConfig = {
+  visible?: CustomBoolean;
+  detailButtonInRow?: CustomBoolean;
+  detailButtonInRowIcon?: string;
+  editButtonInRow?: CustomBoolean;
+  editButtonInRowIcon?: string;
+  editFormRoute?: string;
+  rowHeight?: 'small' | 'medium' | 'large';
+  autoAdjust?: CustomBoolean;
+  autoAlignTitles?: CustomBoolean;
+  collapseGroupedColumns?: CustomBoolean;
+  columnsVisibilityButton?: CustomBoolean;
+  defaultVisibleColumns?: string;
+  disableSelectionFunction?: (item: any) => boolean;
+  detailMode?: 'none' | 'click' | 'dblclick';
+  editionMode?: 'none' | 'click' | 'dblclick';
+  enabled?: CustomBoolean;
+  exportButton?: CustomBoolean;
+  exportServiceType?: string;
+  filterColumnActiveByDefault?: CustomBoolean;
+  groupable?: CustomBoolean;
+  groupedColumns?: string;
+  horizontalScroll?: CustomBoolean;
+  keepSelectedItems?: CustomBoolean;
+  multipleSort?: CustomBoolean;
+  nonHidableColumns?: string;
+  pageSizeOptions?: any[];
+  orderable?: CustomBoolean;
+  quickFilterFunction?: QuickFilterFunction;
+  resizable?: CustomBoolean;
+  rowClass?: (rowData: any, rowIndex: number) => string | string[];
+  selectAllCheckbox?: CustomBoolean;
+  selectAllCheckboxVisible?: CustomBoolean;
+  selectionMode?: 'none' | 'single' | 'multiple';
+  showConfigurationOption?: CustomBoolean;
+  showExpandableIconFunction?: Function;
+  showFilterOption?: CustomBoolean;
+  showPaginatorFirstLastButtons?: CustomBoolean;
+  showReportOnDemandOption?: CustomBoolean;
+  showChartsOnDemandOption?: CustomBoolean;
+  showResetWidthOption?: CustomBoolean;
+  sortColumns?: string;
+  virtualScroll?: CustomBoolean;
+  visibleColumns?: string;
+  visibleExportDialogButtons?: string;
+  selectionOnRowClick?: CustomBoolean;
+};
+</code></pre></div></div>
+"
+
+propertiesColumns: ["Name", "Type", "Description"]
+
+attributes:
+  [
+    { name: "visible", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "detailButtonInRow", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "detailButtonInRowIcon", type: "string", optional: true },
+    { name: "editButtonInRow", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "editButtonInRowIcon", type: "string", optional: true },
+    { name: "editFormRoute", type: "string", optional: true },
+    { name: "rowHeight", type: "'small' | 'medium' | 'large'", optional: true },
+    { name: "autoAdjust", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "autoAlignTitles", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "collapseGroupedColumns", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "columnsVisibilityButton", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "defaultVisibleColumns", type: "string", optional: true },
+    {
+      name: "disableSelectionFunction",
+      type: "(item: any) => boolean",
+      optional: true,
+    },
+    {
+      name: "detailMode",
+      type: "'none' | 'click' | 'dblclick'",
+      optional: true,
+    },
+    {
+      name: "editionMode",
+      type: "'none' | 'click' | 'dblclick'",
+      optional: true,
+    },
+    { name: "enabled", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "exportButton", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "exportServiceType", type: "string", optional: true },
+    {
+      name: "filterColumnActiveByDefault",
+      type: "'yes'  |  'no'  |  'true' | 'false'",
+      optional: true,
+    },
+    { name: "groupable", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "groupedColumns", type: "string", optional: true },
+    { name: "horizontalScroll", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "keepSelectedItems", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "multipleSort", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "nonHidableColumns", type: "string", optional: true },
+    { name: "pageSizeOptions", type: "any[]", optional: true },
+    { name: "orderable", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    {
+      name: "quickFilterFunction",
+      type: "QuickFilterFunction",
+      optional: true,
+    },
+    { name: "resizable", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    {
+      name: "rowClass",
+      type: "(rowData: any, rowIndex: number) => string | string[]",
+      optional: true,
+    },
+    { name: "selectAllCheckbox", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "selectAllCheckboxVisible", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    {
+      name: "selectionMode",
+      type: "'none' | 'single' | 'multiple'",
+      optional: true,
+    },
+    { name: "showConfigurationOption", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "showExpandableIconFunction", type: "Function", optional: true },
+    { name: "showFilterOption", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    {
+      name: "showPaginatorFirstLastButtons",
+      type: "'yes'  |  'no'  |  'true' | 'false'",
+      optional: true,
+    },
+    { name: "showReportOnDemandOption", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "showChartsOnDemandOption", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "showResetWidthOption", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "sortColumns", type: "string", optional: true },
+    { name: "virtualScroll", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true },
+    { name: "visibleColumns", type: "string", optional: true },
+    { name: "visibleExportDialogButtons", type: "string", optional: true },
+    { name: "selectionOnRowClick", type: "'yes'  |  'no'  |  'true' | 'false'", optional: true }
+  ]

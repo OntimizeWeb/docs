@@ -1,0 +1,20 @@
+{% assign files = include.folder | sort %}
+
+{% for file in files %}
+  {% assign filename =  file[0] %}
+  {% assign componentAPI = include.folder[filename];%}
+
+  {% if componentAPI.constant %}
+    <h2 id="{{ componentAPI.constant }}">
+      <span>{{ componentAPI.constant }} </span>
+      {% if componentAPI.extends %}
+        extends {{ componentAPI.extends }}
+      {% endif %}
+    </h2>
+
+    {% if componentAPI.description %}
+      <p>{{ componentAPI.description }}</p>
+    {% endif %}
+  {% endif %}
+
+{% endfor %}

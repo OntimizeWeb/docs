@@ -1,0 +1,9 @@
+directive: "o-app-layout-sidenav"
+
+attributes: [{
+  name: "position",
+  type: "start | end",
+  default: "end",
+  required: "",
+  description: "Indicates whether the custom content of the side menu is attached at the top or at the end of the menu"
+}]

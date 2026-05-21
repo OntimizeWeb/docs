@@ -1,0 +1,17 @@
+{% include base_path %}
+
+{% if post != nil %}
+  {% assign title = post.title %}
+  {% assign body = post.body %}
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 id="title"  class="code panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" onclick="onPostClick(this)">{{ title }}</a>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse">
+      <div class="panel-body">{{ body }}</div>
+    </div>
+  </div>
+{% endif %}
