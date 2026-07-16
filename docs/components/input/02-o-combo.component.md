@@ -13,7 +13,7 @@ nav_order: 2
 
 The `o-combo` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying an option between multiple input submitted by the user.
 
-The combo component is automatically registered on its parent `o-form`, which provides the value for the combo programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `<o-form>`, the combo component is automatically registered on it, which provides the value for the combo programatically, but it is also a standalone component that can be used on its own with Angular Reactive Forms (see [Standalone usage](#standalone-usage) below). Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the options on the drop down and each element of the data array must be an object with at least one key/value pair.
 
@@ -23,6 +23,52 @@ The data array can be provided in two ways:
 {: .note }
 >Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
 Always pass a static reference instead (e.g. `[static-data]="data"`).
+
+## Standalone usage
+
+`o-combo` is standalone and can be imported directly without `<o-form>`:
+
+```typescript
+import { Component } from '@angular/core';
+import { OComboComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [OComboComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`, still using `static-data`/`value-column` to configure the options:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { OComboComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, OComboComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-combo formControlName="country" label="Country" [static-data]="staticData"
+        value-column="name" columns="id;name" visible-columns="name"></o-combo>
+    </form>
+  `
+})
+export class MyComponent {
+  staticData = [{ id: 1, name: 'Spain' }, { id: 2, name: 'France' }];
+
+  form = new FormGroup({
+    country: new FormControl('Spain', Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![Combo component]({{ "/assets/images/components/inputs/o-combo.png" | absolute_url }}){: .comp-example-img}
@@ -93,12 +139,12 @@ Display a custom value by configuring `render-false-value` and `render-true-valu
 
  ```html
 <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
-  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes">
   <o-combo-renderer-boolean boolean-type="boolean" render-true-value="Yes" render-false-value="No"></o-combo-renderer-boolean>
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/combo).
 
 
 **Currency combo renderer**
@@ -107,12 +153,12 @@ Configure the currency symbol with the `currency-symbol` attribute. Check this a
 
  ```html
 <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
-  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes">
   <o-combo-renderer-currency></o-combo-renderer-currency>
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/combo).
 
 
 **Date combo renderer**
@@ -121,61 +167,61 @@ You may want to set the displaying date format by configuring the `format` attri
 
 ```html
 <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
-  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes">
   <o-combo-renderer-date></o-combo-renderer-date>
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/combo).
 
 
 **Integer combo renderer**
 
 ```html
 <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
-  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes">
   <o-combo-renderer-integer></o-combo-renderer-integer>
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/combo).
 
 
 **Real combo renderer**
 
 ```html
 <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
-  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes">
   <o-combo-renderer-real></o-combo-renderer-real>
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/combo).
 
 
 **Percentage combo renderer**
 
 ```html
 <o-combo attr="combo-editable-search" [static-data]="dataArray" [data]="valueSimple"
-  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  value-column="key" columns="key;value" visible-columns="value" required="yes" read-only="no" null-selection="no" searchable="yes">
   <o-combo-renderer-percentage value-base="100"></o-combo-renderer-percentage>
 </o-combo>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/combo).
 
 
 **Icon combo renderer**
 
 ```html
 <o-combo attr="combo-editable-search"
-  value-column="EMPLOYEE_TYPE_ID" columns="EMPLOYEE_TYPE_ID;EMPLOYEE_TYPE_VALUE;EMPLOYEE_TYPE_ICON" visible-columns="EMPLOYEE_TYPE_VALUE" required="yes" read-only="no" null-selection="no" searchable="yes" fxFlex>
+  value-column="EMPLOYEE_TYPE_ID" columns="EMPLOYEE_TYPE_ID;EMPLOYEE_TYPE_VALUE;EMPLOYEE_TYPE_ICON" visible-columns="EMPLOYEE_TYPE_VALUE" required="yes" read-only="no" null-selection="no" searchable="yes">
   <o-combo-renderer-icon icon-position="right" icon-column="EMPLOYEE_TYPE_ICON"></o-combo-renderer-percentage>
 </o-combo>
 ```
 This renderer uses Material Icons to display each icon, you can see the complete set of icons [here](https://fonts.google.com/icons).
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/combo).
 
 ### Custom renderers <span class='menuitem-badge'>new<span>
 
@@ -227,7 +273,7 @@ The *let* keyword declares a template input variable that you reference within t
 
 Finally, add the created component to your module for including it in your combo.
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/combo).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/combo).
 
 ## Locker
 

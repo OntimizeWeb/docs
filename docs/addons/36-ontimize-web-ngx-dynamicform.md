@@ -40,24 +40,24 @@ You must add the module styles definition in your '*.angular-cli.json*' file sty
 ...
 ```
 
-### Import in an application module
+### Import in a standalone component
 
-Include the dynamic form module into your app in the module where you want to use it.
+Include the dynamic form module into your standalone component where you want to use it.
 
 ```bash
 ...
 import { DynamicFormModule } from 'ontimize-web-ngx-dynamicform';
 ...
 
-@NgModule({
+@Component({
+  standalone: true,
   imports: [
     DynamicFormModule,
     /* other imports */
   ],
-  declarations: ...
-  providers: ...
+  ...
 })
-export class ExampleModule { }
+export class ExampleComponent { }
 ```
 
 

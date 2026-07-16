@@ -13,7 +13,50 @@ nav_order: 7
 
 The `o-file-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for uploading files to a server.
 
-The file input is automatically registered on its parent `o-form`. The configuration attributes for this component are explained on the **API** section of this page.
+When placed inside an `o-form`, the file input is automatically registered on its parent. The configuration attributes for this component are explained on the **API** section of this page.
+
+## Standalone usage
+
+`o-file-input` is a standalone component and can be imported directly without an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { OFileInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [OFileInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of relying on `o-form` registration:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { OFileInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, OFileInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-file-input formControlName="file" label="File" accept-file-type="image/*" max-file-size="100000" show-info="yes"></o-file-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    file: new FormControl<string>('')
+  });
+}
+```
 
 ## Basic example
 ![File input component]({{ "/assets/images/components/inputs/o-file-input.png" | absolute_url }}){: .comp-example-img}

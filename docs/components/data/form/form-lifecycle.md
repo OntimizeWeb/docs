@@ -27,20 +27,14 @@ The form modes for the *editable detail form* are the following:
 
 Ontimize Web allow you to configure `header-actions` in the entire application or a module using token injection `O_FORM_GLOBAL_CONFIG`. For example, to configure that all o-forms have the **update** action active, it would be configured as shown below.
 
-**app.module.ts**
+**app.config.ts**
 ```ts
-@NgModule({
-  declarations: [
-  ...
-  ],
-  ...
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
-    { provide: O_FORM_GLOBAL_CONFIG, useValue: { headerActions:'U' } },
-    ...
-  ],
-  ...
-})
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_FORM_GLOBAL_CONFIG, useValue: { headerActions: 'U' } }
+  ]
+};
 ```
 ### States diagram
 

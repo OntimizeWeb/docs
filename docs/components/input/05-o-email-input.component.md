@@ -13,7 +13,50 @@ nav_order: 6
 
 The `o-email-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying email addresses input submitted by the user.
 
-The email input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `o-form`, the email input is automatically registered on its parent, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+`o-email-input` is a standalone component and can be imported directly without an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { OEmailInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [OEmailInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { OEmailInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, OEmailInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-email-input formControlName="email" label="Email" required="yes"></o-email-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    email: new FormControl('john.doe@ontimize.com', Validators.email)
+  });
+}
+```
 
 ## Basic example
 ![Email input component]({{ "/assets/images/components/inputs/o-email-input.png" | absolute_url }}){: .comp-example-img}

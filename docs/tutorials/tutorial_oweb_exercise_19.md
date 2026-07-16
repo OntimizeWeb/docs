@@ -27,65 +27,47 @@ ayudará a establecer nuestro tema predeterminado.
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Creamos el fichero y modificamos los colores como nos guste. Hay páginas que pueden ser de utilidad, como
- <a href="https://www.materialpalette.com" target="_blank">materialpalette.com</a>,
-<a href="https://www.materialui.co" target="_blank">materialui.co</a> o
-<a href="http://mcg.mbitson.com" target="_blank">mcg.mbitson.com</a></p>
+        <p>Creamos el fichero y modificamos los colores como nos guste. Para generar la paleta M3 a partir de un color
+ corporativo podemos apoyarnos en el asistente de Angular Material (<code>ng generate @angular/material:m3-theme</code>)
+ o en la herramienta <a href="https://material-foundation.github.io/material-theme-builder/" target="_blank">Material Theme Builder</a>.</p>
 
 {{"**custom-theme.css**" | markdownify }}
 {% highlight scss %}
 @use '@angular/material' as mat;
 @use 'node_modules/ontimize-web-ngx/theming/ontimize-style.scss' as ontimize-style;
 
-/* Color definitions */
+// Custom M3 palette generated with `ng generate @angular/material:m3-theme`
+// from the seed colour #e69138 (see https://material-foundation.github.io/material-theme-builder/)
 $mat-custom-primary: (
-    50 : #fcf2e7,
-    100 : #f8dec3,
-    200 : #f3c89c,
-    300 : #eeb274,
-    400 : #eaa256,
-    500 : #e69138,
-    600 : #e38932,
-    700 : #df7e2b,
-    800 : #db7424,
-    900 : #d56217,
-    A100 : #ffffff,
-    A200 : #ffe3d4,
-    A400 : #ffc3a1,
-    A700 : #ffb287,
-    contrast: (50 : #4b4845, 100 : #4a423a, 200 : #483c2e, 300 : #473523, 400 : #46301a, 500 : #452b11, 600 : #44290f, 700 : #42260d, 800 : #41230b, 900 : #f2d0ba, A100 : #4c4c4c, A200 : #4c443f, A400 : #4c3a30, A700 : #4c3528)
+  0:   #000000,
+  10:  #341100,
+  20:  #542300,
+  25:  #642c00,
+  30:  #753600,
+  35:  #864000,
+  40:  #984b00,
+  50:  #bb6100,
+  60:  #de7900,
+  70:  #ff9331,
+  80:  #ffb87a,
+  90:  #ffdcbd,
+  95:  #ffeee0,
+  98:  #fff8f4,
+  99:  #fffbff,
+  100: #ffffff,
 );
-
-/* Color definitions */
-$mat-custom-primary-dark: (
-        50 : #fcf2e7,
-        100 : #f8dec3,
-        200 : #f3c89c,
-        300 : #eeb274,
-        400 : #eaa256,
-        500 : #e69138,
-        600 : #e38932,
-        700 : #df7e2b,
-        800 : #db7424,
-        900 : #d56217,
-        A100 : #ffffff,
-        A200 : #ffe3d4,
-        A400 : #ffc3a1,
-        A700 : #ffb287,
-    contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000, 500 : #000000, 600 : #000000, 700 : #000000, 800 : #000000, 900 : #000000, A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000, )
-);
-
-// Define a theme.
-$primary: mat.define-palette($mat-custom-primary);
-$accent: $primary;
-$primary-dark: mat.define-palette($mat-custom-primary-dark);
-$accent-dark: $primary-dark;
 
 /* Light theme */
-$theme: ontimize-style.o-mat-light-theme($primary, $accent);
+$theme: ontimize-style.o-mat-light-theme((
+  primary: $mat-custom-primary,
+  tertiary: $mat-custom-primary
+));
 
 /* Dark theme */
-$dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
+$dark-theme: ontimize-style.o-mat-dark-theme((
+  primary: $mat-custom-primary,
+  tertiary: $mat-custom-primary
+));
 {% endhighlight %}
 
 <p>Luego para aplicar nuestro tema, modificaremos en tema en el fichero <strong>app.scss</strong>, para que use el
@@ -210,8 +192,7 @@ fichero <strong>custom-theme.scss</strong> en vez de <em>ontimize-web-ngx/themin
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -288,8 +269,7 @@ fichero <strong>custom-theme.scss</strong> en vez de <em>ontimize-web-ngx/themin
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -521,56 +501,39 @@ para forzar su carga por defecto.
 @use '@angular/material' as mat;
 @use 'node_modules/ontimize-web-ngx/theming/ontimize-style.scss' as ontimize-style;
 
-/* Color definitions */
+// Custom M3 palette generated with `ng generate @angular/material:m3-theme`
+// from the seed colour #e69138 (see https://material-foundation.github.io/material-theme-builder/)
 $mat-custom-primary: (
-    50 : #fcf2e7,
-    100 : #f8dec3,
-    200 : #f3c89c,
-    300 : #eeb274,
-    400 : #eaa256,
-    500 : #e69138,
-    600 : #e38932,
-    700 : #df7e2b,
-    800 : #db7424,
-    900 : #d56217,
-    A100 : #ffffff,
-    A200 : #ffe3d4,
-    A400 : #ffc3a1,
-    A700 : #ffb287,
-    contrast: (50 : #4b4845, 100 : #4a423a, 200 : #483c2e, 300 : #473523, 400 : #46301a, 500 : #452b11, 600 : #44290f, 700 : #42260d, 800 : #41230b, 900 : #f2d0ba, A100 : #4c4c4c, A200 : #4c443f, A400 : #4c3a30, A700 : #4c3528)
+  0:   #000000,
+  10:  #341100,
+  20:  #542300,
+  25:  #642c00,
+  30:  #753600,
+  35:  #864000,
+  40:  #984b00,
+  50:  #bb6100,
+  60:  #de7900,
+  70:  #ff9331,
+  80:  #ffb87a,
+  90:  #ffdcbd,
+  95:  #ffeee0,
+  98:  #fff8f4,
+  99:  #fffbff,
+  100: #ffffff,
 );
-
-/* Color definitions */
-$mat-custom-primary-dark: (
-        50 : #fcf2e7,
-        100 : #f8dec3,
-        200 : #f3c89c,
-        300 : #eeb274,
-        400 : #eaa256,
-        500 : #e69138,
-        600 : #e38932,
-        700 : #df7e2b,
-        800 : #db7424,
-        900 : #d56217,
-        A100 : #ffffff,
-        A200 : #ffe3d4,
-        A400 : #ffc3a1,
-        A700 : #ffb287,
-    contrast: (50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000, 500 : #000000, 600 : #000000, 700 : #000000, 800 : #000000, 900 : #000000, A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000, )
-);
-
-// Define a theme.
-$primary: mat.define-palette($mat-custom-primary);
-$accent: $primary;
-$primary-dark: mat.define-palette($mat-custom-primary-dark);
-$accent-dark: $primary-dark;
 
 /* Light theme */
-// $theme: ontimize-style.o-mat-light-theme($primary, $accent);
-$theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
+// $theme: ontimize-style.o-mat-light-theme((primary: $mat-custom-primary, tertiary: $mat-custom-primary));
+$theme: ontimize-style.o-mat-dark-theme((
+  primary: $mat-custom-primary,
+  tertiary: $mat-custom-primary
+));
 
 /* Dark theme */
-$dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
+$dark-theme: ontimize-style.o-mat-dark-theme((
+  primary: $mat-custom-primary,
+  tertiary: $mat-custom-primary
+));
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -671,8 +634,7 @@ $dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -749,8 +711,7 @@ $dark-theme: ontimize-style.o-mat-dark-theme($primary-dark, $accent-dark);
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

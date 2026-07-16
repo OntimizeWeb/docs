@@ -40,7 +40,50 @@ This component wraps the [CKEditor 4](https://ckeditor.com/ckeditor-4/){:target=
 
 3. Now you can include the `o-html-input` in your application templates.
 
-The HTML input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `o-form`, the HTML input is automatically registered on its parent, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+`o-html-input` is a standalone component and can be imported directly without an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { OHTMLInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [OHTMLInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`. The control's value is the HTML string edited by CKEditor:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { OHTMLInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, OHTMLInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-html-input formControlName="html" required="yes"></o-html-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    html: new FormControl('<p>Hello world</p>', Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![HTML input component]({{ "/assets/images/components/inputs/o-html-input.png" | absolute_url }}){: .comp-example-img}

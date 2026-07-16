@@ -23,7 +23,7 @@ You can check a working example of WMS layers [here](https://try.imatia.com/onti
 
 ```html
 <o-map #oMapWMS center="40.712784,-74.005941" zoom="10" min-zoom="6" max-zoom="20" base-layer-ids="basemap.nationalmap.gov"
-zoom-control="yes" search-control="no" layer-panel-visible="no" fxFlex>
+zoom-control="yes" search-control="no" layer-panel-visible="no">
   <o-map-layer layer-type="WMS" layer-id="wms-example-airports" layer-base-url="https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}"
     [layer-options]="getWMSLayerOptions()" layer-menu-label="National Hydrography Dataset" layer-menu-label-secondary="USGS The National Map: National Hydrography Dataset.">
   </o-map-layer>

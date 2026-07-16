@@ -12,53 +12,55 @@ nav_order: 2
 ## Installation
 
 ```bash
-  npm install ontimize-web-ngx-report --save
+npm install ontimize-web-ngx-report --save
 ```
+
+### Compatibility
+
+| ontimize-web-ngx-report | ontimize-web-ngx | Angular | ngx-extended-pdf-viewer |
+|---|---|---|---|
+| 18.0.0-next.0+ | ^18.0.0-next.0 | ^18.2.0 | ^21.0.0 |
+
+> **Breaking changes in v18**:
+> - `@angular/flex-layout` and `@ngbracket/ngx-layout` removed. Use `o-flex-*` CSS classes.
+> - All 10 components are now **standalone**. Import them individually instead of using `OReportModule` in `declarations`.
+> - Icons migrated from Ontimize SVG set to **Material Symbols Outlined**.
+> - `Injector.get()` replaced with `inject()` function.
 
 ## Usage
 
-### Import the Ontimize Web Report module into your application
+### Option A — Standalone component (recommended)
 
-Import the `OReportModule` into the main module of your application.
+```typescript
+import { OReportComponent } from 'ontimize-web-ngx-report';
 
-```javascript
+@Component({
+  standalone: true,
+  imports: [OReportComponent],
+  template: `<o-report ...></o-report>`
+})
+export class MyComponent {}
+```
+
+### Option B — NgModule
+
+```typescript
 import { OReportModule } from 'ontimize-web-ngx-report';
 
 @NgModule({
-  imports: [
-    OReportModule ,
-    ...
-  ],
-  declarations: ...
-  providers: ...
+  imports: [OReportModule]
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
+### Configure angular.json assets
 
-###  Configure angular.json dependencies
-
-You must add the module styles definition in your '*.angular.json*' file styles array:
-
-```bash
-...
- "architect": {
-    "build": {
-      "builder": "@angular-devkit/build-angular:browser",
-      "options": {
-        ...
-        "assets": [
-          ...
-          {
-            "glob": "**/*",
-            "input": "node_modules/ontimize-web-ngx-report/assets",
-            "output": "/assets"
-          }
-          ...
-        ]
-      }
-      ...
-    }
- }
-...
+```json
+"assets": [
+  {
+    "glob": "**/*",
+    "input": "node_modules/ontimize-web-ngx-report/assets",
+    "output": "/assets"
+  }
+]
 ```

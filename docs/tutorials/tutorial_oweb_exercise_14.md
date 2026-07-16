@@ -138,6 +138,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'home',
+  standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -508,11 +509,11 @@ export class HomeComponent {
 Crearemos todos los nuevos componentes que tendrán las tarjetas dentro del módulo **shared**
 
 ```
-npx ng g c --skip-tests --skip-import account-card
-npx ng g c --skip-tests --skip-import branch-card
-npx ng g c --skip-tests --skip-import customer-card
-npx ng g c --skip-tests --skip-import employee-card
-npx ng g c --skip-tests --skip-import service-ex-card
+npx ng g c --skip-tests --skip-import --standalone account-card
+npx ng g c --skip-tests --skip-import --standalone branch-card
+npx ng g c --skip-tests --skip-import --standalone customer-card
+npx ng g c --skip-tests --skip-import --standalone employee-card
+npx ng g c --skip-tests --skip-import --standalone service-ex-card
 ```
 
 Al utilizar la opción ```--skip-import``` evitaremos que el componente se importe y declare en el módulo **shared**. En
@@ -561,39 +562,21 @@ export const MENU_COMPONENTS = [
 
 {{"**shared.module.ts**" | markdownify }}
 {% highlight typescript %}
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { AccountNumberRenderComponent } from '../main/accounts/accounts-home/account-number-render/account-number-render.component';
 import { CustomertypeColumnRendererComponent } from '../main/customers/customers-home/customertype-column-renderer/customertype-column-renderer.component';
 import { MovementColumnRendererComponent } from '../main/accounts/accounts-detail/movement-column-renderer/movement-column-renderer.component';
 import { MENU_COMPONENTS } from './app.menu.config';
-import { StarWarsService } from './star-wars.service';
 
 export function intRateMonthlyFunction(rowData: Array<any>): number {
   return rowData["INTERESRATE"] / 12;
 }
 
-@NgModule({
-  imports: [
-    OntimizeWebModule
-  ],
-  declarations: [
-    AccountNumberRenderComponent,
-    CustomertypeColumnRendererComponent,
-    MovementColumnRendererComponent,
-    ...MENU_COMPONENTS
-  ],
-  exports: [
-    CommonModule,
-    AccountNumberRenderComponent,
-    CustomertypeColumnRendererComponent,
-    MovementColumnRendererComponent,
-    ...MENU_COMPONENTS
-  ]
-
-})
-export class SharedModule { }
+export const SHARED_COMPONENTS = [
+  AccountNumberRenderComponent,
+  CustomertypeColumnRendererComponent,
+  MovementColumnRendererComponent,
+  ...MENU_COMPONENTS
+];
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -1000,6 +983,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-customer-card',
+  standalone: true,
   templateUrl: './customer-card.component.html',
   styleUrls: ['./customer-card.component.css'],
   encapsulation: ViewEncapsulation.None,
@@ -1497,6 +1481,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-employee-card',
+  standalone: true,
   templateUrl: './employee-card.component.html',
   styleUrls: ['./employee-card.component.css'],
   encapsulation: ViewEncapsulation.None,
@@ -1947,6 +1932,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-branch-card',
+  standalone: true,
   templateUrl: './branch-card.component.html',
   styleUrls: ['./branch-card.component.css'],
   encapsulation: ViewEncapsulation.None,
@@ -2395,6 +2381,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-account-card',
+  standalone: true,
   templateUrl: './account-card.component.html',
   styleUrls: ['./account-card.component.css'],
   encapsulation: ViewEncapsulation.None,
@@ -2845,6 +2832,7 @@ import { StarWarsService } from '../star-wars.service';
 
 @Component({
   selector: 'app-service-ex-card',
+  standalone: true,
   templateUrl: './service-ex-card.component.html',
   styleUrls: ['./service-ex-card.component.css'],
   encapsulation: ViewEncapsulation.None,

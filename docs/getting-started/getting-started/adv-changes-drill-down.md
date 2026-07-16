@@ -26,36 +26,36 @@ The contents of these files are shown below:
 **employees-detail.component.html**
 
 ```html
-<o-form fxLayout="column" show-header="yes" label-header="EMPLOYEES" header-actions="R;U;D" service="employees"
+<o-form show-header="yes" label-header="EMPLOYEES" header-actions="R;U;D" service="employees"
   entity="employee" keys="EMPLOYEEID" #oForm keys-sql-types="INTEGER">
 
-  <div fxLayout="column" layout-padding class="rounded-panel">
-    <div fxLayout="row" fxFill>
-      <div fxLayout="column" fxFlex="75">
-        <o-text-input attr="EMPLOYEENAME" fxFlex layout-padding></o-text-input>
-        <o-text-input attr="EMPLOYEESURNAME" fxFlex layout-padding></o-text-input>
+  <div class="rounded-panel" style="padding: 1rem">
+    <div class="o-flex-row">
+      <div style="flex: 0 0 75%">
+        <o-text-input attr="EMPLOYEENAME" style="padding: 0.5rem"></o-text-input>
+        <o-text-input attr="EMPLOYEESURNAME" style="padding: 0.5rem"></o-text-input>
       </div>
-      <div fxFlex="25" fxLayoutAlign="center center">
+      <div style="flex: 0 0 25%; display:flex; align-items:center; justify-content:center">
         <o-image attr="EMPLOYEEPHOTO" emptyimage="./assets/images/no-image.png"></o-image>
       </div>
     </div>
 
-    <div fxLayout="row" fxFill>
-      <o-date-input attr="EMPLOYEESTARTDATE" layout-padding></o-date-input>
-      <o-email-input attr="EMPLOYEEEMAIL" fxFlex layout-padding></o-email-input>
+    <div class="o-flex-row">
+      <o-date-input attr="EMPLOYEESTARTDATE" style="padding: 0.5rem"></o-date-input>
+      <o-email-input attr="EMPLOYEEEMAIL" style="padding: 0.5rem; flex: 1"></o-email-input>
     </div>
 
-    <div fxLayout="row" fxFill>
-      <o-text-input attr="EMPLOYEEADDRESS" fxFlex layout-padding></o-text-input>
+    <div class="o-flex-row">
+      <o-text-input attr="EMPLOYEEADDRESS" style="flex: 1; padding: 0.5rem"></o-text-input>
     </div>
 
-    <div fxLayout="row" fxFill>
-      <o-combo attr="EMPLOYEETYPEID" fxFlex layout-padding query-on-init="no" query-on-bind="yes" enabled="yes"
+    <div class="o-flex-row">
+      <o-combo attr="EMPLOYEETYPEID" style="flex: 1; padding: 0.5rem" query-on-init="no" query-on-bind="yes" enabled="yes"
         value-column="EMPLOYEETYPEID" service="employees" entity="employeeType" keys="EMPLOYEETYPEID"
         columns="EMPLOYEETYPEID;EMPLOYEETYPENAME" visible-columns="EMPLOYEETYPENAME">
       </o-combo>
 
-      <o-list-picker attr="OFFICEID" fxFlex layout-padding query-on-init="no" query-on-bind="yes" enabled="yes"
+      <o-list-picker attr="OFFICEID" style="flex: 1; padding: 0.5rem" query-on-init="no" query-on-bind="yes" enabled="yes"
         filter="yes" value-column="OFFICEID" service="branches" entity="branch" keys="OFFICEID" columns="OFFICEID;NAME"
         visible-columns="NAME">
       </o-list-picker>
@@ -68,19 +68,16 @@ The contents of these files are shown below:
 
 **employees-detail.component.ts**
 
-```bash
+```typescript
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
+  standalone: true,
   selector: 'employees-detail',
-  styleUrls: ['employees-detail.component.css'],
+  styleUrls: ['employees-detail.component.scss'],
   templateUrl: 'employees-detail.component.html'
 })
-export class EmployeesDetailComponent {
-
-}
-
+export class EmployeesDetailComponent {}
 ```
 We have now defined the form that contains the information of a determined employee in the html template. This data is provided through the configured Ontimize service. You can find further information about component configuration parameters in the [Components]({{ base_path }}/components/){:target="_blank"} section.
 

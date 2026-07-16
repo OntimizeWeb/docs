@@ -31,11 +31,11 @@ actúa como un **contenedor** de uno o más **componentes** / **módulos**, que 
 Procedemos a crear el módulo de clientes dentro del módulo **main**, a la misma altura del módulo **home**. Nos
 desplazamos desde la consola a la ruta ```src/app/main/``` y ubicados dentro del módulo **main**, ejecutamos el comando
 ```
-    npx ng g module --routing customers
+    ng g component customers/customers-home --standalone
 ```
 El uso del comando ```npx``` es para usar la versión de _angular/cli_ que está instalada en la carpeta _node_modules_ de
 la aplicación (Más información acerca del comando
-[aquí](https://angular.io/cli/generate#module-command){:target="_blank"})
+[aquí](https://angular.dev/cli/generate#module-command){:target="_blank"})
 
 <div class="multicolumn">
     <div class="multicolumnleft">
@@ -86,8 +86,15 @@ la aplicación (Más información acerca del comando
           <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
+            customers-home
+            <ul>
+              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.css</li>
+              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.html</li>
+              <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
+            </ul>
+            </li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -220,33 +227,23 @@ declararlo como módulo importado.
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-{{"**customers.module.ts**" | markdownify }}
+{{"**customers.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { CustomersRoutingModule } from './customers-routing.module';
+import { Routes } from '@angular/router';
+import { CustomersHomeComponent } from './customers-home/customers-home.component';
 
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    CustomersRoutingModule
-  ]
-})
-export class CustomersModule { }
+export const customersRoutes: Routes = [
+  { path: '', component: CustomersHomeComponent }
+];
 {% endhighlight %}
 {{"A continuación, necesitaremos relacionar este nuevo módulo de clientes con el resto de los módulos de la aplicación.
 Al situarlo dentro del módulo **main**, y a la misma altura que **home**, modificaremos el fichero de enrutamiento del
-módulo **main** (_main-routing.module.ts_) y añadiremos la ruta al nuevo módulo de clientes. Se empleará de esta manera,
+módulo **main** (_main.routes.ts_) y añadiremos la ruta al nuevo módulo de clientes. Se empleará de esta manera,
 el enrutado _lazy-loading_." | markdownify }}
-{{"**main-routing.module.ts**" | markdownify }}
+{{"**main.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from 'ontimize-web-ngx';
+import { Routes } from '@angular/router';
+import { authGuard } from 'ontimize-web-ngx';
 
 import { MainComponent } from './main.component';
 
@@ -254,20 +251,16 @@ export const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-      { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) }
+      { path: 'home', loadChildren: () => import('./home/home.routes').then(m => m.homeRoutes) },
+      { path: 'customers', loadChildren: () => import('./customers/customers.routes').then(m => m.customersRoutes) }
     ]
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class MainRoutingModule { }
+export { routes as mainRoutes };
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -312,8 +305,7 @@ export class MainRoutingModule { }
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           customers
           <ul>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -326,7 +318,7 @@ export class MainRoutingModule { }
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.routes.ts</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
@@ -446,9 +438,9 @@ dicho módulo.
 Para crear el componente base de clientes, nos ubicamos dentro de la carpeta **customers**, y ejecutamos el siguiente
 comando:
 ```bash
-npx ng g component --skip-tests customers-home
+npx ng g component --skip-tests --standalone customers-home
 ```
-(Más información acerca del comando [aquí](https://angular.io/cli/generate#component-command){:target="_blank"}). Se
+(Más información acerca del comando [aquí](https://angular.dev/cli/generate#component-command){:target="_blank"}). Se
 creará una carpeta, llamada **customers-home**, que contendrá los ficheros relacionados con el componente.
 
 <div class="multicolumn">
@@ -642,43 +634,14 @@ nueva ruta al fichero de enrutamiento de **customers** que se corresponderá con
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-{{"**customers.module.ts**" | markdownify }}
+{{"**customers.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { CustomersRoutingModule } from './customers-routing.module';
+import { Routes } from '@angular/router';
 import { CustomersHomeComponent } from './customers-home/customers-home.component';
 
-
-@NgModule({
-  declarations: [
-    CustomersHomeComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    CustomersRoutingModule
-  ]
-})
-export class CustomersModule { }
-{% endhighlight %}
-{{"**customers-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CustomersHomeComponent } from './customers-home/customers-home.component';
-
-const routes: Routes = [{
-  path: '',
-  component: CustomersHomeComponent
-}];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class CustomersRoutingModule { }
+export const customersRoutes: Routes = [
+  { path: '', component: CustomersHomeComponent }
+];
 {% endhighlight %}
 {{"En este momento, la única manera de comprobar si es posible acceder al componente **customers-home** (visualizando
 su contenido, definido en el fichero **customers-home.component.html**) es acceder directamente a la dirección
@@ -751,8 +714,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

@@ -54,11 +54,10 @@ export const SERVICE_CONFIG =
       }
     ```
 
-3. In `src/app/main/main-routing.module.ts`, add a route for new report management module p.e with `path` of `reports`
+3. In `src/app/main/main-routing.ts`, add a route for the new report management module with `path` of `reports`
 
     ```ts
-    import { NgModule } from '@angular/core';
-    import { RouterModule, Routes } from '@angular/router';
+    import { Routes } from '@angular/router';
 
     import { MainComponent } from './main.component';
 
@@ -67,37 +66,20 @@ export const SERVICE_CONFIG =
         path: '', component: MainComponent,
         children: [
           ...
-          { path: 'reports', loadChildren: () => import('./reports/reports.module').then(m => m.ReportModule) }
+          { path: 'reports', loadChildren: () => import('./reports/reports.routes').then(m => m.REPORT_ROUTES) }
           ...
         ]
       }
     ];
-
-    @NgModule({
-      imports: [RouterModule.forChild(routes)],
-      exports: [RouterModule]
-    })
-    export class MainRoutingModule { }
     ```
 
-4. Create the new report management module `ReportModule` and import `OReportRoutingModule` module
+4. Create the new report routes file `REPORT_ROUTES` and import `OReportRoutingModule`
 
     ```ts
-    import { NgModule } from '@angular/core';
-    import { CommonModule } from '@angular/common';
-
+    import { Routes } from '@angular/router';
     import { OReportModule, OReportRoutingModule } from 'ontimize-web-ngx-report';
 
-    @NgModule({
-      declarations: [],
-      imports: [
-        CommonModule,
-        OReportRoutingModule,
-        OReportModule
-      ]
-    })
-
-    export class ReportModule{}
+    export const REPORT_ROUTES: Routes = OReportRoutingModule.routes;
     ```
 
 5. To add/remove/update report

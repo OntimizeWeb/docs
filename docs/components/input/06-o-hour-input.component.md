@@ -13,23 +13,66 @@ nav_order: 10
 
 The `o-hour-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying hour input submitted by the user.
 
-The hour input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `o-form`, the hour input is automatically registered on its parent, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+`o-hour-input` is a standalone component and can be imported directly without an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { OHourInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [OHourInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { OHourInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, OHourInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-hour-input formControlName="hour" label="Hour" format="24" clear-button="yes" required="yes"></o-hour-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    hour: new FormControl(Date.now(), Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![Hour input component]({{ "/assets/images/components/inputs/o-hour-input.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="no" show-header="no">
-   <div fxLayout="column" layout-padding>
+   <div layout-padding>
       <label class="input-comp-title">{% raw %}{{ 'INPUTS.READ_ONLY' | oTranslate }}{% endraw %}</label>
-      <o-hour-input fxFlex attr="input" label="{% raw %}{{ 'INPUT.BUTTON.HOUR' | oTranslate }}{% endraw %}" [data]="getValue()"></o-hour-input>
+      <o-hour-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.HOUR' | oTranslate }}{% endraw %}" [data]="getValue()"></o-hour-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
       <label class="input-comp-title">{% raw %}{{ 'INPUTS.EDITABLE' | oTranslate }}{% endraw %}</label>
       <o-hour-input attr="input2" label="{% raw %}{{ 'INPUT.BUTTON.HOUR' | oTranslate }}{% endraw %}" [data]="getValue()" read-only="no" required="yes"
         tooltip="This is an awesome tooltip!" clear-button="yes" format="24"></o-hour-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
       <label class="input-comp-title">{% raw %}{{ 'INPUTS.DISABLED' | oTranslate }}{% endraw %}</label>
       <o-hour-input attr="input3" label="{% raw %}{{ 'INPUT.BUTTON.HOUR' | oTranslate }}{% endraw %}" enabled="no" [data]="getValue()"></o-hour-input>
 </o-form>

@@ -14,25 +14,68 @@ nav_order: 9
 The `o-daterange-input` component is based on **Angular Material** and  is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying start and end date values as a range from a calendar pop-up or by entering the value directly in an HTML input text box.
 .
 
-The date range input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `<o-form>`, the date range input is automatically registered on it, which provides the value for the input programatically, but it is also a standalone component that can be used on its own with Angular Reactive Forms (see [Standalone usage](#standalone-usage) below). Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+`o-daterange-input` is standalone and can be imported directly without `<o-form>`:
+
+```typescript
+import { Component } from '@angular/core';
+import { ODateRangeInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ODateRangeInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ODateRangeInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, ODateRangeInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-daterange-input formControlName="stay" label="Date range" format="LL"></o-daterange-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    stay: new FormControl({ startDate: Date.now(), endDate: Date.now() }, Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![Daterange input component]({{ "/assets/images/components/inputs/o-daterange-input.png" | absolute_url }}){: .comp-example-img width='65%'}
 
 ```html
 <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
       <label>Read only</label>
       <o-daterange-input attr="daterange1" label="DateRange" required="yes" [data]="valueTimestamp">
       </o-daterange-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
       <label>Editable</label>
       <o-daterange-input attr="daterange2" label="DateRange" read-only="no" required="yes" [data]="valueTimestamp"
         format="LL" separator=" to " [touch-ui]="mode.checked">
       </o-daterange-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
       <label class="input-comp-title">Disabled</label>
       <o-daterange-input attr="daterange3" label="DateRange" enabled="no" [data]="valueTimestamp">
       </o-daterange-input>
@@ -80,7 +123,7 @@ The `o-daterange-input` supports date Moments formats setting, all you have to d
 ![Format int daterang input component]({{ "/assets/images/components/inputs/o-daterange-format.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-<div fxLayout="column" layout-padding>
+<div layout-padding>
   <o-daterange-input attr="daterange" label="Date range" read-only="no"
     required="yes" [data]="valueTimestamp" format="LL" separator=" to " text-input-enabled="no">
   </o-daterange-input>

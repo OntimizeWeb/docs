@@ -14,6 +14,8 @@ nav_order: 1
 
 The `o-gallery` component allows to create beautiful image and videos galleries for the web and mobile devices like a carousel.
 
+From version **18.0.0**, the library requires `ontimize-web-ngx ^18.0.0-next.0` and Angular `^18.2.0`. All gallery components (`GalleryComponent`, `GalleryActionComponent`, …) are now **standalone**. Theming uses Material 3 CSS custom properties (`--o-bg-*` tokens).
+
 ![Gallery component]({{ "/assets/images/components/gallery/gallery.png" | absolute_url }}){: .comp-example-img}
 
 ```html

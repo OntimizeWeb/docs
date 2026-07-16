@@ -157,7 +157,7 @@ gráficas
             </ul>
             </li>
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -450,38 +450,14 @@ gráficas
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**accounts.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
+import { Routes } from '@angular/router';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
-import { AccountsNewComponent } from './accounts-new/accounts-new.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
-import { AddMovementComponent } from './add-movement/add-movement.component';
-import { OChartModule } from 'ontimize-web-ngx-charts';
 
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent,
-    AccountsDetailComponent,
-    AccountsNewComponent,
-    AddCustomerComponent,
-    AddMovementComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    AccountsRoutingModule,
-    OChartModule
-  ]
-})
-export class AccountsModule { }
+export const accountsRoutes: Routes = [
+  { path: '', component: AccountsHomeComponent }
+];
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -583,7 +559,7 @@ export class AccountsModule { }
             </ul>
             </li>
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -886,6 +862,7 @@ import { PieChartConfiguration } from 'ontimize-web-ngx-charts';
 
 @Component({
   selector: 'app-accounts-detail',
+  standalone: true,
   templateUrl: './accounts-detail.component.html',
   styleUrls: ['./accounts-detail.component.css']
 })
@@ -918,21 +895,21 @@ export class AccountsDetailComponent {
 <o-form attr="accountsTable" editable-detail=" false" service="branches" entity="accountBalance" keys="ACCOUNTID"
     columns="ACCOUNTID;ACCOUNTNUMBER" show-header="yes" header-actions="R;D" show-header-navigation="yes"
     keys-sql-types="INTEGER" class="fill-form">
-    <div fxLayout="column" fxLayoutGap="8px">
-        <div fxLayout="row" fxLayoutGap="8px">
-            <o-text-input fxFlex="40" attr="ACCOUNTNUMBER" sql-type="STRING"></o-text-input>
-            <o-combo fxFlex="50" attr="OFFICEID" service="branches" entity="branch" keys="OFFICEID"
+    <div>
+        <div>
+            <o-text-input attr="ACCOUNTNUMBER" sql-type="STRING"></o-text-input>
+            <o-combo attr="OFFICEID" service="branches" entity="branch" keys="OFFICEID"
                 columns="OFFICEID;NAME" visible-columns="NAME" value-column="OFFICEID"></o-combo>
-            <o-currency-input fxFlex="20" attr="BALANCE" currency-symbol="EUR"
+            <o-currency-input attr="BALANCE" currency-symbol="EUR"
                 max-decimal-digits="2"></o-currency-input>
         </div>
-        <div fxLayout="row" fxLayoutGap="8px">
-            <o-date-input fxFlex="20" attr="ENDDATE"></o-date-input>
-            <o-percent-input fxFlex="20" attr="INTERESRATE"></o-percent-input>
-            <o-text-input fxFlex="60" attr="ACCOUNTTYP" sql-type="STRING"></o-text-input>
+        <div>
+            <o-date-input attr="ENDDATE"></o-date-input>
+            <o-percent-input attr="INTERESRATE"></o-percent-input>
+            <o-text-input attr="ACCOUNTTYP" sql-type="STRING"></o-text-input>
         </div>
-        <div fxFlex fxLayout="row" fxLayoutGap="8px">
-            <o-table fxFlex="50" attr="customersTable" service="customers" entity="vCustomerAccount"
+        <div>
+            <o-table attr="customersTable" service="customers" entity="vCustomerAccount"
                 parent-keys="ACCOUNTID" keys="CUSTOMERACCOUNTID"
                 columns="ID;NAME;SURNAME;CUSTOMERID;CUSTOMERACCOUNTID;CUSTOMERTYPEID"
                 visible-columns="ID;NAME;SURNAME;CUSTOMERTYPEID" query-rows="15" insert-button="yes"
@@ -944,7 +921,7 @@ export class AccountsDetailComponent {
                     <app-customertype-column-renderer></app-customertype-column-renderer>
                 </o-table-column>
             </o-table>
-            <o-table fxFlex="50" attr="movementsTable" service="movements" entity="movement" parent-keys="ACCOUNTID"
+            <o-table attr="movementsTable" service="movements" entity="movement" parent-keys="ACCOUNTID"
                 keys="MOVEMENTID" columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID"
                 visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-rows="15"
                 insert-form-route="addMovement/new" detail-mode="none" insert-button="yes">
@@ -959,7 +936,7 @@ export class AccountsDetailComponent {
                 </o-table-column>
             </o-table>
         </div>
-        <div fxFlex fxLayout="row" class="bg-level-1" fxLayoutAlign="center center">
+        <div class="bg-level-1">
             <o-chart type="pie" service="movements" entity="movement" x-axis="CONCEPT" parent-keys="ACCOUNTID"
                 query-on-init="no" y-axis="MOVEMENT" [chart-parameters]="movementTypesChartParams"></o-chart>
         </div>
@@ -1066,7 +1043,7 @@ export class AccountsDetailComponent {
             </ul>
             </li>
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -1477,7 +1454,7 @@ export class AccountsDetailComponent {
             </ul>
             </li>
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -1773,36 +1750,14 @@ pueda ser usado tanto por el componente de la tarjeta como por el componente de 
         </button>
         <p>Eliminamos las referencias el módulo de gráficas del módulo <strong>accounts-module</strong></p>
 
-{{"**accounts.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
+import { Routes } from '@angular/router';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
-import { AccountsNewComponent } from './accounts-new/accounts-new.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
-import { AddMovementComponent } from './add-movement/add-movement.component';
 
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent,
-    AccountsDetailComponent,
-    AccountsNewComponent,
-    AddCustomerComponent,
-    AddMovementComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
+export const accountsRoutes: Routes = [
+  { path: '', component: AccountsHomeComponent }
+];
 {% endhighlight %}
 
 <p>Y las añadimos al módulo de <strong>shared</strong></p>
@@ -1944,7 +1899,7 @@ export class SharedModule { }
             </ul>
             </li>
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -2479,7 +2434,7 @@ export class AccountCardComponent implements OnInit {
             </ul>
             </li>
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

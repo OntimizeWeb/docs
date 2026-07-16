@@ -2,115 +2,150 @@
 layout: default
 title: "Add OntimizeWeb to your project"
 permalink: /add-to-project/
-excerpt: "Include OntimizeWeb in your project as a dependency."
+excerpt: "Include OntimizeWeb NGX 18 in your project as a dependency."
 parent: Guide
 nav_order: 10
 ---
 
 {% include base_path %}
+{% include toc %}
 
 ## Install OntimizeWeb
 
-Install `ontimize-web-ngx` from `npm`:
+Install `ontimize-web-ngx` from npm:
 
 ```bash
-npm install ontimize-web-ngx
+npm install ontimize-web-ngx@18
 ```
 
-After installing `ontimize-web-ngx` you must install all its required dependencies.
+## Configure the application
 
-## Add OntimizeWeb to your application
-
-Define the configuration for your application. Create the 'app.config.ts` file whith the following default configuration. Read more about configuring the application [here]({{ base_path }}/guide/appconfig/).
+Create `app.config.ts` with the application settings. Read more about each option [here]({{ base_path }}/guide/appconfig/).
 
 ```typescript
 import { Config } from 'ontimize-web-ngx';
 
 export const CONFIG: Config = {
-    // The base path of the URL used by app service.
-    apiEndpoint: 'http://mydomain.com/',
+  // Base URL used by app services
+  apiEndpoint: 'http://mydomain.com/',
 
-    // Application identifier. Is the unique package identifier of the app. It is used when storing or managing temporal data related with the app. By default is set as 'ontimize-web-uuid'.
-    uuid: 'com.ontimize.web.ngx.myapp',
+  // Unique package identifier of the app
+  uuid: 'com.ontimize.web.ngx.myapp',
 
-    // Title of the app
-    title: 'My app',
+  // Title of the app
+  title: 'My app',
 
-    // Language of the application.
-    locale: 'en',
+  // Default language
+  locale: 'en',
 
-    // The service type used (Ontimize REST standard, Ontimize REST JEE or custom implementation) in the whole application.
-    // serviceType
-
-    applicationLocales: ['en']
+  applicationLocales: ['en']
 };
 ```
 
-And include this configuration in the providers in the application module.
+## Option A — Standalone bootstrap (recommended for Angular 18)
 
-Include the `OntimizeWebModule`, `OntimizeWebModule.forRoot(CONFIG)` and `ONTIMIZE_PROVIDERS` in your application module.
+The recommended approach for Angular 18 uses `bootstrapApplication()` with `provideOntimizeWeb()`.
+
+**`main.ts`:**
+```typescript
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import { provideOntimizeWeb } from 'ontimize-web-ngx';
+import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
+import { CONFIG } from './app/app.config';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideOntimizeWeb(CONFIG),
+    provideRouter(routes),
+  ]
+});
+```
+
+> `provideOntimizeWeb(config)` includes `provideHttpClient`, `provideAnimations`, `TranslateModule`, all Ontimize services, and the `APP_INITIALIZER`. You do **not** need to add them separately.
+
+**`app.component.ts`:**
+```typescript
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
+  template: '<router-outlet />'
+})
+export class AppComponent {}
+```
+
+**`app.routes.ts`:**
+```typescript
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  { path: 'main', loadChildren: () => import('./app/main/main.module').then(m => m.MainModule) },
+  { path: '', redirectTo: 'main', pathMatch: 'full' }
+];
+```
+
+## Option B — NgModule bootstrap (backward compatible)
+
+If you prefer to keep the `AppModule` structure, `OntimizeWebModule` continues to work:
 
 ```typescript
+// app.module.ts
+import { NgModule } from '@angular/core';
 import { APP_CONFIG, ONTIMIZE_PROVIDERS, OntimizeWebModule } from 'ontimize-web-ngx';
-
 import { CONFIG } from './app.config';
 
 @NgModule({
-    ...
-    imports: [ OntimizeWebModule.forRoot(CONFIG), OntimizeWebModule ],
-    providers: [
-        { provide: APP_CONFIG, useValue: CONFIG },
-        ...ONTIMIZE_PROVIDERS
-    ]
-    ...
+  imports: [
+    OntimizeWebModule.forRoot(CONFIG),
+    OntimizeWebModule
+  ],
+  providers: [
+    { provide: APP_CONFIG, useValue: CONFIG },
+    ...ONTIMIZE_PROVIDERS
+  ],
+  bootstrap: [AppComponent]
 })
+export class AppModule {}
 ```
 
-The include `...ONTIMIZE_PROVIDERS` on the `providers` array it is needed to import all elements from the `ONTIMIZE_PROVIDERS` array. Check more information of the **spread operator** [here](https://basarat.gitbook.io/typescript/future-javascript/spread-operator){:target="_blank"}.
+{: .warning }
+> `OntimizeWebModule` and all wrapper modules (`OFormModule`, `OTableModule`, …) are marked as **`@deprecated`** in version 18. They will continue to work but will be removed in a future version. Prefer the standalone approach.
 
-## Add the OntimizeWeb styles to your application
+## Add the OntimizeWeb theme
 
-Import the OntimizeWeb styles in your application. If you are using the `angular-cli` you must add the following styles in your `angular.json` file:
-
-```
-...
-"styles": [
-  "../node_modules/ontimize-web-ngx/ontimize.scss"
-  ...
-]
-...
-```
-
-More information about the `angular.json` style configuration [here](https://angular.io/guide/workspace-config#styles-and-scripts-configuration){:target="_blank"}.
-
-## Add the OntimizeWeb theme to your application
-
-Import the OntimizeWeb theme in your application.
+Import the Ontimize theme in your `styles.scss`:
 
 ```scss
-@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
-@use 'ontimize-web-ngx/theming/ontimize-style.scss';
+@use 'ontimize-web-ngx/theming/themes/ontimize-blue' as theme;
+@use 'ontimize-web-ngx/theming/ontimize-style' as ontimize-style;
 
-/* Include ontimize styles */
 @include ontimize-style.ontimize-theme-styles(theme.$theme);
-```
 
-This file needs to be included in the array of the [previous section](#add-the-ontimizeweb-theme-to-your-application).
-
-More information about the **Ontimize customization** [here]({{ base_path }}/customization/){:target="_blank"}.
-
-## System.js
-If you are using SystemJS, then you need:
-
-```javascript
-System.config({
-  // ...
-  map: {
-    // ...
-    'ontimize-web-ngx': 'node_modules/ontimize-web-ngx/bundles/ontimize-web-ngx.umd.min.js',
-    // ...
-  },
-  // ...
+.o-dark {
+  @include ontimize-style.ontimize-theme-all-component-color(theme.$dark-theme);
 }
 ```
 
+Add it to your `angular.json` styles array:
+
+```json
+"styles": [
+  "src/styles.scss"
+]
+```
+
+More information about theming [here]({{ base_path }}/customize/theming/).
+
+## Add Material Symbols font
+
+Add the following link to your `index.html`:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,GRAD,FILL@20..48,100..700,-50..200,0..1"
+      rel="stylesheet">
+```

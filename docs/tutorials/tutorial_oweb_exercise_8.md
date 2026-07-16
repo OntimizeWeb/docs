@@ -28,7 +28,7 @@ contiene campos y una tabla, similar al siguiente mockup.
 Ejecutamos el siguiente comando, situándonos primero dentro de la carpeta ```src/app/main/branches```
 
 ```
-npx ng g component --skip-tests branches-detail
+npx ng g component --skip-tests --standalone branches-detail
 ```
 
 <div class="multicolumn">
@@ -37,38 +37,13 @@ npx ng g component --skip-tests branches-detail
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**branches.module.ts**" | markdownify }}
+{{"**branches.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { BranchesRoutingModule } from './branches-routing.module';
+import { Routes } from '@angular/router';
 import { BranchesHomeComponent } from './branches-home/branches-home.component';
 import { BranchesDetailComponent } from './branches-detail/branches-detail.component';
 
-
-@NgModule({
-  declarations: [
-    BranchesHomeComponent,
-    BranchesDetailComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    BranchesRoutingModule
-  ]
-})
-export class BranchesModule { }
-{% endhighlight %}
-
-{{"**branches-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { BranchesHomeComponent } from './branches-home/branches-home.component';
-import { BranchesDetailComponent } from './branches-detail/branches-detail.component';
-
-const routes: Routes = [{
+export const branchesRoutes: Routes = [{
   path: '',
   component: BranchesHomeComponent
 },
@@ -76,12 +51,6 @@ const routes: Routes = [{
   path: ":OFFICEID",
   component: BranchesDetailComponent
 }];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class BranchesRoutingModule { }
 {% endhighlight %}
 
 {{"**branches-detail.component.html**" | markdownify }}
@@ -122,6 +91,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-branches-detail',
+  standalone: true,
   templateUrl: './branches-detail.component.html',
   styleUrls: ['./branches-detail.component.css'],
   encapsulation: ViewEncapsulation.None
@@ -242,8 +212,7 @@ app-branches-detail .o-table .o-table-container {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -427,7 +396,7 @@ En este formulario, eliminaremos la tabla de las cuentas y clientes asociados. C
 comando:
 
 ```
-npx ng g component --skip-tests branches-new
+npx ng g component --skip-tests --standalone branches-new
 ```
 
 <div class="multicolumn">
@@ -436,41 +405,14 @@ npx ng g component --skip-tests branches-new
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**branches.module.ts**" | markdownify }}
+{{"**branches.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { BranchesRoutingModule } from './branches-routing.module';
+import { Routes } from '@angular/router';
 import { BranchesHomeComponent } from './branches-home/branches-home.component';
 import { BranchesDetailComponent } from './branches-detail/branches-detail.component';
 import { BranchesNewComponent } from './branches-new/branches-new.component';
 
-
-@NgModule({
-  declarations: [
-    BranchesHomeComponent,
-    BranchesDetailComponent,
-    BranchesNewComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    BranchesRoutingModule
-  ]
-})
-export class BranchesModule { }
-{% endhighlight %}
-
-{{"**branches-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { BranchesHomeComponent } from './branches-home/branches-home.component';
-import { BranchesDetailComponent } from './branches-detail/branches-detail.component';
-import { BranchesNewComponent } from './branches-new/branches-new.component';
-
-const routes: Routes = [{
+export const branchesRoutes: Routes = [{
   path: '',
   component: BranchesHomeComponent
 },
@@ -482,12 +424,6 @@ const routes: Routes = [{
   path: ':OFFICEID',
   component: BranchesDetailComponent
 }];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class BranchesRoutingModule { }
 {% endhighlight %}
 
 {{"**branches-new.component.html**" | markdownify }}
@@ -597,8 +533,7 @@ export class BranchesRoutingModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

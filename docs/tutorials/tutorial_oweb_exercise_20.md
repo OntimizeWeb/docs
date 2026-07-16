@@ -86,7 +86,6 @@ import { CustomertypeColumnRendererComponent } from '../main/customers/customers
 import { MovementColumnRendererComponent } from '../main/accounts/accounts-detail/movement-column-renderer/movement-column-renderer.component';
 import { MENU_COMPONENTS } from './app.menu.config';
 import { OChartModule } from 'ontimize-web-ngx-charts';
-import { AccountsDetailComponent } from '../main/accounts/accounts-detail/accounts-detail.component';
 import { OMapModule } from "ontimize-web-ngx-map";
 
 export function intRateMonthlyFunction(rowData: Array<any>): number {
@@ -103,8 +102,7 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
     AccountNumberRenderComponent,
     CustomertypeColumnRendererComponent,
     MovementColumnRendererComponent,
-    ...MENU_COMPONENTS,
-    AccountsDetailComponent
+    ...MENU_COMPONENTS
   ],
   exports: [
     CommonModule,
@@ -113,7 +111,6 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
     MovementColumnRendererComponent,
     ...MENU_COMPONENTS,
     OChartModule,
-    AccountsDetailComponent,
     OMapModule
   ]
 })
@@ -218,8 +215,7 @@ export class SharedModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -296,8 +292,7 @@ export class SharedModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -530,31 +525,31 @@ latitud y longitud, separadas por comas, que se hayan guardado en la carga del f
 <o-form #form attr="customerDetail" service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
     show-header-navigation="no" class="fill-form" (onDataLoaded)="onFormDataLoaded($event)">
     <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
-    <div fxFlex fxLayout="row" fxLayoutGap="8px">
+    <div>
         <div>
             <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png"
                 sql-type="OTHER"></o-image>
         </div>
-        <mat-tab-group fxFlex="60">
+        <mat-tab-group>
             <mat-tab label="{% raw %}{{ 'CUSTOMER_PERSONAL_INFORMATION' | oTranslate }}{% endraw %}">
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-text-input fxFlex="40" attr="NAME" required="yes"></o-text-input>
-                    <o-text-input fxFlex="40" attr="SURNAME" required="yes"></o-text-input>
-                    <o-date-input fxFlex="20" attr="STARTDATE"></o-date-input>
+                <div>
+                    <o-text-input attr="NAME" required="yes"></o-text-input>
+                    <o-text-input attr="SURNAME" required="yes"></o-text-input>
+                    <o-date-input attr="STARTDATE"></o-date-input>
                 </div>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-nif-input fxFlex="40" attr="ID" required="yes"></o-nif-input>
-                    <o-integer-input fxFlex="40" attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
-                    <o-combo fxFlex="20" attr="CUSTOMERTYPEID" service="customers" entity="customerType"
+                <div>
+                    <o-nif-input attr="ID" required="yes"></o-nif-input>
+                    <o-integer-input attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
+                    <o-combo attr="CUSTOMERTYPEID" service="customers" entity="customerType"
                         keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
                         value-column="CUSTOMERTYPEID"></o-combo>
                 </div>
                 <o-email-input attr="EMAIL"></o-email-input>
                 <o-text-input attr="ADDRESS"></o-text-input>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-real-input fxFlex="50" attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
+                <div>
+                    <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
                         min-decimal-digits="0"></o-real-input>
-                    <o-real-input fxFlex="50" attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
+                    <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
                         min-decimal-digits="0"></o-real-input>
                 </div>
                 <o-textarea-input attr="COMMENTS"></o-textarea-input>
@@ -583,13 +578,15 @@ latitud y longitud, separadas por comas, que se hayan guardado en la carga del f
                 </o-table>
             </mat-tab>
         </mat-tab-group>
-        <div fxFlex="40" fxFlex.md="100" *ngIf="hasGPSPositition()">
-            <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes"
-                search-control="no" layer-panel-visible="no">
-                <o-map-layer layer-type="marker" layer-id="location_marker"
-                    [layer-center]="getPositionGPS()"></o-map-layer>
-            </o-map>
-        </div>
+        @if (hasGPSPositition()) {
+            <div>
+                <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes"
+                    search-control="no" layer-panel-visible="no">
+                    <o-map-layer layer-type="marker" layer-id="location_marker"
+                        [layer-center]="getPositionGPS()"></o-map-layer>
+                </o-map>
+            </div>
+        }
     </div>
 </o-form>
 {% endhighlight %}
@@ -605,6 +602,7 @@ import { AddAccountComponent } from './add-account/add-account.component';
 
 @Component({
   selector: 'app-customers-detail',
+  standalone: true,
   templateUrl: './customers-detail.component.html',
   styleUrls: ['./customers-detail.component.css']
 })
@@ -762,8 +760,7 @@ export class CustomersDetailComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -840,8 +837,7 @@ export class CustomersDetailComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

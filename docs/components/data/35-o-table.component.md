@@ -195,7 +195,7 @@ To manage server data, it is necessary to configure the `service` and the `entit
 <h3 class="grey-color">Example</h3>
 
 ```html
-<o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer"
+<o-table attr="customers" title="CUSTOMERS" service="customers" entity="customer"
 keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL" visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" query-rows="10" quick-filter="yes" row-height="medium" select-all-checkbox="true">
   <o-table-columns-filter columns="STARTDATE;SURNAME"></o-table-columns-filter>
   <o-table-column async-load="true" width="48px" attr="PHOTO" orderable="no" searchable="no" type="image" image-type="base64"
@@ -252,18 +252,13 @@ This option is active by default but it is also possible to configure filtering 
 This option will be available in table menu and in table header by default. However, you can configure it unavailable in table header with `filter-column-active-by-default= 'no'`.  You can also disable/enable the entire application or a certain module with the `O_TABLE_GLOBAL_CONFIG` injection token as shown below.
 
 ```ts
-@NgModule({
-  declarations: [
-  ...
-  ],
-  ...
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
-    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { filterColumnActiveByDefault: false } },
-    ...
-  ],
-  ...
-})
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { filterColumnActiveByDefault: false } }
+  ]
+};
 ```
 
 ![Filter by Column]({{ "/assets/images/components/tabla/filter-by-column.png" | absolute_url }}){: .comp-example-img}
@@ -274,7 +269,7 @@ This option will be available in table menu and in table header by default. Howe
 <o-table service="branches" entity="account" keys="ACCOUNTID"
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
-    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    layout-padding attr="accounts" title="ACCOUNTS"
     sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
     <o-table-columns-filter columns="OFFICEID;NAME" ></o-table-columns-filter>
 
@@ -289,7 +284,7 @@ This option will be available in table menu and in table header by default. Howe
 <o-table service="branches" entity="account" keys="ACCOUNTID"
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
-    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    layout-padding attr="accounts" title="ACCOUNTS"
     sort-columns="ANID:DESC" query-on-init="true" quick-filter="yes" filter-case-sensitive="true">
     <o-table-columns-filter>
       <o-table-columns-filter-column attr="OFFICEID"> </o-table-columns-filter-column>
@@ -762,19 +757,14 @@ All you have to do to enable data editing capabilities for the component is to:
 
  You can also disable/enable cell editing the entire application or a certain module with the `O_TABLE_GLOBAL_CONFIG` injection token as shown below.
 
- ```
- @NgModule({
-  declarations: [
-  ...
-  ],
-  ...
+```ts
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: O_TABLE_GLOBAL_CONFIG, useValue: { editionMode: 'click', detailMode: 'none' } }
-    ...
-  ],
-  ...
-})
+  ]
+};
 ```
 >**NOTE**: It is necessary to configure `detail-mode='none'` attribute for editing in a table column cell.
 
@@ -1008,7 +998,7 @@ The table supports checkbox selection with `select-all-checkbox-visible` propert
 **OntimizeWeb** allows to customize the title, resizing, width, minwidth and maxwidth  of the master toggle checkbox for the header by adding the `o-table-column-select-all` directive to you application. For more information see the API.
 
 ```html
-<o-table fxFlex attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
+<o-table attr="customer" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
       visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="24" quick-filter="yes"
       row-height="medium" select-all-checkbox-visible="true" pageable="no" virtual-scroll="no">
      <o-table-column-select-all title="Omit"></o-table-column-select-all>
@@ -1049,7 +1039,7 @@ Often when displaying numbers in a table, users want to show summary results of 
 <o-table service="branches" entity="account" keys="ACCOUNTID"
     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;BALANCE;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
     visible-columns="ENTITYID;OFFICEID;CDID;ANID;ACCOUNTTYP;BALANCE,INTERESRATE"
-    fxFlex layout-padding attr="accounts" title="ACCOUNTS"
+    layout-padding attr="accounts" title="ACCOUNTS"
     sort-columns="ANID:DESC"  query-on-init="true"
     quick-filter="yes"   filter-case-sensitive="true" >
     <o-table-column attr="BALANCE" title="BALANCE" type="currency" currency-symbol="€" thousand-separator=","></o-table-column>
@@ -1227,7 +1217,7 @@ In this component you can define the columns and required columns with `columns`
 In the following example the table has a insertable row where the user may introduce the name, surname or email for inserting a new customer. Name column is required.
 
 ```html
-<o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
+<o-table attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID" columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL"
   visible-columns="NAME;SURNAME;STARTDATE;EMAIL;ADDRESS" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
   pageable="no" row-height="medium" select-all-checkbox="true" pagination-controls="yes">
 
@@ -1337,18 +1327,13 @@ When the `auto-align-titles` input is set to false in `o-table`, the title of th
 Global title alignment settings can be specified by providing a value for `O_TABLE_GLOBAL_CONFIG` in your application root or in a specific module.
 
 ```ts
-@NgModule({
-  declarations: [
-  ...
-  ],
-  ...
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
-    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAlignTitles: false } },
-    ...
-  ],
-  ...
-})
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAlignTitles: false } }
+  ]
+};
 ```
 
 ### Column resizing
@@ -1427,11 +1412,12 @@ Use `header-tooltip-class` to apply a custom CSS class to the tooltip, allowing 
 To apply `showHeaderTooltip` globally across all `o-table` instances in the application, use `O_TABLE_GLOBAL_CONFIG`:
 
 ```typescript
-// app.module.ts
+// app.config.ts
 import { O_TABLE_GLOBAL_CONFIG } from 'ontimize-web-ngx';
 
-@NgModule({
+export const appConfig: ApplicationConfig = {
   providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
     {
       provide: O_TABLE_GLOBAL_CONFIG,
       useValue: {
@@ -1439,8 +1425,7 @@ import { O_TABLE_GLOBAL_CONFIG } from 'ontimize-web-ngx';
       }
     }
   ]
-})
-export class AppModule { }
+};
 ```
 
 **Priority order**
@@ -1524,15 +1509,15 @@ The example below makes use of *simple template*, the content of the child row i
       <o-table-row-expandable>
         <ng-template let-row>
           <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10" layout-gap="12px">
-            <div fxLayout="row wrap" fxLayoutGap="14px">
-              <span fxFlex="30%"><strong>{% raw %}{{'ADDRESS' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ADDRESS}}{% endraw %}</span>
-              <span fxFlex="20%"><strong>{% raw %}{{'COUNTRY' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.COUNTRY}}{% endraw %}</span>
-              <span fxFlex="20%"><strong>{% raw %}{{'STATE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.STATE}}{% endraw %}</span>
-              <span fxFlex="20%"><strong>{% raw %}{{'ZIPCODE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ZIPCODE}}{% endraw %}</span>
+            <div fxLayoutGap="14px">
+              <span><strong>{% raw %}{{'ADDRESS' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ADDRESS}}{% endraw %}</span>
+              <span><strong>{% raw %}{{'COUNTRY' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.COUNTRY}}{% endraw %}</span>
+              <span><strong>{% raw %}{{'STATE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.STATE}}{% endraw %}</span>
+              <span><strong>{% raw %}{{'ZIPCODE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.ZIPCODE}}{% endraw %}</span>
             </div>
-            <div fxLayout="row wrap" fxLayoutGap="14px">
-              <span fxFlex="20%"><strong>{% raw %}{{'EMAIL' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.EMAIL}}{% endraw %}</span>
-              <span fxFlex="20%"><strong>{% raw %}{{'PHONE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.PHONE}}{% endraw %}</span>
+            <div fxLayoutGap="14px">
+              <span><strong>{% raw %}{{'EMAIL' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.EMAIL}}{% endraw %}</span>
+              <span><strong>{% raw %}{{'PHONE' | oTranslate}}{% endraw %}</strong>: {% raw %}{{row.PHONE}}{% endraw %}</span>
             </div>
           </o-column>
         </ng-template>
@@ -1576,7 +1561,7 @@ It is possible to define a *template with context*, so that if the defined templ
 
 ![Row expanded with a template with context]({{ "/assets/images/components/tabla/row-expanded-context.PNG" | absolute_url }}){: .comp-example-img}
 
-The `o-table` component has an input to control expandable row and show or not the expansion icon. This input `show-expandable-icon-function` must set a function that will receive data of expandable row and has to return a boolean observable. You can check a complete example [here](https://try.imatia.com/ontimizeweb/v15/playground/main/data/table/rowexpandable){:target='_blank'}.
+The `o-table` component has an input to control expandable row and show or not the expansion icon. This input `show-expandable-icon-function` must set a function that will receive data of expandable row and has to return a boolean observable. You can check a complete example [here](https://try.imatia.com/ontimizeweb/v18/playground/main/data/table/rowexpandable){:target='_blank'}.
 
 
 
@@ -1584,25 +1569,20 @@ The `o-table` component has an input to control expandable row and show or not t
 
 The `o-table` component supports automatically adjust to the content of the column. This means that it will always take up the minimum width required to present its content. If you want avoid that behaviour setting `auto-adjust = no` in the `o-table` component.
 
-Global default autoadjust can be specified by providing a value for O_TABLE_GLOBAL_CONFIG in your application's root module.
+Global default autoadjust can be specified by providing a value for O_TABLE_GLOBAL_CONFIG in your application's providers.
 ```ts
-@NgModule({
-  declarations: [
-  ...
-  ],
-  ...
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
-    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAdjust: false } },
-    ...
-  ],
-  ...
-})
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_TABLE_GLOBAL_CONFIG, useValue: { autoAdjust: false } }
+  ]
+};
 ```
 
 <h3 class="grey-color">Example</h3>
 ```html
- <o-table fxFlex attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
+ <o-table attr="customers" title="CUSTOMERS" service="customers" entity="customer" keys="CUSTOMERID"
     columns="CUSTOMERID;PHOTO;NAME;SURNAME;ADDRESS;STARTDATE;EMAIL;CUSTOMERTYPEID"
     visible-columns="PHOTO;NAME;SURNAME;STARTDATE;EMAIL;ADDRESS;CUSTOMERTYPEID" sort-columns="SURNAME" query-rows="10" quick-filter="yes"
     row-height="medium" select-all-checkbox="true" pageable="yes" fixed-header="yes" auto-adjust="yes">
@@ -1734,7 +1714,7 @@ The `o-table` component allows to add content in the toolbar with the selector `
 If the selector `o-table-toolbar` is used together with `position='start'` the content will always be placed to the right of the New/Refresh/Delete and `o-table-buttons` buttons and if used together with  `position='end'` the content will always be placed to the left of the quickfilter
 
 ```ts
- <o-table #table fxFlex attr="table" title="Table" quick-filter="true" insert-button="false"  delete-button="false" refresh-button="false" ..>
+ <o-table #table attr="table" title="Table" quick-filter="true" insert-button="false"  delete-button="false" refresh-button="false" ..>
     <!-- Custom definition button -->
     <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button>
     <!-- Custom content toolbar in position start -->

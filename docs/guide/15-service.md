@@ -299,27 +299,20 @@ export class RickAndMortyServiceResponse implements ServiceResponse {
 
 Once your service and adapters are ready:
 
-* Register the service and adapters in your Angular module's `providers` array.
-```ts
-@NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    OntimizeWebModule,
-    AppRoutingModule
-  ],
+* Register the service and adapters in your `ApplicationConfig` providers (in `app.config.ts`):
+
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: 'rickandmorty', useValue: RickAndMortyService },
     RickAndMortyResponseAdapter,
     RickAndMortyRequestArgumentsAdapter,
-   ...
-  ],
-  bootstrap: [AppComponent]
-})
+    ...
+  ]
+};
+```
+
 * Use the service in your components or link it to a data component (like `o-table`, `o-form`, etc.) via the `serviceType` and `entity` attributes.
 
 
@@ -444,17 +437,15 @@ You can also extend the `BaseServiceResponse` according to your needs. Just reme
 
 ### Use your service in the whole application
 
-In case you want to use your service in the whole application, you have to provide it in you application module using the corresponding injection token.
+In case you want to use your service in the whole application, you have to provide it in `app.config.ts` using the corresponding injection token.
 
-```javascript
-@NgModule({
-  ...
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: O_DATA_SERVICE, useValue: StarWarsService }
   ]
-})
-export class AppModule { }
+};
 ```
 
 At this point every **OntimizeWeb** component will use your recently created `StarWarsService` service for communicating with the backend.
@@ -465,25 +456,22 @@ At this point every **OntimizeWeb** component will use your recently created `St
 
 ### Use your service in a specific component
 
-If you want to use your service in a specific component instead of using it in the whole application, you have to create a provide method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
+If you want to use your service in a specific component instead of the whole application, add it to the component's own `providers` array in its `@Component` decorator.
 
-```javascript
+```typescript
+import { Component } from '@angular/core';
 import { StarWarsService } from '../../shared/star-wars.service';
 
-
-@NgModule({
-
-  ...
-
-  providers: [{
-    provide: 'starWars',
-    useValue: StarWarsService
-  }]
+@Component({
+  standalone: true,
+  selector: 'app-starships',
+  templateUrl: './starships.component.html',
+  providers: [{ provide: 'starWars', useValue: StarWarsService }]
 })
-export class MyModule { }
+export class StarshipsComponent {}
 ```
 
-Once the service is included in the providers of your module, it will be created an instance of the service for each component. For this, configure the `service-type` attribute in the component with the value of the `provide` attribute indicated in the previous step. Check the example below.
+Angular will create a new instance of the service scoped to this component. Configure the `service-type` attribute in the Ontimize component with the value of the `provide` token from the previous step. Check the example below.
 
 ```html
 <o-table
@@ -494,7 +482,6 @@ Once the service is included in the providers of your module, it will be created
   pageable="yes"
   quick-filter="no"
   insert-button="no"
-  fxFlex
   service-type="starWars"
 >
   ...

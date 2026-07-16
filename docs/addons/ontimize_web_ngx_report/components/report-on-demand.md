@@ -218,11 +218,18 @@ export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProv
 
 ```
 
-- Add the extended service in the previous point in the app.module.ts with the injection token `O_REPORT_DATA_SERVICE`.
+- Register the extended service from the previous point in your `app.config.ts` with the injection token `O_REPORT_DATA_SERVICE`.
 
-``` ts
-{ provide: O_REPORT_DATA_SERVICE , useValue:CustomOntimizeReportDataProvider}
+```ts
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_REPORT_DATA_SERVICE, useValue: CustomOntimizeReportDataProvider }
+  ]
+};
 ```
+
+> **Note**: if you still bootstrap with `AppModule`, add the same provider entry to its `providers` array instead.
 
 >**IMPORTANT:** In the case of dates, the reports will take the format of the table but the jasperreport library only accepts the formats of the following table.
 

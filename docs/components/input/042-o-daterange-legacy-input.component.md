@@ -14,7 +14,51 @@ nav_order: 9
 The `o-daterange-legacy-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying start and end date values as a range from a calendar pop-up or by entering the value directly in an HTML input text box.
 .
 
-The date range input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `o-form`, the date range input is automatically registered on its parent, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+`o-daterange-legacy-input` is a standalone component and can be imported directly without an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { ODateRangeLegacyInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ODateRangeLegacyInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ODateRangeLegacyInputComponent } from 'ontimize-web-ngx';
+import * as moment from 'moment';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, ODateRangeLegacyInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-daterange-legacy-input formControlName="daterange" label="Date range" required="yes"></o-daterange-legacy-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    daterange: new FormControl({ startDate: moment('2019-05-15T00:00Z'), endDate: moment('2019-05-20T00:00Z') })
+  });
+}
+```
 
 ## Basic example
 ![Daterange input component]({{ "/assets/images/components/inputs/o-daterange-legacy-input.png" | absolute_url }}){: .comp-example-img width='65%'}
@@ -65,7 +109,7 @@ The `o-daterange-legacy-input` can render in two differents ways based on the `m
 <h3>Mode mobile example</h3>
 ![Date range mode ]({{ "/assets/images/components/inputs/o-daterange-legacy-mode-mobile.png" | absolute_url }}){: .comp-example-img}
 ```html
-<div fxLayout="row" fxLayoutAlign="end center" class="selector-mode">
+<div fxLayoutAlign="end center" class="selector-mode">
   <mat-icon>desktop_mac</mat-icon>{{'MODE.DESKTOP' | oTranslate}}
   <mat-slide-toggle #mode>
     <mat-icon>smartphone</mat-icon> {{'MODE.MOBILE'| oTranslate}}
@@ -89,7 +133,7 @@ The `o-daterange-legacy-input` supports date Moments formats setting, all you ha
 ![Format int daterang input component]({{ "/assets/images/components/inputs/o-daterange-legacy-format.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-<div fxLayout="column" layout-padding>
+<div layout-padding>
   <o-daterange-legacy-input attr="daterange" label="Date range" read-only="no"
     required="yes" [data]="getValue()" format="LL" separator=" to " text-input-enabled="no">
   </o-daterange-legacy-input>

@@ -20,7 +20,7 @@ Nos situamos dentro de la carpeta main, ejecutamos el comando para crear el mód
 ficheros para declarar este módulo dentro de la aplicación:
 
 ```
-npx ng g module --routing branches
+ng g component branches/branches-home --standalone
 ```
 
 <div class="multicolumn">
@@ -29,30 +29,17 @@ npx ng g module --routing branches
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**branches.module.ts**" | markdownify }}
+{{"**branches.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { BranchesRoutingModule } from './branches-routing.module';
+import { Routes } from '@angular/router';
 
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    BranchesRoutingModule
-  ]
-})
-export class BranchesModule { }
+export const branchesRoutes: Routes = [];
 {% endhighlight %}
 
-{{"**main-routing.module.ts**" | markdownify }}
+{{"**main.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from 'ontimize-web-ngx';
+import { Routes } from '@angular/router';
+import { authGuard } from 'ontimize-web-ngx';
 
 import { MainComponent } from './main.component';
 
@@ -60,22 +47,18 @@ export const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-      { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
-      { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) },
-      { path: 'branches', loadChildren: () => import('./branches/branches.module').then(m => m.BranchesModule) }
+      { path: 'home', loadChildren: () => import('./home/home.routes').then(m => m.homeRoutes) },
+      { path: 'customers', loadChildren: () => import('./customers/customers.routes').then(m => m.customersRoutes) },
+      { path: 'employees', loadChildren: () => import('./employees/employees.routes').then(m => m.employeesRoutes) },
+      { path: 'branches', loadChildren: () => import('./branches/branches.routes').then(m => m.branchesRoutes) }
     ]
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class MainRoutingModule { }
+export { routes as mainRoutes };
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -120,8 +103,7 @@ export class MainRoutingModule { }
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           branches
           <ul>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -188,7 +170,7 @@ export class MainRoutingModule { }
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.routes.ts</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
@@ -304,7 +286,7 @@ Una vez definido el módulo de sucursales, definiremos el formulario principal d
 mockup. Nos situamos dentro de la capeta **branches** creada en el paso anterior, y ejecutamos el comando:
 
 ```
-npx ng g component --skip-tests branches-home
+npx ng g component --skip-tests --standalone branches-home
 ```
 
 ![tutorial_o_web_20.png]({{ base_path }}/assets/images/tutorial_o_web_20.png)
@@ -325,44 +307,14 @@ npx ng g component --skip-tests branches-home
 </o-form-layout-manager>
 {% endhighlight %}
 
-{{"**branches-routing.module.ts**" | markdownify }}
+{{"**branches.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { BranchesHomeComponent } from './branches-home/branches-home.component';
 
-const routes: Routes = [{
-  path: '',
-  component: BranchesHomeComponent
-}];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class BranchesRoutingModule { }
-{% endhighlight %}
-
-{{"**branches.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { BranchesRoutingModule } from './branches-routing.module';
-import { BranchesHomeComponent } from './branches-home/branches-home.component';
-
-
-@NgModule({
-  declarations: [
-    BranchesHomeComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    BranchesRoutingModule
-  ]
-})
-export class BranchesModule { }
+export const branchesRoutes: Routes = [
+  { path: '', component: BranchesHomeComponent }
+];
 {% endhighlight %}
 
 {{"**app.menu.config.ts**" | markdownify }}
@@ -444,8 +396,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -632,7 +583,7 @@ las cuentas.
 Nos situamos en el directorio ```src/app/main``` y ejecutamos el comando:
 
 ```
-npx ng g module --routing accounts
+ng g component accounts/accounts-home --standalone
 ```
 
 <div class="multicolumn">
@@ -641,30 +592,17 @@ npx ng g module --routing accounts
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**accounts.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
+import { Routes } from '@angular/router';
 
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
+export const accountsRoutes: Routes = [];
 {% endhighlight %}
 
-{{"**main-routing.module.ts**" | markdownify }}
+{{"**main.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from 'ontimize-web-ngx';
+import { Routes } from '@angular/router';
+import { authGuard } from 'ontimize-web-ngx';
 
 import { MainComponent } from './main.component';
 
@@ -672,23 +610,19 @@ export const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-      { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
-      { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) },
-      { path: 'branches', loadChildren: () => import('./branches/branches.module').then(m => m.BranchesModule) },
-      { path: 'accounts', loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsModule) }
+      { path: 'home', loadChildren: () => import('./home/home.routes').then(m => m.homeRoutes) },
+      { path: 'customers', loadChildren: () => import('./customers/customers.routes').then(m => m.customersRoutes) },
+      { path: 'employees', loadChildren: () => import('./employees/employees.routes').then(m => m.employeesRoutes) },
+      { path: 'branches', loadChildren: () => import('./branches/branches.routes').then(m => m.branchesRoutes) },
+      { path: 'accounts', loadChildren: () => import('./accounts/accounts.routes').then(m => m.accountsRoutes) }
     ]
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class MainRoutingModule { }
+export { routes as mainRoutes };
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -733,8 +667,7 @@ export class MainRoutingModule { }
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           accounts
           <ul>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -816,7 +749,7 @@ export class MainRoutingModule { }
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.routes.ts</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
@@ -932,7 +865,7 @@ Para crear el formulario, nos situamos dentro de la carpeta **accounts** que hem
 ejecutamos el siguiente comando:
 
 ```
-npx ng g component --skip-tests accounts-home
+npx ng g component --skip-tests --standalone accounts-home
 ```
 
 Adaptaremos el componente para realizar un formulario similar a este mockup
@@ -964,44 +897,14 @@ Adaptaremos el componente para realizar un formulario similar a este mockup
 </o-form-layout-manager>
 {% endhighlight %}
 
-{{"**accounts-routing.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
 
-const routes: Routes = [{
-  path: '',
-  component: AccountsHomeComponent
-}];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class AccountsRoutingModule { }
-{% endhighlight %}
-
-{{"**accounts.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
-import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
+export const accountsRoutes: Routes = [
+  { path: '', component: AccountsHomeComponent }
+];
 {% endhighlight %}
 
 {{"**app.menu.config.ts**" | markdownify }}
@@ -1097,8 +1000,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

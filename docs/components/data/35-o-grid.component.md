@@ -153,17 +153,17 @@ By default the filtering is local, you can enable remote filtering setting `page
     keys="EMPLOYEEID" sort-columns="EMPLOYEESURNAME" pageable="no" query-rows="16" fixed-header="yes"
     refresh-button="no" gutter-size="18px" detail-mode="none">
     <o-grid-item *ngFor="let item of grid.dataArray">
-      <div (click)="openDetail(item)" fxLayout="column" fxLayoutAlign="space-evenly center"
+      <div (click)="openDetail(item)" fxLayoutAlign="space-evenly center"
         class="employee-item mat-elevation-z1">
-        <div fxLayout="row" fxLayoutAlign="space-between end" class="image-container">
-          <mat-divider fxFlex></mat-divider>
+        <div fxLayoutAlign="space-between end" class="image-container">
+          <mat-divider></mat-divider>
           <div class="image">
             <img [src]="getImageSrc(item.EMPLOYEEPHOTO)">
           </div>
-          <mat-divider fxFlex></mat-divider>
+          <mat-divider></mat-divider>
         </div>
 
-        <div fxLayout="column" fxLayoutAlign="start center" class="employee-data">
+        <div fxLayoutAlign="start center" class="employee-data">
           {% raw %}
           <span class=" employee-name">{{ item.EMPLOYEENAME }} {{ item.EMPLOYEESURNAME }}</span>
           <span>{{ item.EMPLOYEEEMAIL }}</span>

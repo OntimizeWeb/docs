@@ -14,7 +14,7 @@ nav_order: 11
 
 The `o-list-picker` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying an option between multiple input submitted by the user.
 
-The list picker component is automatically registered on its parent `o-form`, which provides the value for the list picker programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `o-form`, the list picker component is automatically registered on its parent, which provides the value for the list picker programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the optoins on the list and each element of the data array must be an object with at least one key/value pair.
 
@@ -26,6 +26,51 @@ The data array can be provided in two ways:
 Always pass a static reference instead (e.g. `[static-data]="data"`).
 
 Once some data has been provided to the component, the user can see the option list by clicking in the search button of the component. Choosing an option, the list will close up and the selected value will be set to the input.
+
+## Standalone usage
+
+`o-list-picker` is a standalone component and can be imported directly, without an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { OListPickerComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [OListPickerComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`, using `static-data`/`value-column`/`columns` as usual to configure the options:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { OListPickerComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, OListPickerComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-list-picker formControlName="country" label="Country" [static-data]="staticData"
+        value-column="name" columns="id;name" visible-columns="name" required="yes"></o-list-picker>
+    </form>
+  `
+})
+export class MyComponent {
+  staticData = [{ id: 1, name: 'Spain' }, { id: 2, name: 'France' }];
+  form = new FormGroup({
+    country: new FormControl('', Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![List picker component]({{ "/assets/images/components/inputs/o-list-picker.png" | absolute_url }}){: .comp-example-img}
@@ -62,7 +107,7 @@ Configure the currency symbol with the `currency-symbol` attribute. Check this a
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/listpicker).
 
 
 **Date list-picker renderer**
@@ -76,7 +121,7 @@ You may want to set the displaying date format by configuring the `format` attri
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/listpicker).
 
 
 **Integer list-picker renderer**
@@ -88,7 +133,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/listpicker).
 
 
 **Real list-picker renderer**
@@ -100,7 +145,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/listpicker).
 
 
 **Percentage list-picker renderer**
@@ -112,7 +157,7 @@ You can check a working example of this renderer [here](https://try.imatia.com/o
 </o-list-picker>
 ```
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/listpicker).
 
 ### Custom renderers <span class='menuitem-badge'>new<span>
 
@@ -164,7 +209,7 @@ The *let* keyword declares a template input variable that you reference within t
 
 Finally, add the created component to your module for including it in your list-picker.
 
-You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v15/playground/main/inputs/listpicker).
+You can check a working example of this renderer [here](https://try.imatia.com/ontimizeweb/v18/playground/main/inputs/listpicker).
 
 ## Locker
 

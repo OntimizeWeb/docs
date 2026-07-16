@@ -13,7 +13,50 @@ nav_order: 18
 
 The `o-real-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying numeric input submitted by the user.
 
-The real input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+The real input is typically placed inside an `o-form`, which registers it automatically and provides the value for the input programatically — this is the recommended approach for CRUD forms. Its value can be also set manually via the `data` parameter, or the component can be used standalone with Angular Reactive Forms (see [Standalone usage](#standalone-usage) below). This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+The `o-real-input` component is standalone and can be imported directly without going through `OntimizeWebModule` or an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { ORealInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ORealInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl`/`FormGroup` with `formControlName` instead of `data`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ORealInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, ORealInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-real-input formControlName="amount" label="Amount" required="yes"></o-real-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    amount: new FormControl(1430.75, Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![Real input component]({{ "/assets/images/components/inputs/o-real-input.png" | absolute_url }}){: .comp-example-img}

@@ -8,7 +8,7 @@ search_enabled: true
 
 search_tokenizer_separator: /[\s/]+/
 
-description: Welcome to the Ontimize v15 documentation!
+description: Welcome to the Ontimize Web NGX v18 documentation!
 
 theme: just-the-docs
 
@@ -21,6 +21,9 @@ versions:
     selected: false
   - url: /docs/v15
     title: 15.x.x
+    selected: false
+  - url: /docs/v18
+    title: 18.x.x
     selected: true
   - url: /docs/next
     title: next
@@ -32,7 +35,7 @@ github:
   - name: Onitmize Web
     url: https://github.com/OntimizeWeb
 
-playgroundurl: https://try.imatia.com/ontimizeweb/v15/playground
+playgroundurl: https://try.imatia.com/ontimizeweb/v18/playground
 
 callouts_level: quiet
 callouts:

@@ -214,7 +214,7 @@ export class CustomOntimizeExportDataProviderService extends OntimizeExportDataP
 
 ```
 
-- Add the extended service in the previous point in the app.module.ts with the injection token `O_EXPORT_DATA_SERVICE`
+- Add the extended service in the previous point in the `app.config.ts` with the injection token `O_EXPORT_DATA_SERVICE`
 
 ```ts
 // Defining custom providers (if needed)...
@@ -224,23 +224,20 @@ export const customProviders: any = [
   ....
 ];
 
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    OntimizeWebModule.forRoot(CONFIG),
-    OntimizeWebModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: APP_CONFIG, useValue: CONFIG },
     ...ONTIMIZE_PROVIDERS,
     ...customProviders
-  ],
-  bootstrap: [AppComponent]
-})
+  ]
+};
+
+// main.ts
+bootstrapApplication(AppComponent, appConfig)
+  .then(ontimizePostBootstrap)
+  .catch(err => console.error(err));
 ```
 
 ## Ontimize Boot 3.9.0 or higher
@@ -408,7 +405,7 @@ export class CustomOntimizeExportDataProviderService extends OntimizeExportDataP
 
 ```
 
-- Add the extended service in the previous point in the app.module.ts with the injection token `O_EXPORT_DATA_SERVICE`.
+- Add the extended service in the previous point in the `app.config.ts` with the injection token `O_EXPORT_DATA_SERVICE`.
 
 ```ts
 // Defining custom providers (if needed)...
@@ -418,23 +415,20 @@ export const customProviders: any = [
   ....
 ];
 
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    OntimizeWebModule.forRoot(CONFIG),
-    OntimizeWebModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: APP_CONFIG, useValue: CONFIG },
     ...ONTIMIZE_PROVIDERS,
     ...customProviders
-  ],
-  bootstrap: [AppComponent]
-})
+  ]
+};
+
+// main.ts
+bootstrapApplication(AppComponent, appConfig)
+  .then(ontimizePostBootstrap)
+  .catch(err => console.error(err));
 ```
 
 The following example extends the provider by taking into account the marked rows in a table and nd sets the background to green in the first row.
@@ -526,26 +520,20 @@ export const customProviders: any = [
   ...
 ];
 
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    OntimizeWebModule.forRoot(CONFIG),
-    OntimizeWebModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: APP_CONFIG, useValue: CONFIG },
     ...ONTIMIZE_PROVIDERS,
     ...customProviders
-  ],
-  bootstrap: [AppComponent]
-})
+  ]
+};
 
-export class AppModule { }
-
+// main.ts
+bootstrapApplication(AppComponent, appConfig)
+  .then(ontimizePostBootstrap)
+  .catch(err => console.error(err));
 ```
 
 <h4>Export service example for Ontimize EE, Ontimize Boot 2.X.X or lower version</h4>
@@ -656,26 +644,20 @@ export const customProviders: any = [
 ...
 ];
 
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    OntimizeWebModule.forRoot(CONFIG),
-    OntimizeWebModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: APP_CONFIG, useValue: CONFIG },
     ...ONTIMIZE_PROVIDERS,
     ...customProviders
-  ],
-  bootstrap: [AppComponent]
-})
+  ]
+};
 
-export class AppModule { }
-
+// main.ts
+bootstrapApplication(AppComponent, appConfig)
+  .then(ontimizePostBootstrap)
+  .catch(err => console.error(err));
 ```
 Modify `o-table` component
 

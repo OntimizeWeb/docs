@@ -7,6 +7,7 @@ parent: Guide
 nav_order: 4
 ---
 {% include base_path %}
+{% include toc %}
 
 ## Overview
 
@@ -174,10 +175,94 @@ export class CustomersRoutingModule { }
 
 In this file some of the more typical routes related with a logic block are defined, such as:
 
-* **Important**: Remember that all of these routes are below the '*customer*' route defined in the '*AppRoutingModule*'.
+* **Important**: Remember that all of these routes are below the ‘*customer*’ route defined in the ‘*AppRoutingModule*’.
 
-* **'':** Entry point of this logical block. Typically contains a list or table of all elments of the block. In this case, it contains a table with all of the customers. This will be rendered by *CustomersHomeComponent*.
-* **'new':** View for inserting a new item into the collection. Uses *CustomersNewComponent*.
-* **':CUSTOMERID':** Details of selected item. The *:CUSTOMERID* is the token for a route parameter. For example, in a URL such as "/customers/22", "22" is the value of :CUSTOMERID parameter that is generally the customer’s entity primary key. The component *CustomersDetailComponent* will render the view  usually a form) with the details of the selected item. When the detailed data is displayed in a form all inputs contained in it are in read only mode and  cannot be edited.
-When the detail data is displayed into a form all inputs contained in it are in **read only** mode, that is, the inputs only displays data but can not be edited.
-* **':CUSTOMERID/accounts':** Entry point for loading the '*AccountsModule*'.
+* **’’:** Entry point of this logical block. Typically contains a list or table of all elements of the block. In this case, it contains a table with all of the customers. This will be rendered by *CustomersHomeComponent*.
+* **’new’:** View for inserting a new item into the collection. Uses *CustomersNewComponent*.
+* **’:CUSTOMERID’:** Details of selected item. The *:CUSTOMERID* is the token for a route parameter. For example, in a URL such as "/customers/22", "22" is the value of :CUSTOMERID parameter that is generally the customer’s entity primary key. The component *CustomersDetailComponent* will render the view (usually a form) with the details of the selected item. When the detailed data is displayed in a form all inputs contained in it are in read only mode and cannot be edited.
+* **’:CUSTOMERID/accounts’:** Entry point for loading the ‘*AccountsModule*’.
+
+---
+
+## Functional guards (Angular 18)
+
+Class-based guards (`AuthGuardService`, `PermissionsGuardService`) are deprecated in Angular 18. Ontimize Web 18 exports functional equivalents that can be used directly in route definitions:
+
+```typescript
+import { authGuard, permissionsGuard, canActivateFormLayoutChildGuard } from ‘ontimize-web-ngx’;
+```
+
+### Migrating the app routing
+
+**Before (class-based guard):**
+```typescript
+import { AuthGuardService } from ‘ontimize-web-ngx’;
+
+const routes: Routes = [
+  {
+    path: ‘main’,
+    canActivate: [AuthGuardService],
+    loadChildren: () => import(‘./main/main.module’).then(m => m.MainModule)
+  }
+];
+```
+
+**After (functional guard):**
+```typescript
+import { authGuard } from ‘ontimize-web-ngx’;
+
+const routes: Routes = [
+  {
+    path: ‘main’,
+    canActivate: [authGuard],
+    loadChildren: () => import(‘./main/main.module’).then(m => m.MainModule)
+  }
+];
+```
+
+### Available functional guards
+
+| Guard | Description |
+|---|---|
+| `authGuard` | Redirects to login if the user is not authenticated |
+| `permissionsGuard` | Checks Ontimize permissions before activating the route |
+| `canActivateFormLayoutChildGuard` | Controls activation of child routes inside `o-form-layout-manager` |
+
+### Standalone routing file (optional)
+
+In a standalone Angular 18 application, use a `app.routes.ts` file instead of `AppRoutingModule`:
+
+```typescript
+// app.routes.ts
+import { Routes } from ‘@angular/router’;
+import { authGuard } from ‘ontimize-web-ngx’;
+
+export const routes: Routes = [
+  {
+    path: ‘login’,
+    loadChildren: () => import(‘./login/login.routes’).then(m => m.LOGIN_ROUTES)
+  },
+  {
+    path: ‘main’,
+    canActivate: [authGuard],
+    loadChildren: () => import(‘./main/main.routes’).then(m => m.MAIN_ROUTES)
+  },
+  { path: ‘’, redirectTo: ‘main’, pathMatch: ‘full’ }
+];
+```
+
+Register it in `main.ts` via `provideRouter`:
+
+```typescript
+import { bootstrapApplication } from ‘@angular/platform-browser’;
+import { provideRouter } from ‘@angular/router’;
+import { provideOntimizeWeb } from ‘ontimize-web-ngx’;
+import { routes } from ‘./app/app.routes’;
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideOntimizeWeb(CONFIG),
+    provideRouter(routes),
+  ]
+});
+```

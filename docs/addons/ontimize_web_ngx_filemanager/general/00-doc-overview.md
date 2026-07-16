@@ -18,6 +18,8 @@ The **OntimizeWeb** file manager allows you to manage files stored in your appli
 
 We provide two different types of file manager engines on Ontimize: the **DMS** file manager that uses a database to store de files and de **SDMS** file manager (since `ontimize-web-ngx-filemanager 8.6.0` and `ontimize-boot 3.12.0`) wich is based con Amazon S3 cloud.
 
+From version **18.0.0**, the library requires `ontimize-web-ngx ^18.0.0-next.0` and Angular `^18.2.0`. `OFileManagerTableComponent` is now **standalone** — import it directly instead of declaring it through a module. The built-in `OTableSkeletonComponent` replaces the former `OTableSkeletonExtendedComponent`.
+
 ## Upload
 
 You can *upload* files since the button *Upload*.
