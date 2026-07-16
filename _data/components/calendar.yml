@@ -1,0 +1,201 @@
+directive: "o-calendar"
+version: "18.0.0-next.2"
+
+apiTitle: "OCalendarComponent"
+inheritedAttributes:
+  [
+    {
+      component: "OServiceBaseComponent",
+      path: "components/service/service-base/api",
+      attributes:
+        [
+          "attr",
+          "columns",
+          "keys",
+          "static-data",
+          "service",
+          "service-type",
+          "entity",
+          "query-on-init",
+          "query-rows",
+          "title",
+        ],
+    },
+  ]
+
+attributes:
+  [
+    {
+      name: "view",
+      type: "'month' | 'week' | 'day'",
+      default: "month",
+      required: "",
+      description: "Active calendar view.",
+    },
+    {
+      name: "view-date",
+      type: "Date",
+      default: "new Date()",
+      required: "",
+      description: "Reference date used to compute the visible month/week/day.",
+    },
+    {
+      name: "views",
+      type: "string",
+      default: "month;week;day",
+      required: "",
+      description: "Views available in the toolbar switch, as a `;`-separated list, e.g. `month;week`.",
+    },
+    {
+      name: "start-column",
+      type: "string",
+      default: "",
+      required: "yes",
+      description: "Column that holds the event start date/datetime. Required unless `map-function` is provided.",
+    },
+    {
+      name: "end-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Column that holds the event end date/datetime.",
+    },
+    {
+      name: "title-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Column used as the event title (bold part of the event pill).",
+    },
+    {
+      name: "description-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Column shown as the secondary/muted text of the event pill and in its tooltip.",
+    },
+    {
+      name: "color-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Column that holds a color for the event, used as its accent color.",
+    },
+    {
+      name: "all-day-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Column that flags an all-day event.",
+    },
+    {
+      name: "map-function",
+      type: "(row: any) => CalendarEvent",
+      default: "",
+      required: "",
+      description: "Function that builds the whole `CalendarEvent` from a data row. Takes precedence over the `*-column` inputs when provided.",
+    },
+    {
+      name: "value-type",
+      type: "'timestamp' | 'iso-8601' | 'date' | 'string'",
+      default: "timestamp",
+      required: "",
+      description: "Wire format of `start-column`/`end-column` as stored in the entity. Used to build the server-side view-range filter (see \"Server-side range filtering\") with values comparable to those columns. `timestamp` (epoch ms) is the same default used by `o-date-input`/`o-table` date filters.",
+    },
+    {
+      name: "value-format",
+      type: "string",
+      default: "L",
+      required: "",
+      description: "Moment format used to build the range filter when `value-type=\"string\"`.",
+    },
+    {
+      name: "locale",
+      type: "string",
+      default: "current application language",
+      required: "",
+      description: "BCP 47 locale used to format dates in the toolbar, headers, tooltips and the date picker.",
+    },
+    {
+      name: "week-starts-on",
+      type: "number (0-6)",
+      default: "moment locale default",
+      required: "",
+      description: "First day of the week (0 = Sunday ... 6 = Saturday). When not set, it falls back to the first day of the current moment locale (e.g. Monday for `es`).",
+    },
+    {
+      name: "week-header-day-format",
+      type: "string",
+      default: "D",
+      required: "",
+      description: "Moment format applied to the value shown under the weekday name in the week/day view column headers, e.g. `MMM D`.",
+    },
+    {
+      name: "show-toolbar",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Indicates whether or not to show the calendar toolbar (navigation, title/date picker and view switch).",
+    },
+    {
+      name: "show-tooltip",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Shows a tooltip on event hover in the month, week and day views.",
+    },
+    {
+      name: "tooltip-function",
+      type: "(row: any) => string",
+      default: "",
+      required: "",
+      description: "Computes the tooltip text for an event from its source row, taking precedence over the default title/description text. Mirrors `o-table-column`'s own `tooltip-function` input. Has no effect when a custom `oCalendarTooltip` template is provided.",
+    },
+    {
+      name: "show-hours",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Shows the hourly time grid in the week/day views. Set to `no` (e.g. when events are all-day) to render an agenda-style list of event cards per day instead of an hour-by-hour grid.",
+    },
+    {
+      name: "show-weekends",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Shows Saturday/Sunday columns in the month and week views (and in the week agenda list when `show-hours=\"no\"`).",
+    },
+    {
+      name: "max-events-per-cell",
+      type: "number",
+      default: "3",
+      required: "",
+      description: "Max number of event pills rendered per month cell before the \"+N more\" link, which opens a popover listing every event of that day.",
+    },
+  ]
+
+outputs:
+  [
+    {
+      name: "onEventClick",
+      type: "OCalendarEventClick",
+      description: "Emitted when an event is clicked, in any view and also from the \"+N more\" day popover. Payload: `{ event: CalendarEvent, row: any }`.",
+    },
+    {
+      name: "onDayClick",
+      type: "OCalendarDayClick",
+      description: "Emitted when a whole day cell (month view) or an hour segment (week/day views) is clicked. Payload: `{ date: Date, events: CalendarEvent[] }`.",
+    },
+    {
+      name: "onViewChange",
+      type: "OCalendarView",
+      description: "Emitted when the active view changes, either from the toolbar switch or programmatically via the `view` input.",
+    },
+    {
+      name: "onViewDateChange",
+      type: "Date",
+      description: "Emitted when the reference date changes: toolbar previous/next navigation or picking a date from the toolbar date picker.",
+    },
+  ]
+
+directives: [{ name: "oCalendarEvent" }, { name: "oCalendarTooltip" }]

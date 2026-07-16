@@ -435,3 +435,6 @@ sections:
     - url: "/extra-components/image-editor/overview"
       title: "Image Editor"
       description: "Display and refine the same image through different editing interactions"
+    - url: "/extra-components/calendar/overview"
+      title: "Calendar"
+      description: "Display data rows as events over month, week and day views"
