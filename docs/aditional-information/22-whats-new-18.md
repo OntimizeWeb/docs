@@ -2,7 +2,7 @@
 layout: default
 title: "What's new in version 18"
 permalink: /whats-new-18/
-excerpt: "Main changes and new features in Ontimize Web NGX version 18."
+excerpt: "Main changes and new features in Ontimize Web version 18."
 parent: Aditional information
 nav_order: 2
 ---
