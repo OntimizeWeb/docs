@@ -9,7 +9,7 @@ nav_order: 2
 {% include base_path %}
 {% include toc %}
 
-# What's new in Ontimize Web NGX 18
+# What's new in Ontimize Web 18
 
 Version 18 is a major release that upgrades the framework to **Angular 18** and **Material Design 3 (M3)**. This page summarises the most relevant changes. For step-by-step migration instructions see the [Migration guide from 15 to 18]({{ base_path }}/migration-15-to-18/).
 

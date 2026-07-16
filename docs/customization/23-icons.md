@@ -2,7 +2,7 @@
 layout: default
 title: "Icons"
 permalink: /customize/icons/
-excerpt: "How to use and customise icons in Ontimize Web NGX 18 with Material Symbols Outlined."
+excerpt: "How to use and customise icons in Ontimize Web 18 with Material Symbols Outlined."
 parent: Customization
 nav_order: 5
 ---
@@ -12,7 +12,7 @@ nav_order: 5
 
 ## Material Symbols Outlined
 
-Ontimize Web NGX 18 uses **Material Symbols Outlined** (a variable font) instead of the legacy Material Icons ligature font.
+Ontimize Web 18 uses **Material Symbols Outlined** (a variable font) instead of the legacy Material Icons ligature font.
 
 Update your `index.html` to load the new font:
 

@@ -2,7 +2,7 @@
 layout: default
 title: "Migration guide to version 18"
 permalink: /migration-15-to-18/
-excerpt: "Step-by-step guide to migrate from Ontimize Web NGX 15 (Angular 15) to version 18 (Angular 18)."
+excerpt: "Step-by-step guide to migrate from Ontimize Web 15 (Angular 15) to version 18 (Angular 18)."
 parent: Migration guides
 grandParent: Aditional information
 nav_exclude: true
@@ -10,7 +10,7 @@ nav_exclude: true
 {% include base_path %}
 {% include toc %}
 
-# Migration guide — Ontimize Web NGX 15 → 18
+# Migration guide — Ontimize Web 15 → 18
 
 This guide covers the steps required to migrate a consumer project from **ontimize-web-ngx 15** (Angular 15) to **ontimize-web-ngx 18** (Angular 18).
 

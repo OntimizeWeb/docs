@@ -2,7 +2,7 @@
 layout: default
 title: "Theming"
 permalink: /customize/theming/
-excerpt: "How to customise the colour palette and theme of your Ontimize Web NGX 18 application using Material 3."
+excerpt: "How to customise the colour palette and theme of your Ontimize Web 18 application using Material 3."
 parent: Customization
 nav_order: 1
 ---
@@ -11,7 +11,7 @@ nav_order: 1
 {% include toc %}
 
 {: .note }
-> This page covers theming for **Ontimize Web NGX 18** (Angular Material 3). For older versions see the [15.x.x theming guide](https://ontimizeweb.github.io/docs/v15/customize/theming/) or the [8.x.x documentation](https://ontimizeweb.github.io/docs/v8/customize/theming/).
+> This page covers theming for **Ontimize Web 18** (Angular Material 3). For older versions see the [15.x.x theming guide](https://ontimizeweb.github.io/docs/v15/customize/theming/) or the [8.x.x documentation](https://ontimizeweb.github.io/docs/v8/customize/theming/).
 
 ## What is a theme?
 
