@@ -3,20 +3,20 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - 15.x.x
+      - 18.x.x
   workflow_dispatch:
     inputs:
       BASELINE:
         description: 'Baseline branch of documentation'
         required: true
-        default: '15.x.x'
+        default: '18.x.x'
       TARGET_FOLDER:
         description: 'Target version folder'
         required: true
         default: 'next'
         type: choice
         options:
-          - 'v15'
+          - 'v18'
           - 'next'
 
 
@@ -32,7 +32,7 @@ jobs:
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             TARGET_PATH="${{ github.event.inputs.TARGET_FOLDER }}"
           else
-            TARGET_PATH="v15"
+            TARGET_PATH="v18"
           fi
           echo "TARGET_PATH=$TARGET_PATH" >> "$GITHUB_ENV"
           BASELINE_BRANCH=${{ github.event.inputs.BASELINE || github.ref }}
