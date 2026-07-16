@@ -3977,17 +3977,17 @@
   },"568": {
     "doc": "Theming",
     "title": "Theming",
-    "content": "Table of Contents . | What is a theme? | Configuration . | Files to configure . | styles.scss | index.html | . | . | Predefined palettes | Predefined Ontimize themes | Custom theme . | Option A — CLI-generated palette (recommended for corporate branding) | Option B — Inline palette | Factory parameters | . | Dark mode | Density | CSS custom properties . | Ontimize tokens (--o-*) | Material 3 system tokens (--mat-sys-*) | Overriding tokens at runtime | . | Theming your own components | Multiple themes | Clear SaSS — neutral surfaces (optional) | Tools for picking colours | . This page covers theming for Ontimize Web NGX 18 (Angular Material 3). For older versions see the 15.x.x theming guide or the 8.x.x documentation. ",
+    "content": "Table of Contents . | What is a theme? | Configuration . | Files to configure . | styles.scss | index.html | . | . | Predefined palettes | Predefined Ontimize themes | Custom theme . | Option A — CLI-generated palette (recommended for corporate branding) | Option B — Inline palette | Factory parameters | . | Dark mode | Density | CSS custom properties . | Ontimize tokens (--o-*) | Material 3 system tokens (--mat-sys-*) | Overriding tokens at runtime | . | Theming your own components | Multiple themes | Clear SaSS — neutral surfaces (optional) | Tools for picking colours | . This page covers theming for Ontimize Web 18 (Angular Material 3). For older versions see the 15.x.x theming guide or the 8.x.x documentation. ",
     "url": "/docs/next/customize/theming/",
     
     "relUrl": "/customize/theming/"
   },"569": {
     "doc": "Migration guide to version 18",
-    "title": "Migration guide — Ontimize Web NGX 15 → 18",
+    "title": "Migration guide — Ontimize Web 15 → 18",
     "content": "This guide covers the steps required to migrate a consumer project from ontimize-web-ngx 15 (Angular 15) to ontimize-web-ngx 18 (Angular 18). ",
-    "url": "/docs/next/migration-15-to-18/#migration-guide--ontimize-web-ngx-15--18",
+    "url": "/docs/next/migration-15-to-18/#migration-guide--ontimize-web-15--18",
     
-    "relUrl": "/migration-15-to-18/#migration-guide--ontimize-web-ngx-15--18"
+    "relUrl": "/migration-15-to-18/#migration-guide--ontimize-web-15--18"
   },"570": {
     "doc": "Migration guide to version 18",
     "title": "1. Prerequisites",
@@ -4082,7 +4082,7 @@
   },"583": {
     "doc": "Migration guide to version 18",
     "title": "Migration guide to version 18",
-    "content": "Table of Contents . | Migration guide — Ontimize Web NGX 15 → 18 . | 1. Prerequisites | 2. Update dependencies . | 2.1 Update Angular and core dependencies | 2.2 Update ontimize-web-ngx | 2.3 Remove @angular/flex-layout / @ngbracket/ngx-layout . | Percentage size classes — row vs column | . | . | 3. Theming — migrate to Material 3 . | 3.1 Update the styles import in styles.scss . | How to create a Material 3 palette | . | 3.2 CSS custom properties (Material 3) . | Removed typography token equivalences | Removed button token equivalences | Token equivalences for removed colour tokens | . | 3.3 Update the icon font in index.html | 3.4 Use a predefined theme (optional) | 3.5 Visual differences v15 vs v18 | 3.6 Configure density (optional) | 3.7 Overriding Material tokens | . | 4. Application bootstrap . | 4.1 Option A — Standalone bootstrap (recommended) | 4.2 Option B — NgModule bootstrap (backward compatible) | . | 5. Using standalone components directly | 6. Routes — standalone migration (optional) | 7. Functional guards | 8. Typed forms | 9. Material SCSS — M3 tokens via CSS custom properties | 10. Migration checklist | 11. Known issues and solutions . | Icons show literal text instead of the icon | Error NG0303: Can't bind to 'ngTemplateOutlet' | NullInjectorError in standalone bootstrap | SCSS compilation error: Can't find stylesheet to import | SCSS error: 'Typography config does not have a level called \"body-2\"' | mat-toolbar color=\"primary\" does not apply colour | Templates with *ngIf/*ngFor (deprecation warnings) | . | 12. Migrating HTML native inputs to Ontimize components . | 12.1 Quick equivalences | 12.2 Binding change | 12.3 Text input | 12.4 Select with string options | 12.5 Date input | 12.6 Read-only fields | 12.7 Validation | . | 13. Clear SaSS — neutral surfaces, scrollbar and neutral palette . | 13.1 Activate neutral surfaces | 13.2 Scrollbar with brand colour | 13.3 Neutral palette in custom themes | . | . | . ",
+    "content": "Table of Contents . | Migration guide — Ontimize Web 15 → 18 . | 1. Prerequisites | 2. Update dependencies . | 2.1 Update Angular and core dependencies | 2.2 Update ontimize-web-ngx | 2.3 Remove @angular/flex-layout / @ngbracket/ngx-layout . | Percentage size classes — row vs column | . | . | 3. Theming — migrate to Material 3 . | 3.1 Update the styles import in styles.scss . | How to create a Material 3 palette | . | 3.2 CSS custom properties (Material 3) . | Removed typography token equivalences | Removed button token equivalences | Token equivalences for removed colour tokens | . | 3.3 Update the icon font in index.html | 3.4 Use a predefined theme (optional) | 3.5 Visual differences v15 vs v18 | 3.6 Configure density (optional) | 3.7 Overriding Material tokens | . | 4. Application bootstrap . | 4.1 Option A — Standalone bootstrap (recommended) | 4.2 Option B — NgModule bootstrap (backward compatible) | . | 5. Using standalone components directly | 6. Routes — standalone migration (optional) | 7. Functional guards | 8. Typed forms | 9. Material SCSS — M3 tokens via CSS custom properties | 10. Migration checklist | 11. Known issues and solutions . | Icons show literal text instead of the icon | Error NG0303: Can't bind to 'ngTemplateOutlet' | NullInjectorError in standalone bootstrap | SCSS compilation error: Can't find stylesheet to import | SCSS error: 'Typography config does not have a level called \"body-2\"' | mat-toolbar color=\"primary\" does not apply colour | Templates with *ngIf/*ngFor (deprecation warnings) | . | 12. Migrating HTML native inputs to Ontimize components . | 12.1 Quick equivalences | 12.2 Binding change | 12.3 Text input | 12.4 Select with string options | 12.5 Date input | 12.6 Read-only fields | 12.7 Validation | . | 13. Clear SaSS — neutral surfaces, scrollbar and neutral palette . | 13.1 Activate neutral surfaces | 13.2 Scrollbar with brand colour | 13.3 Neutral palette in custom themes | . | . | . ",
     "url": "/docs/next/migration-15-to-18/",
     
     "relUrl": "/migration-15-to-18/"
@@ -4186,11 +4186,11 @@
     "relUrl": "/customize/style-guide/"
   },"598": {
     "doc": "What's new in version 18",
-    "title": "What’s new in Ontimize Web NGX 18",
+    "title": "What’s new in Ontimize Web 18",
     "content": "Version 18 is a major release that upgrades the framework to Angular 18 and Material Design 3 (M3). This page summarises the most relevant changes. For step-by-step migration instructions see the Migration guide from 15 to 18. ",
-    "url": "/docs/next/whats-new-18/#whats-new-in-ontimize-web-ngx-18",
+    "url": "/docs/next/whats-new-18/#whats-new-in-ontimize-web-18",
     
-    "relUrl": "/whats-new-18/#whats-new-in-ontimize-web-ngx-18"
+    "relUrl": "/whats-new-18/#whats-new-in-ontimize-web-18"
   },"599": {
     "doc": "What's new in version 18",
     "title": "Angular 18 + Material 3",
@@ -4243,14 +4243,14 @@
   },"606": {
     "doc": "What's new in version 18",
     "title": "What's new in version 18",
-    "content": "Table of Contents . | What’s new in Ontimize Web NGX 18 . | Angular 18 + Material 3 | Standalone by default | @angular/flex-layout removed | Material Symbols Outlined | Inputs usable outside o-form | New CSS custom properties . | Ontimize tokens (--o-*) | Material 3 system tokens (--mat-sys-*) | . | Breaking changes summary | . | . ",
+    "content": "Table of Contents . | What’s new in Ontimize Web 18 . | Angular 18 + Material 3 | Standalone by default | @angular/flex-layout removed | Material Symbols Outlined | Inputs usable outside o-form | New CSS custom properties . | Ontimize tokens (--o-*) | Material 3 system tokens (--mat-sys-*) | . | Breaking changes summary | . | . ",
     "url": "/docs/next/whats-new-18/",
     
     "relUrl": "/whats-new-18/"
   },"607": {
     "doc": "Icons",
     "title": "Material Symbols Outlined",
-    "content": "Ontimize Web NGX 18 uses Material Symbols Outlined (a variable font) instead of the legacy Material Icons ligature font. Update your index.html to load the new font: . &lt;!-- Remove the old Material Icons link if present: &lt;link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\"&gt; --&gt; &lt;!-- Add the Material Symbols Outlined link: --&gt; &lt;link href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,GRAD,FILL@20..48,100..700,-50..200,0..1\" rel=\"stylesheet\"&gt; . Icon names do not change — only the font file and CSS class change. home, settings, search, etc. all keep the same names. In templates, use the material-symbols-outlined class: . &lt;span class=\"material-symbols-outlined\"&gt;home&lt;/span&gt; . Ontimize Web components handle this internally — you do not need to change any component template. ",
+    "content": "Ontimize Web 18 uses Material Symbols Outlined (a variable font) instead of the legacy Material Icons ligature font. Update your index.html to load the new font: . &lt;!-- Remove the old Material Icons link if present: &lt;link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\"&gt; --&gt; &lt;!-- Add the Material Symbols Outlined link: --&gt; &lt;link href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,GRAD,FILL@20..48,100..700,-50..200,0..1\" rel=\"stylesheet\"&gt; . Icon names do not change — only the font file and CSS class change. home, settings, search, etc. all keep the same names. In templates, use the material-symbols-outlined class: . &lt;span class=\"material-symbols-outlined\"&gt;home&lt;/span&gt; . Ontimize Web components handle this internally — you do not need to change any component template. ",
     "url": "/docs/next/customize/icons/#material-symbols-outlined",
     
     "relUrl": "/customize/icons/#material-symbols-outlined"
