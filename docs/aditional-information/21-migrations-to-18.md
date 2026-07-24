@@ -16,6 +16,29 @@ This guide covers the steps required to migrate a consumer project from **ontimi
 
 ---
 
+## Breaking changes at a glance
+
+Quick reference for every breaking change shipped between **ontimize-web-ngx** 15 and 18 (pre-release versions `18.0.0-next.0` through `18.0.0-next.10`). Find your case, then follow the **Details** link for the full explanation.
+
+| Version | Change | Details |
+|---|---|---|
+| `next.2` | `o-mat-light-theme()` / `o-mat-dark-theme()` take a single M3 config map; positional args and M2 palettes are rejected. | [3.1 Update the styles import](#31-update-the-styles-import-in-stylesscss) |
+| `next.2` | `--o-primary-*`, `--o-accent-*`, `--o-warn-*` (and their `-contrast-*` variants) tokens no longer emitted. | [Token equivalences for removed colour tokens](#token-equivalences-for-removed-colour-tokens) |
+| `next.3` | `--o-button-height` removed — button heights now come exclusively from Material's density tokens. | [Removed button token equivalences](#removed-button-token-equivalences) |
+| `next.3` | Per-level typography tokens removed (`--o-font-<level>-size` / `-line-height` / `-weight`). | [Removed typography token equivalences](#removed-typography-token-equivalences) |
+| `next.4` | Custom components can no longer take `OFormComponent` as a constructor parameter. | [14. Custom components extending Ontimize form base classes](#14-custom-components-extending-ontimize-form-base-classes) |
+| `next.4` | `--o-input-icon-size` removed — input icon size is hardcoded to `20px`. | [Removed icon sizing token](#removed-icon-sizing-token) |
+| `next.4` | `oxygen` theme no longer sets custom font sizes/weights. | [Other typography changes](#other-typography-changes) |
+| `next.4` | Forced `html { font-size: 14px }` override removed. | [Other typography changes](#other-typography-changes) |
+| `next.4` | Hardcoded `'Noto Sans'` font-family fallback replaced by `system-ui, sans-serif`. | [Other typography changes](#other-typography-changes) |
+| `next.9` | `o-action--importance-*` CSS classes renamed to `o-button--importance-*`. | [15. Renamed action and button CSS classes](#15-renamed-action-and-button-css-classes) |
+| `next.10` | `o-daterange-legacy-input` removed entirely (was already deprecated). | [16. Removed o-daterange-legacy-input component](#16-removed-o-daterange-legacy-input-component) |
+| `next.0` (documented in `next.10`) | Custom SVG icon sprite shrank from ~45 to 10 icons — unrecognised `svgIcon="ontimize:X"` names silently render an empty icon. | [17. Reduced Material Symbols icon set](#17-reduced-material-symbols-icon-set-custom-svg-icons) |
+| `next.10` | `row-height` and the legacy `dense` attribute no longer affect table/list/grid row height. | [18. Row height now follows theme density](#18-row-height-now-follows-theme-density) |
+| `next.10` | Luxon replaces Moment.js as the default date engine. | [19. Date engine: Luxon is now the default](#19-date-engine-luxon-is-now-the-default) |
+
+---
+
 ## 1. Prerequisites
 
 | Tool | Minimum version |
@@ -191,7 +214,6 @@ The framework emits **Material 3** tokens (`--mat-sys-*`, `--mdc-*`) and complem
 - Foreground: `--o-fg-text`, `--o-fg-secondary-text`, `--o-fg-divider`, `--o-fg-icon`, `--o-fg-disabled`
 - Background: `--o-bg-card`, `--o-bg-background`, `--o-bg-level-0`, `--o-bg-level-1`, `--o-bg-app-bar`
 - Typography: `--o-font-family`
-- Sizing: `--o-input-icon-size`
 
 > The tokens `--o-primary-*`, `--o-accent-*`, `--o-warn-*` are **no longer emitted** in v18. Use `--mat-sys-primary`, `--mat-sys-tertiary`, `--mat-sys-error` instead.
 
@@ -209,6 +231,14 @@ The framework emits **Material 3** tokens (`--mat-sys-*`, `--mdc-*`) and complem
 | `--o-font-caption-size` | `--mat-sys-label-small-size` |
 | `--o-font-button-size` | `--mat-sys-label-large-size` |
 
+#### Other typography changes
+
+Related changes shipped alongside the token removal above, all in `18.0.0-next.4`:
+
+- The `oxygen` theme no longer sets custom font sizes/weights — its whole type scale now inherits from the M3 system tokens, same as the removals in the table above.
+- The `html { font-size: 14px; }` override was removed from `typography.scss`. The base font size is no longer forced — Material and the browser manage the type scale.
+- `font-family` on `html` is now driven exclusively by `--o-font-family`, emitted dynamically from the theme's typography config. The hardcoded `'Noto Sans'` fallback was replaced by `system-ui, sans-serif`.
+
 #### Removed button token equivalences
 
 | Removed token | MDC / M3 equivalent |
@@ -218,6 +248,10 @@ The framework emits **Material 3** tokens (`--mat-sys-*`, `--mdc-*`) and complem
 | `--o-button-height` | `--mdc-protected-button-container-height` |
 | `--o-button-height` | `--mdc-outlined-button-container-height` |
 | `--o-button-height` (button-toggle) | `--mat-standard-button-toggle-height` |
+
+#### Removed icon sizing token
+
+`--o-input-icon-size` was **removed** in `18.0.0-next.4`. Input prefix/suffix icon size is no longer configurable through a CSS custom property — it is now hardcoded to `20px` in the component styles.
 
 #### Token equivalences for removed colour tokens
 
@@ -234,7 +268,7 @@ The framework emits **Material 3** tokens (`--mat-sys-*`, `--mdc-*`) and complem
 | `--o-warn-500` | `--mat-sys-error` |
 | `--o-warn-contrast-500` | `--mat-sys-on-error` |
 
-The remaining tokens `--o-bg-*`, `--o-fg-*`, `--o-font-family`, `--o-input-icon-size` **are unchanged**.
+The remaining tokens `--o-bg-*`, `--o-fg-*` and `--o-font-family` **are unchanged**.
 
 ### 3.3 Update the icon font in `index.html`
 
@@ -269,7 +303,7 @@ The remaining tokens `--o-bg-*`, `--o-fg-*`, `--o-font-family`, `--o-input-icon-
 
 | Aspect | v15 | v18 |
 |---|---|---|
-| **Font** | Poppins | Noto Sans |
+| **Font** | Poppins (fixed) | Driven by `--o-font-family` (theme typography config); defaults to `system-ui, sans-serif` |
 | **Icons** | Material Icons (ligature) | Material Symbols Outlined |
 | **Sidenav** | Background derived from primary colour | Neutral background (`--o-bg-app-bar`), no shadow |
 | **Density** | Fixed | Configurable via `density` in the factory |
@@ -743,3 +777,142 @@ $theme: ontimize-style.o-mat-light-theme((
 | `100` | `level-1` / card | light |
 | `13` | `level-0` / background | dark |
 | `15` | `level-1` / card | dark |
+
+---
+
+## 14. Custom components extending Ontimize form base classes
+
+Since `18.0.0-next.4`, Ontimize input components no longer accept `OFormComponent` as a constructor parameter. This only affects projects with **custom components** that extend `OFormDataComponent`, `OFormServiceComponent` or `OBooleanFormDataComponent` — most consumers of the framework's built-in components are unaffected.
+
+**Before:**
+```typescript
+@Component({ selector: 'my-custom-input', ... })
+export class MyCustomInputComponent extends OFormDataComponent {
+  constructor(
+    @Optional() @Inject(forwardRef(() => OFormComponent)) form: OFormComponent,
+    elRef: ElementRef,
+    injector: Injector
+  ) {
+    super(form, elRef, injector);
+  }
+}
+```
+
+**After:**
+```typescript
+@Component({ selector: 'my-custom-input', ... })
+export class MyCustomInputComponent extends OFormDataComponent {
+  constructor(elRef: ElementRef, injector: Injector) {
+    super(elRef, injector);
+  }
+}
+```
+
+The form context is now resolved automatically inside the base class through `inject(O_FORM_CONTEXT, { optional: true })`, using the new `IOFormParent` interface and the `O_FORM_CONTEXT` injection token. Remove the `@Optional() @Inject(forwardRef(() => OFormComponent))` parameter — and the `form` argument passed to `super(...)` — from any custom component that extends `OFormDataComponent`, `OFormServiceComponent` or `OBooleanFormDataComponent`.
+
+---
+
+## 15. Renamed action and button CSS classes
+
+Since `18.0.0-next.9`, the shared "action importance" CSS classes defined in `o-button-theme.scss` have been renamed:
+
+| Before | After |
+|---|---|
+| `o-action--importance-primary` | `o-button--importance-primary` |
+| `o-action--importance-warn` | `o-button--importance-warn` |
+| `o-action--importance-default` | `o-button--importance-default` |
+
+These classes are applied by `o-button`, `o-table-button`, the `o-form` toolbar, `o-service-component` and the framework's own dialogs. If your application's stylesheets or templates reference the old `o-action--importance-*` names directly, rename them to `o-button--importance-*`.
+
+> The unrelated `o-action--filled-default` class is **not** affected by this rename.
+
+---
+
+## 16. Removed `o-daterange-legacy-input` component
+
+Since `18.0.0-next.10`, the already-deprecated `o-daterange-legacy-input` component (`ODateRangeLegacyInputComponent`, and its module, directive and picker) has been **removed** from the framework entirely.
+
+**Before:**
+```html
+<o-daterange-legacy-input attr="startDate;endDate" format="dd/MM/yyyy"></o-daterange-legacy-input>
+```
+
+**After:**
+```html
+<o-daterange-input attr="startDate;endDate" format="dd/MM/yyyy"></o-daterange-input>
+```
+
+[`o-daterange-input`]({{ base_path }}/components/input/daterange/overview) exposes an equivalent API — range support, `format`, `value-type` and `[date-class]` — so migration is generally a direct tag rename.
+
+---
+
+## 17. Reduced Material Symbols icon set (custom SVG icons)
+
+The Material Symbols Outlined migration (`18.0.0-next.0`, see [3.3 Update the icon font in index.html](#33-update-the-icon-font-in-indexhtml)) shrank the framework's custom SVG icon sprite (`assets/svg/ontimize-icon-set.svg`) from ~45 icons down to 10. This was not documented until `18.0.0-next.10` — if your application references one of the removed names, it has been **silently rendering an empty icon since `next.0`**, with no console error.
+
+### Icons still in the sprite
+
+Only these names remain valid for `<mat-icon svgIcon="ontimize:X">`:
+
+`CSV`, `EXCEL`, `HTML`, `ILS`, `KRW`, `LIR`, `PDF`, `sort_by_alpha`, `sort_by_alpha_asc`, `sort_by_alpha_desc`
+
+### Removed icons
+
+The following names were removed from the sprite:
+
+`menu`, `close`, `add`, `arrow_back`, `autorenew`, `check_circle`, `clear`, `clock`, `delete`, `done`, `drag_handle`, `edit`, `error_outline`, `filter_list`, `first_page`, `folder_open`, `fullscreen`, `info_outline`, `keyboard_arrow_down`, `keyboard_arrow_left`, `keyboard_arrow_right`, `keyboard_arrow_up`, `last_page`, `mail_outline`, `more_vert`, `perm_identity`, `phone_outline`, `power_settings_new`, `save`, `search`, `settings`, `today`, `undo`, `visibility`, `visibility_off`, `vpn_key` — plus the currency-related icons `BTC`, `EUR`, `GBP`, `INR`, `JPY`, `USD`, `PERCENT`, `PHONE`.
+
+**Fix**: replace the `ontimize:` SVG reference with the icon font, which is the framework's default since v18:
+
+```html
+<!-- Before -->
+<mat-icon svgIcon="ontimize:search"></mat-icon>
+
+<!-- After -->
+<mat-icon>search</mat-icon>
+```
+
+Most removed names match a [Material Symbols Outlined](https://fonts.google.com/icons){:target="_blank"} icon 1:1 by name, but the `_outline` suffix is not always kept in the new font — for example `info_outline`, `mail_outline` and `error_outline` likely become `info`, `mail` and `error`. Verify the exact name for every icon you migrate at [fonts.google.com/icons](https://fonts.google.com/icons){:target="_blank"}.
+
+Two names have no Material Symbols homonym at all:
+
+- `orden_ascendente` / `orden_descendente` — no direct equivalent. Consider `arrow_upward` / `arrow_downward`, `sort`, or register your own SVG with `OntimizeMatIconRegistry.addOntimizeSvgIcon(name, url)` (see [Adding a custom SVG icon]({{ base_path }}/customize/icons/#adding-a-custom-svg-icon)).
+
+The currency icons were replaced internally by `o-currency-input`'s own `currency_icons` map (ISO code → Material Symbols name, e.g. `EUR` → `euro_symbol`, `USD` → `attach_money`). If your application referenced the old `ontimize:EUR`-style icons directly, apply the same kind of mapping.
+
+---
+
+## 18. Row height now follows theme density
+
+Since `18.0.0-next.10`, `o-table`, `o-list` and `o-grid`'s `row-height` input (`small | medium | large`) and the legacy `dense` attribute of `mat-list` / `mat-selection-list` no longer have any visual effect — Material's MDC-based components dropped support for them.
+
+Row height is now controlled by the theme's **density** instead:
+
+- The `density` parameter of the theme factory (see [3.6 Configure density](#36-configure-density-optional)) — e.g. `o-mat-light-theme((density: -4))`.
+- `ontimize-theme-density-extended(<scale>)` to override density for a specific scope (same section).
+- Material's own per-component density mixins, e.g. `mat.list-density(-3)`.
+
+`row-height` still exists in the component API — old templates keep compiling — but it is inert and should be removed:
+
+```html
+<!-- Before: row-height controlled the row size -->
+<o-table row-height="large" ...></o-table>
+
+<!-- After: row-height has no effect; control size via theme density -->
+<o-table ...></o-table>
+```
+
+---
+
+## 19. Date engine: Luxon is now the default
+
+Since `18.0.0-next.10`, [Luxon](https://moment.github.io/luxon/){:target="_blank"} is the framework's **default** date engine, replacing Moment.js. Moment.js is now **deprecated** (not removed) — `MomentService`, `OMomentPipe` and `OntimizeMomentDateAdapter` remain fully functional if you explicitly select the moment adapter.
+
+This is breaking in two ways:
+
+- The default date format token changed from Moment's `'L'` / `'LL'` to Luxon's `'D'` / `'DD'`. Any custom `format` / `value-format` written with Moment tokens (e.g. `'DD/MM/YYYY'`) must be rewritten with Luxon's casing (`'dd/MM/yyyy'` — day and year go lowercase, month stays `'MM'`).
+- `DateCustomClassFunction` (the `[date-class]` input of `o-date-input` / `o-daterange-input`) now types its parameter as `any` instead of `Moment`. Existing `(date: Moment) => ...` callbacks still **compile**, but at **runtime** they receive a Luxon `DateTime` by default — any callback body that calls Moment-only methods (`.date()`, `.month()`, …) will throw unless updated.
+
+A new `O_DATE_ADAPTER` injection token and the `provideODateAdapter('luxon' | 'moment')` helper let you pick the date adapter for the whole application, a route, or a component subtree.
+
+See the [Date handling guide]({{ base_path }}/guide/date-handling/) for the full format-token table, the `date-class` details and `provideODateAdapter` examples.
