@@ -166,11 +166,11 @@ attributes:
       description: "Shows Saturday/Sunday columns in the month and week views (and in the week agenda list when `show-hours=\"no\"`).",
     },
     {
-      name: "max-events-per-cell",
+      name: "max-events-per-month-cell",
       type: "number",
       default: "3",
       required: "",
-      description: "Max number of event pills rendered per month cell before the \"+N more\" link, which opens a popover listing every event of that day.",
+      description: "Max number of event pills rendered per month view day cell before the \"+N more\" link, which opens a popover listing every event of that day.",
     },
   ]
 

@@ -239,7 +239,7 @@ You have an example of a custom renderer below. It displays a formatted date (th
 
 ```javascript
 import { Component, Injector, TemplateRef ViewChild } from '@angular/core';
-import * as moment from 'moment';
+import { DateTime } from 'luxon';
 import { OComboCustomRenderer } from 'ontimize-web-ngx';
 
 @Component({
@@ -256,7 +256,7 @@ export class CustomRendererComponent extends OComboCustomRenderer {
   }
 
  getComboData(value: any) {
-    let theDate = moment.unix(value.value).format("DD/MM/YYYY");
+    let theDate = DateTime.fromSeconds(value.value).toFormat("dd/MM/yyyy");
     return theDate;
   }
 

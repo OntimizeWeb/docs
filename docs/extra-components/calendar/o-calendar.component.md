@@ -72,8 +72,8 @@ mapRow = (row: any): CalendarEvent => ({
 
 * `views`: `;`-separated list of the views available in the toolbar switch (e.g. `views="month;week"`). Defaults to all three.
 * `week-starts-on`: first day of the week (`0` = Sunday ... `6` = Saturday). When not set, it falls back to the first day of the current moment locale (Monday for `es`, Sunday for `en`).
-* `week-header-day-format`: moment format applied to the value shown under the weekday name in the week/day column headers. Defaults to `D` (day number only); use e.g. `MMM D` to also show the month abbreviation.
-* `locale`: BCP 47 locale used to format the toolbar title, the column headers and the date picker. Defaults to the current application language.
+* `week-header-day-format`: moment format applied to the value shown under the weekday name in the week/day column headers. Defaults to `D` (day number only); use e.g. `MMM D` to also show the month abbreviation. Both `D` and `MMM D` translate automatically (backed by `Intl.DateTimeFormat`); any other, free-form moment token still works but — like any direct moment usage — needs the corresponding `import 'moment/locale/xx'` in the app for its locale-dependent parts (month/weekday names) to translate.
+* `locale`: BCP 47 locale used to format the toolbar title, the column headers and the date picker. Defaults to the current application language and keeps following it as it changes, unless explicitly bound.
 * `show-weekends`: shows Saturday/Sunday columns in the month and week views (and in the week agenda list, see below).
 
 ## Toolbar
@@ -83,6 +83,10 @@ The toolbar (hidden with `show-toolbar="no"`) shows the previous/next navigation
 ### Jump to any date
 
 Clicking the toolbar title opens a Material date picker (`mat-calendar`) that lets the user jump to any day, month or year without having to page through the calendar one step at a time.
+
+## Loading state
+
+While a service/entity query is in flight, the active view's content is replaced by a loading skeleton (`ngx-skeleton-loader`) shaped like that view: a 7-column grid for month, one column per visible day for week, a single column for day — both in the hourly grid and the agenda (`show-hours="no"`) layouts. The toolbar stays visible and usable throughout. Not shown in `static-data` mode, since there is no query to wait for.
 
 ## Agenda mode (`show-hours="no"`)
 
@@ -95,11 +99,15 @@ Both reuse the same event pill / custom `oCalendarEvent` template and tooltip as
 
 The day view always shows a header with the weekday and day number (today highlighted), regardless of `show-hours` — above the hourly grid when `show-hours="yes"`, or above the agenda list when `show-hours="no"`.
 
+A day with no events shows `empty-cell-text` (defaults to `···`) in place of the list; set it to `''` to show nothing.
+
 ![Agenda mode with show-hours="no"](../../assets/images/extra-components/agenda/agenda-no-show-hours.png)
 
 ## "+N more" day popover
 
-In month view, the number of event pills rendered per cell is capped by `max-events-per-cell` (default `3`). When a day has more events than that, a `+N more` link is shown; clicking it opens a popover listing every event of that day, reusing the same event pill (or the custom `oCalendarEvent` template, if provided) and tooltip. The popover is anchored to the clicked link and the CDK overlay automatically flips it to whichever side (right, left, top or bottom) fits the viewport, instead of a centered modal. Clicking an event inside it closes the popover and re-emits `onEventClick`, exactly as clicking the event directly on the grid would.
+In month view, the number of event pills rendered per cell is capped by `max-events-per-month-cell` (default `3`). When a day has more events than that, a `+N more` link is shown; clicking it opens a popover listing every event of that day, reusing the same event pill (or the custom `oCalendarEvent` template, if provided) and tooltip. The popover is anchored to the clicked link and the CDK overlay automatically flips it to whichever side (right, left, top or bottom) fits the viewport, instead of a centered modal. Clicking an event inside it closes the popover and re-emits `onEventClick`, exactly as clicking the event directly on the grid would.
+
+Set `more-clickable="no"` to render `+N more` as a static, non-interactive label instead — no popover, no click handling.
 
 ![+N more day popover](../../assets/images/extra-components/agenda/agenda-1-more.png)
 
@@ -139,6 +147,9 @@ Define an `ng-template` with the `oCalendarEvent` directive to replace the defau
 ```
 
 ![Custom event template](../../assets/images/extra-components/agenda/agenda-custom-template.png)
+
+{: .note }
+> The template's content is wrapped in the same `o-cal-event-pill` background and event-colored left border as the default pill (from `color-column`, falling back to the theme's primary color), so the template itself only needs to define what goes *inside* — an icon, a title, whatever — not its own background or border.
 
 ### Custom tooltip template
 

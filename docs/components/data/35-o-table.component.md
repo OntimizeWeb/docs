@@ -65,7 +65,7 @@ You can represent the columns in extended mode with `o-table-column` component. 
   </o-table-column>
   <o-table-column attr="NAME" title="NAME"></o-table-column>
   <o-table-column attr="STARTDATE" title="STARTDATE" type="date"
-    format="MM/DD/YYYY HH:mm:ss">
+    format="MM/dd/yyyy HH:mm:ss">
   </o-table-column>
   <o-table-column attr="CUSTOMERTYPEID" title="TYPE" editable="true">
     <o-table-cell-renderer-service entity="ECustomerTypes"
@@ -343,7 +343,7 @@ A button will also appear to the right of the sort button to change whether you 
 When the column to be filtered is of type `date`, you can configure how the date value is interpreted and displayed
 using the `date-format` and `date-value-type` inputs.
 
-- `date-format` sets the format string used to parse and show the date (using [moment.js tokens](https://momentjs.com/docs/#/displaying/format/)). If not set, the format of the `o-table-column` with the same `attr` is used automatically.
+- `date-format` sets the format string used to parse and show the date, interpreted by the active date adapter (Luxon by default; see the [Date handling guide]({{ base_path }}/guide/date-handling/)). If not set, the format of the `o-table-column` with the same `attr` is used automatically.
 - `date-value-type` defines how the value is stored internally: as a `timestamp` (number), a `string`, as a `iso-8601` (date) or a `date` object.
 
 ```html
@@ -353,7 +353,7 @@ using the `date-format` and `date-value-type` inputs.
     attr="accounts" title="ACCOUNTS" quick-filter="yes">
     <o-table-columns-filter>
       <o-table-columns-filter-column attr="STARTDATE"
-        date-format="DD/MM/YYYY" date-value-type="iso-8601">
+        date-format="dd/MM/yyyy" date-value-type="iso-8601">
       </o-table-columns-filter-column>
     </o-table-columns-filter>
     <o-table-column attr="STARTDATE" type="date"></o-table-column>

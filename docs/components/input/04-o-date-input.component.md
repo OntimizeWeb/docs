@@ -47,7 +47,7 @@ import { ODateInputComponent } from 'ontimize-web-ngx';
   imports: [ReactiveFormsModule, ODateInputComponent],
   template: `
     <form [formGroup]="form">
-      <o-date-input formControlName="birthDate" label="Date" format="LL"></o-date-input>
+      <o-date-input formControlName="birthDate" label="Date" format="DD"></o-date-input>
     </form>
   `
 })
@@ -64,11 +64,19 @@ export class MyComponent {
 ```html
 <o-form editable-detail="no" show-header="no">
     <o-date-input attr="date1" label="Date"></o-date-input>
-    <o-date-input attr="date2" label="Date" read-only="no" required="yes" format="LL"></o-date-input>
+    <o-date-input attr="date2" label="Date" read-only="no" required="yes" format="DD"></o-date-input>
     <o-date-input attr="date3" label="Date" enabled="no"></o-date-input>
 </o-form>
 ```
 
+
+## Date format and adapter
+
+By default the date is displayed using the localized short date format of the active date adapter: [Luxon](https://moment.github.io/luxon/){:target="_blank"}'s macro token `D` (the equivalent of Moment.js' `L` used in previous versions). A custom format can be set via the `format` input, written with the tokens of the active adapter — e.g. `dd/MM/yyyy` in Luxon (note the lowercase day and year), or `DD` for the localized long date.
+
+The `date-class` function receives a Luxon `DateTime` under the default adapter, or a `Moment` when the moment adapter is active.
+
+You can switch the component back to Moment.js by providing `provideODateAdapter('moment')`. Check the [Date handling guide]({{ base_path }}/guide/date-handling/) for the Moment.js/Luxon token equivalences and the date adapter selection mechanism.
 
 ## Disable the text input
 

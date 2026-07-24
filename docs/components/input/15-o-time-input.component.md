@@ -79,3 +79,7 @@ export class MyComponent {
 ```
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/inputs/time){:target="_blank"}.
 
+## Date format and adapter
+
+The `date-format` and `value-format` inputs are interpreted by the active date adapter (Luxon by default), following the same token syntax as `o-date-input`. See the [Date handling guide]({{ base_path }}/guide/date-handling/) for the Moment.js/Luxon token equivalences and the date adapter selection mechanism.
+

@@ -117,7 +117,7 @@ You may want to set the displaying date format by configuring the `format` attri
 ```html
 <o-list-picker #listpicker attr="listpicker" [static-data]="dataArray"
 [data]="value" filter="yes" value-column="key" columns="key;value" visible-columns="value" required="true" read-only="false">
-    <o-listpicker-renderer-date format="YYYY-MM-DD"></o-listpicker-renderer-date>
+    <o-listpicker-renderer-date format="yyyy-MM-dd"></o-listpicker-renderer-date>
 </o-list-picker>
 ```
 
@@ -175,7 +175,7 @@ You have an example of a custom renderer below. It displays a formatted date (th
 
 ```javascript
 import { Component, Injector, TemplateRef ViewChild } from '@angular/core';
-import * as moment from 'moment';
+import { DateTime } from 'luxon';
 import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
 
 @Component({
@@ -192,7 +192,7 @@ export class CustomRendererComponent extends OListPickerCustomRenderer {
   }
 
  getListPickerValue(value: any) {
-    let theDate = moment.unix(value).format("DD/MM/YYYY");
+    let theDate = DateTime.fromSeconds(value).toFormat("dd/MM/yyyy");
     return theDate;
   }
 
