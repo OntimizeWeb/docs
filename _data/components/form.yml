@@ -193,6 +193,13 @@ attributes: [
   description: "Indicates the position of the form toolbar"
 },{
   name: "configure-service-args"
+},{
+  name: "action-styles",
+  type: "Record<string, OActionStyle>",
+  default: "",
+  required: "",
+  since: "18.0.0-next.7",
+  description: "Configures the visual style (variant, importance, label) of the toolbar's built-in action buttons (insert, update, edit, delete, refresh, undo, cancel), keyed by the action's `attr`. See the [Action styles guide](/guide/action-styles/)."
 }]
 
 outputs: [{

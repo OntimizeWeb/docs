@@ -262,6 +262,13 @@ attributes: [{
   description: "Indicates whether or not to show tooltip in the column headers",
   required: "",
   default: "no"
+},{
+  name: "action-styles",
+  type: "Record<string, OActionStyle>",
+  default: "",
+  required: "",
+  since: "18.0.0-next.7",
+  description: "Configures the visual style (variant, importance, label) of the table's built-in action buttons (insert, refresh, delete), keyed by the action's `attr`. A projected `o-table-button` resolves its own style the same way, by its `attr`. See the [Action styles guide](/guide/action-styles/)."
 }]
 
 inheritedOutputs: [{

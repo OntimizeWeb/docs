@@ -13,7 +13,7 @@ attributes: [{
   type: "string",
   default : "",
   required : "",
-  description : "Field label"
+  description : "Button text. When not set, resolves from the host `o-table` by this button's `attr` — see the [Action styles guide](/guide/action-styles/)."
 },{
   name: "icon-position",
   type: "left | right",

@@ -96,6 +96,13 @@ attributes: [{
 },{
   name: "show-buttons-text",
   default: "no"
+},{
+  name: "action-styles",
+  type: "Record<string, OActionStyle>",
+  default: "",
+  required: "",
+  since: "18.0.0-next.7",
+  description: "Configures the visual style (variant, importance, label) of the grid's built-in action buttons (insert, refresh — the grid has no built-in delete button), keyed by the action's `attr`. See the [Action styles guide](/guide/action-styles/)."
 }]
 
 inheritedOutputs: [{

@@ -36,6 +36,7 @@ Quick reference for every breaking change shipped between **ontimize-web-ngx** 1
 | `next.0` (documented in `next.10`) | Custom SVG icon sprite shrank from ~45 to 10 icons — unrecognised `svgIcon="ontimize:X"` names silently render an empty icon. | [17. Reduced Material Symbols icon set](#17-reduced-material-symbols-icon-set-custom-svg-icons) |
 | `next.10` | `row-height` and the legacy `dense` attribute no longer affect table/list/grid row height. | [18. Row height now follows theme density](#18-row-height-now-follows-theme-density) |
 | `next.10` | Luxon replaces Moment.js as the default date engine. | [19. Date engine: Luxon is now the default](#19-date-engine-luxon-is-now-the-default) |
+| `next.10` | New `label` field on `OActionStyle`; the `o-form` toolbar's accept button now shows mode-dependent text instead of always `'INSERT'`. | [20. Action label configuration (`label` field)](#20-action-label-configuration-label-field) |
 
 ---
 
@@ -916,3 +917,48 @@ This is breaking in two ways:
 A new `O_DATE_ADAPTER` injection token and the `provideODateAdapter('luxon' | 'moment')` helper let you pick the date adapter for the whole application, a route, or a component subtree.
 
 See the [Date handling guide]({{ base_path }}/guide/date-handling/) for the full format-token table, the `date-class` details and `provideODateAdapter` examples.
+
+---
+
+## 20. Action label configuration (`label` field)
+
+Since `18.0.0-next.10`, `OActionStyle` gained a third optional field, `label`, which configures an action's **text** through the same mechanism — and the same precedence — as `variant` and `importance` (see [15. Renamed action and button CSS classes](#15-renamed-action-and-button-css-classes) for background on this model):
+
+```typescript
+interface OActionStyle {
+  variant?: 'outline' | 'flat' | 'basic' | 'raised' | 'icon' | 'fab' | 'mini-fab';
+  importance?: 'primary' | 'warn' | 'default';
+  label?: string; // NEW — literal text or a translation key, resolved with oTranslate
+}
+```
+
+`o-form`, `o-table`, `o-list`, `o-grid` and `o-tree` now resolve every built-in button's text through a new `getActionLabel(attr)` method instead of a hardcoded translation key. The auto-rule default for each `attr` is the same text that already rendered before `next.10`, so existing applications see **no text change** unless they configure `label` explicitly:
+
+| Component | Default labels (`attr` → text) |
+|---|---|
+| `o-form` toolbar | `undo`→`UNDO`, `refresh`→`REFRESH`, `insert`→`ADD`, `edit`→`EDIT`, `delete`→`DELETE`, `update`→`SAVE`, `cancel`→`CANCEL` |
+| `o-table` | `insert`→`TABLE.BUTTONS.ADD`, `refresh`→`TABLE.BUTTONS.REFRESH`, `delete`→`TABLE.BUTTONS.DELETE` |
+| `o-list` / `o-grid` | `insert`→`ADD`, `refresh`→`REFRESH`, `delete`→`DELETE` (`o-grid` has no `delete` button) |
+| `o-tree` | `insert`→`INSERT`, `refresh`→`REFRESH`, `delete`→`DELETE` |
+
+Override one action's text with `action-styles`, the same input already used for `variant` / `importance`:
+
+```html
+<o-list [action-styles]="{ insert: { label: 'New customer' } }"></o-list>
+```
+
+Or app-wide, so it applies everywhere without repeating it per component:
+
+```typescript
+provideOActionStyles({
+  actions: {
+    insert: { label: 'TABLE.BUTTONS.NEW' }
+  }
+})
+```
+
+A projected `o-button` / `o-table-button` with no explicit `label` input now also inherits its text from the host the same way it already inherited `variant` / `importance` — set `label` on the button itself to opt back out.
+
+> **Behavior fix**: the `o-form` toolbar's confirm/accept button previously always displayed `'INSERT'`, regardless of the form's actual mode. It is now resolved through this same mechanism by whichever `attr` is active (`insert` in INSERT mode, `update` in UPDATE mode), so it correctly shows `'ADD'` / `'SAVE'`. If your application depended on that button always reading "INSERT" (e.g. E2E tests or custom CSS matching that exact text), update it to the mode-dependent text, or set `action-styles` explicitly on both `insert` and `update` to pin a single literal label.
+
+See the [Action styles guide]({{ base_path }}/guide/action-styles/) for the full `OActionStyle` reference, the `action-styles` input on every host component, `OActionStyleProvider` and `O_ACTION_STYLES_CONFIG`.

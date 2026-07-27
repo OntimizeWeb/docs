@@ -5,13 +5,24 @@ apiTitle: "OButtonComponent"
 attributes: [{
   name: "attr"
 },{
-  name: "label"
+  name: "label",
+  type: "string",
+  default: "",
+  required: "",
+  description: "Button text. Resolved with `oTranslate` (accepts a literal string or a translation key). When not set and the button is projected inside an `o-table` / `o-grid` / `o-list` / `o-tree` / `o-form`, or configured through `O_ACTION_STYLES_CONFIG`, it falls back to the label resolved for its `attr` — see the [Action styles guide](/guide/action-styles/)."
 },{
   name: "type",
   type: "BASIC | RAISED | STROKED | FLAT | ICON | FAB | FAB-MIN",
   default: "STROKED",
   required: "",
-  description: "Type of button"
+  description: "Type of button. <strong>Deprecated</strong> since `18.0.0-next.7`, use `variant` instead (kept for backwards compatibility; if both are set, `variant` wins)."
+},{
+  name: "variant",
+  type: "outline | flat | basic | raised | icon | fab | mini-fab",
+  default: "outline",
+  required: "",
+  since: "18.0.0-next.7",
+  description: "Visual variant / shape of the button, replacing `type`: `outline` → `mat-stroked-button`, `flat` → `mat-flat-button`, `basic` → `mat-button`, `raised` → `mat-raised-button`, `icon` → `mat-icon-button`, `fab` / `mini-fab` → `mat-fab` / `mat-mini-fab`. When not set and the button is projected inside a host component (or configured through `O_ACTION_STYLES_CONFIG`), it resolves from the host by the button's `attr`. See the [Action styles guide](/guide/action-styles/)."
 },{
   name: "icon"
 },{
@@ -36,7 +47,21 @@ attributes: [{
   type: "primary | accent | warn",
   default: "",
   required: "",
-  description: "Theme color palette for the component"
+  description: "Theme color palette for the component. <strong>Deprecated</strong> since `18.0.0-next.7`, use `importance` instead (kept for backwards compatibility; `accent` has no `importance` equivalent and keeps working through this input)."
+},{
+  name: "importance",
+  type: "primary | warn | default",
+  default: "default",
+  required: "",
+  since: "18.0.0-next.7",
+  description: "Semantic relevance of the action, replacing `color`: colours the text and icon (light/transparent shapes) or the container (filled shapes) — `primary` → theme primary colour, `warn` → theme error colour, `default` → the Ontimize foreground tokens. When not set and the button is projected inside a host component (or configured through `O_ACTION_STYLES_CONFIG`), it resolves from the host by the button's `attr`. See the [Action styles guide](/guide/action-styles/)."
+},{
+  name: "aria-label",
+  type: "string",
+  default: "",
+  required: "",
+  since: "18.0.0-next.9",
+  description: "Accessible name applied to the native button via `aria-label`, for screen readers — mainly useful on icon-only buttons. Resolved with `oTranslate`. Falls back to `label`, then `attr`, then the icon name when not set."
 }]
 outputs: [{
   name: "onClick",
