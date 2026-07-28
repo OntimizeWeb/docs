@@ -82,6 +82,55 @@ You can modify value by setting the `data` attribute or calling the `setData` me
   }
 ```
 
+## Query on event
+
+Form service components (combo, list picker, radio) query their options from a service. Besides the automatic triggers `query-on-init` (query once on component initialization, `yes` by default) and `query-on-bind` (re-query whenever the parent `<o-form>` loads new data, `no` by default), they can also be told to re-query in response to an arbitrary external event through the `query-on-event` attribute.
+
+`query-on-event` takes an RxJS `Observable`. Every time it emits, the component calls its service again with its current filter/`parent-keys` configuration — the emitted value itself is not used as query data, only its arrival matters. An emission of `undefined`/`null` is ignored unless `query-with-null-parent-keys` is enabled.
+
+### Cascading (dependent) combos
+
+The most common use of `query-on-event` is making one form service component re-query when **another one's value changes** — e.g. a state combo that reloads its options whenever the selected country changes. `parent-keys` alone only decides **which filter** a query uses whenever one runs; it does not, by itself, make a component re-query reactively when the referenced sibling's value changes — `query-on-event` is what actually triggers that new query. A template reference variable on the "parent" component gives direct access to its `onValueChange` output, which is a ready-made observable for this:
+
+```html
+<o-form show-header="no">
+  <o-combo #comboCountry attr="comboCountry" label="Select Country" service="comboCountry" entity="comboCountry"
+    value-column="CountryId" columns="CountryId,CountryName" visible-columns="CountryName" keys="CountryId">
+  </o-combo>
+
+  <o-combo #comboState attr="comboState" label="Select State" service="comboState" entity="comboState"
+    value-column="StateId" columns="StateId,StateName,CountryId" visible-columns="StateName" keys="StateId"
+    [query-on-event]="comboCountry.onValueChange" parent-keys="CountryId:comboCountry[CountryId]">
+  </o-combo>
+</o-form>
+```
+
+Here, selecting a country emits on `comboCountry.onValueChange`, which triggers `comboState` to re-query; `parent-keys="CountryId:comboCountry[CountryId]"` is what tells that new query to filter states by the selected country's `CountryId`. Try it live in the playground: **Inputs → Combo → Query on event**.
+
+### Refreshing from an arbitrary event
+
+`query-on-event` isn't limited to a sibling component's output — any `Observable` works, so it also covers refreshing a component's options from outside the normal form/`parent-keys` lifecycle entirely, e.g. a manual refresh button or a value from something that isn't part of the same form. A simple "signal" observable (e.g. a `Subject<void>`) is the usual choice here, since the emitted value itself is discarded:
+
+```typescript
+import { Subject } from 'rxjs';
+
+export class MyComponent {
+  refreshUsers$ = new Subject<void>();
+
+  onRefreshUsersClick(): void {
+    this.refreshUsers$.next();
+  }
+}
+```
+
+```html
+<o-combo attr="user" entity="users" columns="id;name" [query-on-event]="refreshUsers$"></o-combo>
+<button (click)="onRefreshUsersClick()">Refresh users</button>
+```
+
+{: .note }
+> `query-on-event` (like `query-on-init`, `query-on-bind` and `parent-keys`) is only available on **form service components** — see [Form service components]({{ base_path }}/components/input/overviewservice/overview){:target="_blank"}. It is not part of the base `OFormDataComponent` API shared by every input.
+
 ## Appearance
 
 You can configure multiple appearance variants changing the `appearance` and `float-label` input values.
