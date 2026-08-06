@@ -62,6 +62,13 @@ attributes: [{
   required: "",
   since: "18.0.0-next.9",
   description: "Accessible name applied to the native button via `aria-label`, for screen readers — mainly useful on icon-only buttons. Resolved with `oTranslate`. Falls back to `label`, then `attr`, then the icon name when not set."
+},{
+  name: "data-testid",
+  type: "string",
+  default: "",
+  required: "",
+  since: "18.0.0-next.13",
+  description: "Forwarded to the `data-testid` attribute of whichever native `<button>` variant actually renders (basic/raised/stroked/flat/icon/fab/mini-fab), for E2E testing (Playwright/Cypress). Falls back to `attr` when not set."
 }]
 outputs: [{
   name: "onClick",
