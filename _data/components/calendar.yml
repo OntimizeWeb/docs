@@ -1,5 +1,5 @@
 directive: "o-calendar"
-version: "18.0.0-next.2"
+version: "18.0.0-next.4"
 
 apiTitle: "OCalendarComponent"
 inheritedAttributes:
@@ -27,7 +27,7 @@ attributes:
   [
     {
       name: "view",
-      type: "'month' | 'week' | 'day'",
+      type: "'month' | 'week' | 'day' | 'year'",
       default: "month",
       required: "",
       description: "Active calendar view.",
@@ -37,14 +37,14 @@ attributes:
       type: "Date",
       default: "new Date()",
       required: "",
-      description: "Reference date used to compute the visible month/week/day.",
+      description: "Reference date used to compute the visible month/week/day/year.",
     },
     {
       name: "views",
       type: "string",
       default: "month;week;day",
       required: "",
-      description: "Views available in the toolbar switch, as a `;`-separated list, e.g. `month;week`.",
+      description: "Views available in the toolbar switch, as a `;`-separated list, e.g. `month;week`. `year` is opt-in only: it must be listed explicitly (e.g. `month;week;day;year`), it is never added on its own.",
     },
     {
       name: "start-column",
@@ -163,7 +163,14 @@ attributes:
       type: "no | false | yes | true",
       default: "yes",
       required: "",
-      description: "Shows Saturday/Sunday columns in the month and week views (and in the week agenda list when `show-hours=\"no\"`).",
+      description: "Shows Saturday/Sunday columns in the month, week and year views (and in the week agenda list when `show-hours=\"no\"`).",
+    },
+    {
+      name: "empty-cell-text",
+      type: "string",
+      default: "···",
+      required: "",
+      description: "Text shown in place of a day's event list in the agenda (`show-hours=\"no\"`) when it has no events. Set to `''` to show nothing.",
     },
     {
       name: "max-events-per-month-cell",
@@ -171,6 +178,13 @@ attributes:
       default: "3",
       required: "",
       description: "Max number of event pills rendered per month view day cell before the \"+N more\" link, which opens a popover listing every event of that day.",
+    },
+    {
+      name: "more-clickable",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Whether the month view's \"+N more\" indicator opens the day events popover on click, or is just a static, non-interactive label.",
     },
   ]
 
@@ -184,7 +198,7 @@ outputs:
     {
       name: "onDayClick",
       type: "OCalendarDayClick",
-      description: "Emitted when a whole day cell (month view) or an hour segment (week/day views) is clicked. Payload: `{ date: Date, events: CalendarEvent[] }`.",
+      description: "Emitted when a whole day cell (month or year view) or an hour segment (week/day views) is clicked. Payload: `{ date: Date, events: CalendarEvent[] }`.",
     },
     {
       name: "onViewChange",

@@ -68,13 +68,27 @@ mapRow = (row: any): CalendarEvent => ({
 
 ## Views
 
-`o-calendar` supports three views, controlled by the `view` input: `month`, `week` and `day`.
+`o-calendar` supports four views, controlled by the `view` input: `month`, `week`, `day` and `year`.
 
-* `views`: `;`-separated list of the views available in the toolbar switch (e.g. `views="month;week"`). Defaults to all three.
+* `views`: `;`-separated list of the views available in the toolbar switch (e.g. `views="month;week"`). Defaults to `month;week;day` — `year` is **opt-in only**: it must be listed explicitly (e.g. `views="month;week;day;year"`) or existing calendars won't get a new toolbar button without asking for it.
 * `week-starts-on`: first day of the week (`0` = Sunday ... `6` = Saturday). When not set, it falls back to the first day of the current moment locale (Monday for `es`, Sunday for `en`).
 * `week-header-day-format`: moment format applied to the value shown under the weekday name in the week/day column headers. Defaults to `D` (day number only); use e.g. `MMM D` to also show the month abbreviation. Both `D` and `MMM D` translate automatically (backed by `Intl.DateTimeFormat`); any other, free-form moment token still works but — like any direct moment usage — needs the corresponding `import 'moment/locale/xx'` in the app for its locale-dependent parts (month/weekday names) to translate.
 * `locale`: BCP 47 locale used to format the toolbar title, the column headers and the date picker. Defaults to the current application language and keeps following it as it changes, unless explicitly bound.
-* `show-weekends`: shows Saturday/Sunday columns in the month and week views (and in the week agenda list, see below).
+* `show-weekends`: shows Saturday/Sunday columns in the month, week and year views (and in the week agenda list, see below).
+
+### Year view
+
+Since `angular-calendar` has no native year view (its own view enum only covers month/week/day), the year view is a grid of 12 mini-months built entirely by `o-calendar`, following the same `week-starts-on`/`show-weekends`/theming conventions as the rest of the component.
+
+Each mini-month cell is too small to show event pills, so a day with events is instead marked with a small colored dot — a numeric count was considered but dropped, since it isn't meaningful information at this zoom level.
+
+Clicking a day only re-emits `onDayClick` — there is no built-in popover or automatic navigation to month/day view, so the app decides what a click means at this zoom level (e.g. switching `view` to `'day'` itself).
+
+```html
+<o-calendar ... views="month;week;day;year" view="year"></o-calendar>
+```
+
+![Year view](../../assets/images/extra-components/agenda/agenda-year.png)
 
 ## Toolbar
 
@@ -82,11 +96,15 @@ The toolbar (hidden with `show-toolbar="no"`) shows the previous/next navigation
 
 ### Jump to any date
 
-Clicking the toolbar title opens a Material date picker (`mat-calendar`) that lets the user jump to any day, month or year without having to page through the calendar one step at a time.
+Clicking the toolbar title opens a Material date picker (`mat-calendar`) that lets the user jump to any day, month or year without having to page through the calendar one step at a time. It matches the granularity of the active view instead of always asking for a full day:
+
+* **Month view**: opens a grid of the 12 months of a year — pick a month, no day required.
+* **Year view**: opens a grid of years — pick a year, no month or day required.
+* **Week/day view**: opens the regular day grid.
 
 ## Loading state
 
-While a service/entity query is in flight, the active view's content is replaced by a loading skeleton (`ngx-skeleton-loader`) shaped like that view: a 7-column grid for month, one column per visible day for week, a single column for day — both in the hourly grid and the agenda (`show-hours="no"`) layouts. The toolbar stays visible and usable throughout. Not shown in `static-data` mode, since there is no query to wait for.
+While a service/entity query is in flight, the active view's content is replaced by a loading skeleton (`ngx-skeleton-loader`) shaped like that view: a 7-column grid for month, one column per visible day for week, a single column for day — both in the hourly grid and the agenda (`show-hours="no"`) layouts — or 12 plain mini-month placeholders for year. The toolbar stays visible and usable throughout. Not shown in `static-data` mode, since there is no query to wait for.
 
 ## Agenda mode (`show-hours="no"`)
 
