@@ -1,6 +1,6 @@
 constant : "O_TABLE_GLOBAL_CONFIG"
 
-description: "Injection token that can be used to set global options for the table or within an application or module.
+description: "Injection token that can be used to set global options for the table or within an application or module. Provide a plain <code>OTableGlobalConfig</code> to apply it once, when each table is constructed, or an <code>Observable&lt;OTableGlobalConfig&gt;</code> to re-apply it on every emission to every already-constructed table (e.g. to flip a default at runtime).
 <div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
-const O_TABLE_GLOBAL_CONFIG:InjectionToken<OTableGlobalConfig>;
+const O_TABLE_GLOBAL_CONFIG:InjectionToken<OTableGlobalConfig | Observable<OTableGlobalConfig>>;
 </code></pre></div></div>"

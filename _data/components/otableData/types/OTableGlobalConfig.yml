@@ -20,7 +20,8 @@ description: "Represents the default options for the table that can be configure
             };
             horizontalScroll: boolean;
             showHeaderTooltip: boolean;
-          };  
+            showButtonsText: boolean;
+          };
         </code>
       </pre>
     </div>
@@ -99,6 +100,13 @@ attributes: [{
   default : "false",
   required : "",
   description : "Indicates whether to show or not the tooltip on header cells."
+},
+{
+  name: "showButtonsText",
+  type: "boolean",
+  default : "true",
+  required : "",
+  description : "Indicates whether to show or not the text label alongside the icon on the table's header buttons (insert/refresh/delete and any custom o-table-button)."
 }
 ]
 

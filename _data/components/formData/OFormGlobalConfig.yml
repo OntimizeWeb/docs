@@ -1,8 +1,11 @@
 title: "OFormGlobalConfig"
-description: "Represents the default options for the `o-form` that can be configured using the <a href='#O_FORM_GLOBAL_CONFIG'>O_FORM_GLOBAL_CONFIG</a> injection token.
+description: "Represents the default options for the `o-form` that can be configured using the <a href='#O_FORM_GLOBAL_CONFIG'>O_FORM_GLOBAL_CONFIG</a> injection token. Provide a plain <code>OFormGlobalConfig</code> to apply it once, when each form is constructed, or an <code>Observable&lt;OFormGlobalConfig&gt;</code> to re-apply it on every emission to every already-constructed form (e.g. to flip a default at runtime).
 <div class='language-html highlighter-rouge'><div class='highlight'><pre class='highlight'><code>
+const O_FORM_GLOBAL_CONFIG:InjectionToken<OFormGlobalConfig | Observable<OFormGlobalConfig>>;
+
 type OFormGlobalConfig = {
-   headerActions: string
+   headerActions: string;
+   showHeaderActionsText: boolean;
 };
 </code></pre></div></div>
 "
@@ -11,5 +14,8 @@ attributes: [{
   name: "headerActions",
   since: "8.14.15",
   description: "Available action buttons in form toolbar of standard CRUD operations, separated by ';'. Available options are R;I;U;D (Refresh, Insert, Update, Delete). Also 'all' is available (showing all buttons)."
+},{
+  name: "showHeaderActionsText",
+  description: "Indicates whether to show or not the text label alongside the icon on the form toolbar's action buttons (save/cancel/etc)."
 }]
 
