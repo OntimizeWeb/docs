@@ -438,3 +438,6 @@ sections:
     - url: "/extra-components/calendar/overview"
       title: "Calendar"
       description: "Display data rows as events over month, week and day views"
+    - url: "/extra-components/collection-editor/overview"
+      title: "Collection Editor"
+      description: "Edit two-level collections of groups and their items using your own templates"

@@ -1,0 +1,327 @@
+directive: "o-collection-editor"
+version: "18.0.0-next.5"
+
+apiTitle: "OCollectionEditorComponent"
+inheritedAttributes:
+  [
+    {
+      component: "FormDataComponent",
+      path: "components/input/overview/api",
+      attributes:
+        [
+          "attr",
+          "enabled",
+          "required",
+          "read-only",
+          "automatic-binding",
+          "automatic-registering",
+          "data-testid",
+        ],
+    },
+  ]
+
+attributes:
+  [
+    {
+      name: "static-data",
+      type: "G[]",
+      default: "",
+      required: "",
+      description: "Initial collection. It is only used while the form control has no value: a `writeValue` (from `o-form`, `formControlName` or `ngModel`) always wins over it.",
+    },
+    {
+      name: "group-keys",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Group properties that make up a group's identity, as a `;`-separated list, e.g. `id` or `templateId;sortOrder`. Groups whose key columns are still empty (not persisted yet) get a synthetic identity instead.",
+    },
+    {
+      name: "item-keys",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Item properties that make up an item's identity, as a `;`-separated list. Must be unique inside its own group; duplicates are reported with a `console.warn` and fall back to a synthetic identity.",
+    },
+    {
+      name: "group-items-column",
+      type: "string",
+      default: "items",
+      required: "",
+      description: "Property on a group that holds its items, for models that do not store them under `items`. The component reads it to seed a group's items and writes the current items back onto it on every change. A present non-array value is treated as a configuration mistake (`console.warn`, group treated as empty).",
+    },
+    {
+      name: "create-group",
+      type: "(index: number) => G",
+      default: "",
+      required: "",
+      description: "Builds a brand new group. While it is not provided the \"add group\" button stays disabled instead of failing at runtime.",
+    },
+    {
+      name: "create-item",
+      type: "(group: G, index: number) => I",
+      default: "",
+      required: "",
+      description: "Builds a brand new item for a group. While it is not provided the \"add item\" button stays disabled.",
+    },
+    {
+      name: "can-remove-group",
+      type: "(group: G, index: number) => boolean",
+      default: "",
+      required: "",
+      description: "Synchronous veto evaluated before anything else: returning `false` shows no confirmation dialog, removes nothing and emits no output. This is the only mechanism that can block a removal.",
+    },
+    {
+      name: "can-remove-item",
+      type: "(group: G, item: I, groupIndex: number, itemIndex: number) => boolean",
+      default: "",
+      required: "",
+      description: "Synchronous veto for an item removal, with the same semantics as `can-remove-group`.",
+    },
+    {
+      name: "remove-group-handler",
+      type: "(group: G, index: number) => Promise<boolean> | boolean",
+      default: "",
+      required: "",
+      description: "Deferred group removal: the row is kept visible and marked busy until the handler settles. Resolving `true` removes it and emits `onGroupRemoved`; resolving `false` or throwing restores the row and emits nothing. Without a handler the removal is local and immediate.",
+    },
+    {
+      name: "remove-item-handler",
+      type: "(group: G, item: I, groupIndex: number, itemIndex: number) => Promise<boolean> | boolean",
+      default: "",
+      required: "",
+      description: "Deferred item removal, with the same busy/restore semantics as `remove-group-handler`.",
+    },
+    {
+      name: "confirm-remove-group-title",
+      type: "string",
+      default: "CONFIRM",
+      required: "",
+      description: "Title of the group removal confirmation dialog, as a literal or an i18n key. Set it to `''` to skip the dialog and remove directly.",
+    },
+    {
+      name: "confirm-remove-group-message",
+      type: "string",
+      default: "MESSAGES.CONFIRM_DELETE",
+      required: "",
+      description: "Message of the group removal confirmation dialog, as a literal or an i18n key. Set it to `''` to skip the dialog and remove directly.",
+    },
+    {
+      name: "confirm-remove-item-title",
+      type: "string",
+      default: "CONFIRM",
+      required: "",
+      description: "Title of the item removal confirmation dialog, as a literal or an i18n key. Set it to `''` to skip the dialog.",
+    },
+    {
+      name: "confirm-remove-item-message",
+      type: "string",
+      default: "MESSAGES.CONFIRM_DELETE",
+      required: "",
+      description: "Message of the item removal confirmation dialog, as a literal or an i18n key. Set it to `''` to skip the dialog.",
+    },
+    {
+      name: "min-groups",
+      type: "number",
+      default: "1",
+      required: "",
+      description: "Minimum number of groups. It only marks the component invalid (`minGroups` error); it never blocks a removal.",
+    },
+    {
+      name: "min-items-per-group",
+      type: "number",
+      default: "1",
+      required: "",
+      description: "Minimum number of items per group. It only marks the component invalid (`minItemsPerGroup` error); it never blocks a removal.",
+    },
+    {
+      name: "groups-draggable",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Enables reordering groups, both by dragging the group handle and through the keyboard move up/down alternative. Items are never dragged between groups.",
+    },
+    {
+      name: "items-draggable",
+      type: "no | false | yes | true",
+      default: "yes",
+      required: "",
+      description: "Enables reordering items inside their own group, both by dragging the item handle and through the keyboard move up/down alternative.",
+    },
+    {
+      name: "title",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Text shown as the editor heading, as a literal or an i18n key.",
+    },
+    {
+      name: "description",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Secondary text shown under the editor heading, as a literal or an i18n key.",
+    },
+    {
+      name: "group-label",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Word used to name a group in its header, as a literal or an i18n key. Shown translated, with no row number appended, whenever the group has no `group-title-column` value.",
+    },
+    {
+      name: "item-label",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Word used to name a single item, as a literal or an i18n key. Shown translated, with no row number appended, whenever the item has no `item-title-column` value.",
+    },
+    {
+      name: "items-label",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Heading of the items block inside each group, as a literal or an i18n key.",
+    },
+    {
+      name: "add-group-text",
+      type: "string",
+      default: "COLLECTION_EDITOR.ADD_GROUP",
+      required: "",
+      description: "Text of the add group button, as a literal or an i18n key.",
+    },
+    {
+      name: "add-item-text",
+      type: "string",
+      default: "COLLECTION_EDITOR.ADD_ITEM",
+      required: "",
+      description: "Text of the add item button, as a literal or an i18n key.",
+    },
+    {
+      name: "remove-group-tooltip",
+      type: "string",
+      default: "COLLECTION_EDITOR.REMOVE_GROUP",
+      required: "",
+      description: "Tooltip and accessible name (`aria-label`) of the group delete button, as a literal or an i18n key.",
+    },
+    {
+      name: "remove-item-tooltip",
+      type: "string",
+      default: "COLLECTION_EDITOR.REMOVE_ITEM",
+      required: "",
+      description: "Tooltip and accessible name (`aria-label`) of the item delete button, as a literal or an i18n key.",
+    },
+    {
+      name: "drag-group-tooltip",
+      type: "string",
+      default: "COLLECTION_EDITOR.DRAG_GROUP",
+      required: "",
+      description: "Tooltip and accessible name (`aria-label`) of the group drag handle, as a literal or an i18n key.",
+    },
+    {
+      name: "drag-item-tooltip",
+      type: "string",
+      default: "COLLECTION_EDITOR.DRAG_ITEM",
+      required: "",
+      description: "Tooltip and accessible name (`aria-label`) of the item drag handle, as a literal or an i18n key.",
+    },
+    {
+      name: "empty-groups-text",
+      type: "string",
+      default: "COLLECTION_EDITOR.EMPTY_GROUPS",
+      required: "",
+      description: "Text shown when the collection has no groups at all, as a literal or an i18n key.",
+    },
+    {
+      name: "empty-items-text",
+      type: "string",
+      default: "COLLECTION_EDITOR.EMPTY_ITEMS",
+      required: "",
+      description: "Text shown inside a group that has no items, as a literal or an i18n key.",
+    },
+    {
+      name: "min-groups-text",
+      type: "string",
+      default: "COLLECTION_EDITOR.VALIDATION.MIN_GROUPS",
+      required: "",
+      description: "Message rendered by the component's own error area when the `minGroups` error is active, as a literal or an i18n key.",
+    },
+    {
+      name: "min-items-text",
+      type: "string",
+      default: "COLLECTION_EDITOR.VALIDATION.MIN_ITEMS_PER_GROUP",
+      required: "",
+      description: "Message rendered by the component's own error area when the `minItemsPerGroup` error is active, as a literal or an i18n key.",
+    },
+    {
+      name: "action-styles",
+      type: "Record<string, OActionStyle>",
+      default: "",
+      required: "",
+      description: "Per-action visual style keyed by the action's `attr` (`add-group`, `add-item`, `remove-group`, `remove-item`, `move-group-up`, `move-group-down`, `move-item-up`, `move-item-down`, `drag-group`, `drag-item`). Same model as `o-form` / `o-table` / `o-grid` / `o-list` / `o-tree` (see the action-styles guide). Also accepts a JSON string.",
+    },
+    {
+      name: "group-title-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Group property read on every render and shown as the group title in its header. Read-only information about the data: it is never an editable field.",
+    },
+    {
+      name: "group-description-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Group property read on every render and shown as the secondary text of the group header. Read-only, never editable.",
+    },
+    {
+      name: "item-title-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Item property read on every render and shown as the item title. Read-only, never editable.",
+    },
+    {
+      name: "item-description-column",
+      type: "string",
+      default: "",
+      required: "",
+      description: "Item property read on every render and shown as the secondary text of the item row. Read-only, never editable.",
+    },
+  ]
+
+outputs:
+  [
+    {
+      name: "onGroupAdded",
+      type: "OCollectionGroupEvent",
+      description: "Emitted after a new group built by `create-group` has been appended. Payload: `{ group: G, index: number }`.",
+    },
+    {
+      name: "onGroupRemoved",
+      type: "OCollectionGroupEvent",
+      description: "Emitted after a group has actually been removed, that is once `can-remove-group`, the confirmation dialog and `remove-group-handler` have all passed. Payload: `{ group: G, index: number }`, with the index computed at emit time.",
+    },
+    {
+      name: "onItemAdded",
+      type: "OCollectionItemEvent",
+      description: "Emitted after a new item built by `create-item` has been appended to its group. Payload: `{ group: G, item: I, groupIndex: number, itemIndex: number }`.",
+    },
+    {
+      name: "onItemRemoved",
+      type: "OCollectionItemEvent",
+      description: "Emitted after an item has actually been removed, once the veto, the dialog and `remove-item-handler` have all passed. Payload: `{ group: G, item: I, groupIndex: number, itemIndex: number }`.",
+    },
+    {
+      name: "onGroupMoved",
+      type: "OCollectionGroupMovedEvent",
+      description: "Emitted when a group changes position, either by drag & drop or by the keyboard move up/down alternative. Payload: `{ group: G, previousIndex: number, currentIndex: number }`.",
+    },
+    {
+      name: "onItemMoved",
+      type: "OCollectionItemMovedEvent",
+      description: "Emitted when an item changes position inside its own group, either by drag & drop or by keyboard. Payload: `{ group: G, item: I, groupIndex: number, previousIndex: number, currentIndex: number }`.",
+    },
+  ]
+
+directives: [{ name: "oCollectionGroupFields" }, { name: "oCollectionItem" }]
