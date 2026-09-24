@@ -53,7 +53,7 @@ The keys are each action's exact internal `attr`:
 |---|---|
 | `o-form` (toolbar) | `insert`, `update`, `edit`, `delete`, `refresh`, `undo`, `cancel` |
 | `o-table` | `insert`, `refresh`, `delete`, … (a projected `o-table-button` resolves by its own `attr`) |
-| `o-list` | `insert`, `refresh`, `delete` |
+| `o-list` | `insert`, `refresh`, `delete`, `scroll-top` (the scroll-to-top button, when `scroll-to-top-button="yes"`) |
 | `o-grid` | `insert`, `refresh` (no built-in `delete` button) |
 | `o-tree` | `insert`, `refresh`, `delete` |
 

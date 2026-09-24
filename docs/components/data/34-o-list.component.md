@@ -160,6 +160,26 @@ The paginator displays a dropdown of page sizes for you to choose from. The opti
 
 You can also configure the number of records initially displayed with query-rows attribute.
 
+## Scroll to top <span class='menuitem-badge'>new<span>
+
+Set `scroll-to-top-button="yes"` to show a floating button once the list has scrolled past a threshold, letting the user jump back to the top without losing their place.
+
+```html
+<o-list #list service="..." entity="..." keys="ID" scroll-to-top-button="yes">
+  <o-list-item *ngFor="let row of list.dataArray">
+     ....
+  </o-list-item>
+</o-list>
+```
+
+![Scroll to top button]({{ "/assets/images/components/list/o-list-scroll-to-top.png" | absolute_url }}){: .comp-example-img}
+
+It only changes the scroll position — it never reloads data, resets filters or pagination, or discards rows already loaded.
+
+It works in any pagination mode: with infinite scroll and with `pagination-controls="yes"` alike, since the list can also be scrolled within the current page. The button follows whichever element actually provides the scroll — the list itself, or the container it is placed in when that is the element with the overflow — and moves only that one.
+
+Its appearance can be configured through the existing [`action-styles`](/guide/action-styles/) input, keyed by `scroll-top`.
+
 ### Support JDBC UUID <span class='menuitem-badge'>new<span>
 
 Ontimize web now supports the JDBC **UUID** sql type. To indicate that a key column is of type UUID, all you have to do is to set to set the **UUID** via input `keys-sql-types` in the `o-list` as indicated in the following example.
@@ -171,3 +191,37 @@ Ontimize web now supports the JDBC **UUID** sql type. To indicate that a key col
   </o-list-item>
 </o-list>
 ```
+
+## Loading skeleton <span class='menuitem-badge'>new<span>
+
+While a query is running, the list renders a skeleton placeholder instead of its items.
+
+To avoid a flash on fast responses, the skeleton is not shown immediately: it waits for a **threshold** (300 ms by default) and is only rendered if the query is still running once that time has elapsed. Once shown, it stays visible for a **minimum time** (300 ms by default) so that it does not disappear abruptly. The very first load skips the threshold, so the initial render is never delayed.
+
+This is the same behaviour as the `o-table` skeleton.
+
+**Global configuration**
+
+Both values are configured application-wide through the `loading` entry of `O_LIST_GLOBAL_CONFIG`:
+
+```typescript
+// app.config.ts
+import { O_LIST_GLOBAL_CONFIG } from 'ontimize-web-ngx';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
+    {
+      provide: O_LIST_GLOBAL_CONFIG,
+      useValue: {
+        loading: {
+          threshold: 500,
+          minVisible: 200
+        }
+      }
+    }
+  ]
+};
+```
+
+![Loading skeleton]({{ "/assets/images/components/list/skeleton-list.png" | absolute_url }}){: .comp-example-img}

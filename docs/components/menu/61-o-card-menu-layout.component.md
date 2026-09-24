@@ -10,7 +10,7 @@ nav_order: 2
 
 {% include base_path %}
 
-The `o-card-menu-layout` component builds automatically a dashboard page based on the application menu configuration (read more about how to configure the application menu [here]({{ base_path }}/guide/appconfig/#menu-configuration){:target="_blank"}). It displays a [`o-card-menu-item`](#card-menu-item) component for each menu item provided on the `parent-menu-id` attribute. When this attribute is not configured, the component builds a [`o-card-menu-item`](#card-menu-item) for each root menu item. You can also include your own card menu items like in the example below.
+The `o-card-menu-layout` component builds automatically a dashboard page based on the application menu configuration (read more about how to configure the application menu [here]({{ base_path }}/guide/appconfig/#menu-configuration){:target="_blank"}). It displays a [`o-card-menu-item`](#card-menu-item) component for each menu item provided on the `parent-menu-id` attribute, that can be the identifier of a menu group or of a menu section. When this attribute is not configured, the component builds a [`o-card-menu-item`](#card-menu-item) for each root menu item, including the menu items contained in the menu sections. You can also include your own card menu items like in the example below.
 
 ## Example
 

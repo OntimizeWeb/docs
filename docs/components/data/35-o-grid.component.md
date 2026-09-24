@@ -287,5 +287,39 @@ If the selector `o-grid-toolbar` is used together with `position='start'` the co
 
 ![Add custom content in toolbar in position start]({{ "/assets/images/components/grid/add-content-toolbar.png" | absolute_url }}){: .comp-example-img}
 
+## Loading skeleton <span class='menuitem-badge'>new<span>
+
+While a query is running, the grid renders a skeleton placeholder instead of its items.
+
+To avoid a flash on fast responses, the skeleton is not shown immediately: it waits for a **threshold** (300 ms by default) and is only rendered if the query is still running once that time has elapsed. Once shown, it stays visible for a **minimum time** (300 ms by default) so that it does not disappear abruptly. The very first load skips the threshold, so the initial render is never delayed.
+
+This is the same behaviour as the `o-table` skeleton.
+
+![Loading skeleton]({{ "/assets/images/components/grid/skeleton-grid.png" | absolute_url }}){: .comp-example-img}
+
+**Global configuration**
+
+Both values are configured application-wide through the `loading` entry of `O_GRID_GLOBAL_CONFIG`:
+
+```typescript
+// app.config.ts
+import { O_GRID_GLOBAL_CONFIG } from 'ontimize-web-ngx';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
+    {
+      provide: O_GRID_GLOBAL_CONFIG,
+      useValue: {
+        loading: {
+          threshold: 500,
+          minVisible: 200
+        }
+      }
+    }
+  ]
+};
+```
+
 ## Demo
 You can see this and more examples of this component in the [OntimizeWeb playground]({{site.playgroundurl}}/main/data/grid/basic).
