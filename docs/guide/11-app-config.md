@@ -421,6 +421,43 @@ If you want to include a menu item to group other menu items, you must include a
 }
 ```
 
+### MenuSection
+
+If you want to group a set of root menu entries under a title, you must include a <code>MenuSection</code>. Unlike the <code>MenuGroup</code>, a menu section is not collapsable and its title is not clickable, it only labels the menu entries it contains.
+
+| Name    | Type      | Description |
+| ------- | --------- | ----------- |
+| id      | string    | The menu section identifier |
+| name    | string    | The menu section title |
+| type    | 'section' | Mandatory, it is the attribute that identifies the menu entry as a menu section |
+| items   | array     | The menu entries grouped under the section title. They can be menu items or menu groups |
+| icon    | string    | An optional icon displayed before the section title (see <a href="https://fonts.google.com/icons">Google material design icons</a>{:target='_blank'}) |
+| svgIcon | string    | Name of svg icon |
+| class   | string    | The CSS class applied to the menu section |
+
+**Example:**
+
+```javascript
+{
+  id: 'block1', name: 'BLOCK_1', type: 'section',
+  items: [
+    { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' },
+    { id: 'views', name: 'VIEW', icon: 'remove_red_eye', opened: true,
+      items: [
+        { id: 'customers', name: 'CUSTOMERS', route: '/main/customers', icon: 'people' }
+      ]
+    }
+  ]
+}
+```
+
+Take into account the following considerations:
+
+- Menu sections are only allowed at the root level of the menu configuration. A menu section placed inside a menu group or inside another menu section is ignored and a warning is shown in the browser console.
+- The entries of a menu section behave exactly as if they were declared at the root level of the menu configuration, so a menu group included in a section is displayed at the first level.
+- The section title is replaced by a separator when the side menu is collapsed.
+- A menu section can be hidden using the [menu permissions]({{ base_path }}/guide/permissions/#menu-permissions){:target="_blank"}, hiding all its entries too. It is also hidden automatically when all of its entries are hidden, so no empty titles are displayed. As the section title is not an interactive element, the `enabled` permission has no effect on it.
+
 ### MenuItem
 
   If you want to include a common menu item, you must include a <code>MenuItem</code> whith the following attributes. Note that there is some attributes that refers to the <a href="#card-menu-layout"><code>o-card-menu-layout</code></a>, this will be explained later.

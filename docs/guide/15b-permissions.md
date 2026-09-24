@@ -368,10 +368,17 @@ The `menu` property must be an array containing the permissions of the applicati
     { "attr": "customers", "visible": true, "enabled": true },
     { "attr": "accounts", "visible": true, "enabled": false },
     { "attr": "branches", "visible": false, "enabled": true },
-    { "attr": "employees", "visible": false, "enabled": false }
+    { "attr": "employees", "visible": false, "enabled": false },
+    { "attr": "block1", "visible": false, "enabled": true }
   ]
 }
 ```
+
+The menu sections are identified with their `attr` property too, as any other menu option. Hiding a menu section hides all the menu options it contains. There are two particularities regarding the menu sections:
+
+- A menu section is hidden automatically when all the menu options it contains are hidden, so no empty section titles are displayed.
+- The `enabled` property has no effect on a menu section, because its title is not an interactive element.
+
 # Permissions Service API
 
 Ontimize Web allows for extensive customization of the `permissions service`. Below are the key methods available for those who wish to extend or modify the default behavior:

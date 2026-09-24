@@ -7,7 +7,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "The menu items identifiers whose children are rendered. Separated by ;. When this attribute is not configured, the component builds a card for the root elements of the menu"
+  description: "The menu groups or menu sections identifiers whose children are rendered. Separated by ;. When this attribute is not configured, the component builds a card for the root elements of the menu, including the ones contained in a menu section"
 },
 {
   name: "exclude-menus-id",
