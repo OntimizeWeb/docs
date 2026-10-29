@@ -1,0 +1,13 @@
+<svg width="120" height="72" viewBox="0 0 120 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="120" height="72" fill="#121212"/>
+<rect width="120" height="72" fill="white" fill-opacity="0.16"/>
+<rect width="120" height="72" fill="#2B3034"/>
+<rect x="0.5" y="0.5" width="119" height="71" stroke="white" stroke-opacity="0.12"/>
+<path d="M47.0723 19.0879L46.0059 20.1543L43.8184 17.9668L44.8848 16.9004C44.9941 16.791 45.1309 16.7363 45.2949 16.7363C45.459 16.7363 45.5957 16.791 45.7051 16.9004L47.0723 18.2676C47.1816 18.377 47.2363 18.5137 47.2363 18.6777C47.2363 18.8418 47.1816 18.9785 47.0723 19.0879ZM36.7363 25.0488L43.1895 18.5957L45.377 20.7832L38.9238 27.2363H36.7363V25.0488Z" fill="white" fill-opacity="0.6"/>
+<rect x="68" y="12" width="20" height="20" rx="10" fill="white" fill-opacity="0.12"/>
+<path d="M82.0605 22.0742H78.5605V25.5742H77.4121V22.0742H73.9121V20.9258H77.4121V17.4258H78.5605V20.9258H82.0605V22.0742Z" fill="white" fill-opacity="0.6"/>
+<rect x="0.350681" y="-0.350681" width="39.2986" height="19.2986" rx="1.05204" transform="matrix(1 0 0 -1 16 59.2986)" stroke="white" stroke-opacity="0.6" stroke-width="0.701363"/>
+<line x1="24.0316" y1="49.5" x2="47.9684" y2="49.5" stroke="white" stroke-opacity="0.6"/>
+<rect width="40" height="20" rx="1.40273" transform="matrix(1 0 0 -1 64 60)" fill="white" fill-opacity="0.6"/>
+<line x1="72.0316" y1="49.5" x2="95.9684" y2="49.5" stroke="black" stroke-opacity="0.74"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="96" viewBox="0 0 112 96">
+  <g id="Ilustracion_Containers" data-name="Ilustracion Containers" transform="translate(-1024 -443)">
+    <g id="BG">
+      <path id="Trazado_121212" data-name="Trazado #121212" d="M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 443)" fill="#121212"/>
+      <path id="Trazado_121212_-_Contorno" data-name="Trazado #121212 - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 443)" fill="rgba(255,255,255,0.12)"/>
+      <path id="Trazado_W14_" data-name="Trazado W14%" d="M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 443)" fill="rgba(255,255,255,0.14)"/>
+      <path id="Trazado_W14_-_Contorno" data-name="Trazado W14% - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 443)" fill="rgba(255,255,255,0.12)"/>
+      <path id="Trazado_BC_6_" data-name="Trazado BC 6%" d="M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 443)" fill="rgba(20,100,165,0.06)"/>
+      <path id="Trazado_BC_6_-_Contorno" data-name="Trazado BC 6% - Contorno" d="M2,1A1,1,0,0,0,1,2V94a1,1,0,0,0,1,1H110a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1H2M2,0H110a2,2,0,0,1,2,2V94a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1024 443)" fill="rgba(255,255,255,0.12)"/>
+    </g>
+    <path id="Trazado_7110" data-name="Trazado 7110" d="M18931.143,195.755h-96a.755.755,0,1,1,0-1.51h96a.755.755,0,1,1,0,1.51Z" transform="translate(-17803.143 272)" fill="rgba(255,255,255,0.12)"/>
+    <path id="Trazado_7111" data-name="Trazado 7111" d="M18875.145,195.755h-40a.755.755,0,1,1,0-1.51h40a.755.755,0,1,1,0,1.51Z" transform="translate(-17802.645 260.5)" fill="rgba(255,255,255,0.74)"/>
+    <g id="Grupo_3944" data-name="Grupo 3944" transform="translate(1115.166 448.292)">
+      <path id="Trazado_7181" data-name="Trazado 7181" d="M5.484,9.683,2.8,7,5.484,4.316,4.667,3.5,1.167,7l3.5,3.5Zm3.033,0L11.2,7,8.517,4.316,9.334,3.5l3.5,3.5-3.5,3.5Z" fill="rgba(255,255,255,0.6)"/>
+      <rect id="Rectángulo_6471" data-name="Rectángulo 6471" width="10.508" height="1.055" transform="translate(5.209 11.9) rotate(-75.924)" fill="rgba(255,255,255,0.6)"/>
+    </g>
+    <g id="item_1" data-name="item 1" transform="translate(1032 478)">
+      <rect id="Rectángulo_6424" data-name="Rectángulo 6424" width="96" height="16" transform="translate(0)" fill="rgba(255,255,255,0.12)"/>
+      <path id="Rectángulo_6424_-_Contorno" data-name="Rectángulo 6424 - Contorno" d="M.5.5v15h95V.5H.5M0,0H96V16H0Z" transform="translate(0)" fill="rgba(255,255,255,0.12)"/>
+    </g>
+    <g id="item_2" data-name="item 2" transform="translate(1032 494)">
+      <rect id="Rectángulo_6424-2" data-name="Rectángulo 6424" width="96" height="16" transform="translate(0)" fill="rgba(255,255,255,0.12)"/>
+      <path id="Rectángulo_6424_-_Contorno-2" data-name="Rectángulo 6424 - Contorno" d="M.5.5v15h95V.5H.5M0,0H96V16H0Z" transform="translate(0)" fill="rgba(255,255,255,0.12)"/>
+    </g>
+    <g id="item_3" data-name="item 3" transform="translate(1032 510)">
+      <rect id="Rectángulo_6424-3" data-name="Rectángulo 6424" width="96" height="16" transform="translate(0)" fill="rgba(255,255,255,0.12)"/>
+      <path id="Rectángulo_6424_-_Contorno-3" data-name="Rectángulo 6424 - Contorno" d="M.5.5v15h95V.5H.5M0,0H96V16H0Z" transform="translate(0)" fill="rgba(255,255,255,0.12)"/>
+    </g>
+    <text id="_1" data-name="1" transform="translate(1036 490)" fill="rgba(255,255,255,0.74)" font-size="10" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="0">1</tspan></text>
+    <text id="_2" data-name="2" transform="translate(1036 508)" fill="rgba(255,255,255,0.74)" font-size="10" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="0">2</tspan></text>
+    <text id="_3" data-name="3" transform="translate(1036 522)" fill="rgba(255,255,255,0.74)" font-size="10" font-family="Poppins-Bold, Poppins" font-weight="700"><tspan x="0" y="0">3</tspan></text>
+  </g>
+</svg>
