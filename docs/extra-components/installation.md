@@ -16,27 +16,44 @@ npm install ontimize-web-ngx-extra-components --save
 
 ## Compatibility
 
-The **ontimize-web-ngx-extra-components** library is compatible with **ontimize-web-ngx** starting from version **15.9.0**.
+The **ontimize-web-ngx-extra-components** library requires **ontimize-web-ngx** version **18.0.0** or higher.
 
+| extra-components | ontimize-web-ngx | Angular |
+|---|---|---|
+| 18.0.0-next.0+ | ^18.0.0-next.0 | ^18.2.0 |
 
 ## Usage
 
-### Import into your application
+### Option A — Standalone import (recommended)
 
-Import the `OExtraComponentsModule` into the main module of your application.
+Import the components directly in your standalone component:
 
-```js
-...
+```typescript
+import { ODataViewComponent } from 'ontimize-web-ngx-extra-components';
+
+@Component({
+  standalone: true,
+  imports: [ODataViewComponent],
+  template: `<o-data-view ...></o-data-view>`
+})
+export class MyComponent {}
+```
+
+### Option B — NgModule import
+
+Import `OExtraComponentsModule` into your module:
+
+```typescript
 import { OExtraComponentsModule } from 'ontimize-web-ngx-extra-components';
-...
 
 @NgModule({
   imports: [
     OExtraComponentsModule,
     /* other imports */
-  ],
-  declarations: ...
-  providers: ...
+  ]
 })
-export class ExampleModule { }
+export class ExampleModule {}
 ```
+
+{: .note }
+> Templates in version 18 use Angular control flow syntax (`@if`, `@for`, `@switch`) instead of `*ngIf` / `*ngFor` directives.

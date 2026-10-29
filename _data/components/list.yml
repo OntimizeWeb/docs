@@ -9,7 +9,7 @@ inheritedAttributes: [{
 },{
   component: "OServiceComponent",
   path: "components/service/service/api",
-  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "quick-filter", "quick-filter-placeholder", "quick-filter-appearance", "pagination-controls", "page-size-options","initial-filter-function", "filter-builder-function"]
+  attributes: ["title", "visible", "enabled", "controls", "detail-mode", "detail-form-route", "recursive-detail", "detail-button-in-row", "detail-button-in-row-icon", "edit-form-route", "recursive-edit", "edit-button-in-row", "edit-button-in-row-icon", "insert-button", "row-height", "insert-form-route", "recursive-insert", "quick-filter", "quick-filter-placeholder", "quick-filter-appearance", "pagination-controls", "page-size-options","initial-filter-function", "filter-builder-function", "no-results-message", "data-testid"]
 }]
 
 inheritedOutputs: [{
@@ -72,6 +72,20 @@ attributes: [{
   default: "",
   required: "",
   description: "Entity keys SQL types, separated by ';'"
+},{
+  name: "action-styles",
+  type: "Record<string, OActionStyle>",
+  default: "",
+  required: "",
+  since: "18.0.0-next.7",
+  description: "Configures the visual style (variant, importance, label) of the list's built-in action buttons (insert, refresh, delete), keyed by the action's `attr`. See the [Action styles guide](/guide/action-styles/)."
+},{
+  name: "scroll-to-top-button",
+  type: "no | false | yes | true",
+  default: "no",
+  required: "",
+  since: "18.0.0-next.18",
+  description: "Shows a floating button (bottom-right, above the insert button when both are present) once the list has been scrolled past a threshold, to jump back to the top. Only moves the scroll position — never reloads data, resets filters/pagination, or discards already-loaded rows. Works in any pagination mode (infinite scroll and `pagination-controls=\"yes\"` alike) and follows whichever element actually provides the list scroll. Its appearance can be configured via `action-styles`, keyed by `scroll-top`."
 }]
 
 outputs: [{

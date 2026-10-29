@@ -140,6 +140,7 @@ import { FilterExpressionUtils, Expression } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-accounts-home',
+  standalone: true,
   templateUrl: './accounts-home.component.html',
   styleUrls: ['./accounts-home.component.css']
 })

@@ -27,8 +27,8 @@ de clientes.
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Controlaremos que se muestre el panel que hemos añadido se muestre mediante la utilización de la directiva
-<code>*ngIf</code> evaluando una variable del componente. Cuando esté a true, se mostrará el panel, en caso contrario,
+        <p>Controlaremos que se muestre el panel que hemos añadido se muestre mediante la utilización del bloque de control de flujo
+<code>@if</code> evaluando una variable del componente. Cuando esté a true, se mostrará el panel, en caso contrario,
 quedará oculto.</p>
 
 {{"**customers-home.component.html**" | markdownify }}
@@ -48,9 +48,11 @@ quedará oculto.</p>
             <app-customertype-column-renderer></app-customertype-column-renderer>
         </o-table-column>
     </o-table>
-    <div class="waitPanel" *ngIf="showWaitForLongTask">
-        <mat-spinner></mat-spinner>
-    </div>
+    @if (showWaitForLongTask) {
+        <div class="waitPanel">
+            <mat-spinner></mat-spinner>
+        </div>
+    }
 </o-form-layout-manager>
 {% endhighlight %}
 
@@ -62,6 +64,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-customers-home',
+  standalone: true,
   templateUrl: './customers-home.component.html',
   styleUrls: ['./customers-home.component.css']
 })
@@ -209,8 +212,7 @@ export class CustomersHomeComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -279,8 +281,7 @@ export class CustomersHomeComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

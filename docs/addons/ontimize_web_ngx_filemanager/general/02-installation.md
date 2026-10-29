@@ -12,64 +12,63 @@ nav_order: 2
 ## Installation
 
 ```bash
-  npm install ontimize-web-ngx-filemanager --save
+npm install ontimize-web-ngx-filemanager --save
 ```
+
+### Compatibility
+
+| ontimize-web-ngx-filemanager | ontimize-web-ngx | Angular |
+|---|---|---|
+| 18.0.0-next.0+ | ^18.0.0-next.0 | ^18.2.0 |
+
+> **Breaking change**: `@angular/flex-layout` has been removed. Replace `fxLayout`/`fxFlex` template attributes with `o-flex-*` CSS utility classes.
+
+> **Breaking change**: `OTableSkeletonExtendedComponent` has been replaced by the built-in `OTableSkeletonComponent` from `ontimize-web-ngx`.
 
 ## Usage
 
-### Add the library theming
-Include the library theme in your application by adding the following code to the '*app.scss*' file:
+### Import into your application
 
-```bash
-...
-@import '~ontimize-web-ngx-filemanager/o-filemanager-table-theme.scss';
-@include o-filemanager-table-theme($theme);
-...
+#### Option A — Standalone component (recommended)
+
+```typescript
+import { OFileManagerTableComponent } from 'ontimize-web-ngx-filemanager';
+
+@Component({
+  standalone: true,
+  imports: [OFileManagerTableComponent],
+  template: `<o-filemanager-table service="customers" workspace-key="ID_DMS_DOC"></o-filemanager-table>`
+})
+export class MyComponent {}
 ```
 
-### Import the File Manager into your application
+#### Option B — NgModule
 
-Import the Ontimize Web file manager module in the module you want to use it.
-
-```javascript
+```typescript
 import { OFileManagerModule } from 'ontimize-web-ngx-filemanager';
 
 @NgModule({
-  imports: [
-    OFileManagerModule
-  ],
-  declarations: ...
-  providers: ...
+  imports: [OFileManagerModule]
 })
-export class ExampleModule { }
+export class ExampleModule {}
 ```
 
 ### Add the File Manager to your component
 
-Insert the `o-filemanager-table` component in your application component template.
-
-You must configure the `service` attribute within the name of the service that manages the files in the server. You must indicate also the column name that stores the work space identifier in the `workspace-key` attribute.
+Insert `o-filemanager-table` in your template. Configure the `service` attribute with the service that manages files and `workspace-key` with the column storing the workspace identifier:
 
 ```html
 <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC"></o-filemanager-table>
 ```
 
-If you want to use the SDMS file manager engine you need to add the `type='S3'` attribute to yours `o-filemanager-table` component.
+For S3 mode:
 
-Also you must indicate also the form column name that stores the work space identifier in the workspace-key attribute or define the `workspace-S3` function as the example bellow
-
-`customers-detail.component.html`:
 ```html
-...
 <o-filemanager-table type="S3" service="customers" [workspace-s3]="setWorkspaceS3"></o-filemanager-table>
-...
 ```
 
-`customers-detail.component.ts`:
 ```typescript
-...
-  setWorkspaceS3(data: any) {
-    return { name: 'default', data: { id: data['CUSTOMERID'] } };
-  }
-...
+setWorkspaceS3(data: any) {
+  return { name: 'default', data: { id: data['CUSTOMERID'] } };
+}
 ```

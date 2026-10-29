@@ -9,7 +9,7 @@ attributes: [{
   type: "string",
   default: "",
   required: "",
-  description: "Date format. See [MomentJS](http://momentjs.com/){:target='_blank'}"
+  description: "Date format, interpreted by the active date adapter (Luxon by default). See the Date handling guide"
 }]
 inherit_properties: [{
   component: "OBaseTableCellRenderer",

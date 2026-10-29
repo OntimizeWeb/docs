@@ -449,44 +449,28 @@ Después de crear los servicios, debemos crear el módulo y los componentes de l
 los componentes</p>
 
 {% highlight console %}
-npx ng g module --routing service-ex
-cd service-ex
-npx ng g component --skip-tests service-ex-home
-npx ng g component --skip-tests service-ex-details
+npx ng g component service-ex/service-ex-home --standalone
+npx ng g component service-ex/service-ex-details --standalone
 {% endhighlight %}
 
 <p>Debemos importar el servicio que hemos creado dentro del módulo <strong>service-ex</strong>, que es dónde se
 utilizará, y anotarlo dentro del array de <code>providers</code></p>
 
-{{"**service-ex.module.ts**" | markdownify }}
+{{"**service-ex.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { Injector, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { StarWarsService } from '../../shared/star-wars.service';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { ServiceExRoutingModule } from './service-ex-routing.module';
+import { Routes } from '@angular/router';
 import { ServiceExHomeComponent } from './service-ex-home/service-ex-home.component';
 import { ServiceExDetailsComponent } from './service-ex-details/service-ex-details.component';
 
-
-
-@NgModule({
-  declarations: [
-    ServiceExHomeComponent,
-    ServiceExDetailsComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    ServiceExRoutingModule
-  ],
-  providers: [{
-    provide: 'starWars',
-    useValue: StarWarsService
-  }]
-})
-export class ServiceExModule { }
-
+export const serviceExRoutes: Routes = [
+  {
+    path: '',
+    component: ServiceExHomeComponent
+  },
+  {
+    path: ":uuid",
+    component: ServiceExDetailsComponent
+  }];
 {% endhighlight %}
 
 <p>Ahora usaremos este servicio cómo si fuera un servicio más de Ontimize. El servicio será <em>starsWars</em>, la
@@ -517,60 +501,29 @@ entidad será <em>films</em> y la clave primaria de la tabla será <em>uuid</em>
 </o-form>
 {% endhighlight %}
 
-{{"**service-ex-routing.module.ts**" | markdownify }}
+{{"**main.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ServiceExHomeComponent } from './service-ex-home/service-ex-home.component';
-import { ServiceExDetailsComponent } from './service-ex-details/service-ex-details.component';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: ServiceExHomeComponent
-  },
-  {
-    path: ":uuid",
-    component: ServiceExDetailsComponent
-  }];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class ServiceExRoutingModule { }
-{% endhighlight %}
-
-{{"**main-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from 'ontimize-web-ngx';
+import { Routes } from '@angular/router';
+import { authGuard } from 'ontimize-web-ngx';
 
 import { MainComponent } from './main.component';
 
-export const routes: Routes = [
+export const mainRoutes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-      { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
-      { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) },
-      { path: 'branches', loadChildren: () => import('./branches/branches.module').then(m => m.BranchesModule) },
-      { path: 'accounts', loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsModule) },
-      { path: 'serviceEx', loadChildren: () => import('./service-ex/service-ex.module').then(m => m.ServiceExModule) }
+      { path: 'home', loadChildren: () => import('./home/home.routes').then(m => m.homeRoutes) },
+      { path: 'customers', loadChildren: () => import('./customers/customers.routes').then(m => m.customersRoutes) },
+      { path: 'employees', loadChildren: () => import('./employees/employees.routes').then(m => m.employeesRoutes) },
+      { path: 'branches', loadChildren: () => import('./branches/branches.routes').then(m => m.branchesRoutes) },
+      { path: 'accounts', loadChildren: () => import('./accounts/accounts.routes').then(m => m.accountsRoutes) },
+      { path: 'serviceEx', loadChildren: () => import('./service-ex/service-ex.routes').then(m => m.serviceExRoutes) }
     ]
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class MainRoutingModule { }
 {% endhighlight %}
 
 {{"**app.menu.config.ts**" | markdownify }}
@@ -842,11 +795,10 @@ export const MENU_CONFIG: MenuRootItem[] = [
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>service-ex.routes.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.routes.ts</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>

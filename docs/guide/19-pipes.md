@@ -75,14 +75,32 @@ The `oInteger` pipe is used to format integer numbers. It can add thousand separ
 {% endraw %}
 ```
 
+## **oLuxon**
+
+**Description:**
+The `oLuxon` pipe is used to format dates into a readable format. It is the current date pipe of **OntimizeWeb** and the one used by the date and time renderers under the default date adapter. This pipe utilizes the `LuxonService` to parse and format the date value using [Luxon](https://moment.github.io/luxon/){:target="_blank"} format tokens (see the [Date handling guide]({{ base_path }}/guide/date-handling/)).
+
+**Parameters:**
+
+- **format:** The desired date format (e.g., `"yyyy-MM-dd"`, `"MM/dd/yyyy"`). See the [Luxon table of tokens](https://moment.github.io/luxon/#/formatting?id=table-of-tokens){:target="_blank"}.
+
+**Example:**
+```html
+{% raw %}
+<span>{{ '2025-03-19T12:00:00Z' | oLuxon:{ format: 'MM/dd/yyyy' } }}</span>
+{% endraw %}
+```
+
 ## **oMoment**
 
 **Description:**
 The `oMoment` pipe is used to format dates into a readable format. It allows customization of the date format based on user requirements. This pipe utilizes the `MomentService` to parse and format the date value.
 
+> **Deprecated:** since version 18, `oMoment` is deprecated in favour of [`oLuxon`](#oluxon). It remains fully functional and it is the pipe used by the date and time renderers when the moment date adapter is active (see the [Date handling guide]({{ base_path }}/guide/date-handling/)).
+
 **Parameters:**
 
-- **format:** The desired date format (e.g., `"YYYY-MM-DD"`, `"MM/DD/YYYY"`).
+- **format:** The desired date format (e.g., `"YYYY-MM-DD"`, `"MM/DD/YYYY"`), using [Moment.js](https://momentjs.com/docs/#/displaying/format/){:target="_blank"} format tokens.
 
 **Example:**
 ```html

@@ -50,3 +50,6 @@ The construction of dependant list-pickers is the same as done in the combo comp
         parent-keys="user_type_id:user[user_type]"></o-list-picker>
 </o-form>
 ```
+
+{: .note }
+> `parent-keys` only decides **which filter** a query uses whenever one runs — it does not by itself make the dependent component re-query reactively when the referenced sibling's value changes. To have it actually reload its options as soon as the user picks a different value in the sibling component (rather than only on the next `query-on-init`/`query-on-bind`), also wire `query-on-event` to that sibling's `onValueChange` output. See [Cascading (dependent) combos]({{ base_path }}/components/input/overview/overview#cascading-dependent-combos){:target="_blank"} for a full working example.

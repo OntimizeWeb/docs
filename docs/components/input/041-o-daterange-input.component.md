@@ -14,25 +14,68 @@ nav_order: 9
 The `o-daterange-input` component is based on **Angular Material** and  is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying start and end date values as a range from a calendar pop-up or by entering the value directly in an HTML input text box.
 .
 
-The date range input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `<o-form>`, the date range input is automatically registered on it, which provides the value for the input programatically, but it is also a standalone component that can be used on its own with Angular Reactive Forms (see [Standalone usage](#standalone-usage) below). Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+`o-daterange-input` is standalone and can be imported directly without `<o-form>`:
+
+```typescript
+import { Component } from '@angular/core';
+import { ODateRangeInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ODateRangeInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ODateRangeInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, ODateRangeInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-daterange-input formControlName="stay" label="Date range" format="DD"></o-daterange-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    stay: new FormControl({ startDate: Date.now(), endDate: Date.now() }, Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![Daterange input component]({{ "/assets/images/components/inputs/o-daterange-input.png" | absolute_url }}){: .comp-example-img width='65%'}
 
 ```html
 <o-form editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
       <label>Read only</label>
       <o-daterange-input attr="daterange1" label="DateRange" required="yes" [data]="valueTimestamp">
       </o-daterange-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
       <label>Editable</label>
       <o-daterange-input attr="daterange2" label="DateRange" read-only="no" required="yes" [data]="valueTimestamp"
-        format="LL" separator=" to " [touch-ui]="mode.checked">
+        format="DD" separator=" to " [touch-ui]="mode.checked">
       </o-daterange-input>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
       <label class="input-comp-title">Disabled</label>
       <o-daterange-input attr="daterange3" label="DateRange" enabled="no" [data]="valueTimestamp">
       </o-daterange-input>
@@ -42,6 +85,8 @@ The date range input is automatically registered on its parent `o-form`, which p
 
 
 ```ts
+import { DateTime } from 'luxon';
+
 export class InputDateRangeComponent {
 
   public selected = {};
@@ -50,13 +95,13 @@ export class InputDateRangeComponent {
   constructor() {
 
      this.selected = {
-      startDate: moment('2019-05-15T00:00Z'),
-      endDate: moment('2019-05-20T00:00Z')
+      startDate: DateTime.fromISO('2019-05-15T00:00Z'),
+      endDate: DateTime.fromISO('2019-05-20T00:00Z')
     };
 
     this.valueTimestamp = {
-      startDate: this.selected['startDate'].valueOf(),
-      endDate: this.selected['endDate'].valueOf()
+      startDate: this.selected['startDate'].toMillis(),
+      endDate: this.selected['endDate'].toMillis()
     }
   }
 }
@@ -75,18 +120,20 @@ The `o-daterange-input` normally opens as a popup under the input, however the c
 
 ## Customizing the parse and display formats
 
-The `o-daterange-input` supports date Moments formats setting, all you have to do is to set the format via `format` input. The format MomentJS by default is <em>L</em> (see <em>Localized formats</em> in [MomentJS format](http://momentjs.com/docs/#/displaying/format){:target='_blank'})
+The `o-daterange-input` supports setting the date format via the `format` input, interpreted by the active date adapter (Luxon by default). The default format is Luxon's macro token <em>D</em> (localized short date, see the [Luxon table of tokens](https://moment.github.io/luxon/#/formatting?id=table-of-tokens){:target='_blank'}), the equivalent of Moment.js' <em>L</em> used when the moment adapter is active. See the [Date handling guide]({{ base_path }}/guide/date-handling/) for the full token equivalences.
 
 ![Format int daterang input component]({{ "/assets/images/components/inputs/o-daterange-format.png" | absolute_url }}){: .comp-example-img}
 
 ```html
-<div fxLayout="column" layout-padding>
+<div layout-padding>
   <o-daterange-input attr="daterange" label="Date range" read-only="no"
-    required="yes" [data]="valueTimestamp" format="LL" separator=" to " text-input-enabled="no">
+    required="yes" [data]="valueTimestamp" format="DD" separator=" to " text-input-enabled="no">
   </o-daterange-input>
 </div>
 ```
 ```ts
+import { DateTime } from 'luxon';
+
 export class InputDateRangeComponent {
 
   public selected = {};
@@ -95,13 +142,13 @@ export class InputDateRangeComponent {
   constructor() {
 
      this.selected = {
-      startDate: moment('2019-05-15T00:00Z'),
-      endDate: moment('2019-05-20T00:00Z')
+      startDate: DateTime.fromISO('2019-05-15T00:00Z'),
+      endDate: DateTime.fromISO('2019-05-20T00:00Z')
     };
 
     this.valueTimestamp = {
-      startDate: this.selected['startDate'].valueOf(),
-      endDate: this.selected['endDate'].valueOf()
+      startDate: this.selected['startDate'].toMillis(),
+      endDate: this.selected['endDate'].toMillis()
     }
   }
 }
@@ -115,7 +162,7 @@ Specifying startKey and endKey would have different model.  For example, the mod
 
 ```html
 <o-daterange-input attr="daterange" label="Date range" read-only="no" startKey="start" endKey="end"
-  required="yes" [data]="valueTimestamp" format="LL" separator=" to "  text-input-enabled="no">
+  required="yes" [data]="valueTimestamp" format="DD" separator=" to "  text-input-enabled="no">
 </o-daterange-input>
 
 ```
@@ -127,7 +174,7 @@ The `min` and `max` properties will disable all dates on the calendar popup befo
 
 ```html
  <o-daterange-input attr="daterange4" label="Date range" read-only="no" required="yes"
-       format="YYYY/MM/DD" value-type="string" min="2019/05/05" max="2019/05/25" [data]="valueString">
+       format="yyyy/MM/dd" value-type="string" min="2019/05/05" max="2019/05/25" [data]="valueString">
   </o-daterange-input>
 ```
 
@@ -135,14 +182,9 @@ The `min` and `max` properties will disable all dates on the calendar popup befo
 export class InputDateRangeComponent {
 
   public selected = {};
-  public valueTimestamp: { startDate: number; endDate: number; };
+  public valueString: { startDate: string; endDate: string; };
 
   constructor() {
-
-    this.selected = {
-      startDate: moment('2019-05-15T00:00Z'),
-      endDate: moment('2019-05-20T00:00Z')
-    };
 
     this.valueString = {
       startDate: '2019/05/15',

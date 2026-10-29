@@ -56,8 +56,8 @@ The final value for a given option is resolved using the following precedence or
 ### Example
 
 ```ts
-import { NgModule } from '@angular/core';
-import { O_TABLE_GLOBAL_CONFIG, OTableGlobalConfig } from 'ontimize-web-ngx';
+import { ApplicationConfig } from '@angular/core';
+import { O_TABLE_GLOBAL_CONFIG, OTableGlobalConfig, provideOntimizeWeb } from 'ontimize-web-ngx';
 
 const TABLE_GLOBAL_CONFIG: OTableGlobalConfig = {
   autoAdjust: true,
@@ -68,12 +68,12 @@ const TABLE_GLOBAL_CONFIG: OTableGlobalConfig = {
   rowHeight: 'medium'
 };
 
-@NgModule({
+export const appConfig: ApplicationConfig = {
   providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: O_TABLE_GLOBAL_CONFIG, useValue: TABLE_GLOBAL_CONFIG }
   ]
-})
-export class AppModule {}
+};
 ```
 For a full description of the token and its supported properties, see the official [OTableComponent documentation]({{base_path}}/components/data/table/api#OTableGlobalConfig).
 
@@ -149,7 +149,7 @@ In table mode, the oDataViewTableColumns template is recommended when you need t
           <mat-card-subtitle>{{ item.location }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <div fxLayout="column" fxLayoutAlign="center">Cost: {{item.price | currency}}</div>
+          <div>Cost: {{item.price | currency}}</div>
         </mat-card-content>
       </mat-card>
     </ng-template>

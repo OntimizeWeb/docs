@@ -23,7 +23,7 @@ You can check a working example of GeoJson layers [here](https://try.imatia.com/
 
 ```html
 <o-map #oMapGeoJSON center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20"
-zoom-control="yes" search-control="no" layer-panel-visible="no" fxFlex>
+zoom-control="yes" search-control="no" layer-panel-visible="no">
   <o-map-layer layer-type="geoJSON" layer-service="geojson-train-lines" layer-id="train-lines"
     layer-menu-label="Train lines" layer-menu-label-secondary="Spain's' train lines.">
   </o-map-layer>

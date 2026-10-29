@@ -36,7 +36,8 @@ de tabla a formato de cuadrícula, y modificar su formulario detalle para que se
     sortable-columns="EMPLOYEENAME;EMPLOYEESURNAME:asc;EMPLOYEESURNAME:desc;EMPLOYEEEMAIL" insert-button="true"
     pagination-controls="true" gutter-size="8px" fixed-header="yes" grid-item-height="300px" detail-mode="none"
     insert-button-floatable="no">
-    <o-grid-item *ngFor="let data of employeesGrid.dataArray">
+    @for (data of employeesGrid.dataArray; track data) {
+    <o-grid-item>
         <div (click)="openDetail(data)" fxLayout="column" fxLayoutAlign="space-evenly center"
             class="mat-elevation-z1 employeeCard">
             <img [src]="getImageSrc(data.EMPLOYEEPHOTO)" width="144px" height="200px">
@@ -45,6 +46,7 @@ de tabla a formato de cuadrícula, y modificar su formulario detalle para que se
             <span class="office">{% raw %}{{ data.NAME }}{% endraw %}</span>
         </div>
     </o-grid-item>
+    }
 </o-grid>
 {% endhighlight %}
 
@@ -142,6 +144,7 @@ import { EmployeesDetailComponent } from '../employees-detail/employees-detail.c
 
 @Component({
   selector: 'app-employees-home',
+  standalone: true,
   templateUrl: './employees-home.component.html',
   styleUrls: ['./employees-home.component.css']
 })
@@ -546,21 +549,21 @@ export class EmployeesHomeComponent implements OnInit {
             <mat-divider></mat-divider>
         </div>
         <div fxLayout="column" class="employeeSecond">
-            <span *ngIf="data.EMPLOYEEEMAIL;else no_mail">
-                <mat-icon>email</mat-icon><span>{% raw %}{{ data.EMPLOYEEEMAIL }}{% endraw %}</span>
-            </span>
-            <ng-template #no_mail><span><mat-icon>email</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}{% endraw %}</span></span></ng-template>
-            <span *ngIf="data.EMPLOYEEPHONE;else no_phone">
-                <mat-icon>smartphone</mat-icon><span>{% raw %}{{ data.EMPLOYEEPHONE }}{% endraw %}</span>
-            </span>
-            <ng-template #no_phone><span><mat-icon>smartphone</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}{% endraw %}</span></span></ng-template>
-            <span *ngIf="data.EMPLOYEEADDRESS;else no_address">
-                <mat-icon>home</mat-icon><span>{% raw %}{{ data.EMPLOYEEADDRESS }}{% endraw %}</span>
-            </span>
-            <ng-template #no_address><span><mat-icon>home</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" |
-                        oTranslate}}{% endraw %}</span></span></ng-template>
+            @if (data.EMPLOYEEEMAIL) {
+                <span><mat-icon>email</mat-icon><span>{% raw %}{{ data.EMPLOYEEEMAIL }}{% endraw %}</span></span>
+            } @else {
+                <span><mat-icon>email</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" | oTranslate}}{% endraw %}</span></span>
+            }
+            @if (data.EMPLOYEEPHONE) {
+                <span><mat-icon>smartphone</mat-icon><span>{% raw %}{{ data.EMPLOYEEPHONE }}{% endraw %}</span></span>
+            } @else {
+                <span><mat-icon>smartphone</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" | oTranslate}}{% endraw %}</span></span>
+            }
+            @if (data.EMPLOYEEADDRESS) {
+                <span><mat-icon>home</mat-icon><span>{% raw %}{{ data.EMPLOYEEADDRESS }}{% endraw %}</span></span>
+            } @else {
+                <span><mat-icon>home</mat-icon><span>{% raw %}{{ "NO_DATA_AVAILABLE" | oTranslate}}{% endraw %}</span></span>
+            }
         </div>
     </div>
     <span layout-margin-right fxFlexAlign="end"><mat-icon>domain</mat-icon>{% raw %}{{ data.NAME }}{% endraw %}</span>
@@ -581,6 +584,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-employees-detail',
+  standalone: true,
   templateUrl: './employees-detail.component.html',
   styleUrls: ['./employees-detail.component.css']
 })
@@ -978,7 +982,7 @@ debemos crear un nuevo componente para usar la inserción del componente, por lo
 el siguiente comando:
 
 ```
-npx ng generate component --skip-tests employees-new
+npx ng generate component --skip-tests --standalone employees-new
 ```
 <div class="multicolumn">
     <div class="multicolumn">
@@ -987,44 +991,14 @@ npx ng generate component --skip-tests employees-new
                 <span class="material-symbols-outlined">right_panel_open</span>
             </button>
 
-{{"**employees.module.ts**" | markdownify }}
-{% highlight typescript%}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { EmployeesRoutingModule } from './employees-routing.module';
-import { EmployeesHomeComponent } from './employees-home/employees-home.component';
-import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
-import { EmployeesNewComponent } from './employees-new/employees-new.component';
-
-
-@NgModule({
-  declarations: [
-    EmployeesHomeComponent,
-    EmployeesDetailComponent,
-    EmployeesNewComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    EmployeesRoutingModule
-  ]
-})
-export class EmployeesModule { }
-{% endhighlight %}
-
-<p>Modificamos la ruta en <code>employees-routing.module.ts</code> para que la ruta de <code>new</code> utilice este
-nuevo componente en vez del componente detalle.</p>
-
-{{"**employees-routing.module.ts**" | markdownify }}
+{{"**employees.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { EmployeesHomeComponent } from './employees-home/employees-home.component';
 import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
 import { EmployeesNewComponent } from './employees-new/employees-new.component';
 
-const routes: Routes = [{
+export const employeesRoutes: Routes = [{
   path: '',
   component: EmployeesHomeComponent
 },
@@ -1036,12 +1010,6 @@ const routes: Routes = [{
   path: ":EMPLOYEEID",
   component: EmployeesDetailComponent
 }];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class EmployeesRoutingModule { }
 {% endhighlight %}
 
 Solo resta añadir el formulario que se encontraba antes como fomulario detalle, pero esta vez para inserción.
@@ -1284,8 +1252,7 @@ Solo resta añadir el formulario que se encontraba antes como fomulario detalle,
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

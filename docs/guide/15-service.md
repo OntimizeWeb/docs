@@ -31,7 +31,9 @@ You can override or extend the functionality of the services defined in **Ontimi
 | `OntimizeExportService` and `OntimizeExportService3X`                         | `O_EXPORT_SERVICE`       | Service used by the [`o-table`]({{ base_path }}/components/data/table/overview){:target="\_blank"} component for exporting its data                     |
 | `OntimizePermissionsService` and `OntimizeEEPermissionsService`               | `O_PERMISSION_SERVICE`   | Service used for loading the application permissions                                                                                                    |
 | `AuthService`                                                                 | `O_AUTH_SERVICE`         | Service used for authentication (since *ontimize-web-ngx@8.3.0*)                                                                                        |
-| `OReportService` or  `JSONAPIReportService` (since *ontimize-web-ngx-report@15.2.0)                                                                     | `O_REPORT_SERVICE`       | Service used to generate reports (since *ontimize-web-ngx@8.7.0*)                                                                             |
+| `OntimizeReportService`                                                       | `O_REPORT_SERVICE`       | Service used by the [`o-table`]({{ base_path }}/components/data/table/overview){:target="\_blank"} menu to open the report on-demand dialog (since *ontimize-web-ngx@8.7.0*) |
+| `OReportService` or `JSONAPIReportService`                                    | `O_REPORT_ON_DEMAND_SERVICE` | Service used by the [report on-demand]({{ base_path }}/addons/report/components/report-on-demand/overview){:target="\_blank"} to generate reports. Exported by `ontimize-web-ngx-report` (since *ontimize-web-ngx-report@18.0.0-next.1*) |
+| `OReportStoreService` or `JSONAPIReportStoreService`                          | `O_REPORT_STORE_SERVICE` | Service used by the [report store]({{ base_path }}/addons/report/components/report-store/overview){:target="\_blank"} to manage and fill reports. Exported by `ontimize-web-ngx-report` (since *ontimize-web-ngx-report@18.0.0-next.1*) |
 | `OntimizeExportDataProviderService` and `OntimizeExportDataProviderService3X` | `O_EXPORT_DATA_SERVICE`  | Service used to provide data and styles to table exports (since *ontimize-web-ngx@8.8.0*)                                                               |
 | `OTableGlobalConfig`                                                          | `O_TABLE_GLOBAL_CONFIG`  | Service used to set some [`o-table`]({{ base_path }}/components/data/table/overview){:target="\_blank"} global options (since *ontimize-web-ngx@8.7.3*) |
 | `LocalStorageService`                                                         | `O_LOCALSTORAGE_SERVICE` | Service used to save in application data in local storage (since *ontimize-web-ngx@15.2.0*)                                                             |
@@ -299,27 +301,20 @@ export class RickAndMortyServiceResponse implements ServiceResponse {
 
 Once your service and adapters are ready:
 
-* Register the service and adapters in your Angular module's `providers` array.
-```ts
-@NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    OntimizeWebModule,
-    AppRoutingModule
-  ],
+* Register the service and adapters in your `ApplicationConfig` providers (in `app.config.ts`):
+
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: 'rickandmorty', useValue: RickAndMortyService },
     RickAndMortyResponseAdapter,
     RickAndMortyRequestArgumentsAdapter,
-   ...
-  ],
-  bootstrap: [AppComponent]
-})
+    ...
+  ]
+};
+```
+
 * Use the service in your components or link it to a data component (like `o-table`, `o-form`, etc.) via the `serviceType` and `entity` attributes.
 
 
@@ -444,17 +439,15 @@ You can also extend the `BaseServiceResponse` according to your needs. Just reme
 
 ### Use your service in the whole application
 
-In case you want to use your service in the whole application, you have to provide it in you application module using the corresponding injection token.
+In case you want to use your service in the whole application, you have to provide it in `app.config.ts` using the corresponding injection token.
 
-```javascript
-@NgModule({
-  ...
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: O_DATA_SERVICE, useValue: StarWarsService }
   ]
-})
-export class AppModule { }
+};
 ```
 
 At this point every **OntimizeWeb** component will use your recently created `StarWarsService` service for communicating with the backend.
@@ -465,25 +458,22 @@ At this point every **OntimizeWeb** component will use your recently created `St
 
 ### Use your service in a specific component
 
-If you want to use your service in a specific component instead of using it in the whole application, you have to create a provide method that returns a new instance of your service and add a provider to your module indicating the factory method like in the example below.
+If you want to use your service in a specific component instead of the whole application, add it to the component's own `providers` array in its `@Component` decorator.
 
-```javascript
+```typescript
+import { Component } from '@angular/core';
 import { StarWarsService } from '../../shared/star-wars.service';
 
-
-@NgModule({
-
-  ...
-
-  providers: [{
-    provide: 'starWars',
-    useValue: StarWarsService
-  }]
+@Component({
+  standalone: true,
+  selector: 'app-starships',
+  templateUrl: './starships.component.html',
+  providers: [{ provide: 'starWars', useValue: StarWarsService }]
 })
-export class MyModule { }
+export class StarshipsComponent {}
 ```
 
-Once the service is included in the providers of your module, it will be created an instance of the service for each component. For this, configure the `service-type` attribute in the component with the value of the `provide` attribute indicated in the previous step. Check the example below.
+Angular will create a new instance of the service scoped to this component. Configure the `service-type` attribute in the Ontimize component with the value of the `provide` token from the previous step. Check the example below.
 
 ```html
 <o-table
@@ -494,7 +484,6 @@ Once the service is included in the providers of your module, it will be created
   pageable="yes"
   quick-filter="no"
   insert-button="no"
-  fxFlex
   service-type="starWars"
 >
   ...

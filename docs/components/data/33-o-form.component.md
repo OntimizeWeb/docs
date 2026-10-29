@@ -145,23 +145,21 @@ Once created the custom form component you can use the custom form template as f
 </custom-form>
 ```
 
-`your-template.module.ts`
+`your-template.component.ts`
 
 ```ts
-import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { CustomFormComponent } from './your-folder/custom-form/custom-form.component';
 
-@NgModule({
+@Component({
+  standalone: true,
   imports: [
+    CustomFormComponent,
     ...
   ],
-  declarations: [
-    ...
-    CustomFormComponent
-  ],
-  exports: ...
+  ...
 })
-export class BranchesModule { }
+export class YourTemplateComponent { }
 ```
 
 You will see that the `o-text-input` field isn't editable in your form changin the declaration of your html.
@@ -191,8 +189,8 @@ In the following example we have a form component with the field to filter the f
 <o-form editable-detail="no" show-header="no">
   <o-column title="{% raw %}{{ 'FILTERS' | oTranslate }}{% endraw %}">
     <o-row layout-align="space-between center">
-      <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
-      <o-text-input attr="SURNAME" read-only="no" fxFlex="66"></o-text-input>
+      <o-text-input attr="NAME" read-only="no"></o-text-input>
+      <o-text-input attr="SURNAME" read-only="no"></o-text-input>
     </o-row>
 
     <o-combo attr="EMPLOYEETYPEID" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
@@ -222,7 +220,7 @@ The filter builder is a component whose purpose is to solve the problem describe
 `o-form-toolbar-buttons` is a directive that allows adding custom buttons to the form toolbar.
 
 ```html
-<o-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+<o-form attr="customers_form_edit" service="customers" entity="customer" show-header="yes"
   header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
   show-header-navigation="yes">
   <div o-form-toolbar-buttons>

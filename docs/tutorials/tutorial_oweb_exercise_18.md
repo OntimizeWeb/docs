@@ -33,31 +33,31 @@ componente
 <o-form #form attr="customerDetail" service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
     show-header-navigation="no" class="fill-form">
     <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
-    <div fxFlex fxLayout="row" fxLayoutGap="8px">
+    <div>
         <div>
             <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png"
                 sql-type="OTHER"></o-image>
         </div>
-        <mat-tab-group fxFlex>
+        <mat-tab-group>
             <mat-tab label="{% raw %}{{ 'CUSTOMER_PERSONAL_INFORMATION' | oTranslate }{% endraw %}}">
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-text-input fxFlex="40" attr="NAME" required="yes"></o-text-input>
-                    <o-text-input fxFlex="40" attr="SURNAME" required="yes"></o-text-input>
-                    <o-date-input fxFlex="20" attr="STARTDATE"></o-date-input>
+                <div>
+                    <o-text-input attr="NAME" required="yes"></o-text-input>
+                    <o-text-input attr="SURNAME" required="yes"></o-text-input>
+                    <o-date-input attr="STARTDATE"></o-date-input>
                 </div>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-nif-input fxFlex="40" attr="ID" required="yes"></o-nif-input>
-                    <o-integer-input fxFlex="40" attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
-                    <o-combo fxFlex="20" attr="CUSTOMERTYPEID" service="customers" entity="customerType"
+                <div>
+                    <o-nif-input attr="ID" required="yes"></o-nif-input>
+                    <o-integer-input attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
+                    <o-combo attr="CUSTOMERTYPEID" service="customers" entity="customerType"
                         keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
                         value-column="CUSTOMERTYPEID"></o-combo>
                 </div>
                 <o-email-input attr="EMAIL"></o-email-input>
                 <o-text-input attr="ADDRESS"></o-text-input>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-real-input fxFlex="50" attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
+                <div>
+                    <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
                         min-decimal-digits="0"></o-real-input>
-                    <o-real-input fxFlex="50" attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
+                    <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
                         min-decimal-digits="0"></o-real-input>
                 </div>
                 <o-textarea-input attr="COMMENTS"></o-textarea-input>
@@ -101,6 +101,7 @@ import { AddAccountComponent } from './add-account/add-account.component';
 
 @Component({
   selector: 'app-customers-detail',
+  standalone: true,
   templateUrl: './customers-detail.component.html',
   styleUrls: ['./customers-detail.component.css']
 })
@@ -236,8 +237,7 @@ export class CustomersDetailComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -306,8 +306,7 @@ export class CustomersDetailComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -527,7 +526,7 @@ Crearemos el nuevo componente para crear una nueva cuenta. Para ello ejecutamos 
 carpeta **customers-detail**
 
 ```
-npx ng g c --skip-tests add-account
+npx ng g c --skip-tests --standalone add-account
 ```
 
 <div class="multicolumn">
@@ -557,6 +556,7 @@ import { OFormComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-add-account',
+  standalone: true,
   templateUrl: './add-account.component.html',
   styleUrls: ['./add-account.component.css']
 })
@@ -583,37 +583,8 @@ export class AddAccountComponent {
 }
 {% endhighlight %}
 
-<p>Añadimos este nuevo componente al array de declaraciones del módulo de cliente.</p>
-
-{{"**customers.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { CustomersRoutingModule } from './customers-routing.module';
-import { CustomersHomeComponent } from './customers-home/customers-home.component';
-import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
-import { CustomersNewComponent } from './customers-new/customers-new.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AddAccountComponent } from './customers-detail/add-account/add-account.component';
-
-
-@NgModule({
-  declarations: [
-    CustomersHomeComponent,
-    CustomersDetailComponent,
-    CustomersNewComponent,
-    AddAccountComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    CustomersRoutingModule
-  ]
-})
-export class CustomersModule { }
-{% endhighlight %}
+<p>Al ser <strong>AddAccountComponent</strong> un componente standalone, no es necesario declararlo en ningún módulo:
+basta con importarlo directamente donde se vaya a usar, como ya se ha hecho en <strong>customers-detail.component.ts</strong>.</p>
 
 <p>Por último añadimos las nuevas traducciones</p>
 
@@ -731,8 +702,7 @@ export class CustomersModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -809,8 +779,7 @@ export class CustomersModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

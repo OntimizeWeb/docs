@@ -28,7 +28,7 @@ le llamaremos **account-render**. Para crear este nuevo componente, podemos situ
 **account-home**, y ejecutar el comando:
 
 ```
-npx ng g component --skip-tests account-number-render
+npx ng g component --skip-tests --standalone account-number-render
 ```
 
 Se habrá creado una carpeta con el componente que usaremos para usar el renderer. Dado que este no es un renderer
@@ -42,30 +42,16 @@ mockup.
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Lo primero que debemos hacer es importar el nuevo componente y añadirlo al array de declaraciones.</p>
+        <p>Lo primero que debemos hacer es importar el nuevo componente en el fichero de rutas de cuentas.</p>
 
-{{"**accounts.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
+import { Routes } from '@angular/router';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-import { AccountNumberRenderComponent } from './accounts-home/account-number-render/account-number-render.component';
 
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent,
-    AccountNumberRenderComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
+export const accountsRoutes: Routes = [
+  { path: '', component: AccountsHomeComponent }
+];
 {% endhighlight %}
 
 <p>Nuestro componente debe extender de la clase <code>OBaseTableCellRenderer</code> e insertamos la siguiente línea
@@ -93,6 +79,7 @@ import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-account-number-render',
+  standalone: true,
   templateUrl: './account-number-render.component.html',
   styleUrls: ['./account-number-render.component.css']
 })
@@ -258,8 +245,7 @@ configuración > Configuración por defecto</em></p>
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

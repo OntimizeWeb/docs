@@ -72,6 +72,20 @@ attributes: [{
   type: "() => OFilterBuilderComponent",
   description: "Callback function that resolves the OFilterBuilderComponent instance",
   since: "15.9.0"
+},{
+  name: "no-results-message",
+  type: "string",
+  default: "",
+  required: "",
+  since: "18.0.0-next.12",
+  description: "Overrides the component's default 'no results' empty-state message (`TABLE.EMPTY` on `o-table` / `o-list`, `GRID.EMPTY` on `o-grid`). Accepts plain text, an i18n key resolved with the translate service, or an HTML string — sanitized before being rendered. For fully custom content (e.g. an icon, which the sanitizer strips from an HTML string), project an `<ng-template #noResultsTemplate>` inside the component instead — it takes precedence over `no-results-message`."
+},{
+  name: "data-testid",
+  type: "string",
+  default: "",
+  required: "",
+  since: "18.0.0-next.13",
+  description: "Base test-id for the component's built-in controls, for E2E testing (Playwright/Cypress). Used as a *prefix*, not applied verbatim, since there is no single native element at this level: the quick-filter gets `${data-testid}-quick-filter`, and `o-table`'s built-in insert/refresh/delete buttons get `${data-testid}-insert` / `-refresh` / `-delete`. Falls back to `attr` when not set."
 }]
 
 

@@ -13,67 +13,52 @@ nav_order: 3
 ## What is typography?
 Typography is a way of arranging type to make text legible, readable, and appealing when displayed.
 
-## Custom Typography of Ontimize Web framework.
+## Typography in Ontimize Web (Material 3)
 
-To change the typography it is neccesary to apply an extension of Angular Material's (you can see spec in [Angular Material's typography](https://v15.material.angular.io/guide/typography){:target='_blank'}) and an extension of Ontimize Web Sass-based theming.
+Since version 18, typography is **Material 3 native**. The whole type scale — headline, title, body and label levels, each with its font-size, line-height and weight — is generated automatically by the theme and exposed at runtime as `--mat-sys-*` CSS custom properties (e.g. `--mat-sys-body-medium-size`, `--mat-sys-title-large-line-height`). See the [full tokens table]({{ base_path }}/customize/theming/#material-3-system-tokens---mat-sys-) on the theming page.
 
-*The extension of Ontimize Web Sass-based theming.* is arranged into typography levels, as Angular Material's typography. Each level has a font-size, line-height and font-weight. This custom typography is used to apply css about [o-table]({{ base_path }}/components/data/table/overview){:target="_blank"} depending of the `row-height` attribute. For more details about table typography and defaut config, see [the source](https://github.com/OntimizeWeb/ontimize-web-ngx/blob/main.15.x/projects/ontimize-web-ngx/src/lib/theming/typography/o-table-typography.scss){:target='_blank'}. The available levels are:
-<ul>
-  <li><strong>small-header-height</strong>: table header height for 'small' predefined row height options.</li>
-  <li><strong>small-row-height</strong>: table row height for 'small' predefined row height options. </li>
-  <li><strong>small-header-font-size</strong> : table header font size  for 'small' predefined row height options. </li>
-  <li><strong>small-row-font-size</strong>:  table row font size for 'small' predefined row height options </li>
+This replaces the previous Sass-based approach, where you built a custom `mat.define-typography-config()` map (one `mat.define-typography-level()` entry per level: headline-1 to headline-6, subtitle-1/2, body-1/2, caption, button) and merged it into the theme at build time. That per-level, build-time API no longer exists — Material 3 controls the type scale, and there is no supported way to redefine each level's font-size/line-height/weight independently through the theme factory.
 
-<li><strong>medium-header-height</strong>:  table header height for 'medium' predefined row height options</li>
-<li><strong>medium-row-height</strong>: table row height for 'medium' predefined row height options.</li>
-<li><strong>medium-header-font-size</strong>:  table header font size for 'medium' predefined row height options </li>
-<li><strong>medium-row-font-size</strong>: table row font size for 'medium' predefined row height options</li>
-<li><strong>large-header-height</strong>:  table header height  for 'large' predefined row height options</li>
-<li><strong>large-row-height</strong>: table row height for 'large' predefined row height options.</li>
-<li><strong>large-header-font-size</strong>: table header font size for 'large' predefined row height options</li>
-<li><strong>large-row-font-size</strong>:  table row font size for 'large' predefined row height options </li>
-</ul>
-
-## Customization
-
-First you must create a custom *typography configuration* of Angular Material's Sass-based theming and another *typography configuration* of Ontimize Web Sass-based theming as the below example demonstrates.
+What you **can** still configure through the theme factory is the base font family:
 
 **app.scss**
 ```scss
-@use 'ontimize-web-ngx/theming/themes/ontimize.scss'as theme;
-@use 'ontimize-web-ngx/theming/ontimize-style.scss';
-@use '../../app/login/login.theme.scss'as login;
+@use 'ontimize-web-ngx/theming/ontimize-style' as ontimize-style;
+@use '@angular/material' as mat;
 
-// Necesary imports
-@use '@angular/material'as mat;
-@use 'sass:map';
-// Imports the Ontimize table typography instead of also modificate it
-@use 'ontimize-web-ngx/theming/typography/o-table-typography.scss'as ontimize-table-typography;
+$theme: ontimize-style.o-mat-light-theme((
+  primary: mat.$azure-palette,
+  typography: (font-family: '"Comic Neue", cursive'),
+));
 
-// Defines the custom typography
-$custom-typography: mat.define-typography-config($font-family: '"Comic Neue", cursive',
-  $headline-1: mat.define-typography-level(84px, 92px, 300),
-  $headline-2: mat.define-typography-level(42px, 42px, 400),
-  $headline-3: mat.define-typography-level(34px, 36px, 400),
-  $headline-4: mat.define-typography-level(26px, 30px, 400),
-  $headline-5: mat.define-typography-level(24px, 24px, 400),
-  $headline-6: mat.define-typography-level(18px, 24px, 500),
-  $subtitle-1: mat.define-typography-level(14px, 21px, 600),
-  $subtitle-2: mat.define-typography-level(12px, 18px, 500),
-  $body-1: mat.define-typography-level(13px, 1.125em, 400),
-  $body-2: mat.define-typography-level(12px, 15px, 400),
-  $caption: mat.define-typography-level(11px, 15px, 400),
-  $button: mat.define-typography-level(13px, 14px, 500)
-);
-
-// Merges our custom typography with the Ontimize table typography
-$merged-typography: map.merge($custom-typography, ontimize-table-typography.$table-typography);
-
-// Replaze the theme typography by our self created typography
-$theme: map.set(theme.$theme, "typography", $merged-typography);
+$dark-theme: ontimize-style.o-mat-dark-theme((
+  primary: mat.$azure-palette,
+  typography: (font-family: '"Comic Neue", cursive'),
+));
 
 @include ontimize-style.ontimize-theme-styles($theme);
 
-@include login.login-theme($theme);
-
+.o-dark {
+  @include ontimize-style.ontimize-theme-all-component-color($dark-theme);
+}
 ```
+
+The `typography` key only accepts `font-family` — it is applied to Material's `mat.define-theme()` internally and emitted as `--o-font-family`, so it cascades to every component (Ontimize's and Material's) without touching `--mat-sys-*` sizes/weights.
+
+### Overriding individual type-scale levels
+
+If you need a specific level to differ from Material's default scale (for example, a larger `headline-large` for a dashboard title), override its `--mat-sys-*` custom property directly — no Sass recompilation required:
+
+```scss
+html {
+  --mat-sys-headline-large-size: 32px;
+  --mat-sys-headline-large-line-height: 40px;
+}
+```
+
+## Table row height
+
+{: .warning }
+> In versions prior to v18, the `row-height` attribute drove a dedicated, customizable per-preset typography map that set the actual row/header height and cell font-size of `o-table`. **That map no longer exists**: `row-height` does not resize the table anymore. Use the theme's **`density`** parameter instead.
+
+Use the theme's **`density`** parameter (`0` to `-5`) instead — see the [Density section]({{ base_path }}/customize/theming/#density) on the theming page. It controls the overall compactness of tables (and every other Material component) consistently.

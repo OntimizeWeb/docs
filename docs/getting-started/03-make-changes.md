@@ -23,15 +23,15 @@ For adding the field we have to open the HTML definition file of the form
 under the location *src/app/main/customers/detail/customers-detail.component.html*. The content of this file is something like this:
 
 ```html
-<mat-tab-group fxFill>
+<mat-tab-group>
 
   <mat-tab label="{{ 'DATA' | oTranslate }}">
-    <o-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes" header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC" show-header-navigation="yes">
+    <o-form attr="customers_form_edit" service="customers" entity="customer" show-header="yes" header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC" show-header-navigation="yes">
 
       <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
-        <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
+        <div class="o-flex-row o-flex-wrap">
           <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
-          <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+          <div class="o-flex-row o-flex-wrap">
             <o-nif-input attr="ID" width="160px" class="form-field"></o-nif-input>
             <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
             <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
@@ -44,13 +44,13 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
       </o-row>
 
       <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10">
-        <div fxLayout="row wrap" fxLayoutGap="14px">
+        <div class="o-flex-row o-flex-wrap">
           <o-text-input attr="ADDRESS" width="374px" class="form-field"></o-text-input>
           <o-text-input attr="COUNTRY" class="form-field"></o-text-input>
           <o-text-input attr="STATE" class="form-field"></o-text-input>
           <o-text-input attr="ZIPCODE" class="form-field"></o-text-input>
         </div>
-        <div fxLayout="row wrap" fxLayoutGap="14px">
+        <div class="o-flex-row o-flex-wrap">
           <o-email-input attr="EMAIL" width="374px" class="form-field"></o-email-input>
           <o-text-input attr="PHONE" class="form-field"></o-text-input>
         </div>
@@ -63,7 +63,7 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
   </mat-tab>
 
   <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-    <o-form attr="customers_accounts_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
+    <o-form attr="customers_accounts_form_edit" service="customers" entity="customer" show-header="no" keys="CUSTOMERID"
       keys-sql-types="INTEGER">
       <o-table #accountsTable attr="customer_accounts" service="customers" entity="customerAccount" parent-keys="CUSTOMERID" keys="ACCOUNTID"
         detail-form-route="accounts" edit-form-route="accounts"
@@ -81,7 +81,7 @@ under the location *src/app/main/customers/detail/customers-detail.component.htm
   </mat-tab>
 
   <mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
-    <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
+    <o-form attr="customers_documents_form_edit" service="customers" entity="customer" show-header="no" keys="CUSTOMERID"
       keys-sql-types="INTEGER" columns="ID_DMS_DOC">
       <o-filemanager-table service="customers" workspace-key="ID_DMS_DOC" new-folder-button="yes"></o-filemanager-table>
     </o-form>
@@ -112,14 +112,14 @@ Just a little clarification before continuing: the fields are only modifiable wh
 So, taking that in consideration, we have to use the form defined in the file *src/app/main/customers/detail/customers-detail.component.html*. The content of this file will be like this:
 
 ```html
-<o-form attr="customers_form_edit" service="customers" entity="customer" fxLayout="column" show-header="yes"
+<o-form attr="customers_form_edit" service="customers" entity="customer" show-header="yes"
   header-actions="R;I;U;D" #oDetailForm keys="CUSTOMERID" keys-sql-types="INTEGER" columns="ID_DMS_DOC"
   show-header-navigation="yes">
 
   <o-row attr="row1" title="CUSTOMER_DATA" icon="person_pin">
-    <div fxLayout="row wrap" fxLayoutGap="14px" fxFill>
+    <div class="o-flex-row o-flex-wrap">
       <o-image attr="PHOTO" empty-image="./assets/images/no-image.png" width="350px" height="250px"></o-image>
-      <div fxLayout="row wrap" fxLayoutAlign="start start" fxFlex fxLayoutGap="14px">
+      <div class="o-flex-row o-flex-wrap">
         <o-nif-input attr="ID" width="160px" class="form-field"></o-nif-input>
         <o-text-input attr="NAME" width="160px" class="form-field"></o-text-input>
         <o-text-input attr="SURNAME" width="160px" class="form-field"></o-text-input>
@@ -133,7 +133,7 @@ So, taking that in consideration, we have to use the form defined in the file *s
   </o-row>
 
   <o-column title="CONTACT_DATA" icon="info" class="vertical-margin-10">
-    <div fxLayout="row wrap" fxLayoutGap="14px">
+    <div class="o-flex-row o-flex-wrap">
       <o-text-input attr="ADDRESS" width="374px" class="form-field"></o-text-input>
       <o-text-input attr="COUNTRY" class="form-field"></o-text-input>
       <o-text-input attr="STATE" class="form-field"></o-text-input>
@@ -141,7 +141,7 @@ So, taking that in consideration, we have to use the form defined in the file *s
       <o-real-input attr="LONGITUDE" class="form-field" min-decimal-digits="6" max-decimal-digits="10" decimal-separator="."></o-real-input>
       <o-real-input attr="LATITUDE" class="form-field" min-decimal-digits="6" max-decimal-digits="10" decimal-separator="."></o-real-input>
     </div>
-    <div fxLayout="row wrap" fxLayoutGap="14px">
+    <div class="o-flex-row o-flex-wrap">
       <o-email-input attr="EMAIL" width="374px" class="form-field"></o-email-input>
       <o-text-input attr="PHONE" class="form-field"></o-text-input>
     </div>
@@ -155,10 +155,11 @@ So, taking that in consideration, we have to use the form defined in the file *s
 
 We also need to modify the file *customers-detail.component.ts* to include the callback for the event:
 
-```javascript
+```typescript
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'customers-detail',
   styleUrls: ['./customers-detail.component.scss'],
   templateUrl: './customers-detail.component.html'
@@ -185,27 +186,22 @@ Continuing with the example, we will place the code of our button in the file *c
 ```
 And we will modify the file *customers-detail.component.ts* like this:
 
-```javascript
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { DialogService } from 'ontimize-web-ngx';
+```typescript
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { OButtonComponent } from 'ontimize-web-ngx';
 
 @Component({
+  standalone: true,
   selector: 'customers-detail',
   templateUrl: './customers-detail.component.html',
   styleUrls: ['./customers-detail.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  host: {
-    '[class.customers-detail]': 'true'
-  }
+  imports: [OButtonComponent],
+  host: { '[class.customers-detail]': 'true' }
 })
+export class CustomersDetailComponent {
 
-export class CustomersDetailComponent implements OnInit {
-
-  constructor(
-    protected dialogService: DialogService,
-    protected router: Router) {
-  }
+  private router = inject(Router);
 
   onButtonClick() {
     this.router.navigate(['/main/about']);

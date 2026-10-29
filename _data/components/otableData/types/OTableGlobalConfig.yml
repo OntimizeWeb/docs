@@ -16,11 +16,12 @@ description: "Represents the default options for the table that can be configure
             showReportOnDemandOption: boolean;
             loading: {
               threshold: number;
-              minVisibleRows: number;
+              minVisible: number;
             };
             horizontalScroll: boolean;
             showHeaderTooltip: boolean;
-          };  
+            showButtonsText: boolean;
+          };
         </code>
       </pre>
     </div>
@@ -88,10 +89,10 @@ attributes: [{
   description : "Indicates whether to show or not the 'Report on demand' option in the table menu."
   },{
   name: "loading",
-  type: "{threshold: number, minVisibleRows: number}",
-  default : "{threshold:300 , minVisibleRows: 300}",
+  type: "{threshold: number, minVisible: number}",
+  default : "{threshold: 300, minVisible: 300}",
   required : "",
-  description : "Configuration object for loading strategy."
+  description : "Loading skeleton behaviour: <code>threshold</code> is the time (ms) the skeleton waits before being shown, so it does not flash on fast queries (skipped on the first load); <code>minVisible</code> is the minimum time (ms) it stays visible once shown."
 },
 {
   name: "showHeaderTooltip",
@@ -99,6 +100,13 @@ attributes: [{
   default : "false",
   required : "",
   description : "Indicates whether to show or not the tooltip on header cells."
+},
+{
+  name: "showButtonsText",
+  type: "boolean",
+  default : "true",
+  required : "",
+  description : "Indicates whether to show or not the text label alongside the icon on the table's header buttons (insert/refresh/delete and any custom o-table-button)."
 }
 ]
 

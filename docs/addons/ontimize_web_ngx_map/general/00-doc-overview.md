@@ -22,7 +22,7 @@ The `o-map` allow to add the draw toolbar into the map with the `o-map-draw-cont
 
 ```html
 <o-map #oMap center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes" search-control="no"
-    layer-panel-visible="no" fxFlex draw-control="no" (onDrawEvent)="addDrawEvent($event)">
+    layer-panel-visible="no" draw-control="no" (onDrawEvent)="addDrawEvent($event)">
     <!-- [crs-configuration]="objeto" -->
     <o-map-crs crs="EPSG4326"></o-map-crs>
     <o-map-draw-controls></o-map-draw-controls>
@@ -37,7 +37,7 @@ The `o-map` allow to put a custom marker beside tile layers, you can easy create
 
 ```
 <o-map #oMapMarker center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes"
-    search-control="no" layer-panel-visible="no" fxFlex>
+    search-control="no" layer-panel-visible="no">
     <o-map-layer layer-type="marker" layer-id="office_marker" layer-center="42.240599;-8.720727" layer-menu-label="Office headquarters "
     layer-menu-label-secondary="Location of office headquarters"></o-map-layer>
 </o-map>
@@ -52,7 +52,7 @@ GeoJSON is becoming a very popular data format among many GIS technologies and s
 
 ```
 <o-map #oMapGeoJSON center="42.940599, -7.120727" zoom="8" min-zoom="3" max-zoom="20" zoom-control="yes"
-    search-control="yes" layer-panel-visible="no" fxFlex>
+    search-control="yes" layer-panel-visible="no">
     <o-map-layer layer-type="geoJSON" layer-service="geojson-train-lines" layer-id="train-lines" layer-menu-label="Train lines"
     layer-menu-label-secondary="Spain's' train lines."></o-map-layer>
     <o-map-layer layer-type="geoJSON" layer-service="geojson-train-stations" layer-id="train-stations"
@@ -77,7 +77,7 @@ To use a WMS service in `o-map`, we can use `o-map-layer` component that provide
 
 ```
  <o-map #oMapWMS center="40.712784,-74.005941" zoom="10" min-zoom="6" max-zoom="20" base-layer-ids="BasemapAT.basemap"
-      zoom-control="yes" search-control="yes" layer-panel-visible="no" fxFlex>
+      zoom-control="yes" search-control="yes" layer-panel-visible="no">
       <o-map-layer layer-type="WMS" layer-id="wms-example-airports" layer-base-url="https://basemap.nationalmap.gov/arcgis/rest/services/USGSHydroCached/MapServer/tile/{z}/{y}/{x}"
         [`layer-base-url`]="getWMSLayerOptions()" layer-menu-label="National Hydrography Dataset"
         layer-menu-label-secondary="USGS The National Map: National Hydrography Dataset.">

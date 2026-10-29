@@ -11,7 +11,9 @@ nav_order: 1
 
 ## Introduction
 
-The module **Ontimize Web Report**  is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx/tree/main.15.x){:target="_blank"}.
+The module **Ontimize Web Report**  is a set of reporting tools for web applications based in [OntimizeWeb](https://github.com/OntimizeWeb/ontimize-web-ngx/tree/18.x.x){:target="_blank"}.
+
+From version **18.0.0**, the library requires `ontimize-web-ngx ^18.0.0-next.0`, Angular `^18.2.0`, and `ngx-extended-pdf-viewer ^21.0.0`. All 10 report components are now **standalone**. Icons have migrated from the Ontimize SVG set to **Material Symbols Outlined**.
 
 **Ontimize Web Report** implements reporting with:
 

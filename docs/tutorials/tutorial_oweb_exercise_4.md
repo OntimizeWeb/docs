@@ -20,7 +20,7 @@ Ahora añadiremos el módulo de empleados, con sus correspondientes componentes,
 Nos situamos en el terminal, dentro del módulo main y ejecutamos el siguiente comando:
 
 ```
-npx ng g module --routing employees
+ng g component employees/employees-home --standalone
 ```
 
 <div class="multicolumn">
@@ -103,8 +103,7 @@ npx ng g module --routing employees
           <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -237,30 +236,17 @@ fichero de importación del módulo de Ontimize Web y declararlo como módulo im
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**employees.module.ts**" | markdownify }}
+{{"**employees.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { EmployeesRoutingModule } from './employees-routing.module';
+import { Routes } from '@angular/router';
 
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    EmployeesRoutingModule
-  ]
-})
-export class EmployeesModule { }
+export const employeesRoutes: Routes = [];
 {% endhighlight %}
 
-{{"**main-routing.module.ts**" | markdownify }}
+{{"**main.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from 'ontimize-web-ngx';
+import { Routes } from '@angular/router';
+import { authGuard } from 'ontimize-web-ngx';
 
 import { MainComponent } from './main.component';
 
@@ -268,21 +254,17 @@ export const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-      { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
-      { path: 'employees', loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule) }
+      { path: 'home', loadChildren: () => import('./home/home.routes').then(m => m.homeRoutes) },
+      { path: 'customers', loadChildren: () => import('./customers/customers.routes').then(m => m.customersRoutes) },
+      { path: 'employees', loadChildren: () => import('./employees/employees.routes').then(m => m.employeesRoutes) }
     ]
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class MainRoutingModule { }
+export { routes as mainRoutes };
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -358,8 +340,7 @@ export class MainRoutingModule { }
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
           employees
           <ul>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -372,7 +353,7 @@ export class MainRoutingModule { }
             <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>home.module.ts</li>
           </ul>
           </li>
-          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main-routing.module.ts</li>
+          <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.routes.ts</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.html</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.scss</li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>main.component.ts</li>
@@ -488,7 +469,7 @@ Crearemos el componente base de empleados de dentro de la carpeta del módulo **
 comando para crear la carpeta employees-home que contendrá el nuevo componente:
 
 ```
-npx ng g component --skip-tests employees-home
+npx ng g component --skip-tests --standalone employees-home
 ```
 
 <div class="multicolumn">
@@ -730,44 +711,14 @@ crearlo y añadirlo al menú lateral.
 </o-form-layout-manager>
 {% endhighlight %}
 
-{{"**employees-routing.module.ts**" | markdownify }}
+{{"**employees.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { EmployeesHomeComponent } from './employees-home/employees-home.component';
 
-const routes: Routes = [{
-  path: '',
-  component: EmployeesHomeComponent
-}];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class EmployeesRoutingModule { }
-{% endhighlight %}
-
-{{"**employees.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { EmployeesRoutingModule } from './employees-routing.module';
-import { EmployeesHomeComponent } from './employees-home/employees-home.component';
-
-
-@NgModule({
-  declarations: [
-    EmployeesHomeComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    EmployeesRoutingModule
-  ]
-})
-export class EmployeesModule { }
+export const employeesRoutes: Routes = [
+  { path: '', component: EmployeesHomeComponent }
+];
 {% endhighlight %}
 
 {{"**app.menu.config.ts**" | markdownify }}
@@ -915,8 +866,7 @@ export const SERVICE_CONFIG: Object = {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -1045,7 +995,7 @@ Para crear el componente de detalle, nos situamos detro de la carpeta **employee
 **employees-home** y ejecutamos el comando para generar un nuevo componente:
 
 ```
-npx ng g component --skip-tests employees-detail
+npx ng g component --skip-tests --standalone employees-detail
 ```
 
 <div class="multicolumn">
@@ -1269,11 +1219,9 @@ npx ng g component --skip-tests employees-detail
     </div>
 </div>
 
-Modificaremos el fichero **employees.module.ts**, para añadir el import del nuevo componente, situándolo en el array de
-declaraciones. De la misma manera que hemos hecho en tutoriales anteriores, estableceremos la nueva ruta en el fichero
-**employees-routing.module.ts**. Dado que esta vez queremos usar el mismo formulario tanto para editar como para
-insertar, añadiremos las rutas necesarias al fichero **employees-routing.module.ts**, declarando el componente de
-detalle de los empleados.
+Modificaremos el fichero **employees.routes.ts**, para añadir el import del nuevo componente y declarar las rutas
+correspondientes. Dado que esta vez queremos usar el mismo formulario tanto para editar como para insertar, añadiremos
+las rutas necesarias al fichero **employees.routes.ts**, declarando el componente de detalle de los empleados.
 
 <div class="multicolumn">
     <div class="multicolumnleft">
@@ -1281,55 +1229,17 @@ detalle de los empleados.
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**employees.module.ts**" | markdownify }}
+{{"**employees.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { EmployeesRoutingModule } from './employees-routing.module';
+import { Routes } from '@angular/router';
 import { EmployeesHomeComponent } from './employees-home/employees-home.component';
 import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
 
-
-@NgModule({
-  declarations: [
-    EmployeesHomeComponent,
-    EmployeesDetailComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    EmployeesRoutingModule
-  ]
-})
-export class EmployeesModule { }
-{% endhighlight %}
-
-{{"**employees-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { EmployeesHomeComponent } from './employees-home/employees-home.component';
-import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
-
-const routes: Routes = [{
-  path: '',
-  component: EmployeesHomeComponent
-},
-{
-  path: "new",
-  component: EmployeesDetailComponent
-},
-{
-  path: ":EMPLOYEEID",
-  component: EmployeesDetailComponent
-}];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class EmployeesRoutingModule { }
+export const employeesRoutes: Routes = [
+  { path: '', component: EmployeesHomeComponent },
+  { path: "new", component: EmployeesDetailComponent },
+  { path: ":EMPLOYEEID", component: EmployeesDetailComponent }
+];
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -1421,8 +1331,7 @@ export class EmployeesRoutingModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>employees.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

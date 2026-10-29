@@ -197,6 +197,22 @@ Available modes:
 
 This setting improves accessibility and user experience by offering contextual information only when it's needed.
 
+### Menu sections <span class='menuitem-badge'>new<span>
+
+The entries of the side menu can be grouped under a title by declaring a `MenuSection` in the [application menu configuration]({{ base_path }}/guide/appconfig/#menusection){:target="_blank"}. A menu section is not collapsable, it only labels the group of menu entries it contains, and it is hidden automatically when all of them are hidden by the [menu permissions]({{ base_path }}/guide/permissions/#menu-permissions){:target="_blank"}.
+
+```javascript
+{
+  id: 'general', name: 'GENERAL', type: 'section',
+  items: [
+    { id: 'home', name: 'HOME', icon: 'dashboard', route: '/main/home' }
+  ]
+}
+```
+
+When the side menu is collapsed, the section titles are replaced by a separator.
+
+![App layout with menu sections]({{ "/assets/images/components/menu/app-menu-secion.png" | absolute_url }})
 
 ## Images
 

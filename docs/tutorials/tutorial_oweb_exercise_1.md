@@ -42,7 +42,7 @@ clonar el repositorio de la seed en nuestro directorio de trabajo mediante el si
 > del proyecto.
 
 {% highlight bash %}
-git clone --single-branch --branch 15.x.x https://github.com/OntimizeWeb/ontimize-web-ngx-jee-seed.git bankmanager-web
+git clone --single-branch --branch 18.x.x https://github.com/OntimizeWeb/ontimize-web-ngx-jee-seed.git bankmanager-web
 {% endhighlight %}
 
 Desde el Visual Studio Code, abriremos la carpeta dónde hemos clonado/descargado el contenido del repositorio,
@@ -272,7 +272,7 @@ configuraciones para proyectos TypeScript
 </div>
 
 Para más información acerca de la estructura de una aplicación en Angular, consultar la documentación oficial de Angular
-en el [siguiente enlace](https://angular.io/guide/quickstart)
+en el [siguiente enlace](https://angular.dev/guide/quickstart)
 
 ## Configurar la plantilla de la aplicación
 
@@ -501,7 +501,7 @@ automáticamente, (la opción ```-o```), y estableciendo la dirección del host 
 {% highlight json %}
 {
   "name": "bankmanager-web",
-  "version": "15.0.0",
+  "version": "18.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4200 -o --host localhost",
@@ -513,37 +513,35 @@ automáticamente, (la opción ```-o```), y estableciendo la dirección del host 
   },
   "private": true,
   "engines": {
-    "node": "^18.10.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
-    "@angular/animations": "^15.2.9",
-    "@angular/cdk": "^15.2.9",
-    "@angular/common": "^15.2.9",
-    "@angular/compiler": "^15.2.9",
-    "@angular/core": "^15.2.9",
-    "@angular/flex-layout": "^15.0.0-beta.42",
-    "@angular/forms": "^15.2.9",
-    "@angular/material": "^15.2.9",
-    "@angular/material-moment-adapter": "^15.2.9",
-    "@angular/platform-browser": "^15.2.9",
-    "@angular/platform-browser-dynamic": "^15.2.9",
-    "@angular/pwa": "^15.2.9",
-    "@angular/router": "^15.2.9",
-    "@angular/service-worker": "^15.2.9",
-    "ontimize-web-ngx": "15.0.0-beta.1",
+    "@angular/animations": "^18.2.0",
+    "@angular/cdk": "^18.2.0",
+    "@angular/common": "^18.2.0",
+    "@angular/compiler": "^18.2.0",
+    "@angular/core": "^18.2.0",
+    "@angular/forms": "^18.2.0",
+    "@angular/material": "^18.2.0",
+    "@angular/platform-browser": "^18.2.0",
+    "@angular/platform-browser-dynamic": "^18.2.0",
+    "@angular/pwa": "^18.2.0",
+    "@angular/router": "^18.2.0",
+    "@angular/service-worker": "^18.2.0",
+    "ontimize-web-ngx": "^18.0.0-next.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.12.0"
+    "zone.js": "~0.14.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.2.9",
-    "@angular-eslint/builder": "15.2.1",
-    "@angular-eslint/eslint-plugin": "15.2.1",
-    "@angular-eslint/eslint-plugin-template": "15.2.1",
-    "@angular-eslint/schematics": "15.2.1",
-    "@angular-eslint/template-parser": "15.2.1",
-    "@angular/cli": "^15.2.9",
-    "@angular/compiler-cli": "^15.2.9",
+    "@angular-devkit/build-angular": "^18.2.0",
+    "@angular-eslint/builder": "18.2.0",
+    "@angular-eslint/eslint-plugin": "18.2.0",
+    "@angular-eslint/eslint-plugin-template": "18.2.0",
+    "@angular-eslint/schematics": "18.2.0",
+    "@angular-eslint/template-parser": "18.2.0",
+    "@angular/cli": "^18.2.0",
+    "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
@@ -753,7 +751,7 @@ automáticamente.
 
   <!-- Styling -->
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" type="text/css" href="./assets/css/loader.css">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#ffcc00">

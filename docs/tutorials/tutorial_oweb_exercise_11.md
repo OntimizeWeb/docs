@@ -33,7 +33,7 @@ Modificaremos el listado que ya tenemos y añadiremos los nuevos elementos y cla
         <p>El primer paso es ubicarnos dentro de la ruta <code>src/app/main/customers/customers-home</code> y ejecutar
 el siguiente comando</p>
 {% highlight console %}
-npx ng g component --skip-import --skip-tests customertype-column-renderer
+npx ng g component --skip-import --skip-tests --standalone customertype-column-renderer
 {% endhighlight %}
 
 <p>Esto creará el nuevo componente que usaremos para realizar el nuevo render. Como nuestra idea es poder usar este
@@ -42,9 +42,6 @@ que tendrá la declaración y exportación del componente es el módulo <strong>
 
 {{"**shared.module.ts**" | markdownify }}
 {% highlight typescript %}
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { AccountNumberRenderComponent } from '../main/accounts/accounts-home/account-number-render/account-number-render.component';
 import { CustomertypeColumnRendererComponent } from '../main/customers/customers-home/customertype-column-renderer/customertype-column-renderer.component';
 
@@ -52,52 +49,10 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
   return rowData["INTERESRATE"] / 12;
 }
 
-@NgModule({
-  imports: [
-    OntimizeWebModule
-  ],
-  declarations: [
-    AccountNumberRenderComponent,
-    CustomertypeColumnRendererComponent
-  ],
-  exports: [
-    CommonModule,
-    AccountNumberRenderComponent,
-    CustomertypeColumnRendererComponent
-  ]
-})
-export class SharedModule { }
-{% endhighlight %}
-
-<p>Ahora, el propio modulo de <strong>customers</strong> debe importar el módulo de <strong>shared</strong> (que ya lo
-importa de ejercicios anteriores)</p>
-
-{{"**customers.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { CustomersRoutingModule } from './customers-routing.module';
-import { CustomersHomeComponent } from './customers-home/customers-home.component';
-import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
-import { CustomersNewComponent } from './customers-new/customers-new.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-
-
-@NgModule({
-  declarations: [
-    CustomersHomeComponent,
-    CustomersDetailComponent,
-    CustomersNewComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    CustomersRoutingModule
-  ]
-})
-export class CustomersModule { }
+export const SHARED_COMPONENTS = [
+  AccountNumberRenderComponent,
+  CustomertypeColumnRendererComponent
+];
 {% endhighlight %}
 
 <p>En nuestro fichero <strong>customertype-column-renderer.html</strong>, crearemos la platilla que se mostrará. En
@@ -107,9 +62,15 @@ mostrar a través de la variable <em>cellvalue</em></p>
 {{"**customertype-column-renderer.html**" | markdownify }}
 {% highlight xml %}
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-    <img *ngIf="cellvalue == 1" src="assets/images/normal_24.png" width="24" height="24">
-    <img *ngIf="cellvalue == 2" src="assets/images/vip_24.png" width="24" height="24">
-    <img *ngIf="cellvalue == 3" src="assets/images/other_24.png" width="24" height="24">
+    @if (cellvalue == 1) {
+        <img src="assets/images/normal_24.png" width="24" height="24">
+    }
+    @if (cellvalue == 2) {
+        <img src="assets/images/vip_24.png" width="24" height="24">
+    }
+    @if (cellvalue == 3) {
+        <img src="assets/images/other_24.png" width="24" height="24">
+    }
 </ng-template>
 {% endhighlight %}
 
@@ -123,6 +84,7 @@ import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-customertype-column-renderer',
+  standalone: true,
   templateUrl: './customertype-column-renderer.component.html',
   styleUrls: ['./customertype-column-renderer.component.css']
 })
@@ -186,32 +148,25 @@ export class CustomertypeColumnRendererComponent extends OBaseTableCellRenderer 
 <strong>branches</strong> la importación del módulo <strong>shared</strong>, y se modificará el formulario del detalle
 de las suscursales para actualizar el listado de cliente con el render que hemos creado</p>
 
-{{"**branches.module.ts**" | markdownify }}
+{{"**branches.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { BranchesRoutingModule } from './branches-routing.module';
+import { Routes } from '@angular/router';
 import { BranchesHomeComponent } from './branches-home/branches-home.component';
 import { BranchesDetailComponent } from './branches-detail/branches-detail.component';
 import { BranchesNewComponent } from './branches-new/branches-new.component';
-import { SharedModule } from 'src/app/shared/shared.module';
 
-
-@NgModule({
-  declarations: [
-    BranchesHomeComponent,
-    BranchesDetailComponent,
-    BranchesNewComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    BranchesRoutingModule
-  ]
-})
-export class BranchesModule { }
+export const branchesRoutes: Routes = [{
+  path: '',
+  component: BranchesHomeComponent
+},
+{
+  path: "new",
+  component: BranchesNewComponent
+},
+{
+  path: ':OFFICEID',
+  component: BranchesDetailComponent
+}];
 {% endhighlight %}
 
 {{"**branches-detail.component.html**" | markdownify }}
@@ -364,8 +319,7 @@ export class BranchesModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>branches.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -569,7 +523,7 @@ se modifique el color y se añadan símbolos y además añadiremos el render que
 <strong>src/app/main/accounts/accounts-detail</strong> y ejecutamos el siguiente comando:</p>
 
 {% highlight console %}
-npx ng g component --skip-import --skip-tests movement-column-renderer
+npx ng g component --skip-import --skip-tests --standalone movement-column-renderer
 {% endhighlight %}
 
 <p>Al ejecutar el comando, crearemos el componente que usaremos como render. De igual forma que el render anterior, este
@@ -577,9 +531,6 @@ componente estará declarado y exportado en el módulo <strong>shared</strong></
 
 {{"**shared.module.ts**" | markdownify }}
 {% highlight typescript %}
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { AccountNumberRenderComponent } from '../main/accounts/accounts-home/account-number-render/account-number-render.component';
 import { CustomertypeColumnRendererComponent } from '../main/customers/customers-home/customertype-column-renderer/customertype-column-renderer.component';
 import { MovementColumnRendererComponent } from '../main/accounts/accounts-detail/movement-column-renderer/movement-column-renderer.component';
@@ -588,58 +539,11 @@ export function intRateMonthlyFunction(rowData: Array<any>): number {
   return rowData["INTERESRATE"] / 12;
 }
 
-@NgModule({
-  imports: [
-    OntimizeWebModule
-  ],
-  declarations: [
-    AccountNumberRenderComponent,
-    CustomertypeColumnRendererComponent,
-    MovementColumnRendererComponent
-  ],
-  exports: [
-    CommonModule,
-    AccountNumberRenderComponent,
-    CustomertypeColumnRendererComponent,
-    MovementColumnRendererComponent
-  ]
-})
-export class SharedModule { }
-{% endhighlight %}
-
-<p>Es necesario que el módulo <strong>accounts.module.ts</strong> importe el módulo <strong>shared</strong> (importado
-en ejercicios anteriores)</p>
-
-{{"**accounts.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
-import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
-import { AccountsNewComponent } from './accounts-new/accounts-new.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
-import { AddMovementComponent } from './add-movement/add-movement.component';
-
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent,
-    AccountsDetailComponent,
-    AccountsNewComponent,
-    AddCustomerComponent,
-    AddMovementComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
+export const SHARED_COMPONENTS = [
+  AccountNumberRenderComponent,
+  CustomertypeColumnRendererComponent,
+  MovementColumnRendererComponent
+];
 {% endhighlight %}
 
 <p>El fichero <strong>movement-column-renderer.component.html</strong> contendrá la plantilla que mostrará la columna de
@@ -653,12 +557,16 @@ la tabla que contendrá el render. Mediante directivas <em>*ngIf</em>, y calcula
 {{"**movement-column-renderer.component.html**" | markdownify }}
 {% highlight xml %}
 <ng-template #templateref let-cellvalue="cellvalue" let-rowvalue="rowvalue">
-    <span *ngIf="cellvalue < 0" style="color:red;" fxLayoutAlign="end center">
-        <mat-icon>arrow_drop_down</mat-icon>{% raw %}{{ getCellData(cellvalue) }}{% endraw %}
-    </span>
-    <span *ngIf="cellvalue >= 0" style="color:green" fxLayoutAlign="end center">
-        <mat-icon>arrow_drop_up</mat-icon>{% raw %}{{ getCellData(cellvalue) }}{% endraw %}
-    </span>
+    @if (cellvalue < 0) {
+        <span style="color:red;" fxLayoutAlign="end center">
+            <mat-icon>arrow_drop_down</mat-icon>{% raw %}{{ getCellData(cellvalue) }}{% endraw %}
+        </span>
+    }
+    @if (cellvalue >= 0) {
+        <span style="color:green" fxLayoutAlign="end center">
+            <mat-icon>arrow_drop_up</mat-icon>{% raw %}{{ getCellData(cellvalue) }}{% endraw %}
+        </span>
+    }
 </ng-template>
 {% endhighlight %}
 
@@ -677,6 +585,7 @@ import { OBaseTableCellRenderer, OCurrencyPipe } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-movement-column-renderer',
+  standalone: true,
   templateUrl: './movement-column-renderer.component.html',
   styleUrls: ['./movement-column-renderer.component.css']
 })
@@ -861,8 +770,7 @@ movimiento al detalle de las cuentas</p>
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

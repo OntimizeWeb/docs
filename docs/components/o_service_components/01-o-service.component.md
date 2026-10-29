@@ -126,6 +126,54 @@ its expression.
 ```
 
 
+## No results message
+
+By default, `o-table`, `o-list` and `o-grid` show a translated "no results" message (`TABLE.EMPTY` on `o-table` / `o-list`, `GRID.EMPTY` on `o-grid`) when there is no data to display. Two inputs let you override it:
+
+* `no-results-message`: plain text, an i18n key, or an HTML string (sanitized before rendering).
+* `<ng-template #noResultsTemplate>`: a fully custom empty-state, for content the sanitizer would otherwise strip (icons, buttons, bindings...).
+
+> When both are provided, `noResultsTemplate` takes precedence over `no-results-message`, which in turn takes precedence over the default translated message.
+
+**Example** — custom empty state with an icon in `o-list`:
+
+```html
+<o-list #pendingReviewsList attr="pendingReviewsList" keys="equipmentId"
+  columns="equipmentId;epiTypeName;serialNumber;workerFullName;maintenanceDeadlineDate" service="dashboardPendingReviews"
+  entity="dashboardPendingReviews" [configure-service-args]="pendingReviewsServiceArgs" [refresh-button]="false" [insert-button]="false"
+  [delete-button]="false" [selectable]="false" [quick-filter]="false" [controls]="false">
+  <ng-template #noResultsTemplate>
+    <div class="app-home__empty-state">
+      <mat-icon>check_circle</mat-icon>
+      <span>{{ 'DASHBOARD_PENDING_REVIEWS_EMPTY' | oTranslate }}</span>
+    </div>
+  </ng-template>
+  <!-- ... row template, unrelated to noResultsTemplate ... -->
+</o-list>
+```
+
+![Custom no results state]({{ "/assets/images/components/list/custom-no-results.png" | absolute_url }}){: .comp-example-img}
+
+## E2E testing (data-testid)
+
+The `data-testid` input, for E2E frameworks like Playwright or Cypress, is forwarded to the actual native element the user interacts with — never to the component's own host tag, unless the host *is* that element (e.g. `o-button`'s rendered `<button>`).
+
+`o-table` / `o-list` / `o-grid` / `o-tree` use it as a **prefix**, since there is no single native element at that level: the quick-filter gets `${data-testid}-quick-filter`, and the built-in insert/refresh/delete buttons get `${data-testid}-insert` / `-refresh` / `-delete`.
+
+> When `data-testid` isn't set, it falls back to `attr` — already a stable, meaningful identifier on these components — so most instances get a sensible test id for free.
+
+For per-row content, `getRowDataTestId(row)` composes it with the row's key value(s) (`${data-testid}-row-${keyValues}`). `o-table` wires this onto its own rows automatically. `o-list` / `o-grid` don't render row markup themselves — it's projected from your own template — so call it directly from there:
+
+```html
+<o-list #pendingReviewsList attr="pendingReviewsList" keys="equipmentId" data-testid="pending-reviews" ...>
+  @for (row of pendingReviewsList.dataArray; track row.equipmentId) {
+    <mat-list-item [attr.data-testid]="pendingReviewsList.getRowDataTestId(row)" [o-list-item]="row">
+      ...
+    </mat-list-item>
+  }
+</o-list>
+```
+
 ## Navigation to record detail
 In the service components, the default action when user clicks a item is to trigger the navigation to its record detail. For changing this behaviour, the user can change the `detail-mode` input value using one of the following values `none`, `click` or `doubleclick`.
 

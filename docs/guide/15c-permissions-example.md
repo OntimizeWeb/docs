@@ -260,31 +260,31 @@ export const SERVICE_CONFIG: Object = {
 
 ## Route permissions
 
-If we want to manage the routes permissions we need to define on the routing module the `canActivateChild` parameter and assign to it the Ontimize Web guard `PermissionsGuardService`.
+If we want to manage the routes permissions we need to define on the routes file the `canActivateChild` parameter and assign to it the Ontimize Web functional guard `permissionsGuard`.
 
-`main-routing.module.ts`:
+`main.routes.ts`:
 
-```javascript
+```typescript
 ...
-import { AuthGuardService, PermissionsGuardService } from 'ontimize-web-ngx';
+import { authGuard, permissionsGuard } from 'ontimize-web-ngx';
 ...
-export const routes: Routes = [
+export const mainRoutes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
-    canActivateChild: [PermissionsGuardService],
+    canActivate: [authGuard],
+    canActivateChild: [permissionsGuard],
     children: [
 ...
 ```
 
 Optionally the last configuration that we can do it's to define a redirection page to visit when the user does not have permissions to access the page requested. To configure this page you need to add the route (or use the ontimize component `403`) to the `restrictedPermissionsRedirect` parameter on the routing module of the component or the module. Example:
 
-`candidates-routing.module.ts` (component):
+`candidates.routes.ts`:
 
-```javascript
+```typescript
 ...
-export const routes: Routes = [
+export const candidatesRoutes: Routes = [
   {
     path: '', component: CandidatesHomeComponent,
     data: {
@@ -317,27 +317,33 @@ export const routes: Routes = [
 ...
 ```
 
-`main-routing.module.ts` (module):
+`main.routes.ts`:
 
-```javascript
+```typescript
 ...
-export const routes: Routes = [
+import { authGuard, permissionsGuard } from 'ontimize-web-ngx';
+
+export const mainRoutes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
-    canActivateChild: [PermissionsGuardService],
+    canActivate: [authGuard],
+    canActivateChild: [permissionsGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
-        path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+        path: 'home',
+        loadChildren: () => import('./home/home.routes').then(m => m.homeRoutes),
         data: {
           oPermission: {
             restrictedPermissionsRedirect: '403'
           }
         }
       },
-      { path: 'candidates', loadChildren: () => import('./candidates/candidates.module').then(m => m.CandidatesModule) }
+      {
+        path: 'candidates',
+        loadChildren: () => import('./candidates/candidates.routes').then(m => m.candidatesRoutes)
+      }
     ]
   }
 ];
@@ -433,59 +439,55 @@ And here are the permissions loaded if the user is not logged in:
 }
 ```
 
-- Add the service to your `app.module.ts` file. Example:
+- Add the service to your `app.config.ts` providers:
 
-```javascript
-...
-,
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    { provide: APP_CONFIG, useValue: CONFIG },
-    ONTIMIZE_PROVIDERS,
+    provideOntimizeWeb(CONFIG, appRoutes),
     { provide: O_PERMISSION_SERVICE, useValue: CustomPermissionsService },
     ...customProviders
-  ],
-})
-export class AppModule { }
+  ]
+};
 ```
 
 The last step would be to load the permissions in the component that is public `PublicComponentComponent` since the permissions are loaded in `AuthGuardService`.
 
 It is also necessary to add an ngif to the component `o-bar-menu` on which we want to apply the permissions so that it is built after loading the permissions.
 
-```ts
-import { Component } from '@angular/core';
+```typescript
+import { Component, signal } from '@angular/core';
+import { inject } from '@angular/core';
+import { OBarMenuComponent, OBarMenuGroupComponent, OLocaleBarMenuItemComponent } from 'ontimize-web-ngx';
 import { PermissionsService } from 'ontimize-web-ngx';
 
-
 @Component({
+  standalone: true,
   selector: 'app-public-component',
   templateUrl: './public-component.component.html',
-  styleUrls: ['./public-component.component.scss']
+  styleUrls: ['./public-component.component.scss'],
+  imports: [OBarMenuComponent, OBarMenuGroupComponent, OLocaleBarMenuItemComponent]
 })
 export class PublicComponentComponent {
-  hasPermission = false;
-  constructor(
-    private permissionService: PermissionsService
-  ) {
-    this.permissionService.getUserPermissionsAsPromise().then(x => this.hasPermission = true);
-  }
+  hasPermission = signal(false);
 
+  private permissionService = inject(PermissionsService);
+
+  constructor() {
+    this.permissionService.getUserPermissionsAsPromise().then(() => this.hasPermission.set(true));
+  }
 }
 ```
 
 ```html
-<o-bar-menu *ngIf="hasPermission">
-  <o-bar-menu-group title="OPTIONS">
-    <o-bar-menu-group title="LANGUAGE">
-      <o-locale-bar-menu-item
-        locale="en"
-        title="English"
-      ></o-locale-bar-menu-item>
-      <o-locale-bar-menu-item
-        locale="es"
-        title="Español"
-      ></o-locale-bar-menu-item>
+@if (hasPermission()) {
+  <o-bar-menu>
+    <o-bar-menu-group title="OPTIONS">
+      <o-bar-menu-group title="LANGUAGE">
+        <o-locale-bar-menu-item locale="en" title="English"></o-locale-bar-menu-item>
+        <o-locale-bar-menu-item locale="es" title="Español"></o-locale-bar-menu-item>
+      </o-bar-menu-group>
     </o-bar-menu-group>
-  </o-bar-menu-group>
-</o-bar-menu>
+  </o-bar-menu>
+}
 ```

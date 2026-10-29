@@ -26,10 +26,10 @@ terminal dentro del módulo de **customers** (a la altura del componente **custo
 creación de componentes de Angular CLI:
 
 ```
-npx ng g component --skip-tests customers-detail
+npx ng g component --skip-tests --standalone customers-detail
 ```
 
-(Más información acerca del comando [aquí](https://angular.io/cli/generate#component-command){:target="_blank"}). Al
+(Más información acerca del comando [aquí](https://angular.dev/cli/generate#component-command){:target="_blank"}). Al
 terminar, tendremos una carpeta llamada customers-detail, que contendrá los archivos relacionados con el componente.
 
 <div class="multicolumn">
@@ -222,8 +222,7 @@ terminar, tendremos una carpeta llamada customers-detail, que contendrá los arc
     </div>
 </div>
 
-Modificamos el fichero **customers.module.ts**, añadiéndole el import del nuevo componente, y situándolo en el array de
-declaraciones. A su vez, establecemos la nueva ruta en el fichero **customers-routing.module.ts**. Para conocer la ruta
+Modificamos el fichero **customers.routes.ts**, añadiéndole el import del nuevo componente, y añadiendo la nueva ruta. A su vez, establecemos la nueva ruta en el fichero **customers.routes.ts**. Para conocer la ruta
 que el componente tabla indicará para el detalle de cada uno de sus registros, tenemos que comprobar cual es el
 parámetro ```key``` de la tabla para la cual queremos obtener el detalle (en este caso, tenemos que ver el parámetro
 ```key``` de la tabla del fichero **customers-home.component.html**). Esto es así debido a que cuando naveguemos en la
@@ -237,51 +236,22 @@ ese comportamiento en el módulo de enrutamiento, precedemos el nombre de la col
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**customers.module.ts**" | markdownify }}
+{{"**customers.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { CustomersRoutingModule } from './customers-routing.module';
+import { Routes } from '@angular/router';
 import { CustomersHomeComponent } from './customers-home/customers-home.component';
 import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
 
-
-@NgModule({
-  declarations: [
-    CustomersHomeComponent,
-    CustomersDetailComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    CustomersRoutingModule
-  ]
-})
-export class CustomersModule { }
-{% endhighlight %}
-
-{{"**customers-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CustomersHomeComponent } from './customers-home/customers-home.component';
-import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
-
-const routes: Routes = [{
-  path: '',
-  component: CustomersHomeComponent
-},
-{
-  path: ':CUSTOMERID',
-  component: CustomersDetailComponent
-}];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class CustomersRoutingModule { }
+export const customersRoutes: Routes = [
+  {
+    path: '',
+    component: CustomersHomeComponent
+  },
+  {
+    path: ':CUSTOMERID',
+    component: CustomersDetailComponent
+  }
+];
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -342,8 +312,7 @@ export class CustomersRoutingModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -1144,7 +1113,7 @@ un nuevo componente, donde usaremos un formulario prácticamente idéntico al de
 componente mediante la línea de comando:
 
 {% highlight console %}
-npx ng g component --skip-tests customers-new
+npx ng g component --skip-tests --standalone customers-new
 {% endhighlight %}
 
 <div class="multicolumn">
@@ -1390,58 +1359,27 @@ npx ng g component --skip-tests customers-new
 
 {{"Declaramos cuál es el nuevo módulo, y la ruta para el que se usará este nuevo componente" | markdownify }}
 
-{{"**customers.module.ts**" | markdownify }}
+{{"**customers.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { CustomersRoutingModule } from './customers-routing.module';
+import { Routes } from '@angular/router';
 import { CustomersHomeComponent } from './customers-home/customers-home.component';
 import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
 import { CustomersNewComponent } from './customers-new/customers-new.component';
 
-
-@NgModule({
-  declarations: [
-    CustomersHomeComponent,
-    CustomersDetailComponent,
-    CustomersNewComponent
-  ],
-  imports: [
-    CommonModule,
-    OntimizeWebModule,
-    CustomersRoutingModule
-  ]
-})
-export class CustomersModule { }
-{% endhighlight %}
-
-{{"**customers-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CustomersHomeComponent } from './customers-home/customers-home.component';
-import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
-import { CustomersNewComponent } from './customers-new/customers-new.component';
-
-const routes: Routes = [{
-  path: '',
-  component: CustomersHomeComponent
-},
-{
-  path: "new",
-  component: CustomersNewComponent
-},
-{
-  path: ':CUSTOMERID',
-  component: CustomersDetailComponent
-}];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class CustomersRoutingModule { }
+export const customersRoutes: Routes = [
+  {
+    path: '',
+    component: CustomersHomeComponent
+  },
+  {
+    path: "new",
+    component: CustomersNewComponent
+  },
+  {
+    path: ':CUSTOMERID',
+    component: CustomersDetailComponent
+  }
+];
 {% endhighlight %}
     </div>
     <div class="multicolumnright jstreeloader collapsed">
@@ -1510,8 +1448,7 @@ export class CustomersRoutingModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

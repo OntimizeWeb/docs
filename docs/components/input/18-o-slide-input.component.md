@@ -13,23 +13,66 @@ nav_order: 20
 
 The `o-slider` component is used in [forms]({{ base_path }}/components/data/form/overview) for selecting or displaying a value from a range via mouse, touch or keyboard.
 
-The slider component is automatically registered on its parent `o-form`, which provides the value for the slide programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+The slider component is typically registered on its parent `o-form`, which provides the value for the slide programatically, but it can also be used standalone with Angular Reactive Forms (see [Standalone usage](#standalone-usage) below). Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+The `o-slider` is a standalone component and can be imported directly without an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { OSliderComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [OSliderComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { OSliderComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, OSliderComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-slider formControlName="volume" min="0" max="100" step="1" thumb-label="true"></o-slider>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    volume: new FormControl(10)
+  });
+}
+```
 
 ## Basic example
 ![Slider component]({{ "/assets/images/components/inputs/slider/o-slider.png" | absolute_url }}){: .comp-example-img}
 
 ```html
 <o-form editable-detail="false" show-header="no">
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
         <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
         <o-slider attr="slider" [data]="getValue()"></o-slider>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
         <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
         <o-slider #slider attr="slider-editable" [data]="getValue()"
         read-only="no" tooltip="This is an awesome tooltip!" read-only="no"></o-slider>
     </div>
-    <div fxLayout="column" layout-padding>
+    <div layout-padding>
         <label class="input-comp-title">{{ 'INPUTS.DISABLED' | oTranslate }}</label>
         <o-slider attr="slider-disabled" [data]="getValue()" enabled="no" ></o-slider>
     </div>
@@ -54,7 +97,7 @@ By default sliders are *horizontal* with the minimum value on the left and the m
 
 ```html
 <o-form editable-detail="false" show-header="no" layout-direction="row">
-    <div fxLayout="column" layout-padding fxFlex="30">
+    <div layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-slider attr="slider-editable" [data]="getValue()" read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" step="1" tick-interval="auto"></o-slider>
     </div>
@@ -65,7 +108,7 @@ An `invert` attribute is also available which can be specified to flip the axis 
 
 ```html
 <o-form editable-detail="false" show-header="no" layout-direction="row">
-    <div fxLayout="column" layout-padding fxFlex="30">
+    <div layout-padding>
       <label class="input-comp-title">{{ 'INPUTS.EDITABLE' | oTranslate }}</label>
       <o-slider attr="slider-editable" [data]="getValue()" read-only="no" tooltip="This is an awesome tooltip!" vertical="true" color="warn"  max="100" min="0" thumb-label="true" step="1" tick-interval="auto" invert="yes"></o-slider>
     </div>

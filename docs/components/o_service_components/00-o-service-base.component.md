@@ -68,18 +68,13 @@ Using the `store-state` boolean input allows user to choose whether or not to st
 By default `store-state` it is set to true but with injection token `O_GLOBAL_CONFIG` you can desactive this functionality in the application or in the module as shown below.
 
 ```ts
-@NgModule({
-  declarations: [
-  ...
-  ],
-  ...
+// app.config.ts
+export const appConfig: ApplicationConfig = {
   providers: [
-    ...
-    { provide: O_GLOBAL_CONFIG, useValue: { storeState: false } },
-    ...
-  ],
-  ...
-})
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_GLOBAL_CONFIG, useValue: { storeState: false } }
+  ]
+};
 ```
 
 

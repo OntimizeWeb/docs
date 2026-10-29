@@ -31,31 +31,31 @@ En primer lugar, añadiremos un nuevo botón a la pestaña de las cuentas de un 
 <o-form attr="customerDetail" service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
     show-header-navigation="no" class="fill-form">
     <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
-    <div fxFlex fxLayout="row" fxLayoutGap="8px">
+    <div>
         <div>
             <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png"
                 sql-type="OTHER"></o-image>
         </div>
-        <mat-tab-group fxFlex>
+        <mat-tab-group>
             <mat-tab label="{% raw %}{{ 'CUSTOMER_PERSONAL_INFORMATION' | oTranslate }}{% endraw %}">
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-text-input fxFlex="40" attr="NAME" required="yes"></o-text-input>
-                    <o-text-input fxFlex="40" attr="SURNAME" required="yes"></o-text-input>
-                    <o-date-input fxFlex="20" attr="STARTDATE"></o-date-input>
+                <div>
+                    <o-text-input attr="NAME" required="yes"></o-text-input>
+                    <o-text-input attr="SURNAME" required="yes"></o-text-input>
+                    <o-date-input attr="STARTDATE"></o-date-input>
                 </div>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-nif-input fxFlex="40" attr="ID" required="yes"></o-nif-input>
-                    <o-integer-input fxFlex="40" attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
-                    <o-combo fxFlex="20" attr="CUSTOMERTYPEID" service="customers" entity="customerType"
+                <div>
+                    <o-nif-input attr="ID" required="yes"></o-nif-input>
+                    <o-integer-input attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
+                    <o-combo attr="CUSTOMERTYPEID" service="customers" entity="customerType"
                         keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
                         value-column="CUSTOMERTYPEID"></o-combo>
                 </div>
                 <o-email-input attr="EMAIL"></o-email-input>
                 <o-text-input attr="ADDRESS"></o-text-input>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-real-input fxFlex="50" attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
+                <div>
+                    <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
                         min-decimal-digits="0"></o-real-input>
-                    <o-real-input fxFlex="50" attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
+                    <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
                         min-decimal-digits="0"></o-real-input>
                 </div>
                 <o-textarea-input attr="COMMENTS"></o-textarea-input>
@@ -99,6 +99,7 @@ import { intRateMonthlyFunction } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-customers-detail',
+  standalone: true,
   templateUrl: './customers-detail.component.html',
   styleUrls: ['./customers-detail.component.css']
 })
@@ -238,8 +239,7 @@ export class CustomersDetailComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -308,8 +308,7 @@ export class CustomersDetailComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -535,34 +534,14 @@ export class CustomersDetailComponent {
 módulo de clientes, es necesario que lo quitemos de la declaración del modulo de <strong>accounts</strong>, y los
 pasemos al módulo <strong>shared</strong></p>
 
-{{"**accounts.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
+import { Routes } from '@angular/router';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AccountsNewComponent } from './accounts-new/accounts-new.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
-import { AddMovementComponent } from './add-movement/add-movement.component';
 
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent,
-    AccountsNewComponent,
-    AddCustomerComponent,
-    AddMovementComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
+export const accountsRoutes: Routes = [
+  { path: '', component: AccountsHomeComponent }
+];
 {% endhighlight %}
 
 {{"**shared.module.ts**" | markdownify }}
@@ -608,37 +587,32 @@ export class SharedModule { }
 
 <p>Indicaremos cual es la nueva ruta que se usará para el componente</p>
 
-{{"**customers-routing.module.ts**" | markdownify }}
+{{"**customers.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { CustomersHomeComponent } from './customers-home/customers-home.component';
-import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
 import { CustomersNewComponent } from './customers-new/customers-new.component';
+import { CustomersDetailComponent } from './customers-detail/customers-detail.component';
 import { AccountsDetailComponent } from '../accounts/accounts-detail/accounts-detail.component';
 
-const routes: Routes = [{
-  path: '',
-  component: CustomersHomeComponent
-},
-{
-  path: "new",
-  component: CustomersNewComponent
-},
-{
-  path: ':CUSTOMERID',
-  component: CustomersDetailComponent
-},
-{
-  path: ":CUSTOMERID/:ACCOUNTID",
-  component: AccountsDetailComponent
-}];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class CustomersRoutingModule { }
+export const customersRoutes: Routes = [
+  {
+    path: '',
+    component: CustomersHomeComponent
+  },
+  {
+    path: 'new',
+    component: CustomersNewComponent
+  },
+  {
+    path: ':CUSTOMERID',
+    component: CustomersDetailComponent
+  },
+  {
+    path: ':CUSTOMERID/:ACCOUNTID',
+    component: AccountsDetailComponent
+  }
+];
 {% endhighlight %}
 
 <p>Modificamos la funciona para que añada los elementos que faltan y que se modifique la ruta para navegar al nuevo
@@ -653,6 +627,7 @@ import { intRateMonthlyFunction } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-customers-detail',
+  standalone: true,
   templateUrl: './customers-detail.component.html',
   styleUrls: ['./customers-detail.component.css']
 })
@@ -775,8 +750,7 @@ export class CustomersDetailComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -845,8 +819,7 @@ export class CustomersDetailComponent {
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -1078,31 +1051,31 @@ que también funcione la navegación en la tabla. Aprovecharemos para añadir al
 <o-form #form attr="customerDetail" service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
     show-header-navigation="no" class="fill-form">
     <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
-    <div fxFlex fxLayout="row" fxLayoutGap="8px">
+    <div>
         <div>
             <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png"
                 sql-type="OTHER"></o-image>
         </div>
-        <mat-tab-group fxFlex>
+        <mat-tab-group>
             <mat-tab label="{% raw %}{{ 'CUSTOMER_PERSONAL_INFORMATION' | oTranslate }}{% endraw %}">
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-text-input fxFlex="40" attr="NAME" required="yes"></o-text-input>
-                    <o-text-input fxFlex="40" attr="SURNAME" required="yes"></o-text-input>
-                    <o-date-input fxFlex="20" attr="STARTDATE"></o-date-input>
+                <div>
+                    <o-text-input attr="NAME" required="yes"></o-text-input>
+                    <o-text-input attr="SURNAME" required="yes"></o-text-input>
+                    <o-date-input attr="STARTDATE"></o-date-input>
                 </div>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-nif-input fxFlex="40" attr="ID" required="yes"></o-nif-input>
-                    <o-integer-input fxFlex="40" attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
-                    <o-combo fxFlex="20" attr="CUSTOMERTYPEID" service="customers" entity="customerType"
+                <div>
+                    <o-nif-input attr="ID" required="yes"></o-nif-input>
+                    <o-integer-input attr="PHONE" step="0" thousand-separator=" "></o-integer-input>
+                    <o-combo attr="CUSTOMERTYPEID" service="customers" entity="customerType"
                         keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" visible-columns="DESCRIPTION"
                         value-column="CUSTOMERTYPEID"></o-combo>
                 </div>
                 <o-email-input attr="EMAIL"></o-email-input>
                 <o-text-input attr="ADDRESS"></o-text-input>
-                <div fxLayout="row" fxLayoutGap="8px">
-                    <o-real-input fxFlex="50" attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
+                <div>
+                    <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10"
                         min-decimal-digits="0"></o-real-input>
-                    <o-real-input fxFlex="50" attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
+                    <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10"
                         min-decimal-digits="0"></o-real-input>
                 </div>
                 <o-textarea-input attr="COMMENTS"></o-textarea-input>
@@ -1231,8 +1204,7 @@ que también funcione la navegación en la tabla. Aprovecharemos para añadir al
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -1301,8 +1273,7 @@ que también funcione la navegación en la tabla. Aprovecharemos para añadir al
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers-routing.module.ts</li>
-            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.module.ts</li>
+            <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>customers.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>

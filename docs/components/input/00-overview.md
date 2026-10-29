@@ -11,9 +11,63 @@ nav_order: 1
 {% include base_path %}
 {% include toc %}
 
-Form data components are components that must be placed inside a [form]({{ base_path }}/components/data/form/overview){:target="_blank"} and allow for an input of data. The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, phone, radio, real, slider, slide toggle, text, textarea and time.
+Form data components allow for an input of data. They are typically placed inside a [form]({{ base_path }}/components/data/form/overview){:target="_blank"}, but since v18 every input is a **standalone** component and can also be used on its own with Angular Reactive Forms (see [Standalone usage](#standalone-usage) below). The form data components offered by **OntimizeWeb** are checkbox, combo, currency, date, email, file, hour, html, integer, list picker, NIF, password, percent, phone, radio, real, slider, slide toggle, text, textarea and time.
 
 All input components in **OntimizeWeb** extend the `OFormDataComponent` class. This class provides a set of methods and attributes inherited by all the input components. This methods and attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+Every input component is standalone, so it can be imported directly into any other standalone component without going through `OntimizeWebModule` or an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { OTextInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [OTextInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+Using inputs inside `<o-form>` is still the recommended approach for CRUD forms bound to a service/entity — `<o-form>` keeps handling data loading, validation summaries and the insert/update/delete lifecycle for you. Standalone usage is for the cases where you just need one or a few inputs outside of that lifecycle (dialogs, filters, wizards, arbitrary reactive forms...).
+
+### Reactive Forms
+
+Outside `<o-form>`, bind the input to a `FormControl`/`FormGroup` with `formControlName` (or `[formControl]`) instead of `[data]`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { OTextInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, OTextInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-text-input formControlName="name" label="Name" required="yes"></o-text-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    name: new FormControl('', Validators.required)
+  });
+}
+```
+
+`[(ngModel)]` also works, for simpler template-driven cases:
+
+```html
+<o-text-input label="Name" [(ngModel)]="name" (onChange)="onNameChange($event.newValue)"></o-text-input>
+```
+
+{: .note }
+> See the [migration guide]({{ base_path }}/migration-15-to-18/) for the full set of native-HTML-to-Ontimize equivalences and binding patterns.
 
 ## Data
 You can modify value by setting the `data` attribute or calling the `setData` method.
@@ -28,34 +82,84 @@ You can modify value by setting the `data` attribute or calling the `setData` me
   }
 ```
 
+## Query on event
+
+Form service components (combo, list picker, radio) query their options from a service. Besides the automatic triggers `query-on-init` (query once on component initialization, `yes` by default) and `query-on-bind` (re-query whenever the parent `<o-form>` loads new data, `no` by default), they can also be told to re-query in response to an arbitrary external event through the `query-on-event` attribute.
+
+`query-on-event` takes an RxJS `Observable`. Every time it emits, the component calls its service again with its current filter/`parent-keys` configuration — the emitted value itself is not used as query data, only its arrival matters. An emission of `undefined`/`null` is ignored unless `query-with-null-parent-keys` is enabled.
+
+### Cascading (dependent) combos
+
+The most common use of `query-on-event` is making one form service component re-query when **another one's value changes** — e.g. a state combo that reloads its options whenever the selected country changes. `parent-keys` alone only decides **which filter** a query uses whenever one runs; it does not, by itself, make a component re-query reactively when the referenced sibling's value changes — `query-on-event` is what actually triggers that new query. A template reference variable on the "parent" component gives direct access to its `onValueChange` output, which is a ready-made observable for this:
+
+```html
+<o-form show-header="no">
+  <o-combo #comboCountry attr="comboCountry" label="Select Country" service="comboCountry" entity="comboCountry"
+    value-column="CountryId" columns="CountryId,CountryName" visible-columns="CountryName" keys="CountryId">
+  </o-combo>
+
+  <o-combo #comboState attr="comboState" label="Select State" service="comboState" entity="comboState"
+    value-column="StateId" columns="StateId,StateName,CountryId" visible-columns="StateName" keys="StateId"
+    [query-on-event]="comboCountry.onValueChange" parent-keys="CountryId:comboCountry[CountryId]">
+  </o-combo>
+</o-form>
+```
+
+Here, selecting a country emits on `comboCountry.onValueChange`, which triggers `comboState` to re-query; `parent-keys="CountryId:comboCountry[CountryId]"` is what tells that new query to filter states by the selected country's `CountryId`. Try it live in the playground: **Inputs → Combo → Query on event**.
+
+### Refreshing from an arbitrary event
+
+`query-on-event` isn't limited to a sibling component's output — any `Observable` works, so it also covers refreshing a component's options from outside the normal form/`parent-keys` lifecycle entirely, e.g. a manual refresh button or a value from something that isn't part of the same form. A simple "signal" observable (e.g. a `Subject<void>`) is the usual choice here, since the emitted value itself is discarded:
+
+```typescript
+import { Subject } from 'rxjs';
+
+export class MyComponent {
+  refreshUsers$ = new Subject<void>();
+
+  onRefreshUsersClick(): void {
+    this.refreshUsers$.next();
+  }
+}
+```
+
+```html
+<o-combo attr="user" entity="users" columns="id;name" [query-on-event]="refreshUsers$"></o-combo>
+<button (click)="onRefreshUsersClick()">Refresh users</button>
+```
+
+{: .note }
+> `query-on-event` (like `query-on-init`, `query-on-bind` and `parent-keys`) is only available on **form service components** — see [Form service components]({{ base_path }}/components/input/overviewservice/overview){:target="_blank"}. It is not part of the base `OFormDataComponent` API shared by every input.
+
 ## Appearance
 
 You can configure multiple appearance variants changing the `appearance` and `float-label` input values.
 
 ### Appearance
-The `appearance` input indicates which of the different `mat-form-field` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://v15.material.angular.io/components/form-field/overview#form-field-appearance-variants).
+The `appearance` input indicates which of the different `mat-form-field` appearance is used. It has the same features that Angular Material appearance input, watch it [here](https://material.angular.io/components/form-field/overview#form-field-appearance-variants).
 
+Global default appearance options can be specified by providing a value for *MAT_FORM_FIELD_DEFAULT_OPTIONS* in your `app.config.ts`. The global setting can be either `fill` or `outline`.
 
-Global default appearance options can be specified by providing a value for *MAT_FORM_FIELD_DEFAULT_OPTIONS* in your application's root module. Like the property, the global setting can be either legacy, standard, fill or outside.
-
-```
-@NgModule({
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
   ]
-})
+};
 ```
 ### Float label
-The `float-label` input indicates which of the different `mat-form-field` label behaviours is chosen. It has the same features that Angular Material appearance input, watch it [here](https://v15.material.angular.io/components/form-field/overview#floating-label)
+The `float-label` input indicates which of the different `mat-form-field` label behaviours is chosen. It has the same features that Angular Material appearance input, watch it [here](https://material.angular.io/components/form-field/overview#floating-label).
 
-Global default label options can be specified by providing a value for *MAT_LABEL_GLOBAL_OPTIONS* in your application's root module. Like the property, the global setting can be either always, never, or auto.
+Global default label options can be specified by providing a value for *MAT_LABEL_GLOBAL_OPTIONS* in your `app.config.ts`. The global setting can be either `always`, `never`, or `auto`.
 
-```
-@NgModule({
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}}
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'always' } }
   ]
-})
+};
 ```
 ## Validation
 
@@ -269,7 +373,7 @@ The *enabled* mode is active by default. You can disable the input by setting `e
 The *readonly* mode represents an element that is no longer editable by the user. You can make a component only readable setting `read-only="yes"`.
 
  ```html
-    <o-text-input fxFlex attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" read-only="yes" [data]="getValue()"></o-text-input>
+    <o-text-input attr="input" label="{% raw %}{{ 'INPUT.BUTTON.TEXT' | oTranslate }}{% endraw %}" read-only="yes" [data]="getValue()"></o-text-input>
 ```
 
 ## Tooltip
@@ -284,22 +388,26 @@ To create a tooltip, add the `tooltip` attribute to an element. By default, the 
 All input components have the `width` atribute. It allows you to can specify the width in pixels (px) or percentage (%) of the input component.
 
 ## Global default options <span class='menuitem-badge'> new </span>
-Global default options in input components can be specified by providing a value for the `O_INPUT_OPTIONS` token in a module. The color of input icons can be configured using the `iconColor` attribute and the selection of the value of an input when clicked using the `selectAllOnClick` attribute.
+Global default options in input components can be specified by providing a value for the `O_INPUTS_OPTIONS` token in `app.config.ts`. The color of input icons can be configured using the `iconColor` attribute and the selection of the value of an input when clicked using the `selectAllOnClick` attribute.
 
-```js
-@NgModule({
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    {provide: O_INPUTS_OPTIONS, useValue: { iconColor:'accent' } }
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_INPUTS_OPTIONS, useValue: { iconColor: 'accent' } }
   ]
-})
+};
+```
 
 or
 
-@NgModule({
+```typescript
+export const appConfig: ApplicationConfig = {
   providers: [
-    {provide: O_INPUTS_OPTIONS, useValue: { selectAllOnClick: true } }
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_INPUTS_OPTIONS, useValue: { selectAllOnClick: true } }
   ]
-})
+};
 ```
 
 ## Visibility <span class='menuitem-badge'> new </span>

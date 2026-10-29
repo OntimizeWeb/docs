@@ -16,6 +16,8 @@ You can also include your own menu adding  [`o-bar-menu-group`](#bar-menu-group)
 
 It is recommended to include it in the main component of you **OntimizeWeb** application, where the `router-outlet` is placed, so the bar menu will be always visible.
 
+The menu sections of the menu configuration have no equivalent in a horizontal menu, so they are rendered as a [`o-bar-menu-group`](#bar-menu-group) containing their menu entries.
+
 
 ## Bar menu item
 

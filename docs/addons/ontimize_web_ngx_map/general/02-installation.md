@@ -72,7 +72,7 @@ Insert the `o-map` component in your application component template.
 
 ```html
    <o-map #oMapBasic attr="basic-usage-map" center="42.240599, -8.720727" zoom="11" min-zoom="3" max-zoom="20"
-      zoom-control="yes" search-control="yes" fxFlex></o-map>
+      zoom-control="yes" search-control="yes"></o-map>
 ```
 
 ![Basic map]({{ "/assets/images/map/basic-map.png" | absolute_url }}){: .comp-example-img }

@@ -218,11 +218,18 @@ export class CustomOntimizeReportDataProvider extends OntimizeReportDataBaseProv
 
 ```
 
-- Add the extended service in the previous point in the app.module.ts with the injection token `O_REPORT_DATA_SERVICE`.
+- Register the extended service from the previous point in your `app.config.ts` with the injection token `O_REPORT_DATA_SERVICE`.
 
-``` ts
-{ provide: O_REPORT_DATA_SERVICE , useValue:CustomOntimizeReportDataProvider}
+```ts
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_REPORT_DATA_SERVICE, useValue: CustomOntimizeReportDataProvider }
+  ]
+};
 ```
+
+> **Note**: if you still bootstrap with `AppModule`, add the same provider entry to its `providers` array instead.
 
 >**IMPORTANT:** In the case of dates, the reports will take the format of the table but the jasperreport library only accepts the formats of the following table.
 
@@ -277,6 +284,50 @@ Moment formats, accepted in the table, are supported in reports
 | `llll`                   | Tue, Feb 27, 2024 9:43 AM     |
 
 If you need to use ISO formats in the table, you can modify the data that is sent to modify the date format of the reports.
+
+## Customizing the report on-demand service
+
+The service that sends the report on-demand requests to the backend (generating the report and loading the available functions) can be replaced using the injection token `O_REPORT_ON_DEMAND_SERVICE` (since *ontimize-web-ngx-report@18.0.0-next.1*). If no service is provided, `OReportService` is used for **OntimizeEE** backends and `JSONAPIReportService` for **JSON:API** backends.
+
+{: .note}
+> Do not confuse it with the `O_REPORT_SERVICE` injection token from `ontimize-web-ngx`, which provides the service that opens the report on-demand dialog from the `o-table` menu.
+
+- Extend `OReportService` (or `JSONAPIReportService` if your application uses **JSON:API**) and override the methods you need. In this example, the application title is used as the report subtitle when the user leaves it empty.
+
+```ts
+import { Injectable, Injector } from '@angular/core';
+import { Observable } from 'ontimize-web-ngx';
+import { OReportParam, OReportService } from 'ontimize-web-ngx-report';
+
+@Injectable()
+export class CustomReportOnDemandService extends OReportService {
+
+  constructor(injector: Injector) {
+    super(injector);
+  }
+
+  public createReport(reportParams: OReportParam): Observable<any> {
+    return super.createReport({
+      ...reportParams,
+      subtitle: reportParams.subtitle || this._appConfig.title
+    });
+  }
+
+}
+```
+
+- Register the extended service from the previous point in your `app.config.ts` with the injection token `O_REPORT_ON_DEMAND_SERVICE`.
+
+```ts
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_REPORT_ON_DEMAND_SERVICE, useValue: CustomReportOnDemandService }
+  ]
+};
+```
+
+> **Note**: if you still bootstrap with `AppModule`, add the same provider entry to its `providers` array instead.
 
 ## Menu option
 

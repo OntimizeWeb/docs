@@ -54,11 +54,10 @@ export const SERVICE_CONFIG =
       }
     ```
 
-3. In `src/app/main/main-routing.module.ts`, add a route for new report management module p.e with `path` of `reports`
+3. In `src/app/main/main-routing.ts`, add a route for the new report management module with `path` of `reports`
 
     ```ts
-    import { NgModule } from '@angular/core';
-    import { RouterModule, Routes } from '@angular/router';
+    import { Routes } from '@angular/router';
 
     import { MainComponent } from './main.component';
 
@@ -67,37 +66,20 @@ export const SERVICE_CONFIG =
         path: '', component: MainComponent,
         children: [
           ...
-          { path: 'reports', loadChildren: () => import('./reports/reports.module').then(m => m.ReportModule) }
+          { path: 'reports', loadChildren: () => import('./reports/reports.routes').then(m => m.REPORT_ROUTES) }
           ...
         ]
       }
     ];
-
-    @NgModule({
-      imports: [RouterModule.forChild(routes)],
-      exports: [RouterModule]
-    })
-    export class MainRoutingModule { }
     ```
 
-4. Create the new report management module `ReportModule` and import `OReportRoutingModule` module
+4. Create the new report routes file `REPORT_ROUTES` and import `OReportRoutingModule`
 
     ```ts
-    import { NgModule } from '@angular/core';
-    import { CommonModule } from '@angular/common';
-
+    import { Routes } from '@angular/router';
     import { OReportModule, OReportRoutingModule } from 'ontimize-web-ngx-report';
 
-    @NgModule({
-      declarations: [],
-      imports: [
-        CommonModule,
-        OReportRoutingModule,
-        OReportModule
-      ]
-    })
-
-    export class ReportModule{}
+    export const REPORT_ROUTES: Routes = OReportRoutingModule.routes;
     ```
 
 5. To add/remove/update report
@@ -137,9 +119,9 @@ Code example:
 
 ```ts
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { OReportService } from 'ontimize-web-ngx-report';
+import { OReportStoreParamValue, OReportStoreService } from 'ontimize-web-ngx-report';
 
-constructor( private reportService: OReportStoreService) {}
+constructor( private reportStoreService: OReportStoreService) {}
   public id;
   public onFormDataLoaded(data: any): void {
       this.id = data.ACCOUNTID;
@@ -159,3 +141,45 @@ constructor( private reportService: OReportStoreService) {}
     this.reportStoreService.openFillReport("1c272846-0693-42c3-b2a3-7f10c611ad6c", this.getParameters());
   }
 ```
+
+## Customizing the report store service
+
+The report store service can be replaced using the injection token `O_REPORT_STORE_SERVICE` (since *ontimize-web-ngx-report@18.0.0-next.1*). If no service is provided, `OReportStoreService` is used for **OntimizeEE** backends and `JSONAPIReportStoreService` for **JSON:API** backends. The service provided is used both by the report management module and by any component that injects `OReportStoreService`.
+
+- Extend `OReportStoreService` (or `JSONAPIReportStoreService` if your application uses **JSON:API**) and override the methods you need. In this example, the logged user is sent as a parameter to every report.
+
+```ts
+import { Injectable, Injector } from '@angular/core';
+import { Observable } from 'ontimize-web-ngx';
+import { OReportStoreParam, OReportStoreService } from 'ontimize-web-ngx-report';
+
+@Injectable()
+export class CustomReportStoreService extends OReportStoreService {
+
+  constructor(injector: Injector) {
+    super(injector);
+  }
+
+  public fillReport(uuid: string, reportStoreParam: OReportStoreParam, entity?: string, sqltypes?: Object): Observable<any> {
+    const parameters = [
+      ...(reportStoreParam.parameters ?? []),
+      { name: 'user', value: this.authService.getSessionInfo().user }
+    ];
+    return super.fillReport(uuid, { ...reportStoreParam, parameters }, entity, sqltypes);
+  }
+
+}
+```
+
+- Register the extended service from the previous point in your `app.config.ts` with the injection token `O_REPORT_STORE_SERVICE`.
+
+```ts
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideOntimizeWeb(CONFIG, appRoutes),
+    { provide: O_REPORT_STORE_SERVICE, useValue: CustomReportStoreService }
+  ]
+};
+```
+
+> **Note**: if you still bootstrap with `AppModule`, add the same provider entry to its `providers` array instead.

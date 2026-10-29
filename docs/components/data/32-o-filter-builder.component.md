@@ -53,8 +53,8 @@ In the following example there is a `o-form` component that contains two `o-text
 
   <o-column title="{% raw %}{{ 'FILTERS' | oTranslate }}{% endraw %}">
     <o-row layout-align="space-between center">
-      <o-text-input attr="NAME" read-only="no" fxFlex="33"></o-text-input>
-      <o-text-input attr="SURNAME" read-only="no" fxFlex="66"></o-text-input>
+      <o-text-input attr="NAME" read-only="no"></o-text-input>
+      <o-text-input attr="SURNAME" read-only="no"></o-text-input>
     </o-row>
 
     <o-list-picker attr="EMPLOYEETYPEID" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
@@ -127,12 +127,12 @@ Here is an example
 ```html
   <o-form editable-detail="no" show-header="no" layout-align="start stretch" class="employees-filters-form" fxFill>
   ...
-      <div fxLayout="row wrap" fxLayoutGap="32px">
-        <o-text-input attr="NAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
-        <o-text-input attr="SURNAME" read-only="no" fxFlex="calc(25% - 32px)"></o-text-input>
+      <div fxLayoutGap="32px">
+        <o-text-input attr="NAME" read-only="no"></o-text-input>
+        <o-text-input attr="SURNAME" read-only="no"></o-text-input>
         <o-combo #type attr="EMPLOYEETYPE" read-only="no" service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
-          value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME" fxFlex="calc(25% - 32px)"></o-combo>
-        <o-text-input attr="EMAIL" read-only="no" fxFlex="25%"></o-text-input>
+          value-column="EMPLOYEETYPEID" keys="EMPLOYEETYPEID" visible-columns="EMPLOYEETYPENAME"></o-combo>
+        <o-text-input attr="EMAIL" read-only="no"></o-text-input>
       </div>
         ...
           <o-button attr="clear" [oFilterBuilderClear]="filterBuilder" type="STROKED" label="Clear" layout-padding>

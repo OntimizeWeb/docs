@@ -13,7 +13,7 @@ nav_order: 17
 
 The `o-radio` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying an option between multiple input submitted by the user.
 
-The radio component is automatically registered on its parent `o-form`, which provides the value for the radio programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+The radio component is typically registered on its parent `o-form`, which provides the value for the radio programatically, but it can also be used standalone with Angular Reactive Forms (see [Standalone usage](#standalone-usage) below). Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
 
 This component is different than most of other inputs, an array of data must be provided to the component in order to interact with it. This data is used to display the optoins of the radio group and each element of the data array must be an object with at least one key/value pair.
 
@@ -23,6 +23,51 @@ The data array can be provided in two ways:
 {: .note }
 >Passing function calls directly to `static-data` (e.g. `[static-data]="getData()"`) is a **bad practice** that causes continuous re-evaluation and leads to malfunctioning behavior in components such as **o-list, o-table, o-grid and o-tree**.
 Always pass a static reference instead (e.g. `[static-data]="data"`).
+
+## Standalone usage
+
+The `o-radio` is a standalone component and can be imported directly without an `<o-form>` wrapper:
+
+```typescript
+import { Component } from '@angular/core';
+import { ORadioComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ORadioComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`, keeping `static-data`, `value-column` and `columns` to describe the options:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ORadioComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, ORadioComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-radio formControlName="option" label="Option" [static-data]="data"
+        value-column="key" columns="key;value" visible-columns="value" required="yes"></o-radio>
+    </form>
+  `
+})
+export class MyComponent {
+  data = [{ key: 1, value: 'Option 1' }, { key: 2, value: 'Option 2' }];
+  form = new FormGroup({
+    option: new FormControl(null, Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![Radio component]({{ "/assets/images/components/inputs/o-radio.png" | absolute_url }}){: .comp-example-img}

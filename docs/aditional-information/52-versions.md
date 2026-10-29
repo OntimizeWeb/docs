@@ -13,6 +13,37 @@ In this section you can check the different releases of **OntimizeWeb** and its 
 
 ## Releases and dependencies
 
+### Angular 18
+
+> **Requirements**: Node.js ≥ 20 · Angular ^18.2.0 · TypeScript ~5.5.4 · ng-packagr ^18.2.0
+
+<table>
+    <thead>
+        <tr>
+            <th>ontimize-web-ngx</th>
+            <th>filemanager*</th>
+            <th>map*</th>
+            <th>charts*</th>
+            <th>gallery*</th>
+            <th>report*</th>
+            <th>extra-components*</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>18.0.0-next.4</td>
+        <td>18.0.0-next.0</td>
+        <td>15.0.1 †</td>
+        <td>18.0.0-next.0</td>
+        <td>18.0.0-next.0</td>
+        <td>18.0.0-next.0</td>
+        <td>18.0.0-next.0</td>
+    </tr>
+    </tbody>
+</table>
+
+† ontimize-web-ngx-map has not yet been migrated to Angular 18.
+
 ### Angular 15
 
 <table>

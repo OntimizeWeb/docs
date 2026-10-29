@@ -39,19 +39,19 @@ In your application '*app.scss*' file you should add the library theme.
 ...
 ```
 
-### Import in an application module
+### Import in a standalone component
 
-Import the Ontimize Web tree module in the app module where you want to use it.
+Import the Ontimize Web tree module in the standalone component where you want to use it.
 
 ```javascript
 import { OTreeModule } from 'ontimize-web-ngx-tree';
 
-@NgModule({
+@Component({
+  standalone: true,
   imports: [
     OTreeModule
   ],
-  declarations: ...
-  providers: ...
+  ...
 })
-export class ExampleModule { }
+export class ExampleComponent { }
 ```

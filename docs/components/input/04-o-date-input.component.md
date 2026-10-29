@@ -13,7 +13,50 @@ nav_order: 4
 
 The `o-date-input` component is used in [forms]({{ base_path }}/components/data/form/overview) for getting or displaying date input submitted by the user.
 
-The date input is automatically registered on its parent `o-form`, which provides the value for the input programatically. Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+When placed inside an `<o-form>`, the date input is automatically registered on it, which provides the value for the input programatically, but it is also a standalone component that can be used on its own with Angular Reactive Forms (see [Standalone usage](#standalone-usage) below). Its value can be also set manually via the `data` parameter. This and other attributes are explained on the **API** section of this page.
+
+## Standalone usage
+
+`o-date-input` is standalone and can be imported directly without `<o-form>`:
+
+```typescript
+import { Component } from '@angular/core';
+import { ODateInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ODateInputComponent],
+  templateUrl: './my-component.component.html'
+})
+export class MyComponent {}
+```
+
+### Reactive Forms
+
+Bind it to a `FormControl` with `formControlName` instead of `[data]`:
+
+```typescript
+import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ODateInputComponent } from 'ontimize-web-ngx';
+
+@Component({
+  selector: 'app-my-component',
+  standalone: true,
+  imports: [ReactiveFormsModule, ODateInputComponent],
+  template: `
+    <form [formGroup]="form">
+      <o-date-input formControlName="birthDate" label="Date" format="DD"></o-date-input>
+    </form>
+  `
+})
+export class MyComponent {
+  form = new FormGroup({
+    birthDate: new FormControl(Date.now(), Validators.required)
+  });
+}
+```
 
 ## Basic example
 ![Date input component]({{ "/assets/images/components/inputs/o-date-input.png" | absolute_url }}){: .comp-example-img}
@@ -21,11 +64,19 @@ The date input is automatically registered on its parent `o-form`, which provide
 ```html
 <o-form editable-detail="no" show-header="no">
     <o-date-input attr="date1" label="Date"></o-date-input>
-    <o-date-input attr="date2" label="Date" read-only="no" required="yes" format="LL"></o-date-input>
+    <o-date-input attr="date2" label="Date" read-only="no" required="yes" format="DD"></o-date-input>
     <o-date-input attr="date3" label="Date" enabled="no"></o-date-input>
 </o-form>
 ```
 
+
+## Date format and adapter
+
+By default the date is displayed using the localized short date format of the active date adapter: [Luxon](https://moment.github.io/luxon/){:target="_blank"}'s macro token `D` (the equivalent of Moment.js' `L` used in previous versions). A custom format can be set via the `format` input, written with the tokens of the active adapter — e.g. `dd/MM/yyyy` in Luxon (note the lowercase day and year), or `DD` for the localized long date.
+
+The `date-class` function receives a Luxon `DateTime` under the default adapter, or a `Moment` when the moment adapter is active.
+
+You can switch the component back to Moment.js by providing `provideODateAdapter('moment')`. Check the [Date handling guide]({{ base_path }}/guide/date-handling/) for the Moment.js/Luxon token equivalences and the date adapter selection mechanism.
 
 ## Disable the text input
 

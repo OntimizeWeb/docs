@@ -21,7 +21,7 @@ En este ejercicio se incorporará un detalle las cuentas, para poder ver un resu
 Nos situamos, dentro de la aplicación, en la ruta``` src/app/main/accounts``` y ejecutamos el siguiente comando:
 
 ```
-npx ng g component --skip-tests accounts-detail
+npx ng g component --skip-tests --standalone accounts-detail
 ```
 
 Lo que haremos será un formulario de detalle similar al siguiente mockup:
@@ -35,42 +35,13 @@ Lo que haremos será un formulario de detalle similar al siguiente mockup:
         </button>
 
 <p>Importamos el componente <strong>AccountsDetailComponent</strong></p>
-{{"**accounts.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
-import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
-
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent,
-    AccountsDetailComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
-{% endhighlight %}
-
-<p>Definimos la ruta que se usará este formulario de detalle</p>
-
-{{"**accounts-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
 import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
 
-const routes: Routes = [{
+export const accountsRoutes: Routes = [{
   path: '',
   component: AccountsHomeComponent
 },
@@ -78,12 +49,6 @@ const routes: Routes = [{
   path: ':ACCOUNTID',
   component: AccountsDetailComponent
 }];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class AccountsRoutingModule { }
 {% endhighlight %}
 
 <p>Para el formulario, necesitaremos añadir un nuevo servicio, el servicio de movimientos (<code>/movements</code>) de
@@ -323,8 +288,7 @@ bloquearemos la edición de los datos de una cuenta.</p>
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-home.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -539,7 +503,7 @@ inicio. Por este motivo, haremos un diálogo sencillo que nos permita insertar e
 un nuevo componente, llamado **accounts-new**
 
 ```
-npx ng g component --skip-tests accounts-new
+npx ng g component --skip-tests --standalone accounts-new
 ```
 
 <div class="multicolumn">
@@ -548,43 +512,14 @@ npx ng g component --skip-tests accounts-new
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
 
-{{"**accounts.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
-import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
-import { AccountsNewComponent } from './accounts-new/accounts-new.component';
-
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent,
-    AccountsDetailComponent,
-    AccountsNewComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
-{% endhighlight %}
-
-{{"**accounts-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
 import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
 import { AccountsNewComponent } from './accounts-new/accounts-new.component';
 
-const routes: Routes = [{
+export const accountsRoutes: Routes = [{
   path: '',
   component: AccountsHomeComponent
 },
@@ -596,12 +531,6 @@ const routes: Routes = [{
   path: ':ACCOUNTID',
   component: AccountsDetailComponent
 }];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class AccountsRoutingModule { }
 {% endhighlight %}
 
 {{"**accounts-new.component.html**" | markdownify }}
@@ -695,8 +624,7 @@ export class AccountsRoutingModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-new.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
@@ -910,8 +838,8 @@ Estos nuevos componentes se crearán, situándonos dentro de la ruta ```src/app/
 comandos:
 
 ```
-npx ng g component --skip-tests add-customer
-npx ng g component --skip-tests add-movement
+npx ng g component --skip-tests --standalone add-customer
+npx ng g component --skip-tests --standalone add-movement
 ```
 
 <div class="multicolumn">
@@ -919,55 +847,18 @@ npx ng g component --skip-tests add-movement
         <button class="unstyle toggle-tree-btn">
             <span class="material-symbols-outlined">right_panel_open</span>
         </button>
-        <p>Se importan los componentes en el módulo de cuentas y se añaden al array de declaraciones</p>
+        <p>Se importan los componentes en el fichero de rutas de cuentas</p>
 
-{{"**accounts.module.ts**" | markdownify }}
+{{"**accounts.routes.ts**" | markdownify }}
 {% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { OntimizeWebModule } from 'ontimize-web-ngx';
-import { AccountsRoutingModule } from './accounts-routing.module';
-import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
-import { AccountsNewComponent } from './accounts-new/accounts-new.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
-import { AddMovementComponent } from './add-movement/add-movement.component';
-
-
-@NgModule({
-  declarations: [
-    AccountsHomeComponent,
-    AccountsDetailComponent,
-    AccountsNewComponent,
-    AddCustomerComponent,
-    AddMovementComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OntimizeWebModule,
-    AccountsRoutingModule
-  ]
-})
-export class AccountsModule { }
-{% endhighlight %}
-
-<p>En el módulo de rutas se añaden aquellas que se han indicado en las tablas del formulario detalle en el atributo
-<code>insert-form-route</code>. Podemos observar que los componentes que usamos para la inserción terminan en
-/<code>new</code>.</p>
-
-{{"**accounts-routing.module.ts**" | markdownify }}
-{% highlight typescript %}
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
 import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
 import { AccountsNewComponent } from './accounts-new/accounts-new.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { AddMovementComponent } from './add-movement/add-movement.component';
 
-const routes: Routes = [{
+export const accountsRoutes: Routes = [{
   path: '',
   component: AccountsHomeComponent
 },
@@ -987,11 +878,6 @@ const routes: Routes = [{
   path: ':ACCOUNTID/addMovement/new',
   component: AddMovementComponent
 }];
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class AccountsRoutingModule { }
 {% endhighlight %}
 
 <p>Este es el componente para añadir movimientos a las cuentas</p>
@@ -1121,8 +1007,7 @@ export class AccountsRoutingModule { }
               <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>add-movement.component.ts</li>
             </ul>
             </li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts-routing.module.ts</li>
-            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.module.ts</li>
+            <li data-jstree='{"selected": true, "icon":"{{ base_path }}/assets/jstree/fa-file.svg"}'>accounts.routes.ts</li>
           </ul>
           </li>
           <li data-jstree='{"disabled":true, "icon":"{{ base_path }}/assets/jstree/fa-folder-open.svg"}'>
